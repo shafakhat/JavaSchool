@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Constructor - JavaSchool</title>
+<meta name="description" content="1. Constructor help javaworld.com Second, if you declare constructors, what you see is what you get. This means that if you don&#x27;t explicitly declare a no-arguments constr">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-class-constructor">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Java Articles</span></nav>
+    <h1>Constructor</h1>
+<ol><li>Constructor help javaworld.com Second, if you declare constructors, what you see is what you get. This means that if you don't explicitly declare a no-arguments constructor but declare some other constructor, you will only get the constructor that you do explicitly define. This is why you see an error in example 3. Since you've never declared a no-arguments constructor but did define another type of constructor, Java does not insert a no-arguments constructor.</li></ol>
+<hr>
+<ol><li>Understanding constructors javaworld.com Constructors have one purpose in life: to create an instance of a class. This can also be called creating an object, as in:</li><li>(Not So) Stupid Questions 13: The Construction of Constructors today.java.net Editor's note: Sometimes the most interesting discussions begin when someone says, "This may be a stupid question, but ...." If the person asking the question has taken the time to think about the problem before asking, the question is often not stupid at all. The uncertainty points out an ambiguity in the specs, holes in the docs, or a search for how more experienced programmers might address a particular problem. From time to time, we will print one of the "(Not So) Stupid Questions" we receive and invite our readers to answer the question in the feedback section.</li><li>(Not So) Stupid Questions 15: How Can a Constructor Be Private? today.java.net Editor's note: Sometimes the most interesting discussions begin when someone says, "This may be a stupid question, but ...." If the person asking the question has taken the time to think about the problem before asking, the question is often not stupid at all. The uncertainty points out an ambiguity in the specs, holes in the docs, or a search for how more experienced programmers might address a particular problem. From time to time, we will print one of the "(Not So) Stupid Questions" we receive and invite our readers to answer the question in the feedback section.</li><li>Inside Constructors developer.com In the last column Object Construction, I began a discussion about constructors. Designing effective constructors is one of the responsibilities that must be taken care of when creating classes. In the previous column, I covered constructor basics as well as some finer points of constructor design. Remember that proper construction puts the object in a safe-state. In this article, you will delve deeper into code as you uncover many of the implementation issues of designing constructors.</li><li>Creating and Destroying Java Objects &gt; Item 1: Consider static factory methods instead of constructors informit.com A second advantage of static factory methods is that, unlike constructors, they are not required to create a new object each time they’re invoked. This allows immutable classes (Item 15) to use preconstructed instances, or to cache instances as they’re constructed, and dispense them repeatedly to avoid creating unnecessary duplicate objects. The Boolean.valueOf(boolean) method illustrates this technique: it never creates an object. This technique is similar to the Flyweight pattern [Gamma95, p. 195]. It can greatly improve performance if equivalent objects are requested often, especially if they are expensive to create.</li><li>Java Nuts and Bolts: Copy Constructors, Cloning, and Linked Structures &gt; Factories and the Recurring Need to Copy Objects informit.com Every programming language has its own special wrinkles, and knowledge of these can help in rapidly solving specific problems. In this article, I'll look at three areas of Java that often pass under the radar of programmers: copy constructors, cloning, and linked structures. Not fully understanding these areas of Java can result in reduced modularity and weak encapsulation—for example, not using copy constructors can easily result in unnecessary object instantiations. The same is true for cloning. Likewise, not using linked data structures can make for an unnecessarily complex data model.</li></ol>
+    <div class="pager"><a class="pager-btn" href="struts-configuration.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Configuration</span></a><a class="pager-btn pager-next" href="jdk-7-convertingarelativepathintoanabsolutepath.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Converting a relative path...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6. Development - Java Tutorial - JavaSchool</title>
+<meta name="description" content="6. Development - Java Tutorial - JavaSchool">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-tut-6-development">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+<nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <span>Development</span></nav>    <h1>6. Development</h1>
+    <p><strong>62 sub-topics</strong> in this chapter. Choose a sub-topic to see its articles.</p>
+    <div class="tchips">
+<a class="tchip" href="tut-6-1-system-class.html">System Class <b>18</b></a>
+<a class="tchip" href="tut-6-2-regular-expressions.html">Regular Expressions <b>11</b></a>
+<a class="tchip" href="tut-6-3-system-properties.html">System Properties <b>26</b></a>
+<a class="tchip" href="tut-6-4-matcher.html">Matcher <b>3</b></a>
+<a class="tchip" href="tut-6-5-console-read.html">Console Read <b>5</b></a>
+<a class="tchip" href="tut-6-6-pattern.html">Pattern <b>6</b></a>
+<a class="tchip" href="tut-6-7-formatter.html">Formatter <b>4</b></a>
+<a class="tchip" href="tut-6-8-pack200.html">Pack200 <b>1</b></a>
+<a class="tchip" href="tut-6-9-formatter-specifiers.html">Formatter Specifiers <b>13</b></a>
+<a class="tchip" href="tut-6-10-preference.html">Preference <b>24</b></a>
+<a class="tchip" href="tut-6-11-formatter-flags.html">Formatter Flags <b>12</b></a>
+<a class="tchip" href="tut-6-12-random.html">Random <b>15</b></a>
+<a class="tchip" href="tut-6-13-formatter-field-width.html">Formatter Field Width <b>6</b></a>
+<a class="tchip" href="tut-6-14-special-directories.html">Special Directories <b>4</b></a>
+<a class="tchip" href="tut-6-15-runtimemxbean.html">RuntimeMXBean <b>5</b></a>
+<a class="tchip" href="tut-6-16-desktop.html">Desktop <b>8</b></a>
+<a class="tchip" href="tut-6-17-formatting-date-time.html">Formatting Date Time <b>13</b></a>
+<a class="tchip" href="tut-6-18-java-console.html">Java Console <b>4</b></a>
+<a class="tchip" href="tut-6-19-formatter-uppercase-option.html">Formatter Uppercase Option <b>3</b></a>
+<a class="tchip" href="tut-6-20-compiler-diagnostic.html">Compiler Diagnostic <b>6</b></a>
+<a class="tchip" href="tut-6-21-formatter-argument-index.html">Formatter Argument Index <b>4</b></a>
+<a class="tchip" href="tut-6-22-script-engines.html">Script Engines <b>28</b></a>
+<a class="tchip" href="tut-6-23-simpledateformat.html">SimpleDateFormat <b>59</b></a>
+<a class="tchip" href="tut-6-24-activation-framework.html">Activation Framework <b>3</b></a>
+<a class="tchip" href="tut-6-25-dateformat.html">DateFormat <b>18</b></a>
+<a class="tchip" href="tut-6-26-clipboard.html">Clipboard <b>12</b></a>
+<a class="tchip" href="tut-6-27-printf-method.html">printf Method <b>75</b></a>
+<a class="tchip" href="tut-6-28-console.html">Console <b>5</b></a>
+<a class="tchip" href="tut-6-29-stringbuffer-stringbuilder.html">StringBuffer StringBuilder <b>29</b></a>
+<a class="tchip" href="tut-6-30-java-compiler.html">Java Compiler <b>7</b></a>
+<a class="tchip" href="tut-6-31-unicode.html">Unicode <b>25</b></a>
+<a class="tchip" href="tut-6-32-runtime-system.html">Runtime System <b>20</b></a>
+<a class="tchip" href="tut-6-33-math-functions.html">Math Functions <b>37</b></a>
+<a class="tchip" href="tut-6-34-scriptengines.html">ScriptEngines <b>8</b></a>
+<a class="tchip" href="tut-6-35-timer.html">Timer <b>12</b></a>
+<a class="tchip" href="tut-6-36-wav-sound.html">WAV Sound <b>2</b></a>
+<a class="tchip" href="tut-6-37-timeunit.html">TimeUnit <b>2</b></a>
+<a class="tchip" href="tut-6-38-audio.html">Audio <b>15</b></a>
+<a class="tchip" href="tut-6-39-timing.html">Timing <b>10</b></a>
+<a class="tchip" href="tut-6-40-midi-sound.html">MIDI Sound <b>8</b></a>
+<a class="tchip" href="tut-6-41-timezone.html">TimeZone <b>15</b></a>
+<a class="tchip" href="tut-6-42-jni.html">JNI <b>3</b></a>
+<a class="tchip" href="tut-6-43-documentation.html">Documentation <b>1</b></a>
+<a class="tchip" href="tut-6-44-commportidentifier.html">CommPortIdentifier <b>4</b></a>
+<a class="tchip" href="tut-6-45-exception.html">Exception <b>28</b></a>
+<a class="tchip" href="tut-6-46-uuid.html">UUID <b>11</b></a>
+<a class="tchip" href="tut-6-47-assertions.html">Assertions <b>9</b></a>
+<a class="tchip" href="tut-6-48-robot.html">Robot <b>9</b></a>
+<a class="tchip" href="tut-6-49-toolkit.html">Toolkit <b>3</b></a>
+<a class="tchip" href="tut-6-50-javabeans.html">JavaBeans <b>36</b></a>
+<a class="tchip" href="tut-6-51-processbuilder.html">ProcessBuilder <b>2</b></a>
+<a class="tchip" href="tut-6-52-base64.html">Base64 <b>3</b></a>
+<a class="tchip" href="tut-6-53-process.html">Process <b>4</b></a>
+<a class="tchip" href="tut-6-54-cache.html">Cache <b>1</b></a>
+<a class="tchip" href="tut-6-55-applet.html">Applet <b>16</b></a>
+<a class="tchip" href="tut-6-56-debug.html">Debug <b>10</b></a>
+<a class="tchip" href="tut-6-57-jnlp.html">JNLP <b>2</b></a>
+<a class="tchip" href="tut-6-58-jdk.html">JDK <b>2</b></a>
+<a class="tchip" href="tut-6-59-crc32.html">CRC32 <b>1</b></a>
+<a class="tchip" href="tut-6-60-os.html">OS <b>5</b></a>
+<a class="tchip" href="tut-6-61-html-parser.html">HTML Parser <b>16</b></a>
+<a class="tchip" href="tut-6-62-stop-watch.html">Stop Watch <b>5</b></a>
+    </div>
+    <h2>All articles in this chapter</h2>
+    <div class="arc-filter-wrap"><input type="text" id="arcFilter" class="arc-filter" placeholder="Filter 61 pages..." autocomplete="off"></div>
+    <ul class="arc-list filterable">
+      <li><a href="development-ahelperclassforprintingindentedtext.html">A helper class for printing indented text</a></li>
+      <li><a href="development-aprogramwithassertions.html">A Program with Assertions</a></li>
+      <li><a href="development-addampmtotimeusingsimpledateformat.html">Add AM PM to time using SimpleDateFormat</a></li>
+      <li><a href="development-addingstringtoastringbufferobject.html">Adding String to a StringBuffer Object</a></li>
+      <li><a href="development-appendingasubsetoftheelementsfromachararray.html">Appending a subset of the elements from a char array</a></li>
+      <li><a href="development-appendingasubstringappendpartoftheastringobjecttothebufobject.html">Appending a Substring</a></li>
+      <li><a href="development-appendingbasictypeslongdouble.html">Appending Basic Types</a></li>
+      <li><a href="development-arraycopymethod.html">Array copy method</a></li>
+      <li><a href="development-beanhasasinglepropertycalledproperty.html">Bean has a single property called property.</a></li>
+      <li><a href="development-bindingsandscopes.html">Bindings And Scopes</a></li>
+      <li><a href="development-calculatethefloorofthelogbase2.html">Calculate the floor of the log, base 2</a></li>
+      <li><a href="development-callingappendmethodtoconstructastringbufferobject.html">Calling append() method to construct a StringBuffer object</a></li>
+      <li><a href="development-capturingaudiowithjavasoundapi.html">Capturing Audio with Java Sound API</a></li>
+      <li><a href="development-catchassertexceptionwithmessage.html">Catch assert exception with message</a></li>
+      <li><a href="development-changingasinglecharacterinastringbufferobject.html">Changing a single character in a StringBuffer object</a></li>
+      <li><a href="development-changingthestringbuferlengthforastringbufferobject.html">Changing the StringBufer Length for a StringBuffer Object</a></li>
+      <li><a href="development-checkifastringisavaliddate.html">Check if a String is a valid date</a></li>
+      <li><a href="development-checkwhethergivenexceptioniscompatiblewiththeexceptionsdeclaredinath.html">Check whether given exception is compatible with the exceptions declared in a throws clause</a></li>
+      <li><a href="development-classrepresentingastandardoperatingsystemplatformwinmacorposix.html">Class representing a standard operating system platform, WIN, MAC, or POSIX.</a></li>
+      <li><a href="development-classtohelpdeterminingtheos.html">Class to help determining the OS</a></li>
+      <li><a href="development-compilerinfo.html">Compiler Info</a></li>
+      <li><a href="development-conditionthatteststheostype.html">Condition that tests the OS type.</a></li>
+      <li><a href="development-consolebasedlogin.html">Console based login</a></li>
+      <li><a href="development-consolereadline.html">Console.ReadLine</a></li>
+      <li><a href="development-convertabeantoxmlpersistence.html">Convert a bean to XML persistence</a></li>
+      <li><a href="development-convertanxmlpersistencetobean.html">Convert an XML persistence to bean</a></li>
+      <li><a href="development-convertmillisecondstoreadablestring.html">Convert milliseconds to readable string</a></li>
+      <li><a href="development-copyingdatatosystemclipboard.html">Copying data to system clipboard</a></li>
+      <li><a href="development-createanewexceptionsettingthecauseifpossible.html">Create a new Exception, setting the cause if possible.</a></li>
+      <li><a href="development-createauserdefinedpropertyorchangethevalueofthecurrentproperty.html">Create a user-defined property or change the value of the current property</a></li>
+      <li><a href="development-createaninstanceabean.html">Create an instance a Bean</a></li>
+      <li><a href="development-createtworandomnumbergeneratorswiththesameseed.html">Create two random number generators with the same seed</a></li>
+      <li><a href="development-createyourownbasicuuid.html">Create your own basic UUID</a></li>
+      <li><a href="development-creatingastringobjectfromastringbufferobject.html">Creating a String Object From a StringBuffer Object</a></li>
+      <li><a href="development-creatingastringbufferobjectwithaspecificvalueforthecapacity.html">Creating a StringBuffer object with a specific value for the capacity</a></li>
+      <li><a href="development-dateformattingandlocalization.html">Date Formatting and Localization</a></li>
+      <li><a href="development-debugutility.html">Debug Utility</a></li>
+      <li><a href="development-decodeanhtmlcolorstringlikef567baintoacolor.html">Decode an HTML color string like '#F567BA;' into a Color</a></li>
+      <li><a href="development-deserializingabeanfromxml.html">Deserializing a Bean from XML</a></li>
+      <li><a href="development-determinebeanspropertytype.html">Determine bean's property type</a></li>
+      <li><a href="development-determinethedurationofamidiaudiofile.html">Determine the duration of a Midi audio file</a></li>
+      <li><a href="development-determinethejdkversionnumber.html">Determine the JDK Version Number</a></li>
+      <li><a href="development-determiningifapreferencenodecontainsaspecifickey.html">Determining If a Preference Node Contains a Specific Key</a></li>
+      <li><a href="development-determiningifapreferencenodecontainsaspecificvalue.html">Determining If a Preference Node Contains a Specific Value</a></li>
+      <li><a href="development-determiningifapreferencenodeexists.html">Determining If a Preference Node Exists</a></li>
+      <li><a href="development-determiningthedurationofasampledaudiofile.html">Determining the Duration of a Sampled Audio File</a></li>
+      <li><a href="development-determiningtheencodingofasampledaudiofile.html">Determining the Encoding of a Sampled Audio File</a></li>
+      <li><a href="development-determiningthefileformatofamidiaudiofile.html">Determining the File Format of a Midi Audio File</a></li>
+      <li><a href="development-determiningthefileformatofasampledaudiofile.html">Determining the File Format of a Sampled Audio File</a></li>
+      <li><a href="development-determiningthepositionofasampledaudioplayer.html">Determining the Position of a Sampled Audio Player</a></li>
+      <li><a href="development-determiningwhenamidiaudioplayerhasfinishedplaying.html">Determining When a Midi Audio Player Has Finished Playing</a></li>
+      <li><a href="development-determiningwhenapreferencenodeisaddedorremoved.html">Determining When a Preference Node Is Added or Removed</a></li>
+      <li><a href="development-determiningwhenasampledaudioplayerhasfinishedplaying.html">Determining When a Sampled Audio Player Has Finished Playing</a></li>
+      <li><a href="development-determiningwhenanitemisnolongeronthesystemclipboard.html">Determining When an Item Is No Longer on the System Clipboard</a></li>
+      <li><a href="development-displaytheamountoffreememoryinthejavavirtualmachine.html">Display the amount of free memory in the Java Virtual Machine.</a></li>
+      <li><a href="development-enumeratescriptengines.html">Enumerate ScriptEngines</a></li>
+      <li><a href="development-escapehtml.html">Escape HTML</a></li>
+      <li><a href="development-executeacommandfromcode.html">Execute a command from code</a></li>
+      <li><a href="development-executeacommandwithmorethanoneargument.html">Execute a command with more than one argument</a></li>
+      <li><a href="development-executeexternalcommandandobtaintheresult.html">Execute external command and obtain the result</a></li>
+      <li><a href="development-executesystemcommand.html">Execute system command</a></li>
+    </ul>
+<script>
+(function(){
+  var inp = document.getElementById('arcFilter');
+  if (!inp) return;
+  var items = Array.prototype.slice.call(document.querySelectorAll('.filterable li'));
+  inp.addEventListener('input', function(){
+    var q = inp.value.toLowerCase().trim();
+    items.forEach(function(el){
+      el.style.display = (!q || (el.textContent || '').toLowerCase().indexOf(q) !== -1) ? '' : 'none';
+    });
+  });
+})();
+</script>    <p class="arc-crumb"><a href="index.html">&larr; Java HOME</a></p>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>
