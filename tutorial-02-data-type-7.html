@@ -1,0 +1,2613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Type (7/7) - Java Tutorial - JavaSchool</title>
+<meta name="description" content="Data Type: java2s tutorial chapter with tabs per sub-topic, 447 archived articles imported.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-chapter">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a></nav>
+    <h1>2. Data Type (7/7)</h1>
+    <p><strong>47 sub-topics</strong> &middot; <strong>864 pages archived (2014-2020)</strong> &middot; <strong>447</strong> imported here, grouped into tabs below (part 7 of 7, 84 articles).</p>
+    <p class="part-pager"><a class="btn btn-outline" href="tutorial-02-data-type-6.html">&larr; Previous part</a> </p>
+    <div class="tabs">
+      <div class="tab-bar"><button type="button" class="tab-btn active" data-tab="tab-0" aria-selected="true">Other examples <span class="tab-count">84</span></button></div>
+      <div class="tab-panel" id="tab-0"><h3 id="a-bubble-sort-for-strings">A bubble sort for Strings.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class SortString {
+  static String arr[] = { "N", "i", "t", "t", "f", "a", "g" };
+
+  publicstaticvoid main(String args[]) {
+    for (int j = 0; j &lt; arr.length; j++) {
+      for (int i = j + 1; i &lt; arr.length; i++) {
+        if (arr[i].compareTo(arr[j]) &lt; 0) {
+          String t = arr[j];
+          arr[j] = arr[i];
+          arr[i] = t;
+        }
+      }
+      System.out.println(arr[j]);
+    }
+  }
+}</code></pre></div>
+<h3 id="add-two-integers-checking-for-overflow">Add two integers, checking for overflow.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *
+ */
+public class Main {
+  /**
+   *
+   * @param x an addend
+   * @param y an addend
+   * @return the sum &lt;code&gt;x+y&lt;/code&gt;
+   * @throws ArithmeticException if the result can not be represented as an
+   *         int
+   * @since 1.1
+   */
+  public static int addAndCheck(int x, int y) {
+      long s = (long)x + (long)y;
+      if (s &lt; Integer.MIN_VALUE || s &gt; Integer.MAX_VALUE) {
+          throw new ArithmeticException("overflow: add");
+      }
+      return (int)s;
+  }
+}</code></pre></div>
+<h3 id="add-two-integers-checking-for-overflow-1">Add two integers, checking for overflow.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
+
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *
+ */publicclass Main {
+
+  /**
+   * Add two integers, checking for overflow.
+   *
+   * @param x an addend
+   * @param y an addend
+   * @return the sum &lt;code&gt;x+y&lt;/code&gt;
+   * @throws ArithmeticException if the result can not be represented as an
+   *         int
+   * @since 1.1
+   */publicstaticint addAndCheck(int x, int y) {
+      long s = (long)x + (long)y;
+      if (s &lt; Integer.MIN_VALUE || s &gt; Integer.MAX_VALUE) {
+          thrownew ArithmeticException("overflow: add");
+      }
+      return (int)s;
+  }
+}</code></pre></div>
+<h3 id="adding-members-to-an-enumeration-class">Adding Members to an Enumeration Class</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum JacketSize {
+  small(36), medium(40), large(42), extra_large(46), extra_extra_large(48);
+  JacketSize(int chestSize) {
+    this.chestSize = chestSize;
+  }
+  public int chestSize() {
+    return chestSize;
+  }
+  private int chestSize;
+}
+class Jacket {
+  public Jacket(JacketSize size) {
+    this.size = size;
+  }
+  public String toString() {
+    switch (this.size) {
+    case small:
+      return "S";
+    case medium:
+      return "M";
+    case large:
+      return "L";
+    case extra_large:
+      return "XL";
+    case extra_extra_large:
+      return "XXL";
+    default:
+      return "";
+    }
+  }
+  private JacketSize size;
+}
+public class MainClass {
+  public static void main(String[] args) {
+    Jacket[] jackets = { new Jacket(JacketSize.medium),
+                         new Jacket(JacketSize.extra_large),
+                         new Jacket(JacketSize.small),
+                         new Jacket(JacketSize.extra_extra_large) };
+    System.out.println("\n\nJackets sizes available are:\n");
+    for (JacketSize size : JacketSize.values()) {
+      System.out.print(" " + size);
+    }
+    System.out.println("\n\nJackets in stock are:");
+    for (Jacket jacket : jackets) {
+      System.out.println(jacket);
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Jackets sizes available are:
+ small medium large extra_large extra_extra_large
+Jackets in stock are:
+M
+XL
+S
+XXL</code></pre></div>
+<h3 id="applied-to-strings-the-precision-specifier-specifies-the-maximum-field-length">Applied to strings, the precision specifier specifies the maximum field length</h3>
+<p>For example, %5.7s displays a string at least five and not exceeding seven characters long. If the string is longer than the maximum field width, the end characters will be truncated.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Formatter;
+
+publicclass MainClass {
+  publicstaticvoid main(String args[]) {
+    Formatter fmt;
+
+    fmt = new Formatter();
+    fmt.format("%5.7s", "abcdefghijklmn");
+    System.out.println(fmt);
+
+    fmt = new Formatter();
+    fmt.format("%5.7s", "abc");
+    System.out.println(fmt);
+
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abcdefg
+abc</code></pre></div>
+<h3 id="arrays-of-strings">Arrays of Strings</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    String[] colors = {"red", "orange", "yellow", "green", "blue", "indigo", "violet"};
+    for(String s: colors){
+      System.out.println(s);
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+red
+orange
+yellow
+green
+blue
+indigo
+violet</code></pre></div>
+<h3 id="arrays-of-strings-1">Arrays of Strings</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    String[] names = new String[5];
+    names[0] = "qwert";
+    names[1] = "yuiop";
+    names[2] = "asdfg";
+    names[3] = "hjkl";
+    names[4] = "zxcvb";
+    System.out.println(names[4]);
+  }
+}</code></pre></div>
+<h3 id="arrays-of-strings-2">Arrays of Strings</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
+
+  publicstaticvoid main(String[] arg) {
+    String[] colors = {"red", "orange", "yellow", "green", "blue", "indigo", "violet"};
+
+    for(String s: colors){
+      System.out.println(s);
+
+    }
+  }
+
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">red
+orange
+yellow
+green
+blue
+indigo
+violet</code></pre></div>
+<h3 id="arrays-of-strings-3">Arrays of Strings</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
+
+  publicstaticvoid main(String[] arg) {
+    String[] names = new String[5];
+
+    names[0] = "qwert";
+    names[1] = "yuiop";
+    names[2] = "asdfg";
+    names[3] = "hjkl";
+    names[4] = "zxcvb";
+
+    System.out.println(names[4]);
+  }
+
+}</code></pre></div>
+<h3 id="auto-unboxing">Auto-unboxing</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
+  publicstaticvoid main(String args[]) {
+    Integer intObject = 100;;
+    Double doubleObject = 98.6;
+
+    doubleObject = doubleObject + intObject;
+    System.out.println("dOb after expression: " + doubleObject);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">dOb after expression: 198.6</code></pre></div>
+<h3 id="auto-unboxing-allows-you-to-mix-different-types-of-numeric-objects-in-an-expression">Auto-unboxing allows you to mix different types of numeric objects in an expression.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class AutoBox4 {
+  publicstaticvoid main(String args[]) {
+
+    Integer iOb = 100;
+    Double dOb = 98.6;
+
+    dOb = dOb + iOb;
+    System.out.println("dOb after expression: " + dOb);
+  }
+}</code></pre></div>
+<h3 id="autoboxing-and-auto-unboxing">Autoboxing and Auto-Unboxing</h3>
+<ul><li>Related to Java's type wrappers.</li><li>How values are moved into and out of a wrapper instance</li><li>Java primitive type wrappers: Boolean, Byte, Character, Double, Float, Long, Integer, Short.</li></ul>
+<h3 id="autoboxingunboxing">Autoboxing/unboxing</h3>
+<p>Autoboxing/unboxing takes place with method parameters and return values.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
+  staticint m(Integer v) {
+    return v ; // auto-unbox to int
+  }
+
+  publicstaticvoid main(String args[]) {
+    Integer iOb = m(100);
+
+    System.out.println(iOb);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">100</code></pre></div>
+<h3 id="autoboxingunboxing-int">Autoboxing/unboxing int</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class AutoBox {
+  publicstaticvoid main(String args[]) {
+
+    Integer iOb = 100; // autobox an int
+int i = iOb; // auto-unbox
+
+    System.out.println(i + " " + iOb); // displays 100 100
+  }
+}</code></pre></div>
+<h3 id="autoboxingunboxing-takes-place-with-method-parameters-and-return-values">Autoboxing/unboxing takes place with method parameters and return values.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class AutoBox2 {
+  staticint m(Integer v) {
+    return v; // auto-unbox to int
+  }
+
+  publicstaticvoid main(String args[]) {
+    Integer iOb = m(100);
+
+    System.out.println(iOb);
+  }
+}</code></pre></div>
+<h3 id="boxing-and-unboxing">Boxing and Unboxing</h3>
+<ul><li>Boxing refers to the conversion of a primitive to a corresponding wrapper instance, such as from an int to a java.lang.Integer.</li><li>Unboxing is the conversion of a wrapper instance to a primitive type, such as from Byte to byte.</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass{
+
+  publicstaticvoid main(String[] args){
+
+     Integer number = newInteger (100);
+     int [] ints = newint [2];
+     ints [0] = number;
+  }
+
+}</code></pre></div>
+<h3 id="calculate-the-age">Calculate the age</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+publicclass Main {
+
+  publicstaticvoid main(String[] args) {
+    Calendar cal = new GregorianCalendar(1999, 1, 1);
+    Calendar now = new GregorianCalendar();
+    int res = now.get(Calendar.YEAR) - cal.get(Calendar.YEAR);
+    if ((cal.get(Calendar.MONTH) &gt; now.get(Calendar.MONTH))
+        || (cal.get(Calendar.MONTH) == now.get(Calendar.MONTH) &amp;&amp; cal.get(Calendar.DAY_OF_MONTH) &gt; now
+            .get(Calendar.DAY_OF_MONTH))) {
+      res--;
+    }
+    System.out.println(res);
+  }
+}</code></pre></div>
+<h3 id="capital-and-uncapital-strings">Capital and uncapital strings</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/* ------------------------------------------------------------------------
+ * $Id: StringUtil.java,v 1.1 2005/12/26 12:59:25 tpv Exp $
+ * Copyright 2005 Tim Vernum
+ * ------------------------------------------------------------------------
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ------------------------------------------------------------------------
+ */
+/**
+ * @version $Revision: 1.1 $
+ */
+public final class StringUtil
+{
+    private StringUtil()
+    {
+        // Static utility class
+    }
+    public static String uncaps(String string)
+    {
+        if (string.length() == 0)
+        {
+            return string;
+        }
+        char ch = string.charAt(0);
+        if (Character.isUpperCase(ch))
+        {
+            ch = Character.toLowerCase(ch);
+            return ch + string.substring(1);
+        }
+        return string;
+    }
+    public static String caps(String string)
+    {
+        if (string.length() == 0)
+        {
+            return string;
+        }
+        char ch = string.charAt(0);
+        if (Character.isLowerCase(ch))
+        {
+            ch = Character.toUpperCase(ch);
+            return ch + string.substring(1);
+        }
+        return string;
+    }
+    public static boolean isBlank(String value)
+    {
+        return value == null || value.length() == 0;
+    }
+    public static boolean isBlankOrSpace(String value)
+    {
+        return isBlank(value) || isBlank(value.trim());
+    }
+}</code></pre></div>
+<h3 id="casting-objects">Casting Objects</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Animal {
+  public String toString() {
+    return "This is an animal ";
+  }
+}
+class Dog extends Animal {
+  public void sound() {
+    System.out.println("Woof Woof");
+  }
+}
+class Cat extends Animal {
+  public Cat(String aName) {
+    name = aName;
+  }
+  public String toString() {
+    return super.toString() + "\nIt's " + name + " the " + breed;
+  }
+  public void sound() {
+    System.out.println("Miiaooww");
+  }
+  private String name;
+  private String breed;
+}
+public class MainClass {
+  public static void main(String[] a) {
+    Cat aPet = new Cat("Fang");
+    Animal theAnimal = (Animal) aPet;
+  }
+}</code></pre></div>
+<h3 id="check-for-a-leap-year">Check for a Leap Year</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.ParseException;
+
+publicclass MainClass {
+
+  publicstaticvoid main(String[] args) throws ParseException {
+    System.out.println(isLeapYear(2000));
+  }
+
+  publicstaticboolean isLeapYear(int year) {
+
+    if (year &lt; 0) {
+      return false;
+    }
+
+    if (year % 400 == 0) {
+      return true;
+    } elseif (year % 100 == 0) {
+      return false;
+    } elseif (year % 4 == 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+}</code></pre></div>
+<h3 id="checking-for-a-leap-year">Checking for a Leap Year</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.ParseException;
+import java.util.GregorianCalendar;
+
+publicclass MainClass {
+
+  publicstaticvoid main(String[] args) throws ParseException {
+    System.out.println(isLeapYear(2000));
+  }
+
+  publicstaticboolean isLeapYear(int year) {
+
+    GregorianCalendar gcal = new GregorianCalendar();
+    return gcal.isLeapYear(year);
+  }
+
+}</code></pre></div>
+<h3 id="compares-two-floats-for-order">Compares two floats for order.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
+import java.math.BigInteger;
+
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *//**
+ * Provides extra functionality for Java Number classes.
+ *
+ * @author &lt;a href="mailto:rand_mcneely@yahoo.com"&gt;Rand McNeely&lt;/a&gt;
+ * @author Stephen Colebourne
+ * @author &lt;a href="mailto:steve.downey@netfolio.com"&gt;Steve Downey&lt;/a&gt;
+ * @author Eric Pugh
+ * @author Phil Steitz
+ * @since 1.0
+ * @version $Id: NumberUtils.java 488819 2006-12-19 21:50:04Z bayard $
+ *
+ */publicclass Main {
+
+  /**
+   * Compares two floats for order.
+   *
+   * This method is more comprehensive than the standard Java greater than,
+   * less than and equals operators.
+   * &lt;ul&gt;
+   *  &lt;li&gt;It returns &lt;code&gt;-1&lt;/code&gt; if the first value is less than the second.
+   *  &lt;li&gt;It returns &lt;code&gt;+1&lt;/code&gt; if the first value is greater than the second.
+   *  &lt;li&gt;It returns &lt;code&gt;0&lt;/code&gt; if the values are equal.
+   * &lt;/ul&gt;
+   *
+   *  The ordering is as follows, largest to smallest:
+   * &lt;ul&gt;
+   * &lt;li&gt;NaN
+   * &lt;li&gt;Positive infinity
+   * &lt;li&gt;Maximum float
+   * &lt;li&gt;Normal positive numbers
+   * &lt;li&gt;+0.0
+   * &lt;li&gt;-0.0
+   * &lt;li&gt;Normal negative numbers
+   * &lt;li&gt;Minimum float (-Float.MAX_VALUE)
+   * &lt;li&gt;Negative infinity
+   * &lt;/ul&gt;
+   *
+   * Comparing &lt;code&gt;NaN&lt;/code&gt; with &lt;code&gt;NaN&lt;/code&gt; will return
+   * &lt;code&gt;0&lt;/code&gt;.
+   *
+   * @param lhs  the first &lt;code&gt;float&lt;/code&gt;
+   * @param rhs  the second &lt;code&gt;float&lt;/code&gt;
+   * @return &lt;code&gt;-1&lt;/code&gt; if lhs is less, &lt;code&gt;+1&lt;/code&gt; if greater,
+   *  &lt;code&gt;0&lt;/code&gt; if equal to rhs
+   */publicstaticint compare(float lhs, float rhs) {
+      if (lhs &lt; rhs) {
+          return -1;
+      }
+      if (lhs &gt; rhs) {
+          return +1;
+      }
+      //Need to compare bits to handle 0.0 == -0.0 being true
+// compare should put -0.0 &lt; +0.0
+// Two NaNs are also == for compare purposes
+// where NaN == NaN is false
+int lhsBits = Float.floatToIntBits(lhs);
+      int rhsBits = Float.floatToIntBits(rhs);
+      if (lhsBits == rhsBits) {
+          return 0;
+      }
+      //Something exotic! A comparison to NaN or 0.0 vs -0.0
+//Fortunately NaN's int is &gt; than everything else
+//Also negzeros bits &lt; poszero
+//NAN: 2143289344
+//MAX: 2139095039
+//NEGZERO: -2147483648
+if (lhsBits &lt; rhsBits) {
+          return -1;
+      } else {
+          return +1;
+      }
+  }
+}</code></pre></div>
+<h3 id="compares-two-floats-for-order-1">Compares two floats for order.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
+import java.math.BigInteger;
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Provides extra functionality for Java Number classes.
+ *
+ * @author &lt;a href="mailto:rand_mcneely@yahoo.com"&gt;Rand McNeely&lt;/a&gt;
+ * @author Stephen Colebourne
+ * @author &lt;a href="mailto:steve.downey@netfolio.com"&gt;Steve Downey&lt;/a&gt;
+ * @author Eric Pugh
+ * @author Phil Steitz
+ * @since 1.0
+ * @version $Id: NumberUtils.java 488819 2006-12-19 21:50:04Z bayard $
+ *
+ */
+public class Main {
+  /**
+   *
+   * This method is more comprehensive than the standard Java greater than,
+   * less than and equals operators.
+   * &lt;ul&gt;
+   *  &lt;li&gt;It returns &lt;code&gt;-1&lt;/code&gt; if the first value is less than the second.
+   *  &lt;li&gt;It returns &lt;code&gt;+1&lt;/code&gt; if the first value is greater than the second.
+   *  &lt;li&gt;It returns &lt;code&gt;0&lt;/code&gt; if the values are equal.
+   * &lt;/ul&gt;
+   *
+   *  The ordering is as follows, largest to smallest:
+   * &lt;ul&gt;
+   * &lt;li&gt;NaN
+   * &lt;li&gt;Positive infinity
+   * &lt;li&gt;Maximum float
+   * &lt;li&gt;Normal positive numbers
+   * &lt;li&gt;+0.0
+   * &lt;li&gt;-0.0
+   * &lt;li&gt;Normal negative numbers
+   * &lt;li&gt;Minimum float (-Float.MAX_VALUE)
+   * &lt;li&gt;Negative infinity
+   * &lt;/ul&gt;
+   *
+   * Comparing &lt;code&gt;NaN&lt;/code&gt; with &lt;code&gt;NaN&lt;/code&gt; will return
+   * &lt;code&gt;0&lt;/code&gt;.
+   *
+   * @param lhs  the first &lt;code&gt;float&lt;/code&gt;
+   * @param rhs  the second &lt;code&gt;float&lt;/code&gt;
+   * @return &lt;code&gt;-1&lt;/code&gt; if lhs is less, &lt;code&gt;+1&lt;/code&gt; if greater,
+   *  &lt;code&gt;0&lt;/code&gt; if equal to rhs
+   */
+  public static int compare(float lhs, float rhs) {
+      if (lhs &lt; rhs) {
+          return -1;
+      }
+      if (lhs &gt; rhs) {
+          return +1;
+      }
+      //Need to compare bits to handle 0.0 == -0.0 being true
+      // compare should put -0.0 &lt; +0.0
+      // Two NaNs are also == for compare purposes
+      // where NaN == NaN is false
+      int lhsBits = Float.floatToIntBits(lhs);
+      int rhsBits = Float.floatToIntBits(rhs);
+      if (lhsBits == rhsBits) {
+          return 0;
+      }
+      //Something exotic! A comparison to NaN or 0.0 vs -0.0
+      //Fortunately NaN's int is &gt; than everything else
+      //Also negzeros bits &lt; poszero
+      //NAN: 2143289344
+      //MAX: 2139095039
+      //NEGZERO: -2147483648
+      if (lhsBits &lt; rhsBits) {
+          return -1;
+      } else {
+          return +1;
+      }
+  }
+}</code></pre></div>
+<h3 id="compares-two-strings-and-returns-the-index-at-which-the-strings-begin-to-differ">Compares two Strings, and returns the index at which the Strings begin to differ.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */publicclass Main {
+
+  /**
+   * Compares two Strings, and returns the index at which the
+   * Strings begin to differ.
+   *
+   * For example,
+   * &lt;code&gt;indexOfDifference("i am a machine", "i am a robot") -&gt; 7&lt;/code&gt;
+   *
+   * &lt;pre&gt;
+   * StringUtils.indexOfDifference(null, null) = -1
+   * StringUtils.indexOfDifference("", "") = -1
+   * StringUtils.indexOfDifference("", "abc") = 0
+   * StringUtils.indexOfDifference("abc", "") = 0
+   * StringUtils.indexOfDifference("abc", "abc") = -1
+   * StringUtils.indexOfDifference("ab", "abxyz") = 2
+   * StringUtils.indexOfDifference("abcde", "abxyz") = 2
+   * StringUtils.indexOfDifference("abcde", "xyz") = 0
+   * &lt;/pre&gt;
+   *
+   * @param str1  the first String, may be null
+   * @param str2  the second String, may be null
+   * @return the index where str2 and str1 begin to differ; -1 if they are equal
+   * @since 2.0
+   */publicstaticint indexOfDifference(String str1, String str2) {
+      if (str1 == str2) {
+          return -1;
+      }
+      if (str1 == null || str2 == null) {
+          return 0;
+      }
+      int i;
+      for (i = 0; i &lt; str1.length() &amp;&amp; i &lt; str2.length(); ++i) {
+          if (str1.charAt(i) != str2.charAt(i)) {
+              break;
+          }
+      }
+      if (i &lt; str2.length() || i &lt; str1.length()) {
+          return i;
+      }
+      return -1;
+  }
+
+}</code></pre></div>
+<h3 id="compares-two-strings-and-returns-the-index-at-which-the-strings-begin-to-differ-1">Compares two Strings, and returns the index at which the Strings begin to differ.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+public class Main {
+  /**
+   * Compares two Strings, and returns the index at which the
+   * Strings begin to differ.
+   *
+   * For example,
+   * &lt;code&gt;indexOfDifference("i am a machine", "i am a robot") -&gt; 7&lt;/code&gt;
+   *
+   * &lt;pre&gt;
+   * StringUtils.indexOfDifference(null, null) = -1
+   * StringUtils.indexOfDifference("", "") = -1
+   * StringUtils.indexOfDifference("", "abc") = 0
+   * StringUtils.indexOfDifference("abc", "") = 0
+   * StringUtils.indexOfDifference("abc", "abc") = -1
+   * StringUtils.indexOfDifference("ab", "abxyz") = 2
+   * StringUtils.indexOfDifference("abcde", "abxyz") = 2
+   * StringUtils.indexOfDifference("abcde", "xyz") = 0
+   * &lt;/pre&gt;
+   *
+   * @param str1  the first String, may be null
+   * @param str2  the second String, may be null
+   * @return the index where str2 and str1 begin to differ; -1 if they are equal
+   * @since 2.0
+   */
+  public static int indexOfDifference(String str1, String str2) {
+      if (str1 == str2) {
+          return -1;
+      }
+      if (str1 == null || str2 == null) {
+          return 0;
+      }
+      int i;
+      for (i = 0; i &lt; str1.length() &amp;&amp; i &lt; str2.length(); ++i) {
+          if (str1.charAt(i) != str2.charAt(i)) {
+              break;
+          }
+      }
+      if (i &lt; str2.length() || i &lt; str1.length()) {
+          return i;
+      }
+      return -1;
+  }
+}</code></pre></div>
+<h3 id="compares-two-strings-and-returns-the-portion-where-they-differ">Compares two Strings, and returns the portion where they differ.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */publicclass Main {
+  // Difference
+//-----------------------------------------------------------------------
+/**
+   * Compares two Strings, and returns the portion where they differ.
+   * (More precisely, return the remainder of the second String,
+   * starting from where it's different from the first.)
+   *
+   * For example,
+   * &lt;code&gt;difference("i am a machine", "i am a robot") -&gt; "robot"&lt;/code&gt;.
+   *
+   * &lt;pre&gt;
+   * StringUtils.difference(null, null) = null
+   * StringUtils.difference("", "") = ""
+   * StringUtils.difference("", "abc") = "abc"
+   * StringUtils.difference("abc", "") = ""
+   * StringUtils.difference("abc", "abc") = ""
+   * StringUtils.difference("ab", "abxyz") = "xyz"
+   * StringUtils.difference("abcde", "abxyz") = "xyz"
+   * StringUtils.difference("abcde", "xyz") = "xyz"
+   * &lt;/pre&gt;
+   *
+   * @param str1  the first String, may be null
+   * @param str2  the second String, may be null
+   * @return the portion of str2 where it differs from str1; returns the
+   * empty String if they are equal
+   * @since 2.0
+   */publicstatic String difference(String str1, String str2) {
+      if (str1 == null) {
+          return str2;
+      }
+      if (str2 == null) {
+          return str1;
+      }
+      int at = indexOfDifference(str1, str2);
+      if (at == -1) {
+          return"";
+      }
+      return str2.substring(at);
+  }
+  /**
+   * Compares two Strings, and returns the index at which the
+   * Strings begin to differ.
+   *
+   * For example,
+   * &lt;code&gt;indexOfDifference("i am a machine", "i am a robot") -&gt; 7&lt;/code&gt;
+   *
+   * &lt;pre&gt;
+   * StringUtils.indexOfDifference(null, null) = -1
+   * StringUtils.indexOfDifference("", "") = -1
+   * StringUtils.indexOfDifference("", "abc") = 0
+   * StringUtils.indexOfDifference("abc", "") = 0
+   * StringUtils.indexOfDifference("abc", "abc") = -1
+   * StringUtils.indexOfDifference("ab", "abxyz") = 2
+   * StringUtils.indexOfDifference("abcde", "abxyz") = 2
+   * StringUtils.indexOfDifference("abcde", "xyz") = 0
+   * &lt;/pre&gt;
+   *
+   * @param str1  the first String, may be null
+   * @param str2  the second String, may be null
+   * @return the index where str2 and str1 begin to differ; -1 if they are equal
+   * @since 2.0
+   */publicstaticint indexOfDifference(String str1, String str2) {
+      if (str1 == str2) {
+          return -1;
+      }
+      if (str1 == null || str2 == null) {
+          return 0;
+      }
+      int i;
+      for (i = 0; i &lt; str1.length() &amp;&amp; i &lt; str2.length(); ++i) {
+          if (str1.charAt(i) != str2.charAt(i)) {
+              break;
+          }
+      }
+      if (i &lt; str2.length() || i &lt; str1.length()) {
+          return i;
+      }
+      return -1;
+  }
+
+}</code></pre></div>
+<h3 id="compares-two-strings-and-returns-the-portion-where-they-differ-1">Compares two Strings, and returns the portion where they differ.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+public class Main {
+  // Difference
+  //-----------------------------------------------------------------------
+  /**
+   * (More precisely, return the remainder of the second String,
+   * starting from where it's different from the first.)
+   *
+   * For example,
+   * &lt;code&gt;difference("i am a machine", "i am a robot") -&gt; "robot"&lt;/code&gt;.
+   *
+   * &lt;pre&gt;
+   * StringUtils.difference(null, null) = null
+   * StringUtils.difference("", "") = ""
+   * StringUtils.difference("", "abc") = "abc"
+   * StringUtils.difference("abc", "") = ""
+   * StringUtils.difference("abc", "abc") = ""
+   * StringUtils.difference("ab", "abxyz") = "xyz"
+   * StringUtils.difference("abcde", "abxyz") = "xyz"
+   * StringUtils.difference("abcde", "xyz") = "xyz"
+   * &lt;/pre&gt;
+   *
+   * @param str1  the first String, may be null
+   * @param str2  the second String, may be null
+   * @return the portion of str2 where it differs from str1; returns the
+   * empty String if they are equal
+   * @since 2.0
+   */
+  public static String difference(String str1, String str2) {
+      if (str1 == null) {
+          return str2;
+      }
+      if (str2 == null) {
+          return str1;
+      }
+      int at = indexOfDifference(str1, str2);
+      if (at == -1) {
+          return "";
+      }
+      return str2.substring(at);
+  }
+  /**
+   * Compares two Strings, and returns the index at which the
+   * Strings begin to differ.
+   *
+   * For example,
+   * &lt;code&gt;indexOfDifference("i am a machine", "i am a robot") -&gt; 7&lt;/code&gt;
+   *
+   * &lt;pre&gt;
+   * StringUtils.indexOfDifference(null, null) = -1
+   * StringUtils.indexOfDifference("", "") = -1
+   * StringUtils.indexOfDifference("", "abc") = 0
+   * StringUtils.indexOfDifference("abc", "") = 0
+   * StringUtils.indexOfDifference("abc", "abc") = -1
+   * StringUtils.indexOfDifference("ab", "abxyz") = 2
+   * StringUtils.indexOfDifference("abcde", "abxyz") = 2
+   * StringUtils.indexOfDifference("abcde", "xyz") = 0
+   * &lt;/pre&gt;
+   *
+   * @param str1  the first String, may be null
+   * @param str2  the second String, may be null
+   * @return the index where str2 and str1 begin to differ; -1 if they are equal
+   * @since 2.0
+   */
+  public static int indexOfDifference(String str1, String str2) {
+      if (str1 == str2) {
+          return -1;
+      }
+      if (str1 == null || str2 == null) {
+          return 0;
+      }
+      int i;
+      for (i = 0; i &lt; str1.length() &amp;&amp; i &lt; str2.length(); ++i) {
+          if (str1.charAt(i) != str2.charAt(i)) {
+              break;
+          }
+      }
+      if (i &lt; str2.length() || i &lt; str1.length()) {
+          return i;
+      }
+      return -1;
+  }
+}</code></pre></div>
+<h3 id="comparing-calendars">Comparing Calendars</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+publicclass MainClass {
+  publicstaticvoid main(String[] a) {
+    GregorianCalendar today = new GregorianCalendar();
+    GregorianCalendar thisDate = new GregorianCalendar();
+    thisDate.set(Calendar.YEAR, 2000);
+    if (thisDate.before(today)) {
+      System.out.println("before");
+    }
+    if (today.after(thisDate)) {
+      System.out.println("after");
+    }
+  }
+}</code></pre></div>
+<h3 id="comparing-enumeration-values">Comparing Enumeration Values</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
+
+  enum Season {
+    spring, summer, fall, winter
+  };
+
+  publicstaticvoid main(String[] arg) {
+    Season season = Season.summer;
+
+    if (season.equals(Season.spring)) {
+      System.out.println("It is Spring.");
+    } else {
+      System.out.println("It isn\'t Spring!");
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">It isn't Spring!</code></pre></div>
+<h3 id="comparing-enumeration-values-1">Comparing Enumeration Values</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  enum Season {
+    spring, summer, fall, winter
+  };
+  public static void main(String[] arg) {
+    Season season = Season.summer;
+    if (season.equals(Season.spring)) {
+      System.out.println("It is Spring.");
+    } else {
+      System.out.println("It isn\'t Spring!");
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">It isn't Spring!</code></pre></div>
+<h3 id="comparing-strings-for-equality">Comparing Strings for Equality</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
+
+  publicstaticvoid main(String[] arg) {
+
+    String a = "a";
+    String b = "a";
+
+    if(a.equals(b)){
+      System.out.println("a==b");
+    }else{
+      System.out.println("a!=b");
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">a==b</code></pre></div>
+<h3 id="comparing-strings-for-equality-1">Comparing Strings for Equality</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    String a = "a";
+    String b = "a";
+    if(a.equals(b)){
+      System.out.println("a==b");
+    }else{
+      System.out.println("a!=b");
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">a==b</code></pre></div>
+<h3 id="comparing-two-strings">Comparing Two Strings</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
+
+  publicstaticvoid main(String[] args) {
+
+    String s1 = "Java";
+    String s2 = "Java";
+    if (s1.equals(s2)) {
+      System.out.println("==");
+    }
+
+  }
+
+}</code></pre></div>
+<p>Sometimes you see this style.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if ("Java".equals (s1))</code></pre></div>
+<p>In the following code, if s1 is null, the if statement will return false without evaluating the second expression.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (s1 != null &amp;&amp; s1.equals("Java"))</code></pre></div>
+<h3 id="comparing-two-strings-1">Comparing Two Strings</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] args) {
+    String s1 = "Java";
+    String s2 = "Java";
+    if (s1.equals(s2)) {
+      System.out.println("==");
+    }
+  }
+}</code></pre></div>
+<p>Sometimes you see this style.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if ("Java".equals (s1))</code></pre></div>
+<p>In the following code, if s1 is null, the if statement will return false without evaluating the second expression.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (s1 != null &amp;&amp; s1.equals("Java"))</code></pre></div>
+<h3 id="compute-days-between-2-dates">Compute days between 2 dates</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+publicclass Main{
+  publicstaticvoid main(String args[]) {
+    Calendar c1 = new GregorianCalendar();
+    Calendar c2 = new GregorianCalendar();
+    c1.set(2000, 12, 12, 0, 0, 0);
+    c2.set(2001, 12, 12, 0, 0, 0);
+
+    System.out.println(daysBetween(c1.getTime(), c2.getTime()) + " day(s) between " + args[0] + "-"
+        + args[1] + "-" + args[2] + " and " + args[3] + "-" + args[4] + "-" + args[5]);
+  }
+
+  staticfinallong ONE_HOUR = 60 * 60 * 1000L;
+
+  publicstaticlong daysBetween(Date d1, Date d2) {
+    return ((d2.getTime() - d1.getTime() + ONE_HOUR) / (ONE_HOUR * 24));
+  }
+}</code></pre></div>
+<h3 id="converting-hexadecimal-strings">Converting hexadecimal strings</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *//* $Id$ *//**
+ * Provides helper functions for converting hexadecimal strings.
+ */publicclass HexUtil {
+
+    privatestaticfinalchar[] DIGITS =
+        {'0', '1', '2', '3', '4', '5', '6', '7',
+         '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+
+    /**
+     * Converts a byte array to a hexadecimal String
+     * @param data the data to encode
+     * @return String the resulting String
+     */publicstaticfinal String toHex(byte[] data) {
+        final StringBuffer sb = new StringBuffer(data.length * 2);
+        for (int i = 0; i &lt; data.length; i++) {
+            sb.append(DIGITS[(data[i] &gt;&gt;&gt; 4) &amp; 0x0F]);
+            sb.append(DIGITS[data[i] &amp; 0x0F]);
+        }
+        return sb.toString();
+    }
+
+}</code></pre></div>
+<h3 id="converting-hexadecimal-strings-1">Converting hexadecimal strings</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* $Id$ */
+/**
+ * Provides helper functions for converting hexadecimal strings.
+ */
+public class HexUtil {
+    private static final char[] DIGITS =
+        {'0', '1', '2', '3', '4', '5', '6', '7',
+         '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    /**
+     * Converts a byte array to a hexadecimal String
+     * @param data the data to encode
+     * @return String the resulting String
+     */
+    public static final String toHex(byte[] data) {
+        final StringBuffer sb = new StringBuffer(data.length * 2);
+        for (int i = 0; i &lt; data.length; i++) {
+            sb.append(DIGITS[(data[i] &gt;&gt;&gt; 4) &amp; 0x0F]);
+            sb.append(DIGITS[data[i] &amp; 0x0F]);
+        }
+        return sb.toString();
+    }
+}</code></pre></div>
+<h3 id="decimalformate0-exponent-must-be-multiple-of-3">DecimalFormat("###E0") (exponent must be multiple of 3)</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+public class Main {
+  public static void main(String[] argv) {
+    DecimalFormat formatter = new DecimalFormat("###E0");
+    String s = formatter.format(-1234.567); // -1.23E3
+    System.out.println(s);
+    s = formatter.format(-123.4567); // -123E0
+    System.out.println(s);
+    s = formatter.format(-12.34567); // -12.3E0
+    System.out.println(s);
+    s = formatter.format(-1.234567); // -12.3E0
+    System.out.println(s);
+    s = formatter.format(-.1234567); // -123E-3
+    System.out.println(s);
+  }
+}</code></pre></div>
+<h3 id="decimalformate0-exponent-must-be-multiple-of-2">DecimalFormat("##E0") (exponent must be multiple of 2)</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    DecimalFormat formatter = new DecimalFormat("##E0");
+    String s = formatter.format(-1234.567);
+    System.out.println(s);
+    s = formatter.format(-123.4567);
+    System.out.println(s);
+    s = formatter.format(-12.34567);
+    System.out.println(s);
+  }
+}
+// -12E2
+// -1.2E2
+// -12E0</code></pre></div>
+<h3 id="decimalformat0000e0">DecimalFormat("00.00E0")</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    DecimalFormat formatter = new DecimalFormat("00.00E0");
+    String s = formatter.format(-1234.567); // -12.35E2
+    System.out.println(s);
+    s = formatter.format(-.1234567); // -12.35E-2
+    System.out.println(s);
+  }
+}</code></pre></div>
+<h3 id="decimalformat0000000000e0">DecimalFormat("0000000000E0")</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    DecimalFormat formatter = new DecimalFormat("0000000000E0");
+    String s = formatter.format(-1234.567); // -1234567000E-6
+    System.out.println(s);
+  }
+}</code></pre></div>
+<h3 id="decimalformat000e00">DecimalFormat("000E00")</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    DecimalFormat formatter = new DecimalFormat("000E00");
+    String s = formatter.format(-1234.567); // -123E01
+    System.out.println(s);
+  }
+}</code></pre></div>
+<h3 id="decimalformat00e00">DecimalFormat("00E00")</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+
+publicclass Main {
+  publicstaticvoid main(String[] argv) throws Exception {
+
+    DecimalFormat formatter = new DecimalFormat("00E00");
+    String s = formatter.format(-1234.567);
+    System.out.println(s);
+  }
+}
+// -12E02</code></pre></div>
+<h3 id="declaring-checked-exceptions">Declaring Checked Exceptions</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicvoid convertStringToInt() throws NumberFormatException {
+
+    String s = "123";
+    int number = Integer.parseInt(s);
+
+  }
+}</code></pre></div>
+<h3 id="delimiters-are-comma-space-or-period">Delimiters are comma, space, or period</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    String text = "To be or not to be, that is the question.";
+    String delimiters = "[, .]"; // Delimiters are comma, space, and period
+    int[] limits = { 0, -1 }; // Limit values to try
+    for (int limit : limits) {
+      System.out.println("\nAnalysis with limit = " + limit);
+      String[] tokens = text.split(delimiters, limit);
+      System.out.println("Number of tokens: " + tokens.length);
+      for (String token : tokens) {
+        System.out.println(token);
+      }
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Analysis with limit = 0
+Number of tokens: 11
+To
+be
+or
+not
+to
+be
+
+that
+is
+the
+question
+
+Analysis with limit = -1
+Number of tokens: 12
+To
+be
+or
+not
+to
+be
+
+that
+is
+the
+question</code></pre></div>
+<h3 id="display-a-currency-value">Display a currency value</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    DecimalFormat df = new DecimalFormat("\u00a4#,##0.00");
+    System.out.println(df.format(4232.19));
+    System.out.println(df.format(-4232.19));
+  }
+}</code></pre></div>
+<h3 id="display-a-percentage">Display a percentage</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    DecimalFormat df = new DecimalFormat("#%");
+    System.out.println(df.format(0.19));
+    System.out.println(df.format(-0.19));
+  }
+}
+/*19%
+-19%
+*/</code></pre></div>
+<h3 id="display-numbers-in-scientific-notation">Display numbers in scientific notation</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+import java.text.NumberFormat;
+public class Main {
+  public static void main(String args[]) {
+    NumberFormat formatter = new DecimalFormat();
+    int maxinteger = Integer.MAX_VALUE;
+    formatter = new DecimalFormat("0.######E0");
+    System.out.println(formatter.format(maxinteger));
+  }
+}
+//2.147484E9</code></pre></div>
+<h3 id="display-numbers-with-commas">Display numbers with commas</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    double d = 123456.7890;
+    DecimalFormat df = new DecimalFormat("#####0.00");
+    System.out.println(df.format(d));
+  }
+}
+//123456.79</code></pre></div>
+<h3 id="display-numbers-with-commas-1">Display numbers with commas</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+public class Main {
+  public static void main(String args[]) {
+    double d = 123456.7890;
+    DecimalFormat df = new DecimalFormat("#####0.00");
+    System.out.println(df.format(d));
+  }
+}
+//123456.79</code></pre></div>
+<h3 id="display-numbers-with-leading-zeroes">Display numbers with leading zeroes</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+public class Main {
+  public static void main(String args[]) {
+    DecimalFormat df = new DecimalFormat("0000000000000000");
+    String z = df.format(123456);
+    System.out.println(z);
+  }
+}</code></pre></div>
+<h3 id="enumeration-fundamentals">Enumeration Fundamentals</h3>
+<p>An enumeration is created using the new enum keyword.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Week {
+  Monday, Tuesday, Wednesday, Thursday, Friday, Saturaday, Sunday
+}</code></pre></div>
+<ul><li>The identifiers Monday, Tuesday, and so on, are called enumeration constants.</li><li>Each is implicitly declared as a public, static member of Week.</li><li>Their type is the type of the enumeration in which they are declared.</li><li>These constants are called self-typed.</li></ul>
+<p>You declare and use an enumeration variable in much the same way as the primitive types.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Week aWeekDay;</code></pre></div>
+<p>Because aWeekDay is of type Week, the only values that it can be assigned (or contain) are those defined by the enumeration.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Week {
+  Monday, Tuesday, Wednesday, Thursday, Friday, Saturaday, Sunday
+}
+public class MainClass {
+  public static void main(String args[]) {
+    Week aWeekDay;
+    aWeekDay = Week.Monday;
+    // Output an enum value.
+    System.out.println("Value of aWeekDay: " + aWeekDay);
+    System.out.println();
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Value of aWeekDay: Monday</code></pre></div>
+<h3 id="enums-in-a-class">Enums in a Class</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Shape {
+  private enum ShapeType {
+    RECTANGLE, TRIANGLE, OVAL
+  };
+  private ShapeType type = ShapeType.RECTANGLE;
+  public String toString() {
+    if (this.type == ShapeType.RECTANGLE) {
+      return "Shape is rectangle";
+    }
+    if (this.type == ShapeType.TRIANGLE) {
+      return "Shape is triangle";
+    }
+    return "Shape is oval";
+  }
+}</code></pre></div>
+<h3 id="equivalence">Equivalence</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
+  publicstaticvoid main(String[] args) {
+    Integer n1 = newInteger(47);
+    Integer n2 = newInteger(47);
+    System.out.println(n1 == n2);
+    System.out.println(n1 != n2);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">false
+true</code></pre></div>
+<h3 id="fix-line-separator">Fix Line Separator</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.UnsupportedEncodingException;
+public class Utils {
+  public static String fixLineSeparator(String xml) throws UnsupportedEncodingException {
+    if ("\r\n".equals(System.getProperty("line.separator"))) {
+      xml = xml.replaceAll("\r[^\n]", System.getProperty("line.separator"));
+    } else {
+      xml = xml.replaceAll("\r\n", System.getProperty("line.separator"));
+    }
+    return xml;
+  }
+}</code></pre></div>
+<h3 id="formatting-dates-and-times">Formatting Dates and Times</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+public class MainClass {
+  public static void main(String[] args) {
+    Date today = new Date();
+    DateFormat fmt = DateFormat.getDateTimeInstance(DateFormat.FULL,
+                                                           DateFormat.FULL, Locale.US);
+    String formatted = fmt.format(today);
+    System.out.println(formatted);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Tuesday, January 16, 2007 10:03:23 AM PST</code></pre></div>
+<h3 id="get-the-difference-between-two-strings">Get the difference between two strings</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements. See the NOTICE file distributed with this
+ * work for additional information regarding copyright ownership. The ASF
+ * licenses this file to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+public class Utils {
+  public static String diff(String str1, String str2) {
+    int index = str1.lastIndexOf(str2);
+    if (index &gt; -1) {
+      return str1.substring(str2.length());
+    }
+    return str1;
+  }
+}</code></pre></div>
+<h3 id="get-the-difference-between-two-strings-1">Get the difference between two strings</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements. See the NOTICE file distributed with this
+ * work for additional information regarding copyright ownership. The ASF
+ * licenses this file to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */publicclass Utils {
+  publicstatic String diff(String str1, String str2) {
+    int index = str1.lastIndexOf(str2);
+    if (index &gt; -1) {
+      return str1.substring(str2.length());
+    }
+    return str1;
+  }
+}</code></pre></div>
+<h3 id="gets-the-maximum-of-three-int-values">Gets the maximum of three int values.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
+import java.math.BigInteger;
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Provides extra functionality for Java Number classes.
+ *
+ * @author &lt;a href="mailto:rand_mcneely@yahoo.com"&gt;Rand McNeely&lt;/a&gt;
+ * @author Stephen Colebourne
+ * @author &lt;a href="mailto:steve.downey@netfolio.com"&gt;Steve Downey&lt;/a&gt;
+ * @author Eric Pugh
+ * @author Phil Steitz
+ * @since 1.0
+ * @version $Id: NumberUtils.java 488819 2006-12-19 21:50:04Z bayard $
+ *
+ */
+public class Main {
+  /**
+   * Gets the maximum of three &lt;code&gt;int&lt;/code&gt; values.
+   *
+   * @param a  value 1
+   * @param b  value 2
+   * @param c  value 3
+   * @return  the largest of the values
+   */
+  public static int maximum(int a, int b, int c) {
+      if (b &gt; a) {
+          a = b;
+      }
+      if (c &gt; a) {
+          a = c;
+      }
+      return a;
+  }
+}</code></pre></div>
+<h3 id="gets-the-minimum-of-three-int-values">Gets the minimum of three int values.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
+import java.math.BigInteger;
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Provides extra functionality for Java Number classes.
+ *
+ * @author &lt;a href="mailto:rand_mcneely@yahoo.com"&gt;Rand McNeely&lt;/a&gt;
+ * @author Stephen Colebourne
+ * @author &lt;a href="mailto:steve.downey@netfolio.com"&gt;Steve Downey&lt;/a&gt;
+ * @author Eric Pugh
+ * @author Phil Steitz
+ * @since 1.0
+ * @version $Id: NumberUtils.java 488819 2006-12-19 21:50:04Z bayard $
+ *
+ */
+public class Main {
+  /**
+   * Gets the minimum of three &lt;code&gt;int&lt;/code&gt; values.
+   *
+   * @param a  value 1
+   * @param b  value 2
+   * @param c  value 3
+   * @return  the smallest of the values
+   */
+  public static int minimum(int a, int b, int c) {
+      if (b &lt; a) {
+          a = b;
+      }
+      if (c &lt; a) {
+          a = c;
+      }
+      return a;
+  }
+}</code></pre></div>
+<h3 id="highest-one-bit">Highest one bit</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String args[]) {
+    int n = 170;
+    System.out.println("Highest one bit: " + Integer.highestOneBit(n));
+  }
+}</code></pre></div>
+<h3 id="how-to-define-an-enumeration">How to define an enumeration</h3>
+<ul><li>To define a new type, Day.</li><li>Variable of type Day can only store the values specified between the braces.</li><li>Monday, Tuesday, ... Sunday are called enumeration constants.</li><li>These names will correspond to integer values, starting from 0 in this case.</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  enum Day {
+    Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+  }
+  public static void main(String[] args) {
+    Day yesterday = Day.Thursday;
+    Day today = Day.Friday;
+    Day tomorrow = Day.Saturday;
+    System.out.println("Today is " + today);
+    System.out.println("Tomorrow will be " + tomorrow);
+    System.out.println("Yesterday was " + yesterday);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Today is Friday
+Tomorrow will be Saturday
+Yesterday was Thursday</code></pre></div>
+<h3 id="leniency">Leniency</h3>
+<p>Leniency refers to whether or not a strict rule will be applied at parsing. If a DateFormat object is lenient, it will accept Jan 32, 2005. In fact, it will take the liberty of converting it to Feb 1, 2006. By default, a DateFormat object is lenient.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DateFormat;
+import java.text.ParseException;
+import java.util.Date;
+public class MainClass {
+  public static void main(String[] args) {
+    DateFormat shortDf = DateFormat.getDateInstance(DateFormat.SHORT);
+    DateFormat mediumDf = DateFormat.getDateInstance(DateFormat.MEDIUM);
+    DateFormat longDf = DateFormat.getDateInstance(DateFormat.LONG);
+    DateFormat fullDf = DateFormat.getDateInstance(DateFormat.FULL);
+    System.out.println(shortDf.format(new Date()));
+    System.out.println(mediumDf.format(new Date()));
+    System.out.println(longDf.format(new Date()));
+    System.out.println(fullDf.format(new Date()));
+    // parsing
+    try {
+      Date date = shortDf.parse("Jan 32, 2005");
+    } catch (ParseException e) {
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+1/26/07
+Jan 26, 2007
+January 26, 2007
+Friday, January 26, 2007</code></pre></div>
+<h3 id="literals">Literals</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  char c = 0xffff; // max char hex value
+  byte b = 0x7f; // max byte hex value
+  short s = 0x7fff; // max short hex value
+  int i1 = 0x2f; // Hexadecimal (lowercase)
+  int i2 = 0X2F; // Hexadecimal (uppercase)
+  int i3 = 0177; // Octal (leading zero)
+  // Hex and Oct also work with long.
+  long n1 = 200L; // long suffix
+  long n2 = 200l; // long suffix (but can be confusing)
+  long n3 = 200;
+  // ! long l6(200); // not allowed
+  float f1 = 1;
+  float f2 = 1F; // float suffix
+  float f3 = 1f; // float suffix
+  float f4 = 1e-45f; // 10 to the power
+  float f5 = 1e+9f; // float suffix
+  double d1 = 1d; // double suffix
+  double d2 = 1D; // double suffix
+  double d3 = 47e47d; // 10 to the power
+}</code></pre></div>
+<h3 id="makes-the-first-letter-caps-and-the-rest-lowercase">Makes the first letter caps and the rest lowercase.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  /**
+   *
+   *
+   *
+   *
+   *  For example &lt;code&gt;fooBar&lt;/code&gt; becomes &lt;code&gt;Foobar&lt;/code&gt;.
+   *
+   *
+   * @param data capitalize this
+   * @return String
+   */
+  static public String firstLetterCaps ( String data )
+  {
+      String firstLetter = data.substring(0,1).toUpperCase();
+      String restLetters = data.substring(1).toLowerCase();
+      return firstLetter + restLetters;
+  }
+}</code></pre></div>
+<h3 id="multiply-two-integers-checking-for-overflow">Multiply two integers, checking for overflow.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *
+ */
+public class Main {
+  /**
+   *
+   * @param x a factor
+   * @param y a factor
+   * @return the product &lt;code&gt;x*y&lt;/code&gt;
+   * @throws ArithmeticException if the result can not be represented as an
+   *         int
+   * @since 1.1
+   */
+  public static int mulAndCheck(int x, int y) {
+      long m = ((long)x) * ((long)y);
+      if (m &lt; Integer.MIN_VALUE || m &gt; Integer.MAX_VALUE) {
+          throw new ArithmeticException("overflow: mul");
+      }
+      return (int)m;
+  }
+}</code></pre></div>
+<h3 id="new-decimalformat0e0">new DecimalFormat("0.######E0")</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+public class Main {
+  public static void main(String args[]) {
+    System.out.println(new DecimalFormat("0.######E0").format(12345));
+  }
+}
+//1.2345E4</code></pre></div>
+<h3 id="new-decimalformat000000e0">new DecimalFormat("000000E0")</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+public class Main {
+  public static void main(String args[]) {
+    System.out.println(new DecimalFormat("000000E0").format(123123));
+  }
+}
+//123123E0</code></pre></div>
+<h3 id="new-decimalformatabc">new DecimalFormat(abc#)</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+import java.text.Format;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    Format formatter = new DecimalFormat("'abc'#");
+    String s = formatter.format(-1234.567);
+    System.out.println(s);
+  }
+}
+// -abc1235</code></pre></div>
+<h3 id="parse-basic-types">Parse basic types</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright 2004, 2005, 2006 Odysseus Software GmbH
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import java.text.DateFormat;
+import java.text.Format;
+import java.text.ParseException;
+import java.text.ParsePosition;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+/**
+ *
+ * @author Christoph Beck
+ */
+public class ParseUtils {
+  private static Locale locale = Locale.US;
+  private static Object nullValue(Class type) {
+    if (type.isPrimitive()) {
+      if (type == boolean.class)
+        return Boolean.FALSE;
+      if (type == byte.class)
+        return new Byte((byte)0);
+      if (type == char.class)
+        return new Character((char)0);
+      if (type == short.class)
+        return new Short((short)0);
+      if (type == int.class)
+        return new Integer(0);
+      if (type == long.class)
+        return new Long(0);
+      if (type == float.class)
+        return new Float(0);
+      if (type == double.class)
+        return new Double(0);
+    }
+    return null;
+  }
+  private static Class objectType(Class type) {
+    if (type.isPrimitive()) {
+      if (type == boolean.class)
+        return Boolean.class;
+      if (type == byte.class)
+        return Byte.class;
+      if (type == char.class)
+        return Character.class;
+      if (type == short.class)
+        return Short.class;
+      if (type == int.class)
+        return Integer.class;
+      if (type == long.class)
+        return Long.class;
+      if (type == float.class)
+        return Float.class;
+      if (type == double.class)
+        return Double.class;
+    }
+    return type;
+  }
+  private static Object parse(Format format, String value) throws ParseException {
+    ParsePosition pos = new ParsePosition(0);
+    Object result = format.parseObject(value, pos);
+    if (pos.getIndex() &lt; value.length())
+      throw new ParseException("Cannot parse " + value + " (garbage suffix)!", pos.getIndex());
+    return result;
+  }
+  private static Date parseDate(String value) throws ParseException {
+    DateFormat format = DateFormat.getDateInstance(DateFormat.SHORT, locale);
+    format.setTimeZone(TimeZone.getTimeZone("GMT"));
+    return (Date)parse(format, value);
+  }
+  private static Boolean parseBoolean(String value) throws ParseException {
+    if ("true".equals(value)) {
+      return Boolean.TRUE;
+    } else if ("false".equals(value)) {
+      return Boolean.FALSE;
+    } else {
+      throw new ParseException("Cannot parse '" + value + "' as boolean", 0);
+    }
+  }
+  private static Character parseCharacter(String value) throws ParseException {
+    if (value.length() != 1) {
+      throw new ParseException("Cannot parse '" + value + "' as character", value.length());
+    }
+    return new Character(value.charAt(0));
+  }
+  /**
+   * Parse value of specified type. The string value has to be in
+   * standard notation for the specified type.
+   */
+  public static Object parse(Class type, String value) throws Exception {
+    if (value == null) {
+      return nullValue(type);
+    } else if (value.length() == 0) {
+      return type == String.class ? value : nullValue(type);
+    }
+    type = objectType(type);
+    if (type == BigDecimal.class) {
+      return new BigDecimal(value);
+    } else if (type == BigInteger.class) {
+      return new BigInteger(value);
+    } else if (type == Boolean.class) {
+      return parseBoolean(value);
+    } else if (type == Byte.class) {
+      return Byte.valueOf(value);
+    } else if (type == Character.class) {
+      return parseCharacter(value);
+    } else if (type == Date.class) {
+      return parseDate(value);
+    } else if (type == Double.class) {
+      return Double.valueOf(value);
+    } else if (type == Float.class) {
+      return Float.valueOf(value);
+    } else if (type == Integer.class) {
+      return Integer.valueOf(value);
+    } else if (type == Long.class) {
+      return Long.valueOf(value);
+    } else if (type == Short.class) {
+      return Short.valueOf(value);
+    } else if (type == String.class) {
+      return value;
+    }
+    throw new ParseException("Cannot parse type " + type, 0);
+  }
+}
+///////////////////////
+/*
+ * Copyright 2004, 2005, 2006 Odysseus Software GmbH
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package de.odysseus.calyxo.base.util;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.Date;
+import junit.framework.TestCase;
+/**
+ * ParseUtils test case.
+ *
+ * @author Christoph Beck
+ */
+public class ParseUtilsTest extends TestCase {
+  /**
+   * Constructor for ParseUtilsTest.
+   * @param arg0
+   */
+  public ParseUtilsTest(String arg0) {
+    super(arg0);
+  }
+  public void testNullPrimitive() throws Exception {
+    assertEquals(Boolean.FALSE, ParseUtils.parse(boolean.class, null));
+    assertEquals(new Character((char)0), ParseUtils.parse(char.class, null));
+    assertEquals(new Byte((byte)0), ParseUtils.parse(byte.class, null));
+    assertEquals(new Short((short)0), ParseUtils.parse(short.class, null));
+    assertEquals(new Integer(0), ParseUtils.parse(int.class, null));
+    assertEquals(new Long(0), ParseUtils.parse(long.class, null));
+    assertEquals(new Float(0), ParseUtils.parse(float.class, null));
+    assertEquals(new Double(0), ParseUtils.parse(double.class, null));
+  }
+  public void testPrimitive() throws Exception {
+    assertEquals(Boolean.TRUE, ParseUtils.parse(boolean.class, "true"));
+    assertEquals(Boolean.FALSE, ParseUtils.parse(boolean.class, "false"));
+    assertEquals(new Character((char)10), ParseUtils.parse(char.class, "\n"));
+    assertEquals(new Byte((byte)10), ParseUtils.parse(byte.class, "10"));
+    assertEquals(new Short((short)10), ParseUtils.parse(short.class, "10"));
+    assertEquals(new Integer(10), ParseUtils.parse(int.class, "10"));
+    assertEquals(new Long(10), ParseUtils.parse(long.class, "10"));
+    assertEquals(new Float(10), ParseUtils.parse(float.class, "10"));
+    assertEquals(new Double(10), ParseUtils.parse(double.class, "10"));
+  }
+  public void testNullObject() throws Exception {
+    assertNull(ParseUtils.parse(Boolean.class, null));
+    assertNull(ParseUtils.parse(Byte.class, null));
+    assertNull(ParseUtils.parse(Character.class, null));
+    assertNull(ParseUtils.parse(Short.class, null));
+    assertNull(ParseUtils.parse(Integer.class, null));
+    assertNull(ParseUtils.parse(Long.class, null));
+    assertNull(ParseUtils.parse(Float.class, null));
+    assertNull(ParseUtils.parse(Double.class, null));
+    assertNull(ParseUtils.parse(BigInteger.class, null));
+    assertNull(ParseUtils.parse(BigDecimal.class, null));
+    assertNull(ParseUtils.parse(Date.class, null));
+    assertNull(ParseUtils.parse(String.class, null));
+  }
+  public void testObject() throws Exception {
+    assertEquals(Boolean.TRUE, ParseUtils.parse(Boolean.class, "true"));
+    assertEquals(Boolean.FALSE, ParseUtils.parse(Boolean.class, "false"));
+    assertEquals(new Character((char)10), ParseUtils.parse(Character.class, "\n"));
+    assertEquals(new Byte((byte)10), ParseUtils.parse(Byte.class, "10"));
+    assertEquals(new Short((short)10), ParseUtils.parse(Short.class, "10"));
+    assertEquals(new Integer(10), ParseUtils.parse(Integer.class, "10"));
+    assertEquals(new Long(10), ParseUtils.parse(Long.class, "10"));
+    assertEquals(new Float(10), ParseUtils.parse(Float.class, "10"));
+    assertEquals(new Double(10), ParseUtils.parse(Double.class, "10"));
+    assertEquals(new BigInteger("10"), ParseUtils.parse(BigInteger.class, "10"));
+    assertEquals(new BigDecimal(10), ParseUtils.parse(BigDecimal.class, "10"));
+    assertEquals(new Date(0), ParseUtils.parse(Date.class, "1/1/70"));
+    assertEquals("foo", ParseUtils.parse(String.class, "foo"));
+  }
+  public void testBadValues() throws Exception {
+    try {
+      ParseUtils.parse(Boolean.class, "no");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Character.class, "10");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Byte.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Short.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Integer.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Long.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Float.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Double.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(BigInteger.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(BigDecimal.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Date.class, "1.1.70");
+      fail("Exception expected");
+    } catch(Exception e) {}
+  }
+  public void testBadType() throws Exception {
+    try {
+      ParseUtils.parse(Cloneable.class, "dolly");
+      fail("Exception expected");
+    } catch(Exception e) {}
+  }
+  public static void main(String[] args) {
+    junit.textui.TestRunner.run(ParseUtilsTest.class);
+  }
+}</code></pre></div>
+<h3 id="performs-an-xor-on-a-set-of-booleans">Performs an xor on a set of booleans.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Operations on boolean primitives and Boolean objects.
+ *
+ * This class tries to handle &lt;code&gt;null&lt;/code&gt; input gracefully.
+ * An exception will not be thrown for a &lt;code&gt;null&lt;/code&gt; input.
+ * Each method documents its behaviour in more detail.
+ *
+ * @author Stephen Colebourne
+ * @author Matthew Hawthorne
+ * @author Gary Gregory
+ * @since 2.0
+ * @version $Id: BooleanUtils.java 589050 2007-10-27 05:07:45Z bayard $
+ */
+public class Main {
+  /**
+   *
+   * &lt;pre&gt;
+   *   BooleanUtils.xor(new boolean[] { true, true })   = false
+   *   BooleanUtils.xor(new boolean[] { false, false }) = false
+   *   BooleanUtils.xor(new boolean[] { true, false })  = true
+   * &lt;/pre&gt;
+   *
+   * @param array  an array of &lt;code&gt;boolean&lt;code&gt;s
+   * @return &lt;code&gt;true&lt;/code&gt; if the xor is successful.
+   * @throws IllegalArgumentException if &lt;code&gt;array&lt;/code&gt; is &lt;code&gt;null&lt;/code&gt;
+   * @throws IllegalArgumentException if &lt;code&gt;array&lt;/code&gt; is empty.
+   */
+  public static boolean xor(boolean[] array) {
+      // Validates input
+      if (array == null) {
+          throw new IllegalArgumentException("The Array must not be null");
+      } else if (array.length == 0) {
+          throw new IllegalArgumentException("Array is empty");
+      }
+      // Loops through array, comparing each item
+      int trueCount = 0;
+      for (int i = 0; i &lt; array.length; i++) {
+          // If item is true, and trueCount is &lt; 1, increments count
+          // Else, xor fails
+          if (array[i]) {
+              if (trueCount &lt; 1) {
+                  trueCount++;
+              } else {
+                  return false;
+              }
+          }
+      }
+      // Returns true if there was exactly 1 true item
+      return trueCount == 1;
+  }
+  /**
+   * Performs an xor on an array of Booleans.
+   *
+   * &lt;pre&gt;
+   *   BooleanUtils.xor(new Boolean[] { Boolean.TRUE, Boolean.TRUE })   = Boolean.FALSE
+   *   BooleanUtils.xor(new Boolean[] { Boolean.FALSE, Boolean.FALSE }) = Boolean.FALSE
+   *   BooleanUtils.xor(new Boolean[] { Boolean.TRUE, Boolean.FALSE })  = Boolean.TRUE
+   * &lt;/pre&gt;
+   *
+   * @param array  an array of &lt;code&gt;Boolean&lt;code&gt;s
+   * @return &lt;code&gt;true&lt;/code&gt; if the xor is successful.
+   * @throws IllegalArgumentException if &lt;code&gt;array&lt;/code&gt; is &lt;code&gt;null&lt;/code&gt;
+   * @throws IllegalArgumentException if &lt;code&gt;array&lt;/code&gt; is empty.
+   * @throws IllegalArgumentException if &lt;code&gt;array&lt;/code&gt; contains a &lt;code&gt;null&lt;/code&gt;
+   */
+  public static Boolean xor(Boolean[] array) {
+      if (array == null) {
+          throw new IllegalArgumentException("The Array must not be null");
+      } else if (array.length == 0) {
+          throw new IllegalArgumentException("Array is empty");
+      }
+      boolean[] primitive = null;
+      try {
+          primitive = toPrimitive(array);
+      } catch (NullPointerException ex) {
+          throw new IllegalArgumentException("The array must not contain any null elements");
+      }
+      return xor(primitive) ? Boolean.TRUE : Boolean.FALSE;
+  }
+  /**
+   * Converts an array of object Booleans to primitives.
+   *
+   * This method returns &lt;code&gt;null&lt;/code&gt; for a &lt;code&gt;null&lt;/code&gt; input array.
+   *
+   * @param array  a &lt;code&gt;Boolean&lt;/code&gt; array, may be &lt;code&gt;null&lt;/code&gt;
+   * @return a &lt;code&gt;boolean&lt;/code&gt; array, &lt;code&gt;null&lt;/code&gt; if null array input
+   * @throws NullPointerException if array content is &lt;code&gt;null&lt;/code&gt;
+   */
+  public static boolean[] toPrimitive(Boolean[] array) {
+      if (array == null) {
+          return null;
+      } else if (array.length == 0) {
+          return new boolean[0];
+      }
+      final boolean[] result = new boolean[array.length];
+      for (int i = 0; i &lt; array.length; i++) {
+          result[i] = array[i].booleanValue();
+      }
+      return result;
+  }
+}</code></pre></div>
+<h3 id="remove-the-leading-and-trailing-quotes-from-str">Remove the leading and trailing quotes from str.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Contains useful helper methods for classes within this package.
+ *
+ * @author John Keyes (john at integralsource.com)
+ * @version $Revision: 680644 $, $Date: 2008-07-29 01:13:48 -0700 (Tue, 29 Jul 2008) $
+ */
+public class Main {
+  /**
+   * Remove the leading and trailing quotes from &lt;code&gt;str&lt;/code&gt;.
+   * E.g. if str is '"one two"', then 'one two' is returned.
+   *
+   * @param str The string from which the leading and trailing quotes
+   * should be removed.
+   *
+   * @return The string without the leading and trailing quotes.
+   */
+  static String stripLeadingAndTrailingQuotes(String str)
+  {
+      if (str.startsWith("\""))
+      {
+          str = str.substring(1, str.length());
+      }
+      if (str.endsWith("\""))
+      {
+          str = str.substring(0, str.length() - 1);
+      }
+      return str;
+  }
+}</code></pre></div>
+<h3 id="removecollapse-multiple-spaces">Remove/collapse multiple spaces.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+/**
+ *
+ *  @author &lt;a href="mailto:jvanzyl@apache.org"&gt;Jason van Zyl&lt;/a&gt;
+ *  @author &lt;a href="mailto:dlr@finemaltcoding.com"&gt;Daniel Rall&lt;/a&gt;
+ *  @version $Id: StringUtils.java 685685 2008-08-13 21:43:27Z nbubna $
+ */
+public class Main {
+  /**
+   *
+   * @param argStr string to remove multiple spaces from.
+   * @return String
+   */
+  public static String collapseSpaces(String argStr)
+  {
+      char last = argStr.charAt(0);
+      StringBuffer argBuf = new StringBuffer();
+      for (int cIdx = 0 ; cIdx &lt; argStr.length(); cIdx++)
+      {
+          char ch = argStr.charAt(cIdx);
+          if (ch != ' ' || last != ' ')
+          {
+              argBuf.append(ch);
+              last = ch;
+          }
+      }
+      return argBuf.toString();
+  }
+}</code></pre></div>
+<h3 id="returns-true-if-enddate-is-after-startdate-or-if-startdate-equals-enddate">Returns true if endDate is after startDate or if startDate equals endDate.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  The ASF licenses this file to You
+ * under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.  For additional information regarding
+ * copyright in this work, please see the NOTICE file in the top level
+ * directory of this distribution.
+ */
+import java.util.Date;
+public class Utils {
+  /**
+   * Returns false if either value is null.  If equalOK, returns true if the
+   * dates are equal.
+   **/
+  public static boolean isValidDateRange(Date startDate, Date endDate, boolean equalOK) {
+      // false if either value is null
+      if (startDate == null || endDate == null) { return false; }
+      if (equalOK) {
+          // true if they are equal
+          if (startDate.equals(endDate)) { return true; }
+      }
+      // true if endDate after startDate
+      if (endDate.after(startDate)) { return true; }
+      return false;
+  }
+}</code></pre></div>
+<h3 id="sequencing-strings">Sequencing Strings</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    String string1 = "abcde";
+    String string2 = "bcdef";
+    if(string1.compareTo(string2) &gt; 0) {
+      System.out.println("greater");
+    }
+    if(string1.compareTo(string2) == 0) {
+      System.out.println("equal");
+    }
+    if(string1.compareTo(string2) &lt; 0) {
+      System.out.println("less");
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">less</code></pre></div>
+<h3 id="shows-default-initial-values">Shows default initial values</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  boolean t;
+  char c;
+  byte b;
+  short s;
+  int i;
+  long l;
+  float f;
+  double d;
+  void print(String s) {
+    System.out.println(s);
+  }
+  void printInitialValues() {
+    print("Data type      Initial value");
+    print("boolean        " + t);
+    print("char           [" + c + "]");
+    print("byte           " + b);
+    print("short          " + s);
+    print("int            " + i);
+    print("long           " + l);
+    print("float          " + f);
+    print("double         " + d);
+  }
+  public static void main(String[] args) {
+    MainClass iv = new MainClass();
+    iv.printInitialValues();
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Data type      Initial value
+boolean        false
+char           []
+byte           0
+short          0
+int            0
+long           0
+float          0.0
+double         0.0</code></pre></div>
+<h3 id="simpledateformat">SimpleDateFormat</h3>
+<p>With SimpleDateFormat, you can set your own date patterns. For example, dd/mm/yyyy, mm/dd/yyyy, yyyy-mm-dd, and so on.</p>
+<p>The following pattern letters are defined (all other characters from 'A' to 'Z' and from 'a' to 'z' are reserved):</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Letter   Date or Time Component   Presentation       Examples
+G        Era designator             Text                AD
+y        Year                       Year                1996;    96
+M        Month in year               Month               July; Jul; 07
+w        Week in year               Number               27
+W        Week in month               Number               2
+D        Day in year               Number               189
+d        Day in month               Number               10
+F        Day of week in month       Number               2
+E        Day in week               Text               Tuesday; Tue
+a        Am/pm marker               Text               PM
+H        Hour in day (0-23)       Number               0
+k        Hour in day (1-24)       Number               24
+K        Hour in am/pm (0-11)       Number               0
+h        Hour in am/pm (1-12)       Number               12
+m        Minute in hour           Number               30
+s        Second in minute           Number               55
+S        Millisecond                Number               978
+z        Time zone                   General time zone   Pacific Standard Time; PST; GMT-08:00
+Z        Time zone                  RFC 822 time zone   -0800
+(from Java API doc)</code></pre></div>
+<p>The more commonly used patterns can be used by a combination of y (representing a year digit), M (representing a month digit) and d (representing a date digit).</p>
+<p>Examples of patterns are dd/MM/yyyy, dd-MM-yyyy, MM/dd/yyyy, yyyy-MM-dd.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+public class MainClass {
+  public static void main(String[] args) {
+    String pattern = "MM/dd/yyyy";
+    SimpleDateFormat format = new SimpleDateFormat(pattern);
+    try {
+      Date date = format.parse("12/31/2006");
+      System.out.println(date);
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
+    // formatting
+    System.out.println(format.format(new Date()));
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Sun Dec 31 00:00:00 PST 2006
+01/26/2007</code></pre></div>
+<h3 id="subtract-two-integers-checking-for-overflow">Subtract two integers, checking for overflow.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *
+ */
+public class Main {
+  /**
+   *
+   * @param x the minuend
+   * @param y the subtrahend
+   * @return the difference &lt;code&gt;x-y&lt;/code&gt;
+   * @throws ArithmeticException if the result can not be represented as an
+   *         int
+   * @since 1.1
+   */
+  public static int subAndCheck(int x, int y) {
+      long s = (long)x - (long)y;
+      if (s &lt; Integer.MIN_VALUE || s &gt; Integer.MAX_VALUE) {
+          throw new ArithmeticException("overflow: subtract");
+      }
+      return (int)s;
+  }
+}</code></pre></div>
+<h3 id="surprise-java-lets-you-overflow">Surprise! Java lets you overflow</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] args) {
+    int big = 0x7fffffff; // max int value
+    System.out.println("big = " + big);
+    int bigger = big * 4;
+    System.out.println("bigger = " + bigger);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+big = 2147483647
+bigger = -4</code></pre></div>
+<h3 id="the-primitive-types">The Primitive Types</h3>
+<p>Java has eight primitive types of data: byte, short, int, long, char, float, double, and boolean.</p>
+<p>These can be put in four groups:</p>
+<ul><li>Integers includes byte, short, int, and long</li><li>Floating-point numbers includes float and double</li><li>Characters includes char, like letters and numbers.</li><li>Boolean includes boolean representing true/false values.</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte
+     The smallest integer type
+     a range from -128 to 127.
+     useful when working with a stream of data from a network or file.
+     Byte variables are declared by use of the byte keyword.
+     byte b, c;
+int
+    The most commonly used integer type
+    a signed 32-bit type
+    Ranging from -2,147,483,648 to 2,147,483,647
+    used to control loops and to index arrays.
+    the most efficient type
+long
+   a signed 64-bit type</code></pre></div>
+<h3 id="to-check-for-equality-between-two-strings-ignoring-the-case">To check for equality between two strings ignoring the case</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    String a = "a";
+    String b = "A";
+    if(a.equalsIgnoreCase(b)){
+      System.out.println("a==b");
+    }else{
+      System.out.println("a!=b");
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">a==b</code></pre></div>
+<h3 id="trim-off-trailing-blanks-but-not-leading-blanks">Trim off trailing blanks but not leading blanks</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ Derby - Class org.apache.derby.iapi.util.PropertyUtil
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to you under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+ http://www.apache.org/licenses/LICENSE-2.0
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+public class Main {
+  /**
+   *
+   * @param str
+   *
+   * @return The input with trailing blanks stipped off
+   */
+  public static String trimTrailing( String str)
+  {
+      if( str == null)
+          return null;
+      int len = str.length();
+      for( ; len &gt; 0; len--)
+      {
+          if( ! Character.isWhitespace( str.charAt( len - 1)))
+              break;
+      }
+      return str.substring( 0, len);
+  } // end of trimTrailing
+}</code></pre></div>
+<h3 id="using-valueof">Using valueOf()</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Week {
+  Monday, Tuesday, Wednesday, Thursday, Friday, Saturaday, Sunday
+}
+public class MainClass {
+  public static void main(String args[]) {
+    Week day;
+    //
+    day = Week.valueOf("Monday");
+    System.out.println("day contains " + day);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">day contains Monday</code></pre></div>
+<h3 id="valueof">valueOf()</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    byte b = 12;
+    System.out.println(String.valueOf(b));
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">12</code></pre></div></div>
+    </div>
+<script>
+(function(){
+  document.querySelectorAll('.tabs').forEach(function(box){
+    var btns = box.querySelectorAll('.tab-btn');
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){
+        var id = b.getAttribute('data-tab');
+        btns.forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+        b.classList.add('active'); b.setAttribute('aria-selected','true');
+        box.querySelectorAll('.tab-panel').forEach(function(p){ p.style.display = (p.id === id) ? '' : 'none'; });
+      });
+    });
+  });
+})();
+</script>
+    <details class="sub-map"><summary>All sub-topics in this chapter (47)</summary><div class="sub-chips"><span class="sub-chip"><span class="sub-num">2.1</span> Data Type Introduction <b>11</b></span><span class="sub-chip"><span class="sub-num">2.25</span> Extracting String Characters <b>8</b></span><span class="sub-chip"><span class="sub-num">2.2</span> Boolean <b>24</b></span><span class="sub-chip"><span class="sub-num">2.26</span> Quote <b>1</b></span><span class="sub-chip"><span class="sub-num">2.3</span> Integer Data Type <b>12</b></span><span class="sub-chip"><span class="sub-num">2.27</span> String vs Byte Array <b>11</b></span><span class="sub-chip"><span class="sub-num">2.4</span> Byte <b>18</b></span><span class="sub-chip"><span class="sub-num">2.28</span> String vs Char Array <b>19</b></span><span class="sub-chip"><span class="sub-num">2.5</span> Short <b>13</b></span><span class="sub-chip"><span class="sub-num">2.29</span> String Find Search <b>21</b></span><span class="sub-chip"><span class="sub-num">2.6</span> Integer <b>43</b></span><span class="sub-chip"><span class="sub-num">2.30</span> String Format <b>38</b></span><span class="sub-chip"><span class="sub-num">2.7</span> Character Data Type <b>42</b></span><span class="sub-chip"><span class="sub-num">2.31</span> String Match <b>20</b></span><span class="sub-chip"><span class="sub-num">2.8</span> Long <b>20</b></span><span class="sub-chip"><span class="sub-num">2.32</span> String Split <b>11</b></span><span class="sub-chip"><span class="sub-num">2.9</span> Hex Oct <b>24</b></span><span class="sub-chip"><span class="sub-num">2.33</span> String Join <b>11</b></span><span class="sub-chip"><span class="sub-num">2.10</span> Float Point Data Type <b>5</b></span><span class="sub-chip"><span class="sub-num">2.34</span> Substring <b>15</b></span><span class="sub-chip"><span class="sub-num">2.11</span> Float <b>24</b></span><span class="sub-chip"><span class="sub-num">2.35</span> Escape Sequences <b>6</b></span><span class="sub-chip"><span class="sub-num">2.12</span> Double <b>23</b></span><span class="sub-chip"><span class="sub-num">2.36</span> Convert from String <b>13</b></span><span class="sub-chip"><span class="sub-num">2.13</span> Number <b>5</b></span><span class="sub-chip"><span class="sub-num">2.37</span> Convert to String <b>16</b></span><span class="sub-chip"><span class="sub-num">2.14</span> Number Format <b>14</b></span><span class="sub-chip"><span class="sub-num">2.38</span> Date <b>15</b></span><span class="sub-chip"><span class="sub-num">2.15</span> Cast <b>2</b></span><span class="sub-chip"><span class="sub-num">2.39</span> Calendar <b>23</b></span><span class="sub-chip"><span class="sub-num">2.16</span> Data Type Conversion <b>13</b></span><span class="sub-chip"><span class="sub-num">2.40</span> Gregorian Calendar <b>18</b></span><span class="sub-chip"><span class="sub-num">2.17</span> Wrapper Classes <b>6</b></span><span class="sub-chip"><span class="sub-num">2.41</span> Date Format <b>43</b></span><span class="sub-chip"><span class="sub-num">2.18</span> Autobox Unbox <b>13</b></span><span class="sub-chip"><span class="sub-num">2.42</span> Date Calculation <b>54</b></span><span class="sub-chip"><span class="sub-num">2.19</span> String <b>22</b></span><span class="sub-chip"><span class="sub-num">2.43</span> enum <b>10</b></span><span class="sub-chip"><span class="sub-num">2.20</span> String Start End <b>6</b></span><span class="sub-chip"><span class="sub-num">2.44</span> enum methods <b>9</b></span><span class="sub-chip"><span class="sub-num">2.21</span> String Replace <b>18</b></span><span class="sub-chip"><span class="sub-num">2.45</span> BigInteger <b>43</b></span><span class="sub-chip"><span class="sub-num">2.22</span> String Concatenation <b>9</b></span><span class="sub-chip"><span class="sub-num">2.46</span> BigDecimal <b>13</b></span><span class="sub-chip"><span class="sub-num">2.23</span> String Compare <b>12</b></span><span class="sub-chip"><span class="sub-num">2.47</span> Decimal <b>20</b></span><span class="sub-chip"><span class="sub-num">2.24</span> String Tokenize <b>3</b></span></div></details>
+
+    <p class="arc-crumb"><a href="java-tutorial.html">&larr; All tutorial chapters</a></p>
+
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

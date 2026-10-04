@@ -40,6 +40,8 @@ from __future__ import annotations
 
 import argparse
 import csv
+import os
+import random
 import html
 import re
 import sys
@@ -54,7 +56,7 @@ CDX = "https://web.archive.org/cdx/search/cdx"
 UA = "JavaSchoolImport/1.0 (static-site builder; polite crawler; +set-your-contact-here)"
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / "content" / "imported"
-MANIFEST = ROOT / "tools" / "wayback_manifest.csv"
+MANIFEST = Path(os.environ.get("JAVA2S_MANIFEST", ROOT / "tools" / "wayback_manifest.csv"))
 
 # --------------------------------------------------------------------------- #
 # Minimal tolerant DOM
@@ -707,35 +709,28 @@ def cdx_list(url_pattern: str, host: str, include: list[str], exclude: str | Non
 
 
 def fetch(url: str, retries: int, delay: float) -> str | None:
+    """Fetch a page with retries and an https -> http fallback."""
+    candidates = [url]
+    if url.startswith("https://web.archive.org"):
+        candidates.append("http://" + url[len("https://"):])
+    last_err = None
     for attempt in range(retries + 1):
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=60) as r:
-                data = r.read()
-            for enc in ("utf-8", "utf-8-sig", "latin-1"):
-                try:
-                    return data.decode(enc)
-                except UnicodeDecodeError:
-                    continue
-            return data.decode("utf-8", "replace")
-        except urllib.error.HTTPError as e:
-            if e.code in (429, 503, 502):
-                wait = 60 * (attempt + 1)
-                print(f"  [!] HTTP {e.code}, backing off {wait}s ...", flush=True)
-                time.sleep(wait)
-            elif e.code == 404:
-                return None
-            else:
-                time.sleep(5 * (attempt + 1))
-        except Exception as e:  # noqa: BLE001 - network zoo
-            print(f"  [!] {type(e).__name__}: {e}", flush=True)
-            time.sleep(5 * (attempt + 1))
+        for u in candidates:
+            try:
+                req = urllib.request.Request(u, headers={"User-Agent": UA, "Accept": "text/html,*/*"})
+                with urllib.request.urlopen(req, timeout=45) as r:
+                    data = r.read()
+                    enc = r.headers.get_content_charset() or "utf-8"
+                    return data.decode(enc, "replace")
+            except urllib.error.HTTPError as e:
+                last_err = e
+            except Exception as e:
+                last_err = e
+        if attempt < retries:
+            time.sleep(1.5 * (attempt + 1) + random.random())
+    print(f"  [!] {type(last_err).__name__}: {last_err}", flush=True)
     return None
 
-
-# --------------------------------------------------------------------------- #
-# Page -> markdown file
-# --------------------------------------------------------------------------- #
 
 def slug_from_url(url: str) -> str:
     path = urllib.parse.urlsplit(url).path
@@ -855,10 +850,59 @@ def main(argv: list[str] | None = None) -> int:
                     help=f"output directory (default {DEFAULT_OUT})")
     ap.add_argument("--list", action="store_true",
                     help="dry run: list matching URLs and exit")
+    ap.add_argument("--urls-file", default=None,
+                    help="file of URLs (one per line) to fetch directly, skipping CDX")
+    ap.add_argument("--stamp", default=None,
+                    help="snapshot year/ts to request for --urls-file (e.g. 2016); "
+                         "default = nearest to 2016")
     ap.add_argument("--retries", type=int, default=3)
     ap.add_argument("--start-order", type=int, default=1000,
                     help="front-matter order of the first imported page")
     args = ap.parse_args(argv)
+
+    if args.urls_file:
+        lines = [l.strip() for l in Path(args.urls_file).read_text(encoding="utf-8").splitlines() if l.strip()]
+        out_dir = Path(args.out)
+        out_dir.mkdir(parents=True, exist_ok=True)
+        done = load_manifest()
+        imported = skipped = failed = 0
+        order = args.start_order
+        print(f"[urls-file] {len(lines)} urls, {len(done)} in manifest", flush=True)
+        for original in lines:
+            if original in done:
+                skipped += 1
+                continue
+            if args.limit and imported >= args.limit:
+                break
+            stamp = args.stamp or "2016"
+            print(f"[get] {original}", flush=True)
+            raw = fetch(f"https://web.archive.org/web/{stamp}id_/{original}",
+                        retries=args.retries, delay=args.delay)
+            if raw is None:
+                failed += 1
+                append_manifest("-", original, stamp)
+                continue
+            try:
+                raw_title, desc, md = extract(raw, original)
+            except Exception:
+                failed += 1
+                append_manifest("-", original, stamp)
+                continue
+            if len(re.sub(r"[\s`#*>|-]+", "", md)) < 60:
+                skipped += 1
+                append_manifest("(thin)", original, stamp)
+                continue
+            slug = slug_from_url(original)
+            title = clean_title(raw_title, original)
+            write_page(out_dir, slug, title, desc, md, original, stamp, order)
+            append_manifest(slug, original, stamp)
+            done[original] = (slug, stamp)
+            order += 1
+            imported += 1
+            if imported % 20 == 0:
+                print(f"[progress] imported={imported} skipped={skipped} failed={failed}", flush=True)
+        print(f"\nDone. imported={imported} skipped={skipped} failed={failed}")
+        return 0
 
     # List generously so that manifest-skip doesn't starve the run, but don't
     # scan the entire archive when the user only wants a handful of pages.

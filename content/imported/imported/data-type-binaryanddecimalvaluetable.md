@@ -1,0 +1,28 @@
+---
+title: Binary and Decimal value table
+nav: Binary and Decimal value t...
+description: Imported from the java2s.com archive: Binary and Decimal value table
+section: Imported - java2s Archive
+order: 1005
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/BinaryandDecimalvaluetable.htm
+---
+Binary  Decimal
+---  ---
+0000 0000  0
+1000 0000  128
+0000 0001  1
+1000 0001  129
+0000 0010  2
+1000 0010  130
+0001 0000  16
+1001 0000  144
+0001 0001  17
+1001 0001  145
+0111 1100  124
+1111 1100  252
+0111 1101  125
+1111 1101  253
+0111 1110  126
+1111 1110  254
+0111 1111  127
+1111 1111  255

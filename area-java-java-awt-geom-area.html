@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java java.awt.geom.Area - JavaSchool</title>
+<meta name="description" content="An Area object stores and manipulates a resolution-independent description of an enclosed area of 2-dimensional space.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-area-java-java-awt-geom-area">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-javaawtgeom.html">java.awt.geom</a></nav>
+    <h1>Java java.awt.geom.Area</h1>
+<p>Next »1122/7083« Previous</p>
+<p>In this chapter you will learn:</p>
+<ul><li>Get to know java.awt.geom.Area</li><li>JDK Version for java.awt.geom.Area</li><li>Constructors from java.awt.geom.Area</li><li>Methods from java.awt.geom.Area</li></ul>
+<h3 id="description">Description</h3>
+<p>An Area object stores and manipulates a resolution-independent description of an enclosed area of 2-dimensional space.</p>
+<p>Area objects can be transformed and can perform various Constructive Area Geometry (CAG) operations when combined with other Area objects.</p>
+<p>The CAG operations include area addition , subtraction , intersection , and exclusive or . See the linked method documentation for examples of the various operations.</p>
+<p>The Area class implements the Shape interface and provides full support for all of its hit-testing and path iteration facilities, but an Area is more specific than a generalized path in a number of ways: Only closed paths and sub-paths are stored.</p>
+<h3 id="since">Since</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">1.2</code></pre></div>
+<h3 id="constructor">Constructor</h3>
+<p>Constructor and Description --- Area() Default constructor which creates an empty area. Area(Shape s) The Area class creates an area geometry from the specified Shape object.</p>
+<h3 id="method">Method</h3>
+<p>Modifier and Type  Method and Description ---  --- void  add(Area rhs) Adds the shape of the specified Area to the shape of this Area . Object  clone() Returns an exact copy of this Area object. boolean  contains(double x, double y) Tests if the specified coordinates are inside the boundary of the Shape , as described by the definition of insideness . boolean  contains(double x, double y, double w, double h) Tests if the interior of the Shape entirely contains the specified rectangular area. boolean  contains(Point2D p) Tests if a specified Point2D is inside the boundary of the Shape , as described by the definition of insideness . boolean  contains(Rectangle2D r) Tests if the interior of the Shape entirely contains the specified Rectangle2D . Area  createTransformedArea(AffineTransform t) Creates a new Area object that contains the same geometry as this Area transformed by the specified AffineTransform . boolean  equals(Area other) Tests whether the geometries of the two Area objects are equal. void  exclusiveOr(Area rhs) Sets the shape of this Area to be the combined area of its current shape and the shape of the specified Area , minus their intersection. Rectangle  getBounds() Returns a bounding Rectangle that completely encloses this Area . Rectangle2D  getBounds2D() Returns a high precision bounding Rectangle2D that completely encloses this Area . PathIterator  getPathIterator(AffineTransform at) Creates a PathIterator for the outline of this Area object. PathIterator  getPathIterator(AffineTransform at, double flatness) Creates a PathIterator for the flattened outline of this Area object. void  intersect(Area rhs) Sets the shape of this Area to the intersection of its current shape and the shape of the specified Area . boolean  intersects(double x, double y, double w, double h) Tests if the interior of the Shape intersects the interior of a specified rectangular area. boolean  intersects(Rectangle2D r) Tests if the interior of the Shape intersects the interior of a specified Rectangle2D . boolean  isEmpty() Tests whether this Area object encloses any area. boolean  isPolygonal() Tests whether this Area consists entirely of straight edged polygonal geometry. boolean  isRectangular() Tests whether this Area is rectangular in shape. boolean  isSingular() Tests whether this Area is comprised of a single closed subpath. void  reset() Removes all of the geometry from this Area and restores it to an empty area. void  subtract(Area rhs) Subtracts the shape of the specified Area from the shape of this Area . void  transform(AffineTransform t) Transforms the geometry of this Area using the specified AffineTransform .</p>
+<h4 id="next-chapter">Next chapter...</h4>
+<p>What you will learn in the next chapter:</p>
+<ul><li>Get to know Area.Area()</li><li>Syntax for Area() constructor from Area</li><li>Example - Area.Area()</li></ul>
+<p>Next »« PreviousHome » Java Tutorial » java.awt.geom » AreaJava java.awt.geom.AreaJava Area() Constructor Java Area(Shape s) Constructor Java Area.add(Area rhs) Java Area.clone() Java Area.contains(double x, double y) Java Area.contains(double x, double y, do... Java Area.contains(Point2D p) Java Area.contains(Rectangle2D r) Java Area .createTransformedArea (AffineTra... Java Area.equals(Area other) Java Area.exclusiveOr(Area rhs) Java Area.getBounds() Java Area.getBounds2D() Java Area .getPathIterator (AffineTransform... Java Area .getPathIterator (AffineTransform... Java Area.intersect(Area rhs) Java Area.intersects(double x, double y, ... Java Area.intersects(Rectangle2D r) Java Area.isEmpty() Java Area.isPolygonal() Java Area.isRectangular() Java Area.isSingular() Java Area.reset() Java Area.subtract(Area rhs) Java Area .transform (AffineTransform t)</p>
+    <div class="pager"><a class="pager-btn" href="random-generate-random-numbers-in-a-range.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms How to - G...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1003.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

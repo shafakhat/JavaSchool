@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Encodes hex octects into Base64 - JavaSchool</title>
+<meta name="description" content="* Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-encodeshexoctectsintobase64-2">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a></nav>
+    <h1>Encodes hex octects into Base64</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*   Copyright 2004 The Apache Software Foundation
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */import java.io.UnsupportedEncodingException;
+/**
+ * This class provides encode/decode for RFC 2045 Base64 as
+ * defined by RFC 2045, N. Freed and N. Borenstein.
+ * RFC 2045: Multipurpose Internet Mail Extensions (MIME)
+ * Part One: Format of Internet Message Bodies. Reference
+ * 1996 Available at: http://www.ietf.org/rfc/rfc2045.txt
+ * This class is used by XML Schema binary format validation
+ *
+ * This implementation does not encode/decode streaming
+ * data. You need the data that you will encode/decode
+ * already on a byte arrray.
+ *
+ *
+ * From xmlbeans
+ * @author Jeffrey Rodriguez
+ * @author Sandy Gao
+ * @version $Id: Base64.java 111285 2004-12-08 16:54:26Z cezar $
+ */publicfinalclass  Base64 {
+
+    staticprivatefinalint  BASELENGTH         = 255;
+    staticprivatefinalint  LOOKUPLENGTH       = 64;
+    staticprivatefinalint  TWENTYFOURBITGROUP = 24;
+    staticprivatefinalint  EIGHTBIT           = 8;
+    staticprivatefinalint  SIXTEENBIT         = 16;
+    //static private final int  SIXBIT             = 6;
+staticprivatefinalint  FOURBYTE           = 4;
+    staticprivatefinalint  SIGN               = -128;
+    staticprivatefinalbyte PAD                = ( byte ) '=';
+    staticprivatefinalboolean fDebug          = false;
+    staticprivatebyte [] base64Alphabet        = newbyte[BASELENGTH];
+    staticprivatebyte [] lookUpBase64Alphabet  = newbyte[LOOKUPLENGTH];
+
+    static {
+
+        for (int i = 0; i&lt;BASELENGTH; i++) {
+            base64Alphabet[i] = -1;
+        }
+        for (int i = 'Z'; i &gt;= 'A'; i--) {
+            base64Alphabet[i] = (byte) (i-'A');
+        }
+        for (int i = 'z'; i&gt;= 'a'; i--) {
+            base64Alphabet[i] = (byte) ( i-'a' + 26);
+        }
+
+        for (int i = '9'; i &gt;= '0'; i--) {
+            base64Alphabet[i] = (byte) (i-'0' + 52);
+        }
+
+        base64Alphabet['+']  = 62;
+        base64Alphabet['/']  = 63;
+
+        for (int i = 0; i&lt;=25; i++)
+            lookUpBase64Alphabet[i] = (byte) ('A'+i );
+
+        for (int i = 26,  j = 0; i&lt;=51; i++, j++)
+            lookUpBase64Alphabet[i] = (byte) ('a'+ j );
+
+        for (int i = 52,  j = 0; i&lt;=61; i++, j++)
+            lookUpBase64Alphabet[i] = (byte) ('0' + j );
+        lookUpBase64Alphabet[62] = (byte) '+';
+        lookUpBase64Alphabet[63] = (byte) '/';
+
+    }
+
+    protectedstaticboolean isWhiteSpace(byte octect) {
+        return (octect == 0x20 || octect == 0xd || octect == 0xa || octect == 0x9);
+    }
+
+    protectedstaticboolean isPad(byte octect) {
+        return (octect == PAD);
+    }
+
+    protectedstaticboolean isData(byte octect) {
+        return (base64Alphabet[octect] != -1);
+    }
+
+    protectedstaticboolean isBase64(byte octect) {
+        return (isWhiteSpace(octect) || isPad(octect) || isData(octect));
+    }
+
+    /**
+     * Encodes hex octects into Base64
+     *
+     * @param binaryData Array containing binaryData
+     * @return Encoded Base64 array
+     */publicstaticbyte[] encode(byte[] binaryData) {
+
+        if (binaryData == null)
+            return null;
+
+        int      lengthDataBits    = binaryData.length*EIGHTBIT;
+        int      fewerThan24bits   = lengthDataBits%TWENTYFOURBITGROUP;
+        int      numberTriplets    = lengthDataBits/TWENTYFOURBITGROUP;
+        byte     encodedData[]     = null;
+
+        if (fewerThan24bits != 0) //data not divisible by 24 bit
+            encodedData = newbyte[ (numberTriplets + 1 )*4  ];
+        else// 16 or 8 bit
+            encodedData = newbyte[ numberTriplets*4 ];
+
+        byte k=0, l=0, b1=0,b2=0,b3=0;
+
+        int encodedIndex = 0;
+        int dataIndex   = 0;
+        int i           = 0;
+        if (fDebug) {
+            System.out.println("number of triplets = " + numberTriplets );
+        }
+        for (i = 0; i&lt;numberTriplets; i++) {
+
+            dataIndex = i*3;
+            b1 = binaryData[dataIndex];
+            b2 = binaryData[dataIndex + 1];
+            b3 = binaryData[dataIndex + 2];
+
+            if (fDebug) {
+                System.out.println( "b1= " + b1 +", b2= " + b2 + ", b3= " + b3 );
+            }
+
+            l  = (byte)(b2 &amp; 0x0f);
+            k  = (byte)(b1 &amp; 0x03);
+
+            encodedIndex = i*4;
+            byte val1 = ((b1 &amp; SIGN)==0)?(byte)(b1&gt;&gt;2):(byte)((b1)&gt;&gt;2^0xc0);
+
+            byte val2 = ((b2 &amp; SIGN)==0)?(byte)(b2&gt;&gt;4):(byte)((b2)&gt;&gt;4^0xf0);
+            byte val3 = ((b3 &amp; SIGN)==0)?(byte)(b3&gt;&gt;6):(byte)((b3)&gt;&gt;6^0xfc);
+
+            encodedData[encodedIndex]   = lookUpBase64Alphabet[ val1 ];
+            if (fDebug) {
+                System.out.println( "val2 = " + val2 );
+                System.out.println( "k4   = " + (k&lt;&lt;4));
+                System.out.println( "vak  = " + (val2 | (k&lt;&lt;4)));
+            }
+
+            encodedData[encodedIndex+1] = lookUpBase64Alphabet[ val2 | ( k&lt;&lt;4 )];
+            encodedData[encodedIndex+2] = lookUpBase64Alphabet[ (l &lt;&lt;2 ) | val3 ];
+            encodedData[encodedIndex+3] = lookUpBase64Alphabet[ b3 &amp; 0x3f ];
+        }
+
+        // form integral number of 6-bit groups
+        dataIndex    = i*3;
+        encodedIndex = i*4;
+        if (fewerThan24bits == EIGHTBIT) {
+            b1 = binaryData[dataIndex];
+            k = (byte) ( b1 &amp;0x03 );
+            if (fDebug) {
+                System.out.println("b1=" + b1);
+                System.out.println("b1&lt;&lt;2 = " + (b1&gt;&gt;2) );
+            }
+            byte val1 = ((b1 &amp; SIGN)==0)?(byte)(b1&gt;&gt;2):(byte)((b1)&gt;&gt;2^0xc0);
+            encodedData[encodedIndex]     = lookUpBase64Alphabet[ val1 ];
+            encodedData[encodedIndex + 1] = lookUpBase64Alphabet[ k&lt;&lt;4 ];
+            encodedData[encodedIndex + 2] = PAD;
+            encodedData[encodedIndex + 3] = PAD;
+        } elseif (fewerThan24bits == SIXTEENBIT) {
+
+            b1 = binaryData[dataIndex];
+            b2 = binaryData[dataIndex +1 ];
+            l = ( byte ) ( b2 &amp;0x0f );
+            k = ( byte ) ( b1 &amp;0x03 );
+
+            byte val1 = ((b1 &amp; SIGN)==0)?(byte)(b1&gt;&gt;2):(byte)((b1)&gt;&gt;2^0xc0);
+            byte val2 = ((b2 &amp; SIGN)==0)?(byte)(b2&gt;&gt;4):(byte)((b2)&gt;&gt;4^0xf0);
+
+            encodedData[encodedIndex]     = lookUpBase64Alphabet[ val1 ];
+            encodedData[encodedIndex + 1] = lookUpBase64Alphabet[ val2 | ( k&lt;&lt;4 )];
+            encodedData[encodedIndex + 2] = lookUpBase64Alphabet[ l&lt;&lt;2 ];
+            encodedData[encodedIndex + 3] = PAD;
+        }
+
+        return encodedData;
+    }
+
+    /**
+     * Decodes Base64 data into octects
+     *
+     * @param base64Data Byte array containing Base64 data
+     * @return Array containind decoded data.
+     */publicstaticbyte[] decode(byte[] base64Data) {
+
+        if (base64Data == null)
+            return null;
+
+        // remove white spaces
+        base64Data = removeWhiteSpace(base64Data);
+
+        if (base64Data.length%FOURBYTE != 0) {
+            return null;//should be divisible by four
+        }
+
+        int      numberQuadruple    = (base64Data.length/FOURBYTE );
+
+        if (numberQuadruple == 0)
+            returnnewbyte[0];
+
+        byte     decodedData[]      = null;
+        byte     b1=0,b2=0,b3=0, b4=0;//, marker0=0, marker1=0;
+byte     d1=0,d2=0,d3=0,d4=0;
+
+        // Throw away anything not in normalizedBase64Data
+// Adjust size
+int i = 0;
+        int encodedIndex = 0;
+        int dataIndex    = 0;
+        decodedData      = newbyte[ (numberQuadruple)*3];
+
+        for (; i&lt;numberQuadruple-1; i++) {
+
+            if (!isData( (d1 = base64Data[dataIndex++]) )||
+                !isData( (d2 = base64Data[dataIndex++]) )||
+                !isData( (d3 = base64Data[dataIndex++]) )||
+                !isData( (d4 = base64Data[dataIndex++]) ))
+                return null;//if found "no data" just return null
+
+            b1 = base64Alphabet[d1];
+            b2 = base64Alphabet[d2];
+            b3 = base64Alphabet[d3];
+            b4 = base64Alphabet[d4];
+
+            decodedData[encodedIndex++] = (byte)(  b1 &lt;&lt;2 | b2&gt;&gt;4 ) ;
+            decodedData[encodedIndex++] = (byte)(((b2 &amp; 0xf)&lt;&lt;4 ) |( (b3&gt;&gt;2) &amp; 0xf) );
+            decodedData[encodedIndex++] = (byte)( b3&lt;&lt;6 | b4 );
+        }
+
+        if (!isData( (d1 = base64Data[dataIndex++]) ) ||
+            !isData( (d2 = base64Data[dataIndex++]) )) {
+            return null;//if found "no data" just return null
+        }
+
+        b1 = base64Alphabet[d1];
+        b2 = base64Alphabet[d2];
+
+        d3 = base64Data[dataIndex++];
+        d4 = base64Data[dataIndex++];
+        if (!isData( (d3 ) ) ||
+            !isData( (d4 ) )) {//Check if they are PAD characters
+if (isPad( d3 ) &amp;&amp; isPad( d4)) {               //Two PAD e.g. 3c[Pad][Pad]
+if ((b2 &amp; 0xf) != 0)//last 4 bits should be zero
+return null;
+                byte[] tmp = newbyte[ i*3 + 1 ];
+                System.arraycopy( decodedData, 0, tmp, 0, i*3 );
+                tmp[encodedIndex]   = (byte)(  b1 &lt;&lt;2 | b2&gt;&gt;4 ) ;
+                return tmp;
+            } elseif (!isPad( d3) &amp;&amp; isPad(d4)) {               //One PAD  e.g. 3cQ[Pad]
+                b3 = base64Alphabet[ d3 ];
+                if ((b3 &amp; 0x3 ) != 0)//last 2 bits should be zero
+return null;
+                byte[] tmp = newbyte[ i*3 + 2 ];
+                System.arraycopy( decodedData, 0, tmp, 0, i*3 );
+                tmp[encodedIndex++] = (byte)(  b1 &lt;&lt;2 | b2&gt;&gt;4 );
+                tmp[encodedIndex]   = (byte)(((b2 &amp; 0xf)&lt;&lt;4 ) |( (b3&gt;&gt;2) &amp; 0xf) );
+                return tmp;
+            } else {
+                return null;//an error  like "3c[Pad]r", "3cdX", "3cXd", "3cXX" where X is non data
+            }
+        } else { //No PAD e.g 3cQl
+            b3 = base64Alphabet[ d3 ];
+            b4 = base64Alphabet[ d4 ];
+            decodedData[encodedIndex++] = (byte)(  b1 &lt;&lt;2 | b2&gt;&gt;4 ) ;
+            decodedData[encodedIndex++] = (byte)(((b2 &amp; 0xf)&lt;&lt;4 ) |( (b3&gt;&gt;2) &amp; 0xf) );
+            decodedData[encodedIndex++] = (byte)( b3&lt;&lt;6 | b4 );
+
+        }
+
+        return decodedData;
+    }
+
+//    /**
+//     * Decodes Base64 data into octects
+//     *
+//     * @param base64Data String containing Base64 data
+//     * @return string containing decoded data.
+//     */
+//    public static String decode(String base64Data) {
+//        if (base64Data == null)
+//            return null;
+//
+//        byte[] decoded = null;
+//        try {
+//            decoded = decode(base64Data.getBytes("utf-8"));
+//        }
+//        catch(UnsupportedEncodingException e) {
+//        }
+//        finally {
+//            return decoded == null ? null : new String(decoded);
+//        }
+//    }
+//
+//    /**
+//     * Encodes octects (using utf-8) into Base64 data
+//     *
+//     * @param binaryData String containing Hex data
+//     * @return string containing decoded data.
+//     */
+//    public static String encode(String binaryData) {
+//        if (binaryData == null)
+//            return null;
+//
+//        byte[] encoded = null;
+//         try {
+//          encoded = encode(binaryData.getBytes("utf-8"));
+//        }
+//        catch(UnsupportedEncodingException e) {}
+//        finally {
+//            return encoded == null ? null : new String(encoded);
+//        }
+//    }
+/**
+     * remove WhiteSpace from MIME containing encoded Base64 data.
+     *
+     * @param data  the byte array of base64 data (with WS)
+     * @return      the byte array of base64 data (without WS)
+     */protectedstaticbyte[] removeWhiteSpace(byte[] data) {
+        if (data == null)
+            return null;
+
+        // count characters that's not whitespace
+int newSize = 0;
+        int len = data.length;
+        for (int i = 0; i &lt; len; i++) {
+            if (!isWhiteSpace(data[i]))
+                newSize++;
+        }
+
+        // if no whitespace, just return the input array
+if (newSize == len)
+            return data;
+
+        // create the array to return
+byte[] newArray = newbyte[newSize];
+
+        int j = 0;
+        for (int i = 0; i &lt; len; i++) {
+            if (!isWhiteSpace(data[i]))
+                newArray[j++] = data[i];
+        }
+        return newArray;
+    }
+}</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="ejb3-ejbtutorialfromjbosscreateearfile.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">EJB Tutorial from JBoss</span></a><a class="pager-btn pager-next" href="class-equivalenceclassset.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Equivalence ClassSet</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

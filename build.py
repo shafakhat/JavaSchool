@@ -922,17 +922,18 @@ def build_chips(section_entries: list[tuple[str, str, int]], all_href: str, all_
 
 
 def render_tutorial_hub(tree: list[dict], chapters: dict, extra: dict, sections: list[dict],
-                        chapters_pages_total: int, foundations: list[tuple]) -> None:
+                        chapters_pages_total: int, foundations: list[tuple],
+                        real_counts: dict) -> None:
     rows = []
     for i, ch in enumerate(tree):
         pages_here = len(chapters.get(ch["dir"], []))
-        total = sum(s["count"] for s in ch["subtopics"])
+        real = real_counts.get(ch["dir"]) or 0
         rows.append(
             f'<a class="tut-chapter" href="tutorial-{i + 1:02d}-{slugify(ch["title"])}.html">'
             f'<span class="tut-num">{i + 1}</span>'
             f'<span class="tut-meta"><span class="tut-title">{esc(ch["title"])}</span>'
-            f'<span class="tut-sub">{len(ch["subtopics"])} sub-topics &middot; {total} articles on java2s '
-            f'&middot; <b>{pages_here}</b> imported</span></span></a>'
+            f'<span class="tut-sub">{len(ch["subtopics"])} sub-topics &middot; {real} pages archived'
+            f' (2014-2020) &middot; <b>{pages_here}</b> imported</span></span></a>'
         )
     found_rows = "".join(
         f'<a class="tchip" href="{href}">{esc(label)} <b>{cnt}</b></a>' for label, href, cnt in foundations
@@ -1016,7 +1017,7 @@ def assign_subtopics(subtopics: list[dict], pages: list[dict]) -> list[tuple]:
 
 
 def render_chapter_pages(tree: list[dict], i: int, pages_here: list[dict], sections: list[dict],
-                         budget: int = 170_000) -> str:
+                         real_counts: dict | None = None, budget: int = 170_000) -> str:
     """One topic page per chapter, sub-topics as tabs; auto-split into parts when huge."""
     ch = tree[i]
     base_slug = f"tutorial-{i + 1:02d}-{slugify(ch['title'])}"
@@ -1072,7 +1073,7 @@ def render_chapter_pages(tree: list[dict], i: int, pages_here: list[dict], secti
             f'    {build_crumb(("Java HOME", "index.html"), ("Java Tutorial", "java-tutorial.html"), (ch["title"], hub_href))}\n'
             f'    <h1>{i + 1}. {esc(label)}</h1>\n'
             f'    <p><strong>{len(ch["subtopics"])} sub-topics</strong> &middot; '
-            f'<strong>{sum(s["count"] for s in ch["subtopics"])} articles</strong> on java2s &middot; '
+            f'<strong>{(real_counts or {}).get(ch["dir"], 0)} pages archived (2014-2020)</strong> &middot; '
             f'<strong>{len(pages_here)}</strong> imported here, grouped into tabs below'
             + (f' (part {pi + 1} of {n}, {subtotal} articles)' if n > 1 else "") + '.</p>\n'
             f'    {pager_links}\n'
@@ -1422,9 +1423,11 @@ def main() -> int:
         (OUT_DIR / f"{page['slug']}.html").write_text(doc, encoding="utf-8")
 
     # generated structure pages
-    render_tutorial_hub(tree, chapters, extra, sections, tut_total, foundations)
+    real_counts = load_json_data("chapter_counts.json")
+    real_counts = real_counts if isinstance(real_counts, dict) else {}
+    render_tutorial_hub(tree, chapters, extra, sections, tut_total, foundations, real_counts)
     for i, ch in enumerate(tree):
-        render_chapter_pages(tree, i, chapters.get(ch["dir"], []), sections)
+        render_chapter_pages(tree, i, chapters.get(ch["dir"], []), sections, real_counts)
     for key, pages_ in extra.items():
         render_extra_section(key, pages_, sections)
     render_certification(cert, scjp_tree, sections)
