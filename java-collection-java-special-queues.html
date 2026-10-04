@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Collection Tutorial - Java Special Queues - JavaSchool</title>
+<meta name="description" content="A blocking queue extends a queue by adding two sets of methods:">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-collection-java-special-queues">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-collection.html">New Java Collection</a></nav>
+    <h1>Java Collection Tutorial - Java Special Queues</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<h2 id="blocking-queues">Blocking Queues</h2>
+<p>A blocking queue extends a queue by adding two sets of methods:</p>
+<ul><li>one set of methods blocks indefinitely</li><li>another set of methods lets you specify a time period to block.</li></ul>
+<p>An instance of the BlockingQueue interface represents a blocking queue. The BlockingQueue interface inherits from the Queue interface.</p>
+<p>put() and offer() methods adds an element to the tail of blocking queue. The put() method blocks indefinitely if the blocking queue is full until space becomes available in the queue. The offer() method lets you specify the time period to wait for space to become available. It returns true if the specified element was added successfully; false otherwise.</p>
+<p>take() and poll() methods retrieve and remove the head of blocking queue. take() method blocks indefinitely if the blocking queue is empty. poll() method lets you specify a time period to wait if the blocking queue is empty; it returns null if the specified time elapses before an element became available.</p>
+<p>The methods from the Queue interface within a BlockingQueue, behave as if you are using a Queue.</p>
+<p>A BlockingQueue is designed to be thread-safe and can be used in a producer/consumer-like situation.</p>
+<p>A blocking queue does not allow a null element and can be bounded or unbounded.</p>
+<p>remainingCapacity() from BlockingQueue returns the number of elements that can be added to the blocking queue without blocking.</p>
+<p>BlockingQueue can control the fairness when multiple threads are blocked. If a blocking queue is fair, it can pick the longest waiting thread to perform the operation. If the blocking queue is not fair, the order to pick is not specified.</p>
+<p>The BlockingQueue interface and all its implementation classes are in the java.util.concurrent package. The following are the implementation classes for the BlockingQueue interface:</p>
+<p>ArrayBlockingQueue backed by an array is a bounded implementation class for BlockingQueue. We can specify the fairness of the blocking queue in its constructor. By default, it is not fair.</p>
+<p>LinkedBlockingQueue can be used as a bounded or unbounded blocking queue. It does not allow specifying a fairness rule for the blocking queue.</p>
+<p>PriorityBlockingQueue is an unbounded implementation class for BlockingQueue. It works the same way as PriortyQueue for ordering the elements in the blocking queue and adds the blocking feature to PriorityQueue.</p>
+<p>SynchronousQueue implements BlockingQueue and does not have any capacity. The put operation waits for the take operation to get the element. It can do handshake between two threads and exchange an object between two threads. Its isEmpty() method always returns true.</p>
+<p>DelayQueue is an unbounded implementation class for BlockingQueue. It keeps an element until a specified delay has passed for that element. If there are more than one elements whose delay has passed, the element whose delay passed earliest will be placed at the head of the queue.</p>
+<h2 id="example">Example</h2>
+<p>The following code shows how to use blocking queue in a producer/consumer application.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.UUID;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+/*fromwww.java2s.com*/class BQProducer extends Thread {
+  privatefinal BlockingQueue&lt;String&gt; queue;
+  privatefinal String name;
+  public BQProducer(BlockingQueue&lt;String&gt; queue, String name) {
+    this.queue = queue;
+    this.name = name;
+  }
+  @Override
+  publicvoid run() {
+    while (true) {
+      try {
+        this.queue.put(UUID.randomUUID().toString());
+        Thread.sleep(4000);
+      }
+      catch (InterruptedException e) {
+        e.printStackTrace();
+        break;
+      }
+    }
+  }
+}
+class BQConsumer extends Thread {
+  privatefinal BlockingQueue&lt;String&gt; queue;
+  privatefinal String name;
+  public BQConsumer(BlockingQueue&lt;String&gt; queue, String name) {
+    this.queue = queue;
+    this.name = name;
+  }
+  @Override
+  publicvoid run() {
+    while (true) {
+      try {
+        String str = this.queue.take();
+        System.out.println(name + "  took: " + str);
+        Thread.sleep(3000);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+        break;
+      }
+    }
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    int capacity = 5;
+    boolean fair = true;
+    BlockingQueue&lt;String&gt; queue = new ArrayBlockingQueue&lt;&gt;(capacity, fair);
+    new BQProducer(queue, "Producer1").start();
+    new BQProducer(queue, "Producer2").start();
+    new BQProducer(queue, "Producer3").start();
+    new BQConsumer(queue, "Consumer1").start();
+    new BQConsumer(queue, "Consumer2").start();
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="delay-queues">Delay Queues</h2>
+<p>A DelayQueue implements the BlockingQueue interface. The elements inside DelayQueue must stay for a certain amount of time.</p>
+<p>DelayQueue uses an interface called Delayed to get the to-be-delayed time.</p>
+<p>The interface is in the java.util.concurrent package. Its declaration is as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicinterface  Delayed  extends Comparable&lt;Delayed&gt;  {
+   long  getDelay(TimeUnit timeUnit);
+}</code></pre></div>
+<p>It extends the Comparable interface whose compareTo() method accepts a Delayed object.</p>
+<p>The DelayQueue calls the getDelay() method of each element to get how long that element must be kept. The DelayQueue will pass a TimeUnit to this method.</p>
+<p>When the getDelay() method returns a zero or a negative number, it is time for the element to get out of the queue.</p>
+<p>The queue determines which one to pop out by calling the compareTo() method of the elements. This method determines the priority of an expired element to be removed from the queue.</p>
+<p>The following code shows how to use DelayQueue.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">importstatic java.time.temporal.ChronoUnit.MILLIS;
+importstatic java.util.concurrent.TimeUnit.MILLISECONDS;
+/*www.java2s.com*/import java.time.Instant;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.TimeUnit;
+class DelayedJob implements Delayed {
+  private Instant scheduledTime;
+  String jobName;
+  public DelayedJob(String jobName, Instant scheduledTime) {
+    this.scheduledTime = scheduledTime;
+    this.jobName = jobName;
+  }
+  @Override
+  publiclong getDelay(TimeUnit unit) {
+    long delay = MILLIS.between(Instant.now(), scheduledTime);
+    long returnValue = unit.convert(delay, MILLISECONDS);
+    return returnValue;
+  }
+  @Override
+  publicint compareTo(Delayed job) {
+    long currentJobDelay = this.getDelay(MILLISECONDS);
+    long jobDelay = job.getDelay(MILLISECONDS);
+    int diff = 0;
+    if (currentJobDelay &gt; jobDelay) {
+      diff = 1;
+    } elseif (currentJobDelay &lt; jobDelay) {
+      diff = -1;
+    }
+    return diff;
+  }
+  @Override
+  public String toString() {
+    String str = this.jobName + ", " + "Scheduled Time:  "
+        + this.scheduledTime;
+    return str;
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) throws InterruptedException {
+    BlockingQueue&lt;DelayedJob&gt; queue = new DelayQueue&lt;&gt;();
+    Instant now = Instant.now();
+    queue.put(new DelayedJob("A", now.plusSeconds(9)));
+    queue.put(new DelayedJob("B", now.plusSeconds(3)));
+    queue.put(new DelayedJob("C", now.plusSeconds(6)));
+    queue.put(new DelayedJob("D", now.plusSeconds(1)));
+    while (queue.size() &gt; 0) {
+      System.out.println("started...");
+      DelayedJob job = queue.take();
+      System.out.println("Job: " + job);
+    }
+    System.out.println("Finished.");
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="transfer-queues">Transfer Queues</h2>
+<p>The transfer queue extends the blocking queue.</p>
+<p>A producer passes an element to a consumer using the transfer(E element) method of the TransferQueue.</p>
+<p>When a producer invokes transfer(E element) method, it waits until a consumer takes its element. The tryTransfer() method provides a non-blocking and a timeout version of the method.</p>
+<p>The getWaitingConsumerCount() method returns the number of waiting consumers.</p>
+<p>The hasWaitingConsumer() method returns true if there is a waiting consumer; otherwise, it returns false. The LinkedTransferQueue is an implementation class for the TransferQueue interface. It provides an unbounded TransferQueue.</p>
+<p>The following code shows how to use the TransferQueue.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.concurrent.LinkedTransferQueue;
+import java.util.concurrent.TransferQueue;
+import java.util.concurrent.atomic.AtomicInteger;
+/*www.java2s.com*/class TQProducer extends Thread {
+  private String name;
+  private TransferQueue&lt;Integer&gt; tQueue;
+  private AtomicInteger sequence;
+  public TQProducer(String name, TransferQueue&lt;Integer&gt; tQueue,
+      AtomicInteger sequence) {
+    this.name = name;
+    this.tQueue = tQueue;
+    this.sequence = sequence;
+  }
+  @Override
+  publicvoid run() {
+    while (true) {
+      try {
+        Thread.sleep(4000);
+        int nextNum = this.sequence.incrementAndGet();
+        if (nextNum % 2 == 0) {
+          System.out.format("%s:  Enqueuing: %d%n", name, nextNum);
+          tQueue.put(nextNum); // Enqueue
+        } else {
+          System.out.format("%s: Handing  off: %d%n", name, nextNum);
+          System.out.format("%s: has  a  waiting  consumer: %b%n", name,
+              tQueue.hasWaitingConsumer());
+          tQueue.transfer(nextNum); // A hand off
+        }
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+}
+class TQConsumer extends Thread {
+  privatefinal String name;
+  privatefinal TransferQueue&lt;Integer&gt; tQueue;
+  public TQConsumer(String name, TransferQueue&lt;Integer&gt; tQueue) {
+    this.name = name;
+    this.tQueue = tQueue;
+  }
+  @Override
+  publicvoid run() {
+    while (true) {
+      try {
+        Thread.sleep(3000);
+        int item = tQueue.take();
+        System.out.format("%s removed:  %d%n", name, item);
+      }
+      catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    final TransferQueue&lt;Integer&gt; tQueue = new LinkedTransferQueue&lt;&gt;();
+    final AtomicInteger sequence = new AtomicInteger();
+    for (int i = 0; i &lt; 5; i++) {
+      try {
+        tQueue.put(sequence.incrementAndGet());
+        System.out.println("Initial queue: " + tQueue);
+        new TQProducer("Producer-1", tQueue, sequence).start();
+        new TQConsumer("Consumer-1", tQueue).start();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-collection-java-deque.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Collection Tutorial -...</span></a><a class="pager-btn pager-next" href="java-collection-java-map.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Collection Tutorial -...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java Annotations - JavaSchool</title>
+<meta name="description" content="An annotation in Java lets us associate metadata to the program elements.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-annotations">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java Annotations</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<h2 id="what-are-annotations">What Are Annotations?</h2>
+<p>An annotation in Java lets us associate metadata to the program elements.</p>
+<p>The program elements may be a package, a class, an interface, a field of a class, a local variable, a method, a parameter of a method, an enum, an annotation, a type parameter in a generic type/method declaration, etc.</p>
+<p>We can annotate any declaration or type in a Java program. An annotation is used as a modifier in a declaration of a program element like any other modifiers (public, private, final, static, etc.).</p>
+<p>Unlike a modifier, an annotation does not modify the meaning of the program elements. It is a note for the program element.</p>
+<h2 id="declaring-an-annotation-type">Declaring an Annotation Type</h2>
+<p>Declaring an annotation type is similar to declaring an interface type.</p>
+<p>An annotation type is a special kind of interface type.</p>
+<p>We use the interface keyword preceded by the @ sign to declare an annotation type.</p>
+<p>The following is the general syntax for declaring an annotation type:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;modifiers&gt; @interface &lt;annotation-type-name&gt;  {
+    // Annotation type body
+}</code></pre></div>
+<p>The &lt;modifiers&gt; for an annotation declaration is the same as for an interface declaration.</p>
+<p>We can declare an annotation type as public or package level.</p>
+<p>The @ sign and the interface keyword may be separated by whitespaces or they can be placed together.</p>
+<p>By convention, they are placed together as @interface.</p>
+<p>The interface keyword is followed by an annotation type name. It should be a valid Java identifier.</p>
+<p>The annotation type body is placed within braces.</p>
+<p>The following code creates an annotation to annotate program elements with the version information.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public  @interface  Version {
+    int  major();
+    int  minor();
+}</code></pre></div>
+<p>We have declared two abstract methods in the Version annotation type: major() and minor().</p>
+<p>Abstract methods in an annotation type are called elements.</p>
+<p>An annotation can declare zero or more elements and they are declared as abstract methods. The abstract method names are the names of the elements of the annotation type.</p>
+<p>In the code above we declared two elements, major and minor, for the Version annotation type. The data types of both elements are int.</p>
+<p>We need to import an annotation type the same way we import any other types.</p>
+<h2 id="annotation-instance">Annotation Instance</h2>
+<p>To create an instance of an annotation type and use it to annotate a program element, we use the following syntax:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+@annotationType(name1=value1,  name2=value2, names3=values3...)</code></pre></div>
+<p>The annotation type is preceded by an @ sign followed by a list of comma-separated name=value pairs enclosed in parentheses.</p>
+<p>The name in a name=value pair is the name of the element declared in the annotation type and the value is supplied by the user.</p>
+<p>The name=value pairs do not have to appear in the same order as they are declared in the annotation type.</p>
+<p>The following code uses an annotation of the Version type, with the major element value set to 1 and the minor element value set to 0.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+@Version(major=1, minor=0)</code></pre></div>
+<p>We can use the annotation type's fully qualified name as</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+@com.java2s.annotation.Version(major=0,  minor=1)</code></pre></div>
+<p>We can annotate the class declaration as</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+@Version(major=1, minor=0)
+publicclass  VersionTest {
+}</code></pre></div>
+<p>We can mix the annotation for a program element with its other modifiers.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+@Version(major=1, minor=0)  publicclass  VersionTest {
+}
+public  @Version(major=1, minor=0)  class  VersionTest {
+}</code></pre></div>
+<p>Full source code</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+@interface Version {
+  int major();//www.java2s.comint minor();
+}
+@Version(major = 1, minor = 0)
+publicclass Main {
+  @Version(major = 1, minor = 1)
+  privateint xyz = 110;
+  @Version(major = 1, minor = 0)
+  public Main() {
+  }
+  @Version(major = 1, minor = 1)
+  public Main(int xyz) {
+    this.xyz = xyz;
+  }
+  @Version(major = 1, minor = 0)
+  publicvoid printData() {
+  }
+  @Version(major = 1, minor = 1)
+  publicvoid setXyz(int xyz) {
+    @Version(major = 1, minor = 2)
+    int newValue = xyz;
+    this.xyz = xyz;
+  }
+}</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-enum-compare.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-annotations-restrictions.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

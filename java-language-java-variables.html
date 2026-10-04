@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Tutorial - Java Variables - JavaSchool</title>
+<meta name="description" content="A variable is defined by an identifier, a type, and an optional initializer. The variables also have a scope(visibility / lifetime).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-language-java-variables">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-language.html">New Java Language</a></nav>
+    <h1>Java Tutorial - Java Variables</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>A variable is defined by an identifier, a type, and an optional initializer. The variables also have a scope(visibility / lifetime).</p>
+<h2 id="java-variable-type">Java variable type</h2>
+<p>In Java, all variables must be declared before they can be used. The basic form of a variable declaration is shown here:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+type identifier [ = value][, identifier [= value] ...] ;</code></pre></div>
+<p>There are three parts in variable definition:</p>
+<ul><li>type could be int or float .</li><li>identifier is the variable's name.</li><li>Initialization includes an equal sign and a value.</li></ul>
+<p>To declare more than one variable of the specified type, use a comma-separated list.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+int a, b, c; // declares three ints, a, b, and c.
+int d = 3, e, f = 5; // declares three more ints, initializing d and f.</code></pre></div>
+<p>The following variables are defined and initialized in one expression.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstatic void main(String[] argv) {
+    byte z = 2; // initializes z.
+    double pi = 3.14; // declares an approximation of pi.
+    char x = 'x'; // the variable x has the value 'x'.
+  }
+}</code></pre></div>
+<p>Variable cannot be used prior to its declaration.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] argv) {
+    count = 100; // Cannot use count before it is declared!
+int count;
+  }
+}</code></pre></div>
+<p>Compiling the code above generates the following error message:</p>
+<h2 id="assignment-operator">Assignment Operator</h2>
+<p>The assignment operator is the single equal sign, =. It has this general form:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">var = expression;</code></pre></div>
+<p>type of var must be compatible with the type of expression. The assignment operator allows you to create a chain of assignments.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] argv) {
+    int x, y, z;
+    x = y = z = 100; // set x, y, and z to 100
+    System.out.println("x is " + x);
+    System.out.println("y is " + y);
+    System.out.println("z is " + z);
+  }
+}</code></pre></div>
+<p>The output:</p>
+<h2 id="dynamic-initialization">Dynamic Initialization</h2>
+<p>Java allows variables to be initialized dynamically. In the following code the Math.sqrt returns the square root of 2 * 2 and assigns the result to c directly.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String args[]) {
+    // c is dynamically initialized
+double c = Math.sqrt(2 * 2);
+    System.out.println("c is " + c);
+  }
+}</code></pre></div>
+<p>The output from the code above is</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-language-java-keywords.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Keywo...</span></a><a class="pager-btn pager-next" href="java-language-java-data-type.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Data ...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

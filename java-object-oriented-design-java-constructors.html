@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java Constructors - JavaSchool</title>
+<meta name="description" content="A constructor is a block of code used to initialize an object immediately after the object is created.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-constructors">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java Constructors</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>A constructor is a block of code used to initialize an object immediately after the object is created.</p>
+<p>The structure of a constructor looks similar to a method.</p>
+<h2 id="declaring-a-constructor">Declaring a Constructor</h2>
+<p>The general syntax for a constructor declaration is</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;Modifiers&gt; &lt;Constructor Name&gt;(&lt;parameters list&gt;) throws &lt;Exceptions list&gt; {
+}</code></pre></div>
+<p>The declaration of a constructor starts with modifiers.</p>
+<p>A constructor can have its access modifier as public, private, protected, or package-level (no modifier).</p>
+<p>The constructor name is the same as the simple name of the class.</p>
+<p>The constructor name is followed by a pair of parentheses, which may include parameters.</p>
+<p>Optionally, the closing parenthesis may be followed by the keyword throws, which in turn is followed by a comma-separated list of exceptions.</p>
+<p>The following code shows an example of declaring a constructor for a class Test. Name of the class and name of constructor must match.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Test {
+  public Test() {
+    // Code goes here
+  }
+}</code></pre></div>
+<p>Unlike a method, a constructor does not have a return type.</p>
+<h2 id="use-a-constructor">Use a Constructor</h2>
+<p>We use a constructor with the new operator to initialize an instance of a class just after the new instance is created.</p>
+<p>The new operator creates an object and a constructor initializes the object.</p>
+<p>The following statement uses a constructor of the Test class to initialize an object of the Test class:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Test t = new Test();</code></pre></div>
+<p>The following code shows how to use a Constructor</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Cat {/*www.java2s.com*/public Cat() {
+    System.out.println("in constructor...");
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    // Create a Cat object and ignore its reference
+new Cat();
+    // Create another Cat object and store its reference in c
+    Cat c = new Cat();
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="overloading-a-constructor">Overloading a Constructor</h2>
+<p>A class can have more than one constructor. They are called overloaded constructors.</p>
+<p>If a class has multiple constructors, all of them must differ from the others in the number, order, or type of parameters.</p>
+<p>The following code declares two constructors. One constructor accepts no parameters and another accepts a String parameter.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Car {//www.java2s.com// Constructor #1
+public Car() {
+    System.out.println("A car  is created.");
+  }
+  // Constructor #2
+public Car(String name) {
+    System.out.println("A car  named " + name + "  is created.");
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Car d1 = new Car(); // Uses Constructor #1
+    Car d2 = new Car("My Car"); // Uses Constructor #2
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<p>A constructor is called once per object creation expression.</p>
+<p>We can execute the code for one constructor only once in the process of an object creation.</p>
+<h2 id="calling-a-constructor-from-another-constructor">Calling a Constructor from another Constructor</h2>
+<p>A constructor may call another constructor of the same class. Let's consider the following Test class. It declares two constructors; one accepts no parameters and one accepts an int parameter.</p>
+<p>We must use the keyword this to call a constructor from another constructor.</p>
+<p>The following code calls the constructor with an int parameter from the constructor with no parameter using the statement, "this(1);".</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test {
+  Test() {
+    this(1); // OK. Note the use of the keyword this.
+  }
+  Test(int x) {
+  }
+}</code></pre></div>
+<p>If a constructor calls another constructor, it must be the first executable statement in the constructor's body.</p>
+<p>A constructor cannot call itself because it will result in a recursive call.</p>
+<h2 id="return-from-a-constructor">return from a Constructor</h2>
+<p>A constructor cannot have a return type in its declaration.</p>
+<p>We can use a return statement without a return expression inside a constructor body.</p>
+<p>When a return statement in a constructor is executed, the control returns to the caller, ignoring the rest of the constructor's code.</p>
+<p>The following code shows an example of using a return statement in a constructor.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test {
+  public Test(int x) {
+    if (x &lt; 0) {
+      return;
+    }
+    System.out.println("here");
+  }
+}</code></pre></div>
+<h2 id="access-level-modifier-for-a-constructor">Access Level Modifier for a Constructor</h2>
+<p>Access level for a constructor determines the program that can use that constructor in an object creation expression.</p>
+<p>We can specify one of the four access levels for a constructor: public, private, protected, and package-level.</p>
+<p>The following code declares four constructors for the Test class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+// Class Test   has  public access level
+publicclass Test {
+  // Constructor #1 - Package-level access
+  Test() {
+  }
+  // Constructor #2 - public access level
+  public Test(int x) {
+  }
+  // Constructor #3 - private access level
+  private Test(int x, int y) {
+  }
+  // Constructor #4 - protected access level
+  protected Test(int x, int y, int z) {
+  }
+}</code></pre></div>
+<p>A constructor with a public access level can be used in any part of the program.</p>
+<p>A constructor with private access level can be used only inside the same class in which it is declared.</p>
+<p>A constructor with protected access level can be used in the program with the same package in which its class is declared and inside any descendant class in any package.</p>
+<p>A constructor with package-level access can be used inside the same package in which its class is declared.</p>
+<h2 id="default-constructor">Default Constructor</h2>
+<p>Java compiler adds a constructor to class if we do not declare one.</p>
+<p>The constructor that is added by the compiler is called the default constructor.</p>
+<p>The default constructor does not have any parameters.</p>
+<p>The default constructor is also called a no-args constructor.</p>
+<p>If the class already had a constructor, the compiler does not add any constructor.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-final-keyword.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-initialization-block.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

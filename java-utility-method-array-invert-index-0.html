@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Utililty Methods Array Invert - JavaSchool</title>
+<meta name="description" content="The list of methods to do Array Invert are organized into topic(s).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-utility-method-array-invert-index-0">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-utility-method.html">java utility method</a></nav>
+    <h1>Java Utililty Methods Array Invert</h1>
+<p>List of utility methods to do Array Invert</p>
+<h2 id="description">Description</h2>
+<p>The list of methods to do Array Invert are organized into topic(s).</p>
+<h2 id="method">Method</h2>
+<p>boolean[]invert(boolean[] binary) Invert binary array (apply a negation to each value).</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">finalboolean[] inverted = newboolean[binary.length];
+for (int i = 0; i &lt; inverted.length; i++) {
+    inverted[i] = !binary[i];
+return inverted;</code></pre></div>
+<p>boolean[]invert(boolean[] result) invert</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for (int i = 0; i &lt; result.length; i++)
+    result[i] = !result[i];
+return result;</code></pre></div>
+<p>byte[]invert(byte abyte0[]) invert</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (abyte0 == null || abyte0.length == 0)
+    return abyte0;
+byte abyte1[] = newbyte[abyte0.length];
+for (int i = 0; i &lt; abyte0.length; i++)
+    abyte1[i] = abyte0[abyte0.length - i - 1];
+return abyte1;</code></pre></div>
+<p>byte[]invert(byte[] array) invert</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[] newArray = newbyte[array.length];
+for (int i = 0; i &lt; array.length; ++i)
+    newArray[newArray.length - i - 1] = array[i];
+return newArray;</code></pre></div>
+<p>byte[]invert(byte[] bytes) Invert the provided byte array.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[] invertedBytes = newbyte[bytes.length];
+for (int i = 0; i &lt; bytes.length; i++) {
+    invertedBytes[i] = (byte) (~bytes[i]);
+return invertedBytes;</code></pre></div>
+<p>byte[]invert(byte[] key) invert</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[] inverted = Arrays.copyOf(key, key.length);
+for (int i = 0; i &lt; inverted.length; i++) {
+    inverted[i] = (byte) (inverted[i] &amp; 0xFF);
+return inverted;</code></pre></div>
+<p>byte[]invert(byte[] v) Flips all the bits in the byte array</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">return invert(v, 0, v.length);</code></pre></div>
+<p>double[]invert(double[] ary) invert</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (ary == null)
+    return null;
+for (int i = 0; i &lt; ary.length; i++)
+    ary[i] = 1. / ary[i];
+return ary;</code></pre></div>
+<p>float[]invert(float[] a) invert</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (a == null) {
+    thrownewIllegalArgumentException("Argument cannot be null");
+float[] c = newfloat[a.length];
+for (int i = 0; i &lt; a.length; i++) {
+    c[i] = 1.0f / a[i];
+return c;
+...</code></pre></div>
+<p>booleaninvert(float[] m, float[] invOut) invert</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">float[] inv = newfloat[16];
+float det;
+int i;
+inv[0] = m[5] * m[10] * m[15] - m[5] * m[11] * m[14] - m[9] * m[6] * m[15] + m[9] * m[7] * m[14]
+        + m[13] * m[6] * m[11] - m[13] * m[7] * m[10];
+inv[4] = -m[4] * m[10] * m[15] + m[4] * m[11] * m[14] + m[8] * m[6] * m[15] - m[8] * m[7] * m[14]
+        - m[12] * m[6] * m[11] + m[12] * m[7] * m[10];
+inv[8] = m[4] * m[9] * m[15] - m[4] * m[11] * m[13] - m[8] * m[5] * m[15] + m[8] * m[7] * m[13]
+...</code></pre></div>
+<p><a href="https://www.java2s.com/">HOME</a> | Copyright © www.java2s.com 2016</p>
+    <div class="pager"><a class="pager-btn" href="scala-scala-variable-declarations.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Scala Tutorial - Scala Var...</span></a><a class="pager-btn pager-next" href="scala-scala-semicolons.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Scala Tutorial - Scala Sem...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

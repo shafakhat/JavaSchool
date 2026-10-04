@@ -1,0 +1,344 @@
+---
+title: A mutable short wrapper.
+nav: A mutable short wrapper.
+description: * Licensed to the Apache Software Foundation (ASF) under one or more
+section: Imported - java2s Archive
+order: 1137
+source: https://web.archive.org/web/20091215164634/http://www.java2s.com:80/Code/Java/Data-Type/Amutableshortwrapper.htm
+---
+A mutable short wrapper.
+
+```java title=Example.java
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+// Revised from commons math Apache
+/**
+ * A mutable <code>short</code> wrapper.
+ *
+ * @see Short
+ * @since 2.1
+ * @version $Id: MutableShort.java 618693 2008-02-05 16:33:29Z sebb $
+ */
+public class MutableShort extends Number implements Comparable, Mutable {
+    /**
+     * Required for serialization support.
+     *
+     * @see java.io.Serializable
+     */
+    private static final long serialVersionUID = -2135791679L;
+    /** The mutable value. */
+    private short value;
+    /**
+     * Constructs a new MutableShort with the default value of zero.
+     */
+    public MutableShort() {
+        super();
+    }
+    /**
+     * Constructs a new MutableShort with the specified value.
+     *
+     * @param value
+     *                  a value.
+     */
+    public MutableShort(short value) {
+        super();
+        this.value = value;
+    }
+    /**
+     * Constructs a new MutableShort with the specified value.
+     *
+     * @param value
+     *                  a value.
+     * @throws NullPointerException
+     *                  if the object is null
+     */
+    public MutableShort(Number value) {
+        super();
+        this.value = value.shortValue();
+    }
+    //-----------------------------------------------------------------------
+    /**
+     * Gets the value as a Short instance.
+     *
+     * @return the value as a Short
+     */
+    public Object getValue() {
+        return new Short(this.value);
+    }
+    /**
+     * Sets the value.
+     *
+     * @param value
+     *                  the value to set
+     */
+    public void setValue(short value) {
+        this.value = value;
+    }
+    /**
+     * Sets the value from any Number instance.
+     *
+     * @param value
+     *                  the value to set
+     * @throws NullPointerException
+     *                  if the object is null
+     * @throws ClassCastException
+     *                  if the type is not a {@link Number}
+     */
+    public void setValue(Object value) {
+        setValue(((Number) value).shortValue());
+    }
+    //-----------------------------------------------------------------------
+    /**
+     * Increments the value.
+     *
+     * @since Commons Lang 2.2
+     */
+    public void increment() {
+        value++;
+    }
+    /**
+     * Decrements the value.
+     *
+     * @since Commons Lang 2.2
+     */
+    public void decrement() {
+        value--;
+    }
+    //-----------------------------------------------------------------------
+    /**
+     * Adds a value.
+     *
+     * @param operand
+     *            the value to add
+     *
+     * @since Commons Lang 2.2
+     */
+    public void add(short operand) {
+        this.value += operand;
+    }
+    /**
+     * Adds a value.
+     *
+     * @param operand
+     *            the value to add
+     * @throws NullPointerException
+     *             if the object is null
+     *
+     * @since Commons Lang 2.2
+     */
+    public void add(Number operand) {
+        this.value += operand.shortValue();
+    }
+    /**
+     * Subtracts a value.
+     *
+     * @param operand
+     *            the value to add
+     *
+     * @since Commons Lang 2.2
+     */
+    public void subtract(short operand) {
+        this.value -= operand;
+    }
+    /**
+     * Subtracts a value.
+     *
+     * @param operand
+     *            the value to add
+     * @throws NullPointerException
+     *             if the object is null
+     *
+     * @since Commons Lang 2.2
+     */
+    public void subtract(Number operand) {
+        this.value -= operand.shortValue();
+    }
+    //-----------------------------------------------------------------------
+    // bytValue relies on Number implementation
+    /**
+     * Returns the value of this MutableShort as a short.
+     *
+     * @return the numeric value represented by this object after conversion to type short.
+     */
+    public short shortValue() {
+        return value;
+    }
+    /**
+     * Returns the value of this MutableShort as a int.
+     *
+     * @return the numeric value represented by this object after conversion to type int.
+     */
+    public int intValue() {
+        return value;
+    }
+    /**
+     * Returns the value of this MutableShort as a long.
+     *
+     * @return the numeric value represented by this object after conversion to type long.
+     */
+    public long longValue() {
+        return value;
+    }
+    /**
+     * Returns the value of this MutableShort as a float.
+     *
+     * @return the numeric value represented by this object after conversion to type float.
+     */
+    public float floatValue() {
+        return value;
+    }
+    /**
+     * Returns the value of this MutableShort as a double.
+     *
+     * @return the numeric value represented by this object after conversion to type double.
+     */
+    public double doubleValue() {
+        return value;
+    }
+    //-----------------------------------------------------------------------
+    /**
+     * Gets this mutable as an instance of Short.
+     *
+     * @return a Short instance containing the value from this mutable
+     */
+    public Short toShort() {
+        return new Short(shortValue());
+    }
+    //-----------------------------------------------------------------------
+    /**
+     * Compares this object against the specified object. The result is <code>true</code> if and only if the argument
+     * is not <code>null</code> and is a <code>MutableShort</code> object that contains the same <code>short</code>
+     * value as this object.
+     *
+     * @param obj
+     *                  the object to compare with.
+     * @return <code>true</code> if the objects are the same; <code>false</code> otherwise.
+     */
+    public boolean equals(Object obj) {
+        if (obj instanceof MutableShort) {
+            return value == ((MutableShort) obj).shortValue();
+        }
+        return false;
+    }
+    /**
+     * Returns a suitable hashcode for this mutable.
+     *
+     * @return a suitable hashcode
+     */
+    public int hashCode() {
+        return value;
+    }
+    /**
+     * Compares this mutable to another in ascending order.
+     *
+     * @param obj
+     *                  the mutable to compare to
+     * @return negative if this is less, zero if equal, positive if greater
+     * @throws ClassCastException if the argument is not a MutableShort
+     */
+    public int compareTo(Object obj) {
+        MutableShort other = (MutableShort) obj;
+        short anotherVal = other.value;
+        return value < anotherVal ? -1 : (value == anotherVal ? 0 : 1);
+    }
+    /**
+     * Returns the String value of this mutable.
+     *
+     * @return the mutable value as a string
+     */
+    public String toString() {
+        return String.valueOf(value);
+    }
+}
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Provides mutable access to a value.
+ * <p>
+ * <code>Mutable</code> is used as a generic interface to the implementations in this package.
+ * <p>
+ * A typical use case would be to enable a primitive or string to be passed to a method and allow that method to
+ * effectively change the value of the primitive/string. Another use case is to store a frequently changing primitive in
+ * a collection (for example a total in a map) without needing to create new Integer/Long wrapper objects.
+ *
+ * @author Matthew Hawthorne
+ * @since 2.1
+ * @version $Id: Mutable.java 618693 2008-02-05 16:33:29Z sebb $
+ */
+interface Mutable {
+    /**
+     * Gets the value of this mutable.
+     *
+     * @return the stored value
+     */
+    Object getValue();
+    /**
+     * Sets the value of this mutable.
+     *
+     * @param value
+     *            the value to store
+     * @throws NullPointerException
+     *             if the object is null and null is invalid
+     * @throws ClassCastException
+     *             if the type is invalid
+     */
+    void setValue(Object value);
+}
+```
+
+1.  Use Integer constructor to convert int primitive type to Integer object.
+---  ---
+2.  Convert Java Integer object to Numeric primitive types
+3.  Convert Java String to Integer object
+4.  Create an Integer object
+5.  Arithmetic Demo
+6.  Max Variable Length Demo
+7.  Data Type Print Test
+8.  Tests all the operators on all the primitive data types
+9.  Demonstrates the ++ and -- operators
+10.  Literals
+11.  Demonstrates the mathematical operators.
+12.  Java lets you overflow
+13.  Built in types
+14.  Shows default initial values
+15.  Relational Demo
+16.  Parse Number
+17.  Java Type Helper
+18.  Convert the given array (which may be a primitive array) to an object array
+19.  Convert primitive back and forth
+20.  Returns a default value if the object passed is null
+21.  A mutable boolean wrapper.
+22.  A mutable byte wrapper.
+23.  A mutable double wrapper.
+24.  A mutable float wrapper.
+25.  A mutable int wrapper.
+26.  A mutable long wrapper.
+27.  Primitive utilities

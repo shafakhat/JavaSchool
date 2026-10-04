@@ -1,0 +1,234 @@
+---
+title: Java Tutorial
+nav: Java Tutorial
+description: Imported from java2s.com: Java Tutorial
+section: Imported - java2s Archive
+order: 50053
+source: https://www.java2s.com/ref/java/java.html
+---
+- JDK
+- Java Basic java.beans java.io java.lang java.lang.annotation java.lang.management java.lang.reflect java.math java.net java.net.http java.nio java.nio.channels java.nio.charset java.nio.file java.nio.file.attribute java.security java.security.cert java.sql java.text java.time java.time.chrono java.time.format java.time.temporal java.time.zone java.util java.util.concurrent java.util.concurrent.atomic java.util.concurrent.locks java.util.function java.util.jar java.util.prefs java.util.regex java.util.stream java.util.zip javax.crypto javax.crypto.spec javax.jms javax.json javax.json.stream javax.mail javax.mail.internet javax.naming javax.naming.directory javax.net javax.net.ssl javax.script javax.servlet javax.servlet.http javax.sql.rowset javax.xml.bind javax.xml.parsers javax.xml.stream javax.xml.transform javax.xml.validation oracle.sql org.json org.w3c.dom
+- Android
+- android.app android.content android.content.pm android.graphics android.text android.util android.widget
+- AWT
+- java.awt java.awt.datatransfer java.awt.event java.awt.font java.awt.geom java.awt.image java.awt.print
+- Swing
+- javax.swing javax.swing.border javax.swing.event javax.swing.plaf javax.swing.table javax.swing.text javax.swing.tree javax.swing.undo
+- JavaFX
+- javafx.animation javafx.application javafx.beans javafx.beans.binding javafx.beans.property javafx.beans.value javafx.collections javafx.concurrent javafx.embed.swing javafx.event javafx.fxml javafx.geometry javafx.print javafx.scene javafx.scene.canvas javafx.scene.control javafx.scene.effect javafx.scene.image javafx.scene.input javafx.scene.layout javafx.scene.media javafx.scene.paint javafx.scene.shape javafx.scene.text javafx.scene.transform javafx.scene.web javafx.stage javafx.util
+
+- Java Basic
+- Java Language Basics Java Language (29) Data Types (70) Operator (91) Statement (128) String (38) enum (7) Array (62) Autobox (7) class (40) Method (35) interface (6) Generics (23) Exception (29) Javadoc (2) Lambda (21) package import (1) Java Features Algorithms (23) Byte Array (12) Data Structures (13) Design Patterns (35) Directory (7) Network (4) Regular Expression (27) Text File (10) OCA OCP Exam OCA OCP Exam 1 (100) OCA OCP Exam 2 (100) OCA OCP Exam 3 (100) OCA OCP Exam 4 (100) OCA OCP Exam 5 (100) OCA OCP Exam 6 (100) OCA OCP Exam 7 (100) OCA OCP Exam 8 (100) OCA OCP Exam 9 (100) OCA OCP Exam 10 (100) OCA OCP Exam 11 (100) OCA OCP Exam 12 (100) OCA OCP Exam 13 (100) OCA OCP Exam 14 (100) OCA OCP Exam 15 (100) OCA OCP Exam 16 (100) OCA OCP Exam 17 (100) OCA OCP Exam 18 (100) OCA OCP Exam 19 (100) OCA OCP Exam 20 (100) OCA OCP Exam 21 (100) OCA OCP Exam 22 (100) OCA OCP Exam 23 (100) OCA OCP Exam 24 (100) OCA OCP Exam 25 (100) OCA OCP Exam 26 (100) OCA OCP Exam 27 (100) OCA OCP Exam 28 (100) OCA OCP Exam 29 (100) OCA OCP Exam 30 (100) OCA OCP Exam 31 (100) OCA OCP Exam 32 (100) OCA OCP Exam 33 (84)
+- java.beans
+- Expression (1) PropertyChangeListener (1) VetoableChangeListener (2) XMLDecoder (1) XMLEncoder (1)
+
+- java.io
+- BufferedInputStream (7) BufferedOutputStream (3) BufferedReader (18) BufferedWriter (7) ByteArrayInputStream (2) ByteArrayOutputStream (2) CharArrayReader (3) CharArrayWriter (3) Console (2) DataInputStream (2) DataOutputStream (2) Externalizable (1) File (37) FileFilter (1) FileInputStream (6) FilenameFilter (1) FileOutputStream (4) FileReader (1) FileWriter (2) FilterReader (1) InputStream (12) InputStreamReader (2) ObjectInputStream (2) ObjectOutputStream (3) OutputStream (4) OutputStreamWriter (1) PipedInputStream (1) PrintStream (3) PrintWriter (7) PushbackInputStream (2) PushbackReader (1) RandomAccessFile (7) Reader (6) SequenceInputStream (1) Serializable (6) StreamTokenizer (1) StringReader (1) Writer (2)
+- java.lang
+- AutoCloseable (2) Boolean (1) Character (6) Class (22) Cloneable (2) Comparable (4) Double (4) Exception (2) Float (2) Integer (3) Iterable (2) Long (3) Math (18) ModuleLayer (1) Package (1) Process (2) ProcessBuilder (5) ProcessHandle (6) Runtime (3) Runtime Version (1) String (145) StringBuffer (8) StringBuilder (6) System (13) Thread (29) ThreadGroup (3) ThreadLocal (1)
+- java.lang.annotation
+- Annotation (11)
+- java.lang.management
+- RuntimeMXBean (1) OperatingSystemMXBean (1)
+- java.lang.reflect
+- Array (1) Constructor (2) Field (6) InvocationHandler (1) Method (9) Modifier (5) Proxy (1)
+- java.math
+- BigDecimal (3) BigInteger (7)
+- java.net
+- DatagramPacket (1) DatagramSocket (10) HttpURLConnection (3) InetAddress (3) InetSocketAddress (1) JarURLConnection (1) MulticastSocket (4) NetworkInterface (3) ServerSocket (6) Socket (7) URI (2) URL (4) URLConnection (3) URLEncoder (1)
+- java.net.http
+- HttpResponse (1)
+- java.nio
+- ByteBuffer (76) ByteOrder (2) CharBuffer (12) DoubleBuffer (4) FloatBuffer (5) IntBuffer (6) LongBuffer (4) MappedByteBuffer (5) ShortBuffer (4)
+- java.nio.channels
+- AsynchronousFileChannel (5) AsynchronousServerSocketChannel (6) AsynchronousSocketChannel (3) CompletionHandler (1) DatagramChannel (6) FileChannel (17) FileLock (1) ReadableByteChannel (1) SeekableByteChannel (5) Selector (2)
+- java.nio.charset
+- Charset (3) CharsetDecoder (1) CharsetEncoder (1)
+- java.nio.file
+- DirectoryStream (3) Files (70) FileStore (10) FileSystem (7) FileSystems (2) FileVisitor (1) Path (34) PathMatcher (3) Paths (2) SecureDirectoryStream (1) SimpleFileVisitor (5) WatchService (1)
+- java.nio.file.attribute
+- AclEntry (1) AclFileAttributeView (3) BasicFileAttributeView (2) DosFileAttributes (2) FileOwnerAttributeView (4) FileTime (4) GroupPrincipal (1) PosixFileAttributes (3) PosixFileAttributeView (7) PosixFilePermission (3) UserDefinedFileAttributeView (1) UserPrincipal (2) UserPrincipalLookupService (1)
+- java.security
+- AlgorithmConstraints (1) GuardedObject (2) KeyPairGenerator (1) KeyStore (3) MessageDigest (2) SecureRandom (4) Security (5) SignedObject (2)
+- java.security.cert
+- Certificate (2)
+- java.sql
+- CallableStatement (2) Clob (2) Connection (3) DatabaseMetaData (2) Date (6) Driver (1) DriverManager (1) PreparedStatement (5) ResultSet (5) Statement (8) Time (3) Timestamp (4)
+- java.text
+- AttributedString (6) DateFormat (8) DateFormatSymbols (4) DecimalFormat (7) DecimalFormatSymbols (1) Format (1) NumberFormat (3) SimpleDateFormat (44)
+- java.time
+- Clock (6) DayOfWeek (7) Duration (4) Instant (12) LocalDate (49) LocalDateTime (19) LocalTime (10) Month (7) MonthDay (4) OffsetDateTime (5) OffsetTime (1) Period (7) Year (2) YearMonth (3) ZonedDateTime (22) ZoneId (6) ZoneOffset (4)
+- java.time.chrono
+- HijrahChronology (2) JapaneseChronology (2) MinguoChronology (2) ThaiBuddhistChronology (2) ThaiBuddhistDate (4)
+- java.time.format
+- DateTimeFormatter (13) DateTimeFormatterBuilder (1)
+- java.time.temporal
+- ChronoField (1) ChronoUnit (4) TemporalAccessor (1) TemporalAdjuster (3) TemporalAdjusters (1) TemporalQuery (5)
+- java.time.zone
+- ZoneRules (1)
+- java.util
+- AbstractList (1) ArrayDeque (2) ArrayList (13) Arrays (29) Base64 (5) BitSet (3) Calendar (34) Collection (2) Collections (19) Comparator (4) Currency (3) Date (56) Deque (1) DoubleSummaryStatistics (2) EnumMap (1) EnumSet (1) EventListener (1) EventObject (1) Formatter (14) GregorianCalendar (14) HashMap (5) HashSet (2) Hashtable (2) IntSummaryStatistics (1) Iterator (6) LinkedHashMap (3) LinkedHashSet (1) LinkedList (11) List (54) ListIterator (4) ResourceBundle (1) Locale (11) LongSummaryStatistics (1) Map (35) NavigableMap (8) Objects (3) Observer (2) Optional (5) OptionalInt (2) PriorityQueue (3) Properties (12) Queue (2) Random (15) Scanner (12) Set (9) SortedMap (1) SortedSet (3) Spliterator (1) Stack (2) StringTokenizer (2) TimerTask (1) TimeZone (5) TreeMap (9) TreeSet (11) UUID (1) Vector (3)
+- java.util.concurrent
+- BlockingDeque (1) Callable (1) ConcurrentHashMap (2) ConcurrentLinkedDeque (2) ConcurrentSkipListMap (1) CopyOnWriteArrayList (1) CountDownLatch (3) CyclicBarrier (2) DelayQueue (1) Exchanger (2) Executors (13) ForkJoinPool (10) LinkedBlockingDeque (2) LinkedTransferQueue (1) Phaser (7) PriorityBlockingQueue (2) RecursiveTask (2) ScheduledThreadPoolExecutor (1) Semaphore (4) ThreadFactory (2) ThreadLocalRandom (3) ThreadPoolExecutor (4) TimeUnit (2)
+- java.util.concurrent.atomic
+- AtomicInteger (2) AtomicIntegerArray (1) AtomicLong (2)
+- java.util.concurrent.locks
+- Lock (1) ReentrantLock (8) ReentrantReadWriteLock (2)
+- java.util.function
+- Function (1)
+- java.util.jar
+- JarOutputStream (2)
+- java.util.prefs
+- Preferences (1)
+- java.util.regex
+- Matcher (3)
+- java.util.stream
+- Collectors (19) DoubleStream (4) IntStream (25) LongStream (5) Stream (93)
+- java.util.zip
+- Adler32 (1) CRC32 (1) CRC32C (1) Deflater (1) Inflater (1) ZipFile (4) ZipInputStream (1) ZipOutputStream (2)
+- javax.crypto
+- Cipher (7) KeyGenerator (1) SealedObject (3)
+- javax.crypto.spec
+- SecretKeySpec (5)
+- javax.jms
+- Connection (1) Message (1) MessageConsumer (2) MessageProducer (1) QueueBrowser (1)
+- javax.json
+- Json (1)
+- javax.json.stream
+- JsonParser (1)
+- javax.mail
+- Authenticator (1) Folder (5) Message (3) Session (1) Transport (1)
+- javax.mail.internet
+- InternetAddress (1) MimeBodyPart (2) MimeMessage (1) MimeMultipart (1)
+- javax.naming
+- Context (1)
+- javax.naming.directory
+- DirContext (8)
+- javax.net
+- SocketFactory (1)
+- javax.net.ssl
+- SSLSocket (3) SSLServerSocket (2) HttpsURLConnection (1)
+- javax.script
+- Invocable (1) ScriptContext (1) ScriptEngine (16) ScriptEngineFactory (1) ScriptEngineManager (4) SimpleBindings (1) SimpleScriptContext (2)
+- javax.servlet
+- Filter (1)
+- javax.servlet.http
+- HttpServlet (1) HttpServletRequest (2) HttpServletResponse (2)
+- javax.sql.rowset
+- CachedRowSet (1) FilteredRowSet (1) JdbcRowSet (1) JoinRowSet (1)
+- javax.xml.bind
+- Marshaller (1) Unmarshaller (1)
+- javax.xml.parsers
+- DocumentBuilder (2)
+- javax.xml.stream
+- XMLEventReader (1) XMLStreamReader (1) XMLStreamWriter (1)
+- javax.xml.transform
+- Transformer (3)
+- javax.xml.validation
+- Validator (2)
+- oracle.sql
+- ARRAY (2)
+- org.json
+- JSONArray (1) JSONObject (2)
+- org.w3c.dom
+- Document (5) Element (6) Node (1)
+- android.app
+- ActivityManager (1) KeyguardManager (1)
+- android.content
+- Intent (2)
+- android.content.pm
+- PackageInfo (1)
+- android.graphics
+- Color (1)
+- android.text
+- ClipboardManager (1)
+- android.util
+- Base64 (1)
+- android.widget
+- TextView (1)
+- java.awt
+- AWTEvent (1) BasicStroke (4) BorderLayout (6) CardLayout (3) Color (5) Component (3) Container (1) Dimension (1) EventQueue (1) FileDialog (2) FlowLayout (5) FocusTraversalPolicy (5) Font (5) FontMetrics (5) GradientPaint (2) Graphics (18) Graphics2D (42) GraphicsDevice (1) GridBagConstraints (1) GridBagLayout (2) GridLayout (7) Image (1) Insets (1) ItemSelectable (1) KeyboardFocusManager (12) KeyEventDispatcher (1) LayoutManager2 (1) LinearGradientPaint (1) Point (1) RadialGradientPaint (1) Rectangle (1) TexturePaint (1) Toolkit (4)
+- java.awt.datatransfer
+- Clipboard (1)
+- java.awt.event
+- ActionEvent (14) ActionListener (7) AdjustmentListener (1) AWTEventListener (1) ComponentListener (1) ContainerListener (1) FocusAdapter (1) FocusEvent (2) FocusListener (3) HierarchyListener (1) InputEvent (4) Event (3) ItemEvent (1) ItemListener (4) KeyAdapter (1) KeyEvent (15) KeyListener (1) MouseAdapter (2) MouseEvent (9) MouseMotionAdapter (1) MouseMotionListener (2) MouseWheelListener (3) WindowAdapter (2) WindowEvent (2) WindowFocusListener (1) WindowStateListener (1)
+- java.awt.font
+- NumericShaper (1) LineBreakMeasurer (1) TextAttribute (5) TextLayout (1)
+- java.awt.geom
+- Arc2D (4) Area (1) CubicCurve2D (1) Ellipse2D (1) GeneralPath (1) Line2D (2) Path2D (1) Point2D (1) QuadCurve2D (2) Rectangle2D (1) RoundRectangle2D (1)
+- java.awt.image
+- BufferedImage (15) ConvolveOp (1)
+- java.awt.print
+- PrinterJob (2) Printable (1)
+- javax.swing
+- AbstractAction (4) Action (3) ActionMap (1) BorderFactory (4) BoundedRangeModel (2) Box (8) BoxLayout (5) ButtonGroup (3) DefaultComboBoxModel (2) DefaultListCellRenderer (1) DefaultListModel (1) GroupLayout (4) Icon (2) ImageIcon (2) InputMap (1) InputVerifier (1) JButton (30) JCheckBox (9) JCheckBoxMenuItem (3) JColorChooser (2) JComboBox (14) JComponent (17) JDesktopPane (1) JDialog (1) JEditorPane (1) JFileChooser (2) JFormattedTextField (27) JFrame (45) JInternalFrame (6) JLabel (24) JLayer (1) JList (11) JMenu (6) JMenuItem (10) JOptionPane (7) JPanel (11) JPasswordField (6) JPopupMenu (2) JProgressBar (2) JRadioButton (2) JRadioButtonMenuItem (3) JRootPane (3) JScrollBar (2) JScrollPane (2) JSlider (2) JSpinner (18) JTabbedPane (5) JTable (54) JTextArea (5) JTextField (39) JTextPane (1) JToggleButton (1) JToolBar (2) JTree (73) KeyStroke (8) ListSelectionModel (3) SpinnerDateModel (2) SpinnerListModel (3) SpinnerModel (1) SpinnerNumberModel (3) SpringLayout (3) SwingUtilities (8) SwingWorker (6) Timer (2) ToolTipManager (1) UIManager (9)
+- javax.swing.border
+- Border (1) TitledBorder (1)
+- javax.swing.event
+- AncestorListener (1) CaretListener (1) ChangeListener (8) DocumentEvent (1) DocumentListener (2) EventListenerList (2) HyperlinkListener (1) InternalFrameAdapter (1) InternalFrameListener (1) ListDataListener (3) ListSelectionEvent (3) MenuDragMouseListener (1) MenuKeyListener (1) MenuListener (1) PopupMenuListener (1) TreeExpansionListener (1) TreeModelListener (1) TreeSelectionListener (1) TreeWillExpandListener (1) UndoableEditListener (2)
+- javax.swing.plaf
+- LayerUI (2)
+- javax.swing.table
+- AbstractTableModel (2) DefaultTableCellRenderer (2) DefaultTableModel (5) JTableHeader (2) TableCellRenderer (3) TableColumn (9) TableColumnModel (2) TableModel (3)
+- javax.swing.text
+- DateFormatter (1) DefaultFormatter (3) DefaultFormatterFactory (2) DocumentFilter (2) Element (1) ElementIterator (1) JTextComponent (1) MaskFormatter (1) NumberFormatter (2) PlainDocument (3) StyledEditorKit (1)
+- javax.swing.tree
+- DefaultMutableTreeNode (7) DefaultTreeCellRenderer (3) DefaultTreeModel (5) TreeModel (2) TreeNode (2) TreePath (4) TreeSelectionModel (1)
+- javax.swing.undo
+- UndoManager (2)
+- javafx.animation
+- FadeTransition (2) KeyFrame (5) PathTransition (6) SequentialTransition (1) Timeline (6) TranslateTransition (1)
+- javafx.application
+- Application (13) Platform (1)
+- javafx.beans
+- Observable (1)
+- javafx.beans.binding
+- Bindings (1) NumberBinding (1) DoubleBinding (1)
+- javafx.beans.property
+- DoubleProperty (2) IntegerProperty (6) ReadOnlyIntegerProperty (1) SimpleDoubleProperty (1) SimpleIntegerProperty (1) SimpleStringProperty (1) StringProperty (1)
+- javafx.beans.value
+- ObservableValue (1)
+- javafx.collections
+- ObservableList (3) ObservableMap (2) ObservableSet (2)
+- javafx.concurrent
+- Task (1)
+- javafx.embed.swing
+- SwingNode (1)
+- javafx.event
+- EventHandler (1)
+- javafx.fxml
+- FXMLLoader (1)
+- javafx.geometry
+- Point2D (1)
+- javafx.print
+- PrinterJob (2) Printer (4)
+- javafx.scene
+- Group (1) Scene (6)
+- javafx.scene.canvas
+- Canvas (2) GraphicsContext (8)
+- javafx.scene.control
+- CSS (10) Button (10) CheckBox (4) CheckMenuItem (1) ChoiceBox (2) ComboBox (3) ContextMenu (2) DatePicker (1) Hyperlink (1) Label (9) ListView (6) Menu (1) MenuBar (3) MenuItem (4) ProgressBar (1) ProgressIndicator (1) RadioButton (6) RadioMenuItem (2) ScrollBar (2) Separator (1) SeparatorMenuItem (1) Slider (2) SplitPane (1) TableView (1) TabPane (1) TextArea (4) TextField (14) ToggleGroup (1) ToggleButton (2) ToolBar (1) TreeView (2)
+- javafx.scene.effect
+- Bloom (1) BoxBlur (1) DropShadow (1) Glow (1) InnerShadow (1) Reflection (1)
+- javafx.scene.image
+- Image (1) ImageView (4)
+- javafx.scene.input
+- KeyCode (2) KeyEvent (2) MouseEvent (12)
+- javafx.scene.layout
+- BorderPane (7) FlowPane (2) GridPane (13) HBox (6) Pane (7) ScrollPane (3) StackPane (7) VBox (4)
+- javafx.scene.media
+- AudioClip (2) AudioSpectrumListener (1) Media (3) MediaPlayer (10)
+- javafx.scene.paint
+- Color (4) LinearGradient (3) RadialGradient (3)
+- javafx.scene.shape
+- Arc (8) Circle (22) CubicCurve (1) Ellipse (8) Line (15) Path (3) Polygon (6) Polyline (6) QuadCurve (1) QuadCurveTo (1) Rectangle (11) Shape (1) SVGPath (1)
+- javafx.scene.text
+- Font (2) FontWeight (1) Text (17)
+- javafx.scene.transform
+- Rotate (1) Scale (1) Shear (1) Translate (1)
+- javafx.scene.web
+- WebView (4) WebEngine (5)
+- javafx.stage
+- Stage (4)
+- javafx.util
+- Duration (1)

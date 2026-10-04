@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Tutorial - Java Method - JavaSchool</title>
+<meta name="description" content="Classes usually consist of two things: instance variables and methods. Instance variables are the data part of a class, while the methods defines the behaviours of a clas">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-language-java-method">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-language.html">New Java Language</a></nav>
+    <h1>Java Tutorial - Java Method</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>Classes usually consist of two things: instance variables and methods. Instance variables are the data part of a class, while the methods defines the behaviours of a class.</p>
+<h2 id="syntax">Syntax</h2>
+<p>This is the general form of a method:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+type name(parameter-list) {
+   // body of method
+}</code></pre></div>
+<p>type specifies the type of data returned by the method. If the method does not return a value, its return type must be void. The name of the method is specified by name.</p>
+<p>The parameter-list is a sequence of type and identifier pairs separated by commas.</p>
+<p>Parameters receives the value of the arguments passed to the method.</p>
+<p>If the method has no parameters, then the parameter list will be empty.</p>
+<p>Add a method to Box,as shown here:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Box {/*fromwww.java2s.com*/int width;
+  int height;
+  int depth;
+  void calculateVolume() {
+    System.out.print("Volume is ");
+    System.out.println(width * height * depth);
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    Box mybox1 = new Box();
+    mybox1.width = 10;
+    mybox1.height = 20;
+    mybox1.depth = 15;
+    mybox1.calculateVolume();
+  }
+}</code></pre></div>
+<p>This program generates the following output:</p>
+<h2 id="java-method-return">Java Method Return</h2>
+<p>A method in a class can return a value with the return statement.</p>
+<p>Methods that have a return type other than void return a value to the calling routine using the following form of the return statement:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+return value;</code></pre></div>
+<p>Here, value is the value returned.</p>
+<p>We can use return statement to return a value to the callers.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Rectangle {
+  int width;//fromwww.java2s.comint height;
+  int getArea() {
+    return width * height;
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    Rectangle mybox1 = new Rectangle();
+    int area;
+    mybox1.width = 10;
+    mybox1.height = 20;
+    area = mybox1.getArea();
+    System.out.println("Area is " + area);
+  }
+}</code></pre></div>
+<p>The output:</p>
+<p>In this line the return statement returns value from the getArea()method. And the returned value is assigned to area.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+area = mybox1.getArea();</code></pre></div>
+<p>The actual returned data type must be compatible with the declared return type . The variable receiving the returned value (area) must be compatible with the return type.</p>
+<p>The following code uses the returned value directly in a println( ) statement:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+System.out.println("Area is " + mybox1.getArea());</code></pre></div>
+<h2 id="example">Example</h2>
+<p>A method can return class types.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {/*fromwww.java2s.com*/int myMemberValue = 2;
+  MyClass() {
+  }
+  MyClass doubleValue() {
+    MyClass temp = new MyClass();
+    temp.myMemberValue = temp.myMemberValue*2;
+    return temp;
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    MyClass ob1 = new MyClass();
+    ob1.myMemberValue =2;
+    MyClass ob2;
+    ob2 = ob1.doubleValue();
+    System.out.println("ob1.a: " + ob1.myMemberValue);
+    System.out.println("ob2.a: " + ob2.myMemberValue);
+    ob2 = ob2.doubleValue();
+    System.out.println("ob2.a after second increase: " + ob2.myMemberValue);
+  }
+}</code></pre></div>
+<p>The output generated by this program is shown here:</p>
+<h2 id="java-method-parameters">Java Method Parameters</h2>
+<p>Parameters allow a method to be generalized by operating on a variety of data and/or be used in a number of slightly different situations.</p>
+<p>This is the general form of a method:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+type methodName(parameterType variable,parameterType2 variable2,...) {
+   // body of method
+}</code></pre></div>
+<p>A parameterized method can operate on a variety of data.</p>
+<p>The new Rectangle class has a new method which accepts the dimensions of a rectangle and sets the dimensions with the passed-in value.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Rectangle {
+  double width;/*www.java2s.com*/double height;
+  double area() {
+    return width * height;
+  }
+  void setDim(double w, double h) { // Method with parameters
+    width = w;
+    height = h;
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    Rectangle mybox1 = new Rectangle();
+    double vol;
+    mybox1.setDim(10, 20);
+    vol = mybox1.area();
+    System.out.println("Area is " + vol);
+  }
+}</code></pre></div>
+<p>The output:</p>
+<h2 id="example-2">Example 2</h2>
+<p>The following code passes objects to methods.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test {/*www.java2s.com*/int a;
+  Test(int i) {
+    a = i;
+  }
+  boolean equals(Test o) {
+    if (o.a == a )
+      return true;
+    elsereturn false;
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    Test ob1 = new Test(100);
+    Test ob2 = new Test(100);
+    System.out.println("ob1 == ob2: " + ob1.equals(ob2));
+  }
+}</code></pre></div>
+<p>This program generates the following output:</p>
+<h2 id="java-method-overload">Java Method Overload</h2>
+<p>Java allows to define two or more methods within the same class that share the same name, as long as their parameter declarations are different.</p>
+<p>When this is the case, the methods are said to be overloaded, and the process is referred to as method overloading.</p>
+<p>Overloaded methods have the same name but different parameters. Overloaded methods must differ in the type and/or number of their parameters. Overloaded methods may have different return types. return type alone is insufficient to distinguish two methods.</p>
+<p>The following example illustrates method overloading:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class OverloadDemo {
+  void test() {//www.java2s.com
+    System.out.println("No parameters");
+  }
+  void test(int a) {
+    System.out.println("a: " + a);
+  }
+  void test(int a, int b) {
+    System.out.println("a and b: " + a + " " + b);
+  }
+  double test(double a) {
+    System.out.println("double a: " + a);
+    return a * a;
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    OverloadDemo ob = new OverloadDemo();
+    ob.test();
+    ob.test(10);
+    ob.test(10, 20);
+    double result = ob.test(123.25);
+    System.out.println("Result of ob.test(123.25): " + result);
+  }
+}</code></pre></div>
+<p>This program generates the following output:</p>
+<h2 id="example-3">Example 3</h2>
+<p>The following code demonstrates method overloading and data type promotion.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class OverloadDemo {
+  void test() {//fromwww.java2s.com
+    System.out.println("No parameters");
+  }
+  void test(int a, int b) {
+    System.out.println("a and b: " + a + " " + b);
+  }
+  void test(double a) {
+    System.out.println("Inside test(double) a: " + a);
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    OverloadDemo ob = new OverloadDemo();
+    int i = 88;
+    ob.test();
+    ob.test(10, 20);
+    ob.test(i); // this will invoke test(double)
+    ob.test(123.2); // this will invoke test(double)
+  }
+}</code></pre></div>
+<p>This program generates the following output:</p>
+<h2 id="java-method-recursion">Java Method Recursion</h2>
+<p>Recursion allows a method to call itself.</p>
+<p>The following code is an example of recursion. It calculates the factorial numbers.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Factorial {
+  // this is a recursive function
+int fact(int n) {
+     int result;//www.java2s.comif (n == 1)
+      return 1;
+    result = fact(n - 1) * n;
+    return result;
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    Factorial f = new Factorial();
+    System.out.println("Factorial of 5 is " + f.fact(5));
+  }
+}</code></pre></div>
+<p>The output from this program is shown here:</p>
+<h2 id="java-main-method">Java main() Method</h2>
+<p>The main() method is the entry point for standalone Java applications. To create an application, you write a class definition that includes a main() method. To execute an application, type java at the command line, followed by the name of the class containing the main() method.</p>
+<h2 id="syntax-for-main-method">Syntax for main() method</h2>
+<p>The signature for main() is:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicstatic void main(String[] args)</code></pre></div>
+<p>The return type must be void. The main() method must be public. It is static so that it can be executed without constructing an instance of the application class.</p>
+<p>A command-line argument is the information that follows the program's name on the command line. The command-line arguments are stored as string array passed to main(). For example, the following program displays all of the command-line arguments:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String args[]) {
+    for (int i = 0; i &lt; args.length; i++)
+      System.out.println("args[" + i + "]: " + args[i]);
+  }
+}</code></pre></div>
+<p>Try executing this program, as shown here:</p>
+<p>When you do, you will see the following output:</p>
+<h2 id="example-4">Example 4</h2>
+<p>The following code shows how to use of argv to get an integer value from command line.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">//www.java2s.compublicclass Main {
+  publicstaticvoid main(String[] argv) {
+    int number = 0;
+    System.out.println("The number of words in argv is " + argv.length);
+    if (argv.length == 0) {
+      number = 1234;
+    } elseif (argv.length == 1) {
+      try {
+        number = Integer.parseInt(argv[0]);
+      } catch(NumberFormatException e) {
+        System.err.println("Number " + argv[0] + " invalid (" + e.getMessage() + ").");
+        System.exit(1);
+      }
+    } else {
+      System.err.println("usage: UseArgv number");
+      System.exit(1);
+    }
+    System.out.println("OK, number is " + number);
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-language-java-class.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Class</span></a><a class="pager-btn pager-next" href="java-language-java-constructors.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Const...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

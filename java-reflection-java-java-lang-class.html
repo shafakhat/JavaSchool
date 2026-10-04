@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Reflection - java.lang.Class Class - JavaSchool</title>
+<meta name="description" content="The java.lang.Class class is the center of reflection in Java.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-reflection-java-java-lang-class">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-reflection.html">New Java Reflection</a></nav>
+    <h1>Java Reflection - java.lang.Class Class</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>The java.lang.Class class is the center of reflection in Java.</p>
+<p>An object of the Class class represents a class in a program at runtime.</p>
+<p>The Class class is a generic class.</p>
+<p>It takes a type parameter, which is the type of the class represented by the Class object.</p>
+<p>For example, Class&lt;Boolean&gt; represents the class object for the Boolean class.</p>
+<p>Class&lt;?&gt; represents a class type whose class is unknown.</p>
+<p>We can use Class class to find information about a class at runtime.</p>
+<p>We can get the reference to the Class object of a class in the followings ways:</p>
+<ul><li>Using class literal</li><li>Using the getClass() method of the Object class</li><li>Using the forName() method of the Class class</li></ul>
+<h2 id="class-literal">Class Literal</h2>
+<p>A class literal is the class name followed by a dot and the word "class."</p>
+<p>For example, if you have a class Test, its class literal is Test.class and you can write</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Class&lt;Test&gt; testClass = Test.class;</code></pre></div>
+<p>You can also get the class object for primitive data types and the keyword void using class literals as boolean.class, byte.class, char.class, short.class, int.class, long.class, float.class, double.class, and void.class.</p>
+<p>Each wrapper primitive data type class has a static field named TYPE, which has the reference to the class object of the primitive data type it represents.</p>
+<p>int.class and Integer.TYPE refer to the same class object.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Class c = boolean.class;//www.java2s.com
+    c = Boolean.TYPE;
+    c = byte.class;
+    c = Byte.TYPE;
+    c = char.class;
+    c = Character.TYPE;
+    c = short.class;
+    c = Short.TYPE ;
+    c = int.class;
+    c = Integer.TYPE;
+    c = long.class;
+    c = Long.TYPE;
+    c = float.class;
+    c = Float.TYPE;
+    c = double.class;
+    c = Double.TYPE;
+    c = void.class;
+    c = Void.TYPE;
+  }
+}</code></pre></div>
+<h2 id="getclass-method">getClass() method</h2>
+<p>The Object class has a getClass() method, which returns the reference to the Class object of the class of the object.</p>
+<p>The following code shows how to get the reference to the Class object of the Test class:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test{/*www.java2s.com*/
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Test   testRef = new Test();
+    Class testClass = testRef.getClass();
+  }
+}</code></pre></div>
+<h2 id="forname-method">forName() method</h2>
+<p>The Class class forName() static method returns a reference to a Class object.</p>
+<p>Its overloaded methods are</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Class&lt;?&gt;   forName(String  className)
+Class&lt;?&gt;   forName(String name,  boolean initialize, ClassLoader loader)</code></pre></div>
+<p>The first version of the forName() method takes the fully qualified name of the class as parameter and loads the class, and returns its object reference.</p>
+<p>If the class is already loaded, it returns the reference to the Class object.</p>
+<p>The second version method can control if to initialize or not to initialize the class when it is loaded. We can also passin class loader.</p>
+<p>To load a class named com.java2s..Test:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Class testClass  = Class.forName("com.java2s..Test");</code></pre></div>
+<p>The following code shows how to load a class and gets the reference to its Class object.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {//www.java2s.comstatic {
+    System.out.println("Loading class MyClass...");
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    try {
+      String className = "MyClass";
+      boolean initialize = false;
+      ClassLoader cLoader = Main.class.getClassLoader();
+      Class c = Class.forName(className, initialize, cLoader);
+      className = "MyClass";
+      System.out.println("about to load");
+      // Will load and initialize the class
+      c = Class.forName(className);
+    } catch (ClassNotFoundException e) {
+      System.out.println(e.getMessage());
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="formatter-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Format - Formatter Ex...</span></a><a class="pager-btn pager-next" href="java-reflection-java-class-reflection.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Reflection - Java Cla...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

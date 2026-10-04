@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Utililty Methods Array Index Of - JavaSchool</title>
+<meta name="description" content="The list of methods to do Array Index Of are organized into topic(s).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-utility-method-array-index-of-index-0">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-utility-method.html">java utility method</a></nav>
+    <h1>Java Utililty Methods Array Index Of</h1>
+<p>List of utility methods to do Array Index Of</p>
+<h2 id="description">Description</h2>
+<p>The list of methods to do Array Index Of are organized into topic(s).</p>
+<h2 id="method">Method</h2>
+<p>intarrayIndex(T[] arr, T item) array Index</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (arr == null) {
+    return -1;
+for (int i = 0; i &lt; arr.length; i++) {
+    if (arr[i].equals(item)) {
+        return i;
+return -1;</code></pre></div>
+<p>voidarrayIndexCheck(char[] text, int startPos, int endPos) array Index Check</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (text == null || startPos &lt; 0 || startPos &gt; endPos) {
+    thrownewArrayIndexOutOfBoundsException("text.length: " + (text == null ? 0 : text.length)
+            + ", startPos: " + startPos + ", endPos: " + endPos);</code></pre></div>
+<p>StringarrayIndexClean(String indx) array Index Clean</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (indx.length() &gt;= 2 &amp;&amp; indx.charAt(0) == '\"' &amp;&amp; indx.charAt(indx.length() - 1) == '\"')
+    return indx.substring(1, indx.length() - 1);
+elsereturn"#" + indx + "#";</code></pre></div>
+<p>intarrayIndexFor(final String raw) DOCUMENT ME!</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (raw.isEmpty()) {
+    return -1;
+if (raw.charAt(0) == '0') {
+    return (raw.length() == 1) ? 0 : -1;
+try {
+    returnInteger.parseInt(raw);
+...</code></pre></div>
+<p>intArrayIndexOf(byte[] data, byte[] dest) Array Index Of</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">return ArrayIndexOf(data, dest, 0);</code></pre></div>
+<p>intarrayIndexOf(int needle, int[] haystack) Sequentially search through an array, return the index of first needle element in haystack or -1, if not found.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for (int i = 0; i &lt; haystack.length; i++) {
+    if (haystack[i] == needle) {
+        return i;
+return -1;</code></pre></div>
+<p>intarrayIndexOf(int value, int[] arr) array Index Of</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for (int i = 0; i &lt; arr.length; i++) {
+    if (arr[i] == value)
+        return i;
+return -1;</code></pre></div>
+<p>intarrayIndexOf(Object[] array, Object element) array Index Of</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for (int i = 0; i &lt; array.length; i++) {
+    if (element.equals(array[i])) {
+        return i;
+return -1;</code></pre></div>
+<p>longarrayIndexOffset(int index, long baseOffset, long indexScale) array Index Offset</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (index &lt; 0)
+    thrownewIndexOutOfBoundsException("index " + index);
+return baseOffset + (long) index * indexScale;</code></pre></div>
+<p>intindexOf(byte[] array, byte[] target, int fromIndex) Returns the index (start position) of the first occurrence of the specified target within array starting at fromIndex , or -1 if there is no such occurrence.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (array == null || target == null) {
+    return -1;
+if (fromIndex &lt; 0 || (fromIndex &gt; (array.length - target.length))) {
+    return -1;
+if (target.length == 0) {
+    return fromIndex;
+...</code></pre></div>
+<p><a href="https://www.java2s.com/">HOME</a> | Copyright © www.java2s.com 2016</p>
+    <div class="pager"><a class="pager-btn" href="java-utility-method-array-implode-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="java-utility-method-array-interpolate-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Utililty Methods Array Starts With - JavaSchool</title>
+<meta name="description" content="The list of methods to do Array Starts With are organized into topic(s).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-utility-method-array-starts-with-index-0">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-utility-method.html">java utility method</a></nav>
+    <h1>Java Utililty Methods Array Starts With</h1>
+<p>List of utility methods to do Array Starts With</p>
+<h2 id="description">Description</h2>
+<p>The list of methods to do Array Starts With are organized into topic(s).</p>
+<h2 id="method">Method</h2>
+<p>booleanstartsWith(byte a[], int from, byte b[]) starts With</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">finalint nb = b.length;
+for (int i = 0; i &lt; nb; i++) {
+    finalint j = from + i;
+    if (j &gt;= a.length || a[j] != b[i])
+        return false;
+return true;</code></pre></div>
+<p>booleanstartsWith(byte[] arr, int offset, int len, byte[] pattern) starts With</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int length = pattern.length;
+int i;
+if (len &lt; length)
+    return false;
+for (i = 0; i &lt; length; i++)
+    if (arr[offset + i] != pattern[i])
+        break;
+return i == length;
+...</code></pre></div>
+<p>booleanstartsWith(byte[] array, byte[] prefix) Utility method to check if one byte array starts with a specified sequence of bytes.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (array == prefix) {
+    return true;
+if (array == null || prefix == null) {
+    return false;
+int prefixLength = prefix.length;
+if (prefix.length &gt; array.length) {
+...</code></pre></div>
+<p>booleanstartsWith(byte[] array, byte[] startBytes) Determines whether the specified byte array starts with the specific bytes.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (array == null || startBytes == null || array.length &lt; startBytes.length) {
+    return false;
+for (int i = 0; i &lt; startBytes.length; i++) {
+    if (array[i] != startBytes[i]) {
+        return false;
+return true;</code></pre></div>
+<p>booleanstartsWith(byte[] bytes, int offset, byte... prefix) starts With</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (length(bytes) == 0 || length(prefix) == 0 || prefix.length &gt; bytes.length || offset &lt; 0
+        || offset + prefix.length &gt; bytes.length) {
+    return false;
+for (int i = 0; i &lt; prefix.length; i++) {
+    if (prefix[i] != bytes[i + offset]) {
+        return false;
+return true;</code></pre></div>
+<p>booleanstartsWith(byte[] bytes, String str, int offset) starts With</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (bytes.length &lt; (offset + str.length()))
+    return false;
+for (int c = 0; c &lt; str.length(); c++) {
+    if (bytes[offset + c] != str.charAt(c))
+        return false;
+return true;</code></pre></div>
+<p>booleanstartsWith(byte[] bytes, String text) starts With</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">char[] chars = text.toCharArray();
+if (chars.length &gt; bytes.length) {
+    return false;
+} else {
+    for (int i = 0; i &lt; chars.length; i++) {
+        if (bytes[i] != chars[i]) {
+            return false;
+    return true;</code></pre></div>
+<p>booleanstartsWith(byte[] checkMe, byte[] maybePrefix) starts With</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int cm_len = checkMe.length;
+int mp_len = maybePrefix.length;
+if (cm_len &lt; mp_len)
+    return false;
+for (int i = 0; i &lt; mp_len; ++i)
+    if (checkMe[i] != maybePrefix[i])
+        return false;
+return true;
+...</code></pre></div>
+<p>booleanstartsWith(byte[] haystack, byte[] needle) compare byte arrays</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int i;
+for (i = 0; i &lt; needle.length; i++)
+    if (needle[i] != haystack[i])
+        break;
+return i == needle.length;</code></pre></div>
+<p>booleanstartsWith(byte[] nameRaw, byte[] namePrefix) starts With</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for (int i = 0; i &lt; namePrefix.length; i++) {
+    if (namePrefix[i] != nameRaw[i])
+        return false;
+return true;</code></pre></div>
+<p><a href="https://www.java2s.com/">HOME</a> | Copyright © www.java2s.com 2016</p>
+    <div class="pager"><a class="pager-btn" href="scala-scala-import.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Scala Tutorial - Scala Imp...</span></a><a class="pager-btn pager-next" href="scala-scala-arrays.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Scala Tutorial - Scala Arr...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

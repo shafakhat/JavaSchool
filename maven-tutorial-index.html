@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maven Tutorial - Maven Introduction - JavaSchool</title>
+<meta name="description" content="When creating software project we normally use a build tool to automate processes.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-maven-tutorial-index">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-maven-tutorial.html">New Maven Tutorial</a></nav>
+    <h1>Maven Tutorial - Maven Introduction</h1>
+<ul><li>Next »</li></ul>
+<p>When creating software project we normally use a build tool to automate processes.</p>
+<p>Building a software project typically includes the following activities:</p>
+<ul><li>Compile source code</li><li>Run test cases</li><li>Create documentation from the source code</li><li>Package compiled code into JAR files or ZIP files</li><li>Install the library JAR file to classpath</li><li>Deploy the packaged code to a server</li></ul>
+<p>A build tool can minimize the risk of humans errors while building the software manually.</p>
+<p>Building software has several life cycles, such as compile, test, package. Different build tools handle the life cycles differently.</p>
+<h2 id="what-is-maven">What is Maven</h2>
+<p>Maven is a project management tool which can manage the complete building life cycle.</p>
+<p>Maven simplifies and standardizes the project build process. by handling compilation, testing, library dependency, distribution, documentation and team collaboration.</p>
+<p>The Maven developers claim that Maven is more than just a build tool. We can think of Maven as a build tool with more features.</p>
+<p>Maven provides developers ways to manage following:</p>
+<ul><li>Builds</li><li>Test</li><li>Documentation</li><li>Reporting</li><li>Dependencies</li><li>Releases</li><li>Distribution</li><li>Mailing List</li></ul>
+<p>You will have your own answer once you understand it and start using it.</p>
+<h2 id="maven-history">Maven History</h2>
+<p>Maven was originally built to simplify building processes for Jakarta Turbine project.</p>
+<p>Jakarta Turbine project has many sub projects and each project was built by using ANT. The generated JARs were checked into version control system.</p>
+<p>Apache group then developed Maven to build multiple projects together.</p>
+<p>Maven can publish projects information, deploy projects, share JARs across projects. The JAR files and building blocks are generated and managed by Maven.</p>
+<p>Maven uses a standard directory layout and a default build lifecycle.</p>
+<p>Maven is developed in Java, and is thus used more for Java projects.</p>
+<h2 id="convention-over-configuration">Convention over Configuration</h2>
+<p>Maven defines a comprehensive and declarative model for projects to make source code more reusable, maintainable, and easier to comprehend.</p>
+<p>Maven uses plugins to interact with this declarative model. Most of the features are actually provided by plugins.</p>
+<p>Maven uses pom.xml file to describe a project. pom.xml is referred as Project Object Model (POM), which is the fundamental unit of the Maven system.</p>
+<p>Maven uses Convention over Configuration in managing projects and provides default behavior for projects. Developers need not to specify the source code folder, where to put the jar files, etc.</p>
+<p>When creating a project, Maven creates default project structure. Developer can just save files accordingly.</p>
+<p>The following table shows the default values for project source code files, test case folders, resource files and other configurations.</p>
+<p>${basedir} denotes the project root folder:</p>
+<p>Item  Default ---  --- pom.xml  ${basedir}/pom.xml source code  ${basedir}/src/main/java resources  ${basedir}/src/main/resources test cases source files  ${basedir}/src/test/java test cases resource files  ${basedir}/src/test/resources Complied source code  ${basedir}/target Generated JAR files  ${basedir}/target/classes</p>
+<h2 id="maven-vs-ant">Maven vs. Ant</h2>
+<p>Ant is a popular build tool also from Apache.</p>
+<p>Ant uses an imperative approach to declare the build files. By using Ant we have to specify in the build file what actions Ant should take and what folders/files to use.</p>
+<p>In Ant we can specify low level actions like copying files, compiling code, zip the jar files etc.</p>
+<p>Ant has no default directory layout.</p>
+<p>Maven uses a more declarative approach. By using Maven we only specify in the POM file what to build, not how to build it.</p>
+<p>In Maven, how to build your project is predefined in the Maven Build Life Cycles, Phases and Goals.</p>
+<ul><li>Next »</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-utility-method-array-copy-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="java-thread-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Thread Tutorial - Jav...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

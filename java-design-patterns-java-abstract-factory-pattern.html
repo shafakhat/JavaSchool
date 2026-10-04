@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Design Patterns Tutorial - Java Design Pattern - Abstract Factory Pattern - JavaSchool</title>
+<meta name="description" content="Abstract Factory patterns, also called as Factory of factories, have a factory which creates other factories.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-design-patterns-java-abstract-factory-pattern">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-design-patterns.html">New Java Design Patterns</a></nav>
+    <h1>Java Design Patterns Tutorial - Java Design Pattern - Abstract Factory Pattern</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>Abstract Factory pattern is another creational pattern.</p>
+<p>Abstract Factory patterns, also called as Factory of factories, have a factory which creates other factories.</p>
+<p>When using Abstract Factory pattern, we first use super factory to create factory, then use the created factory to create objects.</p>
+<h2 id="example">Example</h2>
+<p>The following code shows how to use abstract factory pattern.</p>
+<p>We are going to create shapes and Printers. For shapes, we would have circle, rectangle and square. For printers we will have paper Printer, Web Printer and screen Printer.</p>
+<p>For shape we will create Shape interface, as follows</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface Shape {
+   void draw();
+}</code></pre></div>
+<p>Then we create concrete classes implementing the Shape interface.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Rectangle implements Shape {
+   @Override
+   public void draw() {
+      System.out.println("Inside Rectangle::draw() method.");
+   }
+}
+class Square implements Shape {
+   @Override
+   public void draw() {
+      System.out.println("Inside Square::draw() method.");
+   }
+}
+class Circle implements Shape {
+   @Override
+   public void draw() {
+      System.out.println("Inside Circle::draw() method.");
+   }
+}</code></pre></div>
+<p>After that we create an interface for Printers.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface Printer{
+   void print();
+}</code></pre></div>
+<p>Then we create concrete classes implementing the Printer interface.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class PaperPrinter implements Printer{
+   @Override
+   public void print() {
+      System.out.println("paper");
+   }
+}
+class WebPrinter implements Printer{
+   @Override
+   public void print() {
+      System.out.println("web");
+   }
+}
+class ScreenPrinter implements Printer{
+   @Override
+   public void print() {
+      System.out.println("screen");
+   }
+}</code></pre></div>
+<p>Finally we create an abstract class to get factories for Printer and Shape Objects.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abstractclass AbstractFactory {
+   abstract Printer getPrinter(String type);
+   abstract Shape getShape(String shape) ;
+}</code></pre></div>
+<p>Finally we create Factory classes extending AbstractFactory to generate object of concrete class based on given information.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class ShapeFactory extends AbstractFactory {
+   @Override
+   public Shape getShape(String shapeType){
+      if(shapeType == null){
+         return null;
+      }
+      if(shapeType.equalsIgnoreCase("CIRCLE")){
+         return new Circle();
+      } elseif(shapeType.equalsIgnoreCase("RECTANGLE")){
+         return new Rectangle();
+      } elseif(shapeType.equalsIgnoreCase("SQUARE")){
+         return new Square();
+      }
+      return null;
+   }
+   @Override
+   Printer getPrinter(String type) {
+      return null;
+   }
+}
+class PrinterFactory extends AbstractFactory {
+   @Override
+   public Shape getShape(String shapeType){
+      return null;
+   }
+   @Override
+   Printer getPrinter(String type) {
+   if(type == null){
+      return null;
+    }
+  if(type.equalsIgnoreCase("paper")){
+      return new PaperPrinter();
+  } elseif(type.equalsIgnoreCase("web")){
+      return new WebPrinter();
+  } elseif(type.equalsIgnoreCase("Screen")){
+      return new ScreenPrinter();
+  }
+  return null;
+ }
+}</code></pre></div>
+<p>Create a Factory generator/producer class to get factories by passing an information such as Shape or Printer</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class FactoryProducer {
+   publicstatic AbstractFactory getFactory(String choice){
+      if(choice.equalsIgnoreCase("SHAPE")){
+         return new ShapeFactory();
+      } elseif(choice.equalsIgnoreCase("Printer")){
+         return new PrinterFactory();
+      }
+      return null;
+   }
+}</code></pre></div>
+<p>The following code shows how to use the abstract factory patterns.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+   publicstatic void main(String[] args) {
+      //get shape factory
+      AbstractFactory shapeFactory = FactoryProducer.getFactory("SHAPE");
+      //get an object of Shape Circle
+      Shape shape1 = shapeFactory.getShape("CIRCLE");
+      //call draw method of Shape Circle
+      shape1.draw();
+      //get an object of Shape Rectangle
+      Shape shape2 = shapeFactory.getShape("RECTANGLE");
+      //call draw method of Shape Rectangle
+      shape2.draw();
+      //get an object of Shape Square
+      Shape shape3 = shapeFactory.getShape("SQUARE");
+      //call draw method of Shape Square
+      shape3.draw();
+      //get printer factory
+      AbstractFactory printerFactory = FactoryProducer.getFactory("printer");
+    Printer printer1 = printerFactory.getPrinter("Paper");
+    printer1.print();
+    Printer printer2 = printerFactory.getPrinter("Web");
+    printer2.print();
+    Printer printer3 = printerFactory.getPrinter("Screen");
+    printer3.print();
+   }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-utility-method-array-subtract-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="java-utility-method-array-sum-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

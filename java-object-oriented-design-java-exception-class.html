@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java Exception Class - JavaSchool</title>
+<meta name="description" content="The exception class hierarchy starts at the java.lang.Throwable class.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-exception-class">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java Exception Class</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<h2 id="exception-class-hierarchy">Exception Class Hierarchy</h2>
+<p>The exception class hierarchy starts at the java.lang.Throwable class.</p>
+<p>When an exception is thrown, it must be an object of the Throwable class, or any of its subclasses.</p>
+<p>The parameter of the catch block must be of type Throwable, or one of its subclasses, such as Exception, ArithmeticException, IOException, etc.</p>
+<p>We can create our own exception classes by inheriting our classes from one of the exception classes.</p>
+<h2 id="arranging-multiple-catch-blocks">Arranging Multiple catch Blocks</h2>
+<p>Java runtime selects the appropriate catch block and starts looking for the appropriate catch clock sequentially starting from the first catch block.</p>
+<p>Multiple catch blocks for a try block must be arranged from the most specific exception type to the most generic exception type.</p>
+<p>The following code uses a valid sequence of multiple catch blocks.</p>
+<p>The ArithmeticException class is a subclass of the RuntimeException class.</p>
+<p>If both of these exceptions are handled in catch blocks for the same try block, the most specific type, which is ArithmeticException, must appear before the most generic type, which is RuntimeException.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">try  {
+// Do  something, which  might  throw  Exception
+}
+catch(ArithmeticException e1)  {
+// Handle  ArithmeticException first
+}
+catch(RuntimeException e2)  {
+// Handle  RuntimeException after  ArithmeticException
+}</code></pre></div>
+<h2 id="checked-and-unchecked-exceptions">Checked and Unchecked Exceptions</h2>
+<p>There are three types of exceptions</p>
+<ul><li>There are some exceptions that have a higher potential to occur. We can handle them in a try-catch block. Or we can specify in the calling method/constructor declaration that it may throw an exception.</li><li>Error are the exceptions that may occur, and there is little we can do to handle it. For example, java.lang.OutOfMemeoryError. We cannot do anything to recover from an out of memory error. Classes in the exception class hierarchy, which are subclasses of the Error class, and the Error class itself, fall into this category of exception. The compiler does not insist on taking an action on our code. If an exception of this kind is thrown at runtime, the runtime will handle it for you by displaying a detailed error message and halting the application.</li><li>There are exceptions that may occur at runtime, and we may recover from the exceptional condition. Classes in the exception class hierarchy, which are subclasses of the RuntimeException class, and the RuntimeException class itself, fall into this category. The compiler does not insist on taking an action on our code.</li></ul>
+<p>Exceptions in the first category are known as checked exceptions because the compiler checks that they are handled in the code.</p>
+<p>The Throwable class, the Exception class, and subclasses of the Exception class, excluding the RuntimeException class and its subclasses, are called checked exceptions.</p>
+<p>All exceptions that are not checked exceptions are called unchecked exceptions because the compiler does not check if they are handled in the code.</p>
+<p>The Error class, all subclasses of the Error class, the RuntimeException class, and all its subclasses are unchecked exceptions.</p>
+<p>We can handle the unchecked exception if we want to, the compiler would not force us to do it.</p>
+<p>The program structure for handling a checked or an unchecked exception is the same.</p>
+<p>The following code shows how to handle a checked exception</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
+//www.java2s.compublicclass Main {
+  publicstaticvoid main(String[] argv) {
+    try {
+      int input = System.in.read();
+      if (input != -1) {
+        System.out.println(input);
+      }
+    } catch (IOException e) {
+      System.out.print("IOException occurred.");
+    }
+  }
+}</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-exception-handling.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-exception-throw.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

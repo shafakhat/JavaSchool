@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java Initialization Block - JavaSchool</title>
+<meta name="description" content="An instance initialization block is used to initialize objects of a class.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-initialization-block">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java Initialization Block</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<h2 id="instance-initialization-block">Instance Initialization Block</h2>
+<p>An instance initialization block is used to initialize objects of a class.</p>
+<p>An instance initializer is simply a block of code inside the body of a class, but outside any methods or constructors.</p>
+<p>An instance initializer does not have a name. Its code is simply placed inside an opening brace and a closing brace.</p>
+<h2 id="example">Example</h2>
+<p>The following code shows how to declare an instance initializer for the Test class.</p>
+<p>Note that an instance initializer is executed in instance context and the keyword this is available inside the instance initializer.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test {//fromwww.java2s.comprivateint num;
+  // An instance initializer
+  {
+    this.num = 101;
+    /* Other code for the instance initializer*/
+  }
+  /* Other code for Test class*/
+}</code></pre></div>
+<h2 id="multiple-instance-initializers">Multiple instance initializers</h2>
+<p>We can have multiple instance initializers for a class. All of them are executed automatically in textual order for every object we create.</p>
+<p>Code for all instance initializers are executed before any constructor.</p>
+<p>The following code demonstrates the sequence in which the constructor and instance initializers are executed.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  {//fromwww.java2s.com
+    System.out.println("Inside instance initializer 1.");
+  }
+  {
+    System.out.println("Inside instance initializer 2.");
+  }
+  public Main() {
+    System.out.println("Inside  no-args constructor.");
+  }
+  publicstaticvoid main(String[] args) {
+    Main m = new Main();
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<p>An instance initializer cannot have a return statement.</p>
+<h2 id="static-initialization-block">static Initialization Block</h2>
+<p>A static initialization block is also known as a static initializer. It is similar to an instance initialization block.</p>
+<p>It is used to initialize a class. An instance initializer is executed once per object whereas a static initializer is executed only once for a class when the class definition is loaded into JVM.</p>
+<p>We need to use the static keyword in the beginning of its declaration.</p>
+<p>We can have multiple static initializers in a class. All static initializers are executed in textual order in which they appear, and execute before any instance initializers.</p>
+<p>The following code demonstrates when a static initializer is executed.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  privatestaticint num;
+  {// An instance initializer
+    System.out.println("Inside instance initializer.");
+  }//www.java2s.com// A static initializer. Note the use of the keyword static below.
+static {
+    num = 2014;
+    System.out.println("Inside static initializer.");
+  }
+  // Constructor
+public Main() {
+    System.out.println("Inside constructor.");
+  }
+  publicstaticvoid main(String[] args) {
+    System.out.println("Inside  main() #1.   num: " + num);
+    // Declare a reference variable of the class
+    Main si;
+    System.out.println("Inside  main() #2.   num: " + num);
+    new Main();    // Create an object
+
+    System.out.println("Inside  main() #3.   num: " + num);
+    new Main();// Create another object
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<p>static initializer cannot throw checked exceptions and it cannot have a return statement.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-constructors.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-object-class.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

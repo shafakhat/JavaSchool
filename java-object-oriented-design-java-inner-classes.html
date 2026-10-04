@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java Data Type - JavaSchool</title>
+<meta name="description" content="A class which is a member of a package is known as a top-level class.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-inner-classes">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java Data Type</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<h2 id="what-is-an-inner-class">What Is an Inner Class?</h2>
+<p>A class which is a member of a package is known as a top-level class.</p>
+<p>A class can be declared within another class. This type of class is called an inner class.</p>
+<p>If the class declared within another class is explicitly or implicitly declared static, it is called a nested class, not an inner class.</p>
+<p>The class that contains the inner class is called an enclosing class or an outer class.</p>
+<h2 id="example">Example</h2>
+<p>The following code declares an inner class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Outer {
+  publicclass Inner {
+    // Members of the Inner class go here
+  }
+  // Other members of the Outer class go here
+}</code></pre></div>
+<p>The Outer class is a top-level class.</p>
+<p>The Inner class is an inner class. It is a member of the Outer class.</p>
+<p>The Outer class is the enclosing (outer) class for the Inner class.</p>
+<p>An inner class can be the enclosing class for another inner class. There are no limits on the levels of nesting of inner classes.</p>
+<p>An instance of an inner class can only exist within an instance of its enclosing class.</p>
+<h2 id="advantages-of-using-inner-classes">Advantages of Using Inner Classes</h2>
+<p>The following are some of the advantages of inner classes.</p>
+<ul><li>define classes near other classes that will use them.</li><li>provide an additional namespace to manage class structures.</li><li>Some design patterns are easier to implement using inner classes.</li><li>Implementing a callback mechanism is elegant and convenient using inner classes. It helps implement closures in Java.</li></ul>
+<h2 id="restrictions-on-accessing-local-variables">Restrictions on Accessing Local Variables</h2>
+<p>The following code demonstrates the rules for accessing local variables inside a local inner class.</p>
+<p>The main() method declares two local variables called x and y. Both variables are effectively final.</p>
+<p>The variable x is never changed after it is initialized and the variable y cannot be changed because it is declared as final.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String... args) {
+    int x = 1;//www.java2s.comfinalint y = 2;
+    class LocalInner {
+      void print() {
+        System.out.println("x = " + x);
+        System.out.println("y = " + y);
+      }
+    }
+    /*
+     * Uncomment the following statement will make the variable x no longer
+     * an effectively final variable and the LocalIneer class will not compile.
+     */// x = 100;
+
+    LocalInner li = new LocalInner();
+    li.print();
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="inner-class-and-inheritance">Inner Class and Inheritance</h2>
+<p>An inner class can inherit from another inner class, a top-level class, or its enclosing class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class A {/*fromwww.java2s.com*/publicclass B {
+  }
+  publicclass C extends B {
+  }
+  publicclass D extends A {
+  }
+}
+class E extends A {
+  publicclass F extends B {
+  }
+}</code></pre></div>
+<h2 id="no-static-members-in-an-inner-class">No static Members in an Inner Class</h2>
+<p>The keyword static in Java makes a construct a top-level construct.</p>
+<p>Therefore, we cannot declare any static members (fields, methods, or initializers) for an inner class.</p>
+<p>It is allowed to have static fields in an inner class that are compile-time constants.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class A {
+  publicclass B {
+    publicfinalstaticint DAYS_IN_A_WEEK = 7; // OK
+publicfinal String str = new String("Hello");
+  }
+}</code></pre></div>
+<h2 id="generated-class-files-for-inner-classes">Generated Class Files for Inner Classes</h2>
+<p>Each inner class is compiled into a separate class file.</p>
+<p>The class file name format for a member inner class and a static inner class is as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;outer-class-name&gt;$&lt;member-or-static-inner-class-name&gt;</code></pre></div>
+<p>The format for the class file name for a local inner class is as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;outer-class-name&gt;$&lt;a-number&gt;&lt;local-inner-class-name&gt;</code></pre></div>
+<p>The format for the class file name for an anonymous class is as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;outer-class-name&gt;$&lt;a-number&gt;</code></pre></div>
+<a-number> in a class file name is a number that is generated sequentially starting from 1 to avoid any name conflicts.
+<h2 id="inner-classes-in-static-contexts">Inner Classes in Static Contexts</h2>
+<p>We can define an inner class in a static context such as inside a static method or a static initializer.</p>
+<p>All static field members are accessible to such an inner class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Outer {//www.java2s.comstaticint k = 1;
+  int m = 2;
+  publicstaticvoid staticMethod() {
+    // Class Inner is defined in a static context
+class Inner {
+      int j = k; // OK. Referencing static field k
+// int n = m; // An error. Referencing non-static field m
+    }
+  }
+}</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-objects-class.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-inner-classes-types.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

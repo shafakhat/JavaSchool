@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Annotation with single member - JavaSchool</title>
+<meta name="description" content="When only one member is present, we don&#x27;t need to specify its name.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-java-annotation-with-single-member">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <h1>Java Annotation with single member</h1>
+<ul><li>java.lang.annotation</li><li>java.lang.annotation Annotation</li></ul>
+<h2 id="introduction">Introduction</h2>
+<p>A single-member annotation contains only one member.</p>
+<p>It allows a shorthand form of setting the member value.</p>
+<p>When only one member is present, we don't need to specify its name.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.reflect.Method;
+
+// A single-member annotation.
+@Retention(RetentionPolicy.RUNTIME)
+@interface MySingle {
+  int value(); // this variable name must be value
+}
+
+publicclass Main {
+
+  // Annotate a method using a marker.
+  @MySingle(100)//www.java2s.compublicstaticvoid myMeth() {
+    Main ob = new Main();
+
+    try {
+      Method m = ob.getClass().getMethod("myMeth");
+
+      MySingle anno = m.getAnnotation(MySingle.class);
+
+      System.out.println(anno.value()); // displays 100
+
+    } catch (NoSuchMethodException exc) {
+      System.out.println("Method Not Found.");
+    }
+  }
+
+  publicstaticvoid main(String args[]) {
+    myMeth();
+  }
+}</code></pre></div>
+<p>PreviousNext</p>
+<h2 id="related">Related</h2>
+<ul><li>Java Annotation get all annotations</li><li>Java Annotation default values</li><li>Java Annotation marker annotations</li><li>Java Annotation built-In annotations</li><li>Java annotation @SafeVarargs</li></ul>
+    <div class="pager"><a class="pager-btn" href="jpa-gettwopropertiesfromentity.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Get Two Properties From En...</span></a><a class="pager-btn pager-next" href="data-type-joinsarrayelementsintoasinglestringspecifythestartindexandendindex.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Joins array elements into ...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

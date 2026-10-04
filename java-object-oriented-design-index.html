@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java Class - JavaSchool</title>
+<meta name="description" content="Classes are the basic units of programming in the object-oriented paradigm. They are used as templates to create objects.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-index">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java Class</h1>
+<ul><li>Next »</li></ul>
+<h2 id="what-is-a-class">What Is a Class?</h2>
+<p>Classes are the basic units of programming in the object-oriented paradigm. They are used as templates to create objects.</p>
+<p>A class in Java may consist of five components:</p>
+<ul><li>Fields</li><li>Methods</li><li>Constructors</li><li>Static initializers</li><li>Instance initializers</li></ul>
+<p>Fields and methods are also known as members of the class.</p>
+<p>Classes and interfaces can also be members of a class.</p>
+<p>A class can have zero or more class members.</p>
+<p>Constructors are used to create objects of a class. We must have at least one constructor for a class.</p>
+<p>Initializers are used to initialize fields of a class. We can have zero or more initializers of static or instance types.</p>
+<h2 id="declaring-a-class">Declaring a Class</h2>
+<p>The general syntax for declaring a class in Java is</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;modifiers&gt; class &lt;class name&gt; {
+    // Body of the class
+}</code></pre></div>
+<modifiers> are keywords with special meanings to the class declaration.
+<p>A class declaration may have zero or more modifiers.</p>
+<p>The keyword class is used to declare a class.</p>
+<class name> is a user-defined name for the class, which should be a valid identifier.
+<p>Each class has a body, which is specified inside a pair of braces ({}).</p>
+<p>The body of a class contains its different components, for example, fields, methods, etc.</p>
+<p>The following code defines a class named Dog with an empty body. Dog class does not use any modifiers.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Dog  {
+}</code></pre></div>
+<h2 id="fields-in-a-class">Fields in a Class</h2>
+<p>Fields of a class represent properties or attributes for the class.</p>
+<p>Every object of dog class has two properties: a name and a gender. The dog class should include declarations of two fields: one to represent name and one to represent gender.</p>
+<p>The fields are declared inside the body of the class. The general syntax to declare a field in a class is</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;modifiers&gt; class  className {
+   &lt;modifiers&gt; &lt;data type&gt; &lt;field name&gt; = initialvalue;
+   &lt;modifiers&gt; &lt;data type&gt; fieldName;
+}</code></pre></div>
+<p>A field declaration can use zero or more modifiers.</p>
+<p>The data type of the field precedes its name. Optionally, we can also initialize each field with a value.</p>
+<p>The following code shows how to add fields to a class:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Dog  {
+    String  name;
+    String gender;
+}</code></pre></div>
+<p>It is a convention in java to start a class name with an uppercase letter and capitalize the subsequent words, for example, Table, FirstTime, etc.</p>
+<p>The name of fields and methods should start with a lowercase letter and the subsequent words should be capitalized, for example, name, firstName, etc.</p>
+<p>The Dog class declares two fields: name and gender. Both fields are of the String type.</p>
+<p>Every instance of the Dog class will have a copy of these two fields.</p>
+<p>Java has two types of fields for a class:</p>
+<ul><li>Class fields</li><li>Instance fields</li></ul>
+<p>Sometimes a property belongs to the class itself, not to any particular instance of that class.</p>
+<p>The count of all dogs should belong to the dog class itself. The existence of the count of dog is not tied to any specific instance of the dog class.</p>
+<p>Only one copy of the class property exists irrespective of the number of instances.</p>
+<p>Class fields are also known as class variables. Instance fields are also known as instance variables.</p>
+<p>The name and gender are two instance variables of the Dog class.</p>
+<p>All class variables must be declared using the static keyword as a modifier.</p>
+<p>The following code has the declaration of the Dog class with a count class variable.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Dog  {
+    String name;           // An  instance variable
+    String gender;         // An  instance variable
+    static long  count;    // A  class  variable  because of  the   static  modifier
+}</code></pre></div>
+<p>A class variable is known as a static variable. An instance variable is known as a non-static variable.</p>
+<ul><li>Next »</li></ul>
+    <div class="pager"><a class="pager-btn" href="oca-java-se-8-operators-statements-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">OCA Java SE 8 Operators/St...</span></a><a class="pager-btn pager-next" href="java-java-2.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Tutorial - How to use Java enum as Class - JavaSchool</title>
+<meta name="description" content="You can give constructors, add instance variables and methods, and implement interfaces for enum types.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-language-java-enum-class">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-language.html">New Java Language</a></nav>
+    <h1>Java Tutorial - How to use Java enum as Class</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<p>You can give constructors, add instance variables and methods, and implement interfaces for enum types.</p>
+<p>When you define a constructor for an enum, the constructor is called when each enumeration constant is created.</p>
+<p>Each enumeration constant has its own copy of any instance variables defined by the enumeration.</p>
+<h2 id="restrictions">Restrictions</h2>
+<p>Two restrictions that apply to enumerations.</p>
+<ul><li>an enumeration can't inherit another class.</li><li>an enum cannot be a superclass.</li></ul>
+<p>Enum with constructor</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Direction {/*www.java2s.com*/
+  South(10), East(9), North(12), West(8);
+  privateint myValue;
+  Direction(int p) {
+    myValue = p;
+  }
+  int getMyValue() {
+    return myValue;
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    System.out.println(Direction.East.getMyValue());
+    for (Direction a : Direction.values())
+      System.out.println(a + " costs " + a.getMyValue());
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="example">Example</h2>
+<p>You can add fields, constructors, and methods to an enum. You can have the enum implement interfaces.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">//fromwww.java2s.comenum Coin {
+  PENNY(1), NICKEL(5), DIME(10), QUARTER(25);
+  privatefinalint denomValue;
+  Coin(int denomValue) {
+    this.denomValue = denomValue;
+  }
+  int denomValue() {
+    return denomValue;
+  }
+  int toDenomination(int numPennies) {
+    return numPennies / denomValue;
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    int numPennies = 1;
+    int numQuarters = Coin.QUARTER.toDenomination(numPennies);
+    System.out.println(numQuarters);
+    for (Coin c:Coin.values()) {
+      System.out.println(c.denomValue());
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="java-enum-inherit-enum">Java Enum Inherit Enum</h2>
+<p>All enum inherit java.lang.Enum. java.lang.Enum's methods are available for use by all enumerations.</p>
+<h2 id="ordinal-value">Ordinal value</h2>
+<p>You can obtain a value that indicates an enumeration constant's position in the list of constants. This is called its ordinal value, and it is retrieved by calling the ordinal() method:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">final int ordinal()</code></pre></div>
+<p>It returns the ordinal value of the invoking constant. Ordinal values begin at zero.</p>
+<p>Enum Ordinal value</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Direction {/*fromwww.java2s.com*/
+  East, South, West, North
+}
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    for (Direction a : Direction.values()){
+      System.out.println(a + " " + a.ordinal());
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="example-2">Example 2</h2>
+<p>Overriding toString() to return a Token constant's value.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Token {/*www.java2s.com*/
+  IDENTIFIER("ID"), INTEGER("INT"), LPAREN("("), RPAREN(")"), COMMA(",");
+  privatefinal String tokValue;
+  Token(String tokValue) {
+    this.tokValue = tokValue;
+  }
+  @Override
+  public String toString() {
+    return tokValue;
+  }
+}
+publicclass Main{
+  publicstaticvoid main(String[] args) {
+    for (Token t:Token.values()){
+      System.out.println(t);
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="java-enum-compareto">Java Enum compareTo</h2>
+<p>You can compare the ordinal value of two constants of the same enumeration by using the compareTo() method.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">final int compareTo(enum-type e)</code></pre></div>
+<p>enum-type is the type of the enumeration, and e is the constant being compared to the invoking constant.</p>
+<p>If the two ordinal values are the same, then zero is returned. If the invoking constant has an ordinal value greater than e's, then a positive value is returned.</p>
+<p>Compare the ordinal value of two constants of enum</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Direction {/*fromwww.java2s.com*/
+  East, South, West, North
+}
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    Direction ap = Direction.West;
+    Direction ap2 = Direction.South;
+    Direction ap3 = Direction.West;
+    if (ap.compareTo(ap2) &lt; 0){
+      System.out.println(ap + " comes before " + ap2);
+    }
+    if (ap.compareTo(ap2) &gt; 0){
+      System.out.println(ap2 + " comes before " + ap);
+    }
+    if (ap.compareTo(ap3) == 0){
+      System.out.println(ap + " equals " + ap3);
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="java-enum-equals">Java Enum equals</h2>
+<p>You can compare for equality an enumeration constant with any other object by using equals(). Those two objects will only be equal if they both refer to the same constant, within the same enumeration.</p>
+<p>Compare for equality an enumeration constant with any other object.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Direction {/*fromwww.java2s.com*/
+  East, South, West, North
+}
+publicclass Main {
+  publicstaticvoid main(String args[]) {
+    Direction ap = Direction.West;
+    Direction ap2 = Direction.South;
+    Direction ap3 = Direction.West;
+    if (ap.equals(ap2)){
+      System.out.println("Error!");
+    }
+    if (ap.equals(ap3)){
+      System.out.println(ap + " equals " + ap3);
+    }
+    if (ap == ap3){
+      System.out.println(ap + " == " + ap3);
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="java-enum-behaviour">Java Enum Behaviour</h2>
+<p>We can define enum value with different behaviours by implementing abstract method differently.</p>
+<p>We can assign different value for each constant in an enum.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Converter {//www.java2s.com
+  DollarToEuro("Dollar to Euro") {
+    @Override
+    double convert(double value) {
+      return value * 0.9;
+    }
+  },
+  DollarToPound("Dollar to Pound") {
+    @Override
+    double convert(double value) {
+      return value * .8;
+    }
+  };
+  Converter(String desc) {
+    this.desc = desc;
+  }
+  private String desc;
+  @Override
+  public String toString() {
+    return desc;
+  }
+  abstractdouble convert(double value);
+}
+publicclass Main{
+  publicstaticvoid main(String[] args) {
+    System.out.println(Converter.DollarToEuro + " = " + Converter.DollarToEuro.convert(100.0));
+    System.out.println(Converter.DollarToPound + " = " + Converter.DollarToPound.convert(98.6));
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="implement-interface-for-enum-type">Implement interface for enum type</h2>
+<p>The following code shows how to implement interface for enum type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*fromwww.java2s.com*/publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Size[] sizes = Size.values();
+    for (Size s : sizes) {
+      System.out.println(s);
+    }
+  }
+}
+enum Size implements Countable {
+  S, M, L, XL, XXL, XXXL;
+  @Deprecated
+  public Size increase() {
+    Size sizes[] = this.values();
+    int pos = this.ordinal();
+    if (pos &lt; sizes.length - 1)
+      pos++;
+    return sizes[pos];
+  }
+}
+interface Countable {
+  public Size increase();
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<ul><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-language-java-enum.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Enum</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

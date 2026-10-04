@@ -1,0 +1,32 @@
+---
+title: Java IO Tutorial - ByteArrayInputStream Example
+nav: Java IO Tutorial - ByteArr...
+description: Imported from java2s.com: Java IO Tutorial - ByteArrayInputStream Example
+section: Imported - java2s Archive
+order: 50243
+source: https://www.java2s.com/Tutorials/Java/java.io/ByteArrayInputStream/index.html
+---
+```java title=Example.java
+« Previous
+```
+
+- Next »
+
+## Constructor
+
+- Java ByteArrayInputStream(byte[] buf) Constructor
+- Java ByteArrayInputStream(byte[] buf, int offset, int length) Constructor
+
+## Method
+
+- Java ByteArrayInputStream .available ()
+- Java ByteArrayInputStream.close()
+- Java ByteArrayInputStream.mark(int readAheadLimit)
+- Java ByteArrayInputStream .markSupported ()
+- Java ByteArrayInputStream .read()
+- Java ByteArrayInputStream .read (byte[] b, int off, int len)
+- Java ByteArrayInputStream.reset()
+- Java ByteArrayInputStream .skip (long n)
+
+- Next »
+- « Previous

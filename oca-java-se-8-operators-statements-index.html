@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OCA Java SE 8 Operators/Statements - Java Operators - JavaSchool</title>
+<meta name="description" content="A Java operator can be applied to a set of variables, values, or literals (operands) and that returns a result.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-oca-java-se-8-operators-statements-index">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-oca-java-se-8-operators-statements.html">New OCA Java SE 8 Operators Statements</a></nav>
+    <h1>OCA Java SE 8 Operators/Statements - Java Operators</h1>
+<ul><li>Next »</li></ul>
+<p>A Java operator can be applied to a set of variables, values, or literals (operands) and that returns a result.</p>
+<p>Three kinds of operators are available in Java:</p>
+<ul><li>unary,</li><li>binary, and</li><li>ternary.</li></ul>
+<p>These types of operators can be applied to one, two, or three operands, respectively.</p>
+<p>Java operators are not necessarily evaluated from left-to-right order.</p>
+<p>For example, the following Java expression is actually evaluated from right-to-left given the specific operators involved.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main{
+   publicstatic void main(String[] argv){
+        int y = 4;
+        double x = 5 + 2 * --y;
+        System.out.println(x);
+        System.out.println(y);
+   }
+}</code></pre></div>
+<p>In this example, you would first decrement y to 3, and then multiply the resulting value by 2, and finally add 5.</p>
+<p>The value would then be automatically upcast from int to double and assigned to x.</p>
+<h2 id="order">Order</h2>
+<p>Java operators follow order of operation listed in the following table, by decreasing order of operator precedence.</p>
+<p>If two operators have the same level of precedence, then Java guarantees left-to-right evaluation.</p>
+<p>You need to know only those operators in bold for the OCA exam.</p>
+<p>Operator  Symbols and examples Post-unary operators  expression++, expression-- Pre-unary operators  ++expression, --expression Operator  Symbols and examples Other unary operators  +, -, ! Multiplication/Division/Modulus  <em>, /, % Addition/Subtraction  +, - Shift operators  &lt;&lt;, &gt;&gt;, &gt;&gt;&gt; Relational operators  &lt;, &gt;, &lt;=, &gt;=, instanceof Equal to/not equal to  ==, != Logical operators  &amp;, ^, Short-circuit logical operators  &amp;&amp;, Ternary operators  boolean expression ? expression1 : expression2 Assignment operators  =, +=, -=, </em>=, /=, %=, &amp;=, ^=, !=, &lt;&lt;=, &gt;&gt;=, &gt;&gt;&gt;=</p>
+<h2 id="binary-arithmetic-operators">Binary Arithmetic Operators</h2>
+<p>The binary operators perform mathematical operations on variables, create logical expressions, as well as perform basic variable assignments.</p>
+<p>Binary operators are commonly combined in complex expressions with more than two variables.</p>
+<h2 id="arithmetic-operators">Arithmetic Operators</h2>
+<p>Arithmetic operators include addition (+), subtraction (-), multiplication (*), division (/), and modulus (%).</p>
+<p>They also include the unary operators, ++ and --.</p>
+<p>The multiplicative operators (*, /, %) have a higher order of precedence than the additive operators (+, -).</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main{
+   publicstatic void main(String[] argv){
+        int x = 2 * 5 + 3 * 4 - 8;
+        System.out.println(x);
+   }
+}</code></pre></div>
+<p>We can use the parentheses to change the order of operation explicitly by wrapping parentheses around the sections you want evaluated first.</p>
+<p>All of the arithmetic operators may be applied to any Java primitives, except boolean and String.</p>
+<p>Only the addition operators + and += may be applied to String values, which results in String concatenation.</p>
+<h2 id="modulus-operator">modulus operator</h2>
+<p>The modulus %, or remainder operator, gets the remainder when two numbers are divided.</p>
+<p>For example, 9 divided by 3 divides evenly and has no remainder; therefore 9 % 3 is 0.</p>
+<p>11 divided by 3 does not divide evenly; therefore, the remainder, or 11 % 3, is 2.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main{
+   publicstaticvoid main(String[] argv){
+        System.out.print(9 / 3);  // Outputs 3
+        System.out.print(9 % 3);  // Outputs 0
+        System.out.print(10 / 3);  // Outputs 3
+        System.out.print(10 % 3);  // Outputs 1
+        System.out.print(11 / 3);  // Outputs 3
+        System.out.print(11 % 3);  // Outputs 2
+        System.out.print(12 / 3);  // Outputs 4
+        System.out.print(12 % 3);  // Outputs 0
+   }/*www.java2s.com*/
+}</code></pre></div>
+<p>The modulus operation is not limited to positive integer values in Java and may also be applied to negative integers and floating-point integers.</p>
+<p>For a given divisor y and negative dividend, the resulting modulus value is between and (-y + 1) and 0.</p>
+<p>The code above generates the following result.</p>
+<ul><li>Next »</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-design-patterns-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Design Patterns Tutor...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

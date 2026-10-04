@@ -1,0 +1,45 @@
+---
+title: Velocity MathTool
+nav: Velocity MathTool
+description: The maximum of $aNumber and 3.2 is $math.max($aNumber, "3.2")
+section: Imported - java2s Archive
+order: 1081
+source: https://web.archive.org/web/20071104162756/http://www.java2s.com:80/Code/Java/Velocity/VelocityMathToolMaximun.htm
+---
+Velocity MathTool: Maximun
+
+```java title=Example.java
+import java.io.StringWriter;
+import java.io.Writer;
+import org.apache.velocity.Template;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.Velocity;
+import org.apache.velocity.tools.generic.MathTool;
+public class MathToolExample {
+  public static void main(String[] args) throws Exception {
+    Velocity.init();
+    Template t = Velocity.getTemplate("./src/mathTool.vm");
+    VelocityContext ctx = new VelocityContext();
+    ctx.put("math", new MathTool());
+    ctx.put("aNumber", new Double(5.5));
+    Writer writer = new StringWriter();
+    t.merge(ctx, writer);
+    System.out.println(writer);
+  }
+}
+-------------------------------------------------------------------------------------
+The maximum of $aNumber and 3.2 is $math.max($aNumber, "3.2")
+```
+
+velocity-MathTool-Maximun.zip( 875 k)
+1.  Velocity MathTool: Add
+2.  Velocity MathTool Divide
+3.  Velocity MathTool Minimum
+4.  Velocity MathTool: Multiply
+5.  Reference Class method in Mathtool
+6.  Velocity Math Tool: Power
+7.  Velocity Math Tool Random
+8.  Velocity MathTool Random Between
+9.  Math tool: round to a given integer
+10.  Velocity Math Tool Round To Integer
+11.  Velocity Math Tool: Subtract

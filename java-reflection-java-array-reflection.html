@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Reflection - Java Array Reflection - JavaSchool</title>
+<meta name="description" content="We can use isArray() method from Class class to check if a class is an array.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-reflection-java-array-reflection">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-reflection.html">New Java Reflection</a></nav>
+    <h1>Java Reflection - Java Array Reflection</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>We can use isArray() method from Class class to check if a class is an array.</p>
+<p>We can create an array, read and modify its element's values using reflection through java.lang.reflect.Array class.</p>
+<p>The getLength() method from Array class gets the length of an array.</p>
+<p>All methods from the Array class are static.</p>
+<p>To create an array, use the overloaded static method newInstance() from the Array class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Object newInstance(Class&lt;?&gt; componentType,  int  arrayLength)
+Object newInstance(Class&lt;?&gt; componentType,  int... dimensions)</code></pre></div>
+<p>The first method creates an array from the specified component type and array length.</p>
+<p>The second version creates an array of the specified component type and dimensions.</p>
+<p>The return type from the newInstance() method is Object and we need to cast it to the actual array type.</p>
+<p>The following code creates an array of int of length 5.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+int[] ids = (int[])Array.newInstance(int.class, 5);</code></pre></div>
+<p>To create an array of int of dimension 5 by 3.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+int[][] matrix = (int[][])Array.newInstance(int.class, 5, 3);</code></pre></div>
+<h2 id="example">Example</h2>
+<p>The following code shows how to create an array dynamically and manipulate its elements.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.Array;
+/*fromwww.java2s.com*/publicclass Main {
+  publicstaticvoid main(String[] args) {
+    try {
+      Object my = Array.newInstance(int.class, 2);
+      int n1 = Array.getInt(my, 0);
+      int n2 = Array.getInt(my, 1);
+      System.out.println("n1 = " + n1 + ", n2=" + n2);
+      Array.set(my, 0, 11);
+      Array.set(my, 1, 12);
+      n1 = Array.getInt(my, 0);
+      n2 = Array.getInt(my, 1);
+      System.out.println("n1 = " + n1 + ", n2=" + n2);
+    } catch (NegativeArraySizeException | IllegalArgumentException
+        | ArrayIndexOutOfBoundsException e) {
+      System.out.println(e.getMessage());
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="get-the-dimension-of-an-array">Get the dimension of an array</h2>
+<p>Java supports an array of arrays.</p>
+<p>The method getComponentType() from Class class returns the Class object for an array's element type.</p>
+<p>The following code illustrates how to get the dimension of an array.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] args) {
+    int[][][] intArray = newint[1][2][3];
+/*www.java2s.com*/
+    System.out.println("int[][][] dimension is " + getArrayDimension(intArray));
+  }
+  publicstaticint getArrayDimension(Object array) {
+    int dimension = 0;
+    Class c = array.getClass();
+    if (!c.isArray()) {
+      thrownew IllegalArgumentException("Object is not  an  array");
+    }
+    while (c.isArray()) {
+      dimension++;
+      c = c.getComponentType();
+    }
+    return dimension;
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="expanding-an-array">Expanding an Array</h2>
+<p>Java array is a fixed-length data structure.</p>
+<p>To enlarge array we can create an array of a bigger size and copy the old array elements to the new one</p>
+<p>The following code shows how to expand an Array Using Reflection</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.Array;
+import java.util.Arrays;
+/*www.java2s.com*/publicclass Main {
+  publicstaticvoid main(String[] args) {
+    int[] ids = newint[2];
+    System.out.println(ids.length);
+    System.out.println(Arrays.toString(ids));
+    ids = (int[]) expandBy(ids, 2);
+    ids[2] = 3;
+    System.out.println(ids.length);
+    System.out.println(Arrays.toString(ids));
+  }
+  publicstatic Object expandBy(Object oldArray, int increment) {
+    Object newArray = null;
+    int oldLength = Array.getLength(oldArray);
+    int newLength = oldLength + increment;
+    Class&lt;?&gt; c = oldArray.getClass();
+    newArray = Array.newInstance(c.getComponentType(), newLength);
+    System.arraycopy(oldArray, 0, newArray, 0, oldLength);
+    return newArray;
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-reflection-java-field-access.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Reflection Field Access</span></a><a class="pager-btn pager-next" href="class-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Reflection - Class Ex...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

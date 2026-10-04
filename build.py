@@ -619,6 +619,16 @@ def category_from_url(url: str) -> str:
     cat = "Other examples"
     if len(parts) >= 3 and parts[0] in ("Code", "Tutorial") and parts[1] == "Java":
         cat = parts[2]
+    elif len(parts) >= 3 and parts[0] == "Tutorials" and parts[1] == "Java":
+        cat = "New " + parts[2]
+    elif len(parts) >= 3 and parts[0] == "Article-Tutorial" and parts[1] == "Java":
+        cat = parts[2]
+    elif len(parts) >= 3 and parts[0] == "Tutorial" and parts[1] not in ("Java",):
+        cat = parts[1]
+    elif len(parts) >= 2 and parts[0] == "ref":
+        cat = "OCA OCP Practice" if "oca" in parts[-1].lower() else "ref " + parts[1]
+    elif len(parts) >= 2 and parts[0] == "example":
+        cat = parts[1].replace("java-", "java ").replace("-", " ")
     elif parts:
         cat = parts[-1].rsplit(".", 1)[0] if parts[-1].endswith((".htm", ".html")) else parts[-1]
     name = cat.replace("__", " ").replace("_", " ").replace("-", " ").strip()
@@ -630,16 +640,17 @@ def category_from_url(url: str) -> str:
 
 def archive_category_map() -> dict:
     mapping = {}
-    if not MANIFEST_PATH.exists():
-        return mapping
-    with MANIFEST_PATH.open(newline="", encoding="utf-8") as f:
-        for row in csv.reader(f):
-            if len(row) < 2:
-                continue
-            slug, url = row[0], row[1]
-            if slug in ("-", "(thin)"):
-                continue
-            mapping[slug] = category_from_url(url)
+    for path in (MANIFEST_PATH, ROOT / "tools" / "live_manifest.csv"):
+        if not path.exists():
+            continue
+        with path.open(newline="", encoding="utf-8") as f:
+            for row in csv.reader(f):
+                if len(row) < 2:
+                    continue
+                slug, url = row[0], row[1]
+                if slug in ("-", "(thin)", "(in-archive)"):
+                    continue
+                mapping.setdefault(slug, category_from_url(url))
     return mapping
 
 
@@ -655,7 +666,7 @@ def attach_archive_groups(sections: list[dict]) -> list[dict]:
         groups = []
         for name in sorted(by_cat, key=lambda s: s.lower()):
             pages = sorted(by_cat[name], key=lambda p: p["title"].lower())
-            gslug = "archive-" + slugify(name)
+            gslug = "archive-cat-" + slugify(name)
             groups.append({
                 "title": name,
                 "slug": gslug,

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java IO Tutorial - Java File Lock - JavaSchool</title>
+<meta name="description" content="NIO supports file locking to synchronize access to a file. We have the ability to lock a region of a file or the entire file.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-io-java-nio-file-locks">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-io.html">New Java io</a></nav>
+    <h1>Java IO Tutorial - Java File Lock</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>NIO supports file locking to synchronize access to a file. We have the ability to lock a region of a file or the entire file.</p>
+<p>The file locking mechanism is handled by the operating system.</p>
+<p>There are two kinds of file locking: exclusive and shared.</p>
+<p>Only one program can hold an exclusive lock on a region of a file.</p>
+<p>Multiple programs can hold shared locks on the same region of a file.</p>
+<p>We cannot mix an exclusive lock and a shared lock on the same region of a file.</p>
+<p>java.nio.channels.FileLock class represents a file lock.</p>
+<p>We acquire a lock on a file by using the lock() or tryLock() method of the FileChannel object.</p>
+<p>The lock() method blocks if the lock on the requested region is not available.</p>
+<p>The tryLock() method does not block; it returns immediately an object of the FileLock class if the lock was acquired; otherwise, it returns null.</p>
+<p>Both lock() and tryLock() methods have two versions: one without an argument and another with arguments.</p>
+<p>The version without an argument locks the entire file.</p>
+<p>The version with arguments accepts the starting position of the region to lock, the number of bytes to lock, and a boolean flag to indicate if the lock is shared.</p>
+<p>The isShared() method of the FileLock object returns true if the lock is shared; otherwise, it returns false.</p>
+<p>The following code shows different ways of obtaining locks on a file.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
+/*www.java2s.com*/publicclass Main {
+  publicstaticvoid main(String[] args) throws Exception {
+    RandomAccessFile raf = new RandomAccessFile("test.txt", "rw");
+    FileChannel fileChannel = raf.getChannel();
+    FileLock lock = fileChannel.lock();
+  }
+}</code></pre></div>
+<h2 id="example">Example</h2>
+<p>Get an exclusive lock on first 10 bytes</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
+//fromwww.java2s.compublicclass Main {
+  publicstaticvoid main(String[] args) throws Exception {
+    RandomAccessFile raf = new RandomAccessFile("test.txt", "rw");
+    FileChannel fileChannel = raf.getChannel();
+    // Get an exclusive lock on first 10 bytes
+    FileLock lock = fileChannel.lock(0, 10, false);
+  }
+}</code></pre></div>
+<p>Try to get an exclusive lock on the entire file</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
+publicclass Main {
+  publicstatic void main(String[] args) throws Exception {
+    RandomAccessFile raf = new RandomAccessFile("test.txt", "rw");
+    FileChannel fileChannel = raf.getChannel();
+    FileLock lock = fileChannel.tryLock();
+    if (lock == null) {
+      // Could not get the lock
+    } else {
+      // Got the lock
+    }
+  }
+}</code></pre></div>
+<p>Try to lock 100 bytes starting from the 11th byte in a shared mode</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
+publicclass Main {
+  publicstatic void main(String[] args) throws Exception {
+    RandomAccessFile raf = new RandomAccessFile("test.txt", "rw");
+    FileChannel fileChannel = raf.getChannel();
+    FileLock lock = fileChannel.tryLock(11, 100, true);
+    if (lock == null) {
+      // Could not get the lock
+    } else {
+      // Got the lock
+    }
+  }
+}</code></pre></div>
+<p>The following code shows how to use a try-catch-finally block to acquire and release a file lock as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
+publicclass Main {
+  publicstatic void main(String[] args) throws Exception {
+    RandomAccessFile raf = new RandomAccessFile("test.txt", "rw");
+    FileChannel fileChannel = raf.getChannel();
+    FileLock lock = null;
+    try {
+      lock = fileChannel.lock(0, 10, true);
+    } catch (IOException e) {
+      // Handle the exception
+    } finally {
+      if (lock != null) {
+        try {
+          lock.release();
+        } catch (IOException e) {
+          // Handle the exception
+        }
+      }
+    }
+  }
+}</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-io-java-nio-memory-channels.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java Me...</span></a><a class="pager-btn pager-next" href="java-io-java-nio-filesystem.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java Fi...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

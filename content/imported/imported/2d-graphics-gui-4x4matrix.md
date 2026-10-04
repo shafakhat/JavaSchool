@@ -1,0 +1,693 @@
+---
+title: 4 x 4 Matrix
+nav: 4 x 4 Matrix
+description: public Matrix4(double a11, double a12, double a13, double a14,
+section: Imported - java2s Archive
+order: 1001
+source: https://web.archive.org/web/20111020201715/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/4x4Matrix.htm
+---
+4 x 4 Matrix
+
+```java title=Example.java
+/**
+ * Copyright (c) 2008-2010  Morten Silcowitz.
+ *
+ * This file is part of the Jinngine physics library
+ *
+ * Jinngine is published under the GPL license, available
+ * at http://www.gnu.org/copyleft/gpl.html.
+ */
+//package jinngine.math;
+import java.io.Serializable;
+/**
+ * Copyright (c) 2008-2010  Morten Silcowitz.
+ *
+ * This file is part of the Jinngine physics library
+ *
+ * Jinngine is published under the GPL license, available
+ * at http://www.gnu.org/copyleft/gpl.html.
+ */
+public class Matrix4 {
+        public double a11, a12, a13, a14;
+    public double a21, a22, a23, a24;
+    public double a31, a32, a33, a34;
+    public double a41, a42, a43, a44;
+    public Matrix4() {
+            a11=0; a12=0; a13=0; a14=0;
+            a21=0; a22=0; a23=0; a24=0;
+            a31=0; a32=0; a33=0; a34=0;
+            a41=0; a42=0; a43=0; a44=0;
+          }
+          public final Matrix4 assignZero() {
+                a11=0; a12=0; a13=0; a14=0;
+                a21=0; a22=0; a23=0; a24=0;
+                a31=0; a32=0; a33=0; a34=0;
+                a41=0; a42=0; a43=0; a44=0;
+                return this;
+          }
+    public Matrix4(double a11, double a12, double a13, double a14,
+               double a21, double a22, double a23, double a24,
+               double a31, double a32, double a33, double a34,
+               double a41, double a42, double a43, double a44
+    ) {
+      this.a11=a11; this.a12=a12; this.a13=a13; this.a14=a14;
+      this.a21=a21; this.a22=a22; this.a23=a23; this.a24=a24;
+      this.a31=a31; this.a32=a32; this.a33=a33; this.a34=a34;
+      this.a41=a41; this.a42=a42; this.a43=a43; this.a44=a44;
+    }
+    public Matrix4 assign(double a11, double a12, double a13, double a14,
+               double a21, double a22, double a23, double a24,
+               double a31, double a32, double a33, double a34,
+               double a41, double a42, double a43, double a44
+    ) {
+      this.a11=a11; this.a12=a12; this.a13=a13; this.a14=a14;
+      this.a21=a21; this.a22=a22; this.a23=a23; this.a24=a24;
+      this.a31=a31; this.a32=a32; this.a33=a33; this.a34=a34;
+      this.a41=a41; this.a42=a42; this.a43=a43; this.a44=a44;
+                  return this;
+    }
+    public Matrix4( Matrix4 M) {
+                assign(M);
+    }
+          public final Matrix4 assign(Matrix4 M) {
+                a11 = M.a11; a12 = M.a12; a13 = M.a13; a14 = M.a14;
+                a21 = M.a21; a22 = M.a22; a23 = M.a23; a24 = M.a24;
+                a31 = M.a31; a32 = M.a32; a33 = M.a33; a34 = M.a34;
+                a41 = M.a41; a42 = M.a42; a43 = M.a43; a44 = M.a44;
+                return this;
+          }
+          public Matrix4(double[] m) {
+              assign(m);
+          }
+          /**
+     *
+     * @param M
+     * @param array
+     */
+    public final Matrix4 assign( double[] array) {
+      a11 = array[0];
+      a21 = array[1];
+      a31 = array[2];
+      a41 = array[3];
+      a12 = array[4];
+      a22 = array[5];
+      a32 = array[6];
+      a42 = array[7];
+      a13 = array[8];
+      a23 = array[9];
+      a33 = array[10];
+      a43 = array[11];
+      a14 = array[12];
+      a24 = array[13];
+      a34 = array[14];
+      a44 = array[15];
+                  return this;
+    }
+          public static Matrix4 identity() {
+              return new Matrix4().assignIdentity();
+    }
+          /**
+     * Assign the identity matrix to this matrix4
+     */
+    public final Matrix4 assignIdentity() {
+      a11=1; a12=0; a13=0; a14=0;
+      a21=0; a22=1; a23=0; a24=0;
+      a31=0; a32=0; a33=1; a34=0;
+      a41=0; a42=0; a43=0; a44=1;
+                  return this;
+    }
+    //C = AxB
+    public static Matrix4 multiply( final Matrix4 A, final Matrix4 B, final Matrix4 C ) {
+      //                   B | b11 b12 b13 b14
+      //                     | b21 b22 b23 b24
+      //                     | b31 b32 b33 b34
+    //                     | b41 b42 b43 b44
+      //     ----------------------------------
+      //  A  a11 a12 a13 a14 | c11 c12 c13 c14
+      //     a21 a22 a23 a24 | c21 c22 c23 c24
+      //     a31 a32 a33 a34 | c31 c32 c33 c34
+      //     a41 a42 a43 a44 | c41 c42 c43 c44
+      final double t11 = A.a11*B.a11 + A.a12*B.a21 + A.a13*B.a31 + A.a14*B.a41;
+      final double t12 = A.a11*B.a12 + A.a12*B.a22 + A.a13*B.a32 + A.a14*B.a42;
+      final double t13 = A.a11*B.a13 + A.a12*B.a23 + A.a13*B.a33 + A.a14*B.a43;
+      final double t14 = A.a11*B.a14 + A.a12*B.a24 + A.a13*B.a34 + A.a14*B.a44;
+      final double t21 = A.a21*B.a11 + A.a22*B.a21 + A.a23*B.a31 + A.a24*B.a41;
+      final double t22 = A.a21*B.a12 + A.a22*B.a22 + A.a23*B.a32 + A.a24*B.a42;
+      final double t23 = A.a21*B.a13 + A.a22*B.a23 + A.a23*B.a33 + A.a24*B.a43;
+      final double t24 = A.a21*B.a14 + A.a22*B.a24 + A.a23*B.a34 + A.a24*B.a44;
+      final double t31 = A.a31*B.a11 + A.a32*B.a21 + A.a33*B.a31 + A.a34*B.a41;
+      final double t32 = A.a31*B.a12 + A.a32*B.a22 + A.a33*B.a32 + A.a34*B.a42;
+      final double t33 = A.a31*B.a13 + A.a32*B.a23 + A.a33*B.a33 + A.a34*B.a43;
+      final double t34 = A.a31*B.a14 + A.a32*B.a24 + A.a33*B.a34 + A.a34*B.a44;
+      final double t41 = A.a41*B.a11 + A.a42*B.a21 + A.a43*B.a31 + A.a44*B.a41;
+      final double t42 = A.a41*B.a12 + A.a42*B.a22 + A.a43*B.a32 + A.a44*B.a42;
+      final double t43 = A.a41*B.a13 + A.a42*B.a23 + A.a43*B.a33 + A.a44*B.a43;
+      final double t44 = A.a41*B.a14 + A.a42*B.a24 + A.a43*B.a34 + A.a44*B.a44;
+      //copy to C
+      C.a11 = t11;
+      C.a12 = t12;
+      C.a13 = t13;
+      C.a14 = t14;
+      C.a21 = t21;
+      C.a22 = t22;
+      C.a23 = t23;
+      C.a24 = t24;
+      C.a31 = t31;
+      C.a32 = t32;
+      C.a33 = t33;
+      C.a34 = t34;
+      C.a41 = t41;
+      C.a42 = t42;
+      C.a43 = t43;
+      C.a44 = t44;
+            return C;
+    }
+    /**
+     * Multiply this matrix by A and return the result
+     * @param A
+     * @return
+     */
+    public Matrix4 multiply( final Matrix4 A ) {
+      return Matrix4.multiply(this, A, new Matrix4());
+    }
+    /**
+     *
+     * @param v
+     * @return
+     */
+    public Vector3 multiply( Vector3 v) {
+      return Matrix4.multiply(this, v, new Vector3());
+    }
+    //Transform a vector in R3 to a homogeneous vector in R4, perform matrix mult,
+    //and transform back into an R3 vector
+    //r = Av
+    public static Vector3 multiply( final Matrix4 A, final Vector3 v, final Vector3 r ) {
+      //                   V | v1
+      //                     | v2
+      //                     | v3
+    //                     | 1
+      //     -----------------------
+      //  A  a11 a12 a13 a14 | c1
+      //     a21 a22 a23 a24 | c2
+      //     a31 a32 a33 a34 | c3
+      //     a41 a42 a43 a44 | c4
+      final double t1 = v.x*A.a11+v.y*A.a12+v.z*A.a13+ 1*A.a14;
+      final double t2 = v.x*A.a21+v.y*A.a22+v.z*A.a23+ 1*A.a24;
+      final double t3 = v.x*A.a31+v.y*A.a32+v.z*A.a33+ 1*A.a34;
+      final double t4 = v.x*A.a41+v.y*A.a42+v.z*A.a43+ 1*A.a44;
+      r.x = t1/t4;
+      r.y = t2/t4;
+      r.z = t3/t4;
+      return r;
+    }
+    public double[] toArray() {
+      return new double[]{
+      a11,a21,a31,a41,
+                  a12,a22,a32,a42,
+                  a13,a23,a33,a43,
+                  a14,a24,a34,a44};
+    }
+    public final Matrix4 inverse() {
+                  Matrix4 m=new Matrix4();
+      m.a11 =      a22*a33*a44 - a22*a34*a43 - a32*a23*a44 + a32*a24*a43 + a42*a23*a34 - a42*a24*a33;
+      m.a12 =    - a12*a33*a44 + a12*a34*a43 + a32*a13*a44 - a32*a14*a43 - a42*a13*a34 + a42*a14*a33;
+      m.a13 =      a12*a23*a44 - a12*a24*a43 - a22*a13*a44 + a22*a14*a43 + a42*a13*a24 - a42*a14*a23;
+      m.a14 =    - a12*a23*a34 + a12*a24*a33 + a22*a13*a34 - a22*a14*a33 - a32*a13*a24 + a32*a14*a23;
+      m.a21 =    - a21*a33*a44 + a21*a34*a43 + a31*a23*a44 - a31*a24*a43 - a41*a23*a34 + a41*a24*a33;
+      m.a22 =      a11*a33*a44 - a11*a34*a43 - a31*a13*a44 + a31*a14*a43 + a41*a13*a34 - a41*a14*a33;
+      m.a23 =    - a11*a23*a44 + a11*a24*a43 + a21*a13*a44 - a21*a14*a43 - a41*a13*a24 + a41*a14*a23;
+      m.a24 =      a11*a23*a34 - a11*a24*a33 - a21*a13*a34 + a21*a14*a33 + a31*a13*a24 - a31*a14*a23;
+      m.a31 =      a21*a32*a44 - a21*a34*a42 - a31*a22*a44 + a31*a24*a42 + a41*a22*a34 - a41*a24*a32;
+      m.a32 =    - a11*a32*a44 + a11*a34*a42 + a31*a12*a44 - a31*a14*a42 - a41*a12*a34 + a41*a14*a32;
+      m.a33 =      a11*a22*a44 - a11*a24*a42 - a21*a12*a44 + a21*a14*a42 + a41*a12*a24 - a41*a14*a22;
+      m.a34 =    - a11*a22*a34 + a11*a24*a32 + a21*a12*a34 - a21*a14*a32 - a31*a12*a24 + a31*a14*a22;
+      m.a41 =    - a21*a32*a43 + a21*a33*a42 + a31*a22*a43 - a31*a23*a42 - a41*a22*a33 + a41*a23*a32;
+      m.a42 =      a11*a32*a43 - a11*a33*a42 - a31*a12*a43 + a31*a13*a42 + a41*a12*a33 - a41*a13*a32;
+      m.a43 =    - a11*a22*a43 + a11*a23*a42 + a21*a12*a43 - a21*a13*a42 - a41*a12*a23 + a41*a13*a22;
+      m.a44 =      a11*a22*a33 - a11*a23*a32 - a21*a12*a33 + a21*a13*a32 + a31*a12*a23 - a31*a13*a22;
+      double D = a11*m.a11 + a21*m.a12 +  a31*m.a13 + a41*m.a14;
+      if(D != 0)
+      {
+        m.a11 /=D; m.a12 /=D; m.a13 /=D; m.a14 /=D;
+        m.a21 /=D; m.a22 /=D; m.a23 /=D; m.a24 /=D;
+        m.a31 /=D; m.a32 /=D; m.a33 /=D; m.a34 /=D;
+        m.a41 /=D; m.a42 /=D; m.a43 /=D; m.a44 /=D;
+      }
+      return m;
+    }
+    public static Matrix4 scaleMatrix(double d) {
+        return new Matrix4().assignScale(d,d,d);
+    }
+    public static Matrix4 scaleMatrix(double x,double y, double z) {
+        return new Matrix4().assignScale(x,y,z);
+    }
+    public Matrix4 assignScale(double d) {
+        return assignScale(d, d, d);
+    }
+    public Matrix4 assignScale(double x,double y, double z) {
+        a11=x; a12=0; a13=0; a14=0;
+  a21=0; a22=y; a23=0; a24=0;
+  a31=0; a32=0; a33=z; a34=0;
+  a41=0; a42=0; a43=0; a44=1;
+        return this;
+    }
+    public Matrix4 assignMultiply(Matrix4 m) {
+        return multiply(this, m, this);
+    }
+    public boolean isNaN() {
+        return Double.isNaN(a11)
+                || Double.isNaN(a12)
+                || Double.isNaN(a13)
+                || Double.isNaN(a14)
+                || Double.isNaN(a21)
+                || Double.isNaN(a22)
+                || Double.isNaN(a23)
+                || Double.isNaN(a24)
+                || Double.isNaN(a31)
+                || Double.isNaN(a32)
+                || Double.isNaN(a33)
+                || Double.isNaN(a34)
+                || Double.isNaN(a41)
+                || Double.isNaN(a42)
+                || Double.isNaN(a43)
+                || Double.isNaN(a44);
+    }
+    @Override
+    public String toString() {
+        return "[" + a11 + ", " + a12 + ", " + a13 + ", " + a14 + "]\n"
+                + "[" + a21 + ", " + a22 + ", " + a23 + ", " + a24 + "]\n"
+                + "[" + a31 + ", " + a32 + ", " + a33 + ", " + a34 + "]\n"
+                + "[" + a41 + ", " + a42 + ", " + a43 + ", " + a44 + "]";
+    }
+}
+/**
+ * <code>Vector3d</code> defines a Vector for a three double value tuple.
+ * <code>Vector3d</code> can represent any three dimensional value, such as a
+ * vertex or normal.
+ *
+ * The functional methods like add, sub, multiply that returns new instances, and
+ * left <code>this</code> unchanged.
+ *
+ * Static methods store the resulting vector on a existing reference, which avoid
+ * allowcation an can improove performances around 20% (profiling performend on vector
+ * addition).
+ *
+ * Deprecated methods will be removed on October 2010
+ *
+ * @author Morten Silcowitz
+ * @author Pierre Labatut
+ */
+ final class Vector3 implements Serializable {
+  private static final long serialVersionUID = 1L;
+        /**
+         * The x coordinate.
+         */
+  public double x;
+        /**
+         * The y coordinate.
+         */
+        public double y;
+        /**
+         * The z coordinate.
+         */
+        public double z;
+  public transient final static double e = 1e-9f;
+  /**
+         * Constructs and initializes a <code>Vector3</code> to [0., 0., 0.]
+         */
+  public Vector3 () {
+    x=0; y=0; z=0;
+  }
+        /**
+         * Constructs and initializes a <code>Vector3</code> from the specified
+         * xyz coordinates.
+         * @param x the x coordinate
+         * @param y the y coordinate
+         * @param z the z coordinate
+         */
+  public Vector3( double x, double y, double z) {
+    this.x=x; this.y=y; this.z=z;
+  }
+        /**
+         * Constructs and initializes a <code>Vector3</code> with the coordinates
+         * of the given <code>Vector3</code>.
+         * @param v the <code>Vector3</code> containing the initialization x y z data
+         * @throws NullPointerException when v is null
+         */
+  public Vector3( Vector3 v ) {
+    x=v.x; y=v.y; z = v.z;
+  }
+    /**
+     * Create a new unit vector heading positive x
+     * @return a new unit vector heading positive x
+     */
+    public static Vector3 i() {
+        return new Vector3(1., 0., 0.);
+    }
+    /**
+     * Create a new unit vector heading positive y
+     * @return a new unit vector heading positive y
+     */
+    public static Vector3 j() {
+        return new Vector3(0., 1., 0.);
+    }
+    /**
+     * Create a new unit vector heading positive z
+     * @return a new unit vector heading positive z
+     */
+    public static Vector3 k() {
+        return new Vector3(0., 0., 1.);
+    }
+        /**
+         * Adds a provided vector to this vector creating a resultant
+         * vector which is returned.
+         * Neither <code>this</code> nor <code>v</code> is modified.
+         *
+         * @param v the vector to add to this.
+         * @return resultant vector
+         * @throws NullPointerException if v is null
+         */
+  public final Vector3 add( Vector3 v) {
+    return new Vector3( x+v.x, y+v.y, z+v.z );
+  }
+        /**
+         * Multiply the vector coordinates by -1. creating a resultant vector
+         * which is returned.
+         * <code>this</code> vector is not modified.
+         *
+         * @return resultant vector
+         * @throws NullPointerException if v is null
+         */
+  public final Vector3 negate() {
+    return new Vector3(-x,-y,-z);
+  }
+  /**
+         * Returns true if one of the coordinated is not a number
+         * <code>this</code> vector is not modified.
+         * @return true if one of the coordinated is not a number
+         */
+  public final boolean isNaN() {
+    return Double.isNaN(x)||Double.isNaN(y)||Double.isNaN(z);
+  }
+        /**
+         * Get a coordinate from a dimention ordinal.
+         * @param i the dimention ordinal number. 1 is x, 2 is y 3 is z.
+         * @return <ul>
+         *<li>         x coordiante when i is 0</li>
+         *<li>         y coordiante when i is 1</li>
+         *<li>         z coordiante when i is 2</li>
+         * </ul>
+         */
+  public double get( int i ) {
+    return i>0?(i>1?z:y):x;
+  }
+        /**
+         * Set a coordinate from a dimention ordinal.
+         * @param i the dimention ordinal number. 1 is x, 2 is y 3 is z.
+         * @param v new coordinate value
+         */
+  public void set( int i, double v ) {
+    if (i == 0) {
+      x = v;
+    } else {
+      if ( i==1) {
+        y=v;
+      }else {
+        z=v;
+      }
+    }
+  }
+        /**
+         * Add two vectors and place the result in v1.
+         * <code>v2</code> is not modified.
+         * @param v1 a not null reference, store the sum
+         * @param v2 a not null reference
+         * @throws NullPointerException if v1 or v2 is null
+         */
+  public static void add( final Vector3 v1, final Vector3 v2 ) {
+    v1.x += v2.x;
+    v1.y += v2.y;
+    v1.z += v2.z;
+  }
+        /**
+         * Substract two vectors and place the result in v1.
+         * <code>v2</code> is not modified.
+         * @param v1 a not null reference, store the difference
+         * @param v2 a not null reference
+         * @throws NullPointerException if v1 or v2 is null
+         */
+  public static void sub( final Vector3 v1, final Vector3 v2 ) {
+    v1.x -= v2.x;
+    v1.y -= v2.y;
+    v1.z -= v2.z;
+  }
+        /**
+         * Substracts a provided vector to this vector creating a resultant
+         * vector which is returned.
+         * Neither <code>this</code> nor <code>v</code> is modified.
+         *
+         * @param v the vector to add to this.
+         * @return resultant vector
+         */
+        public final Vector3 sub( Vector3 v ) {
+    return new Vector3( x-v.x, y-v.y, z-v.z );
+  }
+        /**
+         * Multiply this vector by a provided scalar creating a resultant
+         * vector which is returned.
+         * <code>this</code> vector is not modified.
+         *
+         * @param s multiplication coeficient
+         * @return resultant vector
+         */
+  public final Vector3 multiply( double s ) {
+    return new Vector3( x*s, y*s, z*s);
+  }
+  /**
+   * Scale vector by the scale matrix given by s.
+         * <code>this</code> vector is not modified.
+   * @param s scale direction and factor
+   * @return an new vector
+   */
+  public final Vector3 scale( Vector3 s) {
+    return new Vector3(x*s.x, y*s.y, z*s.z);
+  }
+        /**
+         * Multiply a given vector by a scalar and place the result in v
+         * @param v vector multipled
+         * @param s scalar used to scale the vector
+         * @throws NullPointerException if v is null
+         */
+  public static void multiply( Vector3 v, double s) {
+    v.x*=s; v.y*=s; v.z*=s;
+  }
+        /**
+         *
+         * @param v
+         * @param s
+         * @param result
+         * @throws NullPointerException if v ot result is null
+         */
+  public static void multiplyAndAdd( Vector3 v, double s, Vector3 result) {
+    result.x += v.x*s;
+    result.y += v.y*s;
+    result.z += v.z*s;
+  }
+  /**
+   * Multiply v by s, and store result in v. Add v to result and store in result
+   * @param v
+   * @param s
+   * @param result
+         * @throws NullPointerException if v ot result is null
+   */
+  public static void  multiplyStoreAndAdd( Vector3 v, double s, Vector3 result) {
+    v.x *= s;
+    v.y *= s;
+    v.z *= s;
+    result.x += v.x;
+    result.y += v.y;
+    result.z += v.z;
+  }
+        /**
+         * Returns the dot product of this vector and vector v.
+         * Neither <code>this</code> nor <code>v</code> is modified.
+         * @param v the other vector
+         * @return the dot product of this and v1
+         * @throws NullPointerException if v is null
+         */
+  public final double dot( Vector3 v ) {
+    return this.x*v.x+this.y*v.y+this.z*v.z;
+  }
+   /**
+         * Returns the dot product of this vector and vector v.
+         * Neither <code>this</code> nor <code>v</code> is modified.
+         * z coordinated if trucated
+         * @param v the other vector
+         * @return the dot product of this and v1
+         * @throws NullPointerException
+         */
+  public final double xydot( Vector3 v ) {
+    return this.x*v.x+this.y*v.y;
+  }
+  /**
+         * Return a new new set to the cross product of this vectors and v
+         * Neither <code>this</code> nor <code>v</code> is modified.
+         * @param v a not null vector
+         * @return the cross product
+         * @throws NullPointerException when v is null
+         */
+  public final Vector3 cross( final Vector3 v ) {
+    return new Vector3( y*v.z-z*v.y, z*v.x-x*v.z, x*v.y-y*v.x );
+  }
+       /**
+        * Sets result vector to the vector cross product of vectors v1 and v2.
+        * Neither <code>v1</code> nor <code>v2</code> is modified.
+        * @param v1 the first vector
+        * @param v2 the second vector
+        * @param result
+        */
+  public static void crossProduct( final Vector3 v1, final Vector3 v2, final Vector3 result ) {
+    final double tempa1 = v1.y*v2.z-v1.z*v2.y;
+    final double tempa2 = v1.z*v2.x-v1.x*v2.z;
+    final double tempa3 = v1.x*v2.y-v1.y*v2.x;
+    result.x = tempa1;
+    result.y = tempa2;
+    result.z = tempa3;
+  }
+        /**
+         * Return a new vector set to the normalization of vector v1.
+         * <code>this</code> vector is not modified.
+         * @return the normalized vector
+         */
+  public final Vector3 normalize() {
+    double l = Math.sqrt(x*x+y*y+z*z);
+    if ( l == 0.0 ) {return new Vector3(1,0,0); }
+                l=1./l;
+    return new Vector3( x*l, y*l, z*l);
+  }
+        /**
+         * Sets the value of this <code>Vector3</code> to the specified x, y and  coordinates.
+         * @param x the x coordinate
+         * @param y the y coordinate
+         * @param z the z coordinate
+         * @return return this
+         */
+        public final Vector3 assign( double x, double y, double z ) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    return this;
+  }
+        /**
+         * A this vector to the provided coordinates creating a new resultant vector.
+         * <code>this</code> vector is not modified
+         * @param x the x coordinate
+         * @param y the y coordinate
+         * @param z the z coordinate
+         * @return the result vector
+         */
+  public final Vector3 add( double x, double y, double z ) {
+    return new Vector3( this.x+x, this.y+y, this.z+z);
+  }
+  /**
+         * Sets the value of this vector to the value of the xyz coordinates of the
+         * given vector.
+         * <code>v</code> is not modified
+         * @param v the vector to be copied
+         * @return <code>this</code>
+         * @throws NullPointerException
+         */
+  public final Vector3 assign( Vector3 v ) {
+    double t1 =v.x;
+    double t2 =v.y;
+    double t3 =v.z;
+    x = t1;
+    y = t2;
+    z = t3;
+    return this;
+  }
+        /**
+         *
+         * @return
+         */
+  public final Vector3 assignZero() {
+    x = 0;
+    y = 0;
+    z = 0;
+    return this;
+  }
+        /**
+         * Returns the length of this vector.
+         * <code>this</code> vector is not modified.
+         * @return Returns the length of this vector.
+         */
+  public final double norm() {
+    return Math.sqrt( x*x + y*y + z*z );
+  }
+  /**
+         * Returns the length of this vector.
+         * z coordinate is truncated.
+         * <code>this</code> vector is not modified.
+         * @return Double.NaN when Double.isNaN(x) || Double.isNaN(y)
+         */
+  public final double xynorm() {
+    return Math.sqrt( x*x + y*y );
+  }
+        /**
+         * Returns the length of this vector.
+         * <code>this</code> vector is not modified.
+         * @return the length of this vector
+         */
+  public final double squaredNorm() {
+    return x*x+y*y+z*z;
+  }
+    /**
+     * Returns <tt>true</tt> if the absolute value of the three coordinates are
+     * smaller or equal to epsilon.
+     *
+     * @param epsilon positive tolerance around zero
+     * @return true when the coordinates are next to zero
+     *         false in the other cases
+     */
+    public final boolean isEpsilon(double epsilon) {
+        if (epsilon < 0.) {
+            throw new IllegalArgumentException("epsilon must be positive");
+        }
+        return -epsilon <= x && x <= epsilon
+                && -epsilon <= y && y <= epsilon
+                && -epsilon <= z && z <= epsilon;
+    }
+        /**
+         * Pack the three coorindates into a new double array
+         * <code>this</code> vector is not modified.
+         * @return a array set with x, y and z
+         */
+  public final double[] toArray() {
+    return new double[]{x,y,z};
+  }
+        /**
+         * Returns a string representation of this vector.  The string
+         * representation consists of the three dimentions in the order x, y, z,
+         * enclosed in square brackets (<tt>"[]"</tt>). Adjacent elements are
+         * separated by the characters <tt>", "</tt> (comma and space).
+         * Elements are converted to strings as by {@link Double#toString(double)}.
+         *
+         * @return a string representation of this vector
+         */
+  @Override
+  public final String toString() {
+    return  "[" + x + ", " +y+ ", " +z + "]";
+  }
+}
+```
+
+1.  Implementation of a 4x4 matrix suited for use in a 2D and 3D graphics rendering engine
+---  ---
+2.  Rotations in a three-dimensional space
+3.  This class represents a lower (or upper) triangle matrix that stores ints.
+4.  The Java Matrix Class provides the fundamental operations of numerical linear algebra
+5.  Vector extends Matrix
+6.  A 3x3 matrix implementation
+7.  Various geometric transformations on matrix form
+8.  Inertia Matrix
+9.  Simulate a matrix. Provides method to travers vectors that compose the matrix.

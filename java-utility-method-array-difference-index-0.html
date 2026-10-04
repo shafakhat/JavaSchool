@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Utililty Methods Array Difference - JavaSchool</title>
+<meta name="description" content="The list of methods to do Array Difference are organized into topic(s).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-utility-method-array-difference-index-0">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-utility-method.html">java utility method</a></nav>
+    <h1>Java Utililty Methods Array Difference</h1>
+<p>List of utility methods to do Array Difference</p>
+<h2 id="description">Description</h2>
+<p>The list of methods to do Array Difference are organized into topic(s).</p>
+<h2 id="method">Method</h2>
+<p>float[]difference(float[] v1, float[] v2) difference</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (v1.length != v2.length) {
+    thrownewIllegalArgumentException("Arrays lengths are different");
+float[] out = newfloat[v1.length];
+for (int i = 0; i &lt; out.length; i++) {
+    out[i] = v1[i] - v2[i];
+return out;
+...</code></pre></div>
+<p>intdifference2D(char[][] first, char[][] second) difference D</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int result = 0;
+for (int i = 0; i &lt; first.length; i++) {
+    for (int j = 0; j &lt; first[0].length; j++) {
+        if (first[i][j] != second[i][j]) {
+            result++;
+return result;</code></pre></div>
+<p>intdifference5D(char[][][][][] first, char[][][][][] second) difference D</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int result = 0;
+for (int i1 = 0; i1 &lt; first.length; i1++) {
+    for (int i2 = 0; i2 &lt; first.length; i2++) {
+        for (int i3 = 0; i3 &lt; first.length; i3++) {
+            for (int i4 = 0; i4 &lt; first.length; i4++) {
+                for (int i5 = 0; i5 &lt; first.length; i5++) {
+                    if (first[i1][i2][i3][i4][i5] != second[i1][i2][i3][i4][i5]) {
+                        result++;
+...</code></pre></div>
+<p>float[]differenceFunction(float[] data, int windowLength) difference Function</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">float[] diffFunction = newfloat[data.length];
+float sum;
+for (int t = 0; t &lt; data.length; t++) {
+    sum = 0;
+    for (int j = 0; j &lt; Math.min(j + windowLength, data.length - t); j++) {
+        sum += Math.pow(data[j] - data[j + t], 2);
+    diffFunction[t] = sum;
+...</code></pre></div>
+<p><a href="https://www.java2s.com/">HOME</a> | Copyright © www.java2s.com 2016</p>
+    <div class="pager"><a class="pager-btn" href="java-java.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial</span></a><a class="pager-btn pager-next" href="java-utility-method-array-different-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

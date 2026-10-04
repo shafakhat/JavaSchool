@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OCA Java SE 8 Method - Java Method Declaration - JavaSchool</title>
+<meta name="description" content="publicfinal void myMethod(int minutes) throws InterruptedException {">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-oca-java-se-8-method-class-index">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-oca-java-se-8-method-class.html">New OCA Java SE 8 Method Class</a></nav>
+    <h1>OCA Java SE 8 Method - Java Method Declaration</h1>
+<ul><li>Next »</li></ul>
+<p>For example, we can write a basic method.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicfinal void myMethod(int minutes) throws InterruptedException {
+    // method body
+}</code></pre></div>
+<p>This is called a method declaration, which specifies all the information needed to call the method.</p>
+<p>To call this method, just type its name, followed by a single int value in parentheses:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+myMethod(10);</code></pre></div>
+<h2 id="access-modifiers">Access Modifiers</h2>
+<p>Java offers four choices of access modifier:</p>
+<p>Modifier  Meaning ---  --- public  The method can be called from any class. private  The method can only be called from within the same class. protected  The method can only be called from classes in the same package or subclasses. Default (Package Private) Access  The method can only be called from classes in the same package. There is no keyword for default access. Just omit the access modifier.</p>
+<p>myMethod1() is a valid method declaration with public access.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public void myMethod1() {}</code></pre></div>
+<p>myMethod2() doesn't compile because default is not a valid access modifier.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">default void myMethod2() {} // DOES NOT COMPILE</code></pre></div>
+<p>myMethod3() doesn't compile because the access modifier is specified after the return type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+void public myMethod3() {} // DOES NOT COMPILE</code></pre></div>
+<p>myMethod4() is a valid method declaration with default access.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+void myMethod4() {}</code></pre></div>
+<h2 id="optional-specifiers">Optional Specifiers</h2>
+<p>There are a number of optional specifiers in the following list.</p>
+<p>Unlike with access modifiers, you can have multiple specifiers in the same method although not all combinations are legal.</p>
+<p>When this happens, you can specify them in any order.</p>
+<p>You can have zero or more specifiers in a method declaration.</p>
+<p>Specifiers  Meaning ---  --- static  Used for class methods. abstract  Used when not providing a method body. final  Used when a method is not allowed to be overridden by a subclass. synchronized  On the OCP but not the OCA exam. native  Not on the OCA or OCP exam. Used with code written in another language such as C++. strictfp  Not on the OCA or OCP exam. Used for making floating-point calculations portable.</p>
+<p>myMethod1() is a valid method declaration with no optional specifier.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public void myMethod1() {}</code></pre></div>
+<p>myMethod2() is a valid method declaration, with final as the optional specifier.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicfinal void myMethod2() {}</code></pre></div>
+<p>myMethod3() and myMethod4() are valid method declarations with both final and static as optional specifiers. The order of these two keywords doesn't matter.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicstaticfinal void myMethod3() {}
+publicfinalstatic void myMethod4() {}</code></pre></div>
+<p>myMethod5() doesn't compile because modifier is not a valid optional specifier.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public modifier void myMethod5() {} // DOES NOT COMPILE</code></pre></div>
+<p>myMethod6() doesn't compile because the optional specifier is after the return type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public void final myMethod6() {} // DOES NOT COMPILE</code></pre></div>
+<p>myMethod7() does compile. Java allows the optional specifiers to appear before the access modifier.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">finalpublic void myMethod7() {}</code></pre></div>
+<h2 id="return-type">Return Type</h2>
+<p>The return type might be an actual Java type such as String or int.</p>
+<p>If there is no return type, the void keyword is used.</p>
+<p>void means without contents.</p>
+<p>Remember that a method must have a return type. If no value is returned, the return type is void. You cannot omit the return type.</p>
+<p>Methods with a return type other than void MUST have a return statement inside the method body.</p>
+<p>This return statement must include the primitive or object to be returned.</p>
+<p>Methods that have a return type of void can have a return statement with no value returned or omit the return statement entirely.</p>
+<p>Since the return type of myMethod1 () is void, the return statement is optional.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public void myMethod1() { }</code></pre></div>
+<p>myMethod2 () shows the optional return statement that correctly doesn't return anything.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public void myMethod2() { return; }</code></pre></div>
+<p>myMethod3() is a valid method with a String return type and a return statement that returns a String.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public String myMethod3() { return ""; }</code></pre></div>
+<p>myMethod4() doesn't compile because the return statement is missing.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public String myMethod4() { }  // DOES NOT COMPILE</code></pre></div>
+<p>myMethod5() doesn't compile because the return type is missing.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public myMethod5() { }  // DOES NOT COMPILE</code></pre></div>
+<p>myMethod6() has a return statement, but it doesn't always get run. If a is 5, the return statement doesn't get executed. myMethod6() requires a String to be returned.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+String myMethod6(int a) { if (a == 4) return ""; }  // DOES NOT COMPILE</code></pre></div>
+<p>When returning a value, it must be assignable to the return type.</p>
+<p>long1 method returns a long type which cannot be assigned to int type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+int integer1() {
+  return 9;
+}
+int long1() {
+  return 9L; // DOES NOT COMPILE
+}</code></pre></div>
+<ul><li>Next »</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-java-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial</span></a><a class="pager-btn pager-next" href="java-io-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java I/O</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

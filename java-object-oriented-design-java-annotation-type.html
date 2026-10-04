@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java Annotation Type - JavaSchool</title>
+<meta name="description" content="A marker annotation type is an annotation type with no elements, not even one with a default value.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-annotation-type">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java Annotation Type</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<h2 id="marker-annotation-types">Marker Annotation Types</h2>
+<p>A marker annotation type is an annotation type with no elements, not even one with a default value.</p>
+<p>A marker annotation is used by the annotation processing tools.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public  @interface Marker  {
+}
+@Marker
+publicclass Main{
+}</code></pre></div>
+<h2 id="meta-annotation-types">Meta-Annotation Types</h2>
+<p>Meta-annotations types are annotation types, which are used to annotate other annotation types.</p>
+<p>Meta-annotation types are part of the Java class library. They are declared in the package java.lang.annotation.</p>
+<p>The following annotation types are meta-annotation types:</p>
+<ul><li>Target</li><li>Retention</li><li>Inherited</li><li>Documented</li><li>Repeatable</li><li>Native</li></ul>
+<h2 id="target-annotation-type">Target Annotation Type</h2>
+<p>Target annotation type annotates an annotation type to set the context to use the annotation type.</p>
+<p>It has only one element named value. Its value element is an array of java.lang.annotation.ElementType enum type.</p>
+<p>The following table lists all constants in the ElementType enum.</p>
+<p>Constant Name  Description ---  --- ANNOTATION_TYPE  annotate another annotation type declaration. This makes the annotation type a meta-annotation. CONSTRUCTOR  annotate constructors. FIELD  annotate fields and enum constants. LOCAL_VARIABLE  annotate local variables. METHOD  annotate methods. PACKAGE  annotate package declarations. PARAMETER  annotate parameters. TYPE  annotate class, interface (including annotation type), or enum declarations. TYPE_PARAMETER  annotate type parameters in generic classes, interfaces, methods, etc. TYPE_USE  annotate all uses of types.</p>
+<p>The following Version annotation type has Target meta-annotation, which specifies that the Version annotation type can be used with program elements of only three types: any type (class, interface, enum, and annotation types), a constructors, and methods.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+import java.lang.annotation.Target;
+import java.lang.annotation.ElementType;
+@Target({ ElementType.TYPE, ElementType.CONSTRUCTOR, ElementType.METHOD })
+public @interface Version {
+  int major();
+  int minor();
+}</code></pre></div>
+<p>The Version annotation cannot be used on any program elements other than the three types specified in its Target annotation.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+//www.java2s.com
+@Target({ ElementType.TYPE_USE })
+@interface MyAnno {
+}
+@Target({ ElementType.TYPE_USE })
+@interface MyAnno2 {
+}
+publicclass Main {
+  publicvoid processData() throws @MyAnno Exception {
+    int roundedValue = (@MyAnno2 int) .02;
+    Main t = new @MyAnno Main();
+  }
+}</code></pre></div>
+<p>If we do not annotate an annotation type with the Target annotation type, the annotation type can be used as a modifier for any declaration, except a type parameter declaration.</p>
+<h2 id="the-retention-annotation">The Retention Annotation</h2>
+<p>Retention Annotation sets the retention policy of an annotation type.</p>
+<p>An annotation can be retained at three levels.</p>
+<ul><li>Source code only</li><li>Class file only. The default behaviour.</li><li>Class file and the runtime</li></ul>
+<p>The Retention meta-annotation type specifies how an annotation should be retained by Java.</p>
+<p>If an annotation type has a "source code only" retention policy, its instances are removed when compiled into a class file.</p>
+<p>If the retention policy is "class file only", its instances are retained in the class file, but they cannot be read at runtime.</p>
+<p>If the retention policy is "class file and runtime", the annotation instances are retained in the class file and they are available for reading at runtime.</p>
+<p>The Retention meta-annotation type declares one element, named value, which is of the java.lang. annotation.RetentionPolicy enum type.</p>
+<p>The RetentionPolicy enum has three constants, SOURCE, CLASS, and RUNTIME, which are used to specify the retention policy of source only, class only, and class-and-runtime, respectively.</p>
+<p>The following code uses the Retention meta-annotation on the Version annotation type. It specifies that the Version annotations should be available at runtime.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.annotation.Target;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+/*www.java2s.com*/
+@Target({ ElementType.TYPE, ElementType.CONSTRUCTOR, ElementType.METHOD })
+@Retention(RetentionPolicy.RUNTIME)
+@interface Version {
+  int major();
+  int minor();
+}</code></pre></div>
+<p>If we do not use the Retention meta-annotation on an annotation type, its retention policy defaults to class file only. And we will not be able to read those annotations at runtime.</p>
+<p>An annotation on a local variable declaration is never available in the class file or at runtime irrespective of the retention policy of the annotation type.</p>
+<h2 id="inherited-annotation-type">Inherited Annotation Type</h2>
+<p>Inherited annotation type is a marker meta-annotation type.</p>
+<p>If an annotation type is annotated with an Inherited meta-annotation, its instances are inherited by a subclass declaration.</p>
+<p>It has no effect if an annotation type is used to annotate any elements other than a class declaration.</p>
+<p>The following code shows the effect of @Inherited meta-annotation type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.annotation.Inherited;
+/*fromwww.java2s.com*/
+@interface Ann2 {
+  int id();
+}
+@Inherited
+@interface Ann3 {
+  int id();
+}
+@Ann2(id = 1)
+@Ann3(id = 2)
+class A {
+}
+// Class B inherits Ann3(id=2) annotation from the class A
+class B extends A {
+}</code></pre></div>
+<h2 id="documented-annotation">Documented Annotation</h2>
+<p>Documented annotation type is a marker meta-annotation type.</p>
+<p>If an annotation type is annotated with a Documented annotation, the Javadoc tool will generate documentation for all of its instances.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.annotation.Documented;
+//www.java2s.com
+@Documented
+@interface Version {
+  int major();
+  int minor();
+}
+@Version(major = 1, minor = 0)
+publicclass Main {
+}</code></pre></div>
+<p>When generating documentation for the Main class with the Javadoc tool, the Version annotation on the Main class declaration is also generated as part of the documentation.</p>
+<h2 id="repeatable-annotation">Repeatable Annotation</h2>
+<p>Java 8 added a Repeatable meta-annotation type.</p>
+<p>An annotation type declaration must be annotated with a @Repeatable annotation if we would use it repeatly on one single code element.</p>
+<p>The Repeatable annotation type has only one element named value whose type is a class type of another annotation type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.annotation.Repeatable;
+//www.java2s.com
+@interface LogHistory {
+  Log[] value();
+}
+@Repeatable(LogHistory.class)
+@interface Log {
+  String date();
+  String comments();
+}
+@Log(date = "01/01/2014", comments = "B")
+@Log(date = "01/21/2014", comments = "A")
+publicclass Main {
+  publicstaticvoid process() {
+  }
+}</code></pre></div>
+<h2 id="the-native-annotation">The Native Annotation</h2>
+<p>The Native annotation type is a meta-annotation that is used to annotate fields which may be referenced from native code. It is a marker annotation.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-annotation-usage.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-standard-annotations.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

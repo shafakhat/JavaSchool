@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java final Keyword - JavaSchool</title>
+<meta name="description" content="The final keyword does not allow modifying or replacing its original value or definition.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-final-keyword">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java final Keyword</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>The final keyword does not allow modifying or replacing its original value or definition.</p>
+<p>The final keyword can be used in the following three contexts:</p>
+<ul><li>A variable declaration</li><li>A class declaration</li><li>A method declaration</li></ul>
+<h2 id="final-variable">final variable</h2>
+<p>If a variable is declared final, it can be assigned a value only once. The value of a final variable cannot be modified once it has been set.</p>
+<p>A variable declaration includes the declaration of a local variable, a formal parameter of a method/constructor, an instance variable, and a class variable.</p>
+<p>To declare a variable as final, use the final keyword in the variable's declaration.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">final int YES  = 1;</code></pre></div>
+<p>We can set the value of a final variable only once.</p>
+<p>There are two ways to initialize a final variable:</p>
+<ul><li>initialize it at the time of its declaration.</li><li>defer its initialization until a later time.</li></ul>
+<p>However, we must initialize the final variable before it is read for the first time.</p>
+<ul><li>final Local Variables You can declare a local variable final. If you declare a local variable as a blank final variable, you must initialize it before using.</li><li>final Parameters We can declare a parameter final. A parameter is initialized automatically with the value of the actual parameter when the method or the constructor is invoked. Therefore, you cannot change the value of a final formal parameter inside the method's or the constructor's body.</li><li>final Instance Variables We can declare an instance variable final and blank final. A blank final instance variable must be initialized once and only once when any of the constructors of the class is invoked.</li><li>final Class Variables We can declare a class variable final and blank final. We must initialize a blank final class variable in one of the static initializers.</li><li>final Reference Variables A reference variable stores the reference of an object. A final reference variable means that once it references an object (or null), it cannot be modified to reference another object.</li></ul>
+<p>The following code shows the final formal parameter x for the test2() method:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public void  test2(final int x)  {</code></pre></div>
+<p>If we have more than one static initializer for a class, we must initialize all the blank final class variables only once in one of the static initializers.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticfinal int YES = 1;
+  publicstaticfinal int NO = 2;
+  publicstaticfinal String MSG;
+  static {
+    MSG = "final static variable";
+  }
+}</code></pre></div>
+<h2 id="final-class">final class</h2>
+<p>If a class is declared final, it cannot be extended (or subclassed).</p>
+<h2 id="final-method">final method</h2>
+<p>If a method is declared final, it cannot be redefined (overridden or hidden) in the subclasses of the class that contains the method.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-access-level-class-members.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-constructors.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

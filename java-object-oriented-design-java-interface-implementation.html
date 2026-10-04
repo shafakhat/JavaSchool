@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java interface implementation - JavaSchool</title>
+<meta name="description" content="An interface specifies a protocol that an object has to offer.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-interface-implementation">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java interface implementation</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<h2 id="implementing-an-interface">Implementing an Interface</h2>
+<p>An interface specifies a protocol that an object has to offer.</p>
+<p>A class may provide a partial implementation of the abstract methods of the interface, and in that case, the class must declare itself abstract.</p>
+<p>A class that implements an interface uses an "implements" clause to specify the name of the interface.</p>
+<p>An "implements" clause consists of the keyword implements, followed by a comma-separated list of interface types.</p>
+<p>A class can implement multiple interfaces.</p>
+<p>The general syntax for a class declaration that implements an interface looks as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;modifiers&gt; class  &lt;class-Name&gt;  implements &lt;comma-separated-list-of-interfaces&gt;  {
+    // Class body  goes  here
+}</code></pre></div>
+<p>Suppose there is a Circle class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Circle implements Shape {
+   void  draw(){
+      System.out.println("draw circle");
+   }
+}</code></pre></div>
+<p>The class that implements an interface must override to implement all abstract methods declared in the interface. Otherwise, the class must be declared abstract.</p>
+<p>The default methods of an interface are also inherited by the implementing classes.</p>
+<p>The implanting classes may choose bu not required to override the default methods.</p>
+<p>The static methods in an interface are not inherited by the implementing classes.</p>
+<p>The following code defines two reference types, one is from class Circle the other is from interface type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Circle c = new Circle();
+Shape shape = new Circle();</code></pre></div>
+<p>The variable c is of the Circle type. It is referring to the Circle object.</p>
+<p>The second assignment is also valid because the Circle class implements the Shape interface and every object of the Circle class is also of the Shape type.</p>
+<h2 id="implementing-interface-methods">Implementing Interface Methods</h2>
+<p>When a class fully implements an interface, it provides an implementation for all abstract methods of the implemented interfaces.</p>
+<p>A method declaration in an interface includes constraints for the methods. For example, the throws clause in the method declaration is a constraint for the method.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+import java.io.IOException;
+interface Shape {
+  void draw(double amount) throws IOException;
+}
+class Main implements Shape{
+  @Override
+  public void draw(double amount) {
+    // TODO Auto-generated method stub
+  }
+}</code></pre></div>
+<p>The code for Main is valid, even though it dropped the throws clause. Dropping constraints exceptions is allowed when a class overrides an interface method.</p>
+<p>If we use the Shape type, we have to handle the IOException.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+import java.io.IOException;
+interface Shape {
+  void draw(double amount) throws IOException;
+}
+class Main implements Shape{
+  @Override
+  public void draw(double amount) {
+    // TODO Auto-generated method stub
+  }
+  public void anotherMethod(){
+    Shape s = new Main();
+    try {
+      s.draw(0);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    draw(0);
+  }
+}</code></pre></div>
+<h2 id="implementing-multiple-interfaces">Implementing Multiple Interfaces</h2>
+<p>A class can implement multiple interfaces. All interfaces that a class implements are listed after the keyword implements in the class declaration.</p>
+<p>By implementing multiple interfaces, the class agrees to provide the implementation for all abstract methods in all interfaces.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface Adder {
+  int add(int n1, int n2);
+}
+interface Subtractor {
+  int subtract(int n1, int n2);
+}
+class Main implements Adder, Subtractor {
+  public int add(int n1, int n2) {
+    return n1 + n2;
+  }
+  public int subtract(int n1, int n2) {
+    return n1 - n2;
+  }
+}</code></pre></div>
+<h2 id="partially-implementing-an-interface">Partially Implementing an Interface</h2>
+<p>A class does not have to provide implementations for all methods.</p>
+<p>If a class does not provide the full implementation of interfaces, it must be declared abstract.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface Calculator {
+  int add(int n1, int n2);
+  int subtract(int n1, int n2);
+}
+abstractclass Main implements Calculator{
+  public int add(int n1, int n2) {
+    return n1 + n2;
+  }
+}</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-interface-as-type.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-interface-inheritance.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

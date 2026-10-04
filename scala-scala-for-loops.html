@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scala Tutorial - Scala for Loops - JavaSchool</title>
+<meta name="description" content="A For Comprehension is a very powerful control structure of Scala language.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-scala-scala-for-loops">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-scala.html">New Scala</a></nav>
+    <h1>Scala Tutorial - Scala for Loops</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>A For Comprehension is a very powerful control structure of Scala language.</p>
+<p>It offer the ability to iterate over a collection, and it also provides filtering options and the ability to generate new collections.</p>
+<p>Let's start with a basic for expression:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main {
+  def main(args: Array[String]) {
+     val dogBreeds = List("A", "B", "C", "D", "E", "F")
+     for (breed &lt;- dogBreeds)
+       println(breed)
+  }
+}</code></pre></div>
+<p>Basic for Expression is a very basic feature of the for expression.</p>
+<p>First we need a collection over which the for expression will iterate. We create a list of books as shown in the following code:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+val books = List("Scala", "Groovy", "Java", "SQL", "CSS")</code></pre></div>
+<p>Now we can write a very basic for expression to iterate over the books list.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main {
+  def main(args: Array[String]) {
+    val books = List("Scala", "Groovy", "Java", "SQL", "CSS")
+    for (book&lt;-books)
+       println(book)
+  }
+}</code></pre></div>
+<p>In the code above the for expression creates a temporary variable called book for each element in the list books with the corresponding value of that element.</p>
+<p>The left-arrow operator is called a generator because it generates corresponding values from a collection to be used in an expression.</p>
+<h2 id="generator-expressions">Generator Expressions</h2>
+<p>The expression breed &lt;- dogBreeds is called a generator expression , so named because it's generating individual values from a collection.</p>
+<p>The left arrow operator (&lt;-) is used to iterate through a collection, such as a List.</p>
+<p>We can also use it with a Range to write a more traditional-looking for loop:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main {
+  def main(args: Array[String]) {
+     for (i &lt;- 1 to 10) println(i)
+  }
+}</code></pre></div>
+<h2 id="guards-filtering-values">Guards: Filtering Values</h2>
+<p>We can add if expressions to filter for just elements we want to keep.</p>
+<p>These expressions are called guards.</p>
+<p>To find all D in our list of dog breeds, we modify the previous example to the following:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main {
+  def main(args: Array[String]) {
+     val dogBreeds = List("D", "Y", "D", "S", "G", "P")
+     for (breed &lt;- dogBreeds
+       if breed.contains("D")
+     ) println(breed)
+  }
+}</code></pre></div>
+<p>You can have more than one guard:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main {
+  def main(args: Array[String]) {
+     val dogBreeds = List("D", "Y", "D", "S", "G", "P")
+     for (breed &lt;- dogBreeds
+       if breed.contains("D")
+       if  !breed.startsWith("Y")
+     ) println(breed)
+     for (breed &lt;- dogBreeds
+       if breed.contains("D") &amp;&amp;  !breed.startsWith("Y")
+     ) println(breed)
+  }
+}</code></pre></div>
+<p>A filter is an if clause inside the for expression that is used to filter the collection when we do not want to iterate through the entire collection.</p>
+<p>The following code shows how to find all Scala books in our list of books.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main {
+  def main(args: Array[String]) {
+    val books = List("Scala", "Groovy", "Java", "SQL", "CSS")
+    for(book&lt;-books
+        if book.contains("Scala")
+    ) println(book)
+  }
+}</code></pre></div>
+<h2 id="variable-binding">Variable Binding</h2>
+<p>We can define variables inside for expressions.</p>
+<p>We can then re-use these variables within the body of your for expression.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main {
+  def main(args: Array[String]) {
+    val books = List("Scala", "Groovy", "Java", "SQL", "CSS")
+    for {
+        book &lt;- books
+        bookVal = book.toUpperCase()
+    } println(bookVal)
+  }
+}</code></pre></div>
+<p>bookVal is not declared as a val, but you can still reuse it.</p>
+<h2 id="yielding">Yielding</h2>
+<p>In Scala's for expression we can use the yield keyword to generate new collections.</p>
+<p>The type of the collection generated from the for expression is inferred from the type of the collection being iterated over.</p>
+<p>To hand value off to another part of our program in for loop, use the yield keyword to generating new collections with for expressions.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main {
+  def main(args: Array[String]) {
+     val dogBreeds = List("D", "Y", "D", "S", "G", "P")
+     val filteredBreeds = for {
+       breed &lt;- dogBreeds
+       if breed.contains("T") &amp;&amp;  !breed.startsWith("Y")
+     } yield breed
+  }
+}</code></pre></div>
+<p>The following code shows how to use yielding for a collection.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main {
+  def main(args: Array[String]) {
+    val books = List("Scala", "Groovy", "Java", "SQL", "CSS")
+    var scalabooks = for{
+        book &lt;-books
+        if book.contains("Scala")
+    }yield book
+    println(scalabooks);
+  }
+}</code></pre></div>
+<p>The filtered result is yielded as a value named book.</p>
+<p>This result is accumulated with every run inside the for loop, and thus accumulated collection is assigned to the value scalabooks.</p>
+<p>The scalabooks is of type List[String], because it is a subset of the books list, which is also of type List[String].</p>
+<h2 id="expanded-scope-and-value-definitions">Expanded Scope and Value Definitions</h2>
+<p>Scala's for comprehensions can define values inside the first part of your for expressions that can be used in the later expressions, as in this example:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main {
+  def main(args: Array[String]) {
+     val dogBreeds = List("D", "Y", "D", "S", "G", "P")
+     for {
+       breed &lt;- dogBreeds
+       upcasedBreed = breed.toUpperCase()
+     } println(upcasedBreed)
+  }
+}</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-utility-method-array-print-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="java-utility-method-array-range-copy-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

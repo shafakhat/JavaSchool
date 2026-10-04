@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java Generic Constraints - JavaSchool</title>
+<meta name="description" content="For a generic type, a wildcard type is what an Object type is for a raw type.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-generic-constraints">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java Generic Constraints</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<h2 id="unbounded-wildcards">Unbounded Wildcards</h2>
+<p>A wildcard type is denoted by a question mark, as in &lt;?&gt;.</p>
+<p>For a generic type, a wildcard type is what an Object type is for a raw type.</p>
+<p>We can assign any generic of known type to a generic of wildcard type.</p>
+<p>Here is the sample code:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+// MyBag  of  String type
+MyBag&lt;String&gt; stringMyBag  = new MyBag&lt;String&gt;("Hi");
+// You can  assign a  MyBag&lt;String&gt; to  MyBag&lt;?&gt; type
+MyBag&lt;?&gt; wildCardMyBag  = stringMyBag;</code></pre></div>
+<p>The question mark in a wildcard generic type (e.g., &lt;?&gt;) denotes an unknown type.</p>
+<p>When you declare a parameterized type using a wildcard as a parameter type, it means that it does not know about its type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+MyBag&lt;?&gt; unknownMyBag = new MyBag&lt;String&gt;("Hello");</code></pre></div>
+<h2 id="upper-bounded-wildcards">Upper-Bounded Wildcards</h2>
+<p>We express the upper bound of a wildcard as</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;? extends T&gt;</code></pre></div>
+<p>Here, T is a type. &lt;? extends T&gt; means anything that is of type T or its subclass is acceptable.</p>
+<p>For example, the upper bound can be the Number type.</p>
+<p>If we pass any other type, which is a subclass of the Number type, it is fine. However, anything that is not a Number type or its subclass type should be rejected at compile time.</p>
+<p>Using the upper bound as Number, we can define the method as</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyBag&lt;T&gt; {
+  private T ref;/*fromwww.java2s.com*/public MyBag(T ref) {
+    this.ref = ref;
+  }
+  public T get() {
+    return ref;
+  }
+  publicvoid set(T a) {
+    this.ref = a;
+  }
+}
+publicclass Main {
+  publicstaticdouble sum(MyBag&lt;? extends Number&gt; n1,
+      MyBag&lt;? extends Number&gt; n2) {
+    Number num1 = n1.get();
+    Number num2 = n2.get();
+    double sum = num1.doubleValue() + num2.doubleValue();
+    return sum;
+  }
+}</code></pre></div>
+<p>No matter what you pass for n1 and n2, they will always be assignment-compatible with Number since the compiler ensure that the parameters passed to the sum() method follow the rules specified in its declaration of &lt;? extends Number&gt;.</p>
+<h2 id="lower-bounded-wildcards">Lower-Bounded Wildcards</h2>
+<p>Specifying a lower-bound wildcard is the opposite of specifying an upper-bound wildcard.</p>
+<p>The syntax for using a lower-bound wildcard is &lt;? super T&gt;, which means "anything that is a supertype of T."</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyBag&lt;T&gt; {
+  private T ref;/*fromwww.java2s.com*/public MyBag(T ref) {
+    this.ref = ref;
+  }
+  public T get() {
+    return ref;
+  }
+  publicvoid set(T a) {
+    this.ref = a;
+  }
+}
+publicclass Main {
+  publicstatic &lt;T&gt; void copy(MyBag&lt;T&gt; source, MyBag&lt;? super T&gt; dest) {
+    T value = source.get();
+    dest.set(value);
+  }
+}</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-generic-classes.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-generic-methods-constructors.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

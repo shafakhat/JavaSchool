@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>log4j Tutorial - Log4j Introduction - JavaSchool</title>
+<meta name="description" content="Log4j is a Reliable, Fast and Flexible Logging Framework (APIs) written in Java and distributed under the Apache Software License.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-log4j-index">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-log4j.html">New log4j</a></nav>
+    <h1>log4j Tutorial - Log4j Introduction</h1>
+<ul><li>Next »</li></ul>
+<p>Log4j is a Reliable, Fast and Flexible Logging Framework (APIs) written in Java and distributed under the Apache Software License.</p>
+<p>Log4j is configurable via external configuration files at runtime. It controls the logging process in levels of priorities and has abilities to log information to a variety of destinations, such as a database, file, console, UNIX Syslog etc.</p>
+<p>Log4j has three main components:</p>
+<ul><li>loggers: capture logging information.</li><li>appenders: publish logging information to various destinations.</li><li>layouts: format logging information in different styles.</li></ul>
+<h2 id="log4j---architecture">log4j - Architecture</h2>
+<p>Log4j API is designed in layered where each layer is different tasks.</p>
+<p>There are two type of objects in Log4j framework.</p>
+<p><strong>Core Objects:</strong> are mandatory objects of the framework and required to use the framework.</p>
+<p><strong>Support Objects:</strong> are optional and used by core objects to perform additional tasks.</p>
+<p>The Logger object captures logging information.</p>
+<p>The layer objects formats logging information in different styles.</p>
+<p>The Appender object publishes logging information to various preferred destinations such as a database, file, console, UNIX Syslog etc.</p>
+<p>The Level object defines the granularity and priority for logging information. There are seven levels of logging: OFF, DEBUG, INFO, ERROR, WARN, FATAL, and ALL.</p>
+<p>The Filter object does the filtering for the information and decides if to log or not.</p>
+<p>An Appender objects can have several Filter objects.</p>
+<p>The ObjectRenderer object provides a String representation of different objects passed to the logging framework.</p>
+<p>The LogManager object manages the logging framework. It reads the initial configuration parameters from a configuration file or a configuration class.</p>
+<ul><li>Next »</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-utility-method-array-concatenate-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="json-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java JSON Tutorial - JSON ...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java IO Tutorial - Java File Tree - JavaSchool</title>
+<meta name="description" content="FileVisitor API can recursively process all files and directories in a file tree.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-io-java-nio-file-tree">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-io.html">New Java io</a></nav>
+    <h1>Java IO Tutorial - Java File Tree</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>FileVisitor API can recursively process all files and directories in a file tree.</p>
+<p>The FileVisitor API is useful when we want to perform some actions on all or some files or directories in a file tree.</p>
+<p>SimpleFileVisitor class is a basic implementation of the FileVisitor interface.</p>
+<p>SimpleFileVisitor class do not do anything when a file/directory is visited. We can inherit our file visitor class from the SimpleFileVisitor class and override only the methods that fit our needs.</p>
+<p>The Methods of the FileVisitor Interface</p>
+<p>ID  Meaning ---  --- 1  FileVisitResult preVisitDirectory(T dir, BasicFileAttributes attrs) is called once before visiting entries in a directory. 2  FileVisitResult postVisitDirectory(T dir, IOException exc) called after entries in a directory have been visited. If there was any exception thrown during the iteration of a directory, the exception object is passed to this method as the second argument. If the second argument to this method is null, there was no exception during the directory iteration. 2  FileVisitResult visitFile(T file, BasicFileAttributes attrs) called when a file in a directory is visited. 3  FileVisitResult visitFileFailed(T file, IOException exc) called when a file or directory could not be visited for any reason.</p>
+<p>The following table lists Enum Constants of FileVisitResult and Their Descriptions</p>
+<p>Enum Constant  Description ---  --- CONTINUE  Continues processing SKIP_SIBLINGS  Continues processing without visiting the siblings of the file or directory. SKIP_SUBTREE  Continues processing without visiting entries in the directory. TERMINATE  Terminates the file visiting process.</p>
+<p>We do not need to write logic in all four methods of our file visitor class. To copy a directory, code preVisitDirectory() method to create a new directory and the visitFile() method to copy the file.</p>
+<p>The following code shows how to Print the Names of Subdirectories and Files of a directory.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">importstatic java.nio.file.FileVisitResult.CONTINUE;
+//fromwww.java2s.comimport java.io.IOException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.FileVisitor;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Path startDir = Paths.get("");
+    FileVisitor&lt;Path&gt; visitor = getFileVisitor();
+    try {
+      Files.walkFileTree(startDir, visitor);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+  publicstatic FileVisitor&lt;Path&gt; getFileVisitor() {
+    class DirVisitor&lt;Path&gt; extends SimpleFileVisitor&lt;Path&gt; {
+      @Override
+      public FileVisitResult preVisitDirectory(Path dir,
+          BasicFileAttributes attrs) {
+        System.out.format("%s [Directory]%n", dir);
+        return CONTINUE;
+      }
+      @Override
+      public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
+        System.out.format("%s [File,  Size: %s  bytes]%n", file, attrs.size());
+        return CONTINUE;
+      }
+    }
+    FileVisitor&lt;Path&gt; visitor = new DirVisitor&lt;&gt;();
+    return visitor;
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="example">Example</h2>
+<p>The following code shows how to use the FileVisitor API to Delete a Directory Tree.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">importstatic java.nio.file.FileVisitResult.CONTINUE;
+importstatic java.nio.file.FileVisitResult.TERMINATE;
+/*www.java2s.com*/import java.io.IOException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.FileVisitor;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Path dirToDelete = Paths.get("DIR");
+    FileVisitor&lt;Path&gt; visitor = getFileVisitor();
+    try {
+      Files.walkFileTree(dirToDelete, visitor);
+    }
+    catch (IOException e) {
+      System.out.println(e.getMessage());
+    }
+  }
+  publicstatic FileVisitor&lt;Path&gt; getFileVisitor() {
+    class DeleteDirVisitor extends SimpleFileVisitor&lt;Path&gt; {
+      @Override
+      public FileVisitResult postVisitDirectory(Path dir, IOException e)
+          throws IOException {
+        FileVisitResult result = CONTINUE;
+        if (e != null) {
+          System.out.format("Error deleting  %s.  %s%n", dir, e.getMessage());
+          result = TERMINATE;
+        } else {
+          Files.delete(dir);
+          System.out.format("Deleted directory  %s%n", dir);
+        }
+        return result;
+      }
+      @Override
+      public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+          throws IOException {
+        Files.delete(file);
+        System.out.format("Deleted file %s%n", file);
+        return CONTINUE;
+      }
+    }
+    FileVisitor&lt;Path&gt; visitor = new DeleteDirVisitor();
+    return visitor;
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="example-2">Example 2</h2>
+<p>The following code shows how to use the walkFileTree() method to follow a symbolic link.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+import java.nio.file.FileVisitOption;
+import java.nio.file.FileVisitor;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.EnumSet;
+import java.util.Set;
+import static  java.nio.file.FileVisitOption.FOLLOW_LINKS;
+publicclass Main {
+  publicstatic void main(String[] args) throws Exception {
+    Path startDir = Paths.get("");
+    FileVisitor&lt;Path&gt; visitor = create your visitor;
+    Set&lt;FileVisitOption&gt; options = EnumSet.of(FOLLOW_LINKS);
+    int depth = Integer.MAX_VALUE;
+    Files.walkFileTree(startDir, options, depth, visitor);
+  }
+}</code></pre></div>
+<h2 id="pattern-matching">Pattern matching</h2>
+<p>We can perform pattern matching on the string form of Path objects using the glob and regex patterns.</p>
+<p>The functional interface PathMatcher is used to perform the match. It contains a method matches(Path path) method that returns true if the specified path matches the pattern.</p>
+<p>The pattern string consists of two parts, syntax and pattern, separated by a colon:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+syntax:pattern</code></pre></div>
+<p>The value for syntax is either glob or regex. The pattern part follows the syntax that depends on the value of the syntax part.</p>
+<p>The glob pattern uses the following syntax rules:</p>
+<ul><li>* matches zero or more characters without crossing directory boundaries.</li><li>** match zero or more characters crossing directory boundaries.</li><li>? matches exactly one character.</li><li>\ escapes the special meaning of the following character.</li><li>\\ matches a single backslash</li><li>\* matches an asterisk.</li></ul>
+<p>Characters placed inside brackets [] are called a bracket expression, which matches a single character. [aeiou] matches a, e, i, o, or u.</p>
+<p>A dash between two characters specifies a range. [a-z] matches all alphabets between a and z.</p>
+<p>The exclamation mark (!) after the left bracket is treated as negation. [!abc] matches all characters except a, b, and c.</p>
+<p>Use a group of subpatterns by specifying comma-separated subpatterns inside braces ({}). For example, {txt, java, doc} matches txt, java, and doc.</p>
+<p>The matching of the root component of a path is implementation-dependent.</p>
+<p>The following code shows how to use a PathMatcher object to match a path against a glob pattern.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.PathMatcher;
+import java.nio.file.Paths;
+/*fromwww.java2s.com*/publicclass Main {
+  publicstaticvoid main(String[] args) {
+    String globPattern = "glob:**txt";
+    PathMatcher matcher = FileSystems.getDefault().getPathMatcher(globPattern);
+    Path path = Paths.get("C:\\Java_Dev\\test1.txt");
+    boolean matched = matcher.matches(path);
+    System.out.format("%s matches  %s:  %b%n", globPattern, path, matched);
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-io-java-nio-files-content.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java Fi...</span></a><a class="pager-btn pager-next" href="java-io-java-nio-file-owner-permissions.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java Fi...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

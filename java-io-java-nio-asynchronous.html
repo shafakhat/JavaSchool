@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java IO Tutorial - Java Asynchronous I/O - JavaSchool</title>
+<meta name="description" content="In a synchronous file I/O, the request to the I/O operation waits until the I/O operation is complete.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-io-java-nio-asynchronous">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-io.html">New Java io</a></nav>
+    <h1>Java IO Tutorial - Java Asynchronous I/O</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>In a synchronous file I/O, the request to the I/O operation waits until the I/O operation is complete.</p>
+<p>In an asynchronous file I/O, the request for an I/O operation is performed by the system asynchronously.</p>
+<p>When the system finishes the file I/O, it notifies the application about the completion of its request.</p>
+<p>java.nio.channels.AsynchronousFileChannel class represents an asynchronous file channel.</p>
+<p>The static open() method of the AsynchronousFileChannel class gets an instance of the AsynchronousFileChannel class.</p>
+<p>The following code shows how to get an asynchronous file channel for WRITE.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Path  path   = Paths.get("C:\\Java_Dev\\rainbow.txt");
+AsynchronousFileChannel afc   = AsynchronousFileChannel.open(path, WRITE,  CREATE);</code></pre></div>
+<p>The AsynchronousFileChannel provides two ways to handle the result of an asynchronous file I/O operation.</p>
+<ul><li>Using a java.util.concurrent.Future object.</li><li>Using a java.nio.channels.CompletionHandler object.</li></ul>
+<p>Each method of the AsynchronousFileChannel class that supports asynchronous file I/O operation has two versions.</p>
+<p>One version returns a Future object, which we can use to handle the result of the requested asynchronous operation.</p>
+<p>The get() method of the Future object returns the number of bytes written to the file channel.</p>
+<p>The following code uses the version of the write() method that returns a Future object:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+ByteBuffer dataBuffer  = a buffer;
+long  startPosition = 0;
+Future&lt;Integer&gt; result = afc.write(dataBuffer, startPosition);</code></pre></div>
+<p>Once we get a Future object, we can use a polling method or a blocked waiting method to handle the result of the asynchronous file I/O.</p>
+<p>The following code shows the polling method, where it keeps calling the isDone() method of the Future object to check if the I/O operation is finished:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">while (!result.isDone()) {
+}
+int writtenNumberOfBytes = result.get();</code></pre></div>
+<p>Another version of the methods of the AsynchronousFileChannel class gets a CompletionHandler object whose methods are called when the requested asynchronous I/O operation completes or fails.</p>
+<p>The CompletionHandler interface has two methods: completed() and failed().</p>
+<p>The completed() method is called when the requested I/O operation completes successfully.</p>
+<p>When the requested I/O operation fails, the failed() method is called.</p>
+<p>The following code uses an object of the Attachment class as an attachment to completion handler:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class  Attachment {
+    public Path  path;
+    public  ByteBuffer buffer;
+    public  AsynchronousFileChannel asyncChannel;
+}
+class MyHandler implements CompletionHandler&lt;Integer,  Attachment&gt;   {
+    @Override
+    public void  completed(Integer result, Attachment attach)  {
+        // Handle  completion of  the   I/O  operation
+    }
+    @Override
+    public void  failed(Throwable e,  Attachment attach)  {
+        // Handle  failure of  the   I/O  operation
+    }
+}</code></pre></div>
+<p>The following code uses a MyHandler instance as a completion handler for an asynchronous write operation.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+MyHandler handler = new MyHandler();
+ByteBuffer dataBuffer  = get   a  data buffer;
+Attachment attach  = new Attachment();
+attach.asyncChannel = afc;
+attach.buffer = dataBuffer;
+attach.path = path;
+// Perform  the   asynchronous write operation
+afc.write(dataBuffer, 0, attach, handler);</code></pre></div>
+<p>The following code demonstrates how to use a CompletionHandler object to handle the results of an asynchronous write to a file.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+import static java.nio.file.StandardOpenOption.CREATE;
+import static java.nio.file.StandardOpenOption.WRITE;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.AsynchronousFileChannel;
+import java.nio.channels.CompletionHandler;
+import java.nio.charset.Charset;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+publicclass Main {
+  publicstatic void main(String[] args) throws Exception {
+    Path path = Paths.get("test.txt");
+    AsynchronousFileChannel afc = AsynchronousFileChannel.open(path, WRITE,
+        CREATE);
+    WriteHandler handler = new WriteHandler();
+    ByteBuffer dataBuffer = getDataBuffer();
+    Attachment attach = new Attachment();
+    attach.asyncChannel = afc;
+    attach.buffer = dataBuffer;
+    attach.path = path;
+    afc.write(dataBuffer, 0, attach, handler);
+    System.out.println("Sleeping for 5  seconds...");
+    Thread.sleep(5000);
+  }
+  publicstatic ByteBuffer getDataBuffer() {
+    String lineSeparator = System.getProperty("line.separator");
+    StringBuilder sb = new StringBuilder();
+    sb.append("test");
+    sb.append(lineSeparator);
+    sb.append("test");
+    sb.append(lineSeparator);
+    String str = sb.toString();
+    Charset cs = Charset.forName("UTF-8");
+    ByteBuffer bb = ByteBuffer.wrap(str.getBytes(cs));
+    return bb;
+  }
+}
+class Attachment {
+  public Path path;
+  public ByteBuffer buffer;
+  public AsynchronousFileChannel asyncChannel;
+}
+class WriteHandler implements CompletionHandler&lt;Integer, Attachment&gt; {
+  @Override
+  public void completed(Integer result, Attachment attach) {
+    System.out.format("%s bytes written  to  %s%n", result,
+        attach.path.toAbsolutePath());
+    try {
+       attach.asyncChannel.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+  @Override
+  public void failed(Throwable e, Attachment attach) {
+    try {
+      attach.asyncChannel.close();
+    } catch (IOException e1) {
+      e1.printStackTrace();
+    }
+  }
+}</code></pre></div>
+<h2 id="example">Example</h2>
+<p>The following code demonstrates how to use a Future object to handle the results of an asynchronous write to a file.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">importstatic java.nio.file.StandardOpenOption.CREATE;
+importstatic java.nio.file.StandardOpenOption.WRITE;
+/*fromwww.java2s.com*/import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.AsynchronousFileChannel;
+import java.nio.charset.Charset;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.Future;
+publicclass Main {
+  publicstatic ByteBuffer getDataBuffer() {
+    String lineSeparator = System.getProperty("line.separator");
+    StringBuilder sb = new StringBuilder();
+    sb.append("test");
+    sb.append(lineSeparator);
+    String str = sb.toString();
+    Charset cs = Charset.forName("UTF-8");
+    ByteBuffer bb = ByteBuffer.wrap(str.getBytes(cs));
+    return bb;
+  }
+  publicstaticvoid main(String[] args) throws Exception {
+    Path path = Paths.get("test.txt");
+    try (AsynchronousFileChannel afc = AsynchronousFileChannel.open(path,
+        WRITE, CREATE)) {
+      ByteBuffer dataBuffer = getDataBuffer();
+      Future&lt;Integer&gt; result = afc.write(dataBuffer, 0);
+      while (!result.isDone()) {
+        System.out.println("Sleeping for 2  seconds...");
+        Thread.sleep(2000);
+      }
+      int writtenBytes = result.get();
+      System.out.format("%s bytes written  to  %s%n", writtenBytes,
+          path.toAbsolutePath());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="example-2">Example 2</h2>
+<p>The following code demonstrates how to use a CompletionHandler object to handle the results of an asynchronous read from a file.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">importstatic java.nio.file.StandardOpenOption.READ;
+/*www.java2s.com*/import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.AsynchronousFileChannel;
+import java.nio.channels.CompletionHandler;
+import java.nio.charset.Charset;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+publicclass Main {
+  publicstaticvoid main(String[] args) throws Exception{
+    Path path = Paths.get("test.txt");
+    AsynchronousFileChannel afc = AsynchronousFileChannel.open(path, READ);
+    ReadHandler handler = new ReadHandler();
+    int fileSize = (int) afc.size();
+    ByteBuffer dataBuffer = ByteBuffer.allocate(fileSize);
+    Attachment attach = new Attachment();
+    attach.asyncChannel = afc;
+    attach.buffer = dataBuffer;
+    attach.path = path;
+    afc.read(dataBuffer, 0, attach, handler);
+    System.out.println("Sleeping for 5  seconds...");
+    Thread.sleep(5000);
+  }
+}
+class Attachment {
+  public Path path;
+  public ByteBuffer buffer;
+  public AsynchronousFileChannel asyncChannel;
+}
+class ReadHandler implements CompletionHandler&lt;Integer, Attachment&gt; {
+  @Override
+  publicvoid completed(Integer result, Attachment attach) {
+    System.out.format("%s bytes read   from  %s%n", result, attach.path);
+    System.out.format("Read data is:%n");
+    byte[] byteData = attach.buffer.array();
+    Charset cs = Charset.forName("UTF-8");
+    String data = new String(byteData, cs);
+    System.out.println(data);
+    try {
+      // Close the channel
+      attach.asyncChannel.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+  @Override
+  publicvoid failed(Throwable e, Attachment attach) {
+    System.out.format("Read operation  on  %s  file failed."
+        + "The  error is: %s%n", attach.path, e.getMessage());
+    try {
+      // Close the channel
+      attach.asyncChannel.close();
+    } catch (IOException e1) {
+      e1.printStackTrace();
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="example-3">Example 3</h2>
+<p>The following code shows how to use a Future object to handle the results of an asynchronous read from a file. It uses the wait method (a Future.get() method call) to wait for the asynchronous file I/O to complete.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*www.java2s.com*/importstatic java.nio.file.StandardOpenOption.READ;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.AsynchronousFileChannel;
+import java.nio.charset.Charset;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+publicclass Main {
+  publicstaticvoid main(String[] args) throws Exception {
+    Path path = Paths.get("test.txt");
+    try (AsynchronousFileChannel afc = AsynchronousFileChannel.open(path, READ)) {
+      int fileSize = (int) afc.size();
+      ByteBuffer dataBuffer = ByteBuffer.allocate(fileSize);
+      Future&lt;Integer&gt; result = afc.read(dataBuffer, 0);
+      int readBytes = result.get();
+      System.out.format("%s bytes read   from  %s%n", readBytes, path);
+      System.out.format("Read data is:%n");
+      byte[] byteData = dataBuffer.array();
+      Charset cs = Charset.forName("UTF-8");
+      String data = new String(byteData, cs);
+      System.out.println(data);
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-io-java-nio-directory-event.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java Di...</span></a><a class="pager-btn pager-next" href="bufferedinputstream-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Buffere...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

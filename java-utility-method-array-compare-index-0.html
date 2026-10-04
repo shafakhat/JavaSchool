@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Utililty Methods Array Compare - JavaSchool</title>
+<meta name="description" content="The list of methods to do Array Compare are organized into topic(s).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-utility-method-array-compare-index-0">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-utility-method.html">java utility method</a></nav>
+    <h1>Java Utililty Methods Array Compare</h1>
+<p>List of utility methods to do Array Compare</p>
+<h2 id="description">Description</h2>
+<p>The list of methods to do Array Compare are organized into topic(s).</p>
+<h2 id="method">Method</h2>
+<p>booleanareEqual(byte[] a, byte[] b)</p>
+<p>Returns true if the two designated byte arrays are (a) non-null, (b) of the same length, and (c) contain the same values.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (a == null || b == null) {
+    return false;
+int aLength = a.length;
+if (aLength != b.length) {
+    return false;
+for (int i = 0; i &lt; aLength; i++) {
+...</code></pre></div>
+<p>booleanareEqual(byte[] a, byte[] b) Compares two byte arrays for equality.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int aLength = a.length;
+if (aLength != b.length) {
+    return false;
+for (int i = 0; i &lt; aLength; i++) {
+    if (a[i] != b[i]) {
+        return false;
+return true;</code></pre></div>
+<p>booleanareEqual(byte[] a, byte[] b) Compares two byte arrays for equality.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int aLength = a.length;
+if (aLength != b.length)
+    return false;
+for (int i = 0; i &lt; aLength; i++)
+    if (a[i] != b[i])
+        return false;
+return true;</code></pre></div>
+<p>booleanareEqual(byte[] a, byte[] b) are Equal</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int aLength = a.length;
+if (aLength != b.length)
+    return false;
+for (int i = 0; i &lt; aLength; i++)
+    if (a[i] != b[i])
+        return false;
+return true;</code></pre></div>
+<p>booleanareEqual(byte[] array1, byte[] array2) Determine if the two passed arrays have exactly the same values.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">boolean equality;
+if (array1.length == array2.length) {
+    equality = true;
+    for (int loop = 0; equality &amp;&amp; loop &lt; array1.length; loop++) {
+        if (array1[loop] != array2[loop]) {
+            equality = false;
+} else {
+    equality = false;
+return equality;</code></pre></div>
+<p>booleanAreEqual(double[] vector1, double[] vector2) Use this method to check that two vectors have are the same, i.e.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">try {
+    CheckArrays(vector1, vector2);
+} catch (IllegalArgumentException ex) {
+    return false;
+for (int i = 0; i &lt; vector2.length; i++) {
+    if (vector1[i] != vector2[i])
+        return false;
+...</code></pre></div>
+<p>booleanareEqual(final byte[] a, final byte[] b) Checks the specified arrays for equality in constant time.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (a.length != b.length) {
+    return false;
+int result = 0;
+for (int i = 0; i &lt; a.length; i++) {
+    result |= a[i] ^ b[i];
+return result == 0;
+...</code></pre></div>
+<p>booleanareEqualBytes(byte[] b1, byte[] b2) are Equal Bytes</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (b1.length != b2.length) {
+    return false;
+for (int i = 0; i &lt; b1.length; i++) {
+    if (b1[i] != b2[i]) {
+        return false;
+return true;</code></pre></div>
+<p>booleanareEqualPropPaths(String[] pp1, String[] pp2) Tests whether two property paths are equal, i.e.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (pp1 == pp2)
+    return true;
+if (pp1 == null || pp2 == null || pp1.length != pp2.length)
+    return false;
+for (int i = pp1.length - 1; i &gt; -1; i--)
+    if (pp1[i] == null || !pp1[i].equals(pp2[i]))
+        return false;
+return true;
+...</code></pre></div>
+<p>booleanareEquals(byte[] g1, byte[] g2) are Equals</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if ((g1 == null &amp;&amp; g2 == null) || (g1 == null &amp;&amp; g2.length == 0) || (g2 == null &amp;&amp; g1.length == 0))
+    return true;
+boolean b = true;
+for (int i = 0; i &lt; g1.length; i++)
+    b = b &amp;&amp; g1[i] == g2[i];
+return b;</code></pre></div>
+<p><a href="https://www.java2s.com/">HOME</a> | Copyright © www.java2s.com 2016</p>
+    <div class="pager"><a class="pager-btn" href="lucene-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Lucene Tutorial - Lucene I...</span></a><a class="pager-btn pager-next" href="mongodb-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">MongoDB Tutorial - MongoDB...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Tutorial - Java Exception Type - JavaSchool</title>
+<meta name="description" content="The following diagram shows the Java exception type hierarchy:">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-language-java-exception-type">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-language.html">New Java Language</a></nav>
+    <h1>Java Tutorial - Java Exception Type</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>The following diagram shows the Java exception type hierarchy:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Throwable
+ +---Exception.
+ |    +--- RuntimeException
+ +---Error</code></pre></div>
+<p>Exception and its subclasses are used for exceptional conditions that user programs should catch. You can subclass Exception to create your own custom exception types.</p>
+<p>Error defines exceptions that are not expected to be caught under normal circumstances. Java run-time system use Error to indicate errors in the run-time environment. Stack overflow is an example of such an error.</p>
+<h2 id="uncaught-exceptions">Uncaught Exceptions</h2>
+<p>This small program includes an expression that intentionally causes a divide-by-zero error:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String args[]) {
+    int d = 0;
+    int a = 42 / d;
+  }
+}</code></pre></div>
+<p>Here is the exception generated when this example is executed:</p>
+<h2 id="example">Example</h2>
+<p>Here is another version of the preceding program that introduces the same error but in a method separate from main( ):</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  staticvoid subroutine() {
+    int d = 0;/*fromwww.java2s.com*/int a = 10 / d;
+  }
+  publicstaticvoid main(String args[]) {
+    subroutine();
+  }
+}</code></pre></div>
+<p>The resulting stack trace from the default exception handler shows how the entire call stack is displayed:</p>
+<h2 id="example-2">Example 2</h2>
+<p>You can display exception description message in a println( ) statement.</p>
+<p>For example, the catch block can be written like this:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Random;
+/*fromwww.java2s.com*/publicclass Main {
+  publicstaticvoid main(String args[]) {
+    int a = 0, b = 0, c = 0;
+    Random r = new Random();
+    for (int i = 0; i &lt; 32000; i++) {
+      try {
+        b = r.nextInt();
+        c = r.nextInt();
+        a = 12345 / (b / c);
+      } catch (ArithmeticException e) {
+        System.out.println("Exception: " + e);
+        a = 0; // set a to zero and continue
+      }
+      System.out.println("a: " + a);
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="what-are-javas-built-in-exceptions">What are Java's Built-in Exceptions</h2>
+<p>Exceptions subclassing RuntimeException need not be included in any method's throws list. These are called unchecked exceptions.</p>
+<p>The unchecked exceptions defined in java.lang are listed in the following table.</p>
+<p>Exception  Meaning ---  --- ArithmeticException  Arithmetic error, such as divide-by-zero. ArrayIndexOutOfBoundsException  Array index is out-of-bounds. ArrayStoreException  Assignment to an array element of an incompatible type. ClassCastException  Invalid cast. EnumConstantNotPresentException  An attempt is made to use an undefined enumeration value. IllegalArgumentException  Illegal argument used to invoke a method. IllegalMonitorStateException  Illegal monitor operation, such as waiting on an unlocked thread. IllegalStateException  Environment or application is in incorrect state. IllegalThreadStateException  Requested operation not compatible with current thread state. IndexOutOfBoundsException  Some type of index is out-of-bounds. NegativeArraySizeException  Array created with a negative size. NullPointerException  Invalid use of a null reference. NumberFormatException  Invalid conversion of a string to a numeric format. SecurityException  Attempt to violate security. StringIndexOutOfBounds  Attempt to index outside the bounds of a string. TypeNotPresentException  Type not found. UnsupportedOperationException  An unsupported operation was encountered.</p>
+<p>The checked exceptions are listed in the following table.</p>
+<p>Exception  Meaning ---  --- ClassNotFoundException  Class not found. CloneNotSupportedException  Attempt to clone an object that does not implement the Cloneable interface. IllegalAccessException  Access to a class is denied. InstantiationException  Attempt to create an object of an abstract class or interface. InterruptedException  One thread has been interrupted by another thread. NoSuchFieldException  A requested field does not exist. NoSuchMethodException  A requested method does not exist.</p>
+<h2 id="java-custom-exception-class">Java custom exception class</h2>
+<p>You can create your own exception class by defining a subclass of Exception.</p>
+<p>The Exception class does not define any methods of its own. It inherits methods provided by Throwable.</p>
+<p>The following program creates a custom exception type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyException extends Exception {
+  privateint detail;
+/*www.java2s.com*/
+  MyException(int a) {
+    detail = a;
+  }
+  public String toString() {
+    return"MyException[" + detail + "]";
+  }
+}
+publicclass Main {
+  staticvoid compute(int a) throws MyException {
+    System.out.println("Called compute(" + a + ")");
+    if (a &gt; 10)
+      thrownew MyException(a);
+    System.out.println("Normal exit");
+  }
+  publicstaticvoid main(String args[]) {
+    try {
+      compute(1);
+      compute(20);
+    } catch (MyException e) {
+      System.out.println("Caught " + e);
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="java-chained-exceptions">Java chained exceptions</h2>
+<p>The chained exception allows you to associate another exception with an exception. This second exception describes the cause of the first exception.</p>
+<p>To allow chained exceptions, two constructors and two methods were added to Throwable.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Throwable(Throwable causeExc)
+Throwable(String msg, Throwable causeExc)</code></pre></div>
+<p>Here is an example that illustrates the mechanics of handling chained exceptions:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  staticvoid demoproc() {
+    NullPointerException e = new NullPointerException("top layer");
+    e.initCause(new ArithmeticException("cause"));
+    throw e;//www.java2s.com
+  }
+  publicstaticvoid main(String args[]) {
+    try {
+      demoproc();
+    } catch (NullPointerException e) {
+      System.out.println("Caught: " + e);
+      System.out.println("Original cause: " + e.getCause());
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-language-java-exception-statements.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Excep...</span></a><a class="pager-btn pager-next" href="java-language-java-annotation.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Annot...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

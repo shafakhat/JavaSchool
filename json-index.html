@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java JSON Tutorial - JSON Introduction - JavaSchool</title>
+<meta name="description" content="JSON stands for JavaScript Object Notation. It is a lightweight, text-based, human-readable data format.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-json-index">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-json.html">New JSON</a></nav>
+    <h1>Java JSON Tutorial - JSON Introduction</h1>
+<ul><li>Next »</li></ul>
+<p>JSON stands for JavaScript Object Notation. It is a lightweight, text-based, human-readable data format.</p>
+<p>JSON is Language independent.</p>
+<p>The JSON format is specified in RFC 4627</p>
+<p>The official Internet media type for JSON is application/json. The JSON filename extension is .json.</p>
+<p>JSON is often used with JavaScript based application.</p>
+<p>JSON format is used for serializing and transmitting data over network.</p>
+<h2 id="json-example">JSON Example</h2>
+<p>The following JSON data shows how to store Books information.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+{
+    "book": [
+    {
+       "id":"01",
+       "language": "Java",
+       "edition": "third",
+       "author": "java2s.com"
+    },
+    {
+       "id":"02",
+       "language": "JSON",
+       "edition": "second""author": "Jack"
+    }]
+}</code></pre></div>
+<h2 id="output-json">Output JSON</h2>
+<p>The following code shows how to output JSON format data using Javascript. Save the code as json.htm:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;html&gt;
+&lt;head&gt;
+&lt;script language="javascript" &gt;
+  var object1 = { "language" : "Java", "author"  : "java2s.com" };
+  document.write("&lt;h3&gt;Language = " + object1.language+"&lt;/h3&gt;");
+  document.write("&lt;h3&gt;Author = " + object1.author+"&lt;/h3&gt;");
+  var object2 = { "language" : "JSON", "author"  : "Jack" };
+  document.write("&lt;br&gt;");
+  document.write("&lt;h3&gt;Language = " + object2.language+"&lt;/h3&gt;");
+  document.write("&lt;h3&gt;Author = " + object2.author+"&lt;/h3&gt;");
+  document.write("&lt;hr /&gt;");
+  document.write(object2.language +"&lt;br/&gt; "+ object2.author);
+  document.write("&lt;hr /&gt;");
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+<h2 id="json-comparison-with-xml">JSON Comparison with XML</h2>
+<p>JSON and XML are both human readable, language independent data formats.</p>
+<p>XML is more verbose than JSON and used to describe structured data.</p>
+<p>JSON supports arrays.</p>
+<p>The following JSON specify the company and its name.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+{
+   "company": "java2s.com",
+   "name": "Java2s"
+}</code></pre></div>
+<p>Rewrite the above JSON in XML as follows.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;car&gt;
+   &lt;company&gt;java2s.com&lt;/company&gt;
+   &lt;name&gt;Java2s&lt;/name&gt;
+&lt;/car&gt;</code></pre></div>
+<ul><li>Next »</li></ul>
+    <div class="pager"><a class="pager-btn" href="log4j-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">log4j Tutorial - Log4j Int...</span></a><a class="pager-btn pager-next" href="java-utility-method-array-contain-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

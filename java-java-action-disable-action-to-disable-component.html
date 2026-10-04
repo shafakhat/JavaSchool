@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Action disable action to disable component - JavaSchool</title>
+<meta name="description" content="privateJMenuItem disableActionItem = newJMenuItem(&quot;Disable the Action&quot;);">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-java-action-disable-action-to-disable-component">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <h1>Java Action disable action to disable component</h1>
+<ul><li>javax.swing</li><li>javax.swing AbstractAction Action ActionMap BorderFactory BoundedRangeModel Box BoxLayout ButtonGroup DefaultComboBoxModel DefaultListCellRenderer DefaultListModel GroupLayout Icon ImageIcon InputMap InputVerifier JButton JCheckBox JCheckBoxMenuItem JColorChooser JComboBox JComponent JDesktopPane JDialog JEditorPane JFileChooser JFormattedTextField JFrame JInternalFrame JLabel JLayer JList JMenu JMenuItem JOptionPane JPanel JPasswordField JPopupMenu JProgressBar JRadioButton JRadioButtonMenuItem JRootPane JScrollBar JScrollPane JSlider JSpinner JTabbedPane JTable JTextArea JTextField JTextPane JToggleButton JToolBar JTree KeyStroke ListSelectionModel SpinnerDateModel SpinnerListModel SpinnerModel SpinnerNumberModel SpringLayout SwingUtilities SwingWorker Timer ToolTipManager UIManager</li></ul>
+<h2 id="description">Description</h2>
+<p>Java Action disable action to disable component</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.AbstractAction;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JToolBar;
+
+publicclass Main extendsJFrame {
+   publicstaticfinalString ENABLE = "ENABLE";
+   publicstaticfinalString DISABLE = "DISABLE";
+
+   privateJToolBar toolBar = newJToolBar();
+   privateJMenuBar menuBar = newJMenuBar();
+   privateJMenu testMenu = newJMenu("Test");
+   private MyAction theAction = new MyAction();
+   privateJMenuItem disableActionItem = newJMenuItem("Disable the Action");
+
+   public Main() {
+      this.setJMenuBar(menuBar);
+      menuBar.add(testMenu);//fromwww.java2s.com
+
+      testMenu.add(theAction);
+      toolBar.add(theAction);
+
+      disableActionItem.setActionCommand(DISABLE);
+      testMenu.add(disableActionItem);
+      disableActionItem.addActionListener(newActionListener() {
+         publicvoid actionPerformed(ActionEvent e) {
+            if (e.getActionCommand().equals(DISABLE)) {
+               theAction.setEnabled(false);
+               disableActionItem.setText("Enable the Action");
+               disableActionItem.setActionCommand(ENABLE);
+            } else {
+               theAction.setEnabled(true);
+               disableActionItem.setText("Disable the Action");
+               disableActionItem.setActionCommand(DISABLE);
+            }
+         }
+      });
+      this.getContentPane().add(toolBar, BorderLayout.NORTH);
+      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      this.setSize(320, 200);
+      this.setVisible(true);
+   }
+
+   publicstaticvoid main(String[] args) {
+      Main t = new Main();
+   }
+}
+
+class MyAction extendsAbstractAction {
+   public MyAction() {
+      super("Change Color");
+   }
+   publicvoid actionPerformed(ActionEvent e) {
+      System.out.println("action");
+   }
+}</code></pre></div>
+<p>PreviousNext</p>
+<h2 id="related">Related</h2>
+<ul><li>Java AbstractAction transfer focus</li><li>Java Action attribute</li><li>Java Action create</li><li>Java Swing ActionMap list action</li><li>Java BorderFactory create line border</li></ul>
+    <div class="pager"><a class="pager-btn" href="j2ee-insertintodatabase.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Insert Into Database</span></a><a class="pager-btn pager-next" href="java-java-algorithms-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Java Basic Algorithms</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

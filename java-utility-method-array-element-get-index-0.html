@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Utililty Methods Array Element Get - JavaSchool</title>
+<meta name="description" content="The list of methods to do Array Element Get are organized into topic(s).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-utility-method-array-element-get-index-0">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-utility-method.html">java utility method</a></nav>
+    <h1>Java Utililty Methods Array Element Get</h1>
+<p>List of utility methods to do Array Element Get</p>
+<h2 id="description">Description</h2>
+<p>The list of methods to do Array Element Get are organized into topic(s).</p>
+<h2 id="method">Method</h2>
+<p>TarrayElement(T[] array, int index) Gets the element at an index in the array, but returns null if the index is outside of the array bounds.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (index &lt; 0 || index &gt;= array.length)
+    return null;
+elsereturn array[index];</code></pre></div>
+<p>Tget(int index, final T[]... arrays) get</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int shift = index;
+for (T[] tab : arrays) {
+    if (shift &lt; tab.length) {
+        return tab[shift];
+    } else {
+        shift -= tab.length;
+return null;</code></pre></div>
+<p>Objectget(Object[] array, int index) get</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">return getArrayLength(array) &gt; index ? array[index] : null;</code></pre></div>
+<p>Tget(T[] array, int index) get</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">return isRange(array, index) ? array[index] : null;</code></pre></div>
+<p>Tget(T[] array, int index)</p>
+<p>Returns the value at the given index in the arrayor null if the index is out of bounds.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">return index &gt;= 0 &amp;&amp; index &lt; array.length ? array[index] : null;</code></pre></div>
+<p>Tget(T[] array, int index) get</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (array.length &lt; index + 1) {
+    return null;
+return array[index];</code></pre></div>
+<p>ArrayListgetAllMatches(String[] target, String[] pattern) Input: array of strings, and a target array Output: the array of all the appearance</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">ArrayList&lt;Integer&gt; result = newArrayList&lt;Integer&gt;();
+int start = 0;
+while (start &lt; target.length) {
+    String[] subArray = newString[target.length - start];
+    for (int iter = 0; iter &lt; subArray.length; iter++) {
+        subArray[iter] = target[iter + start];
+    int index = getFirst(subArray, pattern);
+...</code></pre></div>
+<p>MapgetArgPairsSeparatedByChar(String[] args, String separator) get Arg Pairs Separated By Char</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; argPairs = newHashMap&lt;String, String&gt;();
+if (args != null) {
+    for (String argPair : args) {
+        String[] pair = argPair.split("=");
+        if (pair.length &gt; 1) {
+            argPairs.put(pair[0], pair[1]);
+return argPairs;</code></pre></div>
+<p>String[]getArgs(final String[] args, final String[] defaultValue, final String... flags) Retrieve multi argument after the given flag and until the next "-*".</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (flags == null || flags.length == 0)
+    return null;
+if (args == null || args.length == 0)
+    return defaultValue;
+finalList&lt;String&gt; r = newArrayList&lt;String&gt;();
+int i = 0;
+outer: for (; i &lt; args.length; i++)
+    for (finalString flag : flags)
+...</code></pre></div>
+<p>MapgetArgs(String[] args, String... singleArgs) Get CLI arguments.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String[]&gt; params = newHashMap&lt;String, String[]&gt;();
+for (int i = 0; i &lt; args.length; i++) {
+    String inArg = args[i];
+    if (!inArg.startsWith("--")) {
+        thrownewException("Wrong argument syntax: " + inArg);
+    } else {
+        inArg = inArg.substring(2);
+    for (int j = 0; j &lt; singleArgs.length; j++) {
+        if (singleArgs[j].equals(inArg)) {
+            params.put(inArg, newString[] {});
+    if (inArg.contains("=")) {
+        String[] keyset = inArg.split("=", 2);
+        if (keyset[1].startsWith("{") &amp;&amp; keyset[1].endsWith("}")) {
+            params.put(keyset[0], newString[] { keyset[1].substring(1, keyset[1].length() - 1) });
+        } else {
+            params.put(keyset[0], keyset[1].split(","));
+return params;</code></pre></div>
+<p><a href="https://www.java2s.com/">HOME</a> | Copyright © www.java2s.com 2016</p>
+    <div class="pager"><a class="pager-btn" href="java-utility-method-array-duplicate-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="java-utility-method-array-empty-check-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

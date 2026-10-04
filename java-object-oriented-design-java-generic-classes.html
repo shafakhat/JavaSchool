@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java Generic Classes - JavaSchool</title>
+<meta name="description" content="Using generics, we can write code without knowing the type of the objects the code operates on. It lets us create generic classes, constructors, and methods.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-generic-classes">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java Generic Classes</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>Using generics, we can write code without knowing the type of the objects the code operates on. It lets us create generic classes, constructors, and methods.</p>
+<p>A generic class is defined using formal type parameters.</p>
+<p>Formal type parameters are a list of comma-separated variable names placed in angle-brackets &lt;&gt; after the class name in the class declaration.</p>
+<h2 id="syntax">Syntax</h2>
+<p>The following code declares a class Wrapper that takes one formal type parameter:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Wrapper&lt;T&gt;  {
+}</code></pre></div>
+<p>The parameter has been given a name T.</p>
+<p>T is a type variable, which could be any reference type in Java, such as String, Integer, Double, etc.</p>
+<p>The formal type parameter value is specified when the Wrapper class will be used.</p>
+<h2 id="formal-parameters">Formal Parameters</h2>
+<p>The classes that take formal type parameter are also known as parameterized classes.</p>
+<p>You can declare a variable of the Wrapper class specifying the String type as the value for its formal type parameter as shown below.</p>
+<p>Here, String is the actual type parameter.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Wrapper&lt;String&gt; stringWrapper;</code></pre></div>
+<p>Java lets us use a generic class without specifying the formal type parameters.</p>
+<h2 id="usage">Usage</h2>
+<p>This is allowed for backward compatibility. You can also declare a variable of the Wrapper&lt;T&gt; class as shown:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Wrapper  aRawWrapper;</code></pre></div>
+<p>When a generic class is used without specifying the actual type parameters, it is known as raw type. The above declaration used the Wrapper&lt;T&gt; class as a raw type as it did not specify the value for T.</p>
+<p>The actual type parameter for a generic class must be a reference type.</p>
+<p>Primitive types are not allowed as the actual type parameters for a generic class.</p>
+<p>A class may take more than one formal type parameter. The following code declares a Mapper class that takes two formal parameters, T and R:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Mapper&lt;T, R&gt;    {
+}</code></pre></div>
+<p>We can declare variable of the Mapper&lt;T, R&gt; class as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Mapper&lt;String, Integer&gt;  mapper;</code></pre></div>
+<p>Here, the actual type parameters are String and Integer.</p>
+<p>The formal type parameters are available inside the class body to be used as types.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Wrapper&lt;T&gt; {
+  private T obj;
+  public Wrapper(T obj) {
+    this.obj = obj;
+  }
+  public T get() {
+    return obj;
+  }
+  public void set(T obj) {
+    this.obj = obj;
+  }
+}</code></pre></div>
+<p>The Wrapper&lt;T&gt; class uses the formal type parameter to declare instance variable obj to declare a formal parameter for its constructor and set() method, and as a return type for the get() method.</p>
+<p>You can create an object of the generic type by specifying the actual type parameter for the constructor as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Wrapper&lt;String&gt; w1  = new Wrapper&lt;String&gt;("Hello");</code></pre></div>
+<p>We can omit the actual type parameter. In the following code, the compiler will infer the actual type parameter for the constructor as String:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Wrapper&lt;String&gt; w1  = new Wrapper&lt;&gt;("Hello");</code></pre></div>
+<p>Once you have declared a variable of the generic class, you can think of the formal type parameter as the specified actual type parameter for all practical purposes.</p>
+<p>Now, you can think that, for w1, the get() method of the Wrapper class returns a String.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+String s1=  w1.get();</code></pre></div>
+<h2 id="example">Example</h2>
+<p>The following code shows how to use Wrapper class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstatic void main(String[] args) {
+    Wrapper&lt;String&gt; w1 = new Wrapper&lt;&gt;("Hello");
+    String s1 = w1.get();
+    System.out.println("s1=" + s1);
+    w1.set("Testing generics");
+    String s2 = w1.get();
+    System.out.println("s2=" + s2);
+    w1.set(null);
+    String s3 = w1.get();
+    System.out.println("s3=" + s3);
+  }
+}
+class Wrapper&lt;T&gt; {
+  private T obj;
+  public Wrapper(T obj) {
+    this.obj = obj;
+  }
+  public T get() {
+    return obj;
+  }
+  public void set(T obj) {
+    this.obj = obj;
+  }
+}</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-abstract-classes-methods.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-generic-constraints.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

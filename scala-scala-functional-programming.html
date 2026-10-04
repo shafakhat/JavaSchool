@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scala Tutorial - Scala Functional Programming - JavaSchool</title>
+<meta name="description" content="Function literals allow us to have an expression of a function type that we can write in a short format without declaring a name for it.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-scala-scala-functional-programming">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-scala.html">New Scala</a></nav>
+    <h1>Scala Tutorial - Scala Functional Programming</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>Scala allows us to express functions as literals.</p>
+<p>Function literals allow us to have an expression of a function type that we can write in a short format without declaring a name for it.</p>
+<p>A function type could be one of the following:</p>
+<ul><li>The type of a variable or parameter to which a function can be assigned</li><li>An argument of a higher-order function taking a function parameter</li><li>The result type of higher-order function returning a function</li></ul>
+<p>A function literal starts with a parenthesized comma-separated list of arguments followed by an arrow and the body of the function.</p>
+<p>A function literal is also called an anonymous function.</p>
+<p>Consider an add function:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+val add = (x: Int, y: Int) =&gt; x + y</code></pre></div>
+<p>Using the function literal you can define the add function as illustrated here:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+(x: Int, y: Int) =&gt; x + y.</code></pre></div>
+<p>A function literal is instantiated into objects called function values.</p>
+<p>The function object extends one of the FunctionN traits, such as Function0, Function1, and so on up to Function22.</p>
+<p>Depending on the number of arguments in the function, the corresponding FunctionN trait is chosen by the compiler.</p>
+<p>For a function with two arguments, the compiler elects Function2 as the underlying type. For a function with 3 arguments compiler chooses Function3 , for a function with 4 arguments, Function4 and so on.</p>
+<p>Because the function value is an object, it could be stored in a variable and it could be invoked using the parentheses function-call as illustrated here:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main extends App {
+   val add = (a: Int, b: Int) =&gt; a + b
+   println(add(1, 2));
+}</code></pre></div>
+<h2 id="first-class-function-and-higher-order-function">First Class Function and Higher Order Function</h2>
+<p>Scala functions are objects.</p>
+<p>In functional programming, functions are first-class citizens. A first-class function is a function that can be</p>
+<ul><li>Assigned to variables,</li><li>Passed as an argument to the other function</li><li>Returned as values from the other function.</li></ul>
+<p>The function that takes a function as an argument or returns a function, are called higher-order functions.</p>
+<h2 id="function-as-variable">Function as Variable</h2>
+<p>Just as we can pass String, Int, and other variables, we can pass a function around like a variable.</p>
+<p>We can define a function literal, and then assign that literal to a variable.</p>
+<p>The following code defines a function literal that takes an Int parameter and returns a value that is twice the amount of the Int that is passed in:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+(i: Int) =&gt; { i * 2 }</code></pre></div>
+<p>We can now assign that function literal to a variable:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+val doubler = (i: Int) =&gt; { i * 2 }</code></pre></div>
+<p>The variable doubler is an instance of a function, known as a function value.</p>
+<p>We can now invoke doubler as illustrated here:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+doubler(2)</code></pre></div>
+<p>doubler is an instance of the Function1 trait, which defines a function that takes one argument.</p>
+<p>doubler is a function created using the keyword val and assigned to a variable.</p>
+<h2 id="function-as-parameter">Function as Parameter</h2>
+<p>We can create a function or a method that takes a function as a parameter.</p>
+<p>For this, first define a method that takes a function as a parameter.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+    def operation(functionparam:(Int, Int) =&gt; Int) {
+        println(functionparam(4,4))
+    }</code></pre></div>
+<p>The operation method takes one parameter named functionparam, which is a function.</p>
+<p>The functionparam function takes two Int and returns an Int.</p>
+<p>The operation method returns a Unit that indicates that operation method returns nothing.</p>
+<p>Next, define a function that matches the expected signature. The following add function matches that signature, because it takes two Int arguments and returns an Int:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+val add = (x: Int, y:Int) =&gt; { x + y }</code></pre></div>
+<p>Now we can pass an add function into the operation method:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main extends App {
+    def operation(functionparam:(Int, Int) =&gt; Int) {
+        println(functionparam(4,4))
+    }
+    val add = (x: Int, y:Int) =&gt; { x + y }
+    operation(add)
+}</code></pre></div>
+<p>Any function that matches this signature can be passed into the operation method.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main extends App {
+    def operation(functionparam:(Int, Int) =&gt; Int) {
+        println(functionparam(4,4))
+    }
+    val add = (x: Int, y:Int) =&gt; { x + y }
+    operation(add)
+    val subtract = (x: Int, y:Int) =&gt; { x - y }
+    val multiply = (x: Int, y:Int) =&gt; { x*y }
+    operation(subtract)
+    operation(multiply)
+}</code></pre></div>
+<h2 id="returning-a-function">Returning a Function</h2>
+<p>We can return a function from a function or method.</p>
+<p>In order to do this, first define an anonymous function. The following code declares an anonymous function that takes a String argument and returns a String:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+(name: String) =&gt; { "hello" + " " + name }</code></pre></div>
+<p>Now we will define a method that returns the anonymous function that we just defined.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+def greeting() = (name: String) =&gt; {"hello" + " " + name}</code></pre></div>
+<p>On the left side of the = symbol you have a normal method declaration:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+def greeting()</code></pre></div>
+<p>On the right side of the = is a function literal:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+def greeting() = (name: String) =&gt; {"hello" + " " + name}</code></pre></div>
+<p>Now you can assign greeting() to a variable:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+val greet= greeting()</code></pre></div>
+<p>Because the anonymous function takes a String parameter name, we can pass it a name:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main extends App {
+    def greeting() = (name: String) =&gt; {"hello" + " " + name}
+    val greet= greeting()
+    println(greet("Scala"))
+}</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-utility-method-array-reverse-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="java-utility-method-array-rotate-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

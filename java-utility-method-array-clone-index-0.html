@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Utililty Methods Array Clone - JavaSchool</title>
+<meta name="description" content="The list of methods to do Array Clone are organized into topic(s).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-utility-method-array-clone-index-0">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-utility-method.html">java utility method</a></nav>
+    <h1>Java Utililty Methods Array Clone</h1>
+<p>List of utility methods to do Array Clone</p>
+<h2 id="description">Description</h2>
+<p>The list of methods to do Array Clone are organized into topic(s).</p>
+<h2 id="method">Method</h2>
+<p>boolean[]clone(boolean[] array)</p>
+<p>Clones an array returning a typecast result and handling null. if (array == null) { return null; return copyOf(array, array.length);</p>
+<p>boolean[]clone(boolean[] array) clone</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">boolean[] newArray = newboolean[array.length];
+System.arraycopy(array, 0, newArray, 0, array.length);
+return newArray;</code></pre></div>
+<p>boolean[]clone(boolean[] in) clone</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">boolean[] ret = newboolean[in.length];
+System.arraycopy(in, 0, ret, 0, in.length);
+return ret;</code></pre></div>
+<p>byte[]clone(byte[] input) Clone a byte array.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (input == null) {
+    return null;
+byte[] ret = newbyte[input.length];
+System.arraycopy(input, 0, ret, 0, input.length);
+return ret;</code></pre></div>
+<p>byte[]clone(byte[] orig) Clone a byte array, maintaining awareness of null arrays</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (orig == null)
+    return null;
+return (byte[]) orig.clone();</code></pre></div>
+<p>byte[][]clone(byte[][] im) clone</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[][] clone = newbyte[im.length][im[0].length];
+copy(clone, im);
+return clone;</code></pre></div>
+<p>double[]clone(double[] array) Return a new copy of a double aray holding the same elements</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (array == null) {
+    return null;
+double[] clone = newdouble[array.length];
+for (int i = 0; i &lt; array.length; i++) {
+    clone[0] = array[i];
+return clone;
+...</code></pre></div>
+<p>double[]clone(double[] p) clone</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">double[] ret = newdouble[p.length];
+System.arraycopy(p, 0, ret, 0, p.length);
+return ret;</code></pre></div>
+<p>double[][]clone(double[][] source) Returns a clone of the specified array.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (source == null) {
+    thrownewIllegalArgumentException("Null 'source' argument.");
+double[][] clone = newdouble[source.length][];
+for (int i = 0; i &lt; source.length; i++) {
+    if (source[i] != null) {
+        double[] row = newdouble[source[i].length];
+        System.arraycopy(source[i], 0, row, 0, source[i].length);
+...</code></pre></div>
+<p>byte[]clone(final byte[] array) Clones an array of bytes.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">return clone(array, 0, array.length);</code></pre></div>
+<p><a href="https://www.java2s.com/">HOME</a> | Copyright © www.java2s.com 2016</p>
+    <div class="pager"><a class="pager-btn" href="jpa-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">JPA Tutorial - JPA Introdu...</span></a><a class="pager-btn pager-next" href="spring-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Spring Tutorial - Spring I...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

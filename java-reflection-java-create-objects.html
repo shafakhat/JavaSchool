@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Reflection Object Create - JavaSchool</title>
+<meta name="description" content="We can use reflection to create objects of a class dynamically. by invoking one of the constructors.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-reflection-java-create-objects">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-reflection.html">New Java Reflection</a></nav>
+    <h1>Java Reflection Object Create</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>We can use reflection to create objects of a class dynamically. by invoking one of the constructors.</p>
+<p>And then we can access the values of fields of objects, set their values, and invoke their methods.</p>
+<p>There are two ways to create objects:</p>
+<ul><li>Using the no-args constructor</li><li>Using the constructor with arguments</li></ul>
+<h2 id="no-args-constructor">no-args constructor</h2>
+<p>If you have the reference of a Class object, you can create an object of the class using the newInstance() method on the Class class.</p>
+<p>This method takes no parameter and is equivalent to using the new operator on the no-args constructor of the class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+MyClass m  = myObject.newInstance();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {/*www.java2s.com*/public MyClass() {
+     System.out.println("called");
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) throws InstantiationException {
+    Class&lt;MyClass&gt; personClass = MyClass.class;
+    try {
+      MyClass p = personClass.newInstance();
+      System.out.println(p);
+    } catch (InstantiationException | IllegalAccessException e) {
+      System.out.println(e.getMessage());
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="constructor-with-argument">Constructor with argument</h2>
+<p>You can create an object using reflection by invoking a particular constructor. It involves two steps.</p>
+<ul><li>Get an instance of the constructor</li><li>Call newInstance to invoke it</li></ul>
+<p>You can get the reference of this constructor as shown:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Constructor&lt;MyClass&gt; cons  = myClass.getConstructor(int.class, String.class);</code></pre></div>
+<p>Then call the newInstance() method with the arguments to create an object.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+//fromwww.java2s.comclass MyClass {
+  public MyClass(int i, String s) {
+    System.out.println("called");
+    System.out.println(i);
+    System.out.println(s);
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Class&lt;MyClass&gt; myClass = MyClass.class;
+    try {
+      Constructor&lt;MyClass&gt; cons = myClass.getConstructor(int.class,
+          String.class);
+      MyClass chris = cons.newInstance(1, "abc");
+      System.out.println(chris);
+    } catch (NoSuchMethodException | SecurityException | InstantiationException
+        | IllegalAccessException | IllegalArgumentException
+        | InvocationTargetException e) {
+      System.out.println(e.getMessage());
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="invoking-methods">Invoking Methods</h2>
+<p>We can invoke methods using reflection through the method reference.</p>
+<p>To invoke a method, call the invoke() method on the method's reference.</p>
+<p>Its first parameter is the object where it is from and the second parameter is a varargs for all the arguments in the same order as the method's declaration.</p>
+<p>In case of a static method, we just need specify null for the first argument.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+//www.java2s.comclass MyClass {
+  public MyClass() {
+  }
+  publicvoid setName(String n) {
+    System.out.println(n);
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Class&lt;MyClass&gt; myClass = MyClass.class;
+    try {
+      MyClass p = myClass.newInstance();
+      Method setName = myClass.getMethod("setName", String.class);
+      setName.invoke(p, "abc");
+    } catch (InstantiationException | IllegalAccessException
+        | NoSuchMethodException | SecurityException | IllegalArgumentException
+        | InvocationTargetException e) {
+      System.out.println(e.getMessage());
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-reflection-java-constructor-reflection.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Reflection - Java Con...</span></a><a class="pager-btn pager-next" href="java-reflection-java-field-access.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Reflection Field Access</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Utililty Methods Array Add - JavaSchool</title>
+<meta name="description" content="The list of methods to do Array Add are organized into topic(s).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-utility-method-array-add-index-0">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-utility-method.html">java utility method</a></nav>
+    <h1>Java Utililty Methods Array Add</h1>
+<p>List of utility methods to do Array Add</p>
+<h2 id="description">Description</h2>
+<p>The list of methods to do Array Add are organized into topic(s).</p>
+<h2 id="method">Method</h2>
+<p>double[]addArray(double[] array1, double[] array2) add Array</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (array1.length != array2.length) {
+    thrownewIllegalArgumentException("The dimensions have to be equal!");
+double[] result = newdouble[array1.length];
+assert array1.length == array2.length;
+for (int i = 0; i &lt; array1.length; i++) {
+    result[i] = array1[i] + array2[i];
+return result;</code></pre></div>
+<p>int[]addArray(int[] a, int p) Add element to the end of the array</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int[] b = newint[a.length + 1];
+System.arraycopy(a, 0, b, 0, a.length);
+b[a.length] = p;
+return b;</code></pre></div>
+<p>int[]addArray(int[] a, int[] b) add Array</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int[] result = null;
+if (a != null &amp;&amp; b != null) {
+    result = newint[a.length + b.length];
+    System.arraycopy(a, 0, result, 0, a.length);
+    System.arraycopy(b, 0, result, a.length, b.length);
+} else {
+    if (b != null)
+        return b;
+...</code></pre></div>
+<p>Object[]addArray(Object[] Old, Object[] New) add Array</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Object[] result = newObject[Old.length + New.length];
+for (int zahl = 0; zahl &lt; result.length; zahl++)
+    if (zahl &lt; Old.length)
+        result[zahl] = Old[zahl];
+    else
+        result[zahl] = New[zahl - Old.length];
+return result;</code></pre></div>
+<p>Object[][]addArray(Object[][] first, Object[][]... more) add Array</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int len = first.length;
+for (int i = 0; i &lt; more.length; i++) {
+    Object[][] next = more[i];
+    len += next.length;
+Object[][] result = newObject[len][];
+int count = 0;
+for (int i = 0; i &lt; first.length; i++) {
+...</code></pre></div>
+<p>voidaddArray(StringBuffer RCode, String name, T[] array, boolean useEquals, boolean isString) add Array</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (useEquals) {
+    RCode.append(name).append("=").append("c(");
+} else {
+    RCode.append(name).append("&lt;-").append("c(");
+for (int i = 0; i &lt; array.length; i++) {
+    if (isString) {
+        RCode.append("\"").append(array[i]).append("\"");
+...</code></pre></div>
+<p>byte[]addArrayAll(byte[] array1, byte[] array2) add Array All</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (array1 == null)
+    return clone(array2);
+if (array2 == null) {
+    return clone(array1);
+byte[] joinedArray = newbyte[array1.length + array2.length];
+System.arraycopy(array1, 0, joinedArray, 0, array1.length);
+System.arraycopy(array2, 0, joinedArray, array1.length, array2.length);
+...</code></pre></div>
+<p>byte[]addArrayElements(byte[] toArray, byte[] fromArray) adds the elements of the fromArray to the toArray.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[] newToArray = newbyte[toArray.length + fromArray.length];
+System.arraycopy(toArray, 0, newToArray, 0, toArray.length);
+System.arraycopy(fromArray, 0, newToArray, toArray.length, fromArray.length);
+return newToArray;</code></pre></div>
+<p>int[]addArrays(final int[] a, final int[] b) Adds two arrays together and returns a new array with the sum.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int[] c = newint[a.length];
+for (int i = 0; i &lt; a.length; i++)
+    c[i] = a[i] + b[i];
+return c;</code></pre></div>
+<p>float[]addArrays(float[] arr1, float[] arr2, float[] arr3) add Arrays</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int l = arr1.length;
+float[] res = newfloat[l];
+for (int i = 0; i &lt; l; i++) {
+    res[i] = arr1[i] + arr2[i] + arr3[i];
+return res;</code></pre></div>
+<p><a href="https://www.java2s.com/">HOME</a> | Copyright © www.java2s.com 2016</p>
+    <div class="pager"><a class="pager-btn" href="xml-html-how-to-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java HTML / XML How to - J...</span></a><a class="pager-btn pager-next" href="javafx-how-to-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java JavaFX How to Example</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

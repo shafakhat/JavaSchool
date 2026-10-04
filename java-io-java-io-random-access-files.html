@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java IO Tutorial - Java Random Access Files - JavaSchool</title>
+<meta name="description" content="Using a random access file, we can read from a file as well as write to the file.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-io-java-io-random-access-files">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-io.html">New Java io</a></nav>
+    <h1>Java IO Tutorial - Java Random Access Files</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>Using a random access file, we can read from a file as well as write to the file.</p>
+<p>Reading and writing using the file input and output streams are a sequential process.</p>
+<p>Using a random access file, we can read or write at any position within the file.</p>
+<p>An object of the RandomAccessFile class can do the random file access. We can read/write bytes and all primitive types values to a file.</p>
+<p>RandomAccessFile can work with strings using its readUTF() and writeUTF() methods.</p>
+<p>The RandomAccessFile class is not in the class hierarchy of the InputStream and OutputStream classes.</p>
+<h2 id="mode">Mode</h2>
+<p>A random access file can be created in four different access modes. The access mode value is a string. They are listed as follows:</p>
+<p>Mode  Meaning ---  --- "r"  The file is opened in a read-only mode. "rw"  The file is opened in a read-write mode. The file is created if it does not exist. "rws"  The file is opened in a read-write mode. Any modifications to the file's content and its metadata are written to the storage device immediately. "rwd"  The file is opened in a read-write mode. Any modifications to the file's content are written to the storage device immediately.</p>
+<h2 id="read-and-write">Read and Write</h2>
+<p>We create an instance of the RandomAccessFile class by specifying the file name and the access mode.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+RandomAccessFile  raf = new RandomAccessFile("randomtest.txt", "rw");</code></pre></div>
+<p>A random access file has a file pointer that moves forward when we read data from it or write data to it.</p>
+<p>The file pointer is a cursor where our next read or write will start.</p>
+<p>Its value indicates the distance of the cursor from the beginning of the file in bytes.</p>
+<p>We can get the value of file pointer by using its getFilePointer() method.</p>
+<p>When we create an object of the RandomAccessFile class, the file pointer is set to zero.</p>
+<p>We can set the file pointer at a specific location in the file using the seek() method.</p>
+<p>The length() method of a RandomAccessFile returns the current length of the file. We can extend or truncate a file by using its setLength() method.</p>
+<h2 id="example">Example</h2>
+<p>The following code shows how to read and write Files Using a RandomAccessFile Object.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+//www.java2s.compublicclass Main {
+  publicstaticvoid main(String[] args) throws IOException {
+    String fileName = "randomaccessfile.txt";
+    File fileObject = newFile(fileName);
+    if (!fileObject.exists()) {
+      initialWrite(fileName);
+    }
+    readFile(fileName);
+    readFile(fileName);
+  }
+  publicstaticvoid readFile(String fileName) throws IOException {
+    RandomAccessFile raf = new RandomAccessFile(fileName, "rw");
+    int counter = raf.readInt();
+    String msg = raf.readUTF();
+    System.out.println(counter);
+    System.out.println(msg);
+    incrementReadCounter(raf);
+    raf.close();
+  }
+  publicstaticvoid incrementReadCounter(RandomAccessFile raf)
+      throws IOException {
+    long currentPosition = raf.getFilePointer();
+    raf.seek(0);
+    int counter = raf.readInt();
+    counter++;
+    raf.seek(0);
+    raf.writeInt(counter);
+    raf.seek(currentPosition);
+  }
+  publicstaticvoid initialWrite(String fileName) throws IOException {
+    RandomAccessFile raf = new RandomAccessFile(fileName, "rw");
+    raf.writeInt(0);
+    raf.writeUTF("Hello world!");
+    raf.close();
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-io-java-io-reader-writer.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java Re...</span></a><a class="pager-btn pager-next" href="java-io-java-io-standard-input-output-error-streams.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java St...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

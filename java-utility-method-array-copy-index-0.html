@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Utililty Methods Array Copy - JavaSchool</title>
+<meta name="description" content="The list of methods to do Array Copy are organized into topic(s).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-utility-method-array-copy-index-0">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-utility-method.html">java utility method</a></nav>
+    <h1>Java Utililty Methods Array Copy</h1>
+<p>List of utility methods to do Array Copy</p>
+<h2 id="description">Description</h2>
+<p>The list of methods to do Array Copy are organized into topic(s).</p>
+<h2 id="method">Method</h2>
+<p>voidarrayBig2Small(int[] big, int bigWidth, int[][] small, int startRow, int startCol, int endRow, int endCol) array Big Small</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int j = 0;
+for (int i = startRow; i &lt;= endRow; i++, j++) {
+    System.arraycopy(big, i * bigWidth + startCol, small[j], 0, endCol - startCol + 1);</code></pre></div>
+<p>voidarrayCopy(byte[] dest, int offset, byte[] in) array Copy</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">System.arraycopy(in, 0, dest, offset, in.length);</code></pre></div>
+<p>voidarrayCopy(byte[] in, int inOff, int length, byte[] out, int outOff) array Copy</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for (int i = inOff; i &lt; inOff + length; i++) {
+    out[outOff + i - inOff] = in[i];</code></pre></div>
+<p>byte[]arrayCopy(byte[] source, byte[] dest) array Copy</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">return arrayCopy(source, 0, dest, 0);</code></pre></div>
+<p>byte[]arrayCopy(byte[] source, byte[] dest) array Copy</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">return arrayCopy(source, dest, 0);</code></pre></div>
+<p>byte[]arraycopy(byte[] src, int destLen, int len) arraycopy</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[] dest = newByte(destLen);
+System.arraycopy(src, 0, dest, 0, len);
+return dest;</code></pre></div>
+<p>voidarraycopy(byte[] src, int src_position, byte[] dst, int dst_position, int length) arraycopy</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (src_position &lt; 0)
+    thrownewIllegalArgumentException("src_position was less than 0.  Actual value " + src_position);
+if (src_position &gt;= src.length)
+    thrownewIllegalArgumentException(
+            "src_position was greater than src array size.  Tried to write starting at position "
+                    + src_position + " but the array length is " + src.length);
+if (src_position + length &gt; src.length)
+    thrownewIllegalArgumentException(
+...</code></pre></div>
+<p>byte[]arrayCopy(byte[] src, int srcOffset, byte[] target, int targetOffset, int length) array Copy</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">System.arraycopy(src, srcOffset, target, targetOffset, length);
+return target;</code></pre></div>
+<p>voidarrayCopy(byte[] src, int srcStart, byte[] dest, int destStart, int destBitOffset, int lengthInBits) array Copy</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int c = 0;
+int nBytes = lengthInBits / 8;
+int nRestBits = lengthInBits % 8;
+for (int i = 0; i &lt; nBytes; i++) {
+    c |= ((src[srcStart + i] &amp; 0xff) &lt;&lt; destBitOffset);
+    dest[destStart + i] |= (byte) (c &amp; 0xff);
+    c &gt;&gt;&gt;= 8;
+if (nRestBits &gt; 0) {
+    c |= ((src[srcStart + nBytes] &amp; (0xff &gt;&gt; (8 - nRestBits))) &lt;&lt; destBitOffset);
+if ((nRestBits + destBitOffset) &gt; 0) {
+    dest[destStart + nBytes] |= c &amp; 0xff;</code></pre></div>
+<p>voidarraycopy(char[] A1, int offset1, char[] A2, int offset2, int length) Copies the contents of</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">A1</code></pre></div>
+<p>starting at offset</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">offset1</code></pre></div>
+<p>into</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">A2</code></pre></div>
+<p>starting at offset</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">offset2</code></pre></div>
+<p>for</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">length</code></pre></div>
+<p>elements.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (offset1 &gt;= 0 &amp;&amp; offset2 &gt;= 0 &amp;&amp; length &gt;= 0 &amp;&amp; length &lt;= A1.length - offset1
+        &amp;&amp; length &lt;= A2.length - offset2) {
+    if (A1 != A2 || offset1 &gt; offset2 || offset1 + length &lt;= offset2) {
+        for (int i = 0; i &lt; length; ++i) {
+            A2[offset2 + i] = A1[offset1 + i];
+    } else {
+        for (int i = length - 1; i &gt;= 0; --i) {
+...</code></pre></div>
+<p><a href="https://www.java2s.com/">HOME</a> | Copyright © www.java2s.com 2016</p>
+    <div class="pager"><a class="pager-btn" href="java-utility-method-array-convert-to-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="maven-tutorial-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Maven Tutorial - Maven Int...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

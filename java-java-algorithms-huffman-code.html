@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Algorithms Huffman code - JavaSchool</title>
+<meta name="description" content="// Count frequencyint[] counts = getCharacterFrequency(&quot;this is a test test test&quot;);">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-java-algorithms-huffman-code">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <h1>Java Algorithms Huffman code</h1>
+<ul><li>Java Basic</li><li>Java Language Basics Java Language Data Types Operator Statement String enum Array Autobox class Method interface Generics Exception Javadoc Lambda package import Java Features Algorithms Byte Array Data Structures Design Patterns Directory Network Regular Expression Text File OCA OCP Exam OCA OCP Exam 1 OCA OCP Exam 2 OCA OCP Exam 3 OCA OCP Exam 4 OCA OCP Exam 5 OCA OCP Exam 6 OCA OCP Exam 7 OCA OCP Exam 8 OCA OCP Exam 9 OCA OCP Exam 10 OCA OCP Exam 11 OCA OCP Exam 12 OCA OCP Exam 13 OCA OCP Exam 14 OCA OCP Exam 15 OCA OCP Exam 16 OCA OCP Exam 17 OCA OCP Exam 18 OCA OCP Exam 19 OCA OCP Exam 20 OCA OCP Exam 21 OCA OCP Exam 22 OCA OCP Exam 23 OCA OCP Exam 24 OCA OCP Exam 25 OCA OCP Exam 26 OCA OCP Exam 27 OCA OCP Exam 28 OCA OCP Exam 29 OCA OCP Exam 30 OCA OCP Exam 31 OCA OCP Exam 32 OCA OCP Exam 33</li></ul>
+<h2 id="description">Description</h2>
+<p>Java Algorithms Huffman code</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] args) {
+    // Count frequencyint[] counts = getCharacterFrequency("this is a test test test");
+
+    System.out.printf("%-15s%-15s%-15s%-15s\n", "ASCII Code", "Character", "Frequency", "Code");
+
+    Tree tree = getHuffmanTree(counts); // Create a Huffman treeString[] codes = getCode(tree.root); // Get codesfor (int i = 0; i &lt; codes.length; i++) {
+      if (counts[i] != 0) {// (char)i is not in text if counts[i] is 0System.out.printf("%-15d%-15s%-15d%-15s\n", i, (char) i + "", counts[i], codes[i]);
+      }/*fromwww.java2s.com*/
+    }
+  }
+  /**
+   * Get Huffman codes for the characters This method is called once after a
+   * Huffman tree is built
+   */publicstaticString[] getCode(Node root) {
+    if (root == null)
+      return null;
+    String[] codes = newString[2 * 128];
+    assignCode(root, codes);
+    return codes;
+  }
+  /* Recursively get codes to the leaf node */privatestaticvoid assignCode(Node root, String[] codes) {
+    if (root.left != null) {
+      root.left.code = root.code + "0";
+      assignCode(root.left, codes);
+
+      root.right.code = root.code + "1";
+      assignCode(root.right, codes);
+    } else {
+      codes[(int) root.element] = root.code;
+    }
+  }
+
+  /** Get a Huffman tree from the codes */publicstatic Tree getHuffmanTree(int[] counts) {
+    // Create a heap to hold trees
+    Heap&lt;Tree&gt; heap = new Heap&lt;&gt;(); // Defined in Listing 24.10for (int i = 0; i &lt; counts.length; i++) {
+      if (counts[i] &gt; 0)
+        heap.add(new Tree(counts[i], (char) i)); // A leaf node tree
+    }
+
+    while (heap.getSize() &gt; 1) {
+      Tree t1 = heap.remove(); // Remove the smallest weight tree
+      Tree t2 = heap.remove(); // Remove the next smallest weight
+      heap.add(new Tree(t1, t2)); // Combine two trees
+    }
+    return heap.remove(); // The final tree
+  }
+  publicstaticint[] getCharacterFrequency(String text) {
+    int[] counts = newint[256]; // 256 ASCII charactersfor (int i = 0; i &lt; text.length(); i++)
+      counts[(int) text.charAt(i)]++; // Count the character in textreturn counts;
+  }
+}
+
+/** Huffman coding tree */class Tree implementsComparable&lt;Tree&gt; {
+  Node root; // The root of the tree/** Create a tree with two subtrees */public Tree(Tree t1, Tree t2) {
+    root = newNode();
+    root.left = t1.root;
+    root.right = t2.root;
+    root.weight = t1.root.weight + t2.root.weight;
+  }
+
+  /** Create a tree containing a leaf node */public Tree(int weight, char element) {
+    root = newNode(weight, element);
+  }
+
+  @Override/** Compare trees based on their weights */publicint compareTo(Tree t) {
+    if (root.weight &lt; t.root.weight) // Purposely reverse the orderreturn 1;
+    elseif (root.weight == t.root.weight)
+      return 0;
+    elsereturn -1;
+  }
+
+}
+
+classNode {
+  char element; // Stores the character for a leaf nodeint weight; // weight of the subtree rooted at this nodeNode left; // Reference to the left subtreeNode right; // Reference to the right subtreeString code = ""; // The code of this node from the rootpublicNode() {
+  }
+  publicNode(int weight, char element) {
+    this.weight = weight;
+    this.element = element;
+  }
+}
+
+class Heap&lt;E extendsComparable&gt; {
+  private java.util.ArrayList&lt;E&gt; list = new java.util.ArrayList&lt;E&gt;();
+
+  public Heap() {
+  }
+
+  public Heap(E[] objects) {
+    for (int i = 0; i &lt; objects.length; i++)
+      add(objects[i]);
+  }
+
+  publicvoid add(E newObject) {
+    list.add(newObject); // Append to the heapint currentIndex = list.size() - 1; // The index of the last nodewhile (currentIndex &gt; 0) {
+      int parentIndex = (currentIndex - 1) / 2;
+      // Swap if the current object is greater than its parentif (list.get(currentIndex).compareTo(list.get(parentIndex)) &gt; 0) {
+        E temp = list.get(currentIndex);
+        list.set(currentIndex, list.get(parentIndex));
+        list.set(parentIndex, temp);
+      } elsebreak; // the tree is a heap now
+
+      currentIndex = parentIndex;
+    }
+  }
+
+  public E remove() {
+    if (list.size() == 0)
+      return null;
+
+    E removedObject = list.get(0);
+    list.set(0, list.get(list.size() - 1));
+    list.remove(list.size() - 1);
+
+    int currentIndex = 0;
+    while (currentIndex &lt; list.size()) {
+      int leftChildIndex = 2 * currentIndex + 1;
+      int rightChildIndex = 2 * currentIndex + 2;
+
+      // Find the maximum between two childrenif (leftChildIndex &gt;= list.size())
+        break; // The tree is a heapint maxIndex = leftChildIndex;
+      if (rightChildIndex &lt; list.size()) {
+        if (list.get(maxIndex).compareTo(list.get(rightChildIndex)) &lt; 0) {
+          maxIndex = rightChildIndex;
+        }
+      }
+
+      // Swap if the current node is less than the maximumif (list.get(currentIndex).compareTo(list.get(maxIndex)) &lt; 0) {
+        E temp = list.get(maxIndex);
+        list.set(maxIndex, list.get(currentIndex));
+        list.set(currentIndex, temp);
+        currentIndex = maxIndex;
+      } elsebreak; // The tree is a heap
+    }
+
+    return removedObject;
+  }
+
+  publicint getSize() {
+    return list.size();
+  }
+}</code></pre></div>
+<p>PreviousNext</p>
+<h2 id="related">Related</h2>
+<ul><li>Java Algorithms Convert number to English words example 3</li><li>Java Algorithms Convert number to English words example 4</li><li>Java Algorithms Convert number to French words</li><li>Java Algorithms Move along circle</li><li>Java Algorithms Parse postfix arithmetic expressions</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-java-action-create.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Action create</span></a><a class="pager-btn pager-next" href="struts-javascript.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JavaScript</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

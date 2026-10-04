@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Algorithms Sort Heap Sort - JavaSchool</title>
+<meta name="description" content="privateint maxSize; // size of arrayprivateint currentSize; // number of items in arraypublic Heap(int mx) {">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-java-algorithms-sort-heap-sort">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <h1>Java Algorithms Sort Heap Sort</h1>
+<ul><li>Java Basic</li><li>Java Language Basics Java Language Data Types Operator Statement String enum Array Autobox class Method interface Generics Exception Javadoc Lambda package import Java Features Algorithms Byte Array Data Structures Design Patterns Directory Network Regular Expression Text File OCA OCP Exam OCA OCP Exam 1 OCA OCP Exam 2 OCA OCP Exam 3 OCA OCP Exam 4 OCA OCP Exam 5 OCA OCP Exam 6 OCA OCP Exam 7 OCA OCP Exam 8 OCA OCP Exam 9 OCA OCP Exam 10 OCA OCP Exam 11 OCA OCP Exam 12 OCA OCP Exam 13 OCA OCP Exam 14 OCA OCP Exam 15 OCA OCP Exam 16 OCA OCP Exam 17 OCA OCP Exam 18 OCA OCP Exam 19 OCA OCP Exam 20 OCA OCP Exam 21 OCA OCP Exam 22 OCA OCP Exam 23 OCA OCP Exam 24 OCA OCP Exam 25 OCA OCP Exam 26 OCA OCP Exam 27 OCA OCP Exam 28 OCA OCP Exam 29 OCA OCP Exam 30 OCA OCP Exam 31 OCA OCP Exam 32 OCA OCP Exam 33</li></ul>
+<h2 id="description">Description</h2>
+<p>Java Algorithms Sort Heap Sort</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">classNode {
+   privateint iData; // data item (key)publicNode(int key) {
+      iData = key;//www.java2s.com
+   }
+
+   publicint getKey() {
+      return iData;
+   }
+}
+
+class Heap {
+   privateNode[] heapArray;
+   privateint maxSize; // size of arrayprivateint currentSize; // number of items in arraypublic Heap(int mx) {
+      maxSize = mx;
+      currentSize = 0;
+      heapArray = newNode[maxSize];
+   }
+
+   publicNode remove() {
+      Node root = heapArray[0];
+      heapArray[0] = heapArray[--currentSize];
+      trickleDown(0);
+      return root;
+   }
+
+   publicvoid trickleDown(int index) {
+      int largerChild;
+      Node top = heapArray[index]; // save rootwhile (index &lt; currentSize / 2) // not on bottom row
+      {
+         int leftChild = 2 * index + 1;
+         int rightChild = leftChild + 1;
+         // find larger childif (rightChild &lt; currentSize &amp;&amp; // right ch exists?
+               heapArray[leftChild].getKey() &lt; heapArray[rightChild].getKey())
+            largerChild = rightChild;
+         else
+            largerChild = leftChild;
+         // top &gt;= largerChild?if (top.getKey() &gt;= heapArray[largerChild].getKey())
+            break;
+         heapArray[index] = heapArray[largerChild];
+         index = largerChild;
+      }
+      heapArray[index] = top;
+   }
+
+   publicvoid displayHeap() {
+      int nBlanks = 32;
+      int itemsPerRow = 1;
+      int column = 0;
+      int j = 0;
+      String dots = "...............................";
+      System.out.println(dots + dots);
+
+      while (currentSize &gt; 0) // for each heap item
+      {
+         if (column == 0) // first item in row?for (int k = 0; k &lt; nBlanks; k++) // preceding blanksSystem.out.print(' ');
+         // display itemSystem.out.print(heapArray[j].getKey());
+
+         if (++j == currentSize)
+            break;
+
+         if (++column == itemsPerRow) {
+            nBlanks /= 2; // half the blanks
+            itemsPerRow *= 2; // twice the items
+            column = 0; // start over onSystem.out.println(); // new row
+         } else// next item on rowfor (int k = 0; k &lt; nBlanks * 2 - 2; k++)
+               System.out.print(' '); // interim blanks
+      }
+      System.out.println("\n" + dots + dots); // dotted bottom line
+   }
+
+   publicvoid displayArray() {
+      for (int j = 0; j &lt; maxSize; j++)
+         System.out.print(heapArray[j].getKey() + " ");
+      System.out.println("");
+   }
+
+   publicvoid insertAt(int index, Node newNode) {
+      heapArray[index] = newNode;
+   }
+
+   publicvoid incrementSize() {
+      currentSize++;
+   }
+}
+
+publicclass Main {
+   publicstaticvoid main(String[] args) {
+      int size = 10, j;
+
+      Heap theHeap = new Heap(size);
+
+      for (j = 0; j &lt; size; j++) // fill array with
+      { // random nodesint random = (int) (java.lang.Math.random() * 100);
+         Node newNode = newNode(random);
+         theHeap.insertAt(j, newNode);
+         theHeap.incrementSize();
+      }
+
+      System.out.print("Random: ");
+      theHeap.displayArray();
+
+      for (j = size / 2 - 1; j &gt;= 0; j--)
+         theHeap.trickleDown(j);
+
+      System.out.print("Heap:   ");
+      theHeap.displayArray();
+      theHeap.displayHeap();
+
+      for (j = size - 1; j &gt;= 0; j--) // remove from heap and
+      {
+         Node biggestNode = theHeap.remove();
+         theHeap.insertAt(j, biggestNode);
+      }
+      System.out.print("Sorted: ");
+      theHeap.displayArray(); // display sorted array
+   }
+}</code></pre></div>
+<p>PreviousNext</p>
+<h2 id="related">Related</h2>
+<ul><li>Java Algorithms Search Linear Search</li><li>Java Algorithms Solve Towers of Hanoi puzzle</li><li>Java Algorithms Sort Bubble Sort</li><li>Java Algorithms Sort Insertion Sort</li><li>Java Algorithms Sort Insertion Sort on custom objects</li></ul>
+    <div class="pager"><a class="pager-btn" href="class-itonlylookslikeyoucanoverrideaprivateorprivatefinalmethod.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">It only looks like you can...</span></a><a class="pager-btn pager-next" href="generics-javagenericambiguitycausedbyerasureonoverloadedmethods.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java generic</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

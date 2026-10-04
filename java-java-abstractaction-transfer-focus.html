@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java AbstractAction transfer focus - JavaSchool</title>
+<meta name="description" content="component.getInputMap(JComponent.WHEN_FOCUSED).put(KeyStroke.getKeyStroke(&quot;shift F2&quot;),">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-java-abstractaction-transfer-focus">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <h1>Java AbstractAction transfer focus</h1>
+<ul><li>javax.swing</li><li>javax.swing AbstractAction Action ActionMap BorderFactory BoundedRangeModel Box BoxLayout ButtonGroup DefaultComboBoxModel DefaultListCellRenderer DefaultListModel GroupLayout Icon ImageIcon InputMap InputVerifier JButton JCheckBox JCheckBoxMenuItem JColorChooser JComboBox JComponent JDesktopPane JDialog JEditorPane JFileChooser JFormattedTextField JFrame JInternalFrame JLabel JLayer JList JMenu JMenuItem JOptionPane JPanel JPasswordField JPopupMenu JProgressBar JRadioButton JRadioButtonMenuItem JRootPane JScrollBar JScrollPane JSlider JSpinner JTabbedPane JTable JTextArea JTextField JTextPane JToggleButton JToolBar JTree KeyStroke ListSelectionModel SpinnerDateModel SpinnerListModel SpinnerModel SpinnerNumberModel SpringLayout SwingUtilities SwingWorker Timer ToolTipManager UIManager</li></ul>
+<h2 id="description">Description</h2>
+<p>Java AbstractAction transfer focus</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.Component;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.KeyStroke;
+
+publicclass Main {
+   publicstaticvoid main(String[] args) {
+      JFrame f = newJFrame();
+
+      JButton component = newJButton("OK");
+      PrevFocusAction prevFocusAction = new PrevFocusAction();
+      component.getInputMap(JComponent.WHEN_FOCUSED).put(KeyStroke.getKeyStroke("shift F2"),
+          prevFocusAction.getValue(Action.NAME));
+      /*fromwww.java2s.com*/
+      component.getInputMap(JComponent.WHEN_FOCUSED).put(KeyStroke.getKeyStroke("shift SPACE"),
+          prevFocusAction.getValue(Action.NAME));
+
+      component.getActionMap().put(prevFocusAction.getValue(Action.NAME), prevFocusAction);
+
+      f.getContentPane().setLayout(newFlowLayout());
+      f.add(newJTextField(10));
+      f.add(component);
+      f.add(newJTextField(10));
+
+      f.setSize(310, 200);
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      f.setVisible(true);
+   }
+}
+
+class PrevFocusAction extendsAbstractAction {
+   PrevFocusAction() {
+     super("Move Focus Backwards");
+   }
+
+   publicvoid actionPerformed(ActionEvent evt) {
+     ((Component) evt.getSource()).transferFocusBackward();
+   }
+}</code></pre></div>
+<p>PreviousNext</p>
+<h2 id="related">Related</h2>
+<ul><li>Java AbstractAction create action for JButton</li><li>Java AbstractAction set mnemonic key</li><li>Java AbstractAction set tool tip text</li><li>Java Action attribute</li><li>Java Action create</li></ul>
+    <div class="pager"><a class="pager-btn" href="data-type-getsthemaximumofthreeintvalues-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Gets the maximum of three ...</span></a><a class="pager-btn pager-next" href="java-java-algorithms-bracket-checker.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Algorithms Bracket Ch...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

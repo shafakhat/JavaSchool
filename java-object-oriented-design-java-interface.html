@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java interface - JavaSchool</title>
+<meta name="description" content="An interface in Java defines a reference type to create an abstract concept. The interface is implemented by classes to provide an implementation of the concept.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-interface">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java interface</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<h2 id="what-is-an-interface">What Is an Interface?</h2>
+<p>An interface in Java defines a reference type to create an abstract concept. The interface is implemented by classes to provide an implementation of the concept.</p>
+<p>Prior to Java 8, an interface could contain only abstract methods. Java 8 allows an interface to have static and default methods with implementation.</p>
+<p>Interfaces define a relationship between unrelated classes through the abstract concept.</p>
+<p>For example, we can create a Person class to represent a person and we can create a Dog class to represent a dog.</p>
+<p>Both person and dog can walk. The walk here is a abstract concept. The dog can walk and so does the person. Here we can create an interface called Walkable to represent the walk concept. Then we can have the Person class and Dog class to implement the Walkable concept and provide their own implementation. The Person class implements the Walkable interface and makes the person to walk in a human being way. And the Dog class can implement the Walkable interface and makes the dog to walk in a dog way.</p>
+<h2 id="example">Example</h2>
+<p>In the following we will use an example to show why do we need interface.</p>
+<p>Suppose Person class has a walk() method.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicinterface Walkable {
+  void walk();//fromwww.java2s.com
+}
+class Person implements Walkable {
+  public Person() {
+  }
+  publicvoid walk() {
+    System.out.println("a person is walking.");
+  }
+}
+class Dog implements Walkable {
+  public Dog() {
+  }
+  publicvoid walk() {
+    System.out.println("a dog is walking.");
+  }
+}</code></pre></div>
+<p>A class can implement one or more interfaces using the keyword implements in its declaration.</p>
+<p>By implementing an interface, a class guarantees that it will provide an implementation for all methods declared in the interface or the class will declare itself abstract.</p>
+<p>If a class implements the Walkable interface, it must provide implementation for the walk() method.</p>
+<p>Like a class, an interface defines a new reference type.</p>
+<p>When defining a new interface (e.g. Walkable), we define a new reference interface type.</p>
+<p>The following declaration is valid:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Walkable  w;  // w  is a  reference variable of  type   Walkable</code></pre></div>
+<p>You cannot create an object of an interface type since the interface is to define an abstract concept. The following code is invalid:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">new Walkable(); // A  compile-time error</code></pre></div>
+<p>We can create an object only for a class type, but we can use an interface type variable can refer to any object whose class implements that interface.</p>
+<p>Because the Person and Dog classes implement the Walkable interface, a reference variable of the Walkable type can refer to an object of these classes.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Walkable  w1  = new Person(); // OK
+Walkable  w2  = new Dog();     // OK</code></pre></div>
+<p>We can access any members of the interface using its reference type variable. Since Walkable interface has only one member, which is the walk() method, we can write code as shown:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+// Let  the   person  walk
+w1.walk();
+// Let  the   dog walk
+w2.walk();</code></pre></div>
+<p>When invoking the walk() method on w1, it invokes the walk() method of the Person object because w1 is referring to a Person object.</p>
+<p>When invoking the walk() method on w2, it invokes the walk() method of the Dog object because w2 is referring to a Dog object.</p>
+<p>When calling a method using a reference variable of an interface type, it calls the method on the object to which it is referring.</p>
+<h2 id="example-2">Example 2</h2>
+<p>The following code created a method to use interface we parameter type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main{
+  publicstatic void main(String[] args) {
+    Walkable[] w = new Walkable[2];
+    w[0] = new Person();
+    w[1] = new Dog();
+    Walkables.letThemWalk(w);
+  }
+}
+class Walkables {
+  publicstatic void letThemWalk(Walkable[] list) {
+    for (Walkable w : list) {
+      w.walk();
+    }
+  }
+}</code></pre></div>
+<h2 id="declaring-an-interface">Declaring an Interface</h2>
+<p>The general syntax for declaring an interface is</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;modifiers&gt; interface &lt;interface-name&gt;  {
+    Constant-Declaration
+    Method-Declaration
+    Nested-Type-Declaration
+}</code></pre></div>
+<p>An interface declaration starts with list of modifiers, which may be empty.</p>
+<p>Like a class, an interface can have a public or package-level scope.</p>
+<p>The keyword public is used to indicate that the interface has a public scope.</p>
+<p>Absence of a scope-modifier indicates that the interface has a package-level scope. An interface with a package-level scope can be referred to only within the members of its package.</p>
+<p>The keyword interface is used to declare an interface and is followed by the name of the interface.</p>
+<p>The name of an interface must be a valid Java identifier.</p>
+<p>An interface body follows its name and is placed inside braces.</p>
+<p>The body of an interface can be empty. The following is the simplest interface declaration:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+package com.java2s;
+interface Updatable  {
+    // The interface body  is empty
+}</code></pre></div>
+<p>Like a class, an interface has a simple name and a fully qualified name. The identifier that follows the keyword interface is its simple name.</p>
+<p>The fully qualified name of an interface is formed by using its package name and the simple name separated by a dot.</p>
+<p>In the above example, Updatable is the simple name and com.java2s.Updatable is the fully qualified name.</p>
+<p>The rules of using simple and fully qualified name of an interface are the same as that of a class.</p>
+<p>The following code declares an interface named ReadOnly. It has a public scope.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+package  com.java2s;
+publicinterface  ReadOnly {
+    // The interface body  is empty
+}</code></pre></div>
+<p>An interface declaration is always abstract whether you declare it abstract explicitly or not.</p>
+<h2 id="marker-interfaces">Marker Interfaces</h2>
+<p>Marker Interfaces are interfaces with no members.</p>
+<p>A marker interface marks the class with a special meaning.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface  Shape {
+}
+class Circle implements Shape{
+}
+Shape c = new Circle();
+if (c instanceof Shape)  {
+   System.out.println("Using a  Shape object");
+}</code></pre></div>
+<p>Java API has many marker interfaces. The java.lang.Cloneable, java.io.Serializable, and java.rmi.Remote are all the marker interfaces.</p>
+<h2 id="functional-interfaces">Functional Interfaces</h2>
+<p>An interface with just one abstract method is known as a functional interface.</p>
+<h2 id="polymorphism-one-object-many-views">Polymorphism-One Object, Many Views</h2>
+<p>Polymorphism refers to the ability of an object to take on many forms.</p>
+<p>polymorphism is an ability of an object to provide its different views.</p>
+<p>Interfaces let us create a polymorphic object.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-exception-usage.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-interface-fields.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

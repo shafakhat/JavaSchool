@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Utililty Methods Array Slice - JavaSchool</title>
+<meta name="description" content="The list of methods to do Array Slice are organized into topic(s).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-utility-method-array-slice-index-0">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-utility-method.html">java utility method</a></nav>
+    <h1>Java Utililty Methods Array Slice</h1>
+<p>List of utility methods to do Array Slice</p>
+<h2 id="description">Description</h2>
+<p>The list of methods to do Array Slice are organized into topic(s).</p>
+<h2 id="method">Method</h2>
+<p>int[]arraySlice(int[] source, int start, int count) Returns a range of elements of source from start to end of the array.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int[] slice = newint[count];
+System.arraycopy(source, start, slice, 0, count);
+return slice;</code></pre></div>
+<p>Object[]arraySlice(Object[] source, Object[] dest, int startIdx) array Slice</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for (int i = startIdx; i &lt; dest.length; i++) {
+    dest[i] = source[i];
+return dest;</code></pre></div>
+<p>byte[]slice(byte[] buffer, int start, int end) slice</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">returnArrays.copyOfRange(buffer, start, end);</code></pre></div>
+<p>byte[]slice(byte[] source, int start, int end) slice</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (start &lt; 0 || end &gt; source.length) {
+    thrownewIllegalArgumentException("start or end is out of bound");
+byte[] target = newbyte[end - start];
+System.arraycopy(source, start, target, 0, target.length);
+return target;</code></pre></div>
+<p>Object[]slice(Object[] objects, int begin, int length) slice</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Object[] result = newObject[length];
+for (int i = 0; i &lt; length; i++) {
+    result[i] = objects[begin + i];
+return result;</code></pre></div>
+<p>String[]slice(String source[], int start, int end) slice</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (source == null)
+    return null;
+if (start == end)
+    returnnewString[0];
+int e = Math.max(start, end);
+e = Math.min(e, source.length);
+int s = Math.min(start, end);
+String newArray[] = newString[e - s];
+...</code></pre></div>
+<p>String[]slice(String[] array, int a, int b) slice</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String[] newarray = newString[b - a];
+if (!(a &lt; array.length &amp;&amp; b &lt;= array.length)) {
+    thrownewException("out of bound:" + a + "," + b);
+for (int i = a; i &lt; b; i++) {
+    newarray[i - a] = array[i];
+return newarray;
+...</code></pre></div>
+<p>String[]slice(String[] array, int index, int length) slice</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String[] slice = newString[length];
+for (int i = 0; i &lt; length; i++) {
+    slice[i] = array[index + i];
+return slice;</code></pre></div>
+<p>String[]slice(String[] o, int index) Slices an array at the given index.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String[] result = newString[o.length - index];
+for (int i = index; i &lt; o.length; i++) {
+    result[i - index] = o[i];
+return result;</code></pre></div>
+<p>String[]slice(String[] strings, int begin, int length) slice</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String[] result = newString[length];
+System.arraycopy(strings, begin, result, 0, length);
+return result;</code></pre></div>
+<p><a href="https://www.java2s.com/">HOME</a> | Copyright © www.java2s.com 2016</p>
+    <div class="pager"><a class="pager-btn" href="scala-scala-inheritance.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Scala Tutorial - Scala Inh...</span></a><a class="pager-btn pager-next" href="scala-scala-constructors.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Scala Tutorial - Scala Con...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

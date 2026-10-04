@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java IO Tutorial - Java Jar file - JavaSchool</title>
+<meta name="description" content="JAR (Java Archive) is a file format based on the ZIP file format.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-io-java-io-jar-file">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-io.html">New Java io</a></nav>
+    <h1>Java IO Tutorial - Java Jar file</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<h2 id="jar-file-format">JAR File Format</h2>
+<p>JAR (Java Archive) is a file format based on the ZIP file format.</p>
+<p>It is used to bundle resources, class files, sound files, images, etc. for a Java application or applet. It also provides data compression.</p>
+<p>A JAR file as a special kind of a ZIP file. You can digitally sign the contents of a JAR file to provide security. It provides a platform-independent file format.</p>
+<p>You can use the JAR API to manipulate a JAR file in a Java program.</p>
+<p>A JAR file can have an optional META-INF directory to contain files and directories containing information about application configuration.</p>
+<h2 id="meta-inf-directory">META-INF directory</h2>
+<p>The following table lists the entries in a META-INF directory.</p>
+<p>Name  Type  Purpose ---  ---  --- MANIFEST.MF  File  It contains extension and package related data. INDEX.LIST  File  It contains location information of packages. Class loaders use it to speed up the class searching and loading process. X.SF  File  X is the base file name. It stores the signature for the jar file. X.DSA  File  X is the base file name. It stores the digital signature of the corresponding signature file. /services  Directory  This directory contains all service provider configuration files.</p>
+<h2 id="jar-tools">Jar tools</h2>
+<p>The JDK ships a jar tool to create and manipulate JAR files. You can also create and manipulate a JAR file using the Java API using classes in the java.util.jar package.</p>
+<p>The JAR API has some new classes to deal with a manifest file. The Manifest class represents a manifest file.</p>
+<p>To create a JAR file using the jar tool, many command-line options are available.</p>
+<p>The following code lists the command-line options for the jar tool.</p>
+<p>Option  Description ---  --- -c  Create a new JAR file. -u  Update an existing JAR file. -x  Extract a named file or all files from a JAR file. -t  List the table of contents of a JAR file. -f  Specify the JAR file name. -m  Include the manifest information from the specified file. -M  Do not create a manifest file. -i  Generate index information for the specified JAR file. It creates an INDEX.LIST file in JAR file under the META-INF directory. -0  Do not compress the entries in the JAR file. Only store them. The option value is zero, which means zero compression. -e  Add the specified class name as the value for the Main-Class entry in the main section of the manifest file. -v  Generate verbose output on the standard output -C  Change to the specified directory and include the following files in a JAR file. Note that the option is in uppercase (C). The lowercase (c) is used to indicate the create JAR file option.</p>
+<h2 id="creating-a-jar-file">Creating a JAR File</h2>
+<p>Use the following command to create a test.jar JAR file with two class files called A.class and B.class:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar cf test.jar  A.class B.class</code></pre></div>
+<p>In the above command, the option c indicates that we are creating a new JAR file and the option f indicates that we are specifying a JAR file name, which is test.jar.</p>
+<p>At the end of the command, we can specify one or more file names or directory names to include in the JAR file.</p>
+<p>To view the contents of the test.jar file, execute the following command:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar tf test.jar</code></pre></div>
+<p>The option t indicates that we are interested in the table of contents of a JAR file.</p>
+<p>The option f indicates that we are specifying the JAR file name, which is test.jar in this case.</p>
+<p>The above command will generate the following output:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+META-INF/
+META-INF/MANIFEST.MF A.class
+B.class</code></pre></div>
+<p>jar command had automatically created two extra things for you: one directory called META-INF and a file named MANIFEST.MF in the META-INF directory.</p>
+<p>The following command will create a test.jar file by including everything in the current working directory.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar cf test.jar  *</code></pre></div>
+<p>The following command will create a JAR file with all class files in the book/archives directory and all images from the book/images directory.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar cf test.jar  book/archives/*.class  book/images</code></pre></div>
+<p>We can specify a manifest file using the command-line option while creating a JAR file.</p>
+<p>The manifest file is a text file that contains all manifest entries for your JAR file.</p>
+<p>The manifest file must have a blank line at the end of the file. Otherwise, the last entry in the manifest file will not be processed.</p>
+<p>The following command will use a manifest.txt file while creating test.jar file including all files and sub-directories in the current directory.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar cfm test.jar manifest.txt *</code></pre></div>
+<p>The order of the options used in the above command matters. f occurs before m, we must specify the JAR file name, test.jar, before the manifest file name manifest.txt.</p>
+<p>You can rewrite the above command as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar cmf manifest.txt test.jar *</code></pre></div>
+<h2 id="updating-a-jar-file">Updating a JAR File</h2>
+<p>Use the option u to update an existing JAR file entries or its manifest file.</p>
+<p>The following command will add a C.class file to an existing test.jar file:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar uf  test.jar  C.class</code></pre></div>
+<p>Suppose we have a test.jar file and we want to change the Main-Class entry in its manifest file to HelloWorld class. You can do that by using the following command:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar ufe  test.jar HelloWorld</code></pre></div>
+<p>In this command, the option u indicates that we are updating a JAR file; the option f indicates that we are specifying the JAR file name, which is test.jar, and the option e indicates that we are specifying the Main-Class entry's value as HelloWorld for the MANIFEST.MF file in test.jar file.</p>
+<h2 id="indexing-a-jar-file">Indexing a JAR File</h2>
+<p>We can generate an index file for JAR file. It is used to speed up class loading.</p>
+<p>We must use the option i with the jar command in a separate command, after creating a JAR file.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar i test.jar</code></pre></div>
+<p>This command will add a META-INF/INDEX.LIST file to the test.jar file. We can verify it by listing the table of contents of the test.jar file by using the following command:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar tf test.jar</code></pre></div>
+<h2 id="extracting-a-jar-file">Extracting a JAR File</h2>
+<p>To extract all or some entries from a JAR file, use the option x with the jar command.</p>
+<p>To extract all entries from a test.jar file</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar xf  test.jar</code></pre></div>
+<p>The option x extracts the entries from the JAR file.</p>
+<p>The option f specifies the file name, which is test.jar.</p>
+<p>The above command will extract all entries from test.jar file in the current working directory.</p>
+<p>It will create the same directory structure as it exists in the test.jar file.</p>
+<p>To extract individual entries from a JAR file, list them at the end of the command. The entries should be separated by a space.</p>
+<p>The following command will extract A.class and book/HelloWorld.class entries from a test.jar file:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar xf  test.jar A.class  book/HelloWorld.class</code></pre></div>
+<p>To extract all class files from a book directory, you can use the following command:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar xf  test.jar  book/*.class</code></pre></div>
+<h2 id="listing-jar-file-contents">Listing JAR File Contents</h2>
+<p>Use the option t with the jar command to list the table of contents of a JAR file on the standard output.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+jar tf test.jar</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-io-java-io-zip-file.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java ZI...</span></a><a class="pager-btn pager-next" href="java-io-java-io-jar-manifest.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java Ja...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java IO Tutorial - Java Files Attributes - JavaSchool</title>
+<meta name="description" content="Files class can access the commonly used attributes of a file.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-io-java-nio-file-attributes">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-io.html">New Java io</a></nav>
+    <h1>Java IO Tutorial - Java Files Attributes</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>Files class can access the commonly used attributes of a file.</p>
+<p>Files.isHidden(Path p) method tests if a file is hidden.</p>
+<p>The following methods in the Files class can access various types of commonly used attributes of a file.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+long size(Path)
+boolean isHidden(Path path)
+boolean isRegularFile(Path path, LinkOption... options)
+boolean isDirectory(Path path, LinkOption... options)
+boolean isSymbolicLink(Path path)
+FileTime getLastModifiedTime(Path path, LinkOption... options)</code></pre></div>
+<h2 id="file-attributes">File Attributes</h2>
+<p>The java.nio.attribute package contains the attribute-related classes. It bundles the file attributes in the following six types of views.</p>
+<p>BasicFileAttributeView manages the basic file attributes such as creation time, last access time, last modified time, size, file type (regular file, directory, symbolic link, or other), and file key (a unique number for a file). This view is supported on all platforms.</p>
+<p>DosFileAttributeView extends the BasicFileAttributeView accesses the file attributes that are specific to DOS. It provides the support to check if a file is a hidden file, a system file, an archive file, and a read-only file. It is available only on the systems that support DOS such as Microsoft Windows.</p>
+<p>POSIX stands for Portable Operating System Interface for UNIX. PosixFileAttributeView extends the BasicFileAttributeView and adds support for attributes that are available on the systems that support POSIX standards such as UNIX. It lets we manage owner, group, and [related access] permissions.</p>
+<p>FileOwnerAttributeView manages the owner of a file.</p>
+<p>ACL stands for Access Control List. AclFileAttributeView manages the ACL for a file.</p>
+<p>UserDefinedFileAttributeView manages a set of user-defined attributes for a file. The name of an attribute is a String. The value of an attribute could be of any data type.</p>
+<h2 id="file-attribute-view-support">File Attribute View Support</h2>
+<p>supportsFileAttributeView() method from the FileStore class tells whether a specific file attribute view is supported by a file store.</p>
+<p>If the specified file attribute view is supported, it returns true; otherwise, it returns false.</p>
+<p>The following code shows how to check for file attribute support.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.FileStore;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.PosixFileAttributeView;
+//www.java2s.compublicclass Main {
+  publicstaticvoid main(String[] args) throws Exception {
+    Path path = Paths.get("");
+    FileStore fs = Files.getFileStore(path);
+    // Check if POSIX file attribute is supported by the file store
+boolean supported = fs
+        .supportsFileAttributeView(PosixFileAttributeView.class);
+    if (supported) {
+      System.out.println("POSIX file attribute view  is supported.");
+    } else {
+      System.out.println("POSIX file attribute view  is not  supported.");
+    }
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="example">Example</h2>
+<p>The following code shows how to check for Supported File Attribute Views by a File Store.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
+import java.nio.file.FileStore;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.AclFileAttributeView;
+import java.nio.file.attribute.BasicFileAttributeView;
+import java.nio.file.attribute.DosFileAttributeView;
+import java.nio.file.attribute.FileAttributeView;
+import java.nio.file.attribute.FileOwnerAttributeView;
+import java.nio.file.attribute.PosixFileAttributeView;
+import java.nio.file.attribute.UserDefinedFileAttributeView;
+/*fromwww.java2s.com*/publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Path path = Paths.get("C:");
+    try {
+      FileStore fs = Files.getFileStore(path);
+      printDetails(fs, AclFileAttributeView.class);
+      printDetails(fs, BasicFileAttributeView.class);
+      printDetails(fs, DosFileAttributeView.class);
+      printDetails(fs, FileOwnerAttributeView.class);
+      printDetails(fs, PosixFileAttributeView.class);
+      printDetails(fs, UserDefinedFileAttributeView.class);
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    }
+  }
+  publicstaticvoid printDetails(FileStore fs,
+      Class&lt;? extends FileAttributeView&gt; attribClass) {
+    boolean supported = fs.supportsFileAttributeView(attribClass);
+    System.out.format("%s is  supported: %s%n", attribClass.getSimpleName(),
+        supported);
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="reading-and-updating-file-attributes">Reading and Updating File Attributes</h2>
+<p>To read or update one file attribute, use Files class.</p>
+<p>Files class has the following two static methods to read and update a file attribute using the attribute name as a string:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Object getAttribute(Path path, String attribute, LinkOption... options)
+Path setAttribute(Path path, String attribute, Object value, LinkOption... options)</code></pre></div>
+<p>To read or update multiple attributes of a file, work with a specific file attribute view.</p>
+<p>For most of the file attribute views, we have to work with two interfaces named as TypeAttributes and TypeAttributeView.</p>
+<p>For the basic file attributes, we have the BasicFileAttributes and BasicFileAtrributeView interfaces.</p>
+<p>The TypeAttributes reads the attributes. The TypeAttributeView reads/updates the attributes.</p>
+<p>The following two methods of the Files class read the file attributes in a bulk.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;A extends BasicFileAttributes&gt; A readAttributes(Path path, Class&lt;A&gt; type, LinkOption... options)
+Map&lt;String,Object&gt; readAttributes(Path path, String attributes, LinkOption... options)</code></pre></div>
+<p>The last argument of both methods specify how a symbolic link is handled. By default, if a file is a symbolic link, the attributes of the target of the symbolic link are read.</p>
+<p>If we specify NOFOLLOW_LINKS as the option, the attributes of the symbolic link are read, not the attributes of its target.</p>
+<p>The first readAttributes() method returns all file attributes of a specified type in an TypeAttributes object.</p>
+<p>To create the Path object representing the path of the file</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Path  path   = Paths.get("C:\\Java_Dev\\test1.txt");</code></pre></div>
+<p>To Read the basic file attributes</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+BasicFileAttributes bfa  = Files.readAttributes(path, BasicFileAttributes.class);</code></pre></div>
+<p>To Get the last modified time</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+FileTime lastModifiedTime  = bfa.lastModifiedTime();</code></pre></div>
+<p>To Get the size of the file</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+long  size = bfa.size();</code></pre></div>
+<p>The second readAttributes() method returns all or some of the attributes of a specific type.</p>
+<p>The list of attributes to read is supplied in a string form. The string form of an attribute list uses the following syntax:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+view-name:comma-separated-attributes</code></pre></div>
+<p>The view-name is the name of the attribute view that we want to read, such as basic, posix, acl, etc.</p>
+<p>If view-name is omitted, it defaults to basic. If view-name is present, it is followed by a colon.</p>
+<p>We can read all attributes of a specific view type by specifying an asterisk as the attributes list. For example, we can specify "basic:<em>" or "</em>" to read all basic file attributes.</p>
+<p>To read the size and the last modified time of the basic view, we would use</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">"basic:size,lastModifiedTime"or"size,lastModifiedTime".</code></pre></div>
+<p>To read the owner attribute of a file using an ACL view, we would use a string "acl:owner".</p>
+<p>To read all posix attributes of a file, we would use "posix:*".</p>
+<p>The following code prints the size and the last modified time of the file C:\Java_Dev\test1.txt.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Map;
+/*fromwww.java2s.com*/publicclass Main {
+  publicstaticvoid main(String[] args) throws Exception {
+    Path path = Paths.get("C:\\Java_Dev\\test1.txt");
+    // Prepare the attribute list
+    String attribList = "basic:size,lastModifiedTime";
+    // Read the attributes
+    Map&lt;String, Object&gt; attribs = Files.readAttributes(path, attribList);
+    System.out.format("Size:%s, Last   Modified   Time:%s %n",
+        attribs.get("size"), attribs.get("lastModifiedTime"));
+  }
+}</code></pre></div>
+<h2 id="example-2">Example 2</h2>
+<p>The following code reads the basic file attributes of the file C:\Java_Dev\test1.txt and prints some of them on the standard output.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
+/*fromwww.java2s.com*/publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Path path = Paths.get("C:\\Java_Dev\\test1.txt");
+    try {
+      BasicFileAttributes bfa = Files.readAttributes(path,
+          BasicFileAttributes.class);
+      System.out.format("Size:%s bytes %n", bfa.size());
+      System.out.format("Creation Time:%s %n", bfa.creationTime());
+      System.out.format("Last Access  Time:%s %n", bfa.lastAccessTime());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+}</code></pre></div>
+<p>We can also read file attributes using a specific view object.</p>
+<p>We can use the getFileAttributeView() method declared as follows of the Files class to get a specific attribute view. It returns null if the file attribute view is not available.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;V extends FileAttributeView&gt; V  getFileAttributeView(Path path,  Class&lt;V&gt; type, LinkOption... options)</code></pre></div>
+<p>After getting a view object of a specific view type, we can read all attributes of that view type using the view object's readAttributes() method.</p>
+<h2 id="example-3">Example 3</h2>
+<p>The following code reads all basic attributes for C:\Java_Dev\test1.txt file using a basic view object:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Path  path   = Paths.get("C:\\Java_Dev\\test1.txt");
+BasicFileAttributeView bfv = Files.getFileAttributeView(path,  BasicFileAttributeView.class);
+BasicFileAttributes bfa  = bfv.readAttributes();</code></pre></div>
+<p>The following code shows how to use the basic file attribute view to read and update basic file attributes.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributeView;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.nio.file.attribute.FileTime;
+import java.time.Instant;
+//fromwww.java2s.compublicclass Main {
+  publicstaticvoid main(String[] args) {
+    Path path = Paths.get("C:\\Java_Dev\\test1.txt");
+    try {
+      BasicFileAttributeView bfv = Files.getFileAttributeView(path,
+          BasicFileAttributeView.class);
+      BasicFileAttributes bfa = bfv.readAttributes();
+      System.out.format("Size:%s bytes %n", bfa.size());
+      System.out.format("Creation  Time:%s %n", bfa.creationTime());
+      System.out.format("Last Access  Time:%s %n", bfa.lastAccessTime());
+      FileTime newLastModifiedTime = null;
+      FileTime newLastAccessTime = null;
+      FileTime newCreateTime = FileTime.from(Instant.now());
+      bfv.setTimes(newLastModifiedTime, newLastAccessTime, newCreateTime);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+}</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-io-java-nio-files.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java Fi...</span></a><a class="pager-btn pager-next" href="java-io-java-nio-files-content.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java Fi...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java Methods - JavaSchool</title>
+<meta name="description" content="The code that invokes the method is the caller of the method.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-method">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java Methods</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>A method in a class defines the behavior of the objects.</p>
+<p>A method is a named block of code.</p>
+<p>The code that invokes the method is the caller of the method.</p>
+<p>Optionally, a method may accept input values from the caller and it may return a value to the caller.</p>
+<p>The list of input values is known as parameters. A method may have zero parameters. If a method has zero parameters, we say that method does not have any parameters or method does not take any parameters.</p>
+<p>A method is always defined inside the body of a class.</p>
+<p>The general syntax for a method declaration is of the form</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+&lt;modifiers&gt; &lt;return type&gt; &lt;method name&gt; (&lt;parameters list&gt;) &lt;throws clause&gt;{
+    // Body of  the   method  goes  here
+}</code></pre></div>
+<ul><li>&lt;modifiers&gt; is an optional list of modifiers;</li><li>&lt;return type&gt; is the data type of the value returned from the method;</li><li>&lt;method name&gt; is the name of the method.</li></ul>
+<h2 id="method-parameters">Method Parameters</h2>
+<p>The method name is followed by a pair of opening and closing parentheses.</p>
+<p>Optionally, we can specify one or more parameters to the method within the parentheses.</p>
+<p>Multiple parameters are separated by a comma.</p>
+<p>The closing parenthesis may optionally be followed by a throws clause.</p>
+<p>Finally, we specify the code for the method inside opening and closing braces.</p>
+<p>The four parts in a method declaration are mandatory:</p>
+<ul><li>the return type,</li><li>method name,</li><li>a pair of opening and closing parentheses, and</li><li>a pair of opening and closing braces.</li></ul>
+<p>The following is an example of a method:</p>
+<ul><li>it is named add;</li><li>it takes two parameters of type int named n1 and n2, and</li><li>it returns their sum:</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+int add(int n1, int n2)  {
+   int sum = n1  + n2;
+   return  sum;
+}</code></pre></div>
+<p>Sometimes, a method does not return a value to its caller. The keyword void is used as the return type if a method does not return any value to the caller.</p>
+<p>The method name must be a valid Java identifier.</p>
+<p>Conventionally, a Java method starts with a lowercase and subsequently a word cap is used.</p>
+<p>For example, getName, setName, getDogCount, and createDog are valid method names.</p>
+<p>A method may take input values from its caller. A parameter is used to take an input value from the caller.</p>
+<p>A parameter consists of two parts: a data type and a variable name. A method parameter is a variable declaration.</p>
+<p>The variables are used to hold the input values that are passed from the method's caller. A comma separates two parameters of a method.</p>
+<p>In the following example, the add method declares two parameters, n1 and n2. Both parameters are of the int data type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+int add(int n1, int n2)  {
+   int sum = n1  + n2;
+   return  sum;
+}</code></pre></div>
+<p>When the add method is called, the caller must pass two int values.</p>
+<p>The first value passed from the caller is stored in n1, and the second value passed from the caller is stored in n2.</p>
+<p>The parameters n1 and n2 are also known as formal parameters.</p>
+<p>A method is uniquely identified by its signature in a particular context. The signature of a method is the combination of its name and its parameter's number, types, and order.</p>
+<h2 id="local-variables">Local Variables</h2>
+<p>A variable declared inside a method, a constructor, or a block is called a local variable.</p>
+<p>A local variable declared in a method exists only for the duration the method is being executed.</p>
+<p>Because a local variable exists only for a temporary duration, it cannot be used outside the method, the constructor, or the block in which it is declared.</p>
+<p>The formal parameters for a method are treated as local variables. They are initialized with the actual parameter values when the method is invoked, and before the method's body is executed.</p>
+<p>You need to observe the following rules about the usage of local variables.</p>
+<ul><li>Local variables are not initialized by default.</li><li>A local variable cannot be accessed in the program until it is assigned a value.</li><li>A local variable can be declared anywhere in the body of a method. However, it must be declared before it is used.</li><li>A local variable hides the name of an instance variable and a class variable with the same name.</li></ul>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-import.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-method-return.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OCA Java SE 8 Class Design - Java Class Design - JavaSchool</title>
+<meta name="description" content="When creating a new class in Java, you can create the class to inherit from an existing class.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-oca-java-se-8-class-design-index">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-oca-java-se-8-class-design.html">New OCA Java SE 8 Class Design</a></nav>
+    <h1>OCA Java SE 8 Class Design - Java Class Design</h1>
+<ul><li>Next »</li></ul>
+<p>When creating a new class in Java, you can create the class to inherit from an existing class.</p>
+<p>During class inheritance the new child subclass includes any public or protected primitives, objects, or methods defined in the parent class.</p>
+<p>We refer to class that inherits from another class as a child class, or a descendent of that class.</p>
+<p>We refer to the class that the child inherits from as the parent class, or an ancestor of the class.</p>
+<p>If child X inherits from class Y, which inherits from class Z, then X would be considered an indirect child, or descendent, of class Z.</p>
+<p>Java supports single inheritance: a class may inherit from only one direct parent class.</p>
+<p>Java supports multiple levels of inheritance: one class may extend another class, which in turn extends another class.</p>
+<p>You can extend a class any number of times.</p>
+<p>To prevent a class from being extended by marking the class with the final modifier.</p>
+<h2 id="extending-a-class">Extending a Class</h2>
+<p>In Java, you can extend a class by adding the parent class name in the definition using the extends keyword.</p>
+<p>The following code shows how to create class inheritance in Java.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Shape {
+  private int edge;
+  public int getEdge() {
+    return edge;
+  }
+  public void setAge(int edge) {
+    this.edge = edge;
+  }
+}
+class Rectangle extends Shape {
+  private void output() {
+    System.out.println("The "+getEdge()+" is 4!");
+  }
+}</code></pre></div>
+<p>extends keyword indicates that the Rectangle class extends from the Shape class.</p>
+<p>In this example, we see that getEdge() and setAge() are accessible by subclass Rectangle, since they are marked as public in the parent class.</p>
+<p>The primitive edge is marked as private and therefore not accessible from the subclass Rectangle, as the following would not compile:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Rectangle extends Shape {
+  private void output() {
+    System.out.println(edge);   // DOES NOT COMPILE
+  }
+}</code></pre></div>
+<p>Even though edge variable is inaccessible by the child class, there is an edge value that exists within the instance.</p>
+<p>The edge value cannot be directly referenced by the child class nor any instance of the class.</p>
+<h2 id="applying-class-access-modifiers">Applying Class Access Modifiers</h2>
+<p>The public access modifier applied to a class says that the class can be referenced and used in any class.</p>
+<p>The default package private modifier, which is the lack of any access modifier, says that the class can be accessed only by a subclass or class within the same package.</p>
+<p>A Java file can have many classes but at most one public class.</p>
+<p>In fact, it may have no public class at all.</p>
+<p>One feature of using the default package private modifier is that you can define many classes within the same Java file.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class A {}
+publicclass G extends A{}</code></pre></div>
+<p>There can be at most one public class or interface in a Java file.</p>
+<p>Top-level interfaces can also be declared with the public or default modifiers.</p>
+<h2 id="javalangobject">java.lang.Object</h2>
+<p>In Java, all classes inherit from a single class, java.lang.Object.</p>
+<p>java.lang.Object is the only class that doesn't have any parent classes.</p>
+<p>The compiler automatically inserts code into any class you write that doesn't extend a specific class.</p>
+<p>For example, consider the following two equivalent class definitions:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+}
+publicclass Main extends java.lang.Object {
+}</code></pre></div>
+<p>when Java sees you define a class without extending another class, it adds the syntax extends java.lang.Object to the class definition.</p>
+<ul><li>Next »</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-book-java.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java tutorial with Quiz, E...</span></a><a class="pager-btn pager-next" href="java-xml-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java XML Tutorial - Java J...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java varargs Method - JavaSchool</title>
+<meta name="description" content="The term &quot;varargs&quot; is shorthand for &quot;variable-length arguments.&quot;">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-varargs-method">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java varargs Method</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>The term "varargs" is shorthand for "variable-length arguments."</p>
+<p>The varargs declares a method or constructor that accepts a variable number of arguments (or parameters).</p>
+<h2 id="declare-varargs-method">Declare varargs Method</h2>
+<p>To declare varargs, add an ellipsis ... after the data type of the method's argument.</p>
+<p>The following code shows a max() method declaration with one variable-length argument, num, which is of the int data type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicstatic  int max(int... num) {
+}</code></pre></div>
+<p>Adding whitespaces before and after ellipsis is optional.</p>
+<p>A varargs method can have more than one argument. The following code shows that aMethod() accepts three arguments, one of which is a variable-length argument:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicstatic int aMethod(String str, double   d1,   int...num)  {
+}</code></pre></div>
+<p>A varargs method can have a maximum of one variable-length argument.</p>
+<p>The variable-length argument of a varargs method must be the last argument in the argument list.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+void  m2(String str, int...n1) {
+}</code></pre></div>
+<h2 id="example">Example</h2>
+<p>Let's rewrite the max() method to make it a varargs method:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticint max(int... num) {
+    int max = Integer.MIN_VALUE;
+    for (int i = 0; i &lt; num.length; i++) {
+      if (num[i] &gt; max) {
+        max = num[i];//fromwww.java2s.com
+      }
+    }
+    return max;
+  }
+}</code></pre></div>
+<h2 id="use-varargs-method">Use varargs Method</h2>
+<p>We can use a for loop to process the list of arguments for the variable-length argument.</p>
+<p>The length property gives you the number of values that were passed for the variable-length argument.</p>
+<p>To get the nth value in the variable-length argument, you need to use varArgsName[n-1].</p>
+<p>We can use a foreach loop to work with variable-length argument.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstatic int max2(int... num) {
+    int max = Integer.MIN_VALUE;
+    for (int currentNumber : num) {
+      if (currentNumber &gt; max) {
+        max = currentNumber;
+      }
+    }
+    return max;
+  }
+}</code></pre></div>
+<p>We can call the Main.max() method as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+int max1 = Main.max(1, 8);
+int max2 = Main.max(1, 1, 3);</code></pre></div>
+<p>You can use zero or more arguments for a variable-length argument in a method. The following code is a valid call to the max() method:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+int max = Main.max(); // Passing no  argument  is ok</code></pre></div>
+<p>The following declaration of the max() method will force its caller to pass at least two integers:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+// Argumenets  n1  and  n2  are   mandatory
+publicstatic int max(int n1,  int n2,   int... num) {
+}</code></pre></div>
+<p>The compiler will treat the first two arguments, n1 and n2, as mandatory and the third argument, num, as optional.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticint max(int n1, int n2, int... num) {
+    // Initialize max to the maximum of n1 and n2
+int max = (n1 &gt; n2 ? n1 : n2);
+/*www.java2s.com*/for (int i = 0; i &lt; num.length; i++) {
+      if (num[i] &gt; max) {
+        max = num[i];
+      }
+    }
+    return max;
+  }
+  publicstaticvoid main(String[] args) {
+    System.out.println(max(7, 9));
+    System.out.println(max(7, 9, 10));
+    System.out.println(max(7, 9, 10, 13));
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="overloading-a-varargs-method">Overloading a Varargs Method</h2>
+<p>The same overloading rules for methods apply to a varargs method.</p>
+<p>We can overload a method with a variable-length argument as long as the parameters for the methods differ in type, order, or number.</p>
+<p>For example, the following is a valid example of an overloaded max() method:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass  Main {
+    publicstatic int max(int x, int  y)  {
+    }
+    publicstatic int max(int...num)  {
+    }
+}</code></pre></div>
+<p>Consider the following code</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+int max = Main.max(12, 13);  // which  max()  will be  called?</code></pre></div>
+<p>Java will call the max(int x, int y). Java first attempts to find a method declaration using an exact match for the number of parameters. If it does not find an exact match, it looks for a match using variable-length parameters.</p>
+<p>If a varargs method is overloaded, Java uses the more specific version of the method instead of using a varargs method. java uses varargs method as the last resort to resolve a method call.</p>
+<p>The overloading of the method itself may be valid. However, the call to it may cause an issue.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticint max(int... num) {
+    return 0;
+  }
+  publicstaticint max(double... num) {
+    return 0;
+  }
+}</code></pre></div>
+<p>Which max() would the following code call?</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+int max = Main.max(); // Which max()  to call?</code></pre></div>
+<p>The above statement will generate a compilation time error.</p>
+<h2 id="varargs-methods-and-the-main-method">Varargs Methods and the main() Method</h2>
+<p>The signature for the main() method must be main(String[] args).</p>
+<p>The following declaration of main() method for the Main class is valid.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstatic void main(String... args) {
+    System.out.println("Hello from  varargs main()...");
+  }
+}</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-parameter-passing.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-this.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

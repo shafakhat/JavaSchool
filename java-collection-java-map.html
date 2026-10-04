@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Collection Tutorial - Java Maps - JavaSchool</title>
+<meta name="description" content="A map represents a collection that contains key-value mappings.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-collection-java-map">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-collection.html">New Java Collection</a></nav>
+    <h1>Java Collection Tutorial - Java Maps</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>A map represents a collection that contains key-value mappings.</p>
+<p>Map is a collection in which each element represents a key-value pair as &lt;key, value&gt;. A &lt;key, value&gt; pair is also known as an entry in the map. The key and the value must be reference types.</p>
+<p>A map is represented by an instance of the Map&lt;K,V&gt; interface, which is not inherited from the Collection interface.</p>
+<p>A Map does not allow any duplicate keys. Each key is mapped to exactly one value. Values do not have to be unique. Two keys may map to the same value.</p>
+<p>A Map allows for at most one null value as its key and multiple null values as its values.</p>
+<p>The methods in the Map interface may be classified in the following four categories depending on the operations they perform:</p>
+<ul><li>basic operations</li><li>bulk operations</li><li>view operations</li><li>comparison operations</li></ul>
+<h2 id="basic-operations">basic operations</h2>
+<p>The basic methods perform basic operations on a Map,</p>
+<ul><li>putting an entry into a Map</li><li>getting the value for a specified key</li><li>getting the number of entries</li><li>removing an entry</li><li>checking if the Map is empty.</li></ul>
+<p>Examples of methods in this category are as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+int size()
+boolean isEmpty()
+boolean containsKey (Object key)
+boolean containsValue (Object value)
+V  get(Object  key)
+V  getOrDefault(Object key, V  defaultValue)
+V  put(K  key, V  value)
+V  putIfAbsent(K key, V  value)
+V  remove  (Object key)
+boolean remove(Object key, Object value)
+boolean replace(K key, V  oldValue, V  newValue)</code></pre></div>
+<h2 id="bulk-operations">bulk operations</h2>
+<p>The Map bulk operations perform bulk operations on a Map such as copying entries to another Map or removing all entries from the Map.</p>
+<p>Examples of methods in this category are as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+void  clear()
+void  putAll (Map&lt;? extends K,  ?  extends V&gt;  t)
+void  replaceAll(BiFunction&lt;? super K,?  super V,?  extends V&gt;  function)</code></pre></div>
+<h2 id="view-operations">View operations</h2>
+<p>The view operations contains three methods. We can view the following sets from a Map.</p>
+<ul><li>all keys in a Map as a Set,</li><li>all values as a Collection,</li><li>all &lt;key, value&gt; pairs as a Set.</li></ul>
+<p>Examples of methods in this category are as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Set&lt;K&gt; keySet()
+Collection&lt;V&gt; values()
+Set&lt;Map.  Entry&lt;K,  V&gt;&gt;entrySet()</code></pre></div>
+<p>All keys and all &lt;key, value&gt; pairs are always unique in a Map and returned as Set views.</p>
+<p>Since a Map may contain duplicate values, it returns a Collection view for the values.</p>
+<h2 id="comparison-operations">Comparison operations</h2>
+<p>The comparison operations methods deal with comparing two Maps for equality. Examples of methods in this category are as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+boolean equals (Object o)
+int hashCode()</code></pre></div>
+<h2 id="implementation">Implementation</h2>
+<p>The HashMap, LinkedHashMap, and WeakHashMap are three implementation classes for the Map interface.</p>
+<p>The HashMap allows one null value as a key and multiple null values as the values.</p>
+<p>The following code demonstrates how to create and use a Map interface from its implementation class HashMap. A HashMap does not guarantee any specific iteration order of entries in the Map.</p>
+<p>The following code creates a Map from a HashMap</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+// Create a  map using HashMap
+Map&lt;String, String&gt;  map = new HashMap&lt;&gt;();
+map.put("CSS", "style");</code></pre></div>
+<p>The LinkedHashMap is another implementation class for the Map interface. It stores entries in the Map using a doubly linked list and keeps the iteration ordering as the insertion order.</p>
+<p>The following code demonstrates how to use a Map.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.HashMap;
+import java.util.Map;
+/*www.java2s.com*/publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
+    map.put("CSS", "style");
+    map.put("HTML", "mark up");
+    map.put("Oracle", "database");
+    map.put("XML", "data");
+    printDetails(map);
+    map.clear();
+    printDetails(map);
+  }
+  publicstaticvoid printDetails(Map&lt;String, String&gt; map) {
+    String usage = map.get("CSS");
+    System.out.println("Map: " + map);
+    System.out.println("Map Size:  " + map.size());
+    System.out.println("Map is empty:  " + map.isEmpty());
+    System.out.println("Map contains CSS key:   " + map.containsKey("CSS"));
+    System.out.println("Usage:  " + usage);
+    System.out.println("removed:  " + map.remove("CSS"));
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<p>The WeakHashMap class is another implementation for the Map interface.</p>
+<p>WeakHashMap class contains weak keys. When there is no reference to the key except in the map, keys are candidates for garbage collection.</p>
+<p>If a key is garbage collected, its associated entry is removed from the WeakHashMap.</p>
+<p>The WeakHashMap allows a null key and multiple null values.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-collection-java-special-queues.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Collection Tutorial -...</span></a><a class="pager-btn pager-next" href="java-collection-java-map-operation.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Collection Tutorial -...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

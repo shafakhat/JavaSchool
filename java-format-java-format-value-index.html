@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Format - Java printf Value Index - JavaSchool</title>
+<meta name="description" content="The following code use the s conversion to format its argument as string.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-format-java-format-value-index">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-format.html">New Java Format</a></nav>
+    <h1>Java Format - Java printf Value Index</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>The following code use the s conversion to format its argument as string.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] args) {
+    System.out.printf("%s, %s,  and  %s",  "A",  "B", "C");
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<p>A format specifier in a format string can refer to an argument in three ways:</p>
+<ul><li>Ordinary indexing</li><li>Explicit indexing</li><li>Relative indexing</li></ul>
+<h2 id="ordinary-indexing">Ordinary Indexing</h2>
+<p>When a format specifier does not specify an argument-index value as the code above, it is called ordinary indexing.</p>
+<p>In ordinary indexing, the argument-index is determined by the position of the format specifier in the format string.</p>
+<p>The first format specifier without argument-index has the index of 1, which refers to the first argument.</p>
+<p>For the following format string,</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+System.out.printf("%s, %s,  and  %s",  "A",  "B", "C");</code></pre></div>
+<p>The first %s has the index of 1, and the second %s has the index of 2.</p>
+<p>The first "%s" format who has the index of 1 refers to the first argument, "A". The second "%s" format refers to the second argument, "B".</p>
+<p>If there are more arguments than the format specifiers in the format string, the extra arguments are ignored.</p>
+<p>A java.util.MissingFormatArgumentException is thrown if there are more format specifier than arguments.</p>
+<p>The following code will throw the exception because the number of arguments is one less than the number of format specifiers.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstatic void main(String[] args) {
+    System.out.printf("%s, %s,  and  %s",  "A",  "B");
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<p>The last argument to the format() method of the Formatter class is a varargs argument. We can also pass an array to a varargs argument.</p>
+<h2 id="explicit-indexing">Explicit Indexing</h2>
+<p>The explicit indexing specifies an argument index explicitly in a format specifier.</p>
+<p>An argument index, an integer ending with $, is specified just after the % sign in a format specifier.</p>
+<p>The following code uses three format specifiers with explicit indexing: "%1$s", "%2$s", and "%3$s".</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstatic void main(String[] args) {
+    System.out.printf("%1$s, %2$s, and %3$s",  "A",  "B", "C");
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<p>Explicit indexing can refer to an argument at any order in the argument list.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] args) {
+    System.out.printf("%3$s, %2$s, and %1$s",  "A",  "B", "C");
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<p>We can reference the same argument multiple times using explicit indexing and not to reference some arguments inside the format string.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstatic void main(String[] args) {
+    System.out.printf("%3$s, %2$s, and %2$s", "A", "B", "C");
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="relative-indexing">Relative Indexing</h2>
+<p>In relative indexing, a format specifier uses the same argument that was used by the previous format specifier.</p>
+<p>Relative indexing does not use an argument-index value. It uses '&lt;' character as a flag in the format specifier.</p>
+<p>We cannot use relative indexing as the first format specifier since there must be a previous format specifier.</p>
+<p>The following code uses relative indexing:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] args) {
+    System.out.printf("%1$s, %&lt;s, %&lt;s, %2$s, and %&lt;s",  "A",  "B");
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<p>It is possible to have less number of arguments than the number of format specifiers for relative indexing.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-format-java-format-string.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Format - Java printf ...</span></a><a class="pager-btn pager-next" href="java-format-java-format-flags.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Format - Java printf ...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

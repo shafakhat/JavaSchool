@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Object Oriented Design - Java Inner Class Members - JavaSchool</title>
+<meta name="description" content="An inner class has access to all instance members, instance fields, and instance methods of its enclosing class.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-object-oriented-design-java-inner-class-members">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">New Java Object Oriented Design</a></nav>
+    <h1>Java Object Oriented Design - Java Inner Class Members</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>An inner class has access to all instance members, instance fields, and instance methods of its enclosing class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Outer {/*fromwww.java2s.com*/privateint value = 2014;
+  publicclass Inner {
+    publicvoid printValue() {
+      System.out.println("Inner: Value  = " + value);
+    }
+  } // Inner class ends here
+publicvoid printValue() {
+    System.out.println("Outer: Value  = " + value);
+  }
+  publicvoid setValue(int newValue) {
+    this.value = newValue;
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Outer out = new Outer();
+    Outer.Inner in = out.new Inner();
+    out.printValue();
+    in.printValue();
+    out.setValue(2015);
+    out.printValue();
+    in.printValue();
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="example">Example</h2>
+<p>The following code shows how to access inner variable for inner class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Outer out = new Outer();
+    Outer.Inner in = out.new Inner();/*www.java2s.com*/
+    out.printValue();
+    in.printValue();
+    out.setValue(3);
+    out.printValue();
+    in.printValue();
+  }
+}
+class Outer {
+  privateint value = 1;
+  publicclass Inner {
+    privateint value = 2;
+    publicvoid printValue() {
+      System.out.println("Inner: Value  = " + value);
+    }
+  } // Inner class ends here
+publicvoid printValue() {
+    System.out.println("Outer: Value  = " + value);
+  }
+  publicvoid setValue(int newValue) {
+    this.value = newValue;
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="this-keyword-for-inner-class">this keyword for Inner class</h2>
+<p>The following code shows how to use the keyword this in the inner class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Outer {/*www.java2s.com*/privateint value = 1;
+  class QualifiedThis {
+    privateint value = 2;
+    publicvoid printValue() {
+      System.out.println("value=" + value);
+      System.out.println("this.value=" + this.value);
+      System.out.println("QualifiedThis.this.value=" + QualifiedThis.this.value);
+    }
+    publicvoid printHiddenValue() {
+      int value = 2;
+      System.out.println("value=" + value);
+      System.out.println("this.value=" + this.value);
+      System.out.println("QualifiedThis.this.value=" + QualifiedThis.this.value);
+    }
+  }
+  publicvoid printValue() {
+    System.out.println("value=" + value);
+    System.out.println("this.value=" + this.value);
+  }
+}
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Outer outer = new Outer();
+    Outer.QualifiedThis qt = outer.new QualifiedThis();
+    System.out.println("printValue():");
+    qt.printValue();
+    System.out.println("printHiddenValue():");
+    qt.printHiddenValue();
+    outer.printValue();
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h2 id="hidden-variable">Hidden variable</h2>
+<p>If the instance variable name is hidden, you must qualify its name with the keyword this or the class name as well as the keyword this.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class TopLevelOuter {
+  privateint v1 = 100;
+/*www.java2s.com*/// Here, only v1 is in scope
+publicclass InnerLevelOne {
+    privateint v2 = 200;
+    // Here, only v1 and v2 are in scope
+publicclass InnerLevelTwo {
+      privateint v3 = 300;
+      // Here, only v1, v2, and v3 are in scope
+publicclass InnerLevelThree {
+        privateint v4 = 400;
+        // Here, all v1, v2, v3, and v4 are in scope
+
+      }
+    }
+  }
+}</code></pre></div>
+<h2 id="from-outer-class">From outer class</h2>
+<p>The following code shows how to reference the variable from the outer class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Test{
+  privateint value = 1;
+  publicclass Inner {
+    privateint value = 2;
+//www.java2s.compublicvoid printValue() {
+      System.out.println("Inner: Value  = " + value);
+      System.out.println("Outer: Value  = " + Test.this.value);
+    }
+  } // Inner class ends here
+publicvoid printValue() {
+    System.out.println("\nOuter - printValue()...");
+    System.out.println("Outer: Value  = " + value);
+  }
+  publicvoid setValue(int newValue) {
+    System.out.println("\nSetting  Outer's value to " + newValue);
+    this.value = newValue;
+  }
+}</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-inner-class-objects.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-inheritance.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

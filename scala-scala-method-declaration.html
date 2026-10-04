@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scala Tutorial - Scala Method Declaration - JavaSchool</title>
+<meta name="description" content="Scala method declarations have the def keyword, the method name, parameters, optional return type, the = keyword, and the method body.myMethod takes no parameters and ret">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-scala-scala-method-declaration">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-scala.html">New Scala</a></nav>
+    <h1>Scala Tutorial - Scala Method Declaration</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>Scala method declarations have the def keyword, the method name, parameters, optional return type, the = keyword, and the method body.myMethod takes no parameters and returns a String:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+def myMethod():String = "java2s.com"</code></pre></div>
+<p>myOtherMethod takes no parameters and returns a String, but the return type is not explicitly declared because the compiler infers the return type.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+def myOtherMethod() = "Moof"</code></pre></div>
+<p>We declare the parameters inside the method declaration's parentheses. The parameter name must be followed by the parameter's type:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+def foo(a: Int):String = a.toString</code></pre></div>
+<p>We can declare multiple parameters:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+def f2(a: Int, b:Boolean):String= if (b)a.toString else"false"</code></pre></div>
+<p>We can pass the type of a parameter or the return type as a parameter.</p>
+<p>The following code takes a parameter p and a type parameter T and returns a List of T.</p>
+<p>Thus, if you pass an Int, you'll get a List[Int], and if you pass a String, you'll get a List[String].</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+deflist[T](p:T):List[T] = p :: Nil
+list(1)
+list("Hello")</code></pre></div>
+<p>And the last parameter in the list may be a variable-length argument.</p>
+<p>If the last parameter is a variable-length argument, it is a Seq of the type of the variable-length argument, so in this case the as parameter is a Seq[Int]:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+def largest(as: Int*): Int = as.reduceLeft((a, b)=&gt; a max b)</code></pre></div>
+<p>A variable-length argument method may be called as follows:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+largest(1)
+largest(2,3,99)
+largest(3,22,33,22)</code></pre></div>
+<p>We can mix type parameters with variable-length arguments:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+def mkString[T](as: T*):String = as.foldLeft("")(_ + _.toString)</code></pre></div>
+<p>And we can put bounds on the type parameters. In this case, the types that are passed in must be Number or a subclass of Number:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+def sum[T &lt;:Number](as:T*): Double = as.foldLeft(0d)(_ + _.doubleValue)</code></pre></div>
+<p>Methods can be declared within any code scope, except at the top level, where classes, traits, and objects are declared.</p>
+<p>Methods can reference any variables in their scope as seen in the following code.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+def readLines(br: BufferedReader) = {
+    var ret: List[String] = Nil
+    def readAll():Unit= br.readLinematch {
+        case null =&gt;
+        case s =&gt; ret ::= s ; readAll()
+    }
+    readAll()
+    ret.reverse
+}</code></pre></div>
+<p>Methods that override declared methods must include the override modifier.</p>
+<p>Methods that override abstract methods may include the override modifier.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+abstract class Base {
+    def thing: String
+}
+class One extends Base {
+    def thing= "Moof"
+}</code></pre></div>
+<p>Methods that take no parameters and variables can be accessed the same way, and a val can override a def in a superclass as shown in the following code.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+class Two extends One{
+override val thing= (new java.util.Date).toString
+}
+class Three extends One{
+override lazy val thing= super.thing + (new java.util.Date).toString
+}</code></pre></div>
+<h2 id="call-by-name">Call-by-Name</h2>
+<p>In Scala we can pass parameters to methods and functions: call-by-name, which passes a code block to the callee.</p>
+<p>Each time the callee accesses the parameter, the code block is executed and the value is calculated.</p>
+<h2 id="method-invocation">Method Invocation</h2>
+<p>Scala provides a number of syntactic variations for invoking methods.</p>
+<p>There's the standard Java dot notation:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+instance.method()</code></pre></div>
+<p>But if a method does not take any parameters, the ending parentheses are optional:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+instance.method</code></pre></div>
+<p>This allows methods without parameters methods to appear as properties or fields on the target instance.</p>
+<p>Methods that take a single parameter can be invoked just as in Java:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+instance.method(param)</code></pre></div>
+<p>But methods that take a single parameter can be invoked without dots or parentheses:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+instance.method param</code></pre></div>
+<p>Because Scala allows method names to contain symbols such as +, -, *, and ?, Scala's dot less method notation creates a syntactically neutral way of invoking methods that are hard-coded operators in Java.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main {
+  def main(args: Array[String]) {
+     println(2.1.*(4.3))
+     println(2.1* 4.3)
+  }
+}</code></pre></div>
+<p>Finally, we invoke multiparameter methods in Scala just as in Java:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+instance.method(p1, p2)</code></pre></div>
+<p>If a Scala method takes a type parameter, wecan also explicitly pass the type parameter:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+instance.method[TypeParam](p1,p2)</code></pre></div>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-utility-method-array-search-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="java-utility-method-array-shift-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

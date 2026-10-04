@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scala Tutorial - Scala Option - JavaSchool</title>
+<meta name="description" content="Option lets us express null value explicitly without the null &quot;hack&quot;.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-scala-scala-option">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-scala.html">New Scala</a></nav>
+    <h1>Scala Tutorial - Scala Option</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
+<ul><li>Next »</li></ul>
+<p>Option lets us express null value explicitly without the null "hack".</p>
+<p>Option is an abstract class and its two concrete subclasses are Some, for when we have a value, and None, when we don't.</p>
+<h2 id="example">Example</h2>
+<p>You can see Option, Some, and None in action in the following example, where we create a map of state capitals in the United States:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+object Main {
+  def main(args: Array[String]) {
+     val stateCapitals = Map(
+       "Alabama" -&gt; "Montgomery",
+       "Alaska"  -&gt; "Juneau",
+       "Wyoming" -&gt; "Cheyenne")
+     println( "Get the capitals wrapped in Options:" )
+     println( "Alabama: " + stateCapitals.get("Alabama") )
+     println( "Wyoming: " + stateCapitals.get("Wyoming") )
+     println( "Unknown: " + stateCapitals.get("Unknown") )
+     println( "Get the capitals themselves out of the Options:" )
+     println( "Alabama: " + stateCapitals.get("Alabama").get )
+     println( "Wyoming: " + stateCapitals.get("Wyoming").getOrElse("Oops!") )
+     println( "Unknown: " + stateCapitals.get("Unknown").getOrElse("Oops2!") )
+  }
+}</code></pre></div>
+<h2 id="note">Note</h2>
+<p>The Map.get method returns an Option[T], where T is String in this case.</p>
+<p>By returning an Option, we can't "forget" that we have to verify that something was returned.</p>
+<p>If the Option is a Some, Some.get returns the value.</p>
+<p>If the Option is actually None, then None.get throws a NoSuchElementException.</p>
+<p>getOrElse in the last two println statements returns either the value in the Option, if it is a Some instance, or it returns the argument passed to getOrElse, if it is a None instance.</p>
+<p>getOrElse argument behaves as the default return value.</p>
+<ul><li>Next »</li><li>« Previous</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-utility-method-array-multiply-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="java-utility-method-array-normalize-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

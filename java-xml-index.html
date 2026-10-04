@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java XML Tutorial - Java JAXP Intro - JavaSchool</title>
+<meta name="description" content="The Java API for XML Processing (JAXP) is for processing XML data in the Java.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-xml-index">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-xml.html">New Java XML</a></nav>
+    <h1>Java XML Tutorial - Java JAXP Intro</h1>
+<ul><li>Next »</li></ul>
+<p>The Java API for XML Processing (JAXP) is for processing XML data in the Java.</p>
+<p>JAXP contains standards Simple API for XML Parsing (SAX), Document Object Model (DOM), and the Streaming API for XML (StAX) standard.</p>
+<p>JAXP supports the Extensible Stylesheet Language Transformations (XSLT) standard, and we can use it to convert the XML documents to other formats, such as HTML.</p>
+<h2 id="packages-overview">Packages Overview</h2>
+<p>The Java SAX and DOM APIs are defined as follows:</p>
+<p>Package  Description ---  --- javax.xml.parsers  The JAXP APIs provide an interface for various SAX and DOM parsers. org.w3c.dom  DOM related classes org.xml.sax  SAX APIs. javax.xml.transform  XSLT APIs that transform XML into other forms. javax.xml.stream  StAX-specific transformation APIs.</p>
+<h2 id="sax">SAX</h2>
+<p>The Simple API for XML (SAX) is the event-driven, serial-access parser. It processes the XML document element-by-element.</p>
+<p>The SAX API is often used as data filters that do not require an in-memory representation of the XML data.</p>
+<h2 id="dom">DOM</h2>
+<p>The DOM API builds a tree structure out of the XML document.</p>
+<p>We can use the DOM API to manipulate the hierarchy of XML objects.</p>
+<p>The entire XML tree is stored in memory by DOM API. It would use more memory than SAX parser</p>
+<h2 id="xslt">XSLT</h2>
+<p>We can use the XSLT APIs defined in javax.xml.transform to write XML data to a file or convert the XML document into other forms, such as HTML or PDF.</p>
+<h2 id="stax">StAX</h2>
+<p>The StAX APIs defined in javax.xml.stream provide a streaming based, event-driven, pull-parsing API for reading and writing XML documents using Java.</p>
+<p>StAX is a simpler than SAX and consumes less memory than DOM.</p>
+<ul><li>Next »</li></ul>
+    <div class="pager"><a class="pager-btn" href="oca-java-se-8-class-design-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">OCA Java SE 8 Class Design...</span></a><a class="pager-btn pager-next" href="oca-java-se-8-core-java-apis-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">OCA Java SE 8 Core Java AP...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

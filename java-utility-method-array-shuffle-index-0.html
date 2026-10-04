@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Utililty Methods Array Shuffle - JavaSchool</title>
+<meta name="description" content="The list of methods to do Array Shuffle are organized into topic(s).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-utility-method-array-shuffle-index-0">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-utility-method.html">java utility method</a></nav>
+    <h1>Java Utililty Methods Array Shuffle</h1>
+<p>List of utility methods to do Array Shuffle</p>
+<h2 id="description">Description</h2>
+<p>The list of methods to do Array Shuffle are organized into topic(s).</p>
+<h2 id="method">Method</h2>
+<p>T[]randomize(final T[] array) Reassigns all of the existing values in the given array to different (pseudo-random) slots.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (array == null) {
+    throw (newNullPointerException("passed array is of null value"));
+T[] copy = Arrays.copyOf(array, array.length);
+List&lt;Integer&gt; track = newArrayList&lt;Integer&gt;();
+for (int i = 0; i &lt; array.length; i++) {
+    int rand = -1;
+    do {
+...</code></pre></div>
+<p>voidshuffle() shuffle</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int i;
+int j;
+int tmp;
+int rmd;
+Random rnd = newRandom();
+for (i = 0, j = 0; i &lt; no; i++, j++) {
+    seq[j] = 0;
+for (i = 0; i &lt; py; i++, j++) {
+    seq[j] = 1;
+for (i = 0; i &lt; os; i++, j++) {
+    seq[j] = 2;
+for (i = 0; i &lt; dl; i++, j++) {
+    seq[j] = 3;
+for (i = 0; i &lt; sl; i++, j++) {
+    seq[j] = 4;
+for (i = 0, j = total - 1; j &gt; 0; i++, j--) {
+    rmd = rnd.nextInt() % (j + 1);
+    if (rmd &lt; 0) {
+        rmd = rmd * -1;
+    tmp = seq[rmd + i];
+    seq[rmd + i] = seq[i];
+    seq[i] = tmp;</code></pre></div>
+<p>voidshuffle(byte[] array) Randomly shuffle elements within an array.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">shuffle(newRandom(), array);</code></pre></div>
+<p>voidshuffle(byte[] values, Random rnd) Shuffles the elements in the given array into a random sequence.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">shuffle(values, 0, values.length, rnd);</code></pre></div>
+<p>Listshuffle(Collection items, Random random) shuffle</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">List&lt;T&gt; result = newArrayList&lt;T&gt;(items);
+Collections.shuffle(result, random);
+return result;</code></pre></div>
+<p>Listshuffle(Collection objects) Creates a new shuffled list containing the objects in the given collection.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">return shuffle(objects, Collections.&lt;T&gt;emptyList());</code></pre></div>
+<p>voidshuffle(double[] arr, Random rnd) Randomly permute the given double array.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for (int i = arr.length - 1; i &gt; 0; i--) {
+    int j = rnd.nextInt(i + 1);
+    double tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;</code></pre></div>
+<p>voidShuffle(double[] array) Shuffle an array.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Shuffle(array, 0);</code></pre></div>
+<p>voidshuffle(double[] array, Random r) Implements Fisher-Yates shuffle.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for (int i = array.length - 1; i &gt; 0; i--) {
+    int index = r.nextInt(i + 1);
+    double a = array[index];
+    array[index] = array[i];
+    array[i] = a;</code></pre></div>
+<p>double[][]shuffle(double[][] kernel, long seed) Shuffle a kernel matrix with seed to initialize the Random object</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Double[][] kernelDouble = convert2DoubleObjects(kernel);
+for (int i = 0; i &lt; kernel.length; i++) {
+    Collections.shuffle(Arrays.asList(kernelDouble[i]), newRandom(seed));
+Collections.shuffle(Arrays.asList(kernelDouble), newRandom(seed));
+return convert2DoublePrimitives(kernelDouble);</code></pre></div>
+<p><a href="https://www.java2s.com/">HOME</a> | Copyright © www.java2s.com 2016</p>
+    <div class="pager"><a class="pager-btn" href="scala-scala-objects.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Scala Tutorial - Scala Obj...</span></a><a class="pager-btn pager-next" href="scala-scala-traits.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Scala Tutorial - Scala Tra...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>
