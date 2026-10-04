@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Map collection with real-time behavior - JavaSchool</title>
+<meta name="description" content="* This class was added from J.A.D.E. directly to avoid adding the jade.jar">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-data-structure-amapcollectionwithrealtimebehavior">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-get-started" aria-expanded="true">Get Started<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-get-started">
+<a class="side-link" href="intro.html" title="Java Introduction">Introduction</a>
+<a class="side-link" href="install.html" title="Java Environment Setup">Install / Setup</a>
+<a class="side-link" href="how-java-works.html" title="How Java Works">How Java Works</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-java-basics" aria-expanded="true">Java Basics<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-java-basics">
+<a class="side-link" href="syntax.html" title="Java Syntax">Syntax</a>
+<a class="side-link" href="comments.html" title="Java Comments">Comments</a>
+<a class="side-link" href="variables.html" title="Java Variables and Data Types">Variables</a>
+<a class="side-link" href="operators.html" title="Java Operators">Operators</a>
+<a class="side-link" href="strings.html" title="Java Strings">Strings</a>
+<a class="side-link" href="conditionals.html" title="Java Conditions (if, else, switch)">Conditions</a>
+<a class="side-link" href="loops.html" title="Java Loops">Loops</a>
+<a class="side-link" href="arrays.html" title="Java Arrays">Arrays</a>
+<a class="side-link" href="methods.html" title="Java Methods (Functions)">Methods</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-object-oriented" aria-expanded="true">Object Oriented<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-object-oriented">
+<a class="side-link" href="classes-objects.html" title="Java Classes and Objects">Classes &amp; Objects</a>
+<a class="side-link" href="constructors.html" title="Java Constructors">Constructors</a>
+<a class="side-link" href="inheritance.html" title="Java Inheritance">Inheritance</a>
+<a class="side-link" href="polymorphism.html" title="Java Polymorphism">Polymorphism</a>
+<a class="side-link" href="encapsulation.html" title="Java Encapsulation">Encapsulation</a>
+<a class="side-link" href="abstraction.html" title="Java Abstraction (Abstract Classes &amp; Interfaces)">Abstraction</a>
+<a class="side-link" href="packages.html" title="Java Packages">Packages</a>
+<a class="side-link" href="static-keyword.html" title="The static Keyword">static Keyword</a>
+<a class="side-link" href="inner-classes.html" title="Java Inner Classes">Inner Classes</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-core-java" aria-expanded="true">Core Java<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-core-java">
+<a class="side-link" href="exceptions.html" title="Java Exceptions">Exceptions</a>
+<a class="side-link" href="file-io.html" title="Java File I/O">File I/O</a>
+<a class="side-link" href="threads.html" title="Java Threads">Threads</a>
+<a class="side-link" href="lambdas.html" title="Java Lambda Expressions">Lambdas</a>
+<a class="side-link" href="streams.html" title="Java Streams">Streams</a>
+<a class="side-link" href="generics.html" title="Java Generics">Generics</a>
+<a class="side-link" href="jdbc.html" title="Java JDBC">JDBC</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-collections" aria-expanded="true">Collections<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-collections">
+<a class="side-link" href="collections.html" title="Java Collections Framework">Collections</a>
+<a class="side-link" href="arraylist.html" title="Java ArrayList">ArrayList</a>
+<a class="side-link" href="hashmap.html" title="Java HashMap">HashMap</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-advanced-java" aria-expanded="true">Advanced Java<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-advanced-java">
+<a class="side-link" href="networking.html" title="Java Networking">Networking</a>
+<a class="side-link" href="regex.html" title="Java Regular Expressions">Regular Expressions</a>
+<a class="side-link" href="reflection.html" title="Java Reflection">Reflection</a>
+<a class="side-link" href="design-patterns.html" title="Java Design Patterns">Design Patterns</a>
+<a class="side-link" href="servlets-jsp.html" title="Servlets and JSP">Servlets &amp; JSP</a>
+<a class="side-link" href="modern-java.html" title="Modern Java Features">Modern Java</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-interview-certification" aria-expanded="true">Interview &amp; Certification<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-interview-certification">
+<a class="side-link" href="interview.html" title="Java Interview Questions">Interview Questions</a>
+<a class="side-link" href="ocjp-practice.html" title="OCJP / OCJA Practice Test">OCJP Practice Test</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-reference" aria-expanded="true">Reference<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-reference">
+<a class="side-link" href="keywords.html" title="Java Keywords Reference">Keywords</a>
+<a class="side-link" href="string-methods.html" title="Java String Methods Reference">String Methods</a>
+<a class="side-link" href="java-api.html" title="Useful Java Classes">Useful Java Classes</a>
+<a class="side-link" href="quiz.html" title="Java Quiz">Java Quiz</a>
+</div></div>
+<div class="side-section collapsed">
+<button type="button" class="side-head" data-target="sec-imported---java2s-archive" aria-expanded="false">Imported - java2s Archive<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-imported---java2s-archive">
+<a class="side-link" href="collections-data-structure-abasicprioritylinkedlistmaintaininganindividuallinked.html" title="A basic priority linked list">A basic priority linked list</a>
+<a class="side-link" href="threads-adaemonthread.html" title="A daemon thread.">A daemon thread.</a>
+<a class="side-link" href="database-sql-jdbc-accessmysqldatabaseopenconnectioncreatetableinsertandretrieve.html" title="Access MySQL Database">Access MySQL Database</a>
+<a class="side-link" href="jsp-accessingthetablefieldindatabase.html" title="Accessing the table field in Database">Accessing the table field ...</a>
+<a class="side-link" href="servlets-addheaderstopreventbrowsersandproxiesfromcachingthisreply.html" title="Add headers to prevent browsers and proxies from caching this reply.">Add headers to prevent bro...</a>
+<a class="side-link" href="thread-addthreadtothreadgroup.html" title="Add thread to thread group">Add thread to thread group</a>
+<a class="side-link" href="language-annotationsandannotationtypes.html" title="Annotations and Annotation Types">Annotations and Annotation...</a>
+<a class="side-link" href="collections-data-structure-abooleanisbeingstoredandthenretrievedfromanarraylist.html" title="A boolean is being stored and then retrieved from an ArrayList">A boolean is being stored ...</a>
+<a class="side-link" href="jsp-acustomtagempty.html" title="A custom tag">A custom tag</a>
+<a class="side-link" href="thread-apoolofworkthreads.html" title="A pool of work threads">A pool of work threads</a>
+<a class="side-link" href="language-aprofilerisusedtoanalyzehowmuchtimeaprogramspendsineachpartofthecode.html" title="A profiler is used to analyze how much time a program spends in each part of the code.">A profiler is used to anal...</a>
+<a class="side-link" href="database-sql-jdbc-accounts.html" title="Accounts">Accounts</a>
+<a class="side-link" href="threads-addadelay.html" title="Add a delay">Add a delay</a>
+<a class="side-link" href="servlets-anotherloggerservlet.html" title="Another logger servlet">Another logger servlet</a>
+<a class="side-link" href="collections-data-structure-acircularqueuefrommina.html" title="A circular queue from mina">A circular queue from mina</a>
+<a class="side-link" href="database-sql-jdbc-acommonintermediateformatforanonxajdbcpool.html" title="A common intermediate format for a non-XA JDBC pool">A common intermediate form...</a>
+<a class="side-link" href="jsp-acustomtagemptywithattributes.html" title="A custom tag">A custom tag</a>
+<a class="side-link" href="threads-alivedaemonthreaddoesnotpreventanapplicationfromexiting.html" title="A live daemon thread does not prevent an application from exiting.">A live daemon thread does ...</a>
+<a class="side-link" href="thread-aqueuelinkedlistisusedtocoordinateworkbetweenaproducerandasetofworkerthre.html" title="A queue(LinkedList) is used to coordinate work between a producer and a set of worker threads.">A queue(LinkedList) is use...</a>
+<a class="side-link" href="servlets-anotherservletlocalizationcurrency.html" title="Another Servlet Localization">Another Servlet Localization</a>
+<a class="side-link" href="language-commentsingeneral.html" title="Comments in general">Comments in general</a>
+<a class="side-link" href="collections-data-structure-aclassforyoutoextendwhenyouwantobjecttomaintainadoubl.html" title="A class for you to extend when you want object to maintain a doubly linked list">A class for you to extend ...</a>
+<a class="side-link" href="jsp-acustomtagiteration.html" title="A custom tag">A custom tag</a>
+<a class="side-link" href="threads-amultithreadedqueueusedforimplementingproducerconsumerstylethreadingpatt.html" title="A multithreaded queue used for implementing producer-consumer style threading patterns">A multithreaded queue used...</a>
+<a class="side-link" href="thread-asemaphorebasedcoordination.html" title="A semaphore based coordination">A semaphore based coordina...</a>
+<a class="side-link" href="database-sql-jdbc-addinganewcolumnnameindatabasetable.html" title="Adding a New Column Name in Database Table">Adding a New Column Name i...</a>
+<a class="side-link" href="servlets-anotherservlettosendpdf.html" title="Another servlet to Send PDF">Another servlet to Send PDF</a>
+<a class="side-link" href="language-creatingannotations.html" title="Creating Annotations">Creating Annotations</a>
+<a class="side-link" href="collections-data-structure-aclassimplementingcomparable.html" title="A Class Implementing Comparable">A Class Implementing Compa...</a>
+<a class="side-link" href="jsp-acustomtagscriptingvariable.html" title="A custom tag">A custom tag</a>
+<a class="side-link" href="thread-asynchronizedcollectionwithcollectionssynchronizedcollection.html" title="A synchronized collection with Collections.synchronizedCollection">A synchronized collection ...</a>
+<a class="side-link" href="database-sql-jdbc-alldatatypesfororacle.html" title="All data types for Oracle">All data types for Oracle</a>
+<a class="side-link" href="threads-anabstractclasstoperformlengthyguiinteractingtasksinadedicatedthread.html" title="An abstract class to perform lengthy GUI-interacting tasks in a dedicated thread.">An abstract class to perfo...</a>
+<a class="side-link" href="servlets-anotherservlettosendxml.html" title="Another servlet to Send XML">Another servlet to Send XML</a>
+<a class="side-link" href="language-defineaconstantvalueanduseit.html" title="Define a constant value and use it">Define a constant value an...</a>
+<a class="side-link" href="collections-data-structure-aclassthatwrapsanarraywithalistinterface.html" title="A class that wraps an array with a List interface.">A class that wraps an arra...</a>
+<a class="side-link" href="jsp-acustomtagthathasneitherattributesnorbodycontent.html" title="A custom tag that has neither attributes nor body content.">A custom tag that has neit...</a>
+<a class="side-link" href="database-sql-jdbc-amethodtogetthecurrentdateandtimetouseinatimestamp.html" title="A method to get the current date and time to use in a timestamp">A method to get the curren...</a>
+<a class="side-link" href="servlets-autilityclassforparsinghttpdatesasusedincookiesandotherheaders.html" title="A utility class for parsing HTTP dates as used in cookies and other headers">A utility class for parsin...</a>
+<a class="side-link" href="threads-anapplicationexitswhentherearenonondaemonthreadsrunning.html" title="An application exits when there are no non-daemon threads running.">An application exits when ...</a>
+<a class="side-link" href="thread-changethreadpriority.html" title="Change Thread Priority">Change Thread Priority</a>
+<a class="side-link" href="language-defineconstant.html" title="Define constant">Define constant</a>
+<a class="side-link" href="collections-data-structure-aclasstoiterateoverallpermutationsofanarray.html" title="A class to iterate over all permutations of an array.">A class to iterate over al...</a>
+<a class="side-link" href="database-sql-jdbc-amethodtogetthecurrentdatetouseinatimestamp.html" title="A method to get the current date to use in a timestamp">A method to get the curren...</a>
+<a class="side-link" href="jsp-advanceddynamicwebcontentgeneration1.html" title="Advanced Dynamic Web Content Generation. 1">Advanced Dynamic Web Conte...</a>
+<a class="side-link" href="threads-anexampleofcountdownlatch.html" title="An example of CountDownLatch.">An example of CountDownLat...</a>
+<a class="side-link" href="servlets-basicformprocessor.html" title="Basic Form processor">Basic Form processor</a>
+<a class="side-link" href="thread-creatingathread.html" title="Creating a Thread">Creating a Thread</a>
+<a class="side-link" href="collections-data-structure-acombinationoftwocollectionsintoacollection.html" title="A combination of two collections into a collection">A combination of two colle...</a>
+<a class="side-link" href="jsp-advanceddynamicwebcontentgenerationformerrorcheck.html" title="Advanced Dynamic Web Content Generation">Advanced Dynamic Web Conte...</a>
+<a class="side-link" href="threads-anexampleofexchanger.html" title="An example of Exchanger.">An example of Exchanger.</a>
+<a class="side-link" href="database-sql-jdbc-anothermethodtochecktableexistance.html" title="Another Method To Check Table Existance">Another Method To Check Ta...</a>
+<a class="side-link" href="servlets-beanparserservlet.html" title="Bean Parser Servlet">Bean Parser Servlet</a>
+<a class="side-link" href="thread-creatingthreadderivingasubclassofthread.html" title="Creating Thread">Creating Thread</a>
+<a class="side-link" href="collections-data-structure-acompacthashsetimplementsthesetinterfacemoretightlyin.html" title="A CompactHashSet implements the set interface more tightly in memory and more efficiently than Java&#x27;s java.util.HashSet.">A CompactHashSet implement...</a>
+<a class="side-link" href="jsp-afirstjspdatabase.html" title="A First JSP Database">A First JSP Database</a>
+<a class="side-link" href="threads-animationswingandthread.html" title="Animation">Animation</a>
+<a class="side-link" href="database-sql-jdbc-appletandoraclejdbc.html" title="Applet and Oracle JDBC">Applet and Oracle JDBC</a>
+<a class="side-link" href="servlets-blockfilter.html" title="Block Filter">Block Filter</a>
+<a class="side-link" href="thread-creatingthreadobjectsimplementingtherunmethodinrunnableinterface.html" title="Creating Thread Objects">Creating Thread Objects</a>
+<a class="side-link" href="collections-data-structure-acomparatorforbooleanobjectsthatcansorteithertrueorfa.html" title="A Comparator for Boolean objects that can sort either true or false first">A Comparator for Boolean o...</a>
+<a class="side-link" href="threads-animplementationofaproducerandconsumerthatusesemaphorestocontrolsynchron.html" title="An implementation of a producer and consumer that use semaphores to control synchronization.">An implementation of a pro...</a>
+<a class="side-link" href="database-sql-jdbc-appletjdbc.html" title="Applet JDBC">Applet JDBC</a>
+<a class="side-link" href="jsp-applicationobject.html" title="Application Object">Application Object</a>
+<a class="side-link" href="servlets-breaklineswithhtml.html" title="break Lines with HTML">break Lines with HTML</a>
+<a class="side-link" href="thread-determiningifthecurrentthreadisholdingasynchronizedlock.html" title="Determining If the Current Thread Is Holding a Synchronized Lock">Determining If the Current...</a>
+<a class="side-link" href="collections-data-structure-actslikeanjavautilarraylistbutforprimitiveintvalues.html" title="Acts like an java.util.ArrayList but for primitive int values">Acts like an java.util.Arr...</a>
+<a class="side-link" href="threads-anotherdeadlockdemo.html" title="Another deadlock demo">Another deadlock demo</a>
+<a class="side-link" href="jsp-applyingjspintherealworldjspprojectiishoppingcartapplication.html" title="Applying JSP in the Real World JSP Project II">Applying JSP in the Real W...</a>
+<a class="side-link" href="database-sql-jdbc-arrangeacolumnofdatabasetable.html" title="Arrange a Column of Database Table">Arrange a Column of Databa...</a>
+<a class="side-link" href="servlets-browserdetection.html" title="Browser detection">Browser detection</a>
+<a class="side-link" href="thread-handleconcurrentreadwriteusesynchronizedtolockthedata.html" title="Handle concurrent read/write">Handle concurrent read/write</a>
+<a class="side-link" href="collections-data-structure-actslikeanjavautilarraylistbutforprimitivelongvalues.html" title="Acts like an java.util.ArrayList but for primitive long values">Acts like an java.util.Arr...</a>
+<a class="side-link" href="threads-anotherwaytostopathread.html" title="Another way to stop a thread">Another way to stop a thread</a>
+<a class="side-link" href="jsp-applyingjspintherealworldjspprojectipersonalizedportal.html" title="Applying JSP in the Real World JSP Project I">Applying JSP in the Real W...</a>
+<a class="side-link" href="database-sql-jdbc-batchupdate.html" title="Batch Update">Batch Update</a>
+<a class="side-link" href="servlets-cachedconnectionservlet.html" title="Cached Connection Servlet">Cached Connection Servlet</a>
+<a class="side-link" href="thread-interruptathread.html" title="Interrupt a thread.">Interrupt a thread.</a>
+<a class="side-link" href="collections-data-structure-adaptiteratortoiterable.html" title="Adapt iterator to iterable">Adapt iterator to iterable</a>
+<a class="side-link" href="threads-anotherwaytosuspendandresume.html" title="Another way to suspend and resume">Another way to suspend and...</a>
+<a class="side-link" href="database-sql-jdbc-batchupdateaddbatchcommands.html" title="Batch update">Batch update</a>
+<a class="side-link" href="servlets-cachefilter.html" title="Cache Filter">Cache Filter</a>
+<a class="side-link" href="jsp-basics.html" title="Java examples (example source code)">Java examples (example sou...</a>
+<a class="side-link" href="thread-monitorathreadsstatus.html" title="Monitor a thread&#x27;s status.">Monitor a thread's status.</a>
+<a class="side-link" href="threads-asemaphore.html" title="A semaphore">A semaphore</a>
+<a class="side-link" href="collections-data-structure-adaptiveextensionofthejavautilvectorclass.html" title="Adaptive extension of the java.util.Vector class">Adaptive extension of the ...</a>
+<a class="side-link" href="database-sql-jdbc-batchupdatedemo.html" title="Batch Update Demo">Batch Update Demo</a>
+<a class="side-link" href="jsp-beanpropertydisplay.html" title="Bean property display">Bean property display</a>
+<a class="side-link" href="servlets-checkerfilter.html" title="Checker Filter">Checker Filter</a>
+<a class="side-link" href="thread-pausingathreadsetbooleanavariablethatthethreadchecksoccasionally.html" title="Pausing a Thread">Pausing a Thread</a>
+<a class="side-link" href="threads-asimpledemonstrationofwaitandnotify.html" title="A simple demonstration of wait() and notify().">A simple demonstration of ...</a>
+<a class="side-link" href="collections-data-structure-addanelementtospecifiedindexofjavaarraylist.html" title="Add an element to specified index of Java ArrayList">Add an element to specifie...</a>
+<a class="side-link" href="database-sql-jdbc-batchupdateformysql.html" title="Batch update for MySQL">Batch update for MySQL</a>
+<a class="side-link" href="jsp-beanswithscriptlet.html" title="Beans with scriptlet">Beans with scriptlet</a>
+<a class="side-link" href="servlets-clientautorefresh.html" title="Client auto refresh">Client auto refresh</a>
+<a class="side-link" href="thread-producerconsumerandqueue.html" title="Producer, consumer and Queue">Producer, consumer and Queue</a>
+<a class="side-link" href="threads-asimpleexamplethatusesanexecutor.html" title="A simple example that uses an Executor.">A simple example that uses...</a>
+<a class="side-link" href="collections-data-structure-addarraytocollection.html" title="Add array to collection">Add array to collection</a>
+<a class="side-link" href="database-sql-jdbc-batchupdateinsert.html" title="Batch Update Insert">Batch Update Insert</a>
+<a class="side-link" href="jsp-buildingasimpleerrorhandlingpage.html" title="Building a simple error handling page">Building a simple error ha...</a>
+<a class="side-link" href="servlets-clientpost.html" title="Client Post">Client Post</a>
+<a class="side-link" href="thread-simplethreadpoolataskisexecutedbyobtainingathreadfromthepool.html" title="Simple thread pool. A task is executed by obtaining a thread from the pool">Simple thread pool. A task...</a>
+<a class="side-link" href="threads-athreadmustbemarkedasadaemonthreadbeforeitisstarted.html" title="A thread must be marked as a daemon thread before it is started.">A thread must be marked as...</a>
+<a class="side-link" href="collections-data-structure-addelementsatbeginningandendoflinkedlistjavaexample.html" title="Add elements at beginning and end of LinkedList Java example">Add elements at beginning ...</a>
+<a class="side-link" href="database-sql-jdbc-blobandjdbcimage.html" title="Blob and JDBC">Blob and JDBC</a>
+<a class="side-link" href="jsp-callingaprivatemethod.html" title="Calling a Private Method">Calling a Private Method</a>
+<a class="side-link" href="servlets-clientpull.html" title="Client Pull">Client Pull</a>
+<a class="side-link" href="thread-stoppingathreadsetabooleanvariablethatthethreadchecksoccasionally.html" title="Stopping a Thread">Stopping a Thread</a>
+<a class="side-link" href="threads-athreadofexecutionthatusesacyclicbarrier.html" title="A thread of execution that uses a CyclicBarrier">A thread of execution that...</a>
+<a class="side-link" href="collections-data-structure-addnewvaluetoexsistingarraythenewvalueisindexedtothel.html" title="Add new value to exsisting array.The new value is indexed to the last.">Add new value to exsisting...</a>
+<a class="side-link" href="database-sql-jdbc-blobimage2.html" title="Blob">Blob</a>
+<a class="side-link" href="jsp-callingastoredprocedurewithinajsp.html" title="Calling a Stored procedure within a JSP">Calling a Stored procedure...</a>
+<a class="side-link" href="servlets-clientpullandmove.html" title="Client Pull and Move">Client Pull and Move</a>
+<a class="side-link" href="thread-stoppingathreadusebooleanvaluetostopathread.html" title="Stopping a Thread">Stopping a Thread</a>
+<a class="side-link" href="collections-data-structure-addnewvaluewhichsetsasthefirstvaluetoexistingarray.html" title="Add new value, which sets as the first value, to existing array.">Add new value, which sets ...</a>
+<a class="side-link" href="threads-atomicfloat.html" title="Atomic Float">Atomic Float</a>
+<a class="side-link" href="database-sql-jdbc-blobimage3.html" title="Blob">Blob</a>
+<a class="side-link" href="jsp-callingsuperclassconstructors.html" title="Calling Superclass Constructors">Calling Superclass Constru...</a>
+<a class="side-link" href="servlets-compressionfilter.html" title="Compression Filter">Compression Filter</a>
+<a class="side-link" href="thread-stoppingathreadwithinterrupt.html" title="Stopping a Thread with interrupt()">Stopping a Thread with int...</a>
+<a class="side-link" href="collections-data-structure-addonearraytoanother.html" title="Add one array to another">Add one array to another</a>
+<a class="side-link" href="threads-atomicutils.html" title="Atomic Utils">Atomic Utils</a>
+<a class="side-link" href="database-sql-jdbc-blobjdbcdealswithbinarydata.html" title="Blob">Blob</a>
+<a class="side-link" href="jsp-catchinganarrayindexoutofboundsexceptionexception.html" title="Catching an ArrayIndexOutOfBoundsException Exception">Catching an ArrayIndexOutO...</a>
+<a class="side-link" href="servlets-compressionresponsestreamservlets.html" title="Compression Response Stream servlets">Compression Response Strea...</a>
+<a class="side-link" href="thread-testunsynchronizedmethod.html" title="Test Unsynchronized method">Test Unsynchronized method</a>
+<a class="side-link" href="threads-aworkqueueisusedtocoordinateworkbetweenaproducerandasetofworkerthreads.html" title="A work queue is used to coordinate work between a producer and a set of worker threads.">A work queue is used to co...</a>
+<a class="side-link" href="collections-data-structure-addorinsertanelementtoarraylistusingjavalistiteratore.html" title="Add or insert an element to ArrayList using Java ListIterator Example">Add or insert an element t...</a>
+<a class="side-link" href="database-sql-jdbc-booleanjavasqldriverjdbccompliant.html" title="boolean java.sql.Driver.jdbcCompliant()">boolean java.sql.Driver.jd...</a>
+<a class="side-link" href="jsp-causingaruntimeerror.html" title="Causing a Runtime Error">Causing a Runtime Error</a>
+<a class="side-link" href="servlets-compressionservletresponsewrapper.html" title="Compression Servlet Response Wrapper">Compression Servlet Respon...</a>
+<a class="side-link" href="thread-threadjoindemo.html" title="Thread Join Demo">Thread Join Demo</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewarray.html" title="Adds all the elements of the given arrays into a new array.">Adds all the elements of t...</a>
+<a class="side-link" href="threads-blockingqueuetest.html" title="BlockingQueue Test">BlockingQueue Test</a>
+<a class="side-link" href="database-sql-jdbc-booleanjavasqldriverpropertyinforequiredispropertyvaluerequire.html" title="boolean java.sql.DriverPropertyInfo.required (Is property value required?)">boolean java.sql.DriverPro...</a>
+<a class="side-link" href="jsp-commentsinjsppage.html" title="Comments in JSP page">Comments in JSP page</a>
+<a class="side-link" href="servlets-contextaccessor.html" title="Context accessor">Context accessor</a>
+<a class="side-link" href="thread-todeterminewhetherathreadhasbeeninterrupted.html" title="To determine whether a thread has been interrupted">To determine whether a thr...</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewbooleanvalu.html" title="Adds all the elements of the given arrays into a new boolean-value array.">Adds all the elements of t...</a>
+<a class="side-link" href="threads-booleanlock.html" title="Boolean lock">Boolean lock</a>
+<a class="side-link" href="database-sql-jdbc-cachedrs.html" title="Cached RS">Cached RS</a>
+<a class="side-link" href="servlets-contextattributesservlet.html" title="Context Attributes Servlet">Context Attributes Servlet</a>
+<a class="side-link" href="jsp-createyourowntagacustomtagbody.html" title="Create your own tag">Create your own tag</a>
+<a class="side-link" href="thread-usewaitandnotifyfromobjectclass.html" title="Use wait() and notify() from Object class">Use wait() and notify() fr...</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewbytetypearr.html" title="Adds all the elements of the given arrays into a new byte-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="threads-bufferedwriterandthreads.html" title="BufferedWriter and threads">BufferedWriter and threads</a>
+<a class="side-link" href="database-sql-jdbc-callafunctionwithoneinoutparameterthefunctionreturnsavarchar.html" title="Call a function with one IN/OUT parameter; the function returns a VARCHAR">Call a function with one I...</a>
+<a class="side-link" href="servlets-contextbinder.html" title="Context binder">Context binder</a>
+<a class="side-link" href="jsp-creatingacustomexceptionobject.html" title="Creating a Custom Exception Object">Creating a Custom Exceptio...</a>
+<a class="side-link" href="thread-usingathreadlocalvariable.html" title="Using a Thread-Local Variable">Using a Thread-Local Varia...</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewchartypearr.html" title="Adds all the elements of the given arrays into a new char-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="threads-bytefifo.html" title="Byte FIFO">Byte FIFO</a>
+<a class="side-link" href="database-sql-jdbc-callafunctionwithoneinparameterthefunctionreturnsavarchar.html" title="Call a function with one IN parameter; the function returns a VARCHAR">Call a function with one I...</a>
+<a class="side-link" href="servlets-contextlog.html" title="Context log">Context log</a>
+<a class="side-link" href="jsp-creatingamethod.html" title="Creating a Method">Creating a Method</a>
+<a class="side-link" href="thread-waitingonanobject.html" title="Waiting on an object">Waiting on an object</a>
+<a class="side-link" href="collections-addinganothercollection.html" title="Adding Another Collection">Adding Another Collection</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewdoubletypea.html" title="Adds all the elements of the given arrays into a new double-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="database-sql-jdbc-callafunctionwithoneoutparameterthefunctionreturnsavarchar.html" title="Call a function with one OUT parameter; the function returns a VARCHAR">Call a function with one O...</a>
+<a class="side-link" href="threads-callingsleeptowaitforawhile.html" title="Calling sleep() to wait for a while">Calling sleep() to wait fo...</a>
+<a class="side-link" href="servlets-contextlogger.html" title="Context logger">Context logger</a>
+<a class="side-link" href="jsp-creatingatable.html" title="Creating a Table">Creating a Table</a>
+<a class="side-link" href="collections-addingelementsinthemiddleofalist.html" title="Adding elements in the middle of a List">Adding elements in the mid...</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewfloattypear.html" title="Adds all the elements of the given arrays into a new float-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="database-sql-jdbc-callaprocedurewithoneinoutparameter.html" title="Call a procedure with one IN/OUT parameter">Call a procedure with one ...</a>
+<a class="side-link" href="threads-collections-threads.html" title="Collections Threads">Collections Threads</a>
+<a class="side-link" href="servlets-converttohtmlstring.html" title="Convert to HTML string">Convert to HTML string</a>
+<a class="side-link" href="jsp-cssjavascriptvbscriptandjsp1.html" title="CSS, JavaScript, VBScript, and JSP 1">CSS, JavaScript, VBScript,...</a>
+<a class="side-link" href="collections-addingkeyvaluepairspublicobjectputobjectkeyobjectvalue.html" title="Adding Key-Value Pairs">Adding Key-Value Pairs</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewinttypearra.html" title="Adds all the elements of the given arrays into a new int-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="database-sql-jdbc-callaprocedurewithoneinparameter.html" title="Call a procedure with one IN parameter">Call a procedure with one ...</a>
+<a class="side-link" href="threads-communicatebetweenthreadsusingaqueue.html" title="Communicate between threads using a Queue">Communicate between thread...</a>
+<a class="side-link" href="servlets-cookie.html" title="Cookie">Cookie</a>
+<a class="side-link" href="jsp-cssjavascriptvbscriptandjsp2.html" title="CSS, JavaScript, VBScript, and JSP 2">CSS, JavaScript, VBScript,...</a>
+<a class="side-link" href="collections-addorinsertanelementtoarraylistusingjavalistiterator.html" title="Add or insert an element to ArrayList using Java ListIterator">Add or insert an element t...</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewlongtypearr.html" title="Adds all the elements of the given arrays into a new long-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="database-sql-jdbc-callaprocedurewithoneoutparameter.html" title="Call a procedure with one OUT parameter">Call a procedure with one ...</a>
+<a class="side-link" href="servlets-cookiedemo.html" title="Cookie Demo">Cookie Demo</a>
+<a class="side-link" href="threads-coordinatesthreadsformultithreadedoperations.html" title="Coordinates threads for multi-threaded operations">Coordinates threads for mu...</a>
+<a class="side-link" href="jsp-currentlocale.html" title="Current Locale">Current Locale</a>
+<a class="side-link" href="collections-addsalltheelementsofthegivenarraysintoanewdoubletypearray.html" title="Adds all the elements of the given arrays into a new double-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewshorttypear.html" title="Adds all the elements of the given arrays into a new short-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="database-sql-jdbc-callastoredprocedurewithnoparametersandreturnvalue.html" title="Call a stored procedure with no parameters and return value.">Call a stored procedure wi...</a>
+<a class="side-link" href="servlets-cookiereader.html" title="Cookie reader">Cookie reader</a>
+<a class="side-link" href="threads-counterswingandthread.html" title="Counter">Counter</a>
+<a class="side-link" href="jsp-dealwiththecookie.html" title="Deal with the cookie">Deal with the cookie</a>
+<a class="side-link" href="collections-afixedsizemapimplementation.html" title="A fixed size map implementation.">A fixed size map implement...</a>
+<a class="side-link" href="collections-data-structure-addstheobjecttothearray.html" title="Adds the object to the array.">Adds the object to the arr...</a>
+<a class="side-link" href="database-sql-jdbc-callingafunctioninadatabasecallfunctionswithinoutandinoutparam.html" title="Calling a Function in a Database">Calling a Function in a Da...</a>
+<a class="side-link" href="servlets-cookieutil.html" title="Cookie Util">Cookie Util</a>
+<a class="side-link" href="threads-createanewthreadforthethreadpoolthecreatethreadwillbeadaemonthread.html" title="Create a new thread for the thread pool. The create thread will be a daemon thread.">Create a new thread for th...</a>
+<a class="side-link" href="jsp-dealwiththeerrors.html" title="Deal with the errors">Deal with the errors</a>
+<a class="side-link" href="collections-data-structure-addtoendperformancecomparelinklistandarraylist.html" title="Add to end Performance compare">Add to end Performance com...</a>
+<a class="side-link" href="collections-afteraddingalloftheelementscallthetrimtosizemethod.html" title="After adding all of the elements, call the trimToSize() method">After adding all of the el...</a>
+<a class="side-link" href="database-sql-jdbc-callingastoredprocedureinadatabasewithnoparameters.html" title="Calling a Stored Procedure in a Database with no parameters">Calling a Stored Procedure...</a>
+<a class="side-link" href="servlets-cookieutilities.html" title="Cookie Utilities">Cookie Utilities</a>
+<a class="side-link" href="threads-createathreadbyextendingthread.html" title="Create a thread by extending Thread.">Create a thread by extendi...</a>
+<a class="side-link" href="jsp-declarationtagexample.html" title="Declaration Tag Example">Declaration Tag Example</a>
+<a class="side-link" href="collections-ahashmapthatusesprimitiveintsforthekeyratherthanobjects.html" title="A hash map that uses primitive ints for the key rather than objects.">A hash map that uses primi...</a>
+<a class="side-link" href="collections-data-structure-addtostartperformancecomparelinklistandarraylist.html" title="Add to start Performance compare">Add to start Performance c...</a>
+<a class="side-link" href="database-sql-jdbc-callstoredprocedure.html" title="Call stored procedure">Call stored procedure</a>
+<a class="side-link" href="servlets-cookieutility.html" title="Cookie Utility">Cookie Utility</a>
+<a class="side-link" href="threads-createathreadbyimplementingrunnable.html" title="Create a thread by implementing Runnable.">Create a thread by impleme...</a>
+<a class="side-link" href="jsp-declarationtagmethods.html" title="Declaration Tag - Methods">Declaration Tag - Methods</a>
+<a class="side-link" href="collections-data-structure-adirectedgraphdatastructure.html" title="A directed graph data structure">A directed graph data stru...</a>
+<a class="side-link" href="collections-aleastrecentlyusedcache.html" title="A Least Recently Used Cache">A Least Recently Used Cache</a>
+<a class="side-link" href="database-sql-jdbc-callstoredprocedureinmysql.html" title="Call Stored Procedure In MySql">Call Stored Procedure In M...</a>
+<a class="side-link" href="threads-creatingaboundedworkqueue.html" title="Creating a Bounded Work Queue">Creating a Bounded Work Qu...</a>
+<a class="side-link" href="servlets-databaseandservletdatabasemetadata.html" title="Database and Servlet">Database and Servlet</a>
+<a class="side-link" href="jsp-declaringmultiplemethods.html" title="Declaring Multiple Methods">Declaring Multiple Methods</a>
+<a class="side-link" href="collections-data-structure-afastersmallerstackimplementation.html" title="A faster, smaller stack implementation.">A faster, smaller stack im...</a>
+<a class="side-link" href="collections-alternativearraydeclarationsyntax.html" title="Alternative Array Declaration Syntax">Alternative Array Declarat...</a>
+<a class="side-link" href="database-sql-jdbc-callstoredprocedureinoracleandpassinoutparameters.html" title="Call Stored Procedure In Oracle And Pass In Out Parameters">Call Stored Procedure In O...</a>
+<a class="side-link" href="threads-creatingthreadswithinnerclasses.html" title="Creating threads with inner classes">Creating threads with inne...</a>
+<a class="side-link" href="servlets-databaseandservletstoreprocedure.html" title="Database and Servlet">Database and Servlet</a>
+<a class="side-link" href="jsp-displaytableindatabase.html" title="Display table in Database">Display table in Database</a>
+<a class="side-link" href="collections-data-structure-afixedsizemapimplementation.html" title="A fixed size map implementation.">A fixed size map implement...</a>
+<a class="side-link" href="collections-amapwherekeysarecomparedbyobjectidentityratherthanequals.html" title="A Map where keys are compared by object identity, rather than equals()">A Map where keys are compa...</a>
+<a class="side-link" href="database-sql-jdbc-cancellingupdatestoanupdatableresultset.html" title="Cancelling Updates to an Updatable Result Set">Cancelling Updates to an U...</a>
+<a class="side-link" href="threads-currentset.html" title="Current set">Current set</a>
+<a class="side-link" href="servlets-databasetransaction.html" title="Database transaction">Database transaction</a>
+<a class="side-link" href="jsp-duplicatedsessionvaraibles.html" title="Duplicated session varaibles">Duplicated session varaibles</a>
+<a class="side-link" href="collections-data-structure-agrowablearrayofbytes.html" title="A growable array of bytes">A growable array of bytes</a>
+<a class="side-link" href="collections-amemoryefficienthashmap.html" title="A memory-efficient hash map.">A memory-efficient hash map.</a>
+<a class="side-link" href="database-sql-jdbc-changecolumnnameofatable.html" title="Change Column Name of a Table">Change Column Name of a Ta...</a>
+<a class="side-link" href="threads-customizedjavautilarraylistoperateinamultithreadedenvironmentwherethelar.html" title="Customized java.util.ArrayList">Customized java.util.Array...</a>
+<a class="side-link" href="servlets-decodeanhtmlcolorstringlikef567baintoacolor.html" title="Decode an HTML color string like &#x27;#F567BA;&#x27; into a Color">Decode an HTML color strin...</a>
+<a class="side-link" href="jsp-elandcomplexjavabeans.html" title="EL and Complex JavaBeans">EL and Complex JavaBeans</a>
+<a class="side-link" href="collections-data-structure-ahashmapthatusesprimitiveintsforthekeyratherthanobjec.html" title="A hash map that uses primitive ints for the key rather than objects.">A hash map that uses primi...</a>
+<a class="side-link" href="collections-anarrayisajavaobject.html" title="An array is a Java object">An array is a Java object</a>
+<a class="side-link" href="database-sql-jdbc-changethefetchsizeontheresultset.html" title="Change the fetch size on the result set">Change the fetch size on t...</a>
+<a class="side-link" href="threads-customizedjavautilhashmapoperateinamultithreadedenvironmentwherethelarge.html" title="Customized java.util.HashMap">Customized java.util.HashMap</a>
+<a class="side-link" href="servlets-dedicatedconnectionservlet.html" title="Dedicated Connection Servlet">Dedicated Connection Servlet</a>
+<a class="side-link" href="jsp-elandcomplexjavabeans1.html" title="EL and Complex JavaBeans 1">EL and Complex JavaBeans 1</a>
+<a class="side-link" href="collections-data-structure-ahashtablebasedmapimplementationwithsoftkeys.html" title="A hashtable-based Map implementation with soft keys">A hashtable-based Map impl...</a>
+<a class="side-link" href="collections-anidentitymapthatusesreferenceequalityinsteadofobjectequality.html" title="An IdentityMap that uses reference-equality instead of object-equality">An IdentityMap that uses r...</a>
+<a class="side-link" href="database-sql-jdbc-checkbatchupdateresult.html" title="Check Batch Update Result">Check Batch Update Result</a>
+<a class="side-link" href="threads-customizedjavautiltreemapoperateinamultithreadedenvironmentwherethelarge.html" title="Customized java.util.TreeMap">Customized java.util.TreeMap</a>
+<a class="side-link" href="servlets-definewelcomefilesforwebapplication.html" title="Define welcome files for web application">Define welcome files for w...</a>
+<a class="side-link" href="jsp-elarithmetic.html" title="EL Arithmetic">EL Arithmetic</a>
+<a class="side-link" href="collections-data-structure-ahashtablebasedmapimplementationwithweakkeysandusingr.html" title="A hashtable-based Map implementation with weak keys and using reference-equality in place of object-equality when comparing keys (and values).">A hashtable-based Map impl...</a>
+<a class="side-link" href="collections-aniteratorthatwrapsanumberofiterators.html" title="An Iterator that wraps a number of Iterators">An Iterator that wraps a n...</a>
+<a class="side-link" href="database-sql-jdbc-checkifcursorisinthefirstrow.html" title="Check if cursor is in the first row">Check if cursor is in the ...</a>
+<a class="side-link" href="threads-daemonthread.html" title="Daemon Thread">Daemon Thread</a>
+<a class="side-link" href="servlets-deleteblobfromservlet.html" title="Delete Blob From Servlet">Delete Blob From Servlet</a>
+<a class="side-link" href="jsp-elfunctionexamples.html" title="EL Function Examples">EL Function Examples</a>
+<a class="side-link" href="collections-data-structure-ahashtablewithemweakkeysemfullconcurrencyofretrievals.html" title="A hash table with &lt;em&gt;weak keys&lt;/em&gt;, full concurrency of retrievals, and adjustable expected concurrency for updates.">A hash table with &lt;em&gt;weak...</a>
+<a class="side-link" href="collections-aniteratorwrapperforanenumeration.html" title="An Iterator wrapper for an Enumeration.">An Iterator wrapper for an...</a>
+<a class="side-link" href="database-sql-jdbc-checkjdbcinstallationformysql.html" title="Check JDBC Installation for MySQL">Check JDBC Installation fo...</a>
+<a class="side-link" href="threads-daemonthreadsdontpreventtheprogramfromending.html" title="Daemon threads don&#x27;t prevent the program from ending.">Daemon threads don't preve...</a>
+<a class="side-link" href="jsp-embeddingcode.html" title="Embedding Code">Embedding Code</a>
+<a class="side-link" href="collections-data-structure-aheapbasedpriorityqueuewithoutanyconcurrencycontrol.html" title="A heap-based priority queue, without any concurrency control">A heap-based priority queu...</a>
+<a class="side-link" href="collections-aniteratorwrapperforanobjectallowustodealwithallarraylikestructuresi.html" title="An Iterator wrapper for an Object[], allow us to deal with all array like structures in a consistent manner.">An Iterator wrapper for an...</a>
+<a class="side-link" href="database-sql-jdbc-checkjdbcinstallationfororacle.html" title="Check JDBC Installation for Oracle">Check JDBC Installation fo...</a>
+<a class="side-link" href="threads-daemonthreadsspawnotherdaemonthreads.html" title="Daemon threads spawn other daemon threads">Daemon threads spawn other...</a>
+<a class="side-link" href="jsp-errorhandlingcompileerrorinjsppage.html" title="Error Handling">Error Handling</a>
+<a class="side-link" href="collections-data-structure-ajavautilmapimplementationusingreferencevalues.html" title="A java.util.Map implementation using reference values">A java.util.Map implementa...</a>
+<a class="side-link" href="collections-anonymousarraysaredeclaredsimilarlytoregulararrays.html" title="Anonymous arrays are declared similarly to regular arrays">Anonymous arrays are decla...</a>
+<a class="side-link" href="database-sql-jdbc-column.html" title="Column">Column</a>
+<a class="side-link" href="threads-deadlockdetecting.html" title="Deadlock Detecting">Deadlock Detecting</a>
+<a class="side-link" href="jsp-errorwithouthandler.html" title="Error without handler">Error without handler</a>
+<a class="side-link" href="collections-data-structure-ajavautilmapinterfacewhichcanonlyholdasingleobject.html" title="A java.util.Map interface which can only hold a single object">A java.util.Map interface ...</a>
+<a class="side-link" href="collections-appendthegivenobjecttothegivenarray.html" title="Append the given Object to the given array">Append the given Object to...</a>
+<a class="side-link" href="database-sql-jdbc-commitorrollbacktransactioninjdbc.html" title="Commit or rollback transaction in JDBC">Commit or rollback transac...</a>
+<a class="side-link" href="threads-deadlockdetector.html" title="Deadlock Detector">Deadlock Detector</a>
+<a class="side-link" href="jsp-expressionlanguageexamples.html" title="Expression Language Examples">Expression Language Examples</a>
+<a class="side-link" href="collections-data-structure-algorithms.html" title="Algorithms">Algorithms</a>
+<a class="side-link" href="collections-arrayiterator.html" title="Array Iterator">Array Iterator</a>
+<a class="side-link" href="database-sql-jdbc-committingandrollingbackupdatestoadatabase.html" title="Committing and Rolling Back Updates to a Database">Committing and Rolling Bac...</a>
+<a class="side-link" href="threads-deadlockdetector2.html" title="DeadLock Detector 2">DeadLock Detector 2</a>
+<a class="side-link" href="jsp-fetchingdatafromadatabase.html" title="Fetching Data From a Database">Fetching Data From a Datab...</a>
+<a class="side-link" href="collections-data-structure-alisthelperclassthatattemptstoavoidunneccessarylistcr.html" title="A List helper class that attempts to avoid unneccessary List creation.">A List helper class that a...</a>
+<a class="side-link" href="collections-arraylistimplementstheemptyserializableinterface.html" title="ArrayList implements the empty Serializable interface">ArrayList implements the e...</a>
+<a class="side-link" href="threads-definingathreadforathreadpool.html" title="Defining a thread for a thread pool">Defining a thread for a th...</a>
+<a class="side-link" href="jsp-fieldsofthecalendarclass.html" title="Fields of the Calendar Class">Fields of the Calendar Class</a>
+<a class="side-link" href="collections-data-structure-alistthatlikeasetcontainsnoduplicateelements.html" title="A List that, like a Set, contains no duplicate Elements.">A List that, like a Set, c...</a>
+<a class="side-link" href="collections-arraysofcharacters.html" title="Arrays of Characters">Arrays of Characters</a>
+<a class="side-link" href="threads-demoforjavautilconcurrentfuture.html" title="Demo for java.util.concurrent.Future">Demo for java.util.concurr...</a>
+<a class="side-link" href="jsp-filetheguestbook.html" title="File">File</a>
+<a class="side-link" href="collections-data-structure-allowsthreadstocommunicateasynchronouslybyputtingmess.html" title="Allows threads to communicate asynchronously by putting messages into and reading messages out of a synchronized queue.">Allows threads to communic...</a>
+<a class="side-link" href="collections-arraytostring.html" title="Array To String">Array To String</a>
+<a class="side-link" href="threads-demonstratejoin.html" title="Demonstrate join().">Demonstrate join().</a>
+<a class="side-link" href="jsp-fillingatable.html" title="Filling a Table">Filling a Table</a>
+<a class="side-link" href="collections-data-structure-amapactslikearray.html" title="A map acts like array.">A map acts like array.</a>
+<a class="side-link" href="collections-asortedsetisasetthatmaintainsitsitemsinasortedorder.html" title="A sorted set is a set that maintains its items in a sorted order">A sorted set is a set that...</a>
+<a class="side-link" href="threads-demonstrateshowdeadlockcanbehiddeninaprogram.html" title="Demonstrates how deadlock can be hidden in a program">Demonstrates how deadlock ...</a>
+<a class="side-link" href="jsp-forloopusingtwoloopindexes.html" title="For loop">For loop</a>
+<a class="side-link active" href="collections-data-structure-amapcollectionwithrealtimebehavior.html" title="A Map collection with real-time behavior">A Map collection with real...</a>
+<a class="side-link" href="collections-associatingavaluewithanobject.html" title="Associating a Value with an Object">Associating a Value with a...</a>
+<a class="side-link" href="threads-determiningifthecurrentthreadisholdingasynchronizedlock.html" title="Determining If the Current Thread Is Holding a Synchronized Lock">Determining If the Current...</a>
+<a class="side-link" href="jsp-formtextfielddemo.html" title="Form TextField Demo">Form TextField Demo</a>
+<a class="side-link" href="collections-data-structure-amapdeclaredtoholdobjectsofatypetcanalsoholdobjectsth.html" title="A map declared to hold objects of a type T can also hold objects that extend from T">A map declared to hold obj...</a>
+<a class="side-link" href="threads-determiningwhenathreadhasfinished.html" title="Determining When a Thread Has Finished">Determining When a Thread ...</a>
+<a class="side-link" href="jsp-getsetpropertiesjstl.html" title="Get Set Properties JSTL">Get Set Properties JSTL</a>
+<a class="side-link" href="collections-data-structure-amapimplementationthatdumpsitscontentwhenmemoryrunslo.html" title="A Map implementation that dumps its content when memory runs low.">A Map implementation that ...</a>
+<a class="side-link" href="threads-earlyreturn.html" title="Early return">Early return</a>
+<a class="side-link" href="jsp-gettingapropertyvalue.html" title="Getting a Property Value">Getting a Property Value</a>
+<a class="side-link" href="collections-data-structure-amapimplementationthatgrowstoafixedsizeandthenretains.html" title="A Map implementation that grows to a fixed size and then retains only a fixed number of the highest (largest) keys.">A Map implementation that ...</a>
+<a class="side-link" href="threads-eliminatingraceconditionsusingswingcomponents.html" title="Eliminating race Conditions using Swing Components">Eliminating race Condition...</a>
+<a class="side-link" href="jsp-gettingheaderdatajsp.html" title="Getting Header Data Jsp">Getting Header Data Jsp</a>
+<a class="side-link" href="collections-data-structure-amapimplementedwitharraylists.html" title="A Map implemented with ArrayLists">A Map implemented with Arr...</a>
+<a class="side-link" href="threads-exceptioncallback.html" title="Exception call back">Exception call back</a>
+<a class="side-link" href="jsp-gettingparameternamesjsp.html" title="Getting Parameter Names Jsp">Getting Parameter Names Jsp</a>
+<a class="side-link" href="collections-data-structure-amapofvaluesbyclass.html" title="A map of values by class.">A map of values by class.</a>
+<a class="side-link" href="threads-executesataskwithaspecifiedtimeout.html" title="Executes a task with a specified timeout">Executes a task with a spe...</a>
+<a class="side-link" href="jsp-httpechofortesting.html" title="HTTP Echo For testing">HTTP Echo For testing</a>
+<a class="side-link" href="collections-data-structure-amapthatacceptsintorintegerkeysonly.html" title="A Map that accepts int or Integer keys only">A Map that accepts int or ...</a>
+<a class="side-link" href="collections-data-structure-amapthatstoresthevaluesinfileswithinadirectory.html" title="A Map that stores the values in files within a directory.">A Map that stores the valu...</a>
+<a class="side-link" href="collections-data-structure-amapwherekeysarecomparedbyobjectidentityratherthanequ.html" title="A Map where keys are compared by object identity, rather than equals()">A Map where keys are compa...</a>
+<a class="side-link" href="collections-data-structure-amapwithmultiplevaluesforakey.html" title="A Map with multiple values for a key">A Map with multiple values...</a>
+<a class="side-link" href="collections-data-structure-amemoryefficienthashmap.html" title="A memory-efficient hash map.">A memory-efficient hash map.</a>
+</div></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <h1>A Map collection with real-time behavior</h1>
+<p>A Map collection with real-time behavior</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * J.A.D.E. Java(TM) Addition to Default Environment.
+ * Latest release available at http://jade.dautelle.com/
+ * This class is public domain (not copyrighted).
+ *
+ * This class was added from J.A.D.E. directly to avoid adding the jade.jar
+ * which was causing a conflict with parsing XML menus in FreeHep for some reason
+ */
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.AbstractCollection;
+import java.util.AbstractSet;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Set;
+/**
+ * &lt;p&gt; This class represents a &lt;code&gt;Map&lt;/code&gt; collection with real-time
+ *     behavior. Unless the map's size exceeds its current capacity,
+ *     no dynamic memory allocation is ever performed and response time is
+ *     &lt;b&gt;extremely fast&lt;/b&gt; and &lt;b&gt;consistent&lt;/b&gt;.&lt;/p&gt;
+ *
+ * &lt;p&gt; Our &lt;a href="http://jade.dautelle.com/doc/benchmark.txt"&gt;benchmark&lt;/a&gt;
+ *     indicates that {@link FastMap#put FastMap.put(key, value)} is up to
+ *     &lt;b&gt;5x faster&lt;/b&gt; than &lt;code&gt;java.util.HashMap.put(key, value)&lt;/code&gt;.
+ *     This difference is mostly due to the cost of the &lt;code&gt;Map.Entry&lt;/code&gt;
+ *     allocations that {@link FastMap} avoids by recycling its entries
+ *     (see note below).&lt;/p&gt;
+ *
+ * &lt;p&gt; {@link FastMap} has a predictable iteration order, which is the order
+ *     in which keys were inserted into the map (similar to
+ *     &lt;code&gt;java.util.LinkedHashMap&lt;/code&gt; collection class).
+ *     A bi-directional list iterator over the map entries is also
+ *     {@link #fastIterator provided}, this iterator can be moved
+ *     to the {@link FastIterator#toFirst first} or to the
+ *     {@link FastIterator#toLast last} entry for unlimited reuse.&lt;/p&gt;
+ *
+ * &lt;p&gt; Applications may change the resizing policy  of {@link FastMap}
+ *     by overriding the {@link #sizeChanged} method. For example, to reduce
+ *     memory footprint, the map's capacity could be maitained at ±50% of
+ *     the current map's size.&lt;/p&gt;
+ *
+ * &lt;p&gt; This implementation is not synchronized. Multiple threads accessing
+ *     or modifying the collection must be synchronized externally.&lt;/p&gt;
+ *
+ * &lt;p&gt; &lt;b&gt;Note:&lt;/b&gt; To avoid dynamic memory allocations, {@link FastMap}
+ *     maintains an internal pool of &lt;code&gt;Map.Entry&lt;/code&gt; objects. The size
+ *     of the pool is determined by the map's capacity. When an entry is
+ *     removed from the map, it is automatically restored to the pool.&lt;/p&gt;
+ *
+ * &lt;p&gt;&lt;i&gt; This class is &lt;b&gt;public domain&lt;/b&gt; (not copyrighted).&lt;/i&gt;&lt;/p&gt;
+ *
+ * @author  &lt;a href="mailto:jean-marie@dautelle.com"&gt;Jean-Marie Dautelle&lt;/a&gt;
+ * @version 6.0, January 18 2004
+ */
+public class FastMap implements Map, Cloneable, Serializable {
+    /**
+     * Holds the map's hash table.
+     */
+    private transient EntryImpl[] _entries;
+    /**
+     * Holds the map's current capacity.
+     */
+    private transient int _capacity;
+    /**
+     * Holds the hash code mask.
+     */
+    private transient int _mask;
+    /**
+     * Holds the first pool entry (linked list).
+     */
+    private transient EntryImpl _poolFirst;
+    /**
+     * Holds the first map entry (linked list).
+     */
+    private transient EntryImpl _mapFirst;
+    /**
+     * Holds the last map entry (linked list).
+     */
+    private transient EntryImpl _mapLast;
+    /**
+     * Holds the current size.
+     */
+    private transient int _size;
+    /**
+     * Creates a {@link FastMap} with a capacity of &lt;code&gt;16&lt;/code&gt; entries.
+     */
+    public FastMap() {
+        initialize(16);
+    }
+    /**
+     * Creates a {@link FastMap}, copy of the specified &lt;code&gt;Map&lt;/code&gt;.
+     * If the specified map is not an instance of {@link FastMap}, the
+     * newly created map has a capacity set to the specified map's size.
+     * The copy has the same order as the original, regardless of the original
+     * map's implementation:&lt;pre&gt;
+     *     TreeMap dictionary = ...;
+     *     FastMap dictionaryLookup = new FastMap(dictionary);
+     * &lt;/pre&gt;
+     *
+     * @param  map the map whose mappings are to be placed in this map.
+     */
+    public FastMap(Map map) {
+        int capacity = (map instanceof FastMap) ?
+            ((FastMap)map).capacity() : map.size();
+        initialize(capacity);
+        putAll(map);
+    }
+    /**
+     * Creates a {@link FastMap} with the specified capacity. Unless the
+     * capacity is exceeded, operations on this map do not allocate entries.
+     * For optimum performance, the capacity should be of the same order
+     * of magnitude or larger than the expected map's size.
+     *
+     * @param  capacity the number of buckets in the hash table; it also
+     *         defines the number of pre-allocated entries.
+     */
+    public FastMap(int capacity) {
+        initialize(capacity);
+    }
+    /**
+     * Returns the number of key-value mappings in this {@link FastMap}.
+     *
+     * @return this map's size.
+     */
+    public int size() {
+        return _size;
+    }
+    /**
+     * Returns the capacity of this {@link FastMap}. The capacity defines
+     * the number of buckets in the hash table, as well as the maximum number
+     * of entries the map may contain without allocating memory.
+     *
+     * @return this map's capacity.
+     */
+    public int capacity() {
+        return _capacity;
+    }
+    /**
+     * Indicates if this {@link FastMap} contains no key-value mappings.
+     *
+     * @return &lt;code&gt;true&lt;/code&gt; if this map contains no key-value mappings;
+     *         &lt;code&gt;false&lt;/code&gt; otherwise.
+     */
+    public boolean isEmpty() {
+        return _size == 0;
+    }
+    /**
+     * Indicates if this {@link FastMap} contains a mapping for the specified
+     * key.
+     *
+     * @param   key the key whose presence in this map is to be tested.
+     * @return &lt;code&gt;true&lt;/code&gt; if this map contains a mapping for the
+     *         specified key; &lt;code&gt;false&lt;/code&gt; otherwise.
+     * @throws NullPointerException if the key is &lt;code&gt;null&lt;/code&gt;.
+     */
+    public boolean containsKey(Object key) {
+        EntryImpl entry = _entries[keyHash(key) &amp; _mask];
+        while (entry != null) {
+            if (key.equals(entry._key) ) {
+                return true;
+            }
+            entry = entry._next;
+        }
+        return false;
+    }
+    /**
+     * Indicates if this {@link FastMap} maps one or more keys to the
+     * specified value.
+     *
+     * @param  value the value whose presence in this map is to be tested.
+     * @return &lt;code&gt;true&lt;/code&gt; if this map maps one or more keys to the
+     *         specified value.
+     * @throws NullPointerException if the key is &lt;code&gt;null&lt;/code&gt;.
+     */
+    public boolean containsValue(Object value) {
+        EntryImpl entry = _mapFirst;
+        while (entry != null) {
+            if (value.equals(entry._value) ) {
+                return true;
+            }
+            entry = entry._after;
+        }
+        return false;
+    }
+    /**
+     * Returns the value to which this {@link FastMap} maps the specified key.
+     *
+     * @param  key the key whose associated value is to be returned.
+     * @return the value to which this map maps the specified key,
+     *         or &lt;code&gt;null&lt;/code&gt; if there is no mapping for the key.
+     * @throws NullPointerException if key is &lt;code&gt;null&lt;/code&gt;.
+     */
+    public Object get(Object key) {
+        EntryImpl entry = _entries[keyHash(key) &amp; _mask];
+        while (entry != null) {
+            if (key.equals(entry._key) ) {
+                return entry._value;
+            }
+            entry = entry._next;
+        }
+        return null;
+    }
+    /**
+     * Returns the entry with the specified key.
+     *
+     * @param key the key whose associated entry is to be returned.
+     * @return the entry for the specified key or &lt;code&gt;null&lt;/code&gt; if none.
+     */
+    public Entry getEntry(Object key) {
+        EntryImpl entry = _entries[keyHash(key) &amp; _mask];
+        while (entry != null) {
+            if (key.equals(entry._key)) {
+                return entry;
+            }
+            entry = entry._next;
+        }
+        return null;
+    }
+    /**
+     * Associates the specified value with the specified key in this
+     * {@link FastMap}. If the {@link FastMap} previously contained a mapping
+     * for this key, the old value is replaced.
+     *
+     * @param  key the key with which the specified value is to be associated.
+     * @param  value the value to be associated with the specified key.
+     * @return the previous value associated with specified key,
+     *         or &lt;code&gt;null&lt;/code&gt; if there was no mapping for key.
+     *         A &lt;code&gt;null&lt;/code&gt; return can also indicate that the map
+     *         previously associated &lt;code&gt;null&lt;/code&gt; with the specified key.
+     * @throws NullPointerException if the key is &lt;code&gt;null&lt;/code&gt;.
+     */
+    public Object put(Object key, Object value) {
+        EntryImpl entry = _entries[keyHash(key) &amp; _mask];
+        while (entry != null) {
+            if (key.equals(entry._key) ) {
+                Object prevValue = entry._value;
+                entry._value = value;
+                return prevValue;
+            }
+            entry = entry._next;
+        }
+        // No previous mapping.
+        addEntry(key, value);
+        return null;
+    }
+    /**
+     * Returns a reusable {@link FastIterator} over this {@link FastMap} entries
+     * (unique instance per map). For example:&lt;pre&gt;
+     *     // Iteration without memory allocation!
+     *     for (FastIterator i=map.fastIterator().toFirst(); i.hasNext();) {
+     *         Entry entry = i.nextEntry();
+     *         ...
+     *     }&lt;/pre&gt;
+     *
+     * @return an iterator which can be reset for reuse over and over.
+     * @see    FastMap.FastIterator
+     */
+    public FastIterator fastIterator() {
+        return _fastIterator;
+    }
+    private final FastIterator _fastIterator = new FastIterator();
+    /**
+     * Copies all of the mappings from the specified map to this
+     * {@link FastMap}.
+     *
+     * @param  map the mappings to be stored in this map.
+     * @throws NullPointerException the specified map is &lt;code&gt;null&lt;/code&gt;, or
+     *         the specified map contains &lt;code&gt;null&lt;/code&gt; keys.
+     */
+    public void putAll(Map map) {
+        for (Iterator i = map.entrySet().iterator(); i.hasNext(); ) {
+            Entry e = (Entry) i.next();
+            addEntry(e.getKey(), e.getValue());
+        }
+    }
+    /**
+     * Removes the mapping for this key from this {@link FastMap} if present.
+     *
+     * @param  key the key whose mapping is to be removed from the map.
+     * @return previous value associated with specified key,
+     *         or &lt;code&gt;null&lt;/code&gt; if there was no mapping for key.
+     *         A &lt;code&gt;null&lt;/code&gt; return can also indicate that the map
+     *         previously associated &lt;code&gt;null&lt;/code&gt; with the specified key.
+     * @throws NullPointerException if the key is &lt;code&gt;null&lt;/code&gt;.
+     */
+    public Object remove(Object key) {
+        EntryImpl entry = _entries[keyHash(key) &amp; _mask];
+        while (entry != null) {
+            if (key.equals(entry._key) ) {
+                Object prevValue = entry._value;
+                removeEntry(entry);
+                return prevValue;
+            }
+            entry = entry._next;
+        }
+        return null;
+    }
+    /**
+     * Removes all mappings from this {@link FastMap}.
+     */
+    public void clear() {
+        // Clears all keys, values and buckets linked lists.
+        for (EntryImpl entry = _mapFirst; entry != null; entry = entry._after) {
+            entry._key = null;
+            entry._value = null;
+            entry._before = null;
+            entry._next = null;
+            if (entry._previous == null) { // First in bucket.
+                _entries[entry._index] = null;
+            } else {
+                entry._previous = null;
+            }
+        }
+        // Recycles all entries.
+        if (_mapLast != null) {
+            _mapLast._after = _poolFirst; // Connects to pool.
+            _poolFirst = _mapFirst;
+            _mapFirst = null;
+            _mapLast = null;
+            _size = 0;
+            sizeChanged();
+        }
+    }
+    /**
+     * Changes the current capacity of this {@link FastMap}. If the capacity
+     * is increased, new entries are allocated and added to the pool.
+     * If the capacity is decreased, entries from the pool are deallocated
+     * (and are garbage collected eventually). The capacity also determined
+     * the number of buckets for the hash table.
+     *
+     * @param newCapacity the new capacity of this map.
+     */
+    public void setCapacity(int newCapacity) {
+        if (newCapacity &gt; _capacity) { // Capacity increases.
+            for (int i = _capacity; i &lt; newCapacity; i++) {
+                EntryImpl entry = new EntryImpl();
+                entry._after = _poolFirst;
+                _poolFirst = entry;
+            }
+        } else if (newCapacity &lt; _capacity) { // Capacity decreases.
+            for (    int i = newCapacity;
+                     (i &lt; _capacity) &amp;&amp; (_poolFirst != null); i++) {
+                // Disconnects the entry for gc to do its work.
+                EntryImpl entry = _poolFirst;
+                _poolFirst = entry._after;
+                entry._after = null; // All pointers are now null!
+            }
+        }
+        // Find a power of 2 &gt;= capacity
+        int tableLength = 16;
+        while (tableLength &lt; newCapacity) {
+            tableLength &lt;&lt;= 1;
+        }
+        // Checks if the hash table has to be re-sized.
+        if (_entries.length != tableLength) {
+            _entries = new EntryImpl[tableLength];
+            _mask = tableLength - 1;
+            // Repopulates the hash table.
+            EntryImpl entry = _mapFirst;
+            while (entry != null) {
+                int index = keyHash(entry._key) &amp; _mask;
+                entry._index = index;
+                // Connects to bucket.
+                entry._previous = null; // Resets previous.
+                EntryImpl next = _entries[index];
+                entry._next = next;
+                if (next != null) {
+                    next._previous = entry;
+                }
+                _entries[index] = entry;
+                entry = entry._after;
+            }
+        }
+        _capacity = newCapacity;
+    }
+    /**
+     * Returns a shallow copy of this {@link FastMap}. The keys and
+     * the values themselves are not cloned.
+     *
+     * @return a shallow copy of this map.
+     */
+    public Object clone() {
+        try {
+            FastMap clone = (FastMap) super.clone();
+            clone.initialize(_capacity);
+            clone.putAll(this);
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            // Should not happen, since we are Cloneable.
+            throw new InternalError();
+        }
+    }
+    /**
+     * Compares the specified object with this {@link FastMap} for equality.
+     * Returns &lt;code&gt;true&lt;/code&gt; if the given object is also a map and the two
+     * maps represent the same mappings (regardless of collection iteration
+     * order).
+     *
+     * @param obj the object to be compared for equality with this map.
+     * @return &lt;code&gt;true&lt;/code&gt; if the specified object is equal to this map;
+     *         &lt;code&gt;false&lt;/code&gt; otherwise.
+     */
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        } else if (obj instanceof Map) {
+            Map that = (Map) obj;
+            if (this.size() == that.size()) {
+                EntryImpl entry = _mapFirst;
+                while (entry != null) {
+                    if (!that.entrySet().contains(entry)) {
+                        return false;
+                    }
+                    entry = entry._after;
+                }
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+    /**
+     * Returns the hash code value for this {@link FastMap}.
+     *
+     * @return the hash code value for this map.
+     */
+    public int hashCode() {
+        int code = 0;
+        EntryImpl entry = _mapFirst;
+        while (entry != null) {
+            code += entry.hashCode();
+            entry = entry._after;
+        }
+        return code;
+    }
+    /**
+     * Returns a &lt;code&gt;String&lt;/code&gt; representation of this {@link FastMap}.
+     *
+     * @return &lt;code&gt;this.entrySet().toString();&lt;/code&gt;
+     */
+    public String toString() {
+        return entrySet().toString();
+    }
+    /**
+     * Returns a collection view of the values contained in this
+     * {@link FastMap}.  The collection is backed by the map, so changes to
+     * the map are reflected in the collection, and vice-versa.
+     * The collection supports element removal, which removes the corresponding
+     * mapping from this map, via the
+     * &lt;code&gt;Iterator.remove&lt;/code&gt;, &lt;code&gt;Collection.remove&lt;/code&gt;,
+     * &lt;code&gt;removeAll&lt;/code&gt;, &lt;code&gt;retainAll&lt;/code&gt;,
+     * and &lt;code&gt;clear&lt;/code&gt; operations. It does not support the
+     * &lt;code&gt;add&lt;/code&gt; or &lt;code&gt;addAll&lt;/code&gt; operations.
+     *
+     * @return a collection view of the values contained in this map.
+     */
+    public Collection values() {
+        return _values;
+    }
+    private transient Values _values;
+    private class Values extends AbstractCollection {
+        public Iterator iterator() {
+            return new Iterator() {
+                EntryImpl after = _mapFirst;
+                EntryImpl before;
+               public void remove() {
+                     if (before != null) {
+                         removeEntry(before);
+                      } else {
+                          throw new IllegalStateException();
+                      }
+                }
+                public boolean hasNext() {
+                    return after != null;
+                }
+                public Object next() {
+                    if (after != null) {
+                        before = after;
+                        after = after._after;
+                        return before._value;
+                    } else {
+                        throw new NoSuchElementException();
+                    }
+                }
+            };
+        }
+        public int size() {
+            return _size;
+        }
+        public boolean contains(Object o) {
+            return containsValue(o);
+        }
+        public void clear() {
+            FastMap.this.clear();
+        }
+    }
+    /**
+     * Returns a collection view of the mappings contained in this
+     * {@link FastMap}. Each element in the returned collection is a
+     * &lt;code&gt;Map.Entry&lt;/code&gt;.  The collection is backed by the map,
+     * so changes to the map are reflected in the collection, and vice-versa.
+     * The collection supports element removal, which removes the corresponding
+     * mapping from this map, via the
+     * &lt;code&gt;Iterator.remove&lt;/code&gt;, &lt;code&gt;Collection.remove&lt;/code&gt;,
+     * &lt;code&gt;removeAll&lt;/code&gt;, &lt;code&gt;retainAll&lt;/code&gt;,
+     * and &lt;code&gt;clear&lt;/code&gt; operations. It does not support the
+     * &lt;code&gt;add&lt;/code&gt; or &lt;code&gt;addAll&lt;/code&gt; operations.
+     *
+     * @return a collection view of the mappings contained in this map.
+     */
+    public Set entrySet() {
+        return _entrySet;
+    }
+    private transient EntrySet _entrySet;
+    private class EntrySet extends AbstractSet {
+        public Iterator iterator() {
+              return new Iterator() {
+                  EntryImpl after = _mapFirst;
+                  EntryImpl before;
+                  public void remove() {
+                      if (before != null) {
+                          removeEntry(before);
+                      } else {
+                          throw new IllegalStateException();
+                      }
+                  }
+                  public boolean hasNext() {
+                      return after != null;
+                  }
+                  public Object next() {
+                      if (after != null) {
+                          before = after;
+                          after = after._after;
+                          return before;
+                      } else {
+                          throw new NoSuchElementException();
+                      }
+                  }
+              };
+          }
+        public int size() {
+            return _size;
+        }
+        public boolean contains(Object obj) { // Optimization.
+            if (obj instanceof Entry) {
+                Entry entry = (Entry) obj;
+                Entry mapEntry = getEntry(entry.getKey());
+                return entry.equals(mapEntry);
+            } else {
+                return false;
+            }
+        }
+        public boolean remove(Object obj) { // Optimization.
+            if (obj instanceof Entry) {
+                Entry entry = (Entry)obj;
+                EntryImpl mapEntry = (EntryImpl) getEntry(entry.getKey());
+                if      ((mapEntry != null) &amp;&amp;
+                        (entry.getValue()).equals(mapEntry._value)) {
+                    removeEntry(mapEntry);
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    /**
+     * Returns a set view of the keys contained in this {@link FastMap}.
+     * The set is backed by the map, so changes to the map are reflected
+     * in the set, and vice-versa.  The set supports element removal,
+     * which removes the corresponding mapping from this map, via the
+     * &lt;code&gt;Iterator.remove&lt;/code&gt;, &lt;code&gt;Collection.remove&lt;/code&gt;,
+     * &lt;code&gt;removeAll&lt;/code&gt;, &lt;code&gt;retainAll&lt;/code&gt;,
+     * and &lt;code&gt;clear&lt;/code&gt; operations. It does not support the
+     * &lt;code&gt;add&lt;/code&gt; or &lt;code&gt;addAll&lt;/code&gt; operations.
+     *
+     * @return a set view of the keys contained in this map.
+     */
+    public Set keySet() {
+        return _keySet;
+    }
+    private transient KeySet _keySet;
+    private class KeySet extends AbstractSet {
+        public Iterator iterator() {
+            return new Iterator() {
+                EntryImpl after = _mapFirst;
+                EntryImpl before;
+                public void remove() {
+                      if (before != null) {
+                    removeEntry(before);
+                      } else {
+                          throw new IllegalStateException();
+                      }
+                }
+                public boolean hasNext() {
+                    return after != null;
+                }
+                public Object next() {
+                    if (after != null) {
+                       before = after;
+                       after = after._after;
+                       return before._key;
+                    } else {
+                        throw new NoSuchElementException();
+                    }
+                }
+            };
+        }
+        public int size() {
+            return _size;
+        }
+        public boolean contains(Object obj) { // Optimization.
+            return FastMap.this.containsKey(obj);
+        }
+        public boolean remove(Object obj) { // Optimization.
+            return FastMap.this.remove(obj) != null;
+        }
+        public void clear() { // Optimization.
+            FastMap.this.clear();
+        }
+    }
+    /**
+     * This methods is being called when the size of this {@link FastMap}
+     * has changed. The default behavior is to double the map's capacity
+     * when the map's size exceeds the current map's capacity.
+     * Sub-class may override this method to implement custom resizing
+     * policies or to disable automatic resizing. For example:&lt;pre&gt;
+     *     Map fixedCapacityMap = new FastMap(256) {
+     *           protected sizeChanged() {
+     *               // Do nothing, automatic resizing disabled.
+     *           }
+     *     };&lt;/pre&gt;
+     * @see #setCapacity
+     */
+    protected void sizeChanged() {
+        if (size() &gt; capacity()) {
+            setCapacity(capacity() * 2);
+        }
+    }
+    /**
+     * Returns the hash code for the specified key. The formula being used
+     * is identical to the formula used by &lt;code&gt;java.util.HashMap&lt;/code&gt;
+     * (ensures similar behavior for ill-conditioned hashcode keys).
+     *
+     * @param key the key to calculate the hashcode for.
+     * @return the hash code for the specified key.
+     */
+    private static int keyHash(Object key) {
+        // From HashMap.hash(Object) function.
+        int hashCode = key.hashCode();
+        hashCode += ~(hashCode &lt;&lt; 9);
+        hashCode ^=  (hashCode &gt;&gt;&gt; 14);
+        hashCode +=  (hashCode &lt;&lt; 4);
+        hashCode ^=  (hashCode &gt;&gt;&gt; 10);
+        return hashCode;
+    }
+    /**
+     * Adds a new entry for the specified key and value.
+     * @param key the entry's key.
+     * @param value the entry's value.
+     */
+    private void addEntry(Object key, Object value) {
+        EntryImpl entry = _poolFirst;
+        if (entry != null) {
+            _poolFirst = entry._after;
+            entry._after = null;
+        } else { // Pool empty.
+            entry = new EntryImpl();
+        }
+        // Setup entry parameters.
+        entry._key = key;
+        entry._value = value;
+        int index = keyHash(key) &amp; _mask;
+        entry._index = index;
+        // Connects to bucket.
+        EntryImpl next = _entries[index];
+        entry._next = next;
+        if (next != null) {
+            next._previous = entry;
+        }
+        _entries[index] = entry;
+        // Connects to collection.
+        if (_mapLast != null) {
+            entry._before = _mapLast;
+            _mapLast._after = entry;
+        } else {
+            _mapFirst = entry;
+        }
+        _mapLast = entry;
+        // Updates size.
+        _size++;
+        sizeChanged();
+    }
+    /**
+     * Removes the specified entry from the map.
+     *
+     * @param entry the entry to be removed.
+     */
+    private void removeEntry(EntryImpl entry) {
+        // Removes from bucket.
+        EntryImpl previous = entry._previous;
+        EntryImpl next = entry._next;
+        if (previous != null) {
+            previous._next = next;
+            entry._previous = null;
+        } else { // First in bucket.
+            _entries[entry._index] = next;
+        }
+        if (next != null) {
+            next._previous = previous;
+            entry._next = null;
+        } // Else do nothing, no last pointer.
+        // Removes from collection.
+        EntryImpl before = entry._before;
+        EntryImpl after = entry._after;
+        if (before != null) {
+            before._after = after;
+            entry._before = null;
+        } else { // First in collection.
+            _mapFirst = after;
+        }
+        if (after != null) {
+            after._before = before;
+        } else { // Last in collection.
+            _mapLast = before;
+        }
+        // Clears value and key.
+        entry._key = null;
+        entry._value = null;
+        // Recycles.
+        entry._after = _poolFirst;
+        _poolFirst = entry;
+        // Updates size.
+        _size--;
+        sizeChanged();
+    }
+    /**
+     * Initializes this instance for the specified capacity.
+     * Once initialized, operations on this map should not create new objects
+     * (unless the map's size exceeds the specified capacity).
+     *
+     * @param capacity the initial capacity.
+     */
+    private void initialize(int capacity) {
+        // Find a power of 2 &gt;= capacity
+        int tableLength = 16;
+        while (tableLength &lt; capacity) {
+            tableLength &lt;&lt;= 1;
+        }
+        // Allocates hash table.
+        _entries = new EntryImpl[tableLength];
+        _mask = tableLength - 1;
+        _capacity = capacity;
+        _size = 0;
+        // Allocates views.
+        _values = new Values();
+        _entrySet = new EntrySet();
+        _keySet = new KeySet();
+        // Resets pointers.
+        _poolFirst = null;
+        _mapFirst = null;
+        _mapLast = null;
+        // Allocates entries.
+        for (int i=0; i &lt; capacity; i++) {
+           EntryImpl entry = new EntryImpl();
+           entry._after = _poolFirst;
+           _poolFirst = entry;
+        }
+    }
+    /**
+     * Requires special handling during de-serialization process.
+     *
+     * @param  stream the object input stream.
+     * @throws IOException if an I/O error occurs.
+     * @throws ClassNotFoundException if the class for the object de-serialized
+     *         is not found.
+     */
+    private void readObject(ObjectInputStream stream)
+            throws IOException, ClassNotFoundException {
+        int capacity = stream.readInt();
+        initialize(capacity);
+        int size = stream.readInt();
+        for (int i=0; i &lt; size; i++) {
+            Object key = stream.readObject();
+            Object value = stream.readObject();
+            addEntry(key, value);
+        }
+    }
+    /**
+     * Requires special handling during serialization process.
+     *
+     * @param  stream the object output stream.
+     * @throws IOException if an I/O error occurs.
+     */
+    private void writeObject(ObjectOutputStream stream) throws IOException {
+        stream.writeInt(_capacity);
+        stream.writeInt(_size);
+        int count = 0;
+        EntryImpl entry = _mapFirst;
+        while (entry != null) {
+            stream.writeObject(entry._key);
+            stream.writeObject(entry._value);
+            count++;
+            entry = entry._after;
+        }
+        if (count != _size) {
+            throw new IOException("FastMap Corrupted");
+        }
+    }
+    /**
+     * This inner class represents a reusable list iterator over
+     * {@link FastMap} entries. This iterator is bi-directional and can be
+     * directly moved to the {@link #toFirst first} or {@link #toLast last}
+     * entry. For example:&lt;pre&gt;
+     *     for (FastIterator i=map.fastIterator().toFirst(); i.hasNext();) {
+     *         Entry entry = i.nextEntry();
+     *         ...
+     *     }&lt;/pre&gt;
+     * {@link #set setting} or {@link #add adding} new entries is not
+     * supported.
+     */
+    public final class FastIterator implements ListIterator {
+        EntryImpl after = _mapFirst;
+        EntryImpl before;
+        int nextIndex = 0;
+        public FastIterator toFirst() {
+            after = _mapFirst;
+            before = null;
+            nextIndex = 0;
+            return this;
+        }
+        public FastIterator toLast() {
+            after = null;
+            before = _mapLast;
+            nextIndex = _size;
+            return this;
+        }
+        public boolean hasNext() {
+            return after != null;
+        }
+        public Entry nextEntry() {
+            if (after != null) {
+                nextIndex++;
+                before = after;
+                after = after._after;
+                return before;
+            } else {
+                throw new NoSuchElementException();
+            }
+        }
+        public Object next() {
+            return nextEntry();
+        }
+        public boolean hasPrevious() {
+            return before != null;
+        }
+        public Entry previousEntry() {
+            if (before != null) {
+                nextIndex--;
+                after = before;
+                before = before._after;
+                return after;
+            } else {
+                throw new NoSuchElementException();
+            }
+        }
+        public Object previous() {
+            return previousEntry();
+        }
+        public int nextIndex() {
+            return nextIndex;
+        }
+        public int previousIndex() {
+            return nextIndex - 1;
+        }
+        public void remove() {
+            if (before != null) {
+               removeEntry(before);
+            } else {
+               throw new IllegalStateException();
+            }
+        }
+        public void set(Object o) {
+            throw new UnsupportedOperationException();
+        }
+        public void add(Object o) {
+            throw new UnsupportedOperationException();
+        }
+    }
+    /**
+     * This class represents a {@link FastMap} entry.
+     */
+    private static final class EntryImpl implements Entry {
+        /**
+         * Holds the entry key (null when in pool).
+         */
+        private Object _key;
+        /**
+         * Holds the entry value (null when in pool).
+         */
+        private Object _value;
+        /**
+         * Holds the bucket index (undefined when in pool).
+         */
+        private int _index;
+        /**
+         * Holds the previous entry in the same bucket (null when in pool).
+         */
+        private EntryImpl _previous;
+        /**
+         * Holds the next entry in the same bucket (null when in pool).
+         */
+        private EntryImpl _next;
+        /**
+         * Holds the entry added before this entry (null when in pool).
+         */
+        private EntryImpl _before;
+        /**
+         * Holds the entry added after this entry
+         * or the next available entry when in pool.
+         */
+        private EntryImpl _after;
+        /**
+         * Returns the key for this entry.
+         *
+         * @return the entry's key.
+         */
+        public Object getKey() {
+            return _key;
+        }
+        /**
+         * Returns the value for this entry.
+         *
+         * @return the entry's value.
+         */
+        public Object getValue() {
+            return _value;
+         }
+        /**
+         * Sets the value for this entry.
+         *
+         * @param value the new value.
+         * @return the previous value.
+         */
+        public Object setValue(Object value) {
+            Object old = _value;
+            _value = value;
+            return old;
+        }
+        /**
+         * Indicates if this entry is considered equals to the specified
+         * entry.
+         *
+         * @param that the object to test for equality.
+         * @return &lt;code&gt;true&lt;code&gt; if both entry are considered equal;
+         *         &lt;code&gt;false&lt;code&gt; otherwise.
+         */
+        public boolean equals(Object that) {
+            if (that instanceof Entry) {
+                Entry entry = (Entry) that;
+                return (_key.equals(entry.getKey())) &amp;&amp;
+                    ((_value != null) ?
+                        _value.equals(entry.getValue()) :
+                        (entry.getValue() == null));
+            } else {
+                return false;
+            }
+        }
+        /**
+         * Returns the hash code for this entry.
+         *
+         * @return this entry's hash code.
+         */
+        public int hashCode() {
+            return _key.hashCode() ^ ((_value != null) ? _value.hashCode() : 0);
+        }
+        /**
+         * Returns the text representation of this entry.
+         *
+         * @return this entry's textual representation.
+         */
+        public String toString() {
+            return _key + "=" + _value;
+        }
+    }
+}</code></pre></div>
+<ol><li>Ordered Map</li></ol>
+<p>---  ---</p>
+<ol><li>Case Insensitive Map</li><li>Cache Map</li><li>Map implementation Optimized for Strings keys</li><li>An integer hashmap</li><li>An IdentityMap that uses reference-equality instead of object-equality</li><li>Int Object HashMap</li><li>Concurrent Skip List Map</li><li>A hash map that uses primitive ints for the key rather than objects.</li><li>Integer Map</li><li>Copy On Write Map</li><li>Expiring Map</li><li>Array Map</li><li>Int Object HashMap (from CERN)</li><li>Int HashMap from jodd.org</li><li>String Map</li><li>List Map</li><li>Map using Locale objects as keys</li><li>Map with keys iterated in insertion order</li><li>Most Recently Used Map</li><li>Multi Map</li><li>MultiMap is a Java version of the C++ STL class std::multimap</li><li>Object Int Map</li><li>Sequenced HashMap</li><li>Int Int Map</li><li>Int Object Map</li><li>Identity HashMap</li><li>A java.util.Map interface which can only hold a single object</li><li>A multi valued Map</li><li>A simple hashmap from keys to integers</li><li>A memory-efficient hash map.</li><li>An implementation of the java.util.Map interface which can only hold a single object.</li><li>Utility methods for operating on memory-efficient maps.</li><li>CaseBlindHashMap - a HashMap extension, using Strings as key values.</li><li>A fixed size map implementation.</li><li>Int HashMap</li><li>IntMap provides a simple hashmap from keys to integers</li><li>Complex Key HashMap</li><li>A Map with multiple values for a key</li><li>A Map that accepts int or Integer keys only</li><li>A Map where keys are compared by object identity, rather than equals()</li><li>Type-safe Map, from char array to String value</li><li>A hashtable-based Map implementation with soft keys</li><li>List ordered map</li><li>Hash map using String values as keys mapped to primitive int values.</li><li>Lookup table that stores a list of strings</li><li>HashNMap stores multiple values by a single key value. Values can be retrieved using a direct query or by creating an enumeration over the stored elements.</li><li>Combines multiple values to form a single composite key. MultiKey can often be used as an alternative to nested maps.</li></ol>
+    <div class="pager"><a class="pager-btn" href="jsp-forloopusingtwoloopindexes.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">For loop</span></a><a class="pager-btn pager-next" href="collections-associatingavaluewithanobject.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Associating a Value with a...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Static site &mdash; deployable on GitHub Pages</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

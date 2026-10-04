@@ -1,0 +1,2604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A map of values by class. - JavaSchool</title>
+<meta name="description" content="* A map of values by class. This differs significantly from a normal key-value">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-data-structure-amapofvaluesbyclass">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-get-started" aria-expanded="true">Get Started<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-get-started">
+<a class="side-link" href="intro.html" title="Java Introduction">Introduction</a>
+<a class="side-link" href="install.html" title="Java Environment Setup">Install / Setup</a>
+<a class="side-link" href="how-java-works.html" title="How Java Works">How Java Works</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-java-basics" aria-expanded="true">Java Basics<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-java-basics">
+<a class="side-link" href="syntax.html" title="Java Syntax">Syntax</a>
+<a class="side-link" href="comments.html" title="Java Comments">Comments</a>
+<a class="side-link" href="variables.html" title="Java Variables and Data Types">Variables</a>
+<a class="side-link" href="operators.html" title="Java Operators">Operators</a>
+<a class="side-link" href="strings.html" title="Java Strings">Strings</a>
+<a class="side-link" href="conditionals.html" title="Java Conditions (if, else, switch)">Conditions</a>
+<a class="side-link" href="loops.html" title="Java Loops">Loops</a>
+<a class="side-link" href="arrays.html" title="Java Arrays">Arrays</a>
+<a class="side-link" href="methods.html" title="Java Methods (Functions)">Methods</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-object-oriented" aria-expanded="true">Object Oriented<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-object-oriented">
+<a class="side-link" href="classes-objects.html" title="Java Classes and Objects">Classes &amp; Objects</a>
+<a class="side-link" href="constructors.html" title="Java Constructors">Constructors</a>
+<a class="side-link" href="inheritance.html" title="Java Inheritance">Inheritance</a>
+<a class="side-link" href="polymorphism.html" title="Java Polymorphism">Polymorphism</a>
+<a class="side-link" href="encapsulation.html" title="Java Encapsulation">Encapsulation</a>
+<a class="side-link" href="abstraction.html" title="Java Abstraction (Abstract Classes &amp; Interfaces)">Abstraction</a>
+<a class="side-link" href="packages.html" title="Java Packages">Packages</a>
+<a class="side-link" href="static-keyword.html" title="The static Keyword">static Keyword</a>
+<a class="side-link" href="inner-classes.html" title="Java Inner Classes">Inner Classes</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-core-java" aria-expanded="true">Core Java<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-core-java">
+<a class="side-link" href="exceptions.html" title="Java Exceptions">Exceptions</a>
+<a class="side-link" href="file-io.html" title="Java File I/O">File I/O</a>
+<a class="side-link" href="threads.html" title="Java Threads">Threads</a>
+<a class="side-link" href="lambdas.html" title="Java Lambda Expressions">Lambdas</a>
+<a class="side-link" href="streams.html" title="Java Streams">Streams</a>
+<a class="side-link" href="generics.html" title="Java Generics">Generics</a>
+<a class="side-link" href="jdbc.html" title="Java JDBC">JDBC</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-collections" aria-expanded="true">Collections<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-collections">
+<a class="side-link" href="collections.html" title="Java Collections Framework">Collections</a>
+<a class="side-link" href="arraylist.html" title="Java ArrayList">ArrayList</a>
+<a class="side-link" href="hashmap.html" title="Java HashMap">HashMap</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-advanced-java" aria-expanded="true">Advanced Java<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-advanced-java">
+<a class="side-link" href="networking.html" title="Java Networking">Networking</a>
+<a class="side-link" href="regex.html" title="Java Regular Expressions">Regular Expressions</a>
+<a class="side-link" href="reflection.html" title="Java Reflection">Reflection</a>
+<a class="side-link" href="design-patterns.html" title="Java Design Patterns">Design Patterns</a>
+<a class="side-link" href="servlets-jsp.html" title="Servlets and JSP">Servlets &amp; JSP</a>
+<a class="side-link" href="modern-java.html" title="Modern Java Features">Modern Java</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-interview-certification" aria-expanded="true">Interview &amp; Certification<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-interview-certification">
+<a class="side-link" href="interview.html" title="Java Interview Questions">Interview Questions</a>
+<a class="side-link" href="ocjp-practice.html" title="OCJP / OCJA Practice Test">OCJP Practice Test</a>
+</div></div>
+<div class="side-section">
+<button type="button" class="side-head" data-target="sec-reference" aria-expanded="true">Reference<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-reference">
+<a class="side-link" href="keywords.html" title="Java Keywords Reference">Keywords</a>
+<a class="side-link" href="string-methods.html" title="Java String Methods Reference">String Methods</a>
+<a class="side-link" href="java-api.html" title="Useful Java Classes">Useful Java Classes</a>
+<a class="side-link" href="quiz.html" title="Java Quiz">Java Quiz</a>
+</div></div>
+<div class="side-section collapsed">
+<button type="button" class="side-head" data-target="sec-imported---java2s-archive" aria-expanded="false">Imported - java2s Archive<span class="side-caret">&#9662;</span></button>
+<div class="side-links" id="sec-imported---java2s-archive">
+<a class="side-link" href="collections-data-structure-abasicprioritylinkedlistmaintaininganindividuallinked.html" title="A basic priority linked list">A basic priority linked list</a>
+<a class="side-link" href="threads-adaemonthread.html" title="A daemon thread.">A daemon thread.</a>
+<a class="side-link" href="database-sql-jdbc-accessmysqldatabaseopenconnectioncreatetableinsertandretrieve.html" title="Access MySQL Database">Access MySQL Database</a>
+<a class="side-link" href="jsp-accessingthetablefieldindatabase.html" title="Accessing the table field in Database">Accessing the table field ...</a>
+<a class="side-link" href="servlets-addheaderstopreventbrowsersandproxiesfromcachingthisreply.html" title="Add headers to prevent browsers and proxies from caching this reply.">Add headers to prevent bro...</a>
+<a class="side-link" href="thread-addthreadtothreadgroup.html" title="Add thread to thread group">Add thread to thread group</a>
+<a class="side-link" href="language-annotationsandannotationtypes.html" title="Annotations and Annotation Types">Annotations and Annotation...</a>
+<a class="side-link" href="collections-data-structure-abooleanisbeingstoredandthenretrievedfromanarraylist.html" title="A boolean is being stored and then retrieved from an ArrayList">A boolean is being stored ...</a>
+<a class="side-link" href="jsp-acustomtagempty.html" title="A custom tag">A custom tag</a>
+<a class="side-link" href="thread-apoolofworkthreads.html" title="A pool of work threads">A pool of work threads</a>
+<a class="side-link" href="language-aprofilerisusedtoanalyzehowmuchtimeaprogramspendsineachpartofthecode.html" title="A profiler is used to analyze how much time a program spends in each part of the code.">A profiler is used to anal...</a>
+<a class="side-link" href="database-sql-jdbc-accounts.html" title="Accounts">Accounts</a>
+<a class="side-link" href="threads-addadelay.html" title="Add a delay">Add a delay</a>
+<a class="side-link" href="servlets-anotherloggerservlet.html" title="Another logger servlet">Another logger servlet</a>
+<a class="side-link" href="collections-data-structure-acircularqueuefrommina.html" title="A circular queue from mina">A circular queue from mina</a>
+<a class="side-link" href="database-sql-jdbc-acommonintermediateformatforanonxajdbcpool.html" title="A common intermediate format for a non-XA JDBC pool">A common intermediate form...</a>
+<a class="side-link" href="jsp-acustomtagemptywithattributes.html" title="A custom tag">A custom tag</a>
+<a class="side-link" href="threads-alivedaemonthreaddoesnotpreventanapplicationfromexiting.html" title="A live daemon thread does not prevent an application from exiting.">A live daemon thread does ...</a>
+<a class="side-link" href="thread-aqueuelinkedlistisusedtocoordinateworkbetweenaproducerandasetofworkerthre.html" title="A queue(LinkedList) is used to coordinate work between a producer and a set of worker threads.">A queue(LinkedList) is use...</a>
+<a class="side-link" href="servlets-anotherservletlocalizationcurrency.html" title="Another Servlet Localization">Another Servlet Localization</a>
+<a class="side-link" href="language-commentsingeneral.html" title="Comments in general">Comments in general</a>
+<a class="side-link" href="collections-data-structure-aclassforyoutoextendwhenyouwantobjecttomaintainadoubl.html" title="A class for you to extend when you want object to maintain a doubly linked list">A class for you to extend ...</a>
+<a class="side-link" href="jsp-acustomtagiteration.html" title="A custom tag">A custom tag</a>
+<a class="side-link" href="threads-amultithreadedqueueusedforimplementingproducerconsumerstylethreadingpatt.html" title="A multithreaded queue used for implementing producer-consumer style threading patterns">A multithreaded queue used...</a>
+<a class="side-link" href="thread-asemaphorebasedcoordination.html" title="A semaphore based coordination">A semaphore based coordina...</a>
+<a class="side-link" href="database-sql-jdbc-addinganewcolumnnameindatabasetable.html" title="Adding a New Column Name in Database Table">Adding a New Column Name i...</a>
+<a class="side-link" href="servlets-anotherservlettosendpdf.html" title="Another servlet to Send PDF">Another servlet to Send PDF</a>
+<a class="side-link" href="language-creatingannotations.html" title="Creating Annotations">Creating Annotations</a>
+<a class="side-link" href="collections-data-structure-aclassimplementingcomparable.html" title="A Class Implementing Comparable">A Class Implementing Compa...</a>
+<a class="side-link" href="jsp-acustomtagscriptingvariable.html" title="A custom tag">A custom tag</a>
+<a class="side-link" href="thread-asynchronizedcollectionwithcollectionssynchronizedcollection.html" title="A synchronized collection with Collections.synchronizedCollection">A synchronized collection ...</a>
+<a class="side-link" href="database-sql-jdbc-alldatatypesfororacle.html" title="All data types for Oracle">All data types for Oracle</a>
+<a class="side-link" href="threads-anabstractclasstoperformlengthyguiinteractingtasksinadedicatedthread.html" title="An abstract class to perform lengthy GUI-interacting tasks in a dedicated thread.">An abstract class to perfo...</a>
+<a class="side-link" href="servlets-anotherservlettosendxml.html" title="Another servlet to Send XML">Another servlet to Send XML</a>
+<a class="side-link" href="language-defineaconstantvalueanduseit.html" title="Define a constant value and use it">Define a constant value an...</a>
+<a class="side-link" href="collections-data-structure-aclassthatwrapsanarraywithalistinterface.html" title="A class that wraps an array with a List interface.">A class that wraps an arra...</a>
+<a class="side-link" href="jsp-acustomtagthathasneitherattributesnorbodycontent.html" title="A custom tag that has neither attributes nor body content.">A custom tag that has neit...</a>
+<a class="side-link" href="database-sql-jdbc-amethodtogetthecurrentdateandtimetouseinatimestamp.html" title="A method to get the current date and time to use in a timestamp">A method to get the curren...</a>
+<a class="side-link" href="servlets-autilityclassforparsinghttpdatesasusedincookiesandotherheaders.html" title="A utility class for parsing HTTP dates as used in cookies and other headers">A utility class for parsin...</a>
+<a class="side-link" href="threads-anapplicationexitswhentherearenonondaemonthreadsrunning.html" title="An application exits when there are no non-daemon threads running.">An application exits when ...</a>
+<a class="side-link" href="thread-changethreadpriority.html" title="Change Thread Priority">Change Thread Priority</a>
+<a class="side-link" href="language-defineconstant.html" title="Define constant">Define constant</a>
+<a class="side-link" href="collections-data-structure-aclasstoiterateoverallpermutationsofanarray.html" title="A class to iterate over all permutations of an array.">A class to iterate over al...</a>
+<a class="side-link" href="database-sql-jdbc-amethodtogetthecurrentdatetouseinatimestamp.html" title="A method to get the current date to use in a timestamp">A method to get the curren...</a>
+<a class="side-link" href="jsp-advanceddynamicwebcontentgeneration1.html" title="Advanced Dynamic Web Content Generation. 1">Advanced Dynamic Web Conte...</a>
+<a class="side-link" href="threads-anexampleofcountdownlatch.html" title="An example of CountDownLatch.">An example of CountDownLat...</a>
+<a class="side-link" href="servlets-basicformprocessor.html" title="Basic Form processor">Basic Form processor</a>
+<a class="side-link" href="thread-creatingathread.html" title="Creating a Thread">Creating a Thread</a>
+<a class="side-link" href="collections-data-structure-acombinationoftwocollectionsintoacollection.html" title="A combination of two collections into a collection">A combination of two colle...</a>
+<a class="side-link" href="jsp-advanceddynamicwebcontentgenerationformerrorcheck.html" title="Advanced Dynamic Web Content Generation">Advanced Dynamic Web Conte...</a>
+<a class="side-link" href="threads-anexampleofexchanger.html" title="An example of Exchanger.">An example of Exchanger.</a>
+<a class="side-link" href="database-sql-jdbc-anothermethodtochecktableexistance.html" title="Another Method To Check Table Existance">Another Method To Check Ta...</a>
+<a class="side-link" href="servlets-beanparserservlet.html" title="Bean Parser Servlet">Bean Parser Servlet</a>
+<a class="side-link" href="thread-creatingthreadderivingasubclassofthread.html" title="Creating Thread">Creating Thread</a>
+<a class="side-link" href="collections-data-structure-acompacthashsetimplementsthesetinterfacemoretightlyin.html" title="A CompactHashSet implements the set interface more tightly in memory and more efficiently than Java&#x27;s java.util.HashSet.">A CompactHashSet implement...</a>
+<a class="side-link" href="jsp-afirstjspdatabase.html" title="A First JSP Database">A First JSP Database</a>
+<a class="side-link" href="threads-animationswingandthread.html" title="Animation">Animation</a>
+<a class="side-link" href="database-sql-jdbc-appletandoraclejdbc.html" title="Applet and Oracle JDBC">Applet and Oracle JDBC</a>
+<a class="side-link" href="servlets-blockfilter.html" title="Block Filter">Block Filter</a>
+<a class="side-link" href="thread-creatingthreadobjectsimplementingtherunmethodinrunnableinterface.html" title="Creating Thread Objects">Creating Thread Objects</a>
+<a class="side-link" href="collections-data-structure-acomparatorforbooleanobjectsthatcansorteithertrueorfa.html" title="A Comparator for Boolean objects that can sort either true or false first">A Comparator for Boolean o...</a>
+<a class="side-link" href="threads-animplementationofaproducerandconsumerthatusesemaphorestocontrolsynchron.html" title="An implementation of a producer and consumer that use semaphores to control synchronization.">An implementation of a pro...</a>
+<a class="side-link" href="database-sql-jdbc-appletjdbc.html" title="Applet JDBC">Applet JDBC</a>
+<a class="side-link" href="jsp-applicationobject.html" title="Application Object">Application Object</a>
+<a class="side-link" href="servlets-breaklineswithhtml.html" title="break Lines with HTML">break Lines with HTML</a>
+<a class="side-link" href="thread-determiningifthecurrentthreadisholdingasynchronizedlock.html" title="Determining If the Current Thread Is Holding a Synchronized Lock">Determining If the Current...</a>
+<a class="side-link" href="collections-data-structure-actslikeanjavautilarraylistbutforprimitiveintvalues.html" title="Acts like an java.util.ArrayList but for primitive int values">Acts like an java.util.Arr...</a>
+<a class="side-link" href="threads-anotherdeadlockdemo.html" title="Another deadlock demo">Another deadlock demo</a>
+<a class="side-link" href="jsp-applyingjspintherealworldjspprojectiishoppingcartapplication.html" title="Applying JSP in the Real World JSP Project II">Applying JSP in the Real W...</a>
+<a class="side-link" href="database-sql-jdbc-arrangeacolumnofdatabasetable.html" title="Arrange a Column of Database Table">Arrange a Column of Databa...</a>
+<a class="side-link" href="servlets-browserdetection.html" title="Browser detection">Browser detection</a>
+<a class="side-link" href="thread-handleconcurrentreadwriteusesynchronizedtolockthedata.html" title="Handle concurrent read/write">Handle concurrent read/write</a>
+<a class="side-link" href="collections-data-structure-actslikeanjavautilarraylistbutforprimitivelongvalues.html" title="Acts like an java.util.ArrayList but for primitive long values">Acts like an java.util.Arr...</a>
+<a class="side-link" href="threads-anotherwaytostopathread.html" title="Another way to stop a thread">Another way to stop a thread</a>
+<a class="side-link" href="jsp-applyingjspintherealworldjspprojectipersonalizedportal.html" title="Applying JSP in the Real World JSP Project I">Applying JSP in the Real W...</a>
+<a class="side-link" href="database-sql-jdbc-batchupdate.html" title="Batch Update">Batch Update</a>
+<a class="side-link" href="servlets-cachedconnectionservlet.html" title="Cached Connection Servlet">Cached Connection Servlet</a>
+<a class="side-link" href="thread-interruptathread.html" title="Interrupt a thread.">Interrupt a thread.</a>
+<a class="side-link" href="collections-data-structure-adaptiteratortoiterable.html" title="Adapt iterator to iterable">Adapt iterator to iterable</a>
+<a class="side-link" href="threads-anotherwaytosuspendandresume.html" title="Another way to suspend and resume">Another way to suspend and...</a>
+<a class="side-link" href="database-sql-jdbc-batchupdateaddbatchcommands.html" title="Batch update">Batch update</a>
+<a class="side-link" href="servlets-cachefilter.html" title="Cache Filter">Cache Filter</a>
+<a class="side-link" href="jsp-basics.html" title="Java examples (example source code)">Java examples (example sou...</a>
+<a class="side-link" href="thread-monitorathreadsstatus.html" title="Monitor a thread&#x27;s status.">Monitor a thread's status.</a>
+<a class="side-link" href="threads-asemaphore.html" title="A semaphore">A semaphore</a>
+<a class="side-link" href="collections-data-structure-adaptiveextensionofthejavautilvectorclass.html" title="Adaptive extension of the java.util.Vector class">Adaptive extension of the ...</a>
+<a class="side-link" href="database-sql-jdbc-batchupdatedemo.html" title="Batch Update Demo">Batch Update Demo</a>
+<a class="side-link" href="jsp-beanpropertydisplay.html" title="Bean property display">Bean property display</a>
+<a class="side-link" href="servlets-checkerfilter.html" title="Checker Filter">Checker Filter</a>
+<a class="side-link" href="thread-pausingathreadsetbooleanavariablethatthethreadchecksoccasionally.html" title="Pausing a Thread">Pausing a Thread</a>
+<a class="side-link" href="threads-asimpledemonstrationofwaitandnotify.html" title="A simple demonstration of wait() and notify().">A simple demonstration of ...</a>
+<a class="side-link" href="collections-data-structure-addanelementtospecifiedindexofjavaarraylist.html" title="Add an element to specified index of Java ArrayList">Add an element to specifie...</a>
+<a class="side-link" href="database-sql-jdbc-batchupdateformysql.html" title="Batch update for MySQL">Batch update for MySQL</a>
+<a class="side-link" href="jsp-beanswithscriptlet.html" title="Beans with scriptlet">Beans with scriptlet</a>
+<a class="side-link" href="servlets-clientautorefresh.html" title="Client auto refresh">Client auto refresh</a>
+<a class="side-link" href="thread-producerconsumerandqueue.html" title="Producer, consumer and Queue">Producer, consumer and Queue</a>
+<a class="side-link" href="threads-asimpleexamplethatusesanexecutor.html" title="A simple example that uses an Executor.">A simple example that uses...</a>
+<a class="side-link" href="collections-data-structure-addarraytocollection.html" title="Add array to collection">Add array to collection</a>
+<a class="side-link" href="database-sql-jdbc-batchupdateinsert.html" title="Batch Update Insert">Batch Update Insert</a>
+<a class="side-link" href="jsp-buildingasimpleerrorhandlingpage.html" title="Building a simple error handling page">Building a simple error ha...</a>
+<a class="side-link" href="servlets-clientpost.html" title="Client Post">Client Post</a>
+<a class="side-link" href="thread-simplethreadpoolataskisexecutedbyobtainingathreadfromthepool.html" title="Simple thread pool. A task is executed by obtaining a thread from the pool">Simple thread pool. A task...</a>
+<a class="side-link" href="threads-athreadmustbemarkedasadaemonthreadbeforeitisstarted.html" title="A thread must be marked as a daemon thread before it is started.">A thread must be marked as...</a>
+<a class="side-link" href="collections-data-structure-addelementsatbeginningandendoflinkedlistjavaexample.html" title="Add elements at beginning and end of LinkedList Java example">Add elements at beginning ...</a>
+<a class="side-link" href="database-sql-jdbc-blobandjdbcimage.html" title="Blob and JDBC">Blob and JDBC</a>
+<a class="side-link" href="jsp-callingaprivatemethod.html" title="Calling a Private Method">Calling a Private Method</a>
+<a class="side-link" href="servlets-clientpull.html" title="Client Pull">Client Pull</a>
+<a class="side-link" href="thread-stoppingathreadsetabooleanvariablethatthethreadchecksoccasionally.html" title="Stopping a Thread">Stopping a Thread</a>
+<a class="side-link" href="threads-athreadofexecutionthatusesacyclicbarrier.html" title="A thread of execution that uses a CyclicBarrier">A thread of execution that...</a>
+<a class="side-link" href="collections-data-structure-addnewvaluetoexsistingarraythenewvalueisindexedtothel.html" title="Add new value to exsisting array.The new value is indexed to the last.">Add new value to exsisting...</a>
+<a class="side-link" href="database-sql-jdbc-blobimage2.html" title="Blob">Blob</a>
+<a class="side-link" href="jsp-callingastoredprocedurewithinajsp.html" title="Calling a Stored procedure within a JSP">Calling a Stored procedure...</a>
+<a class="side-link" href="servlets-clientpullandmove.html" title="Client Pull and Move">Client Pull and Move</a>
+<a class="side-link" href="thread-stoppingathreadusebooleanvaluetostopathread.html" title="Stopping a Thread">Stopping a Thread</a>
+<a class="side-link" href="collections-data-structure-addnewvaluewhichsetsasthefirstvaluetoexistingarray.html" title="Add new value, which sets as the first value, to existing array.">Add new value, which sets ...</a>
+<a class="side-link" href="threads-atomicfloat.html" title="Atomic Float">Atomic Float</a>
+<a class="side-link" href="database-sql-jdbc-blobimage3.html" title="Blob">Blob</a>
+<a class="side-link" href="jsp-callingsuperclassconstructors.html" title="Calling Superclass Constructors">Calling Superclass Constru...</a>
+<a class="side-link" href="servlets-compressionfilter.html" title="Compression Filter">Compression Filter</a>
+<a class="side-link" href="thread-stoppingathreadwithinterrupt.html" title="Stopping a Thread with interrupt()">Stopping a Thread with int...</a>
+<a class="side-link" href="collections-data-structure-addonearraytoanother.html" title="Add one array to another">Add one array to another</a>
+<a class="side-link" href="threads-atomicutils.html" title="Atomic Utils">Atomic Utils</a>
+<a class="side-link" href="database-sql-jdbc-blobjdbcdealswithbinarydata.html" title="Blob">Blob</a>
+<a class="side-link" href="jsp-catchinganarrayindexoutofboundsexceptionexception.html" title="Catching an ArrayIndexOutOfBoundsException Exception">Catching an ArrayIndexOutO...</a>
+<a class="side-link" href="servlets-compressionresponsestreamservlets.html" title="Compression Response Stream servlets">Compression Response Strea...</a>
+<a class="side-link" href="thread-testunsynchronizedmethod.html" title="Test Unsynchronized method">Test Unsynchronized method</a>
+<a class="side-link" href="threads-aworkqueueisusedtocoordinateworkbetweenaproducerandasetofworkerthreads.html" title="A work queue is used to coordinate work between a producer and a set of worker threads.">A work queue is used to co...</a>
+<a class="side-link" href="collections-data-structure-addorinsertanelementtoarraylistusingjavalistiteratore.html" title="Add or insert an element to ArrayList using Java ListIterator Example">Add or insert an element t...</a>
+<a class="side-link" href="database-sql-jdbc-booleanjavasqldriverjdbccompliant.html" title="boolean java.sql.Driver.jdbcCompliant()">boolean java.sql.Driver.jd...</a>
+<a class="side-link" href="jsp-causingaruntimeerror.html" title="Causing a Runtime Error">Causing a Runtime Error</a>
+<a class="side-link" href="servlets-compressionservletresponsewrapper.html" title="Compression Servlet Response Wrapper">Compression Servlet Respon...</a>
+<a class="side-link" href="thread-threadjoindemo.html" title="Thread Join Demo">Thread Join Demo</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewarray.html" title="Adds all the elements of the given arrays into a new array.">Adds all the elements of t...</a>
+<a class="side-link" href="threads-blockingqueuetest.html" title="BlockingQueue Test">BlockingQueue Test</a>
+<a class="side-link" href="database-sql-jdbc-booleanjavasqldriverpropertyinforequiredispropertyvaluerequire.html" title="boolean java.sql.DriverPropertyInfo.required (Is property value required?)">boolean java.sql.DriverPro...</a>
+<a class="side-link" href="jsp-commentsinjsppage.html" title="Comments in JSP page">Comments in JSP page</a>
+<a class="side-link" href="servlets-contextaccessor.html" title="Context accessor">Context accessor</a>
+<a class="side-link" href="thread-todeterminewhetherathreadhasbeeninterrupted.html" title="To determine whether a thread has been interrupted">To determine whether a thr...</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewbooleanvalu.html" title="Adds all the elements of the given arrays into a new boolean-value array.">Adds all the elements of t...</a>
+<a class="side-link" href="threads-booleanlock.html" title="Boolean lock">Boolean lock</a>
+<a class="side-link" href="database-sql-jdbc-cachedrs.html" title="Cached RS">Cached RS</a>
+<a class="side-link" href="servlets-contextattributesservlet.html" title="Context Attributes Servlet">Context Attributes Servlet</a>
+<a class="side-link" href="jsp-createyourowntagacustomtagbody.html" title="Create your own tag">Create your own tag</a>
+<a class="side-link" href="thread-usewaitandnotifyfromobjectclass.html" title="Use wait() and notify() from Object class">Use wait() and notify() fr...</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewbytetypearr.html" title="Adds all the elements of the given arrays into a new byte-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="threads-bufferedwriterandthreads.html" title="BufferedWriter and threads">BufferedWriter and threads</a>
+<a class="side-link" href="database-sql-jdbc-callafunctionwithoneinoutparameterthefunctionreturnsavarchar.html" title="Call a function with one IN/OUT parameter; the function returns a VARCHAR">Call a function with one I...</a>
+<a class="side-link" href="servlets-contextbinder.html" title="Context binder">Context binder</a>
+<a class="side-link" href="jsp-creatingacustomexceptionobject.html" title="Creating a Custom Exception Object">Creating a Custom Exceptio...</a>
+<a class="side-link" href="thread-usingathreadlocalvariable.html" title="Using a Thread-Local Variable">Using a Thread-Local Varia...</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewchartypearr.html" title="Adds all the elements of the given arrays into a new char-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="threads-bytefifo.html" title="Byte FIFO">Byte FIFO</a>
+<a class="side-link" href="database-sql-jdbc-callafunctionwithoneinparameterthefunctionreturnsavarchar.html" title="Call a function with one IN parameter; the function returns a VARCHAR">Call a function with one I...</a>
+<a class="side-link" href="servlets-contextlog.html" title="Context log">Context log</a>
+<a class="side-link" href="jsp-creatingamethod.html" title="Creating a Method">Creating a Method</a>
+<a class="side-link" href="thread-waitingonanobject.html" title="Waiting on an object">Waiting on an object</a>
+<a class="side-link" href="collections-addinganothercollection.html" title="Adding Another Collection">Adding Another Collection</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewdoubletypea.html" title="Adds all the elements of the given arrays into a new double-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="database-sql-jdbc-callafunctionwithoneoutparameterthefunctionreturnsavarchar.html" title="Call a function with one OUT parameter; the function returns a VARCHAR">Call a function with one O...</a>
+<a class="side-link" href="threads-callingsleeptowaitforawhile.html" title="Calling sleep() to wait for a while">Calling sleep() to wait fo...</a>
+<a class="side-link" href="servlets-contextlogger.html" title="Context logger">Context logger</a>
+<a class="side-link" href="jsp-creatingatable.html" title="Creating a Table">Creating a Table</a>
+<a class="side-link" href="collections-addingelementsinthemiddleofalist.html" title="Adding elements in the middle of a List">Adding elements in the mid...</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewfloattypear.html" title="Adds all the elements of the given arrays into a new float-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="database-sql-jdbc-callaprocedurewithoneinoutparameter.html" title="Call a procedure with one IN/OUT parameter">Call a procedure with one ...</a>
+<a class="side-link" href="threads-collections-threads.html" title="Collections Threads">Collections Threads</a>
+<a class="side-link" href="servlets-converttohtmlstring.html" title="Convert to HTML string">Convert to HTML string</a>
+<a class="side-link" href="jsp-cssjavascriptvbscriptandjsp1.html" title="CSS, JavaScript, VBScript, and JSP 1">CSS, JavaScript, VBScript,...</a>
+<a class="side-link" href="collections-addingkeyvaluepairspublicobjectputobjectkeyobjectvalue.html" title="Adding Key-Value Pairs">Adding Key-Value Pairs</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewinttypearra.html" title="Adds all the elements of the given arrays into a new int-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="database-sql-jdbc-callaprocedurewithoneinparameter.html" title="Call a procedure with one IN parameter">Call a procedure with one ...</a>
+<a class="side-link" href="threads-communicatebetweenthreadsusingaqueue.html" title="Communicate between threads using a Queue">Communicate between thread...</a>
+<a class="side-link" href="servlets-cookie.html" title="Cookie">Cookie</a>
+<a class="side-link" href="jsp-cssjavascriptvbscriptandjsp2.html" title="CSS, JavaScript, VBScript, and JSP 2">CSS, JavaScript, VBScript,...</a>
+<a class="side-link" href="collections-addorinsertanelementtoarraylistusingjavalistiterator.html" title="Add or insert an element to ArrayList using Java ListIterator">Add or insert an element t...</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewlongtypearr.html" title="Adds all the elements of the given arrays into a new long-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="database-sql-jdbc-callaprocedurewithoneoutparameter.html" title="Call a procedure with one OUT parameter">Call a procedure with one ...</a>
+<a class="side-link" href="servlets-cookiedemo.html" title="Cookie Demo">Cookie Demo</a>
+<a class="side-link" href="threads-coordinatesthreadsformultithreadedoperations.html" title="Coordinates threads for multi-threaded operations">Coordinates threads for mu...</a>
+<a class="side-link" href="jsp-currentlocale.html" title="Current Locale">Current Locale</a>
+<a class="side-link" href="collections-addsalltheelementsofthegivenarraysintoanewdoubletypearray.html" title="Adds all the elements of the given arrays into a new double-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewshorttypear.html" title="Adds all the elements of the given arrays into a new short-type array.">Adds all the elements of t...</a>
+<a class="side-link" href="database-sql-jdbc-callastoredprocedurewithnoparametersandreturnvalue.html" title="Call a stored procedure with no parameters and return value.">Call a stored procedure wi...</a>
+<a class="side-link" href="servlets-cookiereader.html" title="Cookie reader">Cookie reader</a>
+<a class="side-link" href="threads-counterswingandthread.html" title="Counter">Counter</a>
+<a class="side-link" href="jsp-dealwiththecookie.html" title="Deal with the cookie">Deal with the cookie</a>
+<a class="side-link" href="collections-afixedsizemapimplementation.html" title="A fixed size map implementation.">A fixed size map implement...</a>
+<a class="side-link" href="collections-data-structure-addstheobjecttothearray.html" title="Adds the object to the array.">Adds the object to the arr...</a>
+<a class="side-link" href="database-sql-jdbc-callingafunctioninadatabasecallfunctionswithinoutandinoutparam.html" title="Calling a Function in a Database">Calling a Function in a Da...</a>
+<a class="side-link" href="servlets-cookieutil.html" title="Cookie Util">Cookie Util</a>
+<a class="side-link" href="threads-createanewthreadforthethreadpoolthecreatethreadwillbeadaemonthread.html" title="Create a new thread for the thread pool. The create thread will be a daemon thread.">Create a new thread for th...</a>
+<a class="side-link" href="jsp-dealwiththeerrors.html" title="Deal with the errors">Deal with the errors</a>
+<a class="side-link" href="collections-data-structure-addtoendperformancecomparelinklistandarraylist.html" title="Add to end Performance compare">Add to end Performance com...</a>
+<a class="side-link" href="collections-afteraddingalloftheelementscallthetrimtosizemethod.html" title="After adding all of the elements, call the trimToSize() method">After adding all of the el...</a>
+<a class="side-link" href="database-sql-jdbc-callingastoredprocedureinadatabasewithnoparameters.html" title="Calling a Stored Procedure in a Database with no parameters">Calling a Stored Procedure...</a>
+<a class="side-link" href="servlets-cookieutilities.html" title="Cookie Utilities">Cookie Utilities</a>
+<a class="side-link" href="threads-createathreadbyextendingthread.html" title="Create a thread by extending Thread.">Create a thread by extendi...</a>
+<a class="side-link" href="jsp-declarationtagexample.html" title="Declaration Tag Example">Declaration Tag Example</a>
+<a class="side-link" href="collections-ahashmapthatusesprimitiveintsforthekeyratherthanobjects.html" title="A hash map that uses primitive ints for the key rather than objects.">A hash map that uses primi...</a>
+<a class="side-link" href="collections-data-structure-addtostartperformancecomparelinklistandarraylist.html" title="Add to start Performance compare">Add to start Performance c...</a>
+<a class="side-link" href="database-sql-jdbc-callstoredprocedure.html" title="Call stored procedure">Call stored procedure</a>
+<a class="side-link" href="servlets-cookieutility.html" title="Cookie Utility">Cookie Utility</a>
+<a class="side-link" href="threads-createathreadbyimplementingrunnable.html" title="Create a thread by implementing Runnable.">Create a thread by impleme...</a>
+<a class="side-link" href="jsp-declarationtagmethods.html" title="Declaration Tag - Methods">Declaration Tag - Methods</a>
+<a class="side-link" href="collections-data-structure-adirectedgraphdatastructure.html" title="A directed graph data structure">A directed graph data stru...</a>
+<a class="side-link" href="collections-aleastrecentlyusedcache.html" title="A Least Recently Used Cache">A Least Recently Used Cache</a>
+<a class="side-link" href="database-sql-jdbc-callstoredprocedureinmysql.html" title="Call Stored Procedure In MySql">Call Stored Procedure In M...</a>
+<a class="side-link" href="threads-creatingaboundedworkqueue.html" title="Creating a Bounded Work Queue">Creating a Bounded Work Qu...</a>
+<a class="side-link" href="servlets-databaseandservletdatabasemetadata.html" title="Database and Servlet">Database and Servlet</a>
+<a class="side-link" href="jsp-declaringmultiplemethods.html" title="Declaring Multiple Methods">Declaring Multiple Methods</a>
+<a class="side-link" href="collections-data-structure-afastersmallerstackimplementation.html" title="A faster, smaller stack implementation.">A faster, smaller stack im...</a>
+<a class="side-link" href="collections-alternativearraydeclarationsyntax.html" title="Alternative Array Declaration Syntax">Alternative Array Declarat...</a>
+<a class="side-link" href="database-sql-jdbc-callstoredprocedureinoracleandpassinoutparameters.html" title="Call Stored Procedure In Oracle And Pass In Out Parameters">Call Stored Procedure In O...</a>
+<a class="side-link" href="threads-creatingthreadswithinnerclasses.html" title="Creating threads with inner classes">Creating threads with inne...</a>
+<a class="side-link" href="servlets-databaseandservletstoreprocedure.html" title="Database and Servlet">Database and Servlet</a>
+<a class="side-link" href="jsp-displaytableindatabase.html" title="Display table in Database">Display table in Database</a>
+<a class="side-link" href="collections-data-structure-afixedsizemapimplementation.html" title="A fixed size map implementation.">A fixed size map implement...</a>
+<a class="side-link" href="collections-amapwherekeysarecomparedbyobjectidentityratherthanequals.html" title="A Map where keys are compared by object identity, rather than equals()">A Map where keys are compa...</a>
+<a class="side-link" href="database-sql-jdbc-cancellingupdatestoanupdatableresultset.html" title="Cancelling Updates to an Updatable Result Set">Cancelling Updates to an U...</a>
+<a class="side-link" href="threads-currentset.html" title="Current set">Current set</a>
+<a class="side-link" href="servlets-databasetransaction.html" title="Database transaction">Database transaction</a>
+<a class="side-link" href="jsp-duplicatedsessionvaraibles.html" title="Duplicated session varaibles">Duplicated session varaibles</a>
+<a class="side-link" href="collections-data-structure-agrowablearrayofbytes.html" title="A growable array of bytes">A growable array of bytes</a>
+<a class="side-link" href="collections-amemoryefficienthashmap.html" title="A memory-efficient hash map.">A memory-efficient hash map.</a>
+<a class="side-link" href="database-sql-jdbc-changecolumnnameofatable.html" title="Change Column Name of a Table">Change Column Name of a Ta...</a>
+<a class="side-link" href="threads-customizedjavautilarraylistoperateinamultithreadedenvironmentwherethelar.html" title="Customized java.util.ArrayList">Customized java.util.Array...</a>
+<a class="side-link" href="servlets-decodeanhtmlcolorstringlikef567baintoacolor.html" title="Decode an HTML color string like &#x27;#F567BA;&#x27; into a Color">Decode an HTML color strin...</a>
+<a class="side-link" href="jsp-elandcomplexjavabeans.html" title="EL and Complex JavaBeans">EL and Complex JavaBeans</a>
+<a class="side-link" href="collections-data-structure-ahashmapthatusesprimitiveintsforthekeyratherthanobjec.html" title="A hash map that uses primitive ints for the key rather than objects.">A hash map that uses primi...</a>
+<a class="side-link" href="collections-anarrayisajavaobject.html" title="An array is a Java object">An array is a Java object</a>
+<a class="side-link" href="database-sql-jdbc-changethefetchsizeontheresultset.html" title="Change the fetch size on the result set">Change the fetch size on t...</a>
+<a class="side-link" href="threads-customizedjavautilhashmapoperateinamultithreadedenvironmentwherethelarge.html" title="Customized java.util.HashMap">Customized java.util.HashMap</a>
+<a class="side-link" href="servlets-dedicatedconnectionservlet.html" title="Dedicated Connection Servlet">Dedicated Connection Servlet</a>
+<a class="side-link" href="jsp-elandcomplexjavabeans1.html" title="EL and Complex JavaBeans 1">EL and Complex JavaBeans 1</a>
+<a class="side-link" href="collections-data-structure-ahashtablebasedmapimplementationwithsoftkeys.html" title="A hashtable-based Map implementation with soft keys">A hashtable-based Map impl...</a>
+<a class="side-link" href="collections-anidentitymapthatusesreferenceequalityinsteadofobjectequality.html" title="An IdentityMap that uses reference-equality instead of object-equality">An IdentityMap that uses r...</a>
+<a class="side-link" href="database-sql-jdbc-checkbatchupdateresult.html" title="Check Batch Update Result">Check Batch Update Result</a>
+<a class="side-link" href="threads-customizedjavautiltreemapoperateinamultithreadedenvironmentwherethelarge.html" title="Customized java.util.TreeMap">Customized java.util.TreeMap</a>
+<a class="side-link" href="servlets-definewelcomefilesforwebapplication.html" title="Define welcome files for web application">Define welcome files for w...</a>
+<a class="side-link" href="jsp-elarithmetic.html" title="EL Arithmetic">EL Arithmetic</a>
+<a class="side-link" href="collections-data-structure-ahashtablebasedmapimplementationwithweakkeysandusingr.html" title="A hashtable-based Map implementation with weak keys and using reference-equality in place of object-equality when comparing keys (and values).">A hashtable-based Map impl...</a>
+<a class="side-link" href="collections-aniteratorthatwrapsanumberofiterators.html" title="An Iterator that wraps a number of Iterators">An Iterator that wraps a n...</a>
+<a class="side-link" href="database-sql-jdbc-checkifcursorisinthefirstrow.html" title="Check if cursor is in the first row">Check if cursor is in the ...</a>
+<a class="side-link" href="threads-daemonthread.html" title="Daemon Thread">Daemon Thread</a>
+<a class="side-link" href="servlets-deleteblobfromservlet.html" title="Delete Blob From Servlet">Delete Blob From Servlet</a>
+<a class="side-link" href="jsp-elfunctionexamples.html" title="EL Function Examples">EL Function Examples</a>
+<a class="side-link" href="collections-data-structure-ahashtablewithemweakkeysemfullconcurrencyofretrievals.html" title="A hash table with &lt;em&gt;weak keys&lt;/em&gt;, full concurrency of retrievals, and adjustable expected concurrency for updates.">A hash table with &lt;em&gt;weak...</a>
+<a class="side-link" href="collections-aniteratorwrapperforanenumeration.html" title="An Iterator wrapper for an Enumeration.">An Iterator wrapper for an...</a>
+<a class="side-link" href="database-sql-jdbc-checkjdbcinstallationformysql.html" title="Check JDBC Installation for MySQL">Check JDBC Installation fo...</a>
+<a class="side-link" href="threads-daemonthreadsdontpreventtheprogramfromending.html" title="Daemon threads don&#x27;t prevent the program from ending.">Daemon threads don't preve...</a>
+<a class="side-link" href="jsp-embeddingcode.html" title="Embedding Code">Embedding Code</a>
+<a class="side-link" href="collections-data-structure-aheapbasedpriorityqueuewithoutanyconcurrencycontrol.html" title="A heap-based priority queue, without any concurrency control">A heap-based priority queu...</a>
+<a class="side-link" href="collections-aniteratorwrapperforanobjectallowustodealwithallarraylikestructuresi.html" title="An Iterator wrapper for an Object[], allow us to deal with all array like structures in a consistent manner.">An Iterator wrapper for an...</a>
+<a class="side-link" href="database-sql-jdbc-checkjdbcinstallationfororacle.html" title="Check JDBC Installation for Oracle">Check JDBC Installation fo...</a>
+<a class="side-link" href="threads-daemonthreadsspawnotherdaemonthreads.html" title="Daemon threads spawn other daemon threads">Daemon threads spawn other...</a>
+<a class="side-link" href="jsp-errorhandlingcompileerrorinjsppage.html" title="Error Handling">Error Handling</a>
+<a class="side-link" href="collections-data-structure-ajavautilmapimplementationusingreferencevalues.html" title="A java.util.Map implementation using reference values">A java.util.Map implementa...</a>
+<a class="side-link" href="collections-anonymousarraysaredeclaredsimilarlytoregulararrays.html" title="Anonymous arrays are declared similarly to regular arrays">Anonymous arrays are decla...</a>
+<a class="side-link" href="database-sql-jdbc-column.html" title="Column">Column</a>
+<a class="side-link" href="threads-deadlockdetecting.html" title="Deadlock Detecting">Deadlock Detecting</a>
+<a class="side-link" href="jsp-errorwithouthandler.html" title="Error without handler">Error without handler</a>
+<a class="side-link" href="collections-data-structure-ajavautilmapinterfacewhichcanonlyholdasingleobject.html" title="A java.util.Map interface which can only hold a single object">A java.util.Map interface ...</a>
+<a class="side-link" href="collections-appendthegivenobjecttothegivenarray.html" title="Append the given Object to the given array">Append the given Object to...</a>
+<a class="side-link" href="database-sql-jdbc-commitorrollbacktransactioninjdbc.html" title="Commit or rollback transaction in JDBC">Commit or rollback transac...</a>
+<a class="side-link" href="threads-deadlockdetector.html" title="Deadlock Detector">Deadlock Detector</a>
+<a class="side-link" href="jsp-expressionlanguageexamples.html" title="Expression Language Examples">Expression Language Examples</a>
+<a class="side-link" href="collections-data-structure-algorithms.html" title="Algorithms">Algorithms</a>
+<a class="side-link" href="collections-arrayiterator.html" title="Array Iterator">Array Iterator</a>
+<a class="side-link" href="database-sql-jdbc-committingandrollingbackupdatestoadatabase.html" title="Committing and Rolling Back Updates to a Database">Committing and Rolling Bac...</a>
+<a class="side-link" href="threads-deadlockdetector2.html" title="DeadLock Detector 2">DeadLock Detector 2</a>
+<a class="side-link" href="jsp-fetchingdatafromadatabase.html" title="Fetching Data From a Database">Fetching Data From a Datab...</a>
+<a class="side-link" href="collections-data-structure-alisthelperclassthatattemptstoavoidunneccessarylistcr.html" title="A List helper class that attempts to avoid unneccessary List creation.">A List helper class that a...</a>
+<a class="side-link" href="collections-arraylistimplementstheemptyserializableinterface.html" title="ArrayList implements the empty Serializable interface">ArrayList implements the e...</a>
+<a class="side-link" href="threads-definingathreadforathreadpool.html" title="Defining a thread for a thread pool">Defining a thread for a th...</a>
+<a class="side-link" href="jsp-fieldsofthecalendarclass.html" title="Fields of the Calendar Class">Fields of the Calendar Class</a>
+<a class="side-link" href="collections-data-structure-alistthatlikeasetcontainsnoduplicateelements.html" title="A List that, like a Set, contains no duplicate Elements.">A List that, like a Set, c...</a>
+<a class="side-link" href="collections-arraysofcharacters.html" title="Arrays of Characters">Arrays of Characters</a>
+<a class="side-link" href="threads-demoforjavautilconcurrentfuture.html" title="Demo for java.util.concurrent.Future">Demo for java.util.concurr...</a>
+<a class="side-link" href="jsp-filetheguestbook.html" title="File">File</a>
+<a class="side-link" href="collections-data-structure-allowsthreadstocommunicateasynchronouslybyputtingmess.html" title="Allows threads to communicate asynchronously by putting messages into and reading messages out of a synchronized queue.">Allows threads to communic...</a>
+<a class="side-link" href="collections-arraytostring.html" title="Array To String">Array To String</a>
+<a class="side-link" href="threads-demonstratejoin.html" title="Demonstrate join().">Demonstrate join().</a>
+<a class="side-link" href="jsp-fillingatable.html" title="Filling a Table">Filling a Table</a>
+<a class="side-link" href="collections-data-structure-amapactslikearray.html" title="A map acts like array.">A map acts like array.</a>
+<a class="side-link" href="collections-asortedsetisasetthatmaintainsitsitemsinasortedorder.html" title="A sorted set is a set that maintains its items in a sorted order">A sorted set is a set that...</a>
+<a class="side-link" href="threads-demonstrateshowdeadlockcanbehiddeninaprogram.html" title="Demonstrates how deadlock can be hidden in a program">Demonstrates how deadlock ...</a>
+<a class="side-link" href="jsp-forloopusingtwoloopindexes.html" title="For loop">For loop</a>
+<a class="side-link" href="collections-data-structure-amapcollectionwithrealtimebehavior.html" title="A Map collection with real-time behavior">A Map collection with real...</a>
+<a class="side-link" href="collections-associatingavaluewithanobject.html" title="Associating a Value with an Object">Associating a Value with a...</a>
+<a class="side-link" href="threads-determiningifthecurrentthreadisholdingasynchronizedlock.html" title="Determining If the Current Thread Is Holding a Synchronized Lock">Determining If the Current...</a>
+<a class="side-link" href="jsp-formtextfielddemo.html" title="Form TextField Demo">Form TextField Demo</a>
+<a class="side-link" href="collections-data-structure-amapdeclaredtoholdobjectsofatypetcanalsoholdobjectsth.html" title="A map declared to hold objects of a type T can also hold objects that extend from T">A map declared to hold obj...</a>
+<a class="side-link" href="threads-determiningwhenathreadhasfinished.html" title="Determining When a Thread Has Finished">Determining When a Thread ...</a>
+<a class="side-link" href="jsp-getsetpropertiesjstl.html" title="Get Set Properties JSTL">Get Set Properties JSTL</a>
+<a class="side-link" href="collections-data-structure-amapimplementationthatdumpsitscontentwhenmemoryrunslo.html" title="A Map implementation that dumps its content when memory runs low.">A Map implementation that ...</a>
+<a class="side-link" href="threads-earlyreturn.html" title="Early return">Early return</a>
+<a class="side-link" href="jsp-gettingapropertyvalue.html" title="Getting a Property Value">Getting a Property Value</a>
+<a class="side-link" href="collections-data-structure-amapimplementationthatgrowstoafixedsizeandthenretains.html" title="A Map implementation that grows to a fixed size and then retains only a fixed number of the highest (largest) keys.">A Map implementation that ...</a>
+<a class="side-link" href="threads-eliminatingraceconditionsusingswingcomponents.html" title="Eliminating race Conditions using Swing Components">Eliminating race Condition...</a>
+<a class="side-link" href="jsp-gettingheaderdatajsp.html" title="Getting Header Data Jsp">Getting Header Data Jsp</a>
+<a class="side-link" href="collections-data-structure-amapimplementedwitharraylists.html" title="A Map implemented with ArrayLists">A Map implemented with Arr...</a>
+<a class="side-link" href="threads-exceptioncallback.html" title="Exception call back">Exception call back</a>
+<a class="side-link" href="jsp-gettingparameternamesjsp.html" title="Getting Parameter Names Jsp">Getting Parameter Names Jsp</a>
+<a class="side-link active" href="collections-data-structure-amapofvaluesbyclass.html" title="A map of values by class.">A map of values by class.</a>
+<a class="side-link" href="threads-executesataskwithaspecifiedtimeout.html" title="Executes a task with a specified timeout">Executes a task with a spe...</a>
+<a class="side-link" href="jsp-httpechofortesting.html" title="HTTP Echo For testing">HTTP Echo For testing</a>
+<a class="side-link" href="collections-data-structure-amapthatacceptsintorintegerkeysonly.html" title="A Map that accepts int or Integer keys only">A Map that accepts int or ...</a>
+<a class="side-link" href="collections-data-structure-amapthatstoresthevaluesinfileswithinadirectory.html" title="A Map that stores the values in files within a directory.">A Map that stores the valu...</a>
+<a class="side-link" href="collections-data-structure-amapwherekeysarecomparedbyobjectidentityratherthanequ.html" title="A Map where keys are compared by object identity, rather than equals()">A Map where keys are compa...</a>
+<a class="side-link" href="collections-data-structure-amapwithmultiplevaluesforakey.html" title="A Map with multiple values for a key">A Map with multiple values...</a>
+<a class="side-link" href="collections-data-structure-amemoryefficienthashmap.html" title="A memory-efficient hash map.">A memory-efficient hash map.</a>
+</div></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <h1>A map of values by class.</h1>
+<p>A map of values by class.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * SubclassMap.java Created Jul 9, 2009 by Andrew Butler, PSL
+ */
+//package prisms.util;
+import java.lang.reflect.Array;
+/**
+ * A map of values by class. This differs significantly from a normal key-value
+ * map in that a value may be returned for a class input if an entry exists for
+ * one of the class's superclasses (or inherited interfaces); an entry is not
+ * required for the class itself.
+ *
+ * @param &lt;C&gt;
+ *            The type whose subtypes are used as keys in this map
+ * @param &lt;V&gt;
+ *            The type of value stored in this map
+ */
+public class SubClassMap&lt;C, V&gt; {
+  class MapItem {
+    final Class&lt;? extends C&gt; theClass;
+    V theValue;
+    MapItem(Class&lt;? extends C&gt; clazz, V value) {
+      theClass = clazz;
+      theValue = value;
+    }
+  }
+  private MapItem[] theItems;
+  /**
+   * Creates a SubClassMap
+   */
+  public SubClassMap() {
+    theItems = new SubClassMap.MapItem[0];
+  }
+  /**
+   * Adds or sets a value in this map
+   *
+   * @param clazz
+   *            The class to set the value for. After this, calls to
+   *            {@link #get(Class)} with an argument that is
+   *            &lt;code&gt;clazz&lt;/code&gt; or one of its subclasses will return
+   *            &lt;code&gt;value&lt;/code&gt; unless there is another entry in the map
+   *            for a subtype of &lt;code&gt;clazz&lt;/code&gt; that is also a supertype
+   *            of the argument to get(Class).
+   * @param value
+   *            The value to store in the map
+   */
+  public void put(Class&lt;? extends C&gt; clazz, V value) {
+    for (MapItem item : theItems)
+      if (item.theClass == clazz) {
+        item.theValue = value;
+        return;
+      }
+    theItems = ArrayUtils.add(theItems, new MapItem(clazz, value));
+  }
+  /**
+   * Removes a value from this map
+   *
+   * @param clazz
+   *            The class to remove the value for. After this. calls to
+   *            {@link #get(Class)} with an argument that is
+   *            &lt;code&gt;clazz&lt;/code&gt; or one of its subclasses will return the
+   *            value associated with &lt;code&gt;clazz&lt;/code&gt;'s nearest superclass
+   *            unless there is another entry in the map for a subtype of
+   *            &lt;code&gt;clazz&lt;/code&gt; that is also a supertype of the argument to
+   *            get(Class).
+   * @param allDescending
+   *            Whether all subclasses of &lt;code&gt;clazz&lt;/code&gt; should be removed
+   *            as well
+   */
+  public void remove(Class&lt;? extends C&gt; clazz, boolean allDescending) {
+    for (int i = 0; i &lt; theItems.length; i++) {
+      if (theItems[i].theClass == clazz
+          || (allDescending &amp;&amp; clazz
+              .isAssignableFrom(theItems[i].theClass)))
+        theItems = ArrayUtils.remove(theItems, i);
+    }
+  }
+  /**
+   * Gets the value assigned to &lt;code&gt;subClass&lt;/code&gt; or its nearest supertype
+   * for which there is an entry in this map.
+   *
+   * @param subClass
+   *            The type to get the value for
+   * @return The value associated with the given type or its nearest
+   *         superclass for which this map has an entry
+   */
+  public V get(Class&lt;? extends C&gt; subClass) {
+    MapItem[] matches = new SubClassMap.MapItem[0];
+    for (MapItem item : theItems) {
+      if (item.theClass == subClass)
+        return item.theValue;
+      else if (item.theClass.isAssignableFrom(subClass))
+        matches = ArrayUtils.add(matches, item);
+    }
+    if (matches.length == 0)
+      return null;
+    int minDist = 0;
+    MapItem match = null;
+    for (MapItem item : matches) {
+      int dist = getTypeDistance(item.theClass, subClass);
+      if (match == null || dist &lt; minDist) {
+        minDist = dist;
+        match = item;
+      }
+    }
+    return match.theValue;
+  }
+  private static int getTypeDistance(Class&lt;?&gt; clazz, Class&lt;?&gt; subClass) {
+    if (clazz == subClass)
+      return 0;
+    int dist = getTypeDistance(clazz, subClass.getSuperclass());
+    if (dist &gt;= 0)
+      return dist + 1;
+    for (Class&lt;?&gt; intf : subClass.getInterfaces()) {
+      dist = getTypeDistance(clazz, intf);
+      if (dist &gt;= 0)
+        return dist + 1;
+    }
+    return -1;
+  }
+}
+/**
+ * ArrayUtils provides some static methods for manipulating arrays easily when
+ * using a tool such as {@link java.util.ArrayList} is inconvenient.
+ */
+final class ArrayUtils {
+  /**
+   * Gets the first element in the given array for which the
+   * {@link EqualsChecker#equals(Object, Object)} returns true, or null if
+   * this never occurs. The equals method is called with the element as the
+   * first argument and the test parameter as the second.
+   *
+   * @param &lt;T&gt;
+   *            The type of array to get an element of
+   * @param array
+   *            The array to get the element of
+   * @param test
+   *            The object to compare the others with. This may be null.
+   * @param checker
+   *            The checker to determine which element to get
+   * @return The first element in the array for which the
+   *         {@link EqualsChecker#equals(Object, Object)} returns true, or
+   *         null if this never occurs
+   */
+  public static &lt;T&gt; T get(T[] array, Object test, EqualsChecker checker) {
+    for (T el : array)
+      if (checker.equals(el, test))
+        return el;
+    return null;
+  }
+  /**
+   * Inserts an element into the array--for primitive types
+   *
+   * @param anArray
+   *            The array to insert into
+   * @param anElement
+   *            The element to insert
+   * @param anIndex
+   *            The index for the new element
+   * @return The new array with all elements of &lt;code&gt;anArray&lt;/code&gt;, but with
+   *         &lt;code&gt;anElement&lt;/code&gt; inserted at index &lt;code&gt;anIndex&lt;/code&gt;
+   */
+  public static Object addP(Object anArray, Object anElement, int anIndex) {
+    Object ret;
+    int length;
+    if (anArray == null) {
+      if (anIndex != 0)
+        throw new ArrayIndexOutOfBoundsException("Cannot set "
+            + anIndex + " element in a null array");
+      ret = Array.newInstance(anElement.getClass(), 1);
+      Array.set(ret, 0, anElement);
+      return ret;
+    } else {
+      length = Array.getLength(anArray);
+      ret = Array.newInstance(anArray.getClass().getComponentType(),
+          length + 1);
+    }
+    System.arraycopy(anArray, 0, ret, 0, anIndex);
+    put(ret, anElement, anIndex);
+    System.arraycopy(anArray, anIndex, ret, anIndex + 1, length - anIndex);
+    return ret;
+  }
+  /**
+   * Inserts an element into the array
+   *
+   * @param &lt;T&gt;
+   *            The type of the object array
+   * @param anArray
+   *            The array to insert into
+   * @param anElement
+   *            The element to insert
+   * @param anIndex
+   *            The index for the new element
+   * @return The new array with all elements of &lt;code&gt;anArray&lt;/code&gt;, but with
+   *         &lt;code&gt;anElement&lt;/code&gt; inserted at index &lt;code&gt;anIndex&lt;/code&gt;
+   */
+  public static &lt;T&gt; T[] add(T[] anArray, T anElement, int anIndex) {
+    T[] ret;
+    if (anArray == null) {
+      if (anIndex != 0)
+        throw new ArrayIndexOutOfBoundsException("Cannot set "
+            + anIndex + " element in a null array");
+      ret = (T[]) Array.newInstance(anElement.getClass(), 1);
+      ret[0] = anElement;
+      return ret;
+    } else
+      ret = (T[]) Array.newInstance(
+          anArray.getClass().getComponentType(), anArray.length + 1);
+    System.arraycopy(anArray, 0, ret, 0, anIndex);
+    put(ret, anElement, anIndex);
+    System.arraycopy(anArray, anIndex, ret, anIndex + 1, anArray.length
+        - anIndex);
+    return ret;
+  }
+  /**
+   * @param anArray
+   *            The array to extend
+   * @param anElement
+   *            The element to add into &lt;code&gt;anArray&lt;/code&gt;
+   * @return A new array of length &lt;code&gt;anArray.length+1&lt;/code&gt; whose
+   *         contents are those of &lt;code&gt;anArray&lt;/code&gt; followed by
+   *         &lt;code&gt;anElement&lt;/code&gt;
+   */
+  public static Object addP(Object anArray, Object anElement) {
+    int len = anArray == null ? 0 : Array.getLength(anArray);
+    return addP(anArray, anElement, len);
+  }
+  /**
+   * @param &lt;T&gt;
+   *            The type of the array
+   * @param anArray
+   *            The array to extend
+   * @param anElement
+   *            The element to add into &lt;code&gt;anArray&lt;/code&gt;
+   * @return A new array of length &lt;code&gt;anArray.length+1&lt;/code&gt; whose
+   *         contents are those of &lt;code&gt;anArray&lt;/code&gt; followed by
+   *         &lt;code&gt;anElement&lt;/code&gt;
+   */
+  public static &lt;T&gt; T[] add(T[] anArray, T anElement) {
+    int len = anArray == null ? 0 : Array.getLength(anArray);
+    return add(anArray, anElement, len);
+  }
+  /**
+   * Moves an element in an array from one index to another
+   *
+   * @param &lt;T&gt;
+   *            The type of the array
+   * @param anArray
+   *            The array to move an element within
+   * @param from
+   *            The index of the element to move
+   * @param to
+   *            The index to move the element to
+   * @return The original array
+   */
+  public static &lt;T&gt; T[] move(T[] anArray, int from, int to) {
+    final T element = anArray[from];
+    for (; from &lt; to; from++)
+      anArray[from] = anArray[from + 1];
+    for (; from &gt; to; from--)
+      anArray[from] = anArray[from - 1];
+    anArray[to] = element;
+    return anArray;
+  }
+  /**
+   * Moves an element in a primitive array from one index to another
+   *
+   * @param anArray
+   *            The array to move an element within
+   * @param from
+   *            The index of the element to move
+   * @param to
+   *            The index to move the element to
+   * @return The original array
+   */
+  public static Object moveP(Object anArray, int from, int to) {
+    if (anArray instanceof Object[])
+      return move((Object[]) anArray, from, to);
+    final Object element = Array.get(anArray, from);
+    for (; from &lt; to; from++)
+      Array.set(anArray, from, Array.get(anArray, from + 1));
+    for (; from &gt; to; from--)
+      Array.set(anArray, from, Array.get(anArray, from - 1));
+    Array.set(anArray, to, element);
+    return anArray;
+  }
+  private static void put(Object array, Object element, int index) {
+    try {
+      if (array instanceof Object[]) {
+        try {
+          ((Object[]) array)[index] = element;
+        } catch (ArrayStoreException e) {
+          throw new IllegalArgumentException(e.getMessage()
+              + ": "
+              + (element == null ? "null" : element.getClass()
+                  .getName()) + " into "
+              + array.getClass().getName());
+        }
+      } else {
+        try {
+          Array.set(array, index, element);
+        } catch (IllegalArgumentException e) {
+          throw new IllegalArgumentException(e.getMessage()
+              + ": "
+              + (element == null ? "null" : element.getClass()
+                  .getName()) + " into "
+              + array.getClass().getName(), e);
+        }
+      }
+    } catch (ArrayIndexOutOfBoundsException e) {
+      throw new ArrayIndexOutOfBoundsException(index + " into "
+          + Array.getLength(array));
+    }
+  }
+  /**
+   * Merges all elements of a set of arrays into a single array with no
+   * duplicates. For primitive types.
+   *
+   * @param type
+   *            The type of the result
+   * @param arrays
+   *            The arrays to merge
+   * @return A new array containing all elements of &lt;code&gt;array1&lt;/code&gt; and
+   *         all elements of &lt;code&gt;array2&lt;/code&gt; that are not present in
+   *         &lt;code&gt;array1&lt;/code&gt;
+   * @throws NullPointerException
+   *             If either array is null
+   * @throws ArrayStoreException
+   *             If elements in the arrays are incompatible with
+   *             &lt;code&gt;type&lt;/code&gt;
+   */
+  public static Object mergeInclusiveP(Class&lt;?&gt; type, Object... arrays) {
+    java.util.LinkedHashSet&lt;Object&gt; set = new java.util.LinkedHashSet&lt;Object&gt;();
+    int i, j;
+    for (i = 0; i &lt; arrays.length; i++) {
+      int len = Array.getLength(arrays[i]);
+      for (j = 0; j &lt; len; j++)
+        set.add(Array.get(arrays[i], j));
+    }
+    Object ret = Array.newInstance(type, set.size());
+    i = 0;
+    for (Object el : set) {
+      put(ret, el, i);
+      i++;
+    }
+    return ret;
+  }
+  /**
+   * Merges all elements of a set of arrays into a single array with no
+   * duplicates.
+   *
+   * @param &lt;T1&gt;
+   *            The type of the result
+   * @param &lt;T2&gt;
+   *            The type of the input arrays
+   * @param type
+   *            The type of the result
+   * @param arrays
+   *            The arrays to merge
+   * @return A new array containing all elements of &lt;code&gt;array1&lt;/code&gt; and
+   *         all elements of &lt;code&gt;array2&lt;/code&gt; that are not present in
+   *         &lt;code&gt;array1&lt;/code&gt;
+   * @throws NullPointerException
+   *             If either array is null
+   */
+  public static &lt;T1, T2 extends T1&gt; T1[] mergeInclusive(Class&lt;T1&gt; type,
+      T2[]... arrays) {
+    java.util.LinkedHashSet&lt;T1&gt; set = new java.util.LinkedHashSet&lt;T1&gt;();
+    int i, j;
+    for (i = 0; i &lt; arrays.length; i++) {
+      for (j = 0; j &lt; arrays[i].length; j++)
+        set.add(arrays[i][j]);
+    }
+    return set.toArray((T1[]) Array.newInstance(type, set.size()));
+  }
+  /**
+   * Merges elements found in each of a set of arrays into a single array with
+   * no duplicates. For primitive types.
+   *
+   * @param type
+   *            The type of the result
+   * @param arrays
+   *            The arrays to merge
+   * @return A new array containing all common elements between
+   *         &lt;code&gt;array1&lt;/code&gt; and &lt;code&gt;array2&lt;/code&gt;
+   * @throws NullPointerException
+   *             If either array is null
+   * @throws ArrayStoreException
+   *             If elements in the arrays are incompatible with
+   *             &lt;code&gt;type&lt;/code&gt;
+   */
+  public static Object mergeExclusiveP(Class&lt;?&gt; type, Object... arrays) {
+    if (arrays.length == 0)
+      return Array.newInstance(type, 0);
+    java.util.ArrayList&lt;Object&gt; retSet = new java.util.ArrayList&lt;Object&gt;();
+    int i, j, k;
+    int len = Array.getLength(arrays[0]);
+    for (j = 0; j &lt; len; j++)
+      retSet.add(Array.get(arrays[0], j));
+    for (i = 1; i &lt; arrays.length; i++) {
+      for (j = 0; j &lt; retSet.size(); j++) {
+        len = Array.getLength(arrays[i]);
+        boolean hasEl = false;
+        for (k = 0; k &lt; len; k++)
+          if (equalsUnordered(retSet.get(j), Array.get(arrays[i], k))) {
+            hasEl = true;
+            break;
+          }
+        if (!hasEl) {
+          retSet.remove(j);
+          j--;
+        }
+      }
+    }
+    Object ret = Array.newInstance(type, retSet.size());
+    for (i = 0; i &lt; retSet.size(); i++)
+      Array.set(ret, i, retSet.get(i));
+    return ret;
+  }
+  /**
+   * Merges elements found in both of two arrays into a single array with no
+   * duplicates.
+   *
+   * @param &lt;T1&gt;
+   *            The type of the result
+   * @param &lt;T2&gt;
+   *            The type of the input arrays
+   * @param type
+   *            The type of the result
+   * @param arrays
+   *            The arrays to merge
+   * @return A new array containing all common elements between
+   *         &lt;code&gt;array1&lt;/code&gt; and &lt;code&gt;array2&lt;/code&gt;
+   * @throws NullPointerException
+   *             If either array is null
+   */
+  public static &lt;T1, T2 extends T1&gt; T1[] mergeExclusive(Class&lt;T1&gt; type,
+      T2[]... arrays) {
+    if (arrays.length == 0)
+      return (T1[]) Array.newInstance(type, 0);
+    java.util.ArrayList&lt;Object&gt; retSet = new java.util.ArrayList&lt;Object&gt;();
+    int i, j, k;
+    for (j = 0; j &lt; arrays[0].length; j++)
+      retSet.add(arrays[0][j]);
+    for (i = 1; i &lt; arrays.length; i++) {
+      for (j = 0; j &lt; retSet.size(); j++) {
+        boolean hasEl = false;
+        for (k = 0; k &lt; arrays[i].length; k++)
+          if (equalsUnordered(retSet.get(j), arrays[i][k])) {
+            hasEl = true;
+            break;
+          }
+        if (!hasEl) {
+          retSet.remove(j);
+          j--;
+        }
+      }
+    }
+    return retSet.toArray((T1[]) Array.newInstance(type, retSet.size()));
+  }
+  /**
+   * Concatenates a series of arrays of any type
+   *
+   * @param type
+   *            The type of the arrays
+   * @param arrays
+   *            The arrays to concatenate
+   * @return An array containing all elements of the arrays
+   */
+  public static Object concatP(Class&lt;?&gt; type, Object... arrays) {
+    if (arrays.length == 0)
+      return Array.newInstance(type, 0);
+    if (arrays.length == 1)
+      return arrays[0];
+    int size = 0;
+    int[] sizes = new int[arrays.length];
+    for (int a = 0; a &lt; arrays.length; a++) {
+      sizes[a] = Array.getLength(arrays[a]);
+      size += sizes[a];
+    }
+    Object ret = Array.newInstance(type, size);
+    int aLen = 0;
+    for (int a = 0; a &lt; arrays.length; a++) {
+      System.arraycopy(arrays[a], 0, ret, aLen, sizes[a]);
+      aLen += sizes[a];
+    }
+    return ret;
+  }
+  /**
+   * Concatenates a series of arrays of a non-primitive type
+   *
+   * @param &lt;T&gt;
+   *            The type of the arrays
+   * @param type
+   *            The type of the arrays
+   * @param arrays
+   *            The arrays to concatenate
+   * @return An array containing all elements of the arrays
+   */
+  public static &lt;T&gt; T[] concat(Class&lt;T&gt; type, T[]... arrays) {
+    if (arrays.length == 0)
+      return (T[]) Array.newInstance(type, 0);
+    if (arrays.length == 1)
+      return arrays[0];
+    int size = 0;
+    for (int a = 0; a &lt; arrays.length; a++) {
+      if (arrays[a] != null)
+        size += arrays[a].length;
+    }
+    T[] ret = (T[]) Array.newInstance(type, size);
+    int aLen = 0;
+    for (int a = 0; a &lt; arrays.length; a++) {
+      if (arrays[a] == null)
+        continue;
+      System.arraycopy(arrays[a], 0, ret, aLen, arrays[a].length);
+      aLen += arrays[a].length;
+    }
+    return ret;
+  }
+  /**
+   * @param &lt;T&gt;
+   *            The type of the array to search
+   * @param anArray
+   *            The array to search
+   * @param anElement
+   *            The element to search for
+   * @return The first index &lt;code&gt;0&amp;lt;=idx&amp;lt;anArray.length&lt;/code&gt; such
+   *         that {@link #equals(Object, Object)} returns true for both
+   *         &lt;code&gt;anArray[idx]&lt;/code&gt; and &lt;code&gt;anElement&lt;/code&gt;, or -1 if no
+   *         such index exists
+   */
+  public static &lt;T&gt; int indexOf(T[] anArray, T anElement) {
+    if (anArray == null)
+      return -1;
+    for (int i = 0; i &lt; anArray.length; i++)
+      if (equals(anArray[i], anElement))
+        return i;
+    return -1;
+  }
+  /**
+   * @param anArray
+   *            The array to search
+   * @param anElement
+   *            The element to search for
+   * @return The first index &lt;code&gt;0&amp;lt;=idx&amp;lt;anArray.length&lt;/code&gt; such
+   *         that {@link #equals(Object, Object)} returns true for both
+   *         &lt;code&gt;anArray[idx]&lt;/code&gt; and &lt;code&gt;anElement&lt;/code&gt;, or -1 if no
+   *         such index exists
+   */
+  public static int indexOfP(Object anArray, Object anElement) {
+    if (anArray == null)
+      return -1;
+    if (anArray instanceof Object[]) {
+      Object[] array2 = (Object[]) anArray;
+      for (int i = 0; i &lt; array2.length; i++) {
+        if (equals(array2[i], anElement))
+          return i;
+      }
+      return -1;
+    } else {
+      int i, len;
+      len = Array.getLength(anArray);
+      for (i = 0; i &lt; len; i++) {
+        if (equals(Array.get(anArray, i), anElement))
+          return i;
+      }
+      return -1;
+    }
+  }
+  /**
+   * Removes the specified object from the array. For primitive types.
+   *
+   * @param anArray
+   *            The array to remove an element from
+   * @param anIndex
+   *            The index of the element to remove
+   * @return A new array with all the elements of &lt;code&gt;anArray&lt;/code&gt; except
+   *         the element at &lt;code&gt;anIndex&lt;/code&gt;
+   */
+  public static Object removeP(Object anArray, int anIndex) {
+    Object ret;
+    int length;
+    if (anArray == null)
+      return null;
+    else {
+      length = Array.getLength(anArray);
+      ret = Array.newInstance(anArray.getClass().getComponentType(),
+          length - 1);
+    }
+    System.arraycopy(anArray, 0, ret, 0, anIndex);
+    System.arraycopy(anArray, anIndex + 1, ret, anIndex, length - anIndex
+        - 1);
+    return ret;
+  }
+  /**
+   * Removes the specified object from the array
+   *
+   * @param &lt;T&gt;
+   *            The type of the array
+   * @param anArray
+   *            The array to remove an element from
+   * @param anIndex
+   *            The index of the element to remove
+   * @return A new array with all the elements of &lt;code&gt;anArray&lt;/code&gt; except
+   *         the element at &lt;code&gt;anIndex&lt;/code&gt;
+   */
+  public static &lt;T&gt; T[] remove(T[] anArray, int anIndex) {
+    T[] ret;
+    if (anArray == null)
+      return null;
+    else {
+      ret = (T[]) Array.newInstance(
+          anArray.getClass().getComponentType(), anArray.length - 1);
+    }
+    System.arraycopy(anArray, 0, ret, 0, anIndex);
+    System.arraycopy(anArray, anIndex + 1, ret, anIndex, anArray.length
+        - anIndex - 1);
+    return ret;
+  }
+  /**
+   * Removes the specified object from the array
+   *
+   * @param anArray
+   *            The array to remove an element from
+   * @param anElement
+   *            The element to remove
+   * @return A new array with all the elements of &lt;code&gt;anArray&lt;/code&gt; except
+   *         &lt;code&gt;anElement&lt;/code&gt;
+   */
+  public static Object removeP(Object anArray, Object anElement) {
+    int idx = indexOfP(anArray, anElement);
+    if (idx &gt;= 0)
+      return removeP(anArray, idx);
+    else
+      return anArray;
+  }
+  /**
+   * Removes the specified object from the array
+   *
+   * @param &lt;T&gt;
+   *            The type of the array
+   * @param anArray
+   *            The array to remove an element from
+   * @param anElement
+   *            The element to remove
+   * @return A new array with all the elements of &lt;code&gt;anArray&lt;/code&gt; except
+   *         &lt;code&gt;anElement&lt;/code&gt;
+   */
+  public static &lt;T&gt; T[] remove(T[] anArray, T anElement) {
+    int idx = indexOf(anArray, anElement);
+    if (idx &gt;= 0)
+      return remove(anArray, idx);
+    else
+      return anArray;
+  }
+  /**
+   * Removes all contents of &lt;code&gt;array2&lt;/code&gt; from &lt;code&gt;array1&lt;/code&gt;. All
+   * instances of &lt;code&gt;array2&lt;/code&gt; will also be removed from
+   * &lt;code&gt;array1&lt;/code&gt;. For primitive types.
+   *
+   * @param array1
+   *            The array to remove elements from
+   * @param array2
+   *            The array containing the elements to remove; or the element to
+   *            remove itself
+   * @return &lt;code&gt;array1&lt;/code&gt; missing all the contents of
+   *         &lt;code&gt;array2&lt;/code&gt;
+   */
+  public static Object removeAllP(Object array1, Object array2) {
+    if (array1 == null || array2 == null)
+      return array1;
+    if (!array1.getClass().isArray())
+      return null;
+    if (!array2.getClass().isArray())
+      array2 = new Object[] { array2 };
+    else
+      array2 = addP(array2, array2);
+    java.util.BitSet remove = new java.util.BitSet();
+    int len1 = Array.getLength(array1);
+    int len2 = Array.getLength(array2);
+    int i, j;
+    for (i = 0; i &lt; len1; i++) {
+      for (j = 0; j &lt; len2; j++) {
+        if (equals(Array.get(array1, i), Array.get(array2, j))) {
+          remove.set(i);
+          break;
+        }
+      }
+    }
+    Object ret = Array.newInstance(array1.getClass().getComponentType(),
+        len1 - remove.cardinality());
+    // This copying section might be replaced by a more efficient version
+    // using System.arraycopy()--this would be much faster than reflection,
+    // especially for large arrays needing only a few elements removed
+    for (i = 0, j = 0; i &lt; len1; i++) {
+      if (!remove.get(i)) {
+        put(ret, Array.get(array1, i), j);
+        j++;
+      }
+    }
+    return ret;
+  }
+  /**
+   * Removes all contents of &lt;code&gt;array2&lt;/code&gt; from &lt;code&gt;array1&lt;/code&gt;. All
+   * instances of &lt;code&gt;array2&lt;/code&gt; will also be removed from
+   * &lt;code&gt;array1&lt;/code&gt;.
+   *
+   * @param &lt;T&gt;
+   *            The type of the array
+   * @param array1
+   *            The array to remove elements from
+   * @param array2
+   *            The array containing the elements to remove; or the element to
+   *            remove itself
+   * @return &lt;code&gt;array1&lt;/code&gt; missing all the contents of
+   *         &lt;code&gt;array2&lt;/code&gt;
+   */
+  public static &lt;T&gt; T[] removeAll(T[] array1, Object array2) {
+    if (array1 == null || array2 == null)
+      return array1;
+    if (!array1.getClass().isArray())
+      return null;
+    if (!array2.getClass().isArray())
+      array2 = new Object[] { array2 };
+    java.util.BitSet remove = new java.util.BitSet();
+    int len1 = array1.length;
+    int len2 = Array.getLength(array2);
+    int i, j;
+    for (i = 0; i &lt; len1; i++) {
+      for (j = 0; j &lt; len2; j++) {
+        if (equals(array1[i], Array.get(array2, j))) {
+          remove.set(i);
+          break;
+        }
+      }
+    }
+    T[] ret = (T[]) Array.newInstance(array1.getClass().getComponentType(),
+        len1 - remove.cardinality());
+    // This copying section might be replaced by a more efficient version
+    // using System.arraycopy()--this would be much faster than reflection,
+    // especially for large arrays needing only a few elements removed
+    for (i = 0, j = 0; i &lt; len1; i++) {
+      if (!remove.get(i)) {
+        ret[j] = array1[i];
+        j++;
+      }
+    }
+    return ret;
+  }
+  /**
+   * Searches an array (possibly primitive) for an element
+   *
+   * @param anArray
+   *            The array to search
+   * @param anElement
+   *            The element to search for
+   * @return True if &lt;code&gt;anArray&lt;/code&gt; contains &lt;code&gt;anElement&lt;/code&gt;,
+   *         false otherwise
+   */
+  public static boolean containsP(Object anArray, Object anElement) {
+    if (anArray == null)
+      return false;
+    if (anArray instanceof Object[]) {
+      Object[] oa = (Object[]) anArray;
+      for (int i = 0; i &lt; oa.length; i++) {
+        if (equals(oa[i], anElement))
+          return true;
+      }
+    } else {
+      int len = Array.getLength(anArray);
+      for (int i = 0; i &lt; len; i++) {
+        if (equals(Array.get(anArray, i), anElement))
+          return true;
+      }
+    }
+    return false;
+  }
+  /**
+   * @param &lt;T&gt;
+   *            The type of the array to search
+   * @param anArray
+   *            The array to search
+   * @param anElement
+   *            The element to search for
+   * @return True if &lt;code&gt;anArray&lt;/code&gt; contains &lt;code&gt;anElement&lt;/code&gt;,
+   *         false otherwise
+   */
+  public static &lt;T&gt; boolean contains(T[] anArray, T anElement) {
+    if (anArray == null)
+      return false;
+    for (int i = 0; i &lt; anArray.length; i++) {
+      if (equals(anArray[i], anElement))
+        return true;
+    }
+    return false;
+  }
+  /**
+   * Like {@link #containsP(Object, Object)} but the equality test is by
+   * identity instead of the equals method
+   *
+   * @param anArray
+   *            The array to search
+   * @param anElement
+   *            The element to search for
+   * @return True if &lt;code&gt;anArray&lt;/code&gt; contains &lt;code&gt;anElement&lt;/code&gt; by
+   *         identity, false otherwise
+   */
+  public static boolean containspID(Object anArray, Object anElement) {
+    if (anArray == null)
+      return false;
+    if (anArray instanceof Object[]) {
+      Object[] oa = (Object[]) anArray;
+      for (int i = 0; i &lt; oa.length; i++) {
+        if (oa[i] == anElement)
+          return true;
+      }
+    } else {
+      int len = Array.getLength(anArray);
+      for (int i = 0; i &lt; len; i++) {
+        if (Array.get(anArray, i) == anElement)
+          return true;
+      }
+    }
+    return false;
+  }
+  /**
+   * Like {@link #contains(Object[], Object)} but the equality test is by
+   * identity instead of the equals method
+   *
+   * @param &lt;T&gt;
+   *            The type of the array to search
+   * @param &lt;E&gt;
+   *            The type of the element to search for
+   * @param anArray
+   *            The array to search
+   * @param anElement
+   *            The element to search for
+   * @return True if &lt;code&gt;anArray&lt;/code&gt; contains &lt;code&gt;anElement&lt;/code&gt; by
+   *         identity, false otherwise
+   */
+  public static &lt;T, E extends T&gt; boolean containsID(T[] anArray, E anElement) {
+    if (anArray == null)
+      return false;
+    for (int i = 0; i &lt; anArray.length; i++) {
+      if (anArray[i] == anElement)
+        return true;
+    }
+    return false;
+  }
+  /**
+   * A utility version of equals that allows comparison of null objects and
+   * arrays. WARNING: Does not account for an array that contains a reference
+   * to itself, directly or indirectly
+   *
+   * @param o1
+   *            The first object to compare
+   * @param o2
+   *            The second object to compare
+   * @return true if &lt;code&gt;o1&lt;/code&gt; and &lt;code&gt;o2&lt;/code&gt; are arrays and their
+   *         elements are equivalent or if either
+   *         &lt;code&gt;o1==null &amp;&amp; o2==null&lt;/code&gt; or &lt;code&gt;o1.equals(o2)&lt;/code&gt;,
+   *         false otherwise
+   */
+  public static boolean equals(Object o1, Object o2) {
+    if (o1 == null)
+      return o2 == null;
+    if (o2 == null)
+      return false;
+    if (o1 instanceof Object[] &amp;&amp; o2 instanceof Object[])
+      return equals((Object[]) o1, (Object[]) o2);
+    if (o1.getClass().isArray() &amp;&amp; o2.getClass().isArray()) {
+      if (!o1.getClass().equals(o2.getClass()))
+        return false;
+      int len = Array.getLength(o1);
+      if (len != Array.getLength(o2))
+        return false;
+      for (int i = 0; i &lt; len; i++) {
+        if (!equals(Array.get(o1, i), Array.get(o2, i)))
+          return false;
+      }
+      return true;
+    }
+    return o1.equals(o2);
+  }
+  private static boolean equals(Object[] o1, Object[] o2) {
+    if (o1 == null)
+      return o2 == null;
+    if (o2 == null)
+      return false;
+    if (!o1.getClass().equals(o2.getClass()))
+      return false;
+    if (o1.length != o2.length)
+      return false;
+    for (int i = 0; i &lt; o1.length; i++) {
+      if (!equals(o1[i], o2[i]))
+        return false;
+    }
+    return true;
+  }
+  /**
+   * Like {@link #equals(Object, Object)}, but compares arrays without regard
+   * to order
+   *
+   * @param o1
+   *            The first object to compare
+   * @param o2
+   *            The second object to compare
+   * @return true if &lt;code&gt;o1&lt;/code&gt; and &lt;code&gt;o2&lt;/code&gt; are arrays and their
+   *         elements are equivalent or if either
+   *         &lt;code&gt;o1==null &amp;&amp; o2==null&lt;/code&gt; or &lt;code&gt;o1.equals(o2)&lt;/code&gt;,
+   *         false otherwise
+   */
+  public static boolean equalsUnordered(Object o1, Object o2) {
+    return equalsUnordered(o1, o2, new EqualsChecker() {
+      public boolean equals(Object o3, Object o4) {
+        if (o3 == null)
+          return o4 == null;
+        if (o4 == null)
+          return false;
+        if (!o3.getClass().isArray()) {
+          if (o4.getClass().isArray())
+            return false;
+          return o3.equals(o4);
+        } else if (!o4.getClass().isArray())
+          return false;
+        return equalsUnordered(o3, o4);
+      }
+    });
+  }
+  /**
+   * Checks two values for equality
+   */
+  public static interface EqualsChecker {
+    /**
+     * Checks two values for equality
+     *
+     * @param o1
+     *            The first value to check
+     * @param o2
+     *            The second value to check
+     * @return Whether the two values are equal
+     */
+    boolean equals(Object o1, Object o2);
+  }
+  /**
+   * Like {@link #equals(Object, Object)}, but compares arrays without regard
+   * to order and uses an independent checker to check for equality of
+   * elements
+   *
+   * @param o1
+   *            The first object to compare
+   * @param o2
+   *            The second object to compare
+   * @param checker
+   *            The checker to check elements for equality
+   * @return true if &lt;code&gt;o1&lt;/code&gt; and &lt;code&gt;o2&lt;/code&gt; are arrays and their
+   *         elements are equivalent or if either
+   *         &lt;code&gt;o1==null &amp;&amp; o2==null&lt;/code&gt; or &lt;code&gt;o1.equals(o2)&lt;/code&gt;,
+   *         false otherwise
+   */
+  public static boolean equalsUnordered(Object o1, Object o2,
+      EqualsChecker checker) {
+    if (o1 == null)
+      return o2 == null;
+    if (o2 == null)
+      return false;
+    if (o1 instanceof Object[] &amp;&amp; o2 instanceof Object[])
+      return equalsUnordered((Object[]) o1, (Object[]) o2, checker);
+    if (o1.getClass().isArray() &amp;&amp; o2.getClass().isArray()) {
+      if (!o1.getClass().equals(o2.getClass()))
+        return false;
+      int len = Array.getLength(o1);
+      if (len != Array.getLength(o2))
+        return false;
+      if (len == 0)
+        return true;
+      long[] bs = new long[(len - 1) / 64 + 1];
+      long mask;
+      int i, j, bsIdx;
+      o1Loop: for (i = 0; i &lt; len; i++) {
+        mask = 0;
+        for (j = 0; j &lt; len; j++) {
+          bsIdx = j / 64;
+          if (mask == 0)
+            mask = 0x8000000000000000L;
+          if ((bs[bsIdx] &amp; mask) == 0
+              &amp;&amp; checker.equals(Array.get(o1, i),
+                  Array.get(o2, j))) {
+            bs[bsIdx] |= mask;
+            continue o1Loop;
+          }
+          mask &gt;&gt;&gt;= 1;
+        }
+        return false;
+      }
+      return true;
+    }
+    return checker.equals(o1, o2);
+  }
+  private static boolean equalsUnordered(Object[] o1, Object[] o2,
+      EqualsChecker checker) {
+    if (o1 == null)
+      return o2 == null;
+    if (o2 == null)
+      return false;
+    if (o1.length != o2.length)
+      return false;
+    if (o1.length == 0)
+      return true;
+    long[] bs = new long[(o2.length - 1) / 64 + 1];
+    long mask;
+    int i, j, bsIdx;
+    o1Loop: for (i = 0; i &lt; o1.length; i++) {
+      mask = 0;
+      for (j = 0; j &lt; o2.length; j++) {
+        bsIdx = j / 64;
+        if (mask == 0)
+          mask = 0x8000000000000000L;
+        if ((bs[bsIdx] &amp; mask) == 0 &amp;&amp; checker.equals(o1[i], o2[j])) {
+          bs[bsIdx] |= mask;
+          continue o1Loop;
+        }
+        mask &gt;&gt;&gt;= 1;
+      }
+      return false;
+    }
+    return true;
+  }
+  /**
+   * A compliment to the {@link #equals(Object, Object)} method, this method
+   * returns a hashcode for &lt;code&gt;array&lt;/code&gt; such that it is consistent with
+   * the equals contract for the {@link Object#equals(Object)} method,
+   * represented by the {@link #equals(Object, Object)} method.
+   *
+   * @param array
+   *            The array to get a hashcode for
+   * @return A hashcode based on &lt;code&gt;array&lt;/code&gt; and its contents, if any
+   */
+  public static int hashCode(Object array) {
+    if (array == null)
+      return 0;
+    if (!array.getClass().isArray())
+      return array.hashCode();
+    int ret = array.getClass().getComponentType().hashCode();
+    int len = Array.getLength(array);
+    for (int i = 0; i &lt; len; i++) {
+      ret *= hashCode(Array.get(array, i));
+      ret += 29;
+    }
+    return ret;
+  }
+  /**
+   * A utility method for printing out the contents of an array (not deeply)
+   *
+   * @param array
+   *            The array to print
+   * @return A String containing the representation of the contents of
+   *         &lt;code&gt;array&lt;/code&gt;
+   */
+  public static String toString(Object array) {
+    if (array == null)
+      return "" + null;
+    else if (array instanceof Object[]) {
+      Object[] oa = (Object[]) array;
+      StringBuffer ret = new StringBuffer("[");
+      for (int i = 0; i &lt; oa.length; i++) {
+        ret.append(toString(oa[i]));
+        if (i &lt; oa.length - 1)
+          ret.append(", ");
+      }
+      ret.append("]");
+      return ret.toString();
+    } else if (array.getClass().isArray()) {
+      StringBuffer ret = new StringBuffer("[");
+      int len = Array.getLength(array);
+      for (int i = 0; i &lt; len; i++) {
+        ret.append(Array.get(array, i));
+        if (i &lt; len - 1)
+          ret.append(", ");
+      }
+      ret.append("]");
+      return ret.toString();
+    } else
+      return array.toString();
+  }
+  /**
+   * Replaces &lt;code&gt;toReplace&lt;/code&gt; with &lt;code&gt;replacement&lt;/code&gt; in
+   * &lt;code&gt;array&lt;/code&gt; one time at the most
+   *
+   * @param array
+   *            The array to search and replace in
+   * @param toReplace
+   *            The object to replace
+   * @param replacement
+   *            The object to replace &lt;code&gt;toReplace&lt;/code&gt; with the first
+   *            time it is found
+   * @return The index where &lt;code&gt;toReplace&lt;/code&gt; was found and replaced, or
+   *         -1 if it was not found in &lt;code&gt;array&lt;/code&gt;
+   */
+  public static int replaceOnce(Object array, Object toReplace,
+      Object replacement) {
+    if (array == null)
+      return -1;
+    if (array instanceof Object[]) {
+      Object[] array2 = (Object[]) array;
+      for (int i = 0; i &lt; array2.length; i++) {
+        if (equals(array2[i], toReplace)) {
+          array2[i] = replacement;
+          return i;
+        }
+      }
+      return -1;
+    } else {
+      int i, len;
+      len = Array.getLength(array);
+      for (i = 0; i &lt; len; i++) {
+        if (equals(Array.get(array, i), toReplace)) {
+          put(array, replacement, i);
+          return i;
+        }
+      }
+      return -1;
+    }
+  }
+  /**
+   * Replaces &lt;code&gt;toReplace&lt;/code&gt; with &lt;code&gt;replacement&lt;/code&gt; in
+   * &lt;code&gt;array&lt;/code&gt; as many times as it occurs
+   *
+   * @param array
+   *            The array to search and replace in
+   * @param toReplace
+   *            The object to replace
+   * @param replacement
+   *            The object to replace &lt;code&gt;toReplace&lt;/code&gt; with each time it
+   *            is found
+   * @return The number of times &lt;code&gt;toReplace&lt;/code&gt; was found and replaced
+   */
+  public static int replaceAll(Object array, Object toReplace,
+      Object replacement) {
+    int count = 0;
+    if (array == null)
+      return count;
+    if (array instanceof Object[]) {
+      Object[] array2 = (Object[]) array;
+      for (int i = 0; i &lt; array2.length; i++) {
+        if (equals(array2[i], toReplace)) {
+          array2[i] = replacement;
+          count++;
+        }
+      }
+    } else {
+      int i, len;
+      len = Array.getLength(array);
+      for (i = 0; i &lt; len; i++) {
+        if (equals(Array.get(array, i), toReplace)) {
+          put(array, replacement, i);
+          count++;
+        }
+      }
+    }
+    return count;
+  }
+  /**
+   * Gets the elements that the two arrays have in common. Elements are
+   * retrieved from the first array.
+   *
+   * @param &lt;T&gt;
+   *            The type of the first array and the return array
+   * @param &lt;T2&gt;
+   *            The type of the second array
+   * @param array1
+   *            The first array
+   * @param array2
+   *            The second array
+   * @return The elements in &lt;code&gt;array1&lt;/code&gt; that occur at least once in
+   *         &lt;code&gt;array2&lt;/code&gt;
+   */
+  public static &lt;T, T2 extends T&gt; T[] commonElements(T[] array1, T2[] array2) {
+    int count = 0;
+    if (array1 == null || array2 == null)
+      return (T[]) Array.newInstance(
+          array1.getClass().getComponentType(), 0);
+    int i, j;
+    for (i = 0; i &lt; array1.length; i++)
+      for (j = 0; j &lt; array2.length; j++)
+        if (equals(array1[i], array2[j])) {
+          count++;
+          break;
+        }
+    T[] ret = (T[]) Array.newInstance(array1.getClass().getComponentType(),
+        count);
+    count = 0;
+    for (i = 0; i &lt; array1.length; i++)
+      for (j = 0; j &lt; array2.length; j++)
+        if (equals(array1[i], array2[j])) {
+          ret[count] = array1[i];
+          count++;
+          break;
+        }
+    return ret;
+  }
+  /**
+   * Gets the elements that the two arrays have in common. Elements are
+   * retrieved from the first array.
+   *
+   * @param array1
+   *            The first array
+   * @param array2
+   *            The second array
+   * @return The elements in &lt;code&gt;array1&lt;/code&gt; that occur at least once in
+   *         &lt;code&gt;array2&lt;/code&gt;
+   */
+  public static Object[] commonElementsP(Object array1, Object array2) {
+    int count = 0;
+    if (array1 == null || array2 == null)
+      return new Object[0];
+    if (!array1.getClass().isArray() || array2.getClass().isArray())
+      return new Object[0];
+    int len1 = Array.getLength(array1);
+    int len2 = Array.getLength(array2);
+    int i, j;
+    for (i = 0; i &lt; len1; i++)
+      for (j = 0; j &lt; len2; j++)
+        if (equals(Array.get(array1, i), Array.get(array2, j))) {
+          count++;
+          break;
+        }
+    Object[] ret = new Object[count];
+    count = 0;
+    for (i = 0; i &lt; len1; i++)
+      for (j = 0; j &lt; len2; j++)
+        if (equals(Array.get(array1, i), Array.get(array2, j))) {
+          ret[count] = Array.get(array1, i);
+          count++;
+          break;
+        }
+    return ret;
+  }
+  /**
+   * Gets the elements that are in array1, but not array 2.
+   *
+   * @param &lt;T&gt;
+   *            The type of the arrays
+   * @param array1
+   *            The first array
+   * @param array2
+   *            The second array
+   * @return The elements in &lt;code&gt;array1&lt;/code&gt; that do not occur in
+   *         &lt;code&gt;array2&lt;/code&gt;
+   */
+  public static &lt;T&gt; T[] removedElements(T[] array1, T[] array2) {
+    int count = 0;
+    if (array1 == null || array2 == null)
+      return array1;
+    int len1 = array1.length;
+    int len2 = array2.length;
+    int i, j;
+    for (i = 0; i &lt; len1; i++) {
+      count++;
+      for (j = 0; j &lt; len2; j++) {
+        if (equals(array1[i], array2[j])) {
+          count--;
+          break;
+        }
+      }
+    }
+    T[] ret = (T[]) Array.newInstance(array1.getClass().getComponentType(),
+        count);
+    count = 0;
+    for (i = 0; i &lt; len1; i++) {
+      count++;
+      for (j = 0; j &lt; len2; j++) {
+        if (equals(array1[i], array2[j])) {
+          count--;
+          break;
+        }
+        ret[count] = array1[i];
+      }
+    }
+    return ret;
+  }
+  /**
+   * Gets the elements that are in array1, but not array 2.
+   *
+   * @param array1
+   *            The first array
+   * @param array2
+   *            The second array
+   * @return The elements in &lt;code&gt;array1&lt;/code&gt; that do not occur in
+   *         &lt;code&gt;array2&lt;/code&gt;
+   */
+  public static Object[] removedElementsP(Object array1, Object array2) {
+    int count = 0;
+    if (array1 == null || array2 == null)
+      return new Object[0];
+    if (!array1.getClass().isArray() || array2.getClass().isArray())
+      return new Object[0];
+    int len1 = Array.getLength(array1);
+    int len2 = Array.getLength(array2);
+    int i, j;
+    for (i = 0; i &lt; len1; i++) {
+      count++;
+      for (j = 0; j &lt; len2; j++) {
+        if (equals(Array.get(array1, i), Array.get(array2, j))) {
+          count--;
+          break;
+        }
+      }
+    }
+    Object[] ret = new Object[count];
+    count = 0;
+    for (i = 0; i &lt; len1; i++) {
+      count++;
+      for (j = 0; j &lt; len2; j++) {
+        if (equals(Array.get(array1, i), Array.get(array2, j))) {
+          count--;
+          break;
+        }
+        ret[count] = Array.get(array1, i);
+      }
+    }
+    return ret;
+  }
+  /**
+   * Gets the elements that are in array2, but not array 1.
+   *
+   * @param array1
+   *            The first array
+   * @param array2
+   *            The second array
+   * @return The elements in &lt;code&gt;array2&lt;/code&gt; that do not occur in
+   *         &lt;code&gt;array1&lt;/code&gt;
+   */
+  public static Object[] addedElements(Object array1, Object array2) {
+    int count = 0;
+    if (array1 == null || array2 == null)
+      return new Object[0];
+    if (!array1.getClass().isArray() || array2.getClass().isArray())
+      return new Object[0];
+    int len1 = Array.getLength(array1);
+    int len2 = Array.getLength(array2);
+    int i, j;
+    for (i = 0; i &lt; len1; i++) {
+      count++;
+      for (j = 0; j &lt; len2; j++) {
+        if (equals(Array.get(array2, i), Array.get(array1, j))) {
+          count--;
+          break;
+        }
+      }
+    }
+    Object[] ret = new Object[count];
+    count = 0;
+    for (i = 0; i &lt; len1; i++) {
+      count++;
+      for (j = 0; j &lt; len2; j++) {
+        if (equals(Array.get(array2, i), Array.get(array1, j))) {
+          count--;
+          break;
+        }
+        ret[count] = Array.get(array2, i);
+      }
+    }
+    return ret;
+  }
+  /**
+   * Reverses the order of an array
+   *
+   * @param &lt;T&gt;
+   *            The type of the array to reverse
+   * @param array
+   *            The array to reverse
+   * @return The reversed array, same as the original reference
+   */
+  public static &lt;T&gt; T[] reverse(T[] array) {
+    if (array == null)
+      return array;
+    T temp;
+    final int aLen = array.length - 1;
+    for (int i = 0; i &lt; array.length / 2; i++) {
+      temp = array[i];
+      array[i] = array[aLen - i];
+      array[aLen - i] = temp;
+    }
+    return array;
+  }
+  /**
+   * Reverses the order of an array. Similar to {@link #reverse(Object[])} but
+   * works for primitive arrays as well.
+   *
+   * @param array
+   *            The array to reverse
+   * @return The reversed array, same as the original reference
+   */
+  public static Object reverseP(Object array) {
+    if (array == null)
+      return array;
+    if (array instanceof Object[])
+      return reverse((Object[]) array);
+    Object temp;
+    final int aLen = Array.getLength(array);
+    for (int i = 0; i &lt; aLen / 2; i++) {
+      temp = Array.get(array, i);
+      put(array, Array.get(array, aLen - i - 1), i);
+      put(array, temp, aLen - i - 1);
+    }
+    return array;
+  }
+  /**
+   * @see DifferenceListenerE
+   *
+   * @param &lt;T1&gt;
+   *            The type of the original array
+   * @param &lt;T2&gt;
+   *            The type of the modifying array
+   */
+  public static interface DifferenceListener&lt;T1, T2&gt; extends
+      DifferenceListenerE&lt;T1, T2, RuntimeException&gt; {
+    /**
+     * @see prisms.util.ArrayUtils.DifferenceListenerE#identity(java.lang.Object,
+     *      java.lang.Object)
+     */
+    boolean identity(T1 o1, T2 o2);
+    /**
+     * @see prisms.util.ArrayUtils.DifferenceListenerE#added(java.lang.Object,
+     *      int, int)
+     */
+    T1 added(T2 o, int mIdx, int retIdx);
+    /**
+     * @see prisms.util.ArrayUtils.DifferenceListenerE#removed(java.lang.Object,
+     *      int, int, int)
+     */
+    T1 removed(T1 o, int oIdx, int incMod, int retIdx);
+    /**
+     * @see prisms.util.ArrayUtils.DifferenceListenerE#set(java.lang.Object,
+     *      int, int, java.lang.Object, int, int)
+     */
+    T1 set(T1 o1, int idx1, int incMod, T2 o2, int idx2, int retIdx);
+  }
+  /**
+   * &lt;p&gt;
+   * This listener contains all information needed to reconcile two arrays
+   * using the
+   * {@link ArrayUtils#adjust(Object[], Object[], prisms.util.ArrayUtils.DifferenceListenerE)}
+   * method.
+   * &lt;/p&gt;
+   *
+   * &lt;p&gt;
+   * There are many different indices that may or may not be relevant to a
+   * particular listener:
+   * &lt;ul&gt;
+   * &lt;li&gt;&lt;b&gt;oIdx:&lt;/b&gt; The index of the element in the original array&lt;/li&gt;
+   * &lt;li&gt;&lt;b&gt;incMod:&lt;/b&gt; The index of the element in a copy of the original
+   * array that has been modified incrementally for each add, remove, and
+   * reorder operation&lt;/li&gt;
+   * &lt;li&gt;&lt;b&gt;mIdx:&lt;/b&gt; The index of the element in the modifier array&lt;/li&gt;
+   * &lt;li&gt;&lt;b&gt;retIdx:&lt;/b&gt; The index that the returned element (if not null) will
+   * be at in the result array&lt;/li&gt;
+   * &lt;/ul&gt;
+   * oIdx and mIdx are self-explanatory. incMod and retIdx are useful for
+   * listeners that modify an external ordered set incrementally with each
+   * listener method invocation.
+   * &lt;/p&gt;
+   *
+   * &lt;p&gt;
+   * &lt;b&gt;An Example&lt;/b&gt;&lt;br /&gt;
+   * Suppose there is a list, &lt;b&gt;L&lt;/b&gt;, whose data can only be modified
+   * incrementally by the methods add(value, index), remove(index), and
+   * move(fromIndex, toIndex), but can be accessed in batch by the getData
+   * method, which returns an array of all data in the list. Suppose the list
+   * needs to be modified to represent a new arbitrary set of data, &lt;b&gt;d&lt;/b&gt;.
+   * &lt;b&gt;d&lt;/b&gt; may or may not contain elements represented in &lt;b&gt;L&lt;/b&gt;. These
+   * elements, if present, may be in different order and new items not present
+   * in &lt;b&gt;L&lt;/b&gt; may be present in &lt;b&gt;d&lt;/b&gt;. To modify &lt;b&gt;L&lt;/b&gt; to represent
+   * the data in &lt;b&gt;d&lt;/b&gt; in the correct order, the
+   * {@link ArrayUtils#adjust(Object[], Object[], DifferenceListenerE)} method
+   * should be called with &lt;b&gt;L&lt;/b&gt;.getData(), &lt;b&gt;d&lt;/b&gt;, and a listener whose
+   * methods perform the following operations:
+   * &lt;ul&gt;
+   * &lt;li&gt;{@link #identity(Object, Object)}: Tests the two elements to see if
+   * the item from &lt;b&gt;L&lt;/b&gt; represents the item in &lt;b&gt;d&lt;/b&gt;, possibly by
+   * simply calling {@link Object#equals(Object)}&lt;/li&gt;
+   * &lt;li&gt;{@link #added(Object, int, int)}: Invokes &lt;b&gt;L&lt;/b&gt;.add(o2, retIdx).&lt;/li&gt;
+   * &lt;li&gt;{@link #removed(Object, int, int, int)}: Invokes
+   * &lt;b&gt;L&lt;/b&gt;.remove(incMod). Using incMod accounts for any previous
+   * modifications that may have been performed on the list from the listener.
+   * &lt;/li&gt;
+   * &lt;li&gt;{@link #set(Object, int, int, Object, int, int)}: Invokes
+   * &lt;b&gt;L&lt;/b&gt;.move(incMod, retIdx). This again accounts for all previous
+   * changes to the list and moves the element to the index intended by the
+   * adjust method.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * The end result of this invocation will be that &lt;b&gt;L&lt;/b&gt; contains all the
+   * data in &lt;b&gt;d&lt;/b&gt;, only the data in &lt;b&gt;d&lt;/b&gt;, and is ordered identically
+   * to &lt;b&gt;d&lt;/b&gt;. The returned array may be ignored.
+   * &lt;/p&gt;
+   *
+   * &lt;p&gt;
+   * &lt;b&gt;Alternate Operation:&lt;/b&gt;&lt;br /&gt;
+   * &lt;ul&gt;
+   * &lt;li&gt;If it is intended that the modification operation should only add
+   * data to &lt;b&gt;L&lt;/b&gt;, the remove method may do nothing and return o. The
+   * return value will cause the adjust method to update future indexes,
+   * assuming that the value is kept and not removed.&lt;/li&gt;
+   * &lt;li&gt;If order is not important or no move(fromIndex, toIndex) method
+   * exists, the set method may do nothing and return o1. This will have no
+   * effect on the result of the operation other than leaving the items
+   * originally in &lt;b&gt;L&lt;/b&gt; (those that were also present in &lt;b&gt;d&lt;/b&gt;) in
+   * their original order.&lt;/li&gt;
+   * &lt;li&gt;Other permutations may exist depending on the business logic used by
+   * the listener.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * &lt;/p&gt;
+   *
+   * &lt;p&gt;
+   * The listener is entirely free to choose whether items are added or
+   * removed from the original array and its representations by modifying
+   * whether the return value from those methods is null. The adjust method
+   * does not care what is returned from the add/remove/set methods except
+   * whether the value is null. The listener is free to perform index moving
+   * operations or not. This method will never cause an index out of bounds
+   * error assuming the related data sets are not modified by anything other
+   * than the listener and the data in the arrays passed into the adjust
+   * method do not change.
+   * &lt;/p&gt;
+   *
+   * @param &lt;T1&gt;
+   *            The type of the original array
+   * @param &lt;T2&gt;
+   *            The type of the modifying array
+   * @param &lt;E&gt;
+   *            The type of exception that may be thrown
+   */
+  public static interface DifferenceListenerE&lt;T1, T2, E extends Throwable&gt; {
+    /**
+     * Tests the identity of an item from each of the two sets. This method
+     * should return true if one item is a representation of the other or
+     * both are a representation of the same piece of data.
+     *
+     * @param o1
+     *            The object from the first set
+     * @param o2
+     *            The object from the second set
+     * @return Whether the two objects are fundamentally equivalent
+     * @throws E
+     *             If an error occurs in this method
+     */
+    boolean identity(T1 o1, T2 o2) throws E;
+    /**
+     * Called when a value is found in the second set that is not present in
+     * the first set
+     *
+     * @param o
+     *            The unmatched object
+     * @param mIdx
+     *            The index in the second array where the unmatched object
+     *            was found
+     * @param retIdx
+     *            The index that the new element will be inserted into the
+     *            final array
+     * @return The new T1-type element to insert into the return array, or
+     *         null if the new element is not to be inserted
+     * @throws E
+     *             If an error occurs in this method
+     */
+    T1 added(T2 o, int mIdx, int retIdx) throws E;
+    /**
+     * Called when a value is found in the first set that is not present in
+     * the second set
+     *
+     * @param o
+     *            The unmatched object
+     * @param oIdx
+     *            The index in the first array where the unmatched object
+     *            was found
+     * @param incMod
+     *            The index where the unmatched element would occur the
+     *            incrementally modified original array
+     * @param retIdx
+     *            The index in the final array where the replacement will be
+     *            located if a non-null value is returned
+     * @return null if the original object is to be removed, otherwise its
+     *         replacement
+     * @throws E
+     *             If an error occurs in this method
+     */
+    T1 removed(T1 o, int oIdx, int incMod, int retIdx) throws E;
+    /**
+     * Called when elements in the two arrays match
+     *
+     * @param o1
+     *            The element in the first array
+     * @param idx1
+     *            The index of the element in the first array
+     * @param incMod
+     *            The index where the element in the original array would
+     *            occur the incrementally modified original array
+     * @param o2
+     *            The element in the second array
+     * @param idx2
+     *            The index of the element in the second array
+     * @param retIdx
+     *            The index of the returned element in the final array
+     * @return The element to be inserted in the final array, or null if the
+     *         element is to be removed
+     * @throws E
+     *             If an error occurs in this method
+     */
+    T1 set(T1 o1, int idx1, int incMod, T2 o2, int idx2, int retIdx)
+        throws E;
+  }
+  /**
+   * &lt;p&gt;
+   * Reconciles differences between two ordered sets of objects. Allows a
+   * programmer highly customized control between two different
+   * representations of a data set. The arrays are compared and the listener
+   * is notified when any differences are encountered, allowing it to
+   * determine the composition of the returned array and/or perform
+   * well-defined operations represented by the differences or similarities.
+   * &lt;/p&gt;
+   *
+   * @param &lt;T1&gt;
+   *            The type of the original array
+   * @param &lt;T2&gt;
+   *            The type of the modifying array
+   * @param &lt;E&gt;
+   *            The type of exception that may be thrown
+   * @param original
+   *            The original array
+   * @param modifier
+   *            The modifying array
+   * @param dl
+   *            The listener to determine how to deal with differences between
+   *            the two arrays
+   * @return A final array that is the result of applying select changes
+   *         between the original and the modifying arrays
+   * @throws E
+   *             If the {@link DifferenceListenerE} throws an exception
+   */
+  public static &lt;T1, T2, E extends Throwable&gt; T1[] adjust(T1[] original,
+      T2[] modifier, DifferenceListenerE&lt;T1, T2, E&gt; dl) throws E {
+    ArrayAdjuster&lt;T1, T2, E&gt; adjuster = new ArrayAdjuster&lt;T1, T2, E&gt;(
+        original, modifier, dl);
+    return adjuster.adjust();
+  }
+  static final Object NULL = new Object();
+  /**
+   * Adjusts arrays. This is the more complicated and capable structure used
+   * by {@link ArrayUtils#adjust(Object[], Object[], DifferenceListenerE)}
+   *
+   * @param &lt;T1&gt;
+   *            The type of the original array
+   * @param &lt;T2&gt;
+   *            The type of the modifying array
+   * @param &lt;E&gt;
+   *            The type of exception that may be thrown
+   */
+  public static class ArrayAdjuster&lt;T1, T2, E extends Throwable&gt; {
+    private final T1[] original;
+    private final int[] oIdxAdj;
+    private final int[] oMappings;
+    private final T2[] modifier;
+    private final int[] mMappings;
+    private final boolean[] entriesSet;
+    private final DifferenceListenerE&lt;T1, T2, E&gt; dl;
+    private int maxLength;
+    private boolean isNullElement;
+    /**
+     * Creates an adjuster that can adjust one array by another
+     *
+     * @param o
+     *            The original array
+     * @param m
+     *            The modified array
+     * @param listener
+     *            The listener to determine how to deal with differences
+     *            between the two arrays
+     * @see ArrayUtils#adjust(Object[], Object[], DifferenceListenerE)
+     */
+    public ArrayAdjuster(T1[] o, T2[] m,
+        DifferenceListenerE&lt;T1, T2, E&gt; listener) {
+      original = o;
+      oIdxAdj = new int[o.length];
+      oMappings = new int[o.length];
+      modifier = m;
+      mMappings = new int[m.length];
+      entriesSet = new boolean[m.length];
+      dl = listener;
+    }
+    private void init() throws E {
+      int o, m, r = original.length + modifier.length;
+      for (m = 0; m &lt; modifier.length; m++)
+        mMappings[m] = -1;
+      for (o = 0; o &lt; original.length; o++) {
+        oIdxAdj[o] = o;
+        oMappings[o] = -1;
+        for (m = 0; m &lt; modifier.length; m++) {
+          if (mMappings[m] &gt;= 0)
+            continue;
+          if (dl.identity(original[o], modifier[m])) {
+            oMappings[o] = m;
+            mMappings[m] = o;
+            r--;
+            break;
+          }
+        }
+      }
+      maxLength = r;
+    }
+    /**
+     * Adjusts the arrays set from the constructor
+     *
+     * @return The adjusted array
+     * @throws E
+     *             If an error occurs in one of the listener's methods
+     * @see ArrayUtils#adjust(Object[], Object[], DifferenceListenerE)
+     */
+    public T1[] adjust() throws E {
+      init();
+      int m, o, r = 0;
+      Object[] ret = new Object[maxLength];
+      for (o = 0; o &lt; original.length &amp;&amp; oMappings[o] &lt; 0; o++)
+        if (remove(o, -1, ret, r))
+          r++;
+      for (m = 0; m &lt; modifier.length; m++) {
+        // Add or set each modifier
+        o = mMappings[m];
+        if (o &gt;= 0) {
+          if (set(o, m, ret, r))
+            r++;
+          /* Remove the originals that occur before the next match */
+          for (o++; o &lt; original.length &amp;&amp; oMappings[o] &lt; 0; o++) {
+            if (ret[r] != null) {
+              Object temp = ret[r];
+              for (int r2 = r; r &lt; ret.length - 1 &amp;&amp; temp != null; r2++) {
+                Object temp2 = ret[r2 + 1];
+                ret[r2 + 1] = temp;
+                temp = temp2;
+              }
+            }
+            if (remove(o, m + 1, ret, r))
+              r++;
+          }
+        } else {
+          if (ret[r] != null) {
+            Object temp = ret[r];
+            for (int r2 = r; r &lt; ret.length - 1 &amp;&amp; temp != null; r2++) {
+              Object temp2 = ret[r2 + 1];
+              ret[r2 + 1] = temp;
+              temp = temp2;
+            }
+          }
+          if (add(m, ret, r))
+            r++;
+        }
+      }
+      for (int i = 0; i &lt; r; i++)
+        if (ret[i] == NULL)
+          ret[i] = null;
+      T1[] actualRet = (T1[]) Array.newInstance(original.getClass()
+          .getComponentType(), r);
+      System.arraycopy(ret, 0, actualRet, 0, r);
+      return actualRet;
+    }
+    /**
+     * Marks the current value as a null value. If an actual null were
+     * returned, adjust would interpret this as meaning the element should
+     * be removed from the array, with subsequent indices being affected. If
+     * this method is called from {@link DifferenceListenerE}.add, remove,
+     * or set, the element's place will be saved and that element in the
+     * returned array will be null.
+     */
+    public void nullElement() {
+      isNullElement = true;
+    }
+    static void mergeSort(int[] order, int[] distances, int start, int end) {
+      if (end - start &lt;= 1)
+        return;
+      int mid = (start + end + 1) / 2;
+      mergeSort(order, distances, start, mid);
+      mergeSort(order, distances, mid, end);
+      while (start &lt; mid &amp;&amp; mid &lt; end) {
+        if (distances[start] &lt; distances[mid]) // Reverse order
+        {
+          int temp = distances[mid];
+          int temp2 = order[mid];
+          for (int i = mid; i &gt; start; i--) {
+            distances[i] = distances[i - 1];
+            order[i] = order[i - 1];
+          }
+          distances[start] = temp;
+          order[start] = temp2;
+          mid++;
+        }
+        start++;
+      }
+    }
+    private boolean add(int m, Object[] ret, int r) throws E {
+      entriesSet[m] = true;
+      T1 item = dl.added(modifier[m], m, r);
+      if (isNullElement) {
+        item = (T1) NULL;
+        isNullElement = false;
+      }
+      // Adjust the incremental modification indexes
+      if (item != null) {
+        ret[r] = item;
+        for (int i = 0; i &lt; oIdxAdj.length; i++)
+          if (oIdxAdj[i] &gt;= r)
+            oIdxAdj[i]++;
+      } else {
+        for (; r &lt; ret.length - 1; r++)
+          ret[r] = ret[r + 1];
+      }
+      return item != null;
+    }
+    private boolean remove(int o, int m, Object[] ret, int r) throws E {
+      T1 item = dl.removed(original[o], o, oIdxAdj[o], r);
+      if (isNullElement) {
+        item = (T1) NULL;
+        isNullElement = false;
+      }
+      // Adjust the incremental modification indexes
+      if (item == null) {
+        oIdxAdj[o] = -1;
+        for (; o &lt; oIdxAdj.length; o++)
+          oIdxAdj[o]--;
+      } else
+        ret[r] = item;
+      return item != null;
+    }
+    private boolean set(int o, int m, Object[] ret, int r) throws E {
+      if (entriesSet[m])
+        return ret[r] != null;
+      if (oIdxAdj[o] &gt; r &amp;&amp; oIdxAdj[o] - r &lt;= 10) {
+        /*
+         * If a few elements have been moved forward several indices, we
+         * want to fire a few move events on those elements rather than
+         * many move events for a few index differences.
+         */
+        int o2;
+        for (o2 = o - 1; o2 &gt;= 0; o2--)
+          if (oMappings[o2] &gt; m)
+            set(o2, oMappings[o2], ret, r + oMappings[o2] - m);
+      }
+      entriesSet[m] = true;
+      T1 item = dl.set(original[o], o, oIdxAdj[o], modifier[m], m, r);
+      if (isNullElement) {
+        item = (T1) NULL;
+        isNullElement = false;
+      }
+      // Adjust the incremental modification indexes
+      if (item != null) {
+        ret[r] = item;
+        int oAdj = oIdxAdj[o];
+        if (r &gt; oAdj) { // Element moved forward--decrement incMods up
+                // to the new index
+          for (int i = 0; i &lt; oIdxAdj.length; i++)
+            if (oIdxAdj[i] &gt;= oAdj &amp;&amp; oIdxAdj[i] &lt;= r)
+              oIdxAdj[i]--;
+        } else if (r &lt; oAdj) { // Element moved backward--increment
+                    // incMods up to the original index
+          for (int i = 0; i &lt; oIdxAdj.length; i++)
+            if (oIdxAdj[i] &gt;= r &amp;&amp; oIdxAdj[i] &lt; oAdj)
+              oIdxAdj[i]++;
+        }
+      } else {
+        oIdxAdj[o] = -1;
+        for (int i = 0; i &lt; oIdxAdj.length; i++)
+          if (oIdxAdj[i] &gt; r)
+            oIdxAdj[i]--;
+        for (; r &lt; ret.length - 1; r++)
+          ret[r] = ret[r + 1];
+      }
+      return item != null;
+    }
+  }
+  /**
+   * A listener used for {@link #sort(Object [], SortListener)}
+   *
+   * @param &lt;T&gt;
+   *            The type of object to sort
+   */
+  public static interface SortListener&lt;T&gt; extends java.util.Comparator&lt;T&gt; {
+    /**
+     * Called just &lt;u&gt;after&lt;/u&gt; two elements are swapped.
+     *
+     * @param o1
+     *            The first element being moved
+     * @param idx1
+     *            The index (in the pre-swap array) of the first element
+     * @param o2
+     *            The second element being moved
+     * @param idx2
+     *            The index (in the pre-swap array) of the second element
+     */
+    void swapped(T o1, int idx1, T o2, int idx2);
+  }
+  /**
+   * Sorts an array, allowing for complex operations during the sort, such as
+   * sorting arrays in parallel.
+   *
+   * This is an implementation of selection sort. Selection sort is used
+   * because although it may perform many more comparison operations than
+   * other methods, there is no other method that performs fewer swaps. It is
+   * anticipated that this algorithm will be used most often in the case that
+   * multiple operations must take place during a swap, while comparison
+   * should be fairly quick.
+   *
+   * @param &lt;T&gt;
+   *            The type of the array to sort
+   * @param array
+   *            The array to sort
+   * @param listener
+   *            The listener to use for comparisons and to notify of swapping
+   */
+  public static &lt;T&gt; void sort(T[] array, SortListener&lt;T&gt; listener) {
+    for (int i = 0; i &lt; array.length - 1; i++) {
+      int min = findMin(array, i, listener);
+      if (min != i) {
+        T ta = array[i];
+        T tb = array[min];
+        array[i] = tb;
+        array[min] = ta;
+        listener.swapped(ta, i, tb, min);
+      }
+    }
+  }
+  private static &lt;T&gt; int findMin(T[] array, int start,
+      SortListener&lt;T&gt; listener) {
+    int minIdx = start;
+    for (int i = start + 1; i &lt; array.length; i++)
+      if (listener.compare(array[i], array[minIdx]) &lt; 0)
+        minIdx = i;
+    return minIdx;
+  }
+  /**
+   * Represents some statistical information calculated on a set of float data
+   */
+  public static class ArrayStatistics {
+    /**
+     * The smallest non-NaN, non-infinite datum encountered by this
+     * statistics set
+     */
+    public float min;
+    /**
+     * The largest non-NaN, non-infinite datum encountered by this
+     * statistics set
+     */
+    public float max;
+    /**
+     * The number of NaN data encountered by this statistics set
+     */
+    public int naNCount;
+    /**
+     * The number of +Inf data encountered by this statistics set
+     */
+    public int posInfCount;
+    /**
+     * The number of -Inf data encountered by this statistics set
+     */
+    public int negInfCount;
+    /**
+     * The number of non-NaN, non-infinite data encountered by this
+     * statistics set
+     */
+    public int validCount;
+    /**
+     * The mean value of all non-NaN, non-infinite data encountered by this
+     * statistics set
+     */
+    public float mean;
+    /**
+     * A running data measure that allows the standard deviation of all
+     * non-NaN, non-infinite data encountered by this statistics set
+     */
+    private float q;
+    /**
+     * Creates an ArrayStatistics set
+     */
+    public ArrayStatistics() {
+      min = Float.MAX_VALUE;
+      max = Float.MIN_VALUE;
+      mean = 0;
+      q = Float.NaN;
+      validCount = 0;
+      naNCount = 0;
+      posInfCount = 0;
+      negInfCount = 0;
+    }
+    /**
+     * Adds a value to this statistics set
+     *
+     * @param value
+     *            The value to analyze
+     */
+    public void inputValue(float value) {
+      if (Float.isNaN(value))
+        naNCount++;
+      else if (Float.isInfinite(value)) {
+        if (value &gt; 0)
+          posInfCount++;
+        else
+          negInfCount++;
+      } else if (validCount == 0) {
+        mean = value;
+        q = 0;
+        validCount++;
+      } else {
+        if (value &lt; min)
+          min = value;
+        if (value &gt; max)
+          max = value;
+        q = q + (validCount * (mean - value) * (mean - value))
+            / (validCount + 1);
+        validCount++;
+        mean = mean + (value - mean) / validCount;
+      }
+    }
+    /**
+     * @return The standard deviation of all non-NaN, non-infinite data
+     *         encountered by this statistics set
+     */
+    public float getSigma() {
+      return (float) Math.sqrt(q / (validCount - 1));
+    }
+    /**
+     * @return The total number of data encountered by this statistics set
+     */
+    public int getTotalCount() {
+      return validCount + naNCount + posInfCount + negInfCount;
+    }
+    @Override
+    public String toString() {
+      StringBuilder ret = new StringBuilder();
+      ret.append(getTotalCount());
+      ret.append(" values ranged ");
+      ret.append(min);
+      ret.append(" to ");
+      ret.append(max);
+      ret.append("; mean=");
+      ret.append(mean);
+      ret.append(", st.dev.=");
+      ret.append(getSigma());
+      ret.append("; ");
+      ret.append(naNCount);
+      ret.append("NaN, ");
+      ret.append(posInfCount);
+      ret.append("+Inf, ");
+      ret.append(negInfCount);
+      ret.append("-Inf");
+      return ret.toString();
+    }
+  }
+  /**
+   * Performs a simple statistical analysis of an array of floats
+   *
+   * @param array
+   *            An n-dimensional array of floats
+   * @param stats
+   *            The ArrayStatistics object to populate, or null to create a
+   *            new one
+   * @return The statistics object
+   */
+  public static ArrayStatistics getStatistics(Object array,
+      ArrayStatistics stats) {
+    if (array == null)
+      return null;
+    if (stats == null)
+      stats = new ArrayStatistics();
+    if (array instanceof Object[]) {
+      for (Object subArray : (Object[]) array)
+        getStatistics(subArray, stats);
+      return stats;
+    }
+    if (!(array instanceof float[]))
+      throw new IllegalArgumentException(
+          "Cannot statistically analyze a "
+              + array.getClass().getName());
+    for (float f : (float[]) array)
+      stats.inputValue(f);
+    return stats;
+  }
+  /**
+   * A testing method
+   *
+   * @param args
+   *            The command-line arguments. The first argument is used to
+   *            determine what test to run.
+   */
+  public static void main(String[] args) {
+    String test;
+    if (args.length == 0)
+      test = "intSort";
+    else
+      test = args[0];
+    if (test.equals("intSort")) {
+      int[] random = new int[10000];
+      int[] random2 = new int[random.length];
+      for (int i = 0; i &lt; random.length; i++)
+        random[i] = (int) (Math.random() * Integer.MAX_VALUE);
+      ArrayAdjuster.mergeSort(random2, random, 0, random.length);
+      boolean sorted = true;
+      for (int i = 0; i &lt; random.length - 1; i++)
+        if (random[i] &lt; random[i + 1]) {
+          sorted = false;
+          break;
+        }
+      System.out.println("Sort " + (sorted ? "succeeded" : "failed"));
+    } else if (test.equals("adjust")) {
+      final Integer[] start = new Integer[25];
+      for (int i = 0; i &lt; start.length; i++)
+        start[i] = new Integer(i);
+      Integer[] modifier = new Integer[start.length];
+      for (int i = 0; i &lt; modifier.length; i++) {
+        if (i % 5 != 0)
+          modifier[i] = new Integer(i);
+        else
+          modifier[i] = new Integer(i / 5 * start.length);
+      }
+      Integer[] result = adjust(start, modifier,
+          new DifferenceListener&lt;Integer, Integer&gt;() {
+            public boolean identity(Integer o1, Integer o2) {
+              return o1.equals(o2);
+            }
+            public Integer added(Integer o, int mIdx, int retIdx) {
+              return o;
+            }
+            public Integer removed(Integer o, int oIdx,
+                int oIdxAdj, int retIdx) {
+              return o;
+            }
+            public Integer set(Integer o1, int idx1, int oIdxAdj,
+                Integer o2, int idx2, int retIdx) {
+              if (o1.intValue() % 5 == 2)
+                return null;
+              return o1;
+            }
+          });
+      System.out.println("Original array=" + toString(start));
+      System.out.println("Modifier array=" + toString(modifier));
+      System.out.println("Adjusted array=" + toString(result));
+    } else
+      throw new IllegalArgumentException("Unrecognized test: " + test);
+  }
+}</code></pre></div>
+<ol><li>Creating and storing arrays in a map</li></ol>
+<p>---  ---</p>
+<ol><li>Sort based on the values</li><li>Get a key from value with an HashMap</li><li>Retrieve environment variables (JDK1.5)</li><li>Creating a Type-Specific Map: creates a map whose keys are Integer objects and values are String objects.</li><li>A map declared to hold objects of a type T can also hold objects that extend from T</li><li>A value retrieved from a type-specific collection does not need to be casted</li><li>Map techniques.</li><li>Create an array containing the keys in a map</li><li>Create an array containing the values in a map</li><li>Creating a Hash Table</li><li>Creating a Map That Retains Order-of-Insertion</li><li>Automatically Removing an Unreferenced Element from a Hash Table</li><li>Creating a Type-Specific Map [5.0]</li><li>Use Iterator to loop through the HashMap class</li><li>Create type specific collections</li><li>Convert Properties into Map</li><li>A java.util.Map implementation using reference values</li><li>Utility method that return a String representation of a map. The elements will be represented as "key = value"</li><li>Utility method that return a String representation of a map. The elements will be represented as "key = value" (tab)</li><li>This program demonstrates the use of a map with key type String and value type Employee</li><li>Format a Map</li><li>A Map implementation that dumps its content when memory runs low.</li><li>A Map that stores the values in files within a directory.</li><li>Map List</li><li>Multi Value Map Array List</li><li>Multi Value Map Linked HashSet</li><li>An object that maps keys to values, and values back to keys.</li><li>LRU Map</li><li>A map acts like array.</li><li>Order Retaining Map</li><li>BinaryMap class implements a map from objects to integer objects where the only value is the integer with value 1.</li><li>A space-optimized map for associating char keys with values.</li><li>A Map implementation that grows to a fixed size and then retains only a fixed number of the highest (largest) keys.</li><li>Class which creates mapping between keys and a list of values.</li><li>History Map</li><li>Sorts map by values in ascending order.</li><li>Map from a given key to a list of values</li><li>Map from a given key to a set of values</li><li>Class which keeps a set of values and assigns each value a unique positive index.</li><li>Array Map</li><li>Array map</li><li>An ArrayMap is a very inefficient map type that is more robust in dealing with changes to its keys than other maps.</li><li>This Map stores it's keys as strings in upper case, null and duplicate keys are not allowed</li><li>Map to string</li><li>A simple class that stores key Strings as char[]'s in a hash table.</li></ol>
+    <div class="pager"><a class="pager-btn" href="jsp-gettingparameternamesjsp.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Getting Parameter Names Jsp</span></a><a class="pager-btn pager-next" href="threads-executesataskwithaspecifiedtimeout.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Executes a task with a spe...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Static site &mdash; deployable on GitHub Pages</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>
