@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply executable - JavaSchool</title>
+<meta name="description" content="//COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-ant-applyexecutable">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-ant.html">Ant</a></nav>
+    <h1>Apply executable</h1>
+<p>Apply executable</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">//COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0
+&lt;project name="ajax4jsf" default="distribute"&gt;
+  &lt;property name="commonLibs.dir" value="${basedir}/commonLibs"&gt;&lt;/property&gt;
+  &lt;property name="distrib.dir" value="${basedir}/distribution"/&gt;
+  &lt;property name="work.dir" value="${basedir}/build"/&gt;
+  &lt;property name="src.root.dir" value="${basedir}/src"&gt;&lt;/property&gt;
+  &lt;property name="test.src.dir" value="${src.root.dir}/testCase"&gt;&lt;/property&gt;
+  &lt;property name="framework.src.dir" value="${src.root.dir}/framework"&gt;&lt;/property&gt;
+  &lt;property name="framework.java.src.dir" value="${framework.src.dir}/java"&gt;&lt;/property&gt;
+  &lt;property name="framework.js.src.dir" value="${framework.src.dir}/JavaScript"&gt;&lt;/property&gt;
+  &lt;property name="framework.generate.src.dir" value="${framework.src.dir}/generate"&gt;&lt;/property&gt;
+  &lt;property name="framework.build.dir" value="${work.dir}/framework"&gt;&lt;/property&gt;
+  &lt;property name="cdk.src.dir" value="${src.root.dir}/cdk"&gt;&lt;/property&gt;
+  &lt;property name="cdk.build.dir" value="${work.dir}/cdk"&gt;&lt;/property&gt;
+    &lt;property name="test.src.dir" value="${src.root.dir}/test"&gt;&lt;/property&gt;
+    &lt;property name="test.build.dir" value="${work.dir}/test"&gt;&lt;/property&gt;
+  &lt;property name="doc.root.dir" value="${distrib.dir}/docs"&gt;&lt;/property&gt;
+  &lt;property name="tlddoc.dir" value="${doc.root.dir}/tldDoc"&gt;&lt;/property&gt;
+  &lt;property name="javadoc.dir" value="${doc.root.dir}/javaAPI"&gt;&lt;/property&gt;
+  &lt;property name="tlddoc.jar" value="${commonLibs.dir}/tlddoc.jar"&gt;&lt;/property&gt;
+  &lt;property name="framework-distribution-name" value="ajax4jsf"&gt;&lt;/property&gt;
+  &lt;property name="cdk-distribution-name" value="ajax4jsf-cdk" /&gt;
+    &lt;property name="test-distribution-name" value="ajax4jsf-test" /&gt;
+  &lt;property name="generated-source.dir" value="${work.dir}/gen-src"&gt;&lt;/property&gt;
+  &lt;fileset id="commonLibs" dir="${commonLibs.dir}"&gt;
+    &lt;include name="*.jar"/&gt;
+  &lt;/fileset&gt;
+  &lt;path id="class-path"&gt;
+    &lt;fileset refid="commonLibs"&gt;&lt;/fileset&gt;
+  &lt;/path&gt;
+  &lt;target name="prepare"&gt;
+    &lt;mkdir dir="${distrib.dir}"/&gt;
+    &lt;mkdir dir="${work.dir}"/&gt;
+  &lt;/target&gt;
+  &lt;target name="generate-framework" depends="compile-framework,compile-cdk"&gt;
+    &lt;ant antfile="${framework.generate.src.dir}/build.xml" inheritall="true" dir="${basedir}" target="xml-merge"&gt;
+    &lt;/ant&gt;
+  &lt;/target&gt;
+  &lt;target name="prepare-framework"&gt;
+    &lt;mkdir dir="${framework.build.dir}" /&gt;
+  &lt;/target&gt;
+  &lt;target name="prepare-cdk"&gt;
+    &lt;mkdir dir="${cdk.build.dir}" /&gt;
+  &lt;/target&gt;
+    &lt;target name="prepare-test"&gt;
+        &lt;mkdir dir="${test.build.dir}" /&gt;
+    &lt;/target&gt;
+  &lt;target name="compile-framework" depends="prepare-framework"&gt;
+    &lt;javac
+      destdir="${framework.build.dir}"
+      compiler="javac1.4"
+      source="1.4"
+      target="1.4"
+      debug="true"
+            failonerror="false"
+      debuglevel="lines,vars,source"&gt;
+      &lt;classpath refid="class-path"&gt;&lt;/classpath&gt;
+      &lt;src path="${framework.src.dir}"&gt;&lt;/src&gt;
+    &lt;/javac&gt;
+    &lt;copy todir="${framework.build.dir}"&gt;
+      &lt;fileset dir="${framework.java.src.dir}"&gt;
+        &lt;include name="**/*.*"/&gt;
+        &lt;exclude name="**/*.java"/&gt;
+        &lt;exclude name="META-INF/*faces-config.xml"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+  &lt;target name="compile-cdk" depends="prepare-cdk"&gt;
+    &lt;javac
+      destdir="${cdk.build.dir}"
+      compiler="javac1.5"
+      source="1.5"
+      target="1.5"
+      debug="true"
+      debuglevel="lines,vars,source"&gt;
+        &lt;classpath refid="class-path"&gt;&lt;/classpath&gt;
+      &lt;src path="${cdk.src.dir}"&gt;&lt;/src&gt;
+    &lt;/javac&gt;
+    &lt;copy todir="${cdk.build.dir}/META-INF"&gt;
+      &lt;fileset dir="${cdk.src.dir}/META-INF"&gt;
+        &lt;include name="**/*.*"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+    &lt;target name="compile-test" depends="prepare-test"&gt;
+        &lt;javac
+            destdir="${test.build.dir}"
+            compiler="javac1.4"
+            source="1.4"
+            target="1.4"
+            debug="true"
+            debuglevel="lines,vars,source"
+            includes="org/ajax4jsf/tests/*.*" &gt;
+                &lt;classpath refid="class-path"&gt;&lt;/classpath&gt;
+            &lt;classpath path="${framework.build.dir}"&gt;&lt;/classpath&gt;
+            &lt;src path="${test.src.dir}"&gt;
+            &lt;/src&gt;
+        &lt;/javac&gt;
+        &lt;copy todir="${test.build.dir}/META-INF"&gt;
+            &lt;fileset dir="${test.src.dir}/META-INF"&gt;
+                &lt;include name="**/*.*"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+        &lt;copy todir="${test.build.dir}/WEB-INF"&gt;
+            &lt;fileset dir="${test.src.dir}/WEB-INF"&gt;
+                &lt;include name="**/*.*"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+    &lt;/target&gt;
+    &lt;target name="compile-framework-phase2" depends="generate-framework"&gt;
+    &lt;javac
+      destdir="${framework.build.dir}"
+      compiler="javac1.4"
+      source="1.4"
+      target="1.4"
+      debug="true"
+      debuglevel="lines,vars,source"&gt;
+      &lt;classpath&gt;
+        &lt;path&gt;
+        &lt;path refid="class-path"&gt;&lt;/path&gt;
+        &lt;pathelement path="${framework.build.dir}"/&gt;
+        &lt;/path&gt;
+      &lt;/classpath&gt;
+      &lt;src path="${generated-source.dir}"&gt;&lt;/src&gt;
+    &lt;/javac&gt;
+    &lt;copy todir="${framework.build.dir}"&gt;
+      &lt;fileset dir="${generated-source.dir}"&gt;
+        &lt;include name="**/*.*"/&gt;
+        &lt;exclude name="**/*.java"/&gt;
+        &lt;exclude name="META-INF/*-faces-config.xml"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+  &lt;target name="assemble-javascripts" depends="prepare-framework"&gt;
+    &lt;ant antfile="${framework.js.src.dir}/build.xml" dir="${framework.js.src.dir}"&gt;
+      &lt;property name="target-dir" value="${framework.build.dir}"&gt;&lt;/property&gt;
+    &lt;/ant&gt;
+  &lt;/target&gt;
+  &lt;target name="build-framework" depends="compile-framework,assemble-javascripts,compile-framework-phase2"&gt;
+  &lt;/target&gt;
+  &lt;target name="build-cdk" depends="compile-cdk"&gt;
+  &lt;/target&gt;
+    &lt;target name="build-test" depends="compile-test"&gt;
+    &lt;/target&gt;
+        &lt;target name="prepare-distribution-dir"&gt;
+    &lt;mkdir dir="${distrib.dir}/lib"/&gt;
+  &lt;/target&gt;
+  &lt;target name="package-framework" depends="build-framework, prepare-distribution-dir"&gt;
+    &lt;jar destfile="${distrib.dir}/lib/${framework-distribution-name}.jar"&gt;
+      &lt;fileset dir="${framework.build.dir}"&gt;
+        &lt;include name="**/*.*"/&gt;
+      &lt;/fileset&gt;
+    &lt;/jar&gt;
+  &lt;/target&gt;
+  &lt;target name="package-cdk" depends="prepare-distribution-dir,build-cdk"&gt;
+    &lt;jar destfile="${distrib.dir}/lib/${cdk-distribution-name}.jar"&gt;
+      &lt;fileset dir="${cdk.build.dir}"&gt;
+        &lt;include name="**/*.*"/&gt;
+      &lt;/fileset&gt;
+    &lt;/jar&gt;
+  &lt;/target&gt;
+    &lt;target name="package-test" depends="prepare-distribution-dir,build-test"&gt;
+        &lt;jar destfile="${distrib.dir}/lib/${test-distribution-name}.jar"&gt;
+            &lt;fileset dir="${test.build.dir}"&gt;
+                &lt;include name="**/*.*"/&gt;
+            &lt;/fileset&gt;
+        &lt;/jar&gt;
+    &lt;/target&gt;
+  &lt;target name="prepare-docs"&gt;
+    &lt;mkdir dir="${doc.root.dir}"/&gt;
+  &lt;/target&gt;
+  &lt;target name="docs" depends="prepare-docs, javadoc, tlddoc, copy-doc"&gt;
+  &lt;/target&gt;
+  &lt;target name="copy-doc" depends="prepare-docs"&gt;
+    &lt;copy todir="${doc.root.dir}" failonerror="false"&gt;
+      &lt;fileset dir="${basedir}/doc"&gt;
+        &lt;include name="**/*"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+  &lt;target name="javadoc"&gt;
+    &lt;mkdir dir="${javadoc.dir}"/&gt;
+    &lt;javadoc packagenames="org.*" destdir="${javadoc.dir}"&gt;
+      &lt;sourcepath&gt;
+        &lt;pathelement path="${framework.java.src.dir}"/&gt;
+      &lt;/sourcepath&gt;
+      &lt;classpath refid="class-path"&gt;&lt;/classpath&gt;
+    &lt;/javadoc&gt;
+  &lt;/target&gt;
+  &lt;target name="tlddoc"&gt;
+    &lt;mkdir dir="${tlddoc.dir}"/&gt;
+    &lt;echo message="${tlddoc.jar}"&gt;&lt;/echo&gt;
+    &lt;apply executable="java" parallel="true" verbose="true"&gt;
+      &lt;!-- dir="${tlddoc.dir}"&gt;--&gt;
+      &lt;arg line="-jar ${tlddoc.jar}"/&gt;
+      &lt;arg line="-doctitle 'AJAX4JSF'"/&gt;
+      &lt;!--arg line="-xslt ${tlddocxsl.dir}"/--&gt;
+      &lt;arg line="-d ${tlddoc.dir}"/&gt;
+      &lt;fileset dir="${framework.build.dir}/META-INF" includes="**.tld"/&gt;
+    &lt;/apply&gt;
+  &lt;/target&gt;
+  &lt;target name="copy-dependencies" depends="prepare-distribution-dir"&gt;
+    &lt;copy todir="${distrib.dir}/lib"&gt;
+      &lt;fileset dir="${commonLibs.dir}"&gt;
+        &lt;include name="oscache*.jar"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+  &lt;target name="copy-src"&gt;
+    &lt;mkdir dir="${distrib.dir}/src"/&gt;
+    &lt;copy todir="${distrib.dir}/src"&gt;
+      &lt;fileset dir="${framework.src.dir}"&gt;
+        &lt;include name="**/*"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+  &lt;target name="copy-demo"&gt;
+    &lt;mkdir dir="${distrib.dir}/demo"/&gt;
+    &lt;copy todir="${distrib.dir}/demo" failonerror="false"&gt;
+      &lt;fileset dir="${basedir}/demo"&gt;
+        &lt;include name="**/*"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+  &lt;target name="copy-txt"&gt;
+    &lt;copy todir="${distrib.dir}"&gt;
+      &lt;fileset dir="${basedir}"&gt;
+        &lt;include name="*.txt"/&gt;
+        &lt;include name="*.TXT"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+  &lt;target name="build-test-framework"&gt;
+    &lt;javac
+      destdir="${framework.build.dir}"
+      compiler="javac1.4"
+      source="1.4"
+      target="1.4"
+      debug="true"
+      debuglevel="lines,vars,source"&gt;
+      &lt;classpath refid="class-path"&gt;&lt;/classpath&gt;
+      &lt;src path="${test.src.dir}"&gt;&lt;/src&gt;
+    &lt;/javac&gt;
+    &lt;copy todir="${framework.build.dir}"&gt;
+      &lt;fileset dir="${test.src.dir}"&gt;
+        &lt;include name="**/*.*"/&gt;
+        &lt;exclude name="**/*.java"/&gt;
+        &lt;exclude name="META-INF/*"/&gt;
+        &lt;exclude name="WEB-INF/*"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+  &lt;target name="distribute" depends="clean,build-framework,package-framework, copy-dependencies, docs, copy-src, copy-txt, copy-demo, package-cdk, package-test"&gt;
+    &lt;!--delete dir="${work.dir}"&gt;&lt;/delete--&gt;
+    &lt;delete file="${basedir}/velocity.log" failonerror="false" verbose="true"&gt;&lt;/delete&gt;
+  &lt;/target&gt;
+  &lt;target name="clean"&gt;
+    &lt;delete dir="${work.dir}"&gt;&lt;/delete&gt;
+    &lt;delete includeemptydirs="true" failonerror="false"&gt;
+      &lt;fileset dir="${distrib.dir}"&gt;
+        &lt;include name="**/*"/&gt;
+      &lt;/fileset&gt;
+    &lt;/delete&gt;
+  &lt;/target&gt;
+&lt;/project&gt;</code></pre></div>
+<ol><li>Execute shell command</li><li>Use exec executable to call system shell command</li></ol>
+    <div class="pager"><a class="pager-btn" href="2d-graphics-gui-aniconforpaintingasquareswatchofaspecifiedcolor.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">An icon for painting a squ...</span></a><a class="pager-btn pager-next" href="spring-beannamealiasing.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Bean Name Aliasing</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

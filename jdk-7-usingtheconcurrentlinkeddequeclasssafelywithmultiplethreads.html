@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using the ConcurrentLinkedDeque class safely with multiple threads - JavaSchool</title>
+<meta name="description" content="Using the ConcurrentLinkedDeque class safely with multiple threads">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-jdk-7-usingtheconcurrentlinkeddequeclasssafelywithmultiplethreads">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-jdk-7.html">JDK 7</a></nav>
+    <h1>Using the ConcurrentLinkedDeque class safely with multiple threads</h1>
+<p>Using the ConcurrentLinkedDeque class safely with multiple threads</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.concurrent.ConcurrentLinkedDeque;
+public class Test {
+public static ConcurrentLinkedDeque&lt;Item&gt; deque = new ConcurrentLinkedDeque&lt;&gt;();
+  public static void main(String[] args) {
+    Thread producerThread = new Thread(new ItemProducer());
+    Thread consumerThread = new Thread(new ItemConsumer());
+    producerThread.start();
+    consumerThread.start();
+  }
+}
+class Item {
+  private String description;
+  private int itemId;
+  public String getDescription() {
+    return description;
+  }
+  public int getItemId() {
+    return itemId;
+  }
+  public Item() {
+    this.description = "Default Item";
+    this.itemId = 0;
+  }
+  public Item(String description, int itemId) {
+    this.description = description;
+    this.itemId = itemId;
+  }
+}
+class ItemProducer implements Runnable {
+  @Override
+  public void run() {
+    String itemName = "";
+    int itemId = 0;
+    try {
+      for (int i = 1; i &lt; 8; i++) {
+        itemName = "Item" + i;
+        itemId = i;
+        Test.deque.add(new Item(itemName, itemId));
+        System.out.println("New Item Added:" + itemName + " " + itemId);
+        Thread.currentThread().sleep(250);
+      }
+    } catch (InterruptedException ex) {
+      ex.printStackTrace();
+    }
+  }
+}
+class ItemConsumer implements Runnable {
+  @Override
+  public void run() {
+    try {
+      Thread.currentThread().sleep(1000);
+    } catch (InterruptedException ex) {
+      ex.printStackTrace();
+    }
+    Item item;
+    while ((item = Test.deque.pollFirst()) != null) {
+      if (item == null) {
+      } else {
+        generateOrder(item);
+      }
+    }
+  }
+  private void generateOrder(Item item) {
+    System.out.println(item.getDescription());
+    System.out.println(item.getItemId());
+    try {
+      Thread.currentThread().sleep(1000);
+    } catch (InterruptedException ex) {
+      ex.printStackTrace();
+    }
+  }
+}</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="web-services-soa-thissampledemonstrateusageofservicelifecycleandbitofsessionmana.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">This sample demonstrate us...</span></a><a class="pager-btn pager-next" href="data-type-astringcanbecomparedwithastringbuffer.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">A string can be compared w...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

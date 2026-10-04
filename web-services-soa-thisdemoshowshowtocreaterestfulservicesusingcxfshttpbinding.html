@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>This demo shows how to create RESTful services using CXF's HTTP binding - JavaSchool</title>
+<meta name="description" content="This demo shows how to create RESTful services using CXF&#x27;s HTTP binding">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-web-services-soa-thisdemoshowshowtocreaterestfulservicesusingcxfshttpbinding">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-web-services-soa.html">Web Services SOA</a></nav>
+    <h1>This demo shows how to create RESTful services using CXF's HTTP binding</h1>
+<p>This demo shows how to create RESTful services using CXF's HTTP binding</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">This demo shows how to create RESTful services using CXF's HTTP binding.
+The server in the demo creates 3 different endpoints: a RESTful XML
+endpoint, a RESTful JSON endpoint, and a SOAP endpoint.
+[RUNNING THE DEMO]
+The demo has a class called com.acme.customer.Main which starts up various
+endpoints. To start this server run the command:
+$ ant server
+Once it is running try going to the following URLs:
+http://localhost:8080/xml/customers
+http://localhost:8080/json/customers
+http://localhost:8080/xml/customers/123
+http://localhost:8080/json/customers/123
+These will serve out XML and JSON representation of the resources.
+There is an HTML page that is served by CXF so you can try using the
+JSON service via Javascript. Just go to:
+http://localhost:8080/test.html
+Included are some example JSON and XML files so you can add or update
+customers using wget. Try the following commands and look at the results:
+wget --post-file add.json http://localhost:8080/json/customers
+wget --post-file add.xml http://localhost:8080/xml/customers
+wget --post-file update.xml http://localhost:8080/xml/customers/123
+And if you are interested in SOAP you can try the SOAP endpoint:
+http://localhost:8080/soap?wsdl
+[RUNNING THE CLIENT]
+The demo also includes a Client class which accesses data using
+HTTP. To run this demo, do:
+$ ant client</code></pre></div>
+<p>XFire-CXF-restful_http_binding.zip( 19 k)</p>
+<ol><li>REST based Web Services using the HTTP binding and JAX-WS Provider/Dispatch</li><li>Axis2 client API has facilities to invoke REST interfaces</li></ol>
+<p>w___w___w.___jav___a_2__s_.___c_o__m_</p>
+    <div class="pager"><a class="pager-btn" href="data-type-joinsarrayelementsintoasinglestringspecifythestartindexandendindex-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Joins array elements into ...</span></a><a class="pager-btn pager-next" href="data-type-usestringindexoftolocateasubstringinastring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Use String.indexOf to loca...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ant build script - JavaSchool</title>
+<meta name="description" content="Licensed to the Apache Software Foundation (ASF) under one or more">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-ant-antbuildscript">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-ant.html">Ant</a></nav>
+    <h1>Ant build script</h1>
+<p>Ant build script</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;?xml version="1.0"?&gt;
+&lt;!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+--&gt;
+&lt;project name="apache-ant" default="main" basedir="."&gt;
+  &lt;!-- Give user a chance to override without editing this file
+       (and without typing -D on each invocation) --&gt;
+  &lt;property file=".ant.properties"/&gt;
+  &lt;property file="${user.home}/.ant.properties"/&gt;
+  &lt;property environment="env"/&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Set the properties that control names and versions
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;property name="Name" value="Apache Ant"/&gt;
+  &lt;property name="name" value="ant"/&gt;
+  &lt;!-- this is the groupId of ant in the Maven repository --&gt;
+  &lt;property name="groupid" value="org.apache.ant"/&gt;
+  &lt;property name="project.version" value="1.8.0RC1"/&gt;
+  &lt;!-- pom.version is used when doing a distribution and must match with what is checked in under src/etc/poms --&gt;
+  &lt;property name="pom.version" value="1.8.0-SNAPSHOT"/&gt;
+  &lt;property name="manifest-version" value="1.8.0RC1"/&gt;
+  &lt;property name="bootstrap.jar" value="ant-bootstrap.jar"/&gt;
+  &lt;property name="ant.package" value="org/apache/tools/ant"/&gt;
+  &lt;property name="taskdefs.package" value="${ant.package}/taskdefs"/&gt;
+  &lt;property name="condition.package" value="${taskdefs.package}/condition"/&gt;
+  &lt;property name="optional.package" value="${taskdefs.package}/optional"/&gt;
+  &lt;property name="optional.condition.package" value="${optional.package}/condition"/&gt;
+  &lt;property name="type.package" value="${ant.package}/types"/&gt;
+  &lt;property name="optional.type.package" value="${type.package}/optional"/&gt;
+  &lt;property name="apache.resolver.type.package" value="${ant.package}/types/resolver"/&gt;
+  &lt;property name="util.package" value="${ant.package}/util"/&gt;
+  &lt;property name="regexp.package" value="${util.package}/regexp"/&gt;
+  &lt;property name="optional.jars.prefix" value="ant"/&gt;
+  &lt;property name="optional.jars.whenmanifestonly" value="skip"/&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Set the properties related to the source tree
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;property name="src.dir" value="src"/&gt;
+  &lt;property name="java.dir" value="${src.dir}/main"/&gt;
+  &lt;property name="script.dir" value="${src.dir}/script"/&gt;
+  &lt;property name="lib.dir" value="lib"/&gt;
+  &lt;property name="docs.dir" value="docs"/&gt;
+  &lt;property name="etc.dir" value="${src.dir}/etc"/&gt;
+  &lt;property name="src.junit" value="${src.dir}/tests/junit"/&gt;
+  &lt;property name="src.antunit" value="${src.dir}/tests/antunit"/&gt;
+  &lt;property name="tests.etc.dir" value="${src.dir}/etc/testcases"/&gt;
+  &lt;property name="manifest" value="${src.dir}/etc/manifest"/&gt;
+  &lt;property name="resource.dir" value="${src.dir}/resources"/&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Set the properties for the build area
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;property name="build.dir" value="build"/&gt;
+  &lt;property name="bootstrap.dir" value="bootstrap"/&gt;
+  &lt;property name="build.classes" value="${build.dir}/classes"/&gt;
+  &lt;property name="build.lib" value="${build.dir}/lib"/&gt;
+  &lt;property name="build.javadocs" value="${build.dir}/javadocs"/&gt;
+  &lt;property name="build.tests" value="${build.dir}/testcases"/&gt;
+  &lt;property name="build.tests.javadocs" value="${build.dir}/javadocs.test/"/&gt;
+  &lt;property name="build.junit.xml" location="${build.tests}/xml"/&gt;
+  &lt;property name="antunit.xml" location="${build.dir}/antunit/xml"/&gt;
+  &lt;property name="antunit.reports" location="${build.dir}/antunit/reports"/&gt;
+  &lt;property name="antunit.loglevel" value="none"/&gt;
+  &lt;property name="build.junit.reports" location="${build.tests}/reports"/&gt;
+  &lt;property name="manifest.tmp" value="${build.dir}/optional.manifest"/&gt;
+  &lt;!-- the absolute path --&gt;
+  &lt;property name="build.tests.value" location="${build.tests}"/&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Set the properties that control various build options
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;property name="debug" value="true"/&gt;
+  &lt;property name="chmod.fail" value="true"/&gt;
+  &lt;property name="chmod.maxparallel" value="250"/&gt;
+  &lt;property name="deprecation" value="false"/&gt;
+  &lt;property name="optimize" value="true"/&gt;
+  &lt;property name="javac.target" value="1.2"/&gt;
+  &lt;property name="javac.source" value="1.2"/&gt;
+  &lt;property name="junit.fork" value="false"/&gt;
+  &lt;property name="junit.filtertrace" value="off"/&gt;
+  &lt;property name="junit.summary" value="no"/&gt;
+  &lt;property name="test.haltonfailure" value="false"/&gt;
+  &lt;property name="junit.forkmode" value="once"/&gt;
+  &lt;property name="expandproperty.files"
+            value="**/version.txt,**/defaultManifest.mf"/&gt;
+  &lt;property name="junit.collector.dir" value="${build.dir}/failingTests"/&gt;
+  &lt;property name="junit.collector.class" value="FailedTests"/&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Set the paths used in the build
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;path id="classpath"&gt;
+    &lt;fileset dir="lib/optional" includes="*.jar"/&gt;
+  &lt;/path&gt;
+  &lt;path id="tests-classpath"&gt;
+    &lt;pathelement location="${build.classes}"/&gt;
+    &lt;pathelement location="${build.tests}"/&gt;
+    &lt;!--
+        include the test source and test data dirs
+        so that we can pick resources via getResource(AsStream)
+     --&gt;
+    &lt;pathelement location="${src.junit}"/&gt;
+    &lt;pathelement location="${tests.etc.dir}"/&gt;
+    &lt;path refid="classpath"/&gt;
+  &lt;/path&gt;
+  &lt;!-- turn this path into a string which is passed to the tests --&gt;
+  &lt;property name="tests-classpath.value"
+    refid="tests-classpath"/&gt;
+  &lt;!--
+        -------------------------------------------------------------------
+          Set up properties for the distribution area
+        -------------------------------------------------------------------
+   --&gt;
+  &lt;property name="dist.name" value="apache-${name}-${project.version}"/&gt;
+  &lt;property name="dist.base" value="distribution"/&gt;
+  &lt;property name="dist.base.source" value="${dist.base}/source"/&gt;
+  &lt;property name="dist.base.binaries" value="${dist.base}/binaries"/&gt;
+  &lt;property name="dist.dir" value="dist"/&gt;
+  &lt;property name="dist.bin" value="${dist.dir}/bin"/&gt;
+  &lt;property name="dist.lib" value="${dist.dir}/lib"/&gt;
+  &lt;property name="dist.docs" value="${dist.dir}/docs"/&gt;
+  &lt;property name="dist.etc" value="${dist.dir}/etc"/&gt;
+  &lt;property name="dist.javadocs" value="${dist.dir}/docs/manual/api"/&gt;
+  &lt;property name="src.dist.dir" value="dist-src"/&gt;
+  &lt;property name="src.dist.src" value="${src.dist.dir}/src"/&gt;
+  &lt;property name="src.dist.docs" value="${src.dist.dir}/docs"/&gt;
+  &lt;property name="src.dist.lib" value="${src.dist.dir}/lib"/&gt;
+  &lt;property name="java-repository.dir" value="java-repository/${groupid}"/&gt;
+  &lt;property name="java-repository.jars.dir" value="${java-repository.dir}/jars"/&gt;
+  &lt;property name="java-repository.poms.dir" value="${java-repository.dir}/poms"/&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Set up selectors to be used by javac, junit and jar to exclude
+         files that have dependencies that are not available
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;!-- depends on JDK version --&gt;
+  &lt;selector id="needs.jdk1.5+"&gt;
+    &lt;or&gt;
+      &lt;filename name="${taskdefs.package}/AptTest*"/&gt;
+      &lt;filename name="${util.package}/java15/*"/&gt;
+      &lt;filename name="${ant.package}/loader/*5*"/&gt;
+    &lt;/or&gt;
+  &lt;/selector&gt;
+  &lt;!-- Kaffe has some JDK 1.5 features including java.lang.Readable,
+       but not all of them --&gt;
+  &lt;selector id="not.in.kaffe"&gt;
+    &lt;or&gt;
+      &lt;filename name="${condition.package}/IsReachable*"/&gt;
+    &lt;/or&gt;
+  &lt;/selector&gt;
+  &lt;!-- depends on external libraries --&gt;
+  &lt;selector id="needs.trax"&gt;
+    &lt;or&gt;
+      &lt;filename name="${optional.package}/TraXLiaison*"/&gt;
+      &lt;filename name="${optional.package}/XSLTTraceSupport*"/&gt;
+      &lt;filename name="${optional.package}/XsltTest*"/&gt;
+      &lt;filename name="${type.package}/XMLCatalogBuildFileTest*"/&gt;
+    &lt;/or&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.apache-resolver"&gt;
+    &lt;filename name="${apache.resolver.type.package}/**"/&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.junit"&gt;
+    &lt;filename name="${optional.package}/junit/**"/&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.apache-regexp"&gt;
+    &lt;filename name="${regexp.package}/JakartaRegexp*"/&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.apache-oro"&gt;
+    &lt;or&gt;
+      &lt;filename name="${regexp.package}/JakartaOro*"/&gt;
+      &lt;filename name="${optional.package}/perforce/*"/&gt;
+    &lt;/or&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.apache-bcel"&gt;
+    &lt;or&gt;
+      &lt;filename name="${ant.package}/filters/util/JavaClassHelper*"/&gt;
+      &lt;filename name="${util.package}/depend/bcel/*"/&gt;
+      &lt;filename name="${optional.type.package}/depend/ClassFileSetTest*"/&gt;
+    &lt;/or&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.apache-log4j"&gt;
+    &lt;filename name="${ant.package}/listener/Log4jListener*"/&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.commons-logging"&gt;
+    &lt;filename name="${ant.package}/listener/CommonsLoggingListener*"/&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.apache-bsf"&gt;
+    &lt;or&gt;
+      &lt;filename name="${util.package}/ScriptRunner.*"/&gt;
+      &lt;filename name="${util.package}/optional/ScriptRunner*"/&gt;
+    &lt;/or&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.stylebook"&gt;
+    &lt;filename name="${optional.package}/StyleBook*"/&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.javamail"&gt;
+    &lt;or&gt;
+      &lt;filename name="${ant.package}/taskdefs/email/MimeMailer*"/&gt;
+    &lt;/or&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.netrexx"&gt;
+    &lt;filename name="${optional.package}/NetRexxC*"/&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.commons-net"&gt;
+    &lt;or&gt;
+      &lt;filename name="${optional.package}/net/FTP*"/&gt;
+      &lt;filename name="${optional.package}/net/RExec*"/&gt;
+      &lt;filename name="${optional.package}/net/TelnetTask*"/&gt;
+    &lt;/or&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.antlr"&gt;
+    &lt;filename name="${optional.package}/ANTLR*"/&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.jmf"&gt;
+    &lt;filename name="${optional.package}/sound/*"/&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.jai"&gt;
+    &lt;or&gt;
+      &lt;filename name="${optional.package}/image/*"/&gt;
+      &lt;filename name="${optional.type.package}/image/*"/&gt;
+    &lt;/or&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.jdepend"&gt;
+    &lt;filename name="${optional.package}/jdepend/*"/&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.swing"&gt;
+    &lt;filename name="${optional.package}/splash/*"/&gt;
+  &lt;/selector&gt;
+  &lt;selector id="needs.jsch"&gt;
+    &lt;filename name="${optional.package}/ssh/*"/&gt;
+  &lt;/selector&gt;
+  &lt;!-- needs TraceListenerEx3 interface implemented by PrintTraceListener --&gt;
+  &lt;selector id="needs.apache-xalan2"&gt;
+    &lt;filename name="${optional.package}/Xalan2TraceSupport*"/&gt;
+  &lt;/selector&gt;
+  &lt;selector id="ant.launcher"&gt;
+    &lt;filename name="${ant.package}/launch/**/*"/&gt;
+  &lt;/selector&gt;
+  &lt;patternset id="onlinetests"&gt;
+    &lt;exclude name="**/GetTest.java" if="offline"/&gt;
+    &lt;exclude name="**/HttpTest.java" if="offline"/&gt;
+  &lt;/patternset&gt;
+  &lt;patternset id="teststhatfail"&gt;
+    &lt;!-- Property 'run.failing.tests' should force Ant to run these tests. --&gt;
+    &lt;!-- Because the whole patternset can not be excluded, you have to add --&gt;
+    &lt;!-- an unless-attribute on each exclude-element.                      --&gt;
+    &lt;exclude unless="run.failing.tests" name="${optional.package}/BeanShellScriptTest.java"/&gt;
+    &lt;exclude unless="run.failing.tests" name="${optional.package}/jdepend/JDependTest.java"/&gt;
+  &lt;/patternset&gt;
+  &lt;!--tests that need an XML Schema-supporting parser to work--&gt;
+  &lt;selector id="needs.xmlschema"&gt;
+    &lt;or&gt;
+      &lt;filename name="${optional.package}/SchemaValidateTest.*"/&gt;
+      &lt;filename name="${optional.package}/XmlValidateTest.*"/&gt;
+    &lt;/or&gt;
+  &lt;/selector&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Set up a patternsets that matches the parts of our JUnit testsuite
+         that may be useful for task developers.
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;patternset id="useful.tests"&gt;
+    &lt;include name="${ant.package}/BuildFileTest*"/&gt;
+    &lt;include name="${regexp.package}/RegexpMatcherTest*"/&gt;
+    &lt;include name="${regexp.package}/RegexpTest*"/&gt;
+    &lt;include name="${optional.package}/AbstractXSLTLiaisonTest*"/&gt;
+    &lt;include name="${ant.package}/types/AbstractFileSetTest*"/&gt;
+  &lt;/patternset&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Set up a patternsets that matches the parts of our site that
+         should not be part of the distribution.
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;patternset id="site.excludes"&gt;
+    &lt;exclude name="bindownload.html"/&gt;
+    &lt;exclude name="srcdownload.html"/&gt;
+    &lt;exclude name="*.cgi"/&gt;
+  &lt;/patternset&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Check to see what optional dependencies are available
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="check_for_optional_packages"&gt;
+    &lt;available property="jdk1.5+" classname="java.net.Proxy"/&gt;
+    &lt;available property="jdk1.6+" classname="java.util.ServiceLoader"/&gt;
+    &lt;available property="kaffe" classname="kaffe.util.NotImplemented"/&gt;
+    &lt;available property="bsf.present"
+      classname="org.apache.bsf.BSFManager"
+      classpathref="classpath"/&gt;
+    &lt;available property="netrexx.present"
+      classname="netrexx.lang.Rexx"
+      classpathref="classpath"/&gt;
+    &lt;available property="trax.present"
+      classname="javax.xml.transform.Transformer"
+      classpathref="classpath"/&gt;
+    &lt;condition property="trax.impl.present"&gt;
+      &lt;or&gt;
+        &lt;and&gt;
+          &lt;isset property="javax.xml.transform.TransformerFactory"/&gt;
+          &lt;available classname="${javax.xml.transform.TransformerFactory}"
+            classpathref="classpath"/&gt;
+        &lt;/and&gt;
+        &lt;available resource="META-INF/services/javax.xml.transform.TransformerFactory"/&gt;
+      &lt;/or&gt;
+    &lt;/condition&gt;
+    &lt;available property="apache.resolver.present"
+      classname="org.apache.xml.resolver.tools.CatalogResolver"
+      classpathref="classpath"/&gt;
+    &lt;available property="xalan2.present"
+      classname="org.apache.xalan.transformer.TransformerImpl"
+      classpathref="classpath"/&gt;
+    &lt;available property="recent.xalan2.present"
+      classname="org.apache.xalan.trace.TraceListenerEx3"
+      classpathref="classpath"/&gt;
+    &lt;available property="junit.present"
+      classname="junit.framework.TestCase"
+      classpathref="classpath"/&gt;
+    &lt;available property="antunit.present"
+      classname="org.apache.ant.antunit.AntUnit"
+      classpathref="classpath"/&gt;
+    &lt;available property="commons.net.present"
+      classname="org.apache.commons.net.ftp.FTPClient"
+      classpathref="classpath"/&gt;
+    &lt;available property="antlr.present"
+      classname="antlr.Tool"
+      classpathref="classpath"/&gt;
+    &lt;available property="stylebook.present"
+      classname="org.apache.stylebook.Engine"
+      classpathref="classpath"/&gt;
+    &lt;available property="apache.regexp.present"
+      classname="org.apache.regexp.RE"
+      classpathref="classpath"/&gt;
+    &lt;available property="apache.oro.present"
+      classname="org.apache.oro.text.regex.Perl5Matcher"
+      classpathref="classpath"/&gt;
+    &lt;available property="jmf.present"
+      classname="javax.sound.sampled.Clip"
+      classpathref="classpath"/&gt;
+    &lt;available property="jai.present"
+      classname="javax.media.jai.JAI"
+      classpathref="classpath"/&gt;
+    &lt;available property="jdepend.present"
+      classname="jdepend.framework.JDepend"
+      classpathref="classpath"/&gt;
+    &lt;available property="log4j.present"
+      classname="org.apache.log4j.Logger"
+      classpathref="classpath"/&gt;
+    &lt;available property="commons.logging.present"
+      classname="org.apache.commons.logging.LogFactory"
+      classpathref="classpath"/&gt;
+    &lt;available property="xalan.envcheck"
+      classname="org.apache.xalan.xslt.EnvironmentCheck"
+      classpathref="classpath"/&gt;
+    &lt;available property="which.present"
+      classname="org.apache.env.Which"
+      classpathref="classpath"/&gt;
+    &lt;available property="xerces.present"
+      classname="org.apache.xerces.parsers.SAXParser"
+      classpathref="classpath"/&gt;
+    &lt;available property="bcel.present"
+      classname="org.apache.bcel.Constants"
+      classpathref="classpath"/&gt;
+    &lt;condition property="javamail.complete"&gt;
+      &lt;and&gt;
+        &lt;available classname="javax.activation.DataHandler"
+          classpathref="classpath"/&gt;
+        &lt;available classname="javax.mail.Transport"
+          classpathref="classpath"/&gt;
+      &lt;/and&gt;
+    &lt;/condition&gt;
+    &lt;condition property="tests.and.ant.share.classloader"&gt;
+      &lt;or&gt;
+        &lt;equals arg1="${junit.fork}" arg2="true"/&gt;
+        &lt;equals arg1="${build.sysclasspath}" arg2="only"/&gt;
+      &lt;/or&gt;
+    &lt;/condition&gt;
+    &lt;condition property="sun.tools.present"&gt;
+      &lt;and&gt;
+        &lt;available classname="sun.tools.native2ascii.Main"/&gt;
+        &lt;available classname="com.sun.tools.javah.Main"/&gt;
+      &lt;/and&gt;
+    &lt;/condition&gt;
+    &lt;condition property="tests.are.on.system.classpath"&gt;
+      &lt;or&gt;
+        &lt;resourcecount count="1"&gt;
+          &lt;intersect&gt;
+            &lt;path path="${java.class.path}" /&gt;
+            &lt;file file="${build.tests}" /&gt;
+          &lt;/intersect&gt;
+        &lt;/resourcecount&gt;
+        &lt;istrue value="${junit.fork}"/&gt;
+      &lt;/or&gt;
+    &lt;/condition&gt;
+    &lt;echo level="verbose"&gt; tests.are.on.system.classpath=${tests.are.on.system.classpath}&lt;/echo&gt;
+    &lt;condition property="jasper.present"&gt;
+      &lt;and&gt;
+        &lt;available classname="org.apache.jasper.compiler.Compiler"/&gt;
+        &lt;available classname="org.apache.jasper.JasperException"/&gt;
+      &lt;/and&gt;
+    &lt;/condition&gt;
+    &lt;condition property="swing.present"&gt;
+      &lt;or&gt;
+        &lt;not&gt;
+          &lt;isset property="kaffe"/&gt;
+        &lt;/not&gt;
+        &lt;available classname="javax.swing.ImageIcon"
+          classpathref="classpath"/&gt;
+      &lt;/or&gt;
+    &lt;/condition&gt;
+    &lt;!-- http client needs commons logging --&gt;
+    &lt;condition property="apache-httpclient.present"&gt;
+      &lt;and&gt;
+        &lt;available
+          classname="org.apache.commons.httpclient.HttpClient"
+          classpathref="classpath"/&gt;
+        &lt;isset property="commons.logging.present"/&gt;
+      &lt;/and&gt;
+    &lt;/condition&gt;
+    &lt;available property="rhino.present"
+      classname="org.mozilla.javascript.Scriptable"
+      classpathref="classpath"/&gt;
+    &lt;available property="beanshell.present"
+      classname="bsh.StringUtil"
+      classpathref="classpath"/&gt;
+    &lt;available property="xerces1.present"
+      classname="org.apache.xerces.framework.XMLParser"
+      classpathref="classpath"/&gt;
+    &lt;available property="jsch.present"
+      classname="com.jcraft.jsch.Session"
+      classpathref="classpath"/&gt;
+    &lt;property name="build.compiler" value="modern"/&gt;
+    &lt;!--check for XSD support in the parser--&gt;
+    &lt;condition property="xmlschema.present"&gt;
+      &lt;or&gt;
+        &lt;parsersupports
+          feature="http://apache.org/xml/features/validation/schema"/&gt;
+        &lt;parsersupports
+          feature="http://java.sun.com/xml/jaxp/properties/schemaSource"/&gt;
+      &lt;/or&gt;
+    &lt;/condition&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Prepare the build
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="prepare"&gt;
+    &lt;tstamp&gt;
+      &lt;format property="year" pattern="yyyy"/&gt;
+    &lt;/tstamp&gt;
+    &lt;filterchain id="ant.filters"&gt;
+       &lt;expandproperties/&gt;
+    &lt;/filterchain&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Build the code
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="build"
+    depends="prepare, check_for_optional_packages"
+    description="--&gt; compiles the source code"&gt;
+    &lt;mkdir dir="${build.dir}"/&gt;
+    &lt;mkdir dir="${build.classes}"/&gt;
+    &lt;mkdir dir="${build.lib}"/&gt;
+    &lt;javac srcdir="${java.dir}"
+      includeantruntime="false"
+      destdir="${build.classes}"
+      debug="${debug}"
+      deprecation="${deprecation}"
+      target="${javac.target}"
+      source="${javac.source}"
+      optimize="${optimize}"&gt;
+      &lt;classpath refid="classpath"/&gt;
+      &lt;selector id="conditional-patterns"&gt;
+        &lt;not&gt;
+          &lt;or&gt;
+            &lt;selector refid="needs.jdk1.5+" unless="jdk1.5+"/&gt;
+            &lt;selector refid="not.in.kaffe" if="kaffe"/&gt;
+            &lt;selector refid="needs.trax" unless="trax.present"/&gt;
+            &lt;selector refid="needs.apache-resolver" unless="apache.resolver.present"/&gt;
+            &lt;selector refid="needs.junit" unless="junit.present"/&gt;
+            &lt;selector refid="needs.apache-regexp"
+              unless="apache.regexp.present"/&gt;
+            &lt;selector refid="needs.apache-oro" unless="apache.oro.present"/&gt;
+            &lt;selector refid="needs.apache-bcel" unless="bcel.present"/&gt;
+            &lt;selector refid="needs.apache-log4j" unless="log4j.present"/&gt;
+            &lt;selector refid="needs.commons-logging"
+              unless="commons.logging.present"/&gt;
+            &lt;selector refid="needs.apache-bsf" unless="bsf.present"/&gt;
+            &lt;selector refid="needs.stylebook" unless="stylebook.present"/&gt;
+            &lt;selector refid="needs.javamail" unless="javamail.complete"/&gt;
+            &lt;selector refid="needs.netrexx" unless="netrexx.present"/&gt;
+            &lt;selector refid="needs.commons-net" unless="commons.net.present"/&gt;
+            &lt;selector refid="needs.antlr" unless="antlr.present"/&gt;
+            &lt;selector refid="needs.jmf" unless="jmf.present"/&gt;
+            &lt;selector refid="needs.jai" unless="jai.present"/&gt;
+            &lt;selector refid="needs.jdepend" unless="jdepend.present"/&gt;
+            &lt;selector refid="needs.swing" unless="swing.present"/&gt;
+            &lt;selector refid="needs.jsch" unless="jsch.present"/&gt;
+            &lt;selector refid="needs.xmlschema" unless="xmlschema.present"/&gt;
+            &lt;selector refid="needs.apache-xalan2"
+                      unless="recent.xalan2.present"/&gt;
+            &lt;!-- Java 1.4's built-in Xalan is first on the classpath --&gt;
+            &lt;selector refid="needs.apache-xalan2" unless="jdk1.5+"/&gt;
+          &lt;/or&gt;
+        &lt;/not&gt;
+      &lt;/selector&gt;
+    &lt;/javac&gt;
+    &lt;copy todir="${build.classes}"&gt;
+      &lt;fileset dir="${java.dir}"&gt;
+        &lt;include name="**/*.properties"/&gt;
+        &lt;include name="**/*.dtd"/&gt;
+        &lt;include name="**/*.xml"/&gt;
+      &lt;/fileset&gt;
+      &lt;fileset dir="${resource.dir}" /&gt;
+    &lt;/copy&gt;
+    &lt;copy todir="${build.classes}"
+      overwrite="true" encoding="UTF-8"&gt;
+      &lt;fileset dir="${java.dir}"&gt;
+        &lt;include name="**/version.txt"/&gt;
+        &lt;include name="**/defaultManifest.mf"/&gt;
+      &lt;/fileset&gt;
+      &lt;filterchain refid="ant.filters"/&gt;
+    &lt;/copy&gt;
+    &lt;copy todir="${build.classes}/${optional.package}/junit/xsl"&gt;
+      &lt;fileset dir="${etc.dir}"&gt;
+        &lt;include name="junit-frames.xsl"/&gt;
+        &lt;include name="junit-noframes.xsl"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Create the all of the Apache Ant jars
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="jars"
+    depends="build"
+    description="--&gt; creates the Apache Ant jars"&gt;
+    &lt;copy todir="${build.dir}"&gt;
+      &lt;fileset dir="${basedir}"&gt;
+        &lt;include name="LICENSE"/&gt;
+        &lt;include name="LICENSE.xerces"/&gt;
+        &lt;include name="LICENSE.dom"/&gt;
+        &lt;include name="LICENSE.sax"/&gt;
+        &lt;include name="NOTICE"/&gt;
+      &lt;/fileset&gt;
+      &lt;mapper type="glob" from="*" to="*.txt"/&gt;
+    &lt;/copy&gt;
+    &lt;copy file="${manifest}" tofile="${manifest.tmp}"/&gt;
+    &lt;manifest file="${manifest.tmp}"&gt;
+      &lt;section name="${optional.package}/"&gt;
+        &lt;attribute name="Extension-name"
+          value="org.apache.tools.ant"/&gt;
+        &lt;attribute name="Specification-Title"
+          value="Apache Ant"/&gt;
+        &lt;attribute name="Specification-Version"
+          value="${manifest-version}"/&gt;
+        &lt;attribute name="Specification-Vendor"
+          value="Apache Software Foundation"/&gt;
+        &lt;attribute name="Implementation-Title"
+          value="org.apache.tools.ant"/&gt;
+        &lt;attribute name="Implementation-Version"
+          value="${manifest-version}"/&gt;
+        &lt;attribute name="Implementation-Vendor"
+          value="Apache Software Foundation"/&gt;
+      &lt;/section&gt;
+    &lt;/manifest&gt;
+    &lt;jar destfile="${build.lib}/${name}-launcher.jar"
+      basedir="${build.classes}"
+      whenmanifestonly="fail"&gt;
+      &lt;selector refid="ant.launcher"/&gt;
+      &lt;manifest&gt;
+        &lt;attribute name="Main-Class" value="org.apache.tools.ant.launch.Launcher"/&gt;
+      &lt;/manifest&gt;
+    &lt;/jar&gt;
+    &lt;jar destfile="${build.lib}/${name}.jar"
+      basedir="${build.classes}"
+      manifest="${manifest}"
+      whenmanifestonly="fail"&gt;
+      &lt;not&gt;
+        &lt;selector id="non-core"&gt;
+          &lt;or&gt;
+            &lt;filename name="${optional.package}/**"/&gt;
+            &lt;filename name="${optional.type.package}/**"/&gt;
+            &lt;filename name="${util.package}/depend/**"/&gt;
+            &lt;filename name="${util.package}/optional/**"/&gt;
+            &lt;selector refid="needs.apache-log4j"/&gt;
+            &lt;selector refid="needs.commons-logging"/&gt;
+            &lt;selector refid="needs.apache-bcel"/&gt;
+            &lt;selector refid="needs.apache-bsf"/&gt;
+            &lt;selector refid="needs.apache-regexp"/&gt;
+            &lt;selector refid="needs.apache-resolver"/&gt;
+            &lt;selector refid="needs.apache-oro"/&gt;
+            &lt;selector refid="needs.jdk1.5+"/&gt;
+            &lt;selector refid="needs.javamail"/&gt;
+            &lt;selector refid="ant.launcher"/&gt;
+          &lt;/or&gt;
+        &lt;/selector&gt;
+      &lt;/not&gt;
+      &lt;metainf dir="${build.dir}"&gt;
+        &lt;include name="LICENSE.txt"/&gt;
+        &lt;include name="NOTICE.txt"/&gt;
+      &lt;/metainf&gt;
+      &lt;manifest&gt;
+        &lt;section name="${ant.package}/"&gt;
+          &lt;attribute name="Extension-name"
+            value="org.apache.tools.ant"/&gt;
+          &lt;attribute name="Specification-Title"
+            value="Apache Ant"/&gt;
+          &lt;attribute name="Specification-Version"
+            value="${manifest-version}"/&gt;
+          &lt;attribute name="Specification-Vendor"
+            value="Apache Software Foundation"/&gt;
+          &lt;attribute name="Implementation-Title"
+            value="org.apache.tools.ant"/&gt;
+          &lt;attribute name="Implementation-Version"
+            value="${manifest-version}"/&gt;
+          &lt;attribute name="Implementation-Vendor"
+            value="Apache Software Foundation"/&gt;
+        &lt;/section&gt;
+      &lt;/manifest&gt;
+      &lt;fileset dir="${docs.dir}"&gt;
+        &lt;include name="images/ant_logo_large.gif"/&gt;
+      &lt;/fileset&gt;
+    &lt;/jar&gt;
+    &lt;jar destfile="${build.lib}/${bootstrap.jar}"
+      basedir="${build.classes}"
+      manifest="${manifest}"
+      whenmanifestonly="fail"&gt;
+      &lt;include name="${ant.package}/Main.class"/&gt;
+      &lt;metainf dir="${build.dir}"&gt;
+        &lt;include name="LICENSE.txt"/&gt;
+        &lt;include name="NOTICE.txt"/&gt;
+      &lt;/metainf&gt;
+      &lt;manifest&gt;
+        &lt;attribute name="Class-Path"
+          value="ant.jar xml-apis.jar xercesImpl.jar xalan.jar"/&gt;
+      &lt;/manifest&gt;
+    &lt;/jar&gt;
+    &lt;jar destfile="${build.lib}/ant-nodeps.jar"
+      basedir="${build.classes}"
+      manifest="${manifest.tmp}"
+      whenmanifestonly="${optional.jars.whenmanifestonly}"&gt;
+      &lt;and&gt;
+        &lt;selector refid="non-core"/&gt;
+        &lt;not&gt;
+          &lt;or&gt;
+            &lt;selector refid="ant.launcher"/&gt;
+            &lt;selector refid="needs.trax"/&gt;
+            &lt;selector refid="needs.apache-resolver"/&gt;
+            &lt;selector refid="needs.junit"/&gt;
+            &lt;selector refid="needs.apache-regexp"/&gt;
+            &lt;selector refid="needs.apache-oro"/&gt;
+            &lt;selector refid="needs.apache-bcel"/&gt;
+            &lt;selector refid="needs.apache-log4j"/&gt;
+            &lt;selector refid="needs.commons-logging"/&gt;
+            &lt;selector refid="needs.apache-bsf"/&gt;
+            &lt;selector refid="needs.stylebook"/&gt;
+            &lt;selector refid="needs.javamail"/&gt;
+            &lt;selector refid="needs.netrexx"/&gt;
+            &lt;selector refid="needs.commons-net"/&gt;
+            &lt;selector refid="needs.antlr"/&gt;
+            &lt;selector refid="needs.jmf"/&gt;
+            &lt;selector refid="needs.jai"/&gt;
+            &lt;selector refid="needs.jdepend"/&gt;
+            &lt;selector refid="needs.swing"/&gt;
+            &lt;selector refid="needs.jsch"/&gt;
+            &lt;selector refid="needs.apache-xalan2"/&gt;
+          &lt;/or&gt;
+        &lt;/not&gt;
+      &lt;/and&gt;
+      &lt;metainf dir="${build.dir}"&gt;
+        &lt;include name="LICENSE.txt"/&gt;
+        &lt;include name="NOTICE.txt"/&gt;
+      &lt;/metainf&gt;
+    &lt;/jar&gt;
+    &lt;macrodef name="optional-jar"&gt;
+      &lt;attribute name="dep"/&gt;
+      &lt;sequential&gt;
+        &lt;jar destfile="${build.lib}/${optional.jars.prefix}-@{dep}.jar"
+          basedir="${build.classes}"
+          manifest="${manifest.tmp}"
+          whenmanifestonly="${optional.jars.whenmanifestonly}"&gt;
+          &lt;selector refid="needs.@{dep}"/&gt;
+        &lt;/jar&gt;
+      &lt;/sequential&gt;
+    &lt;/macrodef&gt;
+    &lt;optional-jar dep="trax"/&gt;
+    &lt;optional-jar dep="apache-resolver"/&gt;
+    &lt;optional-jar dep="junit"/&gt;
+    &lt;optional-jar dep="apache-regexp"/&gt;
+    &lt;optional-jar dep="apache-oro"/&gt;
+    &lt;optional-jar dep="apache-bcel"/&gt;
+    &lt;optional-jar dep="apache-log4j"/&gt;
+    &lt;optional-jar dep="commons-logging"/&gt;
+    &lt;optional-jar dep="apache-bsf"/&gt;
+    &lt;optional-jar dep="stylebook"/&gt;
+    &lt;optional-jar dep="javamail"/&gt;
+    &lt;optional-jar dep="netrexx"/&gt;
+    &lt;optional-jar dep="commons-net"/&gt;
+    &lt;optional-jar dep="antlr"/&gt;
+    &lt;optional-jar dep="jmf"/&gt;
+    &lt;optional-jar dep="jai"/&gt;
+    &lt;optional-jar dep="swing"/&gt;
+    &lt;optional-jar dep="jsch"/&gt;
+    &lt;optional-jar dep="jdepend"/&gt;
+    &lt;optional-jar dep="apache-xalan2"/&gt;
+  &lt;/target&gt;
+  &lt;!--   Creates jar of test utility classes --&gt;
+  &lt;target name="test-jar"
+    depends="compile-tests"
+    description="--&gt; creates the Apache Ant Test Utilities jar"&gt;
+    &lt;fail unless="junit.present"&gt;
+      We cannot build the test jar unless JUnit is present,
+      as JUnit is needed to compile the test classes.
+    &lt;/fail&gt;
+    &lt;jar destfile="${build.lib}/${name}-testutil.jar"
+      basedir="${build.tests}"&gt;
+      &lt;patternset refid="useful.tests"/&gt;
+    &lt;/jar&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Create the essential distribution that can run Apache Ant
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="dist-lite"
+    depends="jars,test-jar"
+    description="--&gt; creates a minimum distribution to run Apache Ant"&gt;
+    &lt;mkdir dir="${dist.dir}"/&gt;
+    &lt;mkdir dir="${dist.bin}"/&gt;
+    &lt;mkdir dir="${dist.lib}"/&gt;
+    &lt;copy todir="${dist.lib}"&gt;
+      &lt;fileset dir="${build.lib}"&gt;
+        &lt;exclude name="${bootstrap.jar}"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+    &lt;copy todir="${dist.lib}"&gt;
+      &lt;fileset dir="${lib.dir}"&gt;
+        &lt;include name="*.jar"/&gt;
+        &lt;include name="*.zip"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+    &lt;copy todir="${dist.bin}"&gt;
+      &lt;fileset dir="${script.dir}"/&gt;
+    &lt;/copy&gt;
+    &lt;fixcrlf srcdir="${dist.bin}" eol="dos" includes="*.bat,*.cmd"/&gt;
+    &lt;fixcrlf srcdir="${dist.bin}" eol="unix"&gt;
+      &lt;include name="ant"/&gt;
+      &lt;include name="antRun"/&gt;
+      &lt;include name="*.pl"/&gt;
+    &lt;/fixcrlf&gt;
+    &lt;chmod perm="ugo+rx" dir="${dist.dir}" type="dir" includes="**"
+      failonerror="${chmod.fail}"/&gt;
+    &lt;chmod perm="ugo+r" dir="${dist.dir}" type="file" includes="**"
+      failonerror="${chmod.fail}" maxparallel="${chmod.maxparallel}"/&gt;
+    &lt;chmod perm="ugo+x" type="file" failonerror="${chmod.fail}"&gt;
+      &lt;fileset dir="${dist.bin}"&gt;
+        &lt;include name="**/ant"/&gt;
+        &lt;include name="**/antRun"/&gt;
+        &lt;include name="**/*.pl"/&gt;
+        &lt;include name="**/*.py"/&gt;
+      &lt;/fileset&gt;
+    &lt;/chmod&gt;
+  &lt;/target&gt;
+  &lt;!--
+        -------------------------------------------------------------------
+          Create the complete distribution
+        -------------------------------------------------------------------
+   --&gt;
+  &lt;target name="dist" description="--&gt; creates a complete distribution"&gt;
+    &lt;antcall inheritAll="false" target="internal_dist"&gt;
+      &lt;param name="dist.dir" value="${dist.name}"/&gt;
+    &lt;/antcall&gt;
+  &lt;/target&gt;
+  &lt;target name="dist_javadocs" depends="javadocs"&gt;
+    &lt;mkdir dir="${dist.javadocs}"/&gt;
+    &lt;copy todir="${dist.javadocs}" overwrite="true"&gt;
+      &lt;fileset dir="${build.javadocs}"/&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+  &lt;macrodef name="checksums"&gt;
+    &lt;element name="resources" implicit="true"/&gt;
+    &lt;sequential&gt;
+      &lt;checksum algorithm="md5"&gt;
+        &lt;resources/&gt;
+      &lt;/checksum&gt;
+      &lt;checksum algorithm="sha1"&gt;
+        &lt;resources/&gt;
+      &lt;/checksum&gt;
+      &lt;checksum fileext=".sha512" algorithm="sha-512"&gt;
+        &lt;resources/&gt;
+      &lt;/checksum&gt;
+    &lt;/sequential&gt;
+  &lt;/macrodef&gt;
+  &lt;target name="internal_dist" depends="dist-lite,dist_javadocs"&gt;
+    &lt;mkdir dir="${dist.docs}"/&gt;
+    &lt;mkdir dir="${dist.etc}"/&gt;
+    &lt;copy todir="${dist.lib}" file="${lib.dir}/README"/&gt;
+    &lt;copy todir="${dist.lib}" file="${lib.dir}/libraries.properties"/&gt;
+    &lt;copy todir="${dist.lib}"&gt;
+        &lt;fileset dir="${src.dir}/etc/poms"&gt;
+            &lt;include name="*/pom.xml"/&gt;
+        &lt;/fileset&gt;
+        &lt;mapper type="regexp" from="^(.*)[/\\]pom.xml" to="\1-${project.version}.pom"/&gt;
+        &lt;filterchain&gt;
+            &lt;tokenfilter&gt;
+                &lt;replaceregex pattern="${pom.version}" replace="${project.version}"/&gt;
+            &lt;/tokenfilter&gt;
+        &lt;/filterchain&gt;
+    &lt;/copy&gt;
+    &lt;copy todir="${dist.lib}"&gt;
+        &lt;fileset dir="${src.dir}/etc/poms"&gt;
+            &lt;include name="pom.xml"/&gt;
+        &lt;/fileset&gt;
+        &lt;mapper type="glob" from="pom.xml" to="ant-parent-${project.version}.pom"/&gt;
+        &lt;filterchain&gt;
+            &lt;tokenfilter&gt;
+                &lt;replaceregex pattern="${pom.version}" replace="${project.version}"/&gt;
+            &lt;/tokenfilter&gt;
+        &lt;/filterchain&gt;
+    &lt;/copy&gt;
+    &lt;checksums&gt;
+        &lt;fileset dir="${dist.lib}"&gt;
+            &lt;include name="*.pom"/&gt;
+        &lt;/fileset&gt;
+    &lt;/checksums&gt;
+    &lt;copy todir="${dist.docs}"&gt;
+      &lt;fileset dir="${docs.dir}" includes="${expandproperty.files}"&gt;
+        &lt;patternset refid="site.excludes"/&gt;
+      &lt;/fileset&gt;
+      &lt;filterchain refid="ant.filters"/&gt;
+    &lt;/copy&gt;
+    &lt;copy todir="${dist.docs}" filtering="false"&gt;
+      &lt;fileset dir="${docs.dir}" excludes="${expandproperty.files}"&gt;
+        &lt;patternset refid="site.excludes"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+    &lt;copy todir="${dist.dir}"&gt;
+      &lt;fileset dir="${basedir}"&gt;
+        &lt;include name="README"/&gt;
+        &lt;include name="INSTALL"/&gt;
+        &lt;include name="LICENSE"/&gt;
+        &lt;include name="LICENSE.xerces"/&gt;
+        &lt;include name="LICENSE.dom"/&gt;
+        &lt;include name="LICENSE.sax"/&gt;
+        &lt;include name="NOTICE"/&gt;
+        &lt;include name="TODO"/&gt;
+        &lt;include name="WHATSNEW"/&gt;
+        &lt;include name="KEYS"/&gt;
+        &lt;include name="fetch.xml"/&gt;
+  &lt;include name="get-m2.xml"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+    &lt;chmod perm="ugo+rx" dir="${dist.dir}" type="dir" includes="**"
+      failonerror="${chmod.fail}"/&gt;
+    &lt;chmod perm="ugo+r" dir="${dist.dir}" type="file" includes="**"
+      failonerror="${chmod.fail}" maxparallel="${chmod.maxparallel}"/&gt;
+    &lt;chmod perm="ugo+x" type="file" failonerror="${chmod.fail}"&gt;
+      &lt;fileset dir="${dist.bin}"&gt;
+        &lt;include name="**/ant"/&gt;
+        &lt;include name="**/antRun"/&gt;
+        &lt;include name="**/*.pl"/&gt;
+        &lt;include name="**/*.py"/&gt;
+      &lt;/fileset&gt;
+    &lt;/chmod&gt;
+    &lt;!-- publish some useful stylesheets --&gt;
+    &lt;copy todir="${dist.etc}"&gt;
+      &lt;fileset dir="${etc.dir}"&gt;
+        &lt;include name="junit-frames.xsl"/&gt;
+        &lt;include name="junit-noframes.xsl"/&gt;
+        &lt;include name="junit-frames-xalan1.xsl"/&gt;
+        &lt;include name="coverage-frames.xsl"/&gt;
+        &lt;include name="maudit-frames.xsl"/&gt;
+        &lt;include name="mmetrics-frames.xsl"/&gt;
+        &lt;include name="changelog.xsl"/&gt;
+        &lt;include name="jdepend.xsl"/&gt;
+        &lt;include name="jdepend-frames.xsl"/&gt;
+        &lt;include name="checkstyle/*.xsl"/&gt;
+        &lt;include name="log.xsl"/&gt;
+        &lt;include name="tagdiff.xsl"/&gt;
+      &lt;/fileset&gt;
+      &lt;fileset dir="${build.lib}"&gt;
+        &lt;include name="${bootstrap.jar}"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Target to create bootstrap build
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="bootstrap" description="--&gt; creates a bootstrap build"&gt;
+    &lt;antcall inheritAll="false" target="dist-lite"&gt;
+      &lt;param name="dist.dir" value="${bootstrap.dir}"/&gt;
+    &lt;/antcall&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Create the source distribution
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="src-dist"
+    description="--&gt; creates a source distribution"&gt;
+    &lt;mkdir dir="${src.dist.dir}"/&gt;
+    &lt;copy todir="${src.dist.lib}"&gt;
+      &lt;fileset dir="${lib.dir}"&gt;
+        &lt;include name="*.jar"/&gt;
+        &lt;include name="*.zip"/&gt;
+        &lt;include name="README"/&gt;
+        &lt;include name="libraries.properties"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+    &lt;copy todir="${src.dist.src}"&gt;
+      &lt;fileset dir="${src.dir}"/&gt;
+    &lt;/copy&gt;
+    &lt;copy todir="${src.dist.docs}"&gt;
+      &lt;fileset dir="${docs.dir}"&gt;
+        &lt;exclude name="manual/api/**"/&gt;
+        &lt;patternset refid="site.excludes"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+    &lt;copy todir="${src.dist.dir}"&gt;
+      &lt;fileset dir="${basedir}"&gt;
+        &lt;include name="README"/&gt;
+        &lt;include name="INSTALL"/&gt;
+        &lt;include name="LICENSE"/&gt;
+        &lt;include name="LICENSE.xerces"/&gt;
+        &lt;include name="LICENSE.dom"/&gt;
+        &lt;include name="LICENSE.sax"/&gt;
+        &lt;include name="NOTICE"/&gt;
+        &lt;include name="TODO"/&gt;
+        &lt;include name="WHATSNEW"/&gt;
+        &lt;include name="KEYS"/&gt;
+        &lt;include name="build.bat"/&gt;
+        &lt;include name="build.sh"/&gt;
+        &lt;include name="bootstrap.bat"/&gt;
+        &lt;include name="bootstrap.sh"/&gt;
+        &lt;include name="build.xml"/&gt;
+        &lt;include name="fetch.xml"/&gt;
+  &lt;include name="get-m2.xml"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+    &lt;fixcrlf srcdir="${src.dist.dir}" eol="dos" includes="*.bat,*.cmd"/&gt;
+    &lt;fixcrlf srcdir="${src.dist.dir}" eol="unix"&gt;
+      &lt;include name="**/*.sh"/&gt;
+      &lt;include name="**/*.pl"/&gt;
+      &lt;include name="**/ant"/&gt;
+      &lt;include name="**/antRun"/&gt;
+    &lt;/fixcrlf&gt;
+    &lt;fixcrlf srcdir="${src.dist.dir}"&gt;
+      &lt;include name="**/*.java"/&gt;
+      &lt;exclude name="${tests.etc.dir}/taskdefs/fixcrlf/expected/Junk?.java"/&gt;
+      &lt;exclude name="${tests.etc.dir}/taskdefs/fixcrlf/input/Junk?.java"/&gt;
+    &lt;/fixcrlf&gt;
+    &lt;chmod perm="ugo+x" dir="${src.dist.dir}" type="dir"
+      failonerror="${chmod.fail}"/&gt;
+    &lt;chmod perm="ugo+r" dir="${src.dist.dir}" failonerror="${chmod.fail}"/&gt;
+    &lt;chmod perm="ugo+x" failonerror="${chmod.fail}"&gt;
+      &lt;fileset dir="${src.dist.dir}"&gt;
+        &lt;include name="**/.sh"/&gt;
+        &lt;include name="**/.pl"/&gt;
+        &lt;include name="**/.py"/&gt;
+        &lt;include name="**/ant"/&gt;
+        &lt;include name="**/antRun"/&gt;
+      &lt;/fileset&gt;
+    &lt;/chmod&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Create the binary distribution
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="main_distribution"
+    description="--&gt; creates the zip and tar distributions"&gt;
+    &lt;delete dir="${dist.base}"/&gt;
+    &lt;delete dir="${dist.name}"/&gt;
+    &lt;delete dir="${java-repository.dir}"/&gt;
+    &lt;mkdir dir="${dist.base}"/&gt;
+    &lt;mkdir dir="${dist.base.source}"/&gt;
+    &lt;mkdir dir="${dist.base.binaries}"/&gt;
+    &lt;mkdir dir="${java-repository.jars.dir}"/&gt;
+    &lt;mkdir dir="${java-repository.poms.dir}"/&gt;
+    &lt;antcall inheritAll="false" target="internal_dist"&gt;
+      &lt;param name="dist.dir" value="${dist.name}"/&gt;
+    &lt;/antcall&gt;
+    &lt;zip destfile="${dist.base.binaries}/${dist.name}-bin.zip"&gt;
+      &lt;zipfileset dir="${dist.name}/.." filemode="755"&gt;
+        &lt;include name="${dist.name}/bin/ant"/&gt;
+        &lt;include name="${dist.name}/bin/antRun"/&gt;
+        &lt;include name="${dist.name}/bin/*.pl"/&gt;
+        &lt;include name="${dist.name}/bin/*.py"/&gt;
+      &lt;/zipfileset&gt;
+      &lt;fileset dir="${dist.name}/.."&gt;
+        &lt;include name="${dist.name}/**"/&gt;
+        &lt;exclude name="${dist.name}/bin/ant"/&gt;
+        &lt;exclude name="${dist.name}/bin/antRun"/&gt;
+        &lt;exclude name="${dist.name}/bin/*.pl"/&gt;
+        &lt;exclude name="${dist.name}/bin/*.py"/&gt;
+      &lt;/fileset&gt;
+    &lt;/zip&gt;
+    &lt;tar longfile="gnu"
+      destfile="${dist.base.binaries}/${dist.name}-bin.tar"&gt;
+      &lt;!-- removes redundant definition of permissions, but seems to
+           drop dirs (and to be slow)
+      &lt;zipfileset src="${dist.base.binaries}/${dist.name}-bin.zip"/&gt;
+      --&gt;
+      &lt;tarfileset dir="${dist.name}/.." mode="755" username="ant" group="ant"&gt;
+        &lt;include name="${dist.name}/bin/ant"/&gt;
+        &lt;include name="${dist.name}/bin/antRun"/&gt;
+        &lt;include name="${dist.name}/bin/*.pl"/&gt;
+        &lt;include name="${dist.name}/bin/*.py"/&gt;
+      &lt;/tarfileset&gt;
+      &lt;tarfileset dir="${dist.name}/.." username="ant" group="ant"&gt;
+        &lt;include name="${dist.name}/**"/&gt;
+        &lt;exclude name="${dist.name}/bin/ant"/&gt;
+        &lt;exclude name="${dist.name}/bin/antRun"/&gt;
+        &lt;exclude name="${dist.name}/bin/*.pl"/&gt;
+        &lt;exclude name="${dist.name}/bin/*.py"/&gt;
+      &lt;/tarfileset&gt;
+    &lt;/tar&gt;
+    &lt;gzip destfile="${dist.base.binaries}/${dist.name}-bin.tar.gz"
+      src="${dist.base.binaries}/${dist.name}-bin.tar"/&gt;
+    &lt;bzip2 destfile="${dist.base.binaries}/${dist.name}-bin.tar.bz2"
+      src="${dist.base.binaries}/${dist.name}-bin.tar"/&gt;
+    &lt;delete file="${dist.base.binaries}/${dist.name}-bin.tar"/&gt;
+    &lt;copy todir="${java-repository.jars.dir}"&gt;
+      &lt;fileset dir="${dist.name}/lib"&gt;
+        &lt;include name="ant*.jar"/&gt;
+      &lt;/fileset&gt;
+      &lt;mapper type="glob" from="*.jar" to="*-${project.version}.jar"/&gt;
+    &lt;/copy&gt;
+    &lt;copy todir="${java-repository.poms.dir}"&gt;
+      &lt;fileset dir="${dist.name}/lib"&gt;
+        &lt;include name="*.pom"/&gt;
+        &lt;include name="*.sha1"/&gt;
+        &lt;include name="*.sha512"/&gt;
+        &lt;include name="*.md5"/&gt;
+      &lt;/fileset&gt;
+      &lt;mapper&gt;
+        &lt;mapper type="glob" from="*.pom" to="*.pom"/&gt;
+        &lt;mapper type="glob" from="*.pom.sha1" to="*.pom.sha1"/&gt;
+        &lt;mapper type="glob" from="*.pom.sha512" to="*.pom.sha512"/&gt;
+        &lt;mapper type="glob" from="*.pom.md5" to="*.pom.md5"/&gt;
+      &lt;/mapper&gt;
+    &lt;/copy&gt;
+    &lt;checksums&gt;
+      &lt;fileset dir="${java-repository.jars.dir}" includes="*${project.version}.jar"/&gt;
+    &lt;/checksums&gt;
+    &lt;delete dir="${dist.name}"/&gt;
+    &lt;checksums&gt;
+      &lt;fileset dir="${dist.base.binaries}/"&gt;
+        &lt;include name="**/*"/&gt;
+        &lt;exclude name="**/*.asc"/&gt;
+        &lt;exclude name="**/*.md5"/&gt;
+        &lt;exclude name="**/*.sha1"/&gt;
+        &lt;exclude name="**/*.sha512"/&gt;
+      &lt;/fileset&gt;
+    &lt;/checksums&gt;
+    &lt;antcall inheritAll="false" target="src-dist"&gt;
+      &lt;param name="src.dist.dir" value="${dist.name}"/&gt;
+    &lt;/antcall&gt;
+    &lt;zip destfile="${dist.base.source}/${dist.name}-src.zip"&gt;
+      &lt;zipfileset dir="${dist.name}/.." filemode="755"&gt;
+        &lt;include name="${dist.name}/bootstrap.sh"/&gt;
+        &lt;include name="${dist.name}/build.sh"/&gt;
+      &lt;/zipfileset&gt;
+      &lt;fileset dir="${dist.name}/.."&gt;
+        &lt;include name="${dist.name}/**"/&gt;
+        &lt;exclude name="${dist.name}/bootstrap.sh"/&gt;
+        &lt;exclude name="${dist.name}/build.sh"/&gt;
+      &lt;/fileset&gt;
+    &lt;/zip&gt;
+    &lt;tar longfile="gnu"
+      destfile="${dist.base.source}/${dist.name}-src.tar"&gt;
+      &lt;!--
+      &lt;zipfileset src="${dist.base.source}/${dist.name}-src.zip"/&gt;
+      --&gt;
+      &lt;tarfileset dir="${dist.name}/.." mode="755" username="ant" group="ant"&gt;
+        &lt;include name="${dist.name}/bootstrap.sh"/&gt;
+        &lt;include name="${dist.name}/build.sh"/&gt;
+      &lt;/tarfileset&gt;
+      &lt;tarfileset dir="${dist.name}/.." username="ant" group="ant"&gt;
+        &lt;include name="${dist.name}/**"/&gt;
+        &lt;exclude name="${dist.name}/bootstrap.sh"/&gt;
+        &lt;exclude name="${dist.name}/build.sh"/&gt;
+      &lt;/tarfileset&gt;
+    &lt;/tar&gt;
+    &lt;gzip destfile="${dist.base.source}/${dist.name}-src.tar.gz"
+      src="${dist.base.source}/${dist.name}-src.tar"/&gt;
+    &lt;bzip2 destfile="${dist.base.source}/${dist.name}-src.tar.bz2"
+      src="${dist.base.source}/${dist.name}-src.tar"/&gt;
+    &lt;delete file="${dist.base.source}/${dist.name}-src.tar"/&gt;
+    &lt;delete dir="${dist.name}"/&gt;
+    &lt;checksums&gt;
+      &lt;fileset dir="${dist.base.source}/"&gt;
+        &lt;include name="**/*"/&gt;
+        &lt;exclude name="**/*.asc"/&gt;
+        &lt;exclude name="**/*.md5"/&gt;
+        &lt;exclude name="**/*.sha1"/&gt;
+        &lt;exclude name="**/*.sha512"/&gt;
+      &lt;/fileset&gt;
+    &lt;/checksums&gt;
+  &lt;/target&gt;
+  &lt;target name="distribution" depends="main_distribution"
+    description="--&gt; creates the full Apache Ant distribution"&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Upload the distribution to cvs.apache.org for final releases
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="init-upload" &gt;
+    &lt;fail unless="apache.user" message="set a property apache.user with your apache user"/&gt;
+    &lt;fail unless="ssh.passphrase" message="set a property with your ssh passphrase"/&gt;
+    &lt;fail unless="ssh.keyfile" message="set a property with your ssh keyfile"/&gt;
+    &lt;property name="ssh.knownhosts" location="${user.home}/.ssh/known_hosts" /&gt;
+    &lt;property name="ssh.host" value="cvs.apache.org"/&gt;
+    &lt;property name="ssh.verbose" value="false"/&gt;
+    &lt;property name="ssh.base.directory" value="/www/www.apache.org/dist"/&gt;
+    &lt;property name="ssh.dist.directory" value="${ssh.base.directory}/ant"/&gt;
+    &lt;property name="ssh.java-repository.directory" value="/www/people.apache.org/repo/m1-ibiblio-rsync-repository/ant"/&gt;
+    &lt;echo &gt;
+      Uploading Ant version ${project.version}
+      to host ${ssh.host} as ${apache.user}
+      distribution to ${ssh.dist.directory}
+      JAR files to ${ssh.java-repository.directory}/jars
+      POM files to ${ssh.java-repository.directory}/poms
+      Known hosts = ${ssh.knownhosts}
+    &lt;/echo&gt;
+  &lt;/target&gt;
+  &lt;!-- create the directories if absent--&gt;
+  &lt;target name="ssh-mkdirs"
+    depends="init-upload"&gt;
+    &lt;sshexec username="${apache.user}" host="${ssh.host}"
+      keyfile="${ssh.keyfile}" passphrase="${ssh.passphrase}"
+      knownhosts="${ssh.knownhosts}"
+      command="mkdir -p ${ssh.dist.directory}" /&gt;
+    &lt;sshexec username="${apache.user}" host="${ssh.host}"
+      keyfile="${ssh.keyfile}" passphrase="${ssh.passphrase}"
+      knownhosts="${ssh.knownhosts}"
+      command="mkdir -p ${ssh.java-repository.directory}/jars"/&gt;
+    &lt;sshexec username="${apache.user}" host="${ssh.host}"
+      keyfile="${ssh.keyfile}" passphrase="${ssh.passphrase}"
+      knownhosts="${ssh.knownhosts}"
+      command="mkdir -p ${ssh.java-repository.directory}/poms"/&gt;
+  &lt;/target&gt;
+  &lt;target name="upload" description="--&gt; uploads the distribution"
+      depends="init-upload,ssh-mkdirs"&gt;
+    &lt;scp todir="${apache.user}@${ssh.host}:${ssh.dist.directory}"
+      keyfile="${ssh.keyfile}" passphrase="${ssh.passphrase}"
+      knownhosts="${ssh.knownhosts}"
+      verbose="${ssh.verbose}" &gt;
+      &lt;fileset dir="${dist.base}"&gt;
+        &lt;include name="**/*${project.version}*"/&gt;
+      &lt;/fileset&gt;
+     &lt;/scp&gt;
+    &lt;scp todir="${apache.user}@${ssh.host}:${ssh.java-repository.directory}"
+      keyfile="${ssh.keyfile}" passphrase="${ssh.passphrase}"
+      knownhosts="${ssh.knownhosts}"
+      verbose="${ssh.verbose}"&gt;
+      &lt;fileset dir="java-repository/ant"&gt;
+        &lt;include name="*/*${project.version}*"/&gt;
+      &lt;/fileset&gt;
+     &lt;/scp&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Cleans up build and distribution directories
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="clean"
+    description="--&gt; cleans up build and dist directories"&gt;
+    &lt;delete dir="${build.dir}"/&gt;
+    &lt;delete dir="${dist.base}"/&gt;
+    &lt;delete dir="${dist.dir}"/&gt;
+    &lt;delete&gt;
+      &lt;fileset dir="." includes="**/*~" defaultexcludes="no"/&gt;
+    &lt;/delete&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Cleans everything
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="allclean"
+    depends="clean"
+    description="--&gt; cleans up everything"&gt;
+    &lt;delete file="${bootstrap.dir}/bin/antRun"/&gt;
+    &lt;delete file="${bootstrap.dir}/bin/antRun.bat"/&gt;
+    &lt;delete file="${bootstrap.dir}/bin/*.pl"/&gt;
+    &lt;delete file="${bootstrap.dir}/bin/*.py"/&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Installs Apache Ant
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="install"&gt;
+    &lt;fail message="You must set the property ant.install=/where/to/install" unless="ant.install"/&gt;
+    &lt;antcall inheritAll="false" target="internal_dist"&gt;
+      &lt;param name="dist.dir" value="${ant.install}"/&gt;
+    &lt;/antcall&gt;
+  &lt;/target&gt;
+  &lt;target name="install-lite"&gt;
+    &lt;fail message="You must set the property ant.install=/where/to/install" unless="ant.install"/&gt;
+    &lt;antcall inheritAll="false" target="dist-lite"&gt;
+      &lt;param name="dist.dir" value="${ant.install}"/&gt;
+    &lt;/antcall&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Creates the API documentation
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="javadoc_check"&gt;
+    &lt;uptodate property="javadoc.notrequired"
+      targetfile="${build.javadocs}/packages.html"&gt;
+      &lt;srcfiles dir="${java.dir}" includes="**/*.java"/&gt;
+    &lt;/uptodate&gt;
+    &lt;uptodate property="tests.javadoc.notrequired"
+      targetfile="${build.tests.javadocs}/packages.html"&gt;
+      &lt;srcfiles dir="${src.junit}"&gt;
+        &lt;patternset refid="useful.tests"/&gt;
+      &lt;/srcfiles&gt;
+    &lt;/uptodate&gt;
+  &lt;/target&gt;
+  &lt;target name="javadocs" depends="prepare, javadoc_check"
+    unless="javadoc.notrequired"
+    description="--&gt; creates the API documentation"&gt;
+    &lt;mkdir dir="${build.javadocs}"/&gt;
+    &lt;javadoc useexternalfile="yes"
+      destdir="${build.javadocs}"
+      author="true"
+      version="true"
+      locale="en"
+      windowtitle="${Name} API"
+      doctitle="${Name}"
+      failonerror="true"
+      verbose="${javadoc.verbose}"&gt;
+      &lt;packageset dir="${java.dir}"/&gt;
+      &lt;!-- hide some meta information for javadoc --&gt;
+      &lt;tag name="todo" description="To do:" scope="all"/&gt;
+      &lt;tag name="ant.task" enabled="false" description="Task:" scope="types"/&gt;
+      &lt;tag name="ant.datatype" enabled="false" description="Data type:" scope="types"/&gt;
+      &lt;tag name="ant.attribute" enabled="false" description="Attribute:" scope="types"/&gt;
+      &lt;tag name="ant.attribute.group" enabled="false" description="Attribute group:" scope="types"/&gt;
+      &lt;tag name="ant.element" enabled="false" description="Nested element:" scope="types"/&gt;
+      &lt;group title="Apache Ant Core" packages="org.apache.tools.ant*"/&gt;
+      &lt;group title="Core Tasks" packages="org.apache.tools.ant.taskdefs*"/&gt;
+      &lt;group title="Core Types" packages="org.apache.tools.ant.types*"/&gt;
+      &lt;group title="Optional Tasks" packages="org.apache.tools.ant.taskdefs.optional*"/&gt;
+      &lt;group title="Optional Types" packages="org.apache.tools.ant.types.optional*"/&gt;
+      &lt;group title="Ant Utilities" packages="org.apache.tools.ant.util*"/&gt;
+    &lt;/javadoc&gt;
+  &lt;/target&gt;
+  &lt;target name="test-javadocs" depends="prepare, javadoc_check"
+    unless="tests.javadoc.notrequired"
+    description="--&gt; creates the API documentation for test utilities"&gt;
+    &lt;mkdir dir="${build.tests.javadocs}"/&gt;
+    &lt;javadoc useexternalfile="yes"
+      destdir="${build.tests.javadocs}"
+      failonerror="true"
+      author="true"
+      version="true"
+      locale="en"
+      windowtitle="${Name} Test Utilities"
+      doctitle="${Name}"&gt;
+      &lt;!-- hide some meta information for javadoc --&gt;
+      &lt;tag name="pre" description="Precondition:" scope="all"/&gt;
+      &lt;fileset dir="${src.junit}"&gt;
+        &lt;patternset refid="useful.tests"/&gt;
+      &lt;/fileset&gt;
+    &lt;/javadoc&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Compile testcases
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="compile-tests" depends="build" if="junit.present"&gt;
+    &lt;mkdir dir="${build.tests}"/&gt;
+    &lt;javac srcdir="${src.junit}"
+      includeantruntime="false"
+      destdir="${build.tests}"
+      debug="${debug}"
+      target="${javac.target}"
+      source="${javac.source}"
+      deprecation="${deprecation}"&gt;
+      &lt;classpath refid="tests-classpath"/&gt;
+      &lt;selector refid="conditional-patterns"/&gt;
+    &lt;/javac&gt;
+    &lt;!-- Used by AntlibTest.testAntlibResource: --&gt;
+    &lt;jar jarfile="${build.tests}/org/apache/tools/ant/taskdefs/test2-antlib.jar"&gt;
+      &lt;manifest&gt;
+        &lt;attribute name="Extension-name"
+          value="org.apache.tools.ant"/&gt;
+        &lt;attribute name="Specification-Title"
+          value="Apache Ant"/&gt;
+        &lt;attribute name="Specification-Version"
+          value="${manifest-version}"/&gt;
+        &lt;attribute name="Specification-Vendor"
+          value="Apache Software Foundation"/&gt;
+        &lt;attribute name="Implementation-Title"
+          value="org.apache.tools.ant"/&gt;
+        &lt;attribute name="Implementation-Version"
+          value="${manifest-version}"/&gt;
+        &lt;attribute name="Implementation-Vendor"
+          value="Apache Software Foundation"/&gt;
+      &lt;/manifest&gt;
+      &lt;zipfileset dir="${tests.etc.dir}" fullpath="taskdefs/test.antlib.xml"&gt;
+        &lt;include name="taskdefs/test2.antlib.xml"/&gt;
+      &lt;/zipfileset&gt;
+    &lt;/jar&gt;
+  &lt;/target&gt;
+  &lt;target name="dump-info" depends="dump-sys-properties,run-which"/&gt;
+  &lt;target name="dump-sys-properties" unless="which.present"
+    depends="xml-check"&gt;
+    &lt;echo message="java.vm.info=${java.vm.info}"/&gt;
+    &lt;echo message="java.vm.name=${java.vm.name}"/&gt;
+    &lt;echo message="java.vm.vendor=${java.vm.vendor}"/&gt;
+    &lt;echo message="java.vm.version=${java.vm.version}"/&gt;
+    &lt;echo message="os.arch=${os.arch}"/&gt;
+    &lt;echo message="os.name=${os.name}"/&gt;
+    &lt;echo message="os.version=${os.version}"/&gt;
+    &lt;echo message="file.encoding=${file.encoding}"/&gt;
+    &lt;echo message="user.language=${user.language}"/&gt;
+    &lt;echo message="ant.version=${ant.version}"/&gt;
+  &lt;/target&gt;
+  &lt;!-- helper class from Xalan2 to check for jar versioning of xml/xsl processors --&gt;
+  &lt;target name="xml-check" depends="check_for_optional_packages"
+    if="xalan.envcheck" unless="which.present"&gt;
+    &lt;java classname="org.apache.xalan.xslt.EnvironmentCheck"/&gt;
+  &lt;/target&gt;
+  &lt;target name="run-which" depends="check_for_optional_packages"
+    if="which.present"&gt;
+    &lt;java classname="org.apache.env.Which" taskname="which"/&gt;
+  &lt;/target&gt;
+  &lt;!-- test to see if we are online or not. can take a while when we are off line, so
+    setting the property is a good shortcut--&gt;
+  &lt;target name="probe-offline"&gt;
+    &lt;condition property="offline"&gt;
+      &lt;or&gt;
+        &lt;isset property="offline"/&gt;
+        &lt;not&gt;
+          &lt;http url="http://www.apache.org/"/&gt;
+        &lt;/not&gt;
+      &lt;/or&gt;
+    &lt;/condition&gt;
+    &lt;echo level="verbose"&gt; offline=${offline}&lt;/echo&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Run testcase
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="check-failed"&gt;
+    &lt;condition property="tests.failed"&gt;
+      &lt;or&gt;
+        &lt;isset property="junit.failed" /&gt;
+        &lt;isset property="antunit.failed" /&gt;
+      &lt;/or&gt;
+    &lt;/condition&gt;
+  &lt;/target&gt;
+  &lt;target name="test" description="--&gt; run unit tests and reports"
+          depends="dump-info,junit-report,antunit-report,check-failed"&gt;
+    &lt;fail if="tests.failed" unless="ignore.tests.failed"&gt;Unit tests failed;
+see ${build.junit.reports} / ${antunit.reports}
+    &lt;/fail&gt;
+  &lt;/target&gt;
+  &lt;target name="run-tests" depends="dump-info,junit-tests,antunit-tests,check-failed"
+          description="--&gt; run unit tests without reports"&gt;
+    &lt;fail if="tests.failed" message="Unit tests failed" /&gt;
+  &lt;/target&gt;
+  &lt;target name="test-init" depends="probe-offline,check_for_optional_packages"&gt;
+    &lt;macrodef name="test-junit"&gt;
+      &lt;element name="junit-nested" implicit="true" /&gt;
+      &lt;sequential&gt;
+        &lt;!-- Delete 'old' collector classes --&gt;
+        &lt;delete failonerror="false"&gt;
+          &lt;fileset dir="${junit.collector.dir}" includes="${junit.collector.class}*.class"/&gt;
+        &lt;/delete&gt;
+        &lt;!-- compile the FailedTests class if present --&gt;
+        &lt;mkdir dir="${junit.collector.dir}"/&gt;
+        &lt;!-- FIXME: removed junit collector build code
+        &lt;javac srcdir="${junit.collector.dir}" destdir="${junit.collector.dir}"&gt;
+          &lt;classpath id="failure.cp"&gt;
+            &lt;pathelement location="${build.classes}"/&gt;
+            &lt;pathelement location="${build.tests}"/&gt;
+          &lt;/classpath&gt;
+        &lt;/javac&gt;
+             --&gt;
+        &lt;available file="${junit.collector.dir}/${junit.collector.class}.class"
+                   property="hasFailingTests"/&gt;
+        &lt;!-- run the tests --&gt;
+        &lt;mkdir dir="${build.junit.xml}" /&gt;
+        &lt;property name="test.junit.vmargs" value=""/&gt;
+        &lt;property name="ant.junit.failureCollector"
+                  value="${junit.collector.dir}/${junit.collector.class}"/&gt;
+        &lt;junit printsummary="${junit.summary}"
+               haltonfailure="${test.haltonfailure}"
+               fork="${junit.fork}"
+               forkmode="${junit.forkmode}"
+               failureproperty="junit.failed"
+               errorproperty="junit.failed"
+               filtertrace="${junit.filtertrace}"&gt;
+          &lt;sysproperty key="ant.home" value="${ant.home}"/&gt;
+          &lt;sysproperty key="build.tests" file="${build.tests}"/&gt;
+          &lt;sysproperty key="build.tests.value" value="${build.tests.value}"/&gt;
+          &lt;sysproperty key="offline" value="${offline}"/&gt;
+          &lt;sysproperty key="tests-classpath.value"
+                       value="${tests-classpath.value}"/&gt;
+          &lt;sysproperty key="root" file="${basedir}"/&gt;
+          &lt;sysproperty key="build.compiler" value="${build.compiler}"/&gt;
+          &lt;sysproperty key="tests.and.ant.share.classloader"
+                       value="${tests.and.ant.share.classloader}"/&gt;
+          &lt;classpath&gt;
+            &lt;path refid="tests-classpath"/&gt;
+            &lt;pathelement location="${junit.collector.dir}"/&gt;
+            &lt;!-- FIXME: remove failure collector build code for the moment
+                 &lt;path refid="failure.cp"/&gt;
+                 --&gt;
+          &lt;/classpath&gt;
+          &lt;!-- FIXME: remove failure collector build code for the moment
+          &lt;formatter type="failure" usefile="false"/&gt;
+               --&gt;
+          &lt;formatter type="xml"/&gt;
+          &lt;jvmarg line="${test.junit.vmargs}"/&gt;
+          &lt;!-- FIXME: remove failure collector build code for the moment
+          &lt;test name="${junit.collector.class}" if="hasFailingTests"/&gt;
+          --&gt;
+          &lt;junit-nested /&gt;
+        &lt;/junit&gt;
+      &lt;/sequential&gt;
+    &lt;/macrodef&gt;
+    &lt;fail&gt;"testcase" cannot be specified with "junit.testcase" or "antunit.testcase".
+      &lt;condition&gt;
+        &lt;and&gt;
+          &lt;isset property="testcase" /&gt;
+          &lt;or&gt;
+            &lt;isset property="antunit.testcase" /&gt;
+            &lt;isset property="junit.testcase" /&gt;
+          &lt;/or&gt;
+        &lt;/and&gt;
+      &lt;/condition&gt;
+    &lt;/fail&gt;
+    &lt;condition property="antunit.testcase" value="${testcase}"&gt;
+      &lt;available file="${src.antunit}/${testcase}" /&gt;
+    &lt;/condition&gt;
+    &lt;condition property="junit.testcase" value="${testcase}"&gt;
+      &lt;available classname="${testcase}" classpathref="tests-classpath" /&gt;
+    &lt;/condition&gt;
+    &lt;fail&gt;Cannot locate test ${testcase}
+      &lt;condition&gt;
+        &lt;and&gt;
+          &lt;isset property="testcase" /&gt;
+          &lt;not&gt;
+            &lt;or&gt;
+              &lt;isset property="antunit.testcase" /&gt;
+              &lt;isset property="junit.testcase" /&gt;
+            &lt;/or&gt;
+          &lt;/not&gt;
+        &lt;/and&gt;
+      &lt;/condition&gt;
+    &lt;/fail&gt;
+    &lt;condition property="run.junit"&gt;
+      &lt;and&gt;
+        &lt;not&gt;&lt;equals arg1="${testcase}" arg2="${antunit.testcase}" /&gt;&lt;/not&gt;
+        &lt;isset property="junit.present" /&gt;
+        &lt;available file="${src.junit}" /&gt;
+      &lt;/and&gt;
+    &lt;/condition&gt;
+    &lt;condition property="junit.single"&gt;
+      &lt;and&gt;
+        &lt;isset property="junit.testcase" /&gt;
+        &lt;isset property="run.junit" /&gt;
+      &lt;/and&gt;
+    &lt;/condition&gt;
+    &lt;condition property="junit.batch"&gt;
+      &lt;and&gt;
+        &lt;not&gt;&lt;isset property="junit.testcase" /&gt;&lt;/not&gt;
+        &lt;isset property="run.junit" /&gt;
+      &lt;/and&gt;
+    &lt;/condition&gt;
+    &lt;condition property="run.antunit"&gt;
+      &lt;and&gt;
+        &lt;not&gt;&lt;equals arg1="${testcase}" arg2="${junit.testcase}" /&gt;&lt;/not&gt;
+        &lt;isset property="antunit.present" /&gt;
+        &lt;available file="${src.antunit}" /&gt;
+      &lt;/and&gt;
+    &lt;/condition&gt;
+    &lt;condition property="run.antunit.report"&gt;
+      &lt;and&gt;
+        &lt;isset property="run.antunit" /&gt;
+        &lt;isset property="trax.impl.present" /&gt;
+      &lt;/and&gt;
+    &lt;/condition&gt;
+    &lt;condition property="run.junit.report"&gt;
+      &lt;and&gt;
+        &lt;isset property="run.junit" /&gt;
+        &lt;isset property="trax.impl.present" /&gt;
+      &lt;/and&gt;
+    &lt;/condition&gt;
+  &lt;/target&gt;
+  &lt;target name="junit-report" depends="junit-tests,junit-report-only" /&gt;
+  &lt;target name="junit-report-only" depends="test-init" if="run.junit.report"&gt;
+    &lt;mkdir dir="${build.junit.reports}" /&gt;
+    &lt;junitreport todir="${build.junit.reports}"&gt;
+      &lt;fileset dir="${build.junit.xml}"&gt;
+        &lt;include name="TEST-*.xml"/&gt;
+      &lt;/fileset&gt;
+      &lt;report format="frames" todir="${build.junit.reports}"/&gt;
+    &lt;/junitreport&gt;
+  &lt;/target&gt;
+  &lt;target name="junit-tests" depends="junit-batch,junit-single-test" /&gt;
+  &lt;target name="junit-batch" depends="compile-tests,test-init"
+      if="junit.batch"&gt;
+    &lt;property name="junit.includes" value="**/*Test*" /&gt;
+    &lt;property name="junit.excludes" value="" /&gt;
+    &lt;test-junit&gt;
+      &lt;formatter type="brief" usefile="false"/&gt;
+      &lt;batchtest todir="${build.junit.xml}" unless="hasFailingTests"&gt;
+        &lt;fileset dir="${src.junit}"
+                 includes="${junit.includes}" excludes="${junit.excludes}"&gt;
+          &lt;!-- abstract classes, not testcases --&gt;
+          &lt;exclude name="${taskdefs.package}/TaskdefsTest.java"/&gt;
+          &lt;exclude name="${ant.package}/BuildFileTest.java"/&gt;
+          &lt;exclude name="${regexp.package}/RegexpMatcherTest.java"/&gt;
+          &lt;exclude name="${regexp.package}/RegexpTest.java"/&gt;
+          &lt;exclude name="${optional.package}/AbstractXSLTLiaisonTest.java"/&gt;
+          &lt;exclude name="${ant.package}/types/AbstractFileSetTest.java"/&gt;
+          &lt;exclude name="${ant.package}/types/selectors/BaseSelectorTest.java"/&gt;
+          &lt;!-- helper classes, not testcases --&gt;
+          &lt;exclude name="org/example/**"/&gt;
+          &lt;exclude name="${taskdefs.package}/TaskdefTest*Task.java"/&gt;
+          &lt;exclude name="${optional.package}/junit/TestFormatter.java"/&gt;
+          &lt;!-- interactive tests --&gt;
+          &lt;exclude name="${taskdefs.package}/TestProcess.java"/&gt;
+          &lt;exclude name="${optional.package}/splash/SplashScreenTest.java"/&gt;
+          &lt;!-- only run these tests if their required libraries are
+               installed --&gt;
+          &lt;selector refid="conditional-patterns"/&gt;
+          &lt;!-- tests excluded if the test is run in offline mode --&gt;
+          &lt;patternset refid="onlinetests"/&gt;
+          &lt;!-- failing tests excluded unless run.failing.tests is set --&gt;
+          &lt;patternset refid="teststhatfail"/&gt;
+          &lt;!-- needs BSF to work --&gt;
+          &lt;exclude name="${optional.package}/Rhino*.java"
+            unless="bsf.present"/&gt;
+          &lt;exclude name="${optional.package}/Rhino*.java"
+            unless="rhino.present"/&gt;
+          &lt;exclude name="${optional.package}/script/*.java"
+            unless="bsf.present"/&gt;
+          &lt;exclude name="${optional.package}/script/*.java"
+            unless="rhino.present"/&gt;
+          &lt;exclude name="${optional.package}/BeanShellScriptTest.java"
+            unless="bsf.present"/&gt;
+          &lt;exclude name="${optional.package}/BeanShellScriptTest.java"
+            unless="beanshell.present"/&gt;
+          &lt;exclude name="${optional.type.package}/Script*.java"
+            unless="bsf.present"/&gt;
+          &lt;exclude name="${optional.type.package}/Script*.java"
+            unless="rhino.present"/&gt;
+          &lt;!-- fail if testcases can be loaded from the system classloader --&gt;
+          &lt;exclude name="${ant.package}/AntClassLoaderDelegationTest.java"
+            if="tests.are.on.system.classpath"/&gt;
+          &lt;exclude name="${optional.package}/junit/JUnitClassLoaderTest.java"
+            if="tests.are.on.system.classpath"/&gt;
+          &lt;!-- these tests need to be localised before being ran???? --&gt;
+          &lt;exclude name="${optional.package}/PvcsTest.java"/&gt;
+          &lt;!-- These tests need a TraX implementation like xalan2 or saxon --&gt;
+          &lt;exclude name="${optional.package}/TraXLiaisonTest.java"
+            unless="trax.impl.present"/&gt;
+          &lt;exclude name="${optional.package}/XsltTest.java"
+            unless="trax.impl.present"/&gt;
+          &lt;exclude name="${ant.package}/types/XMLCatalogBuildFileTest.java"
+            unless="trax.impl.present"/&gt;
+          &lt;exclude name="${optional.package}/junit/JUnitReportTest.java"
+            unless="run.junitreport"/&gt;
+          &lt;exclude name="${taskdefs.package}/StyleTest.java"
+            unless="trax.impl.present"/&gt;
+          &lt;!-- needs xerces to work --&gt;
+          &lt;exclude name="${ant.package}/IncludeTest.java"
+            unless="xerces1.present"/&gt;
+          &lt;exclude name="${type.package}/selectors/ModifiedSelectorTest.java"
+            unless="xerces1.present"/&gt;
+          &lt;!-- needs resolver.jar to work --&gt;
+          &lt;exclude name="${optional.package}/XmlValidateCatalogTest.java"
+            unless="apache.resolver.present"/&gt;
+          &lt;!-- needs jasperc --&gt;
+          &lt;exclude name="${optional.package}/JspcTest.java"
+            unless="jasper.present"/&gt;
+          &lt;!--  These tests only passes if testcases and Ant classes have
+          been loaded by the same classloader - will throw
+          IllegalAccessExceptions otherwise.  --&gt;
+          &lt;exclude name="${taskdefs.package}/SQLExecTest.java"
+            unless="tests.and.ant.share.classloader"/&gt;
+          &lt;exclude name="${taskdefs.package}/cvslib/ChangeLogWriterTest.java"
+            unless="tests.and.ant.share.classloader"/&gt;
+          &lt;exclude name="${taskdefs.package}/cvslib/ChangeLogParserTest.java"
+            unless="tests.and.ant.share.classloader"/&gt;
+          &lt;exclude name="${optional.package}/sos/SOSTest.java"
+            unless="tests.and.ant.share.classloader"/&gt;
+          &lt;exclude name="${optional.package}/vss/MSVSSTest.java"
+            unless="tests.and.ant.share.classloader"/&gt;
+          &lt;exclude name="${optional.package}/TraXLiaisonTest.java"
+            unless="tests.and.ant.share.classloader"/&gt;
+          &lt;exclude name="${taskdefs.package}/ProcessDestroyerTest.java"
+            unless="tests.and.ant.share.classloader"/&gt;
+          &lt;exclude name="${taskdefs.package}/ProtectedJarMethodsTest.java"
+            unless="tests.and.ant.share.classloader"/&gt;
+          &lt;exclude name="${ant.package}/launch/LocatorTest.java"
+            unless="tests.and.ant.share.classloader"/&gt;
+          &lt;exclude name="${ant.package}/DefaultLoggerTest.java"
+            unless="tests.and.ant.share.classloader"/&gt;
+          &lt;!-- can only run if cvs is installed on your machine
+               enable by setting the property have.cvs
+          --&gt;
+          &lt;exclude name="${taskdefs.package}/AbstractCvsTaskTest.java"
+            unless="have.cvs"/&gt;
+          &lt;!-- needs a local ftp server and the entry of a user/password combination --&gt;
+          &lt;exclude name="${optional.package}/net/FTPTest.java"/&gt;
+          &lt;!-- test needs special setup --&gt;
+          &lt;exclude name="${optional.package}/ssh/ScpTest.java"/&gt;
+          &lt;!-- test fails if build/classes and ant.jar are using the same
+               classloader  --&gt;
+          &lt;exclude name="${ant.package}/util/ClasspathUtilsTest.java"
+            if="tests.and.ant.share.classloader"/&gt;
+        &lt;/fileset&gt;
+      &lt;/batchtest&gt;
+    &lt;/test-junit&gt;
+  &lt;/target&gt;
+  &lt;target name="junit-single-test" depends="compile-tests,junit-single-test-only"
+    description="--&gt; runs the single unit test at $${junit.testcase}" /&gt;
+  &lt;target name="junit-single-test-only" depends="test-init" if="junit.single"
+    description="--&gt; runs the single unit test at $${junit.testcase} (no compile)"&gt;
+    &lt;test-junit&gt;
+      &lt;formatter type="plain" usefile="false"/&gt;
+      &lt;test name="${junit.testcase}" todir="${build.junit.xml}"/&gt;
+    &lt;/test-junit&gt;
+  &lt;/target&gt;
+  &lt;target name="interactive-tests" description="--&gt; runs interactive tests"
+    depends="compile-tests"
+    &gt;
+    &lt;java classpathref="tests-classpath"
+      classname="org.apache.tools.ant.taskdefs.TestProcess"
+      fork="true"/&gt;
+  &lt;/target&gt;
+  &lt;target name="antunit-tests" depends="dump-info,build,test-init"
+          if="run.antunit" description="--&gt; run the antunit tests"&gt;
+    &lt;condition property="antunit.includes" value="${antunit.testcase}"
+               else="**/test.xml,**/*-test.xml"&gt;
+      &lt;isset property="antunit.testcase" /&gt;
+    &lt;/condition&gt;
+    &lt;property name="antunit.excludes" value="" /&gt;
+    &lt;mkdir dir="${antunit.xml}" /&gt;
+    &lt;au:antunit xmlns:au="antlib:org.apache.ant.antunit"
+                failonerror="false" errorproperty="antunit.failed"&gt;
+      &lt;fileset dir="${src.antunit}" includes="${antunit.includes}"
+               excludes="${antunit.excludes}" /&gt;
+      &lt;au:plainlistener logLevel="${antunit.loglevel}"/&gt;
+      &lt;au:xmllistener todir="${antunit.xml}" /&gt;
+    &lt;/au:antunit&gt;
+  &lt;/target&gt;
+  &lt;target name="antunit-report" depends="antunit-tests,antunit-report-only" /&gt;
+  &lt;target name="antunit-report-only" depends="test-init" if="run.antunit.report"&gt;
+    &lt;length&gt;
+      &lt;fileset dir="${antunit.xml}" includes="TEST-*.xml" /&gt;
+    &lt;/length&gt;
+    &lt;mkdir dir="${antunit.reports}" /&gt;
+    &lt;junitreport todir="${antunit.reports}"&gt;
+      &lt;fileset dir="${antunit.xml}" includes="TEST-*.xml" /&gt;
+      &lt;report styledir="${src.antunit}" format="frames"
+              todir="${antunit.reports}"/&gt;
+    &lt;/junitreport&gt;
+    &lt;length&gt;
+      &lt;fileset dir="${antunit.xml}" includes="TEST-*.xml" /&gt;
+    &lt;/length&gt;
+  &lt;/target&gt;
+  &lt;target name="printFailingTests"&gt;
+    &lt;property name="failingtests.dir" value="${build.dir}/errors"/&gt;
+    &lt;mkdir dir=""/&gt;
+    &lt;xslt
+      style="${etc.dir}/printFailingTests.xsl"
+      destdir="${failingtests.dir}" extension=".txt"
+      basedir="${build.dir}" includes="testcases/**/TEST-*.xml,antunit/xml/TEST-*.xml"
+    /&gt;
+    &lt;echo&gt;+-------------------------------------------------------------------------------------&lt;/echo&gt;
+    &lt;echo&gt;| FAILING TESTS:&lt;/echo&gt;
+    &lt;echo&gt;+-------------------------------------------------------------------------------------&lt;/echo&gt;
+    &lt;concat&gt;
+      &lt;!-- generated message files if they arent empty --&gt;
+      &lt;fileset dir="${failingtests.dir}"&gt;
+        &lt;size value="0" when="more"/&gt;
+      &lt;/fileset&gt;
+      &lt;!-- 'skip' empty lines --&gt;
+      &lt;filterchain&gt;
+        &lt;linecontains&gt;
+          &lt;contains value="|"/&gt;
+        &lt;/linecontains&gt;
+      &lt;/filterchain&gt;
+    &lt;/concat&gt;
+    &lt;echo&gt;+-------------------------------------------------------------------------------------&lt;/echo&gt;
+  &lt;/target&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         Main target - runs dist-lite by default
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="main"
+    description="--&gt; creates a minimum distribution in ./dist"
+    depends="dist-lite"/&gt;
+  &lt;!--
+       -------------------------------------------------------------------
+         MSI target - creates an MSI installer file with the help of
+                      the WiX toolset and the dotnet Antlib.
+       -------------------------------------------------------------------
+  --&gt;
+  &lt;target name="msi"
+    description="--&gt; creates an MSI file for Ant, requires WiX and the dotnet Antlib"
+    depends="internal_dist"
+    xmlns:dn="antlib:org.apache.ant.dotnet"&gt;
+    &lt;property name="msi.dir" value="${build.dir}"/&gt;
+    &lt;property name="msi.name" value="${name}-${project.version}.msi"/&gt;
+    &lt;property name="msi.file" value="${msi.dir}/${msi.name}"/&gt;
+    &lt;property name="wix.home" value="${user.home}/wix"/&gt;
+    &lt;property name="wixobj.dir" value="${build.dir}/wix"/&gt;
+    &lt;property name="dist.dir.resolved" location="${dist.dir}"/&gt;
+    &lt;mkdir dir="${wixobj.dir}"/&gt;
+    &lt;dn:wix target="${msi.file}"
+      mode="both" wixHome="${wix.home}" wixobjDestDir="${wixobj.dir}"&gt;
+      &lt;sources dir="${etc.dir}" includes="*.wxs"/&gt;
+      &lt;moresources dir="${dist.dir}"/&gt;
+      &lt;candleParameter name="dist.dir" value="${dist.dir.resolved}"/&gt;
+      &lt;candleParameter name="version" value="${manifest-version}"/&gt;
+    &lt;/dn:wix&gt;
+  &lt;/target&gt;
+&lt;/project&gt;</code></pre></div>
+<ol><li>Ant script for xmlgraphics-commons</li></ol>
+<p>---  ---</p>
+<ol><li>nutch ant script</li><li>rhino ant build script</li><li>apache solr ant script</li><li>Tomcat ant build script</li><li>OFBiz ant build script</li><li>Apache Lenya Build System</li><li>Apache pivot ant build script</li><li>XmlSchema ant script</li><li>xml security</li><li>velocity tools ant script</li><li>weka build script</li><li>xml bean ant script</li><li>xml graphics common ant script</li><li>uPortal ant script</li><li>SmartGWT ant script</li><li>Build file to fetch maven2 tasks; extracted from (Ant's) fetch.xml</li><li>Build file to fetch optional libraries for Apache Ant</li><li>Build script for apache-cassandra-0.5.1-src</li><li>apache-log4j-site\build.xml</li><li>apache-roller-src-4.0.1</li><li>Build script from apache dbutils</li><li>Fop build script</li><li>Google guice ant script</li><li>GWT ant script</li><li>hadoop ant build script</li><li>jakarta jmeter ant script</li><li>jakarta oro ant script</li><li>jakarta regexp ant script</li><li>jedit build script</li><li>jibx ant build script</li><li>lucene ant build script</li></ol>
+    <div class="pager"><a class="pager-btn" href="servlets-anotherservlettosendxml.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Another servlet to Send XML</span></a><a class="pager-btn pager-next" href="development-appendingasubstringappendpartoftheastringobjecttothebufobject.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Appending a Substring</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

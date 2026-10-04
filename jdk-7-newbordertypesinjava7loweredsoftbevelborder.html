@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New border types in Java 7 - JavaSchool</title>
+<meta name="description" content="panel.setBorder(BorderFactory.createLoweredSoftBevelBorder());">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-jdk-7-newbordertypesinjava7loweredsoftbevelborder">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-jdk-7.html">JDK 7</a></nav>
+    <h1>New border types in Java 7</h1>
+<p>New border types in Java 7:LoweredSoftBevelBorder</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+public class Test extends JFrame {
+  public static void main(String[] argv) {
+    Test window = new Test();
+    window.setVisible(true);
+  }
+  public Test() {
+    this.setBounds(100, 100, 200, 100);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    JPanel panel = new JPanel();
+    panel.setBorder(BorderFactory.createLoweredSoftBevelBorder());
+    this.setLayout(new FlowLayout());
+    JButton exitButton = new JButton("Exit");
+    panel.add(exitButton);
+    this.add(panel);
+    exitButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        System.exit(0);
+      }
+    });
+  }
+}</code></pre></div>
+<ol><li>Creating a varying gradient translucent window</li></ol>
+<p>---  ---</p>
+<ol><li>Handling multiple file selection in the FileDialog class</li><li>Managing the Opacity of a Window</li><li>Managing the Shape of a Window</li><li>Managing Window types</li><li>Mixing heavyweight and lightweight components</li><li>New border types in Java 7:RaisedSoftBevelBorder</li><li>New border types in Java 7:LineBorder width</li><li>BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED)</li><li>BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED, Color.lightGray, Color.yellow)</li><li>Using the new JLayer Decorator for a password field</li><li>Managing extra mouse buttons and high resolution mouse wheels</li><li>Using the NumericShaper.Range enumeration to support the display of digits</li></ol>
+    <div class="pager"><a class="pager-btn" href="chart-jfreechartlinechartdemo5showingtheuseofacustomdrawingsupplier.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">JFreeChart</span></a><a class="pager-btn pager-next" href="data-type-rightpadastringwithspaces.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Right pad a String with sp...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

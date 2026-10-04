@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A mutable double wrapper. - JavaSchool</title>
+<meta name="description" content="* Licensed to the Apache Software Foundation (ASF) under one or more">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-amutabledoublewrapper">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-data-type.html">Data Type</a></nav>
+    <h1>A mutable double wrapper.</h1>
+<p>A mutable double wrapper.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * A mutable &lt;code&gt;double&lt;/code&gt; wrapper.
+ *
+ * @see Double
+ * @since 2.1
+ * @version $Id: MutableDouble.java 618693 2008-02-05 16:33:29Z sebb $
+ */
+public class MutableDouble extends Number implements Comparable, Mutable {
+  /**
+   * Required for serialization support.
+   *
+   * @see java.io.Serializable
+   */
+  private static final long serialVersionUID = 1587163916L;
+  /** The mutable value. */
+  private double value;
+  /**
+   * Constructs a new MutableDouble with the default value of zero.
+   */
+  public MutableDouble() {
+    super();
+  }
+  /**
+   * Constructs a new MutableDouble with the specified value.
+   *
+   * @param value
+   *          a value.
+   */
+  public MutableDouble(double value) {
+    super();
+    this.value = value;
+  }
+  /**
+   * Constructs a new MutableDouble with the specified value.
+   *
+   * @param value
+   *          a value.
+   * @throws NullPointerException
+   *           if the object is null
+   */
+  public MutableDouble(Number value) {
+    super();
+    this.value = value.doubleValue();
+  }
+  // -----------------------------------------------------------------------
+  /**
+   * Gets the value as a Double instance.
+   *
+   * @return the value as a Double
+   */
+  public Object getValue() {
+    return new Double(this.value);
+  }
+  /**
+   * Sets the value.
+   *
+   * @param value
+   *          the value to set
+   */
+  public void setValue(double value) {
+    this.value = value;
+  }
+  /**
+   * Sets the value from any Number instance.
+   *
+   * @param value
+   *          the value to set
+   * @throws NullPointerException
+   *           if the object is null
+   * @throws ClassCastException
+   *           if the type is not a {@link Number}
+   */
+  public void setValue(Object value) {
+    setValue(((Number) value).doubleValue());
+  }
+  // -----------------------------------------------------------------------
+  // shortValue and bytValue rely on Number implementation
+  /**
+   * Returns the value of this MutableDouble as a int.
+   *
+   * @return the numeric value represented by this object after conversion to
+   *         type int.
+   */
+  public int intValue() {
+    return (int) value;
+  }
+  /**
+   * Returns the value of this MutableDouble as a long.
+   *
+   * @return the numeric value represented by this object after conversion to
+   *         type long.
+   */
+  public long longValue() {
+    return (long) value;
+  }
+  /**
+   * Returns the value of this MutableDouble as a float.
+   *
+   * @return the numeric value represented by this object after conversion to
+   *         type float.
+   */
+  public float floatValue() {
+    return (float) value;
+  }
+  /**
+   * Returns the value of this MutableDouble as a double.
+   *
+   * @return the numeric value represented by this object after conversion to
+   *         type double.
+   */
+  public double doubleValue() {
+    return value;
+  }
+  /**
+   * Checks whether the double value is the special NaN value.
+   *
+   * @return true if NaN
+   */
+  public boolean isNaN() {
+    return Double.isNaN(value);
+  }
+  /**
+   * Checks whether the double value is infinite.
+   *
+   * @return true if infinite
+   */
+  public boolean isInfinite() {
+    return Double.isInfinite(value);
+  }
+  // -----------------------------------------------------------------------
+  /**
+   * Gets this mutable as an instance of Double.
+   *
+   * @return a Double instance containing the value from this mutable
+   */
+  public Double toDouble() {
+    return new Double(doubleValue());
+  }
+  // -----------------------------------------------------------------------
+  /**
+   * Increments the value.
+   *
+   * @since Commons Lang 2.2
+   */
+  public void increment() {
+    value++;
+  }
+  /**
+   * Decrements the value.
+   *
+   * @since Commons Lang 2.2
+   */
+  public void decrement() {
+    value--;
+  }
+  // -----------------------------------------------------------------------
+  /**
+   * Adds a value.
+   *
+   * @param operand
+   *          the value to add
+   *
+   * @since Commons Lang 2.2
+   */
+  public void add(double operand) {
+    this.value += operand;
+  }
+  /**
+   * Adds a value.
+   *
+   * @param operand
+   *          the value to add
+   * @throws NullPointerException
+   *           if the object is null
+   *
+   * @since Commons Lang 2.2
+   */
+  public void add(Number operand) {
+    this.value += operand.doubleValue();
+  }
+  /**
+   * Subtracts a value.
+   *
+   * @param operand
+   *          the value to add
+   *
+   * @since Commons Lang 2.2
+   */
+  public void subtract(double operand) {
+    this.value -= operand;
+  }
+  /**
+   * Subtracts a value.
+   *
+   * @param operand
+   *          the value to add
+   * @throws NullPointerException
+   *           if the object is null
+   *
+   * @since Commons Lang 2.2
+   */
+  public void subtract(Number operand) {
+    this.value -= operand.doubleValue();
+  }
+  // -----------------------------------------------------------------------
+  /**
+   * Compares this object against the specified object. The result is
+   * &lt;code&gt;true&lt;/code&gt; if and only if the argument is not &lt;code&gt;null&lt;/code&gt;
+   * and is a &lt;code&gt;Double&lt;/code&gt; object that represents a double that has the
+   * identical bit pattern to the bit pattern of the double represented by this
+   * object. For this purpose, two &lt;code&gt;double&lt;/code&gt; values are considered
+   * to be the same if and only if the method
+   * {@link Double#doubleToLongBits(double)}returns the same long value when
+   * applied to each.
+   * &lt;p&gt;
+   * Note that in most cases, for two instances of class &lt;code&gt;Double&lt;/code&gt;,&lt;code&gt;d1&lt;/code&gt;
+   * and &lt;code&gt;d2&lt;/code&gt;, the value of &lt;code&gt;d1.equals(d2)&lt;/code&gt; is
+   * &lt;code&gt;true&lt;/code&gt; if and only if &lt;blockquote&gt;
+   *
+   * &lt;pre&gt;
+   * d1.doubleValue() == d2.doubleValue()
+   * &lt;/pre&gt;
+   *
+   * &lt;/blockquote&gt;
+   * &lt;p&gt;
+   * also has the value &lt;code&gt;true&lt;/code&gt;. However, there are two exceptions:
+   * &lt;ul&gt;
+   * &lt;li&gt;If &lt;code&gt;d1&lt;/code&gt; and &lt;code&gt;d2&lt;/code&gt; both represent
+   * &lt;code&gt;Double.NaN&lt;/code&gt;, then the &lt;code&gt;equals&lt;/code&gt; method returns
+   * &lt;code&gt;true&lt;/code&gt;, even though &lt;code&gt;Double.NaN==Double.NaN&lt;/code&gt; has
+   * the value &lt;code&gt;false&lt;/code&gt;.
+   * &lt;li&gt;If &lt;code&gt;d1&lt;/code&gt; represents &lt;code&gt;+0.0&lt;/code&gt; while
+   * &lt;code&gt;d2&lt;/code&gt; represents &lt;code&gt;-0.0&lt;/code&gt;, or vice versa, the
+   * &lt;code&gt;equal&lt;/code&gt; test has the value &lt;code&gt;false&lt;/code&gt;, even though
+   * &lt;code&gt;+0.0==-0.0&lt;/code&gt; has the value &lt;code&gt;true&lt;/code&gt;. This allows
+   * hashtables to operate properly.
+   * &lt;/ul&gt;
+   *
+   * @param obj
+   *          the object to compare with.
+   * @return &lt;code&gt;true&lt;/code&gt; if the objects are the same; &lt;code&gt;false&lt;/code&gt;
+   *         otherwise.
+   */
+  public boolean equals(Object obj) {
+    return (obj instanceof MutableDouble)
+        &amp;&amp; (Double.doubleToLongBits(((MutableDouble) obj).value) == Double.doubleToLongBits(value));
+  }
+  /**
+   * Returns a suitable hashcode for this mutable.
+   *
+   * @return a suitable hashcode
+   */
+  public int hashCode() {
+    long bits = Double.doubleToLongBits(value);
+    return (int) (bits ^ (bits &gt;&gt;&gt; 32));
+  }
+  /**
+   * Compares this mutable to another in ascending order.
+   *
+   * @param obj
+   *          the mutable to compare to
+   * @return negative if this is less, zero if equal, positive if greater
+   * @throws ClassCastException
+   *           if the argument is not a MutableDouble
+   */
+  public int compareTo(Object obj) {
+    MutableDouble other = (MutableDouble) obj;
+    double anotherVal = other.value;
+    return compare(value, anotherVal);
+  }
+  /**
+   * Returns the String value of this mutable.
+   *
+   * @return the mutable value as a string
+   */
+  public String toString() {
+    return String.valueOf(value);
+  }
+  protected int compare(Object o1, Object o2) {
+    if (o1 == null) {
+      if (o2 == null) {
+        return 0;
+      } else {
+        return -((Comparable) o2).compareTo(o1);
+      }
+    } else {
+      return ((Comparable) o1).compareTo(o2);
+    }
+  }
+}
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements. See the NOTICE file distributed with this
+ * work for additional information regarding copyright ownership. The ASF
+ * licenses this file to You under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+/**
+ * Provides mutable access to a value.
+ * &lt;p&gt;
+ * &lt;code&gt;Mutable&lt;/code&gt; is used as a generic interface to the implementations
+ * in this package.
+ * &lt;p&gt;
+ * A typical use case would be to enable a primitive or string to be passed to a
+ * method and allow that method to effectively change the value of the
+ * primitive/string. Another use case is to store a frequently changing
+ * primitive in a collection (for example a total in a map) without needing to
+ * create new Integer/Long wrapper objects.
+ *
+ * @author Matthew Hawthorne
+ * @since 2.1
+ * @version $Id: Mutable.java 618693 2008-02-05 16:33:29Z sebb $
+ */
+interface Mutable {
+  /**
+   * Gets the value of this mutable.
+   *
+   * @return the stored value
+   */
+  Object getValue();
+  /**
+   * Sets the value of this mutable.
+   *
+   * @param value
+   *          the value to store
+   * @throws NullPointerException
+   *           if the object is null and null is invalid
+   * @throws ClassCastException
+   *           if the type is invalid
+   */
+  void setValue(Object value);
+}</code></pre></div>
+<ol><li>Use Integer constructor to convert int primitive type to Integer object.</li></ol>
+<p>---  ---</p>
+<ol><li>Convert Java Integer object to Numeric primitive types</li><li>Convert Java String to Integer object</li><li>Create an Integer object</li><li>Arithmetic Demo</li><li>Max Variable Length Demo</li><li>Data Type Print Test</li><li>Tests all the operators on all the primitive data types</li><li>Demonstrates the ++ and -- operators</li><li>Literals</li><li>Demonstrates the mathematical operators.</li><li>Java lets you overflow</li><li>Built in types</li><li>Shows default initial values</li><li>Relational Demo</li><li>Parse Number</li><li>Java Type Helper</li><li>Convert the given array (which may be a primitive array) to an object array</li><li>Convert primitive back and forth</li><li>Returns a default value if the object passed is null</li><li>A mutable boolean wrapper.</li><li>A mutable byte wrapper.</li><li>A mutable float wrapper.</li><li>A mutable int wrapper.</li><li>A mutable long wrapper.</li><li>A mutable short wrapper.</li><li>Primitive utilities</li></ol>
+    <div class="pager"><a class="pager-btn" href="jdk-7-useatomiclongtogenerateid.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Use AtomicLong to generate...</span></a><a class="pager-btn pager-next" href="class-arraysareautomaticallycloneable.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Arrays are automatically c...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

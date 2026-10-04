@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The demo demonstrates the use of the JavaScript and E4X dynamic languages to implement JAX-WS Providers - JavaSchool</title>
+<meta name="description" content="The demo demonstrates the use of the JavaScript and E4X dynamic languages to implement JAX-WS Providers">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-web-services-soa-thedemodemonstratestheuseofthejavascriptande4xdynamiclanguagest">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-web-services-soa.html">Web Services SOA</a></nav>
+    <h1>The demo demonstrates the use of the JavaScript and E4X dynamic languages to implement JAX-WS Providers</h1>
+<p>The demo demonstrates the use of the JavaScript and E4X dynamic languages to implement JAX-WS Providers</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Hello World Demo using JavaScript and E4X Implementations
+=========================================================
+The demo demonstrates the use of the JavaScript and E4X dynamic
+languages to implement JAX-WS Providers.
+The client side makes two Dispatch-based invocations. The first uses
+SOAPMessage data in MESSAGE mode, and the second uses DOMSource in
+PAYLOAD mode. The first service is implemented using E4X, the second
+using JavaScript.
+The two messages are constructed by reading in the XML files found in
+the demo/hwDispatch/client directory.
+Please review the README in the samples directory before
+continuing.
+Prerequisite
+------------
+If your environment already includes cxf-manifest-incubator.jar on the
+CLASSPATH, and the JDK and ant bin directories on the PATH
+it is not necessary to set the environment as described in
+the samples directory's README.  If your environment is not
+properly configured, or if you are planning on using wsdl2java,
+javac, and java to build and run the demos, you must set the
+environment.
+Building and running the demo using ant
+---------------------------------------
+From the samples/js_provider directory, the ant build script
+can be used to build and run the demo.
+Using either UNIX or Windows:
+  ant build
+  ant server  (in the background or another window)
+  ant client
+To remove the code generated from the WSDL file and the .class
+files, run:
+  ant clean
+Building the demo using wsdl2java and javac
+-------------------------------------------
+From the samples/dispatch_provider directory, first create the target
+directory build/classes and then generate code from the WSDL file.
+For UNIX:
+  mkdir -p build/classes
+  wsdl2java -d build/classes ./wsdl/hello_world.wsdl
+For Windows:
+  mkdir build\classes
+    Must use back slashes.
+  wsdl2java -d build\classes .\wsdl\hello_world.wsdl
+    May use either forward or back slashes.
+Now compile both the generated code and the provided client
+application with the commands:
+For UNIX:
+  export CLASSPATH=$CLASSPATH:$CXF_HOME/lib/cxf-manifest-incubator.jar:
+  $CXF_HOME/lib/js-1.6R5.jar:$CXF_HOME/lib/xbean-2.2.0.jar:
+  build/classes
+  javac -d build/classes src/demo/hwDispatch/client/*.java
+For Windows:
+  set CLASSPATH=%CLASSPATH%;%CXF_HOME%\lib\cxf-manifest-incubator.jar;
+  %CXF_HOME%\lib\js-1.6R5.jar;%CXF_HOME%\lib\xbean-2.2.0.jar;
+  build\classes
+  javac -d build\classes src\demo\hwDispatch\client\*.java
+Windows may use either forward or back slashes.
+Since JavaScript and E4X are interpreted at runtime and do not require
+compilation, there is no server-side java code requiring compilation.
+Finally, copy resource files into the build/classes directory with the commands:
+For UNIX:
+  cp ./src/demo/hwDispatch/client/*.xml ./build/classes/demo/hwDispatch/client
+For Windows:
+  copy src\demo\hwDispatch\client\*.xml build\classes\demo\hwDispatch\client
+Running the demo using java
+---------------------------
+From the samples/js_dispatch directory run the commands, entered on a
+single command line:
+For UNIX (must use forward slashes):
+    java -Djava.util.logging.config.file=$CXF_HOME/etc/logging.properties
+         org.apache.cxf.js.rhino.ServerApp -v
+         -b http://localhost:9000/SoapContext impl.jsx impl.js
+    java -Djava.util.logging.config.file=$CXF_HOME/etc/logging.properties
+         demo.hwDispatch.client.Client ./wsdl/hello_world.wsdl
+The server process starts in the background.  After running the client,
+use the kill command to terminate the server process.
+For Windows (may use either forward or back slashes):
+  start
+    java -Djava.util.logging.config.file=%CXF_HOME%\etc\logging.properties
+         org.apache.cxf.js.rhino.ServerApp -v
+         -b http://localhost:9000/SoapContext impl.jsx impl.js
+    java -Djava.util.logging.config.file=%CXF_HOME%\etc\logging.properties
+       demo.hwDispatch.client.Client .\wsdl\hello_world.wsdl
+A new command windows opens for the server process.  After running the
+client, terminate the server process by issuing Ctrl-C in its command window.
+To remove the code generated from the WSDL file and the .class
+files, either delete the build directory and its contents or run:
+  ant clean
+///////////////////////////////////////////////////////////////////////
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership. The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package demo.hwDispatch.client;
+import java.io.File;
+import java.io.InputStream;
+import java.net.URL;
+import javax.xml.namespace.QName;
+import javax.xml.soap.MessageFactory;
+import javax.xml.soap.SOAPMessage;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.ws.Dispatch;
+import javax.xml.ws.Service.Mode;
+import org.apache.hello_world_soap_http.SOAPService1;
+import org.apache.hello_world_soap_http.SOAPService3;
+public final class Client {
+    private Client() {
+    }
+    public static void main(String args[]) throws Exception {
+        if (args.length == 0) {
+            System.out.println("please specify wsdl");
+            System.exit(1);
+        }
+        URL wsdlURL;
+        File wsdlFile = new File(args[0]);
+        if (wsdlFile.exists()) {
+            wsdlURL = wsdlFile.toURL();
+        } else {
+            wsdlURL = new URL(args[0]);
+        }
+        MessageFactory factory = MessageFactory.newInstance();
+        System.out.println(wsdlURL + "\n\n");
+        final String ns = "http://apache.org/hello_world_soap_http";
+        QName serviceName1 = new QName(ns, "SOAPService1");
+        QName portName1 = new QName(ns, "SoapPort1");
+        SOAPService1 service1 = new SOAPService1(wsdlURL, serviceName1);
+        InputStream is1 =  Client.class.getResourceAsStream("GreetMeDocLiteralReq1.xml");
+        SOAPMessage soapReq1 = factory.createMessage(null, is1);
+        Dispatch&lt;SOAPMessage&gt; dispSOAPMsg = service1.createDispatch(portName1,
+                                                                    SOAPMessage.class, Mode.MESSAGE);
+        System.out.println("Invoking server through Dispatch interface using SOAPMessage");
+        SOAPMessage soapResp = dispSOAPMsg.invoke(soapReq1);
+        System.out.println("Response from server: " + soapResp.getSOAPBody().getTextContent());
+        QName serviceName3 = new QName(ns, "SOAPService3");
+        QName portName3 = new QName(ns, "SoapPort3");
+        SOAPService3 service3 = new SOAPService3(wsdlURL, serviceName3);
+        InputStream is3 =  Client.class.getResourceAsStream("GreetMeDocLiteralReq3.xml");
+        SOAPMessage soapReq3 = MessageFactory.newInstance().createMessage(null, is3);
+        DOMSource domReqPayload = new DOMSource(soapReq3.getSOAPBody().extractContentAsDocument());
+        Dispatch&lt;DOMSource&gt; dispDOMSrcPayload = service3.createDispatch(portName3,
+                                                                        DOMSource.class, Mode.PAYLOAD);
+        System.out.println("Invoking server through Dispatch interface using DOMSource in PAYLOAD Mode");
+        DOMSource domRespPayload = dispDOMSrcPayload.invoke(domReqPayload);
+        System.out.println("Response from server: "
+                           + domRespPayload.getNode().getFirstChild().getTextContent());
+        System.exit(0);
+    }
+}
+////////////////////////////////////////////////////////////////////////////////
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements. See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership. The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License. You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied. See the License for the
+  specific language governing permissions and limitations
+  under the License.
+--&gt;
+&lt;wsdl:definitions name="HelloWorld" targetNamespace="http://apache.org/hello_world_soap_http"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://apache.org/hello_world_soap_http"
+    xmlns:x1="http://apache.org/hello_world_soap_http/types"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+    &lt;wsdl:types&gt;
+        &lt;schema targetNamespace="http://apache.org/hello_world_soap_http/types"
+            xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+            &lt;element name="sayHi"&gt;
+                &lt;complexType/&gt;
+            &lt;/element&gt;
+            &lt;element name="sayHiResponse"&gt;
+                &lt;complexType&gt;
+                    &lt;sequence&gt;
+                        &lt;element name="responseType" type="xsd:string"/&gt;
+                    &lt;/sequence&gt;
+                &lt;/complexType&gt;
+            &lt;/element&gt;
+            &lt;element name="greetMe"&gt;
+                &lt;complexType&gt;
+                    &lt;sequence&gt;
+                        &lt;element name="requestType" type="xsd:string"/&gt;
+                    &lt;/sequence&gt;
+                &lt;/complexType&gt;
+            &lt;/element&gt;
+            &lt;element name="greetMeResponse"&gt;
+                &lt;complexType&gt;
+                    &lt;sequence&gt;
+                        &lt;element name="responseType" type="xsd:string"/&gt;
+                    &lt;/sequence&gt;
+                &lt;/complexType&gt;
+            &lt;/element&gt;
+            &lt;element name="greetMeOneWay"&gt;
+                &lt;complexType&gt;
+                    &lt;sequence&gt;
+                        &lt;element name="requestType" type="xsd:string"/&gt;
+                    &lt;/sequence&gt;
+                &lt;/complexType&gt;
+            &lt;/element&gt;
+          &lt;element name="pingMe"&gt;
+        &lt;complexType/&gt;
+      &lt;/element&gt;
+      &lt;element name="pingMeResponse"&gt;
+        &lt;complexType/&gt;
+      &lt;/element&gt;
+      &lt;element name="faultDetail"&gt;
+        &lt;complexType&gt;
+          &lt;sequence&gt;
+            &lt;element name="minor" type="xsd:short"/&gt;
+            &lt;element name="major" type="xsd:short"/&gt;
+          &lt;/sequence&gt;
+        &lt;/complexType&gt;
+      &lt;/element&gt;
+        &lt;/schema&gt;
+    &lt;/wsdl:types&gt;
+    &lt;wsdl:message name="sayHiRequest"&gt;
+        &lt;wsdl:part element="x1:sayHi" name="in"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="sayHiResponse"&gt;
+        &lt;wsdl:part element="x1:sayHiResponse" name="out"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="greetMeRequest"&gt;
+        &lt;wsdl:part element="x1:greetMe" name="in"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="greetMeResponse"&gt;
+        &lt;wsdl:part element="x1:greetMeResponse" name="out"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="greetMeOneWayRequest"&gt;
+        &lt;wsdl:part element="x1:greetMeOneWay" name="in"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:portType name="Greeter"&gt;
+        &lt;wsdl:operation name="sayHi"&gt;
+            &lt;wsdl:input message="tns:sayHiRequest" name="sayHiRequest"/&gt;
+            &lt;wsdl:output message="tns:sayHiResponse" name="sayHiResponse"/&gt;
+        &lt;/wsdl:operation&gt;
+        &lt;wsdl:operation name="greetMe"&gt;
+            &lt;wsdl:input message="tns:greetMeRequest" name="greetMeRequest"/&gt;
+            &lt;wsdl:output message="tns:greetMeResponse" name="greetMeResponse"/&gt;
+        &lt;/wsdl:operation&gt;
+        &lt;wsdl:operation name="greetMeOneWay"&gt;
+            &lt;wsdl:input message="tns:greetMeOneWayRequest" name="greetMeOneWayRequest"/&gt;
+        &lt;/wsdl:operation&gt;
+    &lt;/wsdl:portType&gt;
+    &lt;wsdl:binding name="Greeter_SOAPBinding" type="tns:Greeter"&gt;
+        &lt;soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/&gt;
+        &lt;wsdl:operation name="sayHi"&gt;
+            &lt;soap:operation soapAction="" style="document"/&gt;
+            &lt;wsdl:input name="sayHiRequest"&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:input&gt;
+            &lt;wsdl:output name="sayHiResponse"&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:output&gt;
+        &lt;/wsdl:operation&gt;
+        &lt;wsdl:operation name="greetMe"&gt;
+            &lt;soap:operation soapAction="" style="document"/&gt;
+            &lt;wsdl:input name="greetMeRequest"&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:input&gt;
+            &lt;wsdl:output name="greetMeResponse"&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:output&gt;
+        &lt;/wsdl:operation&gt;
+        &lt;wsdl:operation name="greetMeOneWay"&gt;
+            &lt;soap:operation soapAction="" style="document"/&gt;
+            &lt;wsdl:input name="greetMeOneWayRequest"&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:input&gt;
+        &lt;/wsdl:operation&gt;
+    &lt;/wsdl:binding&gt;
+    &lt;wsdl:service name="SOAPService1"&gt;
+        &lt;wsdl:port binding="tns:Greeter_SOAPBinding" name="SoapPort1"&gt;
+            &lt;soap:address location="http://localhost:9000/SoapContext/SoapPort1"/&gt;
+        &lt;/wsdl:port&gt;
+    &lt;/wsdl:service&gt;
+    &lt;wsdl:service name="SOAPService2"&gt;
+        &lt;wsdl:port binding="tns:Greeter_SOAPBinding" name="SoapPort2"&gt;
+            &lt;soap:address location="http://localhost:9000/SoapContext/SoapPort2"/&gt;
+        &lt;/wsdl:port&gt;
+    &lt;/wsdl:service&gt;
+    &lt;wsdl:service name="SOAPService3"&gt;
+        &lt;wsdl:port binding="tns:Greeter_SOAPBinding" name="SoapPort3"&gt;
+            &lt;soap:address location="http://localhost:9000/SoapContext/SoapPort3"/&gt;
+        &lt;/wsdl:port&gt;
+    &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;</code></pre></div>
+<p>XFire-CXF-js_provider.zip( 13 k)</p>
+<ol><li>The client demo demonstrates the use of (non-browser) JavaScript to call a CXF server</li><li>Axis2 client API has facilities to accept responses in JSON</li></ol>
+    <div class="pager"><a class="pager-btn" href="data-type-intarraytobytearray-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">int array to byte array</span></a><a class="pager-btn pager-next" href="data-type-trimanyofthecharacters.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Trim any of the characters</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

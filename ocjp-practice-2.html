@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OCJP Practice Test 2 - JavaSchool</title>
+<meta name="description" content="Second 50-question OCJP/OCJA style practice test - threads, exceptions, generics, streams, memory and JVM behaviour.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-ocjp-practice-2">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Interview & Certification</span></nav>
+    <h1>OCJP Practice Test 2</h1>
+<h2 id="ocjp-ocja-practice-test-2">OCJP / OCJA practice test 2</h2>
+<p><strong>50 questions</strong> focused on threads, exceptions, generics, streams and memory. Same rules as <a href="ocjp-practice.html">Test 1</a>: instant marking, explanations after submit, pass ≈ <strong>70%</strong>.</p>
+<div id="quiz-root"></div>
+
+<script type="application/json" id="quiz-data">
+[
+  {"q":"Which keyword guarantees a variable's value is always read fresh from main memory?","choices":["synchronized","volatile","transient","static"],"correct":1,"explain":"volatile forces reads/writes to bypass caches and prevents reordering around the access. It does not make compound operations atomic."},
+  {"q":"int count = 0; two threads run count++ 1000 times each. Final value?","choices":["Exactly 2000","Usually less than 2000 - read-modify-write race","Exactly 1000","Always 2000 with volatile"],"correct":1,"explain":"count++ is read, add, write - overlapping threads lose updates. Fix with AtomicInteger or synchronization, not just volatile."},
+  {"q":"Which state does a thread enter when it calls wait()?","choices":["BLOCKED","WAITING","TIMED_WAITING","TERMINATED"],"correct":1,"explain":"wait() without timeout moves the thread to WAITING until notified; wait(ms) uses TIMED_WAITING. BLOCKED is only for monitor contention."},
+  {"q":"Calling sleep() inside a synchronized block holds the monitor. True?","choices":["It releases the lock","It keeps the lock - others block","It throws IllegalMonitorStateException","The lock is undefined"],"correct":1,"explain":"sleep never releases monitors (wait does). Sleeping while holding a lock is a classic throughput killer."},
+  {"q":"Which method must be called inside a synchronized context?","choices":["sleep()","wait()","yield()","join()"],"correct":1,"explain":"wait/notify require monitor ownership, else IllegalMonitorStateException. sleep/yield/join do not."},
+  {"q":"ExecutorService ex = Executors.newFixedThreadPool(2); ex.submit(task 3 times); ex.shutdown(). What happens to queued tasks?","choices":["Dropped","Still execute; shutdown allows queued work to finish","Throw RejectedExecutionException","Run on a new thread"],"correct":1,"explain":"shutdown stops accepting new tasks but queued tasks complete. shutdownNow interrupts running and returns queued tasks."},
+  {"q":"t.join() on a running thread causes the caller to...","choices":["Terminate t","Wait until t finishes","Pause t's next instruction","Do nothing if t is daemon"],"correct":1,"explain":"join() suspends the calling thread until the target terminates (or timeout). It never affects the target."},
+  {"q":"Which is true about a daemon thread?","choices":["It keeps the JVM alive","JVM exits without waiting for it","It cannot be interrupted","It always has priority 10"],"correct":1,"explain":"Daemon threads are killed when all non-daemon threads finish. Never run critical work on one."},
+  {"q":"Which class provides thread-safe, lock-free counters optimized for high contention?","choices":["AtomicInteger","LongAdder","VolatileInt","SynchronizedInt"],"correct":1,"explain":"LongAdder spreads updates over cells; sum() is exact only when quiescent. AtomicInteger is the simple CAS version."},
+  {"q":"What does Collections.synchronizedList return?","choices":["An immutable list","A wrapper whose single methods are synchronized","A copy of the list","A concurrent list"],"correct":1,"explain":"Individual method calls are synchronized; iteration and compound operations still need external synchronization on the wrapper."},
+  {"q":"Which collection is designed for highly concurrent reads with zero locking on get?","choices":["Hashtable","Collections.synchronizedMap","ConcurrentHashMap","TreeMap"],"correct":2,"explain":"ConcurrentHashMap uses lock-free reads and bin-level locking for writes; no null keys or values allowed."},
+  {"q":"Iterator over ArrayList while list.add() from the same thread causes...","choices":["Nothing","ConcurrentModificationException on next iteration step","Silent corruption","IndexOutOfBoundsException always"],"correct":1,"explain":"Structural modification bumps modCount; the iterator's fail-fast check throws CME. Use iterator.remove() or removeIf instead."},
+  {"q":"Which generic declaration is valid?","choices":["List<int> l","List<Integer> l","List l<int>","int List l"],"correct":1,"explain":"Generics require reference types - primitives autobox. int is not a type argument."},
+  {"q":"What is type erasure?","choices":["Generics are removed at runtime; List<String> becomes List","Generics are reified like arrays","It deletes unused classes","It optimizes boxing"],"correct":0,"explain":"Compile-time type checks plus injected casts; at runtime both List<String> and List<Integer> are just List. Hence no new T[] and unchecked warnings."},
+  {"q":"Which wildcard accepts a List of any subtype of Number for reading?","choices":["List<?>","List<? extends Number>","List<? super Number>","List<Number>"],"correct":1,"explain":"? extends Number is the producer form: you can read Numbers. ? super Number (consumer) lets you add."},
+  {"q":"List<? extends Number> nums = ...; nums.add(3.5); result?","choices":["Compiles","Compilation error - cannot add to an extends wildcard","Runtime ClassCastException","Adds silently"],"correct":1,"explain":"The compiler cannot know the actual list type (List<Integer>?), so writes are rejected. That is the PECS producer/consumer rule."},
+  {"q":"Which is a checked exception?","choices":["NumberFormatException","IllegalStateException","FileNotFoundException","ArrayIndexOutOfBoundsException"],"correct":2,"explain":"Only the checked ones (beyond RuntimeException/Error) must be declared or caught. FileNotFoundException extends IOException."},
+  {"q":"try { return 1; } finally { return 2; } - what returns?","choices":["1","2","Compilation error","Throws exception"],"correct":1,"explain":"A return in finally overrides the try return - and silently swallows exceptions too. A notorious bug pattern."},
+  {"q":"Which interface gives try-with-resources its magic method?","choices":["Closeable only","AutoCloseable","Serializable","Runnable"],"correct":1,"explain":"Any AutoCloseable can be used; resources close in reverse order; suppressed exceptions attach to the primary one."},
+  {"q":"catch (IOException | SQLException e) - e's compiled type is...","choices":["IOException","SQLException","The common supertype (Exception)","Object"],"correct":2,"explain":"In multi-catch the variable is implicitly final and typed as the most specific common supertype, so only those methods are callable."},
+  {"q":"What does e.getSuppressed() give you?","choices":["Deleted stack frames","Exceptions thrown while closing resources","Cause chain","Log entries"],"correct":1,"explain":"In try-with-resources, close() failures appear as suppressed exceptions on the primary exception instead of hiding it."},
+  {"q":"Stream<Integer> s = Stream.of(1,2,3); s.forEach(...); s.forEach(...);","choices":["Prints twice","Second forEach throws IllegalStateException - stream already consumed","Compiles but prints once","Rebuilds the stream"],"correct":1,"explain":"Streams are single-use pipelines. Create a fresh stream or store data in a collection."},
+  {"q":"Which is a short-circuit terminal operation on streams?","choices":["collect","forEach","anyMatch","reduce"],"correct":2,"explain":"anyMatch/noneMatch/findFirst can stop early. collect and reduce consume everything."},
+  {"q":"Stream.of(1,2,3).map(i -> i * 2).filter(i -> i > 2).count() =","choices":["0","1","2","3"],"correct":2,"explain":"Values become 2,4,6; filter >2 keeps 4 and 6 - two elements."},
+  {"q":"Collectors.groupingBy(String::length) on [\"a\",\"bb\",\"cc\"] returns...","choices":["A list","A Map<Integer, List<String>>","A Set","A String"],"correct":1,"explain":"Keys are the computed classifier values, values are lists by default; the 3-arg form adds a downstream collector."},
+  {"q":"What does Optional.orElseThrow() do when empty?","choices":["Returns null","Throws NoSuchElementException","Returns default","Throws NullPointerException"],"correct":1,"explain":"orElseThrow() (10+) is the no-arg explicit form of get(): NoSuchElementException when empty; the supplier variant can throw custom types."},
+  {"q":"Which functional interface is used by Stream.forEach?","choices":["Function","Consumer","Supplier","Predicate"],"correct":1,"explain":"Consumer<T>: takes a T, returns nothing. Predicate for filters, Function for map, Supplier for factories."},
+  {"q":"A lambda that captures a local variable requires it to be...","choices":["volatile","final or effectively final","static","boxed"],"correct":1,"explain":"Captured locals are copied into the synthetic method; the compiler enforces effective finality to avoid visible staleness."},
+  {"q":"Which is the default GC through Java 8 (and the parallel one's name)?","choices":["Serial, SerialGC","Parallel, ParallelGC (throughput)","CMS, ConcMarkSweepGC","G1, G1GC"],"correct":1,"explain":"Java 8 default server GC = Parallel (throughput-oriented). G1 became default in Java 9; ZGC/Shenandoah in modern JDKs."},
+  {"q":"Where are objects allocated?","choices":["Stack always","Heap (with possible escape-analysis stack allocation)","Metaspace","Code cache"],"correct":1,"explain":"Objects go on the heap; JIT escape analysis can scalar-replace/stack-allocate truly local objects as an optimization."},
+  {"q":"What lives in Metaspace (Java 8+)?","choices":["Java objects","Class metadata","Thread stacks","String pool only"],"correct":1,"explain":"Class metadata moved out of the heap into native Metaspace in Java 8 (PermGen removed); it grows until -XX:MaxMetaspaceSize."},
+  {"q":"System.gc() guarantees garbage collection runs now. True?","choices":["True","False - it is only a hint","Only in debug mode","Only for old gen"],"correct":1,"explain":"It suggests collection; the JVM may ignore it, and -XX:+DisableExplicitGC makes it a no-op. Never rely on it for correctness."},
+  {"q":"Which class loader loads java.lang.String?","choices":["Application","Platform/Extension","Bootstrap","Custom"],"correct":2,"explain":"Core JDK classes come from the bootstrap loader (null parent, native). Delegation asks parents first, which prevents spoofing."},
+  {"q":"A static nested class compared to an inner class...","choices":["Holds an implicit outer reference","Does not hold an outer reference","Cannot have methods","Cannot be instantiated"],"correct":1,"explain":"Static nested classes are independent; non-static inner classes capture Outer.this and can leak the outer instance."},
+  {"q":"Which is true of interface default methods?","choices":["They are abstract","They provide a body inherited unless overridden","They must be static","They are private only"],"correct":1,"explain":"default methods add behavior without breaking implementors; diamonds require an override. static and private interface methods also exist (9+)."},
+  {"q":"Class C implements A, B - both declare default void m(). Result?","choices":["Compiles, A wins","Compiles, B wins","Compilation error unless C overrides m and (optionally) calls A.super.m()","Runtime error"],"correct":2,"explain":"The compiler forces an explicit override to resolve the diamond; hidden-class rules make ordering irrelevant."},
+  {"q":"What does the diamond operator omit in new ArrayList<>()?","choices":["The elements","The type argument on the right side","The capacity","The superclass"],"correct":1,"explain":"Java 7 diamond infers the type argument from the left-hand context; Java 10 var pushes inference further."},
+  {"q":"Which modifier combination is legal for a top-level class?","choices":["public final","private final","protected static","private static"],"correct":0,"explain":"Top-level classes are public or package-private; private/protected/static only apply to nested classes."},
+  {"q":"Overriding equals without hashCode means...","choices":["Works fine in HashMap","Equal objects may land in different buckets","Compilation error","Auto-fix by the compiler"],"correct":1,"explain":"Hash-based collections use hashCode to find the bucket; equal objects with different hashes are unreachable by lookup."},
+  {"q":"Which is the correct annotation for suppressing unchecked cast warnings?","choices":["@Override","@SuppressWarnings(\"unchecked\")","@SafeVarargs","@Deprecated"],"correct":1,"explain":"@SuppressWarnings(\"unchecked\") on the smallest possible scope. @SafeVarargs is for generic varargs methods only."},
+  {"q":"What is the return type of the compiler-generated bridge method for an override with covariant return?","choices":["The subtype","The supertype (for binary compatibility)","void","Object always"],"correct":1,"explain":"javac emits a synthetic bridge returning the erased/super type so pre-existing callers keep linking."},
+  {"q":"Which is true about finalize()?","choices":["Guaranteed to run once","Deprecated and unreliable; use Cleaner/try-with-resources","Runs on the main thread","Required for all classes"],"correct":1,"explain":"finalize has no timing guarantee, may never run, and delays collection. Deprecated in 9, removed from the spec path by 18 (still callable but useless)."},
+  {"q":"Which reference type is cleared as soon as memory is needed, but before OOM?","choices":["SoftReference","WeakReference","PhantomReference","StrongReference"],"correct":0,"explain":"Soft references are good for caches (cleared under pressure); weak references clear at the next GC cycle regardless."},
+  {"q":"ReferenceQueue is used with which reference types to learn when referents die?","choices":["Only strong","Soft and weak references (and phantom)","Only phantom","None"],"correct":1,"explain":"The GC enqueues the reference object after clearing the referent; cleanup threads poll the queue - the base of Cleaner."},
+  {"q":"Class.forName(\"com.mysql.jdbc.Driver\") vs Class.forName(..., true, loader)?","choices":["Same","The second controls initialization and loader; since JDBC 4 drivers auto-register via SPI","First is deprecated","Second cannot throw"],"correct":1,"explain":"The classloader run initializes static blocks (which used to register drivers). Modern JDBC uses META-INF/services auto-discovery."},
+  {"q":"ServiceLoader.load(MyService.class) reads from...","choices":["MANIFEST.MF","META-INF/services/com.example.MyService","module-info only","Classpath roots"],"correct":1,"explain":"A text file named for the fully-qualified interface lists implementations, one per line - the SPI mechanism also used by java.time formatters, JDBC, etc."},
+  {"q":"Which is true about records (Java 16)?","choices":["They are mutable","They auto-generate accessors, equals, hashCode, toString; components are final","They can extend any class","They cannot implement interfaces"],"correct":1,"explain":"Records are shallowly immutable carriers that may implement interfaces but not extend classes (they extend java.lang.Record)."},
+  {"q":"sealed interface Shape permits Circle, Square; a subclass in the same file without permits...","choices":["Is illegal","Is allowed - same-file subclasses need no permits clause","Requires final","Becomes non-sealed automatically"],"correct":1,"explain":"Same-compilation-unit subtypes are permitted implicitly; others must be listed or the class must be non-sealed/final/sealed."},
+  {"q":"Pattern matching for switch (Java 21) requires...","choices":["No changes to case labels","Type patterns case String s, optionally with when guards","Only enum constants","Only Integer values"],"correct":1,"explain":"Switch patterns select by runtime type with optional guards; exhaustiveness is checked for sealed hierarchies or requires a default."},
+  {"q":"var in a method signature / lambda parameter is allowed since...","choices":["Java 8 for signatures","Java 10 for locals, Java 11 for lambda parameters","Java 17","Never"],"correct":1,"explain":"var: locals (10), lambda params (11), and it is forbidden for fields, method returns and (mostly) catch parameters."}
+]
+</script>
+<hr>
+<p>Previous: <a href="ocjp-practice.html">Test 1</a> · Next: <a href="ocjp-practice-3.html">Test 3</a> · Back to <a href="interview.html">Interview hub</a></p>
+    <div class="pager"><a class="pager-btn" href="interview-collections.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Interview - Collections</span></a><a class="pager-btn pager-next" href="ocjp-practice-3.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">OCJP Practice Test 3</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

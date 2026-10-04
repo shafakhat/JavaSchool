@@ -1,0 +1,53 @@
+---
+title: Jenu is a Java based URL checker
+nav: Jenu is a Java based URL c...
+description: Jenu is a Java based URL checker. It's multi-threaded, and can check
+section: Imported - java2s Archive
+order: 1010
+source: https://web.archive.org/web/20070220095702/http://www.java2s.com:80/Code/Java/Tiny-Application/JenuisaJavabasedURLchecker.htm
+---
+Jenu is a Java based URL checker
+
+```java title=Example.java
+Jenu is a Java based URL checker.  It's multi-threaded, and can check
+links pretty quickly.  It has the beginnings of what could be a very
+nice GUI.
+INSTALLATION
+------------
+Unzip, untar, or un-anything else that works your distrobution.
+(generally 'tar zxf file.tar.gz', or 'tar Ixf file.tar.bz2')
+Compile it:
+-----------
+You should be able to run it with the following:
+javac -classpath .:html-parser.jar *.java
+Run it:
+-------
+You need JDK1.3 or later to run it.
+java -cp .:html-parser.jar Jenu
+put a URL in the window, such as http://www.<mysite>.com.
+Currently, you must put the 'http://', it doesn't assume it for you.
+TODO:
+-----
+There is much to do, but the basic infrastructure is there.
+* Create a nice 'Preferences' window which includes:
+   * # of concurrent threads
+   * regular expressions for inclusion/exclusion
+   * much more...
+* better way to stop when you hit the stop button.  Currently, it
+waits for all requests to finish before really stopping.  It should
+just kill the threads that are outstanding when you hit the stop
+button.
+* A good report of broken links, status, etc...
+NOTES:
+------
+The html-parser.jar is from
+http://www.quiotix.com/downloads/html-parser
+and is fully owned by them, and distributable under the GPL.
+I haven't worked on this project much lately, so if anybody would like
+to add features, feel free to contact me about it.
+You can email me at ccrome at users.sourceforge.net
+of course, Replace the at with '@'
+```
+
+Download: jenu-0.02.zip ( 34 K )
+Related examples in the same category

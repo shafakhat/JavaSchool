@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compares two Strings, and returns the portion where they differ. - JavaSchool</title>
+<meta name="description" content="* Licensed to the Apache Software Foundation (ASF) under one or more">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-comparestwostringsandreturnstheportionwheretheydiffer">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-data-type-0040.html">Data Type (0040)</a></nav>
+    <h1>Compares two Strings, and returns the portion where they differ.</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+public class Main {
+  // Difference
+  //-----------------------------------------------------------------------
+  /**
+   * Compares two Strings, and returns the portion where they differ.
+   * (More precisely, return the remainder of the second String,
+   * starting from where it's different from the first.)
+   *
+   * For example,
+   * &lt;code&gt;difference("i am a machine", "i am a robot") -&gt; "robot"&lt;/code&gt;.
+   *
+   * &lt;pre&gt;
+   * StringUtils.difference(null, null) = null
+   * StringUtils.difference("", "") = ""
+   * StringUtils.difference("", "abc") = "abc"
+   * StringUtils.difference("abc", "") = ""
+   * StringUtils.difference("abc", "abc") = ""
+   * StringUtils.difference("ab", "abxyz") = "xyz"
+   * StringUtils.difference("abcde", "abxyz") = "xyz"
+   * StringUtils.difference("abcde", "xyz") = "xyz"
+   * &lt;/pre&gt;
+   *
+   * @param str1  the first String, may be null
+   * @param str2  the second String, may be null
+   * @return the portion of str2 where it differs from str1; returns the
+   * empty String if they are equal
+   * @since 2.0
+   */
+  public static String difference(String str1, String str2) {
+      if (str1 == null) {
+          return str2;
+      }
+      if (str2 == null) {
+          return str1;
+      }
+      int at = indexOfDifference(str1, str2);
+      if (at == -1) {
+          return "";
+      }
+      return str2.substring(at);
+  }
+  /**
+   * Compares two Strings, and returns the index at which the
+   * Strings begin to differ.
+   *
+   * For example,
+   * &lt;code&gt;indexOfDifference("i am a machine", "i am a robot") -&gt; 7&lt;/code&gt;
+   *
+   * &lt;pre&gt;
+   * StringUtils.indexOfDifference(null, null) = -1
+   * StringUtils.indexOfDifference("", "") = -1
+   * StringUtils.indexOfDifference("", "abc") = 0
+   * StringUtils.indexOfDifference("abc", "") = 0
+   * StringUtils.indexOfDifference("abc", "abc") = -1
+   * StringUtils.indexOfDifference("ab", "abxyz") = 2
+   * StringUtils.indexOfDifference("abcde", "abxyz") = 2
+   * StringUtils.indexOfDifference("abcde", "xyz") = 0
+   * &lt;/pre&gt;
+   *
+   * @param str1  the first String, may be null
+   * @param str2  the second String, may be null
+   * @return the index where str2 and str1 begin to differ; -1 if they are equal
+   * @since 2.0
+   */
+  public static int indexOfDifference(String str1, String str2) {
+      if (str1 == str2) {
+          return -1;
+      }
+      if (str1 == null || str2 == null) {
+          return 0;
+      }
+      int i;
+      for (i = 0; i &lt; str1.length() &amp;&amp; i &lt; str2.length(); ++i) {
+          if (str1.charAt(i) != str2.charAt(i)) {
+              break;
+          }
+      }
+      if (i &lt; str2.length() || i &lt; str1.length()) {
+          return i;
+      }
+      return -1;
+  }
+}</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="swing-components-checkboxlistbyzhiguoyin.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">CheckBox List by Zhiguo Yin</span></a><a class="pager-btn pager-next" href="jdk-7-createpathfromuri.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Create Path from URI</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

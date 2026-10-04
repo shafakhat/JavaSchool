@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The effect of final on fields - JavaSchool</title>
+<meta name="description" content="// www.BruceEckel.com. See copyright notice in CopyRight.txt.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-class-theeffectoffinalonfields">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-class.html">Class</a></nav>
+    <h1>The effect of final on fields</h1>
+<p>The effect of final on fields</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// : c06:FinalData.java
+// The effect of final on fields.
+// From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
+// www.BruceEckel.com. See copyright notice in CopyRight.txt.
+import java.util.Random;
+class Value {
+  int i; // Package access
+  public Value(int i) {
+    this.i = i;
+  }
+}
+public class FinalData {
+  private static Random rand = new Random();
+  private String id;
+  public FinalData(String id) {
+    this.id = id;
+  }
+  // Can be compile-time constants:
+  private final int VAL_ONE = 9;
+  private static final int VAL_TWO = 99;
+  // Typical public constant:
+  public static final int VAL_THREE = 39;
+  // Cannot be compile-time constants:
+  private final int i4 = rand.nextInt(20);
+  static final int i5 = rand.nextInt(20);
+  private Value v1 = new Value(11);
+  private final Value v2 = new Value(22);
+  private static final Value v3 = new Value(33);
+  // Arrays:
+  private final int[] a = { 1, 2, 3, 4, 5, 6 };
+  public String toString() {
+    return id + ": " + "i4 = " + i4 + ", i5 = " + i5;
+  }
+  public static void main(String[] args) {
+    FinalData fd1 = new FinalData("fd1");
+    //! fd1.VAL_ONE++; // Error: can't change value
+    fd1.v2.i++; // Object isn't constant!
+    fd1.v1 = new Value(9); // OK -- not final
+    for (int i = 0; i &lt; fd1.a.length; i++)
+      fd1.a[i]++; // Object isn't constant!
+    //! fd1.v2 = new Value(0); // Error: Can't
+    //! fd1.v3 = new Value(1); // change reference
+    //! fd1.a = new int[3];
+    System.out.println(fd1);
+    System.out.println("Creating new FinalData");
+    FinalData fd2 = new FinalData("fd2");
+    System.out.println(fd1);
+    System.out.println(fd2);
+  }
+} ///:~</code></pre></div>
+<ol><li>Java Final variable: Once created and initialized, its value can not be changed</li></ol>
+<p>---  ---</p>
+<ol><li>Blank final fields</li><li>Experiment with final args to functions</li><li>Using final with method arguments</li><li>Making an entire class final</li></ol>
+    <div class="pager"><a class="pager-btn" href="data-type-removeleadingandtrailingwhitespacefromstring.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Remove leading and trailin...</span></a><a class="pager-btn pager-next" href="velocity-velocitymathtooladd.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Velocity MathTool</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

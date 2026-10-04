@@ -1,0 +1,115 @@
+---
+title: Java 8-21 Features Interview Questions
+nav: Interview - Java 8-21
+description: 25 modern Java interview questions - lambdas, streams, Optional, modules, records, sealed types, pattern matching, virtual threads.
+section: Interview & Certification
+order: 60
+---
+
+## Java 8-21 Features - topic bank
+
+Topic bank #5 of the [Interview Prep hub](interview.html). Tutorials: [Generics](generics.html) · [Lambda & streams](lambdas.html).
+
+<details class="iq"><summary>1. Why functional interfaces matter - what's the rule?</summary>
+<p>A lambda's target type must be a functional interface: exactly one abstract method (defaults/statics don't count). Four built-ins cover most needs: <code>Function</code> (T→R), <code>Predicate</code> (T→boolean), <code>Consumer</code> (T→void), <code>Supplier</code> (()→T); extend with <code>BiX</code>, <code>UnaryOperator</code>, primitives (<code>IntFunction</code>). Annotate your own with <code>@FunctionalInterface</code> to lock the contract.</p>
+</details>
+
+<details class="iq"><summary>2. Lambdas vs anonymous classes?</summary>
+<p>Lambdas don't create a class file per expression (invokedynamic + LambdaMetafactory), aren't objects with a class identity beyond the SAM type, and can't have state or extra methods. Anonymous classes can. <code>this</code> inside a lambda refers to the enclosing instance (no shadowing); performance-wise lambdas are capture-cheap and JIT-friendly.</p>
+</details>
+
+<details class="iq"><summary>3. Method references - the four kinds?</summary>
+<p><code>Type::staticMethod</code>, <code>instance::method</code> (bound), <code>Type::instanceMethod</code> (unbound - first arg becomes receiver), <code>Type::new</code> (constructor). Compiler picks the compatible SAM; overloads are resolved by target type. Use when the lambda would just forward arguments.</p>
+</details>
+
+<details class="iq"><summary>4. Stream pipeline anatomy?</summary>
+<p>Source → zero/more intermediate ops (lazy: filter, map, sorted, distinct, flatMap, limit, peek) → one terminal op (collect, reduce, forEach, count, findAny, anyMatch). Lazy intermediate ops fuse into one pass; short-circuiting terminals (findFirst, anyMatch, limit) can skip work. Streams are single-use and don't modify the source.</p>
+</details>
+
+<details class="iq"><summary>5. map vs flatMap?</summary>
+<p><code>map</code>: 1→1 transformation. <code>flatMap</code>: 1→N, flattens nested structures: <code>orders.stream().flatMap(o -&gt; o.items().stream())</code>. Common bug: using map and ending up with <code>Stream&lt;Stream&lt;T&gt;&gt;</code> or <code>Stream&lt;List&lt;T&gt;&gt;</code> when a flat pipeline was wanted.</p>
+</details>
+
+<details class="iq"><summary>6. Are parallel streams safe? When would you use them?</summary>
+<p>Only if: the source is cheaply splittable (ArrayList, arrays, IntStream.range), elements are independent, no shared mutable state (or use collectors), operations are CPU-bound, and the input is large enough to beat the fork/join overhead. Never for I/O, small collections, or order-hostile-to-cost hotspots; they share the common ForkJoinPool - a blocking task can starve the app.</p>
+</details>
+
+<details class="iq"><summary>7. Stateful vs stateless lambdas in streams?</summary>
+<p>Stateless (map/filter functions pure) is safe and parallel-friendly. Stateful: <code>limit</code>, <code>sorted</code>, <code>distinct</code> (buffering), and mutations in <code>peek</code>/<code>forEach</code> (undefined with parallel). Rule: no side effects in intermediate ops; collect results, don't mutate from forEach unless that <em>is</em> the goal.</p>
+</details>
+
+<details class="iq"><summary>8. Which collector for which job?</summary>
+<p><code>toList/toSet</code>, <code>toMap</code> (needs merge function on duplicates!), <code>groupingBy</code> (+downstream: counting, mapping, summingInt, averagingDouble, teeing), <code>partitioningBy</code> (always two keys), <code>joining</code> (text), <code>teeing</code> (two collectors in one pass, 12+). <code>toMap</code> with duplicate keys throws IllegalStateException - supply <code>(a,b)-&gt;b</code>.</p>
+</details>
+
+<details class="iq"><summary>9. Optional: what it's for and the anti-patterns?</summary>
+<p>For return types where absence is a normal outcome (not fields, parameters, or collections - use empty ones). Anti-patterns: <code>isPresent()+get()</code> (use map/orElse/orElseGet/ifPresentOrElse), Optional of collections, Optional as a Map value, <code>get()</code> without a check, and Optional in hot loops (allocation). Methods: map, flatMap, filter, or, stream (9+).</p>
+</details>
+
+<details class="iq"><summary>10. Interface evolution: default, static, private methods?</summary>
+<p>default methods add behavior without breaking implementors; static methods hold utilities (<code>Comparator.comparing</code>); private (9) methods share code between defaults. Conflict resolution: class wins over interface; unrelated defaults require an explicit <code>Interface.super.m()</code> call.</p>
+</details>
+
+<details class="iq"><summary>11. What are modules (JPMS) really solving?</summary>
+<p>Strong encapsulation (internal packages invisible: <code>sun.misc</code> etc.), reliable configuration (declare what you need), smaller runtime images (jlink), and faster startup for big apps. Cost: migrating reflection-heavy frameworks (opens flags), split packages, and classloader tricks become explicit. Most apps today use them transitively via JDK internals.</p>
+</details>
+
+<details class="iq"><summary>12. What's new in the java.time API vs Date/Calendar?</summary>
+<p>Immutable, thread-safe, fluent: LocalDate/Time/DateTime, Instant, Duration/Period, ZonedDateTime/ZoneId, formatters, adjusters, and clock injection for tests. Old Date/Calendar: mutable, 0-based months, broken timezone handling, SimpleDateFormat not thread-safe. Convert with <code>Date.from(instant)</code> etc. at boundaries.</p>
+</details>
+
+<details class="iq"><summary>13. What changed in the collections API in 9/10/11/21?</summary>
+<p>9: immutable factories <code>List.of/Set.of/Map.of/Map.ofEntries</code> (+ <code>copyOf</code>), <code>Stream.ofNullable</code>. 10: <code>Collectors.toUnmodifiableList</code>, <code>List.copyOf</code>. 11: <code>toArray(IntFunction)</code>, <code>Predicate.not</code>. 16: <code>Stream.toList</code>. 21: sequenced collections - <code>getFirst/getLast/addFirst/addLast/reversed</code> on List/Deque/SortedSet, and <code>List.reversed()</code> views.</p>
+</details>
+
+<details class="iq"><summary>14. Text blocks and template strings?</summary>
+<p>Text blocks (15): multi-line literals with incidental-indent stripping. Template processors (21 preview): <code>STR."Hello \{name}"</code> with pluggable sanitizing processors (<code>FMT</code>, SQL, JSON) - the key point: interpolation can be safe because the processor validates, unlike naive concatenation.</p>
+</details>
+
+<details class="iq"><summary>15. Records versus Lombok versus plain classes?</summary>
+<p>Records: language-level, transparent data carriers, final components, pattern-matchable, zero dependencies; no inheritance, no builder, no mutable state. Lombok: annotations for builders, mutable POJOs, JPA entities. Plain classes: full control. Choose records for DTOs/value objects; Lombok/dependency for ORM entities and complex builders.</p>
+</details>
+
+<details class="iq"><summary>16. Sealed types and exhaustive switches?</summary>
+<p><code>sealed interface Expr permits Add, Mul, Num</code> + final/record subtypes give the compiler a closed world: pattern switches can be checked for exhaustiveness without default, enabling safe algebraic-data-type modeling (ASTs, commands, results) with compiler-verified completeness.</p>
+</details>
+
+<details class="iq"><summary>17. What is pattern matching (instanceof → switch) fixing?</summary>
+<p>Boilerplate casts and manual chains: <code>if (o instanceof Point p &amp;&amp; p.x() &gt; 0)</code> instead of cast-after-check. Switch patterns handle type, null (case null), guards, record deconstruction (<code>case Point(int x, int y)</code>), and enum+type mixes - all with flow scoping of the bound variables.</p>
+</details>
+
+<details class="iq"><summary>18. What did Java remove/deprecate that interviewers still probe?</summary>
+<p>Removed: finalize (18), SecurityManager (deprecated for removal), <code>Thread.stop/suspend</code>, Nashorn (15), CORBA/JAXB/activation modules (11), CMS GC (14). Deprecated: Applet API, <code>Runtime.exec</code> patterns, <code>Date</code> constructors, stack of old I/O (use NIO), <code>System.runFinalizersOnExit</code>.</p>
+</details>
+
+<details class="iq"><summary>19. New in I/O: NIO.2, Files helpers, transferTo?</summary>
+<p>NIO.2 (7): Path/Files, walking, watching, async channels. 9-12 additions: <code>Files.readString/writeString</code>, <code>InputStream.transferTo</code>/<code>readAllBytes</code> (9), <code>Files.mismatch</code> (12), <code>FileChannel.transferTo</code> zero-copy. Modern rule: for text, readString/writeString; for big data, stream with buffered channels, never read the whole file unless it fits memory.</p>
+</details>
+
+<details class="iq"><summary>20. New in HTTP: what replaced HttpURLConnection?</summary>
+<p><code>java.net.http.HttpClient</code> (11): HTTP/2 + WebSocket, async/sync APIs, CompletableFuture, immutability, no global state. Virtual-thread friendly. Third-party alternatives still win for HTTP/1.1 quirks and connection tuning (OkHttp, Apache HttpClient). Key interview point: never use URLConnection for new code.</p>
+</details>
+
+<details class="iq"><summary>21. What is the HttpClient/Flow (reactive streams) story?</summary>
+<p><code>java.util.concurrent.Flow</code> (9): Publisher/Subscriber/Subscription/Processor - the JDK's reactive-streams interfaces, used by HttpClient body handlers and adapters (RxJava, Reactor, Akka interop). It's the standard contract that libraries implement; you rarely implement it directly.</p>
+</details>
+
+<details class="iq"><summary>22. What are the biggest changes in Java 17-21 for application code?</summary>
+<p>14-16: switch expressions, text blocks, records, instanceof patterns. 17: sealed types, always-strict floating point. 18-20: UTF-8 by default (18), simple web server (18), virtual threads + structured concurrency (preview→final in 21), FFM API previews. 21: pattern switch, record patterns, sequenced collections, virtual threads, generational ZGC.</p>
+</details>
+
+<details class="iq"><summary>23. How do you upgrade an old codebase - practical order?</summary>
+<p>Pick an LTS target; fix deprecations compiler-visible first (<code>-Xlint:all</code>, <code>--release</code>), replace removed APIs (finalize→Cleaner, SecurityManager→alternatives), update build plugins, run tests on each LTS hop when jumping far (8→11→17→21), watch GC/flag changes (CMS removed), and check libraries' module/open needs. Automate with jdeps and CI matrix runs.</p>
+</details>
+
+<details class="iq"><summary>24. Which features are still preview in 21 and why avoid shipping them?</summary>
+<p>Structured concurrency, scoped values, string templates, FFM API (21), unnamed patterns/variables. Preview = API may change or vanish; requires <code>--enable-preview</code>, cannot easily ship in libraries. Use for experiments/spikes, abstract behind your own façade, and revisit at the next LTS.</p>
+</details>
+
+<details class="iq"><summary>25. Interview favorite: rewrite this with streams - for loop building a map of department → average salary.</summary>
+<p><code>emps.stream().collect(groupingBy(Employee::dept, averagingDouble(Employee::salary)))</code> - then explain: the loop version is fine too; streams buy declarative clarity (and are worth it when combining filter/map/grouping), not raw speed. Mention parallel only with justification, and null handling (filter Objects::nonNull first).</p>
+</details>
+
+---
+
+Hub: [Interview Prep home](interview.html) · Next: [JDBC bank](interview-jdbc.html) · Practice: [Test 1](ocjp-practice.html) · [Test 2](ocjp-practice-2.html) · [Test 3](ocjp-practice-3.html)

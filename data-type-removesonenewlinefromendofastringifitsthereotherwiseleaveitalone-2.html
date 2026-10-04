@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Removes one newline from end of a String if it's there, otherwise leave it alone. - JavaSchool</title>
+<meta name="description" content="* Licensed to the Apache Software Foundation (ASF) under one or more">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-removesonenewlinefromendofastringifitsthereotherwiseleaveitalone-2">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-data-type-0040.html">Data Type (0040)</a></nav>
+    <h1>Removes one newline from end of a String if it's there, otherwise leave it alone.</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.SQLException;
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *
+ */
+public class Main {
+  /**
+   * &lt;code&gt;\u000a&lt;/code&gt; linefeed LF ('\n').
+   *
+   * @see &lt;a href="http://java.sun.com/docs/books/jls/third_edition/html/lexical.html#101089"&gt;JLF: Escape Sequences
+   *      for Character and String Literals&lt;/a&gt;
+   * @since 2.2
+   */
+  public static final char LF = '\n';
+  /**
+   * &lt;code&gt;\u000d&lt;/code&gt; carriage return CR ('\r').
+   *
+   * @see &lt;a href="http://java.sun.com/docs/books/jls/third_edition/html/lexical.html#101089"&gt;JLF: Escape Sequences
+   *      for Character and String Literals&lt;/a&gt;
+   * @since 2.2
+   */
+  public static final char CR = '\r';
+  /**
+   * Removes one newline from end of a String if it's there,
+   * otherwise leave it alone.  A newline is &amp;quot;&lt;code&gt;\n&lt;/code&gt;&amp;quot;,
+   * &amp;quot;&lt;code&gt;\r&lt;/code&gt;&amp;quot;, or &amp;quot;&lt;code&gt;\r\n&lt;/code&gt;&amp;quot;.
+   *
+   * NOTE: This method changed in 2.0.
+   * It now more closely matches Perl chomp.
+   *
+   * &lt;pre&gt;
+   * StringUtils.chomp(null)          = null
+   * StringUtils.chomp("")            = ""
+   * StringUtils.chomp("abc \r")      = "abc "
+   * StringUtils.chomp("abc\n")       = "abc"
+   * StringUtils.chomp("abc\r\n")     = "abc"
+   * StringUtils.chomp("abc\r\n\r\n") = "abc\r\n"
+   * StringUtils.chomp("abc\n\r")     = "abc\n"
+   * StringUtils.chomp("abc\n\rabc")  = "abc\n\rabc"
+   * StringUtils.chomp("\r")          = ""
+   * StringUtils.chomp("\n")          = ""
+   * StringUtils.chomp("\r\n")        = ""
+   * &lt;/pre&gt;
+   *
+   * @param str  the String to chomp a newline from, may be null
+   * @return String without newline, &lt;code&gt;null&lt;/code&gt; if null String input
+   */
+  public static String chomp(String str) {
+      if (isEmpty(str)) {
+          return str;
+      }
+      if (str.length() == 1) {
+          char ch = str.charAt(0);
+          if (ch == CR || ch == LF) {
+              return "";
+          }
+          return str;
+      }
+      int lastIdx = str.length() - 1;
+      char last = str.charAt(lastIdx);
+      if (last == LF) {
+          if (str.charAt(lastIdx - 1) == CR) {
+              lastIdx--;
+          }
+      } else if (last != CR) {
+          lastIdx++;
+      }
+      return str.substring(0, lastIdx);
+  }
+  // Empty checks
+  //-----------------------------------------------------------------------
+  /**
+   * Checks if a String is empty ("") or null.
+   *
+   * &lt;pre&gt;
+   * StringUtils.isEmpty(null)      = true
+   * StringUtils.isEmpty("")        = true
+   * StringUtils.isEmpty(" ")       = false
+   * StringUtils.isEmpty("bob")     = false
+   * StringUtils.isEmpty("  bob  ") = false
+   * &lt;/pre&gt;
+   *
+   * NOTE: This method changed in Lang version 2.0.
+   * It no longer trims the String.
+   * That functionality is available in isBlank().
+   *
+   * @param str  the String to check, may be null
+   * @return &lt;code&gt;true&lt;/code&gt; if the String is empty or null
+   */
+  public static boolean isEmpty(String str) {
+      return str == null || str.length() == 0;
+  }
+}</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="data-type-removesasubstringonlyifitisattheendofasourcestringotherwisereturnsthes-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Removes a substring only i...</span></a><a class="pager-btn pager-next" href="data-type-removesseparatorfromtheendofstrifitsthereotherwiseleaveitalone-2.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Removes separator from the...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

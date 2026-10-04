@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Map Interface - JavaSchool</title>
+<meta name="description" content="Complete guide to the Java Map hierarchy - HashMap, LinkedHashMap, TreeMap, Hashtable, EnumMap, ConcurrentHashMap, WeakHashMap and friends.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-map">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Collections</span></nav>
+    <h1>Java Map Interface</h1>
+<h2 id="the-map-family-tree">The Map family tree</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">hierarchy</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-text" data-lang="text">Map (key -&gt; value, unique keys)
+├── HashMap              - hash table (default)
+│   └── LinkedHashMap    - + insertion/access order (linked list)
+├── TreeMap              - red-black tree, sorted by key/comparator
+│   └─ interfaces: SortedMap -&gt; NavigableMap (range + neighbor lookups)
+├── Hashtable            - legacy synchronized (Dictionary-era)
+│   └── Properties       - legacy string config file support
+├── WeakHashMap          - keys weakly held - auto-evictable cache
+├── IdentityHashMap      - == comparison instead of equals
+├── EnumMap              - ordinal-indexed, for enum keys (fastest)
+├── ConcurrentHashMap    - concurrent hash (Java 8+: CAS + bin locks)
+├── ConcurrentSkipListMap- concurrent sorted map
+└── (interface) Map.Entry, NavigableMap, ...</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>Class</th><th>Order</th><th>get</th><th>Null keys/values</th><th>Concurrent</th></tr></thead><tbody><tr><td><strong>HashMap</strong></td><td>none</td><td>O(1) avg</td><td>1 null key, many null values</td><td>no</td></tr><tr><td><strong>LinkedHashMap</strong></td><td>insertion / access</td><td>O(1)</td><td>same as HashMap</td><td>no</td></tr><tr><td><strong>TreeMap</strong></td><td>sorted</td><td>O(log n)</td><td>no nulls (NPE)</td><td>no</td></tr><tr><td><strong>EnumMap</strong></td><td>enum ordinal</td><td>O(1)</td><td>no nulls</td><td>no</td></tr><tr><td><strong>Hashtable</strong></td><td>none</td><td>O(1)</td><td>no</td><td>synchronized</td></tr><tr><td><strong>Properties</strong></td><td>none</td><td>O(1)</td><td>no</td><td>synchronized</td></tr><tr><td><strong>WeakHashMap</strong></td><td>none</td><td>O(1)</td><td>no nulls</td><td>no</td></tr><tr><td><strong>IdentityHashMap</strong></td><td>none</td><td>O(1)</td><td>yes</td><td>no</td></tr><tr><td><strong>ConcurrentHashMap</strong></td><td>none</td><td>O(1) lock-free read</td><td>no nulls</td><td>yes</td></tr><tr><td><strong>ConcurrentSkipListMap</strong></td><td>sorted</td><td>O(log n)</td><td>no nulls</td><td>yes</td></tr></tbody></table></div>
+<h2 id="hashmap---the-default">HashMap - the default</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">HashMapDemo.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.*;
+
+public class HashMapDemo {
+    public static void main(String[] args) {
+        Map&lt;String, Integer&gt; ages = new HashMap&lt;&gt;();
+        ages.put("ada", 36);
+        ages.put("grace", 45);
+        ages.put("ada", 37);                    // key unique - replaces value
+
+        System.out.println(ages.get("ada"));            // 37
+        System.out.println(ages.getOrDefault("bob", 0));// 0
+        System.out.println(ages.containsKey("grace"));  // true
+        System.out.println(ages.containsValue(45));     // true - O(n)
+
+        ages.putIfAbsent("bob", 20);            // only if absent
+        ages.remove("bob");                     // by key
+        ages.remove("ada", 37);                 // conditional remove (key+value)
+        ages.merge("grace", 5, Integer::sum);   // 45 + 5 = 50 (atomic in CHM)
+        ages.computeIfAbsent("eve", k -&gt; k.length()); // lazy create
+        ages.replaceAll((k, v) -&gt; v + 1);
+
+        // iteration - all four styles
+        for (Map.Entry&lt;String, Integer&gt; e : ages.entrySet()) {
+            System.out.println(e.getKey() + " -&gt; " + e.getValue());
+        }
+        ages.forEach((k, v) -&gt; System.out.println(k + "=" + v));
+        ages.keySet().forEach(System.out::println);      // view!
+        ages.values().forEach(System.out::println);
+
+        // bulk
+        Map&lt;String, Integer&gt; other = Map.of("zoe", 1);
+        ages.putAll(other);
+        System.out.println(ages.size());
+    }
+}</code></pre></div>
+<p>Key contract: <code>hashCode()+equals</code> of keys decides bucket then identity; keys <strong>must</strong> be immutable-in-practice (changing a key while it's a map key = lost entry); load factor 0.75, resize ×2, treeify at 8/bin (table ≥ 64).</p>
+<h2 id="linkedhashmap---order-lru">LinkedHashMap - order &amp; LRU</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">LinkedHashMapDemo.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.*;
+
+public class LinkedHashMapDemo {
+    public static void main(String[] args) {
+        // insertion order
+        Map&lt;String, Integer&gt; m = new LinkedHashMap&lt;&gt;();
+        m.put("b", 2); m.put("a", 1); m.put("c", 3);
+        System.out.println(m.keySet());          // [b, a, c]
+
+        // access-order mode + eviction = tiny LRU cache
+        Map&lt;String, String&gt; lru = new LinkedHashMap&lt;&gt;(16, 0.75f, true) {
+            @Override
+            protected boolean removeEldestEntry(Map.Entry&lt;String, String&gt; e) {
+                return size() &gt; 3;               // evict oldest-accessed
+            }
+        };
+        lru.put("1", "a"); lru.put("2", "b"); lru.put("3", "c");
+        lru.get("1");                            // "1" now most-recent
+        lru.put("4", "d");                       // evicts "2"
+        System.out.println(lru.keySet());        // [3, 1, 4]  (order by recency)
+    }
+}</code></pre></div>
+<p>Also the base class behind <code>LinkedHashSet</code> and used by frameworks for ordered config.</p>
+<h2 id="treemap-navigablemap">TreeMap &amp; NavigableMap</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">TreeMapDemo.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.*;
+
+public class TreeMapDemo {
+    public static void main(String[] args) {
+        TreeMap&lt;String, Integer&gt; t = new TreeMap&lt;&gt;();
+        t.put("pear", 3); t.put("apple", 1); t.put("mango", 2);
+
+        System.out.println(t.firstKey());            // apple
+        System.out.println(t.lastEntry());           // mango=2
+        System.out.println(t.floorEntry("b"));       // apple=1 (&lt;= "b")
+        System.out.println(t.ceilingEntry("bb"));    // mango=3? -&gt; "mango" (&gt;= "bb")
+        System.out.println(t.lowerKey("mango"));     // apple
+        System.out.println(t.higherKey("apple"));    // mango
+        System.out.println(t.headMap("mango"));      // {apple=1, pear=3}
+        System.out.println(t.subMap("a", "n"));      // a..m
+        NavigableMap&lt;String, Integer&gt; rev = t.descendingMap();
+        System.out.println(rev.firstKey());          // pear
+
+        // sorted views stay live with the backing map
+        SortedMap&lt;String, Integer&gt; view = t.headMap("m");
+        view.put("kiwi", 4);
+        System.out.println(t.containsKey("kiwi"));   // true
+
+        // custom keys: must supply a total ordering
+        TreeMap&lt;String, Integer&gt; byLen = new TreeMap&lt;&gt;(Comparator.comparingInt(String::length));
+        byLen.put("ccc", 1); byLen.put("a", 2);
+        System.out.println(byLen.keySet());          // [a, ccc]
+    }
+}</code></pre></div>
+<h2 id="hashtable-properties-weakhashmap-identityhashmap-enummap">Hashtable, Properties, WeakHashMap, IdentityHashMap, EnumMap</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">Variants.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.*;
+import java.io.*;
+
+public class Variants {
+    public static void main(String[] args) throws Exception {
+        // Hashtable - legacy synchronized, no nulls anywhere
+        Hashtable&lt;String, Integer&gt; h = new Hashtable&lt;&gt;();
+        h.put("k", 1);
+        // h.put(null, 1);   // NPE
+        System.out.println(h.get("k"));
+
+        // Properties - the classic config file (strings only)
+        Properties p = new Properties();
+        p.setProperty("db.url", "jdbc:h2:mem:x");
+        try (var reader = new StringReader("mode=fast\nsize=9")) {
+            p.load(reader);
+        }
+        p.store(new StringWriter(), "app config");
+        System.out.println(p.getProperty("mode"));   // fast
+
+        // WeakHashMap - keys collected when nothing else references them
+        WeakHashMap&lt;Object, String&gt; weak = new WeakHashMap&lt;&gt;();
+        Object key = new Object();
+        weak.put(key, "alive");
+        key = null;                                  // entry evictable at next GC
+        System.gc();
+        System.out.println(weak.size());             // 0 (usually)
+
+        // IdentityHashMap - == not equals (canonicalization, mirror structures)
+        IdentityHashMap&lt;String, String&gt; id = new IdentityHashMap&lt;&gt;();
+        String a = new String("x"), b = new String("x");
+        id.put(a, "first"); id.put(b, "second");
+        System.out.println(id.size());               // 2 (equals() would merge)
+
+        // EnumMap - bitset over enum ordinals
+        enum Day { MON, TUE, WED }
+        // (enums must be top-level/nested - shown inline for brevity of reading)
+    }
+}</code></pre></div>
+<p><code>Properties</code>: prefer <code>Map&lt;String,String&gt;</code>/YAML/JSON in new code - it's a <code>Hashtable&lt;Object,Object&gt;</code> from 1996 (backed by <code>String</code> values only in practice).</p>
+<h2 id="concurrenthashmap---the-concurrent-map">ConcurrentHashMap - the concurrent Map</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">CHM.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.concurrent.*;
+
+public class CHM {
+    public static void main(String[] args) throws Exception {
+        ConcurrentHashMap&lt;String, Integer&gt; c = new ConcurrentHashMap&lt;&gt;();
+        c.put("hits", 0);
+
+        // atomic compound actions - no external lock needed
+        c.compute("hits", (k, v) -&gt; v + 1);
+        c.merge("hits", 1, Integer::sum);
+        Integer now = c.putIfAbsent("views", 1);
+
+        // replace-if-exact (optimistic locking pattern)
+        c.replace("hits", 1, 2);
+
+        // nulls forbidden (ambiguity with "absent" in get)
+        // c.put("k", null);   // NPE
+
+        // iteration is weakly consistent - no ConcurrentModificationException
+        c.forEach((k, v) -&gt; System.out.println(k + "=" + v));
+
+        // parallel bulk (uses internal segment-level parallelism)
+        c.replaceAll((k, v) -&gt; v * 2);
+        long sum = c.mappingCount();
+        System.out.println("count=" + sum);
+    }
+}</code></pre></div>
+<p><code>size()</code>/<code>isEmpty()</code> are estimates under concurrency - use <code>mappingCount()</code> and don't build logic on exact mid-flight sizes. <code>Collections.synchronizedMap</code> exists but needs manual locking for iteration - CHM is nearly always better.</p>
+<h2 id="choosing">Choosing</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">decision</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-text" data-lang="text">one map to rule your code ........................&gt; HashMap
+need insertion order / LRU .......................&gt; LinkedHashMap (+removeEldestEntry)
+sorted keys / floor-ceiling ranges ................&gt; TreeMap (NavigableMap)
+keys are enum constants ..........................&gt; EnumMap
+concurrent access .................................&gt; ConcurrentHashMap
+concurrent + sorted ................................&gt; ConcurrentSkipListMap
+legacy config files / synchronized Vector-era .....&gt; Properties / Hashtable (recognize only)
+cache keyed by objects that can die ...............&gt; WeakHashMap
+identity-sensitive structures (parser trees) ......&gt; IdentityHashMap</code></pre></div>
+<p>Related: <a href="collections.html">Collections overview</a> · <a href="collections-set.html">Set</a> · <a href="collections-queue.html">Queue</a> · <a href="interview.html">HashMap internals interview Q&amp;A</a> · <a href="collections-data-structure-amemoryefficienthashmap.html">Map examples in the archive</a></p>
+    <div class="pager"><a class="pager-btn" href="collections-queue.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Queue &amp; Deque (PriorityQueue, ArrayDeque)</span></a><a class="pager-btn pager-next" href="networking.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Networking</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

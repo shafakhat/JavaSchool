@@ -1,0 +1,495 @@
+---
+title: Java Interview Questions - Master List
+nav: All 115 Questions
+description: 100 Java interview questions with crisp answers - core Java, OOP, collections, threads, Java 8+, JDBC, web and JVM internals.
+section: Interview & Certification
+order: 15
+---
+
+## Core Java & JVM
+
+<p>Click a question to reveal the answer. 115 questions - the set most often asked in Java developer screens.</p>
+
+<details class="iq"><summary>1. What is the difference between JDK, JRE and JVM?</summary>
+<p><strong>JVM</strong> runs bytecode and is platform-specific. <strong>JRE</strong> = JVM + core libraries (to <em>run</em> Java). <strong>JDK</strong> = JRE + compiler and tools like <code>javac</code>, <code>jar</code> (to <em>develop</em>). "Write once, run anywhere" works because the JVM differs per OS while bytecode does not.</p>
+</details>
+
+<details class="iq"><summary>2. What does the class file contain?</summary>
+<p>Version info, constant pool, fields, methods and the bytecode itself, plus a symbol reference table. The magic number <code>CAFEBABE</code> starts every class file.</p>
+</details>
+
+<details class="iq"><summary>3. How does the JVM load and link a class?</summary>
+<p><strong>Loading</strong> brings the .class bytes into memory (bootstrap → platform → application class loaders). <strong>Linking</strong> = verification (bytecode safety), preparation (static fields allocated) and optional resolution (symbol references made concrete). Then <strong>initialization</strong> runs static blocks.</p>
+</details>
+
+<details class="iq"><summary>4. What is the difference between path and CLASSPATH?</summary>
+<p><code>PATH</code> tells the OS/shell where to find executables (<code>java</code>, <code>javac</code>). <code>CLASSPATH</code> tells the JVM where to find class and jar files; with the default application class loader, the current directory <code>.</code> is implied.</p>
+</details>
+
+<details class="iq"><summary>5. What is JIT compilation?</summary>
+<p>The Just-In-Time compiler turns hot bytecode into native machine code at runtime, with inlining, escape analysis and loop optimizations. It is why Java beats naive interpreters - the profile-guided optimization happens after warm-up.</p>
+</details>
+
+<details class="iq"><summary>6. Platform independence - where does it actually live?</summary>
+<p>At the <em>bytecode</em> level, not the source. You compile once to platform-neutral .class files; each platform's JVM executes them. Native libraries (<code>.dll/.so</code> via JNI) are the escape hatch where portability ends.</p>
+</details>
+
+<details class="iq"><summary>7. What is the difference between compile time and runtime?</summary>
+<p>Compile time: syntax checking, type checking, bytecode generation. Runtime: loading, JIT, memory allocation, exceptions. Errors found at compile time never run; runtime errors (NullPointerException, divide by zero) only appear when the code path executes.</p>
+</details>
+
+<details class="iq"><summary>8. How is memory organized in the JVM?</summary>
+<p><strong>Heap</strong> (young + old generations) for objects, <strong>metaspace</strong> (native memory, since Java 8) for class metadata, <strong>stack</strong> per thread for frames (locals, operand stack), plus code cache for JIT-compiled code and direct memory for NIO buffers.</p>
+</details>
+
+<details class="iq"><summary>9. What is the difference between Stack and Heap?</summary>
+<p>Stack holds frames of active method calls - primitives and references, fast LIFO, thread-confined. Heap holds all objects and arrays, shared between threads, managed by the GC. Overflowing the stack throws <code>StackOverflowError</code>; an exhausted heap throws <code>OutOfMemoryError</code>.</p>
+</details>
+
+<details class="iq"><summary>10. When is an object eligible for garbage collection?</summary>
+<p>When it becomes <strong>unreachable</strong> - no live thread can reach it through any chain of references. Local variables going out of scope, cyclic references with no external root, and disconnected listener graphs all become collectible. <code>finalize()</code> is deprecated; use <code>Cleaner</code> or try-with-resources instead.</p>
+</details>
+
+<details class="iq"><summary>11. Name the main JVM garbage collectors.</summary>
+<p>Serial, Parallel (throughput), G1 (default since 9, region-based), ZGC and Shenandoah (sub-millisecond pauses, low latency). Epsilon is a no-op collector for testing. Choice depends on latency SLA vs throughput.</p>
+</details>
+
+<details class="iq"><summary>12. What is a memory leak in Java if GC exists?</summary>
+<p>Objects that are unreachable-but-not (still referenced) accumulate: static collections growing forever, unclosed resources, listener lists never cleared, <code>ThreadLocal</code> in pooled threads, oversized caches. The GC only collects <em>unreachable</em> objects, so a retained reference graph is a leak.</p>
+</details>
+
+<details class="iq"><summary>13. What are String pools?</summary>
+<p>A pool of interned string literals (and results of <code>intern()</code>). <code>"a" == "a"</code> is true because both point at the same pooled instance. In Java 7+ the pool lives in the heap. String literals are compile-time constants, so <code>"a"+"b"</code> folds to <code>"ab"</code>.</p>
+</details>
+
+<details class="iq"><summary>14. How does Escape Analysis help?</summary>
+<p>The JIT proves an object never leaves a method → it can allocate it on the stack or eliminate the allocation entirely; it also enables lock coarsening/elision on synchronized blocks. That is why some "obvious" allocations cost nothing in tight loops.</p>
+</details>
+
+<details class="iq"><summary>15. What does the <code>transient</code> keyword do?</summary>
+<p>Marks a field to be skipped by default serialization. Useful for caches, derived fields, secrets and anything not portable across versions. Pair with <code>readObject/writeObject</code> for custom handling, or implement <code>Externalizable</code> for full control.</p>
+</details>
+
+## Object-Oriented Programming
+
+<details class="iq"><summary>16. What are the four pillars of OOP?</summary>
+<p><strong>Encapsulation</strong> (hide state behind accessors), <strong>inheritance</strong> (reuse/extend), <strong>polymorphism</strong> (one interface, many forms), <strong>abstraction</strong> (model essentials, hide detail). Composition over inheritance is the modern rule of thumb.</p>
+</details>
+
+<details class="iq"><summary>17. Abstract class vs interface - today's rules?</summary>
+<p>Abstract class: state, constructors, any visibility, single inheritance. Interface: contracts, default/static methods, multiple inheritance of type; fields are implicitly <code>public static final</code>. Use an interface for a capability ("can do"), an abstract class for a shared base implementation ("is a").</p>
+</details>
+
+<details class="iq"><summary>18. Is Java pass-by-value or pass-by-reference?</summary>
+<p><strong>Always pass by value.</strong> For primitives the value is copied; for objects the <em>reference</em> is copied - the method can mutate the same object, but reassigning the parameter does not affect the caller.</p>
+</details>
+
+<details class="iq"><summary>19. Overloading vs overriding?</summary>
+<p><strong>Overload</strong> = same name, different parameter list, resolved at <em>compile time</em> (static). <strong>Override</strong> = same signature in a subclass, resolved at <em>runtime</em> via the vtable. Constructors cannot be overridden; return type may only covary when overriding.</p>
+</details>
+
+<details class="iq"><summary>20. Can you override a private or static method?</summary>
+<p>No. Private methods are not visible to subclasses; static methods are hidden (resolved by reference type), not overridden. Calling a "hidden" method through a subclass reference still invokes the superclass version.</p>
+</details>
+
+<details class="iq"><summary>21. What is polymorphism's dynamic dispatch?</summary>
+<p>The JVM picks the implementation from the object's actual type at runtime, not the variable's declared type. Virtual methods go through the vtable; interfaces use itable dispatch. <code>final</code>/<code>private</code>/<code>static</code> methods and constructor calls are bound statically.</p>
+</details>
+
+<details class="iq"><summary>22. What is the Liskov Substitution Principle?</summary>
+<p>Subtypes must be substitutable for their base types: no stronger preconditions, no weaker postconditions, no broken invariants. Violations look like a subclass throwing where the parent promised not to, or a Square that breaks Rectangle's area contract.</p>
+</details>
+
+<details class="iq"><summary>23. Composition vs inheritance?</summary>
+<p>Composition builds behavior by delegating to contained objects - flexible at runtime, no fragile base class. Inheritance couples to the parent's internals and is fixed at compile time. Prefer composition; use inheritance for true is-a taxonomies and interfaces.</p>
+</details>
+
+<details class="iq"><summary>24. What is an immutable class? Recipe?</summary>
+<p>State never changes after construction. Recipe: <code>final</code> class, all fields <code>final</code> and private, no setters, defensive copies of mutable inputs/outputs, no <code>this</code> escaping in the constructor. Examples: String, Integer, Instant, records. Immutability gives thread-safety for free.</p>
+</details>
+
+<details class="iq"><summary>25. What does <code>final</code> mean in each position?</summary>
+<p>Variable: reference/value assigned once. Method: cannot be overridden. Class: cannot be extended. It has no direct effect on the <em>internal mutability</em> of the referenced object.</p>
+</details>
+
+<details class="iq"><summary>26. What is the diamond problem and how does Java solve it?</summary>
+<p>A class inheriting two classes with the same method. Java forbids multiple <em>class</em> inheritance entirely; for interfaces, a class must provide one implementation, and a <code>default</code> conflict between two interfaces must be resolved by overriding explicitly.</p>
+</details>
+
+<details class="iq"><summary>27. What are sealed classes and why?</summary>
+<p><code>sealed</code> (Java 17) restricts which classes may extend an interface/class (<code>permits</code>). Combined with pattern-matching <code>switch</code>, the compiler can check exhaustiveness - a controlled alternative to enums when subtypes carry data.</p>
+</details>
+
+<details class="iq"><summary>28. What is a record good for?</summary>
+<p>Plain, immutable data carriers: equals/hashCode/toString and accessors are generated. Use for DTOs, results and query objects - not for entities with identity or mutable lifecycle. Records cannot extend classes and are implicitly final.</p>
+</details>
+
+<details class="iq"><summary>29. What is the "fragile base class" problem?</summary>
+<p>A base class change silently breaks subclasses: a new method name colliding with a subclass method, changed calling conventions in constructors that invoke overridables, reliance on internal order. Composition and final/template-method discipline reduce the risk.</p>
+</details>
+
+<details class="iq"><summary>30. What are access modifiers?</summary>
+<p><code>private</code> (same class), default/package-private (same package), <code>protected</code> (package + subclasses), <code>public</code> (everywhere). Module boundaries (Java 9+) add another wall: exports decide which packages are even visible.</p>
+</details>
+
+## Strings
+
+<details class="iq"><summary>31. String vs StringBuilder vs StringBuffer?</summary>
+<p><code>String</code> immutable (safe, shareable). <code>StringBuilder</code> mutable, unsynchronized - use in single-threaded loops. <code>StringBuffer</code> synchronized legacy variant. In loops, concatenation compiles to StringBuilder since Java 5; repeated <code>+</code> in one expression still creates temporaries.</p>
+</details>
+
+<details class="iq"><summary>32. Why is String immutable?</summary>
+<p>Security (classloader paths, file paths, DB URLs can't be tampered), string-pool correctness, thread-safety without locks, and safe use as HashMap keys - a key that can't change can't get lost.</p>
+</details>
+
+<details class="iq"><summary>33. <code>==</code> vs <code>equals()</code> vs <code>compareTo()</code>?</summary>
+<p><code>==</code> compares references (identity). <code>equals()</code> compares logical content (as defined by the class). <code>compareTo()</code> gives ordering for sorts. Always override <code>equals</code> together with <code>hashCode</code> - equal objects must hash equally.</p>
+</details>
+
+<details class="iq"><summary>34. Why does <code>new String("a") == "a"</code> print false?</summary>
+<p>The literal is interned in the pool; <code>new</code> always allocates a fresh object outside it. Identity differs, content is equal. <code>.intern()</code> returns the pooled instance and would make the comparison true.</p>
+</details>
+
+<details class="iq"><summary>35. How does <code>String.intern()</code> work today?</summary>
+<p>Returns the canonical pooled representation: the literal's object, or (since 7) the heap copy moved/recorded in the pool. Historically used to deduplicate huge string sets; with the pool on the heap the old perf tricks matter much less.</p>
+</details>
+
+<details class="iq"><summary>36. How do you safely compare user input to a password-like value?</summary>
+<p>Use constant-time comparison for secrets: <code>MessageDigest.isEqual(a.getBytes(UTF_8), b.getBytes(UTF_8))</code> - <code>equals</code> short-circuits on first difference and leaks timing. Better still, store a salted hash (bcrypt/argon2) and compare hashes.</p>
+</details>
+
+<details class="iq"><summary>37. What is text blocks for?</summary>
+<p>Text blocks (Java 15) keep multi-line strings readable: <code>"""</code> delimiters, incidental indentation stripped, escaping on demand. Perfect for SQL, HTML, JSON and log formats - no more <code>\n</code> soup.</p>
+</details>
+
+<details class="iq"><summary>38. Are Strings Unicode?</summary>
+<p>Yes - UTF-16 code units internally, with surrogate pairs for supplementary characters. Beware <code>length()</code> counts code <em>units</em> (an emoji can be 2), and <code>charAt</code> can split a pair. Use <code>codePointCount</code>/<code>offsetByCodePoints</code> for text APIs.</p>
+</details>
+
+## Collections Framework
+
+<details class="iq"><summary>39. List vs Set vs Map?</summary>
+<p><strong>List</strong>: ordered, indexed, duplicates allowed (ArrayList, LinkedList). <strong>Set</strong>: unique elements (HashSet, TreeSet, LinkedHashSet). <strong>Map</strong>: key→value associations (HashMap, TreeMap). Queue/Deque (ArrayDeque, PriorityQueue) cover FIFO/priority processing.</p>
+</details>
+
+<details class="iq"><summary>40. ArrayList vs LinkedList - what do you actually pick?</summary>
+<p>ArrayList almost always: contiguous array, cache-friendly, O(1) random access, amortized O(1) append. LinkedList pays pointer overhead per node, loses on memory locality and loses on <code>get</code>; it only wins for heavy mid-list insert when you already hold the ListIterator.</p>
+</details>
+
+<details class="iq"><summary>41. HashMap internals?</summary>
+<p>Array of buckets + linked lists (bin), turning into trees (≤8 nodes, and table ≥64) when collisions pile up - red-black trees give O(log n) worst case. Hash spread with <code>hash ^ (hash>>>16)</code>; capacity is always a power of two; default load factor 0.75 triggers resize.</p>
+</details>
+
+<details class="iq"><summary>42. Why must <code>hashCode</code> and <code>equals</code> be consistent?</summary>
+<p>HashMap finds the bucket by hash, then the entry by <code>equals</code>. If equal objects hash differently, the entry lands in another bucket and is never found. Contract: equal ⇒ same hash; same hash ⇒ not necessarily equal; equals must be reflexive/symmetric/transitive/consistent.</p>
+</details>
+
+<details class="iq"><summary>43. Hashtable vs HashMap vs ConcurrentHashMap?</summary>
+<p>Hashtable: legacy, whole-map synchronized, unsized. HashMap: unsynchronized, fastest single-thread. ConcurrentHashMap (Java 8+): lock-free reads via volatile/CAS, per-bin locking on write - the default for concurrent code; also has <code>computeIfAbsent</code> atomic ops.</p>
+</details>
+
+<details class="iq"><summary>44. How do you iterate a HashMap?</summary>
+<p><code>for (var e : map.entrySet())</code> for values+keys, <code>map.forEach((k,v) -&gt; ...)</code>, or <code>map.values()</code>/<code>keySet()</code> when only one side is needed. Never mutate structure during iteration or you get ConcurrentModificationException - except via <code>Iterator.remove</code> or the map's own <code>remove</code>.</p>
+</details>
+
+<details class="iq"><summary>45. TreeMap vs LinkedHashMap?</summary>
+<p>TreeMap: sorted by key (or comparator), O(log n) ops, NavigableMap extras (headMap, ceilingKey). LinkedHashMap: insertion (or access) order, O(1), enables LRU caches via <code>removeEldestEntry</code> or access-order iteration.</p>
+</details>
+
+<details class="iq"><summary>46. Comparable vs Comparator?</summary>
+<p><code>Comparable</code> is the class's <em>natural</em> ordering (<code>compareTo</code>, one per class). <code>Comparator</code> is an external, composable strategy: <code>comparing(Person::name).thenComparing(Person::age)</code> - multiple orders without touching the class.</p>
+</details>
+
+<details class="iq"><summary>47. What is a fail-fast iterator?</summary>
+<p>ArrayList/HashMap iterators track a modCount and throw <code>ConcurrentModificationException</code> on structural change from another source - a quick guard, not a guarantee (it's best-effort). Use <code>CopyOnWriteArrayList</code> or concurrent collections for real multi-thread iteration.</p>
+</details>
+
+<details class="iq"><summary>48. Enumeration vs Iterator?</summary>
+<p><code>Enumeration</code> is the legacy (Vector/Hashtable) interface: <code>hasMoreElements</code>/<code>nextElement</code>, no remove. <code>Iterator</code> added <code>remove()</code> and is the framework standard - new code should use <code>Iterator</code> or Streams; Enumeration only appears in old APIs and <code>jar</code>/resource listings.</p>
+</details>
+
+<details class="iq"><summary>49. What does <code>Collections.unmodifiable</code> vs immutable mean?</summary>
+<p><code>unmodifiableList</code> wraps: writes throw, but the <em>backing</em> list can still change. <code>List.of</code>/<code>List.copyOf</code> are truly immutable snapshots: fixed content, <code>null</code> rejected, safe to share. Prefer the real immutable factories.</p>
+</details>
+
+<details class="iq"><summary>50. What is the difference between Array and ArrayList?</summary>
+<p>Arrays are fixed-size, covariant (<code>String[]</code> is an <code>Object[]</code> - runtime ArrayStoreException risk), can hold primitives. ArrayList is resizable, generics-erased (no store exception, rethinks at compile time), objects only (autoboxing for ints).</p>
+</details>
+
+## Threading & Concurrency
+
+<details class="iq"><summary>51. Process vs thread?</summary>
+<p>A process has its own address space, files and security context; threads of a process share that memory and resources but have their own stack and program counter. Threads are cheaper to create/switch; a process crash isolates, a bad thread can corrupt shared state.</p>
+</details>
+
+<details class="iq"><summary>52. Ways to create threads?</summary>
+<p><code>Thread</code> subclass, <code>Runnable</code> passed to Thread, <code>Callable</code>+<code>FutureTask</code> (returns a result/throws), thread pools via <code>ExecutorService</code>, <code>CompletableFuture</code>, parallel streams, and virtual threads (Java 21). Production code: executors or virtual threads - never raw threads.</p>
+</details>
+
+<details class="iq"><summary>53. start() vs run()?</summary>
+<p><code>start()</code> creates a new OS thread and calls <code>run()</code> on it (one start only - second call throws). Calling <code>run()</code> directly is just a method call on the current thread - no concurrency at all, a classic interview trap.</p>
+</details>
+
+<details class="iq"><summary>54. What is a race condition?</summary>
+<p>Outcome depends on uncontrolled interleaving: read-check-write on shared state, check-then-act in HashMap, lazy init without sync. Fix with locks, atomic classes, immutable data, or confinement - don't rely on "it works on my machine".</p>
+</details>
+
+<details class="iq"><summary>55. synchronized vs volatile?</summary>
+<p><code>volatile</code>: visibility + ordering only - reads see latest write, no reordering across it; no mutual exclusion, <code>i++</code> is still unsafe. <code>synchronized</code>: mutual exclusion + the same memory guarantees (lock releases flush, acquires reload). Use volatile for flags/handoff, locks for compound actions.</p>
+</details>
+
+<details class="iq"><summary>56. What is deadlock and how do you prevent it?</summary>
+<p>Two threads waiting on each other's locks, forever. Prevention: consistent global lock ordering, try-lock with timeout (<code>lock.tryLock(1, SECONDS)</code>), shrink lock scope, avoid nested locks, or use higher-level concurrency (ConcurrentHashMap, actors). jstack/jcmd thread dumps show "found one Java-level deadlock".</p>
+</details>
+
+<details class="iq"><summary>57. What is the Java Memory Model's happens-before?</summary>
+<p>A visibility ordering: if action A happens-before B, B sees A's writes. Key edges: program order, monitor unlock→lock, volatile write→read, thread start→first action, final field freeze. Without an edge the JIT may reorder or cache - this is the theory under synchronized/volatile.</p>
+</details>
+
+<details class="iq"><summary>58. wait() vs sleep() vs join()?</summary>
+<p><code>wait()</code>: must hold the monitor, releases it, needs <code>notify/notifyAll</code>, resumes on re-acquire. <code>sleep()</code>: any thread, keeps locks, just pauses. <code>join()</code>: waits for that thread's death (implemented with wait on the Thread object).</p>
+</details>
+
+<details class="iq"><summary>59. notify() vs notifyAll()?</summary>
+<p><code>notify()</code> wakes one arbitrary waiter; <code>notifyAll()</code> wakes all, who then race for the monitor. With multiple conditions/roles sharing one monitor, notify can wake the wrong thread repeatedly - notifyAll is the safe default unless predicates guarantee only one can proceed.</p>
+</details>
+
+<details class="iq"><summary>60. Producer-consumer in one breath?</summary>
+<p>A shared bounded buffer: producer blocks when full, consumer blocks when empty. Java options: <code>BlockingQueue</code> (<code>ArrayBlockingQueue</code>, <code>LinkedBlockingQueue</code>, <code>SynchronousQueue</code>) where the queue <em>is</em> the synchronization; or wait/notify with explicit lock and condition predicates.</p>
+</details>
+
+<details class="iq"><summary>61. ThreadLocal - what and why not overuse?</summary>
+<p>Per-thread variable: each thread sees its own instance (typical: SimpleDateFormat, request context, transaction handles). Danger: pooled threads retain values → leaks and cross-request contamination; always <code>remove()</code> in finally. Virtual threads make ThreadLocal-heavy code memory-hungry.</p>
+</details>
+
+<details class="iq"><summary>62. Callable vs Runnable?</summary>
+<p>Runnable: <code>run()</code>, no return, no checked exceptions. Callable: <code>call()</code> returns <code>V</code> and may throw - submitted to an ExecutorService it yields a <code>Future&lt;V&gt;</code>. Together via <code>invokeAll</code>/<code>invokeAny</code> you get batch results or first-success semantics.</p>
+</details>
+
+<details class="iq"><summary>63. Future vs CompletableFuture?</summary>
+<p>Future blocks: <code>get()</code> waits, no composition, weak cancellation. CompletableFuture is async and composable: <code>thenApply/thenCompose/thenCombine/allOf</code>, callbacks, exception handling - the basis of non-blocking pipelines (Reactor/RxJava are the richer cousins).</p>
+</details>
+
+<details class="iq"><summary>64. What are semaphores, latches and barriers?</summary>
+<p><code>Semaphore</code>: N permits - limit concurrency (pools, rate limits). <code>CountDownLatch</code>: one-shot wait for N events (start line). <code>CyclicBarrier</code>: threads rendezvous and continue repeatedly (phased simulations). All from <code>java.util.concurrent</code>, built on AQS.</p>
+</details>
+
+<details class="iq"><summary>65. Virtual threads vs platform threads?</summary>
+<p>Platform threads map 1:1 to OS threads (expensive, thousands max). Virtual threads (Java 21) are scheduled onto a small pool: millions of tasks blocked on IO are fine because blocking unmounts the carrier. Great for IO-bound servers; CPU-bound work still wants a smaller platform pool (or structured concurrency).</p>
+</details>
+
+## Exceptions & Language
+
+<details class="iq"><summary>66. Checked vs unchecked exceptions?</summary>
+<p>Checked (IOException, SQLException): compiler enforces <code>throws</code> or handling - recoverable conditions the caller must know about. Unchecked (RuntimeException: NPE, ISE): programming defects. Design rule: throw checked only when the caller can actually do something about it.</p>
+</details>
+
+<details class="iq"><summary>67. throw vs throws?</summary>
+<p><code>throw</code> raises an actual exception instance (<code>throw new IllegalArgumentException(...)</code>). <code>throws</code> declares possible exceptions in a method signature for the compiler.</p>
+</details>
+
+<details class="iq"><summary>68. try-with-resources vs finally?</summary>
+<p>TWR (Java 7+) closes each <code>AutoCloseable</code> in reverse declaration order automatically, and (since 9) reuses effectively-final existing variables. Exceptions in the body are suppressed-not-lost (addSuppressed). finally stays for locks/non-resources; never put return inside finally.</p>
+</details>
+
+<details class="iq"><summary>69. Can you catch an Error like OutOfMemoryError?</summary>
+<p>Technically yes (it's a Throwable), practically no: Errors signal unrecoverable JVM/system conditions. Don't swallow them; let the process die and alerting fire. Same spirit for StackOverflowError and linkage Errors.</p>
+</details>
+
+<details class="iq"><summary>70. What is exception chaining?</summary>
+<p>Wrapping a low-level cause while preserving it: <code>new ServiceException("save failed", ex)</code> or <code>initCause</code>. The stack trace keeps the root - never replace a cause with a bare <code>new Exception("error")</code>.</p>
+</details>
+
+<details class="iq"><summary>71. What happens if a finally block returns?</summary>
+<p>The method returns from finally, silently swallowing any pending exception and discarding the original return value - a classic bug. Avoid return/break/continue in finally (the compiler warns; try-with-resources removed the need).</p>
+</details>
+
+<details class="iq"><summary>72. Multi-catch and precise rethrow?</summary>
+<p><code>catch (IOException | SQLException e)</code> handles alternatives with one body (e is effectively final). With Java 7 precise rethrow, <code>catch (Exception e) { throw e; }</code> only propagates the <em>actually thrown</em> checked types - no blanket throws clause needed.</p>
+</details>
+
+## Generics, Reflection, Lambdas & Streams
+
+<details class="iq"><summary>73. Why generics? Type erasure?</summary>
+<p>Generics give compile-time type safety and remove casts. Erasure: type parameters exist only at compile time - <code>List&lt;String&gt;</code> becomes raw <code>List</code> plus casts/bridges. Consequences: no <code>new T()</code>, no <code>instanceof List&lt;String&gt;</code>, arrays of type parameters impossible - but full binary compatibility with pre-generics code.</p>
+</details>
+
+<details class="iq"><summary>74. What are wildcards? PECS?</summary>
+<p><code>&lt;? extends T&gt;</code> read-only producer of T; <code>&lt;? super T&gt;</code> write-only consumer of T; <code>&lt;?&gt;</code> unbounded. <strong>PECS</strong> - Producer Extends, Consumer Super: <code>copy(List&lt;? extends T&gt; src, List&lt;? super T&gt; dst)</code> types collections you read from and write to correctly.</p>
+</details>
+
+<details class="iq"><summary>75. Bounded type parameters?</summary>
+<p><code>&lt;T extends Comparable&lt;T&gt;&gt;</code> constrains T to types usable by the algorithm, letting the body call <code>t.compareTo</code> without casts. Multiple bounds: <code>&lt;T extends A &amp; B &gt;</code> (class bound first). This is how <code>Collections.sort</code> stays type-safe.</p>
+</details>
+
+<details class="iq"><summary>76. What is a lambda expression under the hood?</summary>
+<p>Syntactic sugar for an instance of a functional interface (single abstract method). Non-capturing lambdas are cached singletons; capturing lambdas generate/define a class implementing the interface, with captured locals stored as fields. <code>this</code> inside a lambda is the enclosing instance.</p>
+</details>
+
+<details class="iq"><summary>77. Lambda vs anonymous class?</summary>
+<p>Same interface targets, differences: lambdas are scope-polymorphic (one generated class per state shape), can't declare fields, <code>this</code> = enclosing object, faster to parse. Anonymous classes define a real named class subtype with their own state and identity.</p>
+</details>
+
+<details class="iq"><summary>78. Stream vs Collection?</summary>
+<p>Collections are data (store, traverse, mutate now). Streams are computation (describe a pipeline, evaluate lazily once on terminal op). No storage, no removal, elements not modified by the stream - that's why <code>stream().forEach(list::add)</code> is an anti-pattern.</p>
+</details>
+
+<details class="iq"><summary>79. Lazy vs eager evaluation in streams?</summary>
+<p><code>filter/map/limit</code> are lazy - nothing runs until a terminal op (<code>collect/forEach/reduce</code>). That's why <code>limit</code> short-circuits: <code>generate(infinite).limit(10)</code> is safe while eager mapping would hang. Intermediate ops return new streams, single-use.</p>
+</details>
+
+<details class="iq"><summary>80. Intermediate vs terminal operations?</summary>
+<p>Intermediate: return streams, are lazy, may be fused (map+filter compiled into one pass). Terminal: trigger execution, produce a result/side effect, consume the stream. Stream can have many intermediate ops, exactly one terminal.</p>
+</details>
+
+<details class="iq"><summary>81. Parallel streams - when?</summary>
+<p>Only for large, CPU-bound, order-insensitive work on an immutable-ish data source; the common ForkJoinPool gets saturated (it shares with parallelCount logic) and blocking IO inside is poison. For IO use virtual threads/executors; when in doubt, measure - parallel often loses on small inputs.</p>
+</details>
+
+<details class="iq"><summary>82. What does reflection allow? Cost?</summary>
+<p>Inspect classes at runtime (fields/methods/annotations), create instances, invoke methods, even touch private members (<code>setAccessible</code>). Costs: slower than direct calls, defeats static checks (strings instead of symbols), breaks under module encapsulation, and complicates GraalVM native-image. Frameworks use it; business code rarely should.</p>
+</details>
+
+<details class="iq"><summary>83. What are annotations and meta-annotations?</summary>
+<p>Compile/runtime metadata: <code>@Override</code>, <code>@Deprecated</code>, custom <code>@Route</code>, framework markers. Meta-annotations annotate annotations: <code>@Target</code>, <code>@Retention</code> (SOURCE/CLASS/RUNTIME), <code>@Inherited</code>, <code>@Repeatable</code>. Runtime processing uses reflection; APT (Abstract Processor) generates code at compile time (MapStruct, Dagger).</p>
+</details>
+
+## Java 8–21
+
+<details class="iq"><summary>84. What did Java 8 give us?</summary>
+<p>Lambdas, method references, the Stream API, default/static interface methods, Optional, new date/time (JSR-310), CompletableFuture, functional interfaces (Function/Predicate/Supplier), parallel F/J improvements, Nashorn (since removed). The biggest language step since Java 5.</p>
+</details>
+
+<details class="iq"><summary>85. Optional - correct usage?</summary>
+<p>Return type for maybe-absent values: <code>findFirst()</code>, <code>map</code>/<code>filter</code>/<code>orElseGet</code>, <code>orElseThrow</code>. Never as a field, parameter or collection element; don't call <code>get</code> without <code>isPresent</code>. <code>map(x -&gt; x.orElse(...))</code> or nesting is usually a design smell.</p>
+</details>
+
+<details class="iq"><summary>86. Record patterns and pattern matching milestones?</summary>
+<p><code>instanceof</code> binding (16), pattern matching for <code>switch</code> (21 - finalized), record patterns (19/21 - destructure <code>case Point(int x, int y)</code>), sealed types (17), virtual threads (21). Together they make data-oriented code concise and exhaustiveness-checked.</p>
+</details>
+
+<details class="iq"><summary>87. What is the var keyword?</summary>
+<p>Local variable type inference (10): the type is still static, just written once from the initializer - <code>var m = new HashMap&lt;String, List&lt;Integer&gt;&gt;()</code>. Not for fields/parameters without initializer, not for null alone, excellent for noisy generics. Not JavaScript's var.</p>
+</details>
+
+<details class="iq"><summary>88. String methods added in recent versions?</summary>
+<p><code>strip()</code> (unicode-aware, 11), <code>isBlank()</code>, <code>lines()</code>, <code>repeat()</code>, <code>formatted</code>, <code>describeConstable</code>, <code>indexOf</code> overloads. Plus <code>String.join</code>, <code>chars</code>, <code>codePoints</code> - prefer these over manual StringTokenizer/index loops.</p>
+</details>
+
+<details class="iq"><summary>89. What is the HttpClient API?</summary>
+<p>Java 11's <code>java.net.http.HttpClient</code>: sync <code>send</code> and async <code>sendAsync</code>, HTTP/2 by default with 1.1 fallback, WebSockets, timeouts, async body handlers. Replaces URLConnection boilerplate for modern calls; reactive IO with <code>BodyHandlers.ofPublisher</code>.</p>
+</details>
+
+<details class="iq"><summary>90. Modules in brief?</summary>
+<p>JPMS (9+): packages grouped into modules with explicit <code>requires</code>/<code>exports</code> - strong encapsulation (reflective access to non-exported packages fails by default), smaller runtimes (<code>jlink</code>), faster startup potential. Classic classpath remains "unnamed module" - migration is gradual, most apps still run fine there.</p>
+</details>
+
+## JDBC & Database
+
+<details class="iq"><summary>91. JDBC flow in order?</summary>
+<p>Load driver (auto via ServiceLoader now) → <code>DriverManager.getConnection</code>/<code>DataSource</code> → <code>PreparedStatement</code> → <code>executeQuery/executeUpdate</code> → <code>ResultSet</code> loop → close resources (try-with-resources). Always use parameters via <code>setXxx</code>, never string concatenation.</p>
+</details>
+
+<details class="iq"><summary>92. PreparedStatement vs Statement?</summary>
+<p>Precompiled plan + bound parameters: safe from SQL injection, faster on reuse, type-safe setters. Statement invites injection and re-parses every time. For batch inserts: <code>addBatch/executeBatch</code> round-trips one message instead of N.</p>
+</details>
+
+<details class="iq"><summary>93. What does setAutoCommit(false) give you?</summary>
+<p>Manual transaction control: commit at a logical unit of work, rollback on failure, so partial writes never persist. Add savepoints for nested rollback. Today you'd often let the framework (JTA/Spring) manage it, but the underlying mechanism is the same.</p>
+</details>
+
+<details class="iq"><summary>94. ResultSet types - scrollable and updatable?</summary>
+<p>Default forward-only, read-only. <code>TYPE_SCROLL_INSENSITIVE</code> allows absolute/relative navigation (snapshot), <code>SCROLL_SENSITIVE</code> sees others' changes (driver support varies). <code>CONCUR_UPDATABLE</code> lets <code>updateRow/deleteRow</code> - convenient, but usually better to UPDATE via SQL.</p>
+</details>
+
+<details class="iq"><summary>95. What is a DataSource vs DriverManager?</summary>
+<p>DataSource is the modern entry point: pooling (HikariCP), JNDI lookup, driver configuration in one place - connections are reused instead of opened per request. DriverManager creates raw single-use connections; app servers and pools all expose a DataSource.</p>
+</details>
+
+<details class="iq"><summary>96. What causes SQLIntegrityConstraintViolationException?</summary>
+<p>PK/FK/unique/check violations crossing your SQL - duplicate insert, orphan reference, null in not-null. Handle by mapping to 409/conflict, not by retrying blindly; use upsert (<code>MERGE</code>/<code>ON CONFLICT</code>) when duplicates are expected concurrency.</p>
+</details>
+
+## Web: Servlets, JSP, Spring, Hibernate
+
+<details class="iq"><summary>97. Servlet lifecycle?</summary>
+<p>Container loads the class and creates one instance → <code>init()</code> once → <code>service()</code> per request dispatched to doGet/doPost/... (concurrent, on many threads - keep fields clean) → <code>destroy()</code> on undeploy. One instance, many threads is the mental model that prevents subtle bugs.</p>
+</details>
+
+<details class="iq"><summary>98. What is session tracking?</summary>
+<p>State across requests: <code>HttpSession</code> with the <code>JSESSIONID</code> cookie (URL rewriting via <code>encodeURL</code> for cookie-less clients), hidden form fields, or tokens. Sessions live server-side; scale-out means sticky sessions or a shared store (Redis).</p>
+</details>
+
+<details class="iq"><summary>99. Filter vs Interceptor vs Listener?</summary>
+<p><strong>Filter</strong> (<code>javax/jakarta.servlet</code>) wraps requests/responses before the servlet - auth, gzip, CORS. <strong>Interceptor</strong> (Spring MVC) works inside the DispatcherServlet chain around handler methods - AOP-ish concerns. <strong>Listener</strong> reacts to lifecycle events (session created, context initialized).</p>
+</details>
+
+<details class="iq"><summary>100. MVC in Spring - request path?</summary>
+<p>Request → <code>DispatcherServlet</code> → handler mapping → controller method (with bound <code>@RequestParam/@RequestBody</code>) → <code>ModelAndView</code>/<code>@ResponseBody</code> → view resolver (templates) or message converters (JSON) → response. Services and repositories sit below the controller - controllers stay thin.</p>
+</details>
+
+<details class="iq"><summary>101. Spring IoC and DI in one paragraph?</summary>
+<p>The container builds objects and wires collaborators instead of you calling <code>new</code>: <code>@Component</code>-scanned beans in a registry, constructor injection by default, AOP proxies for <code>@Transactional</code>. Benefits: loose coupling, swappable implementations (test doubles), lifecycle/transaction declaratively.</p>
+</details>
+
+<details class="iq"><summary>102. What does @Transactional actually guard?</summary>
+<p>It proxies the bean and opens a transaction around the method (default rolls back on RuntimeException only). Pitfalls: self-invocation bypasses the proxy, private methods don't trigger it, checked exceptions need <code>rollbackFor=</code>, and don't hold a transaction across HTTP calls or heavy processing.</p>
+</details>
+
+<details class="iq"><summary>103. Spring Boot's magic?</summary>
+<p>Auto-configuration: starter dependencies plus <code>@Conditional</code> rules decide datasource, web server, Jackson, actuator setup for you - embedded Tomcat, externalized config (yaml/env/profiles), production-ready health endpoints. No XML, minimal boilerplate - the "convention over configuration" of Spring.</p>
+</details>
+
+<details class="iq"><summary>104. Hibernate vs JPA?</summary>
+<p>JPA is the specification (annotations, EntityManager, JPQL). Hibernate is the leading implementation plus extras (Second-level cache, Criteria API polish, HQL refinements). You code to JPA (<code>@Entity</code>, repositories) and can swap providers; vendor APIs leak only when you opt in.</p>
+</details>
+
+<details class="iq"><summary>105. What is the N+1 select problem?</summary>
+<p>One query for parents, then N lazy queries for each parent's children - the classic ORM performance bug. Fixes: <code>join fetch</code>/EAGER judiciously, <code>@EntityGraph</code>, batch fetch (<code>@BatchSize</code>), or a projection query. Watch SQL logs in tests to catch it early.</p>
+</details>
+
+<details class="iq"><summary>106. Hibernate session and identity?</summary>
+<p>The Session (EntityManager) is a per-transaction unit of work: first-level cache keeps identity - the same PK returns the same instance while the session lives. <code>save</code>/<code>persist</code> assigns the id, <code>merge</code> copies state onto a detached instance, <code>detach/clear</code> leaves the session.</p>
+</details>
+
+## Design, Testing & Behavioral
+
+<details class="iq"><summary>107. Singleton - pitfalls?</summary>
+<p>Global mutable state, hidden coupling, testability loss, classloader issues in app servers, eager init cost. If needed: enum singleton or holder id - but prefer scoped beans/dependency injection; most "singletons" are just one-per-container services.</p>
+</details>
+
+<details class="iq"><summary>108. Strategy and Factory in one line each?</summary>
+<p><strong>Strategy</strong>: inject/swap the algorithm behind a stable interface (comparators, payment providers). <strong>Factory</strong>: centralize creation so callers don't know the concrete type - returns the right implementation from a hint/config.</p>
+</details>
+
+<details class="iq"><summary>109. What makes code testable?</summary>
+<p>Small units with injected dependencies, no statics/singletons/time/network inside core logic, deterministic inputs (inject Clock/Random), explicit outputs instead of hidden side effects, and seams for fakes (interfaces, constructors). Then tests stay fast and boring.</p>
+</details>
+
+<details class="iq"><summary>110. Unit vs integration test?</summary>
+<p>Unit: one class/method with fakes, milliseconds, no IO - describes design. Integration: real collaborators (DB, web container, broker) - verifies wiring and SQL. Both needed; the pyramid is many units, fewer integration, rare E2E. Flaky integration tests usually mean leaked state or time dependence.</p>
+</details>
+
+<details class="iq"><summary>111. How do you debug a hung Java service?</summary>
+<p><code>jstack &lt;pid&gt;</code> (or jcmd Thread.print) several times - look for threads stuck in the same frame, <code>BLOCKED</code>/waiting states, deadlock section. Then heap histograms (<code>jmap -histo</code>), async-profiler for CPU, GC logs for pause mysteries. Reproduce with a thread dump before touching code.</p>
+</details>
+
+<details class="iq"><summary>112. What would you check for a sudden memory leak in production?</summary>
+<p>Heap after GC keeps growing? Take <code>jcmd &lt;pid&gt; GC.heap_dump</code> (or JFR recording), find dominator tree: static collections, caches without bounds, ThreadLocals in pools, listener leaks, <code>ClassLoader</code> accumulation (deployment reloads). Compare histograms across time to spot the growing class.</p>
+</details>
+
+<details class="iq"><summary>113. serialVersionUID - what for?</summary>
+<p>Guards serialization compatibility: same UID = streams compatible despite field evolution (add/remove with care); different UID → InvalidClassException. Generate explicitly (<code>serialver</code>, IDE) - the default computed UID breaks with almost any class edit.</p>
+</details>
+
+<details class="iq"><summary>114. Lamda capture rules?</summary>
+<p>Lambdas may only capture (effectively) <strong>final</strong> locals and the enclosing instance's fields/methods - no mutable local capture (pre-8; still true for locals). Mutation goes through single-element arrays or holders. Parameters and caught variables follow the same effectively-final rule.</p>
+</details>
+
+<details class="iq"><summary>115. Default methods - why do they exist?</summary>
+<p>To evolve interfaces without breaking implementors: Java 8 added <code>Iterator.remove</code>, <code>Collection.stream</code> this way. Rules: class methods win over interface defaults; more specific interface wins; otherwise you must override explicitly. Also the tool for multiple inheritance of type.</p>
+</details>
+
+---
+
+**Practice next:** take the [15-question OCJP/OCJA practice test](ocjp-practice.html) or browse the [Advanced Java](networking.html) tutorials. Want even more? The sidebar's archive section (see footer note) has 300+ worked examples.

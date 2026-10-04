@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Object Deep copy - JavaSchool</title>
+<meta name="description" content="* Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-class-objectdeepcopy">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-class.html">Class</a></nav>
+    <h1>Object Deep copy</h1>
+<p>Object Deep copy</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright 2009-2010 junithelper.org.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+//package org.junithelper.core.util;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.ArrayList;
+import java.util.List;
+public final class ObjectUtil {
+    private ObjectUtil() {
+    }
+    @SuppressWarnings("unchecked")
+    public static &lt;T&gt; T deepCopy(T obj) {
+        try {
+            if (obj == null) {
+                return null;
+            }
+            Class&lt;?&gt; clazz = obj.getClass();
+            T clone = (T) clazz.newInstance();
+            Field[] fields = clazz.getDeclaredFields();
+            for (int i = 0; i &lt; fields.length; i++) {
+                Field field = fields[i];
+                field.setAccessible(true);
+                if (!Modifier.isFinal(field.getModifiers())) {
+                    if (field.get(obj) instanceof List&lt;?&gt;) {
+                        List&lt;?&gt; copiedList = deepCopyList((List&lt;?&gt;) field.get(obj));
+                        field.set(clone, copiedList);
+                    } else {
+                        field.set(clone, field.get(obj));
+                    }
+                }
+            }
+            while (true) {
+                if (Object.class.equals(clazz)) {
+                    break;
+                }
+                clazz = clazz.getSuperclass();
+                Field[] sFields = clazz.getDeclaredFields();
+                for (int i = 0; i &lt; sFields.length; i++) {
+                    Field field = sFields[i];
+                    field.setAccessible(true);
+                    if (!Modifier.isFinal(field.getModifiers())) {
+                        if (field.get(obj) instanceof List&lt;?&gt;) {
+                            List&lt;?&gt; copiedList = deepCopyList((List&lt;?&gt;) field.get(obj));
+                            field.set(clone, copiedList);
+                        } else {
+                            field.set(clone, field.get(obj));
+                        }
+                    }
+                }
+            }
+            return clone;
+        } catch (InstantiationException e) {
+            return null;
+        } catch (IllegalAccessException e) {
+            return null;
+        }
+    }
+    public static &lt;T&gt; List&lt;T&gt; deepCopyList(List&lt;T&gt; arg) {
+        if (arg == null) {
+            return null;
+        }
+        List&lt;T&gt; retList = new ArrayList&lt;T&gt;();
+        for (T each : arg) {
+            retList.add(deepCopy(each));
+        }
+        return retList;
+    }
+}
+/*
+package org.junithelper.core.util;
+import org.junit.Test;
+import org.junithelper.core.meta.ArgTypeMeta;
+import org.junithelper.core.meta.MethodMeta;
+import java.util.ArrayList;
+import java.util.List;
+import static org.junit.Assert.*;
+public class ObjectUtilTest {
+    @Test
+    public void deepCopy_A$T_paramNull() throws Exception {
+        Object arg = null;
+        Object res = ObjectUtil.deepCopy(arg);
+        assertNull(res);
+        assertNull(arg);
+    }
+    @Test
+    public void deepCopy_A$T_paramObject() throws Exception {
+        Object arg = new Object();
+        Object res = ObjectUtil.deepCopy(arg);
+        assertNotSame(res, arg);
+    }
+    @Test
+    public void deepCopy_A$T_paramClass() throws Exception {
+        Object arg = new Object();
+        Object res = ObjectUtil.deepCopy(arg);
+        assertNotSame(res, arg);
+    }
+    @Test
+    public void deepCopy_A$T_MethodInfo() throws Exception {
+        MethodMeta arg = new MethodMeta();
+        arg.argTypes.add(new ArgTypeMeta());
+        arg.isStatic = true;
+        arg.name = "hogehoge";
+        MethodMeta res = ObjectUtil.deepCopy(arg);
+        assertNotSame(arg.argTypes, res.argTypes);
+        assertNotSame(arg.argTypes.get(0), res.argTypes.get(0));
+        assertEquals(arg.isStatic, res.isStatic);
+        assertEquals(arg.name, res.name);
+    }
+    @Test
+    public void deepCopyList_A$List_List() throws Exception {
+        List&lt;Object&gt; arg = new ArrayList&lt;Object&gt;();
+        arg.add(new Object());
+        arg.add(new Object());
+        List&lt;Object&gt; result = ObjectUtil.deepCopyList(arg);
+        assertNotSame(result, arg);
+        assertNotSame(result.get(0), arg.get(0));
+        assertNotSame(result.get(0), arg.get(0));
+    }
+    @Test
+    public void deepCopyList_A$List_empty() throws Exception {
+        List&lt;Object&gt; arg = new ArrayList&lt;Object&gt;();
+        List&lt;Object&gt; result = ObjectUtil.deepCopyList(arg);
+        assertNotSame(result, arg);
+    }
+    @Test
+    public void deepCopyList_A$List_null() throws Exception {
+        List&lt;Object&gt; arg = null;
+        List&lt;Object&gt; result = ObjectUtil.deepCopyList(arg);
+        assertSame(result, arg);
+    }
+    @Test
+    public void type() throws Exception {
+        assertNotNull(ObjectUtil.class);
+    }
+    @Test
+    public void deepCopy_A$Object_null() throws Exception {
+        // given
+        Object obj = null;
+        // when
+        Object actual = ObjectUtil.deepCopy(obj);
+        // then
+        Object expected = null;
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void deepCopy_A$Object_notNull() throws Exception {
+        // given
+        Object obj = new ObjectUtilTest();
+        // when
+        Object actual = ObjectUtil.deepCopy(obj);
+        // then
+        Object expected = obj;
+        assertFalse(expected == actual);
+    }
+}
+*/</code></pre></div>
+<ol><li>A Cloning Example</li></ol>
+<p>---  ---</p>
+<ol><li>Class is declared to be cloneable.</li><li>Arrays are automatically cloneable</li><li>Clone objects</li><li>Creating a Deep Copy</li><li>Shallow Copy Test</li><li>Deep Copy Test</li><li>Uses serialization to perform deep copy cloning.</li><li>Tests cloning to see if destination of references are also cloned</li><li>Creating local copies with clone</li><li>You can insert Cloneability at any level of inheritance</li><li>Cloning a composed object</li><li>Serializable and clone</li><li>Go through a few gyrations to add cloning to your own class</li><li>Checking to see if a reference can be cloned</li><li>The clone operation works for only a few items in the standard Java library</li><li>Demonstration of cloning</li><li>Simple demo of avoiding side-effects by using Object.clone</li><li>Clone an object with clone method from parent</li><li>Manipulate properties after clone operation</li><li>Deep clone Object</li><li>Serializable Clone</li><li>Utility for object cloning</li><li>Clone Via Serialization</li><li>Clone demo</li><li>Deep clone serializing/de-serializng Clone</li><li>Implements a pool of internalized objects</li><li>A collection of utilities to workaround limitations of Java clone framework</li><li>This program demonstrates cloning</li><li>Returns a copy of the object, or null if the object cannot be serialized.</li><li>Deep-copies the values from one object to the other</li></ol>
+    <div class="pager"><a class="pager-btn" href="regular-expressions-matchaddressmixingnumnersandcharacters.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Match Address</span></a><a class="pager-btn pager-next" href="velocity-rangewithnegativeindex.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Range with negative index</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

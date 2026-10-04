@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Byte Range - JavaSchool</title>
+<meta name="description" content="* Licensed to the Apache Software Foundation (ASF) under one or more">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-byterange">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-data-type-0040.html">Data Type (0040)</a></nav>
+    <h1>Byte Range</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * @version $Id: ByteRange.java 587751 2007-10-24 02:41:36Z vgritsenko $
+ */
+final public class ByteRange {
+    private final long start;
+    private final long end;
+    public ByteRange(long start, long end) {
+        this.start = start;
+        this.end = end;
+    }
+    public ByteRange(String string) throws NumberFormatException {
+        string = string.trim();
+        int dashPos = string.indexOf('-');
+        int length = string.length();
+        if (string.indexOf(',') != -1) {
+            throw new NumberFormatException("Simple ByteRange String contains a comma.");
+        }
+        if (dashPos &gt; 0) {
+            this.start = Integer.parseInt(string.substring(0, dashPos));
+        } else {
+            this.start = Long.MIN_VALUE;
+        }
+        if (dashPos &lt; length - 1) {
+            this.end = Integer.parseInt(string.substring(dashPos + 1, length));
+        } else {
+            this.end = Long.MAX_VALUE;
+        }
+        if (this.start &gt; this.end) {
+            throw new NumberFormatException("Start value is greater than end value.");
+        }
+    }
+    public long getStart() {
+        return this.start;
+    }
+    public long getEnd() {
+        return this.end;
+    }
+    public long length() {
+        return this.end - this.start + 1;
+    }
+    public ByteRange intersection(ByteRange range) {
+        if (range.end &lt; this.start || this.end &lt; range.start) {
+            return null;
+        } else {
+            long start = (this.start &gt; range.start) ? this.start : range.start;
+            long end = (this.end &lt; range.end) ? this.end : range.end;
+            return new ByteRange(start, end);
+        }
+    }
+    public String toString() {
+        return this.start + "-" + this.end;
+    }
+}</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="jsp-beanswithscriptlet.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Beans with scriptlet</span></a><a class="pager-btn pager-next" href="development-changingasinglecharacterinastringbufferobject.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Changing a single characte...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

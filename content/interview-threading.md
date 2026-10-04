@@ -1,0 +1,127 @@
+---
+title: Threads & Concurrency Interview Questions
+nav: Interview - Threads
+description: 28 concurrency interview questions - thread lifecycle, synchronized, volatile, Java memory model, deadlocks, executors, CompletableFuture, virtual threads.
+section: Interview & Certification
+order: 40
+---
+
+## Threads & Concurrency - topic bank
+
+Topic bank #3 of the [Interview Prep hub](interview.html). Deep dive tutorial: [Thread tutorial](threads.html) · Archive: [Thread classes](threads.html).
+
+<details class="iq"><summary>1. Thread vs Runnable vs Callable?</summary>
+<p>Thread is a class owning a native thread + <code>start/join</code>; Runnable is a unit of work returning nothing; Callable returns a value/throws, run by executors giving a <code>Future</code>. Modern default: implement Runnable/Callable and hand to an <code>ExecutorService</code> - manual <code>new Thread</code> only for demos or one-off background tasks (and virtual threads change even that calculus).</p>
+</details>
+
+<details class="iq"><summary>2. Lifecycle states and legal transitions?</summary>
+<p>NEW → RUNNABLE (start) → {BLOCKED | WAITING | TIMED_WAITING} → RUNNABLE → TERMINATED. BLOCKED = waiting for a monitor; WAITING = <code>wait/join/park</code> without timeout; TIMED_WAITING = with timeout. Illegal: <code>start</code> twice, <code>start</code> a dead thread. <code>interrupt()</code> only sets a flag or throws InterruptedException if blocked.</p>
+</details>
+
+<details class="iq"><summary>3. What exactly does <code>synchronized</code> guarantee?</summary>
+<p>Mutual exclusion + visibility: at monitor entry, read fresh values; at exit, flush writes (happens-before edge). It locks on an object: synchronized method → <code>this</code> (static methods → Class object). Reentrant, so nested calls are fine. Only one thread per lock at a time - the basis of "atomic section" reasoning.</p>
+</details>
+
+<details class="iq"><summary>4. <code>volatile</code> - what it does and does NOT do?</summary>
+<p>Guarantees visibility (reads/writes go to main memory, establishing happens-before between writer and reader) and prevents reordering around the access. Does NOT make compound operations atomic - <code>count++</code> on volatile is still racy. Correct for status flags and safe publication (immutable refs); wrong for counters (use AtomicInteger/LongAdder).</p>
+</details>
+
+<details class="iq"><summary>5. What is the Java Memory Model in one answer?</summary>
+<p>The contract that defines when writes by one thread are visible to another: happens-before edges come from synchronized blocks, volatile accesses, thread start/join, executor handoffs, final field freeze, and the atomic package. Without an edge, threads may cache values forever. Every concurrency bug root cause: missing happens-before.</p>
+</details>
+
+<details class="iq"><summary>6. wait/notify vs Condition vs BlockingQueue?</summary>
+<p><code>wait/notify</code>: requires holding the monitor, always in a <code>while</code> loop guarding the predicate, <code>notifyAll</code> unless proven single-consumer. <code>ReentrantLock.newCondition</code>: multiple wait sets, timed waits, interruptible - same loop discipline. <code>BlockingQueue</code>: wraps all of it - use this unless you genuinely need custom signaling.</p>
+</details>
+
+<details class="iq"><summary>7. Race condition - give a subtle one.</summary>
+<p><code>if (map.containsKey(k)) map.put(k, v);</code> on HashMap from two threads - check-then-act race plus structural corruption (Java 8 can still create corruption in resize races). Fix: ConcurrentHashMap.merge/computeIfAbsent. Lazy-init singleton without synchronization is the other classic (use holder idiom/enum).</p>
+</details>
+
+<details class="iq"><summary>8. Deadlock: the four conditions and practical prevention?</summary>
+<p>Coffman: mutual exclusion, hold-and-wait, no preemption, circular wait. Prevention: global lock ordering (always lock A before B - document it), lock timeouts (<code>tryLock</code>), lock-free structures, single lock per object graph, avoid calling foreign code/back to caller holding a lock. Detection: <code>jstack</code>/ThreadMXBean shows "Found one Java-level deadlock".</p>
+</details>
+
+<details class="iq"><summary>9. Livelock and starvation?</summary>
+<p>Livelock: threads stay active but keep yielding/retrying in lockstep - progress never happens (polite retry loops). Starvation: a thread never gets the lock/CPU (unfair locks, priority). Fixes: randomized back-off, fair locks (<code>new ReentrantLock(true)</code> - costlier), priority hygiene, avoid unbounded nested locking.</p>
+</details>
+
+<details class="iq"><summary>10. Asymmetric lock usage - what's the bug?</summary>
+<p>Thread A locks <code>this</code> (synchronized method), thread B locks a private helper object, or exits early without unlocking (<code>ReentrantLock</code> not in finally). Result: silent non-protection. Rule: one lock object per invariant, always unlock in <code>finally</code>, never leak the lock object to outside code (use a private final field).</p>
+</details>
+
+<details class="iq"><summary>11. How do Atomic classes work - CAS?</summary>
+<p>Compare-and-swap loop: read current, compute new, swap only if still current, retry otherwise. On modern CPUs a lock-prefixed instruction; JVM may use intrinsics. <code>AtomicInteger.incrementAndGet</code> is a CAS loop; <code>LongAdder</code> distributes across cells (faster under contention, sum not atomic at a point); <code>AtomicReference</code> enables lock-free data structures (plus <code>AtomicStampedReference</code> for ABA).</p>
+</details>
+
+<details class="iq"><summary>12. ABA problem?</summary>
+<p>A value changes A→B→A between your read and CAS; CAS succeeds but the intermediate work may have invalidated invariants (classic in lock-free stacks). Fix: version stamp (<code>AtomicStampedReference</code>), or design structures where ABA is harmless (immutable nodes).</p>
+</details>
+
+<details class="iq"><summary>13. Executors: what the framework hides?</summary>
+<p>Thread creation, pooling, task queuing, shutdown, result plumbing. Key factories: <code>newFixedThreadPool</code> (bounded workers, unbounded queue - risk), <code>newCachedThreadPool</code> (unbounded threads - risk), <code>newScheduledThreadPool</code>, <code>newSingleThreadExecutor</code>. Executors are automatically wrapped (newFixedThreadPool has unbounded queue → memory risk). Best practice: construct <code>ThreadPoolExecutor</code> explicitly with bounded queue + rejection policy + named threads, or use virtual threads (21) for blocking workloads.</p>
+</details>
+
+<details class="iq"><summary>14. How do you stop an executor properly?</summary>
+<p><code>shutdown()</code>: no new tasks, drain queue. <code>shutdownNow()</code>: interrupt running tasks, return queued list. Await <code>termination</code> with timeout; handle rejected tasks; register as app-lifecycle closeable (use try-with-resources, ExecutorService implements AutoCloseable since 19). Never leave pools unclosed in web apps - redeploy leaks threads.</p>
+</details>
+
+<details class="iq"><summary>15. Future vs CompletableFuture?</summary>
+<p><code>Future</code>: blocking <code>get</code>, no composition, no callbacks, cancellation cooperative. <code>CompletableFuture</code>: non-blocking chains (<code>thenApply</code>, <code>thenCompose</code>, <code>thenCombine</code>), error handling (<code>handle</code>, <code>exceptionally</code>), anyOf/allOf, timeouts (Java 9 <code>orTimeout</code>/<code>completeOnTimeout</code>). Rules: always specify the executor, handle exceptions in every branch, don't mix blocking <code>get</code> into pipelines.</p>
+</details>
+
+<details class="iq"><summary>16. ThreadLocal - what is it and when does it leak?</summary>
+<p>Per-thread variable storage (key = thread, value in a per-thread map). Leaks in thread pools: the pool thread outlives the task, keeping the value (and its classloader) alive; <code>remove()</code> in a finally block is mandatory. Modern replacements: pass parameters explicitly, use framework scoping (request-scoped beans), or <code>ScopedValue</code> (21 preview) with structured concurrency.</p>
+</details>
+
+<details class="iq"><summary>17. fork/join vs parallel streams?</summary>
+<p>ForkJoinPool: work-stealing pool for recursive divide-and-conquer tasks (<code>RecursiveTask</code>), tuned for CPU-bound work. Parallel streams share the common pool by default (change via custom pool trick is discouraged) - only for large, independent, no-blocking-I/O workloads with order-independent operations. Benchmarks regularly show parallel streams losing for small inputs and I/O.</p>
+</details>
+
+<details class="iq"><summary>18. Producer-consumer: three implementations?</summary>
+<p>(1) <code>BlockingQueue</code> + threads/executors - production answer. (2) synchronized + wait/notify with while loop. (3) ReentrantLock + two Conditions (notFull/notEmpty) - most explicit. Also mention bounded blocking = back-pressure (protects memory under overload).</p>
+</details>
+
+<details class="iq"><summary>19. What's in java.util.concurrent besides pools and queues?</summary>
+<p>Concurrent collections (CHM, CopyOnWrite, SkipList), synchronizers (CountDownLatch, CyclicBarrier, Semaphore, Exchanger, Phaser), atomics, locks (ReentrantLock/ReadWriteLock/StampedLock), ThreadLocalRandom, and higher-level (Future, CompletableFuture, Executors). Version additions: 9 reactive-flow (<code>Flow</code>), 19 structured concurrency preview, 21 virtual threads + scoped values preview.</p>
+</details>
+
+<details class="iq"><summary>20. CountDownLatch vs CyclicBarrier vs Semaphore?</summary>
+<p>Latch: one-shot countdown; threads await until it hits zero (start gun / wait for N initializations). Barrier: reusable rendezvous - N parties each wait for the others (phased algorithms). Semaphore: permits - limit concurrency (e.g., 10 DB connections) without owning threads; acquire/release and tryAcquire with timeout for graceful degradation.</p>
+</details>
+
+<details class="iq"><summary>21. ReadWriteLock vs StampedLock edge cases?</summary>
+<p>ReadWriteLock: readers share, writers exclusive; beware write starvation (fair mode) and lock downgrade subtlety (can acquire read while holding write). StampedLock: optimistic reads (validate stamp), NOT reentrant, no condition support - fastest for read-heavy, but the optimistic path must be coded with a fallback and locks can deadlock if misused.</p>
+</details>
+
+<details class="iq"><summary>22. What's the deal with <code>Thread.stop/suspend/resume</code>?</summary>
+<p>Deprecated/removed: stop releases monitors at arbitrary points (corrupted state), suspend/resume can deadlock (suspended thread holding lock). Cooperative cancellation instead: interrupt + check flag/InterruptedException, or a volatile boolean run flag; executors' <code>Future.cancel(true)</code> does exactly that (interrupt the worker).</p>
+</details>
+
+<details class="iq"><summary>23. What does <code>Thread.interrupt()</code> actually do?</summary>
+<p>If the thread is in a blocking call (<code>sleep</code>, <code>wait</code>, <code>join</code>, interruptible I/O, some NIO), it throws InterruptedException and the flag clears. Otherwise it just sets the interrupt flag - your loop must check <code>Thread.currentThread().isInterrupted()</code>. Swallowing the exception and not re-setting the flag is a classic bug.</p>
+</details>
+
+<details class="iq"><summary>24. How would you unit-test concurrency?</summary>
+<p>Test invariants/determinism first (isolate logic). Then stress with latches/barriers coordinating threads, thousands of iterations, assertions on the final state; use JMH for performance claims, not stopwatch tests. Concurrency bugs rarely reproduce on demand - treat flaky tests as bugs (never rerun-to-green), and prefer designs that remove shared mutable state.</p>
+</details>
+
+<details class="iq"><summary>25. What are virtual threads (Java 21)?</summary>
+<p>JVM-scheduled (not OS) threads; millions possible; cheap to block - blocking calls unmount the virtual thread from its carrier. Best for thread-per-task I/O-heavy servers (Tomcat/Spring Boot 3.2 opt-in; JDK 21 has a small pool of carrier threads). Pitfalls: pinning by synchronized blocks/native frames (fixed in 24 for some cases), CPU-bound work doesn't benefit, and thread-local caches explode - revisit pooling assumptions.</p>
+</details>
+
+<details class="iq"><summary>26. Thread priority and daemon threads - useful?</summary>
+<p>Priorities are hints; behavior is OS-dependent (effectively useless for correctness). Daemon threads don't keep the JVM alive - used for housekeeping; NEVER run critical work on a daemon (it dies mid-flight at shutdown). Executor threads are non-daemon by default - shutdown hooks or try-with-resources handle termination.</p>
+</details>
+
+<details class="iq"><summary>27. What is safe publication?</summary>
+<p>Getting a reference to an object to another thread without tearing/partial-final-field visibility. Ways: initialize in a static initializer, store into a volatile/final field, lock-protect it, or hand over via a concurrent collection. Without publication safety, another thread can see a half-constructed object (final fields of a properly-published object are frozen by the JMM).</p>
+</details>
+
+<details class="iq"><summary>28. Explain happens-before with an example a novice can follow.</summary>
+<p>Think of a whiteboard: only when there's a "handshake" (lock release-acquire, volatile write-read, thread start/join) does one thread's whiteboard edits become guaranteed-visible to the other. Without the handshake the reader may clutch their private notes (CPU cache) - correct code always inserts the handshake between writer and reader.</p>
+</details>
+
+---
+
+Hub: [Interview Prep home](interview.html) · Next: [Strings bank](interview-strings.html) · Practice tests: [Test 1](ocjp-practice.html) · [Test 2](ocjp-practice-2.html) · [Test 3](ocjp-practice-3.html)

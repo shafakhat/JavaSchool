@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Set Interface - JavaSchool</title>
+<meta name="description" content="Complete guide to Java Sets - HashSet, LinkedHashSet, TreeSet, EnumSet, SortedSet, NavigableSet, CopyOnWriteArraySet with all behaviors.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-set">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Collections</span></nav>
+    <h1>Java Set Interface</h1>
+<h2 id="the-set-family-tree">The Set family tree</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">java.util</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-text" data-lang="text">Collection
+└── Set (unique elements, no order guarantee)
+    ├── HashSet            - hash table (O(1), unordered)
+    │   └── LinkedHashSet  - hash + insertion/access order links
+    ├── TreeSet            - red-black tree (sorted, O(log n))
+    │   └── (interfaces) SortedSet -&gt; NavigableSet (range ops)
+    ├── AbstractSet        - shared equals/hashCode implementation
+    └── (concurrent) CopyOnWriteArraySet, ConcurrentSkipListSet
+EnumSet (abstract) -&gt; RegularEnumSet / JumboEnumSet - bit vectors over enums</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>Class</th><th>Order</th><th>get/contains</th><th>Nulls</th><th>Notes</th></tr></thead><tbody><tr><td><strong>HashSet</strong></td><td>none</td><td>O(1) avg</td><td>1 allowed</td><td>backed by HashMap</td></tr><tr><td><strong>LinkedHashSet</strong></td><td>insertion (or access*)</td><td>O(1)</td><td>1 allowed</td><td>*if constructed accessOrder-style via constructor arg on the map side; LinkedHashSet itself = insertion order</td></tr><tr><td><strong>TreeSet</strong></td><td>sorted / comparator</td><td>O(log n)</td><td><strong>no</strong></td><td>NavigableSet extras</td></tr><tr><td><strong>EnumSet</strong></td><td>enum ordinal</td><td>O(1)</td><td>no</td><td>tiny/bitset, only enum constants</td></tr><tr><td><strong>CopyOnWriteArraySet</strong></td><td>insertion</td><td>O(n) read</td><td>yes</td><td>snapshot iteration</td></tr><tr><td><strong>ConcurrentSkipListSet</strong></td><td>sorted</td><td>O(log n)</td><td>no</td><td>concurrent TreeSet</td></tr></tbody></table></div>
+<h2 id="hashset---the-workhorse">HashSet - the workhorse</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">HashSetDemo.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.*;
+
+public class HashSetDemo {
+    public static void main(String[] args) {
+        Set&lt;String&gt; set = new HashSet&lt;&gt;(List.of("java", "go", "java"));
+
+        set.add("rust");
+        boolean added = set.add("rust");       // false - duplicate rejected
+        set.addAll(Set.of("c", "zigzag"));
+        set.retainAll(Set.of("java", "go"));   // intersection with argument
+        set.removeAll(Set.of("go"));           // difference
+
+        System.out.println(set.contains("java"));      // O(1) via hashCode+equals
+        System.out.println(set.size());
+        set.removeIf(s -&gt; s.length() &lt; 2);
+
+        // iteration order is undefined - never rely on it
+        for (String s : set) System.out.println(s);
+
+        // set algebra
+        Set&lt;String&gt; a = new HashSet&lt;&gt;(List.of("x", "y", "z"));
+        Set&lt;String&gt; b = new HashSet&lt;&gt;(List.of("y", "w"));
+        Set&lt;String&gt; inter = new HashSet&lt;&gt;(a); inter.retainAll(b);   // {y}
+        Set&lt;String&gt; union = new HashSet&lt;&gt;(a); union.addAll(b);      // {x,y,z,w}
+        Set&lt;String&gt; diff  = new HashSet&lt;&gt;(a); diff.removeAll(b);    // {x,z}
+
+        // equals between sets ignores order: new HashSet&lt;&gt;(a).equals(b)
+    }
+}</code></pre></div>
+<p>Under the hood: a <code>HashMap</code> where the element is the key and a shared <code>PRESENT</code> object is the value - same resize (1.5x at 75%), treeification (≥8 in a bin), and contract: <strong>equal objects must hash equally</strong>.</p>
+<h2 id="linkedhashset---predictable-order">LinkedHashSet - predictable order</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">LinkedHashSetDemo.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.*;
+
+public class LinkedHashSetDemo {
+    public static void main(String[] args) {
+        Set&lt;String&gt; s = new LinkedHashSet&lt;&gt;(List.of("m", "a", "z"));
+        System.out.println(s);              // [m, a, z] - insertion order kept
+        // re-adding an existing element does NOT change its position
+        s.add("m");
+        System.out.println(s);              // [m, a, z]
+        // iteration is stable across runs - safe for UI lists / tests
+        for (String x : s) System.out.print(x + " ");   // m a z
+    }
+}</code></pre></div>
+<p>Cost: two extra pointers per entry vs HashSet. Use whenever output order matters (menus, recent-items, deterministic tests).</p>
+<h2 id="treeset-navigableset---sorted-with-range-operations">TreeSet &amp; NavigableSet - sorted, with range operations</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">TreeSetDemo.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.*;
+
+public class TreeSetDemo {
+    public static void main(String[] args) {
+        TreeSet&lt;Integer&gt; t = new TreeSet&lt;&gt;(List.of(5, 1, 9, 3));
+
+        System.out.println(t.first());               // 1
+        System.out.println(t.last());                // 9
+        System.out.println(t.floor(4));              // 3  - greatest &lt;= 4
+        System.out.println(t.ceiling(4));            // 5  - least  &gt;= 4
+        System.out.println(t.lower(5));              // 3  - greatest &lt;  5
+        System.out.println(t.higher(5));             // 9  - least  &gt;  5
+        System.out.println(t.headSet(5));            // {1, 3}
+        System.out.println(t.tailSet(5));            // {5, 9}
+        System.out.println(t.subSet(3, 9));          // {3, 5}  (hi exclusive)
+        System.out.println(t.pollFirst());           // 1 (removes)
+
+        SortedSet&lt;String&gt; sorted = new TreeSet&lt;&gt;(Set.of("pear", "apple"));
+        for (String s : sorted) System.out.print(s + " ");   // apple pear
+
+        // custom ordering
+        TreeSet&lt;String&gt; byLen = new TreeSet&lt;&gt;(Comparator.comparingInt(String::length));
+        byLen.addAll(List.of("bbb", "a", "cc"));
+        System.out.println(byLen);                   // [a, cc, bbb]
+    }
+}</code></pre></div>
+<p>Rules: <strong>no nulls</strong> (first null breaks comparator/compareTo contracts); consistency with <code>equals</code> recommended for <code>compareTo</code> (<code>TreeSet.equals</code> is still AbstractSet's). <code>NavigableSet</code> is what you code against for schedulers, leaderboards, "next bigger item" logic.</p>
+<h2 id="enumset---the-fastest-set-when-keys-are-enums">EnumSet - the fastest set when keys are enums</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">EnumSetDemo.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.*;
+
+public class EnumSetDemo {
+    enum Skill { JAVA, SQL, K8S, GO }
+
+    public static void main(String[] args) {
+        EnumSet&lt;Skill&gt; none = EnumSet.noneOf(Skill.class);        // empty
+        EnumSet&lt;Skill&gt; all  = EnumSet.allOf(Skill.class);
+        EnumSet&lt;Skill&gt; some = EnumSet.of(Skill.JAVA, Skill.K8S);
+        EnumSet&lt;Skill&gt; range = EnumSet.range(Skill.JAVA, Skill.K8S); // JAVA,SQL,K8S
+
+        some.add(Skill.GO);
+        some.remove(Skill.SQL);
+        System.out.println(some.contains(Skill.JAVA));  // true - bit test O(1)
+
+        // set algebra on enums is cheap and expressive
+        EnumSet&lt;Skill&gt; missing = EnumSet.complementOf(some);
+        System.out.println("missing: " + missing);      // SQL
+        System.out.println(all.containsAll(some));      // true
+    }
+}</code></pre></div>
+<p>RegularEnumSet (≤64 constants → one long) or JumboEnumSet (long[]); serialization-stable, null-hostile, iteration in ordinal order.</p>
+<h2 id="concurrent-sets">Concurrent sets</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">ConcurrentSets.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.concurrent.*;
+
+public class ConcurrentSets {
+    public static void main(String[] args) {
+        // read-mostly: snapshot iteration, O(n) contains
+        CopyOnWriteArraySet&lt;String&gt; cow = new CopyOnWriteArraySet&lt;&gt;();
+        cow.add("config-a");
+
+        // concurrent sorted set: skip list, O(log n), weakly consistent iteration
+        ConcurrentSkipListSet&lt;Integer&gt; skl = new ConcurrentSkipListSet&lt;&gt;();
+        skl.add(3); skl.add(1);
+        System.out.println(skLhead(skl));
+
+        // usual answer instead: ConcurrentHashMap.newKeySet()
+        var keySet = ConcurrentHashMap.&lt;String&gt;newKeySet();
+        keySet.add("workers-1");
+        keySet.forEach(System.out::println);
+    }
+
+    static Object skLhead(ConcurrentSkipListSet&lt;Integer&gt; s) { return s.first(); }
+}</code></pre></div>
+<h2 id="put-everything-together-examples">Put-everything-together examples</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">Recipes.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.*;
+import java.util.stream.*;
+
+public class Recipes {
+    public static void main(String[] args) {
+        List&lt;String&gt; words = List.of("the", "cat", "the", "sat");
+
+        // unique preserving encounter order
+        Set&lt;String&gt; unique = new LinkedHashSet&lt;&gt;(words);
+
+        // duplicates found
+        Set&lt;String&gt; seen = new HashSet&lt;&gt;();
+        List&lt;String&gt; dups = words.stream()
+            .filter(w -&gt; !seen.add(w))          // add() false =&gt; duplicate
+            .toList();
+        System.out.println("dups: " + dups);    // [the]
+
+        // sets from streams - and back
+        Set&lt;Integer&gt; lens = words.stream().map(String::length).collect(Collectors.toSet());
+        List&lt;String&gt; sortedUnique = new TreeSet&lt;&gt;(words).stream().toList();
+
+        // dedupe objects by key
+        record User(long id, String name) {}
+        List&lt;User&gt; users = List.of(new User(1, "a"), new User(1, "b"), new User(2, "c"));
+        Map&lt;Long, User&gt; byId = users.stream()
+            .collect(Collectors.toMap(User::id, u -&gt; u, (a, b) -&gt; a));
+        System.out.println(byId.keySet());      // [1, 2]
+    }
+}</code></pre></div>
+<p>Related: <a href="collections.html">Collections overview</a> · <a href="collections-list.html">List</a> · <a href="collections-queue.html">Queue &amp; Deque</a> · <a href="collections-map.html">Map</a> · <a href="collections-asortedsetisasetthatmaintainsitsitemsinasortedorder.html">Set examples in the archive</a></p>
+    <div class="pager"><a class="pager-btn" href="collections-list.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">List (ArrayList, LinkedList, Vector)</span></a><a class="pager-btn pager-next" href="collections-queue.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Queue &amp; Deque (PriorityQueue, ArrayDeque)</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

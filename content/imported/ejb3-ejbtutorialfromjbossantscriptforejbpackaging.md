@@ -1,0 +1,121 @@
+---
+title: EJB Tutorial from JBoss
+nav: EJB Tutorial from JBoss
+description: <!-- ======================================================================= -->
+section: Imported - java2s Archive
+order: 1010
+source: https://web.archive.org/web/20081212204900/http://www.java2s.com:80/Code/Java/EJB3/EJBTutorialfromJBossantscriptforEJBpackaging.htm
+---
+EJB Tutorial from JBoss: ant script for EJB packaging
+
+```java title=Example.java
+File: build.xml
+<?xml version="1.0"?>
+<!-- ======================================================================= -->
+<!-- JBoss build file                                                       -->
+<!-- ======================================================================= -->
+<project name="JBoss" default="ejbjar" basedir=".">
+   <property file="../local.properties"/>  <property environment="env"/>
+   <property name="src.dir" value="${basedir}/src"/>
+   <property name="jboss.home" value="${env.JBOSS_HOME}"/>   <property name="jboss.server.config" value="default"/>
+   <property name="build.dir" value="${basedir}/build"/>
+   <property name="build.classes.dir" value="${build.dir}/classes"/>
+   <!-- Build classpath -->
+   <path id="classpath">
+      <!-- So that we can get jndi.properties for InitialContext -->
+      <pathelement location="${basedir}"/>
+      <fileset dir="${jboss.home}/lib">
+         <include name="**/*.jar"/>
+      </fileset>
+      <fileset dir="${jboss.home}/server/${jboss.server.config}/lib">
+         <include name="**/*.jar"/>
+      </fileset>
+      <fileset dir="${jboss.home}/server/${jboss.server.config}/deploy/ejb3.deployer">
+         <include name="*.jar"/>
+      </fileset>
+      <fileset dir="${jboss.home}/server/${jboss.server.config}/deploy/jboss-aop-jdk50.deployer">
+         <include name="*.jar"/>
+      </fileset>
+      <pathelement location="${build.classes.dir}"/>
+   </path>
+   <property name="build.classpath" refid="classpath"/>
+   <!-- =================================================================== -->
+   <!-- Prepares the build directory                                        -->
+   <!-- =================================================================== -->
+   <target name="prepare">
+      <mkdir dir="${build.dir}"/>
+      <mkdir dir="${build.classes.dir}"/>
+   </target>
+   <!-- =================================================================== -->
+   <!-- Compiles the source code                                            -->
+   <!-- =================================================================== -->
+   <target name="compile" depends="prepare">
+      <javac srcdir="${src.dir}"
+         destdir="${build.classes.dir}"
+         debug="on"
+         deprecation="on"
+         optimize="off"
+         includes="**">
+         <classpath refid="classpath"/>
+      </javac>
+   </target>
+   <target name="ejbjar" depends="compile">
+      <jar jarfile="build/tutorial.jar">
+         <fileset dir="${build.classes.dir}">
+            <include name="org/jboss/tutorial/packaging/bean/Session*.class"/>
+         </fileset>
+      </jar>
+      <jar jarfile="build/em1.jar">
+         <fileset dir="${build.classes.dir}">
+            <include name="org/jboss/tutorial/packaging/bean/Entity1.class"/>
+         </fileset>
+         <fileset dir="resources/em1">
+            <include name="META-INF/persistence.xml"/>
+         </fileset>
+      </jar>
+      <jar jarfile="build/em2.jar">
+         <fileset dir="${build.classes.dir}">
+            <include name="org/jboss/tutorial/packaging/bean/Entity2.class"/>
+         </fileset>
+         <fileset dir="resources/em2">
+            <include name="META-INF/persistence.xml"/>
+         </fileset>
+      </jar>
+      <zip zipfile="build/tutorial.ear">
+         <zipfileset dir="resources" prefix="META-INF">
+            <include name="application.xml"/>
+         </zipfileset>
+         <zipfileset dir="build">
+            <include name="tutorial.jar"/>
+         </zipfileset>
+         <zipfileset dir="build">
+            <include name="em1.jar"/>
+         </zipfileset>
+         <zipfileset dir="build">
+            <include name="em2.jar"/>
+         </zipfileset>
+      </zip>
+      <copy file="build/tutorial.ear" todir="${jboss.home}/server/${jboss.server.config}/deploy"/>
+   </target>
+   <target name="run" depends="ejbjar">
+      <java classname="org.jboss.tutorial.packaging.client.Client" fork="yes" dir=".">
+         <classpath refid="classpath"/>
+      </java>
+   </target>
+   <!-- =================================================================== -->
+   <!-- Cleans up generated stuff                                           -->
+   <!-- =================================================================== -->
+   <target name="clean.db">
+      <delete dir="${jboss.home}/server/${jboss.server.config}/data/hypersonic"/>
+   </target>
+   <target name="clean">
+      <delete dir="${build.dir}"/>
+      <delete file="${jboss.home}/server/${jboss.server.config}/deploy/tutorial.ear"/>
+   </target>
+</project>
+```
+
+jboss-EJB-3.0_RC9_Patch_1.zip( 10,289 k)
+1.  EJB Tutorial from JBoss: create ear file
+2.  Ear file and war file
+3.  lottery annotation ear

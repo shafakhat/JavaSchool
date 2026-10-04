@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checking to see if a reference can be cloned - JavaSchool</title>
+<meta name="description" content="// www.BruceEckel.com. See copyright notice in CopyRight.txt.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-class-checkingtoseeifareferencecanbecloned">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-class.html">Class</a></nav>
+    <h1>Checking to see if a reference can be cloned</h1>
+<p>Checking to see if a reference can be cloned</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// : appendixa:CheckCloneable.java
+// Checking to see if a reference can be cloned.
+// From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
+// www.BruceEckel.com. See copyright notice in CopyRight.txt.
+// Can't clone this because it doesn't override clone():
+class Ordinary {
+}
+// Overrides clone, but doesn't implement Cloneable:
+class WrongClone extends Ordinary {
+  public Object clone() throws CloneNotSupportedException {
+    return super.clone(); // Throws exception
+  }
+}
+// Does all the right things for cloning:
+class IsCloneable extends Ordinary implements Cloneable {
+  public Object clone() throws CloneNotSupportedException {
+    return super.clone();
+  }
+}
+// Turn off cloning by throwing the exception:
+class NoMore extends IsCloneable {
+  public Object clone() throws CloneNotSupportedException {
+    throw new CloneNotSupportedException();
+  }
+}
+class TryMore extends NoMore {
+  public Object clone() throws CloneNotSupportedException {
+    // Calls NoMore.clone(), throws exception:
+    return super.clone();
+  }
+}
+class BackOn extends NoMore {
+  private BackOn duplicate(BackOn b) {
+    // Somehow make a copy of b and return that copy.
+    // This is a dummy copy, just to make the point:
+    return new BackOn();
+  }
+  public Object clone() {
+    // Doesn't call NoMore.clone():
+    return duplicate(this);
+  }
+}
+// You can't inherit from this, so you can't override
+// the clone method as you can in BackOn:
+final class ReallyNoMore extends NoMore {
+}
+public class CheckCloneable {
+  public static Ordinary tryToClone(Ordinary ord) {
+    String id = ord.getClass().getName();
+    System.out.println("Attempting " + id);
+    Ordinary x = null;
+    if (ord instanceof Cloneable) {
+      try {
+        x = (Ordinary) ((IsCloneable) ord).clone();
+        System.out.println("Cloned " + id);
+      } catch (CloneNotSupportedException e) {
+        System.err.println("Could not clone " + id);
+      }
+    } else {
+      System.out.println("Doesn't implement Cloneable");
+    }
+    return x;
+  }
+  public static void main(String[] args) {
+    // Upcasting:
+    Ordinary[] ord = { new IsCloneable(), new WrongClone(), new NoMore(),
+        new TryMore(), new BackOn(), new ReallyNoMore(), };
+    Ordinary x = new Ordinary();
+    // This won't compile; clone() is protected in Object:
+    //! x = (Ordinary)x.clone();
+    // Checks first to see if a class implements Cloneable:
+    for (int i = 0; i &lt; ord.length; i++)
+      tryToClone(ord[i]);
+  }
+} ///:~</code></pre></div>
+<ol><li>A Cloning Example</li></ol>
+<p>---  ---</p>
+<ol><li>Creating a Deep Copy</li><li>Shallow Copy Test</li><li>Deep Copy Test</li><li>Tests cloning to see if destination of references are also cloned</li><li>Creating local copies with clone</li><li>You can insert Cloneability at any level of inheritance</li><li>Cloning a composed object</li><li>Serializable and clone</li><li>Go through a few gyrations to add cloning to your own class</li><li>The clone operation works for only a few items in the standard Java library</li><li>Demonstration of cloning</li><li>Simple demo of avoiding side-effects by using Object.clone</li><li>Clone demo</li></ol>
+    <div class="pager"><a class="pager-btn" href="data-type-amutableshortwrapper.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">A mutable short wrapper.</span></a><a class="pager-btn pager-next" href="data-type-iso8601dateparsingutility-2.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">ISO 8601 date parsing util...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

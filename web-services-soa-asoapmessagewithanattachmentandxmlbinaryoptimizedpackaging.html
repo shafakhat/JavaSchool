@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A SOAP message with an attachment and XML-binary Optimized Packaging - JavaSchool</title>
+<meta name="description" content="A SOAP message with an attachment and XML-binary Optimized Packaging">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-web-services-soa-asoapmessagewithanattachmentandxmlbinaryoptimizedpackaging">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-web-services-soa.html">Web Services SOA</a></nav>
+    <h1>A SOAP message with an attachment and XML-binary Optimized Packaging</h1>
+<p>A SOAP message with an attachment and XML-binary Optimized Packaging</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">MTOM Demo for SWA &amp; XOP
+=============================================
+This demo illustrates the use of a SOAP message
+with an attachment and XML-binary Optimized Packaging.
+Please review the README in the samples directory before
+continuing.
+Prerequisite
+------------
+If your environment already includes cxf-manifest-incubator.jar on the
+CLASSPATH, and the JDK and ant bin directories on the PATH
+it is not necessary to set the environment as described in
+the samples directory's README.  If your environment is not
+properly configured, or if you are planning on using wsdl2java,
+javac, and java to build and run the demos, you must set the
+environment.
+Building and running the demo using ant
+---------------------------------------
+From the samples/mtom directory, the ant build script
+can be used to build and run the demo.
+Using either UNIX or Windows:
+  ant build
+  ant server
+  ant client
+To remove the code generated from the WSDL file and the .class
+files, run:
+  ant clean
+Building the demo using wsdl2java and javac
+-------------------------------------------
+From the samples/mtom directory, first create the target
+directory build/classes and then generate code from the WSDL file.
+For UNIX:
+  mkdir -p build/classes
+  wsdl2java -d build/classes -compile ./wsdl/mtom_xop.wsdl
+For Windows:
+  mkdir build\classes
+    Must use back slashes.
+  wsdl2java -d build\classes -compile .\wsdl\mtom_xop.wsdl
+    May use either forward or back slashes.
+Now compile the provided client and server applications with the commands:
+For UNIX:
+  export CLASSPATH=$CLASSPATH:$CXF_HOME/lib/cxf-manifest-incubator.jar:./build/classes
+  javac -d build/classes src/demo/mtom/client/*.java
+  javac -d build/classes src/demo/mtom/server/*.java
+  cp src/demo/mtom/client/me.bmp build/classes/demo/mtom/client/me.bmp
+For Windows:
+  set classpath=%classpath%;%CXF_HOME%\lib\cxf-manifest-incubator.jar;.\build\classes
+  javac -d build\classes src\demo\mtom\client\*.java
+  javac -d build\classes src\demo\mtom\server\*.java
+  copy src\demo\mtom\client\me.bmp build\classes\demo\mtom\client\me.bmp
+Running the demo using java
+---------------------------
+From the samples/mtom directory run the following commands.
+They are entered on a single command line.
+For UNIX (must use forward slashes):
+    java -Djava.util.logging.config.file=$CXF_HOME/etc/logging.properties
+         demo.mtom.server.Server &amp;
+    java -Djava.util.logging.config.file=$CXF_HOME/etc/logging.properties
+         demo.mtom.client.Client ./wsdl/mtom_xop.wsdl
+The server process starts in the background.  After running the client,
+use the kill command to terminate the server process.
+For Windows (may use either forward or back slashes):
+  start
+    java -Djava.util.logging.config.file=%CXF_HOME%\etc\logging.properties
+         demo.mtom.server.Server
+    java -Djava.util.logging.config.file=%CXF_HOME%\etc\logging.properties
+       demo.mtom.client.Client .\wsdl\mtom_xop.wsdl
+A new command windows opens for the server process.  After running the
+client, terminate the server process by issuing Ctrl-C in its command window.
+To remove the code generated from the WSDL file and the .class
+files, either delete the build directory and its contents or run:
+  ant clean
+Building and running the demo in a servlet container
+----------------------------------------------------
+From the samples/mtom directory, the ant build script
+can be used to create the war file that is deployed into the
+servlet container.
+Build the war file with the command:
+  ant war
+The war file will be included in the directory
+samples/mtom/build/war.  Simply copy the war file into
+the servlet container's deployment directory.  For example,
+with Tomcat copy the war file into the directory
+&lt;installationDirectory&gt;/webapps.  The servlet container will
+extract the war and deploy the application.
+Make sure already copy all jars from CXF_HOME/lib to
+&lt;TomcatInstallationDirectory&gt;/shared/lib
+Using ant, run the client application with the command:
+  ant client-servlet -Dbase.url=http://localhost:#
+Where # is the TCP/IP port used by the servlet container,
+e.g., 8080.
+Using java, run the client application with the command:
+  For UNIX:
+    java -Djava.util.logging.config.file=$CXF_HOME/etc/logging.properties
+         demo.mtom.client.Client http://localhost:#/mtom/services/mtom?wsdl
+  For Windows:
+    java -Djava.util.logging.config.file=%CXF_HOME%\etc\logging.properties
+       demo.mtom.client.Client http://localhost:#/mtom/services/mtom?wsdl
+Where # is the TCP/IP port used by the servlet container,
+e.g., 8080.
+//////////////////////////////////////////////////////////////////
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership. The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package demo.mtom.client;
+import java.awt.Image;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.net.URL;
+import javax.activation.DataHandler;
+import javax.imageio.ImageIO;
+import javax.mail.util.ByteArrayDataSource;
+import javax.xml.namespace.QName;
+import javax.xml.ws.Binding;
+import javax.xml.ws.BindingProvider;
+import javax.xml.ws.Holder;
+import javax.xml.ws.soap.SOAPBinding;
+import org.apache.cxf.mime.TestMtom;
+import org.apache.cxf.mime.TestMtomService;
+public final class Client {
+    private static final QName SERVICE_NAME = new QName("http://cxf.apache.org/mime", "TestMtomService");
+    private static final QName PORT_NAME = new QName("http://cxf.apache.org/mime", "TestMtomPort");
+    private Client() {
+    }
+    public static void main(String args[]) throws Exception {
+        Client client = new Client();
+        if (args.length == 0) {
+            System.out.println("please specify wsdl");
+            System.exit(1);
+        }
+        URL wsdlURL;
+        File wsdlFile = new File(args[0]);
+        if (wsdlFile.exists()) {
+            wsdlURL = wsdlFile.toURL();
+        } else {
+            wsdlURL = new URL(args[0]);
+        }
+        System.out.println(wsdlURL);
+        TestMtomService tms = new TestMtomService(wsdlURL, SERVICE_NAME);
+        TestMtom port = (TestMtom) tms.getPort(PORT_NAME, TestMtom.class);
+        Binding binding = ((BindingProvider)port).getBinding();
+        ((SOAPBinding)binding).setMTOMEnabled(true);
+        InputStream pre = client.getClass().getResourceAsStream("me.bmp");
+        long fileSize = 0;
+        for (int i = pre.read(); i != -1; i = pre.read()) {
+            fileSize++;
+        }
+        Holder&lt;byte[]&gt; param = new Holder&lt;byte[]&gt;();
+        param.value = new byte[(int) fileSize];
+        System.out.println("Start test without Mtom enable!");
+        System.out.println("Sending out the me.bmp Image content to server, data size is " + fileSize);
+        InputStream in = client.getClass().getResourceAsStream("me.bmp");
+        in.read(param.value);
+        Holder&lt;String&gt; name = new Holder&lt;String&gt;("call detail");
+        port.testXop(name, param);
+        System.out.println("received byte[] back from server, the size is " + param.value.length);
+        Image image = ImageIO.read(new ByteArrayInputStream(param.value));
+        System.out.println("build image with the returned byte[] back from server successfully, hashCode="
+                + image.hashCode());
+        System.out.println("Successfully run demo without mtom enable");
+        System.out.println("Start test with Mtom enable!");
+        System.out.println("Sending out the me.bmp Image content to server, data size is " + fileSize);
+        Holder&lt;DataHandler&gt; handler = new Holder&lt;DataHandler&gt;();
+        byte[] data = new byte[(int) fileSize];
+        client.getClass().getResourceAsStream("me.bmp").read(data);
+        handler.value = new DataHandler(new ByteArrayDataSource(data, "application/octet-stream"));
+        port.testMtom(name, handler);
+        InputStream mtomIn = handler.value.getInputStream();
+        fileSize = 0;
+        for (int i = mtomIn.read(); i != -1; i = mtomIn.read()) {
+            fileSize++;
+        }
+        System.out.println("received DataHandler back from server, the size is " + fileSize);
+        System.out.println("Successfully run demo with mtom enable");
+        System.exit(0);
+    }
+    private static InputStream getResourceStream(File file) throws Exception {
+        InputStream in = new FileInputStream(file);
+        return in;
+    }
+}
+/////////////////////////////////////////////////////////////////////////////
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership. The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package demo.mtom.server;
+import javax.xml.ws.Binding;
+import javax.xml.ws.Endpoint;
+import javax.xml.ws.soap.SOAPBinding;
+public class Server {
+    protected Server() throws Exception {
+        System.out.println("Starting Server");
+        Object implementor = new TestMtomImpl();
+        String address = "http://localhost:9000/mime-test";
+        Endpoint ep = Endpoint.publish(address, implementor);
+        Binding binding = ep.getBinding();
+        ((SOAPBinding)binding).setMTOMEnabled(true);
+    }
+    public static void main(String args[]) throws Exception {
+        new Server();
+        System.out.println("Server ready...");
+        Thread.sleep(5 * 60 * 1000);
+        System.out.println("Server exiting");
+        System.exit(0);
+    }
+}
+/////////////////////////////////////////////////////////////////////////////
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership. The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package demo.mtom.server;
+import java.io.InputStream;
+import javax.activation.DataHandler;
+import javax.jws.WebService;
+import javax.xml.ws.Holder;
+import org.apache.cxf.mime.TestMtom;
+@WebService(serviceName = "TestMtomService",
+                portName = "TestMtomPort",
+                endpointInterface = "org.apache.cxf.mime.TestMtom",
+                targetNamespace = "http://cxf.apache.org/mime")
+public class TestMtomImpl implements TestMtom {
+    public void testXop(Holder&lt;String&gt; name, Holder&lt;byte[]&gt; attachinfo) {
+        System.out.println("Received image holder data from client");
+        System.out.println("The image holder data length is " + attachinfo.value.length);
+        name.value = "return detail + " + name.value;
+    }
+    public void testMtom(Holder&lt;String&gt; name, Holder&lt;DataHandler&gt; attachinfo) {
+        try {
+            System.out.println("Received image holder data with mtom enable from client");
+            InputStream mtomIn = attachinfo.value.getInputStream();
+            long fileSize = 0;
+            System.out.println("The image holder data length is " + mtomIn.available());
+            name.value = "return detail + " + name.value;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements. See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership. The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License. You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied. See the License for the
+  specific language governing permissions and limitations
+  under the License.
+--&gt;
+&lt;wsdl:definitions name="SOAPBuilders-mime-cr-test" xmlns:types="http://cxf.apache.org/mime/types"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://cxf.apache.org/mime"
+    xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+    xmlns:xmime="http://www.w3.org/2005/05/xmlmime"
+    targetNamespace="http://cxf.apache.org/mime"&gt;
+    &lt;wsdl:types&gt;
+        &lt;schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://cxf.apache.org/mime/types"
+            xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified"&gt;
+            &lt;complexType name="XopType"&gt;
+                &lt;sequence&gt;
+                    &lt;element name="name" type="xsd:string" /&gt;
+                    &lt;element name="attachinfo" type="xsd:base64Binary"/&gt;
+                &lt;/sequence&gt;
+            &lt;/complexType&gt;
+            &lt;element name="testXop" type="types:XopType" /&gt;
+            &lt;element name="testXopResponse" type="types:XopType" /&gt;
+            &lt;complexType name="MtomType"&gt;
+                &lt;sequence&gt;
+                    &lt;element name="name" type="xsd:string" /&gt;
+                    &lt;element name="attachinfo" type="xsd:base64Binary" xmime:expectedContentTypes="application/octet-stream"/&gt;
+                &lt;/sequence&gt;
+            &lt;/complexType&gt;
+            &lt;element name="testMtom" type="types:MtomType" /&gt;
+            &lt;element name="testMtomResponse" type="types:MtomType" /&gt;
+        &lt;/schema&gt;
+    &lt;/wsdl:types&gt;
+    &lt;wsdl:message name="testXopIn"&gt;
+        &lt;wsdl:part name="data" element="types:testXop" /&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="testXopOut"&gt;
+        &lt;wsdl:part name="data" element="types:testXopResponse" /&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="testMtomIn"&gt;
+        &lt;wsdl:part name="data" element="types:testMtom" /&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="testMtomOut"&gt;
+        &lt;wsdl:part name="data" element="types:testMtomResponse" /&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:portType name="TestMtom"&gt;
+        &lt;wsdl:operation name="testXop"&gt;
+            &lt;wsdl:input message="tns:testXopIn" /&gt;
+            &lt;wsdl:output message="tns:testXopOut" /&gt;
+        &lt;/wsdl:operation&gt;
+        &lt;wsdl:operation name="testMtom"&gt;
+            &lt;wsdl:input message="tns:testMtomIn" /&gt;
+            &lt;wsdl:output message="tns:testMtomOut" /&gt;
+        &lt;/wsdl:operation&gt;
+    &lt;/wsdl:portType&gt;
+    &lt;wsdl:binding name="TestMtomBinding" type="tns:TestMtom"&gt;
+        &lt;soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /&gt;
+        &lt;wsdl:operation name="testXop"&gt;
+            &lt;soap:operation soapAction="" /&gt;
+            &lt;wsdl:input&gt;
+                &lt;soap:body use="literal" /&gt;
+            &lt;/wsdl:input&gt;
+            &lt;wsdl:output&gt;
+                &lt;soap:body use="literal" /&gt;
+            &lt;/wsdl:output&gt;
+        &lt;/wsdl:operation&gt;
+        &lt;wsdl:operation name="testMtom"&gt;
+            &lt;soap:operation soapAction="" /&gt;
+            &lt;wsdl:input&gt;
+                &lt;soap:body use="literal" /&gt;
+            &lt;/wsdl:input&gt;
+            &lt;wsdl:output&gt;
+                &lt;soap:body use="literal" /&gt;
+            &lt;/wsdl:output&gt;
+        &lt;/wsdl:operation&gt;
+    &lt;/wsdl:binding&gt;
+    &lt;wsdl:service name="TestMtomService"&gt;
+        &lt;wsdl:port name="TestMtomPort" binding="tns:TestMtomBinding"&gt;
+            &lt;soap:address location="http://localhost:9000/mime-test" /&gt;
+        &lt;/wsdl:port&gt;
+    &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;</code></pre></div>
+<p>XFire-CXF-mtom.zip( 15 k)</p>
+<ol><li>JAX-WS: SOAP Element Any Type</li><li>JAX-WS: SOAP Element</li><li>Hello World SOAP12 Demo using Document/Literal Style: the use of Apache CXF's SOAP 1.2 capabilities</li><li>This demo illustrates Apache CXF's support for SOAP headers</li><li>Demonstrates the capabilities and power of SOAP with Attachment support and the Attachment API of AXIS2</li></ol>
+<p>w_w__w_.___j_a___v___a__2___s._c___o___m_</p>
+    <div class="pager"><a class="pager-btn" href="data-type-rightpadastringwithspaces.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Right pad a String with sp...</span></a><a class="pager-btn pager-next" href="data-type-abbreviatestring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Abbreviate string</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apache Lenya Build System - JavaSchool</title>
+<meta name="description" content="Licensed to the Apache Software Foundation (ASF) under one or more">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-ant-apachelenyabuildsystem">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-ant.html">Ant</a></nav>
+    <h1>Apache Lenya Build System</h1>
+<p>Apache Lenya Build System</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;?xml version="1.0"?&gt;
+&lt;!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+--&gt;
+&lt;!-- $Id: build.xml 473861 2006-11-12 03:51:14Z gregor $ --&gt;
+&lt;!DOCTYPE project [
+&lt;!-- ---------------------------------------------------------------------------
+                       * --------------------------- *
+Apache Lenya Build System
+                       * --------------------------- *
+       CVS $Id: build.xml 473861 2006-11-12 03:51:14Z gregor $:
+---------------------------------------------------------------------------- --&gt;
+]&gt;
+&lt;project default="webapp" basedir="." name="lenya"&gt;
+  &lt;!-- ----------------==  Apache Lenya targets  ------------------------ --&gt;
+  &lt;!-- ------------------------------------------------------------------- --&gt;
+  &lt;!-- Global properties  --&gt;
+  &lt;import file="src/targets/properties-build.xml" /&gt;
+  &lt;!-- Initialization targets  --&gt;
+  &lt;import file="src/targets/init-build.xml" /&gt;
+  &lt;!-- IDE targets             --&gt;
+  &lt;import file="src/targets/ide-build.xml" /&gt;
+  &lt;!-- Compile targets         --&gt;
+  &lt;import file="src/targets/compile-build.xml" /&gt;
+  &lt;!-- Documentation targets   --&gt;
+  &lt;import file="src/targets/docs-build.xml" /&gt;
+  &lt;!-- Web application targets --&gt;
+  &lt;import file="src/targets/webapp-build.xml" /&gt;
+  &lt;!-- Testcases targets       --&gt;
+  &lt;import file="src/targets/test-build.xml" /&gt;
+  &lt;!-- Distribution targets    --&gt;
+  &lt;import file="src/targets/dist-build.xml" /&gt;
+  &lt;!-- Kupu targets            --&gt;
+  &lt;import file="src/targets/kupu-build.xml" /&gt;
+  &lt;!-- Export targets          --&gt;
+  &lt;import file="src/targets/export-build.xml" /&gt;
+  &lt;!-- module targets          --&gt;
+  &lt;import file="src/targets/modules-build.xml" /&gt;
+  &lt;!-- migration targets          --&gt;
+  &lt;import file="src/targets/migration-build.xml" /&gt;
+  &lt;!-- Publication tests       --&gt;
+  &lt;import file="src/targets/publication-test-build.xml" /&gt;
+  &lt;!-- Successfully Built Message       --&gt;
+  &lt;import file="src/targets/message-build.xml" /&gt;
+  &lt;!-- ------------------------------------------------------------------- --&gt;
+&lt;/project&gt;
+File: build.properties
+## Licensed to the Apache Software Foundation (ASF) under one or more
+## contributor license agreements.  See the NOTICE file distributed with
+## this work for additional information regarding copyright ownership.
+## The ASF licenses this file to You under the Apache License, Version 2.0
+## (the "License"); you may not use this file except in compliance with
+## the License.  You may obtain a copy of the License at
+#
+##     http://www.apache.org/licenses/LICENSE-2.0
+#
+## Unless required by applicable law or agreed to in writing, software
+## distributed under the License is distributed on an "AS IS" BASIS,
+## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+## See the License for the specific language governing permissions and
+## limitations under the License.
+#------------------------------------------------------------------------------------
+## Properties controlling the build process
+## NOTE:
+## Don't modify this file directly but create a file named
+## 'local.build.properties' and implement ONLY
+## the properties you need.
+## You do NOT have to copy the whole 'build.properties' file.
+## The build system will first read all properties defined
+## in the 'local.build.properties' file and then will read out the
+## ones in 'build.properties'. Ant will use the first found.
+## You can as well execute ./configure.sh (Linux) or configure (Windows)
+## to generate the 'local.build.properties'.
+#------------------------------------------------------------------------------------
+## Build properties version to make sure that local.build.properties is kept in sync
+## NOTE: Do NOT modify this number unless you are a Dev and want to modify this file
+## NOTE for Devs: Update this number if this file is being updated.
+##                Also update the version number within src/targets/properties-build.xml
+build.properties.version=594644
+#------------------------------------------------------------------------------------
+## The root of the Cocoon source tree
+cocoon.src.dir=externals/cocoon_2_1_x
+#cocoon.src.dir=../../cocoon/branches/BRANCH_2_1_X
+#------------------------------------------------------------------------------------
+## The cocoon webapp directory
+## You do not have to change this since Lenya will build Cocoon for you
+cocoon.webapp.dir=${cocoon.src.dir}/build/webapp
+#------------------------------------------------------------------------------------
+## Root directories where publications are located
+pubs.root.dirs=src/pubs
+#pubs.root.dirs=src/pubs:../anotherproject/pubs:/home/user/my-pub
+#------------------------------------------------------------------------------------
+## Root directories where modules are located
+modules.root.dirs=src/modules:src/modules-core:src/pubs/default/modules
+#modules.root.dirs=src/modules:src/pubs/default/modules:src/modules-optional
+## copy modules to the web application?
+modules.copy=true
+#------------------------------------------------------------------------------------
+## Web Application Server
+## NOTE: There are slight differences re deployment on the various servlet containers, e.g. endorsed libraries ...
+web.app.server=Jetty
+## NOTE: This only works for lenya.sh (Linux). TODO: Make it also work for lenya.bat (Windows)
+web.app.server.jetty.port=8888
+web.app.server.jetty.admin.port=8889
+#web.app.server=Tomcat
+#web.app.server=WLS
+#------------------------------------------------------------------------------------
+## Where the 'install' build target should put the webapp context
+## WARNING: This has to be an absolute path! (FIXME: cocoon.xconf needs absolute path (scr/targets/init-build.xml))
+## NOTE: Do not use white spaces within the path
+tomcat.home.dir=/usr/local/tomcat
+#tomcat.home.dir=C:/build/tomcat
+#------------------------------------------------------------------------------------
+## Where the 'install' build target should put the webapp context
+## NOTE: This path is not necessarily relative to tomcat.home.dir
+tomcat.webapps.dir=${tomcat.home.dir}/webapps/lenya
+#------------------------------------------------------------------------------------
+## The server cache directory to be cleaned by the 'reset' target
+## NOTE: This path is not necessarily relative to tomcat.home.dir
+## Tomcat 5.x
+tomcat.cache.dir=${tomcat.home.dir}/work/Catalina/localhost/lenya
+## Tomcat 4.x
+#tomcat.cache.dir=${tomcat.home.dir}/work/Standalone/localhost/lenya
+#------------------------------------------------------------------------------------
+## Where the 'install' build target should copy the endorsed libraries
+## NOTE: This path is not necessarily relative to tomcat.home.dir
+tomcat.endorsed.dir=${tomcat.home.dir}/common/endorsed
+#------------------------------------------------------------------------------------
+## Files and directories which should be excluded during 'install', 'clean' and 'reset'
+## Comma- or space-separated list of patterns
+## All files are included when commented
+## This is useful for preserving content while you are developing a publication
+#target.install.excludes=**/pubs/default/content/**,**/pubs/default/resources/authoring/**,**/pubs/default/resources/live/**,**/pubs/default/config/ac/passwd/*.iml
+#target.reset.excludes=${target.install.excludes}
+#------------------------------------------------------------------------------------
+## TODO: This seems to have moved to src/confpatch/enable-uploads.xweb whereas it
+##       does NOT seem to work properly!
+## Enable file uploads in Lenya
+## If you leave this set to false, asset and image upload will not work.
+## It is disabled by default for security reasons
+## NOTE: One can change this after the build within build/lenya/webapp/WEB-INF/web.xml
+##       where also the max upload size can be configured (upload-max-size parameter)
+enable.uploads=false
+#------------------------------------------------------------------------------------
+## Anteater home directory
+#anteater.home=/usr/local/anteater
+#------------------------------------------------------------------------------------
+## Canoo Webtest configuration
+## Webtest home directory
+#webtest.home=/usr/local/canoo-webtest-2.1
+## Webtest configuration parameters
+webtest.config.host=localhost
+webtest.config.port=8888
+webtest.config.basepath=default/authoring
+#------------------------------------------------------------------------------------
+## Eclipse Properties for use with the eclipse-project target
+ide.eclipse.outputdir=build/eclipse/classes
+ide.eclipse.export.libs=false
+#------------------------------------------------------------------------------------
+## The Java version.
+src.java.version=1.4
+#------------------------------------------------------------------------------------
+## Xopus context name
+xopus.context=Xopus2.1.64
+xopus.path=../../ROOT
+#------------------------------------------------------------------------------------
+## JCR repository factory
+repository.factory=org.apache.lenya.cms.jcr.jackrabbit.JackrabbitRepositoryFactory
+## NOTE: JeceiraRepositoryFactory has not been implemented yet
+#repository.factory=org.apache.lenya.cms.jcr.jeceira.JeceiraRepositoryFactory
+#------------------------------------------------------------------------------------
+## NOTE: The node factory needs to be configured within "build/lenya/webapp/WEB-INF/classes/org/apache/lenya/lenya.roles" after having build Lenya
+#node.factory=org.apache.lenya.cms.repository.SourceNodeFactory
+#node.factory=org.apache.lenya.cms.repo.adapter.RepoNodeFactory
+#node.factory=org.apache.lenya.cms.jcr.JCRNodeFactory
+#------------------------------------------------------------------------------------
+## SVN Revision number
+lenya.revision=xxx</code></pre></div>
+<ol><li>Ant script for xmlgraphics-commons</li></ol>
+<p>---  ---</p>
+<ol><li>nutch ant script</li><li>rhino ant build script</li><li>apache solr ant script</li><li>Tomcat ant build script</li><li>OFBiz ant build script</li><li>Apache pivot ant build script</li><li>XmlSchema ant script</li><li>xml security</li><li>velocity tools ant script</li><li>weka build script</li><li>xml bean ant script</li><li>xml graphics common ant script</li><li>uPortal ant script</li><li>SmartGWT ant script</li><li>Build file to fetch maven2 tasks; extracted from (Ant's) fetch.xml</li><li>Build file to fetch optional libraries for Apache Ant</li><li>Ant build script</li><li>Build script for apache-cassandra-0.5.1-src</li><li>apache-log4j-site\build.xml</li><li>apache-roller-src-4.0.1</li><li>Build script from apache dbutils</li><li>Fop build script</li><li>Google guice ant script</li><li>GWT ant script</li><li>hadoop ant build script</li><li>jakarta jmeter ant script</li><li>jakarta oro ant script</li><li>jakarta regexp ant script</li><li>jedit build script</li><li>jibx ant build script</li><li>lucene ant build script</li></ol>
+    <div class="pager"><a class="pager-btn" href="2d-graphics-gui-alphacompositesrcatop.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">AlphaComposite.SRC_ATOP</span></a><a class="pager-btn pager-next" href="spring-beaninjectioncollectionproperties.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Bean Injection</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

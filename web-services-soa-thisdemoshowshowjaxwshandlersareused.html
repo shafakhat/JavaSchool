@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>This demo shows how JAX-WS handlers are used - JavaSchool</title>
+<meta name="description" content="This demo shows how JAX-WS handlers are used. The server uses a">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-web-services-soa-thisdemoshowshowjaxwshandlersareused">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-web-services-soa.html">Web Services SOA</a></nav>
+    <h1>This demo shows how JAX-WS handlers are used</h1>
+<p>This demo shows how JAX-WS handlers are used</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Handler Demo
+============
+This demo shows how JAX-WS handlers are used.  The server uses a
+SOAP protocol handler which logs incoming and outgoing messages
+to the console.
+The server code registers a handler using the @HandlerChain annotation
+within the service implementation class. For this demo, LoggingHandler
+is SOAPHandler that logs the entire SOAP message content to stdout.
+The client includes a logical handler that checks the parameters on
+outbound requests and short-circuits the invocation in certain
+circumstances. This handler is specified programatically.
+Please review the README in the samples directory before continuing.
+Prerequisite
+------------
+If your environment already includes cxf-manifest-incubator.jar on the CLASSPATH,
+and the JDK and ant bin directories on the PATH, it is not necessary to
+set the environment as described in the samples directory's README.
+If your environment is not properly configured, or if you are planning
+on using wsdl2java, javac, and java to build and run the demos, you must
+set the environment.
+Building and running the demo using ant
+---------------------------------------
+From the samples/handlers directory, the ant build script can be used to
+build and run the demo. The server and client targets automatically build
+the demo.
+Using either UNIX or Windows:
+  ant server
+  ant client
+When using these ant targets, the server process uses the LoggingHandler
+and the client process uses the SmallNumberHandler. Notice that both
+the client and server consoles display short informative messages. The
+client handler examines the operation parameters and, based on the
+parameter values, may decide not to forward the request to the server. The server
+handler displays the entire content of each message in its console.
+The @HandlerChain annotation in the implementation class indicates that
+the file demo_handler.xml includes the information needed to identify the
+handler class.
+  @HandlerChain(file = "../common/demo_handlers.xml", name = "DemoHandlerChain")
+The client side SmallNumberHandler is specified programatically:
+    SmallNumberHandler sh = new SmallNumberHandler();
+    List&lt;Handler&gt; newHandlerChain = new ArrayList&lt;Handler&gt;();
+    newHandlerChain.add(sh);
+    ((BindingProvider)port).getBinding().setHandlerChain(newHandlerChain);
+After running the client, terminate the server process.
+To remove the code generated from the WSDL file and the .class
+files, run:
+  ant clean
+Building the demo using wsdl2java and javac
+-------------------------------------------
+From the samples/handlers directory, first create the target directory
+build/classes and then generate code from the WSDL file.
+For UNIX:
+  mkdir -p build/classes
+  wsdl2java -d build/classes -compile ./wsdl/addNumbers.wsdl
+For Windows:
+  mkdir build\classes
+    Must use back slashes.
+  wsdl2java -d build\classes -compile .\wsdl\addNumbers.wsdl
+    May use either forward or back slashes.
+Now compile the provided client and server applications with the commands:
+For UNIX:
+  export CLASSPATH=$CLASSPATH:$CXF_HOME/lib/cxf-manifest-incubator.jar:./build/classes
+  javac -d build/classes src/demo/handlers/common/*.java
+  javac -d build/classes src/demo/handlers/client/*.java
+  javac -d build/classes src/demo/handlers/server/*.java
+For Windows:
+  set classpath=%classpath%;%CXF_HOME%\lib\cxf-manifest-incubator.jar;.\build\classes
+  javac -d build\classes src\demo\handlers\common\*.java
+  javac -d build\classes src\demo\handlers\client\*.java
+  javac -d build\classes src\demo\handlers\server\*.java
+Finally, copy the demo_handlers.xml file from the src/demo/handlers/common
+directory into the build/classes/demo/handlers/common directory.
+For UNIX:
+  cp ./src/demo/handlers/common/demo_handlers.xml ./build/classes/demo/handlers/common
+For Windows:
+  copy src\demo\handlers\common\demo_handlers.xml build\classes\demo\handlers\common
+Running the demo using java
+---------------------------
+From the samples/handlers directory run the commands (entered on a single command line):
+For UNIX (must use forward slashes):
+    java -Djava.util.logging.config.file=$CXF_HOME%/etc/logging.properties
+         demo.handlers.server.Server &amp;
+    java -Djava.util.logging.config.file=$CXF_HOME%/etc/logging.properties
+         demo.handlers.client.Client ./wsdl/addNumbers.wsdl
+The server process starts in the background.
+For Windows (may use either forward or back slashes):
+  start
+    java -Djava.util.logging.config.file=%CXF_HOME%\etc\logging.properties
+         demo.handlers.server.Server
+    java -Djava.util.logging.config.file=%CXF_HOME%\etc\logging.properties
+         demo.handlers.client.Client .\wsdl\addNumbers.wsdl
+The server process starts in a new command window.
+After running the client, terminate the server process.
+To remove the code generated from the WSDL file and the .class
+files, either delete the build directory and its contents or run:
+  ant clean</code></pre></div>
+<p>XFire-CXF-handlers.zip( 15 k)</p>
+<ol><li>This demo shows a client creating a callback object by passing an EndpointReferenceType to the server</li><li>This demo illustrates the use of the JAX-WS APIs to run a simple client against a standalone server using SOAP 1.1 over HTTP</li><li>This demo illustrates the use of the JAX-WS asynchronous invocation model</li><li>MTOSI 1.1 Samples</li><li>This demo shows how to develope an user interceptor and add the interceptor into the interceptor chain through configuration</li></ol>
+<p>w__w___w__.___ja_v__a__2___s___.__c_om_</p>
+    <div class="pager"><a class="pager-btn" href="data-type-javasortlongarrayexample-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Sort long Array Example</span></a><a class="pager-btn pager-next" href="data-type-usenewdecimalformat0e0toformatdouble.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Use new DecimalFormat("0.#...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

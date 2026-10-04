@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appends a whitespace-normalized form of the specified character sequence into the specified string buffer. - JavaSchool</title>
+<meta name="description" content="Appends a whitespace-normalized form of the specified character sequence into the specified string buffer.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-appendsawhitespacenormalizedformofthespecifiedcharactersequenceintothe">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-data-type.html">Data Type</a></nav>
+    <h1>Appends a whitespace-normalized form of the specified character sequence into the specified string buffer.</h1>
+<p>Appends a whitespace-normalized form of the specified character sequence into the specified string buffer.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * LingPipe v. 3.9
+ * Copyright (C) 2003-2010 Alias-i
+ *
+ * This program is licensed under the Alias-i Royalty Free License
+ * Version 1 WITHOUT ANY WARRANTY, without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the Alias-i
+ * Royalty Free License Version 1 for more details.
+ *
+ * You should have received a copy of the Alias-i Royalty Free License
+ * Version 1 along with this program; if not, visit
+ * http://alias-i.com/lingpipe/licenses/lingpipe-license-1.txt or contact
+ * Alias-i, Inc. at 181 North 11th Street, Suite 401, Brooklyn, NY 11211,
+ * +1 (718) 290-9170.
+ */
+//package com.aliasi.util;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+import java.text.DecimalFormat;
+/**
+ * Static utility methods for processing strings, characters and
+ * string buffers.
+ *
+ * @author  Bob Carpenter
+ * @version 4.0.1
+ * @since   LingPipe1.0
+ * @see     java.lang.Character
+ * @see     java.lang.String
+ * @see     java.lang.StringBuilder
+ */
+public class Strings {
+    /**
+     * Appends a whitespace-normalized form of the specified character
+     * sequence into the specified string buffer.  Initial and final
+     * whitespaces are not appended, and every other maximal sequence
+     * of contiguous whitespace is replaced with a single whitespace
+     * character.  For instance, &lt;code&gt;&amp;quot; a\tb\n&amp;quot;&lt;/code&gt;
+     * would append the following characters to &lt;code&gt;&amp;quot;a
+     * b&amp;quot;&lt;/code&gt;.
+     *
+     * &lt;P&gt;This command is useful for text inputs for web or GUI
+     * applications.
+     *
+     * @param cs Character sequence whose normalization is appended to
+     * the buffer.
+     * @param sb String buffer to which the normalized character
+     * sequence is appended.
+     */
+    public static void normalizeWhitespace(CharSequence cs, StringBuilder sb) {
+        int i = 0;
+        int length = cs.length();
+        while (length &gt; 0 &amp;&amp; isWhitespace(cs.charAt(length-1)))
+            --length;
+        while (i &lt; length &amp;&amp; isWhitespace(cs.charAt(i)))
+            ++i;
+        boolean inWhiteSpace = false;
+        for ( ; i &lt; length; ++i) {
+            char nextChar = cs.charAt(i);
+            if (isWhitespace(nextChar)) {
+                if (!inWhiteSpace) {
+                    sb.append(' ');
+                    inWhiteSpace = true;
+                }
+            } else {
+                inWhiteSpace = false;
+                sb.append(nextChar);
+            }
+        }
+    }
+    /**
+     * Returns a whitespace-normalized version of the specified
+     * character sequence.  See {@link
+     * #normalizeWhitespace(CharSequence,StringBuilder)} for
+     * information on the normalization procedure.
+     *
+     * @param cs Character sequence to normalize.
+     * @return Normalized version of character sequence.
+     */
+    public static String normalizeWhitespace(CharSequence cs) {
+        StringBuilder sb = new StringBuilder();
+        normalizeWhitespace(cs,sb);
+        return sb.toString();
+    }
+    /**
+     * Returns &lt;code&gt;true&lt;/code&gt; if the specified buffer contains
+     * only whitespace characters.
+     *
+     * @param sb String buffer to test for whitespace.
+     * @return &lt;code&gt;true&lt;/code&gt; if the specified buffer contains only
+     * whitespace characters.
+     */
+    public static boolean allWhitespace(StringBuilder sb) {
+        return allWhitespace(sb.toString());
+    }
+    /**
+     * Returns &lt;code&gt;true&lt;/code&gt; if the specified string contains
+     * only whitespace characters.
+     *
+     * @param s Stirng to test for whitespace.
+     * @return &lt;code&gt;true&lt;/code&gt; if the specified string contains only
+     * whitespace characters.
+     */
+    public static boolean allWhitespace(String s) {
+        return allWhitespace(s.toCharArray(),0,s.length());
+    }
+    /**
+     * Returns &lt;code&gt;true&lt;/code&gt; if the specified range of the
+     * specified character array only whitespace characters, as defined for
+     * characters by {@link #isWhitespace(char c)}.
+     *
+     * @param ch Character array to test for whitespace characters in range.
+     * @param start Beginning of range to test.
+     * @param length Number of characters to test.
+     * @return &lt;code&gt;true&lt;/code&gt; if the specified string contains only
+     * whitespace characters.
+     */
+    public static boolean allWhitespace(char[] ch, int start, int length) {
+        for (int i = start; i &lt; start+length; ++i)
+            if (!isWhitespace(ch[i])) return false;
+        return true;
+    }
+    /**
+     * Returns true if specified character is a whitespace character.
+     * The definition in {@link
+     * java.lang.Character#isWhitespace(char)} is extended to include
+     * the unicode non-breakable space character (unicode 160).
+     *
+     * @param c Character to test.
+     * @return &lt;code&gt;true&lt;/code&gt; if specified character is a
+     * whitespace.
+     * @see java.lang.Character#isWhitespace(char)
+     */
+    public static boolean isWhitespace(char c) {
+        return Character.isWhitespace(c) || c == NBSP_CHAR;
+    }
+    /**
+     * The non-breakable space character.
+     */
+    public static char NBSP_CHAR = (char)160;
+}</code></pre></div>
+<ol><li>StrCharAt - show String.charAt()</li></ol>
+<p>---  ---</p>
+<ol><li>Basic tab-character handling stuff</li><li>Convert Characters to Lower Case</li><li>Convert Characters to Upper Case</li><li>Replace Characters in a String</li><li>Character array to String conversion</li><li>Convert String to character array</li><li>Last occurrence of a character</li><li>Extract Ascii codes from a String</li><li>To remove a character</li><li>Removes specified chars from a string</li><li>Checks if a String is not empty (""), not null and not whitespace only.</li><li>Checks if a String is whitespace, empty ("") or null.</li><li>Checks if the String contains any character in the given set of characters.</li><li>Checks if the String contains only certain characters.</li><li>Checks if the String contains only whitespace.</li><li>Checks if the string contains only ASCII printable characters.</li><li>Checks that the String does not contain certain characters.</li><li>The character array based string</li><li>Checks whether the String contains only digit characters.</li><li>Remove char from a string</li><li>Remove whitespace from the ends as well as excessive whitespace within the inside of the string between non-whitespace characters.</li><li>Removes any hypens ( - ) from the given string</li><li>Returns a new string with all the whitespace removed</li><li>Is char a white space character</li><li>Simple scanner that allows to navigate over the characters of a string.</li><li>Returns a string with size of count and all characters initialized with ch.</li><li>Returns a string that contains all characters of the given string in reverse order.</li><li>Returns a string that is equivalent to the specified string with its first character converted to uppercase</li><li>Count the number of occurrences of character c in a string.</li><li>A fast way to convert character arrays into Strings.</li><li>XML utilities that pertain to character handling (markup or character data), without use of any XML libraries.</li><li>Check whether the given String contains any whitespace characters.</li><li>Character utilities.</li><li>Provides a number of static methods which interact with java.nio.charset.Charset to analyze and transform the strings identifing character encodings.</li><li>Operations on char primitives and Character objects.</li><li>Cleans strings of illegal characters with respect to the XML specification.</li><li>Return the result of adding the specified character to the specified sorted character array.</li><li>Return a displayable version of the character sequence, followed by integer positions at various powers of 10.</li><li>Returns the string constructed from the specified character sequence by deaccenting each of its characters.</li><li>Returns a hash code for a character sequence that is equivalent to the hash code generated for a its string yield.</li><li>Return true if the two character sequences have the same length and the same characters.</li><li>Returns an array of substrings of the specified string, in order, with divisions before and after any instance of the specified character.</li><li>Returns true if specified character is a punctuation character.</li><li>Determine whether characters may appear in certain roles in XML documents.</li><li>Advanced navigation over the underlying string.</li><li>Compare two char sequences</li><li>Contents As CharSequence</li></ol>
+    <div class="pager"><a class="pager-btn" href="jdk-7-usingcurrencyonjava17.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Using Currency on Java 1.7</span></a><a class="pager-btn pager-next" href="class-cloningacomposedobject.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Cloning a composed object</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

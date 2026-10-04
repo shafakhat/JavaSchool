@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build script for apache-cassandra-0.5.1-src - JavaSchool</title>
+<meta name="description" content="~ or more contributor license agreements. See the NOTICE file">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-ant-buildscriptforapachecassandra051src">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-ant.html">Ant</a></nav>
+    <h1>Build script for apache-cassandra-0.5.1-src</h1>
+<p>Build script for apache-cassandra-0.5.1-src</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+&lt;!--
+ ~ Licensed to the Apache Software Foundation (ASF) under one
+ ~ or more contributor license agreements.  See the NOTICE file
+ ~ distributed with this work for additional information
+ ~ regarding copyright ownership.  The ASF licenses this file
+ ~ to you under the Apache License, Version 2.0 (the
+ ~ "License"); you may not use this file except in compliance
+ ~ with the License.  You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ --&gt;
+&lt;project basedir="." default="build" name="apache-cassandra"&gt;
+    &lt;property environment="env"/&gt;
+    &lt;property file="build.properties" /&gt;
+    &lt;property name="debuglevel" value="source,lines,vars"/&gt;
+    &lt;property name="basedir" value="."/&gt;
+    &lt;property name="build.src" value="${basedir}/src/java"/&gt;
+    &lt;property name="build.src.gen-java" value="${basedir}/src/gen-java"/&gt;
+    &lt;property name="build.lib" value="${basedir}/lib"/&gt;
+    &lt;property name="build.dir" value="${basedir}/build"/&gt;
+    &lt;property name="build.test.dir" value="${build.dir}/test"/&gt;
+    &lt;property name="build.classes" value="${build.dir}/classes"/&gt;
+    &lt;property name="javadoc.dir" value="${build.dir}/javadoc"/&gt;
+    &lt;property name="interface.dir" value="${basedir}/interface"/&gt;
+    &lt;property name="interface.src.dir" value="${interface.dir}/gen-java"/&gt;
+    &lt;property name="test.dir" value="${basedir}/test"/&gt;
+    &lt;property name="test.resources" value="${test.dir}/resources"/&gt;
+    &lt;property name="test.classes" value="${build.dir}/test/classes"/&gt;
+    &lt;property name="test.conf" value="${test.dir}/conf"/&gt;
+    &lt;property name="test.name" value="*Test"/&gt;
+    &lt;property name="test.unit.src" value="${test.dir}/unit"/&gt;
+    &lt;property name="dist.dir" value="${build.dir}/dist"/&gt;
+    &lt;property name="version" value="0.5.1"/&gt;
+    &lt;property name="final.name" value="${ant.project.name}-${version}"/&gt;
+    &lt;!-- http://cobertura.sourceforge.net/ --&gt;
+    &lt;property name="cobertura.build.dir" value="${build.dir}/cobertura"/&gt;
+    &lt;!-- can't include due to licensing, specify jar via command line --&gt;
+    &lt;property name="cobertura.dir" value="/tmp"/&gt;
+    &lt;property name="cobertura.report.dir" value="${cobertura.build.dir}/report"/&gt;
+    &lt;property name="cobertura.classes.dir" value="${cobertura.build.dir}/classes"/&gt;
+    &lt;property name="cobertura.datafile" value="${cobertura.build.dir}/cobertura.ser"/&gt;
+    &lt;!--
+   Add all the dependencies.
+    --&gt;
+    &lt;path id="cassandra.classpath"&gt;
+        &lt;pathelement location="${cobertura.classes.dir}"/&gt;
+        &lt;pathelement location="${build.classes}"/&gt;
+        &lt;fileset dir="${build.lib}"&gt;
+          &lt;include name="**/*.jar" /&gt;
+        &lt;/fileset&gt;
+    &lt;/path&gt;
+    &lt;!--
+  Setup the output directories.
+    --&gt;
+    &lt;target name="init"&gt;
+        &lt;mkdir dir="${build.classes}"/&gt;
+        &lt;mkdir dir="${test.classes}"/&gt;
+        &lt;mkdir dir="${build.src.gen-java}"/&gt;
+    &lt;/target&gt;
+    &lt;target name="clean"&gt;
+        &lt;delete dir="${build.dir}" /&gt;
+        &lt;delete dir="${build.src.gen-java}" /&gt;
+    &lt;/target&gt;
+    &lt;target depends="clean" name="cleanall"/&gt;
+    &lt;!--
+       This generates the CLI grammar files from Cli.g
+    --&gt;
+    &lt;target name="check-gen-cli-grammar"&gt;
+        &lt;uptodate property="cliUpToDate"
+                srcfile="${build.src}/org/apache/cassandra/cli/Cli.g"
+                targetfile="${build.src.gen-java}/org/apache/cassandra/cli/Cli.tokens"/&gt;
+    &lt;/target&gt;
+    &lt;target name="gen-cli-grammar" depends="check-gen-cli-grammar" unless="cliUpToDate"&gt;
+      &lt;echo&gt;Building Grammar ${build.src}/org/apache/cassandra/cli/Cli.g  ....&lt;/echo&gt;
+      &lt;java classname="org.antlr.Tool"
+            classpath="${build.lib}/antlr-3.1.3.jar"
+            fork="true"&gt;
+         &lt;arg value="${build.src}/org/apache/cassandra/cli/Cli.g" /&gt;
+         &lt;arg value="-fo" /&gt;
+         &lt;arg value="${build.src.gen-java}/org/apache/cassandra/cli/" /&gt;
+      &lt;/java&gt;
+    &lt;/target&gt;
+    &lt;target name="gen-thrift-java"&gt;
+      &lt;echo&gt;Generating Thrift Java code from ${basedir}/interface/cassandra.thrift ....&lt;/echo&gt;
+      &lt;exec executable="thrift" dir="${basedir}/interface"&gt;
+        &lt;arg line="--gen java cassandra.thrift" /&gt;
+      &lt;/exec&gt;
+    &lt;/target&gt;
+    &lt;target name="gen-thrift-py"&gt;
+      &lt;echo&gt;Generating Thrift Python code from ${basedir}/interface/cassandra.thrift ....&lt;/echo&gt;
+      &lt;exec executable="thrift" dir="${basedir}/interface"&gt;
+        &lt;arg line="--gen py cassandra.thrift" /&gt;
+      &lt;/exec&gt;
+    &lt;/target&gt;
+    &lt;!--
+  The build target builds all the .class files
+    --&gt;
+    &lt;target name="build" depends="build-subprojects,build-project"/&gt;
+    &lt;target name="build-subprojects"/&gt;
+    &lt;target name="codecoverage" depends="cobertura-instrument,test,cobertura-report"/&gt;
+    &lt;target depends="init,gen-cli-grammar" name="build-project"&gt;
+        &lt;echo message="${ant.project.name}: ${ant.file}"/&gt;
+        &lt;javac debug="true" debuglevel="${debuglevel}" destdir="${build.classes}"&gt;
+            &lt;src path="${build.src}"/&gt;
+            &lt;src path="${build.src.gen-java}"/&gt;
+            &lt;src path="${interface.src.dir}"/&gt;
+            &lt;classpath refid="cassandra.classpath"/&gt;
+        &lt;/javac&gt;
+    &lt;/target&gt;
+    &lt;!--
+  The jar target makes cassandra.jar output.
+    --&gt;
+    &lt;target name="jar" depends="build"&gt;
+      &lt;mkdir dir="${build.classes}/META-INF"/&gt;
+      &lt;copy file="LICENSE.txt" tofile="${build.classes}/META-INF/LICENSE.txt"/&gt;
+      &lt;copy file="NOTICE.txt" tofile="${build.classes}/META-INF/NOTICE.txt"/&gt;
+      &lt;jar jarfile="${build.dir}/${final.name}.jar"
+           basedir="${build.classes}"&gt;
+        &lt;manifest&gt;
+        &lt;!-- &lt;section name="org/apache/cassandra/infrastructure"&gt; --&gt;
+          &lt;attribute name="Implementation-Title" value="Cassandra"/&gt;
+          &lt;attribute name="Implementation-Version" value="${version}"/&gt;
+          &lt;attribute name="Implementation-Vendor" value="Apache"/&gt;
+          &lt;attribute name="Premain-Class" value="org.apache.cassandra.infrastructure.continuations.CAgent"/&gt;
+        &lt;!-- &lt;/section&gt; --&gt;
+        &lt;/manifest&gt;
+      &lt;/jar&gt;
+    &lt;/target&gt;
+    &lt;!-- creates a release tarball --&gt;
+    &lt;target name="release" depends="jar,javadoc"&gt;
+      &lt;mkdir dir="${dist.dir}"/&gt;
+      &lt;copy todir="${dist.dir}/lib"&gt;
+        &lt;fileset dir="${build.lib}"/&gt;
+        &lt;fileset dir="${build.dir}"&gt;
+          &lt;include name="*.jar" /&gt;
+        &lt;/fileset&gt;
+      &lt;/copy&gt;
+      &lt;copy todir="${dist.dir}/javadoc"&gt;
+        &lt;fileset dir="${javadoc.dir}"/&gt;
+      &lt;/copy&gt;
+      &lt;copy todir="${dist.dir}/bin"&gt;
+        &lt;fileset dir="bin"/&gt;
+      &lt;/copy&gt;
+      &lt;copy todir="${dist.dir}/conf"&gt;
+        &lt;fileset dir="conf"/&gt;
+      &lt;/copy&gt;
+      &lt;copy todir="${dist.dir}/interface"&gt;
+        &lt;fileset dir="interface"&gt;
+          &lt;include name="**/*.thrift" /&gt;
+        &lt;/fileset&gt;
+      &lt;/copy&gt;
+      &lt;copy todir="${dist.dir}/"&gt;
+        &lt;fileset dir="${basedir}"&gt;
+          &lt;include name="*.txt" /&gt;
+        &lt;/fileset&gt;
+      &lt;/copy&gt;
+      &lt;tar compression="gzip" longfile="gnu"
+        destfile="${build.dir}/${final.name}-bin.tar.gz"&gt;
+        &lt;!-- Everything but bin/ (default mode) --&gt;
+        &lt;tarfileset dir="${dist.dir}" prefix="${final.name}"&gt;
+          &lt;include name="**"/&gt;
+          &lt;exclude name="bin/*" /&gt;
+        &lt;/tarfileset&gt;
+        &lt;!-- Shell includes in bin/ (default mode) --&gt;
+        &lt;tarfileset dir="${dist.dir}" prefix="${final.name}"&gt;
+          &lt;include name="bin/*.in.sh" /&gt;
+        &lt;/tarfileset&gt;
+        &lt;!-- Executable scripts in bin/ --&gt;
+        &lt;tarfileset dir="${dist.dir}" prefix="${final.name}" mode="755"&gt;
+          &lt;include name="bin/*"/&gt;
+          &lt;not&gt;
+          &lt;filename name="bin/*.in.sh" /&gt;
+          &lt;/not&gt;
+        &lt;/tarfileset&gt;
+      &lt;/tar&gt;
+      &lt;tar compression="gzip" longfile="gnu"
+        destfile="${build.dir}/${final.name}-src.tar.gz"&gt;
+        &lt;tarfileset dir="${basedir}"
+          prefix="${final.name}-src"&gt;
+          &lt;include name="**"/&gt;
+          &lt;exclude name="build/**" /&gt;
+          &lt;exclude name="src/gen-java/**" /&gt;
+        &lt;/tarfileset&gt;
+      &lt;/tar&gt;
+    &lt;/target&gt;
+  &lt;target name="build-test" depends="build" description="Build the Cassandra classes"&gt;
+    &lt;javac
+     debug="true"
+     debuglevel="${debuglevel}"
+     destdir="${test.classes}"
+    &gt;
+      &lt;classpath refid="cassandra.classpath"/&gt;
+      &lt;src path="${test.unit.src}"/&gt;
+    &lt;/javac&gt;
+    &lt;!-- Non-java resources needed by the test suite --&gt;
+    &lt;copy todir="${test.classes}"&gt;
+      &lt;fileset dir="${test.resources}"/&gt;
+    &lt;/copy&gt;
+  &lt;/target&gt;
+   &lt;target name="test" depends="build-test"&gt;
+    &lt;echo message="running tests"/&gt;
+    &lt;mkdir dir="${build.test.dir}/cassandra"/&gt;
+    &lt;mkdir dir="${build.test.dir}/output"/&gt;
+    &lt;junit fork="on" failureproperty="testfailed"&gt;
+      &lt;sysproperty key="net.sourceforge.cobertura.datafile" file="${cobertura.datafile}"/&gt;
+      &lt;formatter type="xml" usefile="true"/&gt;
+      &lt;formatter type="brief" usefile="false"/&gt;
+      &lt;jvmarg value="-Dstorage-config=${test.conf}"/&gt;
+      &lt;jvmarg value="-ea"/&gt;
+      &lt;classpath&gt;
+        &lt;path refid="cassandra.classpath" /&gt;
+        &lt;pathelement location="${test.classes}"/&gt;
+        &lt;pathelement location="${cobertura.dir}/cobertura.jar"/&gt;
+        &lt;pathelement location="${test.conf}"/&gt;
+      &lt;/classpath&gt;
+      &lt;batchtest todir="${build.test.dir}/output"&gt;
+        &lt;fileset dir="${test.classes}" includes="**/${test.name}.class" /&gt;
+      &lt;/batchtest&gt;
+    &lt;/junit&gt;
+    &lt;fail if="testfailed" message="Some test(s) failed."/&gt;
+  &lt;/target&gt;
+  &lt;!-- instruments the classes to later create code coverage reports --&gt;
+  &lt;target name="cobertura-instrument" depends="build,build-test"&gt;
+    &lt;taskdef resource="tasks.properties"&gt;
+      &lt;classpath&gt;
+        &lt;fileset dir="${cobertura.dir}"&gt;
+            &lt;include name="cobertura.jar" /&gt;
+            &lt;include name="lib/**/*.jar" /&gt;
+        &lt;/fileset&gt;
+      &lt;/classpath&gt;
+    &lt;/taskdef&gt;
+    &lt;delete file="${cobertura.datafile}"/&gt;
+    &lt;cobertura-instrument todir="${cobertura.classes.dir}" datafile="${cobertura.datafile}"&gt;
+      &lt;ignore regex="org.apache.log4j.*"/&gt;
+      &lt;fileset dir="${build.classes}"&gt;
+        &lt;include name="**/*.class"/&gt;
+        &lt;exclude name="**/*Test.class"/&gt;
+        &lt;exclude name="**/*TestCase.class"/&gt;
+        &lt;exclude name="**/test/*.class"/&gt;
+        &lt;exclude name="${cobertura.excludes}"/&gt;
+      &lt;/fileset&gt;
+    &lt;/cobertura-instrument&gt;
+  &lt;/target&gt;
+  &lt;!-- create both html and xml code coverage reports --&gt;
+  &lt;target name="cobertura-report"&gt;
+    &lt;cobertura-report format="html" destdir="${cobertura.report.dir}" srcdir="${build.src}"
+      datafile="${cobertura.datafile}"/&gt;
+    &lt;cobertura-report format="xml" destdir="${cobertura.report.dir}" srcdir="${build.src}"
+      datafile="${cobertura.datafile}"/&gt;
+  &lt;/target&gt;
+  &lt;target name="javadoc" depends="init"&gt;
+    &lt;tstamp&gt;
+      &lt;format property="YEAR" pattern="yyyy"/&gt;
+    &lt;/tstamp&gt;
+    &lt;javadoc destdir="${javadoc.dir}" author="true" version="true" use="true"
+      windowtitle="${ant.project.name} API" classpathref="cassandra.classpath"
+      bottom="Copyright &amp;amp;copy; ${YEAR} The Apache Software Foundation"&gt;
+      &lt;fileset dir="${build.src}" defaultexcludes="yes"&gt;
+        &lt;include name="org/apache/**/*.java"/&gt;
+      &lt;/fileset&gt;
+      &lt;fileset dir="${interface.src.dir}" defaultexcludes="yes"&gt;
+        &lt;include name="org/apache/**/*.java"/&gt;
+      &lt;/fileset&gt;
+    &lt;/javadoc&gt;
+   &lt;/target&gt;
+&lt;/project&gt;</code></pre></div>
+<ol><li>Ant script for xmlgraphics-commons</li></ol>
+<p>---  ---</p>
+<ol><li>nutch ant script</li><li>rhino ant build script</li><li>apache solr ant script</li><li>Tomcat ant build script</li><li>OFBiz ant build script</li><li>Apache Lenya Build System</li><li>Apache pivot ant build script</li><li>XmlSchema ant script</li><li>xml security</li><li>velocity tools ant script</li><li>weka build script</li><li>xml bean ant script</li><li>xml graphics common ant script</li><li>uPortal ant script</li><li>SmartGWT ant script</li><li>Build file to fetch maven2 tasks; extracted from (Ant's) fetch.xml</li><li>Build file to fetch optional libraries for Apache Ant</li><li>Ant build script</li><li>apache-log4j-site\build.xml</li><li>apache-roller-src-4.0.1</li><li>Build script from apache dbutils</li><li>Fop build script</li><li>Google guice ant script</li><li>GWT ant script</li><li>hadoop ant build script</li><li>jakarta jmeter ant script</li><li>jakarta oro ant script</li><li>jakarta regexp ant script</li><li>jedit build script</li><li>jibx ant build script</li><li>lucene ant build script</li></ol>
+    <div class="pager"><a class="pager-btn" href="pdf-rtf-barcodes1282.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Barcodes 128 (2)</span></a><a class="pager-btn pager-next" href="database-sql-jdbc-checkifcursorisinthefirstrow.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Check if cursor is in the ...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

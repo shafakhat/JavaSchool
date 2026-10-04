@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turns a string value into a java.lang.Number. - JavaSchool</title>
+<meta name="description" content="* Licensed to the Apache Software Foundation (ASF) under one or more">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-turnsastringvalueintoajavalangnumber-2">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-data-type-0040.html">Data Type (0040)</a></nav>
+    <h1>Turns a string value into a java.lang.Number.</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
+import java.math.BigInteger;
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Contains useful helper methods for classes within this package.
+ *
+ * @author John Keyes (john at integralsource.com)
+ * @version $Revision: 680644 $, $Date: 2008-07-29 01:13:48 -0700 (Tue, 29 Jul 2008) $
+ */
+public class Main {
+  //--------------------------------------------------------------------
+  // must handle Long, Float, Integer, Float, Short,
+  //                  BigDecimal, BigInteger and Byte
+  // useful methods:
+  // Byte.decode(String)
+  // Byte.valueOf(String,int radix)
+  // Byte.valueOf(String)
+  // Double.valueOf(String)
+  // Float.valueOf(String)
+  // new Float(String)
+  // Integer.valueOf(String,int radix)
+  // Integer.valueOf(String)
+  // Integer.decode(String)
+  // Integer.getInteger(String)
+  // Integer.getInteger(String,int val)
+  // Integer.getInteger(String,Integer val)
+  // new Integer(String)
+  // new Double(String)
+  // new Byte(String)
+  // new Long(String)
+  // Long.getLong(String)
+  // Long.getLong(String,int)
+  // Long.getLong(String,Integer)
+  // Long.valueOf(String,int)
+  // Long.valueOf(String)
+  // new Short(String)
+  // Short.decode(String)
+  // Short.valueOf(String,int)
+  // Short.valueOf(String)
+  // new BigDecimal(String)
+  // new BigInteger(String)
+  // new BigInteger(String,int radix)
+  // Possible inputs:
+  // 45 45.5 45E7 4.5E7 Hex Oct Binary xxxF xxxD xxxf xxxd
+  // plus minus everything. Prolly more. A lot are not separable.
+  /**
+   * &lt;p&gt;Turns a string value into a java.lang.Number.&lt;/p&gt;
+   *
+   * &lt;p&gt;First, the value is examined for a type qualifier on the end
+   * (&lt;code&gt;'f','F','d','D','l','L'&lt;/code&gt;).  If it is found, it starts
+   * trying to create successively larger types from the type specified
+   * until one is found that can hold the value.&lt;/p&gt;
+   *
+   * &lt;p&gt;If a type specifier is not found, it will check for a decimal point
+   * and then try successively larger types from &lt;code&gt;Integer&lt;/code&gt; to
+   * &lt;code&gt;BigInteger&lt;/code&gt; and from &lt;code&gt;Float&lt;/code&gt; to
+   * &lt;code&gt;BigDecimal&lt;/code&gt;.&lt;/p&gt;
+   *
+   * &lt;p&gt;If the string starts with &lt;code&gt;0x&lt;/code&gt; or &lt;code&gt;-0x&lt;/code&gt;, it
+   * will be interpreted as a hexadecimal integer.  Values with leading
+   * &lt;code&gt;0&lt;/code&gt;'s will not be interpreted as octal.&lt;/p&gt;
+   *
+   * @param val String containing a number
+   * @return Number created from the string
+   * @throws NumberFormatException if the value cannot be converted
+   */
+  public static Number createNumber(String val) throws NumberFormatException {
+      if (val == null) {
+          return null;
+      }
+      if (val.length() == 0) {
+          throw new NumberFormatException("\"\" is not a valid number.");
+      }
+      if (val.startsWith("--")) {
+          // this is protection for poorness in java.lang.BigDecimal.
+          // it accepts this as a legal value, but it does not appear
+          // to be in specification of class. OS X Java parses it to
+          // a wrong value.
+          return null;
+      }
+      if (val.startsWith("0x") || val.startsWith("-0x")) {
+          return createInteger(val);
+      }
+      char lastChar = val.charAt(val.length() - 1);
+      String mant;
+      String dec;
+      String exp;
+      int decPos = val.indexOf('.');
+      int expPos = val.indexOf('e') + val.indexOf('E') + 1;
+      if (decPos &gt; -1) {
+          if (expPos &gt; -1) {
+              if (expPos &lt; decPos) {
+                  throw new NumberFormatException(val + " is not a valid number.");
+              }
+              dec = val.substring(decPos + 1, expPos);
+          } else {
+              dec = val.substring(decPos + 1);
+          }
+          mant = val.substring(0, decPos);
+      } else {
+          if (expPos &gt; -1) {
+              mant = val.substring(0, expPos);
+          } else {
+              mant = val;
+          }
+          dec = null;
+      }
+      if (!Character.isDigit(lastChar)) {
+          if (expPos &gt; -1 &amp;&amp; expPos &lt; val.length() - 1) {
+              exp = val.substring(expPos + 1, val.length() - 1);
+          } else {
+              exp = null;
+          }
+          //Requesting a specific type..
+          String numeric = val.substring(0, val.length() - 1);
+          boolean allZeros = isAllZeros(mant) &amp;&amp; isAllZeros(exp);
+          switch (lastChar) {
+              case 'l' :
+              case 'L' :
+                  if (dec == null
+                      &amp;&amp; exp == null
+                      &amp;&amp; (numeric.charAt(0) == '-' &amp;&amp; isDigits(numeric.substring(1)) || isDigits(numeric))) {
+                      try {
+                          return createLong(numeric);
+                      } catch (NumberFormatException nfe) {
+                          //Too big for a long
+                      }
+                      return createBigInteger(numeric);
+                  }
+                  throw new NumberFormatException(val + " is not a valid number.");
+              case 'f' :
+              case 'F' :
+                  try {
+                      Float f = createFloat(numeric);
+                      if (!(f.isInfinite() || (f.floatValue() == 0.0F &amp;&amp; !allZeros))) {
+                          //If it's too big for a float or the float value = 0 and the string
+                          //has non-zeros in it, then float does not have the precision we want
+                          return f;
+                      }
+                  } catch (NumberFormatException e) {
+                      // ignore the bad number
+                  }
+                  //Fall through
+              case 'd' :
+              case 'D' :
+                  try {
+                      Double d = createDouble(numeric);
+                      if (!(d.isInfinite() || (d.floatValue() == 0.0D &amp;&amp; !allZeros))) {
+                          return d;
+                      }
+                  } catch (NumberFormatException nfe) {
+                      // empty catch
+                  }
+                  try {
+                      return createBigDecimal(numeric);
+                  } catch (NumberFormatException e) {
+                      // empty catch
+                  }
+                  //Fall through
+              default :
+                  throw new NumberFormatException(val + " is not a valid number.");
+          }
+      } else {
+          //User doesn't have a preference on the return type, so let's start
+          //small and go from there...
+          if (expPos &gt; -1 &amp;&amp; expPos &lt; val.length() - 1) {
+              exp = val.substring(expPos + 1, val.length());
+          } else {
+              exp = null;
+          }
+          if (dec == null &amp;&amp; exp == null) {
+              //Must be an int,long,bigint
+              try {
+                  return createInteger(val);
+              } catch (NumberFormatException nfe) {
+                  // empty catch
+              }
+              try {
+                  return createLong(val);
+              } catch (NumberFormatException nfe) {
+                  // empty catch
+              }
+              return createBigInteger(val);
+          } else {
+              //Must be a float,double,BigDec
+              boolean allZeros = isAllZeros(mant) &amp;&amp; isAllZeros(exp);
+              try {
+                  Float f = createFloat(val);
+                  if (!(f.isInfinite() || (f.floatValue() == 0.0F &amp;&amp; !allZeros))) {
+                      return f;
+                  }
+              } catch (NumberFormatException nfe) {
+                  // empty catch
+              }
+              try {
+                  Double d = createDouble(val);
+                  if (!(d.isInfinite() || (d.doubleValue() == 0.0D &amp;&amp; !allZeros))) {
+                      return d;
+                  }
+              } catch (NumberFormatException nfe) {
+                  // empty catch
+              }
+              return createBigDecimal(val);
+          }
+      }
+  }
+  /**
+   * &lt;p&gt;Utility method for {@link #createNumber(java.lang.String)}.&lt;/p&gt;
+   *
+   * &lt;p&gt;Returns &lt;code&gt;true&lt;/code&gt; if s is &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;
+   *
+   * @param s the String to check
+   * @return if it is all zeros or &lt;code&gt;null&lt;/code&gt;
+   */
+  private static boolean isAllZeros(String s) {
+      if (s == null) {
+          return true;
+      }
+      for (int i = s.length() - 1; i &gt;= 0; i--) {
+          if (s.charAt(i) != '0') {
+              return false;
+          }
+      }
+      return s.length() &gt; 0;
+  }
+  //--------------------------------------------------------------------
+  /**
+   * &lt;p&gt;Convert a &lt;code&gt;String&lt;/code&gt; to a &lt;code&gt;Float&lt;/code&gt;.&lt;/p&gt;
+   *
+   * @param val  a &lt;code&gt;String&lt;/code&gt; to convert
+   * @return converted &lt;code&gt;Float&lt;/code&gt;
+   * @throws NumberFormatException if the value cannot be converted
+   */
+  public static Float createFloat(String val) {
+      return Float.valueOf(val);
+  }
+  /**
+   * &lt;p&gt;Convert a &lt;code&gt;String&lt;/code&gt; to a &lt;code&gt;Double&lt;/code&gt;.&lt;/p&gt;
+   *
+   * @param val  a &lt;code&gt;String&lt;/code&gt; to convert
+   * @return converted &lt;code&gt;Double&lt;/code&gt;
+   * @throws NumberFormatException if the value cannot be converted
+   */
+  public static Double createDouble(String val) {
+      return Double.valueOf(val);
+  }
+  /**
+   * &lt;p&gt;Convert a &lt;code&gt;String&lt;/code&gt; to a &lt;code&gt;Integer&lt;/code&gt;, handling
+   * hex and octal notations.&lt;/p&gt;
+   *
+   * @param val  a &lt;code&gt;String&lt;/code&gt; to convert
+   * @return converted &lt;code&gt;Integer&lt;/code&gt;
+   * @throws NumberFormatException if the value cannot be converted
+   */
+  public static Integer createInteger(String val) {
+      // decode() handles 0xAABD and 0777 (hex and octal) as well.
+      return Integer.decode(val);
+  }
+  /**
+   * &lt;p&gt;Convert a &lt;code&gt;String&lt;/code&gt; to a &lt;code&gt;Long&lt;/code&gt;.&lt;/p&gt;
+   *
+   * @param val  a &lt;code&gt;String&lt;/code&gt; to convert
+   * @return converted &lt;code&gt;Long&lt;/code&gt;
+   * @throws NumberFormatException if the value cannot be converted
+   */
+  public static Long createLong(String val) {
+      return Long.valueOf(val);
+  }
+  /**
+   * &lt;p&gt;Convert a &lt;code&gt;String&lt;/code&gt; to a &lt;code&gt;BigInteger&lt;/code&gt;.&lt;/p&gt;
+   *
+   * @param val  a &lt;code&gt;String&lt;/code&gt; to convert
+   * @return converted &lt;code&gt;BigInteger&lt;/code&gt;
+   * @throws NumberFormatException if the value cannot be converted
+   */
+  public static BigInteger createBigInteger(String val) {
+      BigInteger bi = new BigInteger(val);
+      return bi;
+  }
+  /**
+   * &lt;p&gt;Convert a &lt;code&gt;String&lt;/code&gt; to a &lt;code&gt;BigDecimal&lt;/code&gt;.&lt;/p&gt;
+   *
+   * @param val  a &lt;code&gt;String&lt;/code&gt; to convert
+   * @return converted &lt;code&gt;BigDecimal&lt;/code&gt;
+   * @throws NumberFormatException if the value cannot be converted
+   */
+  public static BigDecimal createBigDecimal(String val) {
+      BigDecimal bd = new BigDecimal(val);
+      return bd;
+  }
+  //--------------------------------------------------------------------
+  /**
+   * &lt;p&gt;Checks whether the &lt;code&gt;String&lt;/code&gt; contains only
+   * digit characters.&lt;/p&gt;
+   *
+   * &lt;p&gt;&lt;code&gt;Null&lt;/code&gt; and empty String will return
+   * &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;
+   *
+   * @param str  the &lt;code&gt;String&lt;/code&gt; to check
+   * @return &lt;code&gt;true&lt;/code&gt; if str contains only unicode numeric
+   */
+  public static boolean isDigits(String str) {
+      if ((str == null) || (str.length() == 0)) {
+          return false;
+      }
+      for (int i = 0; i &lt; str.length(); i++) {
+          if (!Character.isDigit(str.charAt(i))) {
+              return false;
+          }
+      }
+      return true;
+  }
+}</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="language-thelifetimeofanobject.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">The Lifetime of an Object</span></a><a class="pager-btn pager-next" href="threads-asemaphore.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">A semaphore</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+---
+title: EJB Tutorial from JBoss
+nav: EJB Tutorial from JBoss
+description: * Copyright 2006, Red Hat Middleware LLC, and individual contributors
+section: Imported - java2s Archive
+order: 1036
+source: https://web.archive.org/web/20090127035620/http://java2s.com:80/Code/Java/EJB3/EJBTutorialfromJBosssimpleshoppingcart.htm
+---
+EJB Tutorial from JBoss: simple shopping cart
+
+```java title=Example.java
+File: Order.java
+/*
+ * JBoss, Home of Professional Open Source.
+ * Copyright 2006, Red Hat Middleware LLC, and individual contributors
+ * as indicated by the @author tags. See the copyright.txt file in the
+ * distribution for a full listing of individual contributors.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ */
+package org.jboss.tutorial.entity.bean;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue; import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import java.util.ArrayList;
+import java.util.Collection;
+@Entity
+@Table(name = "PURCHASE_ORDER")
+public class Order implements java.io.Serializable
+{
+   private int id;
+   private double total;
+   private Collection<LineItem> lineItems;
+   @Id @GeneratedValue(strategy=GenerationType.AUTO)
+   public int getId()
+   {
+      return id;
+   }
+   public void setId(int id)
+   {
+      this.id = id;
+   }
+   public double getTotal()
+   {
+      return total;
+   }
+   public void setTotal(double total)
+   {
+      this.total = total;
+   }
+   public void addPurchase(String product, int quantity, double price)
+   {
+      if (lineItems == null) lineItems = new ArrayList<LineItem>();
+      LineItem item = new LineItem();
+      item.setOrder(this);
+      item.setProduct(product);
+      item.setQuantity(quantity);
+      item.setSubtotal(quantity * price);
+      lineItems.add(item);
+      total += quantity * price;
+   }
+   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="order")
+   public Collection<LineItem> getLineItems()
+   {
+      return lineItems;
+   }
+   public void setLineItems(Collection<LineItem> lineItems)
+   {
+      this.lineItems = lineItems;
+   }
+}
+File: ShoppingCart.java
+/*
+ * JBoss, Home of Professional Open Source.
+ * Copyright 2006, Red Hat Middleware LLC, and individual contributors
+ * as indicated by the @author tags. See the copyright.txt file in the
+ * distribution for a full listing of individual contributors.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ */
+package org.jboss.tutorial.entity.bean;
+import javax.ejb.Remove;
+/**
+ * Comment
+ *
+ * @author <a href="mailto:bill@jboss.org">Bill Burke</a>
+ * @version $Revision: 57207 $
+ */
+public interface ShoppingCart
+{
+   void buy(String product, int quantity, double price);
+   Order getOrder();
+   @Remove void checkout();
+}
+File: ShoppingCartBean.java
+/*
+ * JBoss, Home of Professional Open Source.
+ * Copyright 2006, Red Hat Middleware LLC, and individual contributors
+ * as indicated by the @author tags. See the copyright.txt file in the
+ * distribution for a full listing of individual contributors.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ */
+package org.jboss.tutorial.entity.bean;
+import javax.ejb.Remote;
+import javax.ejb.Remove;
+import javax.ejb.Stateful;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContext;
+@Stateful
+@Remote(ShoppingCart.class)
+public class ShoppingCartBean implements ShoppingCart, java.io.Serializable
+{
+   @PersistenceContext
+   private EntityManager manager;
+   private Order order;
+   public void buy(String product, int quantity, double price)
+   {
+      if (order == null) order = new Order();
+      order.addPurchase(product, quantity, price);
+   }
+   public Order getOrder()
+   {
+      return order;
+   }
+   @Remove
+   public void checkout()
+   {
+      manager.persist(order);
+   }
+}
+File: LineItem.java
+/*
+ * JBoss, Home of Professional Open Source.
+ * Copyright 2006, Red Hat Middleware LLC, and individual contributors
+ * as indicated by the @author tags. See the copyright.txt file in the
+ * distribution for a full listing of individual contributors.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ */
+package org.jboss.tutorial.entity.bean;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue; import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Entity;
+@Entity
+public class LineItem implements java.io.Serializable
+{
+   private int id;
+   private double subtotal;
+   private int quantity;
+   private String product;
+   private Order order;
+   @Id @GeneratedValue(strategy=GenerationType.AUTO)
+   public int getId()
+   {
+      return id;
+   }
+   public void setId(int id)
+   {
+      this.id = id;
+   }
+   public double getSubtotal()
+   {
+      return subtotal;
+   }
+   public void setSubtotal(double subtotal)
+   {
+      this.subtotal = subtotal;
+   }
+   public int getQuantity()
+   {
+      return quantity;
+   }
+   public void setQuantity(int quantity)
+   {
+      this.quantity = quantity;
+   }
+   public String getProduct()
+   {
+      return product;
+   }
+   public void setProduct(String product)
+   {
+      this.product = product;
+   }
+   @ManyToOne
+   @JoinColumn(name = "order_id")
+   public Order getOrder()
+   {
+      return order;
+   }
+   public void setOrder(Order order)
+   {
+      this.order = order;
+   }
+}
+File: Client.java
+/*
+ * JBoss, Home of Professional Open Source.
+ * Copyright 2006, Red Hat Middleware LLC, and individual contributors
+ * as indicated by the @author tags. See the copyright.txt file in the
+ * distribution for a full listing of individual contributors.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ */
+package org.jboss.tutorial.entity.client;
+import org.jboss.tutorial.entity.bean.LineItem;
+import org.jboss.tutorial.entity.bean.Order;
+import org.jboss.tutorial.entity.bean.ShoppingCart;
+import javax.naming.InitialContext;
+/**
+ * Comment
+ *
+ * @author <a href="mailto:bill@jboss.org">Bill Burke</a>
+ * @version $Revision: 57207 $
+ */
+public class Client
+{
+   public static void main(String[] args) throws Exception
+   {
+      InitialContext ctx = new InitialContext();
+      ShoppingCart cart = (ShoppingCart) ctx.lookup("ShoppingCartBean/remote");
+      System.out.println("Buying 2 memory sticks");
+      cart.buy("Memory stick", 2, 500.00);
+      System.out.println("Buying a laptop");
+      cart.buy("Laptop", 1, 2000.00);
+      System.out.println("Print cart:");
+      Order order = cart.getOrder();
+      System.out.println("Total: $" + order.getTotal());
+      for (LineItem item : order.getLineItems())
+      {
+         System.out.println(item.getQuantity() + "     " + item.getProduct() + "     " + item.getSubtotal());
+      }
+      System.out.println("Checkout");
+      cart.checkout();
+   }
+}
+```
+
+jboss-EJB-3.0_RC9_Patch_1.zip( 10,289 k)

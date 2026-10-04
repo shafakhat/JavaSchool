@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A simple demonstration of how the event handling features of the Velocity Servlet Engine are used - JavaSchool</title>
+<meta name="description" content="A simple demonstration of how the event handling features of the Velocity Servlet Engine are used">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-velocity-asimpledemonstrationofhowtheeventhandlingfeaturesofthevelocityservleten">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-velocity.html">Velocity</a></nav>
+    <h1>A simple demonstration of how the event handling features of the Velocity Servlet Engine are used</h1>
+<p>A simple demonstration of how the event handling features of the Velocity Servlet Engine are used</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright 2001,2004 The Apache Software Foundation.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import java.io.StringWriter;
+import java.util.Properties;
+import org.apache.velocity.app.Velocity;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.exception.ParseErrorException;
+import org.apache.velocity.exception.MethodInvocationException;
+import org.apache.velocity.runtime.log.LogSystem;
+import org.apache.velocity.runtime.RuntimeServices;
+import org.apache.velocity.app.event.EventCartridge;
+import org.apache.velocity.app.event.ReferenceInsertionEventHandler;
+import org.apache.velocity.app.event.MethodExceptionEventHandler;
+import org.apache.velocity.app.event.NullSetEventHandler;
+import org.apache.velocity.context.Context;
+/**
+ *   This class is a simple demonstration of how the event handling
+ *   features of the Velocity Servlet Engine are used.  It uses a
+ *   custom logger as well to check the log message stream
+ *   when testing the NullSetEventHandler
+ *
+ * @author &lt;a href="mailto:geirm@optonline.net"&gt;Geir Magnusson Jr.&lt;/a&gt;
+ * @version $Id: EventExample.java,v 1.3.10.1 2004/03/04 00:18:29 geirm Exp $
+ */
+public class EventExample implements ReferenceInsertionEventHandler,
+                                     NullSetEventHandler, MethodExceptionEventHandler,
+                                     LogSystem
+{
+    private boolean logOutput = false;
+    private boolean exceptionSwitch = false;
+    public static void main( String args[] )
+    {
+        EventExample ee = new EventExample();
+    }
+    public EventExample()
+    {
+        try
+        {
+            /*
+             *  this class implements the LogSystem interface, so we
+             *  can use it as a logger for Velocity
+             */
+            Velocity.setProperty(Velocity.RUNTIME_LOG_LOGSYSTEM, this );
+            Velocity.init();
+        }
+        catch(Exception e)
+        {
+            System.out.println("Problem initializing Velocity : " + e );
+            return;
+        }
+        /*
+         *  lets make a Context and add some data
+         */
+        VelocityContext context = new VelocityContext();
+        context.put("name", "Velocity");
+        /*
+         *  Now make an event cartridge, register all the
+         *  event handlers (at once) and attach it to the
+         *  Context
+         */
+        EventCartridge ec = new EventCartridge();
+        ec.addEventHandler(this);
+        ec.attachToContext( context );
+        try
+        {
+            /*
+             *  lets test each type of event handler individually
+             *  using 'dynamic' templates
+             *
+             *  First, the reference insertion handler
+             */
+            System.out.println("");
+            System.out.println("Velocity Event Handling Demo");
+            System.out.println("============================");
+            System.out.println("");
+            String s = "The word 'Velocity' should be bounded by emoticons :  $name.";
+            StringWriter w = new StringWriter();
+            Velocity.evaluate( context, w, "mystring", s );
+            System.out.println("Reference Insertion Test : ");
+            System.out.println("   " +  w.toString());
+            System.out.println("");
+            /*
+             *  using the same handler, we can deal with
+             *  null references as well
+             */
+            s = "There is no reference $floobie, $nullvalue or anything in the brackets : &gt;$!silentnull&lt;";
+            w = new StringWriter();
+            Velocity.evaluate( context, w, "mystring", s );
+            System.out.println("Reference Insertion Test with null references : ");
+            System.out.println("   " + w.toString());
+            System.out.println("");
+            /*
+             *  now lets test setting a null value - this test
+             *  should result in *no* log output.
+             *  Turn on the logger output.
+             */
+            logOutput = true;
+            s = "#set($settest = $NotAReference)";
+            w = new StringWriter();
+            System.out.println("NullSetEventHandler test : " );
+            System.out.print("      There should be nothing between &gt;");
+            Velocity.evaluate( context, w, "mystring", s );
+            System.out.println("&lt; the brackets.");
+            System.out.println("");
+            /*
+             *  now lets test setting a null value - this test
+             *  should result in log output.
+             */
+            s = "#set($logthis = $NotAReference)";
+            w = new StringWriter();
+            System.out.println("NullSetEventHandler test : " );
+            System.out.print("     There should be a log message between &gt;");
+            Velocity.evaluate( context, w, "mystring", s );
+            System.out.println("&lt; the brackets.");
+            System.out.println("");
+            logOutput = false;
+            /*
+             *  finally, we test a method exception event - we do this
+             *  by putting this class in the context, and calling
+             *  a method that does nothing but throw an exception.
+             *  we use a little switch to turn the event handling
+             *  on and off
+             *
+             *  Note also how the reference insertion process
+             *  happens as well
+             */
+            exceptionSwitch = true;
+            context.put("this", this );
+            s = " $this.throwException()";
+            w = new StringWriter();
+            System.out.println("MethodExceptionEventHandler test : " );
+            System.out.print("    This exception will be controlled and converted into a string : ");
+            Velocity.evaluate( context, w, "mystring", s );
+            System.out.println("   " + w.toString());
+            System.out.println("");
+            /*
+             *  now, we turn the switch off, and we can see that the
+             *  exception will propgate all the way up here, and
+             *  wil be caught by the catch() block below
+             */
+            exceptionSwitch = false;
+            s = " $this.throwException()";
+            w = new StringWriter();
+            System.out.println("MethodExceptionEventHandler test : " );
+            System.out.println("    This exception will NOT be controlled. "
+                             + " The next thing you should see is the catch() output ");
+            Velocity.evaluate( context, w, "mystring", s );
+            System.out.println("If you see this, it didn't work!");
+        }
+        catch( ParseErrorException pee )
+        {
+            /*
+             * thrown if something is wrong with the
+             * syntax of our template string
+             */
+            System.out.println("ParseErrorException : " + pee );
+        }
+        catch( MethodInvocationException mee )
+        {
+            /*
+             *  thrown if a method of a reference
+             *  called by the template
+             *  throws an exception. That won't happen here
+             *  as we aren't calling any methods in this
+             *  example, but we have to catch them anyway
+             */
+            System.out.println("   Catch Block : MethodInvocationException : " + mee );
+        }
+        catch( Exception e )
+        {
+            System.out.println("Exception : " + e );
+        }
+    }
+    /**
+     *  silly method to throw an exception to demonstrate
+     *  the method invocation exception event handling
+     */
+    public void throwException()
+        throws Exception
+    {
+        throw new Exception("Hello from throwException()");
+    }
+    /**
+     *  Event handler for when a reference is inserted into the output stream.
+     */
+    public Object referenceInsert( String reference, Object value  )
+    {
+        /*
+         *  if we have a value
+         *  lets decorate the reference with emoticons
+         */
+        String s = null;
+        if( value != null )
+        {
+            s = " ;) " + value.toString() + " :-)";
+        }
+        else
+        {
+            /*
+             * we only want to deal with $floobie - anything
+             *  else we let go
+             */
+            if ( reference.equals("floobie") )
+            {
+                s = "&lt;no floobie value&gt;";
+            }
+        }
+        return s;
+    }
+    /**
+     *  Event handler for when the right hand side of
+     *  a #set() directive is null, which results in
+     *  a log message.  This method gives the application
+     *  a chance to 'vote' on msg generation
+     */
+    public boolean shouldLogOnNullSet( String lhs, String rhs )
+    {
+        if (lhs.equals("$settest"))
+            return false;
+        return true;
+    }
+    public Object methodException( Class claz, String method, Exception e )
+         throws Exception
+    {
+        /*
+         *  only do processing if the switch is on
+         */
+        if( exceptionSwitch &amp;&amp; method.equals("throwException"))
+        {
+            return "Hello from the methodException() event handler method.";
+        }
+        throw e;
+    }
+  /**
+   *  Required init method for LogSystem
+   *  to get access to RuntimeServices
+   */
+   public void init( RuntimeServices rs )
+   {
+     return;
+   }
+    /**
+     *  This is the key method needed to implement a logging interface
+     *  for Velocity.
+     */
+    public void logVelocityMessage(int level, String message)
+    {
+        if (logOutput)
+        {
+            System.out.print("Velocity Log : level : " + level + " msg : " + message);
+        }
+    }
+}</code></pre></div>
+<p>Download: velocity-Event-Handle.zip ( 1,876 K ) Related examples in the same category</p>
+    <div class="pager"><a class="pager-btn" href="swing-components-apanelfromwhereyoucanchooseacolorbasedonitshtmlname.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">A panel from where you can...</span></a><a class="pager-btn pager-next" href="threads-asimpledemonstrationofwaitandnotify.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">A simple demonstration of ...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collections Interview Questions - JavaSchool</title>
+<meta name="description" content="30 collections interview questions with answers - ArrayList vs LinkedList, HashMap internals, ConcurrentHashMap, fail-fast iterators, Queue/Set classes.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-interview-collections">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Interview & Certification</span></nav>
+    <h1>Collections Interview Questions</h1>
+<h2 id="collections---topic-bank">Collections - topic bank</h2>
+<p>Topic bank #2 of the <a href="interview.html">Interview Prep hub</a>. Deep class-by-class tutorials: <a href="collections-list.html">List classes</a> · <a href="collections-set.html">Set classes</a> · <a href="collections-queue.html">Queue classes</a> · <a href="collections-map.html">Map classes</a>.</p>
+<details class="iq"><summary>1. Why does the collections framework exist - what came before?</summary>
+<p>Before 1.2: <code>Vector</code>, <code>Hashtable</code>, <code>Enumeration</code>, arrays - no common interface contract, every container had its own API, synchronization everywhere. The framework (1.2): interfaces (<code>Collection</code> hierarchy), implementations, algorithms (<code>Collections</code>), iterator protocol, equals/hashCode-based semantics. Generics (5) removed casts; lambdas (8) enabled <code>forEach</code>/<code>removeIf</code>/<code>computeIfAbsent</code>.</p>
+</details>
+
+<details class="iq"><summary>2. ArrayList vs LinkedList - the full table?</summary>
+<p>ArrayList: array-backed, O(1) random access, amortized O(1) add-at-end, O(n) insert/remove-in-middle (System.arraycopy), memory ~contiguous. LinkedList: doubly linked nodes, O(1) insert/remove given the node's position via iterator, O(n) access, huge per-node overhead, poor cache locality. Verdict: ArrayList wins nearly always; use LinkedList as a List almost never - <code>ArrayDeque</code> beats it as a queue.</p>
+</details>
+
+<details class="iq"><summary>3. How does ArrayList grow?</summary>
+<p>Default capacity 10 (on first add), growth <code>oldCapacity + (oldCapacity &gt;&gt; 1)</code> (≈1.5×), then <code>Arrays.copyOf</code>. <code>ensureCapacity</code>/constructor-with-size avoids repeated copies. Note <code>size()</code> vs capacity - trimming via <code>trimToSize()</code>. Removing from the middle shifts the tail left.</p>
+</details>
+
+<details class="iq"><summary>4. What does <code>subList</code> return - and the classic trap?</summary>
+<p>A <strong>view</strong>: writes into it write through to the backing list; the returned object is a private inner class, not an ArrayList. Structural changes to the original list invalidate the view (<code>ConcurrentModificationException</code>). It doesn't free memory of the original if retained.</p>
+</details>
+
+<details class="iq"><summary>5. Iterator remove vs Collection remove?</summary>
+<p>Only the iterator's <code>remove</code> is legal during iteration (removes the element just returned, updates modCount). <code>list.remove(x)</code> inside a for-each → ConcurrentModificationException on the next step (<em>fail-fast</em>). From Java 8: <code>removeIf</code> expresses it cleanly and often faster (bulk shift).</p>
+</details>
+
+<details class="iq"><summary>6. Fail-fast vs fail-safe iterators?</summary>
+<p>Fail-fast (<code>ArrayList</code>, <code>HashMap</code>): check a modification counter each <code>next()</code> → CME - a bug detector, not a guarantee. Fail-safe (weakly consistent - <code>ConcurrentHashMap</code>, <code>CopyOnWriteArrayList</code>): iterate over a snapshot/stable view, no CME, may or may not see concurrent updates. Neither is "safe" for compound operations - use <code>ConcurrentHashMap</code> atomic methods.</p>
+</details>
+
+<details class="iq"><summary>7. What does <code>Collections.unmodifiableList</code> actually prevent?</summary>
+<p>Writes through <em>that view</em>. Mutations via the original reference still appear - the view is read-only, not the data. Truly immutable: <code>List.of</code>/<code>List.copyOf</code> (Java 10+), Guava <code>ImmutableList</code>. Note <code>List.of</code> throws NPE on nulls and doesn't allow duplicates (that's <code>Set.of</code>).</p>
+</details>
+
+<details class="iq"><summary>8. Arrays.asList vs List.of vs new ArrayList?</summary>
+<p><code>Arrays.asList</code>: fixed-size <em>view</em> of the array - <code>set</code> ok, <code>add</code>/<code>remove</code> throw UnsupportedOperationException; writes reflect into the array. <code>List.of</code>: immutable, rejects nulls. <code>new ArrayList&lt;&gt;(Arrays.asList(...))</code> or <code>new ArrayList&lt;&gt;(List.of(...))</code>: independent mutable copy - the usual answer.</p>
+</details>
+
+<details class="iq"><summary>9. HashSet internals - what makes add O(1)?</summary>
+<p>A <code>HashMap</code> with a dummy value: hash → bucket → equals. Average O(1) add/contains. Iteration order is unspecified (bucket order, changes with capacity). <code>LinkedHashSet</code>: insertion order via linked entries (slightly more memory, faster iteration than HashSet). <code>TreeSet</code>: red-black tree, sorted, O(log n).</p>
+</details>
+
+<details class="iq"><summary>10. HashMap: put() step by step?</summary>
+<p>Hash the key (<code>h ^ (h &gt;&gt;&gt; 16)</code> spread → fewer collisions on small tables), index = <code>(n-1) &amp; hash</code> (n power of two), walk the bucket: match on hash + equals → replace; else append (Java 8: tail append). If bucket length ≥ 8 <em>and</em> capacity ≥ 64 → treeify (red-black) for O(log n) worst case; resize at load factor 0.75 (doubles, splits buckets; Java 8 preserves relative order).</p>
+</details>
+
+<details class="iq"><summary>11. Why is a bad hashCode a performance disaster but not a correctness bug?</summary>
+<p>All keys land in one bucket → chains/tree: O(n) or O(log n) lookups instead of O(1). Correctness only needs equals/hashCode consistency. Classic bad hash: constant hash, or hashing only one field of many. Fix: IDE/records <code>hashCode</code>, or <code>Objects.hash</code> (allocates varargs - fine outside loops).</p>
+</details>
+
+<details class="iq"><summary>12. Mutable keys in HashMap - what exactly breaks?</summary>
+<p>Lookup recomputes the hash from the current state; if the hash changed after insertion, the bucket index no longer matches → <code>get</code> returns null even though the object is there (and it's invisible to remove during iteration too). Keys must be immutable, or at least never mutate equals-relevant fields while in the map.</p>
+</details>
+
+<details class="iq"><summary>13. TreeMap - what contract does it require?</summary>
+<p>Sorting requires either <code>Comparable</code> keys or a <code>Comparator</code>; comparing must be consistent with equals ideally (else the map can hold "duplicate-equal" keys that differ only by compareTo). Operations O(log n); magic methods: <code>firstKey/lastKey</code>, <code>floorKey/ceilingKey</code>, <code>headMap/tailMap/subMap</code> (views), <code>descendingMap</code>. Also <code>NavigableMap</code> successor: <code>ConcurrentSkipListMap</code> for concurrent sorted maps.</p>
+</details>
+
+<details class="iq"><summary>14. LinkedHashMap as an LRU cache?</summary>
+<p>Constructor with <code>accessOrder = true</code> moves entries to the tail on access; override <code>removeEldestEntry</code> to evict when <code>size() &gt; capacity</code>. That's a 10-line LRU; for production use Caffeine/Guava for concurrency, weighers, and stats.</p>
+</details>
+
+<details class="iq"><summary>15. HashMap vs Hashtable vs ConcurrentHashMap?</summary>
+<p>Hashtable: legacy, all methods synchronized on one lock - banned in modern code. <code>Collections.synchronizedMap</code>: same coarse locking, nulls allowed, fail-fast iteration requires manual sync. ConcurrentHashMap: lock-free reads, bin-level CAS/synchronized writes, forbids null keys/values, weakly consistent iteration, atomic <code>computeIfAbsent</code>/<code>merge</code>. That's the default for shared maps.</p>
+</details>
+
+<details class="iq"><summary>16. Why does ConcurrentHashMap forbid nulls?</summary>
+<p>Ambiguity: <code>get(k) == null</code> can't distinguish "absent" from "mapped to null" in a concurrent world where you'd check-then-act wrongly. HashMap allows nulls (one null key, many null values) so the distinction is defined there. Result: CHM forces you to model absence explicitly.</p>
+</details>
+
+<details class="iq"><summary>17. What is CopyOnWriteArrayList for?</summary>
+<p>Read-mostly listener/observer lists: reads iterate a snapshot with zero locking; every write copies the whole array (O(n) - never in a hot write loop). Iterators never throw CME and never see later changes. Classic use: listener registries, configuration snapshots.</p>
+</details>
+
+<details class="iq"><summary>18. Queue vs Deque vs Stack - which to choose?</summary>
+<p><code>Stack</code> is legacy (extends Vector); the modern LIFO is <code>ArrayDeque</code> (push/pop). Use <code>Deque</code> for both ends; <code>ArrayDeque</code> for general use (<code>addFirst/removeLast</code> etc.), <code>LinkedList</code> only if you also need List ops. The Queue methods come in two flavors: throwing (<code>add/remove/element</code>) vs null-returning (<code>offer/poll/peek</code>) - use the latter.</p>
+</details>
+
+<details class="iq"><summary>19. PriorityQueue internals?</summary>
+<p>Binary heap over an array: <code>offer</code>/<code>poll</code> O(log n), <code>peek</code> O(1). Not stable; iteration is heap order, <em>not</em> sorted - use repeated <code>poll</code> or a sort for order. Natural order or Comparator; no nulls. No decrease-key (remove + re-add). Bounded top-K via a min-heap kept at size K.</p>
+</details>
+
+<details class="iq"><summary>20. BlockingQueue in producer-consumer?</summary>
+<p><code>ArrayBlockingQueue</code> (bounded array), <code>LinkedBlockingQueue</code> (optionally bounded), <code>SynchronousQueue</code> (hand-off), <code>PriorityBlockingQueue</code>, <code>DelayQueue</code> (time-based), <code>LinkedTransferQueue</code>. Producers <code>put</code> (blocks when full), consumers <code>take</code> (blocks when empty); <code>offer(timeout)</code> for back-pressure. This replaces wait/notify hand-rolled code entirely.</p>
+</details>
+
+<details class="iq"><summary>21. Comparable vs Comparator in collections - who uses which?</summary>
+<p><code>TreeSet</code>/<code>TreeMap</code> use natural order (<code>Comparable</code>) unless given a <code>Comparator</code> in the constructor; <code>PriorityQueue</code> same. <code>Collections.sort</code>/<code>List.sort</code> take either (Comparable if null comparator). <code>sort</code> is stable (TimSort/MergeSort) - equal elements keep insertion order; <code>Arrays.sort</code> on primitives is dual-pivot quicksort (unstable, no comparator).</p>
+</details>
+
+<details class="iq"><summary>22. How do you sort a map by values?</summary>
+<p>Stream: <code>map.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(toLinkedHashMap())</code> - must collect to a <strong>LinkedHashMap</strong> or the sort is lost. Alternatives: sort the entry list, or build a <code>TreeMap</code> with a value comparator (breaks map contract - use entries instead). Tie-break with <code>thenComparingByKey()</code> for determinism.</p>
+</details>
+
+<details class="iq"><summary>23. What does <code>Collections.rotate/shuffle/binarySearch</code> require?</summary>
+<p><code>binarySearch</code>: the list must be sorted <em>by the same comparator you pass</em>, ascending; otherwise undefined result (it returns a bogus index, not an error). <code>shuffle</code>: you can pass a <code>Random</code> for reproducibility (tests). <code>rotate</code>: distance semantics - positive rotates right. <code>frequency</code>, <code>disjoint</code>, <code>min/max</code>, <code>nCopies</code>, <code>singletonList</code> are the other workhorses.</p>
+</details>
+
+<details class="iq"><summary>24. What's the difference between Collection and Collections?</summary>
+<p><code>Collection</code>: root interface of the hierarchy (except Map). <code>Collections</code>: utility class - algorithms (sort, binarySearch, shuffle), wrappers (unmodifiable/synchronized/checked), factories (<code>emptyList</code>, <code>singleton</code>). Also <code>Collection</code> has no <code>Map</code> - they're separate hierarchies; <code>Map</code> is a key-value structure, not a collection of values, though <code>map.values()</code> is one.</p>
+</details>
+
+<details class="iq"><summary>25. How is <code>Set</code> uniqueness enforced with custom objects?</summary>
+<p>Via <code>equals</code>/<code>hashCode</code> (HashSet) or <code>compareTo</code> (TreeSet). Miss either → duplicates slip in: forgetting hashCode entirely means equal objects hash differently → separate buckets. Debug trick: put two "equal" objects and print <code>size()</code>; then check hash consistency.</p>
+</details>
+
+<details class="iq"><summary>26. What's the deal with <code>Map.getOrDefault</code>, <code>computeIfAbsent</code>, <code>merge</code>?</summary>
+<p>Modern idioms that replace get-then-put races: <code>map.computeIfAbsent(k, k -&gt; new ArrayList&lt;&gt;()).add(v)</code> (multi-map), <code>map.merge(k, 1, Integer::sum)</code> (counting), <code>getOrDefault</code> (read). They're atomic on ConcurrentHashMap (the function runs under the bin lock - don't do long work/call other maps inside).</p>
+</details>
+
+<details class="iq"><summary>27. What implementations would you pick for: cache, leaderboard, word frequency, LRU, task queue?</summary>
+<p><strong>Cache:</strong> Caffeine (or CHM + TTL). <strong>Leaderboard:</strong> TreeMap&lt;Score, Set&lt;Player&gt;&gt; or skip list. <strong>Word frequency:</strong> HashMap&lt;String,Long&gt; + <code>merge</code>. <strong>LRU:</strong> LinkedHashMap accessOrder or Caffeine. <strong>Task queue:</strong> BlockingQueue (bounded) behind an executor; PriorityBlockingQueue for priorities.</p>
+</details>
+
+<details class="iq"><summary>28. How do you make a collection thread-safe properly?</summary>
+<p>Choose the right class first (CHM, CopyOnWrite, BlockingQueue, ConcurrentSkipListMap). <code>Collections.synchronizedX</code> wrappers make single calls atomic but iteration still needs <code>synchronized(list) {...}</code>; compound operations (check-then-add) need external locking or atomic APIs. Immutable collections avoid the problem entirely - share freely.</p>
+</details>
+
+<details class="iq"><summary>29. What changed in collections across versions?</summary>
+<p>5: generics. 6: Deque/ArrayDeque/NavigableMap. 7: diamond, fork/join helpers. 8: streams, lambdas, Map default methods, <code>removeIf</code>. 9: <code>List.of/Set.of/Map.of</code> immutables. 10: <code>copyOf</code>. 11: <code>toArray(IntFunction)</code>. 16: <code>Stream.toList</code>. 21: sequenced collections (<code>getFirst/getLast</code>), <code>toArray</code> unchanged... plus virtual-thread-friendly queues (unrelated but concurrent).</p>
+</details>
+
+<details class="iq"><summary>30. Whiteboard: find duplicates in a list - what does the choice of collection prove?</summary>
+<p>HashSet&lt;T&gt; streaming with <code>add</code> return value - O(n), clean: it demonstrates you know hashing, that add returns boolean, and that you can early-exit. If order must be preserved: LinkedHashSet. If counting matters: HashMap merge. If memory-bound: sort first (O(n log n), O(1) extra) then scan adjacent. Interviewers watch which you pick <em>and why</em>.</p>
+</details>
+<hr>
+<p>Hub: <a href="interview.html">Interview Prep home</a> · Deep tutorials: <a href="collections-list.html">List</a> · <a href="collections-set.html">Set</a> · <a href="collections-queue.html">Queue</a> · <a href="collections-map.html">Map</a> · Master: <a href="interview-master.html">115 questions</a></p>
+    <div class="pager"><a class="pager-btn" href="ocjp-practice.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">OCJP Practice Test</span></a><a class="pager-btn pager-next" href="ocjp-practice-2.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">OCJP Practice Test 2</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

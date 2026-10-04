@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>This demo illustrates the use of the JAX-WS asynchronous invocation model - JavaSchool</title>
+<meta name="description" content="This demo illustrates the use of the JAX-WS asynchronous invocation model">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-web-services-soa-thisdemoillustratestheuseofthejaxwsasynchronousinvocationmodel">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-web-services-soa.html">Web Services SOA</a></nav>
+    <h1>This demo illustrates the use of the JAX-WS asynchronous invocation model</h1>
+<p>This demo illustrates the use of the JAX-WS asynchronous invocation model</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership. The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+Hello World Asynchronous Demo using Document/Literal Style
+==========================================================
+This demo illustrates the use of the JAX-WS asynchronous
+invocation model. Please refer to the JAX-WS 2.0 specification
+(http://jcp.org/aboutJava/communityProcess/pfd/jsr224/index.html)
+for background.
+The asynchronous model allows the client thread to continue after
+making a two-way invocation without being blocked while awaiting a
+response from the server. Once the response is available, it is
+delivered to the client application asynchronously using one
+of two alternative approaches:
+- Callback: the client application implements the
+javax.xml.ws.AsyncHandler interface to accept notification
+of the response availability
+- Polling: the client application periodically polls a
+javax.xml.ws.Response instance to check if the response
+is available
+This demo illustrates both approaches.
+Additional methods are generated on the Service Endpoint
+Interface (SEI) to provide this asynchrony, named by
+convention with the suffix "Async".
+As many applications will not require this functionality,
+the asynchronous variants of the SEI methods are omitted
+by default to avoid polluting the SEI with unnecessary
+baggage. In order to enable generation of these methods,
+a bindings file (wsdl/async_bindings.xml) is passed
+to the wsdl2java generator.
+Please review the README in the samples directory before
+continuing.
+Prerequisite
+------------
+If your environment already includes cxf-manifest-incubator.jar on the
+CLASSPATH, and the JDK and ant bin directories on the PATH
+it is not necessary to set the environment as described in
+the samples directory README.  If your environment is not
+properly configured, or if you are planning on using wsdl2java,
+javac, and java to build and run the demos, you must set the
+environment.
+Building and running the demo using ant
+---------------------------------------
+From the samples/hello_world_async directory, the ant build script
+can be used to build and run the demo.
+Using either UNIX or Windows:
+  ant build
+  ant server
+  ant client
+To remove the code generated from the WSDL file and the .class
+files, run:
+  ant clean
+Building the demo using wsdl2java and javac
+-------------------------------------------
+From the samples/hello_world_async directory, run the following wsdl2java
+command to generate classes required in the async case.
+For UNIX:
+  mkdir -p build/classes
+  wsdl2java -d build/classes -b ./wsdl/async_binding.xml -compile ./wsdl/hello_world_async.wsdl
+For Windows:
+  mkdir build\classes
+    Must use back slashes.
+  wsdl2java -d build\classes -b .\wsdl\async_binding.xml -compile .\wsdl\hello_world_async.wsdl
+    May use either forward or back slashes.
+Now compile the provided client and server applications with the commands:
+For UNIX:
+  export CLASSPATH=$CLASSPATH:$CXF_HOME/lib/cxf-manifest-incubator.jar:./build/classes
+  javac -d build/classes src/demo/hw/client/*.java
+  javac -d build/classes src/demo/hw/server/*.java
+For Windows:
+  set classpath=%classpath%;%CXF_HOME%\lib\cxf-manifest-incubator.jar;.\build\classes
+  javac -d build\classes src\demo\hw\client\*.java
+  javac -d build\classes src\demo\hw\server\*.java
+Running the demo using java
+---------------------------
+From the samples/hello_world_async directory run the commands, entered on a
+single command line:
+For UNIX (must use forward slashes):
+    java -Djava.util.logging.config.file=$CXF_HOME/etc/logging.properties
+         demo.hw.server.Server &amp;
+    java -Djava.util.logging.config.file=$CXF_HOME/etc/logging.properties
+         demo.hw.client.Client ./wsdl/hello_world_async.wsdl
+The server process starts in the background.  After running the client,
+use the kill command to terminate the server process.
+For Windows (may use either forward or back slashes):
+  start
+    java -Djava.util.logging.config.file=%CXF_HOME%\etc\logging.properties
+         demo.hw.server.Server
+    java -Djava.util.logging.config.file=%CXF_HOME%\etc\logging.properties
+       demo.hw.client.Client .\wsdl\hello_world_async.wsdl
+A new command windows opens for the server process.  After running the
+client, terminate the server process by issuing Ctrl-C in its command window.
+To remove the code generated from the WSDL file and the .class
+files, either delete the build directory and its contents or run:
+  ant clean
+///////////////////////////////////////////////////////////////////////////////
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership. The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package demo.hw.client;
+import java.io.File;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import javax.xml.namespace.QName;
+import javax.xml.ws.Response;
+import org.apache.hello_world_async_soap_http.GreeterAsync;
+import org.apache.hello_world_async_soap_http.SOAPService;
+import org.apache.hello_world_async_soap_http.types.GreetMeSometimeResponse;
+public final class Client {
+    private static final QName SERVICE_NAME
+        = new QName("http://apache.org/hello_world_async_soap_http", "SOAPService");
+    private Client() {
+    }
+    public static void main(String args[]) throws Exception {
+        if (args.length == 0) {
+            System.out.println("please specify wsdl");
+            System.exit(1);
+        }
+        File wsdl = new File(args[0]);
+        SOAPService ss = new SOAPService(wsdl.toURL(), SERVICE_NAME);
+        ExecutorService executor = Executors.newFixedThreadPool(5);
+        ss.setExecutor(executor);
+        GreeterAsync port = ss.getSoapPort();
+        String resp;
+        // callback method
+        TestAsyncHandler testAsyncHandler = new TestAsyncHandler();
+        System.out.println("Invoking greetMeSometimeAsync using callback object...");
+        Future&lt;?&gt; response = port.greetMeSometimeAsync(System.getProperty("user.name"), testAsyncHandler);
+        while (!response.isDone()) {
+            Thread.sleep(100);
+        }
+        resp = testAsyncHandler.getResponse();
+        System.out.println();
+        System.out.println("Server responded through callback with: " + resp);
+        System.out.println();
+        //polling method
+        System.out.println("Invoking greetMeSometimeAsync using polling...");
+        Response&lt;GreetMeSometimeResponse&gt; greetMeSomeTimeResp =
+            port.greetMeSometimeAsync(System.getProperty("user.name"));
+        while (!greetMeSomeTimeResp.isDone()) {
+            Thread.sleep(100);
+        }
+        GreetMeSometimeResponse reply = greetMeSomeTimeResp.get();
+        System.out.println("Server responded through polling with: " + reply.getResponseType());
+        System.exit(0);
+    }
+}
+///////////////////////////////////////////////////////////////////////////////
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership. The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package demo.hw.client;
+import javax.xml.ws.AsyncHandler;
+import javax.xml.ws.Response;
+import org.apache.hello_world_async_soap_http.types.GreetMeSometimeResponse;
+public class TestAsyncHandler implements AsyncHandler&lt;GreetMeSometimeResponse&gt; {
+    private GreetMeSometimeResponse reply;
+    public void handleResponse(Response&lt;GreetMeSometimeResponse&gt; response) {
+        try {
+            System.err.println("handleResponse called");
+            reply = response.get();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    public String getResponse() {
+        return reply.getResponseType();
+    }
+}
+///////////////////////////////////////////////////////////////////////////////
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership. The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package demo.hw.server;
+import java.util.concurrent.Future;
+import java.util.logging.Logger;
+import javax.jws.WebService;
+import javax.xml.ws.AsyncHandler;
+import javax.xml.ws.Response;
+import org.apache.hello_world_async_soap_http.GreeterAsync;
+import org.apache.hello_world_async_soap_http.types.GreetMeSometimeResponse;
+@WebService(serviceName = "SOAPService",
+            portName = "SoapPort",
+            endpointInterface = "org.apache.hello_world_async_soap_http.GreeterAsync",
+            targetNamespace = "http://apache.org/hello_world_async_soap_http")
+public class GreeterImpl implements GreeterAsync {
+    private static final Logger LOG =
+        Logger.getLogger(GreeterImpl.class.getPackage().getName());
+     /* (non-Javadoc)
+     * @see org.apache.hello_world_soap_http.Greeter#greetMeSometime(java.lang.String)
+     */
+    public String greetMeSometime(String me) {
+        LOG.info("Executing operation greetMeSometime");
+        System.out.println("Executing operation greetMeSometime\n");
+        return "How are you " + me;
+    }
+    public Future&lt;?&gt;  greetMeSometimeAsync(String requestType,
+                                           AsyncHandler&lt;GreetMeSometimeResponse&gt; asyncHandler) {
+        return null;
+        /*not called */
+    }
+    public Response&lt;GreetMeSometimeResponse&gt; greetMeSometimeAsync(String requestType) {
+        return null;
+        /*not called */
+    }
+}
+///////////////////////////////////////////////////////////////////////////////
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership. The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package demo.hw.server;
+import javax.xml.ws.Endpoint;
+public class Server {
+    protected Server() throws Exception {
+        System.out.println("Starting Server");
+        Object implementor = new GreeterImpl();
+        String address = "http://localhost:9000/SoapContext/SoapPort";
+        Endpoint.publish(address, implementor);
+    }
+    public static void main(String args[]) throws Exception {
+        new Server();
+        System.out.println("Server ready...");
+        Thread.sleep(5 * 60 * 1000);
+        System.out.println("Server exiting");
+        System.exit(0);
+    }
+}
+///////////////////////////////////////////////////////////////////////////////
+&lt;!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements. See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership. The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License. You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied. See the License for the
+  specific language governing permissions and limitations
+  under the License.
+--&gt;
+&lt;bindings
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    wsdlLocation="hello_world_async.wsdl"
+    xmlns="http://java.sun.com/xml/ns/jaxws"&gt;
+    &lt;bindings node="wsdl:definitions"&gt;
+        &lt;enableAsyncMapping&gt;true&lt;/enableAsyncMapping&gt;
+    &lt;/bindings&gt;
+&lt;/bindings&gt;
+///////////////////////////////////////////////////////////////////////////////
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements. See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership. The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License. You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied. See the License for the
+  specific language governing permissions and limitations
+  under the License.
+--&gt;
+&lt;wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://apache.org/hello_world_async_soap_http" xmlns:x1="http://apache.org/hello_world_async_soap_http/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://apache.org/hello_world_async_soap_http" name="HelloWorld"&gt;
+    &lt;wsdl:types&gt;
+        &lt;schema targetNamespace="http://apache.org/hello_world_async_soap_http/types" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:x1="http://apache.org/hello_world_async_soap_http/types" elementFormDefault="qualified"&gt;
+            &lt;element name="greetMeSometime"&gt;
+                &lt;complexType&gt;
+                    &lt;sequence&gt;
+                        &lt;element name="requestType" type="xsd:string"/&gt;
+                    &lt;/sequence&gt;
+                &lt;/complexType&gt;
+            &lt;/element&gt;
+            &lt;element name="greetMeSometimeResponse"&gt;
+                &lt;complexType&gt;
+                    &lt;sequence&gt;
+                        &lt;element name="responseType" type="xsd:string"/&gt;
+                    &lt;/sequence&gt;
+                &lt;/complexType&gt;
+            &lt;/element&gt;
+        &lt;/schema&gt;
+    &lt;/wsdl:types&gt;
+    &lt;wsdl:message name="greetMeSometimeRequest"&gt;
+        &lt;wsdl:part name="in" element="x1:greetMeSometime"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="greetMeSometimeResponse"&gt;
+        &lt;wsdl:part name="out" element="x1:greetMeSometimeResponse"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:portType name="GreeterAsync"&gt;
+        &lt;wsdl:operation name="greetMeSometime"&gt;
+            &lt;wsdl:input name="greetMeSometimeRequest" message="tns:greetMeSometimeRequest"/&gt;
+            &lt;wsdl:output name="greetMeSometimeResponse" message="tns:greetMeSometimeResponse"/&gt;
+        &lt;/wsdl:operation&gt;
+    &lt;/wsdl:portType&gt;
+    &lt;wsdl:binding name="GreeterAsync_SOAPBinding" type="tns:GreeterAsync"&gt;
+        &lt;soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/&gt;
+        &lt;wsdl:operation name="greetMeSometime"&gt;
+            &lt;soap:operation style="document"/&gt;
+            &lt;wsdl:input&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:input&gt;
+            &lt;wsdl:output&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:output&gt;
+        &lt;/wsdl:operation&gt;
+    &lt;/wsdl:binding&gt;
+    &lt;wsdl:service name="SOAPService"&gt;
+        &lt;wsdl:port name="SoapPort" binding="tns:GreeterAsync_SOAPBinding"&gt;
+            &lt;soap:address location="http://localhost:9000/SoapContext/SoapPort"/&gt;
+        &lt;/wsdl:port&gt;
+    &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;</code></pre></div>
+<p>XFire-CXF-hello_world_async.zip( 13 k)</p>
+<ol><li>This demo shows a client creating a callback object by passing an EndpointReferenceType to the server</li><li>This demo shows how JAX-WS handlers are used</li><li>This demo illustrates the use of the JAX-WS APIs to run a simple client against a standalone server using SOAP 1.1 over HTTP</li><li>MTOSI 1.1 Samples</li><li>This demo shows how to develope an user interceptor and add the interceptor into the interceptor chain through configuration</li></ol>
+<p>w_ww.ja_va2_s__._c__o_m_</p>
+    <div class="pager"><a class="pager-btn" href="data-type-iso8601dateparsingutility-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">ISO 8601 date parsing util...</span></a><a class="pager-btn pager-next" href="data-type-uncapitalizesastringchangingthefirstlettertotitlecaseaspercharactertol.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Uncapitalizes a String cha...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

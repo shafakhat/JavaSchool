@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decode an HTML color string like '#F567BA;' into a Color - JavaSchool</title>
+<meta name="description" content="* Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-decodeanhtmlcolorstringlikef567baintoacolor">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-development-0120.html">Development (0120)</a></nav>
+    <h1>Decode an HTML color string like '#F567BA;' into a Color</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright 2005 Joe Walker
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import java.awt.Color;
+/**
+ * Utilities for working with colors.
+ * @author Joe Walker [joe at getahead dot ltd dot uk]
+ */
+public class ColorUtil
+{
+    /**
+     * Decode an HTML color string like '#F567BA;' into a {@link Color}
+     * @param colorString The string to decode
+     * @return The decoded color
+     * @throws IllegalArgumentException if the color sequence is not valid
+     */
+    public static Color decodeHtmlColorString(String colorString)
+    {
+        Color color;
+        if (colorString.startsWith("#"))
+        {
+            colorString = colorString.substring(1);
+        }
+        if (colorString.endsWith(";"))
+        {
+            colorString = colorString.substring(0, colorString.length() - 1);
+        }
+        int red, green, blue;
+        switch (colorString.length())
+        {
+        case 6:
+            red = Integer.parseInt(colorString.substring(0, 2), 16);
+            green = Integer.parseInt(colorString.substring(2, 4), 16);
+            blue = Integer.parseInt(colorString.substring(4, 6), 16);
+            color = new Color(red, green, blue);
+            break;
+        case 3:
+            red = Integer.parseInt(colorString.substring(0, 1), 16);
+            green = Integer.parseInt(colorString.substring(1, 2), 16);
+            blue = Integer.parseInt(colorString.substring(2, 3), 16);
+            color = new Color(red, green, blue);
+            break;
+        case 1:
+            red = green = blue = Integer.parseInt(colorString.substring(0, 1), 16);
+            color = new Color(red, green, blue);
+            break;
+        default:
+            throw new IllegalArgumentException("Invalid color: " + colorString);
+        }
+        return color;
+    }
+}</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="threads-customizedjavautilhashmapoperateinamultithreadedenvironmentwherethelarge.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Customized java.util.HashMap</span></a><a class="pager-btn pager-next" href="servlets-dedicatedconnectionservlet.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Dedicated Connection Servl...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

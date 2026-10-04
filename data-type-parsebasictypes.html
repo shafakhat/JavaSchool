@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parse basic types - JavaSchool</title>
+<meta name="description" content="* Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-parsebasictypes">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-data-type-0040.html">Data Type (0040)</a></nav>
+    <h1>Parse basic types</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright 2004, 2005, 2006 Odysseus Software GmbH
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import java.text.DateFormat;
+import java.text.Format;
+import java.text.ParseException;
+import java.text.ParsePosition;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+/**
+ * Parse basic types.
+ *
+ * @author Christoph Beck
+ */
+public class ParseUtils {
+  private static Locale locale = Locale.US;
+  private static Object nullValue(Class type) {
+    if (type.isPrimitive()) {
+      if (type == boolean.class)
+        return Boolean.FALSE;
+      if (type == byte.class)
+        return new Byte((byte)0);
+      if (type == char.class)
+        return new Character((char)0);
+      if (type == short.class)
+        return new Short((short)0);
+      if (type == int.class)
+        return new Integer(0);
+      if (type == long.class)
+        return new Long(0);
+      if (type == float.class)
+        return new Float(0);
+      if (type == double.class)
+        return new Double(0);
+    }
+    return null;
+  }
+  private static Class objectType(Class type) {
+    if (type.isPrimitive()) {
+      if (type == boolean.class)
+        return Boolean.class;
+      if (type == byte.class)
+        return Byte.class;
+      if (type == char.class)
+        return Character.class;
+      if (type == short.class)
+        return Short.class;
+      if (type == int.class)
+        return Integer.class;
+      if (type == long.class)
+        return Long.class;
+      if (type == float.class)
+        return Float.class;
+      if (type == double.class)
+        return Double.class;
+    }
+    return type;
+  }
+  private static Object parse(Format format, String value) throws ParseException {
+    ParsePosition pos = new ParsePosition(0);
+    Object result = format.parseObject(value, pos);
+    if (pos.getIndex() &lt; value.length())
+      throw new ParseException("Cannot parse " + value + " (garbage suffix)!", pos.getIndex());
+    return result;
+  }
+  private static Date parseDate(String value) throws ParseException {
+    DateFormat format = DateFormat.getDateInstance(DateFormat.SHORT, locale);
+    format.setTimeZone(TimeZone.getTimeZone("GMT"));
+    return (Date)parse(format, value);
+  }
+  private static Boolean parseBoolean(String value) throws ParseException {
+    if ("true".equals(value)) {
+      return Boolean.TRUE;
+    } else if ("false".equals(value)) {
+      return Boolean.FALSE;
+    } else {
+      throw new ParseException("Cannot parse '" + value + "' as boolean", 0);
+    }
+  }
+  private static Character parseCharacter(String value) throws ParseException {
+    if (value.length() != 1) {
+      throw new ParseException("Cannot parse '" + value + "' as character", value.length());
+    }
+    return new Character(value.charAt(0));
+  }
+  /**
+   * Parse value of specified type. The string value has to be in
+   * standard notation for the specified type.
+   */
+  public static Object parse(Class type, String value) throws Exception {
+    if (value == null) {
+      return nullValue(type);
+    } else if (value.length() == 0) {
+      return type == String.class ? value : nullValue(type);
+    }
+    type = objectType(type);
+    if (type == BigDecimal.class) {
+      return new BigDecimal(value);
+    } else if (type == BigInteger.class) {
+      return new BigInteger(value);
+    } else if (type == Boolean.class) {
+      return parseBoolean(value);
+    } else if (type == Byte.class) {
+      return Byte.valueOf(value);
+    } else if (type == Character.class) {
+      return parseCharacter(value);
+    } else if (type == Date.class) {
+      return parseDate(value);
+    } else if (type == Double.class) {
+      return Double.valueOf(value);
+    } else if (type == Float.class) {
+      return Float.valueOf(value);
+    } else if (type == Integer.class) {
+      return Integer.valueOf(value);
+    } else if (type == Long.class) {
+      return Long.valueOf(value);
+    } else if (type == Short.class) {
+      return Short.valueOf(value);
+    } else if (type == String.class) {
+      return value;
+    }
+    throw new ParseException("Cannot parse type " + type, 0);
+  }
+}
+///////////////////////
+/*
+ * Copyright 2004, 2005, 2006 Odysseus Software GmbH
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package de.odysseus.calyxo.base.util;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.Date;
+import junit.framework.TestCase;
+/**
+ * ParseUtils test case.
+ *
+ * @author Christoph Beck
+ */
+public class ParseUtilsTest extends TestCase {
+  /**
+   * Constructor for ParseUtilsTest.
+   * @param arg0
+   */
+  public ParseUtilsTest(String arg0) {
+    super(arg0);
+  }
+  public void testNullPrimitive() throws Exception {
+    assertEquals(Boolean.FALSE, ParseUtils.parse(boolean.class, null));
+    assertEquals(new Character((char)0), ParseUtils.parse(char.class, null));
+    assertEquals(new Byte((byte)0), ParseUtils.parse(byte.class, null));
+    assertEquals(new Short((short)0), ParseUtils.parse(short.class, null));
+    assertEquals(new Integer(0), ParseUtils.parse(int.class, null));
+    assertEquals(new Long(0), ParseUtils.parse(long.class, null));
+    assertEquals(new Float(0), ParseUtils.parse(float.class, null));
+    assertEquals(new Double(0), ParseUtils.parse(double.class, null));
+  }
+  public void testPrimitive() throws Exception {
+    assertEquals(Boolean.TRUE, ParseUtils.parse(boolean.class, "true"));
+    assertEquals(Boolean.FALSE, ParseUtils.parse(boolean.class, "false"));
+    assertEquals(new Character((char)10), ParseUtils.parse(char.class, "\n"));
+    assertEquals(new Byte((byte)10), ParseUtils.parse(byte.class, "10"));
+    assertEquals(new Short((short)10), ParseUtils.parse(short.class, "10"));
+    assertEquals(new Integer(10), ParseUtils.parse(int.class, "10"));
+    assertEquals(new Long(10), ParseUtils.parse(long.class, "10"));
+    assertEquals(new Float(10), ParseUtils.parse(float.class, "10"));
+    assertEquals(new Double(10), ParseUtils.parse(double.class, "10"));
+  }
+  public void testNullObject() throws Exception {
+    assertNull(ParseUtils.parse(Boolean.class, null));
+    assertNull(ParseUtils.parse(Byte.class, null));
+    assertNull(ParseUtils.parse(Character.class, null));
+    assertNull(ParseUtils.parse(Short.class, null));
+    assertNull(ParseUtils.parse(Integer.class, null));
+    assertNull(ParseUtils.parse(Long.class, null));
+    assertNull(ParseUtils.parse(Float.class, null));
+    assertNull(ParseUtils.parse(Double.class, null));
+    assertNull(ParseUtils.parse(BigInteger.class, null));
+    assertNull(ParseUtils.parse(BigDecimal.class, null));
+    assertNull(ParseUtils.parse(Date.class, null));
+    assertNull(ParseUtils.parse(String.class, null));
+  }
+  public void testObject() throws Exception {
+    assertEquals(Boolean.TRUE, ParseUtils.parse(Boolean.class, "true"));
+    assertEquals(Boolean.FALSE, ParseUtils.parse(Boolean.class, "false"));
+    assertEquals(new Character((char)10), ParseUtils.parse(Character.class, "\n"));
+    assertEquals(new Byte((byte)10), ParseUtils.parse(Byte.class, "10"));
+    assertEquals(new Short((short)10), ParseUtils.parse(Short.class, "10"));
+    assertEquals(new Integer(10), ParseUtils.parse(Integer.class, "10"));
+    assertEquals(new Long(10), ParseUtils.parse(Long.class, "10"));
+    assertEquals(new Float(10), ParseUtils.parse(Float.class, "10"));
+    assertEquals(new Double(10), ParseUtils.parse(Double.class, "10"));
+    assertEquals(new BigInteger("10"), ParseUtils.parse(BigInteger.class, "10"));
+    assertEquals(new BigDecimal(10), ParseUtils.parse(BigDecimal.class, "10"));
+    assertEquals(new Date(0), ParseUtils.parse(Date.class, "1/1/70"));
+    assertEquals("foo", ParseUtils.parse(String.class, "foo"));
+  }
+  public void testBadValues() throws Exception {
+    try {
+      ParseUtils.parse(Boolean.class, "no");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Character.class, "10");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Byte.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Short.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Integer.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Long.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Float.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Double.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(BigInteger.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(BigDecimal.class, "abc");
+      fail("Exception expected");
+    } catch(Exception e) {}
+    try {
+      ParseUtils.parse(Date.class, "1.1.70");
+      fail("Exception expected");
+    } catch(Exception e) {}
+  }
+  public void testBadType() throws Exception {
+    try {
+      ParseUtils.parse(Cloneable.class, "dolly");
+      fail("Exception expected");
+    } catch(Exception e) {}
+  }
+  public static void main(String[] args) {
+    junit.textui.TestRunner.run(ParseUtilsTest.class);
+  }
+}</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="jdk-7-getthefolderdirectoryforeachpartofafullpath.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Get the folder/directory f...</span></a><a class="pager-btn pager-next" href="class-specifyinginitialvaluesinaclassdefinition.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Specifying initial values ...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

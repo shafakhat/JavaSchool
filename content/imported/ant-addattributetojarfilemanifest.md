@@ -1,0 +1,160 @@
+---
+title: Add attribute to jar file manifest
+nav: Add attribute to jar file ...
+description: <property name="JUNIT_HOME" value="/Applications/eclipse/plugins/org.junit_3.8.1"/>
+section: Imported - java2s Archive
+order: 1002
+source: https://web.archive.org/web/20100213130420/http://java2s.com/Code/Java/Ant/Addattributetojarfilemanifest.htm
+---
+Add attribute to jar file manifest
+
+```java title=Example.java
+//https://amateur.dev.java.net/
+//GNU General Public License (GPL v. 2.0)
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Amateur" default="compile" basedir=".">
+    <!-- ???? need a help target -->
+    <property name="JUNIT_HOME" value="/Applications/eclipse/plugins/org.junit_3.8.1"/>
+    <property name="QTJava" value="/System/Library/Java/Extensions/QTJava.zip"/>
+    <taskdef name="jarbundler"
+             classpath="lib/jarbundler-1.8.1.jar"
+             classname="net.sourceforge.jarbundler.JarBundler" />
+    <path id="project.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="${QTJava}"/>
+    </path>
+    <path id="test.classpath">
+        <path refid="project.classpath"/>
+        <pathelement location="${JUNIT_HOME}/junit.jar"/>
+    </path>
+    <target name="init">
+        <tstamp/>
+        <property name="Name"    value="Amateur"/>
+        <property name="name"    value="amateur"/>
+        <property name="version" value="1.0d6"/>
+        <property name="year"    value="2006"/>
+        <mkdir dir="bin"/>
+        <mkdir dir="dist"/>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+        <delete dir="dist"/>
+    </target>
+    <target name="compile" depends="init">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac destdir="bin">
+            <src path="src"/>
+            <classpath refid="project.classpath"/>
+        </javac>
+    </target>
+    <target name="test">
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="plain"/>
+            <test name="com.elharo.quicktime.tests.AmateurTests"/>
+            <classpath refid="test.classpath"/>
+        </junit>
+    </target>
+    <target name="run">
+        <java fork="yes" classname="com.elharo.quicktime.Main" failonerror="true">
+            <classpath refid="project.classpath"/>
+        </java>
+    </target>
+    <target name="jar" depends="compile">
+       <jar jarfile="dist/${name}-${version}.jar"
+             basedir="bin"
+             index="no"
+             compress="yes"
+             includes="com/elharo/quicktime/*"
+             excludes="com/elharo/quicktime/tests/* com/elharo/quicktime/pantry/*">
+          <manifest>
+            <attribute name="Built-By" value="${user.name}"/>
+            <attribute name="Specification-Title"    value="Amateur"/>
+            <attribute name="Specification-Version"  value="${version}"/>
+            <attribute name="Specification-Vendor"   value="Elliotte Rusty Harold"/>
+            <attribute name="Implementation-Title"   value="Amateur"/>
+            <attribute name="Implementation-Version" value="${version}"/>
+            <attribute name="Implementation-Vendor"  value="Elliotte Rusty Harold"/>
+            <attribute name="Main-Class" value="com.elharo.quicktime.Main"/>
+            <section name="com/elharo/quicktime/">
+              <attribute name="Sealed" value="true"/>
+              <attribute name="Specification-Title"   value="Amateur core classes"/>
+              <attribute name="Implementation-Title"  value="com.elharo.quicktime"/>
+            <attribute name="Implementation-Version" value="${version}"/>
+            <attribute name="Implementation-Vendor"  value="Elliotte Rusty Harold"/>
+           </section>
+          </manifest>
+        </jar>
+    </target>
+    <target name="app" depends="jar">
+      <delete dir="dist/Amateur.app"/>
+        <jarbundler dir="dist" jars="dist/${name}-${version}.jar"
+                    name="Amateur"
+                    mainclass="com.elharo.quicktime.Main"
+                    infostring=" ${version}"
+                    version=" ${version}"
+                    screenmenu="true"
+                    signature="QTAM"
+                    bundleid="com.elharo.quicktime"
+                    icon="Amateur.icns"
+        >
+          <documenttype name="Amateur Media"
+                    mimetypes="image/jpeg image/png image/gif video/mpeg video/quicktime audio/mpeg"
+                    role="Viewer"/>
+          <documenttype name="Amateur Media"
+                    extensions="jpg mov mpg mp3 gif png pdf"
+                    role="Viewer"/>
+        </jarbundler>
+    </target>
+    <target name="image" depends="app">
+      <exec executable="hdiutil" os="Mac OS X">
+          <arg value="create"/>
+          <arg value="-srcfolder"/>
+          <arg value="dist/${Name}.app"/>
+          <arg value="-ov"/>
+          <arg value="dist/${Name}-${version}.dmg"/>
+      </exec>
+    </target>
+    <taskdef classpath="lib/cobertura.jar" resource="tasks.properties" />
+    <target name="instrument">
+      <cobertura-instrument todir="bin/instrumented-classes">
+        <fileset dir="bin/classes">
+          <include name="**/*.class"/>
+        </fileset>
+      </cobertura-instrument>
+    </target>
+    <target name="cover-test" depends="instrument">
+      <mkdir dir="${testreportdir}" />
+      <junit dir="./" failureproperty="test.failure" printSummary="yes"
+             fork="true" haltonerror="true">
+        <!-- Normally you can create this task by copying your existing JUnit
+             target, changing its name, and adding these next two lines.
+             You may need to change the locations to point to wherever
+             you've put the cobertura.jar file and the instrumented classes. -->
+        <classpath location="lib/cobertura.jar"/>
+        <classpath location="bin/instrumented-classes"/>
+        <classpath>
+          <fileset dir="${libdir}">
+            <include name="*.jar" />
+          </fileset>
+          <pathelement path="${testclassesdir}" />
+          <pathelement path="${classesdir}" />
+        </classpath>
+        <batchtest todir="${testreportdir}">
+          <fileset dir="src">
+            <include name="**/*Test.java" />
+          </fileset>
+        </batchtest>
+      </junit>
+    </target>
+</project>
+```
+
+1.  Ant task: jar
+---  ---
+2.  Jar with includes and excludes using filesets
+3.  Jar with includes and excludes
+4.  Generates java2s.jar
+5.  Ant jar file setting the Main-Class
+6.  Jar file with fileset and exclude
+7.  Jar file: exclude files
+8.  More than one filesets for jar

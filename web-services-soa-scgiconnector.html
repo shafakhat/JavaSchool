@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SCGI connector - JavaSchool</title>
+<meta name="description" content="* This program is free software: you can redistribute it and/or modify">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-web-services-soa-scgiconnector">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-web-services-soa.html">Web Services SOA</a></nav>
+    <h1>SCGI connector</h1>
+<p>SCGI connector</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">//package redstone.xmlrpc.util;
+/**
+ *   nTorrent - A GUI client to administer a rtorrent process
+ *   over a network connection.
+ *
+ *   Copyright (C) 2007  Kim Eik
+ *
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+import java.util.HashMap;
+import java.util.Map;
+/**
+ * SCGI connector.&lt;br&gt;
+ * Version: 1.0&lt;br&gt;
+ * Home page: http://snippets.dzone.com/posts/show/4304
+ */
+public class Scgi {
+  public static class SCGIException extends IOException {
+    private static final long serialVersionUID = 1L;
+    public SCGIException(String message) {
+      super(message);
+    }
+  }
+  /** Used to decode the headers. */
+  public static final Charset ISO_8859_1 = Charset.forName("ISO-8859-1");
+  /**
+   * Read the &lt;a href="http://python.ca/scgi/protocol.txt"&gt;SCGI&lt;/a&gt; request
+   * headers.&lt;br&gt;
+   * After the headers had been loaded, you can read the body of the request
+   * manually from the same {@code input} stream:
+   *
+   * &lt;pre&gt;
+   * // Load the SCGI headers.
+   * Socket clientSocket = socket.accept();
+   * BufferedInputStream bis = new BufferedInputStream(
+   *     clientSocket.getInputStream(), 4096);
+   * HashMap&amp;lt;String, String&amp;gt; env = SCGI.parse(bis);
+   * // Read the body of the request.
+   * bis.read(new byte[Integer.parseInt(env.get(&amp;quot;CONTENT_LENGTH&amp;quot;))]);
+   * &lt;/pre&gt;
+   *
+   * @param input
+   *            an efficient (buffered) input stream.
+   * @return strings passed via the SCGI request.
+   */
+  @SuppressWarnings("unchecked")
+  public static HashMap parse(InputStream input) throws IOException {
+    StringBuilder lengthString = new StringBuilder(12);
+    String headers = "";
+    for (;;) {
+      char ch = (char) input.read();
+      if (ch &gt;= '0' &amp;&amp; ch &lt;= '9') {
+        lengthString.append(ch);
+      } else if (ch == ':') {
+        int length = Integer.parseInt(lengthString.toString());
+        byte[] headersBuf = new byte[length];
+        int read = input.read(headersBuf);
+        if (read != headersBuf.length)
+          throw new SCGIException("Couldn't read all the headers ("
+              + length + ").");
+        headers = ISO_8859_1.decode(ByteBuffer.wrap(headersBuf))
+            .toString();
+        if (input.read() != ',')
+          throw new SCGIException("Wrong SCGI header length: "
+              + lengthString);
+        break;
+      } else {
+        lengthString.append(ch);
+        throw new SCGIException("Wrong SCGI header length: "
+            + lengthString);
+      }
+    }
+    HashMap&lt;String, String&gt; env = new HashMap&lt;String, String&gt;();
+    while (headers.length() != 0) {
+      int sep1 = headers.indexOf(0);
+      int sep2 = headers.indexOf(0, sep1 + 1);
+      env.put(headers.substring(0, sep1),
+          headers.substring(sep1 + 1, sep2));
+      headers = headers.substring(sep2 + 1);
+    }
+    return env;
+  }
+  public static String make(HashMap&lt;String, String&gt; header, String body) {
+    String res = "CONTENT_LENGTH\0" + (body != null ? body.length() : 0)
+        + "\0SCGI\0" + "1\0";
+    if (header != null) {
+      for (Map.Entry&lt;String, String&gt; entry : header.entrySet())
+        res += entry.getKey() + '\0' + entry.getValue() + '\0';
+    }
+    String size = new Integer(res.getBytes().length) + ":";
+    res += "," + body;
+    return size + res;
+  }
+}</code></pre></div>
+<ol><li>Doing the communication using HTTPS</li></ol>
+    <div class="pager"><a class="pager-btn" href="data-type-hexencoderdecoderimplementationborrowedfrombouncycastle-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Hex encoder/decoder implem...</span></a><a class="pager-btn pager-next" href="jdk-7-setgroupprincipal.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Set group Principal</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fraction is a Number implementation that stores fractions accurately. - JavaSchool</title>
+<meta name="description" content="* Licensed to the Apache Software Foundation (ASF) under one or more">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-fractionisanumberimplementationthatstoresfractionsaccurately-2">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-data-type-0040.html">Data Type (0040)</a></nav>
+    <h1>Fraction is a Number implementation that stores fractions accurately.</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+// Revised from commons math from Apache
+import java.math.BigInteger;
+/**
+ * &lt;p&gt;&lt;code&gt;Fraction&lt;/code&gt; is a &lt;code&gt;Number&lt;/code&gt; implementation that
+ * stores fractions accurately.&lt;/p&gt;
+ *
+ * &lt;p&gt;This class is immutable, and interoperable with most methods that accept
+ * a &lt;code&gt;Number&lt;/code&gt;.&lt;/p&gt;
+ *
+ * @author Travis Reeder
+ * @author Stephen Colebourne
+ * @author Tim O'Brien
+ * @author Pete Gieser
+ * @author C. Scott Ananian
+ * @since 2.0
+ * @version $Id: Fraction.java 599500 2007-11-29 16:25:54Z mbenson $
+ */
+public final class Fraction extends Number implements Comparable {
+    /**
+     * Required for serialization support. Lang version 2.0.
+     *
+     * @see java.io.Serializable
+     */
+    private static final long serialVersionUID = 65382027393090L;
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 0.
+     */
+    public static final Fraction ZERO = new Fraction(0, 1);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 1.
+     */
+    public static final Fraction ONE = new Fraction(1, 1);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 1/2.
+     */
+    public static final Fraction ONE_HALF = new Fraction(1, 2);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 1/3.
+     */
+    public static final Fraction ONE_THIRD = new Fraction(1, 3);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 2/3.
+     */
+    public static final Fraction TWO_THIRDS = new Fraction(2, 3);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 1/4.
+     */
+    public static final Fraction ONE_QUARTER = new Fraction(1, 4);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 2/4.
+     */
+    public static final Fraction TWO_QUARTERS = new Fraction(2, 4);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 3/4.
+     */
+    public static final Fraction THREE_QUARTERS = new Fraction(3, 4);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 1/5.
+     */
+    public static final Fraction ONE_FIFTH = new Fraction(1, 5);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 2/5.
+     */
+    public static final Fraction TWO_FIFTHS = new Fraction(2, 5);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 3/5.
+     */
+    public static final Fraction THREE_FIFTHS = new Fraction(3, 5);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 4/5.
+     */
+    public static final Fraction FOUR_FIFTHS = new Fraction(4, 5);
+    /**
+     * The numerator number part of the fraction (the three in three sevenths).
+     */
+    private final int numerator;
+    /**
+     * The denominator number part of the fraction (the seven in three sevenths).
+     */
+    private final int denominator;
+    /**
+     * Cached output hashCode (class is immutable).
+     */
+    private transient int hashCode = 0;
+    /**
+     * Cached output toString (class is immutable).
+     */
+    private transient String toString = null;
+    /**
+     * Cached output toProperString (class is immutable).
+     */
+    private transient String toProperString = null;
+    /**
+     * &lt;p&gt;Constructs a &lt;code&gt;Fraction&lt;/code&gt; instance with the 2 parts
+     * of a fraction Y/Z.&lt;/p&gt;
+     *
+     * @param numerator  the numerator, for example the three in 'three sevenths'
+     * @param denominator  the denominator, for example the seven in 'three sevenths'
+     */
+    private Fraction(int numerator, int denominator) {
+        super();
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+    /**
+     * &lt;p&gt;Creates a &lt;code&gt;Fraction&lt;/code&gt; instance with the 2 parts
+     * of a fraction Y/Z.&lt;/p&gt;
+     *
+     * &lt;p&gt;Any negative signs are resolved to be on the numerator.&lt;/p&gt;
+     *
+     * @param numerator  the numerator, for example the three in 'three sevenths'
+     * @param denominator  the denominator, for example the seven in 'three sevenths'
+     * @return a new fraction instance
+     * @throws ArithmeticException if the denomiator is &lt;code&gt;zero&lt;/code&gt;
+     */
+    public static Fraction getFraction(int numerator, int denominator) {
+        if (denominator == 0) {
+            throw new ArithmeticException("The denominator must not be zero");
+        }
+        if (denominator &lt; 0) {
+            if (numerator==Integer.MIN_VALUE ||
+                    denominator==Integer.MIN_VALUE) {
+                throw new ArithmeticException("overflow: can't negate");
+            }
+            numerator = -numerator;
+            denominator = -denominator;
+        }
+        return new Fraction(numerator, denominator);
+    }
+    /**
+     * &lt;p&gt;Creates a &lt;code&gt;Fraction&lt;/code&gt; instance with the 3 parts
+     * of a fraction X Y/Z.&lt;/p&gt;
+     *
+     * &lt;p&gt;The negative sign must be passed in on the whole number part.&lt;/p&gt;
+     *
+     * @param whole  the whole number, for example the one in 'one and three sevenths'
+     * @param numerator  the numerator, for example the three in 'one and three sevenths'
+     * @param denominator  the denominator, for example the seven in 'one and three sevenths'
+     * @return a new fraction instance
+     * @throws ArithmeticException if the denomiator is &lt;code&gt;zero&lt;/code&gt;
+     * @throws ArithmeticException if the denominator is negative
+     * @throws ArithmeticException if the numerator is negative
+     * @throws ArithmeticException if the resulting numerator exceeds
+     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;
+     */
+    public static Fraction getFraction(int whole, int numerator, int denominator) {
+        if (denominator == 0) {
+            throw new ArithmeticException("The denominator must not be zero");
+        }
+        if (denominator &lt; 0) {
+            throw new ArithmeticException("The denominator must not be negative");
+        }
+        if (numerator &lt; 0) {
+            throw new ArithmeticException("The numerator must not be negative");
+        }
+        long numeratorValue;
+        if (whole &lt; 0) {
+            numeratorValue = whole * (long)denominator - numerator;
+        } else {
+            numeratorValue = whole * (long)denominator + numerator;
+        }
+        if (numeratorValue &lt; Integer.MIN_VALUE ||
+                numeratorValue &gt; Integer.MAX_VALUE)  {
+            throw new ArithmeticException("Numerator too large to represent as an Integer.");
+        }
+        return new Fraction((int) numeratorValue, denominator);
+    }
+    /**
+     * &lt;p&gt;Creates a reduced &lt;code&gt;Fraction&lt;/code&gt; instance with the 2 parts
+     * of a fraction Y/Z.&lt;/p&gt;
+     *
+     * &lt;p&gt;For example, if the input parameters represent 2/4, then the created
+     * fraction will be 1/2.&lt;/p&gt;
+     *
+     * &lt;p&gt;Any negative signs are resolved to be on the numerator.&lt;/p&gt;
+     *
+     * @param numerator  the numerator, for example the three in 'three sevenths'
+     * @param denominator  the denominator, for example the seven in 'three sevenths'
+     * @return a new fraction instance, with the numerator and denominator reduced
+     * @throws ArithmeticException if the denominator is &lt;code&gt;zero&lt;/code&gt;
+     */
+    public static Fraction getReducedFraction(int numerator, int denominator) {
+        if (denominator == 0) {
+            throw new ArithmeticException("The denominator must not be zero");
+        }
+        if (numerator==0) {
+            return ZERO; // normalize zero.
+        }
+        // allow 2^k/-2^31 as a valid fraction (where k&gt;0)
+        if (denominator==Integer.MIN_VALUE &amp;&amp; (numerator&amp;1)==0) {
+            numerator/=2; denominator/=2;
+        }
+        if (denominator &lt; 0) {
+            if (numerator==Integer.MIN_VALUE ||
+                    denominator==Integer.MIN_VALUE) {
+                throw new ArithmeticException("overflow: can't negate");
+            }
+            numerator = -numerator;
+            denominator = -denominator;
+        }
+        // simplify fraction.
+        int gcd = greatestCommonDivisor(numerator, denominator);
+        numerator /= gcd;
+        denominator /= gcd;
+        return new Fraction(numerator, denominator);
+    }
+    /**
+     * &lt;p&gt;Creates a &lt;code&gt;Fraction&lt;/code&gt; instance from a &lt;code&gt;double&lt;/code&gt; value.&lt;/p&gt;
+     *
+     * &lt;p&gt;This method uses the &lt;a href="http://archives.math.utk.edu/articles/atuyl/confrac/"&gt;
+     *  continued fraction algorithm&lt;/a&gt;, computing a maximum of
+     *  25 convergents and bounding the denominator by 10,000.&lt;/p&gt;
+     *
+     * @param value  the double value to convert
+     * @return a new fraction instance that is close to the value
+     * @throws ArithmeticException if &lt;code&gt;|value| &gt; Integer.MAX_VALUE&lt;/code&gt;
+     *  or &lt;code&gt;value = NaN&lt;/code&gt;
+     * @throws ArithmeticException if the calculated denominator is &lt;code&gt;zero&lt;/code&gt;
+     * @throws ArithmeticException if the the algorithm does not converge
+     */
+    public static Fraction getFraction(double value) {
+        int sign = (value &lt; 0 ? -1 : 1);
+        value = Math.abs(value);
+        if (value  &gt; Integer.MAX_VALUE || Double.isNaN(value)) {
+            throw new ArithmeticException
+                ("The value must not be greater than Integer.MAX_VALUE or NaN");
+        }
+        int wholeNumber = (int) value;
+        value -= wholeNumber;
+        int numer0 = 0;  // the pre-previous
+        int denom0 = 1;  // the pre-previous
+        int numer1 = 1;  // the previous
+        int denom1 = 0;  // the previous
+        int numer2 = 0;  // the current, setup in calculation
+        int denom2 = 0;  // the current, setup in calculation
+        int a1 = (int) value;
+        int a2 = 0;
+        double x1 = 1;
+        double x2 = 0;
+        double y1 = value - a1;
+        double y2 = 0;
+        double delta1, delta2 = Double.MAX_VALUE;
+        double fraction;
+        int i = 1;
+//        System.out.println("---");
+        do {
+            delta1 = delta2;
+            a2 = (int) (x1 / y1);
+            x2 = y1;
+            y2 = x1 - a2 * y1;
+            numer2 = a1 * numer1 + numer0;
+            denom2 = a1 * denom1 + denom0;
+            fraction = (double) numer2 / (double) denom2;
+            delta2 = Math.abs(value - fraction);
+//            System.out.println(numer2 + " " + denom2 + " " + fraction + " " + delta2 + " " + y1);
+            a1 = a2;
+            x1 = x2;
+            y1 = y2;
+            numer0 = numer1;
+            denom0 = denom1;
+            numer1 = numer2;
+            denom1 = denom2;
+            i++;
+//            System.out.println("&gt;&gt;" + delta1 +" "+ delta2+" "+(delta1 &gt; delta2)+" "+i+" "+denom2);
+        } while ((delta1 &gt; delta2) &amp;&amp; (denom2 &lt;= 10000) &amp;&amp; (denom2 &gt; 0) &amp;&amp; (i &lt; 25));
+        if (i == 25) {
+            throw new ArithmeticException("Unable to convert double to fraction");
+        }
+        return getReducedFraction((numer0 + wholeNumber * denom0) * sign, denom0);
+    }
+    /**
+     * &lt;p&gt;Creates a Fraction from a &lt;code&gt;String&lt;/code&gt;.&lt;/p&gt;
+     *
+     * &lt;p&gt;The formats accepted are:&lt;/p&gt;
+     *
+     * &lt;ol&gt;
+     *  &lt;li&gt;&lt;code&gt;double&lt;/code&gt; String containing a dot&lt;/li&gt;
+     *  &lt;li&gt;'X Y/Z'&lt;/li&gt;
+     *  &lt;li&gt;'Y/Z'&lt;/li&gt;
+     *  &lt;li&gt;'X' (a simple whole number)&lt;/li&gt;
+     * &lt;/ol&gt;
+     * and a .&lt;/p&gt;
+     *
+     * @param str  the string to parse, must not be &lt;code&gt;null&lt;/code&gt;
+     * @return the new &lt;code&gt;Fraction&lt;/code&gt; instance
+     * @throws IllegalArgumentException if the string is &lt;code&gt;null&lt;/code&gt;
+     * @throws NumberFormatException if the number format is invalid
+     */
+    public static Fraction getFraction(String str) {
+        if (str == null) {
+            throw new IllegalArgumentException("The string must not be null");
+        }
+        // parse double format
+        int pos = str.indexOf('.');
+        if (pos &gt;= 0) {
+            return getFraction(Double.parseDouble(str));
+        }
+        // parse X Y/Z format
+        pos = str.indexOf(' ');
+        if (pos &gt; 0) {
+            int whole = Integer.parseInt(str.substring(0, pos));
+            str = str.substring(pos + 1);
+            pos = str.indexOf('/');
+            if (pos &lt; 0) {
+                throw new NumberFormatException("The fraction could not be parsed as the format X Y/Z");
+            } else {
+                int numer = Integer.parseInt(str.substring(0, pos));
+                int denom = Integer.parseInt(str.substring(pos + 1));
+                return getFraction(whole, numer, denom);
+            }
+        }
+        // parse Y/Z format
+        pos = str.indexOf('/');
+        if (pos &lt; 0) {
+            // simple whole number
+            return getFraction(Integer.parseInt(str), 1);
+        } else {
+            int numer = Integer.parseInt(str.substring(0, pos));
+            int denom = Integer.parseInt(str.substring(pos + 1));
+            return getFraction(numer, denom);
+        }
+    }
+    // Accessors
+    //-------------------------------------------------------------------
+    /**
+     * &lt;p&gt;Gets the numerator part of the fraction.&lt;/p&gt;
+     *
+     * &lt;p&gt;This method may return a value greater than the denominator, an
+     * improper fraction, such as the seven in 7/4.&lt;/p&gt;
+     *
+     * @return the numerator fraction part
+     */
+    public int getNumerator() {
+        return numerator;
+    }
+    /**
+     * &lt;p&gt;Gets the denominator part of the fraction.&lt;/p&gt;
+     *
+     * @return the denominator fraction part
+     */
+    public int getDenominator() {
+        return denominator;
+    }
+    /**
+     * &lt;p&gt;Gets the proper numerator, always positive.&lt;/p&gt;
+     *
+     * &lt;p&gt;An improper fraction 7/4 can be resolved into a proper one, 1 3/4.
+     * This method returns the 3 from the proper fraction.&lt;/p&gt;
+     *
+     * &lt;p&gt;If the fraction is negative such as -7/4, it can be resolved into
+     * -1 3/4, so this method returns the positive proper numerator, 3.&lt;/p&gt;
+     *
+     * @return the numerator fraction part of a proper fraction, always positive
+     */
+    public int getProperNumerator() {
+        return Math.abs(numerator % denominator);
+    }
+    /**
+     * &lt;p&gt;Gets the proper whole part of the fraction.&lt;/p&gt;
+     *
+     * &lt;p&gt;An improper fraction 7/4 can be resolved into a proper one, 1 3/4.
+     * This method returns the 1 from the proper fraction.&lt;/p&gt;
+     *
+     * &lt;p&gt;If the fraction is negative such as -7/4, it can be resolved into
+     * -1 3/4, so this method returns the positive whole part -1.&lt;/p&gt;
+     *
+     * @return the whole fraction part of a proper fraction, that includes the sign
+     */
+    public int getProperWhole() {
+        return numerator / denominator;
+    }
+    // Number methods
+    //-------------------------------------------------------------------
+    /**
+     * &lt;p&gt;Gets the fraction as an &lt;code&gt;int&lt;/code&gt;. This returns the whole number
+     * part of the fraction.&lt;/p&gt;
+     *
+     * @return the whole number fraction part
+     */
+    public int intValue() {
+        return numerator / denominator;
+    }
+    /**
+     * &lt;p&gt;Gets the fraction as a &lt;code&gt;long&lt;/code&gt;. This returns the whole number
+     * part of the fraction.&lt;/p&gt;
+     *
+     * @return the whole number fraction part
+     */
+    public long longValue() {
+        return (long) numerator / denominator;
+    }
+    /**
+     * &lt;p&gt;Gets the fraction as a &lt;code&gt;float&lt;/code&gt;. This calculates the fraction
+     * as the numerator divided by denominator.&lt;/p&gt;
+     *
+     * @return the fraction as a &lt;code&gt;float&lt;/code&gt;
+     */
+    public float floatValue() {
+        return ((float) numerator) / ((float) denominator);
+    }
+    /**
+     * &lt;p&gt;Gets the fraction as a &lt;code&gt;double&lt;/code&gt;. This calculates the fraction
+     * as the numerator divided by denominator.&lt;/p&gt;
+     *
+     * @return the fraction as a &lt;code&gt;double&lt;/code&gt;
+     */
+    public double doubleValue() {
+        return ((double) numerator) / ((double) denominator);
+    }
+    // Calculations
+    //-------------------------------------------------------------------
+    /**
+     * &lt;p&gt;Reduce the fraction to the smallest values for the numerator and
+     * denominator, returning the result.&lt;/p&gt;
+     *
+     * &lt;p&gt;For example, if this fraction represents 2/4, then the result
+     * will be 1/2.&lt;/p&gt;
+     *
+     * @return a new reduced fraction instance, or this if no simplification possible
+     */
+    public Fraction reduce() {
+        if (numerator == 0) {
+            return equals(ZERO) ? this : ZERO;
+        }
+        int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+        if (gcd == 1) {
+            return this;
+        }
+        return Fraction.getFraction(numerator / gcd, denominator / gcd);
+    }
+    /**
+     * &lt;p&gt;Gets a fraction that is the inverse (1/fraction) of this one.&lt;/p&gt;
+     *
+     * &lt;p&gt;The returned fraction is not reduced.&lt;/p&gt;
+     *
+     * @return a new fraction instance with the numerator and denominator
+     *         inverted.
+     * @throws ArithmeticException if the fraction represents zero.
+     */
+    public Fraction invert() {
+        if (numerator == 0) {
+            throw new ArithmeticException("Unable to invert zero.");
+        }
+        if (numerator==Integer.MIN_VALUE) {
+            throw new ArithmeticException("overflow: can't negate numerator");
+        }
+        if (numerator&lt;0) {
+            return new Fraction(-denominator, -numerator);
+        } else {
+            return new Fraction(denominator, numerator);
+        }
+    }
+    /**
+     * &lt;p&gt;Gets a fraction that is the negative (-fraction) of this one.&lt;/p&gt;
+     *
+     * &lt;p&gt;The returned fraction is not reduced.&lt;/p&gt;
+     *
+     * @return a new fraction instance with the opposite signed numerator
+     */
+    public Fraction negate() {
+        // the positive range is one smaller than the negative range of an int.
+        if (numerator==Integer.MIN_VALUE) {
+            throw new ArithmeticException("overflow: too large to negate");
+        }
+        return new Fraction(-numerator, denominator);
+    }
+    /**
+     * &lt;p&gt;Gets a fraction that is the positive equivalent of this one.&lt;/p&gt;
+     * &lt;p&gt;More precisely: &lt;code&gt;(fraction &gt;= 0 ? this : -fraction)&lt;/code&gt;&lt;/p&gt;
+     *
+     * &lt;p&gt;The returned fraction is not reduced.&lt;/p&gt;
+     *
+     * @return &lt;code&gt;this&lt;/code&gt; if it is positive, or a new positive fraction
+     *  instance with the opposite signed numerator
+     */
+    public Fraction abs() {
+        if (numerator &gt;= 0) {
+            return this;
+        }
+        return negate();
+    }
+    /**
+     * &lt;p&gt;Gets a fraction that is raised to the passed in power.&lt;/p&gt;
+     *
+     * &lt;p&gt;The returned fraction is in reduced form.&lt;/p&gt;
+     *
+     * @param power  the power to raise the fraction to
+     * @return &lt;code&gt;this&lt;/code&gt; if the power is one, &lt;code&gt;ONE&lt;/code&gt; if the power
+     * is zero (even if the fraction equals ZERO) or a new fraction instance
+     * raised to the appropriate power
+     * @throws ArithmeticException if the resulting numerator or denominator exceeds
+     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;
+     */
+    public Fraction pow(int power) {
+        if (power == 1) {
+            return this;
+        } else if (power == 0) {
+            return ONE;
+        } else if (power &lt; 0) {
+            if (power==Integer.MIN_VALUE) { // MIN_VALUE can't be negated.
+                return this.invert().pow(2).pow(-(power/2));
+            }
+            return this.invert().pow(-power);
+        } else {
+            Fraction f = this.multiplyBy(this);
+            if ((power % 2) == 0) { // if even...
+                return f.pow(power/2);
+            } else { // if odd...
+                return f.pow(power/2).multiplyBy(this);
+            }
+        }
+    }
+    /**
+     * &lt;p&gt;Gets the greatest common divisor of the absolute value of
+     * two numbers, using the "binary gcd" method which avoids
+     * division and modulo operations.  See Knuth 4.5.2 algorithm B.
+     * This algorithm is due to Josef Stein (1961).&lt;/p&gt;
+     *
+     * @param u  a non-zero number
+     * @param v  a non-zero number
+     * @return the greatest common divisor, never zero
+     */
+    private static int greatestCommonDivisor(int u, int v) {
+        //if either op. is abs 0 or 1, return 1:
+        if (Math.abs(u) &lt;= 1 || Math.abs(v) &lt;= 1) {
+            return 1;
+        }
+        // keep u and v negative, as negative integers range down to
+        // -2^31, while positive numbers can only be as large as 2^31-1
+        // (i.e. we can't necessarily negate a negative number without
+        // overflow)
+        if (u&gt;0) { u=-u; } // make u negative
+        if (v&gt;0) { v=-v; } // make v negative
+        // B1. [Find power of 2]
+        int k=0;
+        while ((u&amp;1)==0 &amp;&amp; (v&amp;1)==0 &amp;&amp; k&lt;31) { // while u and v are both even...
+            u/=2; v/=2; k++; // cast out twos.
+        }
+        if (k==31) {
+            throw new ArithmeticException("overflow: gcd is 2^31");
+        }
+        // B2. Initialize: u and v have been divided by 2^k and at least
+        //     one is odd.
+        int t = ((u&amp;1)==1) ? v : -(u/2)/*B3*/;
+        // t negative: u was odd, v may be even (t replaces v)
+        // t positive: u was even, v is odd (t replaces u)
+        do {
+            /* assert u&lt;0 &amp;&amp; v&lt;0; */
+            // B4/B3: cast out twos from t.
+            while ((t&amp;1)==0) { // while t is even..
+                t/=2; // cast out twos
+            }
+            // B5 [reset max(u,v)]
+            if (t&gt;0) {
+                u = -t;
+            } else {
+                v = t;
+            }
+            // B6/B3. at this point both u and v should be odd.
+            t = (v - u)/2;
+            // |u| larger: t positive (replace u)
+            // |v| larger: t negative (replace v)
+        } while (t!=0);
+        return -u*(1&lt;&lt;k); // gcd is u*2^k
+    }
+    // Arithmetic
+    //-------------------------------------------------------------------
+    /**
+     * Multiply two integers, checking for overflow.
+     *
+     * @param x a factor
+     * @param y a factor
+     * @return the product &lt;code&gt;x*y&lt;/code&gt;
+     * @throws ArithmeticException if the result can not be represented as
+     *                             an int
+     */
+    private static int mulAndCheck(int x, int y) {
+        long m = ((long)x)*((long)y);
+        if (m &lt; Integer.MIN_VALUE ||
+            m &gt; Integer.MAX_VALUE) {
+            throw new ArithmeticException("overflow: mul");
+        }
+        return (int)m;
+    }
+    /**
+     *  Multiply two non-negative integers, checking for overflow.
+     *
+     * @param x a non-negative factor
+     * @param y a non-negative factor
+     * @return the product &lt;code&gt;x*y&lt;/code&gt;
+     * @throws ArithmeticException if the result can not be represented as
+     * an int
+     */
+    private static int mulPosAndCheck(int x, int y) {
+        /* assert x&gt;=0 &amp;&amp; y&gt;=0; */
+        long m = ((long)x)*((long)y);
+        if (m &gt; Integer.MAX_VALUE) {
+            throw new ArithmeticException("overflow: mulPos");
+        }
+        return (int)m;
+    }
+    /**
+     * Add two integers, checking for overflow.
+     *
+     * @param x an addend
+     * @param y an addend
+     * @return the sum &lt;code&gt;x+y&lt;/code&gt;
+     * @throws ArithmeticException if the result can not be represented as
+     * an int
+     */
+    private static int addAndCheck(int x, int y) {
+        long s = (long)x+(long)y;
+        if (s &lt; Integer.MIN_VALUE ||
+            s &gt; Integer.MAX_VALUE) {
+            throw new ArithmeticException("overflow: add");
+        }
+        return (int)s;
+    }
+    /**
+     * Subtract two integers, checking for overflow.
+     *
+     * @param x the minuend
+     * @param y the subtrahend
+     * @return the difference &lt;code&gt;x-y&lt;/code&gt;
+     * @throws ArithmeticException if the result can not be represented as
+     * an int
+     */
+    private static int subAndCheck(int x, int y) {
+        long s = (long)x-(long)y;
+        if (s &lt; Integer.MIN_VALUE ||
+            s &gt; Integer.MAX_VALUE) {
+            throw new ArithmeticException("overflow: add");
+        }
+        return (int)s;
+    }
+    /**
+     * &lt;p&gt;Adds the value of this fraction to another, returning the result in reduced form.
+     * The algorithm follows Knuth, 4.5.1.&lt;/p&gt;
+     *
+     * @param fraction  the fraction to add, must not be &lt;code&gt;null&lt;/code&gt;
+     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values
+     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;
+     * @throws ArithmeticException if the resulting numerator or denominator exceeds
+     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;
+     */
+    public Fraction add(Fraction fraction) {
+        return addSub(fraction, true /* add */);
+    }
+    /**
+     * &lt;p&gt;Subtracts the value of another fraction from the value of this one,
+     * returning the result in reduced form.&lt;/p&gt;
+     *
+     * @param fraction  the fraction to subtract, must not be &lt;code&gt;null&lt;/code&gt;
+     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values
+     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;
+     * @throws ArithmeticException if the resulting numerator or denominator
+     *   cannot be represented in an &lt;code&gt;int&lt;/code&gt;.
+     */
+    public Fraction subtract(Fraction fraction) {
+        return addSub(fraction, false /* subtract */);
+    }
+    /**
+     * Implement add and subtract using algorithm described in Knuth 4.5.1.
+     *
+     * @param fraction the fraction to subtract, must not be &lt;code&gt;null&lt;/code&gt;
+     * @param isAdd true to add, false to subtract
+     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values
+     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;
+     * @throws ArithmeticException if the resulting numerator or denominator
+     *   cannot be represented in an &lt;code&gt;int&lt;/code&gt;.
+     */
+    private Fraction addSub(Fraction fraction, boolean isAdd) {
+        if (fraction == null) {
+            throw new IllegalArgumentException("The fraction must not be null");
+        }
+        // zero is identity for addition.
+        if (numerator == 0) {
+            return isAdd ? fraction : fraction.negate();
+        }
+        if (fraction.numerator == 0) {
+            return this;
+        }
+        // if denominators are randomly distributed, d1 will be 1 about 61%
+        // of the time.
+        int d1 = greatestCommonDivisor(denominator, fraction.denominator);
+        if (d1==1) {
+            // result is ( (u*v' +/- u'v) / u'v')
+            int uvp = mulAndCheck(numerator, fraction.denominator);
+            int upv = mulAndCheck(fraction.numerator, denominator);
+            return new Fraction
+                (isAdd ? addAndCheck(uvp, upv) : subAndCheck(uvp, upv),
+                 mulPosAndCheck(denominator, fraction.denominator));
+        }
+        // the quantity 't' requires 65 bits of precision; see knuth 4.5.1
+        // exercise 7.  we're going to use a BigInteger.
+        // t = u(v'/d1) +/- v(u'/d1)
+        BigInteger uvp = BigInteger.valueOf(numerator)
+            .multiply(BigInteger.valueOf(fraction.denominator/d1));
+        BigInteger upv = BigInteger.valueOf(fraction.numerator)
+            .multiply(BigInteger.valueOf(denominator/d1));
+        BigInteger t = isAdd ? uvp.add(upv) : uvp.subtract(upv);
+        // but d2 doesn't need extra precision because
+        // d2 = gcd(t,d1) = gcd(t mod d1, d1)
+        int tmodd1 = t.mod(BigInteger.valueOf(d1)).intValue();
+        int d2 = (tmodd1==0)?d1:greatestCommonDivisor(tmodd1, d1);
+        // result is (t/d2) / (u'/d1)(v'/d2)
+        BigInteger w = t.divide(BigInteger.valueOf(d2));
+        if (w.bitLength() &gt; 31) {
+            throw new ArithmeticException
+                ("overflow: numerator too large after multiply");
+        }
+        return new Fraction
+            (w.intValue(),
+             mulPosAndCheck(denominator/d1, fraction.denominator/d2));
+    }
+    /**
+     * &lt;p&gt;Multiplies the value of this fraction by another, returning the
+     * result in reduced form.&lt;/p&gt;
+     *
+     * @param fraction  the fraction to multiply by, must not be &lt;code&gt;null&lt;/code&gt;
+     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values
+     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;
+     * @throws ArithmeticException if the resulting numerator or denominator exceeds
+     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;
+     */
+    public Fraction multiplyBy(Fraction fraction) {
+        if (fraction == null) {
+            throw new IllegalArgumentException("The fraction must not be null");
+        }
+        if (numerator == 0 || fraction.numerator == 0) {
+            return ZERO;
+        }
+        // knuth 4.5.1
+        // make sure we don't overflow unless the result *must* overflow.
+        int d1 = greatestCommonDivisor(numerator, fraction.denominator);
+        int d2 = greatestCommonDivisor(fraction.numerator, denominator);
+        return getReducedFraction
+            (mulAndCheck(numerator/d1, fraction.numerator/d2),
+             mulPosAndCheck(denominator/d2, fraction.denominator/d1));
+    }
+    /**
+     * &lt;p&gt;Divide the value of this fraction by another.&lt;/p&gt;
+     *
+     * @param fraction  the fraction to divide by, must not be &lt;code&gt;null&lt;/code&gt;
+     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values
+     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;
+     * @throws ArithmeticException if the fraction to divide by is zero
+     * @throws ArithmeticException if the resulting numerator or denominator exceeds
+     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;
+     */
+    public Fraction divideBy(Fraction fraction) {
+        if (fraction == null) {
+            throw new IllegalArgumentException("The fraction must not be null");
+        }
+        if (fraction.numerator == 0) {
+            throw new ArithmeticException("The fraction to divide by must not be zero");
+        }
+        return multiplyBy(fraction.invert());
+    }
+    // Basics
+    //-------------------------------------------------------------------
+    /**
+     * &lt;p&gt;Compares this fraction to another object to test if they are equal.&lt;/p&gt;.
+     *
+     * &lt;p&gt;To be equal, both values must be equal. Thus 2/4 is not equal to 1/2.&lt;/p&gt;
+     *
+     * @param obj the reference object with which to compare
+     * @return &lt;code&gt;true&lt;/code&gt; if this object is equal
+     */
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof Fraction == false) {
+            return false;
+        }
+        Fraction other = (Fraction) obj;
+        return (getNumerator() == other.getNumerator() &amp;&amp;
+                getDenominator() == other.getDenominator());
+    }
+    /**
+     * &lt;p&gt;Gets a hashCode for the fraction.&lt;/p&gt;
+     *
+     * @return a hash code value for this object
+     */
+    public int hashCode() {
+        if (hashCode == 0) {
+            // hashcode update should be atomic.
+            hashCode = 37 * (37 * 17 + getNumerator()) + getDenominator();
+        }
+        return hashCode;
+    }
+    /**
+     * &lt;p&gt;Compares this object to another based on size.&lt;/p&gt;
+     *
+     * &lt;p&gt;Note: this class has a natural ordering that is inconsistent
+     * with equals, because, for example, equals treats 1/2 and 2/4 as
+     * different, whereas compareTo treats them as equal.
+     *
+     * @param object  the object to compare to
+     * @return -1 if this is less, 0 if equal, +1 if greater
+     * @throws ClassCastException if the object is not a &lt;code&gt;Fraction&lt;/code&gt;
+     * @throws NullPointerException if the object is &lt;code&gt;null&lt;/code&gt;
+     */
+    public int compareTo(Object object) {
+        Fraction other = (Fraction) object;
+        if (this==other) {
+            return 0;
+        }
+        if (numerator == other.numerator &amp;&amp; denominator == other.denominator) {
+            return 0;
+        }
+        // otherwise see which is less
+        long first = (long) numerator * (long) other.denominator;
+        long second = (long) other.numerator * (long) denominator;
+        if (first == second) {
+            return 0;
+        } else if (first &lt; second) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+    /**
+     * &lt;p&gt;Gets the fraction as a &lt;code&gt;String&lt;/code&gt;.&lt;/p&gt;
+     *
+     * &lt;p&gt;The format used is '&lt;i&gt;numerator&lt;/i&gt;/&lt;i&gt;denominator&lt;/i&gt;' always.
+     *
+     * @return a &lt;code&gt;String&lt;/code&gt; form of the fraction
+     */
+    public String toString() {
+        if (toString == null) {
+            toString = new StringBuffer(32)
+                .append(getNumerator())
+                .append('/')
+                .append(getDenominator()).toString();
+        }
+        return toString;
+    }
+    /**
+     * &lt;p&gt;Gets the fraction as a proper &lt;code&gt;String&lt;/code&gt; in the format X Y/Z.&lt;/p&gt;
+     *
+     * &lt;p&gt;The format used in '&lt;i&gt;wholeNumber&lt;/i&gt; &lt;i&gt;numerator&lt;/i&gt;/&lt;i&gt;denominator&lt;/i&gt;'.
+     * If the whole number is zero it will be ommitted. If the numerator is zero,
+     * only the whole number is returned.&lt;/p&gt;
+     *
+     * @return a &lt;code&gt;String&lt;/code&gt; form of the fraction
+     */
+    public String toProperString() {
+        if (toProperString == null) {
+            if (numerator == 0) {
+                toProperString = "0";
+            } else if (numerator == denominator) {
+                toProperString = "1";
+            } else if (numerator == -1 * denominator) {
+                toProperString = "-1";
+            } else if ((numerator&gt;0?-numerator:numerator) &lt; -denominator) {
+                // note that we do the magnitude comparison test above with
+                // NEGATIVE (not positive) numbers, since negative numbers
+                // have a larger range.  otherwise numerator==Integer.MIN_VALUE
+                // is handled incorrectly.
+                int properNumerator = getProperNumerator();
+                if (properNumerator == 0) {
+                    toProperString = Integer.toString(getProperWhole());
+                } else {
+                    toProperString = new StringBuffer(32)
+                        .append(getProperWhole()).append(' ')
+                        .append(properNumerator).append('/')
+                        .append(getDenominator()).toString();
+                }
+            } else {
+                toProperString = new StringBuffer(32)
+                    .append(getNumerator()).append('/')
+                    .append(getDenominator()).toString();
+            }
+        }
+        return toProperString;
+    }
+}</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="j2ee-exercise4applyinggofandj2eepatternsdeploytoweblogicandtest.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Exercise 4</span></a><a class="pager-btn pager-next" href="jstl-jstlexceptionuncaughtexception.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JSTL Exception</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OCJP Practice Test 3 - JavaSchool</title>
+<meta name="description" content="Third 50-question OCJP/OCJA style practice test - OOP design, inner classes, API knowledge, tricky output questions and version awareness.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-ocjp-practice-3">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Interview & Certification</span></nav>
+    <h1>OCJP Practice Test 3</h1>
+<h2 id="ocjp-ocja-practice-test-3">OCJP / OCJA practice test 3</h2>
+<p><strong>50 questions</strong>: OOP design, language corners, API knowledge and output puzzles - the sections that separate a pass from a high score. Same scoring as <a href="ocjp-practice.html">Test 1</a> and <a href="ocjp-practice-2.html">Test 2</a>.</p>
+<div id="quiz-root"></div>
+
+<script type="application/json" id="quiz-data">
+[
+  {"q":"Which OOP principle says a subclass must be usable anywhere the superclass is?","choices":["Encapsulation","Liskov Substitution","Dependency Inversion","Interface Segregation"],"correct":1,"explain":"LSP: subtypes must honor the supertype contract (no strengthened preconditions / weakened postconditions). Violations cause instanceof-branching smells."},
+  {"q":"Composition over inheritance - the practical reason?","choices":["Faster JVM","Loose coupling; internals stay hidden and replaceable","Less memory","Compulsory in Java 8"],"correct":1,"explain":"Inheritance exposes implementation details and creates fragile hierarchies; delegation keeps APIs small and behavior swappable (strategy pattern)."},
+  {"q":"Which pattern ensures exactly one instance and lazy creation?","choices":["Factory","Builder","Singleton (holder idiom or enum)","Prototype"],"correct":2,"explain":"Enum singletons are serialization- and reflection-safe; the holder idiom gives lazy, thread-safe init without synchronization on every get."},
+  {"q":"An interface with no methods is best called...","choices":["Empty","Marker interface (e.g. Serializable, Cloneable)","Abstract class","Annotation"],"correct":1,"explain":"Markers flag capability to the JVM/frameworks via instanceof checks rather than methods."},
+  {"q":"Which is a compile-time error?","choices":["Class implementing two interfaces","Class extending two classes","Class extending a class and implementing an interface","Class implementing an interface that extends another"],"correct":1,"explain":"Single inheritance only. Interfaces give the multi-type effect without state."},
+  {"q":"abstract class vs interface - which can hold state?","choices":["Both","Only abstract class","Only interface","Neither"],"correct":1,"explain":"Abstract classes have fields (any visibility); interfaces can have only public static final constants (and default/static/private methods, no instance state)."},
+  {"q":"Which access modifier limits visibility to the same package?","choices":["private","protected","default (none)","public"],"correct":2,"explain":"Package-private. protected = package + subclasses. private = class only. public = all."},
+  {"q":"Overloading is resolved at...","choices":["Runtime by object type","Compile time by reference type","Both","Neither"],"correct":1,"explain":"Overload choice uses the static types at the call site (a classic interview twist: passing a null literal picks the most specific overload)."},
+  {"q":"Which throws ClassCastException?","choices":["Upcast (Super s = sub;)","Downcast without matching type","Assigning null","Calling super()"],"correct":1,"explain":"Upcasting is always safe; downcasting checks the actual runtime type and fails when it does not match. instanceof guard prevents it."},
+  {"q":"Object obj = 5; Integer i = (Integer) obj; then int n = i; - safe?","choices":["No, ClassCast on cast","Yes - boxing to Integer, then unboxing","Fails on autoboxing","Only with -ea"],"correct":1,"explain":"The literal autoboxes to Integer; the cast matches the runtime type; unboxing succeeds. Had it been valueOf(700) into Object it would still be Integer - safe."},
+  {"q":"Which class cannot be instantiated?","choices":["Final class","Abstract class","Static class","Nested class"],"correct":1,"explain":"Abstract classes exist for extension; final forbids extension (opposite limit). A static class only exists as a nested type."},
+  {"q":"Overriding: which signature is legal for a method returning Object in the parent?","choices":["Return String (covariant)","Return int","Return void","Return Object and add throws Exception"],"correct":0,"explain":"Covariant returns allowed for reference types; primitives must match exactly; you cannot add broader checked exceptions."},
+  {"q":"Which skeleton compiles for an anonymous class?","choices":["Runnable r = new Runnable();","Runnable r = new Runnable() { public void run(){} };","Runnable r = new Runnable { void run(){} };","abstract Runnable r = new Runnable();"],"correct":1,"explain":"new Interface() must be followed by a body implementing the abstract methods - no parentheses-with-semicolon version exists."},
+  {"q":"What is printed by: System.out.println(1 + 2 + \"3\" + 4 + 5);","choices":["12345","3345","33333","Computes 1+2+3+4+5"],"correct":1,"explain":"Left to right: 1+2 numeric = 3, then string concat 3 + \"3\" = \"33\", + 4 = \"334\", + 5 = \"3345\"."},
+  {"q":"byte b = 100; b = b + 1; result?","choices":["101 stored","Compilation error - int to byte needs cast","Wraps silently","Runtime OverflowException"],"correct":1,"explain":"Arithmetic promotes to int; compound assignment b += 1 casts implicitly, but plain b = b + 1 does not compile."},
+  {"q":"final int[] a = {1,2}; a[0] = 9; result?","choices":["Compilation error","Runtime exception","{9,2} - final freezes the reference, not contents","a is now null"],"correct":2,"explain":"final on an array/object reference prevents reassignment, not mutation. This is why defensive copies matter."},
+  {"q":"Which loop prints 5 4 3 2 1?","choices":["for(int i=5;i>0;i--)","for(int i=0;i<5;i++)","while(i>0) i++;","for(int i=5;i>=0;i--)"],"correct":0,"explain":"Option D prints an extra 0; option A is the correct countdown."},
+  {"q":"switch on a String with case labels - which is invalid?","choices":["case \"a\":","final String X = \"a\"; case X:","case new String(\"a\"):","default:"],"correct":2,"explain":"Case labels must be compile-time constants; new String(...) is a runtime object."},
+  {"q":"int j = 0; outer: for(i...) for(j...) { break outer; } - break outer does what?","choices":["Exits inner loop only","Exits both loops","Compilation error","Skips one iteration"],"correct":1,"explain":"Labeled break exits the labeled construct, not just the innermost loop."},
+  {"q":"Which compiles: enhanced for modifying elements?","choices":["for (int x : arr) x *= 2;","for (int x : arr) arr[...] pattern","Elements copy - use for(int i=...) with arr[i] *= 2","for (int x : arr) modify arr via index"],"correct":1,"explain":"The loop variable is a copy; to change the array you need an index loop (or replace contents then reassign the variable)."},
+  {"q":"Arrays: int[] a = {1,2,3}; int[] b = a; b[0]=9; a[0]?","choices":["1","9","Compilation error","0"],"correct":1,"explain":"Assignment copies the reference; both names see the shared array. Copy with Arrays.copyOf/clone for independence."},
+  {"q":"Which is true about arrays vs ArrayList?","choices":["Arrays resize automatically","Arrays hold primitives without boxing, fixed size; ArrayList is a growable List","ArrayList holds primitives directly","Arrays cannot be multidimensional"],"correct":1,"explain":"Core trade-off: fixed size + primitives vs growable + generics/collection APIs. Arrays are also covariant (String[] is Object[] - a runtime hole)."},
+  {"q":"What is the output of: int[] a = new int[3]; System.out.println(a[1]);","choices":["null","0","Compilation error","Garbage"],"correct":1,"explain":"Primitive array elements default to zero. Object arrays default to null - a common interview pairing."},
+  {"q":"Which garbage collector became default in Java 9+?","choices":["Parallel GC","G1 GC","CMS","Serial GC"],"correct":1,"explain":"G1 replaced Parallel as default in JDK 9; ZGC/Shenandoah are opts for very large heaps and low pause goals."},
+  {"q":"Which flag prints GC activity?","choices":["-verbose:gc / -Xlog:gc (modern)","-gcprint","-showGC","-XX:+PrintGarbage"],"correct":0,"explain":"Unified logging replaced -verbose:gc: use -Xlog:gc*:file=gc.log:time,uptime on modern JDKs."},
+  {"q":"String.join(\"-\", List.of(\"a\",\"b\")) returns...","choices":["a-b","ab","a,b","[a-b]"],"correct":0,"explain":"join inserts the delimiter between elements; the collection's toString is not involved."},
+  {"q":"Which method converts a collection to an array of the right runtime type?","choices":["toArray() only","toArray(new String[0]) or toArray(String[]::new)","toArray(String.class)","cast trick"],"correct":1,"explain":"The size-0 array idiom (or Java 11 generator) preserves component type; raw toArray() returns Object[]."},
+  {"q":"Which statement about constructors is FALSE?","choices":["They can be overloaded","They can be private","They can be final","They cannot be abstract"],"correct":2,"explain":"Constructors cannot be final (nothing to override) - nor static, abstract, or native. Private constructors are valid (utility/singleton classes)."},
+  {"q":"super() must be...","choices":["The first statement of a constructor (or delegate via this())","Last statement","Optional anywhere","Implicit in every statement"],"correct":0,"explain":"The JVM initializes the superclass first; javac inserts super() when you don't. Interleaving other code before super() is illegal."},
+  {"q":"this() in a constructor...","choices":["Calls the parent constructor","Calls another constructor of the same class - must be first","Is illegal","Is allowed only in static blocks"],"correct":1,"explain":"Constructor chaining within the class; super() and this() are mutually exclusive as the first statement."},
+  {"q":"Static import allows...","choices":["Importing packages","Using static members without class qualification (import static a.b.C.x)","Importing private fields","Wildcard classes"],"correct":1,"explain":"Handy for constants and JUnit assertions (import static org.junit.Assert.*), overused it hurts readability."},
+  {"q":"Which of these is true about packages?","choices":["Package-private means accessible anywhere","A public class must be in a file of the same name (top-level)","Packages nest like namespaces with inheritance","java.lang must be imported"],"correct":1,"explain":"The filename rule applies to public top-level classes; packages are naming/access scopes, not nested access scopes; java.lang is auto-imported."},
+  {"q":"JAR files are...","choices":["Compressed disk images","ZIP archives with a MANIFEST.MF; optionally executable via Main-Class","Bytecode interpreters","Source bundles always"],"correct":1,"explain":"jar = zip + manifest conventions; Main-Class enables java -jar. Multi-release JARs (9+) can carry version-specific classes."},
+  {"q":"Module path vs classpath - key difference?","choices":["No difference","Modules declare required modules + export packages; classpath is a flat search list","Modules are faster only","Modules disable reflection entirely"],"correct":1,"explain":"JPMS enforces reliable configuration and strong encapsulation (with explicit opens for reflection); classpath has neither."},
+  {"q":"Which build tool convention maps src/main/java?","choices":["Ant","Maven/Gradle standard layout","Make","CMake"],"correct":1,"explain":"Maven and Gradle use src/main/java + src/main/resources (tests: src/test/java); Ant is fully manual - interviewers want the modern pair's basic lifecycle (compile/test/package)."},
+  {"q":"What does unit test naming AAA stand for?","choices":["Array-Assert-Alloc","Arrange-Act-Assert","Add-Apply-Approve","Abstract-Adapter-API"],"correct":1,"explain":"Structure each test in three phases - the readability backbone; keep one logical assertion set per test and no cross-test state."},
+  {"q":"Which JUnit 5 annotation parameterizes a test over inputs?","choices":["@Test","@ParameterizedTest with @ValueSource/@CsvSource","@Repeat(5)","@Theory"],"correct":1,"explain":"JUnit 5: @ParameterizedTest + sources; @Theory was JUnit 4's experimental API (params runner there was Parameterized)."},
+  {"q":"Mockito's main use?","choices":["Running tests faster","Replacing collaborators with mocks to isolate the unit","Coverage reporting","Load testing"],"correct":1,"explain":"Mocks emulate dependencies and verify interactions; over-mocking everything is the smell - prefer real objects for value types, fakes for stateful collaborators."},
+  {"q":"Which is a code smell?","choices":["Long parameter lists and god classes","Small cohesive methods","Immutable DTOs","Dependency injection"],"correct":0,"explain":"Also: duplicated logic, feature envy, primitive obsession, switch-on-type, and train wrecks (a.b().c().d()). Refactor with the pattern catalog (builder, strategy, visitor)."},
+  {"q":"Which pattern decouples an abstraction from its implementation so both vary independently?","choices":["Adapter","Bridge","Decorator","Facade"],"correct":1,"explain":"Bridge = two hierarchies (shape + renderer); Adapter converts interfaces; Decorator adds behavior; Facade simplifies a subsystem."},
+  {"q":"Which pattern gives a unified interface over a set of subsystem classes?","choices":["Facade","Flyweight","Mediator","Proxy"],"correct":0,"explain":"Facade hides complexity (one entry point). Mediator centralizes many-to-many comms; Proxy controls access; Flyweight shares state."},
+  {"q":"Observer vs publish-subscribe?","choices":["Identical","Observer: subjects notify registered observers directly; pub-sub adds a broker/topic and full decoupling","Observer needs a broker","Pub-sub is synchronous only"],"correct":1,"explain":"The distinction interviewers want: coupling to the subject's API vs messaging through an intermediary (JMS/event bus)."},
+  {"q":"Which collection gives O(1) amortized add and get by index?","choices":["LinkedList","ArrayList","TreeMap","HashSet"],"correct":1,"explain":"Array-backed index math. LinkedList is O(n) for both get(i) and middle adds."},
+  {"q":"Map<String,Integer> m = new HashMap<>(); m.put(null, 1); m.get(null)?","choices":["NullPointerException","1 - HashMap allows one null key","null always","IllegalArgumentException"],"correct":1,"explain":"HashMap permits one null key (hash 0 bucket) and null values; ConcurrentHashMap does not."},
+  {"q":"Which statement about equals is required by contract?","choices":["Reflexive, symmetric, transitive, consistent; equal objects must have equal hashCodes","Only reflexive","Only symmetric","hashCode may differ when equals is true"],"correct":0,"explain":"All five properties plus the hashCode consistency rule - violating any one quietly breaks collections."},
+  {"q":"Which serialization claim is TRUE?","choices":["static fields serialize","transient fields are skipped; serialVersionUID mismatch breaks compatibility","All objects serialize automatically","Serialization requires external libraries"],"correct":1,"explain":"Only instance state serializes; transient and static are excluded; version UID guards class evolution (writeObject/readObject for control)."},
+  {"q":"Files.readAllBytes vs streaming for a 5 GB log - which and why?","choices":["readAllBytes - simpler","Stream (BufferedReader/Files.lines) - avoids loading a multi-GB array","Files.readString","Read by FileInputStream byte by byte fast"],"correct":1,"explain":"Memory safety: stream lines with Files.lines or buffered channel; process incrementally. readAllBytes would exceed heap."},
+  {"q":"Which date API class is immutable and thread-safe?","choices":["SimpleDateFormat","java.util.Date","LocalDate / DateTimeFormatter","Calendar"],"correct":2,"explain":"java.time is immutable + thread-safe; Date is mutable, SimpleDateFormat notoriously unsafe to share, Calendar mutable and 0-based months."},
+  {"q":"A -versioned question: which LTS has virtual threads as final?","choices":["Java 8","Java 11","Java 17","Java 21"],"correct":3,"explain":"Virtual threads (JEP 444) shipped final in 21; preview earlier (19/20). 8, 11, 17, 21, 25 are the LTS lineup interviewers track."},
+  {"q":"Why does production logging use a facade (SLF4J) + implementation (Logback/Log4j2)?","choices":["Speed only","Library code can log without forcing an implementation; single runtime binding","JSON support","No reason - outdated"],"correct":1,"explain":"SLF4J at the boundary; parameterized logging (log.debug(\"x={}\", x)) avoids string concat cost, and a single backend prevents classloader mess."}
+]
+</script>
+<hr>
+<p>Previous: <a href="ocjp-practice-2.html">Test 2</a> · Back to <a href="ocjp-practice.html">Test 1</a> · Study plans: <a href="interview.html">Interview hub</a></p>
+    <div class="pager"><a class="pager-btn" href="ocjp-practice-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">OCJP Practice Test 2</span></a><a class="pager-btn pager-next" href="interview-threading.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Interview - Threads</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An integer synchronized counter class. - JavaSchool</title>
+<meta name="description" content="* Copyright 2005, JBoss Inc., and individual contributors as indicated">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-anintegersynchronizedcounterclass">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-data-type-0040.html">Data Type (0040)</a></nav>
+    <h1>An integer synchronized counter class.</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+  * JBoss, Home of Professional Open Source
+  * Copyright 2005, JBoss Inc., and individual contributors as indicated
+  * by the @authors tag. See the copyright.txt in the distribution for a
+  * full listing of individual contributors.
+  *
+  * This is free software; you can redistribute it and/or modify it
+  * under the terms of the GNU Lesser General Public License as
+  * published by the Free Software Foundation; either version 2.1 of
+  * the License, or (at your option) any later version.
+  *
+  * This software is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  * Lesser General Public License for more details.
+  *
+  * You should have received a copy of the GNU Lesser General Public
+  * License along with this software; if not, write to the Free
+  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+  */
+package org.jboss.util;
+import java.io.Serializable;
+/**
+ * An integer counter class.
+ *
+ * @version &lt;tt&gt;$Revision: 2800 $&lt;/tt&gt;
+ * @author  &lt;a href="mailto:jason@planet57.com"&gt;Jason Dillon&lt;/a&gt;
+ */
+public class Counter
+   implements Serializable, Cloneable
+{
+   /** The serialVersionUID */
+   private static final long serialVersionUID = 7736259185393081556L;
+   /** The current count */
+   private int count;
+   /**
+    * Construct a Counter with a starting value.
+    *
+    * @param count   Starting value for counter.
+    */
+   public Counter(final int count) {
+      this.count = count;
+   }
+   /**
+    * Construct a Counter.
+    */
+   public Counter() {}
+   /**
+    * Increment the counter. (Optional operation)
+    *
+    * @return  The incremented value of the counter.
+    */
+   public int increment() {
+      return ++count;
+   }
+   /**
+    * Decrement the counter. (Optional operation)
+    *
+    * @return  The decremented value of the counter.
+    */
+   public int decrement() {
+      return --count;
+   }
+   /**
+    * Return the current value of the counter.
+    *
+    * @return  The current value of the counter.
+    */
+   public int getCount() {
+      return count;
+   }
+   /**
+    * Reset the counter to zero. (Optional operation)
+    */
+   public void reset() {
+      this.count = 0;
+   }
+   /**
+    * Check if the given object is equal to this.
+    *
+    * @param obj  Object to test equality with.
+    * @return     True if object is equal to this.
+    */
+   public boolean equals(final Object obj) {
+      if (obj == this) return true;
+      if (obj != null &amp;&amp; obj.getClass() == getClass()) {
+         return ((Counter)obj).count == count;
+      }
+      return false;
+   }
+   /**
+    * Return a string representation of this.
+    *
+    * @return  A string representation of this.
+    */
+   public String toString() {
+      return String.valueOf(count);
+   }
+   /**
+    * Return a cloned copy of this object.
+    *
+    * @return  A cloned copy of this object.
+    */
+   public Object clone() {
+      try {
+         return super.clone();
+      }
+      catch (CloneNotSupportedException e) {
+         throw new InternalError();
+      }
+   }
+   /////////////////////////////////////////////////////////////////////////
+   //                                Wrappers                             //
+   /////////////////////////////////////////////////////////////////////////
+   /**
+    * Base wrapper class for other wrappers.
+    */
+   private static class Wrapper
+      extends Counter
+   {
+      /** The serialVersionUID */
+      private static final long serialVersionUID = -1803971437884946242L;
+      /** The wrapped counter */
+      protected final Counter counter;
+      public Wrapper(final Counter counter) {
+         this.counter = counter;
+      }
+      public int increment() {
+         return counter.increment();
+      }
+      public int decrement() {
+         return counter.decrement();
+      }
+      public int getCount() {
+         return counter.getCount();
+      }
+      public void reset() {
+         counter.reset();
+      }
+      public boolean equals(final Object obj) {
+         return counter.equals(obj);
+      }
+      public String toString() {
+         return counter.toString();
+      }
+      public Object clone() {
+         return counter.clone();
+      }
+   }
+   /**
+    * Return a synchronized counter.
+    *
+    * @param counter    Counter to synchronize.
+    * @return           Synchronized counter.
+    */
+   public static Counter makeSynchronized(final Counter counter) {
+      return new Wrapper(counter) {
+            /** The serialVersionUID */
+         private static final long serialVersionUID = -6024309396861726945L;
+            public synchronized int increment() {
+               return this.counter.increment();
+            }
+            public synchronized int decrement() {
+               return this.counter.decrement();
+            }
+            public synchronized int getCount() {
+               return this.counter.getCount();
+            }
+            public synchronized void reset() {
+               this.counter.reset();
+            }
+            public synchronized int hashCode() {
+               return this.counter.hashCode();
+            }
+            public synchronized boolean equals(final Object obj) {
+               return this.counter.equals(obj);
+            }
+            public synchronized String toString() {
+               return this.counter.toString();
+            }
+            public synchronized Object clone() {
+               return this.counter.clone();
+            }
+         };
+   }
+   /**
+    * Returns a directional counter.
+    *
+    * @param counter       Counter to make directional.
+    * @param increasing    True to create an increasing only
+    *                      or false to create a decreasing only.
+    * @return              A directional counter.
+    */
+   public static Counter makeDirectional(final Counter counter,
+                                         final boolean increasing)
+   {
+      Counter temp;
+      if (increasing) {
+         temp = new Wrapper(counter) {
+               /** The serialVersionUID */
+            private static final long serialVersionUID = 2161377898611431781L;
+               public int decrement() {
+                  throw new UnsupportedOperationException();
+               }
+               public void reset() {
+                  throw new UnsupportedOperationException();
+               }
+            };
+      }
+      else {
+         temp = new Wrapper(counter) {
+            /** The serialVersionUID */
+            private static final long serialVersionUID = -4683457706354663230L;
+               public int increment() {
+                  throw new UnsupportedOperationException();
+               }
+            };
+      }
+      return temp;
+   }
+}</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="threads-anapplicationexitswhentherearenonondaemonthreadsrunning.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">An application exits when ...</span></a><a class="pager-btn pager-next" href="regular-expressions-anothermatcherreset.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Another Matcher reset</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apache pivot ant build script - JavaSchool</title>
+<meta name="description" content="Licensed to the Apache Software Foundation (ASF) under one or more">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-ant-apachepivotantbuildscript">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-ant.html">Ant</a></nav>
+    <h1>Apache pivot ant build script</h1>
+<p>Apache pivot ant build script</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to you under the Apache License,
+Version 2.0 (the "License"); you may not use this file except in
+compliance with the License.  You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+--&gt;
+&lt;project name="pivot" default="compile"
+    xmlns:artifact="antlib:org.apache.maven.artifact.ant"&gt;
+    &lt;path id="classpath.javalib"&gt;
+        &lt;fileset dir="${java.home}/lib" includes="**/*.jar"/&gt;
+    &lt;/path&gt;
+    &lt;!-- Properties that affect the directories that are created as part of the build --&gt;
+    &lt;property name="folder.bin" value="ant-bin"/&gt;
+    &lt;property name="folder.dist" value="dist"/&gt;
+    &lt;property name="folder.doc" value="doc"/&gt;
+    &lt;property name="folder.install" value="install"/&gt;
+    &lt;property name="folder.lib" value="lib"/&gt;
+    &lt;property name="folder.deploy" value="deploy"/&gt;
+    &lt;!-- Keystore properties --&gt;
+    &lt;property name="keystore.location" value="etc/pivot.keystore"/&gt;
+    &lt;property name="keystore.alias" value="pivot"/&gt;
+    &lt;property name="keystore.passwd" value="apache"/&gt;
+    &lt;!-- Compiler properties --&gt;
+    &lt;property name="compiler.deprecation" value="true"/&gt;
+    &lt;property name="compiler.debug" value="false"/&gt;
+    &lt;property name="compiler.target" value="1.6"/&gt;
+    &lt;property name="compiler.encoding" value="UTF-8"/&gt;
+    &lt;property name="compiler.indexJars" value="true"/&gt;
+    &lt;property name="compiler.arg" value="-Xlint"/&gt;
+    &lt;!-- Test properties --&gt;
+    &lt;property name="test.verbose" value="false"/&gt;
+    &lt;!-- Dynamic properties --&gt;
+    &lt;property file="build.properties"/&gt;
+    &lt;property name="release" value="apache-${ant.project.name}-${version}"/&gt;
+    &lt;!-- Jar file names --&gt;
+    &lt;property name="jar.charts" value="${ant.project.name}-charts-${version}.jar" /&gt;
+    &lt;property name="jar.core" value="${ant.project.name}-core-${version}.jar" /&gt;
+    &lt;property name="jar.demos" value="${ant.project.name}-demos-${version}.jar" /&gt;
+    &lt;property name="jar.tools" value="${ant.project.name}-tools-${version}.jar" /&gt;
+    &lt;property name="jar.tutorials" value="${ant.project.name}-tutorials-${version}.jar" /&gt;
+    &lt;property name="jar.web" value="${ant.project.name}-web-${version}.jar" /&gt;
+    &lt;property name="jar.web-server" value="${ant.project.name}-web-server-${version}.jar" /&gt;
+    &lt;property name="jar.wtk" value="${ant.project.name}-wtk-${version}.jar" /&gt;
+    &lt;property name="jar.wtk-terra" value="${ant.project.name}-wtk-terra-${version}.jar" /&gt;
+    &lt;!-- Ant version check --&gt;
+    &lt;fail&gt;
+        &lt;condition&gt;
+            &lt;not&gt;
+                &lt;contains string="${ant.version}" substring="1.7"/&gt;
+            &lt;/not&gt;
+        &lt;/condition&gt;
+        Error:
+        Building Pivot requires Apache Ant 1.7 or greater. Please see the BUILD
+        file for more information.
+    &lt;/fail&gt;
+    &lt;!-- Compile macro --&gt;
+    &lt;macrodef name="compile"&gt;
+        &lt;attribute name="project"/&gt;
+        &lt;sequential&gt;
+            &lt;!-- JDK version check --&gt;
+            &lt;fail&gt;
+                &lt;condition&gt;
+                    &lt;not&gt;
+                        &lt;or&gt;
+                            &lt;equals arg1="${ant.java.version}" arg2="1.6"/&gt;
+                            &lt;equals arg1="${ant.java.version}" arg2="1.7"/&gt;
+                        &lt;/or&gt;
+                    &lt;/not&gt;
+                &lt;/condition&gt;
+                Error:
+                Building Pivot requires JDK 1.6 or greater. Please see the
+                BUILD file for more information.
+            &lt;/fail&gt;
+            &lt;!-- JUnit check --&gt;
+            &lt;fail&gt;
+                &lt;condition&gt;
+                    &lt;not&gt;
+                        &lt;available classname="org.junit.Test"/&gt;
+                    &lt;/not&gt;
+                &lt;/condition&gt;
+                Error:
+                JUnit 4 was not found on your classpath. Please see the BUILD
+                file for more information.
+            &lt;/fail&gt;
+            &lt;mkdir dir="@{project}/${folder.bin}"/&gt;
+            &lt;javac destDir="@{project}/${folder.bin}"
+                includejavaruntime="true"
+                deprecation="${compiler.deprecation}"
+                debug="${compiler.debug}"
+                target="${compiler.target}"
+                encoding="${compiler.encoding}"
+                failonerror="true"&gt;
+                &lt;src&gt;
+                    &lt;dirset dir="@{project}"&gt;
+                        &lt;include name="src"/&gt;
+                        &lt;include name="test"/&gt;
+                    &lt;/dirset&gt;
+                &lt;/src&gt;
+                &lt;compilerarg line="${compiler.arg}"/&gt;
+                &lt;classpath&gt;
+                    &lt;path refid="classpath.javalib"/&gt;
+                    &lt;dirset dir="${basedir}" includes="**/${folder.bin}"/&gt;
+                    &lt;fileset dir="@{project}" includes="lib/**/*.jar"/&gt;
+                &lt;/classpath&gt;
+            &lt;/javac&gt;
+        &lt;/sequential&gt;
+    &lt;/macrodef&gt;
+    &lt;!-- Test macro --&gt;
+    &lt;macrodef name="test"&gt;
+        &lt;attribute name="project"/&gt;
+        &lt;sequential&gt;
+            &lt;echo message="@{project}: Executing test cases..."/&gt;
+            &lt;condition property="test.formatter"&gt;
+                &lt;istrue value="${test.verbose}"/&gt;
+            &lt;/condition&gt;
+            &lt;junit fork="true"&gt;
+                &lt;classpath&gt;
+                    &lt;path refid="classpath.javalib"/&gt;
+                    &lt;dirset dir="${basedir}" includes="**/${folder.bin}"/&gt;
+                    &lt;dirset dir="@{project}" includes="test"/&gt;
+                    &lt;fileset dir="@{project}" includes="lib/**/*.jar"/&gt;
+                &lt;/classpath&gt;
+                &lt;formatter type="brief" usefile="false" if="test.formatter"/&gt;
+                &lt;batchtest&gt;
+                    &lt;fileset dir="@{project}/test" includes="**/*Test.java"/&gt;
+                &lt;/batchtest&gt;
+            &lt;/junit&gt;
+        &lt;/sequential&gt;
+    &lt;/macrodef&gt;
+    &lt;!-- Package macro --&gt;
+    &lt;macrodef name="package"&gt;
+        &lt;attribute name="project"/&gt;
+        &lt;attribute name="jarFile"/&gt;
+        &lt;attribute name="title"/&gt;
+        &lt;sequential&gt;
+            &lt;mkdir dir="${folder.lib}"/&gt;
+            &lt;jar destfile="${folder.lib}/@{jarFile}" index="${compiler.indexJars}"&gt;
+                &lt;metainf dir="${basedir}"&gt;
+                    &lt;include name="LICENSE"/&gt;
+                    &lt;include name="NOTICE"/&gt;
+                    &lt;include name="README"/&gt;
+                &lt;/metainf&gt;
+                &lt;manifest&gt;
+                    &lt;attribute name="Sealed" value="true"/&gt;
+                    &lt;attribute name="Implementation-Vendor-Id" value="org.apache"/&gt;
+                    &lt;attribute name="Implementation-Vendor" value="The Apache Software Foundation"/&gt;
+                    &lt;attribute name="Implementation-Title" value="Apache Pivot @{title}"/&gt;
+                    &lt;attribute name="Implementation-Version" value="${version}"/&gt;
+                &lt;/manifest&gt;
+                &lt;fileset dir="@{project}/${folder.bin}"&gt;
+                    &lt;exclude name="**/test/**"/&gt;
+                &lt;/fileset&gt;
+                &lt;fileset dir="@{project}/src"&gt;
+                    &lt;exclude name="**/*.java"/&gt;
+                    &lt;exclude name="**/package.html"/&gt;
+                &lt;/fileset&gt;
+            &lt;/jar&gt;
+        &lt;/sequential&gt;
+    &lt;/macrodef&gt;
+    &lt;!-- Clean macro --&gt;
+    &lt;macrodef name="clean"&gt;
+        &lt;attribute name="project"/&gt;
+        &lt;sequential&gt;
+            &lt;delete includeemptydirs="true"&gt;
+                &lt;fileset dir="@{project}"&gt;
+                    &lt;include name="${folder.bin}/**"/&gt;
+                    &lt;include name="${folder.deploy}/**"/&gt;
+                &lt;/fileset&gt;
+                &lt;fileset dir="${basedir}"&gt;
+                    &lt;include name="${folder.lib}/${ant.project.name}-@{project}-${version}.jar"/&gt;
+                &lt;/fileset&gt;
+            &lt;/delete&gt;
+        &lt;/sequential&gt;
+    &lt;/macrodef&gt;
+    &lt;!-- Compile all classes (tests included) --&gt;
+    &lt;target name="compile" description="Compiles all projects"
+        depends="charts, core, demos, tests, tools, tutorials, web, web-server, wtk, wtk-terra"/&gt;
+    &lt;!-- Package JAR files --&gt;
+    &lt;target name="package" description="Packages all projects into JAR files" depends="compile"&gt;
+        &lt;package project="charts" jarFile="${jar.charts}" title="Charts"/&gt;
+        &lt;package project="core" jarFile="${jar.core}" title="Core"/&gt;
+        &lt;package project="demos" jarFile="${jar.demos}" title="Demos"/&gt;
+        &lt;package project="tools" jarFile="${jar.tools}" title="Tools"/&gt;
+        &lt;package project="tutorials" jarFile="${jar.tutorials}" title="Tutorials"/&gt;
+        &lt;package project="web" jarFile="${jar.web}" title="Web Queries"/&gt;
+        &lt;package project="web-server" jarFile="${jar.web-server}" title="Web Queries Server"/&gt;
+        &lt;package project="wtk" jarFile="${jar.wtk}" title="WTK"/&gt;
+        &lt;package project="wtk-terra" jarFile="${jar.wtk-terra}" title="WTK Terra Theme Provider"/&gt;
+    &lt;/target&gt;
+    &lt;!-- Run unit tests --&gt;
+    &lt;target name="test" description="Executes unit tests" depends="compile"&gt;
+        &lt;test project="core"/&gt;
+        &lt;test project="web"/&gt;
+    &lt;/target&gt;
+    &lt;!-- Clean --&gt;
+    &lt;target name="clean" description="Removes all build artifacts"&gt;
+        &lt;clean project="charts"/&gt;
+        &lt;clean project="core"/&gt;
+        &lt;clean project="demos"/&gt;
+        &lt;clean project="tests"/&gt;
+        &lt;clean project="tools"/&gt;
+        &lt;clean project="tutorials"/&gt;
+        &lt;clean project="web"/&gt;
+        &lt;clean project="web-server"/&gt;
+        &lt;clean project="wtk"/&gt;
+        &lt;clean project="wtk-terra"/&gt;
+        &lt;delete dir="${folder.dist}"/&gt;
+        &lt;delete dir="${folder.doc}"/&gt;
+        &lt;delete dir="${folder.install}"/&gt;
+        &lt;delete dir="${folder.lib}"/&gt;
+    &lt;/target&gt;
+    &lt;!-- Javadoc --&gt;
+    &lt;target name="doc" description="Generates API documentation in ${folder.doc}"&gt;
+        &lt;javadoc packagenames="org.apache.pivot.*" destdir="${folder.doc}"
+            author="true" version="true" use="true"
+            classpath="${java.class.path}"&gt;
+            &lt;classpath&gt;
+                &lt;fileset dir="web-server/lib" includes="**/*.jar"/&gt;
+                &lt;path refid="classpath.javalib"/&gt;
+            &lt;/classpath&gt;
+            &lt;packageset dir="charts/src" includes="**/*"/&gt;
+            &lt;packageset dir="core/src" includes="**/*"/&gt;
+            &lt;packageset dir="tools/src" includes="**/*"/&gt;
+            &lt;packageset dir="web/src" includes="**/*"/&gt;
+            &lt;packageset dir="web-server/src" includes="**/*"/&gt;
+            &lt;packageset dir="wtk/src" includes="**/*"/&gt;
+            &lt;packageset dir="wtk-terra/src" includes="**/*"/&gt;
+            &lt;link href="http://java.sun.com/javase/6/docs/api"/&gt;
+            &lt;link href="http://java.sun.com/j2ee/1.4/docs/api"/&gt;
+        &lt;/javadoc&gt;
+    &lt;/target&gt;
+    &lt;!-- Individual compile targets resolve inter-project dependency --&gt;
+    &lt;target name="charts" depends="core, wtk"&gt;
+        &lt;compile project="charts"/&gt;
+    &lt;/target&gt;
+    &lt;target name="core"&gt;
+        &lt;compile project="core"/&gt;
+    &lt;/target&gt;
+    &lt;target name="demos" depends="core, wtk, web"&gt;
+        &lt;compile project="demos"/&gt;
+    &lt;/target&gt;
+    &lt;target name="tests" depends="core, web, wtk, wtk-terra"&gt;
+        &lt;compile project="tests"/&gt;
+    &lt;/target&gt;
+    &lt;target name="tools" depends="core, wtk"&gt;
+        &lt;compile project="tools"/&gt;
+    &lt;/target&gt;
+    &lt;target name="tutorials" depends="core, wtk, web, tools"&gt;
+        &lt;compile project="tutorials"/&gt;
+    &lt;/target&gt;
+    &lt;target name="web" depends="core"&gt;
+        &lt;compile project="web"/&gt;
+    &lt;/target&gt;
+    &lt;target name="web-server" depends="core, web"&gt;
+        &lt;compile project="web-server"/&gt;
+    &lt;/target&gt;
+    &lt;target name="wtk" depends="core"&gt;
+        &lt;fail&gt;
+            &lt;condition&gt;
+                &lt;not&gt;
+                    &lt;available classname="netscape.javascript.JSObject"
+                        classpathref="classpath.javalib"/&gt;
+                &lt;/not&gt;
+            &lt;/condition&gt;
+            Error:
+            LiveConnect was not found on your classpath. Please see the BUILD
+            file for more information.
+        &lt;/fail&gt;
+        &lt;compile project="wtk"/&gt;
+    &lt;/target&gt;
+    &lt;target name="wtk-terra" depends="core, wtk"&gt;
+        &lt;compile project="wtk-terra"/&gt;
+    &lt;/target&gt;
+    &lt;!-- Package source distribution --&gt;
+    &lt;target name="dist" description="Generates source release in ${folder.dist}"
+        depends="clean, trim-whitespace"&gt;
+        &lt;mkdir dir="${folder.dist}/${release}-src"/&gt;
+        &lt;!-- Copy the source files to the release folder --&gt;
+        &lt;copy todir="${folder.dist}/${release}-src"&gt;
+            &lt;fileset dir="${basedir}"&gt;
+                &lt;include name="**/*"/&gt;
+                &lt;!-- Exclude hidden files and folders --&gt;
+                &lt;exclude name="**/.*/**"/&gt;
+                &lt;!-- Exclude folders containing compilation artifacts --&gt;
+                &lt;exclude name="**/${folder.bin}/**"/&gt;
+                &lt;exclude name="${folder.dist}/**"/&gt;
+                &lt;exclude name="${folder.doc}/**"/&gt;
+                &lt;exclude name="${folder.install}/**"/&gt;
+                &lt;exclude name="${folder.lib}/**"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+        &lt;!-- Create .zip archive --&gt;
+        &lt;zip destfile="${folder.dist}/${release}-src.zip" level="9"&gt;
+            &lt;fileset dir="${folder.dist}" includes="${release}-src/**"/&gt;
+        &lt;/zip&gt;
+        &lt;checksum file="${folder.dist}/${release}-src.zip" algorithm="md5"/&gt;
+        &lt;checksum file="${folder.dist}/${release}-src.zip" algorithm="sha"/&gt;
+        &lt;!-- Create .tar.gz archive --&gt;
+        &lt;tar destfile="${folder.dist}/${release}-src.tar" longfile="gnu"&gt;
+            &lt;fileset dir="${folder.dist}" includes="${release}-src/**"/&gt;
+        &lt;/tar&gt;
+        &lt;gzip src="${folder.dist}/${release}-src.tar"
+            destfile="${folder.dist}/${release}-src.tar.gz"/&gt;
+        &lt;delete file="${folder.dist}/${release}-src.tar"/&gt;
+        &lt;checksum file="${folder.dist}/${release}-src.tar.gz" algorithm="md5"/&gt;
+        &lt;checksum file="${folder.dist}/${release}-src.tar.gz" algorithm="sha"/&gt;
+    &lt;/target&gt;
+    &lt;!-- Package binary distribution --&gt;
+    &lt;target name="install" description="Generates binary release in ${folder.install}"
+        depends="clean, package, doc, deploy"&gt;
+        &lt;mkdir dir="${folder.install}/${release}/lib"/&gt;
+        &lt;mkdir dir="${folder.install}/${release}/doc"/&gt;
+        &lt;mkdir dir="${folder.install}/${release}/webapps"/&gt;
+        &lt;!-- Copy base files to the install folder --&gt;
+        &lt;copy todir="${folder.install}/${release}"&gt;
+            &lt;fileset dir="${basedir}"&gt;
+                &lt;include name="LICENSE"/&gt;
+                &lt;include name="NOTICE"/&gt;
+                &lt;include name="README"/&gt;
+                &lt;include name="RELEASE-NOTES"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+        &lt;!-- Copy release binaries --&gt;
+        &lt;copy todir="${folder.install}/${release}/lib"&gt;
+            &lt;fileset dir="${folder.lib}"&gt;
+                &lt;include name="${jar.charts}"/&gt;
+                &lt;include name="${jar.core}"/&gt;
+                &lt;include name="${jar.tools}"/&gt;
+                &lt;include name="${jar.web}"/&gt;
+                &lt;include name="${jar.web-server}"/&gt;
+                &lt;include name="${jar.wtk}"/&gt;
+                &lt;include name="${jar.wtk-terra}"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+        &lt;!-- Copy documentation --&gt;
+        &lt;copy todir="${folder.install}/${release}/doc"&gt;
+            &lt;fileset dir="${folder.doc}"/&gt;
+        &lt;/copy&gt;
+        &lt;!-- Copy webapps --&gt;
+        &lt;copy todir="${folder.install}/${release}/webapps"&gt;
+            &lt;fileset dir="${folder.lib}"&gt;
+                &lt;include name="${ant.project.name}-demos.war"/&gt;
+                &lt;include name="${ant.project.name}-tutorials.war"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+        &lt;!-- Create .zip archive --&gt;
+        &lt;zip destfile="${folder.install}/${release}.zip" level="9"&gt;
+            &lt;fileset dir="${folder.install}" includes="${release}/**"/&gt;
+        &lt;/zip&gt;
+        &lt;checksum file="${folder.install}/${release}.zip" algorithm="md5"/&gt;
+        &lt;checksum file="${folder.install}/${release}.zip" algorithm="sha"/&gt;
+        &lt;!-- Create .tar.gz archive --&gt;
+        &lt;tar destfile="${folder.install}/${release}.tar" longfile="gnu"&gt;
+            &lt;fileset dir="${folder.install}" includes="${release}/**"/&gt;
+        &lt;/tar&gt;
+        &lt;gzip src="${folder.install}/${release}.tar" destfile="${folder.install}/${release}.tar.gz"/&gt;
+        &lt;delete file="${folder.install}/${release}.tar"/&gt;
+        &lt;checksum file="${folder.install}/${release}.tar.gz" algorithm="md5"/&gt;
+        &lt;checksum file="${folder.install}/${release}.tar.gz" algorithm="sha"/&gt;
+    &lt;/target&gt;
+    &lt;!-- Generate deployment files --&gt;
+    &lt;target name="deploy" depends="package"&gt;
+        &lt;!-- Sign JARS --&gt;
+        &lt;mkdir dir="${folder.lib}/signed"/&gt;
+        &lt;copy todir="${folder.lib}/signed"&gt;
+            &lt;fileset dir="${folder.lib}"&gt;
+                &lt;include name="*.jar"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+        &lt;signjar keystore="${keystore.location}" storepass="${keystore.passwd}"
+            alias="${keystore.alias}" preservelastmodified="true" lazy="true"&gt;
+            &lt;path&gt;
+                &lt;fileset dir="${folder.lib}/signed" includes="*.jar" /&gt;
+            &lt;/path&gt;
+        &lt;/signjar&gt;
+        &lt;copy todir="${folder.lib}"&gt;
+            &lt;fileset dir="${folder.lib}/signed" includes="*.jar" /&gt;
+            &lt;mapper type="glob" from="*.jar" to="*.signed.jar"/&gt;
+        &lt;/copy&gt;
+        &lt;delete dir="${folder.lib}/signed"/&gt;
+        &lt;!-- Deploy demos --&gt;
+        &lt;mkdir dir="demos/${folder.deploy}/lib"/&gt;
+        &lt;copy todir="demos/${folder.deploy}/lib"&gt;
+            &lt;fileset dir="${folder.lib}"&gt;
+                &lt;include name="*.jar"/&gt;
+                &lt;exclude name="*-server*.jar"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+        &lt;!-- Transform demos index --&gt;
+        &lt;xslt basedir="demos/www"
+            destdir="demos/${folder.deploy}"
+            extension=".html"
+            force="true"
+            style="demos/xsl/index.xsl"
+            includes="index.xml"/&gt;
+        &lt;!-- Transform demos html --&gt;
+        &lt;xslt basedir="demos/www"
+            destdir="demos/${folder.deploy}"
+            extension=".html"
+            force="true"
+            style="demos/xsl/demo.html.xsl"
+            includes="*.xml"
+            excludes="index.xml"&gt;
+            &lt;param name="version" expression="${version}"/&gt;
+            &lt;param name="root" expression="${ant.project.name}-demos"/&gt;
+        &lt;/xslt&gt;
+        &lt;!-- Transform demos jnlp --&gt;
+        &lt;xslt basedir="demos/www"
+            destdir="demos/${folder.deploy}"
+            extension=".jnlp"
+            force="true"
+            style="demos/xsl/demo.jnlp.xsl"
+            includes="*.xml"
+            excludes="index.xml"&gt;
+            &lt;param name="version" expression="${version}"/&gt;
+            &lt;param name="root" expression="${ant.project.name}-demos"/&gt;
+        &lt;/xslt&gt;
+        &lt;!-- Copy static demo files to deploy folder --&gt;
+        &lt;copy todir="demos/${folder.deploy}"&gt;
+            &lt;fileset dir="demos/www" excludes="**/*.xml"/&gt;
+        &lt;/copy&gt;
+        &lt;!-- Generate demos WAR --&gt;
+        &lt;war destfile="${folder.lib}/${ant.project.name}-demos.war" webxml="demos/web.xml"&gt;
+            &lt;fileset dir="demos/${folder.deploy}"/&gt;
+        &lt;/war&gt;
+        &lt;!-- Deploy tutorials --&gt;
+        &lt;mkdir dir="tutorials/${folder.deploy}/lib"/&gt;
+        &lt;copy todir="tutorials/${folder.deploy}/lib"&gt;
+            &lt;fileset dir="${folder.lib}"&gt;
+                &lt;include name="*.jar"/&gt;
+                &lt;exclude name="*-demos*.jar"/&gt;
+                &lt;exclude name="*-server*.jar"/&gt;
+            &lt;/fileset&gt;
+        &lt;/copy&gt;
+        &lt;!-- Transform tutorials index --&gt;
+        &lt;xslt basedir="tutorials/www"
+            destdir="tutorials/${folder.deploy}"
+            extension=".html"
+            force="true"
+            style="tutorials/xsl/index.xsl"
+            includes="index.xml"/&gt;
+        &lt;!-- Transform tutorials html --&gt;
+        &lt;xslt basedir="tutorials/www"
+            destdir="tutorials/${folder.deploy}"
+            extension=".html"
+            force="true"
+            style="tutorials/xsl/tutorial.xsl"
+            includes="*.xml"
+            excludes="index.xml"&gt;
+            &lt;param name="version" expression="${version}"/&gt;
+        &lt;/xslt&gt;
+        &lt;!-- Copy static tutorial files to deploy folder --&gt;
+        &lt;copy todir="tutorials/${folder.deploy}"&gt;
+            &lt;fileset dir="tutorials/www" excludes="**/*.xml"/&gt;
+        &lt;/copy&gt;
+        &lt;!-- Generate tutorials WAR --&gt;
+        &lt;war destfile="${folder.lib}/${ant.project.name}-tutorials.war" webxml="tutorials/web.xml"&gt;
+            &lt;fileset dir="tutorials/${folder.deploy}"/&gt;
+        &lt;/war&gt;
+    &lt;/target&gt;
+    &lt;!-- Installs JARs to local Maven repository --&gt;
+    &lt;target name="maven-install" depends="clean, package"&gt;
+        &lt;artifact:install file="pom.xml"&gt;
+            &lt;artifact:pom file="pom.xml"/&gt;
+        &lt;/artifact:install&gt;
+        &lt;artifact:install file="lib/pivot-core-${version}.jar"&gt;
+            &lt;artifact:pom file="core/pom.xml"/&gt;
+        &lt;/artifact:install&gt;
+        &lt;artifact:install file="lib/pivot-web-${version}.jar"&gt;
+            &lt;artifact:pom file="web/pom.xml"/&gt;
+        &lt;/artifact:install&gt;
+        &lt;artifact:install file="lib/pivot-wtk-${version}.jar"&gt;
+            &lt;artifact:pom file="wtk/pom.xml"/&gt;
+        &lt;/artifact:install&gt;
+        &lt;artifact:install file="lib/pivot-wtk-terra-${version}.jar"&gt;
+            &lt;artifact:pom file="wtk-terra/pom.xml"/&gt;
+        &lt;/artifact:install&gt;
+        &lt;artifact:install file="lib/pivot-charts-${version}.jar"&gt;
+            &lt;artifact:pom file="charts/pom.xml"/&gt;
+        &lt;/artifact:install&gt;
+    &lt;/target&gt;
+    &lt;!-- Remove trailing white space in all source files --&gt;
+    &lt;target name="trim-whitespace"&gt;
+        &lt;fileset id="trimfiles" dir="."&gt;
+            &lt;include name="BUILD"/&gt;
+            &lt;include name="LICENSE"/&gt;
+            &lt;include name="NOTICE"/&gt;
+            &lt;include name="README"/&gt;
+            &lt;include name="RELEASE-NOTES"/&gt;
+            &lt;include name="**/*.java"/&gt;
+            &lt;include name="**/*.html"/&gt;
+            &lt;include name="**/*.jsp"/&gt;
+            &lt;include name="**/*.txt"/&gt;
+            &lt;include name="**/*.properties"/&gt;
+            &lt;include name="**/*.xml"/&gt;
+            &lt;include name="**/*.wtkx"/&gt;
+            &lt;include name="**/*.wtkd"/&gt;
+            &lt;include name="**/*.json"/&gt;
+        &lt;/fileset&gt;
+        &lt;replaceregexp match="[\t]" replace="    " flags="gm" byline="true"&gt;
+            &lt;fileset refid="trimfiles"/&gt;
+        &lt;/replaceregexp&gt;
+        &lt;replaceregexp match="[\t ]+$" replace="" flags="gm" byline="true"&gt;
+            &lt;fileset refid="trimfiles"/&gt;
+        &lt;/replaceregexp&gt;
+    &lt;/target&gt;
+&lt;/project&gt;
+File: build.properties
+## Licensed to the Apache Software Foundation (ASF) under one or more
+## contributor license agreements.  See the NOTICE file distributed with
+## this work for additional information regarding copyright ownership.
+## The ASF licenses this file to you under the Apache License,
+## Version 2.0 (the "License"); you may not use this file except in
+## compliance with the License.  You may obtain a copy of the License at
+#
+##     http://www.apache.org/licenses/LICENSE-2.0
+#
+## Unless required by applicable law or agreed to in writing, software
+## distributed under the License is distributed on an "AS IS" BASIS,
+## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+## See the License for the specific language governing permissions and
+## limitations under the License.
+version=1.4</code></pre></div>
+<ol><li>Ant script for xmlgraphics-commons</li></ol>
+<p>---  ---</p>
+<ol><li>nutch ant script</li><li>rhino ant build script</li><li>apache solr ant script</li><li>Tomcat ant build script</li><li>OFBiz ant build script</li><li>Apache Lenya Build System</li><li>XmlSchema ant script</li><li>xml security</li><li>velocity tools ant script</li><li>weka build script</li><li>xml bean ant script</li><li>xml graphics common ant script</li><li>uPortal ant script</li><li>SmartGWT ant script</li><li>Build file to fetch maven2 tasks; extracted from (Ant's) fetch.xml</li><li>Build file to fetch optional libraries for Apache Ant</li><li>Ant build script</li><li>Build script for apache-cassandra-0.5.1-src</li><li>apache-log4j-site\build.xml</li><li>apache-roller-src-4.0.1</li><li>Build script from apache dbutils</li><li>Fop build script</li><li>Google guice ant script</li><li>GWT ant script</li><li>hadoop ant build script</li><li>jakarta jmeter ant script</li><li>jakarta oro ant script</li><li>jakarta regexp ant script</li><li>jedit build script</li><li>jibx ant build script</li><li>lucene ant build script</li></ol>
+    <div class="pager"><a class="pager-btn" href="collections-data-structure-addsalltheelementsofthegivenarraysintoanewshorttypear.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Adds all the elements of t...</span></a><a class="pager-btn pager-next" href="spring-beaninjectionmap.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Bean Injection</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

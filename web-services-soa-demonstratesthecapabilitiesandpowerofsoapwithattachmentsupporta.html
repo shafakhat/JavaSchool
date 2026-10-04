@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demonstrates the capabilities and power of SOAP with Attachment support and the Attachment API of AXIS2 - JavaSchool</title>
+<meta name="description" content="Demonstrates the capabilities and power of SOAP with Attachment support and the Attachment API of AXIS2">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-web-services-soa-demonstratesthecapabilitiesandpowerofsoapwithattachmentsupporta">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Imported - java2s Archive</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-web-services-soa.html">Web Services SOA</a></nav>
+    <h1>Demonstrates the capabilities and power of SOAP with Attachment support and the Attachment API of AXIS2</h1>
+<p>Demonstrates the capabilities and power of SOAP with Attachment support and the Attachment API of AXIS2</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Sample: SOAP with Attachments
+================================
+Introduction
+============
+This sample demonstrates the capabilities and power of SOAP with Attachment support and the
+Attachment API of AXIS2. More information about Axis2 attachment implementation can be found at
+http://ws.apache.org/axis2/1_1/mtom-guide.html.
+This sample includes a service and a client which can be used to upload a file to the server using
+SOAP message containing a SOAP with Attachment type binary attachment. The service is written and
+deployed using the RCPMessageReceiver and a POJO(Plain Old Java Object). The POJO service class uses
+the Attachment API of the MessageContext to retrieve the received attachment.The client program is
+written using the OperationClient API of Axis2 together with the Attachment API of MessageContext.
+Objectives
+==========
+ * Writing a POJO (Plain Old Java Object) based service to access attachments.
+ * Implement a Axis2 OperationClient based Web Service client to invoke the service with SOAP
+   with Attachment type attachments.
+ * Invoke the deployed service.
+Prerequisites
+=============
+Install Apache Ant 1.6.2 or later
+Running the Sample:
+===================
+The files belonging to this sample are contained in the samples/soapwithattachments folder of the
+extracted Axis2 binary distribution, which will be called here after as SWA_SAMPLE_DIR. The
+location of the extracted binary distribution will be refered as AXIS2_DIST. There is a
+"build.xml" Ant script in the SWA_SAMPLE_DIR that contains build targets for building the service
+archive and running the client application - all described in steps below.
+1. Generate the service
+Use "ant generate.service" command in the SWA_SAMPLE_DIR to build the service. Generated service
+will automatically gets copied in to the AXIS2_DIST/repository/services directory. Source file
+ralating to this service can be found at
+SWA_SAMPLE_DIR/src/sample/soapwithattachments/service/AttachmentService.java. The services.xml used
+when building this service can be found at SWA_SAMPLE_DIR/resources directory.
+2. Deploy the service
+Run the AXIS2_DIST/bin/axis2server.{sh.bat} script to start the standalone axis2 server. This server
+will deploy all the srvices available at AXIS2_DIST/repository/services directory. Alternatively you
+can drop the sample-swa.aar service archive to the services directory of a running Axis2 servlet)
+3. Running the client
+Use "ant run.client -Dfile &lt;file to be send&gt; -Ddest &lt;destination file name&gt;" command in the
+SWA_SAMPLE_DIR to build and run the client. Source file ralating to the client can be found at
+SWA_SAMPLE_DIR/src/sample/soapwithattachments/client/SWAClient.java.
+Help
+====
+Please contact axis-user list (axis-user@ws.apache.org) if you have any trouble running the sample.</code></pre></div>
+<p>AXIS2-soapwithattachments.zip( 8 k)</p>
+<ol><li>JAX-WS: SOAP Element Any Type</li><li>JAX-WS: SOAP Element</li><li>A SOAP message with an attachment and XML-binary Optimized Packaging</li><li>Hello World SOAP12 Demo using Document/Literal Style: the use of Apache CXF's SOAP 1.2 capabilities</li><li>This demo illustrates Apache CXF's support for SOAP headers</li></ol>
+<p>w__w_w_.___j__av___a_2_s___._c___om_</p>
+    <div class="pager"><a class="pager-btn" href="data-type-addsanumberofhourstoadatereturninganewobject.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Adds a number of hours to ...</span></a><a class="pager-btn pager-next" href="data-type-getslencharactersfromthemiddleofastring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Gets len characters from t...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>
