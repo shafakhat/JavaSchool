@@ -323,3 +323,9 @@
     renderQuiz();
   }
 })();
+
+/* auto-updating footer year (static site, no build step) */
+(function () {
+  var y = document.getElementById('site-year');
+  if (y) { y.textContent = String(new Date().getFullYear()); }
+})();
