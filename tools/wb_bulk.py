@@ -113,16 +113,29 @@ def cdx_list(prefix: str, resume_file: Path) -> list[tuple[str, str]]:
 # Fetch / extract
 # --------------------------------------------------------------------------- #
 
+def _curl(url: str, timeout: int) -> tuple[int, bytes]:
+    import subprocess
+    cmd = ["curl", "-s", "-L", "--compressed", "--max-time", str(timeout),
+           "--retry", "3", "--retry-all-errors", "--retry-delay", "1",
+           "-A", UA, "-w", "\n__HTTP_CODE__%{http_code}", url]
+    out = subprocess.run(cmd, capture_output=True, timeout=timeout + 25).stdout
+    marker = b"\n__HTTP_CODE__"
+    if marker in out:
+        body, _, code = out.rpartition(marker)
+        try:
+            return int(code.strip()), body
+        except ValueError:
+            return 0, body
+    return 0, out
+
+
 def fetch_snapshot(url: str, ts: str, timeout: int = 40) -> str | None:
     fetch_url = f"https://web.archive.org/web/{ts}id_/{url}"
-    req = urllib.request.Request(fetch_url, headers={"User-Agent": UA, "Accept-Encoding": "gzip"})
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            data = r.read()
-    except urllib.error.HTTPError as e:
-        if e.code in (404, 410):
-            return None
-        raise
+    code, data = _curl(fetch_url, timeout)
+    if code in (404, 410):
+        return None
+    if code != 200 or not data:
+        raise RuntimeError(f"http {code}")
     if data[:2] == b"\x1f\x8b":
         try:
             data = gzip.decompress(data)
@@ -214,18 +227,21 @@ def worker(item: tuple[str, str], done: set[str], min_delay: float, order_base: 
         return
     time.sleep(min_delay * (0.4 + random.random()))
     raw = None
-    for attempt in range(4):
+    for attempt in range(10):
         try:
             raw = fetch_snapshot(url, ts)
             break
         except urllib.error.HTTPError as e:
             if e.code in (429, 503, 502, 500):
-                time.sleep(10 * (attempt + 1) + random.random() * 5)
+                time.sleep(5 + attempt * 3 + random.random() * 3)
                 continue
-            raw = None
-            break
-        except Exception:  # noqa: BLE001
-            time.sleep(4 * (attempt + 1))
+            if e.code == 404:
+                raw = None
+                break
+            time.sleep(0.4 + attempt * 0.3)
+            continue
+        except Exception:  # noqa: BLE001 - sandbox drops ~2/3 of connections instantly
+            time.sleep(0.25 + attempt * 0.25 + random.random() * 0.25)
             continue
     if raw is None:
         manifest_append("-", url)

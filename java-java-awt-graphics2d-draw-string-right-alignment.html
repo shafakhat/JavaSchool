@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java AWT Graphics2D draw String right alignment - JavaSchool</title>
+<meta name="description" content="@Override//www.java2s.compublicvoid paintComponent(Graphics g) {">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-java-java-awt-graphics2d-draw-string-right-alignment">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Reference</span></nav>
+    <h1>Java AWT Graphics2D draw String right alignment</h1>
+<ul><li>java.awt</li><li>java.awt AWTEvent BasicStroke BorderLayout CardLayout Color Component Container Dimension EventQueue FileDialog FlowLayout FocusTraversalPolicy Font FontMetrics GradientPaint Graphics Graphics2D GraphicsDevice GridBagConstraints GridBagLayout GridLayout Image Insets ItemSelectable KeyboardFocusManager KeyEventDispatcher LayoutManager2 LinearGradientPaint Point RadialGradientPaint Rectangle TexturePaint Toolkit</li></ul>
+<h2 id="description">Description</h2>
+<p>Java AWT Graphics2D draw String right alignment</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.font.FontRenderContext;
+import java.awt.geom.Rectangle2D;
+import java.util.Random;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+publicclass Main extendsJPanel {
+  Random rnd = newRandom();
+
+  @Override//www.java2s.compublicvoid paintComponent(Graphics g) {
+    super.paintComponent(g);
+
+    Graphics2D g2d = (Graphics2D) g;
+    g2d.setBackground(Color.WHITE);
+    g2d.clearRect(0, 0, getParent().getWidth(), getParent().getHeight());
+    // antialising
+    g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+    // SanSerif
+    g2d.setPaint(Color.BLUE);
+    Font serif = newFont(Font.SERIF, Font.PLAIN, 30);
+    g2d.setFont(serif);
+
+    String sentence1 = "The quick brown fox jumped";
+    String sentence2 = "over the lazy dog.";
+
+    FontRenderContext fontRenderCtx = g2d.getFontRenderContext();
+    Rectangle2D bounds1 = serif.getStringBounds(sentence1, fontRenderCtx);
+    Rectangle2D bounds2 = serif.getStringBounds(sentence2, fontRenderCtx);
+
+    int y = 50;
+    int x = 0;
+    FontMetrics fm = g2d.getFontMetrics();
+    int spaceRow = fm.getDescent() + fm.getLeading() + fm.getAscent();
+
+    x = (getParent().getWidth() - (int) bounds1.getWidth());
+    g2d.drawString(sentence1, x, y);
+    x = (getParent().getWidth() - (int) bounds2.getWidth());
+    g2d.drawString(sentence2, x, y + spaceRow);
+  }
+
+  publicstaticvoid main(String[] args) {
+    // create frame for MainJFrame frame = newJFrame("java2s.com");
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    Main Main = new Main();
+    frame.add(Main);
+    frame.setSize(300, 210);
+    frame.setVisible(true);
+  }
+}</code></pre></div>
+<p>PreviousNext</p>
+<h2 id="related">Related</h2>
+<ul><li>Java AWT Graphics2D draw String</li><li>Java AWT Graphics2D draw String center alignment</li><li>Java AWT Graphics2D draw String left alignment</li><li>Java AWT Graphics2D draw styled String</li><li>Java AWT Graphics2D draw with mouse</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-java-awt-graphics2d-draw-rectangle-with-rectangle2d.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java AWT Graphics2D draw r...</span></a><a class="pager-btn pager-next" href="java-java-awt-graphics2d-draw-styled-string.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java AWT Graphics2D draw s...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

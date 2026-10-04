@@ -2,7 +2,7 @@
 title: Collections Interview Questions
 nav: Interview - Collections
 description: 30 collections interview questions with answers - ArrayList vs LinkedList, HashMap internals, ConcurrentHashMap, fail-fast iterators, Queue/Set classes.
-section: Interview Prep
+section: Interview & Certification
 order: 30
 ---
 

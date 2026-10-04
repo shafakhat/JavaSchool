@@ -2,7 +2,7 @@
 title: Core Java & JVM Interview Questions
 nav: Interview - Core Java
 description: 35 core Java and JVM interview questions with answers - class loading, memory, GC, constants, operators, control flow.
-section: Interview Prep
+section: Interview & Certification
 order: 20
 ---
 

@@ -2,7 +2,7 @@
 title: OCJP Practice Test 2
 nav: OCJP Practice Test 2
 description: Second 50-question OCJP/OCJA style practice test - threads, exceptions, generics, streams, memory and JVM behaviour.
-section: Interview Prep
+section: Interview & Certification
 order: 30
 ---
 

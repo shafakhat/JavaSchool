@@ -2,7 +2,7 @@
 title: Strings & Immutability Interview Questions
 nav: Interview - Strings
 description: 22 string interview questions - pool, intern, == vs equals, StringBuilder, text blocks, unicode, formatting.
-section: Interview Prep
+section: Interview & Certification
 order: 50
 ---
 

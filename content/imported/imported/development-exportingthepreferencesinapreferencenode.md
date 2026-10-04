@@ -2,9 +2,9 @@
 title: Exporting the Preferences in a Preference Node
 nav: Exporting the Preferences ...
 description: Preferences prefs = Preferences.userNodeForPackage(String.class);
-section: Imported - java2s Archive
-order: 1000
-source: https://web.archive.org/web/20111105140914/http://java2s.com/Tutorial/Java/0120__Development/ExportingthePreferencesinaPreferenceNode.htm
+section: Imported
+order: 20004
+source: http://java2s.com/Tutorial/Java/0120__Development/ExportingthePreferencesinaPreferenceNode.htm
 ---
 ```java title=Example.java
 import java.io.FileOutputStream;

@@ -2,7 +2,7 @@
 title: Java 8-21 Features Interview Questions
 nav: Interview - Java 8-21
 description: 25 modern Java interview questions - lambdas, streams, Optional, modules, records, sealed types, pattern matching, virtual threads.
-section: Interview Prep
+section: Interview & Certification
 order: 60
 ---
 

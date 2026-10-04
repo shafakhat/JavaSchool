@@ -782,20 +782,3 @@ html[data-theme="dark"] .quiz-q.answered .quiz-opt.wrong { background: #3b1519; 
 .crumb a { color: var(--green-dark); text-decoration: none; font-weight: 600; }
 .crumb a:hover { text-decoration: underline; }
 .crumb-sep { opacity: .5; margin: 0 2px; }
-
-/* --- java2s-style tutorial hub --- */
-.tut-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 10px; margin: 16px 0 26px; }
-.tut-chapter { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--border);
-  border-left: 4px solid #ffbb00; border-radius: 6px; text-decoration: none; color: inherit; background: var(--bg); }
-.tut-chapter:hover { border-left-color: #059669; background: #f2fbf7; }
-.tut-num { flex: 0 0 30px; height: 30px; border-radius: 50%; background: var(--green-soft, #e7f7f0);
-  color: #046c4e; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
-.tut-meta { display: flex; flex-direction: column; gap: 2px; }
-.tut-title { font-weight: 600; }
-.tut-sub { font-size: 12px; color: var(--text-2, #666); }
-.sub-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 20px; }
-.sub-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border: 1px solid var(--border);
-  border-radius: 6px; font-size: 13px; background: var(--bg); }
-.sub-chip b { color: var(--text-2, #666); font-size: 12px; }
-.sub-num { font-size: 11px; color: #046c4e; font-weight: 700; }
-.arc-empty { padding: 12px; color: var(--text-2, #666); font-style: italic; }

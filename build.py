@@ -45,15 +45,17 @@ SITE_DESCRIPTION = (
 # appended after these, in first-seen order.
 SECTION_ORDER = [
     "Get Started",
-    "Java Tutorial",
-    "Certification",
     "Java Basics",
     "Object Oriented",
     "Core Java",
     "Collections",
     "Advanced Java",
+    "Interview & Certification",
+    "Java Tutorial",
+    "Certification",
+    "Tutorials & How-To",
     "Java Examples",
-    "Interview Prep",
+    "Java Articles",
     "Reference",
 ]
 
@@ -584,14 +586,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 """
 
 
-def render_home(home_path: Path, sections: list[dict], flat: list[dict]) -> str:
+def render_home(home_path: Path, sections: list[dict], flat: list[dict], nav_cards: str = "") -> str:
     raw = home_path.read_text(encoding="utf-8")
     meta, body = parse_front_matter(raw)
     body_html, _ = convert_markdown(body)
     # Expandable topic cards (links live inside the cards).
-    body_html = body_html.replace(
-        '<div id="topic-cards"></div>', build_topic_cards(sections)
-    )
+    body_html = body_html.replace('<div id="topic-cards"></div>', nav_cards)
     # For the home layout, the hero is part of the markdown; no extra <h1>.
     sidebar = build_sidebar(sections, active_slug="")
     pager = build_pager(flat, 0) if flat else ""
@@ -611,77 +611,46 @@ def render_home(home_path: Path, sections: list[dict], flat: list[dict]) -> str:
 # --------------------------------------------------------------------------- #
 
 # --------------------------------------------------------------------------- #
-# Archive grouping (keeps the sidebar small: one link per category instead of
-# one per imported page)
+# java2s tutorial tree: chapters -> sub-topics -> articles
 # --------------------------------------------------------------------------- #
 
-def category_from_url(url: str) -> str:
-    path = urllib.parse.urlparse(url).path.strip("/")
-    parts = [p for p in path.split("/") if p]
-    cat = "Other examples"
-    if len(parts) >= 3 and parts[0] in ("Code", "Tutorial") and parts[1] == "Java":
-        cat = parts[2]
-    elif len(parts) >= 3 and parts[0] == "Tutorials" and parts[1] == "Java":
-        cat = "New " + parts[2]
-    elif len(parts) >= 3 and parts[0] == "Article-Tutorial" and parts[1] == "Java":
-        cat = parts[2]
-    elif len(parts) >= 3 and parts[0] == "Tutorial" and parts[1] not in ("Java",):
-        cat = parts[1]
-    elif len(parts) >= 2 and parts[0] == "ref":
-        cat = "OCA OCP Practice" if "oca" in parts[-1].lower() else "ref " + parts[1]
-    elif len(parts) >= 2 and parts[0] == "example":
-        cat = parts[1].replace("java-", "java ").replace("-", " ")
-    elif parts:
-        cat = parts[-1].rsplit(".", 1)[0] if parts[-1].endswith((".htm", ".html")) else parts[-1]
-    name = cat.replace("__", " ").replace("_", " ").replace("-", " ").strip()
-    m = re.match(r"^(\d{4})\s+(.*)$", name)
-    if m:
-        name = f"{m.group(2)} ({m.group(1)})"
-    return name or "Other examples"
+INDEX_HINT = re.compile(r"/Catalog[^/]*$", re.I)
+
+TREE_DATA = ROOT / "tools" / "data" / "java_tutorial.json"
+TREE_MAP_PATH = ROOT / "tools" / "tree_map.json"
+
+SECTION_ICONS = {
+    "Get Started": "&#128640;",
+    "Java Basics": "&#128216;",
+    "Object Oriented": "&#129513;",
+    "Core Java": "&#9749;",
+    "Collections": "&#128449;",
+    "Advanced Java": "&#129514;",
+    "Interview & Certification": "&#127919;",
+    "Java Tutorial": "&#128218;",
+    "Certification": "&#127891;",
+    "Tutorials & How-To": "&#128161;",
+    "Java Examples": "&#128187;",
+    "Java Articles": "&#128240;",
+    "Reference": "&#128220;",
+}
+
+FILTER_SCRIPT = """<script>
+(function(){
+  var inp = document.getElementById('arcFilter');
+  if (!inp) return;
+  var items = Array.prototype.slice.call(document.querySelectorAll('.filterable li'));
+  inp.addEventListener('input', function(){
+    var q = inp.value.toLowerCase().trim();
+    items.forEach(function(el){
+      el.style.display = (!q || (el.textContent || '').toLowerCase().indexOf(q) !== -1) ? '' : 'none';
+    });
+  });
+})();
+</script>"""
 
 
-def archive_category_map() -> dict:
-    mapping = {}
-    for path in (MANIFEST_PATH, ROOT / "tools" / "live_manifest.csv"):
-        if not path.exists():
-            continue
-        with path.open(newline="", encoding="utf-8") as f:
-            for row in csv.reader(f):
-                if len(row) < 2:
-                    continue
-                slug, url = row[0], row[1]
-                if slug in ("-", "(thin)", "(in-archive)"):
-                    continue
-                mapping.setdefault(slug, category_from_url(url))
-    return mapping
-
-
-def attach_archive_groups(sections: list[dict]) -> list[dict]:
-    """Give the imported section category sub-pages instead of huge link lists."""
-    cats = archive_category_map()
-    for sec in sections:
-        if len(sec["pages"]) < 80:
-            continue
-        by_cat: dict[str, list] = {}
-        for p in sec["pages"]:
-            by_cat.setdefault(cats.get(p["slug"], "Other examples"), []).append(p)
-        groups = []
-        for name in sorted(by_cat, key=lambda s: s.lower()):
-            pages = sorted(by_cat[name], key=lambda p: p["title"].lower())
-            gslug = "archive-cat-" + slugify(name)
-            groups.append({
-                "title": name,
-                "slug": gslug,
-                "href": gslug + ".html",
-                "pages": pages,
-            })
-        sec["groups"] = groups
-        return groups
-    return []
-
-
-def build_crumb(*parts: tuple[str, str | None]) -> str:
-    """Breadcrumb; first part is always the Home link. href=None renders plain text."""
+def build_crumb(*parts) -> str:
     seg = []
     for text, href in parts:
         seg.append(f'<a href="{href}">{text}</a>' if href else f"<span>{text}</span>")
@@ -689,69 +658,340 @@ def build_crumb(*parts: tuple[str, str | None]) -> str:
     return f'<nav class="crumb">&#127968; {joined}</nav>'
 
 
-SECTION_ICONS = {
-    "Get Started": "&#128640;",
-    "Java Tutorial": "&#128218;",
-    "Certification": "&#127891;",
-    "Java Examples": "&#128230;",
-    "Java Basics": "&#128216;",
-    "Object Oriented": "&#129513;",
-    "Core Java": "&#9749;",
-    "Collections": "&#128449;",
-    "Advanced Java": "&#129514;",
-    "Interview & Certification": "&#127919;",
-    "Reference": "&#128218;",
-    IMPORTED_SECTION: "&#128230;",
-}
+def norm_src(url: str) -> str:
+    path = urllib.parse.urlparse(url).path.lower()
+    return re.sub(r"\.html?$", "", path).rstrip("/")
 
 
-def build_topic_cards(sections: list[dict]) -> str:
-    """Expandable topic cards for the home page - links live inside the cards."""
+def load_tree_map() -> dict:
+    if not TREE_MAP_PATH.exists():
+        return {}
+    try:
+        raw = json.loads(TREE_MAP_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    return {norm_src(k): v for k, v in raw.items()}
+
+
+def load_tutorial_chapters() -> list:
+    if not TREE_DATA.exists():
+        return []
+    try:
+        return json.loads(TREE_DATA.read_text(encoding="utf-8")).get("chapters", [])
+    except Exception:
+        return []
+
+
+def classify_imported(pages: list) -> None:
+    """Re-home imported pages into java2s-style sections (no flat archive dump)."""
+    for p in pages:
+        src = p.get("source") or ""
+        if not src:
+            continue
+        path = urllib.parse.urlparse(src).path
+        p["tgroup"] = ""
+        m = re.search(r"/Tutorial/Java/([^/]+)/", path)
+        if m:
+            p["section"] = "Java Tutorial"
+            p["tgroup"] = m.group(1)
+            continue
+        if "/Tutorials/Java/" in path:
+            seg = path.split("/Tutorials/Java/", 1)[1].split("/")[0]
+            p["section"] = "Tutorials & How-To"
+            p["tgroup"] = seg
+            continue
+        if "/ref/java/" in path:
+            name = path.rsplit("/", 1)[-1].lower()
+            if "oca" in name or "ocp" in name:
+                p["section"] = "Certification"
+                p["tgroup"] = "OCA_OCP_PRACTICE"
+            else:
+                p["section"] = "Reference"
+                p["tgroup"] = "Java Reference"
+            continue
+        if "/Tutorial/SCJP" in path or "/Tutorial/OCJP" in path:
+            p["section"] = "Certification"
+            p["tgroup"] = "SCJP"
+            continue
+        if "/Code/Java/" in path:
+            segs = path.split("/Code/Java/", 1)[1].split("/")
+            p["section"] = "Java Examples"
+            p["tgroup"] = segs[0] if len(segs) > 1 else "Misc"
+            continue
+        if "/example/" in path:
+            p["section"] = "Java Examples"
+            p["tgroup"] = "Utility Methods"
+            continue
+        if "/Article-Tutorial/Java/" in path:
+            segs = path.split("/Article-Tutorial/Java/", 1)[1].split("/")
+            p["section"] = "Java Articles"
+            p["tgroup"] = segs[0] if len(segs) > 1 else "Misc"
+            continue
+        p["section"] = "Java Examples"
+        p["tgroup"] = "Other"
+
+
+def pretty_group(name: str) -> str:
+    return name.replace("__", " ").replace("_", " ").replace("-", " ").strip()
+
+
+def article_list_html(items: list, placeholder: str) -> str:
+    if not items:
+        return f'<p class="arc-note">{esc(placeholder)}</p>'
+    lis = "\n".join(
+        f'      <li><a href="{p["slug"]}.html">{esc(p["title"])}</a></li>' for p in items
+    )
+    return (
+        '    <div class="arc-filter-wrap"><input type="text" id="arcFilter" class="arc-filter" '
+        f'placeholder="Filter {len(items)} pages..." autocomplete="off"></div>\n'
+        f'    <ul class="arc-list filterable">\n{lis}\n    </ul>\n' + FILTER_SCRIPT
+    )
+
+
+def tutorial_tree_pages(pages: list, chapters: list, tree_map: dict):
+    """Build the java2s-style tree. Returns (out_pages, placement, skip_slugs)."""
+    by_src = {}
+    for p in pages:
+        if p.get("source"):
+            by_src[norm_src(p["source"])] = p
+    placement = {}
+    skip = set()
+    chunks = []  # chapter page data
+
+    for ch in chapters:
+        num = ch["num"]
+        folder = ch["folder"]
+        ch_slug = f"tut-{num}-{slugify(ch['title'])}"
+        topics = []
+        for i, t in enumerate(ch.get("topics", []), 1):
+            t_slug = f"tut-{num}-{i}-{slugify(t['title'])}"
+            key = norm_src(f"/Tutorial/Java/{folder}/{t['page']}")
+            arts = []
+            for u in tree_map.get(key, []):
+                pg = by_src.get(norm_src(u))
+                if pg and not pg.get("is_index"):
+                    arts.append(pg)
+                    placement[pg["slug"]] = (ch, t, t_slug)
+            arts.sort(key=lambda x: x["title"].lower())
+            topics.append({"i": i, "title": t["title"], "count": t.get("count", 0),
+                           "slug": t_slug, "articles": arts})
+        chunks.append({"ch": ch, "slug": ch_slug, "topics": topics})
+
+    # pages that are index/catalog pages of the classic tutorial are not
+    # rendered separately - the tree pages replace them
+    for p in pages:
+        if p["section"] != "Java Tutorial" or not p.get("source"):
+            continue
+        np_ = norm_src(p["source"])
+        if np_ in tree_map or INDEX_HINT.search(np_) or p["slug"] in placement:
+            if np_ in tree_map or INDEX_HINT.search(np_):
+                skip.add(p["slug"])
+
+    out = []
+    # hub: tutorial.html
+    rows = []
+    for c in chunks:
+        n_arts = sum(len(t["articles"]) for t in c["topics"])
+        rows.append(
+            f'<a class="tut-chapter" href="{c["slug"]}.html">'
+            f'<span class="tut-chapter-num">{c["ch"]["num"]}</span>'
+            f'<span class="tut-chapter-name">{esc(c["ch"]["title"])}</span>'
+            f'<span class="tut-chapter-meta">{len(c["topics"])} topics &middot; '
+            f'{c["ch"].get("count", 0)} articles</span></a>'
+        )
+    out.append(("tutorial", "Java Tutorial - All Chapters",
+                build_crumb(("Java HOME", "index.html"), ("Java Tutorial", None))
+                + '    <h1>Java Tutorial</h1>\n'
+                + '    <p>The complete java2s.com Java tutorial, chapter by chapter &mdash; '
+                + f'<strong>{len(chunks)} chapters</strong>, <strong>'
+                + f'{sum(len(c["topics"]) for c in chunks)} sub-topics</strong>, '
+                + f'<strong>{sum(c["ch"].get("count", 0) for c in chunks)} articles</strong>. '
+                + 'Pick a chapter; each chapter lists its sub-topics, and each sub-topic lists its articles.</p>\n'
+                + '    <div class="tut-chapters">\n' + "\n".join(rows) + '\n    </div>'))
+
+    for c in chunks:
+        ch = c["ch"]
+        chips = []
+        for t in c["topics"]:
+            n = len(t["articles"]) or t["count"]
+            chips.append(f'<a class="tchip" href="{t["slug"]}.html">{esc(t["title"])} <b>{n}</b></a>')
+        # articles in the chapter that were not matched to a sub-topic
+        matched = {a["slug"] for t in c["topics"] for a in t["articles"]}
+        loose = [p for p in pages
+                 if p["section"] == "Java Tutorial" and p.get("tgroup") == ch["folder"]
+                 and p["slug"] not in matched and p["slug"] not in skip]
+        loose.sort(key=lambda x: x["title"].lower())
+        body = (
+            build_crumb(("Java HOME", "index.html"), ("Java Tutorial", "tutorial.html"), (ch["title"], None))
+            + f'    <h1>{ch["num"]}. {esc(ch["title"])}</h1>\n'
+            + f'    <p><strong>{len(c["topics"])} sub-topics</strong> in this chapter. '
+            + 'Choose a sub-topic to see its articles.</p>\n'
+            + '    <div class="tchips">\n' + "\n".join(chips) + '\n    </div>\n'
+            + ('    <h2>All articles in this chapter</h2>\n' + article_list_html(loose, "Articles are being imported - check back soon.")
+               if loose else "")
+        )
+        out.append((c["slug"], f'{ch["num"]}. {ch["title"]} - Java Tutorial', body))
+
+        for t in c["topics"]:
+            t_slug = t["slug"]
+            body = (
+                build_crumb(("Java HOME", "index.html"), ("Java Tutorial", "tutorial.html"),
+                            (ch["title"], c["slug"] + ".html"), (t["title"], None))
+                + f'    <h1>{ch["num"]}.{t["i"]} {esc(t["title"])}</h1>\n'
+                + f'    <p>{t["count"]} articles in this sub-topic.</p>\n'
+                + article_list_html(t["articles"], "These articles are still being imported from the archive - check back soon.")
+            )
+            out.append((t_slug, f'{t["title"]} - {ch["title"]}', body))
+    return out, placement, skip
+
+
+def build_group_pages(pages: list, placement: dict):
+    """Group hub + chunk pages for the non-tutorial sections. Returns (out_pages, nav)."""
+    groups = {}
+    for p in pages:
+        sec = p["section"]
+        if sec in ("Java Tutorial",) or not p.get("tgroup"):
+            continue
+        groups.setdefault((sec, p["tgroup"]), []).append(p)
+
+    out = []
+    nav = {}
+    CHUNK = 400
+    for (sec, grp), items in sorted(groups.items()):
+        items = sorted(items, key=lambda p: x_title(p))
+        label = pretty_group(grp)
+        gslug = "grp-" + slugify(sec + "-" + grp)
+        nav.setdefault(sec, []).append({"label": label, "count": len(items), "href": gslug + ".html"})
+        if len(items) <= CHUNK:
+            body = (build_crumb(("Java HOME", "index.html"), (sec, None), (label, None))
+                    + f'    <h1>{esc(label)}</h1>\n'
+                    + f'    <p>{len(items)} pages.</p>\n'
+                    + article_list_html(items, "Nothing imported here yet."))
+            out.append((gslug, f"{label} - {sec}", body))
+        else:
+            chunk_links = []
+            for i in range(0, len(items), CHUNK):
+                part = items[i:i + CHUNK]
+                cslug = f"{gslug}-p{i // CHUNK + 1}"
+                chunk_links.append(f'<a class="tchip" href="{cslug}.html">{i + 1} &ndash; {i + len(part)} <b>{len(part)}</b></a>')
+                body = (build_crumb(("Java HOME", "index.html"), (sec, None), (label, gslug + ".html"))
+                        + f'    <h1>{esc(label)}</h1>\n'
+                        + f'    <p>Pages {i + 1} &ndash; {i + len(part)} of {len(items)}.</p>\n'
+                        + article_list_html(part, ""))
+                out.append((cslug, f"{label} ({i + 1}-{i + len(part)})", body))
+            body = (build_crumb(("Java HOME", "index.html"), (sec, None), (label, None))
+                    + f'    <h1>{esc(label)}</h1>\n'
+                    + f'    <p>{len(items)} pages, split into {len(chunk_links)} parts.</p>\n'
+                    + '    <div class="tchips">\n' + "\n".join(chunk_links) + '\n    </div>')
+            out.append((gslug, f"{label} - {sec}", body))
+    return out, nav
+
+
+def x_title(p):
+    m = re.match(r"(\d+)", p["slug"])
+    return (int(m.group(1)) if m else 999999, p["title"].lower())
+
+
+def certification_pages(pages: list):
+    """OCA/OCP practice bank + SCJP hub."""
+    qs = [p for p in pages if p.get("tgroup") == "OCA_OCP_PRACTICE"]
+    def qnum(p):
+        m = re.search(r"question-(\d+)", p["slug"])
+        return int(m.group(1)) if m else 0
+    qs.sort(key=qnum)
+    out = []
+    PER = 250
+    parts = []
+    for i in range(0, len(qs), PER):
+        chunk = qs[i:i + PER]
+        cslug = f"cert-oca-practice-{qnum(chunk[0])}-{qnum(chunk[-1])}"
+        parts.append((cslug, qnum(chunk[0]), qnum(chunk[-1]), len(chunk)))
+        body = (build_crumb(("Java HOME", "index.html"), ("Certification", "certification.html"),
+                            (f"Questions {qnum(chunk[0])}-{qnum(chunk[-1])}", None))
+                + f'    <h1>OCA/OCP Practice Questions {qnum(chunk[0])}&ndash;{qnum(chunk[-1])}</h1>\n'
+                + article_list_html(chunk, ""))
+        out.append((cslug, f"OCA/OCP Practice {qnum(chunk[0])}-{qnum(chunk[-1])}", body))
+    chips = "\n".join(f'<a class="tchip" href="{c}.html">{a}&ndash;{b} <b>{n}</b></a>' for c, a, b, n in parts)
+    modules = sorted({p["tgroup"] for p in pages if p["section"] == "Certification"
+                      and p["tgroup"] not in ("OCA_OCP_PRACTICE", "SCJP")})
+    mod_chips = "\n".join(
+        f'<a class="tchip" href="grp-{slugify("Certification-" + m)}.html">{esc(pretty_group(m))} '
+        f'<b>{sum(1 for p in pages if p.get("tgroup") == m)}</b></a>' for m in modules
+    )
+    scjp = [p for p in pages if p.get("tgroup") == "SCJP"]
+    body = (
+        build_crumb(("Java HOME", "index.html"), ("Certification", None))
+        + '    <h1>Certification / OCA / SCJP</h1>\n'
+        + f'    <p>Exam material from java2s: <strong>{len(qs)} OCA/OCP practice questions</strong>, '
+        + f'OCA Java SE 8 modules, mock exams and SCJP pages.</p>\n'
+        + '    <h2>OCA Java SE 8 study modules</h2>\n    <div class="tchips">\n' + mod_chips + '\n    </div>\n'
+        + ('    <h2>SCJP</h2>\n    <div class="tchips">\n'
+           f'<a class="tchip" href="grp-certification-scjp.html">SCJP pages <b>{len(scjp)}</b></a>\n    </div>\n' if scjp else "")
+        + '    <h2>OCA/OCP practice questions</h2>\n    <div class="tchips">\n' + chips
+        + '\n    </div>\n'
+    )
+    out.insert(0, ("certification", "Certification - OCA / SCJP", body))
+    return out
+
+
+def build_nav_cards(sections: list, flat: list, tut_chunks: list, grp_nav: dict) -> str:
+    """Expandable home-page cards: java2s-like sections with links inside."""
+    cards = []  # (title, icon, [items], count)
+
+    # 1) the java2s tutorial tree
+    is_tutorial = [p for p in flat if p["section"] == "Java Tutorial"]
+    items = [{"label": f'{c["ch"]["num"]}. {c["ch"]["title"]}', "href": c["slug"] + ".html",
+              "count": c["ch"].get("count", 0)} for c in tut_chunks]
+    items.append({"label": "Open the full tutorial index", "href": "tutorial.html",
+                  "count": sum(c["ch"].get("count", 0) for c in tut_chunks)})
+    cards.append(("Java Tutorial", SECTION_ICONS["Java Tutorial"], items, len(is_tutorial)))
+
+    # 2) certification
+    cert_items = [{"label": "Certification home (OCA / SCJP)", "href": "certification.html",
+                   "count": sum(1 for p in flat if p["section"] == "Certification")}]
+    for it in grp_nav.get("Certification", []):
+        if "oca" in it["label"].lower() or "scjp" in it["label"].lower() or "mock" in it["label"].lower():
+            cert_items.append(it)
+    cards.append(("Certification", SECTION_ICONS["Certification"], cert_items,
+                  sum(1 for p in flat if p["section"] == "Certification")))
+
+    # 3) everything else, as chips per group
+    for sec in ("Tutorials & How-To", "Java Examples", "Java Articles", "Reference"):
+        items = grp_nav.get(sec, [])
+        if not items:
+            continue
+        cards.append((sec, SECTION_ICONS.get(sec, "&#128196;"), items,
+                      sum(1 for p in flat if p["section"] == sec)))
+
+    # 4) the original hand-written sections
+    for s in sections:
+        if s["title"] in ("Java Tutorial", "Certification", "Tutorials & How-To",
+                          "Java Examples", "Java Articles", "Reference"):
+            continue
+        items = [{"label": p["nav"], "href": p["slug"] + ".html", "count": 0} for p in s["pages"]]
+        cards.append((s["title"], SECTION_ICONS.get(s["title"], "&#128196;"), items, len(s["pages"])))
+
     out = ['<div class="topic-cards">']
-    for i, sec in enumerate(sections):
-        sid = "tc-" + slugify(sec["title"])
-        groups = sec.get("groups")
-        count = sum(len(g["pages"]) for g in groups) if groups else len(sec["pages"])
+    for i, (title, icon, items, count) in enumerate(cards):
+        sid = "tc-" + slugify(title)
         opened = i == 0
-        icon = SECTION_ICONS.get(sec["title"], "&#128196;")
         out.append(f'<div class="tcard{" open" if opened else ""}">')
         out.append(
             f'<button type="button" class="tcard-head" data-target="{sid}" '
             f'aria-expanded="{"true" if opened else "false"}">'
             f'<span class="tcard-icon">{icon}</span>'
-            f'<span class="tcard-title">{esc(sec["title"])}</span>'
+            f'<span class="tcard-title">{esc(title)}</span>'
             f'<span class="tcard-count">{count} pages</span>'
             '<span class="tcard-caret">&#9662;</span></button>'
         )
         out.append(f'<div class="tcard-body" id="{sid}">')
         out.append('<div class="tchips">')
-        if sec.get("chips"):
-            for c in sec["chips"]:
-                cls = "tchip tchip-all" if c.get("highlight") else "tchip"
-                cnt = c.get("count") or 0
-                badge = f' <b>{cnt}</b>' if cnt else ""
-                out.append(f'<a class="{cls}" href="{c["href"]}">{esc(c["label"])}{badge}</a>')
-        elif groups:
-            out.append(
-                f'<a class="tchip tchip-all" href="archive-index.html">'
-                f'&#128218; All Java examples <b>{count}</b></a>'
-            )
-            for g in groups:
-                out.append(
-                    f'<a class="tchip" href="{g["href"]}">{esc(g["title"])} '
-                    f'<b>{len(g["pages"])}</b></a>'
-                )
-        else:
-            for p in sec["pages"]:
-                out.append(f'<a class="tchip" href="{p["slug"]}.html">{esc(p["nav"])}</a>')
-        out.append("</div>")
-        out.append("</div></div>")
+        for it in items:
+            cnt = f' <b>{it["count"]}</b>' if it.get("count") else ""
+            out.append(f'<a class="tchip" href="{it["href"]}">{esc(it["label"])}{cnt}</a>')
+        out.append("</div></div></div>")
     out.append("</div>")
-    out.append(TOPIC_TOGGLE_SCRIPT)
-    return "\n".join(out)
-
-
-TOPIC_TOGGLE_SCRIPT = """<script>
+    out.append("""<script>
 (function(){
   document.querySelectorAll('.tcard-head').forEach(function(btn){
     btn.addEventListener('click', function(){
@@ -761,489 +1001,33 @@ TOPIC_TOGGLE_SCRIPT = """<script>
     });
   });
 })();
-</script>"""
-
-
-def render_archive_pages(groups: list[dict], sections: list[dict]) -> None:
-    def shell(slug: str, title: str, main: str) -> None:
-        doc = page_document(
-            meta_title=title,
-            description=f"Browse the java2s.com archive restored on JavaSchool: {title}.",
-            sidebar_html=build_sidebar(sections, active_slug=slug),
-            main_html=main,
-            is_home=False,
-            body_class="page-archive",
-        )
-        (OUT_DIR / f"{slug}.html").write_text(doc, encoding="utf-8")
-
-    total = sum(len(g["pages"]) for g in groups)
-    cards = "\n".join(
-        f'<a class="arc-card" href="{g["href"]}"><span class="arc-card-name">{esc(g["title"])}</span>'
-        f'<span class="arc-card-count">{len(g["pages"])} pages</span></a>'
-        for g in groups
-    )
-    shell(
-        "archive-index",
-        "Java Examples - All Categories",
-        (
-            f'    {build_crumb(("Java HOME", "index.html"), ("Java Examples", None))}\n'
-            f'    <h1>Java Examples</h1>\n'
-            f'    <p>Example pages restored from the java2s.com archive &mdash; <strong>{total} pages</strong> '
-            f'across {len(groups)} categories. '
-            f'Pick a category below, or use the search box at the top of the page (it searches all '
-            f'{total} archive pages plus the whole tutorial).</p>\n'
-            f'    <div class="arc-filter-wrap"><input type="text" id="arcFilter" class="arc-filter" '
-            f'placeholder="Filter categories..." autocomplete="off"></div>\n'
-            f'    <div class="arc-cards" id="arcCards">\n{cards}\n    </div>\n'
-            + ARC_FILTER_SCRIPT
-        ),
-    )
-    for g in groups:
-        items = "\n".join(
-            f'      <li><a href="{p["slug"]}.html">{esc(p["nav"])}</a></li>' for p in g["pages"]
-        )
-        shell(
-            g["slug"],
-            f"Archive: {g['title']}",
-            (
-                f'    {build_crumb(("Java HOME", "index.html"), ("Java Examples", "archive-index.html"), (g["title"], None))}\n'
-                f'    <h1>{esc(g["title"])}</h1>\n'
-                f'    <p class="arc-crumb"><a href="archive-index.html">&larr; All archive categories</a></p>\n'
-                f'    <p><strong>{len(g["pages"])} pages</strong> restored from java2s.com. '
-                f'Use the filter box to narrow the list.</p>\n'
-                f'    <div class="arc-filter-wrap"><input type="text" id="arcFilter" class="arc-filter" '
-                f'placeholder="Filter {esc(g["title"])}..." autocomplete="off"></div>\n'
-                f'    <ul class="arc-list" id="arcList">\n{items}\n    </ul>\n'
-                + ARC_FILTER_SCRIPT
-            ),
-        )
-
-
-ARC_FILTER_SCRIPT = """    <script>
-(function(){
-  var inp = document.getElementById('arcFilter');
-  if (!inp) return;
-  var items = Array.prototype.slice.call(document.querySelectorAll('#arcCards .arc-card, #arcList li'));
-  inp.addEventListener('input', function(){
-    var q = inp.value.toLowerCase().trim();
-    items.forEach(function(el){
-      var hit = !q || (el.textContent || '').toLowerCase().indexOf(q) !== -1;
-      el.style.display = hit ? '' : 'none';
-    });
-  });
-})();
-</script>"""
-
-
-# --------------------------------------------------------------------------- #
-# java2s-style Java Tutorial + Certification structure
-# --------------------------------------------------------------------------- #
-
-DATA_DIR = ROOT / "tools" / "data"
-TUT_DIR_RE = re.compile(r"/Tutorial/Java/(\d{4}__[^/]+)/")
-CERT_LABELS = {
-    "ocaq": ("OCA OCP Practice Questions", "oca-questions.html"),
-    "ocae": ("OCA Java SE 8 Modules", "oca-exams.html"),
-    "ocal": ("OCA OCP Exam Papers 1-15", "oca-exams.html"),
-    "scjp": ("SCJP Exam (SUN Certified Java Programmer)", "scjp.html"),
-}
-
-
-def load_json_data(name: str):
-    path = DATA_DIR / name
-    try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except Exception:
-        return []
-
-
-def partition_imported(pages: list[dict]) -> tuple[dict, dict, dict, list]:
-    chapters: dict[str, list] = {}
-    extra: dict[str, list] = {}
-    cert = {"ocaq": [], "ocae": [], "ocal": [], "scjp": []}
-    examples: list = []
-    for p in pages:
-        u = p.get("source") or ""
-        ul = u.lower()
-        m = TUT_DIR_RE.search(u)
-        if m and "/Tutorial/Java/" in u:
-            chapters.setdefault(m.group(1), []).append(p)
-        elif "oca-ocp-practice-question" in ul:
-            cert["ocaq"].append(p)
-        elif "/tutorials/java/oca_" in ul:
-            cert["ocae"].append(p)
-        elif "/ref/java/java-oca-ocp-exam" in ul:
-            cert["ocal"].append(p)
-        elif "/tutorial/scjp/" in ul:
-            cert["scjp"].append(p)
-        elif "/tutorials/java/" in ul:
-            key = u.split("/Tutorials/Java/", 1)[1].split("/", 1)[0]
-            extra.setdefault(key, []).append(p)
-        else:
-            examples.append(p)
-    return chapters, extra, cert, examples
-
-
-def chapter_slug(idx: int, title: str) -> str:
-    return f"tutorial-{idx + 1:02d}-{slugify(title)}"
-
-
-def extra_group_href(key: str) -> str:
-    return "archive-cat-" + slugify("New " + key.replace("_", " "))
-
-
-def build_chips(section_entries: list[tuple[str, str, int]], all_href: str, all_label: str,
-                total: int) -> list[dict]:
-    chips = [{"label": all_label, "href": all_href, "count": total, "highlight": True}]
-    for label, href, cnt in section_entries:
-        chips.append({"label": label, "href": href, "count": cnt, "highlight": False})
-    return chips
-
-
-def render_tutorial_hub(tree: list[dict], chapters: dict, extra: dict, sections: list[dict],
-                        chapters_pages_total: int) -> None:
-    rows = []
-    for i, ch in enumerate(tree):
-        pages_here = len(chapters.get(ch["dir"], []))
-        total = sum(s["count"] for s in ch["subtopics"])
-        rows.append(
-            f'<a class="tut-chapter" href="{chapter_slug(i, ch["title"])}.html">'
-            f'<span class="tut-num">{i + 1}</span>'
-            f'<span class="tut-meta"><span class="tut-title">{esc(ch["title"])}</span>'
-            f'<span class="tut-sub">{len(ch["subtopics"])} sub-topics &middot; {total} articles on java2s '
-            f'&middot; <b>{pages_here}</b> imported so far</span></span></a>'
-        )
-    extra_rows = []
-    for key in sorted(extra, key=str.lower):
-        pages_here = len(extra[key])
-        label = key.replace("_", " ")
-        extra_rows.append(
-            f'<a class="tchip" href="{extra_group_href(key)}.html">{esc(label)} <b>{pages_here}</b></a>'
-        )
-    main = (
-        f'    {build_crumb(("Java HOME", "index.html"), ("Java Tutorial", None))}\n'
-        '    <h1>Java Tutorial</h1>\n'
-        '    <p>The complete java2s.com Java tutorial, chapter by chapter - same structure as the original '
-        f'site ({len(tree)} chapters, {sum(len(c["subtopics"]) for c in tree)} sub-topics, '
-        f'{sum(sum(s["count"] for s in c["subtopics"]) for c in tree)} articles), rebuilt in this site\'s style. '
-        'Pick a chapter; each chapter page lists its sub-topics and every article imported for it.</p>\n'
-        '    <div class="tut-grid">\n' + "\n".join(rows) + '\n    </div>\n'
-        + ('    <h2>Additional java2s tutorial sections</h2>\n    <div class="tchips">\n'
-           + "\n".join(extra_rows) + '\n    </div>\n' if extra_rows else "")
-        + f'    <p class="arc-crumb"><b>{chapters_pages_total}</b> tutorial articles imported so far. '
-          'New articles keep being added from the archive - use the search box for the full index.</p>\n'
-    )
-    doc = page_document(
-        meta_title="Java Tutorial - All Chapters",
-        description="The complete java2s Java tutorial rebuilt chapter by chapter: language, data types, collections, threads, Swing, JDBC, JSP, Spring and more.",
-        sidebar_html=build_sidebar(sections, active_slug="java-tutorial"),
-        main_html=main,
-        is_home=False,
-        body_class="page-java-tutorial",
-    )
-    (OUT_DIR / "java-tutorial.html").write_text(doc, encoding="utf-8")
-
-
-def render_chapter_page(tree: list[dict], i: int, pages_here: list[dict], sections: list[dict]) -> None:
-    ch = tree[i]
-    total = sum(s["count"] for s in ch["subtopics"])
-    chips = "".join(
-        f'<span class="sub-chip"><span class="sub-num">{esc(s["num"])}</span> {esc(s["title"])} '
-        f'<b>{s["count"]}</b></span>'
-        for s in ch["subtopics"]
-    )
-    items = "\n".join(
-        f'      <li><a href="{p["slug"]}.html">{esc(p["nav"])}</a></li>'
-        for p in sorted(pages_here, key=lambda x: x["title"].lower())
-    )
-    if not items:
-        items = '      <li class="arc-empty">Articles for this chapter are still being imported from the archive.</li>'
-    main = (
-        f'    {build_crumb(("Java HOME", "index.html"), ("Java Tutorial", "java-tutorial.html"), (ch["title"], None))}\n'
-        f'    <h1>{i + 1}. {esc(ch["title"])}</h1>\n'
-        f'    <p><strong>{len(ch["subtopics"])} sub-topics</strong> &middot; <strong>{total} articles</strong> on java2s '
-        f'&middot; <strong>{len(pages_here)}</strong> imported into this site so far.</p>\n'
-        f'    <h2>Sub-topics in this chapter</h2>\n'
-        f'    <div class="sub-chips">{chips}</div>\n'
-        f'    <h2>Articles ({len(pages_here)})</h2>\n'
-        '    <div class="arc-filter-wrap"><input type="text" id="arcFilter" class="arc-filter" '
-        f'placeholder="Filter {esc(ch["title"])} articles..." autocomplete="off"></div>\n'
-        f'    <ul class="arc-list" id="arcList">\n{items}\n    </ul>\n'
-        + ARC_FILTER_SCRIPT
-        + f'\n    <p class="arc-crumb"><a href="java-tutorial.html">&larr; All tutorial chapters</a></p>\n'
-    )
-    doc = page_document(
-        meta_title=f'{ch["title"]} - Java Tutorial',
-        description=f'{ch["title"]}: java2s tutorial chapter with {total} archived articles, sub-topics and examples.',
-        sidebar_html=build_sidebar(sections, active_slug=chapter_slug(i, ch["title"])),
-        main_html=main,
-        is_home=False,
-        body_class="page-chapter",
-    )
-    (OUT_DIR / f'{chapter_slug(i, ch["title"])}.html').write_text(doc, encoding="utf-8")
-
-
-def render_certification(cert: dict, scjp_tree: list[dict], sections: list[dict]) -> None:
-    def count(k):
-        return len(cert.get(k, []))
-
-    hub_cards = [
-        ("oca-questions.html", "OCA / OCP Practice Questions", f'{count("ocaq")} archived question pages, each with a worked answer'),
-        ("oca-exams.html", "OCA Java SE 8 + Exam Papers", f'{count("ocae")} OCA SE 8 modules and {count("ocal")} OCA/OCP exam paper indexes'),
-        ("scjp.html", "SCJP Exam", f'{count("scjp")} SCJP tutorial articles on the classic exam topics'),
-        ("ocjp-practice.html", "Our OCJP Practice Test 1", "50 original exam-style questions, instantly scored"),
-        ("ocjp-practice-2.html", "Our Practice Test 2", "Threads, generics, exceptions, streams, memory"),
-        ("ocjp-practice-3.html", "Our Practice Test 3", "OOP design, language corners, output puzzles"),
-        ("interview.html", "Interview Question Banks", "205 topical Q&A across 8 banks + 115-question master list"),
-    ]
-    cards = "\n".join(
-        f'<a class="arc-card" href="{href}"><span class="arc-card-name">{esc(name)}</span>'
-        f'<span class="arc-card-count">{esc(sub)}</span></a>'
-        for href, name, sub in hub_cards
-    )
-    main = (
-        f'    {build_crumb(("Java HOME", "index.html"), ("Certification", None))}\n'
-        '    <h1>Java Certification</h1>\n'
-        '    <p>Everything for OCA (Oracle Certified Associate), OCP and the classic SCJP exam - '
-        'restored java2s question banks plus original scored practice tests written for this site.</p>\n'
-        f'    <div class="arc-cards">\n{cards}\n    </div>\n'
-    )
-    doc = page_document(
-        meta_title="Java Certification - OCA, OCP, SCJP",
-        description="OCA/OCP and SCJP certification material: 3,000+ archived practice questions, OCA Java SE 8 modules, exam papers and original scored practice tests.",
-        sidebar_html=build_sidebar(sections, active_slug="certification"),
-        main_html=main,
-        is_home=False,
-        body_class="page-certification",
-    )
-    (OUT_DIR / "certification.html").write_text(doc, encoding="utf-8")
-
-    # --- OCA questions page (grouped, filterable) ---
-    q = sorted(cert.get("ocaq", []), key=lambda p: qnum(p))
-    groups_items = []
-    cur = None
-    buf = []
-    for p in q:
-        n = qnum(p)
-        band = ((n - 1) // 100) * 100 + 1 if n else 0
-        if band != cur:
-            if cur is not None:
-                groups_items.append((cur, buf))
-            cur, buf = band, []
-        buf.append(p)
-    if cur is not None:
-        groups_items.append((cur, buf))
-    parts = []
-    for band, plist in groups_items:
-        hi = band + 99 if band else "?"
-        parts.append(f'    <h2 id="q{band}">Questions {band}-{hi}</h2>\n    <ul class="arc-list">')
-        parts.append("\n".join(f'      <li><a href="{p["slug"]}.html">{esc(p["nav"])}</a></li>' for p in plist))
-        parts.append("    </ul>")
-    if not parts:
-        parts.append('    <p>Question pages are being imported from the archive right now.</p>')
-    main = (
-        f'    {build_crumb(("Java HOME", "index.html"), ("Certification", "certification.html"), ("OCA / OCP Practice Questions", None))}\n'
-        f'    <h1>OCA / OCP Practice Questions</h1>\n'
-        f'    <p><strong>{len(q)}</strong> archived question pages from java2s (the full bank is 3,284 questions). '
-        'Each page shows the question with its answer and explanation. More are imported continuously.</p>\n'
-        '    <div class="arc-filter-wrap"><input type="text" id="arcFilter" class="arc-filter" '
-        'placeholder="Search questions..." autocomplete="off"></div>\n'
-        + "\n".join(parts) + "\n"
-        + ARC_FILTER_SCRIPT
-    )
-    doc = page_document(
-        meta_title="OCA OCP Practice Questions",
-        description="java2s OCA/OCP practice question bank restored from the archive - question, answer and explanation per page.",
-        sidebar_html=build_sidebar(sections, active_slug="oca-questions"),
-        main_html=main,
-        is_home=False,
-        body_class="page-oca-questions",
-    )
-    (OUT_DIR / "oca-questions.html").write_text(doc, encoding="utf-8")
-
-    # --- OCA exam papers page ---
-    def ul(pages_):
-        return "\n".join(f'      <li><a href="{p["slug"]}.html">{esc(p["nav"])}</a></li>'
-                          for p in sorted(pages_, key=lambda x: x["title"].lower()))
-
-    main = (
-        f'    {build_crumb(("Java HOME", "index.html"), ("Certification", "certification.html"), ("OCA Java SE 8 & Exam Papers", None))}\n'
-        '    <h1>OCA Java SE 8 Modules &amp; Exam Papers</h1>\n'
-        '    <h2>OCA Java SE 8 study modules</h2>\n'
-        f'    <ul class="arc-list">\n{ul(cert.get("ocae", [])) or "      <li>Importing...</li>"}\n    </ul>\n'
-        '    <h2>OCA OCP exam paper indexes</h2>\n'
-        f'    <ul class="arc-list">\n{ul(cert.get("ocal", [])) or "      <li>Importing...</li>"}\n    </ul>\n'
-        '    <h2>OCA mock exam question sets</h2>\n'
-        '    <ul class="arc-list">\n'
-        + ul([p for p in cert.get("ocae", []) if "mock" in (p.get("source") or "").lower()] or cert.get("ocaq", [])[:0])
-        + ("\n      <li>Importing...</li>" if not [p for p in cert.get("ocae", []) if "mock" in (p.get("source") or "").lower()] else "")
-        + '\n    </ul>\n'
-    )
-    doc = page_document(
-        meta_title="OCA Java SE 8 & Exam Papers",
-        description="OCA Java SE 8 modules and OCA/OCP exam paper indexes restored from java2s.",
-        sidebar_html=build_sidebar(sections, active_slug="oca-exams"),
-        main_html=main,
-        is_home=False,
-        body_class="page-oca-exams",
-    )
-    (OUT_DIR / "oca-exams.html").write_text(doc, encoding="utf-8")
-
-    # --- SCJP page ---
-    tree_html = []
-    for g in scjp_tree:
-        subs = g.get("subtopics") or []
-        tree_html.append(f'    <h2>{esc(g["title"])}</h2>\n    <div class="tchips">'
-                         + "".join(f'<span class="tchip">{esc(s)}</span>' for s in subs) + "</div>")
-    main = (
-        f'    {build_crumb(("Java HOME", "index.html"), ("Certification", "certification.html"), ("SCJP", None))}\n'
-        '    <h1>SCJP - Sun Certified Java Programmer</h1>\n'
-        '    <p>The classic pre-OCA certification. java2s kept a full SCJP tutorial organised in nine topics - '
-        'restored below, with every imported article listed under it.</p>\n'
-        + "\n".join(tree_html) + "\n"
-        f'    <h2>SCJP articles imported ({len(cert.get("scjp", []))})</h2>\n'
-        f'    <ul class="arc-list">\n{ul(cert.get("scjp", [])) or "      <li>Importing from the archive...</li>"}\n    </ul>\n'
-    )
-    doc = page_document(
-        meta_title="SCJP - Sun Certified Java Programmer",
-        description="SCJP certification tutorial restored from java2s: nine exam topics with archived articles.",
-        sidebar_html=build_sidebar(sections, active_slug="scjp"),
-        main_html=main,
-        is_home=False,
-        body_class="page-scjp",
-    )
-    (OUT_DIR / "scjp.html").write_text(doc, encoding="utf-8")
-
-
-def qnum(page: dict) -> int:
-    m = re.search(r"question-(\d+)", page.get("source") or "")
-    return int(m.group(1)) if m else 0
-
-
-def render_extra_section(key: str, pages_: list[dict], sections: list[dict]) -> None:
-    """List page for one of the additional java2s tutorial sections (new structure)."""
-    label = key.replace("_", " ")
-    items = "\n".join(
-        f'      <li><a href="{p["slug"]}.html">{esc(p["nav"])}</a></li>'
-        for p in sorted(pages_, key=lambda x: x["title"].lower())
-    ) or '      <li class="arc-empty">Importing from the archive...</li>'
-    main = (
-        f'    {build_crumb(("Java HOME", "index.html"), ("Java Tutorial", "java-tutorial.html"), (label, None))}\n'
-        f'    <h1>{esc(label)}</h1>\n'
-        f'    <p><strong>{len(pages_)}</strong> pages imported from this java2s tutorial section.</p>\n'
-        '    <div class="arc-filter-wrap"><input type="text" id="arcFilter" class="arc-filter" '
-        f'placeholder="Filter {esc(label)}..." autocomplete="off"></div>\n'
-        f'    <ul class="arc-list" id="arcList">\n{items}\n    </ul>\n'
-        + ARC_FILTER_SCRIPT
-        + f'\n    <p class="arc-crumb"><a href="java-tutorial.html">&larr; All tutorial chapters</a></p>\n'
-    )
-    doc = page_document(
-        meta_title=f"{label} - Java Tutorial",
-        description=f"{label}: java2s tutorial section restored with {len(pages_)} imported pages.",
-        sidebar_html=build_sidebar(sections, active_slug=extra_group_href(key)),
-        main_html=main,
-        is_home=False,
-        body_class="page-extra-section",
-    )
-    (OUT_DIR / f"{extra_group_href(key)}.html").write_text(doc, encoding="utf-8")
+</script>""")
+    return "\n".join(out)
 
 
 def main() -> int:
-    sections_all, flat = load_pages()
+    sections, flat = load_pages()
+    classify_imported(flat)
+    tree_map = load_tree_map()
+    chapters = load_tutorial_chapters()
 
-    # split imported archive pages away from the original sections
-    imported = [p for p in flat if p["section"] == IMPORTED_SECTION]
-    sections = [s for s in sections_all if s["title"] != IMPORTED_SECTION]
+    tree_out, placement, skip_slugs = tutorial_tree_pages(flat, chapters, tree_map)
+    grp_out, grp_nav = build_group_pages(flat, placement)
+    cert_out = certification_pages(flat)
+    keep = [p for p in flat if p["slug"] not in skip_slugs]
+    flat = keep
 
-    chapters, extra, cert, examples = partition_imported(imported)
-    # relabel imported pages with their new home section (search index + crumbs)
-    for v in chapters.values():
-        for p in v:
-            p["section"] = "Java Tutorial"
-    for v in extra.values():
-        for p in v:
-            p["section"] = "Java Tutorial"
-    for k in ("ocaq", "ocae", "ocal", "scjp"):
-        for p in cert[k]:
-            p["section"] = "Certification"
-    for p in examples:
-        p["section"] = "Java Examples"
-    tree = load_json_data("catalog_tree.json")
-    scjp_tree = load_json_data("scjp_tree.json")
-
-    # example groups (Code/Java and friends) get category sub-pages
-    example_sec = {"title": "Java Examples", "pages": examples}
-    example_groups = attach_archive_groups([example_sec])
-    example_groups = example_sec.get("groups", [])
-
-    # ---- crumb routing for imported pages ----
-    route: dict[str, list] = {}
-    chapters_known = {ch["dir"] for ch in tree}
-    for i, ch in enumerate(tree):
-        href = chapter_slug(i, ch["title"]) + ".html"
-        for p in chapters.get(ch["dir"], []):
-            route[p["slug"]] = [("Java Tutorial", "java-tutorial.html"), (ch["title"], href)]
-    for d, pages_ in chapters.items():
-        if d not in chapters_known:
-            for p in pages_:
-                route[p["slug"]] = [("Java Tutorial", "java-tutorial.html"), (d.split("__")[-1].replace("-", " "), None)]
-    for key, pages_ in extra.items():
-        href = extra_group_href(key) + ".html"
-        for p in pages_:
-            route[p["slug"]] = [("Java Tutorial", "java-tutorial.html"), (key.replace("_", " "), href)]
-    for p in cert["ocaq"]:
-        route[p["slug"]] = [("Certification", "certification.html"), ("OCA / OCP Practice Questions", "oca-questions.html")]
-    for p in cert["ocae"] + cert["ocal"]:
-        route[p["slug"]] = [("Certification", "certification.html"), ("OCA Java SE 8 & Exam Papers", "oca-exams.html")]
-    for p in cert["scjp"]:
-        route[p["slug"]] = [("Certification", "certification.html"), ("SCJP", "scjp.html")]
-    for g in example_groups:
-        for p in g["pages"]:
-            route[p["slug"]] = [("Java Examples", "archive-index.html"), (g["title"], g["href"])]
-
-    # ---- home / sidebar sections ----
-    tut_total = sum(len(v) for v in chapters.values()) + sum(len(v) for v in extra.values())
-    chips_tut = [{"label": "Java Tutorial - all chapters", "href": "java-tutorial.html",
-                  "count": tut_total, "highlight": True}]
-    for i, ch in enumerate(tree):
-        chips_tut.append({"label": f'{i + 1}. {ch["title"]}',
-                          "href": chapter_slug(i, ch["title"]) + ".html",
-                          "count": len(chapters.get(ch["dir"], [])), "highlight": False})
-    for key in sorted(extra, key=str.lower):
-        chips_tut.append({"label": key.replace("_", " "), "href": extra_group_href(key) + ".html",
-                          "count": len(extra[key]), "highlight": False})
-    tut_sec = {"title": "Java Tutorial", "pages": [], "chips": chips_tut}
-
-    chips_cert = [
-        {"label": "Certification home", "href": "certification.html", "count": 0, "highlight": True},
-        {"label": "OCA / OCP Practice Questions", "href": "oca-questions.html",
-         "count": len(cert["ocaq"]), "highlight": False},
-        {"label": "OCA Java SE 8 & Exam Papers", "href": "oca-exams.html",
-         "count": len(cert["ocae"]) + len(cert["ocal"]), "highlight": False},
-        {"label": "SCJP Exam", "href": "scjp.html", "count": len(cert["scjp"]), "highlight": False},
-        {"label": "OCJP Practice Test 1 (50 Q)", "href": "ocjp-practice.html", "count": 0, "highlight": False},
-        {"label": "OCJP Practice Test 2 (50 Q)", "href": "ocjp-practice-2.html", "count": 0, "highlight": False},
-        {"label": "OCJP Practice Test 3 (50 Q)", "href": "ocjp-practice-3.html", "count": 0, "highlight": False},
-        {"label": "Interview banks", "href": "interview.html", "count": 0, "highlight": False},
-    ]
-    cert_sec = {"title": "Certification", "pages": [], "chips": chips_cert}
-
-    ordered = []
-    for name in SECTION_ORDER:
-        if name == "Java Tutorial":
-            ordered.append(tut_sec)
-        elif name == "Certification":
-            ordered.append(cert_sec)
-        elif name == "Java Examples":
-            ordered.append(example_sec)
-        else:
-            for s in sections:
-                if s["title"] == name:
-                    ordered.append(s)
-    for s in sections:  # any extra original sections not in SECTION_ORDER
-        if s["title"] not in SECTION_ORDER:
-            ordered.append(s)
-    sections = ordered
+    # regroup sections now that imported pages have their java2s homes
+    by_sec: dict = {}
+    for p in flat:
+        by_sec.setdefault(p["section"], []).append(p)
+    sections = [{"title": name, "pages": by_sec[name]} for name in SECTION_ORDER if name in by_sec]
+    sections += [{"title": k, "pages": v} for k, v in by_sec.items() if k not in SECTION_ORDER]
+    nav_cards = build_nav_cards(sections, flat, [c for c in
+        [{"ch": ch, "slug": slug} for (slug, t_, b) in [] ] ] if False else
+        [{"ch": ch, "slug": "tut-%s-%s" % (ch["num"], slugify(ch["title"]))} for ch in chapters],
+        grp_nav)
+    extra_pages = tree_out + grp_out + cert_out
 
     home_path = CONTENT_DIR / "home.md"
     if not home_path.exists():
@@ -1253,19 +1037,30 @@ def main() -> int:
     if OUT_DIR.exists():
         shutil.rmtree(OUT_DIR)
     (OUT_DIR / "assets").mkdir(parents=True)
+
+    # assets
     for name in ("style.css", "script.js", "favicon.svg"):
         src = ASSETS_DIR / name
         if src.exists():
             shutil.copy2(src, OUT_DIR / "assets" / name)
 
-    # search index
-    index = [{"t": p["title"], "s": p["section"], "u": p["slug"] + ".html", "d": p["description"]}
-             for p in flat]
-    (OUT_DIR / "assets" / "search-index.js").write_text(
-        "window.JSCHOOL_INDEX=" + json.dumps(index, ensure_ascii=False) + ";\n", encoding="utf-8")
+    # search index (as JS so it also works over file://)
+    index = [
+        {
+            "t": p["title"],
+            "s": p["section"],
+            "u": p["slug"] + ".html",
+            "d": p["description"],
+        }
+        for p in flat
+    ]
+    index_js = "window.JSCHOOL_INDEX=" + json.dumps(index, ensure_ascii=False) + ";\n"
+    (OUT_DIR / "assets" / "search-index.js").write_text(index_js, encoding="utf-8")
 
     # home
-    (OUT_DIR / "index.html").write_text(render_home(home_path, sections, flat), encoding="utf-8")
+    (OUT_DIR / "index.html").write_text(
+        render_home(home_path, sections, flat, nav_cards), encoding="utf-8"
+    )
 
     # pages
     for idx, page in enumerate(flat):
@@ -1274,34 +1069,50 @@ def main() -> int:
         if page["layout"] == "home":
             inner = body_html
         else:
-            r = route.get(page["slug"])
-            if r:
-                crumb = build_crumb(("Java HOME", "index.html"), *r)
-            elif page["section"] in ("Java Tutorial", "Certification", "Java Examples"):
-                crumb = build_crumb(("Java HOME", "index.html"), (page["section"], None))
+            plc = placement.get(page["slug"])
+            if plc:
+                ch, tp, tp_slug = plc
+                crumb = build_crumb(
+                    ("Java HOME", "index.html"),
+                    ("Java Tutorial", "tutorial.html"),
+                    (ch["title"], f'tut-{ch["num"]}-{slugify(ch["title"])}.html'),
+                    (tp["title"], tp_slug + ".html"),
+                )
+            elif page["section"] == "Java Tutorial" and page.get("tgroup"):
+                ch = next((c for c in chapters if c["folder"] == page["tgroup"]), None)
+                if ch:
+                    crumb = build_crumb(
+                        ("Java HOME", "index.html"),
+                        ("Java Tutorial", "tutorial.html"),
+                        (ch["title"], f'tut-{ch["num"]}-{slugify(ch["title"])}.html'),
+                    )
+                else:
+                    crumb = build_crumb(("Java HOME", "index.html"), ("Java Tutorial", "tutorial.html"))
             else:
                 crumb = build_crumb(("Java HOME", "index.html"), (page["section"], None))
             inner = f'    {crumb}\n    <h1>{esc(page["title"])}</h1>\n{body_html}'
-        main_html = f"{inner}\n    {build_pager(flat, idx)}"
+        main = f"{inner}\n    {build_pager(flat, idx)}"
         doc = page_document(
             meta_title=page["title"],
             description=page["description"],
             sidebar_html=sidebar,
-            main_html=main_html,
+            main_html=main,
             is_home=False,
             body_class=f"page-{page['slug']}",
         )
         (OUT_DIR / f"{page['slug']}.html").write_text(doc, encoding="utf-8")
 
-    # generated structure pages
-    render_tutorial_hub(tree, chapters, extra, sections, tut_total)
-    for i, ch in enumerate(tree):
-        render_chapter_page(tree, i, chapters.get(ch["dir"], []), sections)
-    for key, pages_ in extra.items():
-        render_extra_section(key, pages_, sections)
-    render_certification(cert, scjp_tree, sections)
-    if example_groups:
-        render_archive_pages(example_groups, sections)
+    # generated tree / group / certification pages
+    for slug, meta_title, main_html in extra_pages:
+        doc = page_document(
+            meta_title=meta_title,
+            description=f"{meta_title} - JavaSchool",
+            sidebar_html=build_sidebar(sections, active_slug=slug),
+            main_html=main_html + "    <p class=\"arc-crumb\"><a href=\"index.html\">&larr; Java HOME</a></p>",
+            is_home=False,
+            body_class=f"page-{slug}",
+        )
+        (OUT_DIR / f"{slug}.html").write_text(doc, encoding="utf-8")
 
     # 404
     not_found = page_document(
@@ -1319,15 +1130,13 @@ def main() -> int:
         body_class="page-404",
     )
     (OUT_DIR / "404.html").write_text(not_found, encoding="utf-8")
+
+    # GitHub Pages: don't run Jekyll
     (OUT_DIR / ".nojekyll").write_text("", encoding="utf-8")
 
-    print(f"Built {len(flat)} pages + home + 404 -> {OUT_DIR}")
+    print(f"Built {len(flat)} pages + {len(extra_pages)} tree/group pages + home + 404 -> {OUT_DIR}")
     for sec in sections:
-        n = len(sec["pages"]) if sec["pages"] else len(sec.get("chips", []))
-        print(f"  [{sec['title']}] {n} entries")
-    print(f"  [Java Tutorial] {len(tree)} chapters, {tut_total} articles imported")
-    print(f"  [Certification] {len(cert['ocaq'])} OCA questions, {len(cert['ocae'])} SE8, "
-          f"{len(cert['ocal'])} exam papers, {len(cert['scjp'])} SCJP")
+        print(f"  [{sec['title']}] {len(sec['pages'])} pages")
     return 0
 
 

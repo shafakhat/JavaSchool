@@ -2,7 +2,7 @@
 title: Threads & Concurrency Interview Questions
 nav: Interview - Threads
 description: 28 concurrency interview questions - thread lifecycle, synchronized, volatile, Java memory model, deadlocks, executors, CompletableFuture, virtual threads.
-section: Interview Prep
+section: Interview & Certification
 order: 40
 ---
 
