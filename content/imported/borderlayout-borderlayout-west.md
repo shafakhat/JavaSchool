@@ -3,15 +3,15 @@ title: Java Swing Tutorial - Java BorderLayout WEST
 nav: Java Swing Tutorial - Java...
 description: In the following code shows how to use BorderLayout.WEST field.
 section: Imported - java2s Archive
-order: 1013
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/0280__BorderLayout.WEST.htm
+order: 1163
+source: https://web.archive.org/web/20150325172515/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/0280__BorderLayout.WEST.htm
 ---
 ## Syntax
 
 BorderLayout.WEST has the following syntax.
 
 ```java title=Example.java
-publicstaticfinal String WEST
+public static final String WEST
 ```
 
 ## Example
@@ -22,8 +22,8 @@ In the following code shows how to use BorderLayout.WEST field.
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JToggleButton;
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     JFrame f = new JFrame("JToggleButton Sample");
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     f.add(new JToggleButton("North"), BorderLayout.NORTH);
@@ -35,4 +35,5 @@ publicclass Main {
     f.setVisible(true);
   }
 }
+java title=Example.java
 ```

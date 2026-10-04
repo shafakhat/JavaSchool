@@ -3,8 +3,8 @@ title: Gets the substring before the last occurrence of a separator. The separat
 nav: Gets the substring before ...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1179
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/GetsthesubstringbeforethelastoccurrenceofaseparatorTheseparatorisnotreturned.htm
+order: 1115
+source: https://web.archive.org/web/20140829082220/http://www.java2s.com/Tutorial/Java/0040__Data-Type/GetsthesubstringbeforethelastoccurrenceofaseparatorTheseparatorisnotreturned.htm
 ---
 ```java title=Example.java
 /**
@@ -22,7 +22,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * <code>null</code> safe.
  *
@@ -48,7 +49,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */public class Main {
+ */
+public class Main {
   /**
    * Gets the substring before the last occurrence of a separator.
    * The separator is not returned.
@@ -73,7 +75,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @return the substring before the last occurrence of the separator,
    *  <code>null</code> if null String input
    * @since 2.0
-   */ public static String substringBeforeLast(String str, String separator) {
+   */
+  public static String substringBeforeLast(String str, String separator) {
       if (isEmpty(str) || isEmpty(separator)) {
           return str;
       }
@@ -84,8 +87,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
       return str.substring(0, pos);
   }
   // Empty checks
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -102,7 +105,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */ public static boolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }

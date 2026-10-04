@@ -3,8 +3,8 @@ title: Splits the provided text into an array, separator string specified. Retur
 nav: Splits the provided text i...
 description: * Splits the provided text into an array, separator string specified.
 section: Imported - java2s Archive
-order: 1177
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/SplitstheprovidedtextintoanarrayseparatorstringspecifiedReturnsamaximumofmaxsubstrings.htm
+order: 1146
+source: https://web.archive.org/web/20140829092423/http://www.java2s.com/Tutorial/Java/0040__Data-Type/SplitstheprovidedtextintoanarrayseparatorstringspecifiedReturnsamaximumofmaxsubstrings.htm
 ---
 ```java title=Example.java
 import java.util.ArrayList;
@@ -36,7 +36,8 @@ public class Main {
    * @param max  the maximum number of elements to include in the returned
    *  array. A zero or negative value implies no limit.
    * @return an array of parsed Strings, <code>null</code> if null String was input
-   */ public static String[] splitByWholeSeparator( String str, String separator, int max ) {
+   */
+  public static String[] splitByWholeSeparator( String str, String separator, int max ) {
       return splitByWholeSeparatorWorker(str, separator, max, false);
   }
   /**
@@ -52,7 +53,8 @@ public class Main {
    * separators are treated as one separator.
    * @return an array of parsed Strings, <code>null</code> if null String input
    * @since 2.4
-   */ private static String[] splitByWholeSeparatorWorker(String str, String separator, int max,
+   */
+  private static String[] splitByWholeSeparatorWorker(String str, String separator, int max,
                                                       boolean preserveAllTokens)
   {
       if (str == null) {
@@ -64,7 +66,7 @@ public class Main {
       }
       if ((separator == null) || ("".equals(separator))) {
           // Split on whitespace.
- return splitWorker(str, null, max, preserveAllTokens);
+          return splitWorker(str, null, max, preserveAllTokens);
       }
       int separatorLength = separator.length();
       ArrayList substrings = new ArrayList();
@@ -81,16 +83,16 @@ public class Main {
                       substrings.add(str.substring(beg));
                   } else {
                       // The following is OK, because String.substring( beg, end ) excludes
- // the character at the position 'end'.
+                      // the character at the position 'end'.
                       substrings.add(str.substring(beg, end));
                       // Set the starting point for the next search.
- // The following is equivalent to beg = end + (separatorLength - 1) + 1,
- // which is the right calculation:
+                      // The following is equivalent to beg = end + (separatorLength - 1) + 1,
+                      // which is the right calculation:
                       beg = end + separatorLength;
                   }
               } else {
                   // We found a consecutive occurrence of the separator, so skip it.
- if (preserveAllTokens) {
+                  if (preserveAllTokens) {
                       numberOfSubstrings += 1;
                       if (numberOfSubstrings == max) {
                           end = len;
@@ -122,11 +124,12 @@ public class Main {
    * treated as empty token separators; if <code>false</code>, adjacent
    * separators are treated as one separator.
    * @return an array of parsed Strings, <code>null</code> if null String input
-   */ private static String[] splitWorker(String str, String separatorChars, int max, boolean preserveAllTokens) {
+   */
+  private static String[] splitWorker(String str, String separatorChars, int max, boolean preserveAllTokens) {
       // Performance tuned for 2.0 (JDK1.4)
- // Direct code is quicker than StringTokenizer.
- // Also, StringTokenizer uses isSpace() not isWhitespace()
- if (str == null) {
+      // Direct code is quicker than StringTokenizer.
+      // Also, StringTokenizer uses isSpace() not isWhitespace()
+      if (str == null) {
           return null;
       }
       int len = str.length();
@@ -140,7 +143,7 @@ public class Main {
       boolean lastMatch = false;
       if (separatorChars == null) {
           // Null separator means use whitespace
- while (i < len) {
+          while (i < len) {
               if (Character.isWhitespace(str.charAt(i))) {
                   if (match || preserveAllTokens) {
                       lastMatch = true;
@@ -160,7 +163,7 @@ public class Main {
           }
       } else if (separatorChars.length() == 1) {
           // Optimise 1 character case
- char sep = separatorChars.charAt(0);
+          char sep = separatorChars.charAt(0);
           while (i < len) {
               if (str.charAt(i) == sep) {
                   if (match || preserveAllTokens) {
@@ -181,7 +184,7 @@ public class Main {
           }
       } else {
           // standard case
- while (i < len) {
+          while (i < len) {
               if (separatorChars.indexOf(str.charAt(i)) >= 0) {
                   if (match || preserveAllTokens) {
                       lastMatch = true;

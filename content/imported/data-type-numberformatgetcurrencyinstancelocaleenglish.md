@@ -3,8 +3,8 @@ title: NumberFormat.getCurrencyInstance(Locale.ENGLISH)
 nav: NumberFormat.getCurrencyIn...
 description: NumberFormat dollarFormat = NumberFormat.getCurrencyInstance(Locale.ENGLISH);
 section: Imported - java2s Archive
-order: 1116
-source: https://web.archive.org/web/2014/http://www.java2s.com/Tutorial/Java/0040__Data-Type/NumberFormatgetCurrencyInstanceLocaleENGLISH.htm
+order: 1078
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/NumberFormatgetCurrencyInstanceLocaleENGLISH.htm
 ---
 ```java title=Example.java
 import java.text.NumberFormat;

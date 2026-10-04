@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Heap Sort Implementation in Java - JavaSchool</title>
-<meta name="description" content="Next »« PreviousHome » Java Tutorial » AlgorithmsBubble sortBinary SearchInsertion SortSelection sortShell sortHeap SortMerge SortQuick SortFibonacciHanoi puzzleFahrenhei">
+<meta name="description" content="Next »« PreviousHome » Java Tutorial » Java Langauge » Java AlgorithmsJava Bubble sort Java Binary Search Java Insertion Sort Java Selection sort Java Shell sort Java Hea">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -39,11 +39,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   <article class="ws-content">
     <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-algorithms.html">Algorithms</a></nav>
     <h1>Heap Sort Implementation in Java</h1>
-<p>In this chapter you will learn:</p>
-<ul><li>Heap Sort Implementation</li></ul>
 <h3 id="heap-sort-implementation">Heap Sort Implementation</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] args) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] args) {
     int size, i;
     size = 10;
     Heap theHeap = new Heap(size);
@@ -69,28 +67,28 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   }
 }
 class Heap {
-  privateint[] heapArray;
-  privateint maxSize;
-  privateint currentSize; // number of items in array
-public Heap(int mx) {
+  private int[] heapArray;
+  private int maxSize;
+  private int currentSize; // number of items in array
+ public Heap(int mx) {
     maxSize = mx;
     currentSize = 0;
-    heapArray = newint[maxSize];
+    heapArray = new int[maxSize];
   }
-  publicint remove() {
+  public int remove() {
     int root = heapArray[0];
     heapArray[0] = heapArray[--currentSize];
     sort(0);
     return root;
   }
-  publicvoid sort(int index) {
+  public void sort(int index) {
     int largerChild;
     int top = heapArray[index];
     while (index &lt; currentSize / 2) {
       int leftChild = 2 * index + 1;
       int rightChild = leftChild + 1;
       // find larger child
-if (rightChild &lt; currentSize
+ if (rightChild &lt; currentSize
           &amp;&amp; heapArray[leftChild] &lt; heapArray[rightChild]) {
         largerChild = rightChild;
       } else {
@@ -104,7 +102,7 @@ if (rightChild &lt; currentSize
     }
     heapArray[index] = top;
   }
-  publicvoid displayHeap() {
+  public void displayHeap() {
     int nBlanks = 32;
     int itemsPerRow = 1;
     int column = 0;
@@ -116,7 +114,7 @@ if (rightChild &lt; currentSize
         }
       System.out.print(heapArray[currentIndex]);
       if (++currentIndex == currentSize){ // done?
-break;
+ break;
       }
       if (++column == itemsPerRow) // end of row?
       {
@@ -132,14 +130,14 @@ break;
     }
     System.out.println();
   }
-  publicvoid displayArray() {
+  public void displayArray() {
     for (int j = 0; j &lt; maxSize; j++)
       System.out.println(heapArray[j]);
   }
-  publicvoid insertAt(int index, int newNode) {
+  public void insertAt(int index, int newNode) {
     heapArray[index] = newNode;
   }
-  publicvoid incrementSize() {
+  public void incrementSize() {
     currentSize++;
   }
 }</code></pre></div>
@@ -147,7 +145,7 @@ break;
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Merge Sort implementation</li><li>Fast Merge Sort</li></ul>
-    <div class="pager"><a class="pager-btn" href="language-gettingallannotationsforamethod.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Getting all annotations fo...</span></a><a class="pager-btn pager-next" href="language-howdoimarkmethodasdeprecated.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">How do I mark method as de...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-getalistofweekdaynames.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Get a List of Weekday Names</span></a><a class="pager-btn pager-next" href="jdk-7-isapathabsolute.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Is a path absolute</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

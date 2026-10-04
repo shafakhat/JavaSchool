@@ -3,8 +3,8 @@ title: How to implement Insertion Sort in Java
 nav: How to implement Insertion...
 description: while (in > 0 && number[in - 1] >= temp) // until one is smaller,
 section: Imported - java2s Archive
-order: 1002
-source: https://web.archive.org/web/20130905011127/http://java2s.com/Tutorials/Java/Algorithms/How_to_implement_Insertion_Sort_in_Java.htm
+order: 1084
+source: https://web.archive.org/web/20140713164802/http://java2s.com/Tutorials/Java/Algorithms/How_to_implement_Insertion_Sort_in_Java.htm
 ---
 In this chapter you will learn:
 
@@ -14,8 +14,8 @@ In this chapter you will learn:
 ### Insertion Sort Implementation
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     int maxSize = 100; // array size
     InsertSort arr; // reference to array
     arr = new InsertSort(maxSize); // create the array
@@ -35,28 +35,28 @@ publicclass Main {
   }
 }
 class InsertSort {
-  privatelong[] number;
-  privateint nElems;
+  private long[] number;
+  private int nElems;
   public InsertSort(int max) {
-    number = newlong[max];
+    number = new long[max];
     nElems = 0;
   }
-  publicvoid insert(long value) {
+  public void insert(long value) {
     number[nElems] = value;
     nElems++;
   }
-  publicvoid display() {
+  public void display() {
     for (int j = 0; j < nElems; j++)
       System.out.print(number[j] + " ");
     System.out.println("");
   }
-  publicvoid insertionSort() {
+  public void insertionSort() {
     int in, out;
     // out is dividing line
-for (out = 1; out < nElems; out++) {
+ for (out = 1; out < nElems; out++) {
       long temp = number[out]; // remove marked item
       in = out; // start shifts at out
-while (in > 0 && number[in - 1] >= temp) // until one is smaller,
+ while (in > 0 && number[in - 1] >= temp) // until one is smaller,
       {
         number[in] = number[in - 1]; // shift item to right
         --in; // go left one position
@@ -74,8 +74,8 @@ The code above generates the following result.
 The following code shows how to do object Insertion Sort. It compares the person's last name.
 
 ```java title=Example.java
-publicclass Main{
-  publicstaticvoid main(String[] args) {
+public class Main{
+  public static void main(String[] args) {
     int maxSize = 100; // array size
     ObjectInsertSort arr = new ObjectInsertSort(maxSize); // create the array
     arr.insert("Jack", "James", 24);
@@ -95,26 +95,26 @@ publicclass Main{
 }
 class ObjectInsertSort {
   private Person[] a;
-  privateint nElems;
+  private int nElems;
   public ObjectInsertSort(int max) {
     a = new Person[max];
     nElems = 0;
   }
   // put person into array
-publicvoid insert(String last, String first, int age) {
+ public void insert(String last, String first, int age) {
     a[nElems] = new Person(last, first, age);
     nElems++;
   }
-  publicvoid display() {
+  public void display() {
     for (int j = 0; j < nElems; j++)
       a[j].displayPerson();
   }
-  publicvoid insertionSort() {
+  public void insertionSort() {
     int in, out;
     for (out = 1; out < nElems; out++) {
       Person temp = a[out]; // out is dividing line
       in = out; // start shifting at out
-while (in > 0 && // until smaller one found,
+ while (in > 0 && // until smaller one found,
           a[in - 1].getLast().compareTo(temp.getLast()) > 0) {
         a[in] = a[in - 1]; // shift item to the right
         --in; // go left one position
@@ -126,13 +126,13 @@ while (in > 0 && // until smaller one found,
 class Person {
   private String lastName;
   private String firstName;
-  privateint age;
+  private int age;
   public Person(String last, String first, int a) {
     lastName = last;
     firstName = first;
     age = a;
   }
-  publicvoid displayPerson() {
+  public void displayPerson() {
     System.out.print("   Last name: " + lastName);
     System.out.print(", First name: " + firstName);
     System.out.println(", Age: " + age);

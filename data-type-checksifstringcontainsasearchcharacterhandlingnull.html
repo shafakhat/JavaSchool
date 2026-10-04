@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * &lt;code&gt;null&lt;/code&gt; safe.
  *
@@ -80,10 +81,11 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */public class Main {
+ */
+public class Main {
   // Contains
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if String contains a search character, handling &lt;code&gt;null&lt;/code&gt;.
    * This method uses {@link String#indexOf(int)}.
    *
@@ -101,15 +103,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @return true if the String contains the search character,
    *  false if not or &lt;code&gt;null&lt;/code&gt; string input
    * @since 2.0
-   */ public static boolean contains(String str, char searchChar) {
+   */
+  public static boolean contains(String str, char searchChar) {
       if (isEmpty(str)) {
           return false;
       }
       return str.indexOf(searchChar) &gt;= 0;
   }
   // Empty checks
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * &lt;pre&gt;
@@ -126,11 +129,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    *
    * @param str  the String to check, may be null
    * @return &lt;code&gt;true&lt;/code&gt; if the String is empty or null
-   */ public static boolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="data-type-splitstring.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Split string</span></a><a class="pager-btn pager-next" href="data-type-usestringlastindexoftofindacharacterinastring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Use String.lastIndexOf to ...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="chart-chart2dlinechart.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Chart2D</span></a><a class="pager-btn pager-next" href="data-type-datatypeconversion.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Data type conversion</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

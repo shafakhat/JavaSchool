@@ -43,8 +43,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <ul><li>Append an object to an array.</li><li>Append one array to another</li></ul>
 <h3 id="append-an-object-to-an-array">Append an object to an array.</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.Array;
-publicclass Main {
-  publicstatic &lt;T&gt; T[] add(T[] array, T obj) {
+public class Main {
+  public static &lt;T&gt; T[] add(T[] array, T obj) {
     if (array == null &amp;&amp; obj == null) {
       return null;
     }
@@ -60,15 +60,15 @@ publicclass Main {
 }</code></pre></div>
 <h3 id="append-one-array-to-another">Append one array to another</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.Array;
-publicclass Util {
+public class Util {
   /**
    * Returns a new array that is the concatenation of a1 and a2.
    *
    * @param a1
    * @param a2
    * @return
-   */publicstaticint[] append(int[] a1, int[] a2) {
-    int[] ret = newint[a1.length + a2.length];
+   */ public static int[] append(int[] a1, int[] a2) {
+    int[] ret = new int[a1.length + a2.length];
     System.arraycopy(a1, 0, ret, 0, a1.length);
     System.arraycopy(a2, 0, ret, a1.length, a2.length);
     return ret;
@@ -79,8 +79,8 @@ publicclass Util {
    * @param a1
    * @param a2
    * @return
-   */publicstaticdouble[] append(double[] a1, double[] a2) {
-    double[] ret = newdouble[a1.length + a2.length];
+   */ public static double[] append(double[] a1, double[] a2) {
+    double[] ret = new double[a1.length + a2.length];
     System.arraycopy(a1, 0, ret, 0, a1.length);
     System.arraycopy(a2, 0, ret, a1.length, a2.length);
     return ret;
@@ -94,8 +94,8 @@ publicclass Util {
    *            Original array
    * @param elem
    *            Element to add to end
-   */publicstaticint[] append(int[] v, int elem) {
-    int[] ret = newint[v.length + 1];
+   */ public static int[] append(int[] v, int elem) {
+    int[] ret = new int[v.length + 1];
     System.arraycopy(v, 0, ret, 0, v.length);
     ret[v.length] = elem;
     return ret;
@@ -109,8 +109,8 @@ publicclass Util {
    *            Original array
    * @param elem
    *            Element to add to end
-   */publicstaticboolean[] append(boolean[] v, boolean elem) {
-    boolean[] ret = newboolean[v.length + 1];
+   */ public static boolean[] append(boolean[] v, boolean elem) {
+    boolean[] ret = new boolean[v.length + 1];
     System.arraycopy(v, 0, ret, 0, v.length);
     ret[v.length] = elem;
     return ret;
@@ -126,7 +126,7 @@ publicclass Util {
    *            Element to add to end
    * @return Array with length v+1 that is (v0,v1,...,vn,elem). Runtime type
    *         will be same as he pased-in array.
-   */publicstatic Object[] append(Object[] v, Object elem) {
+   */ public static Object[] append(Object[] v, Object elem) {
     Object[] ret = (Object[]) Array.newInstance(v.getClass()
         .getComponentType(), v.length + 1);
     System.arraycopy(v, 0, ret, 0, v.length);
@@ -137,7 +137,7 @@ publicclass Util {
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Maximum value in a byte array</li><li>Maximum value in a double-type array</li><li>Returns the minimum value in a double-type array</li></ul>
-    <div class="pager"><a class="pager-btn" href="j2ee-helloworldjsf.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Hello World JSF</span></a><a class="pager-btn pager-next" href="java-java-aclfileattributeview-get-permission-and-entry.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java AclFileAttributeView ...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-addszerostothebeginningofavaluesothatthetotallengthmatchesthegivenprec.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Adds zeros to the beginnin...</span></a><a class="pager-btn pager-next" href="web-services-soa-howtoexposethegettersandsettersofaservicethisdemousesthespringt.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">How to expose the getters ...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

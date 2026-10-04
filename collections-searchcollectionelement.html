@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search collection element - JavaSchool</title>
+<meta name="description" content="Imported from the java2s.com archive: Search collection element">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-searchcollectionelement">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-collections.html">Collections</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-02-collections.html">Collections</a></nav>
+    <h1>Search collection element</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DateFormatSymbols;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+public class Main {
+  public static void main(String[] args) {
+    List list = new LinkedList();
+    DateFormatSymbols dfs = new DateFormatSymbols();
+    String[] months = dfs.getMonths();
+    for (int i = 0; i &lt; months.length; i++) {
+      String month = months[i];
+      list.add(month);
+    }
+    Collections.sort(list);
+    System.out.println("Month Names = " + list);
+    int index = Collections.binarySearch(list, "October");
+    if (index &gt; 0) {
+      System.out.println("Found at index = " + index);
+      String month = (String) list.get(index);
+      System.out.println("Month = " + month);
+    }
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>9.2.1.</th><th>Using the Collections.synchronized methods</th></tr></thead><tbody><tr><td>9.2.2.</td><td>Get Synchronized List from ArrayList</td></tr><tr><td>9.2.3.</td><td>Sort elements of ArrayList</td></tr><tr><td>9.2.4.</td><td>Copy Elements of ArrayList to Java Vector</td></tr><tr><td>9.2.5.</td><td>Copy Elements of One ArrayList to Another ArrayList</td></tr><tr><td>9.2.6.</td><td>Find maximum element of ArrayList</td></tr><tr><td>9.2.7.</td><td>Find Minimum element of ArrayList</td></tr><tr><td>9.2.8.</td><td>Get Enumeration over ArrayList</td></tr><tr><td>9.2.9.</td><td>Perform Binary Search on ArrayList</td></tr><tr><td>9.2.10.</td><td>Replace All Elements Of ArrayList</td></tr><tr><td>9.2.11.</td><td>Replace all occurrences of specified element of ArrayList</td></tr><tr><td>9.2.12.</td><td>Reverse order of all elements of ArrayList</td></tr><tr><td>9.2.13.</td><td>Shuffle elements of ArrayList</td></tr><tr><td>9.2.14.</td><td>Swap elements of ArrayList</td></tr><tr><td>9.2.15.</td><td>Sort ArrayList in descending order using comparator</td></tr><tr><td>9.2.16.</td><td>Search collection element</td></tr><tr><td>9.2.17.</td><td>Rotate elements of a collection</td></tr><tr><td>9.2.18.</td><td>Sort items of an ArrayList with Collections.reverseOrder()</td></tr><tr><td>9.2.19.</td><td>Create an empty collection object</td></tr><tr><td>9.2.20.</td><td>The Collections.fill() method</td></tr><tr><td>9.2.21.</td><td>Create and demonstrate an immutable collection.</td></tr><tr><td>9.2.22.</td><td>A combination of two collections into a collection</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="collections-sortarraylistindescendingorderusingcomparator.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Sort ArrayList in descendi...</span></a><a class="pager-btn pager-next" href="collections-rotateelementsofacollection.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Rotate elements of a colle...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

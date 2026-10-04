@@ -3,8 +3,8 @@ title: Java Tutorial - Java Area .getPathIterator (AffineTransform at)
 nav: Java Tutorial - Java Area ...
 description: Area.getPathIterator(AffineTransform at) has the following syntax.
 section: Imported - java2s Archive
-order: 1010
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_getPathIterator_AffineTransform_at_.htm
+order: 1107
+source: https://web.archive.org/web/20140830013456/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_getPathIterator_AffineTransform_at_.htm
 ---
 ### Syntax
 

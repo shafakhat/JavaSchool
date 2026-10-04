@@ -3,8 +3,8 @@ title: Java Swing Tutorial - Java CardLayout.toString()
 nav: Java Swing Tutorial - Java...
 description: In the following code shows how to use CardLayout.toString() method.
 section: Imported - java2s Archive
-order: 1014
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0460__CardLayout.toString_.htm
+order: 1185
+source: https://web.archive.org/web/20150325015425/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0460__CardLayout.toString_.htm
 ---
 ## Syntax
 
@@ -25,8 +25,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     JFrame aWindow = new JFrame();
     aWindow.setSize(400, 400);
     aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,8 +45,9 @@ class CardLayoutPanel extends JPanel implements ActionListener {
     }
     System.out.println(card.toString());
   }
-  publicvoid actionPerformed(ActionEvent e) {
+  public void actionPerformed(ActionEvent e) {
     card.next(this);
   }
 }
+java title=Example.java
 ```

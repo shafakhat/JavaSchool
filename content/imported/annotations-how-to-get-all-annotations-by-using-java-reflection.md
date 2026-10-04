@@ -3,8 +3,8 @@ title: How to get all annotations by using Java reflection
 nav: How to get all annotations...
 description: You can obtain all annotations that have RUNTIME retention that are associated with an item by calling getAnnotations( ) on that item.
 section: Imported - java2s Archive
-order: 1021
-source: https://web.archive.org/web/20141115062943/http://www.java2s.com:80/Tutorials/Java/Annotations/How_to_get_all_annotations_by_using_Java_reflection.htm
+order: 1088
+source: https://web.archive.org/web/2016/http://www.java2s.com:80/Tutorials/Java/Annotations/How_to_get_all_annotations_by_using_Java_reflection.htm
 ---
 In this chapter you will learn:
 
@@ -42,10 +42,10 @@ import java.lang.reflect.Method;
 }
 @What(description = "An annotation")
 @MyAnno(str = "Meta2", val = 99)
-publicclass Main {
+public class Main {
   @What(description = "test method")
   @MyAnno(str = "Testing", val = 100)
-  publicstaticvoid myMeth() throws Exception {
+  public static void myMeth() throws Exception {
     Main ob = new Main();
     Annotation annos[] = ob.getClass().getAnnotations();
     System.out.println("All annotations for Meta2:");
@@ -58,7 +58,7 @@ publicclass Main {
       System.out.println(a);
     }
   }
-  publicstaticvoid main(String args[]) throws Exception {
+  public static void main(String args[]) throws Exception {
     myMeth();
   }
 }

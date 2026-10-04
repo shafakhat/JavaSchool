@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convert Date to String - JavaSchool</title>
+<meta name="description" content="Imported from the java2s.com archive: Convert Date to String">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-convertdatetostring">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-13-dateformat.html">DateFormat</a></nav>
+    <h1>Convert Date to String</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+    Date today = Calendar.getInstance().getTime();
+    String reportDate = df.format(today);
+    System.out.println("Report Date: " + reportDate);
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.13.1.</th><th>Formatting and Parsing a Time for a Locale Using Default Formats</th></tr></thead><tbody><tr><td>6.13.2.</td><td>DateFormat.getTimeInstance(DateFormat.MEDIUM, Locale.CANADA).format(new Date())</td></tr><tr><td>6.13.3.</td><td>DateFormat.getTimeInstance(DateFormat.LONG, Locale.CANADA).format(new Date())</td></tr><tr><td>6.13.4.</td><td>DateFormat.getTimeInstance(DateFormat.FULL, Locale.CANADA).format(new Date())</td></tr><tr><td>6.13.5.</td><td>DateFormat.getTimeInstance(DateFormat.DEFAULT, Locale.CANADA).format(new Date())</td></tr><tr><td>6.13.6.</td><td>Parse date string input with DateFormat.getTimeInstance(DateFormat.DEFAULT, Locale.CANADA)</td></tr><tr><td>6.13.7.</td><td>Formatting and Parsing a Time for a Locale: specify the locale when creating the SimpleDateFormat object.</td></tr><tr><td>6.13.8.</td><td>Format with a default format</td></tr><tr><td>6.13.9.</td><td>Convert string date to long value</td></tr><tr><td>6.13.10.</td><td>Format a date-time value:short, medium and long</td></tr><tr><td>6.13.11.</td><td>Convert Date to String</td></tr><tr><td>6.13.12.</td><td>Validate a date Using DateFormat</td></tr><tr><td>6.13.13.</td><td>Format date in Default format</td></tr><tr><td>6.13.14.</td><td>Format date in Full format</td></tr><tr><td>6.13.15.</td><td>Format date in Long format</td></tr><tr><td>6.13.16.</td><td>Format date in Medium format</td></tr><tr><td>6.13.17.</td><td>Find the current date format</td></tr><tr><td>6.13.18.</td><td>DateFormat.SHORT</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-formatwithadefaultformat.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Format with a default format</span></a><a class="pager-btn pager-next" href="development-formatdateinfullformat.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Format date in Full format</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -3,8 +3,8 @@ title: Split string
 nav: Split string
 description: * This program is free software; you can redistribute it and/or modify
 section: Imported - java2s Archive
-order: 1169
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Splitstring.htm
+order: 1136
+source: https://web.archive.org/web/20140216150156/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Splitstring.htm
 ---
 ```java title=Example.java
 /*
@@ -23,7 +23,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * GNU General Public License for more details.
  *
  * See COPYING.TXT for details.
- */import java.util.HashMap;
+ */
+import java.util.HashMap;
 import java.util.regex.Pattern;
 /**
  * Utilities for String formatting, manipulation, and queries.
@@ -32,7 +33,8 @@ import java.util.regex.Pattern;
  *
  * @author Stephen Ostermiller http://ostermiller.org/contact.pl?regarding=Java+Utilities
  * @since ostermillerutils 1.00.00
- */public class StringHelper {
+ */
+public class StringHelper {
   /**
    * Split the given String into tokens.
    *
@@ -66,26 +68,27 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String[] split(String s, String delimiter){
+   */
+  public static String[] split(String s, String delimiter){
     int delimiterLength;
     // the next statement has the side effect of throwing a null pointer
- // exception if s is null.
- int stringLength = s.length();
+    // exception if s is null.
+    int stringLength = s.length();
     if (delimiter == null || (delimiterLength = delimiter.length()) == 0){
       // it is not inherently clear what to do if there is no delimiter
- // On one hand it would make sense to return each character because
- // the null String can be found between each pair of characters in
- // a String.  However, it can be found many times there and we don'
- // want to be returning multiple null tokens.
- // returning the whole String will be defined as the correct behavior
- // in this instance.
- return new String[] {s};
+      // On one hand it would make sense to return each character because
+      // the null String can be found between each pair of characters in
+      // a String.  However, it can be found many times there and we don'
+      // want to be returning multiple null tokens.
+      // returning the whole String will be defined as the correct behavior
+      // in this instance.
+      return new String[] {s};
     }
     // a two pass solution is used because a one pass solution would
- // require the possible resizing and copying of memory structures
- // In the worst case it would have to be resized n times with each
- // resize having a O(n) copy leading to an O(n^2) algorithm.
- int count;
+    // require the possible resizing and copying of memory structures
+    // In the worst case it would have to be resized n times with each
+    // resize having a O(n) copy leading to an O(n^2) algorithm.
+    int count;
     int start;
     int end;
     // Scan s and count the tokens.
@@ -97,7 +100,7 @@ import java.util.regex.Pattern;
     }
     count++;
     // allocate an array to return the tokens,
- // we now know how big it should be
+    // we now know how big it should be
     String[] result = new String[count];
     // Scan s again, but this time pick out the tokens
     count = 0;
@@ -145,26 +148,27 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.05.00
-   */ public static String[] splitIncludeDelimiters(String s, String delimiter){
+   */
+  public static String[] splitIncludeDelimiters(String s, String delimiter){
     int delimiterLength;
     // the next statement has the side effect of throwing a null pointer
- // exception if s is null.
- int stringLength = s.length();
+    // exception if s is null.
+    int stringLength = s.length();
     if (delimiter == null || (delimiterLength = delimiter.length()) == 0){
       // it is not inherently clear what to do if there is no delimiter
- // On one hand it would make sense to return each character because
- // the null String can be found between each pair of characters in
- // a String.  However, it can be found many times there and we don'
- // want to be returning multiple null tokens.
- // returning the whole String will be defined as the correct behavior
- // in this instance.
- return new String[] {s};
+      // On one hand it would make sense to return each character because
+      // the null String can be found between each pair of characters in
+      // a String.  However, it can be found many times there and we don'
+      // want to be returning multiple null tokens.
+      // returning the whole String will be defined as the correct behavior
+      // in this instance.
+      return new String[] {s};
     }
     // a two pass solution is used because a one pass solution would
- // require the possible resizing and copying of memory structures
- // In the worst case it would have to be resized n times with each
- // resize having a O(n) copy leading to an O(n^2) algorithm.
- int count;
+    // require the possible resizing and copying of memory structures
+    // In the worst case it would have to be resized n times with each
+    // resize having a O(n) copy leading to an O(n^2) algorithm.
+    int count;
     int start;
     int end;
     // Scan s and count the tokens.
@@ -176,7 +180,7 @@ import java.util.regex.Pattern;
     }
     count++;
     // allocate an array to return the tokens,
- // we now know how big it should be
+    // we now know how big it should be
     String[] result = new String[count];
     // Scan s again, but this time pick out the tokens
     count = 0;

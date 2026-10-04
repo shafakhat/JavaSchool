@@ -62,10 +62,10 @@ import java.lang.reflect.Method;
 }
 @What(description = "An annotation")
 @MyAnno(str = "Meta2", val = 99)
-publicclass Main {
+public class Main {
   @What(description = "test method")
   @MyAnno(str = "Testing", val = 100)
-  publicstaticvoid myMeth() throws Exception {
+  public static void myMeth() throws Exception {
     Main ob = new Main();
     Annotation annos[] = ob.getClass().getAnnotations();
     System.out.println("All annotations for Meta2:");
@@ -78,7 +78,7 @@ publicclass Main {
       System.out.println(a);
     }
   }
-  publicstaticvoid main(String args[]) throws Exception {
+  public static void main(String args[]) throws Exception {
     myMeth();
   }
 }</code></pre></div>
@@ -86,7 +86,7 @@ publicclass Main {
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Annotation Default Values</li><li>Syntax for Java Annotation Default Values</li><li>Example - How to use the default value from an annotation</li></ul>
-    <div class="pager"><a class="pager-btn" href="data-type-hexstringtobytearray.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">hex String To Byte Array</span></a><a class="pager-btn pager-next" href="java-java-abstractlist-wrap-another-list-to-create-custom-list-and-reverse.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java AbstractList wrap ano...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-formatterthatcachesformatteddateinformation.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Formatter that caches form...</span></a><a class="pager-btn pager-next" href="java-java-arithmetic-operator-solve-quadratic-equations.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Arithmetic Operator s...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

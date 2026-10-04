@@ -1,10 +1,10 @@
 ---
 title: How to get a sub array from an array
 nav: How to get a sub array fro...
-description: Next »« PreviousHome » Java Tutorial » ArrayJava ArrayCreate an ArrayArray Index and lengthMultidimensional ArraysArray examplesArray copyArray compareArray Binary search
+description: public static int[] get(int[] array, int offset, int length) {
 section: Imported - java2s Archive
-order: 1029
-source: https://web.archive.org/web/20130905101611/http://java2s.com/Tutorials/Java/Array/How_to_get_a_sub_array_from_an_array.htm
+order: 1131
+source: https://web.archive.org/web/2018/http://java2s.com/Tutorials/Java/Array/How_to_get_a_sub_array_from_an_array.htm
 ---
 In this chapter you will learn:
 
@@ -14,14 +14,14 @@ In this chapter you will learn:
 
 ```java title=Example.java
 import java.util.Arrays;
-publicclass Main {
-publicstaticvoid main(String[] argv){
-  int[] intArray = newint[]{1,2,3,4,5,6,7,8};
+public class Main {
+public static void main(String[] argv){
+  int[] intArray = new int[]{1,2,3,4,5,6,7,8};
   int[] intSubArray = get(intArray,3,2);
   System.out.println(Arrays.toString(intSubArray));
 }
-  publicstaticint[] get(int[] array, int offset, int length) {
-    int[] result = newint[length];
+  public static int[] get(int[] array, int offset, int length) {
+    int[] result = new int[length];
     System.arraycopy(array, offset, result, 0, length);
     return result;
   }

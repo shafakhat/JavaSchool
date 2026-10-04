@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * &lt;code&gt;null&lt;/code&gt; safe.
  *
@@ -80,7 +81,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */publicclass Main {
+ */
+public class Main {
   /**
    *
    * A &lt;code&gt;null&lt;/code&gt; String will return &lt;code&gt;true&lt;/code&gt;.
@@ -101,15 +103,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param invalidChars  a String of invalid chars, may be null
    * @return true if it contains none of the invalid chars, or is null
    * @since 2.0
-   */publicstaticboolean containsNone(String str, String invalidChars) {
+   */
+  public static boolean containsNone(String str, String invalidChars) {
       if (str == null || invalidChars == null) {
           return true;
       }
       return containsNone(str, invalidChars.toCharArray());
   }
   // ContainsNone
-//-----------------------------------------------------------------------
-/**
+  //-----------------------------------------------------------------------
+  /**
    *
    * A &lt;code&gt;null&lt;/code&gt; String will return &lt;code&gt;true&lt;/code&gt;.
    * A &lt;code&gt;null&lt;/code&gt; invalid character array will return &lt;code&gt;true&lt;/code&gt;.
@@ -129,7 +132,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param invalidChars  an array of invalid chars, may be null
    * @return true if it contains none of the invalid chars, or is null
    * @since 2.0
-   */publicstaticboolean containsNone(String str, char[] invalidChars) {
+   */
+  public static boolean containsNone(String str, char[] invalidChars) {
       if (str == null || invalidChars == null) {
           return true;
       }
@@ -146,21 +150,22 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       return true;
   }
   // ----------------------------------------------------------------------
-/**
+  /**
    * Checks if an array of Objects is empty or &lt;code&gt;null&lt;/code&gt;.
    *
    * @param array  the array to test
    * @return &lt;code&gt;true&lt;/code&gt; if the array is empty or &lt;code&gt;null&lt;/code&gt;
    * @since 2.1
-   */publicstaticboolean isEmpty(char[] array) {
+   */
+  public static boolean isEmpty(char[] array) {
       if (array == null || array.length == 0) {
           return true;
       }
       return false;
   }
   // Empty checks
-//-----------------------------------------------------------------------
-/**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * &lt;pre&gt;
@@ -177,11 +182,13 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    *
    * @param str  the String to check, may be null
    * @return &lt;code&gt;true&lt;/code&gt; if the String is empty or null
-   */publicstaticboolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="data-type-checknumberpropertiesandconvertfromnumber-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Check Number properties an...</span></a><a class="pager-btn pager-next" href="servlets-clientpull.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Client Pull</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.28.1.</th><th>Demonstrates the charAt and getChars</th></tr></thead><tbody><tr><td>2.28.2.</td><td>Converting Char array to String</td></tr><tr><td>2.28.3.</td><td>Creating Character Arrays From String Objects</td></tr><tr><td>2.28.4.</td><td>Copy characters from string into char Array</td></tr><tr><td>2.28.5.</td><td>Creating String Objects From Character Arrays</td></tr><tr><td>2.28.6.</td><td>new String(textArray, 9, 3): Creating String Objects From certain part of a character Array</td></tr><tr><td>2.28.7.</td><td>Creating String Objects From Character Arrays using String.copyValueOf()</td></tr><tr><td>2.28.8.</td><td>Creating a string from a subset of the array elements</td></tr><tr><td>2.28.9.</td><td>Extracting a substring as an array of characters using the method getChars()</td></tr><tr><td>2.28.10.</td><td>Using the Collection-Based for Loop with a String: Counting all vowels in a string</td></tr><tr><td>2.28.11.</td><td>Construct one String from another.</td></tr><tr><td>2.28.12.</td><td>demonstrates getChars( ):</td></tr><tr><td>2.28.13.</td><td>implements CharSequence</td></tr><tr><td>2.28.14.</td><td>Removes spaces (char &lt;= 32) from end of this String with escape, handling null by returning null</td></tr><tr><td>2.28.15.</td><td>Removes spaces (char &lt;= 32) from end of this String, handling null by returning null</td></tr><tr><td>2.28.16.</td><td>Swaps the case of a String changing upper and title case to lower case, and lower case to upper case.</td></tr><tr><td>2.28.17.</td><td>Deletes all whitespaces from a String as defined by Character.isWhitespace(char).</td></tr><tr><td>2.28.18.</td><td>Checks whether the String contains only digit characters.</td></tr><tr><td>2.28.19.</td><td>Checks that the String does not contain certain characters.</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-checksiftwodateobjectsrepresentthesameinstantintime.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Checks if two date objects...</span></a><a class="pager-btn pager-next" href="data-type-checksifstringcontainsasearchstringirrespectiveofcasehandlingnull.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Checks if String contains ...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

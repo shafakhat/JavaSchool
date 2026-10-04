@@ -41,29 +41,29 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     <h1>Java Swing Tutorial - Java CubicCurve2D.getY2()</h1>
 <h2 id="syntax">Syntax</h2>
 <p>CubicCurve2D.getY2() has the following syntax.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicabstractdouble getY2()</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public abstract double getY2()</code></pre></div>
 <h2 id="example">Example</h2>
 <p>In the following code shows how to use CubicCurve2D.getY2() method.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.CubicCurve2D;
-publicclass Main extends Frame {
-  publicstaticvoid main(String[] args) {
+public class Main extends Frame {
+  public static void main(String[] args) {
     new Main().setVisible(true);
   }
   public Main () {
     setSize(400, 550);
   }
-  publicvoid paint(Graphics g) {
+  public void paint(Graphics g) {
     Graphics2D g2d = (Graphics2D) g;
     CubicCurve2D cubcurve = new CubicCurve2D.Float(30, 400, 150, 400, 200, 500, 350, 450);
     g2d.draw(cubcurve);
     System.out.println(cubcurve.getY2());
   }
-}</code></pre></div>
-<p>The code above generates the following result.</p>
-    <div class="pager"><a class="pager-btn" href="borderlayout-borderlayout-page-end.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="fontmetrics-fontmetrics-getleading.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Swing Tutorial - Java...</span></a></div>
+}
+java title=Example.java</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="cubiccurve2d-cubiccurve2d-getx1.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="cubiccurve2d-cubiccurve2d-contains-point2d-p.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Swing Tutorial - Java...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

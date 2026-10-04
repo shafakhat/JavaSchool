@@ -3,8 +3,8 @@ title: Splits a string around matches of the given delimiter character.
 nav: Splits a string around mat...
 description: Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1188
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Splitsastringaroundmatchesofthegivendelimitercharacter.htm
+order: 1145
+source: https://web.archive.org/web/20140829090303/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Splitsastringaroundmatchesofthegivendelimitercharacter.htm
 ---
 ```java title=Example.java
 import java.util.StringTokenizer;
@@ -22,7 +22,8 @@ import java.util.StringTokenizer;
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
- */public class Main {
+ */
+public class Main {
   /**
    *
    * Where applicable, this method can be used as a substitute for
@@ -32,18 +33,19 @@ import java.util.StringTokenizer;
    * @param str the string to be split
    * @param delim the delimiter
    * @throws NullPointerException if str is null
-   */ static public String[] split(String str, char delim)
+   */
+  static public String[] split(String str, char delim)
   {
       if (str == null) {
           throw new NullPointerException("str can't be null");
       }
       // Note the javadoc on StringTokenizer:
- //     StringTokenizer is a legacy class that is retained for
- //     compatibility reasons although its use is discouraged in
- //     new code.
- // In other words, if StringTokenizer is ever removed from the JDK,
- // we need to have a look at String.split() (or java.util.regex)
- // if it is supported on a JSR169/Java ME platform by then.
+      //     StringTokenizer is a legacy class that is retained for
+      //     compatibility reasons although its use is discouraged in
+      //     new code.
+      // In other words, if StringTokenizer is ever removed from the JDK,
+      // we need to have a look at String.split() (or java.util.regex)
+      // if it is supported on a JSR169/Java ME platform by then.
       StringTokenizer st = new StringTokenizer(str, String.valueOf(delim));
       int n = st.countTokens();
       String[] s = new String[n];

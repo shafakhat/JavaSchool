@@ -3,8 +3,8 @@ title: Splits the provided text into an array, using whitespace as the separator
 nav: Splits the provided text i...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1178
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Splitstheprovidedtextintoanarrayusingwhitespaceastheseparatorpreservingalltokensincludingemptytokenscreatedbyadjacentseparators.htm
+order: 1147
+source: https://web.archive.org/web/20140829090202/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Splitstheprovidedtextintoanarrayusingwhitespaceastheseparatorpreservingalltokensincludingemptytokenscreatedbyadjacentseparators.htm
 ---
 ```java title=Example.java
 /*
@@ -22,11 +22,12 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */import java.util.ArrayList;
+ */
+import java.util.ArrayList;
 import java.util.List;
 public class Main {
   // -----------------------------------------------------------------------
- /**
+  /**
    * Splits the provided text into an array, using whitespace as the
    * separator, preserving all tokens, including empty tokens created by
    * adjacent separators. This is an alternative to using StringTokenizer.
@@ -49,7 +50,8 @@ public class Main {
    * @param str  the String to parse, may be <code>null</code>
    * @return an array of parsed Strings, <code>null</code> if null String input
    * @since 2.1
-   */ public static String[] splitPreserveAllTokens(String str) {
+   */
+  public static String[] splitPreserveAllTokens(String str) {
       return splitWorker(str, null, -1, true);
   }
   /**
@@ -65,11 +67,12 @@ public class Main {
    * treated as empty token separators; if <code>false</code>, adjacent
    * separators are treated as one separator.
    * @return an array of parsed Strings, <code>null</code> if null String input
-   */ private static String[] splitWorker(String str, String separatorChars, int max, boolean preserveAllTokens) {
+   */
+  private static String[] splitWorker(String str, String separatorChars, int max, boolean preserveAllTokens) {
       // Performance tuned for 2.0 (JDK1.4)
- // Direct code is quicker than StringTokenizer.
- // Also, StringTokenizer uses isSpace() not isWhitespace()
- if (str == null) {
+      // Direct code is quicker than StringTokenizer.
+      // Also, StringTokenizer uses isSpace() not isWhitespace()
+      if (str == null) {
           return null;
       }
       int len = str.length();
@@ -83,7 +86,7 @@ public class Main {
       boolean lastMatch = false;
       if (separatorChars == null) {
           // Null separator means use whitespace
- while (i < len) {
+          while (i < len) {
               if (Character.isWhitespace(str.charAt(i))) {
                   if (match || preserveAllTokens) {
                       lastMatch = true;
@@ -103,7 +106,7 @@ public class Main {
           }
       } else if (separatorChars.length() == 1) {
           // Optimise 1 character case
- char sep = separatorChars.charAt(0);
+          char sep = separatorChars.charAt(0);
           while (i < len) {
               if (str.charAt(i) == sep) {
                   if (match || preserveAllTokens) {
@@ -124,7 +127,7 @@ public class Main {
           }
       } else {
           // standard case
- while (i < len) {
+          while (i < len) {
               if (separatorChars.indexOf(str.charAt(i)) >= 0) {
                   if (match || preserveAllTokens) {
                       lastMatch = true;

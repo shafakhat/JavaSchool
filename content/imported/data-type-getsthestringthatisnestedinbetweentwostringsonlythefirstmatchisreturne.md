@@ -3,8 +3,8 @@ title: Gets the String that is nested in between two Strings. Only the first mat
 nav: Gets the String that is ne...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1180
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/GetstheStringthatisnestedinbetweentwoStringsOnlythefirstmatchisreturned.htm
+order: 1301
+source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/GetstheStringthatisnestedinbetweentwoStringsOnlythefirstmatchisreturned.htm
 ---
 ```java title=Example.java
 import java.util.ArrayList;

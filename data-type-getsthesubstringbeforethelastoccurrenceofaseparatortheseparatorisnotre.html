@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * &lt;code&gt;null&lt;/code&gt; safe.
  *
@@ -80,7 +81,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */public class Main {
+ */
+public class Main {
   /**
    * Gets the substring before the last occurrence of a separator.
    * The separator is not returned.
@@ -105,7 +107,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @return the substring before the last occurrence of the separator,
    *  &lt;code&gt;null&lt;/code&gt; if null String input
    * @since 2.0
-   */ public static String substringBeforeLast(String str, String separator) {
+   */
+  public static String substringBeforeLast(String str, String separator) {
       if (isEmpty(str) || isEmpty(separator)) {
           return str;
       }
@@ -116,8 +119,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       return str.substring(0, pos);
   }
   // Empty checks
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * &lt;pre&gt;
@@ -134,11 +137,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    *
    * @param str  the String to check, may be null
    * @return &lt;code&gt;true&lt;/code&gt; if the String is empty or null
-   */ public static boolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="data-type-splitstheprovidedtextintoanarrayusingwhitespaceastheseparatorpreservin.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Splits the provided text i...</span></a><a class="pager-btn pager-next" href="data-type-getsthestringthatisnestedinbetweentwostringsonlythefirstmatchisreturne.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Gets the String that is ne...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-getstheminimumofthreelongvalues.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Gets the minimum of three ...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1147.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

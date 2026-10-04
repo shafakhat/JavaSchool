@@ -3,8 +3,8 @@ title: Tests two float arrays for equality.
 nav: Tests two float arrays for...
 description: * JCommon : a free general purpose class library for the Java(tm) platform
 section: Imported - java2s Archive
-order: 1100
-source: https://web.archive.org/web/2020/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Teststwofloatarraysforequality.htm
+order: 1297
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Teststwofloatarraysforequality.htm
 ---
 ```java title=Example.java
 import java.util.Arrays;

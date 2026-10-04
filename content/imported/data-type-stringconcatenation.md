@@ -3,8 +3,8 @@ title: String Concatenation
 nav: String Concatenation
 description: Imported from the java2s.com archive: String Concatenation
 section: Imported - java2s Archive
-order: 1124
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/StringConcatenation.htm
+order: 1079
+source: https://web.archive.org/web/20140829085918/http://www.java2s.com/Tutorial/Java/0040__Data-Type/StringConcatenation.htm
 ---
 ```java title=Example.java
 public class MainClass

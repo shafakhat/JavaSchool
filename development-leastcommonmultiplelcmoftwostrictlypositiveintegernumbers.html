@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Least Common Multiple (LCM) of two strictly positive integer numbers - JavaSchool</title>
+<meta name="description" content="Least Common Multiple (LCM) of two strictly positive integer numbers: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-leastcommonmultiplelcmoftwostrictlypositiveintegernumbers">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-17-math-functions.html">Math Functions</a></nav>
+    <h1>Least Common Multiple (LCM) of two strictly positive integer numbers</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * $RCSfile: MathUtil.java,v $
+ * $Revision: 1.1 $
+ * $Date: 2005/02/11 05:02:25 $
+ * $State: Exp $
+ *
+ * Class:                   MathUtil
+ *
+ * Description:             Utility mathematical methods
+ *
+ *
+ *
+ * COPYRIGHT:
+ *
+ * This software module was originally developed by Raphaël Grosbois and
+ * Diego Santa Cruz (Swiss Federal Institute of Technology-EPFL); Joel
+ * Askelöf (Ericsson Radio Systems AB); and Bertrand Berthelot, David
+ * Bouchard, Félix Henry, Gerard Mozelle and Patrice Onno (Canon Research
+ * Centre France S.A) in the course of development of the JPEG2000
+ * standard as specified by ISO/IEC 15444 (JPEG 2000 Standard). This
+ * software module is an implementation of a part of the JPEG 2000
+ * Standard. Swiss Federal Institute of Technology-EPFL, Ericsson Radio
+ * Systems AB and Canon Research Centre France S.A (collectively JJ2000
+ * Partners) agree not to assert against ISO/IEC and users of the JPEG
+ * 2000 Standard (Users) any of their rights under the copyright, not
+ * including other intellectual property rights, for this software module
+ * with respect to the usage by ISO/IEC and Users of this software module
+ * or modifications thereof for use in hardware or software products
+ * claiming conformance to the JPEG 2000 Standard. Those intending to use
+ * this software module in hardware or software products are advised that
+ * their use may infringe existing patents. The original developers of
+ * this software module, JJ2000 Partners and ISO/IEC assume no liability
+ * for use of this software module or modifications thereof. No license
+ * or right to this software module is granted for non JPEG 2000 Standard
+ * conforming products. JJ2000 Partners have full right to use this
+ * software module for his/her own purpose, assign or donate this
+ * software module to any third party and to inhibit third parties from
+ * using this software module for non JPEG 2000 Standard conforming
+ * products. This copyright notice must be included in all copies or
+ * derivative works of this software module.
+ *
+ * Copyright (c) 1999/2000 JJ2000 Partners.
+ * */
+/**
+ * This class contains a collection of utility methods fro mathematical
+ * operations. All methods are static.
+ * */
+public class MathUtil {
+  /**
+   * Method that calculates the Least Common Multiple (LCM) of two strictly
+   * positive integer numbers.
+   *
+   * @param x1 First number
+   *
+   * @param x2 Second number
+   * */
+  public static final int lcm(int x1,int x2) {
+      if(x1&lt;=0 || x2&lt;=0) {
+          throw new IllegalArgumentException("Cannot compute the least "+
+                                             "common multiple of two "+
+                                             "numbers if one, at least,"+
+                                             "is negative.");
+      }
+      int max,min;
+      if (x1&gt;x2) {
+          max = x1;
+          min = x2;
+      } else {
+          max = x2;
+          min = x1;
+      }
+      for(int i=1; i&lt;=min; i++) {
+          if( (max*i)%min == 0 ) {
+              return i*max;
+          }
+      }
+      throw new Error("Cannot find the least common multiple of numbers "+
+                      x1+" and "+x2);
+  }
+  /**
+   * Method that calculates the Least Common Multiple (LCM) of several
+   * positive integer numbers.
+   *
+   * @param x Array containing the numbers.
+   * */
+  public static final int lcm(int[] x) {
+      if(x.length&lt;2) {
+          throw new Error("Do not use this method if there are less than"+
+                          " two numbers.");
+      }
+      int tmp = lcm(x[x.length-1],x[x.length-2]);
+      for(int i=x.length-3; i&gt;=0; i--) {
+          if(x[i]&lt;=0) {
+              throw new IllegalArgumentException("Cannot compute the least "+
+                                                 "common multiple of "+
+                                                 "several numbers where "+
+                                                 "one, at least,"+
+                                                 "is negative.");
+          }
+          tmp = lcm(tmp,x[i]);
+      }
+      return tmp;
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.17.1.</th><th>Math Class Methods</th></tr></thead><tbody><tr><td>6.17.2.</td><td>Use math functions</td></tr><tr><td>6.17.3.</td><td>Testing the Math class methods</td></tr><tr><td>6.17.4.</td><td>Floating Point Number Enhancements in JDK 6</td></tr><tr><td>6.17.5.</td><td>Math.scalb</td></tr><tr><td>6.17.6.</td><td>Math.getExponent</td></tr><tr><td>6.17.7.</td><td>Math.nextAfter</td></tr><tr><td>6.17.8.</td><td>Math.nextUp</td></tr><tr><td>6.17.9.</td><td>Math.copySign</td></tr><tr><td>6.17.10.</td><td>Demonstrate toDegrees() and toRadians().</td></tr><tr><td>6.17.11.</td><td>Find absolute value of float, int, double and long using Math.abs</td></tr><tr><td>6.17.12.</td><td>Find ceiling value of a number using Math.ceil</td></tr><tr><td>6.17.13.</td><td>Find exponential value of a number using Math.exp</td></tr><tr><td>6.17.14.</td><td>Find floor value of a number using Math.floor</td></tr><tr><td>6.17.15.</td><td>Find maximum of two numbers using Math.max</td></tr><tr><td>6.17.16.</td><td>Find natural logarithm value of a number using Math.log</td></tr><tr><td>6.17.17.</td><td>Find power using Math.pow</td></tr><tr><td>6.17.18.</td><td>Find square root of a number using Math.sqrt</td></tr><tr><td>6.17.19.</td><td>Round Java float and double numbers using Math.round</td></tr><tr><td>6.17.20.</td><td>Math.min</td></tr><tr><td>6.17.21.</td><td>Normalizes an angle to a relative angle.</td></tr><tr><td>6.17.22.</td><td>Normalizes an angle to an absolute angle.</td></tr><tr><td>6.17.23.</td><td>Normalizes an angle to be near an absolute angle</td></tr><tr><td>6.17.24.</td><td>Calculate the floor of the log, base 2</td></tr><tr><td>6.17.25.</td><td>Greatest Common Divisor (GCD) of positive integer numbers</td></tr><tr><td>6.17.26.</td><td>Least Common Multiple (LCM) of two strictly positive integer numbers</td></tr><tr><td>6.17.27.</td><td>Moving Average</td></tr><tr><td>6.17.28.</td><td>Normalize an angle in a 2&amp;pi wide interval around a center value.</td></tr><tr><td>6.17.29.</td><td>Returns n!. Shorthand for n Factorial, the product of the numbers 1,...,n as a double.</td></tr><tr><td>6.17.30.</td><td>Returns n!. Shorthand for n Factorial, the product of the numbers 1,...,n.</td></tr><tr><td>6.17.31.</td><td>Returns the hyperbolic cosine of x.</td></tr><tr><td>6.17.32.</td><td>Returns the hyperbolic sine of x.</td></tr><tr><td>6.17.33.</td><td>Returns the natural log of the (http://mathworld.wolfram.com/BinomialCoefficient.html) Binomial Coefficient</td></tr><tr><td>6.17.34.</td><td>Returns the natural logarithm of n!.</td></tr><tr><td>6.17.35.</td><td>Round the given value to the specified number of decimal places. The value is rounded using the BigDecimal.ROUND_HALF_UP method.</td></tr><tr><td>6.17.36.</td><td>Value is rounded using the given method which is any method defined in BigDecimal</td></tr><tr><td>6.17.37.</td><td>sqrt(a^2 + b^2) without under/overflow</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-returnsnshorthandfornfactorialtheproductofthenumbers1nasadouble.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Returns n!. Shorthand for ...</span></a><a class="pager-btn pager-next" href="development-movingaverage.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Moving Average</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -3,8 +3,8 @@ title: Swaps the case of a String changing upper and title case to lower case, a
 nav: Swaps the case of a String...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1148
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/SwapsthecaseofaStringchangingupperandtitlecasetolowercaseandlowercasetouppercase.htm
+order: 1096
+source: https://web.archive.org/web/20140829081538/http://www.java2s.com/Tutorial/Java/0040__Data-Type/SwapsthecaseofaStringchangingupperandtitlecasetolowercaseandlowercasetouppercase.htm
 ---
 ```java title=Example.java
 /*
@@ -22,7 +22,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */public class Main {
+ */
+public class Main {
   /**
    * Swaps the case of a String changing upper and title case to
    * lower case, and lower case to upper case.
@@ -49,7 +50,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param str  the String to swap case, may be null
    * @return the changed String, <code>null</code> if null String input
-   */ public static String swapCase(String str) {
+   */
+  public static String swapCase(String str) {
       int strLen;
       if (str == null || (strLen = str.length()) == 0) {
           return str;

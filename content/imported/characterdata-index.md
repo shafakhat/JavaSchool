@@ -1,10 +1,10 @@
 ---
 title: Java XML Tutorial - CharacterData Example
 nav: Java XML Tutorial - Charac...
-description: Imported from java2s.com: Java XML Tutorial - CharacterData Example
+description: Imported from the java2s.com archive: Java XML Tutorial - CharacterData Example
 section: Imported - java2s Archive
-order: 50326
-source: https://www.java2s.com/Tutorials/Java/org.w3c.dom/CharacterData/index.html
+order: 1189
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/org.w3c.dom/CharacterData/index.html
 ---
 ## Method
 

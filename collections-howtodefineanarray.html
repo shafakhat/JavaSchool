@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to define an Array - JavaSchool</title>
+<meta name="description" content="An array is a named set of same-type variables. Each variable in the array is called an array element. The first element will have an index of 0.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-howtodefineanarray">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-collections.html">Collections</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-03-array-basics.html">Array Basics</a></nav>
+    <h1>How to define an Array</h1>
+<p>An array is a named set of same-type variables. Each variable in the array is called an array element. The first element will have an index of 0.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    int[] intArray = new int[10];
+    for (int i = 0; i &lt; 10; i++) {
+      intArray[i] = 100;
+    }
+    for (int i = 0; i &lt; 10; i++) {
+      System.out.println(intArray[i]);
+    }
+  }
+}
+java title=Example.java
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>9.3.1.</th><th>How to define an Array</th></tr></thead><tbody><tr><td>9.3.2.</td><td>Initializing array elements by index</td></tr><tr><td>9.3.3.</td><td>Alternative Array Declaration Syntax</td></tr><tr><td>9.3.4.</td><td>Anonymous arrays are declared similarly to regular arrays</td></tr><tr><td>9.3.5.</td><td>An array is a Java object</td></tr><tr><td>9.3.6.</td><td>To reference the components of an array</td></tr><tr><td>9.3.7.</td><td>The Length of an Array</td></tr><tr><td>9.3.8.</td><td>Initializing Arrays</td></tr><tr><td>9.3.9.</td><td>Using a for loop to iterate over all the elements and set the values</td></tr><tr><td>9.3.10.</td><td>Arrays of Characters</td></tr><tr><td>9.3.11.</td><td>Using the Collection-Based for Loop with an Array</td></tr><tr><td>9.3.12.</td><td>Changing Array Size</td></tr><tr><td>9.3.13.</td><td>Array Reallocation</td></tr><tr><td>9.3.14.</td><td>Use System.arraycopy to duplicate array</td></tr><tr><td>9.3.15.</td><td>Minimum and maximum number in array</td></tr><tr><td>9.3.16.</td><td>Shuffle elements of an array</td></tr><tr><td>9.3.17.</td><td>Merge (or add) two arrays into one</td></tr><tr><td>9.3.18.</td><td>Circular Buffer</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="collections-createanddemonstrateanimmutablecollection.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Create and demonstrate an ...</span></a><a class="pager-btn pager-next" href="collections-acombinationoftwocollectionsintoacollection.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">A combination of two colle...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -3,8 +3,8 @@ title: Padded String
 nav: Padded String
 description: /**********************************************************************
 section: Imported - java2s Archive
-order: 1130
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/PaddedString.htm
+order: 1081
+source: https://web.archive.org/web/20140829080859/http://www.java2s.com/Tutorial/Java/0040__Data-Type/PaddedString.htm
 ---
 ```java title=Example.java
 /**********************************************************************
@@ -23,7 +23,8 @@ Contributors:
 2004 Andy Jefferson - moved intArrayToString, booleanArrayToString from SM
 2007 Xuan Baldauf - toJVMIDString hex fix
     ...
-**********************************************************************/import java.io.File;
+**********************************************************************/
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -37,14 +38,16 @@ import java.util.jar.JarFile;
  * Utilities for String manipulation.
  *
  * @version $Revision: 1.23 $
- **/public class StringUtils
+ **/
+public class StringUtils
 {
   /** Utility to return a left-aligned version of a string padded to the
    * number of characters specified.
    * @param input The input string
    * @param length The length desired
    * @return The updated string
-   **/ public static String leftAlignedPaddedString(String input,int length)
+   **/
+  public static String leftAlignedPaddedString(String input,int length)
   {
       if (length <= 0)
       {
@@ -81,7 +84,8 @@ import java.util.jar.JarFile;
    * @param input The input string
    * @param length The length desired
    * @return The updated string
-   **/ public static String rightAlignedPaddedString(String input,int length)
+   **/
+  public static String rightAlignedPaddedString(String input,int length)
   {
       if (length <= 0)
       {
@@ -115,3 +119,14 @@ import java.util.jar.JarFile;
   }
 }
 ```
+
+| 2.22.1. | String concatenation: '+' operation generates a new String object |
+|---|---|
+| 2.22.2. | String concatenation: The + contains null |
+| 2.22.3. | String concatenation: Convert an integer to String and join with two other strings |
+| 2.22.4. | String concatenation: Combining a string and integers |
+| 2.22.5. | String concatenation: Combining integers and a string |
+| 2.22.6. | Substring replacement. |
+| 2.22.7. | Pad string |
+| 2.22.8. | Padded String |
+| 2.22.9. | Return a string padded with the given string for the given count. |

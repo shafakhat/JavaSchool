@@ -3,8 +3,8 @@ title: How to test if a BigInteger value is prime or get prime value from BigInt
 nav: How to test if a BigIntege...
 description: boolean isProbablePrime(int certainty) returns true if this BigInteger is probably prime, false if it's definitely composite.
 section: Imported - java2s Archive
-order: 1043
-source: https://web.archive.org/web/20130821190305/http://java2s.com/Tutorials/Java/BigDecimal_BigInteger/How_to_test_if_a_BigInteger_value_is_prime_or_get_prime_value_from_BigInteger.htm
+order: 1158
+source: https://web.archive.org/web/2016/http://java2s.com/Tutorials/Java/BigDecimal_BigInteger/How_to_test_if_a_BigInteger_value_is_prime_or_get_prime_value_from_BigInteger.htm
 ---
 In this chapter you will learn:
 
@@ -17,8 +17,8 @@ boolean isProbablePrime(int certainty) returns true if this BigInteger is probab
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     BigInteger n = new BigInteger("1000000000000");
     BigInteger one = new BigInteger("1");
     while (!n.isProbablePrime(7))
@@ -39,8 +39,8 @@ probablePrime(int bitLength, Random rnd) returns a positive BigInteger that is p
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.Random;
-publicclass MainClass {
-  publicstaticvoid main(String[] unused) {
+public class MainClass {
+  public static void main(String[] unused) {
     Random prng = new SecureRandom();  // self-seeding
     System.out.println(BigInteger.probablePrime(10, prng));
   }

@@ -56,7 +56,8 @@ import java.math.BigInteger;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Provides extra functionality for Java Number classes.
  *
  * @author &lt;a href="mailto:rand_mcneely@yahoo.com"&gt;Rand McNeely&lt;/a&gt;
@@ -67,7 +68,8 @@ import java.math.BigInteger;
  * @since 1.0
  * @version $Id: NumberUtils.java 488819 2006-12-19 21:50:04Z bayard $
  *
- */public class Main {
+ */
+public class Main {
   /**
    *
    * This method is more comprehensive than the standard Java greater than,
@@ -98,7 +100,8 @@ import java.math.BigInteger;
    * @param rhs  the second &lt;code&gt;float&lt;/code&gt;
    * @return &lt;code&gt;-1&lt;/code&gt; if lhs is less, &lt;code&gt;+1&lt;/code&gt; if greater,
    *  &lt;code&gt;0&lt;/code&gt; if equal to rhs
-   */ public static int compare(float lhs, float rhs) {
+   */
+  public static int compare(float lhs, float rhs) {
       if (lhs &lt; rhs) {
           return -1;
       }
@@ -106,28 +109,29 @@ import java.math.BigInteger;
           return +1;
       }
       //Need to compare bits to handle 0.0 == -0.0 being true
- // compare should put -0.0 &lt; +0.0
- // Two NaNs are also == for compare purposes
- // where NaN == NaN is false
- int lhsBits = Float.floatToIntBits(lhs);
+      // compare should put -0.0 &lt; +0.0
+      // Two NaNs are also == for compare purposes
+      // where NaN == NaN is false
+      int lhsBits = Float.floatToIntBits(lhs);
       int rhsBits = Float.floatToIntBits(rhs);
       if (lhsBits == rhsBits) {
           return 0;
       }
       //Something exotic! A comparison to NaN or 0.0 vs -0.0
- //Fortunately NaN's int is &gt; than everything else
- //Also negzeros bits &lt; poszero
- //NAN: 2143289344
- //MAX: 2139095039
- //NEGZERO: -2147483648
- if (lhsBits &lt; rhsBits) {
+      //Fortunately NaN's int is &gt; than everything else
+      //Also negzeros bits &lt; poszero
+      //NAN: 2143289344
+      //MAX: 2139095039
+      //NEGZERO: -2147483648
+      if (lhsBits &lt; rhsBits) {
           return -1;
       } else {
           return +1;
       }
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="hibernate-collectionmappingmapkeyandvaluearebothobjects.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Collection Mapping</span></a><a class="pager-btn pager-next" href="data-type-comparingtwostrings-2.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Comparing Two Strings</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.11.1.</th><th>Java float is 32 bit single precision type and used when fractional precision calculation is required.</th></tr></thead><tbody><tr><td>2.11.2.</td><td>Floating­Point Types</td></tr><tr><td>2.11.3.</td><td>Min and Max values of data type float</td></tr><tr><td>2.11.4.</td><td>Use Float constructor to convert float primitive type to a Float object.</td></tr><tr><td>2.11.5.</td><td>Java Float Comparison</td></tr><tr><td>2.11.6.</td><td>Java Float isInfinite Method</td></tr><tr><td>2.11.7.</td><td>Java Float isNaN Method</td></tr><tr><td>2.11.8.</td><td>Java Float Wrapper Class</td></tr><tr><td>2.11.9.</td><td>Pass floats as string literals to a method</td></tr><tr><td>2.11.10.</td><td>Check if a string is a valid number</td></tr><tr><td>2.11.11.</td><td>Use toString method of Float class to convert Float into String.</td></tr><tr><td>2.11.12.</td><td>Declaring a variable of type float</td></tr><tr><td>2.11.13.</td><td>Declaring more than one float variable in a single statement</td></tr><tr><td>2.11.14.</td><td>Use Float.valueOf to convert string value to float</td></tr><tr><td>2.11.15.</td><td>Convert Java Float to Numeric Primitive Data Types</td></tr><tr><td>2.11.16.</td><td>Convert Java String to Float Object</td></tr><tr><td>2.11.17.</td><td>Convert from float to String</td></tr><tr><td>2.11.18.</td><td>Convert from String to float</td></tr><tr><td>2.11.19.</td><td>Converting a String to a float type Number</td></tr><tr><td>2.11.20.</td><td>Compare Two Java float Arrays</td></tr><tr><td>2.11.21.</td><td>Compares two floats for order.</td></tr><tr><td>2.11.22.</td><td>For a float value x, this method returns +1.0F if x &gt;= 0 and -1.0F if x &lt; 0. Returns NaN if x is NaN.</td></tr><tr><td>2.11.23.</td><td>Tests two float arrays for equality.</td></tr><tr><td>2.11.24.</td><td>Use System.out.printf to format float point number</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-comparetwojavabooleanarraysexample.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Compare Two Java boolean A...</span></a><a class="pager-btn pager-next" href="data-type-comparetwojavachararrays.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Compare Two Java char Arrays</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

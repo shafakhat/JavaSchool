@@ -1,0 +1,31 @@
+---
+title: Simulate a mouse click
+nav: Simulate a mouse click
+description: Imported from the java2s.com archive: Simulate a mouse click
+section: Imported - java2s Archive
+order: 1996
+source: https://web.archive.org/web/20140301114423/http://www.java2s.com/Tutorial/Java/0120__Development/Simulateamouseclick.htm
+---
+```java title=Example.java
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    Robot robot = new Robot();
+    robot.mousePress(InputEvent.BUTTON1_MASK);
+    robot.mouseRelease(InputEvent.BUTTON1_MASK);
+  }
+}
+```
+
+| 6.55.1. | Moving the Cursor on the Screen |
+|---|---|
+| 6.55.2. | Simulate a mouse click |
+| 6.55.3. | Simulate a key press |
+| 6.55.4. | Create key press event using Robot class? |
+| 6.55.5. | Get the colour of a screen pixel |
+| 6.55.6. | Create mouse event using Robot class |
+| 6.55.7. | Capturing a Screen Shot |
+| 6.55.8. | Capture a screenshot |
+| 6.55.9. | Capturing Screen in an image using Robot class |

@@ -3,8 +3,8 @@ title: Java Float Comparison
 nav: Java Float Comparison
 description: Imported from the java2s.com archive: Java Float Comparison
 section: Imported - java2s Archive
-order: 1081
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/JavaFloatComparison.htm
+order: 1066
+source: https://web.archive.org/web/20140829080625/http://www.java2s.com/Tutorial/Java/0040__Data-Type/JavaFloatComparison.htm
 ---
 ```java title=Example.java
 public class Main {

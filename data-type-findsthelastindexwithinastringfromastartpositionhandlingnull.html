@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * &lt;code&gt;null&lt;/code&gt; safe.
  *
@@ -80,7 +81,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */public class Main {
+ */
+public class Main {
   /**
    * Finds the last index within a String from a start position,
    * handling &lt;code&gt;null&lt;/code&gt;.
@@ -107,15 +109,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @return the last index of the search character,
    *  -1 if no match or &lt;code&gt;null&lt;/code&gt; string input
    * @since 2.0
-   */ public static int lastIndexOf(String str, char searchChar, int startPos) {
+   */
+  public static int lastIndexOf(String str, char searchChar, int startPos) {
       if (isEmpty(str)) {
           return -1;
       }
       return str.lastIndexOf(searchChar, startPos);
   }
   // Empty checks
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * &lt;pre&gt;
@@ -132,11 +135,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    *
    * @param str  the String to check, may be null
    * @return &lt;code&gt;true&lt;/code&gt; if the String is empty or null
-   */ public static boolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="class-comparestwoobjectsforequalitywhereeitheroneorbothobjectsmaybenull.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Compares two objects for e...</span></a><a class="pager-btn pager-next" href="data-type-joinstheelementsoftheprovidediteratorintoasinglestringcontainingthepro.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Joins the elements of the ...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="velocity-velocityvariablenoisereference.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Velocity Variable Noise Re...</span></a><a class="pager-btn pager-next" href="java-java-array-clone.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java array clone</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

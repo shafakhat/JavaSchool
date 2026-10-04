@@ -3,8 +3,8 @@ title: Demonstrate a type wrapper.
 nav: Demonstrate a type wrapper.
 description: Imported from the java2s.com archive: Demonstrate a type wrapper.
 section: Imported - java2s Archive
-order: 1113
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Demonstrateatypewrapper.htm
+order: 1078
+source: https://web.archive.org/web/20140814010807/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Demonstrateatypewrapper.htm
 ---
 ```java title=Example.java
 class Wrap {

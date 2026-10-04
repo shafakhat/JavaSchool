@@ -3,8 +3,8 @@ title: Helper function that dump an array of bytes in hex pair form, without '0x
 nav: Helper function that dump ...
 description: * Licensed to the Apache Software Foundation (ASF) under one
 section: Imported - java2s Archive
-order: 1086
-source: https://web.archive.org/web/2014/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Helperfunctionthatdumpanarrayofbytesinhexpairformwithout0xandspacechars.htm
+order: 1041
+source: https://web.archive.org/web/20140829091240/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Helperfunctionthatdumpanarrayofbytesinhexpairformwithout0xandspacechars.htm
 ---
 ```java title=Example.java
 import java.io.File;

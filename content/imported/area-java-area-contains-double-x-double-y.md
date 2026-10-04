@@ -3,8 +3,8 @@ title: Java Tutorial - Java Area.contains(double x, double y)
 nav: Java Tutorial - Java Area....
 description: In the following code shows how to use Area.contains(double x, double y) method.
 section: Imported - java2s Archive
-order: 1008
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_contains_double_x_double_y_.htm
+order: 1099
+source: https://web.archive.org/web/20140830013317/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_contains_double_x_double_y_.htm
 ---
 ### Syntax
 

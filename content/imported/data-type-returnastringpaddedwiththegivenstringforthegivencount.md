@@ -3,8 +3,8 @@ title: Return a string padded with the given string for the given count.
 nav: Return a string padded wit...
 description: * Copyright 2005, JBoss Inc., and individual contributors as indicated
 section: Imported - java2s Archive
-order: 1139
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Returnastringpaddedwiththegivenstringforthegivencount.htm
+order: 1085
+source: https://web.archive.org/web/20140829080837/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Returnastringpaddedwiththegivenstringforthegivencount.htm
 ---
 ```java title=Example.java
 /*
@@ -27,17 +27,19 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
   * License along with this software; if not, write to the Free
   * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
   * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
-  */public class Main{
+  */
+public class Main{
   /////////////////////////////////////////////////////////////////////////
- //                            Padding Methods                          //
- /////////////////////////////////////////////////////////////////////////
- /**
+  //                            Padding Methods                          //
+  /////////////////////////////////////////////////////////////////////////
+  /**
    *
    * @param buff       String buffer used for padding (buffer is not reset).
    * @param string     Pad element.
    * @param count      Pad count.
    * @return           Padded string.
-   */ public static String pad(final StringBuffer buff, final String string,
+   */
+  public static String pad(final StringBuffer buff, final String string,
      final int count)
   {
      for (int i = 0; i < count; i++)
@@ -51,7 +53,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param string     Pad element.
    * @param count      Pad count.
    * @return           Padded string.
-   */ public static String pad(final String string, final int count)
+   */
+  public static String pad(final String string, final int count)
   {
      return pad(new StringBuffer(), string, count);
   }
@@ -62,7 +65,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param obj     Object to convert to a string.
    * @param count   Pad count.
    * @return        Padded string.
-   */ public static String pad(final Object obj, final int count)
+   */
+  public static String pad(final Object obj, final int count)
   {
      return pad(new StringBuffer(), String.valueOf(obj), count);
   }

@@ -1,13 +1,12 @@
 ---
 title: Hexadecimal integer literal
 nav: Hexadecimal integer literal
-description: Imported from the java2s.com archive: Hexadecimal integer literal
+description: Put 0x or 0X in front of the numbers. Use the letters A to F (or a to f) to represent digits with values 10 to 15, respectively.
 section: Imported - java2s Archive
-order: 1074
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Hexadecimalintegerliteral.htm
+order: 1040
+source: https://web.archive.org/web/20140829091126/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Hexadecimalintegerliteral.htm
 ---
-- Put 0x or 0X in front of the numbers.
-- Use the letters A to F (or a to f) to represent digits with values 10 to 15, respectively.
+Put 0x or 0X in front of the numbers. Use the letters A to F (or a to f) to represent digits with values 10 to 15, respectively.
 
 ```java title=Example.java
 public class MainClass {

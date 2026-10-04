@@ -3,8 +3,8 @@ title: Wrapped Class
 nav: Wrapped Class
 description: Imported from the java2s.com archive: Wrapped Class
 section: Imported - java2s Archive
-order: 1111
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/WrappedClassbooleanintlong.htm
+order: 1080
+source: https://web.archive.org/web/20140829083913/http://www.java2s.com/Tutorial/Java/0040__Data-Type/WrappedClassbooleanintlong.htm
 ---
 ```java title=Example.java
 public class WrappedClassApp {

@@ -41,7 +41,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     <h1>Java Swing Tutorial - Java CardLayout .getLayoutAlignmentY (Container parent)</h1>
 <h2 id="syntax">Syntax</h2>
 <p>CardLayout.getLayoutAlignmentY(Container parent) has the following syntax.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicfloat getLayoutAlignmentY(Container parent)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public float getLayoutAlignmentY(Container parent)</code></pre></div>
 <h2 id="example">Example</h2>
 <p>In the following code shows how to use CardLayout.getLayoutAlignmentY(Container parent) method.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.CardLayout;
@@ -50,8 +50,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     JFrame aWindow = new JFrame();
     aWindow.setSize(400, 400);
     aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,11 +70,12 @@ class CardLayoutPanel extends JPanel implements ActionListener {
     }
     System.out.println(card.getLayoutAlignmentY(this));
   }
-  publicvoid actionPerformed(ActionEvent e) {
+  public void actionPerformed(ActionEvent e) {
     card.next(this);
   }
-}</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="java-java-oca-ocp-practice-question-109.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a><a class="pager-btn pager-next" href="cardlayout-cardlayout-tostring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Swing Tutorial - Java...</span></a></div>
+}
+java title=Example.java</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="development-getsystempropertiesusingsystemclass.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Get system properties usin...</span></a><a class="pager-btn pager-next" href="statement-control-usingthewhilelooptocalculatesum.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Using the while loop to ca...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

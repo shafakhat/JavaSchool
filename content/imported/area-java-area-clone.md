@@ -3,8 +3,8 @@ title: Java Tutorial - Java Area.clone()
 nav: Java Tutorial - Java Area....
 description: //from w ww .j a v a 2 s . co mimport java.awt.Color;
 section: Imported - java2s Archive
-order: 1005
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_clone_.htm
+order: 1096
+source: https://web.archive.org/web/20140829203453/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_clone_.htm
 ---
 ### Syntax
 

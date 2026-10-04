@@ -1060,14 +1060,26 @@ def render_subtopic_page(tree: list[dict], i: int, j: int, sections: list[dict],
         if slug in imported_slugs:
             body = f'<a href="{slug}.html">{esc(it.get("title", ""))}</a>'
             rows.append(f'<li><span class="a-num">{esc(it.get("num", ""))}</span>{body}</li>')
-        else:
-            rows.append(
-                f'<li class="queued"><span class="a-num">{esc(it.get("num", ""))}</span>'
-                f'<span class="pending">{esc(it.get("title", ""))}</span>'
-                f'<span class="pill">restoring</span></li>'
-            )
+    pending = [it for it in items if (it.get("slug") or "") not in imported_slugs]
+    pending_block = ""
+    if pending:
+        prows = "\n".join(
+            f'        <li><span class="a-num">{esc(it.get("num", ""))}</span>'
+            f'<span class="pending">{esc(it.get("title", ""))}</span></li>'
+            for it in pending
+        )
+        pending_block = (
+            f'    <details class="pending-box"><summary>{len(pending)} more pages from this topic are '
+            'being restored from the archive</summary>\n'
+            f'      <ul class="article-list pending">\n{prows}\n      </ul>\n    </details>\n'
+        )
     if not items:
-        rows.append('    <li class="queued"><span class="pending">Indexing this topic from the archive&hellip;</span></li>')
+        pending_block = '    <p class="arc-crumb">This topic is being indexed from the archive.</p>\n'
+    if not rows and pending:
+        pending_block = (
+            '    <p class="arc-crumb">None of this topic\'s pages are on the site yet - they are being '
+            'restored from the archive now.</p>\n' + pending_block
+        )
     crumb = build_crumb(("Java HOME", "index.html"), ("Java Tutorial", "java-tutorial.html"),
                         (ch["title"], chapter_href(i, ch)), (sub["title"], None))
     main = (
@@ -1076,6 +1088,7 @@ def render_subtopic_page(tree: list[dict], i: int, j: int, sections: list[dict],
         f'    <p><strong>{n} pages</strong> in this java2s topic &middot; <strong>{r}</strong> on the site. '
         'Pages are listed in the original order and open exactly as archived.</p>\n'
         '    <ul class="article-list">\n' + "\n".join(rows) + '\n    </ul>\n'
+        + pending_block
         + f'    <p class="arc-crumb"><a href="{chapter_href(i, ch)}">&larr; Back to {esc(ch["title"])}</a></p>\n'
     )
     doc = page_document(

@@ -3,7 +3,7 @@ title: Java Swing Tutorial - Java CardLayout .layoutContainer (Container parent)
 nav: Java Swing Tutorial - Java...
 description: CardLayout.layoutContainer(Container parent) has the following syntax.
 section: Imported - java2s Archive
-order: 1010
+order: 1193
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0260__CardLayout.layoutContainer_Container_parent_.htm
 ---
 ## Syntax
@@ -11,7 +11,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/ja
 CardLayout.layoutContainer(Container parent) has the following syntax.
 
 ```java title=Example.java
-publicvoid layoutContainer(Container parent)
+public void layoutContainer(Container parent)
 ```
 
 ## Example
@@ -25,8 +25,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     JFrame aWindow = new JFrame();
     aWindow.setSize(400, 400);
     aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,7 +45,7 @@ class CardLayoutPanel extends JPanel implements ActionListener {
     }
     card.layoutContainer(this);
   }
-  publicvoid actionPerformed(ActionEvent e) {
+  public void actionPerformed(ActionEvent e) {
     card.next(this);
   }
 }

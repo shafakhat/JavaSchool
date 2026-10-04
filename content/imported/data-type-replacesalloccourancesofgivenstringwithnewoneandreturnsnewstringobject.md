@@ -3,8 +3,8 @@ title: Replaces all occourances of given String with new one and returns new Str
 nav: Replaces all occourances o...
 description: Imported from the java2s.com archive: Replaces all occourances of given String with new one and returns new String object.
 section: Imported - java2s Archive
-order: 1144
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ReplacesalloccourancesofgivenStringwithnewoneandreturnsnewStringobject.htm
+order: 1078
+source: https://web.archive.org/web/20140829080657/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ReplacesalloccourancesofgivenStringwithnewoneandreturnsnewStringobject.htm
 ---
 ```java title=Example.java
 public class Main {

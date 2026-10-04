@@ -3,8 +3,8 @@ title: Java Tutorial - Java Area.exclusiveOr(Area rhs)
 nav: Java Tutorial - Java Area....
 description: In the following code shows how to use Area.exclusiveOr(Area rhs) method.
 section: Imported - java2s Archive
-order: 1009
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_exclusiveOr_Area_rhs_.htm
+order: 1103
+source: https://web.archive.org/web/20140829203002/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_exclusiveOr_Area_rhs_.htm
 ---
 ### Syntax
 

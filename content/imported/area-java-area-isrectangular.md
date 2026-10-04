@@ -3,8 +3,8 @@ title: Java Tutorial - Java Area.isRectangular()
 nav: Java Tutorial - Java Area....
 description: In the following code shows how to use Area.isRectangular() method.
 section: Imported - java2s Archive
-order: 1015
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_isRectangular_.htm
+order: 1113
+source: https://web.archive.org/web/20140829204517/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_isRectangular_.htm
 ---
 ### Syntax
 

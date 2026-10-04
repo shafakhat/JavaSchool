@@ -3,7 +3,7 @@ title: Get Percent Value
 nav: Get Percent Value
 description: * Note: This file is dual licensed under the GPL and the Apache
 section: Imported - java2s Archive
-order: 1103
+order: 1078
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/GetPercentValue.htm
 ---
 ```java title=Example.java

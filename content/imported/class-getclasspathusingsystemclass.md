@@ -1,10 +1,10 @@
 ---
 title: Get classpath using System class
 nav: Get classpath using System...
-description: Imported from the java2s.com archive: Get classpath using System class
+description: 1. Returns a reference to a file with the specified name that is located somewhere on the classpath.
 section: Imported - java2s Archive
-order: 1020
-source: https://web.archive.org/web/20090602123343/http://www.java2s.com:80/Code/Java/Class/GetclasspathusingSystemclass.htm
+order: 1223
+source: https://web.archive.org/web/20140304081102/http://www.java2s.com:80/Code/Java/Class/GetclasspathusingSystemclass.htm
 ---
 ```java title=Example.java
 public class Main {
@@ -13,3 +13,6 @@ public class Main {
   }
 }
 ```
+
+1.  Returns a reference to a file with the specified name that is located somewhere on the classpath.
+2.  Lookup Classpath Files

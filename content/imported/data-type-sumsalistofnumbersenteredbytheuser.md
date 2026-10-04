@@ -3,8 +3,8 @@ title: sums a list of numbers entered by the user
 nav: sums a list of numbers ent...
 description: BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 section: Imported - java2s Archive
-order: 1207
-source: https://web.archive.org/web/2020/http://www.java2s.com/Tutorial/Java/0040__Data-Type/sumsalistofnumbersenteredbytheuser.htm
+order: 1081
+source: https://web.archive.org/web/20140829090333/http://www.java2s.com/Tutorial/Java/0040__Data-Type/sumsalistofnumbersenteredbytheuser.htm
 ---
 ```java title=Example.java
 import java.io.BufferedReader;

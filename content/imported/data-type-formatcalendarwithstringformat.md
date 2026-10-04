@@ -3,8 +3,8 @@ title: Format Calendar with String.format()
 nav: Format Calendar with Strin...
 description: Object a[] = { "String 1", "String 2", Calendar.getInstance() };
 section: Imported - java2s Archive
-order: 1156
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/FormatCalendarwithStringformat.htm
+order: 1314
+source: https://web.archive.org/web/20140829075240/http://www.java2s.com/Tutorial/Java/0040__Data-Type/FormatCalendarwithStringformat.htm
 ---
 ```java title=Example.java
 import java.util.Calendar;

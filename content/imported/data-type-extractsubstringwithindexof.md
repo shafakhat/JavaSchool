@@ -3,8 +3,8 @@ title: Extract Substring with indexOf
 nav: Extract Substring with ind...
 description: Imported from the java2s.com archive: Extract Substring with indexOf
 section: Imported - java2s Archive
-order: 1155
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ExtractSubstringwithindexOf.htm
+order: 1104
+source: https://web.archive.org/web/20140829091042/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ExtractSubstringwithindexOf.htm
 ---
 ```java title=Example.java
 public class ExtractSubstring {

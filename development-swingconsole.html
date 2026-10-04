@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swing Console - JavaSchool</title>
+<meta name="description" content="Swing Console: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-swingconsole">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-59-debug.html">Debug</a></nav>
+    <h1>Swing Console</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * IzPack - Copyright 2001-2008 Julien Ponge, All Rights Reserved.
+ *
+ * http://izpack.org/
+ * http://izpack.codehaus.org/
+ *
+ * Copyright 2002 Jan Blok
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.Document;
+import javax.swing.text.Segment;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.io.*;
+import java.util.Vector;
+public final class Console
+{
+    public static final int INITIAL_WIDTH = 800;
+    public static final int INITIAL_HEIGHT = 600;
+    public static void main(String[] args)
+    {
+        Runtime rt = Runtime.getRuntime();
+        Process p = null;
+        try
+        {
+            /*
+             * Start a new process in which to execute the commands in cmd, using the environment in
+             * env and use pwd as the current working directory.
+             */
+            p = rt.exec(args);// , env, pwd);
+            new Console(p);
+            System.exit(p.exitValue());
+        }
+        catch (IOException e)
+        {
+            /*
+             * Couldn't even get the command to start. Most likely it couldn't be found because of a
+             * typo.
+             */
+            System.out.println("Error starting: " + args[0]);
+            System.out.println(e);
+        }
+    }
+    private StdOut so;
+    private StdOut se;
+    public String getOutputData()
+    {
+        if (so != null)
+        {
+            return so.getData();
+        }
+        else
+        {
+            return "";
+        }
+    }
+    public String getErrorData()
+    {
+        if (se != null)
+        {
+            return se.getData();
+        }
+        else
+        {
+            return "";
+        }
+    }
+    public Console(Process p)
+    {
+        JFrame frame = new JFrame();
+        frame.setTitle("Console");
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setLocation(screenSize.width / 2 - INITIAL_WIDTH / 2, screenSize.height / 2
+                - INITIAL_HEIGHT / 2);
+        ConsoleTextArea cta = new ConsoleTextArea();
+        JScrollPane scroll = new JScrollPane(cta);
+        scroll.setPreferredSize(new Dimension(INITIAL_WIDTH, INITIAL_HEIGHT));
+        frame.getContentPane().add(scroll);
+        frame.pack();
+        // From here down your shell should be pretty much
+        // as it is written here!
+        /*
+         * Start up StdOut, StdIn and StdErr threads that write the output generated by the process
+         * p to the screen, and feed the keyboard input into p.
+         */
+        so = new StdOut(p, cta);
+        se = new StdOut(p, cta);
+        StdIn si = new StdIn(p, cta);
+        so.start();
+        se.start();
+        si.start();
+        // Wait for the process p to complete.
+        try
+        {
+            frame.setVisible(true);
+            p.waitFor();
+        }
+        catch (InterruptedException e)
+        {
+            /*
+             * Something bad happened while the command was executing.
+             */
+            System.out.println("Error during execution");
+            System.out.println(e);
+        }
+        /*
+         * Now signal the StdOut, StdErr and StdIn threads that the process is done, and wait for
+         * them to complete.
+         */
+        try
+        {
+            so.done();
+            se.done();
+            si.done();
+            so.join();
+            se.join();
+            si.join();
+        }
+        catch (InterruptedException e)
+        {
+            // Something bad happend to one of the Std threads.
+            System.out.println("Error in StdOut, StdErr or StdIn.");
+            System.out.println(e);
+        }
+        frame.setVisible(false);
+    }
+}
+class StdIn extends Thread
+{
+    private BufferedReader kb;
+    private boolean processRunning;
+    private PrintWriter op;
+    public StdIn(Process p, ConsoleTextArea cta)
+    {
+        setDaemon(true);
+        InputStreamReader ir = new InputStreamReader(cta.getIn());
+        kb = new BufferedReader(ir);
+        BufferedOutputStream os = new BufferedOutputStream(p.getOutputStream());
+        op = new PrintWriter((new OutputStreamWriter(os)), true);
+        processRunning = true;
+    }
+    public void run()
+    {
+        try
+        {
+            while (kb.ready() || processRunning)
+            {
+                if (kb.ready())
+                {
+                    op.println(kb.readLine());
+                }
+            }
+        }
+        catch (IOException e)
+        {
+            System.err.println("Problem reading standard input.");
+            System.err.println(e);
+        }
+    }
+    public void done()
+    {
+        processRunning = false;
+    }
+}
+class StdOut extends Thread
+{
+    private InputStreamReader output;
+    private boolean processRunning;
+    private ConsoleTextArea cta;
+    private StringBuffer data;
+    public StdOut(Process p, ConsoleTextArea cta)
+    {
+        setDaemon(true);
+        output = new InputStreamReader(p.getInputStream());
+        this.cta = cta;
+        processRunning = true;
+        data = new StringBuffer();
+    }
+    public void run()
+    {
+        try
+        {
+            /*
+             * Loop as long as there is output from the process to be displayed or as long as the
+             * process is still running even if there is presently no output.
+             */
+            while (output.ready() || processRunning)
+            {
+                // If there is output get it and display it.
+                if (output.ready())
+                {
+                    char[] array = new char[255];
+                    int num = output.read(array);
+                    if (num != -1)
+                    {
+                        String s = new String(array, 0, num);
+                        data.append(s);
+                        SwingUtilities.invokeAndWait(new ConsoleWrite(cta, s));
+                    }
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            System.err.println("Problem writing to standard output.");
+            System.err.println(e);
+        }
+    }
+    public void done()
+    {
+        processRunning = false;
+    }
+    public String getData()
+    {
+        return data.toString();
+    }
+}
+class ConsoleWrite implements Runnable
+{
+    private ConsoleTextArea textArea;
+    private String str;
+    public ConsoleWrite(ConsoleTextArea textArea, String str)
+    {
+        this.textArea = textArea;
+        this.str = str;
+    }
+    public void run()
+    {
+        textArea.write(str);
+    }
+}
+class ConsoleWriter extends java.io.OutputStream
+{
+    private ConsoleTextArea textArea;
+    private StringBuffer buffer;
+    public ConsoleWriter(ConsoleTextArea textArea)
+    {
+        this.textArea = textArea;
+        buffer = new StringBuffer();
+    }
+    public synchronized void write(int ch)
+    {
+        buffer.append((char) ch);
+        if (ch == '\n')
+        {
+            flushBuffer();
+        }
+    }
+    public synchronized void write(char[] data, int off, int len)
+    {
+        for (int i = off; i &lt; len; i++)
+        {
+            buffer.append(data[i]);
+            if (data[i] == '\n')
+            {
+                flushBuffer();
+            }
+        }
+    }
+    public synchronized void flush()
+    {
+        if (buffer.length() &gt; 0)
+        {
+            flushBuffer();
+        }
+    }
+    public void close()
+    {
+        flush();
+    }
+    private void flushBuffer()
+    {
+        String str = buffer.toString();
+        buffer.setLength(0);
+        SwingUtilities.invokeLater(new ConsoleWrite(textArea, str));
+    }
+}
+class ConsoleTextArea extends JTextArea implements KeyListener, DocumentListener
+{
+    /**
+     *
+     */
+    private static final long serialVersionUID = 3258410625414475827L;
+    private ConsoleWriter console1;
+    private PrintStream out;
+    private PrintStream err;
+    private PrintWriter inPipe;
+    private PipedInputStream in;
+    private Vector&lt;String&gt; history;
+    private int historyIndex = -1;
+    private int outputMark = 0;
+    public void select(int start, int end)
+    {
+        requestFocus();
+        super.select(start, end);
+    }
+    public ConsoleTextArea()
+    {
+        super();
+        history = new java.util.Vector&lt;String&gt;();
+        console1 = new ConsoleWriter(this);
+        ConsoleWriter console2 = new ConsoleWriter(this);
+        out = new PrintStream(console1);
+        err = new PrintStream(console2);
+        PipedOutputStream outPipe = new PipedOutputStream();
+        inPipe = new PrintWriter(outPipe);
+        in = new PipedInputStream();
+        try
+        {
+            outPipe.connect(in);
+        }
+        catch (IOException exc)
+        {
+            exc.printStackTrace();
+        }
+        getDocument().addDocumentListener(this);
+        addKeyListener(this);
+        setLineWrap(true);
+        setFont(new Font("Monospaced", 0, 12));
+    }
+    void returnPressed()
+    {
+        Document doc = getDocument();
+        int len = doc.getLength();
+        Segment segment = new Segment();
+        try
+        {
+            synchronized (doc)
+            {
+                doc.getText(outputMark, len - outputMark, segment);
+            }
+        }
+        catch (javax.swing.text.BadLocationException ignored)
+        {
+            ignored.printStackTrace();
+        }
+        if (segment.count &gt; 0)
+        {
+            history.addElement(segment.toString());
+        }
+        historyIndex = history.size();
+        inPipe.write(segment.array, segment.offset, segment.count);
+        append("\n");
+        synchronized (doc)
+        {
+            outputMark = doc.getLength();
+        }
+        inPipe.write("\n");
+        inPipe.flush();
+        console1.flush();
+    }
+    public void eval(String str)
+    {
+        inPipe.write(str);
+        inPipe.write("\n");
+        inPipe.flush();
+        console1.flush();
+    }
+    public void keyPressed(KeyEvent e)
+    {
+        int code = e.getKeyCode();
+        if (code == KeyEvent.VK_BACK_SPACE || code == KeyEvent.VK_LEFT)
+        {
+            if (outputMark == getCaretPosition())
+            {
+                e.consume();
+            }
+        }
+        else if (code == KeyEvent.VK_HOME)
+        {
+            int caretPos = getCaretPosition();
+            if (caretPos == outputMark)
+            {
+                e.consume();
+            }
+            else if (caretPos &gt; outputMark)
+            {
+                if (!e.isControlDown())
+                {
+                    if (e.isShiftDown())
+                    {
+                        moveCaretPosition(outputMark);
+                    }
+                    else
+                    {
+                        setCaretPosition(outputMark);
+                    }
+                    e.consume();
+                }
+            }
+        }
+        else if (code == KeyEvent.VK_ENTER)
+        {
+            returnPressed();
+            e.consume();
+        }
+        else if (code == KeyEvent.VK_UP)
+        {
+            historyIndex--;
+            if (historyIndex &gt;= 0)
+            {
+                if (historyIndex &gt;= history.size())
+                {
+                    historyIndex = history.size() - 1;
+                }
+                if (historyIndex &gt;= 0)
+                {
+                    String str = history.elementAt(historyIndex);
+                    int len = getDocument().getLength();
+                    replaceRange(str, outputMark, len);
+                    int caretPos = outputMark + str.length();
+                    select(caretPos, caretPos);
+                }
+                else
+                {
+                    historyIndex++;
+                }
+            }
+            else
+            {
+                historyIndex++;
+            }
+            e.consume();
+        }
+        else if (code == KeyEvent.VK_DOWN)
+        {
+            int caretPos = outputMark;
+            if (history.size() &gt; 0)
+            {
+                historyIndex++;
+                if (historyIndex &lt; 0)
+                {
+                    historyIndex = 0;
+                }
+                int len = getDocument().getLength();
+                if (historyIndex &lt; history.size())
+                {
+                    String str = history.elementAt(historyIndex);
+                    replaceRange(str, outputMark, len);
+                    caretPos = outputMark + str.length();
+                }
+                else
+                {
+                    historyIndex = history.size();
+                    replaceRange("", outputMark, len);
+                }
+            }
+            select(caretPos, caretPos);
+            e.consume();
+        }
+    }
+    public void keyTyped(KeyEvent e)
+    {
+        int keyChar = e.getKeyChar();
+        if (keyChar == 0x8 /* KeyEvent.VK_BACK_SPACE */)
+        {
+            if (outputMark == getCaretPosition())
+            {
+                e.consume();
+            }
+        }
+        else if (getCaretPosition() &lt; outputMark)
+        {
+            setCaretPosition(outputMark);
+        }
+    }
+    public void keyReleased(KeyEvent e)
+    {
+    }
+    public synchronized void write(String str)
+    {
+        insert(str, outputMark);
+        int len = str.length();
+        outputMark += len;
+        select(outputMark, outputMark);
+    }
+    public synchronized void insertUpdate(DocumentEvent e)
+    {
+        int len = e.getLength();
+        int off = e.getOffset();
+        if (outputMark &gt; off)
+        {
+            outputMark += len;
+        }
+    }
+    public synchronized void removeUpdate(DocumentEvent e)
+    {
+        int len = e.getLength();
+        int off = e.getOffset();
+        if (outputMark &gt; off)
+        {
+            if (outputMark &gt;= off + len)
+            {
+                outputMark -= len;
+            }
+            else
+            {
+                outputMark = off;
+            }
+        }
+    }
+    public void postUpdateUI()
+    {
+        // this attempts to cleanup the damage done by updateComponentTreeUI
+        requestFocus();
+        setCaret(getCaret());
+        synchronized (this)
+        {
+            select(outputMark, outputMark);
+        }
+    }
+    public void changedUpdate(DocumentEvent e)
+    {
+    }
+    public InputStream getIn()
+    {
+        return in;
+    }
+    public PrintStream getOut()
+    {
+        return out;
+    }
+    public PrintStream getErr()
+    {
+        return err;
+    }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.59.1.</th><th>Prints messages formatted for a specific line width.</th></tr></thead><tbody><tr><td>6.59.2.</td><td>A bean that can be used to keep track of a counter</td></tr><tr><td>6.59.3.</td><td>Swing Console</td></tr><tr><td>6.59.4.</td><td>Methods for logging events</td></tr><tr><td>6.59.5.</td><td>Debug Utility</td></tr><tr><td>6.59.6.</td><td>A helper class for printing indented text</td></tr><tr><td>6.59.7.</td><td>Random data for test</td></tr><tr><td>6.59.8.</td><td>Count Up Down Latch</td></tr><tr><td>6.59.9.</td><td>A simple logging facility.</td></tr><tr><td>6.59.10.</td><td>Printing indented text</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-tobase64.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">to Base64</span></a><a class="pager-btn pager-next" href="development-randomdatafortest.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Random data for test</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

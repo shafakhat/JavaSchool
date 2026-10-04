@@ -3,8 +3,8 @@ title: Parsing and Formatting a Number into Binary
 nav: Parsing and Formatting a N...
 description: Imported from the java2s.com archive: Parsing and Formatting a Number into Binary
 section: Imported - java2s Archive
-order: 1078
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ParsingandFormattingaNumberintoBinary.htm
+order: 1042
+source: https://web.archive.org/web/20140829091426/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ParsingandFormattingaNumberintoBinary.htm
 ---
 ```java title=Example.java
 public class Main {

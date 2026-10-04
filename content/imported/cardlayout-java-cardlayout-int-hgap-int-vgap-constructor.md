@@ -3,8 +3,8 @@ title: Java Tutorial - Java CardLayout(int hgap, int vgap) Constructor
 nav: Java Tutorial - Java CardL...
 description: CardLayout(int hgap, int vgap) constructor from CardLayout has the following syntax.
 section: Imported - java2s Archive
-order: 1009
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/Java_CardLayout_int_hgap_int_vgap_Constructor.htm
+order: 1188
+source: https://web.archive.org/web/20140830010441/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/Java_CardLayout_int_hgap_int_vgap_Constructor.htm
 ---
 ### Syntax
 

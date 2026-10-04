@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All bitwise operators in action - JavaSchool</title>
+<meta name="description" content="All bitwise operators in action: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-operators-allbitwiseoperatorsinaction">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-03-operators.html">Operators</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-03-05-bitwise-operators.html">Bitwise Operators</a></nav>
+    <h1>All bitwise operators in action</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
+// www.BruceEckel.com. See copyright notice in CopyRight.txt.
+import java.util.Random;
+public class MainClass {
+  public static void main(String[] args) {
+    Random rand = new Random();
+    int i = rand.nextInt();
+    int j = rand.nextInt();
+    printBinaryInt("-1", -1);
+    printBinaryInt("+1", +1);
+    int maxpos = 2147483647;
+    printBinaryInt("maxpos", maxpos);
+    int maxneg = -2147483648;
+    printBinaryInt("maxneg", maxneg);
+    printBinaryInt("i", i);
+    printBinaryInt("~i", ~i);
+    printBinaryInt("-i", -i);
+    printBinaryInt("j", j);
+    printBinaryInt("i &amp; j", i &amp; j);
+    printBinaryInt("i | j", i | j);
+    printBinaryInt("i ^ j", i ^ j);
+    printBinaryInt("i &lt;&lt; 5", i &lt;&lt; 5);
+    printBinaryInt("i &gt;&gt; 5", i &gt;&gt; 5);
+    printBinaryInt("(~i) &gt;&gt; 5", (~i) &gt;&gt; 5);
+    printBinaryInt("i &gt;&gt;&gt; 5", i &gt;&gt;&gt; 5);
+    printBinaryInt("(~i) &gt;&gt;&gt; 5", (~i) &gt;&gt;&gt; 5);
+    long l = rand.nextLong();
+    long m = rand.nextLong();
+    printBinaryLong("-1L", -1L);
+    printBinaryLong("+1L", +1L);
+    long ll = 9223372036854775807L;
+    printBinaryLong("maxpos", ll);
+    long lln = -9223372036854775808L;
+    printBinaryLong("maxneg", lln);
+    printBinaryLong("l", l);
+    printBinaryLong("~l", ~l);
+    printBinaryLong("-l", -l);
+    printBinaryLong("m", m);
+    printBinaryLong("l &amp; m", l &amp; m);
+    printBinaryLong("l | m", l | m);
+    printBinaryLong("l ^ m", l ^ m);
+    printBinaryLong("l &lt;&lt; 5", l &lt;&lt; 5);
+    printBinaryLong("l &gt;&gt; 5", l &gt;&gt; 5);
+    printBinaryLong("(~l) &gt;&gt; 5", (~l) &gt;&gt; 5);
+    printBinaryLong("l &gt;&gt;&gt; 5", l &gt;&gt;&gt; 5);
+    printBinaryLong("(~l) &gt;&gt;&gt; 5", (~l) &gt;&gt;&gt; 5);
+  }
+  static void printBinaryInt(String s, int i) {
+    System.out.println(s + ", int: " + i + ", binary: ");
+    System.out.print("   ");
+    for (int j = 31; j &gt;= 0; j--)
+      if (((1 &lt;&lt; j) &amp; i) != 0)
+        System.out.print("1");
+      else
+        System.out.print("0");
+    System.out.println();
+  }
+  static void printBinaryLong(String s, long l) {
+    System.out.println(s + ", long: " + l + ", binary: ");
+    System.out.print("   ");
+    for (int i = 63; i &gt;= 0; i--)
+      if (((1L &lt;&lt; i) &amp; l) != 0)
+        System.out.print("1");
+      else
+        System.out.print("0");
+    System.out.println();
+  }
+}
+java title=Example.java
+-1, int: -1, binary:
+   11111111111111111111111111111111
++1, int: 1, binary:
+   00000000000000000000000000000001
+maxpos, int: 2147483647, binary:
+   01111111111111111111111111111111
+maxneg, int: -2147483648, binary:
+   10000000000000000000000000000000
+i, int: 907739811, binary:
+   00110110000110110000001010100011
+~i, int: -907739812, binary:
+   11001001111001001111110101011100
+-i, int: -907739811, binary:
+   11001001111001001111110101011101
+j, int: -1527787021, binary:
+   10100100111011111101000111110011
+i &amp; j, int: 604700835, binary:
+   00100100000010110000000010100011
+i | j, int: -1224748045, binary:
+   10110110111111111101001111110011
+i ^ j, int: -1829448880, binary:
+   10010010111101001101001101010000
+i &lt;&lt; 5, int: -1017097120, binary:
+   11000011011000000101010001100000
+i &gt;&gt; 5, int: 28366869, binary:
+   00000001101100001101100000010101
+(~i) &gt;&gt; 5, int: -28366870, binary:
+   11111110010011110010011111101010
+i &gt;&gt;&gt; 5, int: 28366869, binary:
+   00000001101100001101100000010101
+(~i) &gt;&gt;&gt; 5, int: 105850858, binary:
+   00000110010011110010011111101010
+-1L, long: -1, binary:
+   1111111111111111111111111111111111111111111111111111111111111111
++1L, long: 1, binary:
+   0000000000000000000000000000000000000000000000000000000000000001
+maxpos, long: 9223372036854775807, binary:
+   0111111111111111111111111111111111111111111111111111111111111111
+maxneg, long: -9223372036854775808, binary:
+   1000000000000000000000000000000000000000000000000000000000000000
+l, long: 6929873296403828491, binary:
+   0110000000101011110110110000110000001010100111011000111100001011
+~l, long: -6929873296403828492, binary:
+   1001111111010100001001001111001111110101011000100111000011110100
+-l, long: -6929873296403828491, binary:
+   1001111111010100001001001111001111110101011000100111000011110101
+m, long: -352541115944271612, binary:
+   1111101100011011100001011011100100001111011011000000000100000100
+l &amp; m, long: 6920767123913179392, binary:
+   0110000000001011100000010000100000001010000011000000000100000000
+l | m, long: -343434943453622513, binary:
+   1111101100111011110111111011110100001111111111011000111100001111
+l ^ m, long: -7264202067366801905, binary:
+   1001101100110000010111101011010100000101111100011000111000001111
+l &lt;&lt; 5, long: 395016600407892320, binary:
+   0000010101111011011000011000000101010011101100011110000101100000
+l &gt;&gt; 5, long: 216558540512619640, binary:
+   0000001100000001010111101101100001100000010101001110110001111000
+(~l) &gt;&gt; 5, long: -216558540512619641, binary:
+   1111110011111110101000010010011110011111101010110001001110000111
+l &gt;&gt;&gt; 5, long: 216558540512619640, binary:
+   0000001100000001010111101101100001100000010101001110110001111000
+(~l) &gt;&gt;&gt; 5, long: 359902211790803847, binary:
+   0000010011111110101000010010011110011111101010110001001110000111</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="data-type-literals.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Literals</span></a><a class="pager-btn pager-next" href="class-definition-baseclassfordemonstationoffinalmethods.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Base class for demonstatio...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

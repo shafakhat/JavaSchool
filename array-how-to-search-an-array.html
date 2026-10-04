@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to search an array - JavaSchool</title>
-<meta name="description" content="publicstaticint indexOf(int[] array, int valueToFind, int startIndex) {">
+<meta name="description" content="public static int indexOf(int[] array, int valueToFind, int startIndex) {">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -43,12 +43,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <ul><li>Search an element in an array and return the index and last index</li><li>Search a double type array</li></ul>
 <h3 id="search-an-element-in-an-array-and-return-the-index-and-last-index">Search an element in an array and return the index and last index</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.Array;
-publicclass Main {
-  publicstaticfinalint INDEX_NOT_FOUND = -1;
-  publicstaticint indexOf(int[] array, int valueToFind) {
+public class Main {
+  public static final int INDEX_NOT_FOUND = -1;
+  public static int indexOf(int[] array, int valueToFind) {
       return indexOf(array, valueToFind, 0);
   }
-  publicstaticint indexOf(int[] array, int valueToFind, int startIndex) {
+  public static int indexOf(int[] array, int valueToFind, int startIndex) {
       if (array == null) {
           return INDEX_NOT_FOUND;
       }
@@ -62,16 +62,16 @@ publicclass Main {
       }
       return INDEX_NOT_FOUND;
   }
-  publicstaticint lastIndexOf(int[] array, int valueToFind) {
+  public static int lastIndexOf(int[] array, int valueToFind) {
       return lastIndexOf(array, valueToFind, Integer.MAX_VALUE);
   }
-  publicstaticint lastIndexOf(int[] array, int valueToFind, int startIndex) {
+  public static int lastIndexOf(int[] array, int valueToFind, int startIndex) {
       if (array == null) {
           return INDEX_NOT_FOUND;
       }
       if (startIndex &lt; 0) {
           return INDEX_NOT_FOUND;
-      } elseif (startIndex &gt;= array.length) {
+      } else if (startIndex &gt;= array.length) {
           startIndex = array.length - 1;
       }
       for (int i = startIndex; i &gt;= 0; i--) {
@@ -81,20 +81,20 @@ publicclass Main {
       }
       return INDEX_NOT_FOUND;
   }
-  publicstaticboolean contains(int[] array, int valueToFind) {
+  public static boolean contains(int[] array, int valueToFind) {
       return indexOf(array, valueToFind) != INDEX_NOT_FOUND;
   }
 }</code></pre></div>
 <h3 id="search-a-double-type-array">Search a double type array</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.Array;
-publicclass Main {
-  publicstaticfinalint INDEX_NOT_FOUND = -1;
-  publicstaticint indexOf(double[] array, double valueToFind) {
+public class Main {
+  public static final int INDEX_NOT_FOUND = -1;
+  public static int indexOf(double[] array, double valueToFind) {
       return indexOf(array, valueToFind, 0);
-  }publicstaticint indexOf(double[] array, double valueToFind, double tolerance) {
+  } public static int indexOf(double[] array, double valueToFind, double tolerance) {
       return indexOf(array, valueToFind, 0, tolerance);
   }
-  publicstaticint indexOf(double[] array, double valueToFind, int startIndex) {
+  public static int indexOf(double[] array, double valueToFind, int startIndex) {
       if (isEmpty(array)) {
           return INDEX_NOT_FOUND;
       }
@@ -108,7 +108,7 @@ publicclass Main {
       }
       return INDEX_NOT_FOUND;
   }
-  publicstaticint indexOf(double[] array, double valueToFind, int startIndex, double tolerance) {
+  public static int indexOf(double[] array, double valueToFind, int startIndex, double tolerance) {
       if (isEmpty(array)) {
           return INDEX_NOT_FOUND;
       }
@@ -124,19 +124,19 @@ publicclass Main {
       }
       return INDEX_NOT_FOUND;
   }
-  publicstaticint lastIndexOf(double[] array, double valueToFind) {
+  public static int lastIndexOf(double[] array, double valueToFind) {
       return lastIndexOf(array, valueToFind, Integer.MAX_VALUE);
   }
-  publicstaticint lastIndexOf(double[] array, double valueToFind, double tolerance) {
+  public static int lastIndexOf(double[] array, double valueToFind, double tolerance) {
       return lastIndexOf(array, valueToFind, Integer.MAX_VALUE, tolerance);
   }
-  publicstaticint lastIndexOf(double[] array, double valueToFind, int startIndex) {
+  public static int lastIndexOf(double[] array, double valueToFind, int startIndex) {
       if (isEmpty(array)) {
           return INDEX_NOT_FOUND;
       }
       if (startIndex &lt; 0) {
           return INDEX_NOT_FOUND;
-      } elseif (startIndex &gt;= array.length) {
+      } else if (startIndex &gt;= array.length) {
           startIndex = array.length - 1;
       }
       for (int i = startIndex; i &gt;= 0; i--) {
@@ -146,13 +146,13 @@ publicclass Main {
       }
       return INDEX_NOT_FOUND;
   }
-  publicstaticint lastIndexOf(double[] array, double valueToFind, int startIndex, double tolerance) {
+  public static int lastIndexOf(double[] array, double valueToFind, int startIndex, double tolerance) {
       if (isEmpty(array)) {
           return INDEX_NOT_FOUND;
       }
       if (startIndex &lt; 0) {
           return INDEX_NOT_FOUND;
-      } elseif (startIndex &gt;= array.length) {
+      } else if (startIndex &gt;= array.length) {
           startIndex = array.length - 1;
       }
       double min = valueToFind - tolerance;
@@ -164,13 +164,13 @@ publicclass Main {
       }
       return INDEX_NOT_FOUND;
   }
-  publicstaticboolean contains(double[] array, double valueToFind) {
+  public static boolean contains(double[] array, double valueToFind) {
       return indexOf(array, valueToFind) != INDEX_NOT_FOUND;
   }
-  publicstaticboolean contains(double[] array, double valueToFind, double tolerance) {
+  public static boolean contains(double[] array, double valueToFind, double tolerance) {
       return indexOf(array, valueToFind, 0, tolerance) != INDEX_NOT_FOUND;
   }
-  publicstaticboolean isEmpty(double[] array) {
+  public static boolean isEmpty(double[] array) {
       if (array == null || array.length == 0) {
           return true;
       }
@@ -180,7 +180,7 @@ publicclass Main {
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>How to sort an array</li><li>Sort string type array in case insensitive order and case sensitive order</li><li>Sort an Array in Descending (Reverse) Order</li></ul>
-    <div class="pager"><a class="pager-btn" href="data-type-hexadecimalnumbersanditscorrespondingdecimalandbinaryvalue.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Hexadecimal Numbers and it...</span></a><a class="pager-btn pager-next" href="class-initializationblockdemo.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Initialization block Demo</span></a></div>
+    <div class="pager"><a class="pager-btn" href="class-definition-classmemberaccesscontrolmodifiers.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Class Member Access Contro...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-116.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

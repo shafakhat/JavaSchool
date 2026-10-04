@@ -1,10 +1,10 @@
 ---
 title: Java IO Tutorial - CharArrayReader Example
 nav: Java IO Tutorial - CharArr...
-description: Imported from java2s.com: Java IO Tutorial - CharArrayReader Example
+description: Imported from the java2s.com archive: Java IO Tutorial - CharArrayReader Example
 section: Imported - java2s Archive
-order: 50245
-source: https://www.java2s.com/Tutorials/Java/java.io/CharArrayReader/index.html
+order: 1191
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/java.io/CharArrayReader/index.html
 ---
 ## Constructor
 

@@ -42,8 +42,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>In this chapter you will learn:</p>
 <ul><li>Insertion Sort Implementation</li><li>Object Insertion Sort</li></ul>
 <h3 id="insertion-sort-implementation">Insertion Sort Implementation</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] args) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] args) {
     int maxSize = 100; // array size
     InsertSort arr; // reference to array
     arr = new InsertSort(maxSize); // create the array
@@ -63,28 +63,28 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   }
 }
 class InsertSort {
-  privatelong[] number;
-  privateint nElems;
+  private long[] number;
+  private int nElems;
   public InsertSort(int max) {
-    number = newlong[max];
+    number = new long[max];
     nElems = 0;
   }
-  publicvoid insert(long value) {
+  public void insert(long value) {
     number[nElems] = value;
     nElems++;
   }
-  publicvoid display() {
+  public void display() {
     for (int j = 0; j &lt; nElems; j++)
       System.out.print(number[j] + " ");
     System.out.println("");
   }
-  publicvoid insertionSort() {
+  public void insertionSort() {
     int in, out;
     // out is dividing line
-for (out = 1; out &lt; nElems; out++) {
+ for (out = 1; out &lt; nElems; out++) {
       long temp = number[out]; // remove marked item
       in = out; // start shifts at out
-while (in &gt; 0 &amp;&amp; number[in - 1] &gt;= temp) // until one is smaller,
+ while (in &gt; 0 &amp;&amp; number[in - 1] &gt;= temp) // until one is smaller,
       {
         number[in] = number[in - 1]; // shift item to right
         --in; // go left one position
@@ -96,8 +96,8 @@ while (in &gt; 0 &amp;&amp; number[in - 1] &gt;= temp) // until one is smaller,
 <p>The code above generates the following result.</p>
 <h3 id="object-insertion-sort">Object Insertion Sort</h3>
 <p>The following code shows how to do object Insertion Sort. It compares the person's last name.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main{
-  publicstaticvoid main(String[] args) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main{
+  public static void main(String[] args) {
     int maxSize = 100; // array size
     ObjectInsertSort arr = new ObjectInsertSort(maxSize); // create the array
     arr.insert("Jack", "James", 24);
@@ -117,26 +117,26 @@ while (in &gt; 0 &amp;&amp; number[in - 1] &gt;= temp) // until one is smaller,
 }
 class ObjectInsertSort {
   private Person[] a;
-  privateint nElems;
+  private int nElems;
   public ObjectInsertSort(int max) {
     a = new Person[max];
     nElems = 0;
   }
   // put person into array
-publicvoid insert(String last, String first, int age) {
+ public void insert(String last, String first, int age) {
     a[nElems] = new Person(last, first, age);
     nElems++;
   }
-  publicvoid display() {
+  public void display() {
     for (int j = 0; j &lt; nElems; j++)
       a[j].displayPerson();
   }
-  publicvoid insertionSort() {
+  public void insertionSort() {
     int in, out;
     for (out = 1; out &lt; nElems; out++) {
       Person temp = a[out]; // out is dividing line
       in = out; // start shifting at out
-while (in &gt; 0 &amp;&amp; // until smaller one found,
+ while (in &gt; 0 &amp;&amp; // until smaller one found,
           a[in - 1].getLast().compareTo(temp.getLast()) &gt; 0) {
         a[in] = a[in - 1]; // shift item to the right
         --in; // go left one position
@@ -148,13 +148,13 @@ while (in &gt; 0 &amp;&amp; // until smaller one found,
 class Person {
   private String lastName;
   private String firstName;
-  privateint age;
+  private int age;
   public Person(String last, String first, int a) {
     lastName = last;
     firstName = first;
     age = a;
   }
-  publicvoid displayPerson() {
+  public void displayPerson() {
     System.out.print("   Last name: " + lastName);
     System.out.print(", First name: " + firstName);
     System.out.println(", Age: " + age);
@@ -167,7 +167,7 @@ class Person {
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Selection sort implementation</li></ul>
-    <div class="pager"><a class="pager-btn" href="bigdecimal-biginteger-how-to-create-java-biginteger.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">How to create Java BigInte...</span></a><a class="pager-btn pager-next" href="language-insertanannotationtosuppresswarning-2.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Insert an annotation to su...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-delimitersarecommaspaceorperiod.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Delimiters are comma, spac...</span></a><a class="pager-btn pager-next" href="statement-control-infiniteforloopexample.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Infinite For loop Example</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

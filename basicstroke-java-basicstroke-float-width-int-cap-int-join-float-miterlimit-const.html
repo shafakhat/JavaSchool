@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Java Tutorial - Java BasicStroke(float width, int cap, int join, float miterlimit) Constructor - JavaSchool</title>
-<meta name="description" content="BasicStroke(float width, int cap, int join, float miterlimit) constructor from BasicStroke has the following syntax.">
+<title>Java BasicStroke(float width, int cap, int join, float miterlimit) Constructor - JavaSchool</title>
+<meta name="description" content="BasicStroke BasicStroke(float width, int cap, int join, float miterlimit) constructs a solid BasicStroke with the specified attributes.">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -38,10 +38,20 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <main class="main">
   <article class="ws-content">
     <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-basicstroke.html">BasicStroke</a></nav>
-    <h1>Java Tutorial - Java BasicStroke(float width, int cap, int join, float miterlimit) Constructor</h1>
+    <h1>Java BasicStroke(float width, int cap, int join, float miterlimit) Constructor</h1>
+<p>In this chapter you will learn:</p>
+<ul><li>Get to know BasicStroke.BasicStroke(float width, int cap, int join, float miterlimit)</li><li>Syntax for BasicStroke(float width, int cap, int join, float miterlimit) constructor from BasicStroke</li><li>Parameter for BasicStroke.BasicStroke(float width, int cap, int join, float miterlimit)</li><li>Exceptions from BasicStroke.BasicStroke(float width, int cap, int join, float miterlimit)</li><li>Example - BasicStroke.BasicStroke(float width, int cap, int join, float miterlimit)</li></ul>
+<h3 id="description">Description</h3>
+<p>BasicStroke BasicStroke(float width, int cap, int join, float miterlimit) constructs a solid BasicStroke with the specified attributes.</p>
 <h3 id="syntax">Syntax</h3>
 <p>BasicStroke(float width, int cap, int join, float miterlimit) constructor from BasicStroke has the following syntax.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public BasicStroke(float width,   int cap,   int join,   float miterlimit)</code></pre></div>
+<h3 id="parameters">Parameters</h3>
+<p>BasicStroke.BasicStroke(float width, int cap, int join, float miterlimit) constructor has the following parameters.</p>
+<ul><li>width - the width of the BasicStroke</li><li>cap - the decoration of the ends of a BasicStroke</li><li>join - the decoration applied where path segments meet</li><li>miterlimit - the limit to trim the miter join</li></ul>
+<h3 id="exceptions">Exceptions</h3>
+<p>BasicStroke.BasicStroke(float width, int cap, int join, float miterlimit) throws the following exceptions.</p>
+<ul><li>IllegalArgumentException - if width is negative</li><li>IllegalArgumentException - if cap is not either CAP_BUTT, CAP_ROUND or CAP_SQUARE</li><li>IllegalArgumentException - if miterlimit is less than 1 and join is JOIN_MITER</li><li>IllegalArgumentException - if join is not either JOIN_ROUND, JOIN_BEVEL, or JOIN_MITER</li></ul>
 <h3 id="example">Example</h3>
 <p>In the following code shows how to use BasicStroke.BasicStroke(float width, int cap, int join, float miterlimit) constructor.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.BasicStroke;
@@ -52,8 +62,8 @@ import java.awt.Stroke;
 import java.awt.geom.Rectangle2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     Stroke stroke = new BasicStroke(10, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0.1F
         );
@@ -61,7 +71,7 @@ publicclass Main extends JPanel {
     g2.setPaint(Color.black);
     g2.draw(new Rectangle2D.Float(10, 10, 200, 200));
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -69,8 +79,10 @@ publicclass Main extends JPanel {
     frame.setVisible(true);
   }
 }</code></pre></div>
-<p>BasicStrokeBorderLayoutCardLayoutColorCursorDesktopDesktopManagerDisplayModeEventQueueFlowLayoutFocusTraversalPolicyFontFontMetricsGradientPaintGraphicsGraphics2DGraphicsConfigurationGraphicsDeviceGraphicsEnvironmentGridBagConstraintsGridBagLayoutGridLayoutImageItemSelectableKeyboardFocusManagerLayoutManagerLayoutManager2PointRectangleRobotShapeSplashScreenSystemColorSystemTrayTexturePaintTrayIconToolkitTransparency</p>
-    <div class="pager"><a class="pager-btn" href="basicstroke-java-basicstroke-join-bevel.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Basic...</span></a><a class="pager-btn pager-next" href="borderlayout-java-borderlayout-tostring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Borde...</span></a></div>
+<h4 id="next-chapter">Next chapter...</h4>
+<p>What you will learn in the next chapter:</p>
+<ul><li>Get to know BasicStroke.BasicStroke(float width, int cap, int join, float miterlimit, float[] dash, float dash_phase)</li><li>Syntax for BasicStroke(float width, int cap, int join, float miterlimit, float[] dash, float dash_phase) constructor from BasicStroke</li><li>Parameter for BasicStroke.BasicStroke(float width, int cap, int join, float miterlimit, float[] dash, float dash_phase)</li><li>Exceptions from BasicStroke.BasicStroke(float width, int cap, int join, float miterlimit, float[] dash, float dash_phase)</li><li>Example - BasicStroke.BasicStroke(float width, int cap, int join, float miterlimit, float[] dash, float dash_phase)</li></ul>
+    <div class="pager"><a class="pager-btn" href="operators-instanceofoperatorandclasshierarchy.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">instanceof operator and cl...</span></a><a class="pager-btn pager-next" href="jdk-7-usingthediamondoperatorandsuppressinguncheckedwarningssuppresswarnings.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Using the Diamond Operator...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

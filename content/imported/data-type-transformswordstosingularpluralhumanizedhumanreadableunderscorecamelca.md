@@ -3,8 +3,8 @@ title: Transforms words to singular, plural, humanized (human readable), undersc
 nav: Transforms words to singul...
 description: * See the COPYRIGHT.txt file distributed with this work for information
 section: Imported - java2s Archive
-order: 1160
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Transformswordstosingularpluralhumanizedhumanreadableunderscorecamelcaseorordinalform.htm
+order: 1316
+source: https://web.archive.org/web/20140217205601/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Transformswordstosingularpluralhumanizedhumanreadableunderscorecamelcaseorordinalform.htm
 ---
 ```java title=Example.java
 /*
@@ -29,7 +29,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * License along with this software; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
- */import java.util.HashSet;
+ */
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -41,7 +42,8 @@ import java.util.regex.Pattern;
  * href="http://wiki.rubyonrails.org/rails/pages/License">Rails license</a>.
  *
  * @author Randall Hauch
- */public class Inflector {
+ */
+public class Inflector {
     protected static final Inflector INSTANCE = new Inflector();
     public static final Inflector getInstance() {
         return INSTANCE;
@@ -62,7 +64,8 @@ import java.util.regex.Pattern;
          *
          * @param input the input string
          * @return the modified string if this rule applied, or null if the input was not modified by this rule
-         */ protected String apply( String input ) {
+         */
+        protected String apply( String input ) {
             Matcher matcher = this.expressionPattern.matcher(input);
             if (!matcher.find()) return null;
             return matcher.replaceAll(this.replacement);
@@ -90,7 +93,8 @@ import java.util.regex.Pattern;
     /**
      * The lowercase words that are to be excluded and not processed. This map can be modified by the users via
      * {@link #getUncountables()}.
-     */ private final Set<String> uncountables = new HashSet<String>();
+     */
+    private final Set<String> uncountables = new HashSet<String>();
     public Inflector() {
         initialize();
     }
@@ -104,9 +108,9 @@ import java.util.regex.Pattern;
         return new Inflector(this);
     }
     // ------------------------------------------------------------------------------------------------
- // Usage functions
- // ------------------------------------------------------------------------------------------------
- /**
+    // Usage functions
+    // ------------------------------------------------------------------------------------------------
+    /**
      * Returns the plural form of the word in the string.
      *
      * Examples:
@@ -128,7 +132,8 @@ import java.util.regex.Pattern;
      * @param word the word that is to be pluralized.
      * @return the pluralized form of the word, or the word itself if it could not be pluralized
      * @see #singularize(Object)
-     */ public String pluralize( Object word ) {
+     */
+    public String pluralize( Object word ) {
         if (word == null) return null;
         String wordStr = word.toString().trim();
         if (wordStr.length() == 0) return wordStr;
@@ -169,7 +174,8 @@ import java.util.regex.Pattern;
      * @param word the word that is to be pluralized.
      * @return the pluralized form of the word, or the word itself if it could not be pluralized
      * @see #pluralize(Object)
-     */ public String singularize( Object word ) {
+     */
+    public String singularize( Object word ) {
         if (word == null) return null;
         String wordStr = word.toString().trim();
         if (wordStr.length() == 0) return wordStr;
@@ -200,7 +206,8 @@ import java.util.regex.Pattern;
      * @see #underscore(String, char[])
      * @see #camelCase(String, boolean, char[])
      * @see #upperCamelCase(String, char[])
-     */ public String lowerCamelCase( String lowerCaseAndUnderscoredWord,
+     */
+    public String lowerCamelCase( String lowerCaseAndUnderscoredWord,
                                   char... delimiterChars ) {
         return camelCase(lowerCaseAndUnderscoredWord, false, delimiterChars);
     }
@@ -224,7 +231,8 @@ import java.util.regex.Pattern;
      * @see #underscore(String, char[])
      * @see #camelCase(String, boolean, char[])
      * @see #lowerCamelCase(String, char[])
-     */ public String upperCamelCase( String lowerCaseAndUnderscoredWord,
+     */
+    public String upperCamelCase( String lowerCaseAndUnderscoredWord,
                                   char... delimiterChars ) {
         return camelCase(lowerCaseAndUnderscoredWord, true, delimiterChars);
     }
@@ -254,7 +262,8 @@ import java.util.regex.Pattern;
      * @see #underscore(String, char[])
      * @see #upperCamelCase(String, char[])
      * @see #lowerCamelCase(String, char[])
-     */ public String camelCase( String lowerCaseAndUnderscoredWord,
+     */
+    public String camelCase( String lowerCaseAndUnderscoredWord,
                              boolean uppercaseFirstLetter,
                              char... delimiterChars ) {
         if (lowerCaseAndUnderscoredWord == null) return null;
@@ -263,13 +272,13 @@ import java.util.regex.Pattern;
         if (uppercaseFirstLetter) {
             String result = lowerCaseAndUnderscoredWord;
             // Replace any extra delimiters with underscores (before the underscores are converted in the next step)...
- if (delimiterChars != null) {
+            if (delimiterChars != null) {
                 for (char delimiterChar : delimiterChars) {
                     result = result.replace(delimiterChar, '_');
                 }
             }
             // Change the case at the beginning at after each underscore ...
- return replaceAllWithUppercase(result, "(^|_)(.)", 2);
+            return replaceAllWithUppercase(result, "(^|_)(.)", 2);
         }
         if (lowerCaseAndUnderscoredWord.length() < 2) return lowerCaseAndUnderscoredWord;
         return "" + Character.toLowerCase(lowerCaseAndUnderscoredWord.charAt(0))
@@ -295,7 +304,8 @@ import java.util.regex.Pattern;
      * @param camelCaseWord the camel-cased word that is to be converted;
      * @param delimiterChars optional characters that are used to delimit word boundaries (beyond capitalization)
      * @return a lower-cased version of the input, with separate words delimited by the underscore character.
-     */ public String underscore( String camelCaseWord,
+     */
+    public String underscore( String camelCaseWord,
                               char... delimiterChars ) {
         if (camelCaseWord == null) return null;
         String result = camelCaseWord.trim();
@@ -315,7 +325,8 @@ import java.util.regex.Pattern;
      *
      * @param words the word to be capitalized
      * @return the string with the first character capitalized and the remaining characters lowercased
-     */ public String capitalize( String words ) {
+     */
+    public String capitalize( String words ) {
         if (words == null) return null;
         String result = words.trim();
         if (result.length() == 0) return "";
@@ -339,7 +350,8 @@ import java.util.regex.Pattern;
      * @param removableTokens optional array of tokens that are to be removed
      * @return the humanized string
      * @see #titleCase(String, String[])
-     */ public String humanize( String lowerCaseAndUnderscoredWords,
+     */
+    public String humanize( String lowerCaseAndUnderscoredWords,
                             String... removableTokens ) {
         if (lowerCaseAndUnderscoredWords == null) return null;
         String result = lowerCaseAndUnderscoredWords.trim();
@@ -347,13 +359,13 @@ import java.util.regex.Pattern;
         // Remove a trailing "_id" token
         result = result.replaceAll("_id$", "");
         // Remove all of the tokens that should be removed
- if (removableTokens != null) {
+        if (removableTokens != null) {
             for (String removableToken : removableTokens) {
                 result = result.replaceAll(removableToken, "");
             }
         }
         result = result.replaceAll("_+", " "); // replace all adjacent underscores with a single space
- return capitalize(result);
+        return capitalize(result);
     }
     /**
      * Capitalizes all the words and replaces some characters in the string to create a nicer looking title. Underscores are
@@ -372,11 +384,12 @@ import java.util.regex.Pattern;
      * @param words the input to be turned into title case
      * @param removableTokens optional array of tokens that are to be removed
      * @return the title-case version of the supplied words
-     */ public String titleCase( String words,
+     */
+    public String titleCase( String words,
                              String... removableTokens ) {
         String result = humanize(words, removableTokens);
         result = replaceAllWithUppercase(result, "\\b([a-z])", 1); // change first char of each word to uppercase
- return result;
+        return result;
     }
     /**
      * Turns a non-negative number into an ordinal string used to denote the position in an ordered sequence, such as 1st, 2nd,
@@ -384,7 +397,8 @@ import java.util.regex.Pattern;
      *
      * @param number the non-negative number
      * @return the string with the number and ordinal suffix
-     */ public String ordinalize( int number ) {
+     */
+    public String ordinalize( int number ) {
         int remainder = number % 100;
         String numberStr = Integer.toString(number);
         if (11 <= number && number <= 13) return numberStr + "th";
@@ -395,15 +409,16 @@ import java.util.regex.Pattern;
         return numberStr + "th";
     }
     // ------------------------------------------------------------------------------------------------
- // Management methods
- // ------------------------------------------------------------------------------------------------
- /**
+    // Management methods
+    // ------------------------------------------------------------------------------------------------
+    /**
      * Determine whether the supplied word is considered uncountable by the {@link #pluralize(Object) pluralize} and
      * {@link #singularize(Object) singularize} methods.
      *
      * @param word the word
      * @return true if the plural and singular forms of the word are the same
-     */ public boolean isUncountable( String word ) {
+     */
+    public boolean isUncountable( String word ) {
         if (word == null) return false;
         String trimmedLower = word.trim().toLowerCase();
         return this.uncountables.contains(trimmedLower);
@@ -412,7 +427,8 @@ import java.util.regex.Pattern;
      * Get the set of words that are not processed by the Inflector. The resulting map is directly modifiable.
      *
      * @return the set of uncountable words
-     */ public Set<String> getUncountables() {
+     */
+    public Set<String> getUncountables() {
         return uncountables;
     }
     public void addPluralize( String rule,
@@ -428,7 +444,7 @@ import java.util.regex.Pattern;
     public void addIrregular( String singular,
                               String plural ) {
         //CheckArg.isNotEmpty(singular, "singular rule");
- //CheckArg.isNotEmpty(plural, "plural rule");
+        //CheckArg.isNotEmpty(plural, "plural rule");
         String singularRemainder = singular.length() > 1 ? singular.substring(1) : "";
         String pluralRemainder = plural.length() > 1 ? plural.substring(1) : "";
         addPluralize("(" + singular.charAt(0) + ")" + singularRemainder + "$", "$1" + pluralRemainder);
@@ -454,7 +470,8 @@ import java.util.regex.Pattern;
      * @param regex
      * @param groupNumberToUppercase
      * @return the input string with the appropriate characters converted to upper-case
-     */ protected static String replaceAllWithUppercase( String input,
+     */
+    protected static String replaceAllWithUppercase( String input,
                                                      String regex,
                                                      int groupNumberToUppercase ) {
         Pattern underscoreAndDotPattern = Pattern.compile(regex);
@@ -468,7 +485,8 @@ import java.util.regex.Pattern;
     }
     /**
      * Completely remove all rules within this inflector.
-     */ public void clear() {
+     */
+    public void clear() {
         this.uncountables.clear();
         this.plurals.clear();
         this.singulars.clear();

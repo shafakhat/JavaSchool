@@ -45,10 +45,10 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>Java System class has a method we can use to copy array faster.</p>
 <p>static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length) Copies an array from the specified source array, beginning at the specified position, to the specified position of the destination array.</p>
 <p>The arraycopy( ) method can be used to copy quickly an array of any type from one place to another.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  staticbyte a[] = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74};
-  staticbyte b[] = {77, 77, 77, 77, 77, 77, 77, 77, 77, 77};
-publicstaticvoid main(String args[]) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  static byte a[] = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74};
+  static byte b[] = {77, 77, 77, 77, 77, 77, 77, 77, 77, 77};
+public static void main(String args[]) {
     System.out.println("a = " + new String(a));
     System.out.println("b = " + new String(b));
     System.arraycopy(a, 0, b, 0, a.length);
@@ -63,15 +63,15 @@ publicstaticvoid main(String args[]) {
 <p>The output:</p>
 <h3 id="copy-array-1">Copy array</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-publicclass Main
+public class Main
 {
-    publicstaticvoid main(String args[])
+    public static void main(String args[])
     {
         int arrayOriginal[] = {42, 55, 21};
         int arrayNew[] = Arrays.copyOf(arrayOriginal, 3);
         printIntArray(arrayNew);
     }
-    staticvoid printIntArray(int arrayNew[])
+    static void printIntArray(int arrayNew[])
     {
         for (int i : arrayNew)
         {
@@ -84,7 +84,7 @@ publicclass Main
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Compare two arrays</li><li>Compare two two-dimensional array</li><li>Compare two arrays by reference</li></ul>
-    <div class="pager"><a class="pager-btn" href="class-definition-gettheidentityhashcodes.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Get the identity hash codes</span></a><a class="pager-btn pager-next" href="class-implementsapoolofinternalizedobjects.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Implements a pool of inter...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="class-definition-compositionwithpublicobjects.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Composition with public ob...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1159.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

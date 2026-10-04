@@ -3,8 +3,8 @@ title: Checks that the String does not contain certain characters.
 nav: Checks that the String doe...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1016
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ChecksthattheStringdoesnotcontaincertaincharacters.htm
+order: 1351
+source: https://web.archive.org/web/20140829081438/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ChecksthattheStringdoesnotcontaincertaincharacters.htm
 ---
 ```java title=Example.java
 /**
@@ -22,7 +22,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * <code>null</code> safe.
  *
@@ -48,7 +49,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */publicclass Main {
+ */
+public class Main {
   /**
    *
    * A <code>null</code> String will return <code>true</code>.
@@ -69,15 +71,16 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param invalidChars  a String of invalid chars, may be null
    * @return true if it contains none of the invalid chars, or is null
    * @since 2.0
-   */publicstaticboolean containsNone(String str, String invalidChars) {
+   */
+  public static boolean containsNone(String str, String invalidChars) {
       if (str == null || invalidChars == null) {
           return true;
       }
       return containsNone(str, invalidChars.toCharArray());
   }
   // ContainsNone
-//-----------------------------------------------------------------------
-/**
+  //-----------------------------------------------------------------------
+  /**
    *
    * A <code>null</code> String will return <code>true</code>.
    * A <code>null</code> invalid character array will return <code>true</code>.
@@ -97,7 +100,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param invalidChars  an array of invalid chars, may be null
    * @return true if it contains none of the invalid chars, or is null
    * @since 2.0
-   */publicstaticboolean containsNone(String str, char[] invalidChars) {
+   */
+  public static boolean containsNone(String str, char[] invalidChars) {
       if (str == null || invalidChars == null) {
           return true;
       }
@@ -114,21 +118,22 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
       return true;
   }
   // ----------------------------------------------------------------------
-/**
+  /**
    * Checks if an array of Objects is empty or <code>null</code>.
    *
    * @param array  the array to test
    * @return <code>true</code> if the array is empty or <code>null</code>
    * @since 2.1
-   */publicstaticboolean isEmpty(char[] array) {
+   */
+  public static boolean isEmpty(char[] array) {
       if (array == null || array.length == 0) {
           return true;
       }
       return false;
   }
   // Empty checks
-//-----------------------------------------------------------------------
-/**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -145,8 +150,30 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */publicstaticboolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }
 ```
+
+| 2.28.1. | Demonstrates the charAt and getChars |
+|---|---|
+| 2.28.2. | Converting Char array to String |
+| 2.28.3. | Creating Character Arrays From String Objects |
+| 2.28.4. | Copy characters from string into char Array |
+| 2.28.5. | Creating String Objects From Character Arrays |
+| 2.28.6. | new String(textArray, 9, 3): Creating String Objects From certain part of a character Array |
+| 2.28.7. | Creating String Objects From Character Arrays using String.copyValueOf() |
+| 2.28.8. | Creating a string from a subset of the array elements |
+| 2.28.9. | Extracting a substring as an array of characters using the method getChars() |
+| 2.28.10. | Using the Collection-Based for Loop with a String: Counting all vowels in a string |
+| 2.28.11. | Construct one String from another. |
+| 2.28.12. | demonstrates getChars( ): |
+| 2.28.13. | implements CharSequence |
+| 2.28.14. | Removes spaces (char <= 32) from end of this String with escape, handling null by returning null |
+| 2.28.15. | Removes spaces (char <= 32) from end of this String, handling null by returning null |
+| 2.28.16. | Swaps the case of a String changing upper and title case to lower case, and lower case to upper case. |
+| 2.28.17. | Deletes all whitespaces from a String as defined by Character.isWhitespace(char). |
+| 2.28.18. | Checks whether the String contains only digit characters. |
+| 2.28.19. | Checks that the String does not contain certain characters. |

@@ -1,10 +1,10 @@
 ---
 title: Merge Sort implementation in Java
 nav: Merge Sort implementation ...
-description: privatevoid recMergeSort(long[] workSpace, int lowerBound, int upperBound) {
+description: private void recMergeSort(long[] workSpace, int lowerBound, int upperBound) {
 section: Imported - java2s Archive
-order: 1005
-source: https://web.archive.org/web/20130905010011/http://java2s.com/Tutorials/Java/Algorithms/Merge_Sort_implementation_in_Java.htm
+order: 1102
+source: https://web.archive.org/web/20140713130213/http://java2s.com/Tutorials/Java/Algorithms/Merge_Sort_implementation_in_Java.htm
 ---
 In this chapter you will learn:
 
@@ -14,8 +14,8 @@ In this chapter you will learn:
 ### Merge Sort implementation
 
 ```java title=Example.java
-publicclass Main{
-  publicstaticvoid main(String[] args) {
+public class Main{
+  public static void main(String[] args) {
     MergeSortArray arr = new MergeSortArray(20);
     arr.insert(4);
     arr.insert(1);
@@ -35,31 +35,31 @@ publicclass Main{
   }
 }
 class MergeSortArray {
-  privatelong[] theArray;
-  privateint nElems;
+  private long[] theArray;
+  private int nElems;
   public MergeSortArray(int max) {
-    theArray = newlong[max];
+    theArray = new long[max];
     nElems = 0;
   }
-  publicvoid insert(long value) {
+  public void insert(long value) {
     theArray[nElems] = value; // insert it
     nElems++; // increment size
   }
-  publicvoid display() {
+  public void display() {
     for (int j = 0; j < nElems; j++){
       System.out.print(theArray[j] + " ");
     }
     System.out.println("");
   }
-  publicvoid mergeSort() {
-    long[] workSpace = newlong[nElems];
+  public void mergeSort() {
+    long[] workSpace = new long[nElems];
     recMergeSort(workSpace, 0, nElems - 1);
   }
-  privatevoid recMergeSort(long[] workSpace, int lowerBound, int upperBound) {
+  private void recMergeSort(long[] workSpace, int lowerBound, int upperBound) {
     if (lowerBound == upperBound){ // if range is 1,
-return;
+ return;
     }else { // find midpoint
-int mid = (lowerBound + upperBound) / 2;
+ int mid = (lowerBound + upperBound) / 2;
       // sort low half
       recMergeSort(workSpace, lowerBound, mid);
       // sort high half
@@ -68,12 +68,12 @@ int mid = (lowerBound + upperBound) / 2;
       merge(workSpace, lowerBound, mid + 1, upperBound);
     }
   }
-  privatevoid merge(long[] workSpace, int lowPtr, int highPtr, int upperBound) {
+  private void merge(long[] workSpace, int lowPtr, int highPtr, int upperBound) {
     int j = 0; // workspace index
-int lowerBound = lowPtr;
+ int lowerBound = lowPtr;
     int mid = highPtr - 1;
     int n = upperBound - lowerBound + 1; // # of items
-while (lowPtr <= mid && highPtr <= upperBound){
+ while (lowPtr <= mid && highPtr <= upperBound){
       if (theArray[lowPtr] < theArray[highPtr]){
         workSpace[j++] = theArray[lowPtr++];
       }else{
@@ -107,13 +107,13 @@ import java.util.Comparator;
  * objects this one runs for 3.5s.
  *
  * reference: Arrays.mergeSort (private method).
- */publicclass FastMergeSort {
+ */public class Main {
   @SuppressWarnings( { "unchecked" })
-  privatestaticvoid mergeSort(Object src[], Object dest[], int low, int high, int off,
+  private static void mergeSort(Object src[], Object dest[], int low, int high, int off,
       Comparator c) {
     int length = high - low;
     // use insertion sort on smallest arrays
-if (length < 7) {
+ if (length < 7) {
       for (int i = low; i < high; i++) {
         for (int j = i; j > low && c.compare(dest[j - 1], dest[j]) > 0; j--) {
           Object temp = dest[j];
@@ -124,7 +124,7 @@ if (length < 7) {
       return;
     }
     // recursively sort halves of dest into src
-int destLow = low;
+ int destLow = low;
     int destHigh = high;
     low += off;
     high += off;
@@ -132,12 +132,12 @@ int destLow = low;
     mergeSort(dest, src, low, mid, -off, c);
     mergeSort(dest, src, mid, high, -off, c);
     // is list already sorted?
-if (c.compare(src[mid - 1], src[mid]) <= 0) {
+ if (c.compare(src[mid - 1], src[mid]) <= 0) {
       System.arraycopy(src, low, dest, destLow, length);
       return;
     }
     // merge sorted halves from src into dest
-for (int i = destLow, p = low, q = mid; i < destHigh; i++) {
+ for (int i = destLow, p = low, q = mid; i < destHigh; i++) {
       if (q >= high || p < mid && c.compare(src[p], src[q]) <= 0) {
         dest[i] = src[p++];
       } else {
@@ -145,20 +145,20 @@ for (int i = destLow, p = low, q = mid; i < destHigh; i++) {
       }
     }
   }
-  publicvoid sort(Object[] a, Comparator c) {
+  public void sort(Object[] a, Comparator c) {
     Object aux[] = a.clone();
     mergeSort(aux, a, 0, a.length, 0, c);
   }
-  publicvoid sort(Comparable[] a) {
+  public void sort(Comparable[] a) {
     Object aux[] = a.clone();
     mergeSort(aux, a, 0, a.length, 0, ComparableComparator.INSTANCE);
   }
   // ---------------------------------------------------------------- static
-publicstaticvoid doSort(Object[] a, Comparator c) {
+ public static void doSort(Object[] a, Comparator c) {
     Object aux[] = a.clone();
     mergeSort(aux, a, 0, a.length, 0, c);
   }
-  publicstaticvoid doSort(Comparable[] a) {
+  public static void doSort(Comparable[] a) {
     Object aux[] = a.clone();
     mergeSort(aux, a, 0, a.length, 0, ComparableComparator.INSTANCE);
   }
@@ -170,8 +170,8 @@ publicstaticvoid doSort(Object[] a, Comparator c) {
  */class ComparableComparator<T extends Comparable<T>> implements Comparator<T> {
   /**
    * Cached instance.
-   */publicstaticfinal ComparableComparator INSTANCE = new ComparableComparator();
-  publicint compare(T o1, T o2) {
+   */ public static final ComparableComparator INSTANCE = new ComparableComparator();
+  public int compare(T o1, T o2) {
     return o1.compareTo(o2);
   }
 }

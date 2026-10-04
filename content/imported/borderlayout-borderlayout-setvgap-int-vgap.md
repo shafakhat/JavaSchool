@@ -3,7 +3,7 @@ title: Java Swing Tutorial - Java BorderLayout.setVgap(int vgap)
 nav: Java Swing Tutorial - Java...
 description: In the following code shows how to use BorderLayout.setVgap(int vgap) method.
 section: Imported - java2s Archive
-order: 1010
+order: 1169
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/0660__BorderLayout.setVgap_int_vgap_.htm
 ---
 ## Syntax
@@ -11,7 +11,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/ja
 BorderLayout.setVgap(int vgap) has the following syntax.
 
 ```java title=Example.java
-publicvoid setVgap(int vgap)
+public void setVgap(int vgap)
 ```
 
 ## Example
@@ -23,7 +23,7 @@ import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main  extends JPanel {
+public class Main  extends JPanel {
   public Main() {
     JButton btn1 = new JButton("Button1");
     JButton btn2 = new JButton("Button2");
@@ -41,7 +41,7 @@ publicclass Main  extends JPanel {
     add("East", btn6);
     borderLayout.setVgap(30);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.getContentPane().add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

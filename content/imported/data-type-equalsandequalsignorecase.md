@@ -3,8 +3,8 @@ title: equals() and equalsIgnoreCase().
 nav: equals() and equalsIgnoreC...
 description: System.out.println(s1 + " equals " + s2 + " -> " + s1.equals(s2));
 section: Imported - java2s Archive
-order: 1132
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/equalsandequalsIgnoreCase.htm
+order: 1081
+source: https://web.archive.org/web/20140829085606/http://www.java2s.com/Tutorial/Java/0040__Data-Type/equalsandequalsIgnoreCase.htm
 ---
 ```java title=Example.java
 class equalsDemo {

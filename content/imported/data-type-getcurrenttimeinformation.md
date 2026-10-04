@@ -3,8 +3,8 @@ title: Get current time information
 nav: Get current time information
 description: System.out.println("Current Hour in 12 hour format is : " + now.get(Calendar.HOUR));
 section: Imported - java2s Archive
-order: 1200
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Getcurrenttimeinformation.htm
+order: 1089
+source: https://web.archive.org/web/20140614152338/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Getcurrenttimeinformation.htm
 ---
 ```java title=Example.java
 import java.util.Calendar;

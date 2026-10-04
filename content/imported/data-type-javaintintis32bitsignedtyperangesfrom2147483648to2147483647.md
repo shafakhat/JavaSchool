@@ -3,8 +3,8 @@ title: Java int
 nav: Java int
 description: Imported from the java2s.com archive: Java int
 section: Imported - java2s Archive
-order: 1036
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Javaintintis32bitsignedtyperangesfrom2147483648to2147483647.htm
+order: 1029
+source: https://web.archive.org/web/2014/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Javaintintis32bitsignedtyperangesfrom2147483648to2147483647.htm
 ---
 ```java title=Example.java
 public class Main {

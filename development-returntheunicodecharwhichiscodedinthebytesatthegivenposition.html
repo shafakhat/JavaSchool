@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Return the Unicode char which is coded in the bytes at the given position. - JavaSchool</title>
+<meta name="description" content="Return the Unicode char which is coded in the bytes at the given position.: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-returntheunicodecharwhichiscodedinthebytesatthegivenposition">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-16-unicode.html">Unicode</a></nav>
+    <h1>Return the Unicode char which is coded in the bytes at the given position.</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
+import java.io.FileFilter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+/*
+ *  Licensed to the Apache Software Foundation (ASF) under one
+ *  or more contributor license agreements.  See the NOTICE file
+ *  distributed with this work for additional information
+ *  regarding copyright ownership.  The ASF licenses this file
+ *  to you under the Apache License, Version 2.0 (the
+ *  "License"); you may not use this file except in compliance
+ *  with the License.  You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing,
+ *  software distributed under the License is distributed on an
+ *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ *  KIND, either express or implied.  See the License for the
+ *  specific language governing permissions and limitations
+ *  under the License.
+ *
+ */
+/**
+ * Various string manipulation methods that are more efficient then chaining
+ * string operations: all is done in the same buffer without creating a bunch of
+ * string objects.
+ *
+ * @author &lt;a href="mailto:dev@labs.apache.org"&gt;Dungeon Project&lt;/a&gt;
+ */
+public class Main {
+  private static final int CHAR_ONE_BYTE_MASK = 0xFFFFFF80;
+  private static final int CHAR_TWO_BYTES_MASK = 0xFFFFF800;
+  private static final int CHAR_THREE_BYTES_MASK = 0xFFFF0000;
+  private static final int CHAR_FOUR_BYTES_MASK = 0xFFE00000;
+  private static final int CHAR_FIVE_BYTES_MASK = 0xFC000000;
+  private static final int CHAR_SIX_BYTES_MASK = 0x80000000;
+  /**
+   * Return the Unicode char which is coded in the bytes at the given
+   * position.
+   *
+   * @param car The character to be transformed to an array of bytes
+   *
+   * @return The byte array representing the char
+   *
+   * TODO : Should stop after the third byte, as a char is only 2 bytes long.
+   */
+  public static final byte[] charToBytes( char car )
+  {
+      byte[] bytes = new byte[countNbBytesPerChar( car )];
+      if ( ( car | 0x7F ) == 0x7F )
+      {
+          // Single byte char
+          bytes[0] = ( byte ) car;
+          return bytes;
+      }
+      else if ( ( car | 0x7F) == 0x7FF )
+      {
+          // two bytes char
+          bytes[0] = ( byte ) ( 0x00C0 + ( ( car &amp; 0x07C0 ) &gt;&gt; 6 ) );
+          bytes[1] = ( byte ) ( 0x0080 + ( car &amp; 0x3F ) );
+      }
+      else
+      {
+          // Three bytes char
+          bytes[0] = ( byte ) ( 0x00E0 + ( ( car &amp; 0xF000 ) &gt;&gt; 12 ) );
+          bytes[1] = ( byte ) ( 0x0080 + ( ( car &amp; 0x0FC0 ) &gt;&gt; 6 ) );
+          bytes[2] = ( byte ) ( 0x0080 + ( car &amp; 0x3F ) );
+      }
+      return bytes;
+  }
+  /**
+   * Return the number of bytes that hold an Unicode char.
+   *
+   * @param car
+   *            The character to be decoded
+   * @return The number of bytes to hold the char. TODO : Should stop after
+   *         the third byte, as a char is only 2 bytes long.
+   */
+  public static final int countNbBytesPerChar( char car )
+  {
+      if ( ( car &amp; CHAR_ONE_BYTE_MASK ) == 0 )
+      {
+          return 1;
+      }
+      else if ( ( car &amp; CHAR_TWO_BYTES_MASK ) == 0 )
+      {
+          return 2;
+      }
+      else if ( ( car &amp; CHAR_THREE_BYTES_MASK ) == 0 )
+      {
+          return 3;
+      }
+      else if ( ( car &amp; CHAR_FOUR_BYTES_MASK ) == 0 )
+      {
+          return 4;
+      }
+      else if ( ( car &amp; CHAR_FIVE_BYTES_MASK ) == 0 )
+      {
+          return 5;
+      }
+      else if ( ( car &amp; CHAR_SIX_BYTES_MASK ) == 0 )
+      {
+          return 6;
+      }
+      else
+      {
+          return -1;
+      }
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.16.1.</th><th>Using Unicode in String</th></tr></thead><tbody><tr><td>6.16.2.</td><td>Display special character using Unicode</td></tr><tr><td>6.16.3.</td><td>Convert from Unicode to UTF-8</td></tr><tr><td>6.16.4.</td><td>Convert from UTF-8 to Unicode</td></tr><tr><td>6.16.5.</td><td>Convert string to UTF8 bytes</td></tr><tr><td>6.16.6.</td><td>Converts Unicode into something that can be embedded in a java properties file</td></tr><tr><td>6.16.7.</td><td>Converts the string to the unicode format</td></tr><tr><td>6.16.8.</td><td>Return an UTF-8 encoded String</td></tr><tr><td>6.16.9.</td><td>Return an UTF-8 encoded String by length</td></tr><tr><td>6.16.10.</td><td>Return UTF-8 encoded byte[] representation of a String</td></tr><tr><td>6.16.11.</td><td>Get UTF String Size</td></tr><tr><td>6.16.12.</td><td>Return the number of bytes that hold an Unicode char.</td></tr><tr><td>6.16.13.</td><td>Return the Unicode char which is coded in the bytes at position 0.</td></tr><tr><td>6.16.14.</td><td>Return the Unicode char which is coded in the bytes at the given position.</td></tr><tr><td>6.16.15.</td><td>Checks if the String contains only unicode digits or space</td></tr><tr><td>6.16.16.</td><td>Checks if the String contains only unicode digits. A decimal point is not a unicode digit and returns false.</td></tr><tr><td>6.16.17.</td><td>Checks if the String contains only unicode letters and space (' ').</td></tr><tr><td>6.16.18.</td><td>Checks if the String contains only unicode letters or digits.</td></tr><tr><td>6.16.19.</td><td>Checks if the String contains only unicode letters, digits or space (' ').</td></tr><tr><td>6.16.20.</td><td>Checks if the String contains only unicode letters.</td></tr><tr><td>6.16.21.</td><td>Count the number of bytes included in the given char[].</td></tr><tr><td>6.16.22.</td><td>Count the number of bytes needed to return an Unicode char. This can be from 1 to 6.</td></tr><tr><td>6.16.23.</td><td>Count the number of chars included in the given byte[].</td></tr><tr><td>6.16.24.</td><td>Decodes values of attributes in the DN encoded in hex into a UTF-8 String.</td></tr><tr><td>6.16.25.</td><td>Safe UTF: 64K serialized size</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-returnthenumberofbytesthatholdanunicodechar.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Return the number of bytes...</span></a><a class="pager-btn pager-next" href="development-checksifthestringcontainsonlyunicodedigitsadecimalpointisnotaunicode.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Checks if the String conta...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

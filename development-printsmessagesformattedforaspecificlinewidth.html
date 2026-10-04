@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prints messages formatted for a specific line width. - JavaSchool</title>
+<meta name="description" content="Prints messages formatted for a specific line width.: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-printsmessagesformattedforaspecificlinewidth">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-59-debug.html">Debug</a></nav>
+    <h1>Prints messages formatted for a specific line width.</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * $RCSfile: MsgPrinter.java,v $
+ * $Revision: 1.1 $
+ * $Date: 2005/02/11 05:02:26 $
+ * $State: Exp $
+ *
+ * Class:                   MsgPrinter
+ *
+ * Description:             Prints messages formatted for a specific
+ *                          line width.
+ *
+ *
+ *
+ * COPYRIGHT:
+ *
+ * This software module was originally developed by Raphaël Grosbois and
+ * Diego Santa Cruz (Swiss Federal Institute of Technology-EPFL); Joel
+ * Askelöf (Ericsson Radio Systems AB); and Bertrand Berthelot, David
+ * Bouchard, Félix Henry, Gerard Mozelle and Patrice Onno (Canon Research
+ * Centre France S.A) in the course of development of the JPEG2000
+ * standard as specified by ISO/IEC 15444 (JPEG 2000 Standard). This
+ * software module is an implementation of a part of the JPEG 2000
+ * Standard. Swiss Federal Institute of Technology-EPFL, Ericsson Radio
+ * Systems AB and Canon Research Centre France S.A (collectively JJ2000
+ * Partners) agree not to assert against ISO/IEC and users of the JPEG
+ * 2000 Standard (Users) any of their rights under the copyright, not
+ * including other intellectual property rights, for this software module
+ * with respect to the usage by ISO/IEC and Users of this software module
+ * or modifications thereof for use in hardware or software products
+ * claiming conformance to the JPEG 2000 Standard. Those intending to use
+ * this software module in hardware or software products are advised that
+ * their use may infringe existing patents. The original developers of
+ * this software module, JJ2000 Partners and ISO/IEC assume no liability
+ * for use of this software module or modifications thereof. No license
+ * or right to this software module is granted for non JPEG 2000 Standard
+ * conforming products. JJ2000 Partners have full right to use this
+ * software module for his/her own purpose, assign or donate this
+ * software module to any third party and to inhibit third parties from
+ * using this software module for non JPEG 2000 Standard conforming
+ * products. This copyright notice must be included in all copies or
+ * derivative works of this software module.
+ *
+ * Copyright (c) 1999/2000 JJ2000 Partners.
+ *
+ *
+ *
+ */
+import java.io.*;
+/**
+ * This utility class formats messages to the specified line width, by
+ * inserting line-breaks between words, and printing the resulting
+ * lines.
+ * */
+public class MsgPrinter {
+    /** The line width to use */
+    public int lw;
+    /** Signals that a newline was found */
+    private static final int IS_NEWLINE = -2;
+    /** Signals that the end-of-string was reached */
+    private static final int IS_EOS = -1;
+    /**
+     * Creates a new message printer with the specified line width and
+     * with the default locale.
+     *
+     * @param linewidth The line width for which to format (in
+     * characters)
+     *
+     *
+     * */
+    public MsgPrinter(int linewidth) {
+        lw = linewidth;
+    }
+    /**
+     * Returns the line width that is used for formatting.
+     *
+     * @return The line width used for formatting
+     *
+     *
+     * */
+    public int getLineWidth() {
+        return lw;
+    }
+    /**
+     * Sets the line width to the specified value. This new value will
+     * be used in subsequent calls to the print() message.
+     *
+     * @param linewidth The new line width to use (in cahracters)
+     *
+     *
+     * */
+    public void setLineWidth(int linewidth) {
+        if (linewidth &lt;1) {
+            throw new IllegalArgumentException();
+        }
+        lw = linewidth;
+    }
+    /**
+     * Formats the message to print in the current line width, by
+     * breaking the message into lines between words. The number of
+     * spaces to indent the first line is specified by 'flind' and the
+     * number of spaces to indent each of the following lines is
+     * specified by 'ind'. Newlines in 'msg' are respected. A newline is
+     * always printed at the end.
+     *
+     * @param out Where to print the message.
+     *
+     * @param flind The indentation for the first line.
+     *
+     * @param ind The indentation for the other lines.
+     *
+     * @param msg The message to format and print.
+     *
+     *
+     * */
+    public void print(PrintWriter out, int flind, int ind,
+                      String msg) {
+        int start,end,pend,efflw,lind,i;
+        start = 0;
+        end = 0;
+        pend = 0;
+        efflw = lw-flind;
+        lind = flind;
+        while ((end = nextLineEnd(msg,pend)) != IS_EOS) {
+            if (end == IS_NEWLINE) { // Forced line break
+                for (i=0; i&lt;lind; i++) {
+                    out.print(" ");
+                }
+                out.println(msg.substring(start,pend));
+                if (nextWord(msg,pend) == msg.length()) {
+                    // Traling newline =&gt; print it and done
+                    out.println("");
+                    start = pend;
+                    break;
+                }
+            }
+            else {
+                if (efflw &gt; end-pend) { // Room left on current line
+                    efflw -= end-pend;
+                    pend = end;
+                    continue;
+                }
+                else { // Filled-up current line =&gt; print it
+                    for (i=0; i&lt;lind; i++) {
+                        out.print(" ");
+                    }
+                    if (start == pend) { // Word larger than line width
+                        // Print anyways
+                        out.println(msg.substring(start,end));
+                        pend = end;
+                    }
+                    else {
+                        out.println(msg.substring(start,pend));
+                    }
+                }
+            }
+            // Initialize for next line
+            lind = ind;
+            efflw = lw-ind;
+            start = nextWord(msg,pend);
+            pend = start;
+            if (start == IS_EOS) {
+                break; // Did all the string
+            }
+        }
+        if (pend != start) { // Part of a line left =&gt; print it
+            for (i=0; i&lt;lind; i++) {
+                out.print(" ");
+            }
+            out.println(msg.substring(start,pend));
+        }
+    }
+    /**
+     * Returns the index of the last character of the next word, plus 1, or
+     * IS_NEWLINE if a newline character is encountered before the next word,
+     * or IS_EOS if the end of the string is ecnounterd before the next
+     * word. The method first skips all whitespace characters at or after
+     * 'from', except newlines. If a newline is found IS_NEWLINE is
+     * returned. Then it skips all non-whitespace characters and returns the
+     * position of the last non-whitespace character, plus 1. The returned
+     * index may be greater than the last valid index in the tsring, but it is
+     * always suitable to be used in the String.substring() method.
+     *
+     * Non-whitespace characters are defined as in the
+     * Character.isWhitespace method (that method is used).
+     *
+     * @param str The string to parse
+     *
+     * @param from The index of the first position to search from
+     *
+     * @return The index of the last character in the next word, plus 1,
+     * IS_NEWLINE, or IS_EOS if there are no more words.
+     *
+     *
+     * */
+    private int nextLineEnd(String str, int from) {
+        final int len = str.length();
+        char c = '\0';
+        // First skip all whitespace, except new line
+        while (from &lt; len &amp;&amp; (c = str.charAt(from)) != '\n' &amp;&amp;
+               Character.isWhitespace(c)) {
+            from++;
+        }
+        if (c == '\n') {
+            return IS_NEWLINE;
+        }
+        if (from &gt;= len) {
+            return IS_EOS;
+        }
+        // Now skip word characters
+        while (from &lt; len &amp;&amp; !Character.isWhitespace(str.charAt(from))) {
+            from++;
+        }
+        return from;
+    }
+    /**
+     * Returns the position of the first character in the next word, starting
+     * from 'from', if a newline is encountered first then the index of the
+     * newline character plus 1 is returned. If the end of the string is
+     * encountered then IS_EOS is returned. Words are defined as any
+     * concatenation of 1 or more characters which are not
+     * whitespace. Whitespace characters are those for which
+     * Character.isWhitespace() returns true (that method is used).
+     *
+     * Non-whitespace characters are defined as in the
+     * Character.isWhitespace method (that method is used).
+     *
+     * @param str The string to parse
+     *
+     * @param from The index where to start parsing
+     *
+     * @return The index of the first character of the next word, or the index
+     * of the newline plus 1, or IS_EOS.
+     *
+     *
+     * */
+    private int nextWord(String str, int from) {
+        final int len = str.length();
+        char c = '\0';
+        // First skip all whitespace, but new lines
+        while (from &lt; len &amp;&amp; (c = str.charAt(from)) != '\n' &amp;&amp;
+               Character.isWhitespace(c)) {
+            from++;
+        }
+        if (from &gt;= len) {
+            return IS_EOS;
+        }
+        else if (c == '\n') {
+            return from+1;
+        }
+        else {
+            return from;
+        }
+    }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.59.1.</th><th>Prints messages formatted for a specific line width.</th></tr></thead><tbody><tr><td>6.59.2.</td><td>A bean that can be used to keep track of a counter</td></tr><tr><td>6.59.3.</td><td>Swing Console</td></tr><tr><td>6.59.4.</td><td>Methods for logging events</td></tr><tr><td>6.59.5.</td><td>Debug Utility</td></tr><tr><td>6.59.6.</td><td>A helper class for printing indented text</td></tr><tr><td>6.59.7.</td><td>Random data for test</td></tr><tr><td>6.59.8.</td><td>Count Up Down Latch</td></tr><tr><td>6.59.9.</td><td>A simple logging facility.</td></tr><tr><td>6.59.10.</td><td>Printing indented text</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-base64encodingdecoding.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Base64 encoding/decoding.</span></a><a class="pager-btn pager-next" href="development-abeanthatcanbeusedtokeeptrackofacounter.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">A bean that can be used to...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

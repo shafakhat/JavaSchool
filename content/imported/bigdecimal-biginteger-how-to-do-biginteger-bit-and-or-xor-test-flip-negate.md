@@ -3,8 +3,8 @@ title: How to do BigInteger bit and,or,xor,test,flip,negate
 nav: How to do BigInteger bit a...
 description: BigInteger andNot(BigInteger val) Returns a BigInteger whose value is (this & ~val).
 section: Imported - java2s Archive
-order: 1041
-source: https://web.archive.org/web/20130821213106/http://java2s.com/Tutorials/Java/BigDecimal_BigInteger/How_to_do_BigInteger_bit_and_or_xor_test_flip_negate.htm
+order: 1161
+source: https://web.archive.org/web/2016/http://java2s.com/Tutorials/Java/BigDecimal_BigInteger/How_to_do_BigInteger_bit_and_or_xor_test_flip_negate.htm
 ---
 In this chapter you will learn:
 
@@ -25,9 +25,9 @@ BigInteger andNot(BigInteger val) Returns a BigInteger whose value is (this & ~v
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.andNot(bi);
   }
@@ -42,8 +42,8 @@ int bitLength() Returns the number of bits in the minimal two's-complement repre
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     BigInteger n = new BigInteger("1000000000000");
     BigInteger one = new BigInteger("1");
     while (!n.isProbablePrime(7))
@@ -62,9 +62,9 @@ BigInteger clearBit(int n) Returns a BigInteger whose value is equivalent to thi
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.clearBit(3);
   }
@@ -79,9 +79,9 @@ BigInteger flipBit(int n) returns a BigInteger whose value is equivalent to this
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.flipBit(3);
     System.out.println(bi);
@@ -97,8 +97,8 @@ BigInteger negate() returns a BigInteger whose value is (-this).
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
+public class Main {
+  public static void main(String[] argv) throws Exception {
     BigInteger bi1 = new BigInteger("1234567890123456890");
     bi1 = bi1.negate();
     System.out.println(bi1);
@@ -114,9 +114,9 @@ BigInteger not() returns a BigInteger whose value is (~this).
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.not();
   }
@@ -129,9 +129,9 @@ BigInteger or(BigInteger val) returns a BigInteger whose value is (this | val).
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.or(bi);
   }
@@ -144,9 +144,9 @@ BigInteger setBit(int n) returns a BigInteger whose value is equivalent to this 
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.setBit(3);
     System.out.println(bi);
@@ -162,9 +162,9 @@ boolean testBit(int n) Returns true if and only if the designated bit is set.
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     boolean b = bi.testBit(3);
     b = bi.testBit(16);
@@ -181,9 +181,9 @@ BigInteger xor(BigInteger val) Returns a BigInteger whose value is (this ^ val).
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.xor(bi);
     System.out.println(bi);

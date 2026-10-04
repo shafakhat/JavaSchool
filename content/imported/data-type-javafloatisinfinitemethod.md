@@ -3,8 +3,8 @@ title: Java Float isInfinite Method
 nav: Java Float isInfinite Method
 description: Imported from the java2s.com archive: Java Float isInfinite Method
 section: Imported - java2s Archive
-order: 1075
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/JavaFloatisInfiniteMethod.htm
+order: 1076
+source: https://web.archive.org/web/20140829080150/http://www.java2s.com/Tutorial/Java/0040__Data-Type/JavaFloatisInfiniteMethod.htm
 ---
 ```java title=Example.java
 public class Main {

@@ -3,8 +3,8 @@ title: Create a Date object using the Calendar class
 nav: Create a Date object using...
 description: Imported from the java2s.com archive: Create a Date object using the Calendar class
 section: Imported - java2s Archive
-order: 1198
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/CreateaDateobjectusingtheCalendarclass.htm
+order: 1158
+source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/CreateaDateobjectusingtheCalendarclass.htm
 ---
 ```java title=Example.java
 import java.util.Calendar;

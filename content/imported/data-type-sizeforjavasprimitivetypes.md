@@ -3,8 +3,8 @@ title: Size for Java's Primitive Types
 nav: Size for Java's Primitive ...
 description: char A 16-bit character using the Unicode encoding scheme
 section: Imported - java2s Archive
-order: 1011
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/SizeforJavasPrimitiveTypes.htm
+order: 1028
+source: https://web.archive.org/web/2020/http://www.java2s.com/Tutorial/Java/0040__Data-Type/SizeforJavasPrimitiveTypes.htm
 ---
 ```java title=Example.java
 Type          Explanation

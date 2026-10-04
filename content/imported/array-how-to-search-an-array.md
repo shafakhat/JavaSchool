@@ -1,10 +1,10 @@
 ---
 title: How to search an array
 nav: How to search an array
-description: publicstaticint indexOf(int[] array, int valueToFind, int startIndex) {
+description: public static int indexOf(int[] array, int valueToFind, int startIndex) {
 section: Imported - java2s Archive
-order: 1031
-source: https://web.archive.org/web/20130905095119/http://java2s.com/Tutorials/Java/Array/How_to_search_an_array.htm
+order: 1126
+source: https://web.archive.org/web/2016/http://java2s.com/Tutorials/Java/Array/How_to_search_an_array.htm
 ---
 In this chapter you will learn:
 
@@ -15,12 +15,12 @@ In this chapter you will learn:
 
 ```java title=Example.java
 import java.lang.reflect.Array;
-publicclass Main {
-  publicstaticfinalint INDEX_NOT_FOUND = -1;
-  publicstaticint indexOf(int[] array, int valueToFind) {
+public class Main {
+  public static final int INDEX_NOT_FOUND = -1;
+  public static int indexOf(int[] array, int valueToFind) {
       return indexOf(array, valueToFind, 0);
   }
-  publicstaticint indexOf(int[] array, int valueToFind, int startIndex) {
+  public static int indexOf(int[] array, int valueToFind, int startIndex) {
       if (array == null) {
           return INDEX_NOT_FOUND;
       }
@@ -34,16 +34,16 @@ publicclass Main {
       }
       return INDEX_NOT_FOUND;
   }
-  publicstaticint lastIndexOf(int[] array, int valueToFind) {
+  public static int lastIndexOf(int[] array, int valueToFind) {
       return lastIndexOf(array, valueToFind, Integer.MAX_VALUE);
   }
-  publicstaticint lastIndexOf(int[] array, int valueToFind, int startIndex) {
+  public static int lastIndexOf(int[] array, int valueToFind, int startIndex) {
       if (array == null) {
           return INDEX_NOT_FOUND;
       }
       if (startIndex < 0) {
           return INDEX_NOT_FOUND;
-      } elseif (startIndex >= array.length) {
+      } else if (startIndex >= array.length) {
           startIndex = array.length - 1;
       }
       for (int i = startIndex; i >= 0; i--) {
@@ -53,7 +53,7 @@ publicclass Main {
       }
       return INDEX_NOT_FOUND;
   }
-  publicstaticboolean contains(int[] array, int valueToFind) {
+  public static boolean contains(int[] array, int valueToFind) {
       return indexOf(array, valueToFind) != INDEX_NOT_FOUND;
   }
 }
@@ -63,14 +63,14 @@ publicclass Main {
 
 ```java title=Example.java
 import java.lang.reflect.Array;
-publicclass Main {
-  publicstaticfinalint INDEX_NOT_FOUND = -1;
-  publicstaticint indexOf(double[] array, double valueToFind) {
+public class Main {
+  public static final int INDEX_NOT_FOUND = -1;
+  public static int indexOf(double[] array, double valueToFind) {
       return indexOf(array, valueToFind, 0);
-  }publicstaticint indexOf(double[] array, double valueToFind, double tolerance) {
+  } public static int indexOf(double[] array, double valueToFind, double tolerance) {
       return indexOf(array, valueToFind, 0, tolerance);
   }
-  publicstaticint indexOf(double[] array, double valueToFind, int startIndex) {
+  public static int indexOf(double[] array, double valueToFind, int startIndex) {
       if (isEmpty(array)) {
           return INDEX_NOT_FOUND;
       }
@@ -84,7 +84,7 @@ publicclass Main {
       }
       return INDEX_NOT_FOUND;
   }
-  publicstaticint indexOf(double[] array, double valueToFind, int startIndex, double tolerance) {
+  public static int indexOf(double[] array, double valueToFind, int startIndex, double tolerance) {
       if (isEmpty(array)) {
           return INDEX_NOT_FOUND;
       }
@@ -100,19 +100,19 @@ publicclass Main {
       }
       return INDEX_NOT_FOUND;
   }
-  publicstaticint lastIndexOf(double[] array, double valueToFind) {
+  public static int lastIndexOf(double[] array, double valueToFind) {
       return lastIndexOf(array, valueToFind, Integer.MAX_VALUE);
   }
-  publicstaticint lastIndexOf(double[] array, double valueToFind, double tolerance) {
+  public static int lastIndexOf(double[] array, double valueToFind, double tolerance) {
       return lastIndexOf(array, valueToFind, Integer.MAX_VALUE, tolerance);
   }
-  publicstaticint lastIndexOf(double[] array, double valueToFind, int startIndex) {
+  public static int lastIndexOf(double[] array, double valueToFind, int startIndex) {
       if (isEmpty(array)) {
           return INDEX_NOT_FOUND;
       }
       if (startIndex < 0) {
           return INDEX_NOT_FOUND;
-      } elseif (startIndex >= array.length) {
+      } else if (startIndex >= array.length) {
           startIndex = array.length - 1;
       }
       for (int i = startIndex; i >= 0; i--) {
@@ -122,13 +122,13 @@ publicclass Main {
       }
       return INDEX_NOT_FOUND;
   }
-  publicstaticint lastIndexOf(double[] array, double valueToFind, int startIndex, double tolerance) {
+  public static int lastIndexOf(double[] array, double valueToFind, int startIndex, double tolerance) {
       if (isEmpty(array)) {
           return INDEX_NOT_FOUND;
       }
       if (startIndex < 0) {
           return INDEX_NOT_FOUND;
-      } elseif (startIndex >= array.length) {
+      } else if (startIndex >= array.length) {
           startIndex = array.length - 1;
       }
       double min = valueToFind - tolerance;
@@ -140,13 +140,13 @@ publicclass Main {
       }
       return INDEX_NOT_FOUND;
   }
-  publicstaticboolean contains(double[] array, double valueToFind) {
+  public static boolean contains(double[] array, double valueToFind) {
       return indexOf(array, valueToFind) != INDEX_NOT_FOUND;
   }
-  publicstaticboolean contains(double[] array, double valueToFind, double tolerance) {
+  public static boolean contains(double[] array, double valueToFind, double tolerance) {
       return indexOf(array, valueToFind, 0, tolerance) != INDEX_NOT_FOUND;
   }
-  publicstaticboolean isEmpty(double[] array) {
+  public static boolean isEmpty(double[] array) {
       if (array == null || array.length == 0) {
           return true;
       }

@@ -1,10 +1,10 @@
 ---
 title: Java IO Tutorial - Console Example
 nav: Java IO Tutorial - Console...
-description: Imported from java2s.com: Java IO Tutorial - Console Example
+description: Imported from the java2s.com archive: Java IO Tutorial - Console Example
 section: Imported - java2s Archive
-order: 50247
-source: https://www.java2s.com/Tutorials/Java/java.io/Console/index.html
+order: 1249
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/java.io/Console/index.html
 ---
 ## Method
 

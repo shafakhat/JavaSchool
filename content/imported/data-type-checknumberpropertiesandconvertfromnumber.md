@@ -3,8 +3,8 @@ title: Check Number properties and convert from Number
 nav: Check Number properties an...
 description: * Licensed under the Apache License, Version 2.0 (the "License");
 section: Imported - java2s Archive
-order: 1024
-source: https://web.archive.org/web/20100406202746/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/CheckNumberpropertiesandconvertfromNumber.htm
+order: 1344
+source: https://web.archive.org/web/20140829074932/http://www.java2s.com/Tutorial/Java/0040__Data-Type/CheckNumberpropertiesandconvertfromNumber.htm
 ---
 ```java title=Example.java
 /**
@@ -302,3 +302,10 @@ public class NumberUtils {
   }
 }
 ```
+
+| 2.13.1. | Check Number properties and convert from Number |
+|---|---|
+| 2.13.2. | Turns a string value into a java.lang.Number. |
+| 2.13.3. | Fraction is a Number implementation that stores fractions accurately. |
+| 2.13.4. | Represents a range of Number objects. |
+| 2.13.5. | An integer synchronized counter class. |

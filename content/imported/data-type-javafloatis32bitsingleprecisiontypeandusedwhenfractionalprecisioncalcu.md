@@ -3,8 +3,8 @@ title: Java float is 32 bit single precision type and used when fractional preci
 nav: Java float is 32 bit singl...
 description: Imported from the java2s.com archive: Java float is 32 bit single precision type and used when fractional precision calculation is required.
 section: Imported - java2s Archive
-order: 1073
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Javafloatis32bitsingleprecisiontypeandusedwhenfractionalprecisioncalculationisrequired.htm
+order: 1032
+source: https://web.archive.org/web/20140829080425/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Javafloatis32bitsingleprecisiontypeandusedwhenfractionalprecisioncalculationisrequired.htm
 ---
 ```java title=Example.java
 public class Main {

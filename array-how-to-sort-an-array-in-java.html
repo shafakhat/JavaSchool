@@ -45,9 +45,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The following methods sort the specified array into ascending numerical order.</p>
 <ul><li>static void sort(byte[] a)</li><li>static void sort(byte[] a, int fromIndex, int toIndex)</li><li>static void sort(char[] a)</li><li>static void sort(char[] a, int fromIndex, int toIndex)</li><li>static void sort(double[] a)</li><li>static void sort(double[] a, int fromIndex, int toIndex)</li><li>static void sort(float[] a)</li><li>static void sort(float[] a, int fromIndex, int toIndex)</li><li>static void sort(int[] a)</li><li>static void sort(int[] a, int fromIndex, int toIndex)</li><li>static void sort(long[] a)</li><li>static void sort(long[] a, int fromIndex, int toIndex)</li><li>static void sort(Object[] a)</li><li>static void sort(Object[] a, int fromIndex, int toIndex)</li><li>static void sort(short[] a)</li><li>static void sort(short[] a, int fromIndex, int toIndex)</li><li>static&lt;T&gt; void sort(T[] a, Comparator&lt;? super T&gt; c)</li><li>static&lt;T&gt; void sort(T[] a, int fromIndex, int toIndex, Comparator&lt;? super T&gt; c)</li></ul>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-publicclass Main{
-  publicstaticvoid main(String args[]) {
-    int array[] = newint[10];
+public class Main{
+  public static void main(String args[]) {
+    int array[] = new int[10];
     for (int i = 0; i &lt; 10; i++){
       array[i] = -3 * i;
     }
@@ -61,8 +61,8 @@ publicclass Main{
 <p>The output:</p>
 <h3 id="sort-string-type-array-in-case-insensitive-order-and-case-sensitive-order">Sort string type array in case insensitive order and case sensitive order</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     String[] teams = new String[5];
     teams[0] = "M";
     teams[1] = "c";
@@ -81,13 +81,13 @@ publicclass Main {
 <h3 id="sort-an-array-in-descending-reverse-order">Sort an Array in Descending (Reverse) Order</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
 import java.util.Collections;
-publicclass Main {
-    publicstaticvoid main(String[] args) {
-        Integer[] arrayToSort = newInteger[] {
-            newInteger(5),
-            newInteger(89),
-            newInteger(16),
-            newInteger(2)
+public class Main {
+    public static void main(String[] args) {
+        Integer[] arrayToSort = new Integer[] {
+            new Integer(5),
+            new Integer(89),
+            new Integer(16),
+            new Integer(2)
         };
         Arrays.sort(arrayToSort, Collections.reverseOrder());
         for (Integer i : arrayToSort) {
@@ -99,7 +99,7 @@ publicclass Main {
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Convert array to list</li></ul>
-    <div class="pager"><a class="pager-btn" href="data-type-hexencoderdecoderimplementationborrowedfrombouncycastle.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Hex encoder/decoder implem...</span></a><a class="pager-btn pager-next" href="class-inner-class.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Inner Class</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-amethodtogetthelastdayofamonth.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">A method to get the last d...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1161.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

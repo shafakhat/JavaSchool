@@ -3,8 +3,8 @@ title: ASCII character handling functions
 nav: ASCII character handling f...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1006
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ASCIIcharacterhandlingfunctions.htm
+order: 1294
+source: https://web.archive.org/web/20140829083102/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ASCIIcharacterhandlingfunctions.htm
 ---
 ```java title=Example.java
 /*
@@ -22,26 +22,31 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- *//**
+ */
+/**
  * This class implements some basic ASCII character handling functions.
  *
  * @author dac@eng.sun.com
  * @author James Todd [gonzo@eng.sun.com]
- */publicfinalclass Ascii {
+ */
+public final class Ascii {
     /*
      * Character translation tables.
-     */privatestaticfinalbyte[] toUpper = newbyte[256];
-    privatestaticfinalbyte[] toLower = newbyte[256];
+     */
+    private static final byte[] toUpper = new byte[256];
+    private static final byte[] toLower = new byte[256];
     /*
      * Character type tables.
-     */privatestaticfinalboolean[] isAlpha = newboolean[256];
-    privatestaticfinalboolean[] isUpper = newboolean[256];
-    privatestaticfinalboolean[] isLower = newboolean[256];
-    privatestaticfinalboolean[] isWhite = newboolean[256];
-    privatestaticfinalboolean[] isDigit = newboolean[256];
+     */
+    private static final boolean[] isAlpha = new boolean[256];
+    private static final boolean[] isUpper = new boolean[256];
+    private static final boolean[] isLower = new boolean[256];
+    private static final boolean[] isWhite = new boolean[256];
+    private static final boolean[] isDigit = new boolean[256];
     /*
      * Initialize character translation and type tables.
-     */static {
+     */
+    static {
         for (int i = 0; i < 256; i++) {
             toUpper[i] = (byte)i;
             toLower[i] = (byte)i;
@@ -67,37 +72,44 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
     }
     /**
      * Returns the upper case equivalent of the specified ASCII character.
-     */publicstaticint toUpper(int c) {
+     */
+    public static int toUpper(int c) {
         return toUpper[c & 0xff] & 0xff;
     }
     /**
      * Returns the lower case equivalent of the specified ASCII character.
-     */publicstaticint toLower(int c) {
+     */
+    public static int toLower(int c) {
         return toLower[c & 0xff] & 0xff;
     }
     /**
      * Returns true if the specified ASCII character is upper or lower case.
-     */publicstaticboolean isAlpha(int c) {
+     */
+    public static boolean isAlpha(int c) {
         return isAlpha[c & 0xff];
     }
     /**
      * Returns true if the specified ASCII character is upper case.
-     */publicstaticboolean isUpper(int c) {
+     */
+    public static boolean isUpper(int c) {
         return isUpper[c & 0xff];
     }
     /**
      * Returns true if the specified ASCII character is lower case.
-     */publicstaticboolean isLower(int c) {
+     */
+    public static boolean isLower(int c) {
         return isLower[c & 0xff];
     }
     /**
      * Returns true if the specified ASCII character is white space.
-     */publicstaticboolean isWhite(int c) {
+     */
+    public static boolean isWhite(int c) {
         return isWhite[c & 0xff];
     }
     /**
      * Returns true if the specified ASCII character is a digit.
-     */publicstaticboolean isDigit(int c) {
+     */
+    public static boolean isDigit(int c) {
         return isDigit[c & 0xff];
     }
     /**
@@ -106,33 +118,34 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
      * @param off the start offset of the bytes
      * @param len the length of the bytes
      * @exception NumberFormatException if the integer format was invalid
-     */publicstaticint parseInt(byte[] b, int off, int len)
+     */
+    public static int parseInt(byte[] b, int off, int len)
         throws NumberFormatException
     {
         int c;
         if (b == null || len <= 0 || !isDigit(c = b[off++])) {
-            thrownew NumberFormatException();
+            throw new NumberFormatException();
         }
         int n = c - '0';
         while (--len > 0) {
             if (!isDigit(c = b[off++])) {
-                thrownew NumberFormatException();
+                throw new NumberFormatException();
             }
             n = n * 10 + c - '0';
         }
         return n;
     }
-    publicstaticint parseInt(char[] b, int off, int len)
+    public static int parseInt(char[] b, int off, int len)
         throws NumberFormatException
     {
         int c;
         if (b == null || len <= 0 || !isDigit(c = b[off++])) {
-            thrownew NumberFormatException();
+            throw new NumberFormatException();
         }
         int n = c - '0';
         while (--len > 0) {
             if (!isDigit(c = b[off++])) {
-                thrownew NumberFormatException();
+                throw new NumberFormatException();
             }
             n = n * 10 + c - '0';
         }
@@ -144,46 +157,47 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
      * @param off the start offset of the bytes
      * @param len the length of the bytes
      * @exception NumberFormatException if the long format was invalid
-     */publicstaticlong parseLong(byte[] b, int off, int len)
+     */
+    public static long parseLong(byte[] b, int off, int len)
         throws NumberFormatException
     {
         int c;
         if (b == null || len <= 0 || !isDigit(c = b[off++])) {
-            thrownew NumberFormatException();
+            throw new NumberFormatException();
         }
         long n = c - '0';
         long m;
         while (--len > 0) {
             if (!isDigit(c = b[off++])) {
-                thrownew NumberFormatException();
+                throw new NumberFormatException();
             }
             m = n * 10 + c - '0';
             if (m < n) {
                 // Overflow
-thrownew NumberFormatException();
+                throw new NumberFormatException();
             } else {
                 n = m;
             }
         }
         return n;
     }
-    publicstaticlong parseLong(char[] b, int off, int len)
+    public static long parseLong(char[] b, int off, int len)
         throws NumberFormatException
     {
         int c;
         if (b == null || len <= 0 || !isDigit(c = b[off++])) {
-            thrownew NumberFormatException();
+            throw new NumberFormatException();
         }
         long n = c - '0';
         long m;
         while (--len > 0) {
             if (!isDigit(c = b[off++])) {
-                thrownew NumberFormatException();
+                throw new NumberFormatException();
             }
             m = n * 10 + c - '0';
             if (m < n) {
                 // Overflow
-thrownew NumberFormatException();
+                throw new NumberFormatException();
             } else {
                 n = m;
             }
@@ -192,3 +206,47 @@ thrownew NumberFormatException();
     }
 }
 ```
+
+| 2.7.1. | Java char: char is 16 bit type and used to represent Unicode characters. Range of char is 0 to 65,536. |
+|---|---|
+| 2.7.2. | Escape Sequence Characters |
+| 2.7.3. | Storing Characters |
+| 2.7.4. | Assign int value to char variable |
+| 2.7.5. | char variables behave like integers |
+| 2.7.6. | Display printable Characters |
+| 2.7.7. | Character: is Upper Case |
+| 2.7.8. | Character: is Lower Case |
+| 2.7.9. | isDigit(): true if the argument is a digit (0 to 9), and false otherwise. |
+| 2.7.10. | Validate if a String contains only numbers |
+| 2.7.11. | isLetter(): true if the argument is a letter, and false otherwise. |
+| 2.7.12. | Count letters in a String |
+| 2.7.13. | isLetterOrDigit(): true if the argument is a letter or a digit, and false otherwise. |
+| 2.7.14. | is White space |
+| 2.7.15. | Is character a digit, letter, white space, lower case or upper case character |
+| 2.7.16. | Convert character to digit with Character.digit |
+| 2.7.17. | Demonstrate several Is... methods. |
+| 2.7.18. | Convert from ASCII code to String |
+| 2.7.19. | Convert from integer to ASCII code (byte) |
+| 2.7.20. | To extract Ascii codes from a String |
+| 2.7.21. | Copy char array to string |
+| 2.7.22. | Store unicode in a char variable |
+| 2.7.23. | Determining a Character's Unicode Block |
+| 2.7.24. | Plus one to char variable |
+| 2.7.25. | Convert string to char array |
+| 2.7.26. | Compare Two Java char Arrays |
+| 2.7.27. | Max and Min values of datatype char |
+| 2.7.28. | Determining If a String Is a Legal Java Identifier |
+| 2.7.29. | compare two objects of Character |
+| 2.7.30. | ASCII character handling functions |
+| 2.7.31. | Checks if the string contains only ASCII printable characters. |
+| 2.7.32. | Checks whether the character is ASCII 7 bit alphabetic lower case. |
+| 2.7.33. | Checks whether the character is ASCII 7 bit alphabetic upper case. |
+| 2.7.34. | Checks whether the character is ASCII 7 bit alphabetic. |
+| 2.7.35. | Checks whether the character is ASCII 7 bit control. |
+| 2.7.36. | Checks whether the character is ASCII 7 bit numeric and character. |
+| 2.7.37. | Checks whether the character is ASCII 7 bit numeric. |
+| 2.7.38. | Checks whether the character is ASCII 7 bit printable. |
+| 2.7.39. | Checks whether the character is ASCII 7 bit. |
+| 2.7.40. | Determines if the specified string is permissible as a Java identifier. |
+| 2.7.41. | Thansform an array of ASCII bytes to a string. the byte array should contains only values in [0, 127]. |
+| 2.7.42. | Utility methods for ASCII character checking. |

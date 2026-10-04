@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
- */public class Main {
+ */
+public class Main {
   /**
    *
    * Where applicable, this method can be used as a substitute for
@@ -64,18 +65,19 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param str the string to be split
    * @param delim the delimiter
    * @throws NullPointerException if str is null
-   */ static public String[] split(String str, char delim)
+   */
+  static public String[] split(String str, char delim)
   {
       if (str == null) {
           throw new NullPointerException("str can't be null");
       }
       // Note the javadoc on StringTokenizer:
- //     StringTokenizer is a legacy class that is retained for
- //     compatibility reasons although its use is discouraged in
- //     new code.
- // In other words, if StringTokenizer is ever removed from the JDK,
- // we need to have a look at String.split() (or java.util.regex)
- // if it is supported on a JSR169/Java ME platform by then.
+      //     StringTokenizer is a legacy class that is retained for
+      //     compatibility reasons although its use is discouraged in
+      //     new code.
+      // In other words, if StringTokenizer is ever removed from the JDK,
+      // we need to have a look at String.split() (or java.util.regex)
+      // if it is supported on a JSR169/Java ME platform by then.
       StringTokenizer st = new StringTokenizer(str, String.valueOf(delim));
       int n = st.countTokens();
       String[] s = new String[n];
@@ -85,7 +87,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       return s;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="data-type-convertstringtojavaintexample.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Convert String to java int...</span></a><a class="pager-btn pager-next" href="data-type-convertinttooctalstring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Convert int to Octal String</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-joinstheelementsoftheprovidedcollectionintoasinglestringcontainingthep.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Joins the elements of the ...</span></a><a class="pager-btn pager-next" href="web-services-soa-thisexampledemonstratestheuseofasynchronouswebmethodinvocations.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">This example demonstrates ...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

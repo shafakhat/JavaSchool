@@ -3,8 +3,8 @@ title: An integer synchronized counter class.
 nav: An integer synchronized co...
 description: * Copyright 2005, JBoss Inc., and individual contributors as indicated
 section: Imported - java2s Archive
-order: 1005
-source: https://web.archive.org/web/20100403230254/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Anintegersynchronizedcounterclass.htm
+order: 1287
+source: https://web.archive.org/web/20140411231420/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Anintegersynchronizedcounterclass.htm
 ---
 ```java title=Example.java
 /*
@@ -230,3 +230,10 @@ public class Counter
    }
 }
 ```
+
+| 2.13.1. | Check Number properties and convert from Number |
+|---|---|
+| 2.13.2. | Turns a string value into a java.lang.Number. |
+| 2.13.3. | Fraction is a Number implementation that stores fractions accurately. |
+| 2.13.4. | Represents a range of Number objects. |
+| 2.13.5. | An integer synchronized counter class. |

@@ -3,8 +3,8 @@ title: Convert String to byte
 nav: Convert String to byte
 description: // Causes a NumberFormatException since the value is out of range
 section: Imported - java2s Archive
-order: 1037
-source: https://web.archive.org/web/2020/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ConvertStringtobyte.htm
+order: 1019
+source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ConvertStringtobyte.htm
 ---
 ```java title=Example.java
 public class Main {

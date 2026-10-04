@@ -52,8 +52,8 @@ import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     Ellipse2D e1 = new Ellipse2D.Double (20.0, 20.0, 80.0, 70.0);
     Ellipse2D e2 = new Ellipse2D.Double (20.0, 70.0, 40.0, 40.0);
@@ -66,7 +66,7 @@ publicclass Main extends JPanel {
     g2.drawString ("subtract", 20, 140);
     System.out.println(a1.getPathIterator(new AffineTransform(),0.5).getWindingRule());
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.getContentPane().add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -75,7 +75,7 @@ publicclass Main extends JPanel {
   }
 }</code></pre></div>
 <p>AffineTransformArc2DAreaCubicCurve2DEllipse2DGeneralPath</p>
-    <div class="pager"><a class="pager-btn" href="java-language-java-generic-hierarchy.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - How to ext...</span></a><a class="pager-btn pager-next" href="area-java-area-getbounds2d.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Area....</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-javastringstartswith.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java String startsWith</span></a><a class="pager-btn pager-next" href="chart-jfreechartlinechartdemo6.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JFreeChart</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

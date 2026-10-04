@@ -44,34 +44,34 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h3 id="recursive-binary-search-implementation">Recursive Binary Search Implementation</h3>
 <p>The following code implements the binary search algorithm. Its uses the Comparable interface to compare elements in the passed in array.</p>
 <p>Another feature is that it uses the recursive in the implementation.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticfinalint NOT_FOUND = -1;
-  publicstaticint binarySearch(Comparable[] a, Comparable x) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static final int NOT_FOUND = -1;
+  public static int binarySearch(Comparable[] a, Comparable x) {
     return binarySearch(a, x, 0, a.length - 1);
-  }privatestaticint binarySearch(Comparable[] a, Comparable x, int low, int high) {
+  }private static int binarySearch(Comparable[] a, Comparable x, int low, int high) {
     if (low &gt; high)
       return NOT_FOUND;
     int mid = (low + high) / 2;
     if (a[mid].compareTo(x) &lt; 0)
       return binarySearch(a, x, mid + 1, high);
-    elseif (a[mid].compareTo(x) &gt; 0)
+    else if (a[mid].compareTo(x) &gt; 0)
       return binarySearch(a, x, low, mid - 1);
-    elsereturn mid;
+    else return mid;
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     int SIZE = 8;
-    Comparable[] a = newInteger[SIZE];
+    Comparable[] a = new Integer[SIZE];
     for (int i = 0; i &lt; SIZE; i++)
-      a[i] = newInteger(i * 2);
+      a[i] = new Integer(i * 2);
     for (int i = 0; i &lt; SIZE * 2; i++)
-      System.out.println("Found " + i + " at " + binarySearch(a, newInteger(i)));
+      System.out.println("Found " + i + " at " + binarySearch(a, new Integer(i)));
   }
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <h3 id="binary-search-without-recursive">Binary search without recursive</h3>
 <p>The following code uses the binary search algorithm to search a hard code array against hard coded value.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main{
-  publicstaticvoid main(String[] args) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main{
+  public static void main(String[] args) {
     double[] x = { -39, -3, 6, 10, 4, 9, 10 };
 double value = 8;
     int lower = 0, upper = x.length - 1;
@@ -79,9 +79,9 @@ double value = 8;
       int middle = (lower + upper) / 2;
       if (value &gt; x[middle])
         lower = middle + 1;
-      elseif (value &lt; x[middle])
+      else if (value &lt; x[middle])
         upper = middle - 1;
-      elsebreak;
+      else break;
     }
     if (lower &gt; upper)
       System.out.println("Not found");
@@ -91,8 +91,8 @@ double value = 8;
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <h3 id="binary-search-insert">Binary Search Insert</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main{
-  publicstaticvoid main(String[] args) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main{
+  public static void main(String[] args) {
     int maxSize = 100;
     BinarySearchArray arr = new BinarySearchArray(maxSize);
     arr.insert(2);
@@ -112,54 +112,54 @@ double value = 8;
     arr.insert(8);
     arr.insert(9);
     arr.display(); // display array
-int searchKey = 27; // search for item
-if (arr.find(searchKey) != arr.size())
+ int searchKey = 27; // search for item
+ if (arr.find(searchKey) != arr.size())
       System.out.println("Found " + searchKey);
     else
       System.out.println("Can't find " + searchKey);
   }
 }
 class BinarySearchArray {
-  privatelong[] a;
-  privateint nElems;
+  private long[] a;
+  private int nElems;
   public BinarySearchArray(int max) {
-    a = newlong[max]; // create array
+    a = new long[max]; // create array
     nElems = 0;
   }
-  publicint size() {
+  public int size() {
     return nElems;
   }
-  publicint find(long searchKey) {
+  public int find(long searchKey) {
     return recFind(searchKey, 0, nElems - 1);
   }
-  privateint recFind(long searchKey, int lowerBound, int upperBound) {
+  private int recFind(long searchKey, int lowerBound, int upperBound) {
     int curIn;
     curIn = (lowerBound + upperBound) / 2;
     if (a[curIn] == searchKey)
       return curIn; // found it
-elseif (lowerBound &gt; upperBound)
+ else if (lowerBound &gt; upperBound)
       return nElems; // can't find it
-else// divide range
+ else // divide range
     {
       if (a[curIn] &lt; searchKey) // in upper half
-return recFind(searchKey, curIn + 1, upperBound);
-      else// in lower half
-return recFind(searchKey, lowerBound, curIn - 1);
+ return recFind(searchKey, curIn + 1, upperBound);
+      else // in lower half
+ return recFind(searchKey, lowerBound, curIn - 1);
     }
   }
-  publicvoid insert(long value) {
+  public void insert(long value) {
     int j;
     for (j = 0; j &lt; nElems; j++)
       // find where it goes
-if (a[j] &gt; value) // (linear search)
-break;
+ if (a[j] &gt; value) // (linear search)
+ break;
     for (int k = nElems; k &gt; j; k--)
       // move bigger ones up
       a[k] = a[k - 1];
     a[j] = value; // insert it
     nElems++; // increment size
   }
-  publicvoid display() {
+  public void display() {
     for (int j = 0; j &lt; nElems; j++)
       System.out.print(a[j] + " ");
     System.out.println("");
@@ -171,7 +171,7 @@ Can't find 27</code></pre></div>
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Insertion Sort Implementation</li><li>Object Insertion Sort</li></ul>
-    <div class="pager"><a class="pager-btn" href="data-type-getstheminimumofthreeintvalues-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Gets the minimum of three ...</span></a><a class="pager-btn pager-next" href="language-inherited.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Inherited</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-demoforescape.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Demo for escape</span></a><a class="pager-btn pager-next" href="jdk-7-isfileasymboliclink.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Is file a symbolic link</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

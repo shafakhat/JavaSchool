@@ -3,8 +3,8 @@ title: Read double value from console and check the format
 nav: Read double value from con...
 description: Imported from the java2s.com archive: Read double value from console and check the format
 section: Imported - java2s Archive
-order: 1096
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Readdoublevaluefromconsoleandchecktheformat.htm
+order: 1077
+source: https://web.archive.org/web/20140324193923/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Readdoublevaluefromconsoleandchecktheformat.htm
 ---
 ```java title=Example.java
 import java.io.BufferedReader;

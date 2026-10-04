@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retrieving the Parent and Child Nodes of a Preference Node - JavaSchool</title>
+<meta name="description" content="Preferences prefs = Preferences.userNodeForPackage(java.lang.String.class);">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-retrievingtheparentandchildnodesofapreferencenode">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-36-preference.html">Preference</a></nav>
+    <h1>Retrieving the Parent and Child Nodes of a Preference Node</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.prefs.Preferences;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    Preferences prefs = Preferences.userNodeForPackage(java.lang.String.class);
+    Preferences node = prefs.parent(); // /java
+    node = node.parent(); // null
+    String[] names = null;
+    names = prefs.childrenNames();
+    for (int i = 0; i &lt; names.length; i++) {
+      node = prefs.node(names[i]);
+    }
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.36.1.</th><th>Put key value pair to Preference</th></tr></thead><tbody><tr><td>6.36.2.</td><td>Get childrenNames from Preferences</td></tr><tr><td>6.36.3.</td><td>Get keys from Preferences</td></tr><tr><td>6.36.4.</td><td>Get name and parent from Preference</td></tr><tr><td>6.36.5.</td><td>Get node from Preference</td></tr><tr><td>6.36.6.</td><td>Get value from Preferences</td></tr><tr><td>6.36.7.</td><td>Getting and Setting Java Type Values in a Preference</td></tr><tr><td>6.36.8.</td><td>Getting the Maximum Size of a Preference Key and Value</td></tr><tr><td>6.36.9.</td><td>Getting the Roots of the Preference Trees</td></tr><tr><td>6.36.10.</td><td>Removing a Preference from a Preference Node</td></tr><tr><td>6.36.11.</td><td>Export Preferences to XML file</td></tr><tr><td>6.36.12.</td><td>Preference save and load</td></tr><tr><td>6.36.13.</td><td>Preferences Inspector</td></tr><tr><td>6.36.14.</td><td>Removing a Preference Node</td></tr><tr><td>6.36.15.</td><td>Determining If a Preference Node Exists</td></tr><tr><td>6.36.16.</td><td>Determining If a Preference Node Contains a Specific Key</td></tr><tr><td>6.36.17.</td><td>Determining If a Preference Node Contains a Specific Value</td></tr><tr><td>6.36.18.</td><td>Read / write data in Windows registry</td></tr><tr><td>6.36.19.</td><td>Retrieving the Parent and Child Nodes of a Preference Node</td></tr><tr><td>6.36.20.</td><td>Exporting the Preferences in a Preference Node</td></tr><tr><td>6.36.21.</td><td>Exporting the Preferences in a Subtree of Preference Nodes</td></tr><tr><td>6.36.22.</td><td>Listening for Changes to Preference Values in a Preference Node</td></tr><tr><td>6.36.23.</td><td>Determining When a Preference Node Is Added or Removed</td></tr><tr><td>6.36.24.</td><td>Get the desired look and feel from a per-user preference</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-readwritedatainwindowsregistry.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Read / write data in Windo...</span></a><a class="pager-btn pager-next" href="development-listeningforchangestopreferencevaluesinapreferencenode.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Listening for Changes to P...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

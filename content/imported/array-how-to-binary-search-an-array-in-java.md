@@ -3,8 +3,8 @@ title: How to binary search an Array in Java
 nav: How to binary search an Ar...
 description: System.out.println("Result of binary search of 2 is : " + intResult);
 section: Imported - java2s Archive
-order: 1025
-source: https://web.archive.org/web/20130905060135/http://java2s.com/Tutorials/Java/Array/How_to_binary_search_an_Array_in_Java.htm
+order: 1127
+source: https://web.archive.org/web/2020/http://java2s.com/Tutorials/Java/Array/How_to_binary_search_an_Array_in_Java.htm
 ---
 In this chapter you will learn:
 
@@ -37,9 +37,9 @@ The following methods binary search array elements.
 
 ```java title=Example.java
 import java.util.Arrays;
-publicclass Main{
-  publicstaticvoid main(String args[]) {
-    int array[] = newint[10];
+public class Main{
+  public static void main(String args[]) {
+    int array[] = new int[10];
     for (int i = 0; i < 10; i++){
       array[i] = -3 * i;
     }
@@ -63,8 +63,8 @@ Performing Binary Search on byte Array
 
 ```java title=Example.java
 import java.util.Arrays;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     byte bArray[] = {1, 2, 3, 4, 5};
     Arrays.sort(bArray);
     byte searchValue = 2;
@@ -83,8 +83,8 @@ The output:
 
 ```java title=Example.java
 import java.util.Arrays;
-publicclass Main {
-  publicstaticvoid main(String[] argv) {
+public class Main {
+  public static void main(String[] argv) {
     String[] oldArray = new String[] { "a", "b", "c", "d" };
     int index = Arrays.binarySearch(oldArray, "e");
     if (index < 0) {

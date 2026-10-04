@@ -3,8 +3,8 @@ title: Convert boolean value to Boolean
 nav: Convert boolean value to B...
 description: Imported from the java2s.com archive: Convert boolean value to Boolean
 section: Imported - java2s Archive
-order: 1019
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ConvertbooleanvaluetoBoolean.htm
+order: 1028
+source: https://web.archive.org/web/2014/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ConvertbooleanvaluetoBoolean.htm
 ---
 ```java title=Example.java
 public class Main {

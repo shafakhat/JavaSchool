@@ -1,10 +1,10 @@
 ---
 title: Java Collection How to Example
 nav: Java Collection How to Exa...
-description: Imported from java2s.com: Java Collection How to Example
+description: Imported from the java2s.com archive: Java Collection How to Example
 section: Imported - java2s Archive
-order: 50024
-source: https://www.java2s.com/Tutorials/Java/Collection_How_to/index.html
+order: 1224
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Collection_How_to/index.html
 ---
 - Array 46
 - Comparable 4

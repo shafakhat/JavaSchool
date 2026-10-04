@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deals with the different version of the Java Virtual Machine. - JavaSchool</title>
+<meta name="description" content="Deals with the different version of the Java Virtual Machine.: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-dealswiththedifferentversionofthejavavirtualmachine">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-60-jdk.html">JDK</a></nav>
+    <h1>Deals with the different version of the Java Virtual Machine.</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * $Id: JVM.java,v 1.3 2009/02/22 02:01:04 kschaefe Exp $
+ *
+ * Copyright 2004 Sun Microsystems, Inc., 4150 Network Circle,
+ * Santa Clara, California 95054, U.S.A. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+/**
+ * Deals with the different version of the Java Virtual Machine. &lt;br&gt;
+ */public class JVM {
+  public final static int JDK1_0 = 10;
+  public final static int JDK1_1 = 11;
+  public final static int JDK1_2 = 12;
+  public final static int JDK1_3 = 13;
+  public final static int JDK1_4 = 14;
+  public final static int JDK1_5 = 15;
+  public final static int JDK1_6 = 16;
+  public final static int JDK1_6N = 1610;
+  public final static int JDK1_7 = 17;
+  private static JVM current;
+  static {
+    current = new JVM();
+  }
+  /**
+   * @return the current JVM object
+   */ public static JVM current() {
+    return current;
+  }
+  private int jdkVersion;
+  /**
+   * Creates a new JVM data from the &lt;code&gt;java.version&lt;/code&gt;
+   * System property
+   *
+   */ public JVM() {
+    this(System.getProperty("java.version"));
+  }
+  /**
+   * Constructor for the OS object
+   */ public JVM(String p_JavaVersion) {
+    if (p_JavaVersion.startsWith("1.7.")) {
+      jdkVersion = JDK1_7;
+    } else if (p_JavaVersion.startsWith("1.6.")) {
+      for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+          if ("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel".equals(info.getClassName())) {
+              jdkVersion = JDK1_6N;
+              break;
+          }
+      }
+      jdkVersion = jdkVersion == 0 ? JDK1_6 : jdkVersion;
+    } else if (p_JavaVersion.startsWith("1.5.")) {
+      jdkVersion = JDK1_5;
+    } else if (p_JavaVersion.startsWith("1.4.")) {
+      jdkVersion = JDK1_4;
+    } else if (p_JavaVersion.startsWith("1.3.")) {
+      jdkVersion = JDK1_3;
+    } else if (p_JavaVersion.startsWith("1.2.")) {
+      jdkVersion = JDK1_2;
+    } else if (p_JavaVersion.startsWith("1.1.")) {
+      jdkVersion = JDK1_1;
+    } else if (p_JavaVersion.startsWith("1.0.")) {
+      jdkVersion = JDK1_0;
+    } else {
+      // unknown version, assume 1.3
+      jdkVersion = JDK1_3;
+    }
+  }
+  public boolean isOrLater(int p_Version) {
+    return jdkVersion &gt;= p_Version;
+  }
+  public boolean isOneDotOne() {
+    return jdkVersion == JDK1_1;
+  }
+  public boolean isOneDotTwo() {
+    return jdkVersion == JDK1_2;
+  }
+  public boolean isOneDotThree() {
+    return jdkVersion == JDK1_3;
+  }
+  public boolean isOneDotFour() {
+    return jdkVersion == JDK1_4;
+  }
+  public boolean isOneDotFive() {
+    return jdkVersion == JDK1_5;
+  }
+  public boolean isOneDotSix() {
+    return jdkVersion == JDK1_6;
+  }
+    /**
+     * Determines if the version of JDK1_6 has Nimbus Look and Feel installed.
+     *
+     * @return {@code true} if Nimbus is available and the version is 1.6;
+     *         {@code false} otherwise
+     */ public boolean isOneDotSixUpdateN() {
+      return jdkVersion == JDK1_6N;
+  }
+  public boolean isOneDotSeven() {
+      return jdkVersion == JDK1_7;
+  }
+}</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="reflection-getconstructorbyparametertype.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Get constructor by paramet...</span></a><a class="pager-btn pager-next" href="reflection-passingaparametertotheconstructorandcallingamethoddynamically.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Passing a parameter to the...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -3,8 +3,8 @@ title: Using the Calendar Class to Display Current Time in Different Time Zones
 nav: Using the Calendar Class t...
 description: calNewYork.setTimeZone(TimeZone.getTimeZone("America/New_York"));
 section: Imported - java2s Archive
-order: 1204
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/UsingtheCalendarClasstoDisplayCurrentTimeinDifferentTimeZones.htm
+order: 1152
+source: https://web.archive.org/web/20140616102004/http://www.java2s.com/Tutorial/Java/0040__Data-Type/UsingtheCalendarClasstoDisplayCurrentTimeinDifferentTimeZones.htm
 ---
 ```java title=Example.java
 import java.util.Calendar;

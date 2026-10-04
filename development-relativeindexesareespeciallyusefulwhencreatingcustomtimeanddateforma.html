@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relative indexes are especially useful when creating custom time and date formats - JavaSchool</title>
+<meta name="description" content="Because of relative indexing, the argument cal need only be passed once, rather than three times.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-relativeindexesareespeciallyusefulwhencreatingcustomtimeanddateforma">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-11-formatter-argument-index.html">Formatter Argument Index</a></nav>
+    <h1>Relative indexes are especially useful when creating custom time and date formats</h1>
+<p>Because of relative indexing, the argument cal need only be passed once, rather than three times.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Calendar;
+import java.util.Formatter;
+public class MainClass {
+  public static void main(String args[]) {
+    Formatter fmt = new Formatter();
+    Calendar cal = Calendar.getInstance();
+    fmt.format("Today is day %te of %&lt;tB, %&lt;tY", cal);
+    System.out.println(fmt);
+  }
+}
+java title=Example.java
+Today is day 1 of December, 2006</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.11.1.</th><th>Using an Argument Index</th></tr></thead><tbody><tr><td>6.11.2.</td><td>Argument indexes enable you to reuse an argument without having to specify it twice</td></tr><tr><td>6.11.3.</td><td>Relative index enables you to reuse the argument matched by the preceding format specifier</td></tr><tr><td>6.11.4.</td><td>Relative indexes are especially useful when creating custom time and date formats</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-newsimpledateformatatheampmmarker.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">new SimpleDateFormat('a')</span></a><a class="pager-btn pager-next" href="development-newsimpledateformatz.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">new SimpleDateFormat('Z')</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

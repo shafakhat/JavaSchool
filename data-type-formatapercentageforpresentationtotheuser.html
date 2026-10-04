@@ -55,7 +55,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */import java.io.PrintWriter;
+ */
+import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.InetAddress;
 import java.net.URI;
@@ -71,7 +72,8 @@ import java.util.StringTokenizer;
 import java.util.Collection;
 /**
  * General string utils
- */public class StringUtils {
+ */
+public class StringUtils {
   final public static char COMMA = ',';
   final public static String COMMA_STR = ",";
   final public static char ESCAPE_CHAR = '\\';
@@ -80,7 +82,8 @@ import java.util.Collection;
    * @param done the percentage to format (0.0 to 1.0)
    * @param digits the number of digits past the decimal point
    * @return a string representation of the percentage
-   */ public static String formatPercent(double done, int digits) {
+   */
+  public static String formatPercent(double done, int digits) {
     DecimalFormat percentFormat = new DecimalFormat("0.00%");
     double scale = Math.pow(10.0, digits+2);
     double rounded = Math.floor(done * scale);
@@ -90,7 +93,7 @@ import java.util.Collection;
     return percentFormat.format(rounded / scale);
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="web-services-soa-developingwebservicesusingjaxws.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Developing Web Services Us...</span></a><a class="pager-btn pager-next" href="data-type-getstheminimumofthreelongvalues.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Gets the minimum of three ...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-arraysofstringsusingnewoperator.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Arrays of Strings</span></a><a class="pager-btn pager-next" href="data-type-formatcurrentdateandtimewiththesimpledateformathhmmss.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Format current date and ti...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

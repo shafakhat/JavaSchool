@@ -1299,6 +1299,25 @@ a:hover {
   padding: 2px 9px;
 }
 
+/* collapsible list of pages still being restored from the archive */
+.pending-box {
+  margin: 10px 0 26px;
+  border: 1px dashed var(--gray-mid);
+  border-radius: 10px;
+  background: var(--surface-2);
+  padding: 12px 16px;
+}
+.pending-box summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 14.5px;
+}
+.pending-box summary:hover { background: var(--lemon-soft); }
+.article-list.pending li { padding: 7px 12px; border-bottom: 1px dashed var(--line); }
+.article-list.pending li:hover { background: none; }
+.article-list.pending .pending { color: var(--muted); font-size: 14.5px; }
+
 /* ==========================================================================
    Dark mode - same rule: colour lives in the backgrounds, type stays
    white / light grey.

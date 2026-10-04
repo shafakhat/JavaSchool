@@ -45,9 +45,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The following methods binary search array elements.</p>
 <ul><li>static int binarySearch(byte[] a, byte key)</li><li>static int binarySearch(byte[] a, int fromIndex, int toIndex, byte key)</li><li>static int binarySearch(char[] a, char key)</li><li>static int binarySearch(char[] a, int fromIndex, int toIndex, char key)</li><li>static int binarySearch(double[] a, double key)</li><li>static int binarySearch(double[] a, int fromIndex, int toIndex, double key)</li><li>static int binarySearch(float[] a, float key)</li><li>static int binarySearch(float[] a, int fromIndex, int toIndex, float key)</li><li>static int binarySearch(int[] a, int key)</li><li>static int binarySearch(int[] a, int fromIndex, int toIndex, int key)</li><li>static int binarySearch(long[] a, int fromIndex, int toIndex, long key)</li><li>static int binarySearch(long[] a, long key)</li><li>static int binarySearch(Object[] a, int fromIndex, int toIndex, Object key)</li><li>static int binarySearch(Object[] a, Object key)</li><li>static int binarySearch(short[] a, int fromIndex, int toIndex, short key)</li><li>static int binarySearch(short[] a, short key)</li><li>static&lt;T&gt; int binarySearch(T[] a, int fromIndex, int toIndex, T key, Comparator&lt;? super T&gt; c)</li><li>static&lt;T&gt; int binarySearch(T[] a, T key, Comparator&lt;? super T&gt; c)</li></ul>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-publicclass Main{
-  publicstaticvoid main(String args[]) {
-    int array[] = newint[10];
+public class Main{
+  public static void main(String args[]) {
+    int array[] = new int[10];
     for (int i = 0; i &lt; 10; i++){
       array[i] = -3 * i;
     }
@@ -65,8 +65,8 @@ publicclass Main{
 <h3 id="binary-search-on-byte-array">Binary Search on byte Array</h3>
 <p>Performing Binary Search on byte Array</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     byte bArray[] = {1, 2, 3, 4, 5};
     Arrays.sort(bArray);
     byte searchValue = 2;
@@ -80,8 +80,8 @@ publicclass Main {
 <p>The output:</p>
 <h3 id="insert-an-element-into-a-sorted-array">Insert an Element into a Sorted Array</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-publicclass Main {
-  publicstaticvoid main(String[] argv) {
+public class Main {
+  public static void main(String[] argv) {
     String[] oldArray = new String[] { "a", "b", "c", "d" };
     int index = Arrays.binarySearch(oldArray, "e");
     if (index &lt; 0) {
@@ -100,7 +100,7 @@ publicclass Main {
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Search an element in an array and return the index and last index</li><li>Search a double type array</li></ul>
-    <div class="pager"><a class="pager-btn" href="class-holdsasequenceofobjects.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Holds a sequence of Objects</span></a><a class="pager-btn pager-next" href="struts-html.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">HTML</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-checksifastringisnotemptyandnotnull.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Checks if a String is not ...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1160.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

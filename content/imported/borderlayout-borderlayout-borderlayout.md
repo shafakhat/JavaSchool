@@ -3,8 +3,8 @@ title: Java Swing Tutorial - Java BorderLayout() Constructor
 nav: Java Swing Tutorial - Java...
 description: BorderLayout() constructor from BorderLayout has the following syntax.
 section: Imported - java2s Archive
-order: 1015
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/0300__BorderLayout.BorderLayout_.htm
+order: 1160
+source: https://web.archive.org/web/20150325031319/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/0300__BorderLayout.BorderLayout_.htm
 ---
 ## Syntax
 
@@ -23,7 +23,7 @@ import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main  extends JPanel {
+public class Main  extends JPanel {
   public Main() {
     JButton btn1 = new JButton("Button1");
     JButton btn2 = new JButton("Button2");
@@ -39,7 +39,7 @@ publicclass Main  extends JPanel {
     add("South", btn5);
     add("East", btn6);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.getContentPane().add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,4 +47,5 @@ publicclass Main  extends JPanel {
     frame.setVisible(true);
   }
 }
+java title=Example.java
 ```

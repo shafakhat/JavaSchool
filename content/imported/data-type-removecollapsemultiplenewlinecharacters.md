@@ -3,8 +3,8 @@ title: Remove/collapse multiple newline characters.
 nav: Remove/collapse multiple n...
 description: * or more contributor license agreements. See the NOTICE file
 section: Imported - java2s Archive
-order: 1161
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Removecollapsemultiplenewlinecharacters.htm
+order: 1315
+source: https://web.archive.org/web/20140407041240/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Removecollapsemultiplenewlinecharacters.htm
 ---
 ```java title=Example.java
 /*
@@ -24,17 +24,20 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- *//**
+ */
+/**
  *
  *  @author <a href="mailto:jvanzyl@apache.org">Jason van Zyl</a>
  *  @author <a href="mailto:dlr@finemaltcoding.com">Daniel Rall</a>
  *  @version $Id: StringUtils.java 685685 2008-08-13 21:43:27Z nbubna $
- */public class Main {
+ */
+public class Main {
   /**
    *
    * @param argStr string to collapse newlines in.
    * @return String
-   */ public static String collapseNewlines(String argStr)
+   */
+  public static String collapseNewlines(String argStr)
   {
       char last = argStr.charAt(0);
       StringBuffer argBuf = new StringBuffer();

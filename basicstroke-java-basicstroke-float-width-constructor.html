@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Java Tutorial - Java BasicStroke(float width) Constructor - JavaSchool</title>
-<meta name="description" content="BasicStroke(float width) constructor from BasicStroke has the following syntax.">
+<title>Java BasicStroke(float width) Constructor - JavaSchool</title>
+<meta name="description" content="BasicStroke BasicStroke(float width) constructs a solid BasicStroke with the specified line width and with default values for the cap and join styles.">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -38,10 +38,20 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <main class="main">
   <article class="ws-content">
     <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-basicstroke.html">BasicStroke</a></nav>
-    <h1>Java Tutorial - Java BasicStroke(float width) Constructor</h1>
+    <h1>Java BasicStroke(float width) Constructor</h1>
+<p>In this chapter you will learn:</p>
+<ul><li>Get to know BasicStroke.BasicStroke(float width)</li><li>Syntax for BasicStroke(float width) constructor from BasicStroke</li><li>Parameter for BasicStroke.BasicStroke(float width)</li><li>Exceptions from BasicStroke.BasicStroke(float width)</li><li>Example - BasicStroke.BasicStroke(float width)</li></ul>
+<h3 id="description">Description</h3>
+<p>BasicStroke BasicStroke(float width) constructs a solid BasicStroke with the specified line width and with default values for the cap and join styles.</p>
 <h3 id="syntax">Syntax</h3>
 <p>BasicStroke(float width) constructor from BasicStroke has the following syntax.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public BasicStroke(float width)</code></pre></div>
+<h3 id="parameters">Parameters</h3>
+<p>BasicStroke.BasicStroke(float width) constructor has the following parameters.</p>
+<ul><li>width - the width of the BasicStroke</li></ul>
+<h3 id="exceptions">Exceptions</h3>
+<p>BasicStroke.BasicStroke(float width) throws the following exceptions.</p>
+<ul><li>IllegalArgumentException - if width is negative</li></ul>
 <h3 id="example">Example</h3>
 <p>In the following code shows how to use BasicStroke.BasicStroke(float width) constructor.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.BasicStroke;
@@ -51,14 +61,14 @@ import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     g2.setPaint(Color.black);
     g2.setStroke(new BasicStroke(8));
     g2.draw(new Ellipse2D.Double(20,20, 50, 50));
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,8 +76,10 @@ publicclass Main extends JPanel {
     frame.setVisible(true);
   }
 }</code></pre></div>
-<p>BasicStrokeBorderLayoutCardLayoutColorCursorDesktopDesktopManagerDisplayModeEventQueueFlowLayoutFocusTraversalPolicyFontFontMetricsGradientPaintGraphicsGraphics2DGraphicsConfigurationGraphicsDeviceGraphicsEnvironmentGridBagConstraintsGridBagLayoutGridLayoutImageItemSelectableKeyboardFocusManagerLayoutManagerLayoutManager2PointRectangleRobotShapeSplashScreenSystemColorSystemTrayTexturePaintTrayIconToolkitTransparency</p>
-    <div class="pager"><a class="pager-btn" href="basicstroke-java-basicstroke-cap-square.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Basic...</span></a><a class="pager-btn pager-next" href="basicstroke-java-basicstroke-getdasharray.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Basic...</span></a></div>
+<h4 id="next-chapter">Next chapter...</h4>
+<p>What you will learn in the next chapter:</p>
+<ul><li>Get to know BasicStroke.BasicStroke(float width, int cap, int join)</li><li>Syntax for BasicStroke(float width, int cap, int join) constructor from BasicStroke</li><li>Parameter for BasicStroke.BasicStroke(float width, int cap, int join)</li><li>Exceptions from BasicStroke.BasicStroke(float width, int cap, int join)</li><li>Example - BasicStroke.BasicStroke(float width, int cap, int join)</li></ul>
+    <div class="pager"><a class="pager-btn" href="data-type-dateerachange.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Date Era change</span></a><a class="pager-btn pager-next" href="data-type-joinstring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Join String</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

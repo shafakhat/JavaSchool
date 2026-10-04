@@ -3,8 +3,8 @@ title: Create a Double object using one of the below given constructors
 nav: Create a Double object usi...
 description: Imported from the java2s.com archive: Create a Double object using one of the below given constructors
 section: Imported - java2s Archive
-order: 1085
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/CreateaDoubleobjectusingoneofthebelowgivenconstructors.htm
+order: 1039
+source: https://web.archive.org/web/20140829085020/http://www.java2s.com/Tutorial/Java/0040__Data-Type/CreateaDoubleobjectusingoneofthebelowgivenconstructors.htm
 ---
 ```java title=Example.java
 public class Main {

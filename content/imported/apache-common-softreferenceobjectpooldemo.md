@@ -3,8 +3,8 @@ title: Soft Reference Object Pool Demo
 nav: Soft Reference Object Pool...
 description: this.pool = new SoftReferenceObjectPool(new PoolableObjectFactory() {
 section: Imported - java2s Archive
-order: 1055
-source: https://web.archive.org/web/20061016093607/http://www.java2s.com/Code/Java/Apache-Common/SoftReferenceObjectPoolDemo.htm
+order: 1100
+source: https://web.archive.org/web/20140829221235/http://www.java2s.com/Code/Java/Apache-Common/SoftReferenceObjectPoolDemo.htm
 ---
 ```java title=Example.java
 import junit.framework.TestCase;
@@ -137,5 +137,7 @@ public class Employee {
 }
 ```
 
-Related examples in the same category
-1. Keyed Object Pool
+| 1. | Keyed Object Pool |
+|---|---|
+| 2. | Test Object Pool |
+| 3. | Test Redundant Object Pool |

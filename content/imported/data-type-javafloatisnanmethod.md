@@ -3,8 +3,8 @@ title: Java Float isNaN Method
 nav: Java Float isNaN Method
 description: Imported from the java2s.com archive: Java Float isNaN Method
 section: Imported - java2s Archive
-order: 1076
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/JavaFloatisNaNMethod.htm
+order: 1064
+source: https://web.archive.org/web/20140829080615/http://www.java2s.com/Tutorial/Java/0040__Data-Type/JavaFloatisNaNMethod.htm
 ---
 ```java title=Example.java
 public class Main {

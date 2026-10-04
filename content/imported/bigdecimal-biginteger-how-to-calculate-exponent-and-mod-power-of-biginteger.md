@@ -3,8 +3,8 @@ title: How to calculate exponent and mod power of BigInteger
 nav: How to calculate exponent ...
 description: BigInteger pow(int exponent) returns a BigInteger whose value is (thisexponent).
 section: Imported - java2s Archive
-order: 1037
-source: https://web.archive.org/web/20130821182759/http://java2s.com/Tutorials/Java/BigDecimal_BigInteger/How_to_calculate_exponent_and_mod_power_of_BigInteger.htm
+order: 1165
+source: https://web.archive.org/web/2018/http://java2s.com/Tutorials/Java/BigDecimal_BigInteger/How_to_calculate_exponent_and_mod_power_of_BigInteger.htm
 ---
 In this chapter you will learn:
 
@@ -17,8 +17,8 @@ BigInteger pow(int exponent) returns a BigInteger whose value is (thisexponent).
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
+public class Main {
+  public static void main(String[] argv) throws Exception {
     BigInteger bi1 = new BigInteger("1234567890123456890");
     int exponent = 2;
     bi1 = bi1.pow(exponent);
@@ -36,8 +36,8 @@ BigInteger modPow(BigInteger exponent, BigInteger m) returns a BigInteger whose 
 ```java title=Example.java
 import java.math.BigInteger;
 import java.security.SecureRandom;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     int bitLength = 512; // 512 bits
     SecureRandom rnd = new SecureRandom();
     int certainty = 90; // 1 - 1/2(90) certainty

@@ -3,8 +3,8 @@ title: Java Swing Tutorial - Java BasicStroke.getEndCap()
 nav: Java Swing Tutorial - Java...
 description: In the following code shows how to use BasicStroke.getEndCap() method.
 section: Imported - java2s Archive
-order: 1009
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BasicStroke/0340__BasicStroke.getEndCap_.htm
+order: 1140
+source: https://web.archive.org/web/20150326164633/http://www.java2s.com/Tutorials/Java/java.awt/BasicStroke/0340__BasicStroke.getEndCap_.htm
 ---
 ## Example
 
@@ -13,8 +13,8 @@ In the following code shows how to use BasicStroke.getEndCap() method.
 ```java title=Example.java
 import java.awt.BasicStroke;
 import java.util.Arrays;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     BasicStroke stroke = new BasicStroke(10, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0.1F);
     System.out.println(stroke.getEndCap());
   }

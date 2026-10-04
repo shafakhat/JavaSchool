@@ -3,8 +3,8 @@ title: Use String.lastIndexOf to find a character in a string
 nav: Use String.lastIndexOf to ...
 description: Imported from the java2s.com archive: Use String.lastIndexOf to find a character in a string
 section: Imported - java2s Archive
-order: 1171
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/UseStringlastIndexOftofindacharacterinastring.htm
+order: 1101
+source: https://web.archive.org/web/20140829090720/http://www.java2s.com/Tutorial/Java/0040__Data-Type/UseStringlastIndexOftofindacharacterinastring.htm
 ---
 ```java title=Example.java
 public class MainClass

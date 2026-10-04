@@ -92,14 +92,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * individuals and hosted on ObjectStyle Group web site.  For more
  * information on the ObjectStyle Group, please see
  * &lt;http://objectstyle.org/&gt;.
- */import java.math.BigDecimal;
+ */
+import java.math.BigDecimal;
 import java.math.BigInteger;
 /**
  * A collection of static conversion utility methods.
  *
  * @since 1.1
  * @author Andrei Adamchik
- */public final class ConversionUtil {
+ */
+public final class ConversionUtil {
     public static int toInt(Object object, int defaultValue) {
         if (object == null) {
             return defaultValue;
@@ -143,7 +145,8 @@ import java.math.BigInteger;
     }
     /**
      * Attempts to convert an object to Comparable instance.
-     */ public static Comparable toComparable(Object object) {
+     */
+    public static Comparable toComparable(Object object) {
         if (object == null) {
             return null;
         }
@@ -163,7 +166,8 @@ import java.math.BigInteger;
     }
     /**
      * Attempts to convert an object to Comparable instance.
-     */ public static String toString(Object object) {
+     */
+    public static String toString(Object object) {
         if (object == null) {
             return null;
         }
@@ -183,7 +187,8 @@ import java.math.BigInteger;
     }
     /**
      * Attempts to convert an object to an uppercase string.
-     */ public static Object toUpperCase(Object object) {
+     */
+    public static Object toUpperCase(Object object) {
         if ((object instanceof String) || (object instanceof StringBuffer)) {
             return object.toString().toUpperCase();
         }
@@ -197,7 +202,8 @@ import java.math.BigInteger;
     private ConversionUtil() {
     }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="web-services-soa-axis2clientapihasfacilitiestoacceptresponsesinjson.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Axis2 client API has facil...</span></a><a class="pager-btn pager-next" href="data-type-fourdifferentdateformatsforfourcountriesusukgermanyfrance.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Four different date format...</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.16.1.</th><th>The Widening Conversion</th></tr></thead><tbody><tr><td>2.16.2.</td><td>The Narrowing Conversion</td></tr><tr><td>2.16.3.</td><td>Narrowing conversion with information loss</td></tr><tr><td>2.16.4.</td><td>An automatic type conversion</td></tr><tr><td>2.16.5.</td><td>Casting Incompatible Types</td></tr><tr><td>2.16.6.</td><td>Pass a string to the Integer class constructor and call the intValue()</td></tr><tr><td>2.16.7.</td><td>Use toString method of Integer class to conver Integer into String.</td></tr><tr><td>2.16.8.</td><td>Declaring Checked Exceptions</td></tr><tr><td>2.16.9.</td><td>Automatic Type Promotion in Expressions</td></tr><tr><td>2.16.10.</td><td>Convert byte array to Integer and Long</td></tr><tr><td>2.16.11.</td><td>Class with methods for type conversion</td></tr><tr><td>2.16.12.</td><td>Data type conversion</td></tr><tr><td>2.16.13.</td><td>Convert primitive back and forth</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-checksifstringcontainsasearchcharacterhandlingnull.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Checks if String contains ...</span></a><a class="pager-btn pager-next" href="data-type-decimalformate0exponentmustbemultipleof3.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">DecimalFormat("###E0") (ex...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

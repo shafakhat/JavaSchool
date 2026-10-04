@@ -3,8 +3,8 @@ title: Express a duration in term of HH
 nav: Express a duration in term...
 description: long secs = (cal2.getTimeInMillis() - cal1.getTimeInMillis()) / 1000;
 section: Imported - java2s Archive
-order: 1237
-source: https://web.archive.org/web/2014/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ExpressadurationintermofHHMMSS.htm
+order: 1081
+source: https://web.archive.org/web/20140218022318/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ExpressadurationintermofHHMMSS.htm
 ---
 ```java title=Example.java
 import java.util.Calendar;

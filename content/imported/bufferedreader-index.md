@@ -1,10 +1,10 @@
 ---
 title: Java IO Tutorial - BufferedReader Example
 nav: Java IO Tutorial - Buffere...
-description: Imported from java2s.com: Java IO Tutorial - BufferedReader Example
+description: Imported from the java2s.com archive: Java IO Tutorial - BufferedReader Example
 section: Imported - java2s Archive
-order: 50241
-source: https://www.java2s.com/Tutorials/Java/java.io/BufferedReader/index.html
+order: 1172
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/java.io/BufferedReader/index.html
 ---
 ## Constructor
 

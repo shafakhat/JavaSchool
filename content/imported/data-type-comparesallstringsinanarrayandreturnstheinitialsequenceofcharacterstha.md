@@ -3,8 +3,8 @@ title: Compares all Strings in an array and returns the initial sequence of char
 nav: Compares all Strings in an...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1007
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ComparesallStringsinanarrayandreturnstheinitialsequenceofcharactersthatiscommontoallofthem.htm
+order: 1360
+source: https://web.archive.org/web/20140829092012/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ComparesallStringsinanarrayandreturnstheinitialsequenceofcharactersthatiscommontoallofthem.htm
 ---
 ```java title=Example.java
 /*
@@ -22,7 +22,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */public class Main {
+ */
+public class Main {
   /**
    * Compares all Strings in an array and returns the initial sequence of
    * characters that is common to all of them.
@@ -55,23 +56,24 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * in the array; empty String if the array is null, the elements are all null
    * or if there is no common prefix.
    * @since 2.4
-   */ public static String getCommonPrefix(String[] strs) {
+   */
+  public static String getCommonPrefix(String[] strs) {
       if (strs == null || strs.length == 0) {
           return "";
       }
       int smallestIndexOfDiff = indexOfDifference(strs);
       if (smallestIndexOfDiff == -1) {
           // all strings were identical
- if (strs[0] == null) {
+          if (strs[0] == null) {
               return "";
           }
           return strs[0];
       } else if (smallestIndexOfDiff == 0) {
           // there were no common initial characters
- return "";
+          return "";
       } else {
           // we found a common initial character sequence
- return strs[0].substring(0, smallestIndexOfDiff);
+          return strs[0].substring(0, smallestIndexOfDiff);
       }
   }
   /**
@@ -104,7 +106,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param strs  array of strings, entries may be null
    * @return the index where the strings begin to differ; -1 if they are all equal
    * @since 2.4
-   */ public static int indexOfDifference(String[] strs) {
+   */
+  public static int indexOfDifference(String[] strs) {
       if (strs == null || strs.length <= 1) {
           return -1;
       }
@@ -114,9 +117,9 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
       int shortestStrLen = Integer.MAX_VALUE;
       int longestStrLen = 0;
       // find the min and max string lengths; this avoids checking to make
- // sure we are not exceeding the length of the string each time through
- // the bottom loop.
- for (int i = 0; i < arrayLen; i++) {
+      // sure we are not exceeding the length of the string each time through
+      // the bottom loop.
+      for (int i = 0; i < arrayLen; i++) {
           if (strs[i] == null) {
               anyStringNull = true;
               shortestStrLen = 0;
@@ -127,15 +130,15 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
           }
       }
       // handle lists containing all nulls or all empty strings
- if (allStringsNull || (longestStrLen == 0 && !anyStringNull)) {
+      if (allStringsNull || (longestStrLen == 0 && !anyStringNull)) {
           return -1;
       }
       // handle lists containing some nulls or some empty strings
- if (shortestStrLen == 0) {
+      if (shortestStrLen == 0) {
           return 0;
       }
       // find the position with the first difference across all strings
- int firstDiff = -1;
+      int firstDiff = -1;
       for (int stringPos = 0; stringPos < shortestStrLen; stringPos++) {
           char comparisonChar = strs[0].charAt(stringPos);
           for (int arrayPos = 1; arrayPos < arrayLen; arrayPos++) {
@@ -150,11 +153,25 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
       }
       if (firstDiff == -1 && shortestStrLen != longestStrLen) {
           // we compared all of the characters up to the length of the
- // shortest string and didn't find a match, but the string lengths
- // vary, so return the length of the shortest string.
- return shortestStrLen;
+          // shortest string and didn't find a match, but the string lengths
+          // vary, so return the length of the shortest string.
+          return shortestStrLen;
       }
       return firstDiff;
   }
 }
 ```
+
+| 2.23.1. | Comparing Strings for Equality |
+|---|---|
+| 2.23.2. | To check for equality between two strings ignoring the case |
+| 2.23.3. | Sequencing Strings |
+| 2.23.4. | String length, charAt, equals |
+| 2.23.5. | equals() and equalsIgnoreCase(). |
+| 2.23.6. | equals() vs == |
+| 2.23.7. | Region Matches |
+| 2.23.8. | Compares all Strings in an array and returns the index at which the Strings begin to differ. |
+| 2.23.9. | Compares all Strings in an array and returns the initial sequence of characters that is common to all of them. |
+| 2.23.10. | Compares two Strings, and returns the index at which the Strings begin to differ. |
+| 2.23.11. | Compares two Strings, and returns the portion where they differ. |
+| 2.23.12. | Compress 2 adjacent (single or double) quotes into a single (s or d) quote when found in the middle of a String. |

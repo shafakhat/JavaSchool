@@ -3,8 +3,8 @@ title: Print the limits of primitive types (e.g. byte, short, int ...) in Java
 nav: Print the limits of primit...
 description: System.out.println("Min int value = " + Integer.MIN_VALUE);
 section: Imported - java2s Archive
-order: 1010
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/PrintthelimitsofprimitivetypesegbyteshortintinJava.htm
+order: 1076
+source: https://web.archive.org/web/20140829093526/http://www.java2s.com/Tutorial/Java/0040__Data-Type/PrintthelimitsofprimitivetypesegbyteshortintinJava.htm
 ---
 ```java title=Example.java
 public class Main {

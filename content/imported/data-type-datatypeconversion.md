@@ -3,8 +3,8 @@ title: Data type conversion
 nav: Data type conversion
 description: * Copyright (c) 2002-2005, Andrei (Andrus) Adamchik and individual authors
 section: Imported - java2s Archive
-order: 1107
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Datatypeconversion.htm
+order: 1080
+source: https://web.archive.org/web/20140301111449/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Datatypeconversion.htm
 ---
 ```java title=Example.java
 /*
@@ -60,14 +60,16 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * individuals and hosted on ObjectStyle Group web site.  For more
  * information on the ObjectStyle Group, please see
  * <http://objectstyle.org/>.
- */import java.math.BigDecimal;
+ */
+import java.math.BigDecimal;
 import java.math.BigInteger;
 /**
  * A collection of static conversion utility methods.
  *
  * @since 1.1
  * @author Andrei Adamchik
- */public final class ConversionUtil {
+ */
+public final class ConversionUtil {
     public static int toInt(Object object, int defaultValue) {
         if (object == null) {
             return defaultValue;
@@ -111,7 +113,8 @@ import java.math.BigInteger;
     }
     /**
      * Attempts to convert an object to Comparable instance.
-     */ public static Comparable toComparable(Object object) {
+     */
+    public static Comparable toComparable(Object object) {
         if (object == null) {
             return null;
         }
@@ -131,7 +134,8 @@ import java.math.BigInteger;
     }
     /**
      * Attempts to convert an object to Comparable instance.
-     */ public static String toString(Object object) {
+     */
+    public static String toString(Object object) {
         if (object == null) {
             return null;
         }
@@ -151,7 +155,8 @@ import java.math.BigInteger;
     }
     /**
      * Attempts to convert an object to an uppercase string.
-     */ public static Object toUpperCase(Object object) {
+     */
+    public static Object toUpperCase(Object object) {
         if ((object instanceof String) || (object instanceof StringBuffer)) {
             return object.toString().toUpperCase();
         }
@@ -166,3 +171,18 @@ import java.math.BigInteger;
     }
 }
 ```
+
+| 2.16.1. | The Widening Conversion |
+|---|---|
+| 2.16.2. | The Narrowing Conversion |
+| 2.16.3. | Narrowing conversion with information loss |
+| 2.16.4. | An automatic type conversion |
+| 2.16.5. | Casting Incompatible Types |
+| 2.16.6. | Pass a string to the Integer class constructor and call the intValue() |
+| 2.16.7. | Use toString method of Integer class to conver Integer into String. |
+| 2.16.8. | Declaring Checked Exceptions |
+| 2.16.9. | Automatic Type Promotion in Expressions |
+| 2.16.10. | Convert byte array to Integer and Long |
+| 2.16.11. | Class with methods for type conversion |
+| 2.16.12. | Data type conversion |
+| 2.16.13. | Convert primitive back and forth |

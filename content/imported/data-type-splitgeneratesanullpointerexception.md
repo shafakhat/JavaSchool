@@ -3,8 +3,8 @@ title: " ".split(" ") generates a NullPointerException
 nav: " ".split(" ") generates a...
 description: Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
 section: Imported - java2s Archive
-order: 1172
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/splitgeneratesaNullPointerException.htm
+order: 1140
+source: https://web.archive.org/web/20140829092312/http://www.java2s.com/Tutorial/Java/0040__Data-Type/splitgeneratesaNullPointerException.htm
 ---
 ```java title=Example.java
 public class Main {

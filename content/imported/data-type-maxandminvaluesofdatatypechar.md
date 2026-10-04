@@ -4,7 +4,7 @@ nav: Max and Min values of data...
 description: Imported from the java2s.com archive: Max and Min values of datatype char
 section: Imported - java2s Archive
 order: 1055
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/MaxandMinvaluesofdatatypechar.htm
+source: https://web.archive.org/web/20140829083303/http://www.java2s.com/Tutorial/Java/0040__Data-Type/MaxandMinvaluesofdatatypechar.htm
 ---
 ```java title=Example.java
 public class Main {

@@ -3,8 +3,8 @@ title: Java Collection Tutorial - ArrayList Example
 nav: Java Collection Tutorial -...
 description: The following code shows how to get Size of ArrayList and loop through elements.
 section: Imported - java2s Archive
-order: 50344
-source: https://www.java2s.com/Tutorials/Java/java.util/ArrayList/index.html
+order: 1133
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/java.util/ArrayList/index.html
 ---
 ## Example
 
@@ -12,8 +12,8 @@ The following code shows how to get Size of ArrayList and loop through elements.
 
 ```java title=Example.java
 import java.util.ArrayList;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     ArrayList<String> arrayList = new ArrayList<String>();
     arrayList.add("1");
     arrayList.add("2");
@@ -35,8 +35,8 @@ The following code shows how to traverse through ArrayList in forward direction 
 ```java title=Example.java
 import java.util.ArrayList;
 import java.util.ListIterator;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     ArrayList<String> aList = new ArrayList<String>();
     aList.add("1");
     aList.add("2");
@@ -59,8 +59,8 @@ The following code shows how to get the size of an arraylist after and before ad
 
 ```java title=Example.java
 import java.util.ArrayList;
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     ArrayList<String> al = new ArrayList<String>();
     System.out.println("Initial size of al: " + al.size());
     al.add("C");
@@ -88,8 +88,8 @@ The following code shows how to use set method to change the value in an array l
 
 ```java title=Example.java
 import java.util.ArrayList;
-publicclass Main {
-  publicstaticvoid main(String[] a) {
+public class Main {
+  public static void main(String[] a) {
     ArrayList<String> nums = new ArrayList<String>();
     nums.clear();
     nums.add("One");

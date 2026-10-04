@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BufferedReader reflection - JavaSchool</title>
+<meta name="description" content="BufferedReader reflection: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-reflection-bufferedreaderreflection">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-07-reflection.html">Reflection</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-07-07-class-loader.html">Class Loader</a></nav>
+    <h1>BufferedReader reflection</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright (c) 1995 - 2008 Sun Microsystems, Inc.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   - Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   - Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in the
+ *     documentation and/or other materials provided with the distribution.
+ *
+ *   - Neither the name of Sun Microsystems nor the names of its
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+ * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+import static java.lang.System.out;
+import java.io.BufferedReader;
+import java.io.CharArrayReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.util.Arrays;
+public class GrowBufferedReader {
+  private static final int srcBufSize = 10 * 1024;
+  private static char[] src = new char[srcBufSize];
+  static {
+    src[srcBufSize - 1] = 'x';
+  }
+  private static CharArrayReader car = new CharArrayReader(src);
+  public static void main(String... args) {
+    try {
+      BufferedReader br = new BufferedReader(car);
+      Class&lt;?&gt; c = br.getClass();
+      Field f = c.getDeclaredField("cb");
+      // cb is a private field
+      f.setAccessible(true);
+      char[] cbVal = char[].class.cast(f.get(br));
+      char[] newVal = Arrays.copyOf(cbVal, cbVal.length * 2);
+      if (args.length &gt; 0 &amp;&amp; args[0].equals("grow"))
+        f.set(br, newVal);
+      for (int i = 0; i &lt; srcBufSize; i++)
+        br.read();
+      // see if the new backing array is being used
+      if (newVal[srcBufSize - 1] == src[srcBufSize - 1])
+        out.format("Using new backing array, size=%d%n", newVal.length);
+      else
+        out.format("Using original backing array, size=%d%n", cbVal.length);
+      // production code should handle these exceptions more gracefully
+    } catch (FileNotFoundException x) {
+      x.printStackTrace();
+    } catch (NoSuchFieldException x) {
+      x.printStackTrace();
+    } catch (IllegalAccessException x) {
+      x.printStackTrace();
+    } catch (IOException x) {
+      x.printStackTrace();
+    }
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>7.7.1.</th><th>URL class loader</th></tr></thead><tbody><tr><td>7.7.2.</td><td>extends URLClassLoader</td></tr><tr><td>7.7.3.</td><td>Load classes</td></tr><tr><td>7.7.4.</td><td>how to use reflection to print the names and values of all nonstatic fields of an object</td></tr><tr><td>7.7.5.</td><td>Runs a jar application from any url</td></tr><tr><td>7.7.6.</td><td>BufferedReader reflection</td></tr><tr><td>7.7.7.</td><td>Get the class By way of an object</td></tr><tr><td>7.7.8.</td><td>Get the class By way of a string</td></tr><tr><td>7.7.9.</td><td>Get the class By way of .class</td></tr><tr><td>7.7.10.</td><td>Catch InvocationTargetException</td></tr><tr><td>7.7.11.</td><td>Determining from Where a Class Was Loaded</td></tr><tr><td>7.7.12.</td><td>Dynamically Reloading a Modified Class</td></tr><tr><td>7.7.13.</td><td>Creating an Object Using a Constructor Object</td></tr><tr><td>7.7.14.</td><td>Create an object from a string</td></tr><tr><td>7.7.15.</td><td>Using the forName() method</td></tr><tr><td>7.7.16.</td><td>Context ClassLoader</td></tr><tr><td>7.7.17.</td><td>A tree structure that maps inheritance hierarchies of classes</td></tr><tr><td>7.7.18.</td><td>Analyze ClassLoader hierarchy for any given object or class loader</td></tr><tr><td>7.7.19.</td><td>Instantiate unknown class at runtime and call the object's methods</td></tr><tr><td>7.7.20.</td><td>Load Class</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="reflection-runsajarapplicationfromanyurl.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Runs a jar application fro...</span></a><a class="pager-btn pager-next" href="reflection-extendsurlclassloader.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">extends URLClassLoader</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

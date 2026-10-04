@@ -3,8 +3,8 @@ title: demonstrates getChars( )
 nav: demonstrates getChars( )
 description: Imported from the java2s.com archive: demonstrates getChars( )
 section: Imported - java2s Archive
-order: 1162
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/demonstratesgetChars.htm
+order: 1094
+source: https://web.archive.org/web/20140828212246/http://www.java2s.com/Tutorial/Java/0040__Data-Type/demonstratesgetChars.htm
 ---
 ```java title=Example.java
 class getCharsDemo {

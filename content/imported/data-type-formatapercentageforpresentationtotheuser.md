@@ -3,8 +3,8 @@ title: Format a percentage for presentation to the user
 nav: Format a percentage for pr...
 description: * or more contributor license agreements. See the NOTICE file
 section: Imported - java2s Archive
-order: 1115
-source: https://web.archive.org/web/2020/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Formatapercentageforpresentationtotheuser.htm
+order: 1297
+source: https://web.archive.org/web/20140121030541/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Formatapercentageforpresentationtotheuser.htm
 ---
 ```java title=Example.java
 /**
@@ -23,7 +23,8 @@ source: https://web.archive.org/web/2020/http://www.java2s.com/Tutorial/Java/004
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */import java.io.PrintWriter;
+ */
+import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.InetAddress;
 import java.net.URI;
@@ -39,7 +40,8 @@ import java.util.StringTokenizer;
 import java.util.Collection;
 /**
  * General string utils
- */public class StringUtils {
+ */
+public class StringUtils {
   final public static char COMMA = ',';
   final public static String COMMA_STR = ",";
   final public static char ESCAPE_CHAR = '\\';
@@ -48,7 +50,8 @@ import java.util.Collection;
    * @param done the percentage to format (0.0 to 1.0)
    * @param digits the number of digits past the decimal point
    * @return a string representation of the percentage
-   */ public static String formatPercent(double done, int digits) {
+   */
+  public static String formatPercent(double done, int digits) {
     DecimalFormat percentFormat = new DecimalFormat("0.00%");
     double scale = Math.pow(10.0, digits+2);
     double rounded = Math.floor(done * scale);

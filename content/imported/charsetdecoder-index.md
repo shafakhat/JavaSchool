@@ -1,10 +1,10 @@
 ---
 title: Java IO Tutorial - CharsetDecoder Example
 nav: Java IO Tutorial - Charset...
-description: Imported from java2s.com: Java IO Tutorial - CharsetDecoder Example
+description: Imported from the java2s.com archive: Java IO Tutorial - CharsetDecoder Example
 section: Imported - java2s Archive
-order: 50302
-source: https://www.java2s.com/Tutorials/Java/java.nio.charset/CharsetDecoder/index.html
+order: 1194
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/java.nio.charset/CharsetDecoder/index.html
 ---
 ## Method
 

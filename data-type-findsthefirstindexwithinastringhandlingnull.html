@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * &lt;code&gt;null&lt;/code&gt; safe.
  *
@@ -80,7 +81,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */public class Main {
+ */
+public class Main {
   /**
    * Finds the first index within a String, handling &lt;code&gt;null&lt;/code&gt;.
    * This method uses {@link String#indexOf(String, int)}.
@@ -111,18 +113,19 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @return the first index of the search String,
    *  -1 if no match or &lt;code&gt;null&lt;/code&gt; string input
    * @since 2.0
-   */ public static int indexOf(String str, String searchStr, int startPos) {
+   */
+  public static int indexOf(String str, String searchStr, int startPos) {
       if (str == null || searchStr == null) {
           return -1;
       }
       // JDK1.2/JDK1.3 have a bug, when startPos &gt; str.length for "", hence
- if (searchStr.length() == 0 &amp;&amp; startPos &gt;= str.length()) {
+      if (searchStr.length() == 0 &amp;&amp; startPos &gt;= str.length()) {
           return str.length();
       }
       return str.indexOf(searchStr, startPos);
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="class-comparingobjectvaluesusinghashcodes.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Comparing Object Values Us...</span></a><a class="pager-btn pager-next" href="data-type-joinstring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Join String</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-enumsinaclass.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Enums in a Class</span></a><a class="pager-btn pager-next" href="java-java-array-check-if-an-array-of-primitive-chars-is-empty-or-null.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java array check if an arr...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

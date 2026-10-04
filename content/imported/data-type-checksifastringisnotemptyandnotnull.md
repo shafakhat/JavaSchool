@@ -3,8 +3,8 @@ title: Checks if a String is not empty ("") and not null.
 nav: Checks if a String is not ...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1182
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ChecksifaStringisnotemptyandnotnull.htm
+order: 1127
+source: https://web.archive.org/web/20140613022930/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ChecksifaStringisnotemptyandnotnull.htm
 ---
 ```java title=Example.java
 import java.util.Calendar;
@@ -26,7 +26,8 @@ import java.util.TimeZone;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * <code>null</code> safe.
  *
@@ -52,7 +53,8 @@ import java.util.TimeZone;
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */public class Main {
+ */
+public class Main {
   /**
    *
    * <pre>
@@ -65,12 +67,13 @@ import java.util.TimeZone;
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is not empty and not null
-   */ public static boolean isNotEmpty(String str) {
+   */
+  public static boolean isNotEmpty(String str) {
       return !isEmpty(str);
   }
   // Empty checks
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -87,7 +90,8 @@ import java.util.TimeZone;
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */ public static boolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }

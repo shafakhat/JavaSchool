@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Class encapsulating timer functionality - JavaSchool</title>
+<meta name="description" content="Class encapsulating timer functionality: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-classencapsulatingtimerfunctionality">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-18-timer.html">Timer</a></nav>
+    <h1>Class encapsulating timer functionality</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright (c) 2003 - 2007 OpenSubsystems s.r.o. Slovak Republic. All rights reserved.
+ *
+ * Project: OpenSubsystems
+ *
+ * $Id: MyTimer.java,v 1.5 2007/01/07 06:14:00 bastafidli Exp $
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; version 2 of the License.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+/**
+ *
+ * @version $Id: MyTimer.java,v 1.5 2007/01/07 06:14:00 bastafidli Exp $
+ * @author Miro Halas
+ * @code.reviewer Miro Halas
+ * @code.reviewed Initial revision
+ */
+public class MyTimer
+{
+   // Attributes ///////////////////////////////////////////////////////////////
+   /**
+    * Remeber start time here.
+    */
+   private long m_lStartTime;
+   /**
+    * Remeber stop time here.
+    */
+   private long m_lStopTime;
+   // Constructors /////////////////////////////////////////////////////////////
+   /**
+    * Default constructor.
+    * Starts counting fro the moment it is cosntructed.
+    */
+   public MyTimer(
+   )
+   {
+      reset();
+   }
+   // Logic ////////////////////////////////////////////////////////////////////
+   /**
+    * @return long - start time;
+    */
+   public long getStartTime()
+   {
+      return m_lStartTime;
+   }
+   /**
+    * @return - stop time;
+    */
+   public long getStopTime()
+   {
+      return m_lStopTime;
+   }
+   /**
+    * Reset the counter and start counting from scratch.
+    */
+   public void reset(
+   )
+   {
+      m_lStartTime = System.currentTimeMillis();
+      m_lStopTime = 0;
+   }
+   /**
+    * Stop the timer.
+    */
+   public void stop(
+   )
+   {
+      m_lStopTime = System.currentTimeMillis();
+   }
+   /**
+    * Get timer duration (the timer doesn't stop) in milliseconds.
+    *
+    * @return long - difference between stop and start time.
+    */
+   public long getDuration(
+   )
+   {
+      long lStopTime;
+      if (m_lStopTime == 0)
+      {
+         lStopTime = System.currentTimeMillis();
+      }
+      else
+      {
+         lStopTime = m_lStopTime;
+      }
+      return lStopTime - m_lStartTime;
+   }
+   /**
+    * Print the state of the timer without stopping it.
+    * @return String - timing information
+    */
+   public String toString(
+   )
+   {
+      long lTotalMS   = getDuration();
+      long lMS        = lTotalMS % 1000;
+      long lTotalSecs = lTotalMS / 1000;
+      long lSecs      = lTotalSecs % 60;
+      long lTotalMins = lTotalSecs / 60;
+      long lMinutes   = lTotalMins % 60;
+      long lHours     = lTotalMins / 60;
+      StringBuffer sbBuffer = new StringBuffer();
+      if (lHours &gt; 0)
+      {
+         sbBuffer.append(lHours);
+         sbBuffer.append(":");
+         sbBuffer.append(lMinutes);
+         sbBuffer.append(":");
+         sbBuffer.append(lSecs);
+         sbBuffer.append(".");
+         sbBuffer.append(lMS);
+      }
+      else if (lMinutes &gt; 0)
+      {
+         sbBuffer.append(lMinutes);
+         sbBuffer.append(":");
+         sbBuffer.append(lSecs);
+         sbBuffer.append(".");
+         sbBuffer.append(lMS);
+      }
+      else if (lSecs &gt; 0)
+      {
+         sbBuffer.append(lSecs);
+         sbBuffer.append(".");
+         sbBuffer.append(lMS);
+         sbBuffer.append(" seconds");
+      }
+      else
+      {
+         sbBuffer.append(lMS);
+         sbBuffer.append(" ms");
+      }
+      return sbBuffer.toString();
+   }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.18.1.</th><th>Using Timers</th></tr></thead><tbody><tr><td>6.18.2.</td><td>Demonstrate Timer and TimerTask.</td></tr><tr><td>6.18.3.</td><td>Timer and TimerTask Classes</td></tr><tr><td>6.18.4.</td><td>Pause and start a timer task</td></tr><tr><td>6.18.5.</td><td>Create a Timer object</td></tr><tr><td>6.18.6.</td><td>Swing also provide a Timer class. A Timer object will send an ActionEvent to the registered ActionListener.</td></tr><tr><td>6.18.7.</td><td>Create a scheduled task using timer</td></tr><tr><td>6.18.8.</td><td>Schedule a task by using Timer and TimerTask.</td></tr><tr><td>6.18.9.</td><td>Scheduling a Timer Task to Run Repeatedly</td></tr><tr><td>6.18.10.</td><td>extends TimerTask to create your own task</td></tr><tr><td>6.18.11.</td><td>Your own timer</td></tr><tr><td>6.18.12.</td><td>Class encapsulating timer functionality</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-usingnewmethodsintimeunit.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Using new methods in TimeU...</span></a><a class="pager-btn pager-next" href="development-computeanddisplayelapsedtimeofanoperation.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Compute and display elapse...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

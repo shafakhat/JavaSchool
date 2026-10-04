@@ -3,8 +3,8 @@ title: Displaying Date by weekday name
 nav: Displaying Date by weekday...
 description: GregorianCalendar birthdate = new GregorianCalendar(1999, 1, 1);
 section: Imported - java2s Archive
-order: 1236
-source: https://web.archive.org/web/2020/http://www.java2s.com/Tutorial/Java/0040__Data-Type/DisplayingDatebyweekdayname.htm
+order: 1081
+source: https://web.archive.org/web/20140829080514/http://www.java2s.com/Tutorial/Java/0040__Data-Type/DisplayingDatebyweekdayname.htm
 ---
 ```java title=Example.java
 import static java.util.Calendar.DATE;

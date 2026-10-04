@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using 'instance initialization' to perform construction on an anonymous inner class - JavaSchool</title>
+<meta name="description" content="Imported from the java2s.com archive: Using &#x27;instance initialization&#x27; to perform construction on an anonymous inner class">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-class-definition-usinginstanceinitializationtoperformconstructiononananonymousin">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-05-class-definition.html">Class Definition</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-05-15-anonymous-inner-class.html">Anonymous inner class</a></nav>
+    <h1>Using 'instance initialization' to perform construction on an anonymous inner class</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public A dest(final String dest, final float price) {
+    return new A() {
+      private int cost;
+      {
+        cost = 100;
+        System.out.println("Over budget!");
+      }
+      private String label = dest;
+      public String readLabel() {
+        return label;
+      }
+    };
+  }
+  public static void main(String[] args) {
+    MainClass p = new MainClass();
+    A d = p.dest("A", 101.395F);
+  }
+}
+interface A {
+  String readLabel();
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>5.15.1.</th><th>Demonstrate an inner class.</th></tr></thead><tbody><tr><td>5.15.2.</td><td>Define an inner class within a for loop.</td></tr><tr><td>5.15.3.</td><td>Use anonymous inner classes</td></tr><tr><td>5.15.4.</td><td>Building the anonymous inner class in-place</td></tr><tr><td>5.15.5.</td><td>Anonymous inner class cannot have a named constructor, only an instance initializer</td></tr><tr><td>5.15.6.</td><td>Creating a constructor for an anonymous inner class</td></tr><tr><td>5.15.7.</td><td>Using 'instance initialization' to perform construction on an anonymous inner class</td></tr><tr><td>5.15.8.</td><td>Argument must be final to use inside anonymous inner class</td></tr><tr><td>5.15.9.</td><td>A method that returns an anonymous inner class</td></tr><tr><td>5.15.10.</td><td>An anonymous inner class that calls the base-class constructor</td></tr><tr><td>5.15.11.</td><td>An anonymous inner class that performs initialization</td></tr><tr><td>5.15.12.</td><td>Demonstrates method-scoped inner classes</td></tr><tr><td>5.15.13.</td><td>Demonstrates anonymous classes</td></tr><tr><td>5.15.14.</td><td>Demonstration of some static nested classes</td></tr><tr><td>5.15.15.</td><td>Access inner class from outside</td></tr><tr><td>5.15.16.</td><td>Accessing its enclosing instance from an inner class</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-uselastindexoftofindasubstringinastring.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Use lastIndexOf to find a ...</span></a><a class="pager-btn pager-next" href="class-youcaninsertcloneabilityatanylevelofinheritance.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">You can insert Cloneabilit...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

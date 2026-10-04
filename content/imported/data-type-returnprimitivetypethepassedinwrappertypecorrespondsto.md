@@ -3,8 +3,8 @@ title: Return primitive type the passed in wrapper type corresponds to
 nav: Return primitive type the ...
 description: * Copyright 2005, JBoss Inc., and individual contributors as indicated
 section: Imported - java2s Archive
-order: 1015
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Returnprimitivetypethepassedinwrappertypecorrespondsto.htm
+order: 1028
+source: https://web.archive.org/web/2014/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Returnprimitivetypethepassedinwrappertypecorrespondsto.htm
 ---
 ```java title=Example.java
 import java.util.HashSet;
@@ -30,11 +30,13 @@ import java.util.Set;
  * License along with this software; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
- */public class Main {
+ */
+public class Main {
   /**
    * @param wrapper
    *          a primitive wrapper type
-   */ public static Class getPrimitive(Class wrapper) {
+   */
+  public static Class getPrimitive(Class wrapper) {
     Class primitive;
     if (Integer.class == wrapper) {
       primitive = int.class;

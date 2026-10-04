@@ -3,8 +3,8 @@ title: Java Swing Tutorial - Java CardLayout.last(Container parent)
 nav: Java Swing Tutorial - Java...
 description: In the following code shows how to use CardLayout.last(Container parent) method.
 section: Imported - java2s Archive
-order: 1008
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0240__CardLayout.last_Container_parent_.htm
+order: 1180
+source: https://web.archive.org/web/20150325024225/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0240__CardLayout.last_Container_parent_.htm
 ---
 ## Syntax
 
@@ -49,4 +49,5 @@ class CardLayoutPanel extends JPanel implements ActionListener {
     card.next(this);
   }
 }
+java title=Example.java
 ```

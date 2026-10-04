@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Java Tutorial - Java CubicCurve2D.contains(double x, double y) - JavaSchool</title>
-<meta name="description" content="CubicCurve2D.contains(double x, double y) has the following syntax.">
+<title>Java CubicCurve2D.contains(double x, double y) - JavaSchool</title>
+<meta name="description" content="CubicCurve2D contains(double x, double y) tests if the specified coordinates are inside the boundary of the Shape , as described by the definition of insideness .">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -38,10 +38,19 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <main class="main">
   <article class="ws-content">
     <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-cubiccurve2d.html">CubicCurve2D</a></nav>
-    <h1>Java Tutorial - Java CubicCurve2D.contains(double x, double y)</h1>
+    <h1>Java CubicCurve2D.contains(double x, double y)</h1>
+<p>In this chapter you will learn:</p>
+<ul><li>Get to know CubicCurve2D.contains(double x, double y)</li><li>Syntax for CubicCurve2D.contains(double x, double y)</li><li>Parameter for CubicCurve2D.contains(double x, double y)</li><li>Returns for CubicCurve2D.contains(double x, double y)</li><li>Example - CubicCurve2D.contains(double x, double y)</li></ul>
+<h3 id="description">Description</h3>
+<p>CubicCurve2D contains(double x, double y) tests if the specified coordinates are inside the boundary of the Shape , as described by the definition of insideness .</p>
 <h3 id="syntax">Syntax</h3>
 <p>CubicCurve2D.contains(double x, double y) has the following syntax.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicboolean contains(double x,  double y)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public boolean contains(double x,  double y)</code></pre></div>
+<h3 id="parameters">Parameters</h3>
+<p>CubicCurve2D.contains(double x, double y) has the following parameters.</p>
+<ul><li>x - the specified X coordinate to be tested</li><li>y - the specified Y coordinate to be tested</li></ul>
+<h3 id="returns">Returns</h3>
+<p>CubicCurve2D.contains(double x, double y) method returns true if the specified coordinates are inside the Shape boundary; false otherwise.</p>
 <h3 id="example">Example</h3>
 <p>In the following code shows how to use CubicCurve2D.contains(double x, double y) method.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.Frame;
@@ -49,22 +58,24 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.CubicCurve2D;
 import java.awt.geom.Point2D;
-publicclass Main extends Frame {
-  publicstaticvoid main(String[] args) {
+public class Main extends Frame {
+  public static void main(String[] args) {
     new Main().setVisible(true);
   }
   public Main () {
     setSize(400, 550);
   }
-  publicvoid paint(Graphics g) {
+  public void paint(Graphics g) {
     Graphics2D g2d = (Graphics2D) g;
     CubicCurve2D cubcurve = new CubicCurve2D.Float(30, 400, 150, 400, 200, 500, 350, 450);
     g2d.draw(cubcurve);
     System.out.println(cubcurve.contains(0.2F, 0.3F));
   }
 }</code></pre></div>
-<p>AffineTransformArc2DAreaCubicCurve2DEllipse2DGeneralPath</p>
-    <div class="pager"><a class="pager-btn" href="area-java-area-clone.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Area....</span></a><a class="pager-btn pager-next" href="cubiccurve2d-java-cubiccurve2d-getctrlp1.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Cubic...</span></a></div>
+<h4 id="next-chapter">Next chapter...</h4>
+<p>What you will learn in the next chapter:</p>
+<ul><li>Get to know CubicCurve2D.contains(Point2D p)</li><li>Syntax for CubicCurve2D.contains(Point2D p)</li><li>Parameter for CubicCurve2D.contains(Point2D p)</li><li>Returns for CubicCurve2D.contains(Point2D p)</li><li>Example - CubicCurve2D.contains(Point2D p)</li></ul>
+    <div class="pager"><a class="pager-btn" href="cursor-cursor-custom-cursor.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="class-definition-nestingaclasswithinascope.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Nesting a class within a s...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

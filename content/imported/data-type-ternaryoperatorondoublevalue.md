@@ -3,8 +3,8 @@ title: Ternary operator on double value
 nav: Ternary operator on double...
 description: Imported from the java2s.com archive: Ternary operator on double value
 section: Imported - java2s Archive
-order: 1094
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Ternaryoperatorondoublevalue.htm
+order: 1048
+source: https://web.archive.org/web/20140324200413/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Ternaryoperatorondoublevalue.htm
 ---
 ```java title=Example.java
 public class Main {

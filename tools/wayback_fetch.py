@@ -217,7 +217,13 @@ def prune(node: Node) -> None:
     node.children = keep
 
 
-def looks_like_nav_line(text: str) -> bool:
+def looks_like_nav_line(text: str, row: bool = False) -> bool:
+    """Heuristic: is this text site chrome rather than content?
+
+    row=True relaxes the rules for <tr> cells: table rows are where java2s
+    keeps its numbered article index ("2.2.1. java.lang.Boolean") and its code
+    listings (which can contain words like "trademark" in licence headers).
+    """
     t = text.strip().lower()
     if not t:
         return False
@@ -226,14 +232,18 @@ def looks_like_nav_line(text: str) -> bool:
     # "Java » JDK 7 » Asynchronous Channel" breadcrumbs etc.
     if len(t) < 80 and (" » " in t or " << " in t or " « " in t):
         return True
-    if t.startswith(("copyright", "©")) or "all rights reserved" in t:
+    limit = 400 if row else 160
+    if t.startswith(("copyright", "©")) and len(t) < limit:
+        return True
+    if "all rights reserved" in t and len(t) < limit:
         return True
     if "contact us" in t and len(t) < 80:
         return True
-    if "trademark" in t or "demo source and support" in t:
+    if ("trademark" in t or "demo source and support" in t) and len(t) < limit:
         return True
-    # numbered table-of-contents entries: "1.3.2 Program Comments..."
-    if re.match(r"^(\d+\s*\.\s*)+\d", t):
+    # numbered table-of-contents entries: "1.3.2 Program Comments..." - these
+    # are navigation in prose, but content when they are table rows.
+    if not row and re.match(r"^(\d+\s*\.\s*)+\d", t) and len(t) < 120:
         return True
     return False
 
@@ -268,6 +278,7 @@ def extract(raw: str, base_url: str) -> tuple[str, str, str]:
     prune(body)
 
     out: list[str] = []
+    dbg = [0]
     code_buf: list[str] | None = None   # committed code lines
     code_line: list[str] = []            # current code line fragments
     buf: list[str] = []                  # current paragraph / inline run
@@ -343,6 +354,11 @@ def extract(raw: str, base_url: str) -> tuple[str, str, str]:
         nonlocal code_buf
         tag = n.tag
         in_code = code_buf is not None
+        if os.environ.get("J2S_DEBUG"):
+            dbg[0] += 1
+            if dbg[0] <= 40:
+                print(f"[walk {dbg[0]:2d}] <{tag}> in_code={in_code} text={n.text()[:40]!r}",
+                      file=sys.stderr)
 
         if _has_code_class(n) and not in_code:
             start_code()
@@ -431,10 +447,11 @@ def extract(raw: str, base_url: str) -> tuple[str, str, str]:
             flush_para()
             row_links = sum(1 for c in n.iter() if c.tag == "a")
             row_text = n.text()
+            code_row = any(has_code_descendant(c) for c in n.children if isinstance(c, Node))
             # link-heavy, short rows are navigation menus / breadcrumbs
-            if row_links >= 3 and len(row_text) < 200:
+            if row_links >= 3 and len(row_text) < 200 and not code_row:
                 return
-            if looks_like_nav_line(row_text):
+            if not code_row and looks_like_nav_line(row_text, row=True):
                 return
             cell_nodes = [c for c in n.children
                           if isinstance(c, Node) and c.tag in ("td", "th")]
@@ -525,8 +542,16 @@ def extract(raw: str, base_url: str) -> tuple[str, str, str]:
                     walk_inline(c, code)
 
     # body-level walk, remembering separator rows
+    if os.environ.get("J2S_DEBUG"):
+        kids = [getattr(c, "tag", "#text") for c in body.children]
+        print(f"[debug] body children: {kids}", file=sys.stderr)
+        print(f"[debug] body text head: {body.text()[:120]!r}", file=sys.stderr)
     walk(body)
     flush_para()
+    if os.environ.get("J2S_DEBUG"):
+        print(f"[debug] out lines={len(out)}", file=sys.stderr)
+        for line in out[:8]:
+            print(f"[debug]   {line[:120]!r}", file=sys.stderr)
 
     # post-process: convert pipe-only runs into markdown tables, drop noise
     md = cleanup_markdown("\n".join(out))
@@ -604,13 +629,20 @@ def cleanup_markdown(md: str) -> str:
     text = "\n".join(lines)
     text = re.sub(r"\n{3,}", "\n\n", text)
 
-    # post-pass: lone pipe rows are broken table fragments, not real tables
+    # post-pass: flatten only genuinely lone pipe rows (broken table fragments).
+    # Rows that belong to a table (adjacent to other pipe rows / a separator)
+    # must stay intact, including narrow two-column index tables.
     fixed: list[str] = []
-    for line in text.split("\n"):
+    src2 = text.split("\n")
+    for idx, line in enumerate(src2):
         s = line.strip()
-        if s.startswith("|") and s.endswith("|") and s.count("|") <= 4:
+        prev = src2[idx - 1].strip() if idx else ""
+        nxt = src2[idx + 1].strip() if idx + 1 < len(src2) else ""
+        is_sep = bool(re.fullmatch(r"\|[\s:|-]*\|", s))
+        in_table = is_sep or prev.startswith("|") or nxt.startswith("|")
+        if s.startswith("|") and s.endswith("|") and s.count("|") <= 4 and not in_table:
             plain = re.sub(r"\s*\|\s*", "  ", s).strip("| ").strip()
-            if plain and not looks_like_nav_line(plain):
+            if plain and not looks_like_nav_line(plain, row=True):
                 fixed.append(plain)
             continue
         fixed.append(line)

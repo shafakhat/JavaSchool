@@ -54,11 +54,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */import java.util.ArrayList;
+ */
+import java.util.ArrayList;
 import java.util.List;
 public class Main {
   // -----------------------------------------------------------------------
- /**
+  /**
    * Splits the provided text into an array, using whitespace as the
    * separator, preserving all tokens, including empty tokens created by
    * adjacent separators. This is an alternative to using StringTokenizer.
@@ -81,7 +82,8 @@ public class Main {
    * @param str  the String to parse, may be &lt;code&gt;null&lt;/code&gt;
    * @return an array of parsed Strings, &lt;code&gt;null&lt;/code&gt; if null String input
    * @since 2.1
-   */ public static String[] splitPreserveAllTokens(String str) {
+   */
+  public static String[] splitPreserveAllTokens(String str) {
       return splitWorker(str, null, -1, true);
   }
   /**
@@ -97,11 +99,12 @@ public class Main {
    * treated as empty token separators; if &lt;code&gt;false&lt;/code&gt;, adjacent
    * separators are treated as one separator.
    * @return an array of parsed Strings, &lt;code&gt;null&lt;/code&gt; if null String input
-   */ private static String[] splitWorker(String str, String separatorChars, int max, boolean preserveAllTokens) {
+   */
+  private static String[] splitWorker(String str, String separatorChars, int max, boolean preserveAllTokens) {
       // Performance tuned for 2.0 (JDK1.4)
- // Direct code is quicker than StringTokenizer.
- // Also, StringTokenizer uses isSpace() not isWhitespace()
- if (str == null) {
+      // Direct code is quicker than StringTokenizer.
+      // Also, StringTokenizer uses isSpace() not isWhitespace()
+      if (str == null) {
           return null;
       }
       int len = str.length();
@@ -115,7 +118,7 @@ public class Main {
       boolean lastMatch = false;
       if (separatorChars == null) {
           // Null separator means use whitespace
- while (i &lt; len) {
+          while (i &lt; len) {
               if (Character.isWhitespace(str.charAt(i))) {
                   if (match || preserveAllTokens) {
                       lastMatch = true;
@@ -135,7 +138,7 @@ public class Main {
           }
       } else if (separatorChars.length() == 1) {
           // Optimise 1 character case
- char sep = separatorChars.charAt(0);
+          char sep = separatorChars.charAt(0);
           while (i &lt; len) {
               if (str.charAt(i) == sep) {
                   if (match || preserveAllTokens) {
@@ -156,7 +159,7 @@ public class Main {
           }
       } else {
           // standard case
- while (i &lt; len) {
+          while (i &lt; len) {
               if (separatorChars.indexOf(str.charAt(i)) &gt;= 0) {
                   if (match || preserveAllTokens) {
                       lastMatch = true;
@@ -181,7 +184,7 @@ public class Main {
       return (String[]) list.toArray(new String[list.size()]);
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="data-type-splitstheprovidedtextintoanarrayseparatorstringspecifiedreturnsamaximu.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Splits the provided text i...</span></a><a class="pager-btn pager-next" href="data-type-getsthesubstringbeforethelastoccurrenceofaseparatortheseparatorisnotre.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Gets the substring before ...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="class-comparingobjectvaluesusinghashcodes.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Comparing Object Values Us...</span></a><a class="pager-btn pager-next" href="data-type-dateerachange.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Date Era change</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -44,9 +44,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h3 id="big-andnot-on-biginteger">Big andNot on BigInteger</h3>
 <p>BigInteger andNot(BigInteger val) Returns a BigInteger whose value is (this &amp; ~val).</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.andNot(bi);
   }
@@ -55,8 +55,8 @@ publicclass Main {
 <h3 id="get-the-number-of-bit-in-a-biginteger">Get the number of bit in a BigInteger</h3>
 <p>int bitLength() Returns the number of bits in the minimal two's-complement representation of this BigInteger, excluding a sign bit.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     BigInteger n = new BigInteger("1000000000000");
     BigInteger one = new BigInteger("1");
     while (!n.isProbablePrime(7))
@@ -69,9 +69,9 @@ publicclass Main {
 <h3 id="clear-designated-bit-from-biginteger">Clear designated bit from BigInteger</h3>
 <p>BigInteger clearBit(int n) Returns a BigInteger whose value is equivalent to this BigInteger with the designated bit cleared.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.clearBit(3);
   }
@@ -80,9 +80,9 @@ publicclass Main {
 <h3 id="flip-designated-bit-in-biginteger">Flip designated bit in BigInteger</h3>
 <p>BigInteger flipBit(int n) returns a BigInteger whose value is equivalent to this BigInteger with the designated bit flipped.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.flipBit(3);
     System.out.println(bi);
@@ -92,8 +92,8 @@ publicclass Main {
 <h3 id="negate-a-biginteger">Negate a BigInteger</h3>
 <p>BigInteger negate() returns a BigInteger whose value is (-this).</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
+public class Main {
+  public static void main(String[] argv) throws Exception {
     BigInteger bi1 = new BigInteger("1234567890123456890");
     bi1 = bi1.negate();
     System.out.println(bi1);
@@ -103,9 +103,9 @@ publicclass Main {
 <h3 id="not-operation-on-biginteger">Not operation on BigInteger</h3>
 <p>BigInteger not() returns a BigInteger whose value is (~this).</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.not();
   }
@@ -113,9 +113,9 @@ publicclass Main {
 <h3 id="or-a-biginteger">or a BigInteger</h3>
 <p>BigInteger or(BigInteger val) returns a BigInteger whose value is (this | val).</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.or(bi);
   }
@@ -123,9 +123,9 @@ publicclass Main {
 <h3 id="set-bit-value-on-biginteger">Set bit value on BigInteger</h3>
 <p>BigInteger setBit(int n) returns a BigInteger whose value is equivalent to this BigInteger with the designated bit set.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.setBit(3);
     System.out.println(bi);
@@ -135,9 +135,9 @@ publicclass Main {
 <h3 id="if-the-designated-bit-is-set">If the designated bit is set</h3>
 <p>boolean testBit(int n) Returns true if and only if the designated bit is set.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     boolean b = bi.testBit(3);
     b = bi.testBit(16);
@@ -148,9 +148,9 @@ publicclass Main {
 <h3 id="bit-xor-calculation-on-biginteger">Bit xor calculation on BigInteger</h3>
 <p>BigInteger xor(BigInteger val) Returns a BigInteger whose value is (this ^ val).</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] bytes = newbyte[] { 0x1, 0x00, 0x00 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] bytes = new byte[] { 0x1, 0x00, 0x00 };
     BigInteger bi = new BigInteger(bytes);
     bi = bi.xor(bi);
     System.out.println(bi);
@@ -164,7 +164,7 @@ publicclass Main {
 <p>BigDecimal BigDecimal constants BigDecimal Rounding mode BigDecimal creation BigDecimal calculation BigDecimal convert BigDecimal Comparison BigDecimal to String BigDecimal decimal point BigDecimal precision BigDecimal format</p>
 <h4 id="biginteger">BigInteger</h4>
 <p>BigInteger class BigInteger creation BigInteger add, subtract, multiply and divide BigInteger power and modPow BigInteger conversion BigInteger to String BigInteger bit and,or,xor,test,flip,negate BigInteger bit shift left and right BigInteger prime value BigDecimal BigDecimal constants BigDecimal Rounding mode BigDecimal creation BigDecimal calculation BigDecimal convert BigDecimal Comparison BigDecimal to String BigDecimal decimal point BigDecimal precision BigDecimal format</p>
-    <div class="pager"><a class="pager-btn" href="regular-expressions-greedyqualifier.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Greedy Qualifier</span></a><a class="pager-btn pager-next" href="apache-common-httppostmethodexample.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Http post method Example</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-gettimeinmillisecondsusingjavacalendar.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Get time in milliseconds u...</span></a><a class="pager-btn pager-next" href="data-type-obtainingthecharactersinastringasanarrayofbytes.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Obtaining the Characters i...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

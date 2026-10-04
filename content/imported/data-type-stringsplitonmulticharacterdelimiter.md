@@ -3,7 +3,7 @@ title: String split on multicharacter delimiter
 nav: String split on multichara...
 description: /**************************************************************************************
 section: Imported - java2s Archive
-order: 1194
+order: 1160
 source: https://web.archive.org/web/2014/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Stringsplitonmulticharacterdelimiter.htm
 ---
 ```java title=Example.java

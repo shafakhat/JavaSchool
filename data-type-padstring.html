@@ -55,7 +55,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * GNU General Public License for more details.
  *
  * See COPYING.TXT for details.
- */import java.util.HashMap;
+ */
+import java.util.HashMap;
 import java.util.regex.Pattern;
 /**
  * Utilities for String formatting, manipulation, and queries.
@@ -64,7 +65,8 @@ import java.util.regex.Pattern;
  *
  * @author Stephen Ostermiller http://ostermiller.org/contact.pl?regarding=Java+Utilities
  * @since ostermillerutils 1.00.00
- */public class StringHelper {
+ */
+public class StringHelper {
   /**
    * Pad the beginning of the given String with spaces until
    * the String is of the given length.
@@ -79,7 +81,8 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String prepad(String s, int length){
+   */
+  public static String prepad(String s, int length){
     return prepad(s, length, ' ');
   }
   /**
@@ -97,7 +100,8 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String prepad(String s, int length, char c){
+   */
+  public static String prepad(String s, int length, char c){
     int needed = length - s.length();
     if (needed &lt;= 0){
       return s;
@@ -123,7 +127,8 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String postpad(String s, int length){
+   */
+  public static String postpad(String s, int length){
     return postpad(s, length, ' ');
   }
   /**
@@ -141,7 +146,8 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String postpad(String s, int length, char c){
+   */
+  public static String postpad(String s, int length, char c){
     int needed = length - s.length();
     if (needed &lt;= 0){
       return s;
@@ -172,7 +178,8 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String midpad(String s, int length){
+   */
+  public static String midpad(String s, int length){
     return midpad(s, length, ' ');
   }
   /**
@@ -195,7 +202,8 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String midpad(String s, int length, char c){
+   */
+  public static String midpad(String s, int length, char c){
     int needed = length - s.length();
     if (needed &lt;= 0){
       return s;
@@ -213,7 +221,7 @@ import java.util.regex.Pattern;
     return sb.toString();
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="java-java-oca-ocp-practice-question-1177.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a><a class="pager-btn pager-next" href="data-type-usetostringmethodofshortclasstoconvertshortintostring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Use toString method of Sho...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="jdk-7-maintaininguserdefinedfileattributesusingtheuserdefinedfileattributeview.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Maintaining user defined f...</span></a><a class="pager-btn pager-next" href="data-type-returnsadatesettothefirstpossiblemillisecondofthemonthjustaftermidnigh.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Returns a Date set to the ...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

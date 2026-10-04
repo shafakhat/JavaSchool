@@ -3,8 +3,8 @@ title: Integer Data Types in Java
 nav: Integer Data Types in Java
 description: int -2147483648 -- 2147483647 occupy 4 bytes (32 bits) in memory
 section: Imported - java2s Archive
-order: 1022
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/IntegerDataTypesinJavamemoryandlength.htm
+order: 1028
+source: https://web.archive.org/web/2020/http://www.java2s.com/Tutorial/Java/0040__Data-Type/IntegerDataTypesinJavamemoryandlength.htm
 ---
 - There are four types of integer data variables.
 - They can store both negative and positive values.

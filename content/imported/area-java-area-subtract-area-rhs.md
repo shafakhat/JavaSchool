@@ -3,15 +3,15 @@ title: Java Tutorial - Java Area.subtract(Area rhs)
 nav: Java Tutorial - Java Area....
 description: In the following code shows how to use Area.subtract(Area rhs) method.
 section: Imported - java2s Archive
-order: 1002
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_subtract_Area_rhs_.htm
+order: 1117
+source: https://web.archive.org/web/20140830013029/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_subtract_Area_rhs_.htm
 ---
 ### Syntax
 
 Area.subtract(Area rhs) has the following syntax.
 
 ```java title=Example.java
-publicvoid subtract(Area rhs)
+public void subtract(Area rhs)
 ```
 
 ### Example
@@ -26,8 +26,8 @@ import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     Ellipse2D e1 = new Ellipse2D.Double (20.0, 20.0, 80.0, 70.0);
     Ellipse2D e2 = new Ellipse2D.Double (20.0, 70.0, 40.0, 40.0);
@@ -39,7 +39,7 @@ publicclass Main extends JPanel {
     g2.setColor (Color.black);
     g2.drawString ("subtract", 20, 140);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.getContentPane().add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -55,7 +55,8 @@ Contributors:
 2004 Andy Jefferson - moved intArrayToString, booleanArrayToString from SM
 2007 Xuan Baldauf - toJVMIDString hex fix
     ...
-**********************************************************************/import java.io.File;
+**********************************************************************/
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -69,14 +70,16 @@ import java.util.jar.JarFile;
  * Utilities for String manipulation.
  *
  * @version $Revision: 1.23 $
- **/public class StringUtils
+ **/
+public class StringUtils
 {
   /** Utility to return a left-aligned version of a string padded to the
    * number of characters specified.
    * @param input The input string
    * @param length The length desired
    * @return The updated string
-   **/ public static String leftAlignedPaddedString(String input,int length)
+   **/
+  public static String leftAlignedPaddedString(String input,int length)
   {
       if (length &lt;= 0)
       {
@@ -113,7 +116,8 @@ import java.util.jar.JarFile;
    * @param input The input string
    * @param length The length desired
    * @return The updated string
-   **/ public static String rightAlignedPaddedString(String input,int length)
+   **/
+  public static String rightAlignedPaddedString(String input,int length)
   {
       if (length &lt;= 0)
       {
@@ -146,7 +150,8 @@ import java.util.jar.JarFile;
       return output.toString();
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="java-java-oca-ocp-practice-question-1163.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a><a class="pager-btn pager-next" href="web-services-soa-thedemodemonstratestheuseofthejavascriptande4xdynamiclanguagest.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">The demo demonstrates the ...</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.22.1.</th><th>String concatenation: '+' operation generates a new String object</th></tr></thead><tbody><tr><td>2.22.2.</td><td>String concatenation: The + contains null</td></tr><tr><td>2.22.3.</td><td>String concatenation: Convert an integer to String and join with two other strings</td></tr><tr><td>2.22.4.</td><td>String concatenation: Combining a string and integers</td></tr><tr><td>2.22.5.</td><td>String concatenation: Combining integers and a string</td></tr><tr><td>2.22.6.</td><td>Substring replacement.</td></tr><tr><td>2.22.7.</td><td>Pad string</td></tr><tr><td>2.22.8.</td><td>Padded String</td></tr><tr><td>2.22.9.</td><td>Return a string padded with the given string for the given count.</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="java-java-oca-ocp-practice-question-1100.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a><a class="pager-btn pager-next" href="data-type-parsestringdatevalueinputwithsimpledateformatddmmmyy.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Parse string date value in...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

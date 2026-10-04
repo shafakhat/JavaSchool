@@ -48,22 +48,22 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.CubicCurve2D;
-publicclass Main extends Frame {
-  publicstaticvoid main(String[] args) {
+public class Main extends Frame {
+  public static void main(String[] args) {
     new Main().setVisible(true);
   }
   public Main () {
     setSize(400, 550);
   }
-  publicvoid paint(Graphics g) {
+  public void paint(Graphics g) {
     Graphics2D g2d = (Graphics2D) g;
     CubicCurve2D cubcurve = new CubicCurve2D.Float(30, 400, 150, 400, 200, 500, 350, 450);
     g2d.draw(cubcurve);
     System.out.println(cubcurve.getBounds());
   }
-}</code></pre></div>
-<p>The code above generates the following result.</p>
-    <div class="pager"><a class="pager-btn" href="borderlayout-borderlayout-east.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="cubiccurve2d-cubiccurve2d-getctrlx1.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Swing Tutorial - Java...</span></a></div>
+}
+java title=Example.java</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="cubiccurve2d-cubiccurve2d-contains-double-x-double-y.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="class-definition-initializationorder.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Initialization order</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

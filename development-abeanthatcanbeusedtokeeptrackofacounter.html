@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A bean that can be used to keep track of a counter - JavaSchool</title>
+<meta name="description" content="public class Counter implements java.util.Iterator, Serializable {">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-abeanthatcanbeusedtokeeptrackofacounter">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-59-debug.html">Debug</a></nav>
+    <h1>A bean that can be used to keep track of a counter</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright (c) 2002-2003 by OpenSymphony
+ * All rights reserved.
+ */
+import java.io.Serializable;
+/**
+ * &lt;p/&gt;
+ * Since it is an Iterator it can be used by the iterator tag
+ *
+ * @author Rickard Öberg (rickard@middleware-company.com)
+ * @version $Revision: 1282 $
+ * @see &lt;related&gt;
+ */
+public class Counter implements java.util.Iterator, Serializable {
+    boolean wrap = false;
+    // Attributes ----------------------------------------------------
+    long first = 1;
+    long current = first;
+    long interval = 1;
+    long last = -1;
+    public void setAdd(long addition) {
+        current += addition;
+    }
+    public void setCurrent(long current) {
+        this.current = current;
+    }
+    public long getCurrent() {
+        return current;
+    }
+    public void setFirst(long first) {
+        this.first = first;
+        current = first;
+    }
+    public long getFirst() {
+        return first;
+    }
+    public void setInterval(long interval) {
+        this.interval = interval;
+    }
+    public long getInterval() {
+        return interval;
+    }
+    public void setLast(long last) {
+        this.last = last;
+    }
+    public long getLast() {
+        return last;
+    }
+    // Public --------------------------------------------------------
+    public long getNext() {
+        long next = current;
+        current += interval;
+        if (wrap &amp;&amp; (current &gt; last)) {
+            current -= ((1 + last) - first);
+        }
+        return next;
+    }
+    public long getPrevious() {
+        current -= interval;
+        if (wrap &amp;&amp; (current &lt; first)) {
+            current += (last - first + 1);
+        }
+        return current;
+    }
+    public void setWrap(boolean wrap) {
+        this.wrap = wrap;
+    }
+    public boolean isWrap() {
+        return wrap;
+    }
+    public boolean hasNext() {
+        return ((last == -1) || wrap) ? true : (current &lt;= last);
+    }
+    public Object next() {
+        return new Long(getNext());
+    }
+    public void remove() {
+        // Do nothing
+    }
+}
+///////////////////
+/*
+ * Copyright (c) 2002-2003 by OpenSymphony
+ * All rights reserved.
+ */
+package com.opensymphony.webwork.util;
+import junit.framework.TestCase;
+/**
+ * User: plightbo
+ * Date: Jan 7, 2004
+ * Time: 7:55:35 PM
+ */
+public class CounterTest extends TestCase {
+    Counter c = new Counter();
+    public void testCurrentAfterNext() {
+        long next = c.getNext();
+        long current = c.getCurrent();
+        assertEquals(next + 1, current);
+    }
+    public void testCurrentBeforeNext() {
+        long current = c.getCurrent();
+        long next = c.getNext();
+        assertEquals(current, next);
+    }
+    public void testWrap() {
+        c.setWrap(true);
+        c.setLast(1);
+        long a = c.getNext();
+        long b = c.getNext();
+        assertEquals(1, a);
+        assertEquals(1, b);
+    }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.59.1.</th><th>Prints messages formatted for a specific line width.</th></tr></thead><tbody><tr><td>6.59.2.</td><td>A bean that can be used to keep track of a counter</td></tr><tr><td>6.59.3.</td><td>Swing Console</td></tr><tr><td>6.59.4.</td><td>Methods for logging events</td></tr><tr><td>6.59.5.</td><td>Debug Utility</td></tr><tr><td>6.59.6.</td><td>A helper class for printing indented text</td></tr><tr><td>6.59.7.</td><td>Random data for test</td></tr><tr><td>6.59.8.</td><td>Count Up Down Latch</td></tr><tr><td>6.59.9.</td><td>A simple logging facility.</td></tr><tr><td>6.59.10.</td><td>Printing indented text</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-printsmessagesformattedforaspecificlinewidth.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Prints messages formatted ...</span></a><a class="pager-btn pager-next" href="development-tobase64.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">to Base64</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

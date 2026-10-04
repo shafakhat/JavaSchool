@@ -3,8 +3,8 @@ title: How to append element to an array
 nav: How to append element to a...
 description: Class<?> clazz = obj != null ? obj.getClass() : array.getClass().getComponentType();
 section: Imported - java2s Archive
-order: 1024
-source: https://web.archive.org/web/20130905084049/http://java2s.com/Tutorials/Java/Array/How_to_append_element_to_an_array.htm
+order: 1120
+source: https://web.archive.org/web/2016/http://java2s.com/Tutorials/Java/Array/How_to_append_element_to_an_array.htm
 ---
 In this chapter you will learn:
 
@@ -15,8 +15,8 @@ In this chapter you will learn:
 
 ```java title=Example.java
 import java.lang.reflect.Array;
-publicclass Main {
-  publicstatic <T> T[] add(T[] array, T obj) {
+public class Main {
+  public static <T> T[] add(T[] array, T obj) {
     if (array == null && obj == null) {
       return null;
     }
@@ -36,15 +36,15 @@ publicclass Main {
 
 ```java title=Example.java
 import java.lang.reflect.Array;
-publicclass Util {
+public class Util {
   /**
    * Returns a new array that is the concatenation of a1 and a2.
    *
    * @param a1
    * @param a2
    * @return
-   */publicstaticint[] append(int[] a1, int[] a2) {
-    int[] ret = newint[a1.length + a2.length];
+   */ public static int[] append(int[] a1, int[] a2) {
+    int[] ret = new int[a1.length + a2.length];
     System.arraycopy(a1, 0, ret, 0, a1.length);
     System.arraycopy(a2, 0, ret, a1.length, a2.length);
     return ret;
@@ -55,8 +55,8 @@ publicclass Util {
    * @param a1
    * @param a2
    * @return
-   */publicstaticdouble[] append(double[] a1, double[] a2) {
-    double[] ret = newdouble[a1.length + a2.length];
+   */ public static double[] append(double[] a1, double[] a2) {
+    double[] ret = new double[a1.length + a2.length];
     System.arraycopy(a1, 0, ret, 0, a1.length);
     System.arraycopy(a2, 0, ret, a1.length, a2.length);
     return ret;
@@ -70,8 +70,8 @@ publicclass Util {
    *            Original array
    * @param elem
    *            Element to add to end
-   */publicstaticint[] append(int[] v, int elem) {
-    int[] ret = newint[v.length + 1];
+   */ public static int[] append(int[] v, int elem) {
+    int[] ret = new int[v.length + 1];
     System.arraycopy(v, 0, ret, 0, v.length);
     ret[v.length] = elem;
     return ret;
@@ -85,8 +85,8 @@ publicclass Util {
    *            Original array
    * @param elem
    *            Element to add to end
-   */publicstaticboolean[] append(boolean[] v, boolean elem) {
-    boolean[] ret = newboolean[v.length + 1];
+   */ public static boolean[] append(boolean[] v, boolean elem) {
+    boolean[] ret = new boolean[v.length + 1];
     System.arraycopy(v, 0, ret, 0, v.length);
     ret[v.length] = elem;
     return ret;
@@ -102,7 +102,7 @@ publicclass Util {
    *            Element to add to end
    * @return Array with length v+1 that is (v0,v1,...,vn,elem). Runtime type
    *         will be same as he pased-in array.
-   */publicstatic Object[] append(Object[] v, Object elem) {
+   */ public static Object[] append(Object[] v, Object elem) {
     Object[] ret = (Object[]) Array.newInstance(v.getClass()
         .getComponentType(), v.length + 1);
     System.arraycopy(v, 0, ret, 0, v.length);

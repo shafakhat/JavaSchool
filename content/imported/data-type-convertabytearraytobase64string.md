@@ -3,14 +3,32 @@ title: Convert a byte array to base64 string
 nav: Convert a byte array to ba...
 description: Imported from the java2s.com archive: Convert a byte array to base64 string
 section: Imported - java2s Archive
-order: 1024
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Convertabytearraytobase64string.htm
+order: 1384
+source: https://web.archive.org/web/20140829083510/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Convertabytearraytobase64string.htm
 ---
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    byte[] buf = newbyte[] { 0x12, 0x23 };
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    byte[] buf = new byte[] { 0x12, 0x23 };
     String s = new sun.misc.BASE64Encoder().encode(buf);
   }
 }
 ```
+
+| 2.37.1. | Convert String to java int Example |
+|---|---|
+| 2.37.2. | Converting Integer to Hex String |
+| 2.37.3. | Converting int to binary string |
+| 2.37.4. | Convert int to Octal String |
+| 2.37.5. | valueOf(): convert to String |
+| 2.37.6. | Converting byte to String |
+| 2.37.7. | Converting long to String |
+| 2.37.8. | Converting int to String |
+| 2.37.9. | Converting float to String |
+| 2.37.10. | Converting double to String |
+| 2.37.11. | Converting short to String |
+| 2.37.12. | Converting Char array to String |
+| 2.37.13. | Converting a Primitive Type Value to a String |
+| 2.37.14. | Convert Characters to Lower Case |
+| 2.37.15. | Convert Characters to Upper Case |
+| 2.37.16. | Convert a byte array to base64 string |

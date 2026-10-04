@@ -49,24 +49,25 @@ import java.awt.Stroke;
 import java.awt.geom.Rectangle2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     Stroke stroke = new BasicStroke(10, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0,
-        newfloat[] { 3, 1 }, 0);
+        new float[] { 3, 1 }, 0);
     g2.setStroke(stroke);
     g2.setPaint(Color.black);
     g2.draw(new Rectangle2D.Float(10, 10, 200, 200));
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setBounds(20,20, 500,500);
     frame.setVisible(true);
   }
-}</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="data-type-assignintvaluetocharvariable.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Assign int value to char v...</span></a><a class="pager-btn pager-next" href="apache-common-beanutilsdealwithcollections.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Bean Utils</span></a></div>
+}
+java title=Example.java</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="data-type-amutableintwrapper.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">A mutable int wrapper.</span></a><a class="pager-btn pager-next" href="class-blankfinalfields.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Blank final fields</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

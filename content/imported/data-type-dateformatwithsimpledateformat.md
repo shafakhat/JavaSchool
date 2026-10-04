@@ -3,8 +3,8 @@ title: Date Format with SimpleDateFormat
 nav: Date Format with SimpleDat...
 description: Imported from the java2s.com archive: Date Format with SimpleDateFormat
 section: Imported - java2s Archive
-order: 1229
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/DateFormatwithSimpleDateFormat.htm
+order: 1132
+source: https://web.archive.org/web/20140811061415/http://www.java2s.com/Tutorial/Java/0040__Data-Type/DateFormatwithSimpleDateFormat.htm
 ---
 ```java title=Example.java
 import java.text.SimpleDateFormat;

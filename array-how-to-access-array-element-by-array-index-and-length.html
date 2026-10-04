@@ -43,19 +43,19 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <ul><li>How to access array element by index</li><li>How to get the array length</li></ul>
 <h3 id="array-index">Array Index</h3>
 <p>Array stores elements and we use index to reference a single value in an array. The starting value of the index is 0. If you try to reference elements with negative numbers or numbers greater than the array length, you will get a run-time error.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
-int days[] = {31, 28, 31,};
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String args[]) {
+ int days[] = {31, 28, 31,};
     System.out.println("days[2] is " + days[10]);
   }
 }</code></pre></div>
 <p>It generates the following error.</p>
 <p>We usually use a for loop to access each element in an array. The following code uses a one-dimensional array to find the average of a set of numbers.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String args[]) {
     double nums[] = {10.1, 11.2, 12.3, 13.4, 14.5};
     double result = 0;
-    int i;for (i = 0; i &lt; 5; i++)
+    int i; for (i = 0; i &lt; 5; i++)
       result = result + nums[i];
     System.out.println("Average is " + result / 5);
   }
@@ -63,9 +63,9 @@ int days[] = {31, 28, 31,};
 <p>The output:</p>
 <h3 id="arrays-length">Arrays length</h3>
 <p>Array size, arrayName.length, holds its length. The following code outputs the length of each array by using its length property.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
-    int a1[] = newint[10];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String args[]) {
+    int a1[] = new int[10];
     int a2[] = {1, 2, 3, 4, 5};
     int a3[] = {4, 3, 2, 1};
     System.out.println("length of a1 is " + a1.length);
@@ -77,7 +77,7 @@ int days[] = {31, 28, 31,};
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>How is the multidimensional arrays stored</li><li>How to create a three-dimensional array</li><li>What are Jagged array</li><li>How to initialize multidimensional arrays during declaration</li></ul>
-    <div class="pager"><a class="pager-btn" href="j2ee-hardcodeconstantinsql.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Hard Code Constant In SQL</span></a><a class="pager-btn pager-next" href="java-java-aclfileattributeview-get-from-path.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java AclFileAttributeView ...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-creatingacalendarobjectfromalocale.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Creating a Calendar object...</span></a><a class="pager-btn pager-next" href="web-services-soa-inthissamplewearedeployinganxmlbeansgeneratedservice.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">In this sample, we are dep...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -3,8 +3,8 @@ title: How to sort an array in Java
 nav: How to sort an array in Java
 description: The following methods sort the specified array into ascending numerical order.
 section: Imported - java2s Archive
-order: 1033
-source: https://web.archive.org/web/20130905055437/http://java2s.com/Tutorials/Java/Array/How_to_sort_an_array_in_Java.htm
+order: 1128
+source: https://web.archive.org/web/2016/http://java2s.com/Tutorials/Java/Array/How_to_sort_an_array_in_Java.htm
 ---
 In this chapter you will learn:
 
@@ -37,9 +37,9 @@ The following methods sort the specified array into ascending numerical order.
 
 ```java title=Example.java
 import java.util.Arrays;
-publicclass Main{
-  publicstaticvoid main(String args[]) {
-    int array[] = newint[10];
+public class Main{
+  public static void main(String args[]) {
+    int array[] = new int[10];
     for (int i = 0; i < 10; i++){
       array[i] = -3 * i;
     }
@@ -58,8 +58,8 @@ The output:
 
 ```java title=Example.java
 import java.util.Arrays;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     String[] teams = new String[5];
     teams[0] = "M";
     teams[1] = "c";
@@ -83,13 +83,13 @@ The code above generates the following result.
 ```java title=Example.java
 import java.util.Arrays;
 import java.util.Collections;
-publicclass Main {
-    publicstaticvoid main(String[] args) {
-        Integer[] arrayToSort = newInteger[] {
-            newInteger(5),
-            newInteger(89),
-            newInteger(16),
-            newInteger(2)
+public class Main {
+    public static void main(String[] args) {
+        Integer[] arrayToSort = new Integer[] {
+            new Integer(5),
+            new Integer(89),
+            new Integer(16),
+            new Integer(2)
         };
         Arrays.sort(arrayToSort, Collections.reverseOrder());
         for (Integer i : arrayToSort) {

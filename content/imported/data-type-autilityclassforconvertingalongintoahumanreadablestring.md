@@ -3,8 +3,8 @@ title: A utility class for converting a long into a human readable string.
 nav: A utility class for conver...
 description: * Copyright 2008, Red Hat Middleware LLC, and individual contributors
 section: Imported - java2s Archive
-order: 1010
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Autilityclassforconvertingalongintoahumanreadablestring.htm
+order: 1301
+source: https://web.archive.org/web/20140829083916/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Autilityclassforconvertingalongintoahumanreadablestring.htm
 ---
 ```java title=Example.java
 /*
@@ -27,7 +27,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * License along with this software; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
- */import java.io.Serializable;
+ */
+import java.io.Serializable;
 /**
  * TimeFormat is a utility class for converting a long into a human readable
  * string.
@@ -44,34 +45,36 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * @author <a href="mailto:jhaynie@vocalocity.net">Jeff Haynie</a>
  * @date $Date: 2008-11-14 07:45:28 -0500 (Fri, 14 Nov 2008) $
  * @version $Revision: 81022 $
- */publicfinalclass TimeFormat implements Serializable {
-  publicstaticfinalboolean DEBUG = false;
-  publicstaticfinallong ONE_MILLISECOND = (1);
-  publicstaticfinallong ONE_SECOND = (ONE_MILLISECOND * 1000);
-  publicstaticfinallong ONE_MINUTE = (ONE_SECOND * 60);
-  publicstaticfinallong ONE_HOUR = (ONE_MINUTE * 60);
-  publicstaticfinallong ONE_DAY = (ONE_HOUR * 24);
-  publicstaticfinalint ROUND_TO_MILLISECOND = 5;
-  publicstaticfinalint ROUND_TO_SECOND = 4;
-  publicstaticfinalint ROUND_TO_MINUTE = 3;
-  publicstaticfinalint ROUND_TO_HOUR = 2;
-  publicstaticfinalint ROUND_TO_DAY = 1;
-  privatelong original = 0;
-  privatelong time = 0;
-  privatelong remainder = 0;
-  privatelong days = 0;
-  privatelong hours = 0;
-  privatelong minutes = 0;
-  privatelong seconds = 0;
-  privatelong milliseconds = 0;
-  privateboolean micro = false;
-  privateint rounding = ROUND_TO_SECOND;
+ */
+public final class TimeFormat implements Serializable {
+  public static final boolean DEBUG = false;
+  public static final long ONE_MILLISECOND = (1);
+  public static final long ONE_SECOND = (ONE_MILLISECOND * 1000);
+  public static final long ONE_MINUTE = (ONE_SECOND * 60);
+  public static final long ONE_HOUR = (ONE_MINUTE * 60);
+  public static final long ONE_DAY = (ONE_HOUR * 24);
+  public static final int ROUND_TO_MILLISECOND = 5;
+  public static final int ROUND_TO_SECOND = 4;
+  public static final int ROUND_TO_MINUTE = 3;
+  public static final int ROUND_TO_HOUR = 2;
+  public static final int ROUND_TO_DAY = 1;
+  private long original = 0;
+  private long time = 0;
+  private long remainder = 0;
+  private long days = 0;
+  private long hours = 0;
+  private long minutes = 0;
+  private long seconds = 0;
+  private long milliseconds = 0;
+  private boolean micro = false;
+  private int rounding = ROUND_TO_SECOND;
   /**
    * construct a time format
    *
    *
    * @param milliseconds
-   */private TimeFormat(long milliseconds, int round) {
+   */
+  private TimeFormat(long milliseconds, int round) {
     this.rounding = round;
     this.original = milliseconds;
     if (milliseconds >= ONE_SECOND) {
@@ -80,7 +83,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
     } else {
       micro = true;
       // if less than second, we'll just
-// display
+      // display
       time = milliseconds;
     }
   }
@@ -89,35 +92,40 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    *
    * @param milliseconds
-   */private TimeFormat(long milliseconds) {
+   */
+  private TimeFormat(long milliseconds) {
     this(milliseconds, TimeFormat.ROUND_TO_MILLISECOND);
   }
   /**
    * get days
    *
    * @return days
-   */publiclong getDays() {
+   */
+  public long getDays() {
     return days;
   }
   /**
    * get minutes
    *
    * @return minutes
-   */publiclong getMinutes() {
+   */
+  public long getMinutes() {
     return minutes;
   }
   /**
    * get hours
    *
    * @return hours
-   */publiclong getHours() {
+   */
+  public long getHours() {
     return hours;
   }
   /**
    * get seconds
    *
    * @return seconds
-   */publiclong getSeconds() {
+   */
+  public long getSeconds() {
     return seconds;
   }
   /**
@@ -125,7 +133,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    *
    * @param t
-   */publicvoid add(TimeFormat t) {
+   */
+  public void add(TimeFormat t) {
     days += t.days;
     hours += t.hours;
     minutes += t.minutes;
@@ -136,7 +145,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    *
    * @param t
-   */publicvoid getDays(TimeFormat t) {
+   */
+  public void getDays(TimeFormat t) {
     if (t.remainder >= ONE_DAY) {
       t.days = (t.remainder / ONE_DAY);
       t.remainder -= (t.days * ONE_DAY);
@@ -147,7 +157,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    *
    * @param t
-   */publicvoid getHours(TimeFormat t) {
+   */
+  public void getHours(TimeFormat t) {
     if (t.remainder >= ONE_HOUR && t.remainder < ONE_DAY) {
       t.hours = (t.remainder / ONE_HOUR);
       t.remainder -= (t.hours * ONE_HOUR);
@@ -158,7 +169,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    *
    * @param t
-   */publicvoid getMinutes(TimeFormat t) {
+   */
+  public void getMinutes(TimeFormat t) {
     if (t.remainder >= ONE_MINUTE && t.remainder < ONE_HOUR) {
       t.minutes = (t.remainder / ONE_MINUTE);
       t.remainder -= (t.minutes * ONE_MINUTE);
@@ -169,7 +181,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    *
    * @param t
-   */publicvoid getSeconds(TimeFormat t) {
+   */
+  public void getSeconds(TimeFormat t) {
     if (t.remainder >= ONE_SECOND && t.remainder < ONE_MINUTE) {
       t.seconds = (t.remainder / ONE_SECOND);
       t.milliseconds = t.remainder -= (t.seconds * ONE_SECOND);
@@ -183,13 +196,15 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    *
    * @param t
-   */publicvoid getTime(TimeFormat t) {
+   */
+  public void getTime(TimeFormat t) {
     t.getTime();
   }
   /**
    * update
    *
-   */privatevoid getTime() {
+   */
+  private void getTime() {
     getDays(this);
     getHours(this);
     getMinutes(this);
@@ -197,27 +212,32 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
   }
   /**
    * get the milliseconds
-   */publiclong getMilliseconds() {
+   */
+  public long getMilliseconds() {
     return (micro ? time : milliseconds);
   }
   /**
    * print out the time format in a string representation
-   */public String toString() {
+   */
+  public String toString() {
     return format(rounding);
   }
   /**
    * set rounding - one of ROUND_TO_MILLISECONDS, etc.
-   */publicvoid setRounding(int r) {
+   */
+  public void setRounding(int r) {
     rounding = r;
   }
   /**
    * return the rounding
-   */publicint getRouding() {
+   */
+  public int getRouding() {
     return rounding;
   }
   /**
    * format string based on rouding
-   */public String format(int round) {
+   */
+  public String format(int round) {
     if (DEBUG) {
       System.err.println("-->time: " + time + ", round: " + round + ", micro: " + micro
           + ",remainder:" + remainder);
@@ -255,7 +275,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param empty
    * @return
-   */private String formatDays(boolean empty) {
+   */
+  private String formatDays(boolean empty) {
     if (days <= 0) {
       return empty ? "" : "0 days";
     }
@@ -267,7 +288,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param empty
    * @return
-   */private String formatHours(boolean empty) {
+   */
+  private String formatHours(boolean empty) {
     if (hours <= 0) {
       return empty ? "" : "0 hours";
     }
@@ -279,7 +301,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param empty
    * @return
-   */private String formatMinutes(boolean empty) {
+   */
+  private String formatMinutes(boolean empty) {
     if (minutes <= 0) {
       return empty ? "" : "0 minutes";
     }
@@ -291,7 +314,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param empty
    * @return
-   */private String formatSeconds(boolean empty) {
+   */
+  private String formatSeconds(boolean empty) {
     if (seconds <= 0) {
       return empty ? "" : "0 seconds";
     }
@@ -299,11 +323,12 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
   }
   /**
    * handle amt formatting
-   */private String format(String single, String plural, long amt) {
+   */
+  private String format(String single, String plural, long amt) {
     if (amt > 0) {
       return amt + " " + (amt > 1 ? plural : single) + " ";
     }
-    return"";
+    return "";
   }
   /**
    * return a string formatted version of time <code>t</code> rounding to
@@ -312,7 +337,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param t
    * @param round
    * @return String value
-   */publicstatic String valueOf(long t, int round) {
+   */
+  public static String valueOf(long t, int round) {
     TimeFormat f = new TimeFormat(t, round);
     return f.toString();
   }
@@ -323,19 +349,22 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param t
    * @param round
    * @return String value
-   */publicstatic String valueOf(long t) {
+   */
+  public static String valueOf(long t) {
     return valueOf(t, TimeFormat.ROUND_TO_MILLISECOND);
   }
   /**
    * format with a date time
-   */publicstatic String format(String format, long time) {
+   */
+  public static String format(String format, long time) {
     TimeFormat f = new TimeFormat(time);
     return f.parse(format, f.getDays(), f.getHours(), f.getMinutes(), f.getSeconds(), f
         .getMilliseconds());
   }
   /**
    * parse
-   */private String parse(String format, long day, long hour, long minute, long second, long millis) {
+   */
+  private String parse(String format, long day, long hour, long minute, long second, long millis) {
     String s = "";
     int start = 0;
     int len = format.length();
@@ -344,18 +373,18 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
       int sc = c;
       int l = 0;
       switch (tc) {
-      case' ': {
+      case ' ': {
         s += " ";
         break;
       }
-      case'\'': {
+      case '\'': {
         while (++c < len && format.charAt(c) != '\'')
           ;
         s += format.substring(sc + 1, c);
         break;
       }
-      case'D': // days
-case'd':
+      case 'D': // days
+      case 'd':
         while (++c < len && (format.charAt(c) == 'd' || format.charAt(c) == 'D'))
           ;
         l = c - sc;
@@ -363,8 +392,8 @@ case'd':
         s += zeroPad(day, l - 1);
         --c;
         break;
-      case'h': // hours
-case'H':
+      case 'h': // hours
+      case 'H':
         while (++c < len && (format.charAt(c) == 'h' || format.charAt(c) == 'H'))
           ;
         l = c - sc;
@@ -372,8 +401,8 @@ case'H':
         s += zeroPad(hour, l - 1);
         --c;
         break;
-      case'm': // minutes
-case'M':
+      case 'm': // minutes
+      case 'M':
         while (++c < len && (format.charAt(c) == 'm' || format.charAt(c) == 'M'))
           ;
         l = c - sc;
@@ -381,8 +410,8 @@ case'M':
         s += zeroPad(minute, l - 1);
         --c;
         break;
-      case's': // seconds
-case'S':
+      case 's': // seconds
+      case 'S':
         while (++c < len && (format.charAt(c) == 's' || format.charAt(c) == 'S'))
           ;
         l = c - sc;
@@ -390,8 +419,8 @@ case'S':
         s += zeroPad(second, l - 1);
         --c;
         break;
-      case'z': // milliseconds
-case'Z':
+      case 'z': // milliseconds
+      case 'Z':
         while (++c < len && (format.charAt(c) == 'z' || format.charAt(c) == 'Z'))
           ;
         l = c - sc;
@@ -406,7 +435,8 @@ case'Z':
   }
   /**
    * zero pad a number to len
-   */private String zeroPad(long value, int len) {
+   */
+  private String zeroPad(long value, int len) {
     String s = String.valueOf(value);
     int l = s.length();
     String r = "";
@@ -420,7 +450,8 @@ case'Z':
    *
    *
    * @param args
-   */publicstaticvoid main(String args[]) {
+   */
+  public static void main(String args[]) {
     String FORMAT = "D 'days,' HH 'hours,' mm 'minutes and ' ss 'seconds, 'zz 'milliseconds'";
     System.out.println(TimeFormat.format(FORMAT, 1000));
     System.out.println("ONE SECOND: " + TimeFormat.ONE_SECOND);
@@ -456,3 +487,25 @@ case'Z':
  *
  */
 ```
+
+| 2.8.1. | Long Integer Literal |
+|---|---|
+| 2.8.2. | Create a Long object |
+| 2.8.3. | Add two long integers, checking for overflow. |
+| 2.8.4. | Multiply two long integers, checking for overflow. |
+| 2.8.5. | Subtract two long integers, checking for overflow. |
+| 2.8.6. | Convert Long to numeric primitive data types example |
+| 2.8.7. | Convert long primitive to Long object Example |
+| 2.8.8. | Compute distance light travels using long variables |
+| 2.8.9. | Java long Example: long is 64 bit signed type |
+| 2.8.10. | Min and Max values of datatype long |
+| 2.8.11. | Gets the maximum of three long values. |
+| 2.8.12. | Gets the minimum of three long values. |
+| 2.8.13. | Convert Java String to Long example |
+| 2.8.14. | Use toString method of Long class to convert Long into String. |
+| 2.8.15. | Convert from long to String |
+| 2.8.16. | Convert from String to long |
+| 2.8.17. | A utility class for converting a long into a human readable string. |
+| 2.8.18. | Java Sort long Array Example |
+| 2.8.19. | Compare Two Java long Arrays Example |
+| 2.8.20. | Format long with System.out.format |

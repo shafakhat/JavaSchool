@@ -3,8 +3,8 @@ title: Keyed Object Pool
 nav: Keyed Object Pool
 description: System.err.println("Employee " + toString() + " made redundant");
 section: Imported - java2s Archive
-order: 1045
-source: https://web.archive.org/web/20061016093642/http://www.java2s.com/Code/Java/Apache-Common/KeyedObjectPool.htm
+order: 1090
+source: https://web.archive.org/web/20140829200443/http://www.java2s.com/Code/Java/Apache-Common/KeyedObjectPool.htm
 ---
 ```java title=Example.java
 import org.apache.commons.pool.impl.GenericKeyedObjectPool;
@@ -91,5 +91,7 @@ public class SkilledEmployee extends Employee {
 }
 ```
 
-Related examples in the same category
-3. Soft Reference Object Pool Demo
+| 1. | Test Object Pool |
+|---|---|
+| 2. | Test Redundant Object Pool |
+| 3. | Soft Reference Object Pool Demo |

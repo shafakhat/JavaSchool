@@ -3,8 +3,8 @@ title: Check if a String starts with a specified prefix.
 nav: Check if a String starts w...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1167
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/CheckifaStringstartswithaspecifiedprefix.htm
+order: 1125
+source: https://web.archive.org/web/20140829081943/http://www.java2s.com/Tutorial/Java/0040__Data-Type/CheckifaStringstartswithaspecifiedprefix.htm
 ---
 ```java title=Example.java
 /*
@@ -22,10 +22,11 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */public class Main {
+ */
+public class Main {
   // startsWith
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    *
    * <code>null</code>s are handled without exceptions. Two <code>null</code>
    * references are considered to be equal. The comparison is case sensitive.
@@ -44,7 +45,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @return <code>true</code> if the String starts with the prefix, case sensitive, or
    *  both <code>null</code>
    * @since 2.4
-   */ public static boolean startsWith(String str, String prefix) {
+   */
+  public static boolean startsWith(String str, String prefix) {
       return startsWith(str, prefix, false);
   }
   /**
@@ -57,7 +59,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *  (case insensitive) or not.
    * @return <code>true</code> if the String starts with the prefix or
    *  both <code>null</code>
-   */ private static boolean startsWith(String str, String prefix, boolean ignoreCase) {
+   */
+  private static boolean startsWith(String str, String prefix, boolean ignoreCase) {
       if (str == null || prefix == null) {
           return (str == null && prefix == null);
       }
@@ -67,8 +70,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
       return str.regionMatches(ignoreCase, 0, prefix, 0, prefix.length());
   }
   // Empty checks
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -85,7 +88,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */ public static boolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }

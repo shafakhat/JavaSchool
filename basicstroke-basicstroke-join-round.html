@@ -41,7 +41,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     <h1>Java Swing Tutorial - Java BasicStroke JOIN_ROUND</h1>
 <h2 id="syntax">Syntax</h2>
 <p>BasicStroke.JOIN_ROUND has the following syntax.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicstaticfinalint JOIN_ROUND</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public static final int JOIN_ROUND</code></pre></div>
 <h2 id="example">Example</h2>
 <p>In the following code shows how to use BasicStroke.JOIN_ROUND field.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.BasicStroke;
@@ -51,8 +51,8 @@ import java.awt.RenderingHints;
 import java.awt.geom.GeneralPath;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     RenderingHints rh = g2.getRenderingHints();
     rh.put(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -65,15 +65,16 @@ publicclass Main extends JPanel {
     path.lineTo(270.0f, 90.0f);
     g2.draw(path);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setBounds(20,20, 500,500);
     frame.setVisible(true);
   }
-}</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="basicstroke-basicstroke-join-miter.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="borderlayout-borderlayout-after-last-line.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Swing Tutorial - Java...</span></a></div>
+}
+java title=Example.java</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="java-java-oca-ocp-practice-question-1181.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a><a class="pager-btn pager-next" href="data-type-joinstheelementsofcollectionintoasinglestringwithstringseparator.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Joins the elements of Coll...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

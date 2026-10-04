@@ -3,8 +3,8 @@ title: Trigonometric Demo
 nav: Trigonometric Demo
 description: * Copyright (c) 1995 - 2008 Sun Microsystems, Inc. All rights reserved.
 section: Imported - java2s Archive
-order: 1092
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/TrigonometricDemo.htm
+order: 1297
+source: https://web.archive.org/web/2020/http://www.java2s.com/Tutorial/Java/0040__Data-Type/TrigonometricDemo.htm
 ---
 ```java title=Example.java
 /*

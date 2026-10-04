@@ -1,10 +1,10 @@
 ---
 title: Java IO Tutorial - BufferedInputStream Example
 nav: Java IO Tutorial - Buffere...
-description: Imported from java2s.com: Java IO Tutorial - BufferedInputStream Example
+description: Imported from the java2s.com archive: Java IO Tutorial - BufferedInputStream Example
 section: Imported - java2s Archive
-order: 50239
-source: https://www.java2s.com/Tutorials/Java/java.io/BufferedInputStream/index.html
+order: 1171
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/java.io/BufferedInputStream/index.html
 ---
 ## Constructor
 

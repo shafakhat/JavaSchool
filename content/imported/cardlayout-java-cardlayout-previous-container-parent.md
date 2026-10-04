@@ -3,15 +3,15 @@ title: Java Tutorial - Java CardLayout.previous(Container parent)
 nav: Java Tutorial - Java CardL...
 description: CardLayout.previous(Container parent) has the following syntax.
 section: Imported - java2s Archive
-order: 1016
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/Java_CardLayout_previous_Container_parent_.htm
+order: 1192
+source: https://web.archive.org/web/20140829195908/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/Java_CardLayout_previous_Container_parent_.htm
 ---
 ### Syntax
 
 CardLayout.previous(Container parent) has the following syntax.
 
 ```java title=Example.java
-publicvoid previous(Container parent)
+public void previous(Container parent)
 ```
 
 ### Example
@@ -25,8 +25,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     JFrame aWindow = new JFrame();
     aWindow.setSize(400, 400);
     aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,7 +45,7 @@ class CardLayoutPanel extends JPanel implements ActionListener {
     }
     card.previous(this);
   }
-  publicvoid actionPerformed(ActionEvent e) {
+  public void actionPerformed(ActionEvent e) {
     card.next(this);
   }
 }

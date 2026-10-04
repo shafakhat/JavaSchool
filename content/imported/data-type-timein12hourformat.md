@@ -3,8 +3,8 @@ title: Time in 12-hour format
 nav: Time in 12-hour format
 description: Imported from the java2s.com archive: Time in 12-hour format
 section: Imported - java2s Archive
-order: 1248
-source: https://web.archive.org/web/2014/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Timein12hourformat.htm
+order: 1084
+source: https://web.archive.org/web/20140829090601/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Timein12hourformat.htm
 ---
 ```java title=Example.java
 import java.text.SimpleDateFormat;

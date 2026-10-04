@@ -1,10 +1,10 @@
 ---
 title: Java Reflection - Constructor Example
 nav: Java Reflection - Construc...
-description: Imported from java2s.com: Java Reflection - Constructor Example
+description: Imported from the java2s.com archive: Java Reflection - Constructor Example
 section: Imported - java2s Archive
-order: 50412
-source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Constructor/index.html
+order: 1254
+source: https://web.archive.org/web/2020/https://www.java2s.com/Tutorials/Java/java.lang.reflect/Constructor/index.html
 ---
 ## Method
 

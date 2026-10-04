@@ -1,0 +1,147 @@
+---
+title: Print all of the thread's information and stack traces
+nav: Print all of the thread's ...
+description: * or more contributor license agreements. See the NOTICE file
+section: Imported - java2s Archive
+order: 1790
+source: https://web.archive.org/web/20140829075832/http://www.java2s.com/Tutorial/Java/0120__Development/Printallofthethreadsinformationandstacktraces.htm
+---
+```java title=Example.java
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import java.io.PrintWriter;
+import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadInfo;
+import java.lang.management.ThreadMXBean;
+import java.lang.reflect.Constructor;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+/**
+ * General reflection utils
+ */
+public class ReflectionUtils {
+  private static final Class[] emptyArray = new Class[] {};
+  /**
+   * Cache of constructors for each class. Pins the classes so they can't be
+   * garbage collected until ReflectionUtils can be collected.
+   */
+  private static final Map<Class<?>, Constructor<?>> CONSTRUCTOR_CACHE = new ConcurrentHashMap<Class<?>, Constructor<?>>();
+  static private ThreadMXBean threadBean = ManagementFactory.getThreadMXBean();
+  public static void setContentionTracing(boolean val) {
+    threadBean.setThreadContentionMonitoringEnabled(val);
+  }
+  private static String getTaskName(long id, String name) {
+    if (name == null) {
+      return Long.toString(id);
+    }
+    return id + " (" + name + ")";
+  }
+  /**
+   *
+   * @param stream
+   *          the stream to
+   * @param title
+   *          a string title for the stack trace
+   */
+  public static void printThreadInfo(PrintWriter stream, String title) {
+    final int STACK_DEPTH = 20;
+    boolean contention = threadBean.isThreadContentionMonitoringEnabled();
+    long[] threadIds = threadBean.getAllThreadIds();
+    stream.println("Process Thread Dump: " + title);
+    stream.println(threadIds.length + " active threads");
+    for (long tid : threadIds) {
+      ThreadInfo info = threadBean.getThreadInfo(tid, STACK_DEPTH);
+      if (info == null) {
+        stream.println("  Inactive");
+        continue;
+      }
+      stream.println("Thread " + getTaskName(info.getThreadId(), info.getThreadName()) + ":");
+      Thread.State state = info.getThreadState();
+      stream.println("  State: " + state);
+      stream.println("  Blocked count: " + info.getBlockedCount());
+      stream.println("  Waited count: " + info.getWaitedCount());
+      if (contention) {
+        stream.println("  Blocked time: " + info.getBlockedTime());
+        stream.println("  Waited time: " + info.getWaitedTime());
+      }
+      if (state == Thread.State.WAITING) {
+        stream.println("  Waiting on " + info.getLockName());
+      } else if (state == Thread.State.BLOCKED) {
+        stream.println("  Blocked on " + info.getLockName());
+        stream.println("  Blocked by "
+            + getTaskName(info.getLockOwnerId(), info.getLockOwnerName()));
+      }
+      stream.println("  Stack:");
+      for (StackTraceElement frame : info.getStackTrace()) {
+        stream.println("    " + frame.toString());
+      }
+    }
+    stream.flush();
+  }
+  private static long previousLogTime = 0;
+  /**
+   * Return the correctly-typed {@link Class} of the given object.
+   *
+   * @param o
+   *          object whose correctly-typed <code>Class</code> is to be
+   *          obtained
+   * @return the correctly typed <code>Class</code> of the given object.
+   */
+  @SuppressWarnings("unchecked")
+  public static <T> Class<T> getClass(T o) {
+    return (Class<T>) o.getClass();
+  }
+  // methods to support testing
+  static void clearCache() {
+    CONSTRUCTOR_CACHE.clear();
+  }
+  static int getCacheSize() {
+    return CONSTRUCTOR_CACHE.size();
+  }
+}
+```
+
+| 6.23.1. | Error Handling |
+|---|---|
+| 6.23.2. | Types of Exceptions |
+| 6.23.3. | Java's Unchecked RuntimeException Subclasses |
+| 6.23.4. | Java's Checked Exceptions Defined in java.lang |
+| 6.23.5. | Throwing an Exception from a Method |
+| 6.23.6. | Write a catch block that handles java.lang.Exception |
+| 6.23.7. | Handling Exceptions |
+| 6.23.8. | Multiple catch Blocks |
+| 6.23.9. | The finally Block |
+| 6.23.10. | Exception Objects: stack trace |
+| 6.23.11. | Defining Your Own Exceptions, Throwing Your Own Exception |
+| 6.23.12. | Demonstrate exception chaining. |
+| 6.23.13. | Getting the Stack Trace of an Exception |
+| 6.23.14. | Put printStackTrace() into a String: redirect the StackTrace to a String with a StringWriter/PrintWriter |
+| 6.23.15. | Check whether given exception is compatible with the exceptions declared in a throws clause |
+| 6.23.16. | Convert an exception to a String with full stack trace |
+| 6.23.17. | Get Deepest Throwable |
+| 6.23.18. | Get the stack trace of the supplied exception. |
+| 6.23.19. | Is Checked Exception |
+| 6.23.20. | Locates a particular type of exception |
+| 6.23.21. | Make a string representation of the exception |
+| 6.23.22. | Print all of the thread's information and stack traces |
+| 6.23.23. | Return stack trace from the passed exception as a string |
+| 6.23.24. | Returns the root cause of an exception |
+| 6.23.25. | Create a new Exception, setting the cause if possible. |
+| 6.23.26. | Returns the output of printStackTrace as a String. |
+| 6.23.27. | This program creates a custom exception type. |
+| 6.23.28. | Utility methods for dealing with stack traces |

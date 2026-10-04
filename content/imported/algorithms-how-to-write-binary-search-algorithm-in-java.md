@@ -3,8 +3,8 @@ title: How to write Binary Search algorithm in Java
 nav: How to write Binary Search...
 description: The following code implements the binary search algorithm. Its uses the Comparable interface to compare elements in the passed in array.
 section: Imported - java2s Archive
-order: 1003
-source: https://web.archive.org/web/20130904182451/http://java2s.com/Tutorials/Java/Algorithms/How_to_write_Binary_Search_algorithm_in_Java.htm
+order: 1085
+source: https://web.archive.org/web/20140713164343/http://java2s.com/Tutorials/Java/Algorithms/How_to_write_Binary_Search_algorithm_in_Java.htm
 ---
 In this chapter you will learn:
 
@@ -19,27 +19,27 @@ The following code implements the binary search algorithm. Its uses the Comparab
 Another feature is that it uses the recursive in the implementation.
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticfinalint NOT_FOUND = -1;
-  publicstaticint binarySearch(Comparable[] a, Comparable x) {
+public class Main {
+  public static final int NOT_FOUND = -1;
+  public static int binarySearch(Comparable[] a, Comparable x) {
     return binarySearch(a, x, 0, a.length - 1);
-  }privatestaticint binarySearch(Comparable[] a, Comparable x, int low, int high) {
+  }private static int binarySearch(Comparable[] a, Comparable x, int low, int high) {
     if (low > high)
       return NOT_FOUND;
     int mid = (low + high) / 2;
     if (a[mid].compareTo(x) < 0)
       return binarySearch(a, x, mid + 1, high);
-    elseif (a[mid].compareTo(x) > 0)
+    else if (a[mid].compareTo(x) > 0)
       return binarySearch(a, x, low, mid - 1);
-    elsereturn mid;
+    else return mid;
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     int SIZE = 8;
-    Comparable[] a = newInteger[SIZE];
+    Comparable[] a = new Integer[SIZE];
     for (int i = 0; i < SIZE; i++)
-      a[i] = newInteger(i * 2);
+      a[i] = new Integer(i * 2);
     for (int i = 0; i < SIZE * 2; i++)
-      System.out.println("Found " + i + " at " + binarySearch(a, newInteger(i)));
+      System.out.println("Found " + i + " at " + binarySearch(a, new Integer(i)));
   }
 }
 ```
@@ -51,8 +51,8 @@ The code above generates the following result.
 The following code uses the binary search algorithm to search a hard code array against hard coded value.
 
 ```java title=Example.java
-publicclass Main{
-  publicstaticvoid main(String[] args) {
+public class Main{
+  public static void main(String[] args) {
     double[] x = { -39, -3, 6, 10, 4, 9, 10 };
 double value = 8;
     int lower = 0, upper = x.length - 1;
@@ -60,9 +60,9 @@ double value = 8;
       int middle = (lower + upper) / 2;
       if (value > x[middle])
         lower = middle + 1;
-      elseif (value < x[middle])
+      else if (value < x[middle])
         upper = middle - 1;
-      elsebreak;
+      else break;
     }
     if (lower > upper)
       System.out.println("Not found");
@@ -77,8 +77,8 @@ The code above generates the following result.
 ### Binary Search Insert
 
 ```java title=Example.java
-publicclass Main{
-  publicstaticvoid main(String[] args) {
+public class Main{
+  public static void main(String[] args) {
     int maxSize = 100;
     BinarySearchArray arr = new BinarySearchArray(maxSize);
     arr.insert(2);
@@ -98,54 +98,54 @@ publicclass Main{
     arr.insert(8);
     arr.insert(9);
     arr.display(); // display array
-int searchKey = 27; // search for item
-if (arr.find(searchKey) != arr.size())
+ int searchKey = 27; // search for item
+ if (arr.find(searchKey) != arr.size())
       System.out.println("Found " + searchKey);
     else
       System.out.println("Can't find " + searchKey);
   }
 }
 class BinarySearchArray {
-  privatelong[] a;
-  privateint nElems;
+  private long[] a;
+  private int nElems;
   public BinarySearchArray(int max) {
-    a = newlong[max]; // create array
+    a = new long[max]; // create array
     nElems = 0;
   }
-  publicint size() {
+  public int size() {
     return nElems;
   }
-  publicint find(long searchKey) {
+  public int find(long searchKey) {
     return recFind(searchKey, 0, nElems - 1);
   }
-  privateint recFind(long searchKey, int lowerBound, int upperBound) {
+  private int recFind(long searchKey, int lowerBound, int upperBound) {
     int curIn;
     curIn = (lowerBound + upperBound) / 2;
     if (a[curIn] == searchKey)
       return curIn; // found it
-elseif (lowerBound > upperBound)
+ else if (lowerBound > upperBound)
       return nElems; // can't find it
-else// divide range
+ else // divide range
     {
       if (a[curIn] < searchKey) // in upper half
-return recFind(searchKey, curIn + 1, upperBound);
-      else// in lower half
-return recFind(searchKey, lowerBound, curIn - 1);
+ return recFind(searchKey, curIn + 1, upperBound);
+      else // in lower half
+ return recFind(searchKey, lowerBound, curIn - 1);
     }
   }
-  publicvoid insert(long value) {
+  public void insert(long value) {
     int j;
     for (j = 0; j < nElems; j++)
       // find where it goes
-if (a[j] > value) // (linear search)
-break;
+ if (a[j] > value) // (linear search)
+ break;
     for (int k = nElems; k > j; k--)
       // move bigger ones up
       a[k] = a[k - 1];
     a[j] = value; // insert it
     nElems++; // increment size
   }
-  publicvoid display() {
+  public void display() {
     for (int j = 0; j < nElems; j++)
       System.out.print(a[j] + " ");
     System.out.println("");

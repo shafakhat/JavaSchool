@@ -3,8 +3,8 @@ title: Demonstrate time formats.
 nav: Demonstrate time formats.
 description: df = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.JAPAN);
 section: Imported - java2s Archive
-order: 1242
-source: https://web.archive.org/web/2020/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Demonstratetimeformats.htm
+order: 1081
+source: https://web.archive.org/web/20140218022055/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Demonstratetimeformats.htm
 ---
 ```java title=Example.java
 import java.text.DateFormat;

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Construct a Calendar object by using the setTime method - JavaSchool</title>
+<meta name="description" content="Imported from the java2s.com archive: Construct a Calendar object by using the setTime method">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-constructacalendarobjectbyusingthesettimemethod">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-39-calendar.html">Calendar</a></nav>
+    <h1>Construct a Calendar object by using the setTime method</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Calendar;
+import java.util.Date;
+public class MainClass {
+  public static void main(String[] args) {
+    Calendar calendar = Calendar.getInstance();
+    calendar.setTime(new Date());
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>2.39.1.</th><th>The java.util.Calendar Class</th></tr></thead><tbody><tr><td>2.39.2.</td><td>Create instance of java.sql.Date from Calendar.getTimeInMillis()</td></tr><tr><td>2.39.3.</td><td>Create a Date object using the Calendar class</td></tr><tr><td>2.39.4.</td><td>Using the Calendar Class to Display Current Time in Different Time Zones</td></tr><tr><td>2.39.5.</td><td>Get day of week</td></tr><tr><td>2.39.6.</td><td>Display Day of Week using Java Calendar</td></tr><tr><td>2.39.7.</td><td>Display Month of year using Java Calendar</td></tr><tr><td>2.39.8.</td><td>Get current date, year and month</td></tr><tr><td>2.39.9.</td><td>Get current time information</td></tr><tr><td>2.39.10.</td><td>Get the last date of a month</td></tr><tr><td>2.39.11.</td><td>Get the last day of a month</td></tr><tr><td>2.39.12.</td><td>Display full date time</td></tr><tr><td>2.39.13.</td><td>Get time in milliseconds using Java Calendar</td></tr><tr><td>2.39.14.</td><td>Get Week of month and year using Java Calendar</td></tr><tr><td>2.39.15.</td><td>Construct a Calendar object by using the setTime method</td></tr><tr><td>2.39.16.</td><td>To obtain a date part, such as the hour, the month, or the year, use the get method</td></tr><tr><td>2.39.17.</td><td>To change a date/time component, use its set method: public void set (int field, int value)</td></tr><tr><td>2.39.18.</td><td>Change multiple components at the same time</td></tr><tr><td>2.39.19.</td><td>Check for a Leap Year</td></tr><tr><td>2.39.20.</td><td>Checking for a Leap Year: using GregorianCalendar</td></tr><tr><td>2.39.21.</td><td>Get Days Of The Week for different locale</td></tr><tr><td>2.39.22.</td><td>Get the number of days in that month</td></tr><tr><td>2.39.23.</td><td>Try month in a leap year</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-computationwithshorterintegertypes.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Computation with Shorter I...</span></a><a class="pager-btn pager-next" href="data-type-constructonestringfromanother.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Construct one String from ...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

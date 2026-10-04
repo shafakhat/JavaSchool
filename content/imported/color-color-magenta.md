@@ -1,17 +1,17 @@
 ---
 title: Java Swing Tutorial - Java Color magenta
 nav: Java Swing Tutorial - Java...
-description: Imported from the java2s.com archive: Java Swing Tutorial - Java Color magenta
+description: // w ww . j a va 2 s . c o mimport javax.swing.JFrame;
 section: Imported - java2s Archive
-order: 1012
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Color/0320__Color.magenta.htm
+order: 1240
+source: https://web.archive.org/web/20150325035742/http://www.java2s.com/Tutorials/Java/java.awt/Color/0320__Color.magenta.htm
 ---
 ## Syntax
 
 Color.magenta has the following syntax.
 
 ```java title=Example.java
-publicstaticfinal Color magenta
+public static final Color magenta
 ```
 
 ## Example
@@ -22,8 +22,8 @@ In the following code shows how to use Color.magenta field.
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     JLabel label = new JLabel("First Name");
     label.setForeground(Color.magenta);
     JFrame frame = new JFrame();
@@ -33,4 +33,5 @@ publicclass Main {
     frame.setVisible(true);
   }
 }
+java title=Example.java
 ```

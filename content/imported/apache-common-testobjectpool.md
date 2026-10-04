@@ -3,8 +3,8 @@ title: Test Object Pool
 nav: Test Object Pool
 description: System.err.println("Number of employees in pool: " + pool.getNumIdle());
 section: Imported - java2s Archive
-order: 1068
-source: https://web.archive.org/web/20061016093854/http://www.java2s.com/Code/Java/Apache-Common/TestObjectPool.htm
+order: 1091
+source: https://web.archive.org/web/20140227133501/http://www.java2s.com/Code/Java/Apache-Common/TestObjectPool.htm
 ---
 ```java title=Example.java
 import org.apache.commons.pool.impl.GenericObjectPool;
@@ -115,8 +115,7 @@ public class SkilledEmployee extends Employee {
 }
 ```
 
-Download: TestObjectPool.zip ( 1,218 K )
----
-Related examples in the same category
-1. Keyed Object Pool
-3. Soft Reference Object Pool Demo
+TestObjectPool.zip( 1,218 k)
+1.  Keyed Object Pool
+2.  Test Redundant Object Pool
+3.  Soft Reference Object Pool Demo

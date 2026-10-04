@@ -3,8 +3,8 @@ title: Match Zip Codes
 nav: Match Zip Codes
 description: Imported from the java2s.com archive: Match Zip Codes
 section: Imported - java2s Archive
-order: 1165
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/MatchZipCodes.htm
+order: 1093
+source: https://web.archive.org/web/20140614114144/http://www.java2s.com/Tutorial/Java/0040__Data-Type/MatchZipCodes.htm
 ---
 ```java title=Example.java
 public class Main {

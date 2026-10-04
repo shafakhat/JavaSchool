@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get UTF String Size - JavaSchool</title>
+<meta name="description" content="Get UTF String Size: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-getutfstringsize">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-16-unicode.html">Unicode</a></nav>
+    <h1>Get UTF String Size</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/* Copyright (c) 1995-2000, The Hypersonic SQL Group.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * Neither the name of the Hypersonic SQL Group nor the names of its
+ * contributors may be used to endorse or promote products derived from this
+ * software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN NO EVENT SHALL THE HYPERSONIC SQL GROUP,
+ * OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * This software consists of voluntary contributions made by many individuals
+ * on behalf of the Hypersonic SQL Group.
+ *
+ *
+ * For work added by the HSQL Development Group:
+ *
+ * Copyright (c) 2001-2009, The HSQL Development Group
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * Neither the name of the HSQL Development Group nor the names of its
+ * contributors may be used to endorse or promote products derived from this
+ * software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN NO EVENT SHALL HSQL DEVELOPMENT GROUP, HSQLDB.ORG,
+ * OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+/**
+ * Collection of static methods for converting strings between different formats
+ * and to and from byte arrays.
+ *
+ *
+ * Includes some methods based on Hypersonic code as indicated.
+ *
+ * @author Thomas Mueller (Hypersonic SQL Group)
+ * @author Fred Toussi (fredt@users dot sourceforge.net)
+ * @version 1.9.0
+ * @since 1.7.2
+ */
+public class Main {
+  private static final byte[] HEXBYTES = { (byte) '0', (byte) '1', (byte) '2', (byte) '3',
+      (byte) '4', (byte) '5', (byte) '6', (byte) '7', (byte) '8', (byte) '9', (byte) 'a',
+      (byte) 'b', (byte) 'c', (byte) 'd', (byte) 'e', (byte) 'f' };
+  public static int getUTFSize(String s) {
+      int len = (s == null) ? 0
+                            : s.length();
+      int l   = 0;
+      for (int i = 0; i &lt; len; i++) {
+          int c = s.charAt(i);
+          if ((c &gt;= 0x0001) &amp;&amp; (c &lt;= 0x007F)) {
+              l++;
+          } else if (c &gt; 0x07FF) {
+              l += 3;
+          } else {
+              l += 2;
+          }
+      }
+      return l;
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.16.1.</th><th>Using Unicode in String</th></tr></thead><tbody><tr><td>6.16.2.</td><td>Display special character using Unicode</td></tr><tr><td>6.16.3.</td><td>Convert from Unicode to UTF-8</td></tr><tr><td>6.16.4.</td><td>Convert from UTF-8 to Unicode</td></tr><tr><td>6.16.5.</td><td>Convert string to UTF8 bytes</td></tr><tr><td>6.16.6.</td><td>Converts Unicode into something that can be embedded in a java properties file</td></tr><tr><td>6.16.7.</td><td>Converts the string to the unicode format</td></tr><tr><td>6.16.8.</td><td>Return an UTF-8 encoded String</td></tr><tr><td>6.16.9.</td><td>Return an UTF-8 encoded String by length</td></tr><tr><td>6.16.10.</td><td>Return UTF-8 encoded byte[] representation of a String</td></tr><tr><td>6.16.11.</td><td>Get UTF String Size</td></tr><tr><td>6.16.12.</td><td>Return the number of bytes that hold an Unicode char.</td></tr><tr><td>6.16.13.</td><td>Return the Unicode char which is coded in the bytes at position 0.</td></tr><tr><td>6.16.14.</td><td>Return the Unicode char which is coded in the bytes at the given position.</td></tr><tr><td>6.16.15.</td><td>Checks if the String contains only unicode digits or space</td></tr><tr><td>6.16.16.</td><td>Checks if the String contains only unicode digits. A decimal point is not a unicode digit and returns false.</td></tr><tr><td>6.16.17.</td><td>Checks if the String contains only unicode letters and space (' ').</td></tr><tr><td>6.16.18.</td><td>Checks if the String contains only unicode letters or digits.</td></tr><tr><td>6.16.19.</td><td>Checks if the String contains only unicode letters, digits or space (' ').</td></tr><tr><td>6.16.20.</td><td>Checks if the String contains only unicode letters.</td></tr><tr><td>6.16.21.</td><td>Count the number of bytes included in the given char[].</td></tr><tr><td>6.16.22.</td><td>Count the number of bytes needed to return an Unicode char. This can be from 1 to 6.</td></tr><tr><td>6.16.23.</td><td>Count the number of chars included in the given byte[].</td></tr><tr><td>6.16.24.</td><td>Decodes values of attributes in the DN encoded in hex into a UTF-8 String.</td></tr><tr><td>6.16.25.</td><td>Safe UTF: 64K serialized size</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-returnutf8encodedbyterepresentationofastring.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Return UTF-8 encoded byte[...</span></a><a class="pager-btn pager-next" href="development-convertsthestringtotheunicodeformat.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Converts the string to the...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

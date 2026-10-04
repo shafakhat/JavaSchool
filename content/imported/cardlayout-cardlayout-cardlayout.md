@@ -3,8 +3,8 @@ title: Java Swing Tutorial - Java CardLayout() Constructor
 nav: Java Swing Tutorial - Java...
 description: CardLayout() constructor from CardLayout has the following syntax.
 section: Imported - java2s Archive
-order: 1010
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0040__CardLayout.CardLayout_.htm
+order: 1182
+source: https://web.archive.org/web/20150325020648/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0040__CardLayout.CardLayout_.htm
 ---
 ## Syntax
 
@@ -25,8 +25,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     JFrame aWindow = new JFrame();
     aWindow.setSize(400, 400);
     aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,8 +44,9 @@ class CardLayoutPanel extends JPanel implements ActionListener {
       button.addActionListener(this);
     }
   }
-  publicvoid actionPerformed(ActionEvent e) {
+  public void actionPerformed(ActionEvent e) {
     card.next(this);
   }
 }
+java title=Example.java
 ```

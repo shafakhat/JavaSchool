@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Normalizes an angle to be near an absolute angle - JavaSchool</title>
+<meta name="description" content="Normalizes an angle to be near an absolute angle: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-normalizesanangletobenearanabsoluteangle">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-17-math-functions.html">Math Functions</a></nav>
+    <h1>Normalizes an angle to be near an absolute angle</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*******************************************************************************
+ * Copyright (c) 2001, 2008 Mathew A. Nelson and Robocode contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Common Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://robocode.sourceforge.net/license/cpl-v10.html
+ *
+ * Contributors:
+ *     Mathew A. Nelson
+ *     - Initial API and implementation
+ *     Flemming N. Larsen
+ *     - Moved all methods to classes like FileUtil, StringUtil, WindowUtil,
+ *       Logger etc. exception for the following methods, which have been kept
+ *       here as legacy robots make use of these methods:
+ *       - normalAbsoluteAngle()
+ *       - normalNearAbsoluteAngle()
+ *       - normalRelativeAngle()
+ *     - The isNear() was made public
+ *     - Optimized and provided javadocs for all methods
+ *******************************************************************************/
+import static java.lang.Math.PI;
+import java.util.Random;
+/**
+ * Utility class that provide methods for normalizing angles.
+ *
+ * @author Mathew A. Nelson (original)
+ * @author Flemming N. Larsen (contributor)
+ */
+public class Utils {
+  private final static double TWO_PI = 2 * PI;
+  private final static double THREE_PI_OVER_TWO = 3 * PI / 2;
+  private final static double PI_OVER_TWO = PI / 2;
+  public static final double NEAR_DELTA = .00001;
+  /**
+   * The normalized angle will be in the range from 0 to 2*PI, where 2*PI
+   * itself is not included.
+   * If the normalized angle is near to 0, PI/2, PI, 3*PI/2 or 2*PI, that
+   * angle will be returned. The {@link #isNear(double, double) isNear}
+   * method is used for defining when the angle is near one of angles listed
+   * above.
+   *
+   * @param angle the angle to normalize
+   * @return the normalized angle that will be in the range of [0,2*PI[
+   * @see #normalAbsoluteAngle(double)
+   * @see #isNear(double, double)
+   */
+  public static double normalNearAbsoluteAngle(double angle) {
+    angle = (angle %= TWO_PI) &gt;= 0 ? angle : (angle + TWO_PI);
+    if (isNear(angle, PI)) {
+      return PI;
+    } else if (angle &lt; PI) {
+      if (isNear(angle, 0)) {
+        return 0;
+      } else if (isNear(angle, PI_OVER_TWO)) {
+        return PI_OVER_TWO;
+      }
+    } else {
+      if (isNear(angle, THREE_PI_OVER_TWO)) {
+        return THREE_PI_OVER_TWO;
+      } else if (isNear(angle, TWO_PI)) {
+        return 0;
+      }
+    }
+    return angle;
+  }
+  /**
+   * Tests if the two {@code double} values are near to each other.
+   * It is recommended to use this method instead of testing if the two
+   * doubles are equal using an this expression: {@code value1 == value2}.
+   * The reason being, that this expression might never become
+   * {@code true} due to the precision of double values.
+   * Whether or not the specified doubles are near to each other is defined by
+   * the following expression:
+   * {@code (Math.abs(value1 - value2) &lt; .00001)}
+   *
+   * @param value1 the first double value
+   * @param value2 the second double value
+   * @return {@code true} if the two doubles are near to each other;
+   *         {@code false} otherwise.
+   */
+  public static boolean isNear(double value1, double value2) {
+    return (Math.abs(value1 - value2) &lt; NEAR_DELTA);
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.17.1.</th><th>Math Class Methods</th></tr></thead><tbody><tr><td>6.17.2.</td><td>Use math functions</td></tr><tr><td>6.17.3.</td><td>Testing the Math class methods</td></tr><tr><td>6.17.4.</td><td>Floating Point Number Enhancements in JDK 6</td></tr><tr><td>6.17.5.</td><td>Math.scalb</td></tr><tr><td>6.17.6.</td><td>Math.getExponent</td></tr><tr><td>6.17.7.</td><td>Math.nextAfter</td></tr><tr><td>6.17.8.</td><td>Math.nextUp</td></tr><tr><td>6.17.9.</td><td>Math.copySign</td></tr><tr><td>6.17.10.</td><td>Demonstrate toDegrees() and toRadians().</td></tr><tr><td>6.17.11.</td><td>Find absolute value of float, int, double and long using Math.abs</td></tr><tr><td>6.17.12.</td><td>Find ceiling value of a number using Math.ceil</td></tr><tr><td>6.17.13.</td><td>Find exponential value of a number using Math.exp</td></tr><tr><td>6.17.14.</td><td>Find floor value of a number using Math.floor</td></tr><tr><td>6.17.15.</td><td>Find maximum of two numbers using Math.max</td></tr><tr><td>6.17.16.</td><td>Find natural logarithm value of a number using Math.log</td></tr><tr><td>6.17.17.</td><td>Find power using Math.pow</td></tr><tr><td>6.17.18.</td><td>Find square root of a number using Math.sqrt</td></tr><tr><td>6.17.19.</td><td>Round Java float and double numbers using Math.round</td></tr><tr><td>6.17.20.</td><td>Math.min</td></tr><tr><td>6.17.21.</td><td>Normalizes an angle to a relative angle.</td></tr><tr><td>6.17.22.</td><td>Normalizes an angle to an absolute angle.</td></tr><tr><td>6.17.23.</td><td>Normalizes an angle to be near an absolute angle</td></tr><tr><td>6.17.24.</td><td>Calculate the floor of the log, base 2</td></tr><tr><td>6.17.25.</td><td>Greatest Common Divisor (GCD) of positive integer numbers</td></tr><tr><td>6.17.26.</td><td>Least Common Multiple (LCM) of two strictly positive integer numbers</td></tr><tr><td>6.17.27.</td><td>Moving Average</td></tr><tr><td>6.17.28.</td><td>Normalize an angle in a 2&amp;pi wide interval around a center value.</td></tr><tr><td>6.17.29.</td><td>Returns n!. Shorthand for n Factorial, the product of the numbers 1,...,n as a double.</td></tr><tr><td>6.17.30.</td><td>Returns n!. Shorthand for n Factorial, the product of the numbers 1,...,n.</td></tr><tr><td>6.17.31.</td><td>Returns the hyperbolic cosine of x.</td></tr><tr><td>6.17.32.</td><td>Returns the hyperbolic sine of x.</td></tr><tr><td>6.17.33.</td><td>Returns the natural log of the (http://mathworld.wolfram.com/BinomialCoefficient.html) Binomial Coefficient</td></tr><tr><td>6.17.34.</td><td>Returns the natural logarithm of n!.</td></tr><tr><td>6.17.35.</td><td>Round the given value to the specified number of decimal places. The value is rounded using the BigDecimal.ROUND_HALF_UP method.</td></tr><tr><td>6.17.36.</td><td>Value is rounded using the given method which is any method defined in BigDecimal</td></tr><tr><td>6.17.37.</td><td>sqrt(a^2 + b^2) without under/overflow</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-mathnextafter.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Math.nextAfter</span></a><a class="pager-btn pager-next" href="development-mathnextup.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Math.nextUp</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

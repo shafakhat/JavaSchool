@@ -3,8 +3,8 @@ title: Java Array Variables
 nav: Java Array Variables
 description: A Java array variable has two parts: array type and array object.
 section: Imported - java2s Archive
-order: 1036
-source: https://web.archive.org/web/20131220111545/http://www.java2s.com:80/Tutorials/Java/Array/Java_Array_Variables.htm
+order: 1150
+source: https://web.archive.org/web/2020/http://www.java2s.com:80/Tutorials/Java/Array/Java_Array_Variables.htm
 ---
 In this chapter you will learn:
 
@@ -56,8 +56,8 @@ This is exactly equivalent to the previous statement. int[] form is preferred si
 The following two declarations are equivalent:
 
 ```java title=Example.java
-int a1[] = newint[3];
-int[] a2 = newint[3];
+int a1[] = new int[3];
+int[] a2 = new int[3];
 ```
 
 ### Array create
@@ -65,7 +65,7 @@ int[] a2 = newint[3];
 After you have declared an array variable, you can define an array that it references:
 
 ```java title=Example.java
-myIntArray = newint[10];        // Define an array of 10 integers
+myIntArray = new int[10];        // Define an array of 10 integers
 ```
 
 This statement creates an array that stores 10 values of type int and stores a reference to the array in the variable myIntArray.
@@ -77,7 +77,7 @@ The reference is simply where the array is in memory.
 You could also declare the array variable and define the array of type int to hold 10 integers with a single statement.
 
 ```java title=Example.java
-int[] myIntArray = newint[10];            //An array of 10 integers
+int[] myIntArray = new int[10];            //An array of 10 integers
 ```
 
 The first part of the definition specifies the type of the array. The element type name, int in this case, is followed by an empty pair of square brackets.

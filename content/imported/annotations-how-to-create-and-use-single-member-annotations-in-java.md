@@ -3,8 +3,8 @@ title: How to create and use Single-Member Annotations in Java
 nav: How to create and use Sing...
 description: A single-member annotation contains only one member. It allows a shorthand form of specifying the value of the member.
 section: Imported - java2s Archive
-order: 1020
-source: https://web.archive.org/web/20141115061926/http://www.java2s.com:80/Tutorials/Java/Annotations/How_to_create_and_use_Single_Member_Annotations_in_Java.htm
+order: 1089
+source: https://web.archive.org/web/2016/http://www.java2s.com:80/Tutorials/Java/Annotations/How_to_create_and_use_Single_Member_Annotations_in_Java.htm
 ---
 In this chapter you will learn:
 
@@ -30,9 +30,9 @@ import java.lang.reflect.Method;
 @interface MySingle {
   int value(); // this variable name must be value
 }
-publicclass Main {
+public class Main {
   @MySingle(100)
-  publicstaticvoid myMeth() {
+  public static void myMeth() {
     Main ob = new Main ();
     try {
       Method m = ob.getClass().getMethod("myMeth");
@@ -42,7 +42,7 @@ publicclass Main {
       System.out.println("Method Not Found.");
     }
   }
-  publicstaticvoid main(String args[]) {
+  public static void main(String args[]) {
     myMeth();
   }
 }

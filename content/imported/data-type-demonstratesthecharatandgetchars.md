@@ -3,8 +3,8 @@ title: Demonstrates the charAt and getChars
 nav: Demonstrates the charAt an...
 description: Imported from the java2s.com archive: Demonstrates the charAt and getChars
 section: Imported - java2s Archive
-order: 1150
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/DemonstratesthecharAtandgetChars.htm
+order: 1097
+source: https://web.archive.org/web/20140829081838/http://www.java2s.com/Tutorial/Java/0040__Data-Type/DemonstratesthecharAtandgetChars.htm
 ---
 ```java title=Example.java
 public class MainClass

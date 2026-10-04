@@ -1,0 +1,38 @@
+---
+title: Calling a Constructor From a Constructor
+nav: Calling a Constructor From...
+description: Imported from the java2s.com archive: Calling a Constructor From a Constructor
+section: Imported - java2s Archive
+order: 1087
+source: https://web.archive.org/web/20140829082741/http://www.java2s.com/Tutorial/Java/0100__Class-Definition/CallingaConstructorFromaConstructor.htm
+---
+```java title=Example.java
+class Sphere {
+  int radius = 0;
+  double xCenter;
+  double yCenter;
+  double zCenter;
+  Sphere() {
+    radius = 1;
+  }
+  Sphere(double x, double y, double z) {
+    this();
+    xCenter = x;
+    yCenter = y;
+    zCenter = z;
+  }
+  Sphere(int theRadius, double x, double y, double z) {
+    this(x, y, z);
+    radius = theRadius;
+  }
+}
+```
+
+| 5.2.1. | Using Constructors |
+|---|---|
+| 5.2.2. | The Default Constructor |
+| 5.2.3. | Multiple Constructors |
+| 5.2.4. | Calling a Constructor From a Constructor |
+| 5.2.5. | Duplicating Objects using a Constructor |
+| 5.2.6. | Class Initializer: during declaration |
+| 5.2.7. | Order of constructor calls |

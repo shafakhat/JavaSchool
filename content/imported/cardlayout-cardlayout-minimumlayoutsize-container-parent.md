@@ -3,8 +3,8 @@ title: Java Swing Tutorial - Java CardLayout .minimumLayoutSize (Container paren
 nav: Java Swing Tutorial - Java...
 description: CardLayout.minimumLayoutSize(Container parent) has the following syntax.
 section: Imported - java2s Archive
-order: 1013
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0300__CardLayout.minimumLayoutSize_Container_parent_.htm
+order: 1183
+source: https://web.archive.org/web/20150325015224/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0300__CardLayout.minimumLayoutSize_Container_parent_.htm
 ---
 ## Syntax
 
@@ -25,8 +25,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     JFrame aWindow = new JFrame();
     aWindow.setSize(400, 400);
     aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,8 +45,9 @@ class CardLayoutPanel extends JPanel implements ActionListener {
     }
     System.out.println(card.minimumLayoutSize(this));
   }
-  publicvoid actionPerformed(ActionEvent e) {
+  public void actionPerformed(ActionEvent e) {
     card.next(this);
   }
 }
+java title=Example.java
 ```

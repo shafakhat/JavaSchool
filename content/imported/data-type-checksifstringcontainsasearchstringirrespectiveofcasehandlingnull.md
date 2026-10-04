@@ -3,8 +3,8 @@ title: Checks if String contains a search String irrespective of case, handling 
 nav: Checks if String contains ...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1013
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ChecksifStringcontainsasearchStringirrespectiveofcasehandlingnull.htm
+order: 1352
+source: https://web.archive.org/web/20140829082145/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ChecksifStringcontainsasearchStringirrespectiveofcasehandlingnull.htm
 ---
 ```java title=Example.java
 /**
@@ -22,7 +22,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * <code>null</code> safe.
  *
@@ -48,7 +49,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */publicclass Main {
+ */
+public class Main {
   /**
    * Checks if String contains a search String irrespective of case,
    * handling <code>null</code>. This method uses
@@ -71,7 +73,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param searchStr  the String to find, may be null
    * @return true if the String contains the search String irrespective of
    * case or false if not or <code>null</code> string input
-   */publicstaticboolean containsIgnoreCase(String str, String searchStr) {
+   */
+  public static boolean containsIgnoreCase(String str, String searchStr) {
       if (str == null || searchStr == null) {
           return false;
       }
@@ -97,15 +100,16 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @return true if the String contains the search String,
    *  false if not or <code>null</code> string input
    * @since 2.0
-   */publicstaticboolean contains(String str, String searchStr) {
+   */
+  public static boolean contains(String str, String searchStr) {
       if (str == null || searchStr == null) {
           return false;
       }
       return str.indexOf(searchStr) >= 0;
   }
   // Empty checks
-//-----------------------------------------------------------------------
-/**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -122,8 +126,31 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */publicstaticboolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }
 ```
+
+| 2.31.1. | Match Phone Number |
+|---|---|
+| 2.31.2. | Match Zip Codes |
+| 2.31.3. | Match Dates |
+| 2.31.4. | Match Name Formats |
+| 2.31.5. | Case insensitive check if a String ends with a specified suffix. |
+| 2.31.6. | Case insensitive check if a String starts with a specified prefix. |
+| 2.31.7. | Case insensitive removal of a substring if it is at the begining of a source string, otherwise returns the source string. |
+| 2.31.8. | Case insensitive removal of a substring if it is at the end of a source string, otherwise returns the source string. |
+| 2.31.9. | Check if a String ends with a specified suffix. |
+| 2.31.10. | Check if a String starts with a specified prefix. |
+| 2.31.11. | Check if a string is present at the current position in another string. |
+| 2.31.12. | Check whether the given String is a valid identifier according to the Java Language specifications. |
+| 2.31.13. | Checks if String contains a search String irrespective of case, handling null |
+| 2.31.14. | Checks if String contains a search String, handling null |
+| 2.31.15. | Checks if String contains a search character, handling null |
+| 2.31.16. | Checks if a String is empty ("") or null. |
+| 2.31.17. | Checks if a String is not empty ("") and not null. |
+| 2.31.18. | Checks if a String is whitespace, empty ("") or null. |
+| 2.31.19. | Checks if the String contains any character in the given set of characters. |
+| 2.31.20. | Checks if the String contains only certain characters. |

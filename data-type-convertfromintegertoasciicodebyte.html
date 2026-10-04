@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convert from integer to ASCII code (byte) - JavaSchool</title>
+<meta name="description" content="Imported from the java2s.com archive: Convert from integer to ASCII code (byte)">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-convertfromintegertoasciicodebyte">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-07-character-data-type.html">Character Data Type</a></nav>
+    <h1>Convert from integer to ASCII code (byte)</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] args) throws Exception {
+    char c = 'A';
+    int i = (int) c; // i == 65 DECIMAL
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>2.7.1.</th><th>Java char: char is 16 bit type and used to represent Unicode characters. Range of char is 0 to 65,536.</th></tr></thead><tbody><tr><td>2.7.2.</td><td>Escape Sequence Characters</td></tr><tr><td>2.7.3.</td><td>Storing Characters</td></tr><tr><td>2.7.4.</td><td>Assign int value to char variable</td></tr><tr><td>2.7.5.</td><td>char variables behave like integers</td></tr><tr><td>2.7.6.</td><td>Display printable Characters</td></tr><tr><td>2.7.7.</td><td>Character: is Upper Case</td></tr><tr><td>2.7.8.</td><td>Character: is Lower Case</td></tr><tr><td>2.7.9.</td><td>isDigit(): true if the argument is a digit (0 to 9), and false otherwise.</td></tr><tr><td>2.7.10.</td><td>Validate if a String contains only numbers</td></tr><tr><td>2.7.11.</td><td>isLetter(): true if the argument is a letter, and false otherwise.</td></tr><tr><td>2.7.12.</td><td>Count letters in a String</td></tr><tr><td>2.7.13.</td><td>isLetterOrDigit(): true if the argument is a letter or a digit, and false otherwise.</td></tr><tr><td>2.7.14.</td><td>is White space</td></tr><tr><td>2.7.15.</td><td>Is character a digit, letter, white space, lower case or upper case character</td></tr><tr><td>2.7.16.</td><td>Convert character to digit with Character.digit</td></tr><tr><td>2.7.17.</td><td>Demonstrate several Is... methods.</td></tr><tr><td>2.7.18.</td><td>Convert from ASCII code to String</td></tr><tr><td>2.7.19.</td><td>Convert from integer to ASCII code (byte)</td></tr><tr><td>2.7.20.</td><td>To extract Ascii codes from a String</td></tr><tr><td>2.7.21.</td><td>Copy char array to string</td></tr><tr><td>2.7.22.</td><td>Store unicode in a char variable</td></tr><tr><td>2.7.23.</td><td>Determining a Character's Unicode Block</td></tr><tr><td>2.7.24.</td><td>Plus one to char variable</td></tr><tr><td>2.7.25.</td><td>Convert string to char array</td></tr><tr><td>2.7.26.</td><td>Compare Two Java char Arrays</td></tr><tr><td>2.7.27.</td><td>Max and Min values of datatype char</td></tr><tr><td>2.7.28.</td><td>Determining If a String Is a Legal Java Identifier</td></tr><tr><td>2.7.29.</td><td>compare two objects of Character</td></tr><tr><td>2.7.30.</td><td>ASCII character handling functions</td></tr><tr><td>2.7.31.</td><td>Checks if the string contains only ASCII printable characters.</td></tr><tr><td>2.7.32.</td><td>Checks whether the character is ASCII 7 bit alphabetic lower case.</td></tr><tr><td>2.7.33.</td><td>Checks whether the character is ASCII 7 bit alphabetic upper case.</td></tr><tr><td>2.7.34.</td><td>Checks whether the character is ASCII 7 bit alphabetic.</td></tr><tr><td>2.7.35.</td><td>Checks whether the character is ASCII 7 bit control.</td></tr><tr><td>2.7.36.</td><td>Checks whether the character is ASCII 7 bit numeric and character.</td></tr><tr><td>2.7.37.</td><td>Checks whether the character is ASCII 7 bit numeric.</td></tr><tr><td>2.7.38.</td><td>Checks whether the character is ASCII 7 bit printable.</td></tr><tr><td>2.7.39.</td><td>Checks whether the character is ASCII 7 bit.</td></tr><tr><td>2.7.40.</td><td>Determines if the specified string is permissible as a Java identifier.</td></tr><tr><td>2.7.41.</td><td>Thansform an array of ASCII bytes to a string. the byte array should contains only values in [0, 127].</td></tr><tr><td>2.7.42.</td><td>Utility methods for ASCII character checking.</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-convertfromfloattostring.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Convert from float to String</span></a><a class="pager-btn pager-next" href="data-type-convertfromstringtodouble.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Convert from String to dou...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

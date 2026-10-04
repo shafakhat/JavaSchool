@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listening for Changes to the Current Directory in a JFileChooser Dialog - JavaSchool</title>
+<meta name="description" content="chooser.addPropertyChangeListener(new PropertyChangeListener() {">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-listeningforchangestothecurrentdirectoryinajfilechooserdialog">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-56-javabeans.html">JavaBeans</a></nav>
+    <h1>Listening for Changes to the Current Directory in a JFileChooser Dialog</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.io.File;
+import javax.swing.JFileChooser;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    final JFileChooser chooser = new JFileChooser();
+    chooser.addPropertyChangeListener(new PropertyChangeListener() {
+      public void propertyChange(PropertyChangeEvent evt) {
+        if (JFileChooser.DIRECTORY_CHANGED_PROPERTY.equals(evt.getPropertyName())) {
+          JFileChooser chooser = (JFileChooser) evt.getSource();
+          File oldDir = (File) evt.getOldValue();
+          File newDir = (File) evt.getNewValue();
+          File curDir = chooser.getCurrentDirectory();
+        }
+      }
+    });
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.56.1.</th><th>Listening for Changes to the Selected File in a JFileChooser Dialog</th></tr></thead><tbody><tr><td>6.56.2.</td><td>Get a list of selected files</td></tr><tr><td>6.56.3.</td><td>Listening for Changes to the Current Directory in a JFileChooser Dialog</td></tr><tr><td>6.56.4.</td><td>Displaying the Current Directory in the Title of a JFileChooser Dialog</td></tr><tr><td>6.56.5.</td><td>Setting an Accessory Component in a JFileChooser Dialog</td></tr><tr><td>6.56.6.</td><td>Convert a bean to XML persistence</td></tr><tr><td>6.56.7.</td><td>Listen for bean's property change event</td></tr><tr><td>6.56.8.</td><td>List property names of a Bean</td></tr><tr><td>6.56.9.</td><td>Prevent bean's property being serialized to XML</td></tr><tr><td>6.56.10.</td><td>Create an instance a Bean</td></tr><tr><td>6.56.11.</td><td>Convert an XML persistence to bean</td></tr><tr><td>6.56.12.</td><td>Determine bean's property type</td></tr><tr><td>6.56.13.</td><td>Listen for a constrained property change</td></tr><tr><td>6.56.14.</td><td>Bean has a single property called property.</td></tr><tr><td>6.56.15.</td><td>Implementing a Bound Property</td></tr><tr><td>6.56.16.</td><td>Implementing a Constrained Property: fires a PropertyChangeEvent whenever its value is about to be changed.</td></tr><tr><td>6.56.17.</td><td>Instantiating a Bean</td></tr><tr><td>6.56.18.</td><td>Listing the Property Names of a Bean</td></tr><tr><td>6.56.19.</td><td>Getting and Setting a Property of a Bean</td></tr><tr><td>6.56.20.</td><td>Get and set the value of a property in a bean using Expression and Statement</td></tr><tr><td>6.56.21.</td><td>Get and set an Object type property</td></tr><tr><td>6.56.22.</td><td>gets and sets a primitive type property</td></tr><tr><td>6.56.23.</td><td>gets and sets an array type property</td></tr><tr><td>6.56.24.</td><td>Serializing a Bean to XML: XMLEncoder only persists the value of public properties.</td></tr><tr><td>6.56.25.</td><td>Deserializing a Bean from XML</td></tr><tr><td>6.56.26.</td><td>Preventing a Bean Property from Being Serialized to XML</td></tr><tr><td>6.56.27.</td><td>Serializing an Immutable Bean Property to XML</td></tr><tr><td>6.56.28.</td><td>Listening for a Property Change Event: A property change event is fired when a bound property is changed.</td></tr><tr><td>6.56.29.</td><td>Listening for a Vetoable Property Change Event</td></tr><tr><td>6.56.30.</td><td>Read bean's property value</td></tr><tr><td>6.56.31.</td><td>extends SimpleBeanInfo</td></tr><tr><td>6.56.32.</td><td>Get and set properties on a bean</td></tr><tr><td>6.56.33.</td><td>Process bean properties getter by applying the JavaBean naming conventions.</td></tr><tr><td>6.56.34.</td><td>Is JavaBean Compliant Setter</td></tr><tr><td>6.56.35.</td><td>Constructs a method name from element's bean name for a given prefix</td></tr><tr><td>6.56.36.</td><td>Returns attribute's setter method. If the method not found then NoSuchMethodException will be thrown.</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-listenforbeanspropertychangeevent.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Listen for bean's property...</span></a><a class="pager-btn pager-next" href="development-listenforaconstrainedpropertychange.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Listen for a constrained p...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

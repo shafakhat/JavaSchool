@@ -37,12 +37,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-47-decimal.html">Decimal</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <span>Data Type</span></nav>
     <h1>Change the decimal separator is set to "."</h1>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     double d = 123456.7890;
     DecimalFormat df = new DecimalFormat("#####0.00");
     DecimalFormatSymbols dfs = df.getDecimalFormatSymbols();
@@ -51,7 +51,8 @@ publicclass Main {
     System.out.println(df.format(d));
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="jpa-changetablenameinhierarchy.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Change Table Name In Hiera...</span></a><a class="pager-btn pager-next" href="data-type-checkifastringendswithaspecifiedsuffix.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Check if a String ends wit...</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.47.1.</th><th>new DecimalFormat(abc#)</th></tr></thead><tbody><tr><td>2.47.2.</td><td>DecimalFormat("00E00")</td></tr><tr><td>2.47.3.</td><td>DecimalFormat("000E00")</td></tr><tr><td>2.47.4.</td><td>DecimalFormat("0000000000E0")</td></tr><tr><td>2.47.5.</td><td>new DecimalFormat("0.######E0")</td></tr><tr><td>2.47.6.</td><td>Use new DecimalFormat("0.#####E0") to format double</td></tr><tr><td>2.47.7.</td><td>new DecimalFormat("000000E0")</td></tr><tr><td>2.47.8.</td><td>Use java.text.DecimalFormat to format integer</td></tr><tr><td>2.47.9.</td><td>Display numbers with leading zeroes</td></tr><tr><td>2.47.10.</td><td>Display a percentage</td></tr><tr><td>2.47.11.</td><td>Display a currency value</td></tr><tr><td>2.47.12.</td><td>Force minimum number of digits to left and right of decimal point</td></tr><tr><td>2.47.13.</td><td>DecimalFormat("00.00E0")</td></tr><tr><td>2.47.14.</td><td>The number of #'s to the left of the decimal point sets the multiple of the exponent.</td></tr><tr><td>2.47.15.</td><td>DecimalFormat("##E0") (exponent must be multiple of 2)</td></tr><tr><td>2.47.16.</td><td>DecimalFormat("###E0") (exponent must be multiple of 3)</td></tr><tr><td>2.47.17.</td><td>Change the decimal separator is set to "."</td></tr><tr><td>2.47.18.</td><td>Round number to fewer decimals</td></tr><tr><td>2.47.19.</td><td>Display numbers with commas</td></tr><tr><td>2.47.20.</td><td>Display numbers in scientific notation</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-centersastringinalargerstringofsizesizeusingthespacecharacter.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Centers a String in a larg...</span></a><a class="pager-btn pager-next" href="data-type-changedateformattingsymbols.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Change date formatting sym...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

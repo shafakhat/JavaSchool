@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */public class Main {
+ */
+public class Main {
   /**
    * Compares all Strings in an array and returns the initial sequence of
    * characters that is common to all of them.
@@ -87,23 +88,24 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * in the array; empty String if the array is null, the elements are all null
    * or if there is no common prefix.
    * @since 2.4
-   */ public static String getCommonPrefix(String[] strs) {
+   */
+  public static String getCommonPrefix(String[] strs) {
       if (strs == null || strs.length == 0) {
           return "";
       }
       int smallestIndexOfDiff = indexOfDifference(strs);
       if (smallestIndexOfDiff == -1) {
           // all strings were identical
- if (strs[0] == null) {
+          if (strs[0] == null) {
               return "";
           }
           return strs[0];
       } else if (smallestIndexOfDiff == 0) {
           // there were no common initial characters
- return "";
+          return "";
       } else {
           // we found a common initial character sequence
- return strs[0].substring(0, smallestIndexOfDiff);
+          return strs[0].substring(0, smallestIndexOfDiff);
       }
   }
   /**
@@ -136,7 +138,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param strs  array of strings, entries may be null
    * @return the index where the strings begin to differ; -1 if they are all equal
    * @since 2.4
-   */ public static int indexOfDifference(String[] strs) {
+   */
+  public static int indexOfDifference(String[] strs) {
       if (strs == null || strs.length &lt;= 1) {
           return -1;
       }
@@ -146,9 +149,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       int shortestStrLen = Integer.MAX_VALUE;
       int longestStrLen = 0;
       // find the min and max string lengths; this avoids checking to make
- // sure we are not exceeding the length of the string each time through
- // the bottom loop.
- for (int i = 0; i &lt; arrayLen; i++) {
+      // sure we are not exceeding the length of the string each time through
+      // the bottom loop.
+      for (int i = 0; i &lt; arrayLen; i++) {
           if (strs[i] == null) {
               anyStringNull = true;
               shortestStrLen = 0;
@@ -159,15 +162,15 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
           }
       }
       // handle lists containing all nulls or all empty strings
- if (allStringsNull || (longestStrLen == 0 &amp;&amp; !anyStringNull)) {
+      if (allStringsNull || (longestStrLen == 0 &amp;&amp; !anyStringNull)) {
           return -1;
       }
       // handle lists containing some nulls or some empty strings
- if (shortestStrLen == 0) {
+      if (shortestStrLen == 0) {
           return 0;
       }
       // find the position with the first difference across all strings
- int firstDiff = -1;
+      int firstDiff = -1;
       for (int stringPos = 0; stringPos &lt; shortestStrLen; stringPos++) {
           char comparisonChar = strs[0].charAt(stringPos);
           for (int arrayPos = 1; arrayPos &lt; arrayLen; arrayPos++) {
@@ -182,14 +185,15 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       }
       if (firstDiff == -1 &amp;&amp; shortestStrLen != longestStrLen) {
           // we compared all of the characters up to the length of the
- // shortest string and didn't find a match, but the string lengths
- // vary, so return the length of the shortest string.
- return shortestStrLen;
+          // shortest string and didn't find a match, but the string lengths
+          // vary, so return the length of the shortest string.
+          return shortestStrLen;
       }
       return firstDiff;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="data-type-comparesallstringsinanarrayandreturnstheindexatwhichthestringsbegintod-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Compares all Strings in an...</span></a><a class="pager-btn pager-next" href="data-type-convertastringdatesuchas20030110intoajavautildateobject-2.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Convert a String Date Such...</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.23.1.</th><th>Comparing Strings for Equality</th></tr></thead><tbody><tr><td>2.23.2.</td><td>To check for equality between two strings ignoring the case</td></tr><tr><td>2.23.3.</td><td>Sequencing Strings</td></tr><tr><td>2.23.4.</td><td>String length, charAt, equals</td></tr><tr><td>2.23.5.</td><td>equals() and equalsIgnoreCase().</td></tr><tr><td>2.23.6.</td><td>equals() vs ==</td></tr><tr><td>2.23.7.</td><td>Region Matches</td></tr><tr><td>2.23.8.</td><td>Compares all Strings in an array and returns the index at which the Strings begin to differ.</td></tr><tr><td>2.23.9.</td><td>Compares all Strings in an array and returns the initial sequence of characters that is common to all of them.</td></tr><tr><td>2.23.10.</td><td>Compares two Strings, and returns the index at which the Strings begin to differ.</td></tr><tr><td>2.23.11.</td><td>Compares two Strings, and returns the portion where they differ.</td></tr><tr><td>2.23.12.</td><td>Compress 2 adjacent (single or double) quotes into a single (s or d) quote when found in the middle of a String.</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-clearabitinabiginteger.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Clear a bit in a BigInteger</span></a><a class="pager-btn pager-next" href="data-type-comparesallstringsinanarrayandreturnstheindexatwhichthestringsbegintod.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Compares all Strings in an...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

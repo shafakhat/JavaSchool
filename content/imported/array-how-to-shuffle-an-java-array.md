@@ -1,10 +1,10 @@
 ---
 title: How to shuffle an Java array
 nav: How to shuffle an Java array
-description: publicstaticvoid shuffle(final Object[] array, finallong seed) {
+description: public static void shuffle(final Object[] array, final long seed) {
 section: Imported - java2s Archive
-order: 1032
-source: https://web.archive.org/web/20130905081700/http://java2s.com/Tutorials/Java/Array/How_to_shuffle_an_Java_array.htm
+order: 1132
+source: https://web.archive.org/web/2016/http://java2s.com/Tutorials/Java/Array/How_to_shuffle_an_Java_array.htm
 ---
 In this chapter you will learn:
 
@@ -14,34 +14,34 @@ In this chapter you will learn:
 
 ```java title=Example.java
 import java.util.Random;
-publicclass Main {
-  publicstaticvoid shuffle(final Object[] array) {
+public class Main {
+  public static void shuffle(final Object[] array) {
     final Random r = new Random();
-    finalint limit = array.length;
+    final int limit = array.length;
     for (int i = 0; i < limit; ++i) {
       swap(array, i, r.nextInt(limit));
     }
   }
-  publicstaticvoid shuffle(finalint[] array) {
+  public static void shuffle(final int[] array) {
     final Random r = new Random();
-    finalint limit = array.length;
+    final int limit = array.length;
     for (int i = 0; i < limit; ++i) {
       swap(array, i, r.nextInt(limit));
     }
   }
-  publicstaticvoid shuffle(final Object[] array, finallong seed) {
+  public static void shuffle(final Object[] array, final long seed) {
     final Random r = new Random(seed);
-    finalint limit = array.length;
+    final int limit = array.length;
     for (int i = 0; i < limit; ++i) {
       swap(array, i, r.nextInt(limit));
     }
   }
-  publicstaticvoid swap(final Object[] array, finalint i, finalint j) {
+  public static void swap(final Object[] array, final int i, final int j) {
     Object o = array[i];
     array[i] = array[j];
     array[j] = o;
   }
-  publicstaticvoid swap(finalint[] array, finalint i, finalint j) {
+  public static void swap(final int[] array, final int i, final int j) {
     int o = array[i];
     array[i] = array[j];
     array[j] = o;

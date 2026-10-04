@@ -3,8 +3,8 @@ title: Java Tutorial - Java Area .createTransformedArea (AffineTransform t)
 nav: Java Tutorial - Java Area ...
 description: Area.createTransformedArea(AffineTransform t) has the following syntax.
 section: Imported - java2s Archive
-order: 1001
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_createTransformedArea_AffineTransform_t_.htm
+order: 1104
+source: https://web.archive.org/web/20140829202236/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_createTransformedArea_AffineTransform_t_.htm
 ---
 ### Syntax
 
@@ -27,8 +27,8 @@ import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     Ellipse2D e1 = new Ellipse2D.Double (20.0, 20.0, 80.0, 70.0);
     Ellipse2D e2 = new Ellipse2D.Double (20.0, 70.0, 40.0, 40.0);
@@ -41,7 +41,7 @@ publicclass Main extends JPanel {
     g2.drawString ("subtract", 20, 140);
     System.out.println(a1.createTransformedArea(null));
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.getContentPane().add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

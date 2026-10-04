@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * &lt;code&gt;null&lt;/code&gt; safe.
  *
@@ -80,7 +81,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */public class Main {
+ */
+public class Main {
   /**
    * Search a String to find the first index of any
    * character not in the given set of characters.
@@ -102,7 +104,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param searchChars  the chars to search for, may be null
    * @return the index of any of the chars, -1 if no match or null input
    * @since 2.0
-   */ public static int indexOfAnyBut(String str, String searchChars) {
+   */
+  public static int indexOfAnyBut(String str, String searchChars) {
       if (isEmpty(str) || isEmpty(searchChars)) {
           return -1;
       }
@@ -114,21 +117,22 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       return -1;
   }
   // ----------------------------------------------------------------------
- /**
+  /**
    * Checks if an array of Objects is empty or &lt;code&gt;null&lt;/code&gt;.
    *
    * @param array  the array to test
    * @return &lt;code&gt;true&lt;/code&gt; if the array is empty or &lt;code&gt;null&lt;/code&gt;
    * @since 2.1
-   */ public static boolean isEmpty(char[] array) {
+   */
+  public static boolean isEmpty(char[] array) {
       if (array == null || array.length == 0) {
           return true;
       }
       return false;
   }
   // Empty checks
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * &lt;pre&gt;
@@ -145,11 +149,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    *
    * @param str  the String to check, may be null
    * @return &lt;code&gt;true&lt;/code&gt; if the String is empty or null
-   */ public static boolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="class-creatinginstancesofinnerclasses.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Creating instances of inne...</span></a><a class="pager-btn pager-next" href="data-type-obtainingadateobjectfromastring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Obtaining a Date Object Fr...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="jdk-7-processingthecontentsoftheentirefilereadtheentirefile.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Processing the contents of...</span></a><a class="pager-btn pager-next" href="data-type-addsanumberofhourstoadatereturninganewobject.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Adds a number of hours to ...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

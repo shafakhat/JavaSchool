@@ -3,8 +3,8 @@ title: String class constructors
 nav: String class constructors
 description: char charArray[] = { 'b', 'i', 'r', 't', 'h', ' ', 'd', 'a', 'y' };
 section: Imported - java2s Archive
-order: 1122
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Stringclassconstructors.htm
+order: 1079
+source: https://web.archive.org/web/2014/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Stringclassconstructors.htm
 ---
 ```java title=Example.java
 public class MainClass

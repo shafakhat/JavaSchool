@@ -1,10 +1,10 @@
 ---
 title: Java Data Structure How to Example
 nav: Java Data Structure How to...
-description: Imported from java2s.com: Java Data Structure How to Example
+description: Imported from the java2s.com archive: Java Data Structure How to Example
 section: Imported - java2s Archive
-order: 50026
-source: https://www.java2s.com/Tutorials/Java/Data_Structure_How_to/index.html
+order: 1280
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Data_Structure_How_to/index.html
 ---
 - Cache 3
 - Graph 1

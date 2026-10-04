@@ -3,8 +3,8 @@ title: Checks whether the character is ASCII 7 bit alphabetic upper case.
 nav: Checks whether the charact...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1063
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/CheckswhetherthecharacterisASCII7bitalphabeticuppercase.htm
+order: 1031
+source: https://web.archive.org/web/20140829083446/http://www.java2s.com/Tutorial/Java/0040__Data-Type/CheckswhetherthecharacterisASCII7bitalphabeticuppercase.htm
 ---
 ```java title=Example.java
 /**
@@ -22,7 +22,8 @@ source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/004
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on char primitives and Character objects.
  *
  * This class tries to handle <code>null</code> input gracefully.
@@ -32,7 +33,8 @@ source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/004
  * @author Stephen Colebourne
  * @since 2.1
  * @version $Id: CharUtils.java 437554 2006-08-28 06:21:41Z bayard $
- */public class Main {
+ */
+public class Main {
   /**
    *
    * <pre>
@@ -46,7 +48,8 @@ source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/004
    *
    * @param ch  the character to check
    * @return true if between 65 and 90 inclusive
-   */ public static boolean isAsciiAlphaUpper(char ch) {
+   */
+  public static boolean isAsciiAlphaUpper(char ch) {
       return ch >= 'A' && ch <= 'Z';
   }
 }

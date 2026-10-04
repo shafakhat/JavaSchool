@@ -3,7 +3,7 @@ title: Get 7-bit ASCII character array from input String.
 nav: Get 7-bit ASCII character ...
 description: Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1151
+order: 1075
 source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Get7bitASCIIcharacterarrayfrominputString.htm
 ---
 ```java title=Example.java

@@ -1,10 +1,10 @@
 ---
 title: Java IO Tutorial - ByteOrder Example
 nav: Java IO Tutorial - ByteOrd...
-description: Imported from java2s.com: Java IO Tutorial - ByteOrder Example
+description: Imported from the java2s.com archive: Java IO Tutorial - ByteOrder Example
 section: Imported - java2s Archive
-order: 50308
-source: https://www.java2s.com/Tutorials/Java/java.nio/ByteOrder/index.html
+order: 1177
+source: https://web.archive.org/web/2020/https://www.java2s.com/Tutorials/Java/java.nio/ByteOrder/index.html
 ---
 ## Field
 

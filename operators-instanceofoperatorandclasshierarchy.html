@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>instanceof operator and class hierarchy - JavaSchool</title>
+<meta name="description" content="Imported from the java2s.com archive: instanceof operator and class hierarchy">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-operators-instanceofoperatorandclasshierarchy">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-03-operators.html">Operators</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-03-10-instanceof.html">instanceof</a></nav>
+    <h1>instanceof operator and class hierarchy</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class A {
+  int i, j;
+}
+class B {
+  int i, j;
+}
+class C extends A {
+  int k;
+}
+class D extends A {
+  int k;
+}
+class InstanceOf {
+  public static void main(String args[]) {
+    A a = new A();
+    B b = new B();
+    C c = new C();
+    D d = new D();
+    if (a instanceof A)
+      System.out.println("a is instance of A");
+    if (b instanceof B)
+      System.out.println("b is instance of B");
+    if (c instanceof C)
+      System.out.println("c is instance of C");
+    if (c instanceof A)
+      System.out.println("c can be cast to A");
+    if (a instanceof C)
+      System.out.println("a can be cast to C");
+    System.out.println();
+    A ob;
+    ob = d; // A reference to d
+    System.out.println("ob now refers to d");
+    if (ob instanceof D)
+      System.out.println("ob is instance of D");
+    System.out.println();
+    ob = c; // A reference to c
+    System.out.println("ob now refers to c");
+    if (ob instanceof D)
+      System.out.println("ob can be cast to D");
+    else
+      System.out.println("ob cannot be cast to D");
+    if (ob instanceof A)
+      System.out.println("ob can be cast to A");
+    System.out.println();
+    // all objects can be cast to Object
+    if (a instanceof Object)
+      System.out.println("a may be cast to Object");
+    if (b instanceof Object)
+      System.out.println("b may be cast to Object");
+    if (c instanceof Object)
+      System.out.println("c may be cast to Object");
+    if (d instanceof Object)
+      System.out.println("d may be cast to Object");
+  }
+}</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="class-definition-fullyqualifiedname.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">fully qualified name</span></a><a class="pager-btn pager-next" href="basicstroke-java-basicstroke-float-width-int-cap-int-join-float-miterlimit-const.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java BasicStroke(float wid...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

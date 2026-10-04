@@ -3,15 +3,15 @@ title: Java Swing Tutorial - Java CardLayout.setHgap(int hgap)
 nav: Java Swing Tutorial - Java...
 description: In the following code shows how to use CardLayout.setHgap(int hgap) method.
 section: Imported - java2s Archive
-order: 1012
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0400__CardLayout.setHgap_int_hgap_.htm
+order: 1187
+source: https://web.archive.org/web/20150325014958/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0400__CardLayout.setHgap_int_hgap_.htm
 ---
 ## Syntax
 
 CardLayout.setHgap(int hgap) has the following syntax.
 
 ```java title=Example.java
-publicvoid setHgap(int hgap)
+public void setHgap(int hgap)
 ```
 
 ## Example
@@ -25,8 +25,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     JFrame aWindow = new JFrame();
     aWindow.setSize(400, 400);
     aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,8 +46,9 @@ class CardLayoutPanel extends JPanel implements ActionListener {
     card.setVgap(50);
     card.setHgap(30);
   }
-  publicvoid actionPerformed(ActionEvent e) {
+  public void actionPerformed(ActionEvent e) {
     card.next(this);
   }
 }
+java title=Example.java
 ```

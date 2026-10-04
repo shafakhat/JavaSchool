@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Format Date with System.out.format - JavaSchool</title>
+<meta name="description" content="Format Date with System.out.format: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-data-type-formatdatewithsystemoutformat">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-41-date-format.html">Date Format</a></nav>
+    <h1>Format Date with System.out.format</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright (c) 1995 - 2008 Sun Microsystems, Inc.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   - Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   - Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in the
+ *     documentation and/or other materials provided with the distribution.
+ *
+ *   - Neither the name of Sun Microsystems nor the names of its
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+ * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+import java.util.Calendar;
+import java.util.Locale;
+public class TestFormat {
+  public static void main(String[] args) {
+    long n = 461012;
+    System.out.format("%d%n", n);
+    System.out.format("%08d%n", n);
+    System.out.format("%+8d%n", n);
+    System.out.format("%,8d%n", n);
+    System.out.format("%+,8d%n%n", n);
+    double pi = Math.PI;
+    System.out.format("%f%n", pi);
+    System.out.format("%.3f%n", pi);
+    System.out.format("%10.3f%n", pi);
+    System.out.format("%-10.3f%n", pi);
+    System.out.format(Locale.FRANCE, "%-10.4f%n%n", pi);
+    Calendar c = Calendar.getInstance();
+    System.out.format("%tB %te, %tY%n", c, c, c);
+    System.out.format("%tl:%tM %tp%n", c, c, c);
+    System.out.format("%tD%n", c);
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>2.41.1.</th><th>Date Parsing and Formatting with DateFormat</th></tr></thead><tbody><tr><td>2.41.2.</td><td>Parsing the Time Using a Custom Format</td></tr><tr><td>2.41.3.</td><td>Parse with a custom format</td></tr><tr><td>2.41.4.</td><td>Parse with a default format</td></tr><tr><td>2.41.5.</td><td>Parse string date value input with SimpleDateFormat('dd-MMM-yy')</td></tr><tr><td>2.41.6.</td><td>Parse a date and time</td></tr><tr><td>2.41.7.</td><td>Parse string date value input with SimpleDateFormat('E, dd MMM yyyy HH:mm:ss Z')</td></tr><tr><td>2.41.8.</td><td>Parse string date value with default format: DateFormat.getDateInstance(DateFormat.DEFAULT)</td></tr><tr><td>2.41.9.</td><td>Leniency</td></tr><tr><td>2.41.10.</td><td>Formatting String Symbols for SimpleDateFormat</td></tr><tr><td>2.41.11.</td><td>SimpleDateFormat: hh:mm:ss, dd MMM yyyy hh:mm:ss zzz, E MMM dd yyyy</td></tr><tr><td>2.41.12.</td><td>Simply format a date as YYYYMMDD</td></tr><tr><td>2.41.13.</td><td>Express a duration in term of HH:MM:SS</td></tr><tr><td>2.41.14.</td><td>Date Format with SimpleDateFormat</td></tr><tr><td>2.41.15.</td><td>Demonstrate date formats with different DateFormat constants</td></tr><tr><td>2.41.16.</td><td>Demonstrate time formats.</td></tr><tr><td>2.41.17.</td><td>DateFormat.getDateTimeInstance(DateFormat.FULL,DateFormat.MEDIUM)</td></tr><tr><td>2.41.18.</td><td>print out the current date and time</td></tr><tr><td>2.41.19.</td><td>Date Era change</td></tr><tr><td>2.41.20.</td><td>Format Date with System.out.format</td></tr><tr><td>2.41.21.</td><td>SimpleDateFormat</td></tr><tr><td>2.41.22.</td><td>Formatting Dates and Times</td></tr><tr><td>2.41.23.</td><td>Four different date formats for four countries: US, UK, GERMANY, FRANCE</td></tr><tr><td>2.41.24.</td><td>Various Date format</td></tr><tr><td>2.41.25.</td><td>Display date with day name in a short format</td></tr><tr><td>2.41.26.</td><td>Display date with a short day and month name</td></tr><tr><td>2.41.27.</td><td>Format a date into dd/mm/yyyy</td></tr><tr><td>2.41.28.</td><td>Format current date and time with the SimpleDateFormat: dd/MM/yyyy</td></tr><tr><td>2.41.29.</td><td>Format current date and time with the SimpleDateFormat: HH:mm:ss</td></tr><tr><td>2.41.30.</td><td>Formatting Symbols for SimpleDateFormat</td></tr><tr><td>2.41.31.</td><td>Formatting the Time Using a Custom Format</td></tr><tr><td>2.41.32.</td><td>Change date formatting symbols</td></tr><tr><td>2.41.33.</td><td>Get a List of Short Month Names</td></tr><tr><td>2.41.34.</td><td>Get a List of Weekday Names</td></tr><tr><td>2.41.35.</td><td>Get a List of Short Weekday Names</td></tr><tr><td>2.41.36.</td><td>Time in 12-hour format</td></tr><tr><td>2.41.37.</td><td>Time in 24-hour format</td></tr><tr><td>2.41.38.</td><td>Date and time with month</td></tr><tr><td>2.41.39.</td><td>Date and time with day and month fully spelled-out</td></tr><tr><td>2.41.40.</td><td>Output current time: %tc</td></tr><tr><td>2.41.41.</td><td>Formatter that caches formatted date information</td></tr><tr><td>2.41.42.</td><td>RFC date format</td></tr><tr><td>2.41.43.</td><td>A formatter that formats dates to show the elapsed time relative to some base date.</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-expressadurationintermofhhmmss.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Express a duration in term...</span></a><a class="pager-btn pager-next" href="data-type-getalistofshortmonthnames.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Get a List of Short Month ...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

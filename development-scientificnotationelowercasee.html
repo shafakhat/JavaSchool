@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scientific notation - JavaSchool</title>
+<meta name="description" content="Imported from the java2s.com archive: Scientific notation">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-scientificnotationelowercasee">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-14-printf-method.html">printf Method</a></nav>
+    <h1>Scientific notation</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] args) {
+     System.out.printf("Scientific notation:   %e\n", Math.PI);
+  }
+}
+java title=Example.java
+Scientific notation:   3.141593e+00</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.14.1.</th><th>Using Java's printf( ) Method</th></tr></thead><tbody><tr><td>6.14.2.</td><td>Demonstrate printf()</td></tr><tr><td>6.14.3.</td><td>printf to command line summary</td></tr><tr><td>6.14.4.</td><td>Formatting Numerical Data:</td></tr><tr><td>6.14.5.</td><td>Specifying the Width and Precision</td></tr><tr><td>6.14.6.</td><td>Formatting Characters and Strings</td></tr><tr><td>6.14.7.</td><td>output a % character</td></tr><tr><td>6.14.8.</td><td>Formatting Data into a String</td></tr><tr><td>6.14.9.</td><td>Formatting a string and Ouputing to console</td></tr><tr><td>6.14.10.</td><td>Formated System.out.printf</td></tr><tr><td>6.14.11.</td><td>localized day name: %tA/%TA</td></tr><tr><td>6.14.12.</td><td>localized, abbreviated day: %ta/%Ta</td></tr><tr><td>6.14.13.</td><td>two-digit century: %tC/%TC</td></tr><tr><td>6.14.14.</td><td>four digit year: %tY/%TY</td></tr><tr><td>6.14.15.</td><td>two-digit year: %ty/%Ty</td></tr><tr><td>6.14.16.</td><td>three-digit day of the year: %tj/%Tj</td></tr><tr><td>6.14.17.</td><td>two-digit month: %tm/%Tm</td></tr><tr><td>6.14.18.</td><td>two-digit day of the month: %td/%Td</td></tr><tr><td>6.14.19.</td><td>a one-or-two-digit day of the month: %te/%Te</td></tr><tr><td>6.14.20.</td><td>hours and minutes on a 24-hour clock: %tR/%TR</td></tr><tr><td>6.14.21.</td><td>hours, minutes, and seconds on a 24-hour clock: %tT/%TT</td></tr><tr><td>6.14.22.</td><td>hours, minutes, and seconds on a 12-hour clock: %tr/%Tr</td></tr><tr><td>6.14.23.</td><td>month/day/year: %tD/%TD</td></tr><tr><td>6.14.24.</td><td>ISO 8601 standard date: %tF/%TF</td></tr><tr><td>6.14.25.</td><td>Unix date format: %tc/%Tc</td></tr><tr><td>6.14.26.</td><td>Decimal: %f</td></tr><tr><td>6.14.27.</td><td>Scientific notation: %e (lower case e)</td></tr><tr><td>6.14.28.</td><td>Scientific notation: %E (upper case E)</td></tr><tr><td>6.14.29.</td><td>Decimal/Scientific: %g (lower case g)</td></tr><tr><td>6.14.30.</td><td>Decimal/Scientific: %G (upper case G)</td></tr><tr><td>6.14.31.</td><td>Lowercase Hexadecimal: %a</td></tr><tr><td>6.14.32.</td><td>Uppercase Hexadecimal: %A</td></tr><tr><td>6.14.33.</td><td>Decimal: %d</td></tr><tr><td>6.14.34.</td><td>Octal: %o</td></tr><tr><td>6.14.35.</td><td>Lowercase hexadecimal: %x</td></tr><tr><td>6.14.36.</td><td>Uppercase hexadecimal: %X</td></tr><tr><td>6.14.37.</td><td>Output URL: %b (lower case b)</td></tr><tr><td>6.14.38.</td><td>Output URL: %B (upper case B)</td></tr><tr><td>6.14.39.</td><td>Hashcode: %h (lower case h)</td></tr><tr><td>6.14.40.</td><td>HASHCODE: %H (upper case H)</td></tr><tr><td>6.14.41.</td><td>STRING: %S (upper case S)</td></tr><tr><td>6.14.42.</td><td>string: %s (lower case s)</td></tr><tr><td>6.14.43.</td><td>Using the integral conversion characters</td></tr><tr><td>6.14.44.</td><td>Using floating-point conversion characters</td></tr><tr><td>6.14.45.</td><td>Using character and string conversion characters.</td></tr><tr><td>6.14.46.</td><td>Conversion characters for date/time compositions</td></tr><tr><td>6.14.47.</td><td>Conversion characters for date</td></tr><tr><td>6.14.48.</td><td>Conversion characters for time</td></tr><tr><td>6.14.49.</td><td>Using the b, B, h, H, % and n conversion characters.</td></tr><tr><td>6.14.50.</td><td>Right justifying integers in fields: Field Width</td></tr><tr><td>6.14.51.</td><td>Using precision for floating-point numbers and strings</td></tr><tr><td>6.14.52.</td><td>Right justifying and left justifying values</td></tr><tr><td>6.14.53.</td><td>Printing numbers with and without the + flag</td></tr><tr><td>6.14.54.</td><td>Printing a space before non-negative values</td></tr><tr><td>6.14.55.</td><td>Using the # flag with conversion characters o and x</td></tr><tr><td>6.14.56.</td><td>Printing with the 0 (zero) flag fills in leading zeros</td></tr><tr><td>6.14.57.</td><td>Using the comma (,) flag to display numbers with thousands separator</td></tr><tr><td>6.14.58.</td><td>Using the ( flag to place parentheses around negative numbers</td></tr><tr><td>6.14.59.</td><td>Reordering output with argument indices.</td></tr><tr><td>6.14.60.</td><td>Two digit hour on a 24-hour clock: %tH/%TH</td></tr><tr><td>6.14.61.</td><td>two digit hour on a 12-hour clock: %tI/%TI</td></tr><tr><td>6.14.62.</td><td>one-or-two digit hour on a 24-hour clock: %tk/%Tk</td></tr><tr><td>6.14.63.</td><td>one-or-two digit hour on a 12-hour: %tl/%Tl</td></tr><tr><td>6.14.64.</td><td>two digit minutes ranging from 00 to 59: %tH / %TH</td></tr><tr><td>6.14.65.</td><td>two digit seconds ranging from 00 to 60 : %tS/%TS</td></tr><tr><td>6.14.66.</td><td>milliseconds: %tL/%TL</td></tr><tr><td>6.14.67.</td><td>nanoseconds: %tN/%TN</td></tr><tr><td>6.14.68.</td><td>Locale-specific morning/afternoon indicator: %tp/%Tp</td></tr><tr><td>6.14.69.</td><td>RFC 822 numeric time zone indicator: %tz/%Tz</td></tr><tr><td>6.14.70.</td><td>Time zone abbreviation: %tZ/%TZ</td></tr><tr><td>6.14.71.</td><td>seconds since the epoch: %ts/%Ts</td></tr><tr><td>6.14.72.</td><td>milliseconds since the epoch: %TQ</td></tr><tr><td>6.14.73.</td><td>localized month name: %tB/%TB</td></tr><tr><td>6.14.74.</td><td>localized, abbreviated month: %tb/%Tb</td></tr><tr><td>6.14.75.</td><td>localized, abbreviated month: %th/%Th</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-decimald.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Decimal</span></a><a class="pager-btn pager-next" href="development-stringslowercases.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">string</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

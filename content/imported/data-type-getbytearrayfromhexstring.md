@@ -3,8 +3,8 @@ title: Get byte array from hex string
 nav: Get byte array from hex st...
 description: * Licensed to the Apache Software Foundation (ASF) under one
 section: Imported - java2s Archive
-order: 1141
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Getbytearrayfromhexstring.htm
+order: 1081
+source: https://web.archive.org/web/2014/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Getbytearrayfromhexstring.htm
 ---
 ```java title=Example.java
 /*

@@ -3,8 +3,8 @@ title: Java Tutorial - Java Area.intersects(Rectangle2D r)
 nav: Java Tutorial - Java Area....
 description: In the following code shows how to use Area.intersects(Rectangle2D r) method.
 section: Imported - java2s Archive
-order: 1012
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_intersects_Rectangle2D_r_.htm
+order: 1112
+source: https://web.archive.org/web/20140830012738/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_intersects_Rectangle2D_r_.htm
 ---
 ### Syntax
 

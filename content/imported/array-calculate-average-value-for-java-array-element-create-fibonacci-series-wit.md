@@ -3,8 +3,8 @@ title: Calculate average value for Java array element, Create Fibonacci Series w
 nav: Calculate average value fo...
 description: The following code declares an int array and stores integer value into it. Then it uses a for loop to go through each element in that array and sum the int value. Finally
 section: Imported - java2s Archive
-order: 1022
-source: https://web.archive.org/web/20130905061854/http://java2s.com/Tutorials/Java/Array/Calculate_average_value_for_Java_array_element_Create_Fibonacci_Series_with_array_Matrix_calculation.htm
+order: 1121
+source: https://web.archive.org/web/2020/http://java2s.com/Tutorials/Java/Array/Calculate_average_value_for_Java_array_element_Create_Fibonacci_Series_with_array_Matrix_calculation.htm
 ---
 In this chapter you will learn:
 
@@ -17,16 +17,16 @@ In this chapter you will learn:
 The following code declares an int array and stores integer value into it. Then it uses a for loop to go through each element in that array and sum the int value. Finally it divides the sum by the array length and output the average.
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
-int[] intArray = newint[] { 1, 2, 3, 4, 5 };
+public class Main {
+  public static void main(String[] args) {
+ int[] intArray = new int[] { 1, 2, 3, 4, 5 };
     // calculate sum
-int sum = 0;
+ int sum = 0;
     for (int i = 0; i < intArray.length; i++){
       sum = sum + intArray[i];
     }
     // calculate average
-double average = sum / intArray.length;
+ double average = sum / intArray.length;
     System.out.println("average: " + average);
   }
 }
@@ -40,10 +40,10 @@ The first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent
 
 ```java title=Example.java
 import java.util.Arrays;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     int length = 20;
-    long[] series = newlong[length];
+    long[] series = new long[length];
     series[0] = 0;
     series[1] = 1;
     for (int i = 2; i < length; i++) {
@@ -61,9 +61,9 @@ The output:
 The following code use two-dimensional double type array to do Matrix calculation
 
 ```java title=Example.java
-class Matrix {privatedouble[][] doubleArray;
+class Matrix {private double[][] doubleArray;
   Matrix(int nrows, int ncols) {
-    doubleArray = newdouble[nrows][ncols];
+    doubleArray = new double[nrows][ncols];
   }
   int getCols() {
     return doubleArray[0].length;
@@ -78,8 +78,8 @@ class Matrix {privatedouble[][] doubleArray;
     doubleArray[row][col] = value;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Matrix a = new Matrix(1, 3);
     a.setValue(0, 0, 1); // | 1 2 3 |
     a.setValue(0, 1, 2);
@@ -95,7 +95,7 @@ publicclass Main {
     dump(b);
     dump(multiply(a, b));
   }
-  staticvoid dump(Matrix m) {
+  static void dump(Matrix m) {
     for (int i = 0; i < m.getRows(); i++) {
       for (int j = 0; j < m.getCols(); j++){
         System.out.print(m.getValue(i, j) + " ");
@@ -106,7 +106,7 @@ publicclass Main {
   }
   static Matrix multiply(Matrix a, Matrix b) {
     if (a.getCols() != b.getRows()) {
-      thrownew IllegalArgumentException("rows/columns mismatch");
+      throw new IllegalArgumentException("rows/columns mismatch");
     }
     Matrix result = new Matrix(a.getRows(), b.getCols());
     for (int i = 0; i < a.getRows(); i++) {

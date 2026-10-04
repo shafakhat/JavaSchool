@@ -77,28 +77,37 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * --------
  * 14-Jun-2007 : Version 1 (RW);
  *
- */import java.text.FieldPosition;
+ */
+import java.text.FieldPosition;
 import java.text.NumberFormat;
 import java.text.ParsePosition;
 /**
  * There are some limitations, so be careful using this class.
  *
  * @since 1.0.6
- */publicclass HexNumberFormat extends NumberFormat {
-    /** Number of hexadecimal digits for a byte. */publicstaticfinalint BYTE = 2;
-    /** Number of hexadecimal digits for a word. */publicstaticfinalint WORD = 4;
-    /** Number of hexadecimal digits for a double word. */publicstaticfinalint DWORD = 8;
-    /** Number of hexadecimal digits for a quad word. */publicstaticfinalint QWORD = 16;
-    /** The number of digits (shorter strings will be left padded). */privateint m_numDigits = DWORD;
+ */
+public class HexNumberFormat extends NumberFormat {
+    /** Number of hexadecimal digits for a byte. */
+    public static final int BYTE = 2;
+    /** Number of hexadecimal digits for a word. */
+    public static final int WORD = 4;
+    /** Number of hexadecimal digits for a double word. */
+    public static final int DWORD = 8;
+    /** Number of hexadecimal digits for a quad word. */
+    public static final int QWORD = 16;
+    /** The number of digits (shorter strings will be left padded). */
+    private int m_numDigits = DWORD;
     /**
      * Creates a new instance with 8 digits.
-     */public HexNumberFormat() {
+     */
+    public HexNumberFormat() {
         this(DWORD);
     }
     /**
      * Creates a new instance with the specified number of digits.
      * @param digits  the digits.
-     */public HexNumberFormat(int digits) {
+     */
+    public HexNumberFormat(int digits) {
         super();
         this.m_numDigits = digits;
     }
@@ -106,14 +115,16 @@ import java.text.ParsePosition;
      * Returns the number of digits.
      *
      * @return The number of digits.
-     */publicfinalint getNumberOfDigits() {
+     */
+    public final int getNumberOfDigits() {
         return this.m_numDigits;
     }
     /**
      * Sets the number of digits.
      *
      * @param digits  the number of digits.
-     */publicvoid setNumberOfDigits(int digits) {
+     */
+    public void setNumberOfDigits(int digits) {
         this.m_numDigits = digits;
     }
     /**
@@ -125,7 +136,8 @@ import java.text.ParsePosition;
      * @param pos  the field position (ignored here).
      *
      * @return The string buffer.
-     */public StringBuffer format(double number, StringBuffer toAppendTo,
+     */
+    public StringBuffer format(double number, StringBuffer toAppendTo,
             FieldPosition pos) {
         return format((long) number, toAppendTo, pos);
     }
@@ -138,7 +150,8 @@ import java.text.ParsePosition;
      * @param pos  the field position (ignored here).
      *
      * @return The string buffer.
-     */public StringBuffer format(long number, StringBuffer toAppendTo,
+     */
+    public StringBuffer format(long number, StringBuffer toAppendTo,
             FieldPosition pos) {
         String l_hex = Long.toHexString(number).toUpperCase();
         int l_pad = this.m_numDigits - l_hex.length();
@@ -158,11 +171,13 @@ import java.text.ParsePosition;
      * @param parsePosition  ignored.
      *
      * @return Always &lt;code&gt;null&lt;/code&gt;.
-     */public Number parse (String source, ParsePosition parsePosition) {
+     */
+    public Number parse (String source, ParsePosition parsePosition) {
         return null; // don't bother with parsing
     }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="collections-data-structure-acombinationoftwocollectionsintoacollection.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">A combination of two colle...</span></a><a class="pager-btn pager-next" href="swing-components-ajoutlookbarprovidesacomponentthatissimilartoajtabbedpanebutins.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">A JOutlookBar provides a c...</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.9.1.</th><th>Hexadecimal integer literal</th></tr></thead><tbody><tr><td>2.9.2.</td><td>A hexadecimal literal of type long</td></tr><tr><td>2.9.3.</td><td>Defining integer literals as octal values</td></tr><tr><td>2.9.4.</td><td>Decode string to integer</td></tr><tr><td>2.9.5.</td><td>Convert octal number to decimal number example</td></tr><tr><td>2.9.6.</td><td>Convert decimal integer to octal number example</td></tr><tr><td>2.9.7.</td><td>Convert decimal integer to hexadecimal number example</td></tr><tr><td>2.9.8.</td><td>Parsing and Formatting a Number into Binary</td></tr><tr><td>2.9.9.</td><td>Convert byte array to Hex String</td></tr><tr><td>2.9.10.</td><td>Convert the bytes to a hex string representation of the bytes</td></tr><tr><td>2.9.11.</td><td>Converting hexadecimal strings</td></tr><tr><td>2.9.12.</td><td>Dumps data in hexadecimal format</td></tr><tr><td>2.9.13.</td><td>Given a hexstring this will return the byte array corresponding to string</td></tr><tr><td>2.9.14.</td><td>Hex encoder/decoder implementation borrowed from BouncyCastle</td></tr><tr><td>2.9.15.</td><td>Returns the hexadecimal value of the supplied byte array</td></tr><tr><td>2.9.16.</td><td>A custom number formatter that formats numbers as hexadecimal strings.</td></tr><tr><td>2.9.17.</td><td>Decodes Hex data into octects</td></tr><tr><td>2.9.18.</td><td>Decodes Base64 data into octects</td></tr><tr><td>2.9.19.</td><td>Helper function that returns a char from an hex</td></tr><tr><td>2.9.20.</td><td>Encodes hex octects into Base64</td></tr><tr><td>2.9.21.</td><td>Hex encoder and decoder.</td></tr><tr><td>2.9.22.</td><td>Helper function that dump an array of bytes in hex pair form, without '0x' and space chars</td></tr><tr><td>2.9.23.</td><td>dump an array of bytes in hex form</td></tr><tr><td>2.9.24.</td><td>Decode byte array</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-abbreviatestring.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Abbreviate string</span></a><a class="pager-btn pager-next" href="class-definition-properinheritanceofaninnerclass.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Proper inheritance of an i...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

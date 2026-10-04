@@ -3,8 +3,8 @@ title: Is character a digit, letter, white space, lower case or upper case chara
 nav: Is character a digit, lett...
 description: Imported from the java2s.com archive: Is character a digit, letter, white space, lower case or upper case character
 section: Imported - java2s Archive
-order: 1060
-source: https://web.archive.org/web/2020/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Ischaracteradigitletterwhitespacelowercaseoruppercasecharacter.htm
+order: 1028
+source: https://web.archive.org/web/20140829083134/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Ischaracteradigitletterwhitespacelowercaseoruppercasecharacter.htm
 ---
 ```java title=Example.java
 public class Main {

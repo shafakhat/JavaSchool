@@ -3,15 +3,15 @@ title: Java Swing Tutorial - Java CardLayout .getLayoutAlignmentY (Container par
 nav: Java Swing Tutorial - Java...
 description: CardLayout.getLayoutAlignmentY(Container parent) has the following syntax.
 section: Imported - java2s Archive
-order: 1014
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0180__CardLayout.getLayoutAlignmentY_Container_parent_.htm
+order: 1179
+source: https://web.archive.org/web/20150325023038/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0180__CardLayout.getLayoutAlignmentY_Container_parent_.htm
 ---
 ## Syntax
 
 CardLayout.getLayoutAlignmentY(Container parent) has the following syntax.
 
 ```java title=Example.java
-publicfloat getLayoutAlignmentY(Container parent)
+public float getLayoutAlignmentY(Container parent)
 ```
 
 ## Example
@@ -25,8 +25,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     JFrame aWindow = new JFrame();
     aWindow.setSize(400, 400);
     aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,8 +45,9 @@ class CardLayoutPanel extends JPanel implements ActionListener {
     }
     System.out.println(card.getLayoutAlignmentY(this));
   }
-  publicvoid actionPerformed(ActionEvent e) {
+  public void actionPerformed(ActionEvent e) {
     card.next(this);
   }
 }
+java title=Example.java
 ```

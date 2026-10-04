@@ -3,8 +3,8 @@ title: Java Tutorial - Java Area() Constructor
 nav: Java Tutorial - Java Area(...
 description: In the following code shows how to use Area.Area() constructor.
 section: Imported - java2s Archive
-order: 1006
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_Constructor.htm
+order: 1097
+source: https://web.archive.org/web/20140829201428/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_Constructor.htm
 ---
 ### Syntax
 

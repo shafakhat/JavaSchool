@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helper method to execute shell command - JavaSchool</title>
+<meta name="description" content="Helper method to execute shell command: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-development-helpermethodtoexecuteshellcommand">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-27-process.html">Process</a></nav>
+    <h1>Helper method to execute shell command</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright (c) 1998-2002 Carnegie Mellon University.  All rights
+ * reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY ``AS IS'' AND
+ * ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY
+ * NOR ITS EMPLOYEES BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */import java.io.*;
+public abstract class Exec {
+    public static Process exec (String[] cmdarray) throws IOException {
+        return exec (cmdarray, null, null);
+    }
+    public static Process exec (String[] cmdarray, String[] envp) throws IOException {
+        return exec (cmdarray, envp, null);
+    }
+    public static Process exec (String[] cmdarray, String[] envp, File directory) throws IOException {
+  return
+      isWindows ()
+      ? execWindows (cmdarray, envp, directory)
+      : execUnix (cmdarray, envp, directory);
+    }
+    /*
+     * Unix
+     */ static Process execUnix (String[] cmdarray, String[] envp, File directory) throws IOException {
+        // instead of calling command directly, we'll call the shell to change
+ // directory and set environment variables.
+ // start constructing the sh command line.
+        StringBuffer buf = new StringBuffer ();
+        if (directory != null) {
+            // change to directory
+            buf.append ("cd '");
+            buf.append (escapeQuote (directory.toString ()));
+            buf.append ("'; ");
+        }
+        if (envp != null) {
+            // set environment variables.  Quote the value (but not the name).
+ for (int i = 0; i &lt; envp.length; ++i) {
+                String nameval = envp[i];
+                int equals = nameval.indexOf ('=');
+                if (equals == -1)
+                    throw new IOException ("environment variable '" + nameval
+                                           + "' should have form NAME=VALUE");
+                buf.append (nameval.substring (0, equals+1));
+                buf.append ('\'');
+                buf.append (escapeQuote (nameval.substring (equals+1)));
+                buf.append ("\' ");
+            }
+        }
+        // now that we have the directory and environment, run "which"
+ // to test if the command name is found somewhere in the path.
+ // If "which" fails, throw an IOException.
+        String cmdname = escapeQuote (cmdarray[0]);
+        Runtime rt = Runtime.getRuntime ();
+        String[] sharray = new String[] { "sh", "-c", buf.toString () + " which \'" + cmdname + "\'" };
+        Process which = rt.exec (sharray);
+        try {
+            which.waitFor ();
+        } catch (InterruptedException e) {
+            throw new IOException ("interrupted");
+        }
+        if (which.exitValue () != 0)
+            throw new IOException ("can't execute " + cmdname + ": bad command or filename");
+        // finish in
+        buf.append ("exec \'");
+        buf.append (cmdname);
+        buf.append ("\' ");
+        // quote each argument in the command
+ for (int i = 1; i &lt; cmdarray.length; ++i) {
+            buf.append ('\'');
+            buf.append (escapeQuote (cmdarray[i]));
+            buf.append ("\' ");
+        }
+        System.out.println ("executing " + buf);
+        sharray[2] = buf.toString ();
+        return rt.exec (sharray);
+    }
+    static String escapeQuote (String s) {
+        // replace single quotes with a bit of magic (end-quote, escaped-quote, start-quote)
+ // that works in a single-quoted string in the Unix shell
+ if (s.indexOf ('\'') != -1) {
+          System.out.println ("replacing single-quotes in " + s);
+            s = s.replace("'", "'\\''");
+            System.out.println ("to get " + s);
+        }
+        return s;
+    }
+    /*
+     * Windows
+     */ static boolean isWindows () {
+        String os = System.getProperty ("os.name");
+  return (os != null &amp;&amp; os.startsWith ("Windows"));
+     }
+     static boolean isJview () {
+        String vendor = System.getProperty ("java.vendor");
+  return (vendor != null &amp;&amp; vendor.startsWith ("Microsoft"));
+     }
+    static Process execWindows (String[] cmdarray, String[] envp, File directory) throws IOException {
+  if (envp != null || directory != null) {
+      if (isJview ())
+    // jview doesn't support JNI, so can't call putenv/chdir
+ throw new IOException
+        ("can't use Exec.exec() under Microsoft JVM");
+      if (!linked) {
+    try {
+        System.loadLibrary ("win32exec");
+        linked = true;
+    } catch (LinkageError e) {
+        throw new IOException ("can't use Exec.exec(): "
+             + e.getMessage ());
+    }
+      }
+      if (envp != null) {
+    for (int i = 0; i &lt; envp.length; ++i)
+        putenv (envp[i]);
+      }
+      if (directory != null)
+    chdir (directory.toString ());
+  }
+        return Runtime.getRuntime ().exec (cmdarray);
+    }
+    static boolean linked = false; // true after System.loadLibrary() is called
+ static native boolean putenv (String env);
+    static native boolean chdir (String dir);
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>6.27.1.</th><th>Reading Output from a Command</th></tr></thead><tbody><tr><td>6.27.2.</td><td>Sending Input to a Command</td></tr><tr><td>6.27.3.</td><td>Execute external command and obtain the result</td></tr><tr><td>6.27.4.</td><td>Helper method to execute shell command</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="development-anexamplejnlpfile.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">An Example JNLP File</span></a><a class="pager-btn pager-next" href="development-crc32check.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">CRC32 check</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

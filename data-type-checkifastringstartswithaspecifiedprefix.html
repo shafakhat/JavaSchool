@@ -54,10 +54,11 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */public class Main {
+ */
+public class Main {
   // startsWith
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    *
    * &lt;code&gt;null&lt;/code&gt;s are handled without exceptions. Two &lt;code&gt;null&lt;/code&gt;
    * references are considered to be equal. The comparison is case sensitive.
@@ -76,7 +77,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @return &lt;code&gt;true&lt;/code&gt; if the String starts with the prefix, case sensitive, or
    *  both &lt;code&gt;null&lt;/code&gt;
    * @since 2.4
-   */ public static boolean startsWith(String str, String prefix) {
+   */
+  public static boolean startsWith(String str, String prefix) {
       return startsWith(str, prefix, false);
   }
   /**
@@ -89,7 +91,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    *  (case insensitive) or not.
    * @return &lt;code&gt;true&lt;/code&gt; if the String starts with the prefix or
    *  both &lt;code&gt;null&lt;/code&gt;
-   */ private static boolean startsWith(String str, String prefix, boolean ignoreCase) {
+   */
+  private static boolean startsWith(String str, String prefix, boolean ignoreCase) {
       if (str == null || prefix == null) {
           return (str == null &amp;&amp; prefix == null);
       }
@@ -99,8 +102,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       return str.regionMatches(ignoreCase, 0, prefix, 0, prefix.length());
   }
   // Empty checks
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * &lt;pre&gt;
@@ -117,11 +120,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    *
    * @param str  the String to check, may be null
    * @return &lt;code&gt;true&lt;/code&gt; if the String is empty or null
-   */ public static boolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="data-type-lastoccurrenceofacharacter.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Last occurrence of a chara...</span></a><a class="pager-btn pager-next" href="data-type-checkifastringispresentatthecurrentpositioninanotherstring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Check if a string is prese...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-allowtextcontainingmostlyasciicharacterstobedecipherableonanasciitermi.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Allow text containing most...</span></a><a class="pager-btn pager-next" href="class-definition-compositionwithpublicobjects.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Composition with public ob...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

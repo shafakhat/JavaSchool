@@ -3,8 +3,8 @@ title: Java Tutorial - Java Area.contains(double x, double y, double w, double h
 nav: Java Tutorial - Java Area....
 description: Area.contains(double x, double y, double w, double h) has the following syntax.
 section: Imported - java2s Archive
-order: 1007
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_contains_double_x_double_y_double_w_double_h_.htm
+order: 1098
+source: https://web.archive.org/web/20140829203504/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_contains_double_x_double_y_double_w_double_h_.htm
 ---
 ### Syntax
 

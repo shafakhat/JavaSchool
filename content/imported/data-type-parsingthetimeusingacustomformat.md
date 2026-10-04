@@ -3,8 +3,8 @@ title: Parsing the Time Using a Custom Format
 nav: Parsing the Time Using a C...
 description: Imported from the java2s.com archive: Parsing the Time Using a Custom Format
 section: Imported - java2s Archive
-order: 1225
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ParsingtheTimeUsingaCustomFormat.htm
+order: 1130
+source: https://web.archive.org/web/20140829091024/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ParsingtheTimeUsingaCustomFormat.htm
 ---
 ```java title=Example.java
 import java.text.DateFormat;

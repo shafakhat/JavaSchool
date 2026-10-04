@@ -3,7 +3,7 @@ title: Match Name Formats
 nav: Match Name Formats
 description: Imported from the java2s.com archive: Match Name Formats
 section: Imported - java2s Archive
-order: 1174
+order: 1124
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/MatchNameFormats.htm
 ---
 ```java title=Example.java

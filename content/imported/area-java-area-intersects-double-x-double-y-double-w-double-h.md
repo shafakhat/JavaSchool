@@ -3,8 +3,8 @@ title: Java Tutorial - Java Area.intersects(double x, double y, double w, double
 nav: Java Tutorial - Java Area....
 description: Area.intersects(double x, double y, double w, double h) has the following syntax.
 section: Imported - java2s Archive
-order: 1011
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_intersects_double_x_double_y_double_w_double_h_.htm
+order: 1118
+source: https://web.archive.org/web/20140829202236/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_intersects_double_x_double_y_double_w_double_h_.htm
 ---
 ### Syntax
 

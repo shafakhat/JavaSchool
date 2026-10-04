@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * The Initial Developer of the Original Code is Sapient Corporation
  *
  * Copyright (C) 2003 Sapient Corporation. All Rights Reserved.
- */import java.util.ArrayList;
+ */
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -67,14 +68,16 @@ import java.util.StringTokenizer;
  * @since carbon 1.0
  * @author Greg Hinkle, May 2002
  * @version $Revision: 1.5 $($Author: dvoet $ / $Date: 2003/05/05 21:21:24 $)
- */public class StringUtil {
+ */
+public class StringUtil {
   /**
    *
    * @param aString the string that will be examined to remove chars
    * @param unWantedCharArray the char array containing the chars
    * that should be removed from a string
    * @return the string after removing the specified chars
-   */ public static String removeCharsFromString(String aString, char[] unWantedCharArray) {
+   */
+  public static String removeCharsFromString(String aString, char[] unWantedCharArray) {
       Character character = null;
       // Store unwanted chars in a hashset
       Set unWantedCharSet = new HashSet();
@@ -85,18 +88,19 @@ import java.util.StringTokenizer;
       // Create result String buffer
       StringBuffer result = new StringBuffer(aString.length());
       // For each character in aString, append it to the result string buffer
- // if it is not in unWantedCharSet
- for (int i = 0; i &lt; aString.length(); i++) {
+      // if it is not in unWantedCharSet
+      for (int i = 0; i &lt; aString.length(); i++) {
           character = new Character(aString.charAt(i));
           if (!unWantedCharSet.contains(character)) {
               result.append(aString.charAt(i));
           }
       }
       // Return result
- return result.toString();
+      return result.toString();
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="java-java-oca-ocp-practice-question-1168.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a><a class="pager-btn pager-next" href="web-services-soa-thisdemoillustrateshowtodevelopaserviceusethecodefirstapproachu.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">This demo illustrates how ...</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.21.1.</th><th>To replace one specific character with another throughout a string</th></tr></thead><tbody><tr><td>2.21.2.</td><td>To remove whitespace from the beginning and end of a string (but not the interior)</td></tr><tr><td>2.21.3.</td><td>Replacing Characters in a String: replace() method creates a new string with the replaced characters.</td></tr><tr><td>2.21.4.</td><td>Replacing Substrings in a String</td></tr><tr><td>2.21.5.</td><td>String.Replace</td></tr><tr><td>2.21.6.</td><td>Replaces all occourances of given character with new one and returns new String object.</td></tr><tr><td>2.21.7.</td><td>Replaces only first occourances of given String with new one and returns new String object.</td></tr><tr><td>2.21.8.</td><td>Replaces all occourances of given String with new one and returns new String object.</td></tr><tr><td>2.21.9.</td><td>Replace/remove character in a String: replace all occurences of a given character</td></tr><tr><td>2.21.10.</td><td>To replace a character at a specified position</td></tr><tr><td>2.21.11.</td><td>Replace \r\n with the tag</td></tr><tr><td>2.21.12.</td><td>Replace multiple whitespaces between words with single blank</td></tr><tr><td>2.21.13.</td><td>Unaccent letters</td></tr><tr><td>2.21.14.</td><td>Only replace first occurence</td></tr><tr><td>2.21.15.</td><td>Get all digits from a string</td></tr><tr><td>2.21.16.</td><td>Returns a new string with all the whitespace removed</td></tr><tr><td>2.21.17.</td><td>Removes specified chars from a string</td></tr><tr><td>2.21.18.</td><td>Remove/collapse multiple spaces.</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-removesasubstringonlyifitisatthebeginingofasourcestringotherwisereturn.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Removes a substring only i...</span></a><a class="pager-btn pager-next" href="class-thefullprocessofinitialization.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">The full process of initia...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

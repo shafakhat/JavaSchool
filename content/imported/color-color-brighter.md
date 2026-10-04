@@ -3,8 +3,8 @@ title: Java Swing Tutorial - Java Color.brighter()
 nav: Java Swing Tutorial - Java...
 description: In the following code shows how to use Color.brighter() method.
 section: Imported - java2s Archive
-order: 1018
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Color/0700__Color.brighter_.htm
+order: 1229
+source: https://web.archive.org/web/20150325033136/http://www.java2s.com/Tutorials/Java/java.awt/Color/0700__Color.brighter_.htm
 ---
 ## Syntax
 
@@ -22,8 +22,8 @@ In the following code shows how to use Color.brighter() method.
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Color myColor = Color.RED;
     JLabel label = new JLabel("First Name");
     label.setForeground(myColor.brighter());
@@ -34,4 +34,5 @@ publicclass Main {
     frame.setVisible(true);
   }
 }
+java title=Example.java
 ```

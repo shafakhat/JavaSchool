@@ -3,8 +3,8 @@ title: Pad string
 nav: Pad string
 description: * This program is free software; you can redistribute it and/or modify
 section: Imported - java2s Archive
-order: 1142
-source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Padstring.htm
+order: 1092
+source: https://web.archive.org/web/20140829080842/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Padstring.htm
 ---
 ```java title=Example.java
 /*
@@ -23,7 +23,8 @@ source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorial/Java/004
  * GNU General Public License for more details.
  *
  * See COPYING.TXT for details.
- */import java.util.HashMap;
+ */
+import java.util.HashMap;
 import java.util.regex.Pattern;
 /**
  * Utilities for String formatting, manipulation, and queries.
@@ -32,7 +33,8 @@ import java.util.regex.Pattern;
  *
  * @author Stephen Ostermiller http://ostermiller.org/contact.pl?regarding=Java+Utilities
  * @since ostermillerutils 1.00.00
- */public class StringHelper {
+ */
+public class StringHelper {
   /**
    * Pad the beginning of the given String with spaces until
    * the String is of the given length.
@@ -47,7 +49,8 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String prepad(String s, int length){
+   */
+  public static String prepad(String s, int length){
     return prepad(s, length, ' ');
   }
   /**
@@ -65,7 +68,8 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String prepad(String s, int length, char c){
+   */
+  public static String prepad(String s, int length, char c){
     int needed = length - s.length();
     if (needed <= 0){
       return s;
@@ -91,7 +95,8 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String postpad(String s, int length){
+   */
+  public static String postpad(String s, int length){
     return postpad(s, length, ' ');
   }
   /**
@@ -109,7 +114,8 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String postpad(String s, int length, char c){
+   */
+  public static String postpad(String s, int length, char c){
     int needed = length - s.length();
     if (needed <= 0){
       return s;
@@ -140,7 +146,8 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String midpad(String s, int length){
+   */
+  public static String midpad(String s, int length){
     return midpad(s, length, ' ');
   }
   /**
@@ -163,7 +170,8 @@ import java.util.regex.Pattern;
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */ public static String midpad(String s, int length, char c){
+   */
+  public static String midpad(String s, int length, char c){
     int needed = length - s.length();
     if (needed <= 0){
       return s;

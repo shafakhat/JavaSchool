@@ -1,0 +1,31 @@
+---
+title: Get full class name
+nav: Get full class name
+description: Imported from the java2s.com archive: Get full class name
+section: Imported - java2s Archive
+order: 2206
+source: https://web.archive.org/web/20140829075217/http://www.java2s.com/Tutorial/Java/0125__Reflection/Getfullclassname.htm
+---
+```java title=Example.java
+public class Main {
+  public static String getFullClassName(Class c) {
+    return c.getName();
+  }
+  public static void main(String[] args) {
+    System.out.println(getFullClassName(java.awt.Frame.class));
+  }
+}
+```
+
+| 7.14.1. | Getting the Name of a Member Object |
+|---|---|
+| 7.14.2. | Unqualified names |
+| 7.14.3. | Get full class name |
+| 7.14.4. | Get the name of a class |
+| 7.14.5. | Get the name of an array |
+| 7.14.6. | Get the name of void |
+| 7.14.7. | Get the unqualified name of a class |
+| 7.14.8. | Get the fully-qualified name of a class |
+| 7.14.9. | Get the fully-qualified name of a inner class |
+| 7.14.10. | Use Class.forName to load a class |
+| 7.14.11. | Get the class name in a static method |

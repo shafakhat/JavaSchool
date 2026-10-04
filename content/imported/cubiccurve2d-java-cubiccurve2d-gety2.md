@@ -3,15 +3,15 @@ title: Java Tutorial - Java CubicCurve2D.getY2()
 nav: Java Tutorial - Java Cubic...
 description: In the following code shows how to use CubicCurve2D.getY2() method.
 section: Imported - java2s Archive
-order: 1008
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/CubicCurve2D/Java_CubicCurve2D_getY2_.htm
+order: 1269
+source: https://web.archive.org/web/20140829201458/http://www.java2s.com/Tutorials/Java/java.awt.geom/CubicCurve2D/Java_CubicCurve2D_getY2_.htm
 ---
 ### Syntax
 
 CubicCurve2D.getY2() has the following syntax.
 
 ```java title=Example.java
-publicabstractdouble getY2()
+public abstract double getY2()
 ```
 
 ### Example
@@ -23,14 +23,14 @@ import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.CubicCurve2D;
-publicclass Main extends Frame {
-  publicstaticvoid main(String[] args) {
+public class Main extends Frame {
+  public static void main(String[] args) {
     new Main().setVisible(true);
   }
   public Main () {
     setSize(400, 550);
   }
-  publicvoid paint(Graphics g) {
+  public void paint(Graphics g) {
     Graphics2D g2d = (Graphics2D) g;
     CubicCurve2D cubcurve = new CubicCurve2D.Float(30, 400, 150, 400, 200, 500, 350, 450);
     g2d.draw(cubcurve);

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Java Tutorial - Java BasicStroke CAP_SQUARE - JavaSchool</title>
-<meta name="description" content="In the following code shows how to use BasicStroke.CAP_SQUARE field.">
+<title>Java BasicStroke CAP_SQUARE - JavaSchool</title>
+<meta name="description" content="BasicStroke CAP_SQUARE ends unclosed subpaths and dash segments with a square projection that extends beyond the end of the segment to a distance equal to half of the lin">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -38,10 +38,14 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <main class="main">
   <article class="ws-content">
     <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-basicstroke.html">BasicStroke</a></nav>
-    <h1>Java Tutorial - Java BasicStroke CAP_SQUARE</h1>
+    <h1>Java BasicStroke CAP_SQUARE</h1>
+<p>In this chapter you will learn:</p>
+<ul><li>Get to know BasicStroke.CAP_SQUARE</li><li>Syntax for BasicStroke.CAP_SQUARE</li><li>Example - BasicStroke.CAP_SQUARE</li></ul>
+<h3 id="description">Description</h3>
+<p>BasicStroke CAP_SQUARE ends unclosed subpaths and dash segments with a square projection that extends beyond the end of the segment to a distance equal to half of the line width.</p>
 <h3 id="syntax">Syntax</h3>
 <p>BasicStroke.CAP_SQUARE has the following syntax.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicstaticfinalint CAP_SQUARE</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public static final int CAP_SQUARE</code></pre></div>
 <h3 id="example">Example</h3>
 <p>In the following code shows how to use BasicStroke.CAP_SQUARE field.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.BasicStroke;
@@ -49,14 +53,14 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     BasicStroke bs = new BasicStroke(16.0f, BasicStroke.CAP_SQUARE, BasicStroke.JOIN_BEVEL);
     g2.setStroke(bs);
     g.drawLine(30, 20, 270, 20);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,8 +68,10 @@ publicclass Main extends JPanel {
     frame.setVisible(true);
   }
 }</code></pre></div>
-<p>BasicStrokeBorderLayoutCardLayoutColorCursorDesktopDesktopManagerDisplayModeEventQueueFlowLayoutFocusTraversalPolicyFontFontMetricsGradientPaintGraphicsGraphics2DGraphicsConfigurationGraphicsDeviceGraphicsEnvironmentGridBagConstraintsGridBagLayoutGridLayoutImageItemSelectableKeyboardFocusManagerLayoutManagerLayoutManager2PointRectangleRobotShapeSplashScreenSystemColorSystemTrayTexturePaintTrayIconToolkitTransparency</p>
-    <div class="pager"><a class="pager-btn" href="area-java-area-exclusiveor-area-rhs.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Area....</span></a><a class="pager-btn pager-next" href="basicstroke-java-basicstroke-float-width-constructor.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Basic...</span></a></div>
+<h4 id="next-chapter">Next chapter...</h4>
+<p>What you will learn in the next chapter:</p>
+<ul><li>Get to know BasicStroke.JOIN_BEVEL</li><li>Syntax for BasicStroke.JOIN_BEVEL</li><li>Example - BasicStroke.JOIN_BEVEL</li></ul>
+    <div class="pager"><a class="pager-btn" href="class-combiningcompositionandinheritance.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Combining composition and ...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1182.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

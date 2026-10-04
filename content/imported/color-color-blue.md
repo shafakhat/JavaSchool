@@ -3,8 +3,8 @@ title: Java Swing Tutorial - Java Color blue
 nav: Java Swing Tutorial - Java...
 description: Imported from the java2s.com archive: Java Swing Tutorial - Java Color blue
 section: Imported - java2s Archive
-order: 1013
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Color/0080__Color.blue.htm
+order: 1228
+source: https://web.archive.org/web/20150325033620/http://www.java2s.com/Tutorials/Java/java.awt/Color/0080__Color.blue.htm
 ---
 ## Syntax
 
@@ -33,4 +33,5 @@ public class Main {
     frame.setVisible(true);
   }
 }
+java title=Example.java
 ```

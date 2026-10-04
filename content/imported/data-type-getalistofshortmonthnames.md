@@ -3,8 +3,8 @@ title: Get a List of Short Month Names
 nav: Get a List of Short Month ...
 description: String[] shortMonths = new DateFormatSymbols().getShortMonths();
 section: Imported - java2s Archive
-order: 1244
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/GetaListofShortMonthNames.htm
+order: 1081
+source: https://web.archive.org/web/20140128041556/http://www.java2s.com/Tutorial/Java/0040__Data-Type/GetaListofShortMonthNames.htm
 ---
 ```java title=Example.java
 import java.text.DateFormatSymbols;

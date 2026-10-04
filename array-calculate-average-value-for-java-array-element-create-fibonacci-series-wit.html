@@ -43,16 +43,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <ul><li>Calculate Average value of Array elements</li><li>How to Create Fibonacci Series with array</li><li>How to use two-dimensional double type array to do Matrix calculation</li></ul>
 <h3 id="calculate-with-array">Calculate with Array</h3>
 <p>The following code declares an int array and stores integer value into it. Then it uses a for loop to go through each element in that array and sum the int value. Finally it divides the sum by the array length and output the average.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] args) {
-int[] intArray = newint[] { 1, 2, 3, 4, 5 };
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] args) {
+ int[] intArray = new int[] { 1, 2, 3, 4, 5 };
     // calculate sum
-int sum = 0;
+ int sum = 0;
     for (int i = 0; i &lt; intArray.length; i++){
       sum = sum + intArray[i];
     }
     // calculate average
-double average = sum / intArray.length;
+ double average = sum / intArray.length;
     System.out.println("average: " + average);
   }
 }</code></pre></div>
@@ -60,10 +60,10 @@ double average = sum / intArray.length;
 <h3 id="create-fibonacci-series-with-array">Create Fibonacci Series with array</h3>
 <p>The first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     int length = 20;
-    long[] series = newlong[length];
+    long[] series = new long[length];
     series[0] = 0;
     series[1] = 1;
     for (int i = 2; i &lt; length; i++) {
@@ -75,9 +75,9 @@ publicclass Main {
 <p>The output:</p>
 <h3 id="two-dimensional-double-type-array-and-matrix-calculation">Two-dimensional double type array and Matrix calculation</h3>
 <p>The following code use two-dimensional double type array to do Matrix calculation</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Matrix {privatedouble[][] doubleArray;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Matrix {private double[][] doubleArray;
   Matrix(int nrows, int ncols) {
-    doubleArray = newdouble[nrows][ncols];
+    doubleArray = new double[nrows][ncols];
   }
   int getCols() {
     return doubleArray[0].length;
@@ -92,8 +92,8 @@ publicclass Main {
     doubleArray[row][col] = value;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Matrix a = new Matrix(1, 3);
     a.setValue(0, 0, 1); // | 1 2 3 |
     a.setValue(0, 1, 2);
@@ -109,7 +109,7 @@ publicclass Main {
     dump(b);
     dump(multiply(a, b));
   }
-  staticvoid dump(Matrix m) {
+  static void dump(Matrix m) {
     for (int i = 0; i &lt; m.getRows(); i++) {
       for (int j = 0; j &lt; m.getCols(); j++){
         System.out.print(m.getValue(i, j) + " ");
@@ -120,7 +120,7 @@ publicclass Main {
   }
   static Matrix multiply(Matrix a, Matrix b) {
     if (a.getCols() != b.getRows()) {
-      thrownew IllegalArgumentException("rows/columns mismatch");
+      throw new IllegalArgumentException("rows/columns mismatch");
     }
     Matrix result = new Matrix(a.getRows(), b.getCols());
     for (int i = 0; i &lt; a.getRows(); i++) {
@@ -137,7 +137,7 @@ publicclass Main {
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Copy array</li><li>Copy array</li></ul>
-    <div class="pager"><a class="pager-btn" href="database-sql-jdbc-cachedrs.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Cached RS</span></a><a class="pager-btn pager-next" href="data-type-centersastringinalargerstringofsizesizeusingthespacecharacter.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Centers a String in a larg...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="class-accessingitsenclosinginstancefromaninnerclass.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Accessing its enclosing in...</span></a><a class="pager-btn pager-next" href="web-services-soa-howtowriteawebserviceandwebserviceclientwithapacheaxis2usingxml.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">How to write a Web service...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

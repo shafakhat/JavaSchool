@@ -3,8 +3,8 @@ title: Get the last day of a month
 nav: Get the last day of a month
 description: Imported from the java2s.com archive: Get the last day of a month
 section: Imported - java2s Archive
-order: 1203
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Getthelastdayofamonth.htm
+order: 1156
+source: https://web.archive.org/web/20140829080418/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Getthelastdayofamonth.htm
 ---
 ```java title=Example.java
 import java.util.Calendar;

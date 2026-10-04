@@ -3,8 +3,8 @@ title: byte Array To Hex String
 nav: byte Array To Hex String
 description: Imported from the java2s.com archive: byte Array To Hex String
 section: Imported - java2s Archive
-order: 1020
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/byteArrayToHexString.htm
+order: 1028
+source: https://web.archive.org/web/20140829082804/http://www.java2s.com/Tutorial/Java/0040__Data-Type/byteArrayToHexString.htm
 ---
 ```java title=Example.java
 public class Main {

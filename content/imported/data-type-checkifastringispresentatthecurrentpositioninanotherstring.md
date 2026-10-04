@@ -3,8 +3,8 @@ title: Check if a string is present at the current position in another string.
 nav: Check if a string is prese...
 description: * Licensed to the Apache Software Foundation (ASF) under one
 section: Imported - java2s Archive
-order: 1168
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Checkifastringispresentatthecurrentpositioninanotherstring.htm
+order: 1114
+source: https://web.archive.org/web/20140829082230/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Checkifastringispresentatthecurrentpositioninanotherstring.htm
 ---
 ```java title=Example.java
 import java.io.File;
@@ -32,13 +32,15 @@ import java.util.regex.PatternSyntaxException;
  *  specific language governing permissions and limitations
  *  under the License.
  *
- *//**
+ */
+/**
  * Various string manipulation methods that are more efficient then chaining
  * string operations: all is done in the same buffer without creating a bunch of
  * string objects.
  *
  * @author <a href="mailto:dev@labs.apache.org">Dungeon Project</a>
- */public class Main {
+ */
+public class Main {
   /**
    * Check if a text is present at the current position in another string.
    *
@@ -49,7 +51,8 @@ import java.util.regex.PatternSyntaxException;
    * @param text
    *            The text we want to check
    * @return <code>true</code> if the string contains the text.
-   */ public static final boolean areEquals( String string, int index, String text )
+   */
+  public static final boolean areEquals( String string, int index, String text )
   {
       if ( ( string == null ) || ( text == null ) )
       {

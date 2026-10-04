@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to get a sub array from an array - JavaSchool</title>
-<meta name="description" content="Next »« PreviousHome » Java Tutorial » ArrayJava ArrayCreate an ArrayArray Index and lengthMultidimensional ArraysArray examplesArray copyArray compareArray Binary search">
+<meta name="description" content="public static int[] get(int[] array, int offset, int length) {">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -43,14 +43,14 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <ul><li>Subarray from array that starts at offset</li></ul>
 <h3 id="subarray-from-array-that-starts-at-offset">Subarray from array that starts at offset</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-publicclass Main {
-publicstaticvoid main(String[] argv){
-  int[] intArray = newint[]{1,2,3,4,5,6,7,8};
+public class Main {
+public static void main(String[] argv){
+  int[] intArray = new int[]{1,2,3,4,5,6,7,8};
   int[] intSubArray = get(intArray,3,2);
   System.out.println(Arrays.toString(intSubArray));
 }
-  publicstaticint[] get(int[] array, int offset, int length) {
-    int[] result = newint[length];
+  public static int[] get(int[] array, int offset, int length) {
+    int[] result = new int[length];
     System.arraycopy(array, offset, result, 0, length);
     return result;
   }
@@ -59,7 +59,7 @@ publicstaticvoid main(String[] argv){
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Get array upperbound</li><li>Get the number of dimensions</li></ul>
-    <div class="pager"><a class="pager-btn" href="data-type-getstherightmostlencharactersofastring-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Gets the rightmost len cha...</span></a><a class="pager-btn pager-next" href="class-inheritancesyntaxandproperties.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Inheritance syntax and pro...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="operators-andoperator.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">AND operator</span></a><a class="pager-btn pager-next" href="data-type-integerparseintconvertingstringtoint.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Integer.parseInt()</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

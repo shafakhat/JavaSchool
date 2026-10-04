@@ -3,8 +3,8 @@ title: Java Swing Tutorial - BorderLayout Example
 nav: Java Swing Tutorial - Bord...
 description: Imported from the java2s.com archive: Java Swing Tutorial - BorderLayout Example
 section: Imported - java2s Archive
-order: 1017
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/index.htm
+order: 1164
+source: https://web.archive.org/web/20141228065829/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/index.htm
 ---
 ## Field
 
@@ -33,5 +33,3 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/ja
 - Java BorderLayout.toString()
 
 ## Method
-
-- « Previous

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to do reflection on array dimension - JavaSchool</title>
-<meta name="description" content="Next »« PreviousHome » Java Tutorial » ArrayJava ArrayCreate an ArrayArray Index and lengthMultidimensional ArraysArray examplesArray copyArray compareArray Binary search">
+<meta name="description" content="}/*j a v a 2 s . com*/ public static int getDimension(Object array) {">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -42,8 +42,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>In this chapter you will learn:</p>
 <ul><li>Get array upperbound</li><li>Get the number of dimensions</li></ul>
 <h3 id="get-array-upperbound">Get array upperbound</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String args[]) {
     String[][] data = new String[3][4];
     System.out.println("Dimension 1: " + data.length);
     System.out.println("Dimension 2: " + data[0].length);
@@ -51,11 +51,11 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 }</code></pre></div>
 <p>Output:</p>
 <h3 id="get-the-number-of-dimensions">Get the number of dimensions</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String args[]) {
     String[][] data = new String[3][4];
     System.out.println(getDimension(data));
-  }publicstaticint getDimension(Object array) {
+  } public static int getDimension(Object array) {
     int dim = 0;
     Class c = array.getClass();
     while (c.isArray()) {
@@ -69,7 +69,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>How to clone an Array</li><li>Clones two dimensional float array</li></ul>
-    <div class="pager"><a class="pager-btn" href="generics-genericpairstructure.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Generic pair structure</span></a><a class="pager-btn pager-next" href="class-definition-implementhashcodeusingcommonslang.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Implement hashCode using c...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="class-definition-defaultaccesslevel.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Default access level</span></a><a class="pager-btn pager-next" href="web-services-soa-inthissamplewearedeployingapojoafterwritingaservicesxmlandcreat.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">In this sample, we are dep...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

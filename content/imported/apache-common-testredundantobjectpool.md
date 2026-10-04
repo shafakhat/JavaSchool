@@ -3,8 +3,8 @@ title: Test Redundant Object Pool
 nav: Test Redundant Object Pool
 description: System.err.println("Number of employees in pool: " + pool.getNumIdle());
 section: Imported - java2s Archive
-order: 1069
-source: https://web.archive.org/web/20061016093540/http://www.java2s.com/Code/Java/Apache-Common/TestRedundantObjectPool.htm
+order: 1092
+source: https://web.archive.org/web/20140829221211/http://www.java2s.com/Code/Java/Apache-Common/TestRedundantObjectPool.htm
 ---
 ```java title=Example.java
 import java.util.HashMap;
@@ -114,8 +114,7 @@ public class Employee {
 }
 ```
 
-Download: TestRedundantObjectPool.zip ( 1,219 K )
----
-Related examples in the same category
-1. Keyed Object Pool
-3. Soft Reference Object Pool Demo
+TestRedundantObjectPool.zip( 1,219 k)
+1.  Keyed Object Pool
+2.  Test Object Pool
+3.  Soft Reference Object Pool Demo

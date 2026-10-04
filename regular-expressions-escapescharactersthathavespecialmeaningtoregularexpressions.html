@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escapes characters that have special meaning to regular expressions - JavaSchool</title>
+<meta name="description" content="Escapes characters that have special meaning to regular expressions: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-regular-expressions-escapescharactersthathavespecialmeaningtoregularexpressions">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-08-regular-expressions.html">Regular Expressions</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-08-01-introduction.html">Introduction</a></nav>
+    <h1>Escapes characters that have special meaning to regular expressions</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Static String formatting and query routines.
+ * Copyright (C) 2001-2005 Stephen Ostermiller
+ * http://ostermiller.org/contact.pl?regarding=Java+Utilities
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * See COPYING.TXT for details.
+ */
+import java.util.HashMap;
+import java.util.regex.Pattern;
+/**
+ * Utilities for String formatting, manipulation, and queries.
+ * More information about this class is available from &lt;a target="_top" href=
+ * "http://ostermiller.org/utils/StringHelper.html"&gt;ostermiller.org&lt;/a&gt;.
+ *
+ * @author Stephen Ostermiller http://ostermiller.org/contact.pl?regarding=Java+Utilities
+ * @since ostermillerutils 1.00.00
+ */
+public class StringHelper {
+  /**
+   * Escapes characters that have special meaning to
+   * regular expressions
+   *
+   * @param s String to be escaped
+   * @return escaped String
+   * @throws NullPointerException if s is null.
+   *
+   * @since ostermillerutils 1.02.25
+   */
+  public static String escapeRegularExpressionLiteral(String s){
+    // According to the documentation in the Pattern class:
+    //
+    // The backslash character ('\') serves to introduce escaped constructs,
+    // as defined in the table above, as well as to quote characters that
+    // otherwise would be interpreted as unescaped constructs. Thus the
+    // expression \\ matches a single backslash and \{ matches a left brace.
+    //
+    // It is an error to use a backslash prior to any alphabetic character
+    // that does not denote an escaped construct; these are reserved for future
+    // extensions to the regular-expression language. A backslash may be used
+    // prior to a non-alphabetic character regardless of whether that character
+    // is part of an unescaped construct.
+    //
+    // As a result, escape everything except [0-9a-zA-Z]
+    int length = s.length();
+    int newLength = length;
+    // first check for characters that might
+    // be dangerous and calculate a length
+    // of the string that has escapes.
+    for (int i=0; i&lt;length; i++){
+      char c = s.charAt(i);
+      if (!((c&gt;='0' &amp;&amp; c&lt;='9') || (c&gt;='A' &amp;&amp; c&lt;='Z') || (c&gt;='a' &amp;&amp; c&lt;='z'))){
+        newLength += 1;
+      }
+    }
+    if (length == newLength){
+      // nothing to escape in the string
+      return s;
+    }
+    StringBuffer sb = new StringBuffer(newLength);
+    for (int i=0; i&lt;length; i++){
+      char c = s.charAt(i);
+      if (!((c&gt;='0' &amp;&amp; c&lt;='9') || (c&gt;='A' &amp;&amp; c&lt;='Z') || (c&gt;='a' &amp;&amp; c&lt;='z'))){
+        sb.append('\\');
+      }
+      sb.append(c);
+    }
+    return sb.toString();
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>8.1.1.</th><th>Meta-characters predefined to match specific characters.</th></tr></thead><tbody><tr><td>8.1.2.</td><td>Meta-characters to match against certain string boundaries.</td></tr><tr><td>8.1.3.</td><td>Regular expression languages also have character classes.</td></tr><tr><td>8.1.4.</td><td>POSIX character classes and Java character classes</td></tr><tr><td>8.1.5.</td><td>Java Character Class</td></tr><tr><td>8.1.6.</td><td>Match a particular character a specified number of times.</td></tr><tr><td>8.1.7.</td><td>Read regular expression from console</td></tr><tr><td>8.1.8.</td><td>Regex Test Harness</td></tr><tr><td>8.1.9.</td><td>Match Java source file and file and class name</td></tr><tr><td>8.1.10.</td><td>Finding all words that start with an 'a'</td></tr><tr><td>8.1.11.</td><td>Simple validation using the Pattern and Matcher objects</td></tr><tr><td>8.1.12.</td><td>A possessive qualifier</td></tr><tr><td>8.1.13.</td><td>Find the starting point of the second 'Bond'</td></tr><tr><td>8.1.14.</td><td>A negative look ahead</td></tr><tr><td>8.1.15.</td><td>A negative behind ahead</td></tr><tr><td>8.1.16.</td><td>A positive look ahead</td></tr><tr><td>8.1.17.</td><td>Pattern helper</td></tr><tr><td>8.1.18.</td><td>Escapes characters that have special meaning to regular expressions</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="regular-expressions-findingallwordsthatstartwithana.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Finding all words that sta...</span></a><a class="pager-btn pager-next" href="regular-expressions-asimplesubgroup.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">A simple sub group</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

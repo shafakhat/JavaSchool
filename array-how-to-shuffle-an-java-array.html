@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to shuffle an Java array - JavaSchool</title>
-<meta name="description" content="publicstaticvoid shuffle(final Object[] array, finallong seed) {">
+<meta name="description" content="public static void shuffle(final Object[] array, final long seed) {">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -43,34 +43,34 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <ul><li>Shuffle an array</li></ul>
 <h3 id="shuffle-an-array">Shuffle an array</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Random;
-publicclass Main {
-  publicstaticvoid shuffle(final Object[] array) {
+public class Main {
+  public static void shuffle(final Object[] array) {
     final Random r = new Random();
-    finalint limit = array.length;
+    final int limit = array.length;
     for (int i = 0; i &lt; limit; ++i) {
       swap(array, i, r.nextInt(limit));
     }
   }
-  publicstaticvoid shuffle(finalint[] array) {
+  public static void shuffle(final int[] array) {
     final Random r = new Random();
-    finalint limit = array.length;
+    final int limit = array.length;
     for (int i = 0; i &lt; limit; ++i) {
       swap(array, i, r.nextInt(limit));
     }
   }
-  publicstaticvoid shuffle(final Object[] array, finallong seed) {
+  public static void shuffle(final Object[] array, final long seed) {
     final Random r = new Random(seed);
-    finalint limit = array.length;
+    final int limit = array.length;
     for (int i = 0; i &lt; limit; ++i) {
       swap(array, i, r.nextInt(limit));
     }
   }
-  publicstaticvoid swap(final Object[] array, finalint i, finalint j) {
+  public static void swap(final Object[] array, final int i, final int j) {
     Object o = array[i];
     array[i] = array[j];
     array[j] = o;
   }
-  publicstaticvoid swap(finalint[] array, finalint i, finalint j) {
+  public static void swap(final int[] array, final int i, final int j) {
     int o = array[i];
     array[i] = array[j];
     array[j] = o;
@@ -79,7 +79,7 @@ publicclass Main {
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Append an object to an array.</li><li>Append one array to another</li></ul>
-    <div class="pager"><a class="pager-btn" href="data-type-hexencoderanddecoder.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Hex encoder and decoder.</span></a><a class="pager-btn pager-next" href="class-initializationorder.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Initialization order</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-dateformatwithsimpledateformat.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Date Format with SimpleDat...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1165.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

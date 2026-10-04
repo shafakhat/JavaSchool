@@ -1,14 +1,12 @@
 ---
 title: java.lang.Boolean
 nav: java.lang.Boolean
-description: You can construct a Boolean object from a boolean or a String, using one of these constructors.
+description: The java.lang.Boolean class wraps a boolean. You can construct a Boolean object from a boolean or a String, using one of these constructors.
 section: Imported - java2s Archive
-order: 1006
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/javalangBoolean.htm
+order: 1075
+source: https://web.archive.org/web/20140218005301/http://www.java2s.com/Tutorial/Java/0040__Data-Type/javalangBoolean.htm
 ---
-The java.lang.Boolean class wraps a boolean.
-
-You can construct a Boolean object from a boolean or a String, using one of these constructors.
+The java.lang.Boolean class wraps a boolean. You can construct a Boolean object from a boolean or a String, using one of these constructors.
 
 ```java title=Example.java
 public Boolean (boolean value)

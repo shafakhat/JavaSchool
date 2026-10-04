@@ -1,10 +1,10 @@
 ---
 title: Java Collection Tutorial - Comparator Example
 nav: Java Collection Tutorial -...
-description: Imported from java2s.com: Java Collection Tutorial - Comparator Example
+description: Imported from the java2s.com archive: Java Collection Tutorial - Comparator Example
 section: Imported - java2s Archive
-order: 50349
-source: https://www.java2s.com/Tutorials/Java/java.util/Comparator/index.html
+order: 1250
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/java.util/Comparator/index.html
 ---
 ## Method
 

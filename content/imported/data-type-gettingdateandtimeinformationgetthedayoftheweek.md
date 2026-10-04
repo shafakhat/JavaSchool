@@ -3,8 +3,8 @@ title: Getting Date and Time Information
 nav: Getting Date and Time Info...
 description: Imported from the java2s.com archive: Getting Date and Time Information
 section: Imported - java2s Archive
-order: 1220
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/GettingDateandTimeInformationgetthedayoftheweek.htm
+order: 1116
+source: https://web.archive.org/web/20140829080322/http://www.java2s.com/Tutorial/Java/0040__Data-Type/GettingDateandTimeInformationgetthedayoftheweek.htm
 ---
 ```java title=Example.java
 import java.util.Calendar;

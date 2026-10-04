@@ -1,20 +1,16 @@
 ---
 title: Heap Sort Implementation in Java
 nav: Heap Sort Implementation i...
-description: Next »« PreviousHome » Java Tutorial » AlgorithmsBubble sortBinary SearchInsertion SortSelection sortShell sortHeap SortMerge SortQuick SortFibonacciHanoi puzzleFahrenhei
+description: Next »« PreviousHome » Java Tutorial » Java Langauge » Java AlgorithmsJava Bubble sort Java Binary Search Java Insertion Sort Java Selection sort Java Shell sort Java Hea
 section: Imported - java2s Archive
-order: 1000
-source: https://web.archive.org/web/20130905043900/http://java2s.com/Tutorials/Java/Algorithms/Heap_Sort_Implementation_in_Java.htm
+order: 1083
+source: https://web.archive.org/web/20140713164757/http://java2s.com/Tutorials/Java/Algorithms/Heap_Sort_Implementation_in_Java.htm
 ---
-In this chapter you will learn:
-
-- Heap Sort Implementation
-
 ### Heap Sort Implementation
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     int size, i;
     size = 10;
     Heap theHeap = new Heap(size);
@@ -40,28 +36,28 @@ publicclass Main {
   }
 }
 class Heap {
-  privateint[] heapArray;
-  privateint maxSize;
-  privateint currentSize; // number of items in array
-public Heap(int mx) {
+  private int[] heapArray;
+  private int maxSize;
+  private int currentSize; // number of items in array
+ public Heap(int mx) {
     maxSize = mx;
     currentSize = 0;
-    heapArray = newint[maxSize];
+    heapArray = new int[maxSize];
   }
-  publicint remove() {
+  public int remove() {
     int root = heapArray[0];
     heapArray[0] = heapArray[--currentSize];
     sort(0);
     return root;
   }
-  publicvoid sort(int index) {
+  public void sort(int index) {
     int largerChild;
     int top = heapArray[index];
     while (index < currentSize / 2) {
       int leftChild = 2 * index + 1;
       int rightChild = leftChild + 1;
       // find larger child
-if (rightChild < currentSize
+ if (rightChild < currentSize
           && heapArray[leftChild] < heapArray[rightChild]) {
         largerChild = rightChild;
       } else {
@@ -75,7 +71,7 @@ if (rightChild < currentSize
     }
     heapArray[index] = top;
   }
-  publicvoid displayHeap() {
+  public void displayHeap() {
     int nBlanks = 32;
     int itemsPerRow = 1;
     int column = 0;
@@ -87,7 +83,7 @@ if (rightChild < currentSize
         }
       System.out.print(heapArray[currentIndex]);
       if (++currentIndex == currentSize){ // done?
-break;
+ break;
       }
       if (++column == itemsPerRow) // end of row?
       {
@@ -103,14 +99,14 @@ break;
     }
     System.out.println();
   }
-  publicvoid displayArray() {
+  public void displayArray() {
     for (int j = 0; j < maxSize; j++)
       System.out.println(heapArray[j]);
   }
-  publicvoid insertAt(int index, int newNode) {
+  public void insertAt(int index, int newNode) {
     heapArray[index] = newNode;
   }
-  publicvoid incrementSize() {
+  public void incrementSize() {
     currentSize++;
   }
 }

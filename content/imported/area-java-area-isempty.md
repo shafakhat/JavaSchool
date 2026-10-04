@@ -3,8 +3,8 @@ title: Java Tutorial - Java Area.isEmpty()
 nav: Java Tutorial - Java Area....
 description: In the following code shows how to use Area.isEmpty() method.
 section: Imported - java2s Archive
-order: 1013
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_isEmpty_.htm
+order: 1116
+source: https://web.archive.org/web/20140829202320/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_isEmpty_.htm
 ---
 ### Syntax
 

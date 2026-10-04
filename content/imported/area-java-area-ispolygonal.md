@@ -3,8 +3,8 @@ title: Java Tutorial - Java Area.isPolygonal()
 nav: Java Tutorial - Java Area....
 description: In the following code shows how to use Area.isPolygonal() method.
 section: Imported - java2s Archive
-order: 1014
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_isPolygonal_.htm
+order: 1119
+source: https://web.archive.org/web/20140829202758/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_isPolygonal_.htm
 ---
 ### Syntax
 

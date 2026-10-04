@@ -3,8 +3,8 @@ title: Java byte
 nav: Java byte
 description: Imported from the java2s.com archive: Java byte
 section: Imported - java2s Archive
-order: 1017
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/JavabytebyteissmallestJavaintegertypebyteis8bitsignedtyperangesfrom128to127.htm
+order: 1028
+source: https://web.archive.org/web/20140829083411/http://www.java2s.com/Tutorial/Java/0040__Data-Type/JavabytebyteissmallestJavaintegertypebyteis8bitsignedtyperangesfrom128to127.htm
 ---
 ```java title=Example.java
 public class Main {
