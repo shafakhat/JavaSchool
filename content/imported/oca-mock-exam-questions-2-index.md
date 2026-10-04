@@ -3,22 +3,22 @@ title: OCA Java SE 8 Mock Exam 2 - OCA Mock Question 1
 nav: OCA Java SE 8 Mock Exam 2 ...
 description: What will happen when you compile and run the following code?
 section: Imported - java2s Archive
-order: 50007
-source: https://www.java2s.com/Tutorials/Java/OCA_Mock_Exam_Questions_2/index.html
+order: 1013
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/OCA_Mock_Exam_Questions_2/index.html
 ---
 ## Question
 
 What will happen when you compile and run the following code?
 
 ```java title=Example.java
-publicclass Main{
+ public class Main{
            private int i = 1;
-           publicstatic void main(String argv[]){
+           public static void main(String argv[]){
               int i = 2;
               Main s = new Main ();
               s.someMethod();
            }
-           publicstatic void someMethod(){
+           public static void someMethod(){
               System.out.println(i);
            }
          }

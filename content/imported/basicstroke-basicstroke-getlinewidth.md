@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BasicStroke/0380__BasicStroke.getLineWidth_.htm
 ---
-```java title=Example.java
-Back to BasicStroke  ↑
-```
-
 ## Syntax
 
 BasicStroke.getLineWidth() has the following syntax.
@@ -34,5 +30,3 @@ public class Main {
 ```
 
 The code above generates the following result.
-
-- Back to BasicStroke ↑

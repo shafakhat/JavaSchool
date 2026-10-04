@@ -24,9 +24,7 @@ B.  (new MyThread()).run();
 C.  (new MyRunnable()).run();
 D.  (newThread(new MyRunnable()))
 E.   .start();
-```
-
-```java title=Example.java
+java title=Example.java
 A, D.
 ```
 

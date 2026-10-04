@@ -34,9 +34,7 @@ D.  publicint hashCode() {
 E.  publicint hashCode() {
           return (int)Math.random();
     }
-```
-
-```java title=Example.java
+java title=Example.java
 A, E.
 ```
 

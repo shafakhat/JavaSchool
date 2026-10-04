@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BasicStroke/0280__BasicStroke.equals_Object_obj_.htm
 ---
-```java title=Example.java
-Back to BasicStroke  ↑
-```
-
 ## Syntax
 
 BasicStroke.equals(Object obj) has the following syntax.
@@ -33,5 +29,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-- Back to BasicStroke ↑

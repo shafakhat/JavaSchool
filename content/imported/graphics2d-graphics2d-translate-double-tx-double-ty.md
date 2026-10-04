@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1039
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics2D/0800__Graphics2D.translate_double_tx_double_ty_.htm
 ---
-```java title=Example.java
-Back to Graphics2D  ↑
-```
-
 ## Syntax
 
 Graphics2D.translate(double tx, double ty) has the following syntax.
@@ -50,5 +46,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Graphics2D ↑

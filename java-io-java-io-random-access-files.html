@@ -29,17 +29,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-io.html">Java io</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-io.html">Java io</a></nav>
     <h1>Java IO Tutorial - Java Random Access Files</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>Using a random access file, we can read from a file as well as write to the file.</p>
 <p>Reading and writing using the file input and output streams are a sequential process.</p>
 <p>Using a random access file, we can read or write at any position within the file.</p>
@@ -64,17 +63,17 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws IOException {
+public class Main {
+  public static void main(String[] args) throws IOException {
     String fileName = "randomaccessfile.txt";
-    File fileObject = newFile(fileName);
+    File fileObject = new File(fileName);
     if (!fileObject.exists()) {
       initialWrite(fileName);
     }
     readFile(fileName);
     readFile(fileName);
   }
-  publicstaticvoid readFile(String fileName) throws IOException {
+  public static void readFile(String fileName) throws IOException {
     RandomAccessFile raf = new RandomAccessFile(fileName, "rw");
     int counter = raf.readInt();
     String msg = raf.readUTF();
@@ -83,7 +82,7 @@ publicclass Main {
     incrementReadCounter(raf);
     raf.close();
   }
-  publicstaticvoid incrementReadCounter(RandomAccessFile raf)
+  public static void incrementReadCounter(RandomAccessFile raf)
       throws IOException {
     long currentPosition = raf.getFilePointer();
     raf.seek(0);
@@ -93,7 +92,7 @@ publicclass Main {
     raf.writeInt(counter);
     raf.seek(currentPosition);
   }
-  publicstaticvoid initialWrite(String fileName) throws IOException {
+  public static void initialWrite(String fileName) throws IOException {
     RandomAccessFile raf = new RandomAccessFile(fileName, "rw");
     raf.writeInt(0);
     raf.writeUTF("Hello world!");
@@ -102,7 +101,7 @@ publicclass Main {
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-io-java-io-reader-writer.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java Re...</span></a><a class="pager-btn pager-next" href="java-io-java-io-standard-input-output-error-streams.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java St...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="jsp-basics.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java examples (example sou...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1017.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50146
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0078__Java_varargs_Method.html
 ---
-```java title=Example.java
-```
-
 The term "varargs" is shorthand for "variable-length arguments."
 
 The varargs declares a method or constructor that accepts a variable number of arguments (or parameters).

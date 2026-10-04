@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50416
 source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/ParameterizedType/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java ParameterizedType .getActualTypeArguments ()

@@ -3,8 +3,8 @@ title: Searches a String for substrings delimited by a start and end tag, return
 nav: Searches a String for subs...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1108
-source: https://web.archive.org/web/20100606072211/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/SearchesaStringforsubstringsdelimitedbyastartandendtagreturningallmatchingsubstringsinanarray.htm
+order: 1006
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/SearchesaStringforsubstringsdelimitedbyastartandendtagreturningallmatchingsubstringsinanarray.htm
 ---
 ```java title=Example.java
 import java.util.ArrayList;
@@ -24,8 +24,7 @@ import java.util.List;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-/**
+ *//**
  * Operations on {@link java.lang.String} that are
  * <code>null</code> safe.
  *
@@ -51,8 +50,7 @@ import java.util.List;
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */
-public class Main {
+ */public class Main {
     /**
      * Searches a String for substrings delimited by a start and end tag,
      * returning all matching substrings in an array.
@@ -74,8 +72,7 @@ public class Main {
      * @param close  the String identifying the end of the substring, empty returns null
      * @return a String Array of substrings, or <code>null</code> if no match
      * @since 2.3
-     */
-    public static String[] substringsBetween(String str, String open, String close) {
+     */ public static String[] substringsBetween(String str, String open, String close) {
         if (str == null || isEmpty(open) || isEmpty(close)) {
             return null;
         }
@@ -106,8 +103,8 @@ public class Main {
         return (String[]) list.toArray(new String [list.size()]);
     }
   // Empty checks
-  //-----------------------------------------------------------------------
-  /**
+ //-----------------------------------------------------------------------
+ /**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -124,8 +121,7 @@ public class Main {
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */
-  public static boolean isEmpty(String str) {
+   */ public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }

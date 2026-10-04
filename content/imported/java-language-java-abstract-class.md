@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50447
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5090__Java_Abstract_Class.html
 ---
-```java title=Example.java
-```
-
 Abstract class is for abstract idea or concept. For example, int data type is a concrete data type and double is another concrete data type. They are both numbers. Here number is an abstract concept. Shape is another example. We can have spare, rectangle or triangle or circle. They are all concrete while shape is an abstract class.
 
 In Java we use abstract class to define the abstract concept. Abstract concept must have some abstract aspects. For example, the abstract concept is the Shape while the abstract aspect is how to calculate area. The abstract concept becomes abstract class in Java and the abstract aspect becomes the abstract method.

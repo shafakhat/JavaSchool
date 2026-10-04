@@ -3,12 +3,9 @@ title: Java Object Oriented Design - Java Objects Class
 nav: Java Object Oriented Desig...
 description: Java has a utility class Objects in the java.util package for working with objects.
 section: Imported - java2s Archive
-order: 50159
-source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0230__Java_Objects_Class.html
+order: 1001
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0230__Java_Objects_Class.html
 ---
-```java title=Example.java
-```
-
 Java has a utility class Objects in the java.util package for working with objects.
 
 It consists of all static methods. Most of the methods of the Objects class deal with null values gracefully.
@@ -31,10 +28,10 @@ The following code demonstrates how to use the method from the Objects class to 
 
 ```java title=Example.java
 import java.util.Objects;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     // Compute hash code for two integers, a char, and a string
-int hash = Objects.hash(10, 800, '\u20b9', "Hello");
+ int hash = Objects.hash(10, 800, '\u20b9', "Hello");
     System.out.println("Hash Code is " + hash);
   }
 }
@@ -48,10 +45,10 @@ The following code shows how to use equals method from Objects class to compare 
 
 ```java title=Example.java
 import java.util.Objects;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     // Test for equality
-boolean isEqual = Objects.equals(null, null);
+ boolean isEqual = Objects.equals(null, null);
     System.out.println("null is  equal to null:  " + isEqual);
     isEqual = Objects.equals(null, "XYZ");
     System.out.println("null is  equal to XYZ: " + isEqual);
@@ -67,8 +64,8 @@ The following code shows how to use toString method from Objects to convert obje
 
 ```java title=Example.java
 import java.util.Objects;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     // toString() method test
     System.out.println("toString(null) is  " + Objects.toString(null));
     System.out.println("toString(null, \"XXX\")  is "
@@ -87,8 +84,8 @@ The following code shows how to use requireNonNull from Objects class.
 import java.time.Instant;
 import java.util.Objects;
 import java.util.function.Supplier;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     try {
       printName("A");
       printName(null);
@@ -104,11 +101,11 @@ publicclass Main {
       System.out.println(e.getMessage());
     }
   }
-  publicstaticvoid printName(String name) {
+  public static void printName(String name) {
     Objects.requireNonNull(name, "Name is required.");
     System.out.println("Name is " + name);
   }
-  publicstaticvoid printNameWithSuplier(String name,
+  public static void printNameWithSuplier(String name,
       Supplier<String> messageSupplier) {
     Objects.requireNonNull(name, messageSupplier);
   }

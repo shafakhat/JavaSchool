@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50323
 source: https://www.java2s.com/Tutorials/Java/Java_XML/0110__Java_DOM_Edit.html
 ---
-```java title=Example.java
-```
-
 ## Attribute
 
 The following code shows how to add attribute to an element.

@@ -3,12 +3,9 @@ title: Java Design Patterns Tutorial - Java Design Pattern - Template Pattern
 nav: Java Design Patterns Tutor...
 description: In Template pattern, a parent abstract class expose several abstract methods for the subclass to implement. In the parent abstract class there is another method or severa
 section: Imported - java2s Archive
-order: 50133
-source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0260__Java_Template_Pattern.html
+order: 1001
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0260__Java_Template_Pattern.html
 ---
-```java title=Example.java
-```
-
 In Template pattern, a parent abstract class expose several abstract methods for the subclass to implement. In the parent abstract class there is another method or several methods which uses the abstract methods to achieve business logics.
 
 The abstract methods usually are for each step required by the parent class.
@@ -16,7 +13,7 @@ The abstract methods usually are for each step required by the parent class.
 For example, in order to use a new software we need to download, install, configuration, and run. If we are going to use template pattern to code the logic we would create a parent class as follows.
 
 ```java title=Example.java
-abstractclass UseSoftware{
+abstract class UseSoftware{
    abstract void download();
    abstract void install();
    abstract void configuration();
@@ -37,11 +34,11 @@ Template pattern is a behavior pattern.
 ## Example
 
 ```java title=Example.java
-abstractclass Software {
-   abstractvoid initialize();
-   abstractvoid start();
-   abstractvoid end();
-   //template methodpublicfinalvoid play(){
+abstract class Software {
+   abstract void initialize();
+   abstract void start();
+   abstract void end();
+   //template methodpublic final void play(){
       //initialize
       initialize();
       //start
@@ -78,8 +75,8 @@ class Editor extends Software {
       System.out.println("Editor Started!");
    }
 }
-publicclass Main {
-   publicstaticvoid main(String[] args) {
+public class Main {
+   public static void main(String[] args) {
       Software s1 = new Browser();
       s1.play();
       s1 = new Editor();

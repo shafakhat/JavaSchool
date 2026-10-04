@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50347
 source: https://www.java2s.com/Tutorials/Java/java.util/Collections/index.html
 ---
-```java title=Example.java
-```
-
 ## Field
 
 - Java Collections EMPTY_LIST

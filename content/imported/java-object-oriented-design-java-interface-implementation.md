@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50183
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0540__Java_interface_implementation.html
 ---
-```java title=Example.java
-```
-
 ## Implementing an Interface
 
 An interface specifies a protocol that an object has to offer.

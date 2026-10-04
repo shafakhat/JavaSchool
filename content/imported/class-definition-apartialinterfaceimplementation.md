@@ -16,9 +16,7 @@ interface Conversions {
   public double inchesToMillimeters(double inches);
   public double ouncesToGrams(double ounces);
 }
-```
-
-```java title=Example.java
+java title=Example.java
 public abstract class MainClass implements Conversions {
   public double inchesToMillimeters(double inches) {
     return inches * INCH_TO_MM;

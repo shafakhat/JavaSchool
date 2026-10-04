@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50327
 source: https://www.java2s.com/Tutorials/Java/org.w3c.dom/Document/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Document .createAttribute (String name)

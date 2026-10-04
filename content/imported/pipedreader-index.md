@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50274
 source: https://www.java2s.com/Tutorials/Java/java.io/PipedReader/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java PipedReader() Constructor

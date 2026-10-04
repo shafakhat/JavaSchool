@@ -3,8 +3,8 @@ title: Convert string to uppercase
 nav: Convert string to uppercase
 description: Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1064
-source: https://web.archive.org/web/20100412210109/http://java2s.com:80/Tutorial/Java/0040__Data-Type/Convertstringtouppercase.htm
+order: 1012
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Convertstringtouppercase.htm
 ---
 ```java title=Example.java
 import java.io.IOException;
@@ -26,13 +26,11 @@ import java.util.Properties;
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
- */
-public class Main {
+ */public class Main {
    * Always use the java.util.ENGLISH locale
    * @param s   string to uppercase
    * @return uppercased string
-   */
-  public static String SQLToUpperCase(String s)
+   */ public static String SQLToUpperCase(String s)
   {
       return s.toUpperCase(Locale.ENGLISH);
   }

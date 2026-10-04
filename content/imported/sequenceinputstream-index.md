@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50282
 source: https://www.java2s.com/Tutorials/Java/java.io/SequenceInputStream/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java SequenceInputStream (Enumeration e) Constructor

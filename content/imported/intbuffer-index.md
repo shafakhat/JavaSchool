@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50312
 source: https://www.java2s.com/Tutorials/Java/java.nio/IntBuffer/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java IntBuffer.allocate(int capacity)

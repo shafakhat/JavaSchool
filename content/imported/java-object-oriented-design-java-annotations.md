@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50191
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0700__Java_Annotations.html
 ---
-```java title=Example.java
-```
-
 ## What Are Annotations?
 
 An annotation in Java lets us associate metadata to the program elements.

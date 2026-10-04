@@ -108,9 +108,7 @@ public class MainClass {
     p.testDouble();
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 double argument:
   f1(double)
   f2(float)

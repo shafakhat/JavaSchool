@@ -16,9 +16,7 @@ for(String s: weekdays){
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Sunday
 Monday
 Tuesday

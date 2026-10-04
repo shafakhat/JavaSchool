@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50423
 source: https://www.java2s.com/Tutorials/Java/Java_Language/2030__Java_Floating_Point.html
 ---
-```java title=Example.java
-```
-
 ## float type
 
 float type represents single-precision numbers.

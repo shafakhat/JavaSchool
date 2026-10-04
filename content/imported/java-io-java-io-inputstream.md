@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50200
 source: https://www.java2s.com/Tutorials/Java/Java_io/0080__Java_io_InputStream.html
 ---
-```java title=Example.java
-```
-
 The abstract base component is the InputStream class.
 
 ```java title=Example.java

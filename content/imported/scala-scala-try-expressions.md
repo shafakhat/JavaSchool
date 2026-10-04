@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50094
 source: https://www.java2s.com/Tutorials/Java/Scala/0250__Scala_try_expressions.html
 ---
-```java title=Example.java
-```
-
 Exception handling in Scala is implemented differently, but it behaves exactly like Java and works seamlessly with existing Java libraries.
 
 All exceptions in Scala are unchecked; there is no concept of checked exception.

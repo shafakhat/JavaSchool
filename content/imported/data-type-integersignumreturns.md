@@ -18,9 +18,7 @@ public class MainClass {
       System.out.println(Integer.signum(0));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 1
 -1
 0

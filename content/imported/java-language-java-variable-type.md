@@ -3,12 +3,9 @@ title: Java Tutorial - Java Variable Type
 nav: Java Tutorial - Java Varia...
 description: Object reference variables act differently when an assignment takes place.
 section: Imported - java2s Archive
-order: 50448
-source: https://www.java2s.com/Tutorials/Java/Java_Language/5100__Java_Variable_Type.html
+order: 1012
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Language/5100__Java_Variable_Type.html
 ---
-```java title=Example.java
-```
-
 ## Java Object Reference Variable
 
 Object reference variables act differently when an assignment takes place.
@@ -40,12 +37,12 @@ Here, b1 has been set to null, but b2 still points to the original object.
 Java Object Reference Variable
 
 ```java title=Example.java
-class Box {int width;
+ class Box {int width;
   int height;
   int depth;
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Box myBox1 = new Box();
     Box myBox2 = myBox1;
     myBox1.width = 10;
@@ -67,13 +64,13 @@ When a simple primitive type is passed to a method, it is done by use of call-by
 The following program uses the "pass by value".
 
 ```java title=Example.java
-class Test {void change(int i, int j) {
+ class Test {void change(int i, int j) {
     i *= 2;
     j /= 2;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Test ob = new Test();
     int a = 5, b = 20;
     System.out.println("a and b before call: " + a + " " + b);
@@ -90,7 +87,7 @@ The output from this program is shown here:
 In the following program, objects are passed by reference.
 
 ```java title=Example.java
-class Test {int a, b;
+ class Test {int a, b;
   Test(int i, int j) {
     a = i;
     b = j;
@@ -100,8 +97,8 @@ class Test {int a, b;
     o.b /= 2;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Test ob = new Test(15, 20);
     System.out.println("ob.a and ob.b before call: " + ob.a + " " + ob.b);
     ob.meth(ob);

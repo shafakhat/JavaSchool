@@ -3,8 +3,8 @@ title: Java Utililty Methods Angle Difference
 nav: Java Utililty Methods Angl...
 description: The list of methods to do Angle Difference are organized into topic(s).
 section: Imported - java2s Archive
-order: 50021
-source: https://www.java2s.com/example/java-utility-method/angle-difference-index-0.html
+order: 1011
+source: https://web.archive.org/web/2016/https://www.java2s.com/example/java-utility-method/angle-difference-index-0.html
 ---
 List of utility methods to do Angle Difference
 
@@ -17,12 +17,12 @@ The list of methods to do Angle Difference are organized into topic(s).
 doubleangleDif(double a1, double a2) Compute the difference between two angles.
 
 ```java title=Example.java
-doubleval = a1 - a2;
+double val = a1 - a2;
 if (val > Math.PI) {
     val -= 2. * Math.PI;
 if (val < -Math.PI) {
     val += 2. * Math.PI;
-returnval;
+return val;
 ...
 ```
 
@@ -37,7 +37,7 @@ return a - b > PI ? (float) (b + 2 * PI - a) : a - b;
 floatangleDif(float a1, float a2) Compute the difference between two angles.
 
 ```java title=Example.java
-doubleval = a1 - a2;
+double val = a1 - a2;
 if (val > Math.PI) {
     val -= 2. * Math.PI;
 if (val < -Math.PI) {
@@ -65,7 +65,7 @@ doubleangleDiff(double angle1, double angle2, boolean normalized) angle Diff
 if (!normalized) {
     angle1 = normalizeAngle(angle1);
     angle2 = normalizeAngle(angle2);
-returnMath.min(Math.abs(angle1 - angle2),
+return Math.min(Math.abs(angle1 - angle2),
         Math.min(Math.abs(angle1 - angle2 + TWO_PI), Math.abs(angle1 - angle2 - TWO_PI)));
 ```
 
@@ -73,11 +73,11 @@ doubleangleDiff(final double a1, final double a2) Get the difference of angles (
 
 ```java title=Example.java
 if (Double.isNaN(a1) || Double.isNaN(a1))
-    returnDouble.NaN;
-finaldouble diff = a2 - a1;
+    return Double.NaN;
+final double diff = a2 - a1;
 if (diff < -Math.PI)
     return diff + 2.0 * Math.PI;
-elseif (diff > Math.PI)
+else if (diff > Math.PI)
     return diff - 2.0 * Math.PI;
 else
 ...

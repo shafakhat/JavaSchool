@@ -18,8 +18,6 @@ public class MainClass {
     System.out.println(averageC);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 7.5
 ```

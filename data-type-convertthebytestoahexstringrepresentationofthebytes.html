@@ -37,7 +37,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-09-hex-oct.html">Hex Oct</a></nav>
     <h1>Convert the bytes to a hex string representation of the bytes</h1>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -55,8 +55,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-import java.io.PrintWriter;
+ */import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.InetAddress;
 import java.net.URI;
@@ -72,8 +71,7 @@ import java.util.StringTokenizer;
 import java.util.Collection;
 /**
  * General string utils
- */
-public class StringUtils {
+ */public class StringUtils {
   final public static char COMMA = ',';
   final public static String COMMA_STR = ",";
   final public static char ESCAPE_CHAR = '\\';
@@ -83,8 +81,7 @@ public class StringUtils {
    * representation of the bytes
    * @param bytes
    * @return hex string representation of the byte array
-   */
-  public static String byteToHexString(byte bytes[]) {
+   */ public static String byteToHexString(byte bytes[]) {
     StringBuffer retString = new StringBuffer();
     for (int i = 0; i &lt; bytes.length; ++i) {
       retString.append(Integer.toHexString(0x0100 + (bytes[i] &amp; 0x00FF))
@@ -93,7 +90,7 @@ public class StringUtils {
     return retString.toString();
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="class-definition-blankfinalfields.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">'Blank' final fields</span></a><a class="pager-btn pager-next" href="jdk-7-getrelativepath.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Get relative path</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-convertjavastringtolongexample-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Convert Java String to Lon...</span></a><a class="pager-btn pager-next" href="class-definition-copyanserializableobjectdeeply.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Copy an serializable objec...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

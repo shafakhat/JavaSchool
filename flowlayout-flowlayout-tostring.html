@@ -29,17 +29,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-javaawt.html">java.awt</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-flowlayout.html">FlowLayout</a></nav>
     <h1>Java Swing Tutorial - Java FlowLayout.toString()</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Back to FlowLayout  ↑</code></pre></div>
 <h2 id="syntax">Syntax</h2>
 <p>FlowLayout.toString() has the following syntax.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public String toString()</code></pre></div>
@@ -49,7 +48,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
+public class Main extends JPanel {
   public Main() {
     FlowLayout flowLayout = new FlowLayout(FlowLayout.RIGHT, 10, 3);
     setLayout(flowLayout);
@@ -59,7 +58,7 @@ publicclass Main extends JPanel {
     add(new JButton("JavaSchool"));
     System.out.println(flowLayout.toString());
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,8 +66,7 @@ publicclass Main extends JPanel {
     frame.setVisible(true);
   }
 }</code></pre></div>
-<ul><li>Back to FlowLayout ↑</li></ul>
-    <div class="pager"><a class="pager-btn" href="flowlayout-flowlayout-left.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="font-font-derivefont-int-style-float-size.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Swing Tutorial - Java...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="color-color-getcolorspace.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="borderlayout-java-borderlayout-page-start.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Borde...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

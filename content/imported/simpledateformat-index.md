@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50400
 source: https://www.java2s.com/Tutorials/Java/java.text/SimpleDateFormat/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java SimpleDateFormat() Constructor

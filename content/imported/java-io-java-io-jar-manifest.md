@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50220
 source: https://www.java2s.com/Tutorials/Java/Java_io/0840__Java_io_Jar_Manifest.html
 ---
-```java title=Example.java
-```
-
 ## Manifest File
 
 A JAR file may optionally contain a manifest file named MANIFEST.MF in the META-INF directory.

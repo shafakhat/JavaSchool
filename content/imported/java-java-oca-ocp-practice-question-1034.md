@@ -1,21 +1,21 @@
 ---
 title: Java OCA OCP Practice Question 1034
 nav: Java OCA OCP Practice Ques...
-description: The code compiles and runs without issues, so Options C and D are incorrect.
+description: package mypkg; /* w w w . j av a 2s . com*/public class Main {
 section: Imported - java2s Archive
-order: 1015
-source: https://web.archive.org/web/20210101014705/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1034.html
+order: 1002
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1034.html
 ---
 ## Question
 
 What is the output of the following application?
 
 ```java title=Example.java
-package mypkg; publicclass Main {
-  publicstaticvoid main(String[] dribble) {
+package mypkg; public class Main {
+  public static void main(String[] dribble) {
      try {
         System.out.print(1);
-        thrownewClassCastException();
+        throw new ClassCastException();
      } catch (ArrayIndexOutOfBoundsException ex) {
         System.out.print(2);
      } catch (Throwable ex) {

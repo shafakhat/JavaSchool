@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 1015
 source: https://web.archive.org/web/20160729082809/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Math/index.htm
 ---
-```java title=Example.java
-```
-
 - Java Calculate powers
 - Java Compare BigDecimal movePointRight and scaleByPowerOfTen
 - Java Convert mathematical string to int
@@ -22,6 +19,3 @@ source: https://web.archive.org/web/20160729082809/http://www.java2s.com:80/Tuto
 - Java Parse a mathematical expression and operators and solve it
 - Java Plot the sine and cosine functions
 - Java Save decimal
-
-```java title=Example.java
-```

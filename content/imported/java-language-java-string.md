@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50425
 source: https://www.java2s.com/Tutorials/Java/Java_Language/2050__Java_String.html
 ---
-```java title=Example.java
-```
-
 The String class represents character strings. A quoted string constant can be assigned to a String variable.
 
 ## Java String Literal

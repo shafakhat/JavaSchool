@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50303
 source: https://www.java2s.com/Tutorials/Java/java.nio.charset/CharsetEncoder/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java CharsetEncoder .averageBytesPerChar ()

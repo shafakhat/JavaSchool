@@ -22,18 +22,14 @@ What is the output of the following code?
 9:     m.printName(9.0);
 10:   }
 11: }
-```
-
-```java title=Example.java
+java title=Example.java
 A.  MainPrintable
 B.  PrintableMain
 C.  MainMain
 D.  PrintablePrintable
 E.  The code will not compile because of line 5.
 F.  The code will not compile because of line 9.
-```
-
-```java title=Example.java
+java title=Example.java
 A.
 ```
 

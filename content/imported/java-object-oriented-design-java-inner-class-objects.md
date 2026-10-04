@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50163
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0270__Java_Inner_Class_Objects.html
 ---
-```java title=Example.java
-```
-
 Objects of a local inner class are created using the new operator inside the block, which declares the class.
 
 An object of an anonymous class is created at the same time the class is declared.

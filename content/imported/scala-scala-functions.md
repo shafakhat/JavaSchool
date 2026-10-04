@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50097
 source: https://www.java2s.com/Tutorials/Java/Scala/2000__Scala_Functions.html
 ---
-```java title=Example.java
-```
-
 Scala has both functions and methods.
 
 A Scala method is a part of a class that has a name and a signature. A function in Scala is a complete object that can be assigned to a variable.
@@ -62,9 +59,7 @@ The following code shows how to create a function with parameters.
 
 ```java title=Example.java
 def square (i:Int) = {i*i}
-```
-
-```java title=Example.java
+java title=Example.java
 The body of the functions are expressions,
 where the final line becomes the return value of the function.
 ```

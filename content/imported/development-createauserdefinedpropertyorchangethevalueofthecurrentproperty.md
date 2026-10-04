@@ -13,8 +13,6 @@ public class MainClass {
     System.out.println(System.getProperty("password"));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 myPassword
 ```

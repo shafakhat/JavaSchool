@@ -3,8 +3,8 @@ title: Quick Sort implementation in Java
 nav: Quick Sort implementation ...
 description: QuickSortSimpleVersion arr = new QuickSortSimpleVersion(maxSize); // create array
 section: Imported - java2s Archive
-order: 1006
-source: https://web.archive.org/web/20130905031432/http://java2s.com/Tutorials/Java/Algorithms/Quick_Sort_implementation_in_Java.htm
+order: 1000
+source: https://web.archive.org/web/2016/http://java2s.com/Tutorials/Java/Algorithms/Quick_Sort_implementation_in_Java.htm
 ---
 In this chapter you will learn:
 
@@ -16,8 +16,8 @@ In this chapter you will learn:
 ### Quick Sort implementation
 
 ```java title=Example.java
-publicclass Main{
-  publicstaticvoid main(String[] args) {
+public class Main{
+  public static void main(String[] args) {
     int maxSize = 16; // array size
     QuickSortSimpleVersion arr = new QuickSortSimpleVersion(maxSize); // create array
 for (int j = 0; j < maxSize; j++){
@@ -30,57 +30,57 @@ for (int j = 0; j < maxSize; j++){
   }
 }
 class QuickSortSimpleVersion {
-  privatelong[] data;
-  privateint len;
+  private long[] data;
+  private int len;
   public QuickSortSimpleVersion(int max) {
-    data = newlong[max];
+    data = new long[max];
     len = 0;
   }
-  publicvoid insert(long value) {
+  public void insert(long value) {
     data[len] = value;
     len++;
   }
-  publicvoid display() {
+  public void display() {
     System.out.print("Data:");
     for (int j = 0; j < len; j++)
       System.out.print(data[j] + " ");
     System.out.println("");
   }
-  publicvoid quickSort() {
+  public void quickSort() {
     recQuickSort(0, len - 1);
   }
-  publicvoid recQuickSort(int left, int right) {
+  public void recQuickSort(int left, int right) {
     if (right - left <= 0){ // if size <= 1 already sorted
-return;
+ return;
     }else{ // size is 2 or larger
-long pivot = data[right]; // rightmost item
-// partition range
-int partition = partitionData(left, right, pivot);
+ long pivot = data[right]; // rightmost item
+ // partition range
+ int partition = partitionData(left, right, pivot);
       recQuickSort(left, partition - 1); // sort left side
       recQuickSort(partition + 1, right); // sort right side
     }
   }
-  publicint partitionData(int left, int right, long pivot) {
+  public int partitionData(int left, int right, long pivot) {
     int leftPtr = left - 1; // left (after ++)
-int rightPtr = right; // right-1 (after --)
-while (true) { // find bigger item
-while (data[++leftPtr] < pivot){
+ int rightPtr = right; // right-1 (after --)
+ while (true) { // find bigger item
+ while (data[++leftPtr] < pivot){
         ;
       }
       // find smaller item
-while (rightPtr > 0 && data[--rightPtr] > pivot){
+ while (rightPtr > 0 && data[--rightPtr] > pivot){
         ;
       }
       if (leftPtr >= rightPtr){ // if pointers cross, partition done
-break;
+ break;
       }else{
         swap(leftPtr, rightPtr);
       }
     }
     swap(leftPtr, right); // restore pivot and return pivot location
-return leftPtr;
+ return leftPtr;
   }
-  publicvoid swap(int d1, int d2) {
+  public void swap(int d1, int d2) {
     long temp = data[d1];
     data[d1] = data[d2];
     data[d2] = temp;
@@ -99,9 +99,9 @@ The following quick sort code is from joddy.org and released under open source l
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-publicclass Main{
-  publicstaticvoid main(String[] argv){
-    Object[] objectArray = newInteger[]{1,2,3};
+public class Main{
+  public static void main(String[] argv){
+    Object[] objectArray = new Integer[]{1,2,3};
     FastQuickSort.qsort(objectArray, Collections.reverseOrder());
     System.out.println(Arrays.toString(objectArray));
   }
@@ -113,9 +113,9 @@ publicclass Main{
  * sorts for 6.8s. However, {@link FastMergeSort} is much faster.
  */class FastQuickSort  {
   @SuppressWarnings({"unchecked"})
-  publicstaticvoid qsort(Object[] c, Comparator comparator) {
+  public static void qsort(Object[] c, Comparator comparator) {
     int i, j, left = 0, right = c.length - 1, stack_pointer = -1;
-    int[] stack = newint[128];
+    int[] stack = new int[128];
     Object swap, temp;
     while (true) {
       if (right - left <= 7) {
@@ -149,9 +149,9 @@ publicclass Main{
         temp = c[i];
         while (true) {
           //noinspection ControlFlowStatementWithoutBraces,StatementWithEmptyBody
-while (comparator.compare(c[++i], temp) < 0);
+ while (comparator.compare(c[++i], temp) < 0);
           //noinspection ControlFlowStatementWithoutBraces,StatementWithEmptyBody
-while (comparator.compare(c[--j], temp) > 0);
+ while (comparator.compare(c[--j], temp) > 0);
           if (j < i) {
             break;
           }
@@ -196,15 +196,15 @@ The following code is an open source version of quick sort. The interesting part
  * java.utils.Collections this one does not create any objects. There are
  * two implementations, one for arrays of Comparable's and another that
  * uses a comparator.
- */class Quicksort {
+ */ class Quicksort {
     /**
      * Sort the first size entries in a.
-     */publicstaticvoid quicksort(Object[] a, int size) {
+     */ public static void quicksort(Object[] a, int size) {
         quicksort(a, 0, size - 1);
     }
     /**
      * Sort the entries in a between left and right inclusive.
-     */publicstaticvoid quicksort(Object[] a, int left, int right) {
+     */ public static void quicksort(Object[] a, int left, int right) {
         int size = right - left + 1;
         switch (size) {
             case 0:
@@ -225,21 +225,21 @@ The following code is an open source version of quick sort. The interesting part
                 quicksort(a, partition + 1, right);
         }
     }
-    privatestaticint compare(Object a, Object b) {
+    private static int compare(Object a, Object b) {
         if (a == null) {
             return b == null ? 0 : -1;
-        } elseif (b == null) {
+        } else if (b == null) {
             return +1;
         } else {
             return ((Comparable)a).compareTo(b);
         }
     }
-    privatestaticvoid swap(Object[] a, int left, int right) {
+    private static void swap(Object[] a, int left, int right) {
         Object t = a[left];
         a[left] = a[right];
         a[right] = t;
     }
-    privatestaticint median(Object[] a, int left, int right) {
+    private static int median(Object[] a, int left, int right) {
         int center = (left + right) / 2;
         if (compare(a[left], a[center]) > 0) swap(a, left, center);
         if (compare(a[left], a[right]) > 0) swap(a, left, right);
@@ -247,7 +247,7 @@ The following code is an open source version of quick sort. The interesting part
         swap(a, center, right - 1);
         return right - 1;
     }
-    privatestaticint partition(Object[] a, int left, int right, int pivotIndex) {
+    private static int partition(Object[] a, int left, int right, int pivotIndex) {
         int leftIndex = left;
         int rightIndex = right - 1;
         while (true) {
@@ -260,16 +260,16 @@ The following code is an open source version of quick sort. The interesting part
             }
         }
         swap(a, leftIndex, right - 1);         // restore pivot
-return leftIndex;                 // return pivot location
+ return leftIndex;                 // return pivot location
     }
     /**
      * Sort the first size entries in a.
-     */publicstaticvoid quicksort(Object[] a, int size, Comparator c) {
+     */ public static void quicksort(Object[] a, int size, Comparator c) {
         quicksort(a, 0, size - 1, c);
     }
     /**
      * Sort the entries in a between left and right inclusive.
-     */publicstaticvoid quicksort(Object[] a, int left, int right, Comparator c) {
+     */ public static void quicksort(Object[] a, int left, int right, Comparator c) {
         int size = right - left + 1;
         switch (size) {
             case 0:
@@ -290,7 +290,7 @@ return leftIndex;                 // return pivot location
                 quicksort(a, partition + 1, right, c);
         }
     }
-    privatestaticint median(Object[] a, int left, int right, Comparator c) {
+    private static int median(Object[] a, int left, int right, Comparator c) {
         int center = (left + right) / 2;
         if (c.compare(a[left], a[center]) > 0) swap(a, left, center);
         if (c.compare(a[left], a[right]) > 0) swap(a, left, right);
@@ -298,7 +298,7 @@ return leftIndex;                 // return pivot location
         swap(a, center, right - 1);
         return right - 1;
     }
-    privatestaticint partition(Object[] a, int left, int right,
+    private static int partition(Object[] a, int left, int right,
             int pivotIndex, Comparator c) {
         int leftIndex = left;
         int rightIndex = right - 1;
@@ -312,7 +312,7 @@ return leftIndex;                 // return pivot location
             }
         }
         swap(a, leftIndex, right - 1);         // restore pivot
-return leftIndex;                 // return pivot location
+ return leftIndex;                 // return pivot location
     }
 }
 ```
@@ -320,31 +320,31 @@ return leftIndex;                 // return pivot location
 ### Quick sort with median-of-three partitioning
 
 ```java title=Example.java
-publicclass AnotherQuickSort {
-  privatelong[] data;
-privateint len;
-  public AnotherQuickSort(int max) {
-    data = newlong[max];
+public class Main {
+  private long[] data;
+private int len;
+  public Main(int max) {
+    data = new long[max];
     len = 0;
   }
-  publicvoid insert(long value) {
+  public void insert(long value) {
     data[len] = value; // insert and increment size
     len++;
   }
-  publicvoid display() {
+  public void display() {
     System.out.print("Data:");
     for (int j = 0; j < len; j++)
       System.out.print(data[j] + " ");
     System.out.println("");
   }
-  publicvoid quickSort() {
+  public void quickSort() {
     recQuickSort(0, len - 1);
   }
-  publicvoid recQuickSort(int left, int right) {
+  public void recQuickSort(int left, int right) {
     int size = right - left + 1;
     if (size <= 3) // manual sort if small
       manualSort(left, right);
-    else// quicksort if large
+    else // quicksort if large
     {
       long median = medianOf3(left, right);
       int partition = partitionIt(left, right, median);
@@ -352,66 +352,66 @@ privateint len;
       recQuickSort(partition + 1, right);
     }
   }
-  publiclong medianOf3(int left, int right) {
+  public long medianOf3(int left, int right) {
     int center = (left + right) / 2;
     // order left & center
-if (data[left] > data[center])
+ if (data[left] > data[center])
       swap(left, center);
     // order left & right
-if (data[left] > data[right])
+ if (data[left] > data[right])
       swap(left, right);
     // order center & right
-if (data[center] > data[right])
+ if (data[center] > data[right])
       swap(center, right);
     swap(center, right - 1); // put pivot on right
-return data[right - 1]; // return median value
+ return data[right - 1]; // return median value
   }
-  publicvoid swap(int dex1, int dex2) {
+  public void swap(int dex1, int dex2) {
     long temp = data[dex1];
     data[dex1] = data[dex2];
     data[dex2] = temp;
   }
-  publicint partitionIt(int left, int right, long pivot) {
+  public int partitionIt(int left, int right, long pivot) {
     int leftPtr = left; // right of first elem
-int rightPtr = right - 1; // left of pivot
-while (true) {
+ int rightPtr = right - 1; // left of pivot
+ while (true) {
       //       find bigger
-while (data[++leftPtr] < pivot)
+ while (data[++leftPtr] < pivot)
         ;
       //       find smaller
-while (data[--rightPtr] > pivot)
+ while (data[--rightPtr] > pivot)
         ;
       if (leftPtr >= rightPtr) // if pointers cross, partition done
-break;
-      else// not crossed, so
+ break;
+      else // not crossed, so
         swap(leftPtr, rightPtr); // swap elements
     }
     swap(leftPtr, right - 1); // restore pivot
-return leftPtr; // return pivot location
+ return leftPtr; // return pivot location
   }
-  publicvoid manualSort(int left, int right) {
+  public void manualSort(int left, int right) {
     int size = right - left + 1;
     if (size <= 1)
       return; // no sort necessary
-if (size == 2) { // 2-sort left and right
-if (data[left] > data[right])
+ if (size == 2) { // 2-sort left and right
+ if (data[left] > data[right])
         swap(left, right);
       return;
-    } else// size is 3
+    } else // size is 3
     { // 3-sort left, center, & right
-if (data[left] > data[right - 1])
+ if (data[left] > data[right - 1])
         swap(left, right - 1); // left, center
-if (data[left] > data[right])
+ if (data[left] > data[right])
         swap(left, right); // left, right
-if (data[right - 1] > data[right])
+ if (data[right - 1] > data[right])
         swap(right - 1, right); // center, right
     }
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     int maxSize = 16;
-    AnotherQuickSort arr = new AnotherQuickSort(maxSize);
+    Main arr = new Main(maxSize);
     for (int j = 0; j < maxSize; j++) { // random numbers
-long n = (int) (java.lang.Math.random() * 99);
+ long n = (int) (java.lang.Math.random() * 99);
       arr.insert(n);
     }
     arr.display();
@@ -420,6 +420,8 @@ long n = (int) (java.lang.Math.random() * 99);
   }
 }
 ```
+
+The code above generates the following result.
 
 #### Next chapter...
 

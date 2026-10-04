@@ -13,8 +13,6 @@ public class MainClass {
     System.out.println(smallNumber);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 1234
 ```

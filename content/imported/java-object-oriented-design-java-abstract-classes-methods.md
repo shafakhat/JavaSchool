@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50169
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0340__Java_Abstract_Classes_Methods.html
 ---
-```java title=Example.java
-```
-
 Java can define a class whose objects cannot be created.
 
 Its purpose is just to represent an idea, which is common to objects of other classes.

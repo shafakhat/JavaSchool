@@ -3,7 +3,7 @@ title: Java Tutorial - Java Font.isPlain()
 nav: Java Tutorial - Java Font....
 description: In the following code shows how to use Font.isPlain() method.
 section: Imported - java2s Archive
-order: 1029
+order: 1002
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Font/Java_Font_isPlain_.htm
 ---
 ### Syntax
@@ -11,7 +11,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/ja
 Font.isPlain() has the following syntax.
 
 ```java title=Example.java
-publicboolean isPlain()
+public boolean isPlain()
 ```
 
 ### Example
@@ -22,13 +22,13 @@ In the following code shows how to use Font.isPlain() method.
 import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JFrame;
-publicclass Main extends JFrame {
-  publicstaticvoid main(String[] a) {
+public class Main extends JFrame {
+  public static void main(String[] a) {
     Main f = new Main();
     f.setSize(300, 300);
     f.setVisible(true);
   }
-  publicvoid paint(Graphics g) {
+  public void paint(Graphics g) {
     Font f = g.getFont();
     System.out.println(f.isPlain());
     g.drawString("JavaSchool", 4, 16);

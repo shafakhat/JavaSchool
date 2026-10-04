@@ -17,9 +17,7 @@ publicclass MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 n
 o
 t

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Font/1460__Font.getTransform_.htm
 ---
-```java title=Example.java
-Back to Font  ↑
-```
-
 ## Syntax
 
 Font.getTransform() has the following syntax.
@@ -39,5 +35,3 @@ publicclass Main extends JFrame {
   }
 }
 ```
-
-- Back to Font ↑

@@ -18,8 +18,6 @@ public class MainClass {
     System.out.println("day contains " + day);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 day contains Monday
 ```

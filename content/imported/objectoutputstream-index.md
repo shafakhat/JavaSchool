@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50269
 source: https://www.java2s.com/Tutorials/Java/java.io/ObjectOutputStream/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java ObjectOutputStream (OutputStream out) Constructor

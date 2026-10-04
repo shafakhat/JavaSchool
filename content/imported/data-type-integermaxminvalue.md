@@ -17,9 +17,7 @@ public class MainClass {
     System.out.println(Integer.MIN_VALUE);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 2147483647
 -2147483648
 ```

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50092
 source: https://www.java2s.com/Tutorials/Java/Scala/0230__Scala_for_Loops.html
 ---
-```java title=Example.java
-```
-
 A For Comprehension is a very powerful control structure of Scala language.
 
 It offer the ability to iterate over a collection, and it also provides filtering options and the ability to generate new collections.

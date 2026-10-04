@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50304
 source: https://www.java2s.com/Tutorials/Java/java.nio.charset/StandardCharsets/index.html
 ---
-```java title=Example.java
-```
-
 ## Field
 
 - Java StandardCharsets ISO_8859_1

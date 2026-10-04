@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50184
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0550__Java_Interface_Inheritance.html
 ---
-```java title=Example.java
-```
-
 An interface can inherit from another interface. Unlike a class, an interface can inherit from multiple interfaces.
 
 ```java title=Example.java
@@ -103,9 +100,7 @@ The general syntax of the instanceof operator is
 
 ```java title=Example.java
 referenceVariable instanceof  ReferenceType
-```
-
-```java title=Example.java
+java title=Example.java
 interface A {default String getValue(){
     return"A";
   }

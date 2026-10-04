@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java Buffer Read Write
 nav: Java IO Tutorial - Java Bu...
 description: The get() method overloaded with four versions is used to read data from a buffer.
 section: Imported - java2s Archive
-order: 50223
-source: https://www.java2s.com/Tutorials/Java/Java_io/0910__Java_nio_Bufer_Read_Write.html
+order: 1017
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/0910__Java_nio_Bufer_Read_Write.html
 ---
-```java title=Example.java
-```
-
 ## Buffer Read
 
 There are two ways to read data from a buffer:
@@ -44,8 +41,8 @@ The following code shows how to do Writing to and Reading from a Buffer.
 
 ```java title=Example.java
 import java.nio.ByteBuffer;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     ByteBuffer bb = ByteBuffer.allocate(8);
     printBufferInfo(bb);
     for (int i = 50; i < 58; i++) {
@@ -53,7 +50,7 @@ publicclass Main {
     }
     printBufferInfo(bb);
   }
-  publicstaticvoid printBufferInfo(ByteBuffer bb) {
+  public static void printBufferInfo(ByteBuffer bb) {
     int limit = bb.limit();
     System.out.println("Position =  " + bb.position() + ", Limit   = " + limit);
     for (int i = 0; i < limit; i++) {
@@ -76,23 +73,23 @@ The following code shows how to use the flip() and hasRemaining() Methods of a B
 
 ```java title=Example.java
 import java.nio.ByteBuffer;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     ByteBuffer bb = ByteBuffer.allocate(8);
     printBufferInfo(bb);
     // Use flip() to reset the position to zero because
-// the printBufferInfo() method uses relative get() method
+ // the printBufferInfo() method uses relative get() method
     bb.flip();
     int i = 50;
     while (bb.hasRemaining()) {
       bb.put((byte) i++);
     }
     // Call flip() again to reset the position to zero,
-// because the above put() call incremented the position
+ // because the above put() call incremented the position
     bb.flip();
     printBufferInfo(bb);
   }
-  publicstaticvoid printBufferInfo(ByteBuffer bb) {
+  public static void printBufferInfo(ByteBuffer bb) {
     int limit = bb.limit();
     System.out.println("Position =  " + bb.position() + ", Limit   = " + limit);
     while (bb.hasRemaining()) {

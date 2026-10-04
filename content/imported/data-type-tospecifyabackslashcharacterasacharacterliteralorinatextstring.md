@@ -11,7 +11,4 @@ publicclass MainClass {
   publicstaticvoid main(String[] arg) {
     System.out.println("\\");
     System.out.println("\\\\");
-
 ```java title=Example.java
-\\
-```

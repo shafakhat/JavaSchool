@@ -3,19 +3,15 @@ title: Java Swing Tutorial - Java FlowLayout .layoutContainer (Container target)
 nav: Java Swing Tutorial - Java...
 description: FlowLayout.layoutContainer(Container target) has the following syntax.
 section: Imported - java2s Archive
-order: 1024
+order: 1011
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/FlowLayout/0300__FlowLayout.layoutContainer_Container_target_.htm
 ---
-```java title=Example.java
-Back to FlowLayout  ↑
-```
-
 ## Syntax
 
 FlowLayout.layoutContainer(Container target) has the following syntax.
 
 ```java title=Example.java
-publicvoid layoutContainer(Container target)
+public void layoutContainer(Container target)
 ```
 
 ## Example
@@ -27,7 +23,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
+public class Main extends JPanel {
   public Main() {
     FlowLayout flowLayout = new FlowLayout(FlowLayout.RIGHT, 10, 3);
     setLayout(flowLayout);
@@ -37,7 +33,7 @@ publicclass Main extends JPanel {
     add(new JButton("JavaSchool"));
     flowLayout.layoutContainer(this);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,5 +42,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to FlowLayout ↑

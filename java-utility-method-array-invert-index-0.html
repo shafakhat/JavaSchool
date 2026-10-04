@@ -44,7 +44,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The list of methods to do Array Invert are organized into topic(s).</p>
 <h2 id="method">Method</h2>
 <p>boolean[]invert(boolean[] binary) Invert binary array (apply a negation to each value).</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">finalboolean[] inverted = newboolean[binary.length];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">final boolean[] inverted = new boolean[binary.length];
 for (int i = 0; i &lt; inverted.length; i++) {
     inverted[i] = !binary[i];
 return inverted;</code></pre></div>
@@ -55,17 +55,17 @@ return result;</code></pre></div>
 <p>byte[]invert(byte abyte0[]) invert</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (abyte0 == null || abyte0.length == 0)
     return abyte0;
-byte abyte1[] = newbyte[abyte0.length];
+byte abyte1[] = new byte[abyte0.length];
 for (int i = 0; i &lt; abyte0.length; i++)
     abyte1[i] = abyte0[abyte0.length - i - 1];
 return abyte1;</code></pre></div>
 <p>byte[]invert(byte[] array) invert</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[] newArray = newbyte[array.length];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[] newArray = new byte[array.length];
 for (int i = 0; i &lt; array.length; ++i)
     newArray[newArray.length - i - 1] = array[i];
 return newArray;</code></pre></div>
 <p>byte[]invert(byte[] bytes) Invert the provided byte array.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[] invertedBytes = newbyte[bytes.length];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[] invertedBytes = new byte[bytes.length];
 for (int i = 0; i &lt; bytes.length; i++) {
     invertedBytes[i] = (byte) (~bytes[i]);
 return invertedBytes;</code></pre></div>
@@ -84,14 +84,14 @@ for (int i = 0; i &lt; ary.length; i++)
 return ary;</code></pre></div>
 <p>float[]invert(float[] a) invert</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (a == null) {
-    thrownewIllegalArgumentException("Argument cannot be null");
-float[] c = newfloat[a.length];
+    throw new IllegalArgumentException("Argument cannot be null");
+float[] c = new float[a.length];
 for (int i = 0; i &lt; a.length; i++) {
     c[i] = 1.0f / a[i];
 return c;
 ...</code></pre></div>
 <p>booleaninvert(float[] m, float[] invOut) invert</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">float[] inv = newfloat[16];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">float[] inv = new float[16];
 float det;
 int i;
 inv[0] = m[5] * m[10] * m[15] - m[5] * m[11] * m[14] - m[9] * m[6] * m[15] + m[9] * m[7] * m[14]
@@ -100,7 +100,7 @@ inv[4] = -m[4] * m[10] * m[15] + m[4] * m[11] * m[14] + m[8] * m[6] * m[15] - m[
         - m[12] * m[6] * m[11] + m[12] * m[7] * m[10];
 inv[8] = m[4] * m[9] * m[15] - m[4] * m[11] * m[13] - m[8] * m[5] * m[15] + m[8] * m[7] * m[13]
 ...</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="scala-scala-variable-declarations.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Scala Tutorial - Scala Var...</span></a><a class="pager-btn pager-next" href="scala-scala-semicolons.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Scala Tutorial - Scala Sem...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="graphics-graphics-drawchars-char-data-int-offset-int-length-int-x-int-y.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="jstl-jstlformactionandpassingparameter.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JSTL-Form Action And Passi...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50311
 source: https://www.java2s.com/Tutorials/Java/java.nio/FloatBuffer/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java FloatBuffer.allocate(int capacity)

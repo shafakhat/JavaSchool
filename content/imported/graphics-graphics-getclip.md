@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics/0720__Graphics.getClip_.htm
 ---
-```java title=Example.java
-Back to Graphics  ↑
-```
-
 ## Syntax
 
 Graphics.getClip() has the following syntax.
@@ -40,5 +36,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Graphics ↑

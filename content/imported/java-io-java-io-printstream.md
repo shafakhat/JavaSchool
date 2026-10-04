@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java PrintStream
 nav: Java IO Tutorial - Java Pr...
 description: The PrintStream class is a concrete decorator for the output stream.
 section: Imported - java2s Archive
-order: 50207
-source: https://www.java2s.com/Tutorials/Java/Java_io/0240__Java_io_PrintStream.html
+order: 1011
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/0240__Java_io_PrintStream.html
 ---
-```java title=Example.java
-```
-
 The PrintStream class is a concrete decorator for the output stream.
 
 PrintStream can print any data type values, primitive or object, in a suitable format for printing.
@@ -25,8 +22,8 @@ If we set the auto-flush flag to true, PrintStream will flush its contents when 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     String destFile = "luci3.txt";
     try (PrintStream ps = new PrintStream(destFile)) {
       ps.println("test");
@@ -36,7 +33,7 @@ publicclass Main {
       // flush the print stream
       ps.flush();
       System.out.println("Text has  been  written to "
-          + (newFile(destFile).getAbsolutePath()));
+          + (new File(destFile).getAbsolutePath()));
     } catch (FileNotFoundException e1) {
       e1.printStackTrace();
     }

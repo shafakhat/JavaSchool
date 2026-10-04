@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50417
 source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/TypeVariable/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java TypeVariable.getBounds()

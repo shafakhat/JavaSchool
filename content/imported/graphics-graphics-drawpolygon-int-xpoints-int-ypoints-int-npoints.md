@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics/0420__Graphics.drawPolygon_int_xPoints_int_yPoints_int_nPoints_.htm
 ---
-```java title=Example.java
-Back to Graphics  ↑
-```
-
 ## Syntax
 
 Graphics.drawPolygon(int[] xPoints, int[] yPoints, int nPoints) has the following syntax.
@@ -42,5 +38,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Graphics ↑

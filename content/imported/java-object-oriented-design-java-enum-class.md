@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50187
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0620__Java_Enum_class.html
 ---
-```java title=Example.java
-```
-
 ## Superclass of an Enum Type
 
 The compiler creates a class when an enum type is compiled.

@@ -14,8 +14,6 @@ public class MainClass {
     System.out.println(newString);
    }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 abcde1234567890saves nine
 ```

@@ -29,22 +29,21 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">Java Object Oriented Design</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-object-oriented-design.html">Java Object Oriented Design</a></nav>
     <h1>Java Object Oriented Design - Java this</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <h2 id="what-is-this">What Is this?</h2>
 <p>Java has a keyword called this. It is a reference to the current instance of a class.</p>
 <p>It can be used only in the context of an instance.</p>
 <p>The following code shows how to use this keyword.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
   int varA = 1;
   int varB = varA; // Assign value of varA to varB
   int varC = this.varA; // Assign value of varA to varC
@@ -52,13 +51,13 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>We need to qualify an instance variable with the keyword this and a class variable with the class name when the instance variable or the class variable is hidden by another variable with the same name.</p>
 <h2 id="example">Example</h2>
 <p>The following code shows how to use the this Keyword to Refer to an Instance Variable Whose Name Is Hidden by a Local Variable.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
   int num = 2014; // An instance variable
-void printNum(int num) {
+ void printNum(int num) {
     System.out.println("Parameter num: " + num);
     System.out.println("Instance variable num: " + this.num);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     Main tt6 = new Main();
     tt6.printNum(2000);
   }
@@ -69,27 +68,27 @@ void printNum(int num) {
 <p>For example, the following code is very common:</p>
 <p>The Student class declares an instance variable id. In its setId() method, it also names the parameter id, and uses this.id to refer to the instance variable.</p>
 <p>It also uses this.id to refer to the instance variable id in its getId() method.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Student {
-  privateint id; // An instance variable
-publicvoid setId(int id) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Student {
+  private int id; // An instance variable
+public void setId(int id) {
     this.id = id;
   }
-  publicint getId() {
+  public int getId() {
     return this.id;
   }
 }</code></pre></div>
 <p>We can use the keyword this to qualify an instance method name. The following code shows the m1() method invoking the m2() method using the keyword this.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
   void m1() {
     // Invoke the m2() method
-    this.m2(); // same as"m2();"
+    this.m2(); // same as "m2();"
   }
   void m2() {
     // do something
   }
 }</code></pre></div>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-varargs-method.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-access-level-class-members.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-format-java-format-value-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Format - Java printf ...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1006.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

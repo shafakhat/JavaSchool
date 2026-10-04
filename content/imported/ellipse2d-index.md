@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Ellipse2D/index.htm
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java Ellipse2D() Constructor

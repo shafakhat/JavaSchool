@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50263
 source: https://www.java2s.com/Tutorials/Java/java.io/FilterWriter/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java FilterWriter.close()

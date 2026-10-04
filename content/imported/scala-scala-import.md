@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50109
 source: https://www.java2s.com/Tutorials/Java/Scala/3090__Scala_Import.html
 ---
-```java title=Example.java
-```
-
 ## Importing Types and Their Members
 
 To use declarations in packages, we have to import them, just as we do in Java.

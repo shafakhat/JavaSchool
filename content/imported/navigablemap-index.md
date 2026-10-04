@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50367
 source: https://www.java2s.com/Tutorials/Java/java.util/NavigableMap/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java NavigableMap.ceilingEntry(K key)

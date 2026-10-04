@@ -34,9 +34,7 @@ B. It will throwArrayIndexOutOfBoundsException.
 C. It will print null.
 D. It will run without any error but will print nothing.
 E. None of the above.
-```
-
-```java title=Example.java
+java title=Example.java
 Correct Option is  : C
 ```
 

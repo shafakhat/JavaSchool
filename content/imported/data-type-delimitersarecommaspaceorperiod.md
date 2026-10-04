@@ -22,9 +22,7 @@ public class MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Analysis with limit = 0
 Number of tokens: 11
 To

@@ -37,7 +37,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Java Arithmetic Operator calculate area of a triangle</h1>
 <h2 id="question">Question</h2>
 <p>We would like to calculate area of a triangle.</p>
@@ -45,13 +45,14 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>Display its area.</p>
 <p>The formula for computing the area of a triangle is</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">s  =  (side1  + side2  +  side3)/2;
-area  =  2s(s  -  side1)(s  -  side2)(s  -  side3)</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Scanner;
-publicclass Main {
-  publicstaticvoid main(String[] Strings) {
-    Scanner input = newScanner(System.in);
+area  =  2s(s  -  side1)(s  -  side2)(s  -  side3)
+java title=Example.java
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] Strings) {
+    Scanner input = new Scanner(System.in);
     System.out.print("Enter three points for a triangle: ");
-    // triangle pointsdouble x1 = input.nextDouble();
+    // triangle points double x1 = input.nextDouble();
     double y1 = input.nextDouble();
     double x2 = input.nextDouble();
     double y2 = input.nextDouble();
@@ -59,19 +60,20 @@ publicclass Main {
     double y3 = input.nextDouble();
     //your codeSystem.out.println("The area of the triangle is " + area);
   }
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Scanner;
-publicclass Main {
-  publicstaticvoid main(String[] Strings) {
-    Scanner input = newScanner(System.in);
+}
+java title=Example.java
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] Strings) {
+    Scanner input = new Scanner(System.in);
     System.out.print("Enter three points for a triangle: ");
-    // triangle pointsdouble x1 = input.nextDouble();
+    // triangle points double x1 = input.nextDouble();
     double y1 = input.nextDouble();
     double x2 = input.nextDouble();
     double y2 = input.nextDouble();
     double x3 = input.nextDouble();
     double y3 = input.nextDouble();
-    // gettings sides of triangledouble side1 = Math.pow((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2), 0.5);
+    // gettings sides of triangle double side1 = Math.pow((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2), 0.5);
     double side2 = Math.pow((x1 - x3) * (x1 - x3) + (y1 - y3) * (y1 - y3), 0.5);
     double side3 = Math.pow((x3 - x2) * (x3 - x2) + (y3 - y2) * (y3 - y2), 0.5);
     double s = (side1 + side2 + side3) / 2.0;
@@ -81,9 +83,9 @@ publicclass Main {
 }</code></pre></div>
 <p>Use method</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Scanner;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
-    Scanner input = newScanner(System.in);
+public class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
     System.out.print("Enter three points for a triangle: ");
     double x1 = input.nextDouble();
     double y1 = input.nextDouble();
@@ -93,22 +95,22 @@ publicclass Main {
     double y3 = input.nextDouble();
     double area = areaOfTriangle(x1, y1, x2, y2, x3, y3);
     System.out.println("The area of the triangle is " + area);
-  }privatestaticdouble areaOfTriangle(double x1, double y1, double x2,
+  }private static double areaOfTriangle(double x1, double y1, double x2,
     double y2, double x3, double y3) {
     double s1 = distance(x1, y1, x2, y2);
     double s2 = distance(x2, y2, x3, y3);
     double s3 = distance(x3, y3, x1, y1);
     double s = (s1 + s2 + s3) / 2.0;
-    returnMath.sqrt(s * (s - s1) * (s - s2) * (s - s3));
+    return Math.sqrt(s * (s - s1) * (s - s2) * (s - s3));
   }
-  privatestaticdouble distance(double x1, double y1, double x2, double y2) {
-    returnMath.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+  private static double distance(double x1, double y1, double x2, double y2) {
+    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
   }
 }</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
 <ul><li>Java Arithmetic Operator Body Mass Index Calculator(BMI)</li><li>Java Arithmetic Operator calculate area and perimeter of a circle</li><li>Java Arithmetic Operator calculate area and perimeter of a rectangle</li><li>Java Arithmetic Operator calculate average speed in kilometers</li><li>Java Arithmetic Operator calculate average speed in miles</li></ul>
-    <div class="pager"><a class="pager-btn" href="data-type-isletterordigittrueiftheargumentisaletteroradigitandfalseotherwise.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">isLetterOrDigit()</span></a><a class="pager-btn pager-next" href="graphicsdevice-java-graphicsdevice-getavailableacceleratedmemory.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java GraphicsDevice.getAva...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="random-toss-coin.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms How to - T...</span></a><a class="pager-btn pager-next" href="java-io-java-io-zip-byte-array.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java Zi...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

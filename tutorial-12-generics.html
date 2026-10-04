@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Generics - Java Tutorial - JavaSchool</title>
-<meta name="description" content="Generics: java2s tutorial chapter with tabs per sub-topic, 1 archived articles imported.">
+<meta name="description" content="Generics: java2s tutorial chapter with 8 sub-topics, 52 archived pages.">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -37,82 +37,20 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-12-generics.html">Generics</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <span>Generics</span></nav>
     <h1>12. Generics</h1>
-    <p><strong>8 sub-topics</strong> &middot; <strong>60 pages archived (2014-2020)</strong> &middot; <strong>1</strong> imported here, grouped into tabs below.</p>
-    
-    <div class="tabs">
-      <div class="tab-bar"><button type="button" class="tab-btn active" data-tab="tab-0" aria-selected="true">Generic Collections <span class="tab-count">1</span></button></div>
-      <div class="tab-panel" id="tab-0"><h3 id="generic-to-list">Generic to list</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
-  Milyn - Copyright (C) 2006
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License (version 2.1) as published by the Free Software
-  Foundation.
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  See the GNU Lesser General Public License for more details:
-  http://www.gnu.org/licenses/lgpl.txt
-*/
-import java.util.*;
-/**
- * Collections Utilities.
- *
- * @author &lt;a href="mailto:tom.fennelly@jboss.com"&gt;tom.fennelly@jboss.com&lt;/a&gt;
- */
-public class CollectionsUtil {
-    /**
-     * Private constructor.
-     */
-    private CollectionsUtil() {
-    }
-    /**
-     * Create an Object {@link Set} from the supplied objects.
-     * @param objects The objects to be added to the set.
-     * @return The {@link Set}.
-     */
-    public static &lt;T&gt; Set&lt;T&gt; toSet(T... objects) {
-        Set&lt;T&gt; theSet = new HashSet&lt;T&gt;();
-        addToCollection(theSet, objects);
-        return theSet;
-    }
-    /**
-     * Create an Object {@link List} from the supplied objects.
-     * @param objects The objects to be added to the list.
-     * @return The {@link List}.
-     */
-    public static &lt;T&gt; List&lt;T&gt; toList(T... objects) {
-        List&lt;T&gt; theSet = new ArrayList&lt;T&gt;();
-        addToCollection(theSet, objects);
-        return theSet;
-    }
-    private static &lt;T&gt; void addToCollection(Collection&lt;T&gt; theCollection, T... objects) {
-        for(T object : objects) {
-            theCollection.add(object);
-        }
-    }
-}</code></pre></div></div>
-    </div>
-<script>
-(function(){
-  document.querySelectorAll('.tabs').forEach(function(box){
-    var btns = box.querySelectorAll('.tab-btn');
-    btns.forEach(function(b){
-      b.addEventListener('click', function(){
-        var id = b.getAttribute('data-tab');
-        btns.forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
-        b.classList.add('active'); b.setAttribute('aria-selected','true');
-        box.querySelectorAll('.tab-panel').forEach(function(p){ p.style.display = (p.id === id) ? '' : 'none'; });
-      });
-    });
-  });
-})();
-</script>
-    <details class="sub-map"><summary>All sub-topics in this chapter (8)</summary><div class="sub-chips"><span class="sub-chip"><span class="sub-num">12.1</span> Generics Basics <b>9</b></span><span class="sub-chip"><span class="sub-num">12.5</span> Bounded Types <b>4</b></span><span class="sub-chip"><span class="sub-num">12.2</span> Generic Collections <b>14</b></span><span class="sub-chip"><span class="sub-num">12.6</span> Generic Class <b>6</b></span><span class="sub-chip"><span class="sub-num">12.3</span> Generic Method <b>6</b></span><span class="sub-chip"><span class="sub-num">12.7</span> Generic Class Hierarchies <b>6</b></span><span class="sub-chip"><span class="sub-num">12.4</span> Generic Parameters <b>5</b></span><span class="sub-chip"><span class="sub-num">12.8</span> Generic Interfaces <b>2</b></span></div></details>
-
-    <p class="arc-crumb"><a href="java-tutorial.html">&larr; All tutorial chapters</a></p>
+    <p><strong>8 sub-topics</strong> &middot; <strong>52 pages archived (2014-2020)</strong> &middot; <strong>2</strong> on the site. Every sub-topic below is a real java2s topic - open one to read its pages in the original order.</p>
+    <ol class="topic-list">
+<li class="topic-row empty"><a class="topic-link" href="tutorial-12-01-generics-basics.html"><span class="topic-num">12.1</span><span class="topic-name">Generics Basics</span><span class="topic-count">0/9</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-12-02-generic-collections.html"><span class="topic-num">12.2</span><span class="topic-name">Generic Collections</span><span class="topic-count">2/14</span></a></li>
+<li class="topic-row empty"><a class="topic-link" href="tutorial-12-03-generic-method.html"><span class="topic-num">12.3</span><span class="topic-name">Generic Method</span><span class="topic-count">0/6</span></a></li>
+<li class="topic-row empty"><a class="topic-link" href="tutorial-12-04-generic-parameters.html"><span class="topic-num">12.4</span><span class="topic-name">Generic Parameters</span><span class="topic-count">0/5</span></a></li>
+<li class="topic-row empty"><a class="topic-link" href="tutorial-12-05-bounded-types.html"><span class="topic-num">12.5</span><span class="topic-name">Bounded Types</span><span class="topic-count">0/4</span></a></li>
+<li class="topic-row empty"><a class="topic-link" href="tutorial-12-06-generic-class.html"><span class="topic-num">12.6</span><span class="topic-name">Generic Class</span><span class="topic-count">0/6</span></a></li>
+<li class="topic-row empty"><a class="topic-link" href="tutorial-12-07-generic-class-hierarchies.html"><span class="topic-num">12.7</span><span class="topic-name">Generic Class Hierarchies</span><span class="topic-count">0/6</span></a></li>
+<li class="topic-row empty"><a class="topic-link" href="tutorial-12-08-generic-interfaces.html"><span class="topic-num">12.8</span><span class="topic-name">Generic Interfaces</span><span class="topic-count">0/2</span></a></li>
+    </ol>
+    <p class="arc-crumb"><a href="java-tutorial.html">&larr; All 39 chapters</a></p>
 
   </article>
 </main>

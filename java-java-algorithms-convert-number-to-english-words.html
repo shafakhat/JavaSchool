@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Java Algorithms Convert number to English words - JavaSchool</title>
-<meta name="description" content="privatestaticfinalString[] tensNames = { &quot;&quot;, //&quot; ten&quot;, //&quot; twenty&quot;, //&quot; thirty&quot;, //&quot; forty&quot;, //&quot; fifty&quot;, //&quot; sixty&quot;, //&quot; seventy&quot;, //&quot; eighty&quot;, //&quot; ninety&quot;//">
+<meta name="description" content="private static final String[] tensNames = { &quot;&quot;, // &quot; ten&quot;, // &quot; twenty&quot;, // &quot; thirty&quot;, // &quot; forty&quot;, // &quot; fifty&quot;, // &quot; sixty&quot;, // &quot; seventy&quot;, // &quot; eighty&quot;, // &quot; ninety&quot; //">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -37,15 +37,15 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Java Algorithms Convert number to English words</h1>
 <h2 id="description">Description</h2>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
-publicclass Main {
-   privatestaticfinalString[] tensNames = { "", //" ten", //" twenty", //" thirty", //" forty", //" fifty", //" sixty", //" seventy", //" eighty", //" ninety"//
-   };privatestaticfinalString[] numNames = { "", //" one", //" two", //" three", //" four", //" five", //" six", //" seven", //" eight", //" nine", //" ten", //" eleven", //" twelve", //" thirteen", //" fourteen", //" fifteen", //" sixteen", //" seventeen", //" eighteen", //" nineteen"//
+public class Main {
+   private static final String[] tensNames = { "", // " ten", // " twenty", // " thirty", // " forty", // " fifty", // " sixty", // " seventy", // " eighty", // " ninety" //
+   };private static final String[] numNames = { "", // " one", // " two", // " three", // " four", // " five", // " six", // " seven", // " eight", // " nine", // " ten", // " eleven", // " twelve", // " thirteen", // " fourteen", // " fifteen", // " sixteen", // " seventeen", // " eighteen", // " nineteen" //
    };
-   privatestaticString convertLessThanOneThousand(int number) {
+   private static String convertLessThanOneThousand(int number) {
       String soFar;
       if (number % 100 &lt; 20) {
          soFar = numNames[number % 100];
@@ -60,18 +60,18 @@ publicclass Main {
          return soFar;
       return numNames[number] + " hundred" + soFar;
    }
-   publicstaticString convert(long number) {
-      // 0 to 999 999 999 999if (number == 0) {
-         return"zero";
+   public static String convert(long number) {
+      // 0 to 999 999 999 999 if (number == 0) {
+         return "zero";
       }
       String snumber = Long.toString(number);
-      // pad with "0"String mask = "000000000000";
-      DecimalFormat df = newDecimalFormat(mask);
+      // pad with "0" String mask = "000000000000";
+      DecimalFormat df = new DecimalFormat(mask);
       snumber = df.format(number);
-      // XXXnnnnnnnnnint billions = Integer.parseInt(snumber.substring(0, 3));
-      // nnnXXXnnnnnnint millions = Integer.parseInt(snumber.substring(3, 6));
-      // nnnnnnXXXnnnint hundredThousands = Integer.parseInt(snumber.substring(6, 9));
-      // nnnnnnnnnXXXint thousands = Integer.parseInt(snumber.substring(9, 12));
+      // XXXnnnnnnnnn int billions = Integer.parseInt(snumber.substring(0, 3));
+      // nnnXXXnnnnnn int millions = Integer.parseInt(snumber.substring(3, 6));
+      // nnnnnnXXXnnn int hundredThousands = Integer.parseInt(snumber.substring(6, 9));
+      // nnnnnnnnnXXX int thousands = Integer.parseInt(snumber.substring(9, 12));
       String tradBillions;
       switch (billions) {
       case 0:
@@ -111,9 +111,9 @@ publicclass Main {
       String tradThousand;
       tradThousand = convertLessThanOneThousand(thousands);
       result = result + tradThousand;
-      // remove extra spaces!return result.replaceAll("^\\s+", "").replaceAll("\\b\\s{2,}\\b", " ");
+      // remove extra spaces! return result.replaceAll("^\\s+", "").replaceAll("\\b\\s{2,}\\b", " ");
    }
-   publicstaticvoid main(String[] args) {
+   public static void main(String[] args) {
       System.out.println(convert(0));
       System.out.println(convert(1));
       System.out.println(convert(16));
@@ -126,7 +126,7 @@ publicclass Main {
 }</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
-    <div class="pager"><a class="pager-btn" href="java-java-aclfileattributeview-update.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java AclFileAttributeView ...</span></a><a class="pager-btn pager-next" href="random-divide-a-number-into-smaller-random-ints.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Algorithms How to - D...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-java-actionevent-get-event-happened-time.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java ActionEvent get event...</span></a><a class="pager-btn pager-next" href="random-generate-random-number-between-two-given-values.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Algorithms How to - G...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -16,8 +16,6 @@ publicclass MainClass{
     System.out.println(index);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 5
 ```

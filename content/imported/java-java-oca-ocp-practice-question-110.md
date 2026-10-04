@@ -3,8 +3,8 @@ title: Java OCA OCP Practice Question 110
 nav: Java OCA OCP Practice Ques...
 description: Variable a has default access, so it cannot be accessed from outside the package.
 section: Imported - java2s Archive
-order: 1080
-source: https://web.archive.org/web/20210101014438/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-110.html
+order: 1017
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-110.html
 ---
 ## Question
 
@@ -12,15 +12,15 @@ Given two files:
 
 ```java title=Example.java
 1. package pkgA;
-2. publicclass Foo {
+2. public class Foo {
 3.    int a = 5;
-4.    protectedint b = 6;
-5.    publicint c = 7;
+4.    protected int b = 6;
+5.    public int c = 7;
 6. }
 3. package pkgB;
 4. import pkgA.*;
-5. publicclass Baz {
-6.   publicstaticvoid main(String[] args) {
+5. public class Baz {
+6.   public static void main(String[] args) {
 7.     Foo f = new Foo();
 8.     System.out.print(" " + f.a);
 9.     System.out.print(" " + f.b);

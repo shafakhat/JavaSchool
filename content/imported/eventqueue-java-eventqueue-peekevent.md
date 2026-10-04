@@ -3,7 +3,7 @@ title: Java Tutorial - Java EventQueue.peekEvent()
 nav: Java Tutorial - Java Event...
 description: In the following code shows how to use EventQueue.peekEvent() method.
 section: Imported - java2s Archive
-order: 1022
+order: 1007
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/EventQueue/Java_EventQueue_peekEvent_.htm
 ---
 ### Syntax
@@ -30,13 +30,13 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel implements ActionListener {
+public class Main extends JPanel implements ActionListener {
   Main() {
     JButton button = new JButton("Click to chooose the first point");
     add(button);
     button.addActionListener(this);
   }
-  publicvoid actionPerformed(ActionEvent evt) {
+  public void actionPerformed(ActionEvent evt) {
     Graphics g = getGraphics();
     Point p = getClick();
     g.drawOval(p.x - 2, p.y - 2, 4, 4);
@@ -63,7 +63,7 @@ publicclass Main extends JPanel implements ActionListener {
       }
     }
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.setSize(300, 200);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

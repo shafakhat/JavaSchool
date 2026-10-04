@@ -29,34 +29,33 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-javaawt.html">java.awt</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-fontmetrics.html">FontMetrics</a></nav>
     <h1>Java Swing Tutorial - Java FontMetrics.getLeading()</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Back to FontMetrics  ↑</code></pre></div>
 <h2 id="syntax">Syntax</h2>
 <p>FontMetrics.getLeading() has the following syntax.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicint getLeading()</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public int getLeading()</code></pre></div>
 <h2 id="example">Example</h2>
 <p>In the following code shows how to use FontMetrics.getLeading() method.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import javax.swing.JFrame;
-publicclass Main extends JFrame {
+public class Main extends JFrame {
   public Main() {
     super("Demonstrating FontMetrics");
     setSize(510, 210);
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
-  publicvoid paint(Graphics g) {
+  public void paint(Graphics g) {
     g.setFont(new Font("SansSerif", Font.BOLD, 12));
     FontMetrics fm = g.getFontMetrics();
     g.drawString("Current font: " + g.getFont(), 10, 40);
@@ -73,12 +72,11 @@ publicclass Main extends JFrame {
     g.drawString("Height: " + fm.getHeight(), 10, 175);
     g.drawString("Leading: " + fm.getLeading(), 10, 190);
   }
-  publicstaticvoid main(String args[]) {
+  public static void main(String args[]) {
     Main app = new Main();
   }
 }</code></pre></div>
-<ul><li>Back to FontMetrics ↑</li></ul>
-    <div class="pager"><a class="pager-btn" href="fontmetrics-fontmetrics-charswidth-char-data-int-off-int-len.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="graphics-graphics-drawimage-image-img-int-x-int-y-imageobserver-observer.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Swing Tutorial - Java...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="cubiccurve2d-cubiccurve2d-gety2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="graphicsconfiguration-graphicsconfiguration-getimagecapabilities.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Swing Tutorial - Java...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

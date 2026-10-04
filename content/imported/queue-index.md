@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50369
 source: https://www.java2s.com/Tutorials/Java/java.util/Queue/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Queue.add(E e)

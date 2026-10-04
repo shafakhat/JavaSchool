@@ -44,19 +44,19 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The list of methods to do Angle Difference are organized into topic(s).</p>
 <h2 id="method">Method</h2>
 <p>doubleangleDif(double a1, double a2) Compute the difference between two angles.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">doubleval = a1 - a2;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">double val = a1 - a2;
 if (val &gt; Math.PI) {
     val -= 2. * Math.PI;
 if (val &lt; -Math.PI) {
     val += 2. * Math.PI;
-returnval;
+return val;
 ...</code></pre></div>
 <p>floatangleDif(float a, float b) angle Dif</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (b &gt; a)
     return b - a &gt; PI ? (float) (a + 2 * PI - b) : b - a;
 return a - b &gt; PI ? (float) (b + 2 * PI - a) : a - b;</code></pre></div>
 <p>floatangleDif(float a1, float a2) Compute the difference between two angles.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">doubleval = a1 - a2;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">double val = a1 - a2;
 if (val &gt; Math.PI) {
     val -= 2. * Math.PI;
 if (val &lt; -Math.PI) {
@@ -72,15 +72,15 @@ return ((((angleDiff) % (2 * Math.PI)) + (3 * Math.PI)) % (2 * Math.PI)) - Math.
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (!normalized) {
     angle1 = normalizeAngle(angle1);
     angle2 = normalizeAngle(angle2);
-returnMath.min(Math.abs(angle1 - angle2),
+return Math.min(Math.abs(angle1 - angle2),
         Math.min(Math.abs(angle1 - angle2 + TWO_PI), Math.abs(angle1 - angle2 - TWO_PI)));</code></pre></div>
 <p>doubleangleDiff(final double a1, final double a2) Get the difference of angles (radians) as given from angle(x,z), from a1 to a2, i.e.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (Double.isNaN(a1) || Double.isNaN(a1))
-    returnDouble.NaN;
-finaldouble diff = a2 - a1;
+    return Double.NaN;
+final double diff = a2 - a1;
 if (diff &lt; -Math.PI)
     return diff + 2.0 * Math.PI;
-elseif (diff &gt; Math.PI)
+else if (diff &gt; Math.PI)
     return diff - 2.0 * Math.PI;
 else
 ...</code></pre></div>
@@ -100,7 +100,7 @@ if (diff &lt;= 180) {
     return diff;
 } else {
     return 360 - diff;</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="java-java-oca-ocp-exam-11-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Java Basic OCA OCP Ex...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-exam-12-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Java Basic OCA OCP Ex...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-android-content-pm.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java tutorial for android....</span></a><a class="pager-btn pager-next" href="jstl-jstlconstructingurls.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JSTL Constructing URLs</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

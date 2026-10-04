@@ -45,9 +45,7 @@ public class MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Your pet details:
 Flea@360be0
 It's Gnasher the null

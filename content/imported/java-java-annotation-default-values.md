@@ -3,8 +3,8 @@ title: Java Annotation default values
 nav: Java Annotation default va...
 description: The default value is used when no value is set when using the annotation.
 section: Imported - java2s Archive
-order: 1041
-source: https://web.archive.org/web/20210102121619/http://www.java2s.com/ref/java/java-annotation-default-values.html
+order: 1010
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-annotation-default-values.html
 ---
 - java.lang.annotation
 - java.lang.annotation Annotation
@@ -31,8 +31,8 @@ Here is @MyAnno rewritten to include default values:
 // An annotation type declaration that includes defaults.
 @Retention(RetentionPolicy.RUNTIME)
 @interface MyAnno {
-  String str() default"DefaultStringValue";
-  intval() default 99999;
+  String str() default "DefaultStringValue";
+  int val() default 99999;
 }
 ```
 
@@ -54,14 +54,14 @@ import java.lang.reflect.Method;
 // An annotation type declaration that includes defaults.
 @Retention(RetentionPolicy.RUNTIME)
 @interface MyAnno {
-  String str() default"Testing";
-  intval() default 9000;
+  String str() default "Testing";
+  int val() default 9000;
 }
-publicclass Main {
+public class Main {
   // Annotate a method using the default values.
-  @MyAnno()publicstaticvoid myMethod() {
+  @MyAnno()public static void myMethod() {
     Main ob = new Main();
-    // Obtain the annotation for this method// and display the values of the members.try {
+    // Obtain the annotation for this method // and display the values of the members. try {
       Class<?> c = ob.getClass();
       Method m = c.getMethod("myMethod");
       MyAnno anno = m.getAnnotation(MyAnno.class);
@@ -70,7 +70,7 @@ publicclass Main {
       System.out.println("Method Not Found.");
     }
   }
-  publicstaticvoid main(String args[]) {
+  public static void main(String args[]) {
     myMethod();
   }
 }

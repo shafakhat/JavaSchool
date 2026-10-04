@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50441
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5030__Java_Constructors.html
 ---
-```java title=Example.java
-```
-
 A constructor initializes an object during object creation when using new operator.
 
 Java allows objects to initialize themselves when they are created. This automatic initialization is performed through the use of a constructor.

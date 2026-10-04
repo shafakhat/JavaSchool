@@ -34,9 +34,7 @@ D.  2
     0
 E. It will keeping printing numbers in an infinite loop.
 F. It will not compile.
-```
-
-```java title=Example.java
+java title=Example.java
 Correct Option is  : C
 ```
 

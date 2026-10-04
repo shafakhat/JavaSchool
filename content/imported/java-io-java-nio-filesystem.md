@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50228
 source: https://www.java2s.com/Tutorials/Java/Java_io/0960__Java_nio_FileSystem.html
 ---
-```java title=Example.java
-```
-
 Java 7 introduced New Input/Output 2 (NIO.2) API and provides a new I/O API.
 
 It adds three packages to the Java class library: java.nio.file, java.nio.file.attribute, and java.nio.file.spi.

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1024
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/FlowLayout/0420__FlowLayout.setHgap_int_hgap_.htm
 ---
-```java title=Example.java
-Back to FlowLayout  ↑
-```
-
 ## Syntax
 
 FlowLayout.setHgap(int hgap) has the following syntax.
@@ -47,5 +43,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to FlowLayout ↑

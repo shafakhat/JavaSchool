@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java Console
 nav: Java IO Tutorial - Java Co...
 description: The purpose of the Console class is to make the interaction between a Java program and the console easier.
 section: Imported - java2s Archive
-order: 50214
-source: https://www.java2s.com/Tutorials/Java/Java_io/0720__Java_io_Console.html
+order: 1009
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/0720__Java_io_Console.html
 ---
-```java title=Example.java
-```
-
 The purpose of the Console class is to make the interaction between a Java program and the console easier.
 
 The Console class is a utility class in the java.io package that gives access to the system console.
@@ -32,8 +29,8 @@ The program prompts the user to enter a user name and a password. If the user en
 
 ```java title=Example.java
 import java.io.Console;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Console console = System.console();
     if (console != null) {
       console.printf("Console is  available.%n");

@@ -14,8 +14,6 @@ publicclass MainClass{
      System.out.println( a % b );
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 0.1999999999999998
 ```

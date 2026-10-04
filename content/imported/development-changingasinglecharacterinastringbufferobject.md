@@ -14,8 +14,6 @@ public class MainClass {
     System.out.println(phrase);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 oneZtwo three four
 ```

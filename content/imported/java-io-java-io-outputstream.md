@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50205
 source: https://www.java2s.com/Tutorials/Java/Java_io/0200__Java_io_OutputStream.html
 ---
-```java title=Example.java
-```
-
 There are three important methods defined in the abstract superclass OutputStream: write(), flush(), and close().
 
 ```java title=Example.java

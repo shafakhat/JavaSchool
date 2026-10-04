@@ -3,8 +3,8 @@ title: Convert Short to numeric primitive data types
 nav: Convert Short to numeric p...
 description: Imported from the java2s.com archive: Convert Short to numeric primitive data types
 section: Imported - java2s Archive
-order: 1060
-source: https://web.archive.org/web/20101020195308/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/ConvertShorttonumericprimitivedatatypes.htm
+order: 1009
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ConvertShorttonumericprimitivedatatypes.htm
 ---
 ```java title=Example.java
 public class Main {

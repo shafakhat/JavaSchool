@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50403
 source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0030__Java_Class_Reflection.html
 ---
-```java title=Example.java
-```
-
 We can use Java reflection to get the information about a class, such as its package name, its access modifiers, etc.
 
 To get the simple class name, use the getSimpleName() method from the Class.

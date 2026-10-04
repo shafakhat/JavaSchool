@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20160730061924/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Random/Get_random_boolean.htm
 ---
-```java title=Example.java
-Back to Random  ↑
-```
-
 ## Question
 
 We would like to know how to get random boolean.
@@ -27,8 +23,5 @@ publicclass Main {
     }
   }
 }
-```
-
-```java title=Example.java
-Back to Random  ↑
+java title=Example.java
 ```

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50371
 source: https://www.java2s.com/Tutorials/Java/java.util/SortedMap/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java SortedMap.comparator()

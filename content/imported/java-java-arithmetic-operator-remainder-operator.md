@@ -21,9 +21,7 @@ publicclass Main {
     //your code here
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 publicclass Main {
   publicstaticvoid main(String args[]) {
     int total = 248;

@@ -48,9 +48,7 @@ publicclass Main {
     System.out.println("Area is " + figref.area());
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Compile time error
 The class Shape can be either abstract or final, not both
 ```

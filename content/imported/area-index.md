@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/index.htm
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java Area() Constructor

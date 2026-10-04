@@ -3,8 +3,8 @@ title: Java Utililty Methods Args Parse
 nav: Java Utililty Methods Args...
 description: The list of methods to do Args Parse are organized into topic(s).
 section: Imported - java2s Archive
-order: 50026
-source: https://www.java2s.com/example/java-utility-method/args-parse-index-0.html
+order: 1012
+source: https://web.archive.org/web/2016/https://www.java2s.com/example/java-utility-method/args-parse-index-0.html
 ---
 List of utility methods to do Args Parse
 
@@ -17,10 +17,10 @@ The list of methods to do Args Parse are organized into topic(s).
 ListgetPossibleCompletionsForGivenArgs(String[] args, String[] possibilitiesOfCompletion) get Possible Completions For Given Args
 
 ```java title=Example.java
-finalString argumentToFindCompletionFor = args[args.length - 1];
-finalList<String> listOfPossibleCompletions = newArrayList<String>();
+final String argumentToFindCompletionFor = args[args.length - 1];
+final List<String> listOfPossibleCompletions = new ArrayList<String>();
 for (int i = 0; i < possibilitiesOfCompletion.length; i++) {
-    finalString[] foundString = possibilitiesOfCompletion;
+    final String[] foundString = possibilitiesOfCompletion;
     try {
         if (foundString[i] != null && foundString[i].regionMatches(true, 0, argumentToFindCompletionFor, 0,
                 argumentToFindCompletionFor.length())) {
@@ -32,7 +32,7 @@ ListgetPossibleCompletionsForGivenArgs(String[] args, String[] possibilitiesOfCo
 
 ```java title=Example.java
 String argumentToFindCompletionFor = args[args.length - 1];
-List<String> listOfPossibleCompletions = newArrayList<String>();
+List<String> listOfPossibleCompletions = new ArrayList<String>();
 for (int i = 0; i < possibilitiesOfCompletion.length; ++i) {
     String foundString = possibilitiesOfCompletion[i];
     if (foundString.regionMatches(true, 0, argumentToFindCompletionFor, 0,
@@ -44,7 +44,7 @@ return listOfPossibleCompletions;
 Mapparse(String[] args) parse
 
 ```java title=Example.java
-Map<String, String> options = newHashMap<>();
+Map<String, String> options = new HashMap<>();
 for (int i = 0; i < args.length; i++) {
     if (args[i].charAt(0) == '-' || args[i].charAt(0) == '/')
         args[i] = args[i].substring(1);
@@ -56,7 +56,7 @@ for (int i = 0; i < args.length; i++) {
 Mapparse(String[] args) parse
 
 ```java title=Example.java
-HashMap<String, String> ret = newHashMap<>();
+HashMap<String, String> ret = new HashMap<>();
 for (int i = 0; i < args.length; i += 2) {
     String key = args[i].substring(1);
     ret.put(key.substring(1), args[i + 1]);
@@ -66,7 +66,7 @@ return ret;
 HashMapparseAndFillFittingValues(String[] prefixes, String[] values) parse And Fill Fitting Values
 
 ```java title=Example.java
-HashMap<String, String> result = newHashMap();
+HashMap<String, String> result = new HashMap();
 for (String value : values) {
     for (String prefix : prefixes) {
         String realValue = getValueIfExists(prefix, value);
@@ -78,7 +78,7 @@ return result;
 MapparseArg(String[] args) parse Arg
 
 ```java title=Example.java
-Map<String, String> map = newHashMap<String, String>();
+Map<String, String> map = new HashMap<String, String>();
 if (args == null || args.length == 0)
     return map;
 String lastKey = null;
@@ -92,7 +92,7 @@ for (int i = 0; i < args.length; i++) {
 MapparseArgs(String argvStart, String[] args) parse Args
 
 ```java title=Example.java
-Map<String, String> rs = newHashMap<String, String>();
+Map<String, String> rs = new HashMap<String, String>();
 for (int i = 0; i < args.length; i++) {
     String arg = args[i];
     String v = ((i < args.length - 1) && !args[i + 1].startsWith(argvStart)) ? args[++i] : null;
@@ -105,21 +105,21 @@ return rs;
 MapparseArgs(String[] args) parse Args
 
 ```java title=Example.java
-Map<String, String> parsedArgs = newHashMap<String, String>();
+Map<String, String> parsedArgs = new HashMap<String, String>();
 for (String arg : args) {
     if (arg.startsWith("--port=")) {
         parsedArgs.put("port", arg.substring("--port=".length()));
-    } elseif (arg.equals("START") || arg.equals("STOP")) {
+    } else if (arg.equals("START") || arg.equals("STOP")) {
         parsedArgs.put("action", arg);
     } else {
-        thrownewRuntimeException("Only accepts START, STOP, and --port=<port #> as arguments");
+        throw new RuntimeException("Only accepts START, STOP, and --port=<port #> as arguments");
 ...
 ```
 
 HashMapparseArgs(String[] args) parse Args
 
 ```java title=Example.java
-HashMap results = newHashMap();
+HashMap results = new HashMap();
 for (int i = 0; i <= args.length - 1; i++) {
     String value = "";
     if (args[i].indexOf("-") == 0) {
@@ -133,13 +133,13 @@ for (int i = 0; i <= args.length - 1; i++) {
 MapparseArgs(String[] args) Parse command-line options of the form --key=value into a map of .
 
 ```java title=Example.java
-Map<String, String> m = newHashMap<String, String>();
+Map<String, String> m = new HashMap<String, String>();
 if (args != null) {
     for (String s : args) {
         if (s.indexOf("=") < 0) {
             m.put(s.replace("--", ""), Boolean.TRUE.toString());
         } else {
             String key = s.substring(0, s.indexOf("=")).replace("--", "");
-            Stringval = s.substring(s.indexOf("=") + 1);
+            String val = s.substring(s.indexOf("=") + 1);
 ...
 ```

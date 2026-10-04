@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50336
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0170__Java_Priority_Queues.html
 ---
-```java title=Example.java
-```
-
 A priory queue is a queue in which each element has an associated priority. The element with the highest priority is removed next from the queue.
 
 PriorityQueue is an implementation class for an unbounded priority queue in Java Collection Framework.

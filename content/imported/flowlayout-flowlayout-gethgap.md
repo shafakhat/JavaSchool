@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/FlowLayout/0260__FlowLayout.getHgap_.htm
 ---
-```java title=Example.java
-Back to FlowLayout  ↑
-```
-
 ## Syntax
 
 FlowLayout.getHgap() has the following syntax.
@@ -46,5 +42,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to FlowLayout ↑

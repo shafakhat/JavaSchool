@@ -3,12 +3,9 @@ title: Java Object Oriented Design - Java Annotation Type
 nav: Java Object Oriented Desig...
 description: A marker annotation type is an annotation type with no elements, not even one with a default value.
 section: Imported - java2s Archive
-order: 50195
-source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0740__Java_Annotation_Type.html
+order: 1015
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0740__Java_Annotation_Type.html
 ---
-```java title=Example.java
-```
-
 ## Marker Annotation Types
 
 A marker annotation type is an annotation type with no elements, not even one with a default value.
@@ -19,7 +16,7 @@ A marker annotation is used by the annotation processing tools.
 public  @interface Marker  {
 }
 @Marker
-publicclass Main{
+public class Main{
 }
 ```
 
@@ -82,8 +79,8 @@ import java.lang.annotation.Target;
 @Target({ ElementType.TYPE_USE })
 @interface MyAnno2 {
 }
-publicclass Main {
-  publicvoid processData() throws @MyAnno Exception {
+public class Main {
+  public void processData() throws @MyAnno Exception {
     int roundedValue = (@MyAnno2 int) .02;
     Main t = new @MyAnno Main();
   }
@@ -175,7 +172,7 @@ import java.lang.annotation.Documented;
   int minor();
 }
 @Version(major = 1, minor = 0)
-publicclass Main {
+public class Main {
 }
 ```
 
@@ -201,8 +198,8 @@ import java.lang.annotation.Repeatable;
 }
 @Log(date = "01/01/2014", comments = "B")
 @Log(date = "01/21/2014", comments = "A")
-publicclass Main {
-  publicstaticvoid process() {
+public class Main {
+  public static void process() {
   }
 }
 ```

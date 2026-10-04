@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50108
 source: https://www.java2s.com/Tutorials/Java/Scala/3080__Scala_Closure.html
 ---
-```java title=Example.java
-```
-
 A closure is a function, whose return value depends on the value of one or more variables declared outside this function.
 
 ## Example

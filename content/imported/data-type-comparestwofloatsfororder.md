@@ -3,8 +3,8 @@ title: Compares two floats for order.
 nav: Compares two floats for or...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1031
-source: https://web.archive.org/web/20100125091023/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Comparestwofloatsfororder.htm
+order: 1008
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Comparestwofloatsfororder.htm
 ---
 ```java title=Example.java
 import java.math.BigDecimal;
@@ -24,8 +24,7 @@ import java.math.BigInteger;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-/**
+ *//**
  * Provides extra functionality for Java Number classes.
  *
  * @author <a href="mailto:rand_mcneely@yahoo.com">Rand McNeely</a>
@@ -36,8 +35,7 @@ import java.math.BigInteger;
  * @since 1.0
  * @version $Id: NumberUtils.java 488819 2006-12-19 21:50:04Z bayard $
  *
- */
-public class Main {
+ */public class Main {
   /**
    *
    * This method is more comprehensive than the standard Java greater than,
@@ -68,8 +66,7 @@ public class Main {
    * @param rhs  the second <code>float</code>
    * @return <code>-1</code> if lhs is less, <code>+1</code> if greater,
    *  <code>0</code> if equal to rhs
-   */
-  public static int compare(float lhs, float rhs) {
+   */ public static int compare(float lhs, float rhs) {
       if (lhs < rhs) {
           return -1;
       }
@@ -77,21 +74,21 @@ public class Main {
           return +1;
       }
       //Need to compare bits to handle 0.0 == -0.0 being true
-      // compare should put -0.0 < +0.0
-      // Two NaNs are also == for compare purposes
-      // where NaN == NaN is false
-      int lhsBits = Float.floatToIntBits(lhs);
+ // compare should put -0.0 < +0.0
+ // Two NaNs are also == for compare purposes
+ // where NaN == NaN is false
+ int lhsBits = Float.floatToIntBits(lhs);
       int rhsBits = Float.floatToIntBits(rhs);
       if (lhsBits == rhsBits) {
           return 0;
       }
       //Something exotic! A comparison to NaN or 0.0 vs -0.0
-      //Fortunately NaN's int is > than everything else
-      //Also negzeros bits < poszero
-      //NAN: 2143289344
-      //MAX: 2139095039
-      //NEGZERO: -2147483648
-      if (lhsBits < rhsBits) {
+ //Fortunately NaN's int is > than everything else
+ //Also negzeros bits < poszero
+ //NAN: 2143289344
+ //MAX: 2139095039
+ //NEGZERO: -2147483648
+ if (lhsBits < rhsBits) {
           return -1;
       } else {
           return +1;

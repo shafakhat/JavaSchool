@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1053
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/GraphicsEnvironment/0260__GraphicsEnvironment.isHeadlessInstance_.htm
 ---
-```java title=Example.java
-Back to GraphicsEnvironment  ↑
-```
-
 ## Syntax
 
 GraphicsEnvironment.isHeadlessInstance() has the following syntax.
@@ -33,5 +29,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-- Back to GraphicsEnvironment ↑

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50345
 source: https://www.java2s.com/Tutorials/Java/java.util/Arrays/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Arrays.asList(T... a)

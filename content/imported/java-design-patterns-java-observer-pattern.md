@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50127
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0170__Java_Observer_Pattern.html
 ---
-```java title=Example.java
-```
-
 Observer pattern is used to notify its depenedent objects if one object is modified,.
 
 Observer pattern is a behavioral pattern category.

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50078
 source: https://www.java2s.com/Tutorials/Java/Scala/0090__Scala_Comments.html
 ---
-```java title=Example.java
-```
-
 Scala comments are much like Java and C++ comments.
 
 Multiline comments start with /* and ended with */.

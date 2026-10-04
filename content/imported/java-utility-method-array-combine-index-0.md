@@ -3,8 +3,8 @@ title: Java Utililty Methods Array Combine
 nav: Java Utililty Methods Arra...
 description: The list of methods to do Array Combine are organized into topic(s).
 section: Imported - java2s Archive
-order: 50038
-source: https://www.java2s.com/example/java-utility-method/array-combine-index-0.html
+order: 1014
+source: https://web.archive.org/web/2016/https://www.java2s.com/example/java-utility-method/array-combine-index-0.html
 ---
 List of utility methods to do Array Combine
 
@@ -18,7 +18,7 @@ Object[]combine(int size, Object[]... arrays) combine
 
 ```java title=Example.java
 int offset = 0;
-Object[] target = newObject[size];
+Object[] target = new Object[size];
 for (Object[] arr : arrays) {
     System.arraycopy(arr, 0, target, offset, arr.length);
     offset += arr.length;
@@ -34,7 +34,7 @@ if (arr != null)
         c += arr[i].length;
 if (terms != null)
     c += terms.length;
-int[] r = newint[c];
+int[] r = new int[c];
 c = 0;
 ...
 ```
@@ -51,7 +51,7 @@ Object[]combine(Object[] first, Object[] last) combine
 ```java title=Example.java
 if (first.length == 0 && last.length == 0) {
     return null;
-Object[] result = newObject[first.length + last.length];
+Object[] result = new Object[first.length + last.length];
 System.arraycopy(first, 0, result, 0, first.length);
 System.arraycopy(last, 0, result, first.length, last.length);
 return result;
@@ -65,7 +65,7 @@ int m = l - 1;
 int x;
 if (l == 0) {
     return null;
-StringBuilder r = newStringBuilder();
+StringBuilder r = new StringBuilder();
 for (x = 0; x < m; x++) {
 ...
 ```
@@ -88,7 +88,7 @@ if (count > 0) {
 voidcombineArrays(final Object[] array1, final Object[] array2, final Object[] targetArray) Combines two array into a target array, inserting all elements of the first array and then all elements of the second array in the target array.
 
 ```java title=Example.java
-finalint lengthOfFirst = array1.length;
+final int lengthOfFirst = array1.length;
 int i;
 for (i = 0; i < lengthOfFirst; i++) {
     targetArray[i] = array1[i];
@@ -100,7 +100,7 @@ float[]combineArrays(float[]... arrays) combine Arrays
 
 ```java title=Example.java
 int size = arrays[0].length;
-float[] result = newfloat[arrays.length * arrays[0].length];
+float[] result = new float[arrays.length * arrays[0].length];
 for (int i = 0; i < arrays.length; i++) {
     for (int j = 0; j < size; j++) {
         result[i * size + j] = arrays[i][j];
@@ -111,7 +111,7 @@ return result;
 byte[]combineByteArray(byte[] one, byte[] two) combine Byte Array
 
 ```java title=Example.java
-byte[] out = newbyte[one.length + two.length];
+byte[] out = new byte[one.length + two.length];
 System.arraycopy(one, 0, out, 0, one.length);
 System.arraycopy(two, 0, out, one.length, two.length);
 return out;

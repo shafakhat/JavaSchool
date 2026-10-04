@@ -3,19 +3,15 @@ title: Java Swing Tutorial - Java Graphics.create()
 nav: Java Swing Tutorial - Java...
 description: In the following code shows how to use Graphics.create() method.
 section: Imported - java2s Archive
-order: 1039
+order: 1017
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics/0120__Graphics.create_.htm
 ---
-```java title=Example.java
-Back to Graphics  ↑
-```
-
 ## Syntax
 
 Graphics.create() has the following syntax.
 
 ```java title=Example.java
-publicabstract Graphics create()
+public abstract Graphics create()
 ```
 
 ## Example
@@ -27,8 +23,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     g.setColor (Color.red);
     Graphics clippedGraphics = g.create();
     clippedGraphics.drawRect (0,0,100,100);
@@ -38,7 +34,7 @@ publicclass Main extends JPanel {
     clippedGraphics=null;
     g.drawLine (0,100,100,0);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,5 +43,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Graphics ↑

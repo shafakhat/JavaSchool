@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50172
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0370__Java_Generic_Methods_Constructors.html
 ---
-```java title=Example.java
-```
-
 ## Generic Methods
 
 We can define type parameters in a method declaration, They are specified in angle brackets before the return type of the method.

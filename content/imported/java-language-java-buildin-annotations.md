@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50456
 source: https://www.java2s.com/Tutorials/Java/Java_Language/7030__Java_Buildin_annotations.html
 ---
-```java title=Example.java
-```
-
 ## Built-In Annotations
 
 Java defines many built-in annotations. Most are specialized, but seven are general purpose.

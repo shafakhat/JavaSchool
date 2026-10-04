@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50098
 source: https://www.java2s.com/Tutorials/Java/Scala/2100__Scala_Functional_Programming.html
 ---
-```java title=Example.java
-```
-
 Scala allows us to express functions as literals.
 
 Function literals allow us to have an expression of a function type that we can write in a short format without declaring a name for it.

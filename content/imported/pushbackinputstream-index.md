@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50278
 source: https://www.java2s.com/Tutorials/Java/java.io/PushbackInputStream/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java PushbackInputStream (InputStream in) Constructor

@@ -16,9 +16,7 @@ public class MainClass {
     System.out.println("\nBeginning with the value 1, " + "rotate left 16 times.");
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Lowest one bit: 2
 Number of leading zeros : 24
 Number of trailing zeros : 1

@@ -30,9 +30,7 @@ double doubleValue = 33.333; // no suffix, double is default
       System.out.printf("Object = %s\n", String.valueOf( objectRef ) );
    } // end main
 }
-```
-
-```java title=Example.java
+java title=Example.java
 char array = abcdef
 part of char array = def
 boolean = true

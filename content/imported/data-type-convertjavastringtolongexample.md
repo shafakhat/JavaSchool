@@ -3,8 +3,8 @@ title: Convert Java String to Long example
 nav: Convert Java String to Lon...
 description: Imported from the java2s.com archive: Convert Java String to Long example
 section: Imported - java2s Archive
-order: 1051
-source: https://web.archive.org/web/20090912060545/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/ConvertJavaStringtoLongexample.htm
+order: 1004
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ConvertJavaStringtoLongexample.htm
 ---
 ```java title=Example.java
 public class Main {

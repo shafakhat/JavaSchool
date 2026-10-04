@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java Files Attributes
 nav: Java IO Tutorial - Java Fi...
 description: Files class can access the commonly used attributes of a file.
 section: Imported - java2s Archive
-order: 50233
-source: https://www.java2s.com/Tutorials/Java/Java_io/1000__Java_nio_File_Attributes.html
+order: 1021
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/1000__Java_nio_File_Attributes.html
 ---
-```java title=Example.java
-```
-
 Files class can access the commonly used attributes of a file.
 
 Files.isHidden(Path p) method tests if a file is hidden.
@@ -54,12 +51,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.PosixFileAttributeView;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     Path path = Paths.get("");
     FileStore fs = Files.getFileStore(path);
     // Check if POSIX file attribute is supported by the file store
-boolean supported = fs
+ boolean supported = fs
         .supportsFileAttributeView(PosixFileAttributeView.class);
     if (supported) {
       System.out.println("POSIX file attribute view  is supported.");
@@ -89,8 +86,8 @@ import java.nio.file.attribute.FileAttributeView;
 import java.nio.file.attribute.FileOwnerAttributeView;
 import java.nio.file.attribute.PosixFileAttributeView;
 import java.nio.file.attribute.UserDefinedFileAttributeView;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Path path = Paths.get("C:");
     try {
       FileStore fs = Files.getFileStore(path);
@@ -104,7 +101,7 @@ publicclass Main {
       ex.printStackTrace();
     }
   }
-  publicstaticvoid printDetails(FileStore fs,
+  public static void printDetails(FileStore fs,
       Class<? extends FileAttributeView> attribClass) {
     boolean supported = fs.supportsFileAttributeView(attribClass);
     System.out.format("%s is  supported: %s%n", attribClass.getSimpleName(),
@@ -188,7 +185,7 @@ We can read all attributes of a specific view type by specifying an asterisk as 
 To read the size and the last modified time of the basic view, we would use
 
 ```java title=Example.java
-"basic:size,lastModifiedTime"or"size,lastModifiedTime".
+"basic:size,lastModifiedTime" or "size,lastModifiedTime".
 ```
 
 To read the owner attribute of a file using an ACL view, we would use a string "acl:owner".
@@ -202,8 +199,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     Path path = Paths.get("C:\\Java_Dev\\test1.txt");
     // Prepare the attribute list
     String attribList = "basic:size,lastModifiedTime";
@@ -225,8 +222,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Path path = Paths.get("C:\\Java_Dev\\test1.txt");
     try {
       BasicFileAttributes bfa = Files.readAttributes(path,
@@ -272,8 +269,8 @@ import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 import java.time.Instant;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Path path = Paths.get("C:\\Java_Dev\\test1.txt");
     try {
       BasicFileAttributeView bfv = Files.getFileAttributeView(path,

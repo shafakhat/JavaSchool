@@ -3,8 +3,8 @@ title: Given a hexstring this will return the byte array corresponding to string
 nav: Given a hexstring this wil...
 description: * or more contributor license agreements. See the NOTICE file
 section: Imported - java2s Archive
-order: 1028
-source: https://web.archive.org/web/20100706224353/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Givenahexstringthiswillreturnthebytearraycorrespondingtostring.htm
+order: 1005
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Givenahexstringthiswillreturnthebytearraycorrespondingtostring.htm
 ---
 ```java title=Example.java
 /**
@@ -23,8 +23,7 @@ source: https://web.archive.org/web/20100706224353/http://www.java2s.com:80/Tuto
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-import java.io.PrintWriter;
+ */import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.InetAddress;
 import java.net.URI;
@@ -40,8 +39,7 @@ import java.util.StringTokenizer;
 import java.util.Collection;
 /**
  * General string utils
- */
-public class StringUtils {
+ */public class StringUtils {
   final public static char COMMA = ',';
   final public static String COMMA_STR = ",";
   final public static char ESCAPE_CHAR = '\\';
@@ -52,8 +50,7 @@ public class StringUtils {
    * @param hex the hex String array
    * @return a byte array that is a hex string representation of the given
    *         string. The size of the byte array is therefore hex.length/2
-   */
-  public static byte[] hexStringToByte(String hex) {
+   */ public static byte[] hexStringToByte(String hex) {
     byte[] bts = new byte[hex.length() / 2];
     for (int i = 0; i < bts.length; i++) {
       bts[i] = (byte) Integer.parseInt(hex.substring(2 * i, 2 * i + 2), 16);

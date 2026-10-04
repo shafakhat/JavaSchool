@@ -18,8 +18,6 @@ publicclass MainClass {
     System.out.println(calendar.get(Calendar.MONTH));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 11
 ```

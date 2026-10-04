@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20160730060903/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Random/Generate_Random_numbers_in_a_range.htm
 ---
-```java title=Example.java
-Back to Random  ↑
-```
-
 ## Question
 
 We would like to know how to generate Random numbers in a range.
@@ -33,7 +29,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-```java title=Example.java
-Back to Random  ↑
-```

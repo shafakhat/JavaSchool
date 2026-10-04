@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BasicStroke/0140__BasicStroke.JOIN_ROUND.htm
 ---
-```java title=Example.java
-Back to BasicStroke  ↑
-```
-
 ## Syntax
 
 BasicStroke.JOIN_ROUND has the following syntax.
@@ -53,5 +49,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to BasicStroke ↑

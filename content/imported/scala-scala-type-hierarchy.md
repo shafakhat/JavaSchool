@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50079
 source: https://www.java2s.com/Tutorials/Java/Scala/0100__Scala_Type_Hierarchy.html
 ---
-```java title=Example.java
-```
-
 Unlike Java, there are no primitive types in Scala.
 
 All data types in Scala are objects that have methods to operate on their data.

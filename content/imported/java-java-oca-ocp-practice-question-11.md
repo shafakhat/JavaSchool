@@ -3,8 +3,8 @@ title: Java OCA OCP Practice Question 11
 nav: Java OCA OCP Practice Ques...
 description: The Runnable interface defines a run() method with void return type and no parameters.
 section: Imported - java2s Archive
-order: 1079
-source: https://web.archive.org/web/20210101014422/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-11.html
+order: 1016
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-11.html
 ---
 ## Question
 
@@ -12,17 +12,17 @@ Which one statement is true for the following code?
 
 ```java title=Example.java
  1. class MyList extends java.util.Vector
- 2.   implementsRunnable {
- 3.     publicvoid run(String message) {
+ 2.   implements Runnable {
+ 3.     public void run(String message) {
  4.       System.out.println("in run() method: " +
  5.       message);
  6.   }
  7. }
  8.
  9. class MyListTest {
-10.   publicstaticvoid main(String args[]) {
+10.   public static void main(String args[]) {
 12.     MyList g = new MyList();
-13.     Thread t = newThread(g);
+13.     Thread t = new Thread(g);
 14.     t.start();
 15.   }
 16. }

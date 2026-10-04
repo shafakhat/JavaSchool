@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50299
 source: https://www.java2s.com/Tutorials/Java/java.nio.file/Paths/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Paths.get(String first, String ... more)

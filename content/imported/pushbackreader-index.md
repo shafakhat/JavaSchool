@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50279
 source: https://www.java2s.com/Tutorials/Java/java.io/PushbackReader/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java PushbackReader(Reader in) Constructor

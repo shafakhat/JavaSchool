@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50298
 source: https://www.java2s.com/Tutorials/Java/java.nio.file/Path/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Path.compareTo(Path other)

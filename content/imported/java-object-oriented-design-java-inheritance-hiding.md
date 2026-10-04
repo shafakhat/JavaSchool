@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50168
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0330__Java_Inheritance_Hiding.html
 ---
-```java title=Example.java
-```
-
 ## Method Hiding
 
 A class inherits all non-private static methods from its superclass.

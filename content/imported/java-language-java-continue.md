@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50437
 source: https://www.java2s.com/Tutorials/Java/Java_Language/4060__Java_Continue.html
 ---
-```java title=Example.java
-```
-
 continue statement forces an early iteration of a loop. In while and do-while loops, a continue statement causes control to be transferred to the conditional expression that controls the loop. In a for loop, control goes first to the iteration portion of the for statement and then to the conditional expression.
 
 ## Java continue statement

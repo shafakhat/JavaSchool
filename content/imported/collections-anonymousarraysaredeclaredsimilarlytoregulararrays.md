@@ -8,9 +8,7 @@ source: https://web.archive.org/web/20070520061533/http://www.java2s.com:80/Tuto
 ---
 ```java title=Example.java
 new type[] {comma-delimited-list}
-```
-
-```java title=Example.java
+java title=Example.java
 public class MainClass {
   public static void main (String args[]) {
     int array1[] = {1, 2, 3, 4, 5};
@@ -19,9 +17,7 @@ public class MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 1
 2
 3

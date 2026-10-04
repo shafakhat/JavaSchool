@@ -3,13 +3,13 @@ title: Simply format a date as YYYYMMDD
 nav: Simply format a date as YY...
 description: System.out.println(gc.get(GregorianCalendar.YEAR) + (m < 10 ? "0" + mm : mm)
 section: Imported - java2s Archive
-order: 1050
+order: 1009
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/SimplyformatadateasYYYYMMDD.htm
 ---
 ```java title=Example.java
 import java.util.GregorianCalendar;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
+public class Main {
+  public static void main(String[] argv) throws Exception {
     GregorianCalendar gc = new GregorianCalendar();
     gc.setLenient(false);
     gc.set(GregorianCalendar.YEAR, 2003);

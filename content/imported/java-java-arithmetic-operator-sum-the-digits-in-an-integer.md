@@ -31,9 +31,7 @@ publicclass Main {
     //your code here// Display resultsSystem.out.println("The sum of the digits is " + sum);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Scanner;
 publicclass Main {
   publicstaticvoid main(String[] args) {

@@ -20,9 +20,7 @@ public class MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 1! is 1
 2! is 2
 3! is 6

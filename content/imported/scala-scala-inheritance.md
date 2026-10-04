@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50105
 source: https://www.java2s.com/Tutorials/Java/Scala/3050__Scala_Inheritance.html
 ---
-```java title=Example.java
-```
-
 Scala supports single inheritance, not multiple inheritance.
 
 A child class can have one and only one parent class.

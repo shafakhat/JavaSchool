@@ -17,9 +17,7 @@ publicclass Main {
     x + = 2; // Statement System.out.println(x += 2); // Expression
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Compile time error
 ```
 

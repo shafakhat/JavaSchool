@@ -22,9 +22,7 @@ publicclass Main {
     System.out.println(b);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 7
 6
 7

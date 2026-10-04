@@ -3,12 +3,9 @@ title: Java Tutorial - Java static final
 nav: Java Tutorial - Java stati...
 description: A static class member can be used independently of any object of that class.
 section: Imported - java2s Archive
-order: 50449
-source: https://www.java2s.com/Tutorials/Java/Java_Language/5110__Java_static_final.html
+order: 1011
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Language/5110__Java_static_final.html
 ---
-```java title=Example.java
-```
-
 ## Java static keyword
 
 A static class member can be used independently of any object of that class.
@@ -18,8 +15,8 @@ A static member that can be used by itself, without reference to a specific inst
 Here shows how to declare static method and static variable.
 
 ```java title=Example.java
-staticint intValue;
-staticvoid aStaticMethod(){
+static int intValue;
+static void aStaticMethod(){
 }
 ```
 
@@ -36,15 +33,15 @@ All instances of the class share the same static variable. You can declare a sta
 The following example shows a class that has a static method
 
 ```java title=Example.java
-publicclass Main {
-  staticint a = 3;
-  staticint b;
-staticvoid meth(int x) {
+ public class Main {
+  static int a = 3;
+  static int b;
+ static void meth(int x) {
     System.out.println("x = " + x);
     System.out.println("a = " + a);
     System.out.println("b = " + b);
   }
-  publicstaticvoid main(String args[]) {
+  public static void main(String args[]) {
     Main.meth(42);
   }
 }
@@ -57,9 +54,9 @@ The output:
 The following example shows a class that has the static variables.
 
 ```java title=Example.java
-publicclass Main {
-    staticint a = 3;
-    staticint b;
+ public class Main {
+    static int a = 3;
+    static int b;
 }
 ```
 
@@ -72,7 +69,7 @@ Main.a
 The following example shows a class that has a static initialization block.
 
 ```java title=Example.java
-publicclass Main {
+public class Main {
   static int a = 3;
   static int b;
   static {
@@ -89,9 +86,9 @@ A final variable cannot be modified. You must initialize a final variable when i
 ## Final variables
 
 ```java title=Example.java
-publicclass Main {
-  finalint FILE_NEW = 1;
-  finalint FILE_OPEN = 2;
+ public class Main {
+  final int FILE_NEW = 1;
+  final int FILE_OPEN = 2;
 }
 ```
 
@@ -100,7 +97,7 @@ publicclass Main {
 Methods declared as final cannot be overridden.
 
 ```java title=Example.java
-class Base {finalvoid meth() {
+ class Base { final void meth() {
     System.out.println("This is a final method.");
   }
 }

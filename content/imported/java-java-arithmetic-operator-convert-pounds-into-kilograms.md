@@ -25,9 +25,7 @@ publicclass Main {
     //your code
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Scanner;
 publicclass Main {
   publicstaticvoid main(String[] Strings) {

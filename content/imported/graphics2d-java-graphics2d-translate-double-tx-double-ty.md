@@ -3,7 +3,7 @@ title: Java Tutorial - Java Graphics2D.translate(double tx, double ty)
 nav: Java Tutorial - Java Graph...
 description: Graphics2D.translate(double tx, double ty) has the following syntax.
 section: Imported - java2s Archive
-order: 1048
+order: 1005
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics2D/Java_Graphics2D_translate_double_tx_double_ty_.htm
 ---
 ### Syntax
@@ -11,7 +11,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/ja
 Graphics2D.translate(double tx, double ty) has the following syntax.
 
 ```java title=Example.java
-publicabstractvoid translate(double tx,  double ty)
+public abstract void translate(double tx,  double ty)
 ```
 
 ### Example
@@ -27,8 +27,8 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.Rectangle2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     g.fillRect(0, 0, 20, 20);
     Graphics2D g2 = (Graphics2D) g;
     g2.translate(5.3, 5.4);
@@ -37,7 +37,7 @@ publicclass Main extends JPanel {
     g.setColor(Color.red);
     g.fillRect(0, 0, 20, 20);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

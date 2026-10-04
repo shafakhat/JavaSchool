@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50119
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0080__Java_Filter_Pattern.html
 ---
-```java title=Example.java
-```
-
 Filter pattern filters objects using different criteria.
 
 The criteria can be chained together through logical operations.

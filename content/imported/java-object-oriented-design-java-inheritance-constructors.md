@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50167
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0320__Java_Inheritance_Constructors.html
 ---
-```java title=Example.java
-```
-
 Constructors are not members of a class and they are not inherited by subclasses.
 
 They are used to initialize instance variables.

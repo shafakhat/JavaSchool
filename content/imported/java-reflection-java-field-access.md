@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50408
 source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0080__Java_Field_Access.html
 ---
-```java title=Example.java
-```
-
 We can get or set a field using reflection in two steps.
 
 - get the reference of the field.

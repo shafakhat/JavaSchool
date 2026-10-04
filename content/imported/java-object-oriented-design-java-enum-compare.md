@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50190
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0650__Java_Enum_Compare.html
 ---
-```java title=Example.java
-```
-
 You can compare two enum constants in three ways:
 
 - Using the compareTo() method of the Enum class

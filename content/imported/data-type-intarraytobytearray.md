@@ -3,8 +3,8 @@ title: int array to byte array
 nav: int array to byte array
 description: * Permission is hereby granted, free of charge, to any person obtaining a copy of
 section: Imported - java2s Archive
-order: 1037
-source: https://web.archive.org/web/20100719191813/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/intarraytobytearray.htm
+order: 1007
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/intarraytobytearray.htm
 ---
 ```java title=Example.java
 /*
@@ -25,8 +25,7 @@ source: https://web.archive.org/web/20100719191813/http://www.java2s.com:80/Tuto
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- */
-public class ArrayCopy {
+ */public class ArrayCopy {
   public static byte[] int2byte(int[]src) {
     int srcLength = src.length;
     byte[]dst = new byte[srcLength << 2];

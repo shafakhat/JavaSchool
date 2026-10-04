@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/FontMetrics/0120__FontMetrics.charWidth_char_ch_.htm
 ---
-```java title=Example.java
-Back to FontMetrics  ↑
-```
-
 ## Syntax
 
 FontMetrics.charWidth(char ch) has the following syntax.
@@ -37,5 +33,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to FontMetrics ↑

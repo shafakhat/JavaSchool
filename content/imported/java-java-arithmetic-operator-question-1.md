@@ -17,9 +17,7 @@ a)   System.out.printf("x = %d%n", x);
 b)   System.out.printf("Value of %d + %d is %d%n", x, x, (x + x));
 c)   System.out.printf("x =");
 d)   System.out.printf("%d = %d%n", (x + y), (y + x));
-```
-
-```java title=Example.java
+java title=Example.java
 x = 2
 Value of 2 + 2 is 4
 x =5 = 5

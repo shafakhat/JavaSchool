@@ -37,28 +37,28 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Java Algorithms Convert number to English words example 2</h1>
 <h2 id="description">Description</h2>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-   publicenum hundreds {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+   public enum hundreds {
       OneHundred, TwoHundred, ThreeHundred, FourHundred, FiveHundred, SixHundred, SevenHundred, EightHundred,
       NineHundred
    }
-   publicenum tens {
+   public enum tens {
       Twenty, Thirty, Forty, Fifty, Sixty, Seventy, Eighty, Ninety
    }
-   publicenum ones {
+   public enum ones {
       One, Two, Three, Four, Five, Six, Seven, Eight, Nine
    }
-   publicenum denom {
+   public enum denom {
       Thousand, Million, Billion
    }
-   publicenum splNums {
+   public enum splNums {
       Ten, Eleven, Twelve, Thirteen, Fourteen, Fifteen, Sixteen, Seventeen, Eighteen, Nineteen
    }
-   publicstaticString text = "";
-   publicstaticvoid main(String[] args) {
+   public static String text = "";
+   public static void main(String[] args) {
       long num = 1234567;
       int rem = 0;
       int i = 0;
@@ -68,7 +68,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
             printText(rem);
             num = num / 1000;
             i++;
-         } elseif (num &gt; 0) {
+         } else if (num &gt; 0) {
             rem = (int) (num % 100);
             if (rem &gt; 0)
                text = denom.values()[i - 1] + " " + text;
@@ -79,9 +79,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       }
       if (i &gt; 0)
          System.out.println(text);
-      elseSystem.out.println("Zero");
+      else System.out.println("Zero");
    }
-   publicstaticvoid printText(int num) {
+   public static void printText(int num) {
       if (!(num &gt; 9 &amp;&amp; num &lt; 19)) {
          if (num % 10 &gt; 0)
             getOnes(num % 10);
@@ -95,22 +95,22 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
          getSplNums(num % 10);
       }
    }
-   publicstaticvoid getSplNums(int num) {
+   public static void getSplNums(int num) {
       text = splNums.values()[num] + " " + text;
    }
-   publicstaticvoid getHundreds(int num) {
+   public static void getHundreds(int num) {
       text = hundreds.values()[num - 1] + " " + text;
    }
-   publicstaticvoid getTens(int num) {
+   public static void getTens(int num) {
       text = tens.values()[num - 2] + " " + text;
    }
-   publicstaticvoid getOnes(int num) {
+   public static void getOnes(int num) {
       text = ones.values()[num - 1] + " " + text;
    }
 }</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
-    <div class="pager"><a class="pager-btn" href="java-java-aclentry-get-file-flag-and-permissions.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java AclEntry get file fla...</span></a><a class="pager-btn pager-next" href="parser-create-a-bracket-checker-to-check-the-pair-of-bracket.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Algorithms How to - C...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-java-actionevent-get-action-command.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java ActionEvent get actio...</span></a><a class="pager-btn pager-next" href="random-generate-password.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Algorithms How to - G...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

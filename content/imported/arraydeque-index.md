@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50343
 source: https://www.java2s.com/Tutorials/Java/java.util/ArrayDeque/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java ArrayDeque() Constructor

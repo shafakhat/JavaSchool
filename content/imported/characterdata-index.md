@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50326
 source: https://www.java2s.com/Tutorials/Java/org.w3c.dom/CharacterData/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java CharacterData .appendData (String arg)

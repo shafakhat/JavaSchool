@@ -15,9 +15,7 @@ publicclass MainClass {
     System.out.println("bigger = " + bigger);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 big = 2147483647
 bigger = -4
 ```

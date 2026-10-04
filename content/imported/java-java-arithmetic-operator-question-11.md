@@ -18,9 +18,7 @@ publicclass Main {
     System.out.println(a); // Expression
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 14.0
 ```
 

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/0660__BorderLayout.setVgap_int_vgap_.htm
 ---
-```java title=Example.java
-Back to BorderLayout  ↑
-```
-
 ## Syntax
 
 BorderLayout.setVgap(int vgap) has the following syntax.
@@ -54,5 +50,3 @@ publicclass Main  extends JPanel {
   }
 }
 ```
-
-- Back to BorderLayout ↑

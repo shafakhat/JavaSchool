@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50420
 source: https://www.java2s.com/Tutorials/Java/Java_Language/2005__Java_Data_Type.html
 ---
-```java title=Example.java
-```
-
 Java defines eight primitive types of data: byte, short, int, long, char, float, double, and boolean.
 
 | Primitive Type | Reserved Word | Size | Min Value | Max Value |

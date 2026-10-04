@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50262
 source: https://www.java2s.com/Tutorials/Java/java.io/FilterReader/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java FilterReader.close()

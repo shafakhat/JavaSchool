@@ -24,9 +24,7 @@ class GradeBook
          courseName );
    }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Welcome to the grade book for
 Java !
 ```

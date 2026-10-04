@@ -37,20 +37,20 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-05-class-definition.html">Class Definition</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-05-class-definition.html">Class Definition</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-05-27-final.html">final</a></nav>
     <h1>'Blank' final fields</h1>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class A {
-  privateint i;
+  private int i;
   A(int ii) {
     i = ii;
   }
 }
-publicclass MainClass {
-  privatefinalint i = 0; // Initialized final
-privatefinalint j; // Blank final
-privatefinal A a; // Blank final reference
-// Blank finals MUST be initialized in the constructor:
-public MainClass() {
+public class MainClass {
+  private final int i = 0; // Initialized final
+ private final int j; // Blank final
+ private final A a; // Blank final reference
+ // Blank finals MUST be initialized in the constructor:
+ public MainClass() {
     j = 1; // Initialize blank final
     a = new A(1); // Initialize blank final reference
   }
@@ -58,12 +58,12 @@ public MainClass() {
     j = x; // Initialize blank final
     a = new A(x); // Initialize blank final reference
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     new MainClass();
     new MainClass(47);
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="velocity-useifinvelocity.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Use if in velocity</span></a><a class="pager-btn pager-next" href="data-type-convertthebytestoahexstringrepresentationofthebytes.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Convert the bytes to a hex...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="statement-control-theforstatement.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">The for Statement</span></a><a class="pager-btn pager-next" href="collections-data-structure-adaptiteratortoiterable.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Adapt iterator to iterable</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

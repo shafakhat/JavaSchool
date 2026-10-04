@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50339
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0180__Java_Map.html
 ---
-```java title=Example.java
-```
-
 A map represents a collection that contains key-value mappings.
 
 Map is a collection in which each element represents a key-value pair as <key, value>. A <key, value> pair is also known as an entry in the map. The key and the value must be reference types.

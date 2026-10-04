@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50178
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0430__Java_Exception_Usage.html
 ---
-```java title=Example.java
-```
-
 ## Accessing the Stack of a Thread
 
 The following code shows how to get to the stack frames of a thread.

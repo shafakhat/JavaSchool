@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50297
 source: https://www.java2s.com/Tutorials/Java/java.nio.file/FileVisitor/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java FileVisitor .postVisitDirectory (T dir, IOException exc)

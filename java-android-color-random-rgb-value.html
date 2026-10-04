@@ -37,31 +37,31 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Android Color random RGB value</h1>
 <ul><li>android.graphics</li><li>android graphics Color</li></ul>
 <h2 id="description">Description</h2>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import android.graphics.Color;
 import java.util.Random;
-publicclass Main {
-    publicstaticvoid main(String[] argv) throwsException {
+public class Main {
+    public static void main(String[] argv) throws Exception {
         System.out.println(randomRGB());
-    }publicstaticint randomRGB() {
+    }public static int randomRGB() {
         String r, g, b;
-        Random random = newRandom();
+        Random random = new Random();
         r = Integer.toHexString(random.nextInt(256)).toUpperCase();
         g = Integer.toHexString(random.nextInt(256)).toUpperCase();
         b = Integer.toHexString(random.nextInt(256)).toUpperCase();
         r = r.length() == 1 ? "0" + r : r;
         g = g.length() == 1 ? "0" + g : g;
         b = b.length() == 1 ? "0" + b : b;
-        returnColor.parseColor("#" + (r + g + b));
+        return Color.parseColor("#" + (r + g + b));
     }
 }</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
 <ul><li>Android Intent send text</li><li>Android Intent share photo</li><li>Android PackageInfo get package version name</li><li>Android ClipboardManager set text</li><li>Android Base64 decode from base64 String</li></ul>
-    <div class="pager"><a class="pager-btn" href="regular-expressions-allowsyoutoeaslytryoutregularexpressions.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Allows you to easly try ou...</span></a><a class="pager-btn pager-next" href="servlets-anotherservlettosendpdf.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Another servlet to Send PDF</span></a></div>
+    <div class="pager"><a class="pager-btn" href="pdf-rtf-addinglisttoparagraph.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Adding List to Paragraph</span></a><a class="pager-btn pager-next" href="ant-antremoveallgeneratedfiles.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Ant</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

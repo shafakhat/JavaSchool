@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50151
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0120__Java_Initialization_Block.html
 ---
-```java title=Example.java
-```
-
 ## Instance Initialization Block
 
 An instance initialization block is used to initialize objects of a class.

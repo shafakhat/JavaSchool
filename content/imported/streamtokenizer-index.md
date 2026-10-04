@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50283
 source: https://www.java2s.com/Tutorials/Java/java.io/StreamTokenizer/index.html
 ---
-```java title=Example.java
-```
-
 ## Field
 
 - Java StreamTokenizer nval

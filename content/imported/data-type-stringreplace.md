@@ -19,9 +19,7 @@ publicclass MainClass
       System.out.printf("Replace 'l' with 'L' in s1: %s\n\n", s1.replace( 'l', 'L' ) );
    } // end main
 }
-```
-
-```java title=Example.java
+java title=Example.java
 s1 = hello
 s2 = GOODBYE
 s3 =    spaces

@@ -3,14 +3,14 @@ title: Number format with FieldPosition
 nav: Number format with FieldPo...
 description: FieldPosition fp = new FieldPosition(NumberFormat.INTEGER_FIELD);
 section: Imported - java2s Archive
-order: 1044
+order: 1019
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/NumberformatwithFieldPosition.htm
 ---
 ```java title=Example.java
 import java.text.FieldPosition;
 import java.text.NumberFormat;
-publicclass MainClass {
-  publicstaticvoid main(String[] args) {
+public class MainClass {
+  public static void main(String[] args) {
     NumberFormat myFormat = NumberFormat.getNumberInstance();
     FieldPosition fp = new FieldPosition(NumberFormat.INTEGER_FIELD);
     myFormat.setMaximumIntegerDigits(3);
@@ -29,9 +29,7 @@ publicclass MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Degrees  Radians  Grads
    0.00     0.00     0.00
    1.00     0.02     1.11

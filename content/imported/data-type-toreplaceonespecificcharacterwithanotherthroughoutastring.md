@@ -26,9 +26,7 @@ public class MainClass {
     System.out.println(">"+result+"<");
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 >   This is a string   <
 >This is a string<
 ```

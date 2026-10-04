@@ -3,8 +3,8 @@ title: How to create Java BigInteger
 nav: How to create Java BigInte...
 description: BigInteger(byte[] val) Translates a byte array containing the two's-complement binary representation of a BigInteger into a BigInteger.
 section: Imported - java2s Archive
-order: 1040
-source: https://web.archive.org/web/20130821182500/http://java2s.com/Tutorials/Java/BigDecimal_BigInteger/How_to_create_Java_BigInteger.htm
+order: 1002
+source: https://web.archive.org/web/2016/http://java2s.com/Tutorials/Java/BigDecimal_BigInteger/How_to_create_Java_BigInteger.htm
 ---
 In this chapter you will learn:
 
@@ -21,12 +21,12 @@ The following code use new BigInteger(byte[] val) to create a BigInteger.
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
+public class Main {
+  public static void main(String[] argv) throws Exception {
     // A negative value
-byte[] bytes = newbyte[] { (byte) 0xFF, 0x00, 0x00 }; // -65536
-// A positive value
-    bytes = newbyte[] { 0x1, 0x00, 0x00 }; // 65536
+ byte[] bytes = new byte[] { (byte) 0xFF, 0x00, 0x00 }; // -65536
+ // A positive value
+    bytes = new byte[] { 0x1, 0x00, 0x00 }; // 65536
     BigInteger bi = new BigInteger(bytes);
   }
 }
@@ -40,8 +40,8 @@ The following code use new BigInteger(String val)to create a BigInteger.
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass MainClass {
-  publicstaticvoid main(String[] args) {
+public class MainClass {
+  public static void main(String[] args) {
     System.out.println("Here's Long.MAX_VALUE: " + Long.MAX_VALUE);
     BigInteger bInt = new BigInteger("3419229223372036854775807");
     System.out.println("Here's a bigger number: " + bInt);
@@ -60,8 +60,8 @@ You can set the radix for the string value passed in with new BigInteger(String 
 
 ```java title=Example.java
 import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
+public class Main {
+  public static void main(String[] argv) throws Exception {
     BigInteger bi = new BigInteger("4407760", 8);
   }
 }
@@ -74,8 +74,8 @@ new BigInteger(int bitLength, int certainty, Random rnd) creates a BigInteger wi
 ```java title=Example.java
 import java.math.BigInteger;
 import java.security.SecureRandom;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     int bitLength = 512; // 512 bits
     SecureRandom rnd = new SecureRandom();
     int certainty = 90; // 1 - 1/2(90) certainty

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50149
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0095__Java_final_Keyword.html
 ---
-```java title=Example.java
-```
-
 The final keyword does not allow modifying or replacing its original value or definition.
 
 The final keyword can be used in the following three contexts:

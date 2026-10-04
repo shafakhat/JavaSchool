@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java Asynchronous I/O
 nav: Java IO Tutorial - Java As...
 description: In a synchronous file I/O, the request to the I/O operation waits until the I/O operation is complete.
 section: Imported - java2s Archive
-order: 50238
-source: https://www.java2s.com/Tutorials/Java/Java_io/1050__Java_nio_Asynchronous.html
+order: 1016
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/1050__Java_nio_Asynchronous.html
 ---
-```java title=Example.java
-```
-
 In a synchronous file I/O, the request to the I/O operation waits until the I/O operation is complete.
 
 In an asynchronous file I/O, the request for an I/O operation is performed by the system asynchronously.
@@ -108,8 +105,8 @@ import java.nio.channels.CompletionHandler;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-publicclass Main {
-  publicstatic void main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     Path path = Paths.get("test.txt");
     AsynchronousFileChannel afc = AsynchronousFileChannel.open(path, WRITE,
         CREATE);
@@ -123,7 +120,7 @@ publicclass Main {
     System.out.println("Sleeping for 5  seconds...");
     Thread.sleep(5000);
   }
-  publicstatic ByteBuffer getDataBuffer() {
+  public static ByteBuffer getDataBuffer() {
     String lineSeparator = System.getProperty("line.separator");
     StringBuilder sb = new StringBuilder();
     sb.append("test");
@@ -168,8 +165,8 @@ class WriteHandler implements CompletionHandler<Integer, Attachment> {
 The following code demonstrates how to use a Future object to handle the results of an asynchronous write to a file.
 
 ```java title=Example.java
-importstatic java.nio.file.StandardOpenOption.CREATE;
-importstatic java.nio.file.StandardOpenOption.WRITE;
+import static java.nio.file.StandardOpenOption.CREATE;
+import static java.nio.file.StandardOpenOption.WRITE;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousFileChannel;
@@ -177,8 +174,8 @@ import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.Future;
-publicclass Main {
-  publicstatic ByteBuffer getDataBuffer() {
+public class Main {
+  public static ByteBuffer getDataBuffer() {
     String lineSeparator = System.getProperty("line.separator");
     StringBuilder sb = new StringBuilder();
     sb.append("test");
@@ -188,7 +185,7 @@ publicclass Main {
     ByteBuffer bb = ByteBuffer.wrap(str.getBytes(cs));
     return bb;
   }
-  publicstaticvoid main(String[] args) throws Exception {
+  public static void main(String[] args) throws Exception {
     Path path = Paths.get("test.txt");
     try (AsynchronousFileChannel afc = AsynchronousFileChannel.open(path,
         WRITE, CREATE)) {
@@ -215,7 +212,7 @@ The code above generates the following result.
 The following code demonstrates how to use a CompletionHandler object to handle the results of an asynchronous read from a file.
 
 ```java title=Example.java
-importstatic java.nio.file.StandardOpenOption.READ;
+import static java.nio.file.StandardOpenOption.READ;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousFileChannel;
@@ -223,8 +220,8 @@ import java.nio.channels.CompletionHandler;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception{
+public class Main {
+  public static void main(String[] args) throws Exception{
     Path path = Paths.get("test.txt");
     AsynchronousFileChannel afc = AsynchronousFileChannel.open(path, READ);
     ReadHandler handler = new ReadHandler();
@@ -246,7 +243,7 @@ class Attachment {
 }
 class ReadHandler implements CompletionHandler<Integer, Attachment> {
   @Override
-  publicvoid completed(Integer result, Attachment attach) {
+  public void completed(Integer result, Attachment attach) {
     System.out.format("%s bytes read   from  %s%n", result, attach.path);
     System.out.format("Read data is:%n");
     byte[] byteData = attach.buffer.array();
@@ -261,7 +258,7 @@ class ReadHandler implements CompletionHandler<Integer, Attachment> {
     }
   }
   @Override
-  publicvoid failed(Throwable e, Attachment attach) {
+  public void failed(Throwable e, Attachment attach) {
     System.out.format("Read operation  on  %s  file failed."
         + "The  error is: %s%n", attach.path, e.getMessage());
     try {
@@ -281,7 +278,7 @@ The code above generates the following result.
 The following code shows how to use a Future object to handle the results of an asynchronous read from a file. It uses the wait method (a Future.get() method call) to wait for the asynchronous file I/O to complete.
 
 ```java title=Example.java
-importstatic java.nio.file.StandardOpenOption.READ;
+import static java.nio.file.StandardOpenOption.READ;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousFileChannel;
@@ -290,8 +287,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     Path path = Paths.get("test.txt");
     try (AsynchronousFileChannel afc = AsynchronousFileChannel.open(path, READ)) {
       int fileSize = (int) afc.size();

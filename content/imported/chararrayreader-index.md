@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50245
 source: https://www.java2s.com/Tutorials/Java/java.io/CharArrayReader/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java CharArrayReader(char[] buf) Constructor

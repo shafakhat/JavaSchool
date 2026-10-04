@@ -15,8 +15,6 @@ publicclass MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 starts with ab
 ```

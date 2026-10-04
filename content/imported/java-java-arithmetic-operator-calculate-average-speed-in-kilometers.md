@@ -3,8 +3,8 @@ title: Java Arithmetic Operator calculate average speed in kilometers
 nav: Java Arithmetic Operator c...
 description: Assume a runner runs 24 miles in 1 hour, 40 ?minutes, and 35 seconds.
 section: Imported - java2s Archive
-order: 1054
-source: https://web.archive.org/web/20210102113213/http://www.java2s.com/ref/java/java-arithmetic-operator-calculate-average-speed-in-kilometers.html
+order: 1015
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-arithmetic-operator-calculate-average-speed-in-kilometers.html
 ---
 ## Question
 
@@ -17,16 +17,14 @@ We would like to write a program that displays the average speed in kilometers p
 Code structure you can use:
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] agrs) {
+public class Main {
+  public static void main(String[] agrs) {
        //your code here
   }
 }
-```
-
-```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] agrs) {
+java title=Example.java
+public class Main {
+  public static void main(String[] agrs) {
     System.out.println("Miles / (hour + (minutes / 60) + (seconds / 3600)) * 1.6");
     System.out.println("24    / (1    + (40      / 60) + (35      / 3600))  * 1.6");
     System.out.println((24 / (1 + (40 / 60.0) + (35 / 3600.0))) * 1.6);
@@ -39,13 +37,13 @@ publicclass Main {
 The following code creates method to clear the calculation steps.
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     System.out.println("kph: " + mphToKph(milesPerHour(24, 100.58)));
-  }privatestaticdouble milesPerHour(double miles, double minutes) {
+  }private static double milesPerHour(double miles, double minutes) {
     return 60.0 * (miles / minutes);
   }
-  privatestaticdouble mphToKph(double mph) {
+  private static double mphToKph(double mph) {
     return mph * 1.6;
   }
 }

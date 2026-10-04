@@ -14,9 +14,7 @@ public class MainClass {
       System.out.println(Integer.reverseBytes(0));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 167772160
 -150994945
 0

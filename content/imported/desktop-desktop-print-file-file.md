@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Desktop/0200__Desktop.print_File_file_.htm
 ---
-```java title=Example.java
-Back to Desktop  ↑
-```
-
 ## Syntax
 
 Desktop.print(File file) has the following syntax.
@@ -40,5 +36,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to Desktop ↑

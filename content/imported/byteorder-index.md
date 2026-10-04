@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50308
 source: https://www.java2s.com/Tutorials/Java/java.nio/ByteOrder/index.html
 ---
-```java title=Example.java
-```
-
 ## Field
 
 - Java ByteOrder BIG_ENDIAN

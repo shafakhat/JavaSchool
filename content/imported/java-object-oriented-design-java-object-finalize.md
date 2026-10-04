@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50157
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0210__Java_Object_Finalize.html
 ---
-```java title=Example.java
-```
-
 Java provides a way to perform resource release, when an object is about to be destroyed.
 
 In Java, we create objects, but we cannot destroy objects.

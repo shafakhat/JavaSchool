@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50138
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0020__Java_Class_Access_Level.html
 ---
-```java title=Example.java
-```
-
 Class simple name is the name between class keyword and {.
 
 When we refer to a class by its simple name, the compiler looks for that class declaration in the same package where the referring class is.

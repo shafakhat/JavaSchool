@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50143
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0060__Java_Instance_Static_Method.html
 ---
-```java title=Example.java
-```
-
 A class can have two types of methods: instance methods and class methods. Instance methods and class methods are also called non-static methods and static methods, respectively.
 
 An instance method is used to implement behavior for the instances of the class. An instance method can only be invoked in the context of an instance of the class.

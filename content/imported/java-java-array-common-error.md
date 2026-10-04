@@ -18,9 +18,7 @@ publicclass Main {
          r(i) = Math.random * 100;
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 public class Main {
   public static void main(String[] args) {
      double[100] r; //should be double[] r = new double[100];
@@ -30,9 +28,7 @@ public class Main {
        //r[i]       missing()
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 publicclass Main {
   publicstaticvoid main(String[] args) {
      double[] r = newdouble[100];

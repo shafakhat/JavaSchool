@@ -3,8 +3,8 @@ title: Java Annotation create repeating annotations
 nav: Java Annotation create rep...
 description: To be a repeatable annotation, annotated with the @Repeatable annotation in java.lang.annotation.
 section: Imported - java2s Archive
-order: 1040
-source: https://web.archive.org/web/20210102121619/http://www.java2s.com/ref/java/java-annotation-create-repeating-annotations.html
+order: 1009
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-annotation-create-repeating-annotations.html
 ---
 - java.lang.annotation
 - java.lang.annotation Annotation
@@ -25,24 +25,24 @@ import java.lang.reflect.Method;
 @Retention(RetentionPolicy.RUNTIME)
 @Repeatable(MyRepeatedAnnos.class)
 @interface MyAnno {
-  String str() default"Testing";
-  intval() default 999;
+  String str() default "Testing";
+  int val() default 999;
 }
 // This is the container annotation.
 @Retention(RetentionPolicy.RUNTIME)
 @interface MyRepeatedAnnos {
   MyAnno[] value();
 }
-publicclass Main {
+public class Main {
   // Repeat MyAnno on myMethod().
   @MyAnno(str = "First annotation", val = -1)
   @MyAnno(str = "Second annotation", val = 100)
-  publicstaticvoid myMethod(String str, int i) {
+  public static void myMethod(String str, int i) {
     Main ob = new Main();
     try {
       Class<?> c = ob.getClass();
-      // Obtain the annotations for myMethod().Method m = c.getMethod("myMethod", String.class, int.class);
-      // Display the repeated MyAnno annotations.Annotation anno = m.getAnnotation(MyRepeatedAnnos.class);
+      // Obtain the annotations for myMethod(). Method m = c.getMethod("myMethod", String.class, int.class);
+      // Display the repeated MyAnno annotations. Annotation anno = m.getAnnotation(MyRepeatedAnnos.class);
       System.out.println(anno);
       Annotation[] annos = m.getAnnotationsByType(MyAnno.class);
       for(Annotation a : annos)  {
@@ -52,7 +52,7 @@ publicclass Main {
       System.out.println("Method Not Found.");
     }
   }
-  publicstaticvoid main(String args[]) {
+  public static void main(String args[]) {
     myMethod("test", 10);
   }
 }

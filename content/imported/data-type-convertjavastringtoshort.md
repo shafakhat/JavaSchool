@@ -3,8 +3,8 @@ title: Convert Java String to Short
 nav: Convert Java String to Short
 description: Imported from the java2s.com archive: Convert Java String to Short
 section: Imported - java2s Archive
-order: 1052
-source: https://web.archive.org/web/20101020195303/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/ConvertJavaStringtoShort.htm
+order: 1005
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ConvertJavaStringtoShort.htm
 ---
 ```java title=Example.java
 public class Main {

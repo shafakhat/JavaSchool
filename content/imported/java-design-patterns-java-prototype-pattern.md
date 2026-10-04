@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50116
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0050__Java_Prototype_Pattern.html
 ---
-```java title=Example.java
-```
-
 Prototype pattern is one of the creational patterns.
 
 Prototype pattern helps create duplicate object with better performance.

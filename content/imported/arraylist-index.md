@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50344
 source: https://www.java2s.com/Tutorials/Java/java.util/ArrayList/index.html
 ---
-```java title=Example.java
-```
-
 ## Example
 
 The following code shows how to get Size of ArrayList and loop through elements.

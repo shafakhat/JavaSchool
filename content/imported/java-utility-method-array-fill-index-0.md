@@ -3,8 +3,8 @@ title: Java Utililty Methods Array Fill
 nav: Java Utililty Methods Arra...
 description: The list of methods to do Array Fill are organized into topic(s).
 section: Imported - java2s Archive
-order: 50065
-source: https://www.java2s.com/example/java-utility-method/array-fill-index-0.html
+order: 1017
+source: https://web.archive.org/web/2016/https://www.java2s.com/example/java-utility-method/array-fill-index-0.html
 ---
 List of utility methods to do Array Fill
 
@@ -38,9 +38,9 @@ Listfill(byte[] arr) fill
 ```java title=Example.java
 List<Byte> list = null;
 if (arr == null) {
-    returnnewArrayList<Byte>(0);
+    return new ArrayList<Byte>(0);
 int size = arr.length;
-list = newArrayList<Byte>(size);
+list = new ArrayList<Byte>(size);
 for (byte by : arr) {
     list.add(by);
 ...
@@ -50,9 +50,9 @@ byte[]fill(byte[] val, byte b) fill
 
 ```java title=Example.java
 if (val == null)
-    thrownewIllegalArgumentException("val should not be null");
+    throw new IllegalArgumentException("val should not be null");
 Arrays.fill(val, b);
-returnval;
+return val;
 ```
 
 char[]fill(char[] chars, int fromIndex, int toIndex, char c) fill
@@ -62,7 +62,7 @@ int length = toIndex - fromIndex;
 if (length < 20) {
     for (int i = fromIndex; i < toIndex; i++)
         chars[i] = c;
-} elseif (c != ' ' || length > WHITESPACE_BUFFER.length) {
+} else if (c != ' ' || length > WHITESPACE_BUFFER.length) {
     Arrays.fill(chars, fromIndex, toIndex, c);
 } else {
     System.arraycopy(WHITESPACE_BUFFER, 0, chars, fromIndex, length);
@@ -86,7 +86,7 @@ for (double[] aD : d) {
 double[][]fill(final double[][] arr, final double val) Fills the given two-dimensional double array with the value val .
 
 ```java title=Example.java
-for (finaldouble[] line : arr) {
+for (final double[] line : arr) {
     Arrays.fill(line, val);
 return arr;
 ```
@@ -97,7 +97,7 @@ voidfill(final Object[] array, final int start, final int end, final Object valu
 assert start >= 0 && start <= end;
 assert end <= array.length;
 assert array.length == 0 || array.length == pow2(array.length);
-finalint n = LINE_SIZE;
+final int n = LINE_SIZE;
 int i = Math.min(n, end);
 Arrays.fill(array, start, i, value);
 while (i < end) {

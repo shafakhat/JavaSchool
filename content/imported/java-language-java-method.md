@@ -3,12 +3,9 @@ title: Java Tutorial - Java Method
 nav: Java Tutorial - Java Method
 description: Classes usually consist of two things: instance variables and methods. Instance variables are the data part of a class, while the methods defines the behaviours of a clas
 section: Imported - java2s Archive
-order: 50440
-source: https://www.java2s.com/Tutorials/Java/Java_Language/5020__Java_Method.html
+order: 1007
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Language/5020__Java_Method.html
 ---
-```java title=Example.java
-```
-
 Classes usually consist of two things: instance variables and methods. Instance variables are the data part of a class, while the methods defines the behaviours of a class.
 
 ## Syntax
@@ -32,7 +29,7 @@ If the method has no parameters, then the parameter list will be empty.
 Add a method to Box,as shown here:
 
 ```java title=Example.java
-class Box {int width;
+ class Box { int width;
   int height;
   int depth;
   void calculateVolume() {
@@ -40,8 +37,8 @@ class Box {int width;
     System.out.println(width * height * depth);
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Box mybox1 = new Box();
     mybox1.width = 10;
     mybox1.height = 20;
@@ -68,14 +65,14 @@ Here, value is the value returned.
 We can use return statement to return a value to the callers.
 
 ```java title=Example.java
-class Rectangle {
+ class Rectangle {
   int width;int height;
   int getArea() {
     return width * height;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Rectangle mybox1 = new Rectangle();
     int area;
     mybox1.width = 10;
@@ -107,7 +104,7 @@ System.out.println("Area is " + mybox1.getArea());
 A method can return class types.
 
 ```java title=Example.java
-class MyClass {int myMemberValue = 2;
+ class MyClass { int myMemberValue = 2;
   MyClass() {
   }
   MyClass doubleValue() {
@@ -116,8 +113,8 @@ class MyClass {int myMemberValue = 2;
     return temp;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     MyClass ob1 = new MyClass();
     ob1.myMemberValue =2;
     MyClass ob2;
@@ -149,8 +146,8 @@ A parameterized method can operate on a variety of data.
 The new Rectangle class has a new method which accepts the dimensions of a rectangle and sets the dimensions with the passed-in value.
 
 ```java title=Example.java
-class Rectangle {
-  double width;double height;
+ class Rectangle {
+  double width; double height;
   double area() {
     return width * height;
   }
@@ -159,8 +156,8 @@ class Rectangle {
     height = h;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Rectangle mybox1 = new Rectangle();
     double vol;
     mybox1.setDim(10, 20);
@@ -177,18 +174,18 @@ The output:
 The following code passes objects to methods.
 
 ```java title=Example.java
-class Test {int a;
+ class Test { int a;
   Test(int i) {
     a = i;
   }
   boolean equals(Test o) {
     if (o.a == a )
       return true;
-    elsereturn false;
+    else return false;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Test ob1 = new Test(100);
     Test ob2 = new Test(100);
     System.out.println("ob1 == ob2: " + ob1.equals(ob2));
@@ -209,7 +206,7 @@ Overloaded methods have the same name but different parameters. Overloaded metho
 The following example illustrates method overloading:
 
 ```java title=Example.java
-class OverloadDemo {
+ class OverloadDemo {
   void test() {
     System.out.println("No parameters");
   }
@@ -224,8 +221,8 @@ class OverloadDemo {
     return a * a;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     OverloadDemo ob = new OverloadDemo();
     ob.test();
     ob.test(10);
@@ -243,7 +240,7 @@ This program generates the following output:
 The following code demonstrates method overloading and data type promotion.
 
 ```java title=Example.java
-class OverloadDemo {
+ class OverloadDemo {
   void test() {
     System.out.println("No parameters");
   }
@@ -254,8 +251,8 @@ class OverloadDemo {
     System.out.println("Inside test(double) a: " + a);
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     OverloadDemo ob = new OverloadDemo();
     int i = 88;
     ob.test();
@@ -275,17 +272,17 @@ Recursion allows a method to call itself.
 The following code is an example of recursion. It calculates the factorial numbers.
 
 ```java title=Example.java
-class Factorial {
+ class Factorial {
   // this is a recursive function
-int fact(int n) {
+ int fact(int n) {
      int result;if (n == 1)
       return 1;
     result = fact(n - 1) * n;
     return result;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Factorial f = new Factorial();
     System.out.println("Factorial of 5 is " + f.fact(5));
   }
@@ -303,7 +300,7 @@ The main() method is the entry point for standalone Java applications. To create
 The signature for main() is:
 
 ```java title=Example.java
-publicstatic void main(String[] args)
+public static void main(String[] args)
 ```
 
 The return type must be void. The main() method must be public. It is static so that it can be executed without constructing an instance of the application class.
@@ -311,8 +308,8 @@ The return type must be void. The main() method must be public. It is static so 
 A command-line argument is the information that follows the program's name on the command line. The command-line arguments are stored as string array passed to main(). For example, the following program displays all of the command-line arguments:
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+ public class Main {
+  public static void main(String args[]) {
     for (int i = 0; i < args.length; i++)
       System.out.println("args[" + i + "]: " + args[i]);
   }
@@ -328,13 +325,13 @@ When you do, you will see the following output:
 The following code shows how to use of argv to get an integer value from command line.
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] argv) {
+public class Main {
+  public static void main(String[] argv) {
     int number = 0;
     System.out.println("The number of words in argv is " + argv.length);
     if (argv.length == 0) {
       number = 1234;
-    } elseif (argv.length == 1) {
+    } else if (argv.length == 1) {
       try {
         number = Integer.parseInt(argv[0]);
       } catch(NumberFormatException e) {

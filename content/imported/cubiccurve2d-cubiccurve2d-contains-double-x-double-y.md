@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/CubicCurve2D/0080__CubicCurve2D.contains_double_x_double_y_.htm
 ---
-```java title=Example.java
-Back to CubicCurve2D  ↑
-```
-
 ## Syntax
 
 CubicCurve2D.contains(double x, double y) has the following syntax.
@@ -45,5 +41,3 @@ publicclass Main extends Frame {
 ```
 
 The code above generates the following result.
-
-- Back to CubicCurve2D ↑

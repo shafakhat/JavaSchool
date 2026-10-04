@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50397
 source: https://www.java2s.com/Tutorials/Java/java.text/DateFormat/index.html
 ---
-```java title=Example.java
-```
-
 ## Field
 
 - Java DateFormat DEFAULT

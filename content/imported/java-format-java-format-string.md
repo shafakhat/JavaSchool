@@ -3,12 +3,9 @@ title: Java Format - Java printf Format String
 nav: Java Format - Java printf ...
 description: Formatting data using a Formatter requires two types of inputs:
 section: Imported - java2s Archive
-order: 50391
-source: https://www.java2s.com/Tutorials/Java/Java_Format/0060__Java_Format_String.html
+order: 1004
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Format/0060__Java_Format_String.html
 ---
-```java title=Example.java
-```
-
 Formatting data using a Formatter requires two types of inputs:
 
 - A format string
@@ -67,8 +64,8 @@ The local date value and "Mike" becomes the input values for the format string.
 ```java title=Example.java
 import java.time.LocalDate;
 import java.time.Month;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     LocalDate dob = LocalDate.of(1971, Month.MAY, 16);
     System.out.printf(
         "%1$tB %1$td,  %1$tY is %2$s's birth day. Let's go and celebrate.",
@@ -115,8 +112,8 @@ There are two special format specifiers:
 The following code shows how to use these two special format specifiers:
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     System.out.printf("The rate is 10%%.%nA%nB");
   }
 }

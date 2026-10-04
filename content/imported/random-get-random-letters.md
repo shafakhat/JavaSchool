@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20160730061312/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Random/Get_random_letters.htm
 ---
-```java title=Example.java
-Back to Random  ↑
-```
-
 ## Question
 
 We would like to know how to get random letters.
@@ -34,7 +30,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-```java title=Example.java
-Back to Random  ↑
-```

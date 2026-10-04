@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50439
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5010__Java_Class.html
 ---
-```java title=Example.java
-```
-
 A class defines a new data type.
 
 This new type can be used to create objects of that type.

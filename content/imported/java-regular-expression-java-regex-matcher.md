@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50382
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/0040__Java_Regex_Matcher.html
 ---
-```java title=Example.java
-```
-
 Matcher class performs a match on a sequence of characters by interpreting the compiled pattern defined in a Pattern object.
 
 The matcher() method of the Pattern class creates an instance of the Matcher class.

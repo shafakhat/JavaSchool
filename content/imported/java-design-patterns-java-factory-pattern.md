@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50112
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0010__Java_Factory_Pattern.html
 ---
-```java title=Example.java
-```
-
 Factory pattern is a creational pattern as this pattern provides better ways to create an object.
 
 In Factory pattern, we create object without exposing the creation logic to the client.

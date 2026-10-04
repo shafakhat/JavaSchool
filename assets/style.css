@@ -1211,6 +1211,94 @@ a:hover {
 }
 .code-box pre::-webkit-scrollbar-thumb { background: #4C5359; }
 
+/* ---------------------------------------- java2s topic + article listings -- */
+
+.topic-list {
+  list-style: none;
+  counter-reset: topic;
+  padding: 0;
+  margin: 20px 0 34px;
+}
+.topic-row {
+  counter-increment: topic;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin: 8px 0;
+  background: var(--surface);
+  overflow: hidden;
+}
+.topic-link {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 13px 18px;
+  text-decoration: none;
+  color: var(--body);
+}
+.topic-link:hover { background: var(--sea-soft); text-decoration: none; }
+.topic-num {
+  flex: 0 0 58px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--sea);
+  color: var(--on-dark);
+  border-radius: 6px;
+  padding: 2px 8px;
+  text-align: center;
+}
+.topic-row:nth-child(4n+2) .topic-num { background: var(--blue); }
+.topic-row:nth-child(4n+3) .topic-num { background: var(--gray); }
+.topic-row:nth-child(4n+4) .topic-num { background: var(--lemon); color: var(--on-lemon); }
+.topic-name { flex: 1; font-weight: 600; color: var(--ink); font-size: 16px; }
+.topic-count {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--on-dark);
+  background: var(--gray);
+  border-radius: 999px;
+  padding: 2px 11px;
+}
+.topic-row.empty .topic-count { background: var(--gray-mid); color: var(--ink); }
+.topic-row.empty .topic-name { color: var(--muted); font-weight: 500; }
+
+.article-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 34px;
+  counter-reset: art;
+}
+.article-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.article-list li:last-child { border-bottom: 0; }
+.article-list li:hover { background: var(--sea-soft); }
+.article-list a { color: var(--ink); font-weight: 600; text-decoration: none; font-size: 15.5px; }
+.article-list a:hover { text-decoration: underline; text-decoration-color: var(--sea); background: none; }
+.a-num {
+  flex: 0 0 62px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  text-align: right;
+}
+.article-list li.queued .pending { color: var(--muted); font-size: 15.5px; }
+.pill {
+  margin-left: auto;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+  background: var(--lemon);
+  color: var(--on-lemon);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+
 /* ==========================================================================
    Dark mode - same rule: colour lives in the backgrounds, type stays
    white / light grey.

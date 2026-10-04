@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java ZIP File
 nav: Java IO Tutorial - Java ZI...
 description: Java has direct support for the ZIP file format. Typically, we would be using the following four classes from the java.util.zip package to work with the ZIP file format:
 section: Imported - java2s Archive
-order: 50218
-source: https://www.java2s.com/Tutorials/Java/Java_io/0810__Java_io_Zip_File.html
+order: 1015
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/0810__Java_io_Zip_File.html
 ---
-```java title=Example.java
-```
-
 Java has direct support for the ZIP file format. Typically, we would be using the following four classes from the java.util.zip package to work with the ZIP file format:
 
 - ZipEntry
@@ -41,21 +38,21 @@ import java.io.IOException;
 import java.util.zip.Deflater;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     String zipFileName = "ziptest.zip";
     String[] entries = new String[2];
     entries[0] = "test1.txt";
     entries[1] = "notes" + File.separator + "test2.txt";
     zip(zipFileName, entries);
   }
-  publicstaticvoid zip(String zipFileName, String[] zipEntries) {
+  public static void zip(String zipFileName, String[] zipEntries) {
     try (ZipOutputStream zos = new ZipOutputStream(new BufferedOutputStream(
         new FileOutputStream(zipFileName)))) {
       // Set the compression level to best compression
       zos.setLevel(Deflater.BEST_COMPRESSION);
       for (int i = 0; i < zipEntries.length; i++) {
-        File entryFile = newFile(zipEntries[i]);
+        File entryFile = new File(zipEntries[i]);
         if (!entryFile.exists()) {
           System.out.println("The entry file  " + entryFile.getAbsolutePath()
               + "  does  not  exist");
@@ -71,11 +68,11 @@ publicclass Main {
       e.printStackTrace();
     }
   }
-  publicstaticvoid addEntryContent(ZipOutputStream zos, String entryFileName)
+  public static void addEntryContent(ZipOutputStream zos, String entryFileName)
       throws IOException, FileNotFoundException {
     BufferedInputStream bis = new BufferedInputStream(new FileInputStream(
         entryFileName));
-    byte[] buffer = newbyte[1024];
+    byte[] buffer = new byte[1024];
     int count = -1;
     while ((count = bis.read(buffer)) != -1) {
       zos.write(buffer, 0, count);
@@ -101,13 +98,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     String zipFileName = "ziptest.zip";
     String unzipdirectory = "extracted";
     unzip(zipFileName, unzipdirectory);
   }
-  publicstaticvoid unzip(String zipFileName, String unzipdir) {
+  public static void unzip(String zipFileName, String unzipdir) {
     try (ZipInputStream zis = new ZipInputStream(new BufferedInputStream(
         new FileInputStream(zipFileName)))) {
       ZipEntry entry = null;
@@ -119,22 +116,22 @@ publicclass Main {
       e.printStackTrace();
     }
   }
-  publicstaticvoid extractEntryContent(ZipInputStream zis, ZipEntry entry,
+  public static void extractEntryContent(ZipInputStream zis, ZipEntry entry,
       String unzipdir) throws IOException, FileNotFoundException {
     String entryFileName = entry.getName();
     String entryPath = unzipdir + File.separator + entryFileName;
     createFile(entryPath);
     BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(
         entryPath));
-    byte[] buffer = newbyte[1024];
+    byte[] buffer = new byte[1024];
     int count = -1;
     while ((count = zis.read(buffer)) != -1) {
       bos.write(buffer, 0, count);
     }
     bos.close();
   }
-  publicstaticvoid createFile(String filePath) throws IOException {
-    File file = newFile(filePath);
+  public static void createFile(String filePath) throws IOException {
+    File file = new File(filePath);
     File parent = file.getParentFile();
     if (!parent.exists()) {
       parent.mkdirs();
@@ -155,8 +152,8 @@ import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     ZipFile zf = new ZipFile("ziptest.zip");
     // Get the enumeration for all zip entries and loop through them
     Enumeration<? extends ZipEntry> e = zf.entries();
@@ -165,7 +162,7 @@ publicclass Main {
       entry = e.nextElement();
       // Get the input stream for the current zip entry
       InputStream is = zf.getInputStream(entry);
-      /* Read data for the entry using the is object */// Print the name of the entry
+      /* Read data for the entry using the is object */ // Print the name of the entry
       System.out.println(entry.getName());
     }
   }
@@ -180,8 +177,8 @@ import java.io.InputStream;
 import java.util.stream.Stream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-publicclass Main {
-  publicstatic void main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     ZipFile zf = new ZipFile("ziptest.zip");
     Stream<? extends ZipEntry> entryStream = zf.stream();
     entryStream.forEach(entry -> {

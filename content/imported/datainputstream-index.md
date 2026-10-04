@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50248
 source: https://www.java2s.com/Tutorials/Java/java.io/DataInputStream/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java DataInputStream(InputStream in) Constructor

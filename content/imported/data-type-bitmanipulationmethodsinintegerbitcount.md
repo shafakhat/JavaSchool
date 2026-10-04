@@ -14,9 +14,7 @@ public class MainClass {
     System.out.println("Number of one bits: " + Integer.bitCount(n));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Value in binary: 10101010
 Number of one bits: 4
 ```

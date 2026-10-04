@@ -15,8 +15,6 @@ public class MainClass {
     System.out.println("Hypotenuse is " + c);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Hypotenuse is 5.0
 ```

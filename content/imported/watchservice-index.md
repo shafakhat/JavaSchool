@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50300
 source: https://www.java2s.com/Tutorials/Java/java.nio.file/WatchService/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java WatchService.close()

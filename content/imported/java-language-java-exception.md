@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50451
 source: https://www.java2s.com/Tutorials/Java/Java_Language/6000__Java_Exception.html
 ---
-```java title=Example.java
-```
-
 An exception is an abnormal condition that arises in a code sequence at run time. For example, read a non-existing file.
 
 A Java exception is an object that describes an exceptional condition that has occurred in a piece of code.

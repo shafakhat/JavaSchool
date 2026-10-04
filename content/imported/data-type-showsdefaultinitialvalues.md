@@ -35,9 +35,7 @@ public class MainClass {
     iv.printInitialValues();
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Data type      Initial value
 boolean        false
 char           []

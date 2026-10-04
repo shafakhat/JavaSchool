@@ -29,26 +29,25 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-language.html">Java Language</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-language.html">Java Language</a></nav>
     <h1>Java Tutorial - Java For</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>Java for loop statement provides a powerful way of writing loop statement.</p>
 <p>The simplest form of the for loop is shown here:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for(initialization; condition; iteration)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> for(initialization; condition; iteration)
      statement;</code></pre></div>
 <p>Java for loop statement has three parts:</p>
 <ul><li>initialization sets a loop control variable to an initial value.</li><li>condition is a Boolean expression that tests the loop control variable. If condition is true , the for loop continues to iterate. If condition is false , the loop terminates.</li><li>The iteration determines how the loop control variable is changed each time the loop iterates.</li></ul>
 <p>Here is a short program that illustrates the for loop. i is the loop control variable and i is initialized to zero in the initialization. At the start of each iteration, the conditional test x &lt; 10 is performed. If the outcome of this test is true, the println() statement is executed, and then the iteration portion of the loop is executed. This process continues until the conditional test is false.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String args[]) {
     int i;
     for (i = 0; i &lt; 10; i = i + 1)
       System.out.println("This is i: " + i);
@@ -57,8 +56,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>This program generates the following output:</p>
 <h2 id="example">Example</h2>
 <p>The following code writes the code logic from above again but loops reversively:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> public class Main {
+  public static void main(String args[]) {
     for (int n = 10; n &gt; 0; n--)
       System.out.println("n:" + n);
   }
@@ -66,9 +65,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The output:</p>
 <h2 id="example-2">Example 2</h2>
 <p>Here is a program that tests for prime numbers using for loop statement.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
-    int num;boolean isPrime = true;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> public class Main {
+  public static void main(String args[]) {
+    int num; boolean isPrime = true;
     num = 50;
     for (int i = 2; i &lt;= num / 2; i++) {
       if ((num % i) == 0) {
@@ -85,8 +84,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The output:</p>
 <h2 id="example-3">Example 3</h2>
 <p>Java allows two or more variables to control a for loop. And you can include multiple statements in both the initialization and iteration portions of the for loop. Each statement is separated from the next by a comma. Here is an example:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> public class Main {
+  public static void main(String args[]) {
 for (int a = 1, b = 4; a &lt; b; a++, b--) {
       System.out.println("a = " + a);
       System.out.println("b = " + b);
@@ -96,9 +95,9 @@ for (int a = 1, b = 4; a &lt; b; a++, b--) {
 <p>The program generates the following output:</p>
 <h2 id="example-4">Example 4</h2>
 <p>The three sections of the for can be used for any purpose and parts of the for loop can be empty.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
-    int i = 0;boolean done = false;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> public class Main {
+  public static void main(String args[]) {
+    int i = 0; boolean done = false;
     for (; !done;) {
       System.out.println("i is " + i);
       if (i == 10)
@@ -110,8 +109,8 @@ for (int a = 1, b = 4; a &lt; b; a++, b--) {
 <p>The output:</p>
 <h2 id="example-5">Example 5</h2>
 <p>for loop can be nested to produce powerful logic, for example, we can use nested for loop to iterate a two-dimensional array. For example, here is a program that nests for loops:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> public class Main {
+  public static void main(String args[]) {
     for (int i = 0; i &lt; 10; i++) {
       for (int j = i; j &lt; 10; j++)
         System.out.print(".");
@@ -127,8 +126,8 @@ for (int a = 1, b = 4; a &lt; b; a++, b--) {
 }</code></pre></div>
 <p>The type must be compatible with the array type.</p>
 <p>The following code shows how to use for each loop.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String args[]) {
     String[] arr = new String[]{"JavaSchool","a","b","c"};
     for(String s:arr){
       System.out.println(s);
@@ -138,16 +137,16 @@ for (int a = 1, b = 4; a &lt; b; a++, b--) {
 <p>The output:</p>
 <h2 id="example-6">Example 6</h2>
 <p>The following code uses the for-each style loop to iterate a two-dimensional array.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
-    int sum = 0;int nums[][] = newint[3][5];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String args[]) {
+    int sum = 0; int nums[][] = new int[3][5];
     for (int i = 0; i &lt; 3; i++){
       for (int j = 0; j &lt; 5; j++){
         nums[i][j] = (i + 1) * (j + 1);
       }
     }
     // use for-each for to display and sum the values
-for (int x[] : nums) {
+ for (int x[] : nums) {
       for (int y : x) {
         System.out.println("Value is: " + y);
         sum += y;
@@ -159,12 +158,12 @@ for (int x[] : nums) {
 <p>The output from this program is shown here:</p>
 <h2 id="example-7">Example 7</h2>
 <p>for-each style loop is useful when searching an element in an array.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String args[]) {
     int nums[] = { 6, 8, 3, 7, 5, 6, 1, 4 };
     int val = 5;boolean found = false;
     // use for-each style for to search nums for val
-for (int x : nums) {
+ for (int x : nums) {
       if (x == val) {
         found = true;
         break;
@@ -176,7 +175,7 @@ for (int x : nums) {
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-language-java-switch.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Switch</span></a><a class="pager-btn pager-next" href="java-language-java-while.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java While</span></a></div>
+    <div class="pager"><a class="pager-btn" href="font-java-font-isbold.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Font....</span></a><a class="pager-btn pager-next" href="graphics-java-graphics-setclip-int-x-int-y-int-width-int-height.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Graph...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

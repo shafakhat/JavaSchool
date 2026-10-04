@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50361
 source: https://www.java2s.com/Tutorials/Java/java.util/LinkedHashSet/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java LinkedHashSet() Constructor

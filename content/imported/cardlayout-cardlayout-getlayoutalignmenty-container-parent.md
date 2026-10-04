@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0180__CardLayout.getLayoutAlignmentY_Container_parent_.htm
 ---
-```java title=Example.java
-Back to CardLayout  ↑
-```
-
 ## Syntax
 
 CardLayout.getLayoutAlignmentY(Container parent) has the following syntax.
@@ -54,5 +50,3 @@ class CardLayoutPanel extends JPanel implements ActionListener {
   }
 }
 ```
-
-- Back to CardLayout ↑

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50333
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0120__Java_Navigable_Set.html
 ---
-```java title=Example.java
-```
-
 A navigable set is a sorted set that lets you work with its subsets in a variety of ways.
 
 NavigableSet represents a navigable set in Java Collection Framework. The NavigableSet interface inherits from the SortedSet interface and extends SortedSet.

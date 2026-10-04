@@ -18,9 +18,7 @@ publicclass Main {
     System.out.println("x: " + x);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 x: 0.5
 ```
 

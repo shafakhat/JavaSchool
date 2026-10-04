@@ -3,8 +3,8 @@ title: Count the number of instances of substring within a string
 nav: Count the number of instan...
 description: * Copyright 2005, JBoss Inc., and individual contributors as indicated
 section: Imported - java2s Archive
-order: 1068
-source: https://web.archive.org/web/20100612011829/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Countthenumberofinstancesofsubstringwithinastring.htm
+order: 1016
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Countthenumberofinstancesofsubstringwithinastring.htm
 ---
 ```java title=Example.java
 /*
@@ -27,18 +27,16 @@ source: https://web.archive.org/web/20100612011829/http://www.java2s.com:80/Tuto
   * License along with this software; if not, write to the Free
   * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
   * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
-  */
-public class Main{
+  */public class Main{
   /////////////////////////////////////////////////////////////////////////
-  //                          Counting Methods                           //
-  /////////////////////////////////////////////////////////////////////////
-  /**
+ //                          Counting Methods                           //
+ /////////////////////////////////////////////////////////////////////////
+ /**
    *
    * @param string     String to look for substring in.
    * @param substring  Sub-string to look for.
    * @return           Count of substrings in string.
-   */
-  public static int count(final String string, final String substring)
+   */ public static int count(final String string, final String substring)
   {
      int count = 0;
      int idx = 0;
@@ -55,8 +53,7 @@ public class Main{
    * @param string     String to look for substring in.
    * @param c          Character to look for.
    * @return           Count of substrings in string.
-   */
-  public static int count(final String string, final char c)
+   */ public static int count(final String string, final char c)
   {
      return count(string, String.valueOf(c));
   }

@@ -29,17 +29,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-language.html">Java Language</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-language.html">Java Language</a></nav>
     <h1>Java Tutorial - How to extend Java generic classes</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>A generic class can act as a superclass or be a subclass. In a generic hierarchy, any type arguments needed by a generic superclass must be passed up the hierarchy by all subclasses.</p>
 <h2 id="example">Example</h2>
 <p>Using a Generic Superclass</p>
@@ -62,8 +61,8 @@ class MySubclass&lt;T, V&gt; extends MyClass&lt;T&gt; {
     return ob2;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     MySubclass&lt;String, Integer&gt; x = new MySubclass&lt;String, Integer&gt;("Value is: ", 99);
     System.out.print(x.getob());
     System.out.println(x.getob2());
@@ -90,8 +89,8 @@ class MySubclass&lt;T&gt; extends MyClass {
     return ob;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
      MySubclass&lt;String&gt; w = new MySubclass&lt;String&gt;("Hello", 4);
     System.out.print(w.getob() + " ");
     System.out.println(w.getnum());
@@ -114,8 +113,8 @@ class Gen2&lt;T&gt; extends Gen&lt;T&gt; {
     super(o);
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Gen&lt;Integer&gt; iOb = new Gen&lt;Integer&gt;(88);
     Gen2&lt;Integer&gt; iOb2 = new Gen2&lt;Integer&gt;(99);
     Gen2&lt;String&gt; strOb2 = new Gen2&lt;String&gt;("Generics Test");
@@ -149,8 +148,8 @@ class Gen2&lt;T&gt; extends Gen&lt;T&gt; {
     return obj;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Gen&lt;Integer&gt; iOb = new Gen&lt;Integer&gt;(88);
     Gen2&lt;String&gt; strOb2 = new Gen2&lt;String&gt;("Generics Test");
     System.out.println(iOb.getob());
@@ -175,8 +174,8 @@ class Gen2&lt;T&gt; extends Gen&lt;T&gt; {
     super(o);
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Gen&lt;Integer&gt; iOb = new Gen&lt;Integer&gt;(88);
     Gen2&lt;Integer&gt; iOb2 = new Gen2&lt;Integer&gt;(99);
     Gen2&lt;String&gt; strOb2 = new Gen2&lt;String&gt;("Generics Test");
@@ -198,8 +197,8 @@ class Gen2&lt;T&gt; extends Gen&lt;T&gt; {
     super(o);
   }
 }
-publicclass Main {
-  publicstatic void main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Gen&lt;Integer&gt; iOb = new Gen&lt;Integer&gt;(88);
     Gen2&lt;Integer&gt; iOb2 = new Gen2&lt;Integer&gt;(99);
     Gen2&lt;String&gt; strOb2 = new Gen2&lt;String&gt;("Generics Test");
@@ -208,7 +207,7 @@ publicclass Main {
 }</code></pre></div>
 <p>is not legal because iOb2 is not an instance of Gen&lt;Long&gt;.</p>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-language-java-generic-interface.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - How to use...</span></a><a class="pager-btn pager-next" href="java-language-java-generic-constraints.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - What is Ja...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="color-java-tutorial.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial</span></a><a class="pager-btn pager-next" href="area-java-area-getpathiterator-affinetransform-at-double-flatness.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Area ...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

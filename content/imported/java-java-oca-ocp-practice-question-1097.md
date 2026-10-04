@@ -13,16 +13,12 @@ Which of the following segments of a for loop can be left blank?
 ```java title=Example.java
 for (segmentA; segmentB; segmentC) {
 }
-```
-
-```java title=Example.java
+java title=Example.java
 A.   segmentA
 B.   segmentB
 C.   segmentC
 D.   All of the above
-```
-
-```java title=Example.java
+java title=Example.java
 D.
 ```
 

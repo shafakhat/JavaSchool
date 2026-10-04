@@ -15,9 +15,7 @@ A.   publicvoid getValue()
 B.   publicvoid setBow()
 C.   publicvoid setValue(int range)
 D.   publicString addValue(String target)
-```
-
-```java title=Example.java
+java title=Example.java
 C.
 ```
 

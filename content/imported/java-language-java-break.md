@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50436
 source: https://www.java2s.com/Tutorials/Java/Java_Language/4050__Java_break.html
 ---
-```java title=Example.java
-```
-
 When a break statement is encountered inside a loop, the loop is terminated and program control resumes at the next statement following the loop.
 
 Syntax for break statement

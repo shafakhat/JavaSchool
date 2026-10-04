@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50464
 source: https://www.java2s.com/Tutorials/Java/Java_Language/9010__Java_enum_class.html
 ---
-```java title=Example.java
-```
-
 You can give constructors, add instance variables and methods, and implement interfaces for enum types.
 
 When you define a constructor for an enum, the constructor is called when each enumeration constant is created.

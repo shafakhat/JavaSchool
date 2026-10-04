@@ -24,9 +24,7 @@ publicclass Main {
     //your code here
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 publicclass Main {
   publicstaticvoid main(String[] args) {
     System.out.println(((9.5 * 4.5) - (2.5 * 3)) / (199.5 - 3.5));

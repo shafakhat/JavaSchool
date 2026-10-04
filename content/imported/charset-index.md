@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50301
 source: https://www.java2s.com/Tutorials/Java/java.nio.charset/Charset/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Charset.aliases()

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50309
 source: https://www.java2s.com/Tutorials/Java/java.nio/CharBuffer/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java CharBuffer.allocate(int capacity)

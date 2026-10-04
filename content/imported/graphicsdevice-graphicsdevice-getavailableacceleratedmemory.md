@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/GraphicsDevice/0120__GraphicsDevice.getAvailableAcceleratedMemory_.htm
 ---
-```java title=Example.java
-Back to GraphicsDevice  ↑
-```
-
 ## Syntax
 
 GraphicsDevice.getAvailableAcceleratedMemory() has the following syntax.
@@ -44,5 +40,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-- Back to GraphicsDevice ↑

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Ellipse2D/0140__Ellipse2D.hashCode_.htm
 ---
-```java title=Example.java
-Back to Ellipse2D  ↑
-```
-
 ## Syntax
 
 Ellipse2D.hashCode() has the following syntax.
@@ -34,5 +30,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-- Back to Ellipse2D ↑

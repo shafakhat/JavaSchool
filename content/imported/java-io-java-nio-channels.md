@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java Channels
 nav: Java IO Tutorial - Java Ch...
 description: A channel is an open connection between a data source and a Java program to perform I/O operations.
 section: Imported - java2s Archive
-order: 50225
-source: https://www.java2s.com/Tutorials/Java/Java_io/0930__Java_nio_Channels.html
+order: 1018
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/0930__Java_nio_Channels.html
 ---
-```java title=Example.java
-```
-
 A channel is an open connection between a data source and a Java program to perform I/O operations.
 
 The Channel interface is in the java.nio.channels package.
@@ -102,9 +99,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
-    File inputFile = newFile("test1.txt");
+public class Main {
+  public static void main(String[] args) {
+    File inputFile = new File("test1.txt");
     if (!inputFile.exists()) {
       System.out.println("The input file " + inputFile.getAbsolutePath()
           + "  does  not  exist.");
@@ -140,9 +137,9 @@ import java.nio.channels.FileChannel;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.io.FileOutputStream;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
-    File outputFile = newFile("test.txt");
+public class Main {
+  public static void main(String[] args) {
+    File outputFile = new File("test.txt");
     try (FileChannel fileChannel = new FileOutputStream(outputFile)
         .getChannel()) {
       String text = getText();
@@ -153,7 +150,7 @@ publicclass Main {
       e1.printStackTrace();
     }
   }
-  publicstatic String getText() {
+  public static String getText() {
     String lineSeparator = System.getProperty("line.separator");
     StringBuilder sb = new StringBuilder();
     sb.append("test");
@@ -180,8 +177,8 @@ The following code shows how to copy a file.
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.channels.FileChannel;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     FileChannel sourceChannel = new FileInputStream("sourceFile").getChannel();
     FileChannel sinkChannel = new FileOutputStream("newFile").getChannel();
     // Copy source file contents to the sink file

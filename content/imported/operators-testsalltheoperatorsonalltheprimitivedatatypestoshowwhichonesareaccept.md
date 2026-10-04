@@ -3,12 +3,12 @@ title: Tests all the operators on all the primitive data types to show which one
 nav: Tests all the operators on...
 description: Imported from the java2s.com archive: Tests all the operators on all the primitive data types to show which ones are accepted by the Java compiler
 section: Imported - java2s Archive
-order: 1071
+order: 1015
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0060__Operators/TestsalltheoperatorsonalltheprimitivedatatypestoshowwhichonesareacceptedbytheJavacompiler.htm
 ---
 ```java title=Example.java
-publicclass MainClass {
-   publicstaticvoid main(String[] a){
+public class MainClass {
+   public static void main(String[] a){
       boolTest(true, false);
       charTest('x', 'y');
       byteTest((byte)0, (byte)1);
@@ -19,60 +19,60 @@ publicclass MainClass {
       doubleTest(1.1, 2.2);
    }
   // To accept the results of a boolean test:
-staticvoid f(boolean b) {
+ static void f(boolean b) {
      System.out.println("f:"+b);
   }
-  staticvoid boolTest(boolean x, boolean y) {
+  static void boolTest(boolean x, boolean y) {
     // Arithmetic operators:
-//! x = x * y;
-//! x = x / y;
-//! x = x % y;
-//! x = x + y;
-//! x = x - y;
-//! x++;
-//! x--;
-//! x = +y;
-//! x = -y;
-// Relational and logical:
-//! f(x > y);
-//! f(x >= y);
-//! f(x < y);
-//! f(x <= y);
+ //! x = x * y;
+ //! x = x / y;
+ //! x = x % y;
+ //! x = x + y;
+ //! x = x - y;
+ //! x++;
+ //! x--;
+ //! x = +y;
+ //! x = -y;
+ // Relational and logical:
+ //! f(x > y);
+ //! f(x >= y);
+ //! f(x < y);
+ //! f(x <= y);
     f(x == y);
     f(x != y);
     f(!y);
     x = x && y;
     x = x || y;
     // Bitwise operators:
-//! x = ~y;
+ //! x = ~y;
     x = x & y;
     x = x | y;
     x = x ^ y;
     //! x = x << 1;
-//! x = x >> 1;
-//! x = x >>> 1;
-// Compound assignment:
-//! x += y;
-//! x -= y;
-//! x *= y;
-//! x /= y;
-//! x %= y;
-//! x <<= 1;
-//! x >>= 1;
-//! x >>>= 1;
+ //! x = x >> 1;
+ //! x = x >>> 1;
+ // Compound assignment:
+ //! x += y;
+ //! x -= y;
+ //! x *= y;
+ //! x /= y;
+ //! x %= y;
+ //! x <<= 1;
+ //! x >>= 1;
+ //! x >>>= 1;
     x &= y;
     x ^= y;
     x |= y;
     // Casting:
-//! char c = (char)x;
-//! byte B = (byte)x;
-//! short s = (short)x;
-//! int i = (int)x;
-//! long l = (long)x;
-//! float f = (float)x;
-//! double d = (double)x;
+ //! char c = (char)x;
+ //! byte B = (byte)x;
+ //! short s = (short)x;
+ //! int i = (int)x;
+ //! long l = (long)x;
+ //! float f = (float)x;
+ //! double d = (double)x;
   }
-  staticvoid charTest(char x, char y) {
+  static void charTest(char x, char y) {
     // Arithmetic operators:
     x = (char)(x * y);
     x = (char)(x / y);
@@ -91,9 +91,9 @@ staticvoid f(boolean b) {
     f(x == y);
     f(x != y);
     //! f(!x);
-//! f(x && y);
-//! f(x || y);
-// Bitwise operators:
+ //! f(x && y);
+ //! f(x || y);
+ // Bitwise operators:
     x= (char)~y;
     x = (char)(x & y);
     x  = (char)(x | y);
@@ -114,15 +114,15 @@ staticvoid f(boolean b) {
     x ^= y;
     x |= y;
     // Casting:
-//! boolean b = (boolean)x;
-byte B = (byte)x;
+ //! boolean b = (boolean)x;
+ byte B = (byte)x;
     short s = (short)x;
     int i = (int)x;
     long l = (long)x;
     float f = (float)x;
     double d = (double)x;
   }
-  staticvoid byteTest(byte x, byte y) {
+  static void byteTest(byte x, byte y) {
     // Arithmetic operators:
     x = (byte)(x* y);
     x = (byte)(x / y);
@@ -141,9 +141,9 @@ byte B = (byte)x;
     f(x == y);
     f(x != y);
     //! f(!x);
-//! f(x && y);
-//! f(x || y);
-// Bitwise operators:
+ //! f(x && y);
+ //! f(x || y);
+ // Bitwise operators:
     x = (byte)~y;
     x = (byte)(x & y);
     x = (byte)(x | y);
@@ -164,15 +164,15 @@ byte B = (byte)x;
     x ^= y;
     x |= y;
     // Casting:
-//! boolean b = (boolean)x;
-char c = (char)x;
+ //! boolean b = (boolean)x;
+ char c = (char)x;
     short s = (short)x;
     int i = (int)x;
     long l = (long)x;
     float f = (float)x;
     double d = (double)x;
   }
-  staticvoid shortTest(short x, short y) {
+  static void shortTest(short x, short y) {
     // Arithmetic operators:
     x = (short)(x * y);
     x = (short)(x / y);
@@ -191,9 +191,9 @@ char c = (char)x;
     f(x == y);
     f(x != y);
     //! f(!x);
-//! f(x && y);
-//! f(x || y);
-// Bitwise operators:
+ //! f(x && y);
+ //! f(x || y);
+ // Bitwise operators:
     x = (short)~y;
     x = (short)(x & y);
     x = (short)(x | y);
@@ -214,15 +214,15 @@ char c = (char)x;
     x ^= y;
     x |= y;
     // Casting:
-//! boolean b = (boolean)x;
-char c = (char)x;
+ //! boolean b = (boolean)x;
+ char c = (char)x;
     byte B = (byte)x;
     int i = (int)x;
     long l = (long)x;
     float f = (float)x;
     double d = (double)x;
   }
-  staticvoid intTest(int x, int y) {
+  static void intTest(int x, int y) {
     // Arithmetic operators:
     x = x * y;
     x = x / y;
@@ -241,9 +241,9 @@ char c = (char)x;
     f(x == y);
     f(x != y);
     //! f(!x);
-//! f(x && y);
-//! f(x || y);
-// Bitwise operators:
+ //! f(x && y);
+ //! f(x || y);
+ // Bitwise operators:
     x = ~y;
     x = x & y;
     x = x | y;
@@ -264,15 +264,15 @@ char c = (char)x;
     x ^= y;
     x |= y;
     // Casting:
-//! boolean b = (boolean)x;
-char c = (char)x;
+ //! boolean b = (boolean)x;
+ char c = (char)x;
     byte B = (byte)x;
     short s = (short)x;
     long l = (long)x;
     float f = (float)x;
     double d = (double)x;
   }
-  staticvoid longTest(long x, long y) {
+  static void longTest(long x, long y) {
     // Arithmetic operators:
     x = x * y;
     x = x / y;
@@ -291,9 +291,9 @@ char c = (char)x;
     f(x == y);
     f(x != y);
     //! f(!x);
-//! f(x && y);
-//! f(x || y);
-// Bitwise operators:
+ //! f(x && y);
+ //! f(x || y);
+ // Bitwise operators:
     x = ~y;
     x = x & y;
     x = x | y;
@@ -314,15 +314,15 @@ char c = (char)x;
     x ^= y;
     x |= y;
     // Casting:
-//! boolean b = (boolean)x;
-char c = (char)x;
+ //! boolean b = (boolean)x;
+ char c = (char)x;
     byte B = (byte)x;
     short s = (short)x;
     int i = (int)x;
     float f = (float)x;
     double d = (double)x;
   }
-  staticvoid floatTest(float x, float y) {
+  static void floatTest(float x, float y) {
     // Arithmetic operators:
     x = x * y;
     x = x / y;
@@ -341,38 +341,38 @@ char c = (char)x;
     f(x == y);
     f(x != y);
     //! f(!x);
-//! f(x && y);
-//! f(x || y);
-// Bitwise operators:
-//! x = ~y;
-//! x = x & y;
-//! x = x | y;
-//! x = x ^ y;
-//! x = x << 1;
-//! x = x >> 1;
-//! x = x >>> 1;
-// Compound assignment:
+ //! f(x && y);
+ //! f(x || y);
+ // Bitwise operators:
+ //! x = ~y;
+ //! x = x & y;
+ //! x = x | y;
+ //! x = x ^ y;
+ //! x = x << 1;
+ //! x = x >> 1;
+ //! x = x >>> 1;
+ // Compound assignment:
     x += y;
     x -= y;
     x *= y;
     x /= y;
     x %= y;
     //! x <<= 1;
-//! x >>= 1;
-//! x >>>= 1;
-//! x &= y;
-//! x ^= y;
-//! x |= y;
-// Casting:
-//! boolean b = (boolean)x;
-char c = (char)x;
+ //! x >>= 1;
+ //! x >>>= 1;
+ //! x &= y;
+ //! x ^= y;
+ //! x |= y;
+ // Casting:
+ //! boolean b = (boolean)x;
+ char c = (char)x;
     byte B = (byte)x;
     short s = (short)x;
     int i = (int)x;
     long l = (long)x;
     double d = (double)x;
   }
-  staticvoid doubleTest(double x, double y) {
+  static void doubleTest(double x, double y) {
     // Arithmetic operators:
     x = x * y;
     x = x / y;
@@ -391,31 +391,31 @@ char c = (char)x;
     f(x == y);
     f(x != y);
     //! f(!x);
-//! f(x && y);
-//! f(x || y);
-// Bitwise operators:
-//! x = ~y;
-//! x = x & y;
-//! x = x | y;
-//! x = x ^ y;
-//! x = x << 1;
-//! x = x >> 1;
-//! x = x >>> 1;
-// Compound assignment:
+ //! f(x && y);
+ //! f(x || y);
+ // Bitwise operators:
+ //! x = ~y;
+ //! x = x & y;
+ //! x = x | y;
+ //! x = x ^ y;
+ //! x = x << 1;
+ //! x = x >> 1;
+ //! x = x >>> 1;
+ // Compound assignment:
     x += y;
     x -= y;
     x *= y;
     x /= y;
     x %= y;
     //! x <<= 1;
-//! x >>= 1;
-//! x >>>= 1;
-//! x &= y;
-//! x ^= y;
-//! x |= y;
-// Casting:
-//! boolean b = (boolean)x;
-char c = (char)x;
+ //! x >>= 1;
+ //! x >>>= 1;
+ //! x &= y;
+ //! x ^= y;
+ //! x |= y;
+ // Casting:
+ //! boolean b = (boolean)x;
+ char c = (char)x;
     byte B = (byte)x;
     short s = (short)x;
     int i = (int)x;

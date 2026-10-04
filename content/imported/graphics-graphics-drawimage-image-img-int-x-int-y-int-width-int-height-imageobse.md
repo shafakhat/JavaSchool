@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1031
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics/0320__Graphics.drawImage_Image_img_int_x_int_y_int_width_int_height_ImageObserver_observer_.htm
 ---
-```java title=Example.java
-Back to Graphics  ↑
-```
-
 ## Syntax
 
 Graphics.drawImage(Image img, int x, int y, int width, int height, ImageObserver observer) has the following syntax.
@@ -49,5 +45,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Graphics ↑

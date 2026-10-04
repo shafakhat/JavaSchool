@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50393
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0080__Java_Format_Flags.html
 ---
-```java title=Example.java
-```
-
 Java printf flags changes the formatted output.
 
 The following table lists all flags that can be used in a format specifier.

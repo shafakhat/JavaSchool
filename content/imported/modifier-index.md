@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50415
 source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Modifier/index.html
 ---
-```java title=Example.java
-```
-
 ## Field
 
 - Java Modifier ABSTRACT

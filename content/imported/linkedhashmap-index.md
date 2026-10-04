@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50360
 source: https://www.java2s.com/Tutorials/Java/java.util/LinkedHashMap/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java LinkedHashMap() Constructor

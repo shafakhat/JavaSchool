@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20160730061920/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Random/Generate_random_with_strings.htm
 ---
-```java title=Example.java
-Back to Random  ↑
-```
-
 ## Question
 
 We would like to know how to generate random with strings.
@@ -29,7 +25,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-```java title=Example.java
-Back to Random  ↑
-```

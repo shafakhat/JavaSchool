@@ -19,9 +19,7 @@ Here is a sample run:
 ```java title=Example.java
 Enter the number of minutes: 1000000000
 1000000000 minutes is approximately 1902 years and 214 days
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Scanner;
 publicclass Main {
   publicstaticvoid main(String[] args) {
@@ -32,9 +30,7 @@ publicclass Main {
       + " years and " + days + " days");
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Scanner;
 publicclass Main {
   publicstaticvoid main(String[] args) {

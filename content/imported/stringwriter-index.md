@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50285
 source: https://www.java2s.com/Tutorials/Java/java.io/StringWriter/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java StringWriter() Constructor

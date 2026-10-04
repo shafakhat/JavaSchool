@@ -3,12 +3,9 @@ title: Java Object Oriented Design - Java Standard Annotations
 nav: Java Object Oriented Desig...
 description: The following section discusses four of the most commonly used standard annotations which are defined in the java.lang package.
 section: Imported - java2s Archive
-order: 50196
-source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0750__Java_Standard_Annotations.html
+order: 1003
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0750__Java_Standard_Annotations.html
 ---
-```java title=Example.java
-```
-
 Java API defines many standard annotation types.
 
 The following section discusses four of the most commonly used standard annotations which are defined in the java.lang package.
@@ -28,13 +25,13 @@ Using a deprecated program element will cause compiler to generate a warning.
 @Deprecatedclass MyClass {
   private MyClass() {
   }
-  publicstatic MyClass getInstance() {
+  public static MyClass getInstance() {
     MyClass dt = new MyClass();
     return dt;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     MyClass dt; // Generates a compile-time note
   }
 }
@@ -53,12 +50,12 @@ The compiler will make sure that the annotated method really overrides a method 
 If the annotated method does not override a method in the supertype, the compiler will generate an error.
 
 ```java title=Example.java
-class A {publicvoid m1() {
+class A { public void m1() {
   }
 }
 class B extends A {
   @Override
-  publicvoid m1() {
+  public void m1() {
   }
 }
 ```
@@ -69,9 +66,9 @@ The SuppressWarnings is used to suppress named compiler warnings. It declares on
 
 ```java title=Example.java
 import java.util.ArrayList;
-publicclass Main {
+public class Main {
   @SuppressWarnings("unchecked")
-  publicvoid test() {
+  public void test() {
     @SuppressWarnings("rawtypes")
     ArrayList list = new ArrayList();
     list.add("Hello"); // The compiler issues an unchecked warning

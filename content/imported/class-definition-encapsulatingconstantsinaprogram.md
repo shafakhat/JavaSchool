@@ -14,16 +14,12 @@ interface ConversionFactors {
   double HP_TO_WATT = 745.7;
   double WATT_TO_HP = 1.0 / HP_TO_WATT;
 }
-```
-
-```java title=Example.java
+java title=Example.java
 public class MainClass {
   public static void main(String[] a) {
     System.out.println(ConversionFactors.INCH_TO_MM);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 25.4
 ```

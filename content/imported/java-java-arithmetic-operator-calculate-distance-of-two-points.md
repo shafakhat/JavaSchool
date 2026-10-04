@@ -28,9 +28,7 @@ publicclass Main {
     //your code hereSystem.out.println("The distance between the two points is " + distance);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Scanner;
 publicclass Main {
   publicstaticvoid main(String[] String) {

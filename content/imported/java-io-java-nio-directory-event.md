@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java Directory Event
 nav: Java IO Tutorial - Java Di...
 description: We can listen to a watch service to get alert when an object in a file system is modified.
 section: Imported - java2s Archive
-order: 50237
-source: https://www.java2s.com/Tutorials/Java/Java_io/1040__Java_nio_Directory_Event.html
+order: 1020
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/1040__Java_nio_Directory_Event.html
 ---
-```java title=Example.java
-```
-
 We can listen to a watch service to get alert when an object in a file system is modified.
 
 The following classes and interfaces in the java.nio.file package provide the watch service.
@@ -114,10 +111,10 @@ The WatchService is AutoCloseable. We can create an object of the WatchService i
 The following code shows how to implement a Watch Service to Monitor Changes in a Directory.
 
 ```java title=Example.java
-importstatic java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
-importstatic java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
-importstatic java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
-importstatic java.nio.file.StandardWatchEventKinds.OVERFLOW;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
+import static java.nio.file.StandardWatchEventKinds.OVERFLOW;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -126,8 +123,8 @@ import java.nio.file.WatchEvent;
 import java.nio.file.WatchEvent.Kind;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     try (WatchService ws = FileSystems.getDefault().newWatchService()) {
       Path dirToWatch = Paths.get("C:\\myName");
       dirToWatch.register(ws, ENTRY_CREATE, ENTRY_MODIFY, ENTRY_DELETE);

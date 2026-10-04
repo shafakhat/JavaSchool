@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50318
 source: https://www.java2s.com/Tutorials/Java/java.util.zip/ZipEntry/index.html
 ---
-```java title=Example.java
-```
-
 ## Field
 
 - Java ZipEntry DEFLATED

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50443
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5050__Java_class_variable.html
 ---
-```java title=Example.java
-```
-
 ## Three types of class variables
 
 Java supports variables of three different lifetimes:

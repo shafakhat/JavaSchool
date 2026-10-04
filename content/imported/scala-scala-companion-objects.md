@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50107
 source: https://www.java2s.com/Tutorials/Java/Scala/3070__Scala_Companion_Objects.html
 ---
-```java title=Example.java
-```
-
 In Scala, both a class and an object can share the same name.
 
 When an object shares a name with a class, it's called a companion object, and the class is called a companion class.

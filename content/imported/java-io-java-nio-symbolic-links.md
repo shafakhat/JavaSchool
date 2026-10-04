@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50231
 source: https://www.java2s.com/Tutorials/Java/Java_io/0980__Java_nio_Symbolic_Links.html
 ---
-```java title=Example.java
-```
-
 A symbolic link contains a reference to another file or directory.
 
 The file referenced by a symbolic link is known as the target file for the symbolic link.

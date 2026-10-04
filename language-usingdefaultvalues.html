@@ -37,13 +37,13 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-01-language.html">Language</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-01-language.html">Language</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-01-13-annotations-types.html">Annotations Types</a></nav>
     <h1>Using Default Values</h1>
 <ul><li>Annotation default values is used if no value is specified.</li><li>A default value is specified by adding a default clause.</li><li>Default value must be of a type compatible with type.</li></ul>
 <p>Here is @MyAnnotation rewritten to include default values:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@Retention(RetentionPolicy.RUNTIME)
 @interface MyAnnotation {
-  String stringValue() default"defaultString";
+  String stringValue() default "defaultString";
   int intValue() default 101;
 }</code></pre></div>
 <p>This declaration gives a default value of "Testing" to str and 9000 to val.</p>
@@ -53,24 +53,25 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@MyAnnotation()                           // both str and val default
 @MyAnnotation(stringValue = "some string")        // val defaults
 @MyAnnotation(intValue = 100)                  // str defaults
-@MyAnnotation(stringValue = "Testing", intValue = 100) // no defaults</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.annotation.Annotation;
+@MyAnnotation(stringValue = "Testing", intValue = 100) // no defaults
+java title=Example.java
+import java.lang.annotation.Annotation;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.reflect.Method;
 // A simple annotation type.
 @Retention(RetentionPolicy.RUNTIME)
 @interface MyAnnotation {
-  String stringValue() default"defaultString";
+  String stringValue() default "defaultString";
   int intValue() default 101;
 }
 @MyAnnotation(stringValue = "for class", intValue = 100)
-publicclass MainClass {
+public class MainClass {
   // Annotate a method.
   @MyAnnotation(intValue = 100)
-  publicstaticvoid myMethod() {
+  public static void myMethod() {
   }
-  publicstaticvoid main(String[] arg) {
+  public static void main(String[] arg) {
     try {
       MainClass ob = new MainClass();
       Method m = ob.getClass( ).getMethod("myMethod");
@@ -81,10 +82,11 @@ publicclass MainClass {
     } catch (Exception exc) {
     }
   }
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">All annotations for myMeth:
+}
+java title=Example.java
+All annotations for myMeth:
 @MyAnnotation(intValue=100, stringValue=defaultString)</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="language-useoverrideannotation.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Use Override annotation</span></a><a class="pager-btn pager-next" href="2d-graphics-gui-aclassthatmodelsacubicbeziercurve.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">A class that models a Cubi...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-usetostringmethodoflongclasstoconvertlongintostring.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Use toString method of Lon...</span></a><a class="pager-btn pager-next" href="2d-graphics-gui-abarebonesplayerplaythemediaobject.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">A Bare Bones Player</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

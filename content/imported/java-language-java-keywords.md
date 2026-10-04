@@ -3,12 +3,9 @@ title: Java Tutorial - Java Keywords
 nav: Java Tutorial - Java Keywo...
 description: A keyword is a word whose meaning is defined by the programming language. Java keywords and reserved Words:
 section: Imported - java2s Archive
-order: 50418
-source: https://www.java2s.com/Tutorials/Java/Java_Language/1010__Java_Keywords.html
+order: 1006
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Language/1010__Java_Keywords.html
 ---
-```java title=Example.java
-```
-
 ## Full list of keywords in Java
 
 A keyword is a word whose meaning is defined by the programming language. Java keywords and reserved Words:
@@ -43,8 +40,8 @@ Java Identifiers are case sensitive. For example, myValue and MyValue are distin
 Identifiers are used for class names, method names, and variable names. An identifier may be any sequence of uppercase and lowercase letters, numbers, or the underscore and dollar-sign characters. Identifiers must not begin with a number. Java Identifiers are case-sensitive. The following code illustrates some examples of valid identifiers:
 
 ```java title=Example.java
-publicclass Main {
-  publicstatic void main(String[] argv) {
+public class Main {
+  public static void main(String[] argv) {
     int ATEST, count, i1, $Atest, this_is_a_test;
   }
 }
@@ -53,8 +50,8 @@ publicclass Main {
 The following code shows invalid variable names include:
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] argv){
+public class Main {
+  public static void main(String[] argv){
      int 2count, h-l, a/b,
   }
 }

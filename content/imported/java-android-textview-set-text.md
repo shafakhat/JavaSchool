@@ -1,10 +1,10 @@
 ---
 title: Android TextView set text
 nav: Android TextView set text
-description: @Override/*fromwww.java2s.com*/publicvoid onCreate(Bundle savedInstanceState) {
+description: @Override/*from ww w . j a v a2 s.c om*/ public void onCreate(Bundle savedInstanceState) {
 section: Imported - java2s Archive
-order: 1008
-source: https://web.archive.org/web/20210102122034/http://www.java2s.com/ref/java/android-textview-set-text.html
+order: 1015
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/android-textview-set-text.html
 ---
 - android.widget
 - android.widget TextView
@@ -16,9 +16,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
-publicclass Main extends Activity {
+public class Main extends Activity {
    private TextView textView;
-   @Overridepublicvoid onCreate(Bundle savedInstanceState) {
+   @Override public void onCreate(Bundle savedInstanceState) {
       String displayText = null;
       super.onCreate(savedInstanceState);
       setContentView(1);// R.layout.displayinformation

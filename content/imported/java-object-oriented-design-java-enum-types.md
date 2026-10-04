@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50185
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0600__Java_Enum_Types.html
 ---
-```java title=Example.java
-```
-
 ## What Is an Enum Type?
 
 An enum type creates an ordered list of constants as a type. It specifies constants in a specific order.

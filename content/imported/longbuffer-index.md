@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50313
 source: https://www.java2s.com/Tutorials/Java/java.nio/LongBuffer/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java LongBuffer.allocate(int capacity)

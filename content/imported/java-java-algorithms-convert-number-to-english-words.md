@@ -1,20 +1,20 @@
 ---
 title: Java Algorithms Convert number to English words
 nav: Java Algorithms Convert nu...
-description: privatestaticfinalString[] tensNames = { "", //" ten", //" twenty", //" thirty", //" forty", //" fifty", //" sixty", //" seventy", //" eighty", //" ninety"//
+description: private static final String[] tensNames = { "", // " ten", // " twenty", // " thirty", // " forty", // " fifty", // " sixty", // " seventy", // " eighty", // " ninety" //
 section: Imported - java2s Archive
-order: 1025
-source: https://web.archive.org/web/20210102113325/http://www.java2s.com/ref/java/java-algorithms-convert-number-to-english-words.html
+order: 1003
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-algorithms-convert-number-to-english-words.html
 ---
 ## Description
 
 ```java title=Example.java
 import java.text.DecimalFormat;
-publicclass Main {
-   privatestaticfinalString[] tensNames = { "", //" ten", //" twenty", //" thirty", //" forty", //" fifty", //" sixty", //" seventy", //" eighty", //" ninety"//
-   };privatestaticfinalString[] numNames = { "", //" one", //" two", //" three", //" four", //" five", //" six", //" seven", //" eight", //" nine", //" ten", //" eleven", //" twelve", //" thirteen", //" fourteen", //" fifteen", //" sixteen", //" seventeen", //" eighteen", //" nineteen"//
+public class Main {
+   private static final String[] tensNames = { "", // " ten", // " twenty", // " thirty", // " forty", // " fifty", // " sixty", // " seventy", // " eighty", // " ninety" //
+   };private static final String[] numNames = { "", // " one", // " two", // " three", // " four", // " five", // " six", // " seven", // " eight", // " nine", // " ten", // " eleven", // " twelve", // " thirteen", // " fourteen", // " fifteen", // " sixteen", // " seventeen", // " eighteen", // " nineteen" //
    };
-   privatestaticString convertLessThanOneThousand(int number) {
+   private static String convertLessThanOneThousand(int number) {
       String soFar;
       if (number % 100 < 20) {
          soFar = numNames[number % 100];
@@ -29,18 +29,18 @@ publicclass Main {
          return soFar;
       return numNames[number] + " hundred" + soFar;
    }
-   publicstaticString convert(long number) {
-      // 0 to 999 999 999 999if (number == 0) {
-         return"zero";
+   public static String convert(long number) {
+      // 0 to 999 999 999 999 if (number == 0) {
+         return "zero";
       }
       String snumber = Long.toString(number);
-      // pad with "0"String mask = "000000000000";
-      DecimalFormat df = newDecimalFormat(mask);
+      // pad with "0" String mask = "000000000000";
+      DecimalFormat df = new DecimalFormat(mask);
       snumber = df.format(number);
-      // XXXnnnnnnnnnint billions = Integer.parseInt(snumber.substring(0, 3));
-      // nnnXXXnnnnnnint millions = Integer.parseInt(snumber.substring(3, 6));
-      // nnnnnnXXXnnnint hundredThousands = Integer.parseInt(snumber.substring(6, 9));
-      // nnnnnnnnnXXXint thousands = Integer.parseInt(snumber.substring(9, 12));
+      // XXXnnnnnnnnn int billions = Integer.parseInt(snumber.substring(0, 3));
+      // nnnXXXnnnnnn int millions = Integer.parseInt(snumber.substring(3, 6));
+      // nnnnnnXXXnnn int hundredThousands = Integer.parseInt(snumber.substring(6, 9));
+      // nnnnnnnnnXXX int thousands = Integer.parseInt(snumber.substring(9, 12));
       String tradBillions;
       switch (billions) {
       case 0:
@@ -80,9 +80,9 @@ publicclass Main {
       String tradThousand;
       tradThousand = convertLessThanOneThousand(thousands);
       result = result + tradThousand;
-      // remove extra spaces!return result.replaceAll("^\\s+", "").replaceAll("\\b\\s{2,}\\b", " ");
+      // remove extra spaces! return result.replaceAll("^\\s+", "").replaceAll("\\b\\s{2,}\\b", " ");
    }
-   publicstaticvoid main(String[] args) {
+   public static void main(String[] args) {
       System.out.println(convert(0));
       System.out.println(convert(1));
       System.out.println(convert(16));

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50316
 source: https://www.java2s.com/Tutorials/Java/java.util.jar/JarFile/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java JarFile(File file) Constructor

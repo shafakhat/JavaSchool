@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1024
 source: https://web.archive.org/web/20160730032210/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Random/Create_random_name_generator.htm
 ---
-```java title=Example.java
-Back to Random  ↑
-```
-
 ## Question
 
 We would like to know how to create random name generator.
@@ -36,7 +32,3 @@ if (lastname.length() > 5)
 ```
 
 The code above generates the following result.
-
-```java title=Example.java
-Back to Random  ↑
-```

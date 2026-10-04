@@ -3,19 +3,15 @@ title: Java Swing Tutorial - Java BorderLayout CENTER
 nav: Java Swing Tutorial - Java...
 description: In the following code shows how to use BorderLayout.CENTER field.
 section: Imported - java2s Archive
-order: 1012
+order: 1003
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/0120__BorderLayout.CENTER.htm
 ---
-```java title=Example.java
-Back to BorderLayout  ↑
-```
-
 ## Syntax
 
 BorderLayout.CENTER has the following syntax.
 
 ```java title=Example.java
-publicstaticfinal String CENTER
+public static final String CENTER
 ```
 
 ## Example
@@ -28,8 +24,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-publicclass Main {
-  publicstaticvoid main(String[] a) {
+public class Main {
+  public static void main(String[] a) {
     JFrame frame = new JFrame();
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     JPanel outerPanel = new JPanel(new BorderLayout());
@@ -45,5 +41,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to BorderLayout ↑

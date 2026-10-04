@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50411
 source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Array/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Array.get(Object array, int index)

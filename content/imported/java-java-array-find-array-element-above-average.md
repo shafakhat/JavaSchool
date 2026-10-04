@@ -26,9 +26,7 @@ publicclass Main {
     //your code here
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 publicclass Main {
   publicstaticvoid main(String[] args) {
     java.util.Scanner input = new java.util.Scanner(System.in);

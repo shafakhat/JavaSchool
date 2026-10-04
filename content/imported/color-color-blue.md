@@ -3,19 +3,15 @@ title: Java Swing Tutorial - Java Color blue
 nav: Java Swing Tutorial - Java...
 description: Imported from the java2s.com archive: Java Swing Tutorial - Java Color blue
 section: Imported - java2s Archive
-order: 1018
+order: 1013
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Color/0080__Color.blue.htm
 ---
-```java title=Example.java
-Back to Color  ↑
-```
-
 ## Syntax
 
 Color.blue has the following syntax.
 
 ```java title=Example.java
-publicstaticfinal Color blue
+public static final Color blue
 ```
 
 ## Example
@@ -26,8 +22,8 @@ In the following code shows how to use Color.blue field.
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     JLabel label = new JLabel("First Name");
     label.setForeground(Color.blue);
     JFrame frame = new JFrame();
@@ -38,5 +34,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to Color ↑

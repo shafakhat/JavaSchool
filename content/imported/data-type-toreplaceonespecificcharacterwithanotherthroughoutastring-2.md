@@ -14,8 +14,6 @@ publicclass MainClass {
     System.out.println(newText);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 To/be/or/not/to/be,/that/is/the/question.
 ```

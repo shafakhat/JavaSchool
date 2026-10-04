@@ -3,19 +3,15 @@ title: Java Swing Tutorial - Java FontMetrics .stringWidth (String str)
 nav: Java Swing Tutorial - Java...
 description: FontMetrics.stringWidth(String str) has the following syntax.
 section: Imported - java2s Archive
-order: 1031
+order: 1008
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/FontMetrics/0580__FontMetrics.stringWidth_String_str_.htm
 ---
-```java title=Example.java
-Back to FontMetrics  ↑
-```
-
 ## Syntax
 
 FontMetrics.stringWidth(String str) has the following syntax.
 
 ```java title=Example.java
-publicint stringWidth(String str)
+public int stringWidth(String str)
 ```
 
 ## Example
@@ -29,8 +25,8 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     int fontSize = 20;
     g.setFont(new Font("TimesRoman", Font.PLAIN, fontSize));
     FontMetrics fm = g.getFontMetrics();
@@ -56,7 +52,7 @@ publicclass Main extends JPanel {
     g.setColor(Color.black);
     g.drawString(s, x, baseline);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.getContentPane().add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,5 +61,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to FontMetrics ↑

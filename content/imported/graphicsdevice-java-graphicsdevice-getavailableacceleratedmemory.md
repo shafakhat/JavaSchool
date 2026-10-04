@@ -3,7 +3,7 @@ title: Java GraphicsDevice.getAvailableAcceleratedMemory()
 nav: Java GraphicsDevice.getAva...
 description: GraphicsDevice getAvailableAcceleratedMemory() this method returns the number of bytes available in accelerated memory on this device. Some images are created or cached i
 section: Imported - java2s Archive
-order: 1053
+order: 1010
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/GraphicsDevice/Java_GraphicsDevice_getAvailableAcceleratedMemory_.htm
 ---
 In this chapter you will learn:
@@ -28,7 +28,7 @@ For example, depending on operating system, driver, memory configuration, and th
 GraphicsDevice.getAvailableAcceleratedMemory() has the following syntax.
 
 ```java title=Example.java
-publicint getAvailableAcceleratedMemory()
+public int getAvailableAcceleratedMemory()
 ```
 
 ### Returns
@@ -43,8 +43,8 @@ In the following code shows how to use GraphicsDevice.getAvailableAcceleratedMem
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.image.VolatileImage;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
+public class Main {
+  public static void main(String[] argv) throws Exception {
     GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
     GraphicsDevice[] gs = ge.getScreenDevices();
     for (int i = 0; i < gs.length; i++) {

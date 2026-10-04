@@ -3,13 +3,9 @@ title: Java Swing Tutorial - Java FlowLayout(int align) Constructor
 nav: Java Swing Tutorial - Java...
 description: FlowLayout(int align) constructor from FlowLayout has the following syntax.
 section: Imported - java2s Archive
-order: 1015
+order: 1010
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/FlowLayout/0160__FlowLayout.FlowLayout_int_align_.htm
 ---
-```java title=Example.java
-Back to FlowLayout  ↑
-```
-
 ## Syntax
 
 FlowLayout(int align) constructor from FlowLayout has the following syntax.
@@ -30,8 +26,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-publicclass Main extends JFrame {
-  publicstaticvoid main(String[] args) {
+public class Main extends JFrame {
+  public static void main(String[] args) {
     Main ft = new Main();
     ft.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     ft.setSize(400, 300);
@@ -49,5 +45,3 @@ publicclass Main extends JFrame {
   }
 }
 ```
-
-- Back to FlowLayout ↑

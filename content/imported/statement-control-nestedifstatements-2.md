@@ -22,8 +22,6 @@ publicclass MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 a is not 0
 ```

@@ -3,8 +3,8 @@ title: Java Utililty Methods Array Covariance
 nav: Java Utililty Methods Arra...
 description: The list of methods to do Array Covariance are organized into topic(s).
 section: Imported - java2s Archive
-order: 50045
-source: https://www.java2s.com/example/java-utility-method/array-covariance-index-0.html
+order: 1015
+source: https://web.archive.org/web/2016/https://www.java2s.com/example/java-utility-method/array-covariance-index-0.html
 ---
 List of utility methods to do Array Covariance
 
@@ -28,7 +28,7 @@ doublecovariance(double[] a, double[] b) Calculates the covariance between the t
 ```java title=Example.java
 if (a.length != b.length) {
     System.err.println("Arrays are not of the same size!");
-    returnDouble.NaN;
+    return Double.NaN;
 double sumA = 0.0;
 double sumB = 0.0;
 double m_A = 0.0;
@@ -72,12 +72,12 @@ doublecovariance(final double[] xArray, final double[] yArray) Computes the cova
 
 ```java title=Example.java
 double result = 0d;
-finalint length = xArray.length;
-finaldouble xMean = mean(xArray);
-finaldouble yMean = mean(yArray);
+final int length = xArray.length;
+final double xMean = mean(xArray);
+final double yMean = mean(yArray);
 for (int i = 0; i < length; i++) {
-    finaldouble xDev = xArray[i] - xMean;
-    finaldouble yDev = yArray[i] - yMean;
+    final double xDev = xArray[i] - xMean;
+    final double yDev = yArray[i] - yMean;
     result += (xDev * yDev - result) / (i + 1);
 ...
 ```
@@ -85,13 +85,13 @@ for (int i = 0; i < length; i++) {
 double[][]covariance(final double[][] data) covariance
 
 ```java title=Example.java
-finalint len = data.length;
-finaldouble[] means = newdouble[len];
-finaldouble[][] ret = newdouble[len][len];
+final int len = data.length;
+final double[] means = new double[len];
+final double[][] ret = new double[len][len];
 for (int i = 0; i < len; i++) {
     means[i] = mean(data[i]);
     for (int j = 0; j <= i; j++) {
-        finaldouble d = sum(multiply(shift(data[i], -means[i]), shift(data[j], -means[j]))) / (len);
+        final double d = sum(multiply(shift(data[i], -means[i]), shift(data[j], -means[j]))) / (len);
         ret[i][j] = d;
 ...
 ```
@@ -100,10 +100,10 @@ doublecovariance(int[] v1, int[] v2) Computes the covariance.
 
 ```java title=Example.java
 if (v1.length != v2.length)
-    thrownewIllegalArgumentException(
+    throw new IllegalArgumentException(
             "Arrays must have the same length : " + v1.length + ", " + v2.length);
-finaldouble m1 = mean(v1);
-finaldouble m2 = mean(v2);
+final double m1 = mean(v1);
+final double m2 = mean(v2);
 double ans = 0.0;
 for (int i = 0; i < v1.length; i++)
     ans += (v1[i] - m1) * (v2[i] - m2);
@@ -118,9 +118,9 @@ int i;
 double xbar;
 double ybar;
 if (x.length != y.length)
-    thrownewIllegalArgumentException("Arrays differ in length: " + x.length + " != " + y.length);
+    throw new IllegalArgumentException("Arrays differ in length: " + x.length + " != " + y.length);
 if (x.length == 0)
-    thrownewIllegalArgumentException("0-length arrays provided!");
+    throw new IllegalArgumentException("0-length arrays provided!");
 ...
 ```
 

@@ -18,9 +18,7 @@ The formula for the conversion is as follows:
 
 ```java title=Example.java
 fahrenheit = (9 / 5) * celsius + 32
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Scanner;
 publicclass Main {
   publicstaticvoid main(String[] Strings) {
@@ -30,9 +28,7 @@ publicclass Main {
     //your code hereSystem.out.println(celsius + " degree Celsius is equal to " + fahrenheit + " in Fahrenheit");
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Scanner;
 publicclass Main {
   publicstaticvoid main(String[] Strings) {

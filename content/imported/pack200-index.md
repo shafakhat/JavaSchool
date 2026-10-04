@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50317
 source: https://www.java2s.com/Tutorials/Java/java.util.jar/Pack200/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Pack200.newPacker()

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50381
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/0030__Java_Regex_Pattern.html
 ---
-```java title=Example.java
-```
-
 The package java.util.regex contains three classes to support the full version of regular expressions.
 
 - Pattern

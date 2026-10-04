@@ -3,12 +3,9 @@ title: Java Tutorial - Java Nested Class
 nav: Java Tutorial - Java Neste...
 description: Classes that are declared outside of any class are top-level classes. Nested classes are classes declared as members of other classes or scopes.
 section: Imported - java2s Archive
-order: 50444
-source: https://www.java2s.com/Tutorials/Java/Java_Language/5060__Java_Nested_Class.html
+order: 1008
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Language/5060__Java_Nested_Class.html
 ---
-```java title=Example.java
-```
-
 Classes that are declared outside of any class are top-level classes. Nested classes are classes declared as members of other classes or scopes.
 
 There are four kinds of nested classes:
@@ -27,10 +24,10 @@ An anonymous class instance can only access local final variables and final para
 How to define an anonymous class?
 
 ```java title=Example.java
-abstractclass People {
-  abstractvoid speak();
-}publicclass Main {
-  publicstaticvoid main(final String[] args) {
+abstract class People {
+  abstract void speak();
+}public class Main {
+  public static void main(final String[] args) {
     new People() {
       String msg = "test";
       @Override
@@ -50,13 +47,13 @@ The following code declares and instantiates an anonymous class that implements 
 
 ```java title=Example.java
 interface People {
-  abstractvoid speak();
-}publicclass Main {
-  publicstaticvoid main(final String[] args) {
+  abstract void speak();
+}public class Main {
+  public static void main(final String[] args) {
     new People() {
       String msg = (args.length == 1) ? args[0] : "nothing to say";
       @Override
-      publicvoid speak() {
+      public void speak() {
         System.out.println(msg);
       }
     }.speak();
@@ -75,8 +72,8 @@ A local class has a name and can be reused. A local class instance can access th
 Java Local Class
 
 ```java title=Example.java
-class MyClass {void myMethod(finalint x) {
-    finalint y = x;
+class MyClass { void myMethod(final int x) {
+    final int y = x;
     class LocalClass {
       int a = x;
       int b = y;
@@ -86,8 +83,8 @@ class MyClass {void myMethod(finalint x) {
     System.out.println(lc.b);
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     MyClass ec = new MyClass();
     ec.myMethod(10);
   }
@@ -117,7 +114,7 @@ interface Iterator {
 }
 class ItemManager {
   private Item[] itemArray;
-  privateint index = 0;
+  private int index = 0;
   ItemManager(int size) {
     itemArray = new Item[size];
   }
@@ -125,7 +122,7 @@ class ItemManager {
     class Iter implements Iterator {
       int index = 0;
       @Override
-      publicboolean hasMoreElements() {
+      public boolean hasMoreElements() {
         return index < itemArray.length;
       }
       @Override
@@ -133,14 +130,14 @@ class ItemManager {
         return itemArray[index++];
       }
     }
-    returnnew Iter();
+    return new Iter();
   }
   void add(Item item) {
     itemArray[index++] = item;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     ItemManager itemManager = new ItemManager(5);
     itemManager.add(new Item("#1", "A"));
     itemManager.add(new Item("#2", "B"));
@@ -165,8 +162,8 @@ The following code has one outer class named EnclosingClass and a nonstatic memb
 
 ```java title=Example.java
 class EnclosingClass {
-  privateint outerVariable;
-privatevoid privateOuterMethod() {
+  private int outerVariable;
+ private void privateOuterMethod() {
     System.out.println(outerVariable);
   }
   class EnclosedClass {
@@ -176,8 +173,8 @@ privatevoid privateOuterMethod() {
     }
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     EnclosingClass ec = new EnclosingClass();
     ec.new EnclosedClass().accessEnclosingClass(); // Output: 1
   }
@@ -191,7 +188,7 @@ The code above generates the following result.
 The following code uses inner class ItemList to store the items.
 
 ```java title=Example.java
-class Item {private String name;
+class Item { private String name;
   private String desc;
   Item(String name, String desc) {
     this.name = name;
@@ -205,12 +202,12 @@ class Item {private String name;
   }
   @Override
   public String toString() {
-    return"Name = " + getName() + ", Desc = " + getDesc();
+    return "Name = " + getName() + ", Desc = " + getDesc();
   }
 }
 class ItemManager {
   private ItemList itemList;
-  privateint index = 0;
+  private int index = 0;
   ItemManager() {
     itemList = new ItemList(2);
   }
@@ -223,9 +220,9 @@ class ItemManager {
   void add(Item item) {
     itemList.add(item);
   }
-  privateclass ItemList {
+  private class ItemList {
     private Item[] itemArray;
-    privateint index = 0;
+    private int index = 0;
     ItemList(int initSize) {
       itemArray = new Item[initSize];
     }
@@ -246,8 +243,8 @@ class ItemManager {
     }
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     ItemManager itemManager = new ItemManager();
     itemManager.add(new Item("1", "A"));
     itemManager.add(new Item("2", "B"));
@@ -265,7 +262,7 @@ The code above generates the following result.
 The following program illustrates how to define and use an inner class.
 
 ```java title=Example.java
-class Outer {int outer_x = 100;
+ class Outer {int outer_x = 100;
   void test() {
     Inner inner = new Inner();
     inner.display();
@@ -276,8 +273,8 @@ class Outer {int outer_x = 100;
     }
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Outer outer = new Outer();
     outer.test();
   }
@@ -291,12 +288,12 @@ Output from this application is shown here:
 The inner class members are accessible only within the inner class and may not be used by the outer class. If you try to compile the following code, you will get error message.
 
 ```java title=Example.java
-publicclass Main {
+ public class Main {
   int outer_x = 100;
   // this is an inner class
-class Inner {
+ class Inner {
     int y = 10; // y is local to Inner
-void display() {
+ void display() {
       System.out.println("display: outer_x = " + outer_x);
     }
   }
@@ -317,22 +314,22 @@ A static member can access the enclosing class's static fields and invoke its st
 The following code has a static member class declaration.
 
 ```java title=Example.java
-class Demo {publicstaticvoid main(String[] args) {
+class Demo {public static void main(String[] args) {
     Main.EnclosedClass.accessEnclosingClass();
     Main.EnclosedClass ec = new Main.EnclosedClass();
     ec.accessEnclosingClass2();
   }
 }
 class Main {
-  privatestaticint outerVariable;
-  privatestaticvoid privateStaticOuterMethod() {
+  private static int outerVariable;
+  private static void privateStaticOuterMethod() {
     System.out.println(outerVariable);
   }
-  staticvoid staticOuterMethod() {
+  static void staticOuterMethod() {
     EnclosedClass.accessEnclosingClass();
   }
-  staticclass EnclosedClass {
-    staticvoid accessEnclosingClass() {
+  static class EnclosedClass {
+    static void accessEnclosingClass() {
       outerVariable = 1;
       privateStaticOuterMethod();
     }
@@ -350,13 +347,13 @@ The static member classes can declare multiple implementations of their enclosin
 The following code declares a Rectangle class and it uses static member class to provide Rectangle implementation for different data types, one is for double type and another is for float type.
 
 ```java title=Example.java
-abstractclass Rectangle {
-  abstractdouble getX();
-abstractdouble getY();
-  abstractdouble getWidth();
-  abstractdouble getHeight();
-  staticclass Double extends Rectangle {
-    privatedouble x, y, width, height;
+abstract class Rectangle {
+  abstract double getX();
+abstract double getY();
+  abstract double getWidth();
+  abstract double getHeight();
+  static class Double extends Rectangle {
+    private double x, y, width, height;
     Double(double x, double y, double width, double height) {
       this.x = x;
       this.y = y;
@@ -376,8 +373,8 @@ abstractdouble getY();
       return height;
     }
   }
-  staticclass Float extends Rectangle {
-    privatefloat x, y, width, height;
+  static class Float extends Rectangle {
+    private float x, y, width, height;
     Float(float x, float y, float width, float height) {
       this.x = x;
       this.y = y;
@@ -403,8 +400,8 @@ abstractdouble getY();
     return (x >= getX() && x < getX() + getWidth()) && (y >= getY() && y < getY() + getHeight());
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Rectangle r = new Rectangle.Double(10.0, 10.0, 20.0, 30.0);
     r = new Rectangle.Float(10.0f, 10.0f, 20.0f, 30.0f);
   }

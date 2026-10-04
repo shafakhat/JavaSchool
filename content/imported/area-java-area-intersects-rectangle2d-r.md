@@ -3,7 +3,7 @@ title: Java Tutorial - Java Area.intersects(Rectangle2D r)
 nav: Java Tutorial - Java Area....
 description: In the following code shows how to use Area.intersects(Rectangle2D r) method.
 section: Imported - java2s Archive
-order: 1002
+order: 1012
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/Java_Area_intersects_Rectangle2D_r_.htm
 ---
 ### Syntax
@@ -11,7 +11,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/ja
 Area.intersects(Rectangle2D r) has the following syntax.
 
 ```java title=Example.java
-publicboolean intersects(Rectangle2D r)
+public boolean intersects(Rectangle2D r)
 ```
 
 ### Example
@@ -27,8 +27,8 @@ import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     Ellipse2D e1 = new Ellipse2D.Double (20.0, 20.0, 80.0, 70.0);
     Ellipse2D e2 = new Ellipse2D.Double (20.0, 70.0, 40.0, 40.0);
@@ -40,7 +40,7 @@ publicclass Main extends JPanel {
     g2.setColor (Color.black);
     g2.drawString ("intersect", 20, 140);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.getContentPane().add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

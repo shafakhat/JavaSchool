@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 1038
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/GradientPaint/index.htm
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java GradientPaint(float x1, float y1, Color color1, float x2, float y2, Color color2) Constructor

@@ -33,9 +33,7 @@ publicclass Main {
     //your code here// Display resultSystem.out.println("After the sixth month, the account value is " + total);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Scanner;
 publicclass Main {
   publicstaticvoid main(String[] args) {

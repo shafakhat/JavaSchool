@@ -3,12 +3,9 @@ title: Java Reflection - Java Constructor Reflection
 nav: Java Reflection - Java Con...
 description: The following four methods from the Class class get information about the constructors:
 section: Imported - java2s Archive
-order: 50406
-source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0060__Java_Constructor_Reflection.html
+order: 1006
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Reflection/0060__Java_Constructor_Reflection.html
 ---
-```java title=Example.java
-```
-
 The following four methods from the Class class get information about the constructors:
 
 ```java title=Example.java
@@ -40,12 +37,12 @@ class MyClass<T> {
   }
   public MyClass(T t) {
   }
-  publicint getInt(String a) {
+  public int getInt(String a) {
     return 0;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Class<MyClass> c = MyClass.class;
     System.out.println("Constructors for " + c.getName());
     Constructor[] constructors = c.getConstructors();
@@ -54,7 +51,7 @@ publicclass Main {
       System.out.println(desc);
     }
   }
-  publicstatic ArrayList<String> getConstructorsDesciption(
+  public static ArrayList<String> getConstructorsDesciption(
       Constructor[] constructors) {
     ArrayList<String> constructorList = new ArrayList<>();
     for (Constructor constructor : constructors) {
@@ -65,7 +62,7 @@ publicclass Main {
     }
     return constructorList;
   }
-  publicstatic ArrayList<String> getParameters(Executable exec) {
+  public static ArrayList<String> getParameters(Executable exec) {
     Parameter[] parms = exec.getParameters();
     ArrayList<String> parmList = new ArrayList<>();
     for (int i = 0; i < parms.length; i++) {
@@ -81,18 +78,18 @@ publicclass Main {
     }
     return parmList;
   }
-  publicstatic ArrayList<String> getExceptionList(Executable exec) {
+  public static ArrayList<String> getExceptionList(Executable exec) {
     ArrayList<String> exceptionList = new ArrayList<>();
     for (Class<?> c : exec.getExceptionTypes()) {
       exceptionList.add(c.getSimpleName());
     }
     return exceptionList;
   }
-  publicstatic String getModifiers(Executable exec) {
+  public static String getModifiers(Executable exec) {
     int mod = exec.getModifiers();
     if (exec instanceof Method) {
       mod = mod & Modifier.methodModifiers();
-    } elseif (exec instanceof Constructor) {
+    } else if (exec instanceof Constructor) {
       mod = mod & Modifier.constructorModifiers();
     }
     return Modifier.toString(mod);

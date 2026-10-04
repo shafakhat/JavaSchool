@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50210
 source: https://www.java2s.com/Tutorials/Java/Java_io/0400__Java_io_Object_Serialization.html
 ---
-```java title=Example.java
-```
-
 An object of the ObjectOutputStream class is used to serialize an object.
 
 An object of the ObjectInputStream class is used to deserialize an object.

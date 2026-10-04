@@ -50,9 +50,7 @@ public class MainClass {
   static B t2 = new B();
   static C t3 = new C();
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Bowl(1)
 Bowl(2)
 Table()

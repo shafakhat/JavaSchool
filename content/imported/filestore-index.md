@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50295
 source: https://www.java2s.com/Tutorials/Java/java.nio.file/FileStore/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java FileStore.getAttribute(String attribute)

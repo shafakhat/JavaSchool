@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Cursor/0060__Cursor.CUSTOM_CURSOR.htm
 ---
-```java title=Example.java
-Back to Cursor  ↑
-```
-
 ## Syntax
 
 Cursor.CUSTOM_CURSOR has the following syntax.
@@ -35,5 +31,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to Cursor ↑

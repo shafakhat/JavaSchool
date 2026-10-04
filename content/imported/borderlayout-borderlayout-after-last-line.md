@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/0040__BorderLayout.AFTER_LAST_LINE.htm
 ---
-```java title=Example.java
-Back to BorderLayout  ↑
-```
-
 ## Syntax
 
 BorderLayout.AFTER_LAST_LINE has the following syntax.
@@ -45,5 +41,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to BorderLayout ↑

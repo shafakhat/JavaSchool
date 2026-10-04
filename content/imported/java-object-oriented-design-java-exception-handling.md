@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50173
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0380__Java_Exception_Handling.html
 ---
-```java title=Example.java
-```
-
 An exception is a condition that may arise during the execution of a Java program when a normal path of execution is not defined.
 
 Java handles errors by separating the code that performs actions from the code that handles errors.

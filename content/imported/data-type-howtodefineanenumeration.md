@@ -25,9 +25,7 @@ public class MainClass {
     System.out.println("Yesterday was " + yesterday);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Today is Friday
 Tomorrow will be Saturday
 Yesterday was Thursday

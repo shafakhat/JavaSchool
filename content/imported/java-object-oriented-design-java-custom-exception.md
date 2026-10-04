@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50176
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0410__Java_Custom_Exception.html
 ---
-```java title=Example.java
-```
-
 We can create our own exception classes.
 
 They must extend an existing exception class.
@@ -16,9 +13,7 @@ They must extend an existing exception class.
 ```java title=Example.java
 <Class Modifiers> class <Class Name> extends <Exception Class Name> {
 }
-```
-
-```java title=Example.java
+java title=Example.java
 <Class Name> is the exception class name.
 ```
 

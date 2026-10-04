@@ -18,9 +18,7 @@ publicclass Main {
     System.out.println(d);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 0.0
 ```
 

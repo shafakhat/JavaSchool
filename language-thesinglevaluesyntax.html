@@ -37,15 +37,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-01-language.html">Language</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-01-language.html">Language</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-01-13-annotations-types.html">Annotations Types</a></nav>
     <h1>The single-value syntax</h1>
 <p>Using the single-value syntax when applying an annotation that has other members, if other members all have default values.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@interface SomeAnno {
   int value();
   int xyz() default 0;
 }
-@SomeAnno(88)</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.annotation.Annotation;
+@SomeAnno(88)
+java title=Example.java
+import java.lang.annotation.Annotation;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.reflect.Method;
@@ -55,12 +56,12 @@ import java.lang.reflect.Method;
   int defaultValue() default 100;
 }
 @MyAnnotation(102)
-publicclass MainClass {
+public class MainClass {
   // Annotate a method.
   @MyAnnotation(101)
-  publicstaticvoid myMethod() {
+  public static void myMethod() {
   }
-  publicstaticvoid main(String[] arg) {
+  public static void main(String[] arg) {
     try {
       MainClass ob = new MainClass();
       Method m = ob.getClass( ).getMethod("myMethod");
@@ -71,10 +72,11 @@ publicclass MainClass {
     } catch (Exception exc) {
     }
   }
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">All annotations for myMeth:
+}
+java title=Example.java
+All annotations for myMeth:
 @MyAnnotation(defaultValue=100, value=101)</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="language-thenative2asciitool.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">The native2ascii Tool</span></a><a class="pager-btn pager-next" href="language-thesyntaxtousethejavactool.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">The syntax to use the java...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="language-signjarwiththecertificatenamedaliasinthekeystore.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Sign jar with the certific...</span></a><a class="pager-btn pager-next" href="generics-useawildcard.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Use a wildcard.</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

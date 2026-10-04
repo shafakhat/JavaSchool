@@ -37,7 +37,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-11-float.html">Float</a></nav>
     <h1>Compares two floats for order.</h1>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -56,8 +56,7 @@ import java.math.BigInteger;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-/**
+ *//**
  * Provides extra functionality for Java Number classes.
  *
  * @author &lt;a href="mailto:rand_mcneely@yahoo.com"&gt;Rand McNeely&lt;/a&gt;
@@ -68,8 +67,7 @@ import java.math.BigInteger;
  * @since 1.0
  * @version $Id: NumberUtils.java 488819 2006-12-19 21:50:04Z bayard $
  *
- */
-public class Main {
+ */public class Main {
   /**
    *
    * This method is more comprehensive than the standard Java greater than,
@@ -100,8 +98,7 @@ public class Main {
    * @param rhs  the second &lt;code&gt;float&lt;/code&gt;
    * @return &lt;code&gt;-1&lt;/code&gt; if lhs is less, &lt;code&gt;+1&lt;/code&gt; if greater,
    *  &lt;code&gt;0&lt;/code&gt; if equal to rhs
-   */
-  public static int compare(float lhs, float rhs) {
+   */ public static int compare(float lhs, float rhs) {
       if (lhs &lt; rhs) {
           return -1;
       }
@@ -109,28 +106,28 @@ public class Main {
           return +1;
       }
       //Need to compare bits to handle 0.0 == -0.0 being true
-      // compare should put -0.0 &lt; +0.0
-      // Two NaNs are also == for compare purposes
-      // where NaN == NaN is false
-      int lhsBits = Float.floatToIntBits(lhs);
+ // compare should put -0.0 &lt; +0.0
+ // Two NaNs are also == for compare purposes
+ // where NaN == NaN is false
+ int lhsBits = Float.floatToIntBits(lhs);
       int rhsBits = Float.floatToIntBits(rhs);
       if (lhsBits == rhsBits) {
           return 0;
       }
       //Something exotic! A comparison to NaN or 0.0 vs -0.0
-      //Fortunately NaN's int is &gt; than everything else
-      //Also negzeros bits &lt; poszero
-      //NAN: 2143289344
-      //MAX: 2139095039
-      //NEGZERO: -2147483648
-      if (lhsBits &lt; rhsBits) {
+ //Fortunately NaN's int is &gt; than everything else
+ //Also negzeros bits &lt; poszero
+ //NAN: 2143289344
+ //MAX: 2139095039
+ //NEGZERO: -2147483648
+ if (lhsBits &lt; rhsBits) {
           return -1;
       } else {
           return +1;
       }
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="swing-components-cellbordertableexample.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Cell Border Table Example</span></a><a class="pager-btn pager-next" href="servlets-cookieutilities.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Cookie Utilities</span></a></div>
+    <div class="pager"><a class="pager-btn" href="hibernate-collectionmappingmapkeyandvaluearebothobjects.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Collection Mapping</span></a><a class="pager-btn pager-next" href="data-type-comparingtwostrings-2.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Comparing Two Strings</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

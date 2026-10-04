@@ -33,9 +33,7 @@ public class MainClass {
     System.out.println("exit");
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 0
 1
 2

@@ -3,12 +3,12 @@ title: Compute distance light travels using long variables
 nav: Compute distance light tra...
 description: Imported from the java2s.com archive: Compute distance light travels using long variables
 section: Imported - java2s Archive
-order: 1016
+order: 1017
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Computedistancelighttravelsusinglongvariables.htm
 ---
 ```java title=Example.java
-publicclass MainClass {
-  publicstaticvoid main(String args[]) {
+public class MainClass {
+  public static void main(String args[]) {
     int lightspeed;
     long days;
     long seconds;
@@ -23,8 +23,6 @@ publicclass MainClass {
     System.out.println(distance + " miles.");
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 In 1000 days light will travel about 16070400000000 miles
 ```

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50380
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/0020__Java_Regex_Character_Classes.html
 ---
-```java title=Example.java
-```
-
 Metacharacters are characters with special meanings in Java regular expression.
 
 The metacharacters supported by the regular expressions in Java are as follows:

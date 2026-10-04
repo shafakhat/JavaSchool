@@ -14,8 +14,6 @@ public class MainClass {
     System.out.println(proverb);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 ABCDE
 ```

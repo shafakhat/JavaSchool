@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50115
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0040__Java_Builder_Pattern.html
 ---
-```java title=Example.java
-```
-
 Builder pattern is used to create a complex object using simple objects. It creates the bigger object step by step from small and simple object.
 
 Builder pattern is another creational pattern.

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20160730055245/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Random/Make_a_rock_paper_scissor_game.htm
 ---
-```java title=Example.java
-Back to Random  ↑
-```
-
 ## Question
 
 We would like to know how to make a rock paper scissor game.
@@ -55,7 +51,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-```java title=Example.java
-Back to Random  ↑
-```

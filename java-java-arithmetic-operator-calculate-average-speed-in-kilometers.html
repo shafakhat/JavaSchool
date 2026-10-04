@@ -37,20 +37,21 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Java Arithmetic Operator calculate average speed in kilometers</h1>
 <h2 id="question">Question</h2>
 <p>Assume a runner runs 24 miles in 1 hour, 40 ?minutes, and 35 seconds.</p>
 <p>We would like to write a program that displays the average speed in kilometers per hour.</p>
 <p>1 mile is 1.6 kilometers.</p>
 <p>Code structure you can use:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] agrs) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] agrs) {
        //your code here
   }
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] agrs) {
+}
+java title=Example.java
+public class Main {
+  public static void main(String[] agrs) {
     System.out.println("Miles / (hour + (minutes / 60) + (seconds / 3600)) * 1.6");
     System.out.println("24    / (1    + (40      / 60) + (35      / 3600))  * 1.6");
     System.out.println((24 / (1 + (40 / 60.0) + (35 / 3600.0))) * 1.6);
@@ -58,20 +59,20 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 }</code></pre></div>
 <h2 id="note">Note</h2>
 <p>The following code creates method to clear the calculation steps.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] args) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] args) {
     System.out.println("kph: " + mphToKph(milesPerHour(24, 100.58)));
-  }privatestaticdouble milesPerHour(double miles, double minutes) {
+  }private static double milesPerHour(double miles, double minutes) {
     return 60.0 * (miles / minutes);
   }
-  privatestaticdouble mphToKph(double mph) {
+  private static double mphToKph(double mph) {
     return mph * 1.6;
   }
 }</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
 <ul><li>Java Arithmetic Operator calculate area and perimeter of a circle</li><li>Java Arithmetic Operator calculate area and perimeter of a rectangle</li><li>Java Arithmetic Operator calculate area of a triangle</li><li>Java Arithmetic Operator calculate average speed in miles</li><li>Java Arithmetic Operator calculate circle area</li></ul>
-    <div class="pager"><a class="pager-btn" href="jpa-inheritanceresultmapping.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Inheritance Result Mapping</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1072.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="math-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms How to - J...</span></a><a class="pager-btn pager-next" href="java-io-java-io-zip-file.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java ZI...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

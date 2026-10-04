@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1039
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics/0600__Graphics.fillOval_int_x_int_y_int_width_int_height_.htm
 ---
-```java title=Example.java
-Back to Graphics  ↑
-```
-
 ## Syntax
 
 Graphics.fillOval(int x, int y, int width, int height) has the following syntax.
@@ -40,5 +36,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Graphics ↑

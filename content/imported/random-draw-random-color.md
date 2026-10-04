@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1026
 source: https://web.archive.org/web/20160730055224/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Random/Draw_random_color.htm
 ---
-```java title=Example.java
-Back to Random  ↑
-```
-
 ## Question
 
 We would like to know how to draw random color.
@@ -85,8 +81,5 @@ publicclass Main extends JFrame {
     new Main();
   }
 }
-```
-
-```java title=Example.java
-Back to Random  ↑
+java title=Example.java
 ```

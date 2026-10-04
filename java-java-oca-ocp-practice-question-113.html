@@ -49,8 +49,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 B.  (new MyThread()).run();
 C.  (new MyRunnable()).run();
 D.  (newThread(new MyRunnable()))
-E.   .start();</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">A, D.</code></pre></div>
+E.   .start();
+java title=Example.java
+A, D.</code></pre></div>
 <h2 id="note">Note</h2>
 <p>A is correct because the start() method of Thread causes a thread to begin execution of the thread object's run() method.</p>
 <p>Calling run() directly as in B and C just causes the run() method to execute in the current thread.</p>

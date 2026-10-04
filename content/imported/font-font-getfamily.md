@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1028
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Font/0960__Font.getFamily_.htm
 ---
-```java title=Example.java
-Back to Font  ↑
-```
-
 ## Syntax
 
 Font.getFamily() has the following syntax.
@@ -39,5 +35,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-- Back to Font ↑

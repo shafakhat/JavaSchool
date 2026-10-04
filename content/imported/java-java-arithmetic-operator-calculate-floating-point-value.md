@@ -3,22 +3,20 @@ title: Java Arithmetic Operator calculate floating point value
 nav: Java Arithmetic Operator c...
 description: When floating point type is involved in calculation we cannot get exact result.
 section: Imported - java2s Archive
-order: 1061
-source: https://web.archive.org/web/20210102113215/http://www.java2s.com/ref/java/java-arithmetic-operator-calculate-floating-point-value.html
+order: 1017
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-arithmetic-operator-calculate-floating-point-value.html
 ---
 ## Question
 
 What is the output of the following code?
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     System.out.println((10.5 + 2 * 3) / (45 - 3.5));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 0.39759036144578314
 ```
 

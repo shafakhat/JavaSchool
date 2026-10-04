@@ -29,15 +29,15 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-bigdecimal-biginteger.html">BigDecimal BigInteger</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-bigdecimal-biginteger.html">BigDecimal BigInteger</a></nav>
     <h1>How to create Java BigInteger</h1>
 <p>In this chapter you will learn:</p>
 <ul><li>How to create BigInteger from byte array</li><li>How to create BigInteger from String</li><li>How to use different radix to create BigInteger from String</li><li>How to create BigInteger with random number</li></ul>
@@ -45,12 +45,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>BigInteger(byte[] val) Translates a byte array containing the two's-complement binary representation of a BigInteger into a BigInteger.</p>
 <p>The following code use new BigInteger(byte[] val) to create a BigInteger.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
+public class Main {
+  public static void main(String[] argv) throws Exception {
     // A negative value
-byte[] bytes = newbyte[] { (byte) 0xFF, 0x00, 0x00 }; // -65536
-// A positive value
-    bytes = newbyte[] { 0x1, 0x00, 0x00 }; // 65536
+ byte[] bytes = new byte[] { (byte) 0xFF, 0x00, 0x00 }; // -65536
+ // A positive value
+    bytes = new byte[] { 0x1, 0x00, 0x00 }; // 65536
     BigInteger bi = new BigInteger(bytes);
   }
 }</code></pre></div>
@@ -58,8 +58,8 @@ byte[] bytes = newbyte[] { (byte) 0xFF, 0x00, 0x00 }; // -65536
 <p>BigInteger(String val) translates the decimal String representation of a BigInteger into a BigInteger.</p>
 <p>The following code use new BigInteger(String val)to create a BigInteger.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass MainClass {
-  publicstaticvoid main(String[] args) {
+public class MainClass {
+  public static void main(String[] args) {
     System.out.println("Here's Long.MAX_VALUE: " + Long.MAX_VALUE);
     BigInteger bInt = new BigInteger("3419229223372036854775807");
     System.out.println("Here's a bigger number: " + bInt);
@@ -71,8 +71,8 @@ publicclass MainClass {
 <p>BigInteger(String val, int radix) translates the String representation of a BigInteger in the specified radix into a BigInteger.</p>
 <p>You can set the radix for the string value passed in with new BigInteger(String val, int radix).</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
+public class Main {
+  public static void main(String[] argv) throws Exception {
     BigInteger bi = new BigInteger("4407760", 8);
   }
 }</code></pre></div>
@@ -80,8 +80,8 @@ publicclass Main {
 <p>new BigInteger(int bitLength, int certainty, Random rnd) creates a BigInteger with a random number</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
 import java.security.SecureRandom;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     int bitLength = 512; // 512 bits
     SecureRandom rnd = new SecureRandom();
     int certainty = 90; // 1 - 1/2(90) certainty
@@ -95,7 +95,7 @@ publicclass Main {
 <p>BigDecimal BigDecimal constants BigDecimal Rounding mode BigDecimal creation BigDecimal calculation BigDecimal convert BigDecimal Comparison BigDecimal to String BigDecimal decimal point BigDecimal precision BigDecimal format</p>
 <h4 id="biginteger">BigInteger</h4>
 <p>BigInteger class BigInteger creation BigInteger add, subtract, multiply and divide BigInteger power and modPow BigInteger conversion BigInteger to String BigInteger bit and,or,xor,test,flip,negate BigInteger bit shift left and right BigInteger prime value BigDecimal BigDecimal constants BigDecimal Rounding mode BigDecimal creation BigDecimal calculation BigDecimal convert BigDecimal Comparison BigDecimal to String BigDecimal decimal point BigDecimal precision BigDecimal format</p>
-    <div class="pager"><a class="pager-btn" href="regular-expressions-greedyoperatordescription.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Greedy Operator Description</span></a><a class="pager-btn pager-next" href="apache-common-httpclientsimpledemo.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Http Client Simple Demo</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-getsahexstringfrombytearray.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Gets a hex string from byt...</span></a><a class="pager-btn pager-next" href="algorithms-how-to-implement-insertion-sort-in-java.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">How to implement Insertion...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

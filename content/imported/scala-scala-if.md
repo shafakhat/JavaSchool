@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50091
 source: https://www.java2s.com/Tutorials/Java/Scala/0220__Scala_If.html
 ---
-```java title=Example.java
-```
-
 The result of if expressions in Scala is always Unit.
 
 The result of if/else is based on the type of each part of the expression.

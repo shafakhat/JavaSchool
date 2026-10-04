@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50114
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0030__Java_Singleton_Pattern.html
 ---
-```java title=Example.java
-```
-
 Singleton pattern is a creational pattern.
 
 This pattern involves only a single class which is responsible to creates its own object.

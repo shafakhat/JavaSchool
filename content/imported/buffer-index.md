@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50306
 source: https://www.java2s.com/Tutorials/Java/java.nio/Buffer/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Buffer.array()

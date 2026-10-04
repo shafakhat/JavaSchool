@@ -48,14 +48,14 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>Variables hold the state of the program, and methods operate on that state.</p>
 <h2 id="example">Example</h2>
 <p>The simplest Java class you can write looks like this:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Animal {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Animal {
 }</code></pre></div>
 <p>Java defines special words in code as keyword.</p>
 <p>The public keyword means the class can be used by other classes.</p>
 <p>The class keyword indicates you're defining a class.</p>
 <p>Animal gives the name of the class.</p>
 <p>The following code adds field to the class:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Animal {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Animal {
     String name;
 }</code></pre></div>
 <p>In the code above we defined a variable named name.</p>
@@ -63,7 +63,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A String is a value to store characters, such as "this is a string".</p>
 <p>String is a class from Java language.</p>
 <p>The following code adds methods to the class:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Animal {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Animal {
      String name;
      public String getName() {
            return name;
@@ -114,7 +114,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>You can put two classes in the same file.</p>
 <p>When putting two classes in one file, at most one of the classes in the file can be public.</p>
 <p>That means a file containing the following is also fine:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Animal {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Animal {
    private String name;
 }
 class Animal2 {
@@ -124,8 +124,8 @@ class Animal2 {
 <h2 id="main-method">main() Method</h2>
 <p>A Java program begins execution with its main() method.</p>
 <p>The following code defines a class with a main() method:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstatic void main(String[] args) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] args) {
   }
 }</code></pre></div>
 <p>To compile and execute this code, type it into a file called Main.java and execute the following:</p>
@@ -138,8 +138,8 @@ $ java Main</code></pre></div>
 <p>We must omit the .class extension to run Main.java because the period has a reserved meaning in the JVM.</p>
 <p>The following code shows how to use the args parameter.</p>
 <p>First we modify the Main program to print out the first two arguments passed in:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstatic void main(String[] args) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] args) {
      System.out.println(args[0]);
      System.out.println(args[1]);
   }
@@ -173,7 +173,7 @@ $ java Main First</code></pre></div>
 Exception in thread "main"
 java.lang.ArrayIndexOutOfBoundsException: 1
        at mainmethod.Main.main(Main.java:4)</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="java-utility-method-java-utility-method.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utility Methods</span></a><a class="pager-btn pager-next" href="scala-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Scala Tutorial - Scala Fir...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="tiny-application-mdibasedwebbrowser.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">MDI based web browser</span></a><a class="pager-btn pager-next" href="data-type-sizeforjavasprimitivetypes.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Size for Java's Primitive ...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20150410121030/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Parser/Create_a_Bracket_Checker_to_check_the_pair_of_Bracket.htm
 ---
-```java title=Example.java
-Back to Parser  ↑
-```
-
 ## Question
 
 We would like to know how to create a Bracket Checker to check the pair of Bracket.
@@ -82,8 +78,5 @@ class Stack {
     return (top == -1);
   }
 }
-```
-
-```java title=Example.java
-Back to Parser  ↑
+java title=Example.java
 ```

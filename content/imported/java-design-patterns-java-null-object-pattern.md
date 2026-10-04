@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50131
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0220__Java_Null_Object_Pattern.html
 ---
-```java title=Example.java
-```
-
 In Null Object pattern, a business-meaningless object is created incase of null object.
 
 We use the business-meaningless object to replace the null pointer check.

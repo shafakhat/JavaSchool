@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/0500__Area.subtract_Area_rhs_.htm
 ---
-```java title=Example.java
-Back to Area  ↑
-```
-
 ## Syntax
 
 Area.subtract(Area rhs) has the following syntax.
@@ -52,5 +48,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Area ↑

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50251
 source: https://www.java2s.com/Tutorials/Java/java.io/File/index.html
 ---
-```java title=Example.java
-```
-
 ## Field
 
 - Java File pathSeparator

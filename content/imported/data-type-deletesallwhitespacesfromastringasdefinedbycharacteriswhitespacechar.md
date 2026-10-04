@@ -3,7 +3,7 @@ title: Deletes all whitespaces from a String as defined by Character.isWhitespac
 nav: Deletes all whitespaces fr...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1014
+order: 1025
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/DeletesallwhitespacesfromaStringasdefinedbyCharacterisWhitespacechar.htm
 ---
 ```java title=Example.java
@@ -22,7 +22,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */publicclass Main {
+ */public class Main {
   /**
    * Deletes all whitespaces from a String as defined by
    * {@link Character#isWhitespace(char)}.
@@ -36,12 +36,12 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param str  the String to delete whitespace from, may be null
    * @return the String without whitespaces, <code>null</code> if null String input
-   */publicstatic String deleteWhitespace(String str) {
+   */ public static String deleteWhitespace(String str) {
       if (isEmpty(str)) {
           return str;
       }
       int sz = str.length();
-      char[] chs = newchar[sz];
+      char[] chs = new char[sz];
       int count = 0;
       for (int i = 0; i < sz; i++) {
           if (!Character.isWhitespace(str.charAt(i))) {
@@ -51,11 +51,11 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
       if (count == sz) {
           return str;
       }
-      returnnew String(chs, 0, count);
+      return new String(chs, 0, count);
   }
   // Empty checks
-//-----------------------------------------------------------------------
-/**
+ //-----------------------------------------------------------------------
+ /**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -72,7 +72,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */publicstaticboolean isEmpty(String str) {
+   */ public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }

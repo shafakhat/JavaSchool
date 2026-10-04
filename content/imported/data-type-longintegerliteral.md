@@ -15,8 +15,6 @@ publicclass MainClass {
      System.out.println(longValue);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 123456789
 ```

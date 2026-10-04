@@ -3,12 +3,9 @@ title: Java Object Oriented Design - Java Class Instance
 nav: Java Object Oriented Desig...
 description: The following is the general syntax to create an instance of a class:
 section: Imported - java2s Archive
-order: 50137
-source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0010__Java_Class_Instance.html
+order: 1016
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0010__Java_Class_Instance.html
 ---
-```java title=Example.java
-```
-
 The following is the general syntax to create an instance of a class:
 
 ```java title=Example.java
@@ -124,12 +121,12 @@ long count = Dog.count;
 The following code shows how to use class fields
 
 ```java title=Example.java
-class Dog {staticint count = 0;
+class Dog {static int count = 0;
   String name;
   String gender;
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Dog obj = new Dog();
     // Increase count by one
     Dog.count++;
@@ -152,7 +149,7 @@ A numeric field (byte, short, char, int, long, float, and double) is initialized
 The following code demonstrates the default initialization of fields.
 
 ```java title=Example.java
-publicclass Main {
+public class Main {
   byte b;short s;
   int i;
   long l;
@@ -160,7 +157,7 @@ publicclass Main {
   double d;
   boolean bool;
   String str;
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     Main obj = new Main();
     System.out.println("byte is initialized to " + obj.l);
     System.out.println("short is initialized to " + obj.s);

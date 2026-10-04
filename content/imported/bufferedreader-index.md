@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50241
 source: https://www.java2s.com/Tutorials/Java/java.io/BufferedReader/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java BufferedReader(Reader in) Constructor

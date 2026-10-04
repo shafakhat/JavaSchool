@@ -21,9 +21,7 @@ publicclass MainClass {
     System.out.println(fmt);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 abcdefg
 abc
 ```

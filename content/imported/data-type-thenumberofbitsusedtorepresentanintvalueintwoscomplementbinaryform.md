@@ -12,8 +12,6 @@ public class MainClass {
     System.out.println(Integer.SIZE);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 32
 ```

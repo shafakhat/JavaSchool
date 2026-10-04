@@ -19,9 +19,7 @@ public class MainClass {
     System.out.println(MM_PER_INCH);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 3
 25.4
 ```

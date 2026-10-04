@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50206
 source: https://www.java2s.com/Tutorials/Java/Java_io/0210__Java_io_FileOutputStream.html
 ---
-```java title=Example.java
-```
-
 ## Creating the Output Stream
 
 To write to a file, we need to create an object of the FileOutputStream class, which will represent the output stream.

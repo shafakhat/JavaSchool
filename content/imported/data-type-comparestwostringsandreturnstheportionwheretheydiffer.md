@@ -3,8 +3,8 @@ title: Compares two Strings, and returns the portion where they differ.
 nav: Compares two Strings, and ...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1033
-source: https://web.archive.org/web/20100831125906/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/ComparestwoStringsandreturnstheportionwheretheydiffer.htm
+order: 1010
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ComparestwoStringsandreturnstheportionwheretheydiffer.htm
 ---
 ```java title=Example.java
 /*
@@ -22,11 +22,10 @@ source: https://web.archive.org/web/20100831125906/http://www.java2s.com:80/Tuto
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-public class Main {
+ */public class Main {
   // Difference
-  //-----------------------------------------------------------------------
-  /**
+ //-----------------------------------------------------------------------
+ /**
    * (More precisely, return the remainder of the second String,
    * starting from where it's different from the first.)
    *
@@ -49,8 +48,7 @@ public class Main {
    * @return the portion of str2 where it differs from str1; returns the
    * empty String if they are equal
    * @since 2.0
-   */
-  public static String difference(String str1, String str2) {
+   */ public static String difference(String str1, String str2) {
       if (str1 == null) {
           return str2;
       }
@@ -85,8 +83,7 @@ public class Main {
    * @param str2  the second String, may be null
    * @return the index where str2 and str1 begin to differ; -1 if they are equal
    * @since 2.0
-   */
-  public static int indexOfDifference(String str1, String str2) {
+   */ public static int indexOfDifference(String str1, String str2) {
       if (str1 == str2) {
           return -1;
       }

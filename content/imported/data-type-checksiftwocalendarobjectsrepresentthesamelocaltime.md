@@ -3,8 +3,8 @@ title: Checks if two calendar objects represent the same local time.
 nav: Checks if two calendar obj...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1025
-source: https://web.archive.org/web/20100328232627/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Checksiftwocalendarobjectsrepresentthesamelocaltime.htm
+order: 1001
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Checksiftwocalendarobjectsrepresentthesamelocaltime.htm
 ---
 ```java title=Example.java
 import java.math.BigDecimal;
@@ -26,8 +26,7 @@ import java.util.Date;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-/**
+ *//**
  * A suite of utilities surrounding the use of the
  * {@link java.util.Calendar} and {@link java.util.Date} object.
  *
@@ -52,10 +51,9 @@ import java.util.Date;
  * @author Robert Scholte
  * @since 2.0
  * @version $Id: DateUtils.java 634096 2008-03-06 00:58:11Z niallp $
- */
-public class Main {
+ */public class Main {
   //-----------------------------------------------------------------------
-  /**
+ /**
    *
    * This method compares the values of the fields of the two objects.
    * In addition, both calendars must be the same of the same type.
@@ -65,8 +63,7 @@ public class Main {
    * @return true if they represent the same millisecond instant
    * @throws IllegalArgumentException if either date is <code>null</code>
    * @since 2.1
-   */
-  public static boolean isSameLocalTime(Calendar cal1, Calendar cal2) {
+   */ public static boolean isSameLocalTime(Calendar cal1, Calendar cal2) {
       if (cal1 == null || cal2 == null) {
           throw new IllegalArgumentException("The date must not be null");
       }

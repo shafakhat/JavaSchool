@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50180
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0510__Java_interface_fields.html
 ---
-```java title=Example.java
-```
-
 An interface can have three types of members:
 
 - Constant fields

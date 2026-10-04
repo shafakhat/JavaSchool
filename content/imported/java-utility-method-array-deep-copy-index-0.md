@@ -92,9 +92,7 @@ StringdeepCopy(final String s) Does an deep copy of the input string and returns
 
 ```java title=Example.java
 input != (return value)
-```
-
-```java title=Example.java
+java title=Example.java
 returnnewString(s);
 ```
 

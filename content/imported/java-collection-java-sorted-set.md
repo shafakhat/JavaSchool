@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50332
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0110__Java_Sorted_Set.html
 ---
-```java title=Example.java
-```
-
 A sorted set is a set with ordering on its elements.
 
 SortedSet interface represents a sorted set in Java Collection Framework.

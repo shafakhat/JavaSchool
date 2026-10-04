@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50296
 source: https://www.java2s.com/Tutorials/Java/java.nio.file/FileSystem/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java FileSystem.close()

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50101
 source: https://www.java2s.com/Tutorials/Java/Scala/3010__Scala_Method_Declaration.html
 ---
-```java title=Example.java
-```
-
 Scala method declarations have the def keyword, the method name, parameters, optional return type, the = keyword, and the method body.myMethod takes no parameters and returns a String:
 
 ```java title=Example.java

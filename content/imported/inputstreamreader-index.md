@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50265
 source: https://www.java2s.com/Tutorials/Java/java.io/InputStreamReader/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java InputStreamReader(InputStream in) Constructor

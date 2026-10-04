@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50457
 source: https://www.java2s.com/Tutorials/Java/Java_Language/8000__Java_Generic_introduction.html
 ---
-```java title=Example.java
-```
-
 The term generics means parameterized types. Using generics, it is possible to create a single class that works with different types of data. A class, interface, or method that operates on a parameterized type is called generic.
 
 ## Syntax

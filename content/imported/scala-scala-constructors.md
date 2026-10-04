@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50106
 source: https://www.java2s.com/Tutorials/Java/Scala/3060__Scala_Constructors.html
 ---
-```java title=Example.java
-```
-
 A class consists of class members such as fields and methods.
 
 Fields hold the state of an object and are defined with either val or var.

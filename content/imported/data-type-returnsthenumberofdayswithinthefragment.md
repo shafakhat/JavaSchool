@@ -3,8 +3,8 @@ title: Returns the number of days within the fragment.
 nav: Returns the number of days...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1098
-source: https://web.archive.org/web/20100328230337/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Returnsthenumberofdayswithinthefragment.htm
+order: 1003
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Returnsthenumberofdayswithinthefragment.htm
 ---
 ```java title=Example.java
 import java.util.Calendar;
@@ -26,8 +26,7 @@ import java.util.TimeZone;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-/**
+ *//**
  * A suite of utilities surrounding the use of the
  * {@link java.util.Calendar} and {@link java.util.Date} object.
  *
@@ -52,37 +51,30 @@ import java.util.TimeZone;
  * @author Robert Scholte
  * @since 2.0
  * @version $Id: DateUtils.java 634096 2008-03-06 00:58:11Z niallp $
- */
-public class Main {
+ */public class Main {
   /**
    * The UTC time zone  (often referred to as GMT).
-   */
-  public static final TimeZone UTC_TIME_ZONE = TimeZone.getTimeZone("GMT");
+   */ public static final TimeZone UTC_TIME_ZONE = TimeZone.getTimeZone("GMT");
   /**
    * Number of milliseconds in a standard second.
    * @since 2.1
-   */
-  public static final long MILLIS_PER_SECOND = 1000;
+   */ public static final long MILLIS_PER_SECOND = 1000;
   /**
    * Number of milliseconds in a standard minute.
    * @since 2.1
-   */
-  public static final long MILLIS_PER_MINUTE = 60 * MILLIS_PER_SECOND;
+   */ public static final long MILLIS_PER_MINUTE = 60 * MILLIS_PER_SECOND;
   /**
    * Number of milliseconds in a standard hour.
    * @since 2.1
-   */
-  public static final long MILLIS_PER_HOUR = 60 * MILLIS_PER_MINUTE;
+   */ public static final long MILLIS_PER_HOUR = 60 * MILLIS_PER_MINUTE;
   /**
    * Number of milliseconds in a standard day.
    * @since 2.1
-   */
-  public static final long MILLIS_PER_DAY = 24 * MILLIS_PER_HOUR;
+   */ public static final long MILLIS_PER_DAY = 24 * MILLIS_PER_HOUR;
   /**
    * This is half a month, so this represents whether a date is in the top
    * or bottom half of the month.
-   */
-  public final static int SEMI_MONTH = 1001;
+   */ public final static int SEMI_MONTH = 1001;
   private static final int[][] fields = {
           {Calendar.MILLISECOND},
           {Calendar.SECOND},
@@ -96,28 +88,22 @@ public class Main {
           {Calendar.ERA}};
   /**
    * A week range, starting on Sunday.
-   */
-  public final static int RANGE_WEEK_SUNDAY = 1;
+   */ public final static int RANGE_WEEK_SUNDAY = 1;
   /**
    * A week range, starting on Monday.
-   */
-  public final static int RANGE_WEEK_MONDAY = 2;
+   */ public final static int RANGE_WEEK_MONDAY = 2;
   /**
    * A week range, starting on the day focused.
-   */
-  public final static int RANGE_WEEK_RELATIVE = 3;
+   */ public final static int RANGE_WEEK_RELATIVE = 3;
   /**
    * A week range, centered around the day focused.
-   */
-  public final static int RANGE_WEEK_CENTER = 4;
+   */ public final static int RANGE_WEEK_CENTER = 4;
   /**
    * A month range, the week starting on Sunday.
-   */
-  public final static int RANGE_MONTH_SUNDAY = 5;
+   */ public final static int RANGE_MONTH_SUNDAY = 5;
   /**
    * A month range, the week starting on Monday.
-   */
-  public final static int RANGE_MONTH_MONDAY = 6;
+   */ public final static int RANGE_MONTH_MONDAY = 6;
   /**
    * Returns the number of days within the
    * fragment. All datefields greater than the fragment will be ignored.
@@ -155,8 +141,7 @@ public class Main {
    * @throws IllegalArgumentException if the date is <code>null</code> or
    * fragment is not supported
    * @since 2.4
-   */
-  public static long getFragmentInDays(Calendar calendar, int fragment) {
+   */ public static long getFragmentInDays(Calendar calendar, int fragment) {
       return getFragment(calendar, fragment, Calendar.DAY_OF_YEAR);
   }
   /**
@@ -169,10 +154,9 @@ public class Main {
    * @throws IllegalArgumentException if the date is <code>null</code> or
    * fragment is not supported
    * @since 2.4
-   */
-  private static long getFragment(Date date, int fragment, int unit) {
+   */ private static long getFragment(Date date, int fragment, int unit) {
       if(date == null) {
-          throw  new IllegalArgumentException("The date must not be null");
+          throw new IllegalArgumentException("The date must not be null");
       }
       Calendar calendar = Calendar.getInstance();
       calendar.setTime(date);
@@ -188,15 +172,14 @@ public class Main {
    * @throws IllegalArgumentException if the date is <code>null</code> or
    * fragment is not supported
    * @since 2.4
-   */
-  private static long getFragment(Calendar calendar, int fragment, int unit) {
+   */ private static long getFragment(Calendar calendar, int fragment, int unit) {
       if(calendar == null) {
-          throw  new IllegalArgumentException("The date must not be null");
+          throw new IllegalArgumentException("The date must not be null");
       }
       long millisPerUnit = getMillisPerUnit(unit);
       long result = 0;
       // Fragments bigger than a day require a breakdown to days
-      switch (fragment) {
+ switch (fragment) {
           case Calendar.YEAR:
               result += (calendar.get(Calendar.DAY_OF_YEAR) * MILLIS_PER_DAY) / millisPerUnit;
               break;
@@ -206,10 +189,10 @@ public class Main {
       }
       switch (fragment) {
           // Number of days already calculated for these cases
-          case Calendar.YEAR:
+ case Calendar.YEAR:
           case Calendar.MONTH:
           // The rest of the valid cases
-          case Calendar.DAY_OF_YEAR:
+ case Calendar.DAY_OF_YEAR:
           case Calendar.DATE:
               result += (calendar.get(Calendar.HOUR_OF_DAY) * MILLIS_PER_HOUR) / millisPerUnit;
           case Calendar.HOUR_OF_DAY:
@@ -220,7 +203,7 @@ public class Main {
               result += (calendar.get(Calendar.MILLISECOND) * 1) / millisPerUnit;
               break;
           case Calendar.MILLISECOND: break;//never useful
-              default: throw new IllegalArgumentException("The fragment " + fragment + " is not supported");
+ default: throw new IllegalArgumentException("The fragment " + fragment + " is not supported");
       }
       return result;
   }
@@ -231,8 +214,7 @@ public class Main {
    * @return number of millis
    * @throws IllegalArgumentException if date can't be represented in millisenconds
    * @since 2.4
-   */
-  private static long getMillisPerUnit(int unit) {
+   */ private static long getMillisPerUnit(int unit) {
       long result = Long.MAX_VALUE;
       switch (unit) {
           case Calendar.DAY_OF_YEAR:

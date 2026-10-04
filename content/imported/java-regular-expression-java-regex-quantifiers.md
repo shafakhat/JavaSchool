@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50383
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/0050__Java_Regex_Quantifiers.html
 ---
-```java title=Example.java
-```
-
 We can specify the number of times a character in a regular expression may match the sequence of characters.
 
 To express a pattern "one digit or more" using a regular expression, we can use the quantifiers.

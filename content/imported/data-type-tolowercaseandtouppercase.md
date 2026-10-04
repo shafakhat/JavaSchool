@@ -20,9 +20,7 @@ publicclass MainClass
       System.out.printf( "s2.toLowerCase() = %s\n\n", s2.toLowerCase() );
    }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 s1 = hello
 s2 = GOODBYE
 s3 =    spaces

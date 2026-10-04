@@ -3,12 +3,9 @@ title: Java Tutorial - Java Package
 nav: Java Tutorial - Java Package
 description: Packages are containers for classes. Packages are used to keep the class name space compartmentalized. In Java, package is mapped to a folder on your hard drive.
 section: Imported - java2s Archive
-order: 50450
-source: https://www.java2s.com/Tutorials/Java/Java_Language/5120__Java_Package.html
+order: 1009
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Language/5120__Java_Package.html
 ---
-```java title=Example.java
-```
-
 Packages are containers for classes. Packages are used to keep the class name space compartmentalized. In Java, package is mapped to a folder on your hard drive.
 
 ## Syntax
@@ -37,8 +34,8 @@ Java package maps to physical directory on your hard drive. As what is defined i
 
 ```java title=Example.java
 package MyPack;
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     System.out.println("hi");
   }
 }
@@ -122,8 +119,8 @@ If they are present, then they must appear in the following order:
 ```java title=Example.java
 package MyPack;
 import java.util.Date;
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     System.out.println(new Date());
   }
 }

@@ -3,17 +3,17 @@ title: Java OCA OCP Practice Question 1076
 nav: Java OCA OCP Practice Ques...
 description: Line 4 prints 1 and line 6 prints 2, so options A and B are correct.
 section: Imported - java2s Archive
-order: 1056
-source: https://web.archive.org/web/20210101014712/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1076.html
+order: 1011
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1076.html
 ---
 ## Question
 
 What is printed by the following? (Choose all that apply)
 
 ```java title=Example.java
-1:  publicclass Main {
-2:    publicString name;
-3:    publicvoid run() {
+1:  public class Main {
+2:    public String name;
+3:    public void run() {
 4:      System.out.print("1");
 5:      try {
 6:        System.out.print("2");
@@ -25,7 +25,7 @@ What is printed by the following? (Choose all that apply)
 12:     }
 13:     System.out.print("5");
 14:   }
-15:   publicstaticvoid main(String[] args) {
+15:   public static void main(String[] args) {
 16:     Main m = new Main();
 17:     m.run();
 18:     System.out.print("6");

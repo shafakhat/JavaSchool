@@ -19,9 +19,7 @@ public class MainClass {
     System.out.println(newString);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 31
 15
 abcde1234567890

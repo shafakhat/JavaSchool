@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50153
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0170__Java_Object_HashCode.html
 ---
-```java title=Example.java
-```
-
 ## Hash Code of an Object
 
 A hash code is an integer value. The algorithm to compute an integer is called a hash function.

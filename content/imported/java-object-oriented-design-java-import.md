@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50139
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0030__Java_import.html
 ---
-```java title=Example.java
-```
-
 An import declaration is used to import any type into a compilation unit.
 
 Import declarations appear just after the package declaration and before the first type declaration.

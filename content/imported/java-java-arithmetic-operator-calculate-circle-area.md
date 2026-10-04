@@ -19,9 +19,7 @@ publicclass Main {
     radius = 20; // New value is radius//your code here
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 publicclass Main {
   publicstaticvoid main(String[] args) {
     double radius; // Declare radiusdouble area; // Declare area// Assign a radius

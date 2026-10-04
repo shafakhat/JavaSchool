@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50353
 source: https://www.java2s.com/Tutorials/Java/java.util/EnumMap/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java EnumMap(Class < K > keyType) Constructor

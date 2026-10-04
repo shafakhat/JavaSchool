@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50216
 source: https://www.java2s.com/Tutorials/Java/Java_io/0740__Java_io_Tokenizer.html
 ---
-```java title=Example.java
-```
-
 Java has some utility classes that let we break a string into parts called tokens.
 
 We define the sequence of characters that are considered tokens by defining delimiter characters.

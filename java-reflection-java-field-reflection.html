@@ -29,17 +29,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-reflection.html">Java Reflection</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-reflection.html">Java Reflection</a></nav>
     <h1>Java Reflection - Java Field Reflection</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>We can use java.lang.reflect.Field class to get information about a field in a class.</p>
 <p>The following four methods in the Class class can return Field object about the fields.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Field[] getFields()
@@ -54,15 +53,15 @@ Field getDeclaredField(String name)</code></pre></div>
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 class MySuperClass {
-  publicint super_id = -1;
+  public int super_id = -1;
   public String super_name = "Unknown";
 }
 class MyClass extends MySuperClass{
-  publicint id = -1;
+  public int id = -1;
   public String name = "Unknown";
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Class&lt;MyClass&gt; c = MyClass.class;
     // Print declared fields
     ArrayList&lt;String&gt; fieldsDesciption = getDeclaredFieldsList(c);
@@ -76,17 +75,17 @@ publicclass Main {
       System.out.println(desc);
     }
   }
-  publicstatic ArrayList&lt;String&gt; getFieldsList(Class c) {
+  public static ArrayList&lt;String&gt; getFieldsList(Class c) {
     Field[] fields = c.getFields();
     ArrayList&lt;String&gt; fieldsList = getFieldsDesciption(fields);
     return fieldsList;
   }
-  publicstatic ArrayList&lt;String&gt; getDeclaredFieldsList(Class c) {
+  public static ArrayList&lt;String&gt; getDeclaredFieldsList(Class c) {
     Field[] fields = c.getDeclaredFields();
     ArrayList&lt;String&gt; fieldsList = getFieldsDesciption(fields);
     return fieldsList;
   }
-  publicstatic ArrayList&lt;String&gt; getFieldsDesciption(Field[] fields) {
+  public static ArrayList&lt;String&gt; getFieldsDesciption(Field[] fields) {
     ArrayList&lt;String&gt; fieldList = new ArrayList&lt;&gt;();
     for (Field f : fields) {
       int mod = f.getModifiers() &amp; Modifier.fieldModifiers();
@@ -101,7 +100,7 @@ publicclass Main {
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-reflection-java-class-reflection.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Reflection - Java Cla...</span></a><a class="pager-btn pager-next" href="java-reflection-java-method-reflection.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Reflection - Java Met...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-java-oca-ocp-practice-question-1058.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a><a class="pager-btn pager-next" href="basicstroke-basicstroke-cap-square.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Swing Tutorial - Java...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

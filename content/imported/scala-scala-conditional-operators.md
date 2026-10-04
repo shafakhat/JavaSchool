@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50090
 source: https://www.java2s.com/Tutorials/Java/Scala/0200__Scala_Conditional_Operators.html
 ---
-```java title=Example.java
-```
-
 Scala conditional operators are listed in the following Table.
 
 Operator  Operation  Description

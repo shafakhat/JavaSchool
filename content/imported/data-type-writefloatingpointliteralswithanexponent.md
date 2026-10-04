@@ -21,9 +21,7 @@ public class MainClass{
      System.out.println(f2 + f1);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 1.496E8
 9.0E-28
 1.496E8

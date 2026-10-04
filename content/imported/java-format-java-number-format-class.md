@@ -3,12 +3,9 @@ title: Java Format - Java Number Format Class
 nav: Java Format - Java Number ...
 description: The following two classes can be used to format and parse numbers:
 section: Imported - java2s Archive
-order: 50389
-source: https://www.java2s.com/Tutorials/Java/Java_Format/0040__Java_Number_Format_Class.html
+order: 1006
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Format/0040__Java_Number_Format_Class.html
 ---
-```java title=Example.java
-```
-
 The following two classes can be used to format and parse numbers:
 
 - java.text.NumberFormat
@@ -28,8 +25,8 @@ Call the format() method with the number argument to get the formatted number as
 
 ```java title=Example.java
 import java.text.NumberFormat;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     NumberFormat formatter;
     // Get number formatter for default locale
     formatter = NumberFormat.getInstance();
@@ -47,8 +44,8 @@ The following code illustrates how to format numbers in default format for the c
 ```java title=Example.java
 import java.text.NumberFormat;
 import java.util.Locale;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     double value = 123456789.9876543;
     // Default locale
     printFormatted(Locale.getDefault(), value);
@@ -56,7 +53,7 @@ publicclass Main {
     Locale indianLocale = new Locale("en", "IN");
     printFormatted(indianLocale, value);
   }
-  publicstaticvoid printFormatted(Locale locale, double value) {
+  public static void printFormatted(Locale locale, double value) {
     // Get number and currency formatter
     NumberFormat nf = NumberFormat.getInstance(locale);
     NumberFormat cf = NumberFormat.getCurrencyInstance(locale);
@@ -91,9 +88,9 @@ Once we create an object of the DecimalFormat class, you can change the format p
 
 ```java title=Example.java
 import java.text.DecimalFormat;
-publicclass Main {
-  privatestatic DecimalFormat formatter = new DecimalFormat();
-  publicstaticvoid main(String[] args) {
+public class Main {
+  private static DecimalFormat formatter = new DecimalFormat();
+  public static void main(String[] args) {
     formatNumber("##.##", 12.345);
     formatNumber("##.##", 12.345);
     formatNumber("0000.0000", 12.345);
@@ -101,7 +98,7 @@ publicclass Main {
     // Positive and negative number format
     formatNumber("#.##;(#.##)", -12.735);
   }
-  publicstaticvoid formatNumber(String pattern, double value) {
+  public static void formatNumber(String pattern, double value) {
     // Apply the pattern formatter.applyPattern ( pattern );
     String formattedNumber = formatter.format(value);
     System.out.println("Number:" + value + ", Pattern:" + pattern
@@ -121,16 +118,16 @@ We can use xxxValue() methods from java.lang.Number class to get the primitive v
 ```java title=Example.java
 import java.text.DecimalFormat;
 import java.text.ParsePosition;
-publicclass Main {
-  privatestatic DecimalFormat formatter = new DecimalFormat();
-  publicstaticvoid main(String[] args) {
+public class Main {
+  private static DecimalFormat formatter = new DecimalFormat();
+  public static void main(String[] args) {
     // Parse a string to decimal number
     String str = "qq1,234.567";
     String pattern = "#,###.###";
     formatter.applyPattern(pattern);
     // Create a ParsePosition object to specify the first digit of
-// number in the string. It is 1 in "qq1,234.567"
-// with the index 2.
+ // number in the string. It is 1 in "qq1,234.567"
+ // with the index 2.
     ParsePosition pp = new ParsePosition(2);
     Number numberObject = formatter.parse(str, pp);
     double value = numberObject.doubleValue();

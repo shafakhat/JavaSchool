@@ -19,9 +19,7 @@ public class MainClass {
     print(99, "Int first");
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 String: String first, int: 11
 int: 99, String: Int first
 ```

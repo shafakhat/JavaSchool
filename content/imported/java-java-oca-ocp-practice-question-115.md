@@ -17,9 +17,7 @@ Diagram:
     Book
 + price
 + getRating()
-```
-
-```java title=Example.java
+java title=Example.java
 A.    publicclassBook {
            publicint numOfPages;
 B.    publicclassBook {
@@ -32,9 +30,7 @@ C.    publicclassBook {
 D.    publicclassBook {
            void price;
       }
-```
-
-```java title=Example.java
+java title=Example.java
 C.
 ```
 

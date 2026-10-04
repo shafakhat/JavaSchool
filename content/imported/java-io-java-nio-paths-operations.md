@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50230
 source: https://www.java2s.com/Tutorials/Java/Java_io/0975__Java_nio_Paths_Operations.html
 ---
-```java title=Example.java
-```
-
 ## Comparing Paths
 
 We can compare two Path objects for equality based on their textual representation.

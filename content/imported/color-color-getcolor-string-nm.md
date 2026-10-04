@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Color/0840__Color.getColor_String_nm_.htm
 ---
-```java title=Example.java
-Back to Color  ↑
-```
-
 ## Syntax
 
 Color.getColor(String nm) has the following syntax.
@@ -34,5 +30,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-- Back to Color ↑

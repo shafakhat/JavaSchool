@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50399
 source: https://www.java2s.com/Tutorials/Java/java.text/NumberFormat/index.html
 ---
-```java title=Example.java
-```
-
 ## Field
 
 - Java NumberFormat FRACTION_FIELD

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50136
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0400__Java_Data_Access_Object_Pattern.html
 ---
-```java title=Example.java
-```
-
 Data Access Object Pattern or DAO pattern separates data accessing API from high level business services.
 
 A DAO pattern usually has the following interface and classes.

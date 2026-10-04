@@ -1,18 +1,18 @@
 ---
 title: Java OCA OCP Practice Question 106
 nav: Java OCA OCP Practice Ques...
-description: class _ { //fromwww.java2s.comstaticpublicvoid main(String[] __A_V_) {
+description: class _ { //from w w w . j av a 2 s . co m static public void main(String[] __A_V_) {
 section: Imported - java2s Archive
-order: 1040
-source: https://web.archive.org/web/20210101014437/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-106.html
+order: 1009
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-106.html
 ---
 ## Question
 
 Given that the for loop's syntax is correct, and given:
 
 ```java title=Example.java
-importstatic java.lang.System.*;
-class _ { staticpublicvoid main(String[] __A_V_) {
+import static java.lang.System.*;
+class _ { static public void main(String[] __A_V_) {
     String $ = "";
     for(int x=0; ++x < __A_V_.length; )   // for loop
       $ += __A_V_[x];

@@ -3,12 +3,9 @@ title: Java Collection Tutorial - Java Collections Traversing
 nav: Java Collection Tutorial -...
 description: In Java Collections Framework, different types of collections store their elements differently using different types of data structures.
 section: Imported - java2s Archive
-order: 50330
-source: https://www.java2s.com/Tutorials/Java/Java_Collection/0040__Java_Collections_Traversing.html
+order: 1018
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Collection/0040__Java_Collections_Traversing.html
 ---
-```java title=Example.java
-```
-
 In Java Collections Framework, different types of collections store their elements differently using different types of data structures.
 
 Some collections has ordering on their elements and some do not. The Collections Framework provides the following ways to traverse a collection:
@@ -37,8 +34,8 @@ The following code creates a list of strings and gets an iterator for the list:
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-publicclass Main {
-  publicstatic void main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     // Create a list of strings
     List<String> names = new ArrayList<>();
     // Get an iterator for the list
@@ -68,8 +65,8 @@ Typically, the hasNext() and next() methods are used together in a loop. The fol
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     // Create a list of strings
     List<String> names = new ArrayList<>();
     names.add("A");
@@ -78,7 +75,7 @@ publicclass Main {
     // Get an iterator for the list
     Iterator<String> nameIterator = names.iterator();
     // Iterate over all elements in the list
-while (nameIterator.hasNext()) {
+ while (nameIterator.hasNext()) {
       // Get the next element from the list
       String name = nameIterator.next();
       System.out.println(name);
@@ -103,8 +100,8 @@ The following code iterates over all elements of a list using an iterator and re
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     // Create a list of strings
     List<String> names = new ArrayList<>();
     names.add("A");
@@ -112,7 +109,7 @@ publicclass Main {
     names.add("C");
     Iterator<String> nameIterator = names.iterator();
     // Iterate over all elements in the list
-while (nameIterator.hasNext()) {
+ while (nameIterator.hasNext()) {
       // Get the next element from the list
       String name = nameIterator.next();
       System.out.println(name);
@@ -137,8 +134,8 @@ The following code shows how to print all elements of a list.
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     // Create a list of strings
     List<String> names = new ArrayList<>();
     names.add("A");
@@ -177,8 +174,8 @@ Behind the scenes, for-each loop gets the iterator and calls the hasNext() and n
 ```java title=Example.java
 import java.util.ArrayList;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     // Create a list of strings
     List<String> names = new ArrayList<>();
     names.add("A");
@@ -223,8 +220,8 @@ The forEach() method is available in all collection types that inherit from the 
 ```java title=Example.java
 import java.util.ArrayList;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     // Create a list of strings
     List<String> names = new ArrayList<>();
     names.add("A");

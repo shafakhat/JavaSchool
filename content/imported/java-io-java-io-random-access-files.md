@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java Random Access Files
 nav: Java IO Tutorial - Java Ra...
 description: Using a random access file, we can read from a file as well as write to the file.
 section: Imported - java2s Archive
-order: 50212
-source: https://www.java2s.com/Tutorials/Java/Java_io/0600__Java_io_Random_Access_Files.html
+order: 1012
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/0600__Java_io_Random_Access_Files.html
 ---
-```java title=Example.java
-```
-
 Using a random access file, we can read from a file as well as write to the file.
 
 Reading and writing using the file input and output streams are a sequential process.
@@ -62,17 +59,17 @@ The following code shows how to read and write Files Using a RandomAccessFile Ob
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws IOException {
+public class Main {
+  public static void main(String[] args) throws IOException {
     String fileName = "randomaccessfile.txt";
-    File fileObject = newFile(fileName);
+    File fileObject = new File(fileName);
     if (!fileObject.exists()) {
       initialWrite(fileName);
     }
     readFile(fileName);
     readFile(fileName);
   }
-  publicstaticvoid readFile(String fileName) throws IOException {
+  public static void readFile(String fileName) throws IOException {
     RandomAccessFile raf = new RandomAccessFile(fileName, "rw");
     int counter = raf.readInt();
     String msg = raf.readUTF();
@@ -81,7 +78,7 @@ publicclass Main {
     incrementReadCounter(raf);
     raf.close();
   }
-  publicstaticvoid incrementReadCounter(RandomAccessFile raf)
+  public static void incrementReadCounter(RandomAccessFile raf)
       throws IOException {
     long currentPosition = raf.getFilePointer();
     raf.seek(0);
@@ -91,7 +88,7 @@ publicclass Main {
     raf.writeInt(counter);
     raf.seek(currentPosition);
   }
-  publicstaticvoid initialWrite(String fileName) throws IOException {
+  public static void initialWrite(String fileName) throws IOException {
     RandomAccessFile raf = new RandomAccessFile(fileName, "rw");
     raf.writeInt(0);
     raf.writeUTF("Hello world!");

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50365
 source: https://www.java2s.com/Tutorials/Java/java.util/Map/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Map.clear()

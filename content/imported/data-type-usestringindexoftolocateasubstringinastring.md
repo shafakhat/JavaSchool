@@ -20,9 +20,7 @@ public class MainClass
           letters.indexOf( "hello" ) );
    }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 "def" is located at index 3
 "def" is located at index 16
 "hello" is located at index -1

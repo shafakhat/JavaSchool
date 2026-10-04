@@ -29,9 +29,7 @@ public class MainClass {
     System.out.println("Yesterdays Date = " + sdf.format(yesterday));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Input Date = 12/12/2003
 Yesterdays Date = 12/11/2003
 ```

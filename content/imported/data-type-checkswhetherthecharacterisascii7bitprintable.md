@@ -3,7 +3,7 @@ title: Checks whether the character is ASCII 7 bit printable.
 nav: Checks whether the charact...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1005
+order: 1004
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/CheckswhetherthecharacterisASCII7bitprintable.htm
 ---
 ```java title=Example.java
@@ -32,7 +32,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * @author Stephen Colebourne
  * @since 2.1
  * @version $Id: CharUtils.java 437554 2006-08-28 06:21:41Z bayard $
- */publicclass Main {
+ */public class Main {
   /**
    *
    * <pre>
@@ -46,7 +46,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param ch  the character to check
    * @return true if between 32 and 126 inclusive
-   */publicstaticboolean isAsciiPrintable(char ch) {
+   */ public static boolean isAsciiPrintable(char ch) {
       return ch >= 32 && ch < 127;
   }
 }

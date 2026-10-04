@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50340
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0190__Java_Map_Operation.html
 ---
-```java title=Example.java
-```
-
 ## Map Iteration
 
 To iterate over keys, values, or entries of a Map, use keySet(), values() and entrySet() methods of a map which returns a Set of keys, a Collection of values, and a Set of entries, respectively.

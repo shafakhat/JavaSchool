@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1027
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Font/0520__Font.canDisplay_char_c_.htm
 ---
-```java title=Example.java
-Back to Font  ↑
-```
-
 ## Syntax
 
 Font.canDisplay(char c) has the following syntax.
@@ -47,5 +43,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Font ↑

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50188
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0630__Java_Enum_Methods.html
 ---
-```java title=Example.java
-```
-
 Since an enum type is actually a class type, we can declare everything inside an enum type body that we can declare inside a class body.
 
 The following code defines a Level enum with fields, constructors, and methods

@@ -14,8 +14,6 @@ public class MainClass {
     System.out.println(outString);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 x =           27.50 y =           33.8
 ```

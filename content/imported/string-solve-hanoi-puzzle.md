@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/20170428082807/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/String/Solve_Hanoi_puzzle.htm
 ---
-```java title=Example.java
-Back to String  ↑
-```
-
 ## Question
 
 We would like to know how to solve Hanoi puzzle.
@@ -38,5 +34,3 @@ publicclass HanoiTower {
 ```
 
 The code above generates the following result.
-
-- Back to String ↑

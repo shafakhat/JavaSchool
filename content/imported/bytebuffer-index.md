@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50307
 source: https://www.java2s.com/Tutorials/Java/java.nio/ByteBuffer/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java ByteBuffer.allocate(int capacity)

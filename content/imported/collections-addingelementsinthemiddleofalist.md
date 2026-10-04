@@ -19,8 +19,6 @@ public class MainClass {
     System.out.println(list);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 [A, G, B, C]
 ```

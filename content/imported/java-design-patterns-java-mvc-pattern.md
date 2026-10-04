@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50135
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0300__Java_MVC_Pattern.html
 ---
-```java title=Example.java
-```
-
 MVC Pattern stands for Model-View-Controller Pattern.
 
 From the name we can see that the MVC pattern involves three parts:

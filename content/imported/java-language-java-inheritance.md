@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50445
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5070__Java_inheritance.html
 ---
-```java title=Example.java
-```
-
 In Java the classes can inherit attributes and behavior from pre-existing classes. The pre-existing classes are called base classes, superclasses, or parent classes. The new classes are known as derived classes, subclasses, or child classes. The relationships of classes through inheritance form a hierarchy.
 
 Let's look at an example. Suppose we have a class called Employee. It defines first name, last name. Then we want to create a class called Programmer. Programmer would have first name and last name as well. Rather than defining the first name and last name again for Programmer we can let Programmer inherit from Employee. In this way the Programmer would have attributes and behavior from Employee.

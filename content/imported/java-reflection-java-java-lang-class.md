@@ -3,12 +3,9 @@ title: Java Reflection - java.lang.Class Class
 nav: Java Reflection - java.lan...
 description: The java.lang.Class class is the center of reflection in Java.
 section: Imported - java2s Archive
-order: 50402
-source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0020__Java_java.lang.Class.html
+order: 1009
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Reflection/0020__Java_java.lang.Class.html
 ---
-```java title=Example.java
-```
-
 The java.lang.Class class is the center of reflection in Java.
 
 An object of the Class class represents a class in a program at runtime.
@@ -46,8 +43,8 @@ Each wrapper primitive data type class has a static field named TYPE, which has 
 int.class and Integer.TYPE refer to the same class object.
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Class c = boolean.class;
     c = Boolean.TYPE;
     c = byte.class;
@@ -79,8 +76,8 @@ The following code shows how to get the reference to the Class object of the Tes
 ```java title=Example.java
 class Test{
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Test   testRef = new Test();
     Class testClass = testRef.getClass();
   }
@@ -117,8 +114,8 @@ class MyClass {static {
     System.out.println("Loading class MyClass...");
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     try {
       String className = "MyClass";
       boolean initialize = false;

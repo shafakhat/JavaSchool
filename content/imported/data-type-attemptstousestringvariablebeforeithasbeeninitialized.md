@@ -13,9 +13,7 @@ public class MainClass {
     System.out.println(s.length());
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Exception in thread "main" java.lang.NullPointerException
 	at MainClass.main(MainClass.java:6)
 ```

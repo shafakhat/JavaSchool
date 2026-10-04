@@ -45,7 +45,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="method">Method</h2>
 <p>Object[]combine(int size, Object[]... arrays) combine</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int offset = 0;
-Object[] target = newObject[size];
+Object[] target = new Object[size];
 for (Object[] arr : arrays) {
     System.arraycopy(arr, 0, target, offset, arr.length);
     offset += arr.length;
@@ -57,7 +57,7 @@ if (arr != null)
         c += arr[i].length;
 if (terms != null)
     c += terms.length;
-int[] r = newint[c];
+int[] r = new int[c];
 c = 0;
 ...</code></pre></div>
 <p>voidcombine(Object[] array1, Object[] array2, Object[] combinedArray) combine</p>
@@ -66,7 +66,7 @@ System.arraycopy(array2, 0, combinedArray, array1.length, array2.length);</code>
 <p>Object[]combine(Object[] first, Object[] last) combine</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (first.length == 0 &amp;&amp; last.length == 0) {
     return null;
-Object[] result = newObject[first.length + last.length];
+Object[] result = new Object[first.length + last.length];
 System.arraycopy(first, 0, result, 0, first.length);
 System.arraycopy(last, 0, result, first.length, last.length);
 return result;</code></pre></div>
@@ -76,7 +76,7 @@ int m = l - 1;
 int x;
 if (l == 0) {
     return null;
-StringBuilder r = newStringBuilder();
+StringBuilder r = new StringBuilder();
 for (x = 0; x &lt; m; x++) {
 ...</code></pre></div>
 <p>floatcombineAlpha(float[] partsAlpha, int partsN) Combine multiple alpha values.</p>
@@ -91,7 +91,7 @@ if (count &gt; 0) {
 } else {
     return 0.f;</code></pre></div>
 <p>voidcombineArrays(final Object[] array1, final Object[] array2, final Object[] targetArray) Combines two array into a target array, inserting all elements of the first array and then all elements of the second array in the target array.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">finalint lengthOfFirst = array1.length;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">final int lengthOfFirst = array1.length;
 int i;
 for (i = 0; i &lt; lengthOfFirst; i++) {
     targetArray[i] = array1[i];
@@ -99,14 +99,14 @@ for (i = 0; i &lt; array2.length; i++) {
     targetArray[i + lengthOfFirst] = array2[i];</code></pre></div>
 <p>float[]combineArrays(float[]... arrays) combine Arrays</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int size = arrays[0].length;
-float[] result = newfloat[arrays.length * arrays[0].length];
+float[] result = new float[arrays.length * arrays[0].length];
 for (int i = 0; i &lt; arrays.length; i++) {
     for (int j = 0; j &lt; size; j++) {
         result[i * size + j] = arrays[i][j];
 return result;
 ...</code></pre></div>
 <p>byte[]combineByteArray(byte[] one, byte[] two) combine Byte Array</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[] out = newbyte[one.length + two.length];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[] out = new byte[one.length + two.length];
 System.arraycopy(one, 0, out, 0, one.length);
 System.arraycopy(two, 0, out, one.length, two.length);
 return out;</code></pre></div>
@@ -116,7 +116,7 @@ int h = pixels[0].length;
 for (int x = 0; x &lt; w; ++x) {
     for (int y = 0; y &lt; h; ++y) {
         pixels[x][y] = (a[x][y] &lt;&lt; 24) | (r[x][y] &lt;&lt; 16) | (g[x][y] &lt;&lt; 8) | b[x][y];</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="spring-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Spring Tutorial - Spring I...</span></a><a class="pager-btn pager-next" href="jdbc-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JDBC Tutorial - JDBC Intro...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-android-util.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java tutorial for android....</span></a><a class="pager-btn pager-next" href="jstl-jstlexceptionuncaughtexception.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JSTL Exception</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

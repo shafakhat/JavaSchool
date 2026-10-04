@@ -17,18 +17,14 @@ We would like to calculate the result of the following remainders.
 -34 % -5
 15 % 1
 11 % 5
-```
-
-```java title=Example.java
+java title=Example.java
 4
 2
 -3
 -4
 0
 1
-```
-
-```java title=Example.java
+java title=Example.java
 publicclass Main {
    publicstaticvoid main(String[] args) {
       System.out.println( 58 % 6);

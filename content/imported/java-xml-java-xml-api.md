@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50320
 source: https://www.java2s.com/Tutorials/Java/Java_XML/0020__Java_XML_API.html
 ---
-```java title=Example.java
-```
-
 ## SAX APIs
 
 Here is a summary of the key SAX APIs:

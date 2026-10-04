@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LinkedList - Collections - Java Tutorial - JavaSchool</title>
+<meta name="description" content="9.12 LinkedList: 30 java2s tutorial pages (Collections chapter).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-subtopic">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-collections.html">Collections</a> <span class="crumb-sep">&rsaquo;</span> <span>LinkedList</span></nav>
+    <h1>9.12 LinkedList</h1>
+    <p><strong>30 pages</strong> in this java2s topic &middot; <strong>0</strong> on the site. Pages are listed in the original order and open exactly as archived.</p>
+    <ul class="article-list">
+<li class="queued"><span class="a-num">9.12.1.</span><span class="pending">LinkedList Class</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.2.</span><span class="pending">Get first and last elements from LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.3.</span><span class="pending">Get elements from LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.4.</span><span class="pending">Get SubList from LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.5.</span><span class="pending">Adding Elements: add a single element</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.6.</span><span class="pending">Add elements at beginning and end of LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.7.</span><span class="pending">LinkedList: add, addFirst, addLast, remove</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.8.</span><span class="pending">Retrieving the Ends from a LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.9.</span><span class="pending">Removing Elements</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.10.</span><span class="pending">Making a stack from a LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.11.</span><span class="pending">Making a queue from a LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.12.</span><span class="pending">Convert Collection to ArrayList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.13.</span><span class="pending">Remove all elements or clear LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.14.</span><span class="pending">Remove first and last elements of LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.15.</span><span class="pending">Remove range of elements from LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.16.</span><span class="pending">Remove specified element from LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.17.</span><span class="pending">Convert LinkedList to Array with zero length array</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.18.</span><span class="pending">Convert LinkedList to Array with full length array</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.19.</span><span class="pending">Convert a LinkedList to ArrayList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.20.</span><span class="pending">Implementing a Stack</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.21.</span><span class="pending">Implementing a Queue with LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.22.</span><span class="pending">Wrap queue to synchronize the methods</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.23.</span><span class="pending">Search elements of LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.24.</span><span class="pending">Replace an Element of LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.25.</span><span class="pending">Add object to LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.26.</span><span class="pending">Check if a particular element exists in LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.27.</span><span class="pending">Create an object array from elements of LinkedList</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.28.</span><span class="pending">Using a LinkedList in multi-thread</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.29.</span><span class="pending">A basic priority linked list: maintaining an individual LinkedList for each priority level.</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.12.30.</span><span class="pending">Helper method for creating list</span><span class="pill">restoring</span></li>
+    </ul>
+    <p class="arc-crumb"><a href="tutorial-09-collections.html">&larr; Back to Collections</a></p>
+
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

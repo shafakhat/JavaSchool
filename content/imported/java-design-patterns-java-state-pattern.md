@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50130
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0210__Java_State_Pattern.html
 ---
-```java title=Example.java
-```
-
 In State pattern a class behavior is changed based on its state.
 
 State pattern is a behavior pattern.

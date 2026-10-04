@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50286
 source: https://www.java2s.com/Tutorials/Java/java.io/Writer/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Writer.append(char c)

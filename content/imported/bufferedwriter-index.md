@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50242
 source: https://www.java2s.com/Tutorials/Java/java.io/BufferedWriter/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java BufferedWriter(Writer out) Constructor

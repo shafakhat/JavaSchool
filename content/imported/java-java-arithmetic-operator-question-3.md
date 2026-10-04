@@ -15,9 +15,7 @@ System.out.println(2 * (5 / 2 + 5 / 2));
 System.out.println(2 * 5 / 2 + 2 * 5 / 2);
 System.out.println(2 * (5 / 2));
 System.out.println(2 * 5 / 2);
-```
-
-```java title=Example.java
+java title=Example.java
 8
 10
 4

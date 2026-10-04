@@ -44,10 +44,10 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The list of methods to do Args Parse are organized into topic(s).</p>
 <h2 id="method">Method</h2>
 <p>ListgetPossibleCompletionsForGivenArgs(String[] args, String[] possibilitiesOfCompletion) get Possible Completions For Given Args</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">finalString argumentToFindCompletionFor = args[args.length - 1];
-finalList&lt;String&gt; listOfPossibleCompletions = newArrayList&lt;String&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">final String argumentToFindCompletionFor = args[args.length - 1];
+final List&lt;String&gt; listOfPossibleCompletions = new ArrayList&lt;String&gt;();
 for (int i = 0; i &lt; possibilitiesOfCompletion.length; i++) {
-    finalString[] foundString = possibilitiesOfCompletion;
+    final String[] foundString = possibilitiesOfCompletion;
     try {
         if (foundString[i] != null &amp;&amp; foundString[i].regionMatches(true, 0, argumentToFindCompletionFor, 0,
                 argumentToFindCompletionFor.length())) {
@@ -55,7 +55,7 @@ for (int i = 0; i &lt; possibilitiesOfCompletion.length; i++) {
 ...</code></pre></div>
 <p>ListgetPossibleCompletionsForGivenArgs(String[] args, String[] possibilitiesOfCompletion) get Possible Completions For Given Args</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String argumentToFindCompletionFor = args[args.length - 1];
-List&lt;String&gt; listOfPossibleCompletions = newArrayList&lt;String&gt;();
+List&lt;String&gt; listOfPossibleCompletions = new ArrayList&lt;String&gt;();
 for (int i = 0; i &lt; possibilitiesOfCompletion.length; ++i) {
     String foundString = possibilitiesOfCompletion[i];
     if (foundString.regionMatches(true, 0, argumentToFindCompletionFor, 0,
@@ -63,7 +63,7 @@ for (int i = 0; i &lt; possibilitiesOfCompletion.length; ++i) {
         listOfPossibleCompletions.add(foundString);
 return listOfPossibleCompletions;</code></pre></div>
 <p>Mapparse(String[] args) parse</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; options = newHashMap&lt;&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; options = new HashMap&lt;&gt;();
 for (int i = 0; i &lt; args.length; i++) {
     if (args[i].charAt(0) == '-' || args[i].charAt(0) == '/')
         args[i] = args[i].substring(1);
@@ -71,13 +71,13 @@ for (int i = 0; i &lt; args.length; i++) {
             options.put(args[i], "null");
 ...</code></pre></div>
 <p>Mapparse(String[] args) parse</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">HashMap&lt;String, String&gt; ret = newHashMap&lt;&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">HashMap&lt;String, String&gt; ret = new HashMap&lt;&gt;();
 for (int i = 0; i &lt; args.length; i += 2) {
     String key = args[i].substring(1);
     ret.put(key.substring(1), args[i + 1]);
 return ret;</code></pre></div>
 <p>HashMapparseAndFillFittingValues(String[] prefixes, String[] values) parse And Fill Fitting Values</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">HashMap&lt;String, String&gt; result = newHashMap();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">HashMap&lt;String, String&gt; result = new HashMap();
 for (String value : values) {
     for (String prefix : prefixes) {
         String realValue = getValueIfExists(prefix, value);
@@ -85,7 +85,7 @@ for (String value : values) {
             result.put(prefix, realValue);
 return result;</code></pre></div>
 <p>MapparseArg(String[] args) parse Arg</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; map = newHashMap&lt;String, String&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
 if (args == null || args.length == 0)
     return map;
 String lastKey = null;
@@ -95,7 +95,7 @@ for (int i = 0; i &lt; args.length; i++) {
     if (args[i].startsWith("-")) {
 ...</code></pre></div>
 <p>MapparseArgs(String argvStart, String[] args) parse Args</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; rs = newHashMap&lt;String, String&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; rs = new HashMap&lt;String, String&gt;();
 for (int i = 0; i &lt; args.length; i++) {
     String arg = args[i];
     String v = ((i &lt; args.length - 1) &amp;&amp; !args[i + 1].startsWith(argvStart)) ? args[++i] : null;
@@ -104,17 +104,17 @@ for (int i = 0; i &lt; args.length; i++) {
 return rs;
 ...</code></pre></div>
 <p>MapparseArgs(String[] args) parse Args</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; parsedArgs = newHashMap&lt;String, String&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; parsedArgs = new HashMap&lt;String, String&gt;();
 for (String arg : args) {
     if (arg.startsWith("--port=")) {
         parsedArgs.put("port", arg.substring("--port=".length()));
-    } elseif (arg.equals("START") || arg.equals("STOP")) {
+    } else if (arg.equals("START") || arg.equals("STOP")) {
         parsedArgs.put("action", arg);
     } else {
-        thrownewRuntimeException("Only accepts START, STOP, and --port=&lt;port #&gt; as arguments");
+        throw new RuntimeException("Only accepts START, STOP, and --port=&lt;port #&gt; as arguments");
 ...</code></pre></div>
 <p>HashMapparseArgs(String[] args) parse Args</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">HashMap results = newHashMap();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">HashMap results = new HashMap();
 for (int i = 0; i &lt;= args.length - 1; i++) {
     String value = "";
     if (args[i].indexOf("-") == 0) {
@@ -124,16 +124,16 @@ for (int i = 0; i &lt;= args.length - 1; i++) {
             } catch (Exception e) {
 ...</code></pre></div>
 <p>MapparseArgs(String[] args) Parse command-line options of the form --key=value into a map of .</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; m = newHashMap&lt;String, String&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; m = new HashMap&lt;String, String&gt;();
 if (args != null) {
     for (String s : args) {
         if (s.indexOf("=") &lt; 0) {
             m.put(s.replace("--", ""), Boolean.TRUE.toString());
         } else {
             String key = s.substring(0, s.indexOf("=")).replace("--", "");
-            Stringval = s.substring(s.indexOf("=") + 1);
+            String val = s.substring(s.indexOf("=") + 1);
 ...</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="data-structure-how-to-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Data Structure How to...</span></a><a class="pager-btn pager-next" href="io-how-to-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java I/O How to - Java IO ...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-android-graphics.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java tutorial for android....</span></a><a class="pager-btn pager-next" href="jstl-jstlcookiebasedchatroom.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JSTL Cookie based Chat Room</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -16,8 +16,6 @@ public class MainClass {
     System.out.println(buf);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 The number is 99912.34
 ```

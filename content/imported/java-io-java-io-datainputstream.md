@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50204
 source: https://www.java2s.com/Tutorials/Java/Java_io/0130__Java_io_DataInputStream.html
 ---
-```java title=Example.java
-```
-
 DataInputStream can read Java primitive data type values from an input stream.
 
 The DataInputStream class contains read methods to read a value of a data type. For example, to read an int value, it contains a readInt() method; to read a char value, it has a readChar() method, etc. It also supports reading strings using the readUTF() method.

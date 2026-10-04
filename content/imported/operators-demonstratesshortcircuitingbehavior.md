@@ -30,9 +30,7 @@ publicclass MainClass {
       System.out.println("expression is false");
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 test1(0)
 result: true
 test2(2)

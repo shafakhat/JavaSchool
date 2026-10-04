@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50171
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0360__Java_Generic_Constraints.html
 ---
-```java title=Example.java
-```
-
 ## Unbounded Wildcards
 
 A wildcard type is denoted by a question mark, as in <?>.

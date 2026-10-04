@@ -3,8 +3,8 @@ title: Get the difference between two strings
 nav: Get the difference between...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1027
-source: https://web.archive.org/web/20100120070824/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Getthedifferencebetweentwostrings.htm
+order: 1001
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Getthedifferencebetweentwostrings.htm
 ---
 ```java title=Example.java
 /**
@@ -22,8 +22,7 @@ source: https://web.archive.org/web/20100120070824/http://www.java2s.com:80/Tuto
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations under
  * the License.
- */
-public class Utils {
+ */public class Utils {
   public static String diff(String str1, String str2) {
     int index = str1.lastIndexOf(str2);
     if (index > -1) {

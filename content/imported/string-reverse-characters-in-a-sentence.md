@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20170606141303/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/String/Reverse_characters_in_a_sentence.htm
 ---
-```java title=Example.java
-Back to String  ↑
-```
-
 ## Question
 
 We would like to know how to reverse characters in a sentence.
@@ -36,5 +32,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-- Back to String ↑

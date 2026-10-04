@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50165
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0300__Java_Inheritance.html
 ---
-```java title=Example.java
-```
-
 A subclass can inherit from the superclass. A superclass is also known as a base class or a parent class. A subclass is also known as a derived class or a child class.
 
 It is very simple to inherit a class from another class. We use the keyword extends followed by the superclass name in the class declaration of your subclass.

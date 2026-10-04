@@ -18,8 +18,6 @@ public class MainClass {
     System.out.println(map);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 {key1=value1, key3=value3, key2=value2}
 ```

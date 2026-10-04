@@ -21,9 +21,7 @@ import java.util.Scanner; // Scanner is in the java.util packagepublicclass Main
     //your code here
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Scanner; // Scanner is in the java.util packagepublicclass Main {
   publicstaticvoid main(String[] args) {
     // Create a Scanner objectScanner input = newScanner(System.in);

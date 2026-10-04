@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50121
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0100__Java_Decorator_Pattern.html
 ---
-```java title=Example.java
-```
-
 Decorator pattern adds new functionality an existing object without chaining its structure.
 
 It is a structural pattern as it acts as a wrapper to existing class.

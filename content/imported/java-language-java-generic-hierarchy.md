@@ -3,12 +3,9 @@ title: Java Tutorial - How to extend Java generic classes
 nav: Java Tutorial - How to ext...
 description: A generic class can act as a superclass or be a subclass. In a generic hierarchy, any type arguments needed by a generic superclass must be passed up the hierarchy by all
 section: Imported - java2s Archive
-order: 50460
-source: https://www.java2s.com/Tutorials/Java/Java_Language/8030__Java_generic_hierarchy.html
+order: 1002
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Language/8030__Java_generic_hierarchy.html
 ---
-```java title=Example.java
-```
-
 A generic class can act as a superclass or be a subclass. In a generic hierarchy, any type arguments needed by a generic superclass must be passed up the hierarchy by all subclasses.
 
 ## Example
@@ -35,8 +32,8 @@ class MySubclass<T, V> extends MyClass<T> {
     return ob2;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     MySubclass<String, Integer> x = new MySubclass<String, Integer>("Value is: ", 99);
     System.out.print(x.getob());
     System.out.println(x.getob2());
@@ -69,8 +66,8 @@ class MySubclass<T> extends MyClass {
     return ob;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
      MySubclass<String> w = new MySubclass<String>("Hello", 4);
     System.out.print(w.getob() + " ");
     System.out.println(w.getnum());
@@ -99,8 +96,8 @@ class Gen2<T> extends Gen<T> {
     super(o);
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Gen<Integer> iOb = new Gen<Integer>(88);
     Gen2<Integer> iOb2 = new Gen2<Integer>(99);
     Gen2<String> strOb2 = new Gen2<String>("Generics Test");
@@ -140,8 +137,8 @@ class Gen2<T> extends Gen<T> {
     return obj;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Gen<Integer> iOb = new Gen<Integer>(88);
     Gen2<String> strOb2 = new Gen2<String>("Generics Test");
     System.out.println(iOb.getob());
@@ -173,8 +170,8 @@ class Gen2<T> extends Gen<T> {
     super(o);
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Gen<Integer> iOb = new Gen<Integer>(88);
     Gen2<Integer> iOb2 = new Gen2<Integer>(99);
     Gen2<String> strOb2 = new Gen2<String>("Generics Test");
@@ -200,8 +197,8 @@ class Gen2<T> extends Gen<T> {
     super(o);
   }
 }
-publicclass Main {
-  publicstatic void main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Gen<Integer> iOb = new Gen<Integer>(88);
     Gen2<Integer> iOb2 = new Gen2<Integer>(99);
     Gen2<String> strOb2 = new Gen2<String>("Generics Test");

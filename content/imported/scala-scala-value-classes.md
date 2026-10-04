@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50100
 source: https://www.java2s.com/Tutorials/Java/Scala/3000__Scala_Value_Classes.html
 ---
-```java title=Example.java
-```
-
 With value classes, Scala allows user-defined value classes that extend AnyVal.
 
 Scala Value classes enable us to write classes on the AnyVal side of the Scala type hierarchy.

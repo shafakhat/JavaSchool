@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50452
 source: https://www.java2s.com/Tutorials/Java/Java_Language/6010__Java_Exception_Statements.html
 ---
-```java title=Example.java
-```
-
 To guard against and handle a run-time error, enclose the code to monitor inside a try block.
 
 Immediately following the try block, include a catch clause that specifies the exception type that you wish to catch.

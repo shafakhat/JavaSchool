@@ -15,8 +15,6 @@ publicclass MainClass {
     System.out.println(hexLongValue);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 15
 ```

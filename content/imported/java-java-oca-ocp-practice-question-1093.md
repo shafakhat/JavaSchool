@@ -1,21 +1,21 @@
 ---
 title: Java OCA OCP Practice Question 1093
 nav: Java OCA OCP Practice Ques...
-description: Since count is a class variable that isn't specifically initialized, it defaults to 0.
+description: package mypkg; /* w w w. ja va 2 s.c o m*/public class Main {
 section: Imported - java2s Archive
-order: 1072
-source: https://web.archive.org/web/20210101014715/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1093.html
+order: 1015
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1093.html
 ---
 ## Question
 
 What is the output of the following code?
 
 ```java title=Example.java
-package mypkg; publicclass Main {
-        privatestaticint count;
-        privatestaticString[] stops = newString[] { "Washington",
+package mypkg; public class Main {
+        private static int count;
+        private static String[] stops = new String[] { "Washington",
             "Monroe", "Jackson", "LaSalle" };
-        publicstaticvoid main(String[] args) {
+        public static void main(String[] args) {
            while (count < stops.length) {
               if (stops[count++].length() < 8) {
                  break;

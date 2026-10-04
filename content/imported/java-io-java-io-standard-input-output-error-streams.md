@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50213
 source: https://www.java2s.com/Tutorials/Java/Java_io/0700__Java_io_Standard_Input_Output_Error_Streams.html
 ---
-```java title=Example.java
-```
-
 We can use the System.out and System.err object references wherever we can use an OutputStream object.
 
 We can use the System.in object wherever we can use an InputStream object.

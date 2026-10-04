@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1031
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/FontMetrics/0080__FontMetrics.bytesWidth_byte_data_int_off_int_len_.htm
 ---
-```java title=Example.java
-Back to FontMetrics  ↑
-```
-
 ## Syntax
 
 FontMetrics.bytesWidth(byte[] data, int off, int len) has the following syntax.
@@ -37,5 +33,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to FontMetrics ↑

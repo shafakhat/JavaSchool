@@ -21,9 +21,7 @@ publicclass Main {
     System.out.println("z:" + z);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 x:0.0
 y:6.0
 z:7.0

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50120
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0090__Java_Composite_Pattern.html
 ---
-```java title=Example.java
-```
-
 Composite pattern is structural pattern since it creates a tree structure of group of objects.
 
 Composite pattern treats a group of objects as a single object.

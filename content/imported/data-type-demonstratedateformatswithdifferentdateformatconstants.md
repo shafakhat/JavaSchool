@@ -3,15 +3,15 @@ title: Demonstrate date formats with different DateFormat constants
 nav: Demonstrate date formats w...
 description: df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.JAPAN);
 section: Imported - java2s Archive
-order: 1034
+order: 1026
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/DemonstratedateformatswithdifferentDateFormatconstants.htm
 ---
 ```java title=Example.java
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
-publicclass DateFormatDemo {
-  publicstaticvoid main(String args[]) {
+public class DateFormatDemo {
+  public static void main(String args[]) {
     Date date = new Date();
     DateFormat df;
     df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.JAPAN);

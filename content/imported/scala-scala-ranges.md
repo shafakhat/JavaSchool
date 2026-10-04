@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50087
 source: https://www.java2s.com/Tutorials/Java/Scala/0180__Scala_Ranges.html
 ---
-```java title=Example.java
-```
-
 Some code need to create a sequence of numbers from some start to finish. A Range literal is what we need.
 
 Ranges can be defined by their start, their end, and the stepping value.

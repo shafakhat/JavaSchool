@@ -20,9 +20,7 @@ public class MainClass {
     System.out.println("outer = " + outer);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 inner = 2
 outer = 1
 inner = 3

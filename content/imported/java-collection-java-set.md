@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50331
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0100__Java_Set.html
 ---
-```java title=Example.java
-```
-
 A set represents a collection of unique objects. The ordering of elements in a set is irrelevant.
 
 The Collections Framework offers three types of sets:

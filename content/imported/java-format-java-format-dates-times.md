@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50396
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0120__Java_Format_Dates_Times.html
 ---
-```java title=Example.java
-```
-
 Java printf Date/time formatting deals with date, time, and datetime values.
 
 Java printf Date/time formatting can be applied to format values of long, Long, java.util.Calendar, java.util.Date, and java.time.temporal.TemporalAccessor types.

@@ -37,9 +37,7 @@ publicclass MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 All annotations for myMeth:
 @MyAnnotation()
 ```

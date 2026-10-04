@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50305
 source: https://www.java2s.com/Tutorials/Java/java.nio.channels/FileChannel/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java FileChannel.lock(long position, long size, boolean shared)

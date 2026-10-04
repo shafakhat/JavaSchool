@@ -3,12 +3,9 @@ title: Java Tutorial - What is Java Generic Bounded Types and how to use Generic
 nav: Java Tutorial - What is Ja...
 description: When specifying a type parameter, you can create an upper bound from which all type arguments must be derived.
 section: Imported - java2s Archive
-order: 50461
-source: https://www.java2s.com/Tutorials/Java/Java_Language/8040__Java_Generic_Constraints.html
+order: 1001
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Language/8040__Java_Generic_Constraints.html
 ---
-```java title=Example.java
-```
-
 When specifying a type parameter, you can create an upper bound from which all type arguments must be derived.
 
 ## Syntax
@@ -37,8 +34,8 @@ class Calculator<T extends Number> {
     return sum / nums.length;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Integer inums[] = { 1, 2, 3, 4, 5 };
     Calculator<Integer> iob = new Calculator<Integer>(inums);
     double v = iob.average();
@@ -111,13 +108,13 @@ class Calculator<T extends Number> {
     return sum / nums.length;
   }
 }
-publicclass Main {
+public class Main {
   boolean sameAvg(Calculator<?> ob) {
     if (1.2 == ob.average())
       return true;
     return false;
   }
-  publicstaticvoid main(String args[]) {
+  public static void main(String args[]) {
   }
 }
 ```
@@ -146,8 +143,8 @@ class Calculator<T extends Number> {
     return false;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Integer inums[] = { 1, 2, 3, 4, 5 };
     Calculator<Integer> iob = new Calculator<Integer>(inums);
     Double dnums[] = { 1.1, 2.2, 3.3, 4.4, 5.5 };
@@ -185,19 +182,19 @@ class Map<T extends TwoD> {
     coords = o;
   }
 }
-publicclass Main {
-  staticvoid showXY(Map<?> c) {
+public class Main {
+  static void showXY(Map<?> c) {
     for (int i = 0; i < c.coords.length; i++){
       System.out.println(c.coords[i].x + " " + c.coords[i].y);
     }
   }
-  staticvoid showXYZ(Map<? extends ThreeD> c) {
+  static void showXYZ(Map<? extends ThreeD> c) {
     for (int i = 0; i < c.coords.length; i++){
       System.out.println(c.coords[i].x + " " + c.coords[i].y + " "
           + c.coords[i].z);
     }
   }
-  publicstaticvoid main(String args[]) {
+  public static void main(String args[]) {
     TwoD td[] = { new TwoD(0, 0), new TwoD(-1, -2) };
     Map<TwoD> map = new Map<TwoD>(td);
     System.out.println("Contents of tdlocs.");

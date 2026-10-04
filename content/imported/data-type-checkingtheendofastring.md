@@ -15,8 +15,6 @@ public class MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 ends with de
 ```

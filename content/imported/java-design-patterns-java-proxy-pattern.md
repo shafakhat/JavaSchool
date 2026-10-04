@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50123
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0130__Java_Proxy_Pattern.html
 ---
-```java title=Example.java
-```
-
 In Proxy pattern, a class represents functionality of another class.
 
 Proxy pattern is a structural pattern.

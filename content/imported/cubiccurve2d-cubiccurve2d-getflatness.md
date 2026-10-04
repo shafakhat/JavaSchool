@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/CubicCurve2D/0300__CubicCurve2D.getFlatness_.htm
 ---
-```java title=Example.java
-Back to CubicCurve2D  ↑
-```
-
 ## Syntax
 
 CubicCurve2D.getFlatness() has the following syntax.
@@ -44,5 +40,3 @@ publicclass Main extends Frame {
 ```
 
 The code above generates the following result.
-
-- Back to CubicCurve2D ↑

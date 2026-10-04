@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java Zip Byte Array
 nav: Java IO Tutorial - Java Zi...
 description: Java provides an Adler32 class in the java.util.zip package to compute the Adler-32 checksum for bytes of data.
 section: Imported - java2s Archive
-order: 50217
-source: https://www.java2s.com/Tutorials/Java/Java_io/0800__Java_io_Zip_Byte_Array.html
+order: 1014
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/0800__Java_io_Zip_Byte_Array.html
 ---
-```java title=Example.java
-```
-
 ## checksum
 
 Java provides an Adler32 class in the java.util.zip package to compute the Adler-32 checksum for bytes of data.
@@ -22,8 +19,8 @@ The following code illustrates how to use the Adler32 and CRC32 classes to compu
 ```java title=Example.java
 import java.util.zip.Adler32;
 import java.util.zip.CRC32;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     String str = "HELLO";
     byte[] data = str.getBytes("UTF-8");
     System.out.println("Adler32 and  CRC32  checksums  for " + str);
@@ -74,8 +71,8 @@ import java.io.IOException;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     String input = "Hello world!";
     byte[] uncompressedData = input.getBytes("UTF-8");
     byte[] compressedData = compress(uncompressedData,
@@ -86,13 +83,13 @@ publicclass Main {
     System.out.println("Compressed data length:  " + compressedData.length);
     System.out.println("Decompressed data length:  " + decompressedData.length);
   }
-  publicstaticbyte[] compress(byte[] input, int compressionLevel,
+  public static byte[] compress(byte[] input, int compressionLevel,
       boolean GZIPFormat) throws IOException {
     Deflater compressor = new Deflater(compressionLevel, GZIPFormat);
     compressor.setInput(input);
     compressor.finish();
     ByteArrayOutputStream bao = new ByteArrayOutputStream();
-    byte[] readBuffer = newbyte[1024];
+    byte[] readBuffer = new byte[1024];
     int readCount = 0;
     while (!compressor.finished()) {
       readCount = compressor.deflate(readBuffer);
@@ -103,12 +100,12 @@ publicclass Main {
     compressor.end();
     return bao.toByteArray();
   }
-  publicstaticbyte[] decompress(byte[] input, boolean GZIPFormat)
+  public static byte[] decompress(byte[] input, boolean GZIPFormat)
       throws IOException, DataFormatException {
     Inflater decompressor = new Inflater(GZIPFormat);
     decompressor.setInput(input);
     ByteArrayOutputStream bao = new ByteArrayOutputStream();
-    byte[] readBuffer = newbyte[1024];
+    byte[] readBuffer = new byte[1024];
     int readCount = 0;
     while (!decompressor.finished()) {
       readCount = decompressor.inflate(readBuffer);

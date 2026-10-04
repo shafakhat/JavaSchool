@@ -3,8 +3,8 @@ title: Java Utililty Methods Array Max Value
 nav: Java Utililty Methods Arra...
 description: The list of methods to do Array Max Value are organized into topic(s).
 section: Imported - java2s Archive
-order: 50081
-source: https://www.java2s.com/example/java-utility-method/array-max-value-index-0.html
+order: 1020
+source: https://web.archive.org/web/2016/https://www.java2s.com/example/java-utility-method/array-max-value-index-0.html
 ---
 List of utility methods to do Array Max Value
 
@@ -47,7 +47,7 @@ assert (vec != null);
 double max = vec[0];
 int argmax = 0;
 for (int i = 1; i < vec.length; i++) {
-    finaldouble tmp = vec[i];
+    final double tmp = vec[i];
     if (tmp > max) {
         max = tmp;
         argmax = i;
@@ -123,7 +123,7 @@ return currentArgmax;
 double[]arrayMax(double maxVal, double[] vals) Applies a max value to all elements in an array
 
 ```java title=Example.java
-double[] out = newdouble[vals.length];
+double[] out = new double[vals.length];
 for (int i = 0; i < vals.length; i++) {
     out[i] = Math.max(maxVal, vals[i]);
 return out;

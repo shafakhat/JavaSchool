@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50315
 source: https://www.java2s.com/Tutorials/Java/java.nio/ShortBuffer/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java ShortBuffer.allocate(int capacity)

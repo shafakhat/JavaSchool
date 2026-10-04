@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50226
 source: https://www.java2s.com/Tutorials/Java/Java_io/0940__Java_nio_Memory_Channels.html
 ---
-```java title=Example.java
-```
-
 Another way to perform I/O on a file, is mapping a region of the file into physical memory and treating it as a memory array.
 
 We can use MappedByteBuffer to perform memory-mapped file I/O.

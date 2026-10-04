@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50280
 source: https://www.java2s.com/Tutorials/Java/java.io/RandomAccessFile/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java RandomAccessFile(File file, String mode) Constructor

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50273
 source: https://www.java2s.com/Tutorials/Java/java.io/PipedOutputStream/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java PipedOutputStream() Constructor

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50455
 source: https://www.java2s.com/Tutorials/Java/Java_Language/7010__Java_Annotation_Type.html
 ---
-```java title=Example.java
-```
-
 ## Java Marker annotation
 
 A marker annotation contains no members. It is used to mark a declaration.

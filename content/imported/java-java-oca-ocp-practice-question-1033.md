@@ -1,25 +1,25 @@
 ---
 title: Java OCA OCP Practice Question 1033
 nav: Java OCA OCP Practice Ques...
-description: 9: publicvoid dive(int depth) { System.out.println("MySubClass diving"); }
+description: 9: public void dive(int depth) { System.out.println("MySubClass diving"); }
 section: Imported - java2s Archive
-order: 1014
-source: https://web.archive.org/web/20210101014705/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1033.html
+order: 1001
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1033.html
 ---
 ## Question
 
 What is the output of the following code?
 
 ```java title=Example.java
-1: publicabstractclass MyClass {
-2:   publicabstractvoid dive() {};
-3:   publicstaticvoid main(String[] args) {
+1: public abstract class MyClass {
+2:   public abstract void dive() {};
+3:   public static void main(String[] args) {
 4:     MyClass m = new MySubClass();
 5:     m.dive();
 6:   }
 7: }
 8: class MySubClass extends MyClass {
-9:   publicvoid dive(int depth) { System.out.println("MySubClass diving"); }
+9:   public void dive(int depth) { System.out.println("MySubClass diving"); }
 10: }
 ```
 

@@ -39,9 +39,7 @@ publicclass MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 All annotations for Meta2:
 @MyAnnotation(stringValue=for class, intValue=100)
 @What(description=An annotation test class)

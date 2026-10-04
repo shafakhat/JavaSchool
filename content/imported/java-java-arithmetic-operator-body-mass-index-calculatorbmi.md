@@ -3,8 +3,8 @@ title: Java Arithmetic Operator Body Mass Index Calculator(BMI)
 nav: Java Arithmetic Operator B...
 description: System.out.print("BMI calculator: 1 for imperial, 2 for metric: ");
 section: Imported - java2s Archive
-order: 1050
-source: https://web.archive.org/web/20210102113213/http://www.java2s.com/ref/java/java-arithmetic-operator-body-mass-index-calculatorbmi.html
+order: 1012
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-arithmetic-operator-body-mass-index-calculatorbmi.html
 ---
 ## Question
 
@@ -21,13 +21,11 @@ for metric
                weight In Kilograms
 BMI = ------------------------------------
       heightInMeters times heightInMeters
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Scanner;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
-    Scanner input = newScanner(System.in);
+public class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
     int weight;
     int height;
     int bmi;
@@ -53,13 +51,13 @@ To support two systems:imperial and metric
 
 ```java title=Example.java
 import java.util.Scanner;
-publicclass Main{
-    publicstaticvoid main(String[] args){
-        Scanner input = newScanner(System.in);
+public class Main{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
         double weight, height, bmi;
         int choice;
         System.out.print("BMI calculator: 1 for imperial, 2 for metric: ");
-        choice = input.nextInt();System.out.printf("Input weight in %s: ",
+        choice = input.nextInt(); System.out.printf("Input weight in %s: ",
                 (choice == 1) ? "pounds" : "kilograms");
         weight = input.nextDouble();
         System.out.printf("Input height in %s: ",
@@ -69,13 +67,13 @@ publicclass Main{
         System.out.printf("Your BMI : %.1f\n", bmi);
         printBmiTable();
     }
-    // calculate using imperial measuresprivatestaticdouble calculateImperial(double weight, double height){
+    // calculate using imperial measures private static double calculateImperial(double weight, double height){
         return ((weight * 703) / (height * height));
     }
-    // calculate using metric measuresprivatestaticdouble calculateMetric(double weight, double height){
+    // calculate using metric measures private static double calculateMetric(double weight, double height){
         return weight / (height * height);
     }
-    // print BMI information from Department of Health and Human Services /// National Institutes of Health.privatestaticvoid printBmiTable(){
+    // print BMI information from Department of Health and Human Services / // National Institutes of Health. private static void printBmiTable(){
         System.out.printf("BMI VALUES:");
         System.out.println("Underweight: less than 18.5");
         System.out.println("Normal:      between 18.5 and 24.9");

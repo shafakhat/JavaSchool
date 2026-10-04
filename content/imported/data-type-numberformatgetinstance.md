@@ -17,9 +17,7 @@ publicclass MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 3.142	3.141592653589793
 31.416	31.41592653589793
 314.159	314.1592653589793

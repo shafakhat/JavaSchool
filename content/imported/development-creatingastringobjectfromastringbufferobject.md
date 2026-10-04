@@ -14,8 +14,6 @@ public class MainClass {
     System.out.println(aString);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 so many dynamos
 ```

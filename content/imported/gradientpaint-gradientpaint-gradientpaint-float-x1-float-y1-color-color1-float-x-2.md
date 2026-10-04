@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/GradientPaint/0040__GradientPaint.GradientPaint_float_x1_float_y1_Color_color1_float_x2_float_y2_Color_color2_.htm
 ---
-```java title=Example.java
-Back to GradientPaint  ↑
-```
-
 ## Syntax
 
 GradientPaint(float x1, float y1, Color color1, float x2, float y2, Color color2) constructor from GradientPaint has the following syntax.
@@ -47,5 +43,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to GradientPaint ↑

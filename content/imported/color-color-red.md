@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Color/0460__Color.RED.htm
 ---
-```java title=Example.java
-Back to Color  ↑
-```
-
 ## Syntax
 
 Color.RED has the following syntax.
@@ -38,5 +34,3 @@ public class Main {
   }
 }
 ```
-
-- Back to Color ↑

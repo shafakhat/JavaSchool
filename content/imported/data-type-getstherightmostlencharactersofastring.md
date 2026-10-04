@@ -3,8 +3,8 @@ title: Gets the rightmost len characters of a String.
 nav: Gets the rightmost len cha...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1116
-source: https://web.archive.org/web/20100606073749/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/GetstherightmostlencharactersofaString.htm
+order: 1000
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/GetstherightmostlencharactersofaString.htm
 ---
 ```java title=Example.java
 /**
@@ -22,8 +22,7 @@ source: https://web.archive.org/web/20100606073749/http://www.java2s.com:80/Tuto
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-/**
+ *//**
  * Operations on {@link java.lang.String} that are
  * <code>null</code> safe.
  *
@@ -49,8 +48,7 @@ source: https://web.archive.org/web/20100606073749/http://www.java2s.com:80/Tuto
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */
-public class Main {
+ */public class Main {
   /**
    * Gets the rightmost <code>len</code> characters of a String.
    *
@@ -70,8 +68,7 @@ public class Main {
    * @param str  the String to get the rightmost characters from, may be null
    * @param len  the length of the required String, must be zero or positive
    * @return the rightmost characters, <code>null</code> if null String input
-   */
-  public static String right(String str, int len) {
+   */ public static String right(String str, int len) {
       if (str == null) {
           return null;
       }

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50161
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0250__Java_Inner_Classes_Types.html
 ---
-```java title=Example.java
-```
-
 You can define an inner class anywhere inside a class where you can write a Java statement.
 
 There are three types of inner classes. The type of inner class depends on the location and the way it is declared.

@@ -27,9 +27,7 @@ publicclass MainClass
       System.out.printf( "Product is %d\n", result );
    }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Enter first integer: 1
 Enter second integer: 2
 Enter third integer: 3

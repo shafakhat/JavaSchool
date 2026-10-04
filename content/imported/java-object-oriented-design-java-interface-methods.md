@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50181
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0520__Java_interface_Methods.html
 ---
-```java title=Example.java
-```
-
 ## Methods Declarations
 
 You can declare three types of methods in an interface:

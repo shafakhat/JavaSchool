@@ -18,8 +18,6 @@ publicclass MainClass {
     System.out.println(iOb);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 100
 ```

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50221
 source: https://www.java2s.com/Tutorials/Java/Java_io/0850__Java_io_Jar_API.html
 ---
-```java title=Example.java
-```
-
 ## JAR API
 
 JAR API includes classes for working with a manifest file. An object of the Manifest class represents a manifest file. You create a Manifest object in your code as follows:

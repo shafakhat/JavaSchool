@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50128
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0180__Java_Mediator_Pattern.html
 ---
-```java title=Example.java
-```
-
 Mediator pattern reduces communication between multiple objects.
 
 This pattern provides a mediator class which handles all the communications between different classes.

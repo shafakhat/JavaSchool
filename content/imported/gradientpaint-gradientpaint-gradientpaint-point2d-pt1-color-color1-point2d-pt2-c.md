@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1042
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/GradientPaint/0100__GradientPaint.GradientPaint_Point2D_pt1_Color_color1_Point2D_pt2_Color_color2_boolean_cyclic_.htm
 ---
-```java title=Example.java
-Back to GradientPaint  ↑
-```
-
 ## Syntax
 
 GradientPaint(Point2D pt1, Color color1, Point2D pt2, Color color2, boolean cyclic) constructor from GradientPaint has the following syntax.
@@ -76,5 +72,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to GradientPaint ↑

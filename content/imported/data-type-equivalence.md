@@ -15,9 +15,7 @@ publicclass MainClass {
     System.out.println(n1 != n2);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 false
 true
 ```

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50453
 source: https://www.java2s.com/Tutorials/Java/Java_Language/6020__Java_Exception_Type.html
 ---
-```java title=Example.java
-```
-
 The following diagram shows the Java exception type hierarchy:
 
 ```java title=Example.java

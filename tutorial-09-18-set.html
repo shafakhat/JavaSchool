@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set - Collections - Java Tutorial - JavaSchool</title>
+<meta name="description" content="9.18 Set: 25 java2s tutorial pages (Collections chapter).">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-subtopic">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-collections.html">Collections</a> <span class="crumb-sep">&rsaquo;</span> <span>Set</span></nav>
+    <h1>9.18 Set</h1>
+    <p><strong>25 pages</strong> in this java2s topic &middot; <strong>0</strong> on the site. Pages are listed in the original order and open exactly as archived.</p>
+    <ul class="article-list">
+<li class="queued"><span class="a-num">9.18.1.</span><span class="pending">Convert a List to a Set</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.2.</span><span class="pending">Convert an ArrayList to HashSet</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.3.</span><span class="pending">Creating a Sorted Set</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.4.</span><span class="pending">Create new sets from Iterable, var argv</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.5.</span><span class="pending">Create an array containing the elements in a set</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.6.</span><span class="pending">Comparable with a sorted collection.</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.7.</span><span class="pending">Duplicate elements are discarded</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.8.</span><span class="pending">Creating a Set That Retains Order-of-Insertion</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.9.</span><span class="pending">Convert Set into array</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.10.</span><span class="pending">Convert Set into List</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.11.</span><span class="pending">Copy all the elements from set2 to set1 (set1 += set2), set1 becomes the union of set1 and set2</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.12.</span><span class="pending">Remove all the elements in set1 from set2 (set1 -= set2), set1 becomes the asymmetric difference of set1 and set2</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.13.</span><span class="pending">Get the intersection of set1 and set2, set1 becomes the intersection of set1 and set2</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.14.</span><span class="pending">Set operations: union, intersection, difference, symmetric difference, is subset, is superset</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.15.</span><span class="pending">Remove all elements from a set</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.16.</span><span class="pending">List Set</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.17.</span><span class="pending">Set implementation that use == instead of equals()</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.18.</span><span class="pending">Set union and intersection</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.19.</span><span class="pending">Set with values iterated in insertion order.</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.20.</span><span class="pending">Implements the Set interface, backed by a ConcurrentHashMap instance</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.21.</span><span class="pending">A weak HashSet: element stored in the WeakHashSet might be garbage collected</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.22.</span><span class="pending">An IdentitySet that uses reference-equality instead of object-equality</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.23.</span><span class="pending">A thin wrapper around a List transforming it into a modifiable Set.</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.24.</span><span class="pending">Concurrent set</span><span class="pill">restoring</span></li>
+<li class="queued"><span class="a-num">9.18.25.</span><span class="pending">Set that compares object by identity rather than equality</span><span class="pill">restoring</span></li>
+    </ul>
+    <p class="arc-crumb"><a href="tutorial-09-collections.html">&larr; Back to Collections</a></p>
+
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

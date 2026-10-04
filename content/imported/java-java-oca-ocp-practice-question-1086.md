@@ -3,8 +3,8 @@ title: Java OCA OCP Practice Question 1086
 nav: Java OCA OCP Practice Ques...
 description: Which of the following can be inserted on line 8 to make this code compile?
 section: Imported - java2s Archive
-order: 1067
-source: https://web.archive.org/web/20210101014714/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1086.html
+order: 1013
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1086.html
 ---
 ## Question
 
@@ -13,7 +13,7 @@ Which of the following can be inserted on line 8 to make this code compile?
 Choose all that apply
 
 ```java title=Example.java
-7: publicvoid r() throwsIOException {
+7: public void r() throws IOException {
 8:   // INSERT CODE HERE
 9: }
 ```

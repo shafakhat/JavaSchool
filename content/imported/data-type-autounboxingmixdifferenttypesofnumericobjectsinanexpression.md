@@ -15,8 +15,6 @@ publicclass MainClass {
     System.out.println("dOb after expression: " + doubleObject);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 dOb after expression: 198.6
 ```

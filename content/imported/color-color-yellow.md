@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Color/0540__Color.YELLOW.htm
 ---
-```java title=Example.java
-Back to Color  ↑
-```
-
 ## Syntax
 
 Color.YELLOW has the following syntax.
@@ -38,5 +34,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to Color ↑

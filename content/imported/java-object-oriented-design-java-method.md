@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50140
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0040__Java_Method.html
 ---
-```java title=Example.java
-```
-
 A method in a class defines the behavior of the objects.
 
 A method is a named block of code.

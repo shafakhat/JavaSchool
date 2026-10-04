@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Cursor/0140__Cursor.MOVE_CURSOR.htm
 ---
-```java title=Example.java
-Back to Cursor  ↑
-```
-
 ## Syntax
 
 Cursor.MOVE_CURSOR has the following syntax.
@@ -35,5 +31,3 @@ public class Main {
   }
 }
 ```
-
-- Back to Cursor ↑

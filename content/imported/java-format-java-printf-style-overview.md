@@ -3,12 +3,9 @@ title: Java Format - Java printf-style Formatting
 nav: Java Format - Java printf-...
 description: The java.util.Formatter class supports printf-style formatting.
 section: Imported - java2s Archive
-order: 50390
-source: https://www.java2s.com/Tutorials/Java/Java_Format/0050__Java_Printf_Style_Overview.html
+order: 1007
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Format/0050__Java_Printf_Style_Overview.html
 ---
-```java title=Example.java
-```
-
 The java.util.Formatter class supports printf-style formatting.
 
 printf-style formatting is well supported by C programming language.
@@ -17,8 +14,8 @@ The following code uses C's Printf-style Formatting in Java.
 
 ```java title=Example.java
 import java.util.Date;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     // Formatting strings
     System.out.printf("%1$s, %2$s,  and  %3$s %n", "ABC", "DEF", "XYZ");
     System.out.printf("%3$s, %2$s,  and  %1$s %n", "ABC", "DEF", "XYZ");
@@ -66,8 +63,8 @@ The following code shows how to use Formatter class to format the data and store
 ```java title=Example.java
 import java.util.Date;
 import java.util.Formatter;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     StringBuilder sb = new StringBuilder();
     Formatter fm = new Formatter(sb);
     // Formatting strings
@@ -103,8 +100,8 @@ And we have to call its close() method to close the output file.
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Formatter;
-publicclass Main {
-  publicstatic void main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     File file = new File("xyz.txt");
     Formatter fm = null;
     try {

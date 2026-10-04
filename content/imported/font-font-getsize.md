@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Font/1320__Font.getSize_.htm
 ---
-```java title=Example.java
-Back to Font  ↑
-```
-
 ## Syntax
 
 Font.getSize() has the following syntax.
@@ -47,5 +43,3 @@ publicclass Main extends JFrame {
   }
 }
 ```
-
-- Back to Font ↑

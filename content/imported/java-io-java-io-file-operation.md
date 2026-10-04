@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50199
 source: https://www.java2s.com/Tutorials/Java/Java_io/0020__Java_io_File_Operation.html
 ---
-```java title=Example.java
-```
-
 ## File Create
 
 We can create a new file using the createNewFile() method of the File class:

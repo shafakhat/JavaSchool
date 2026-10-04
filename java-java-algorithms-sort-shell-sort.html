@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Java Algorithms Sort Shell Sort - JavaSchool</title>
-<meta name="description" content="Java Algorithms Sort Shell Sort: Java tutorial page with examples and explanations.">
+<meta name="description" content="class MyArray {/*from w w w . j a v a2s .c o m*/ private long[] theArray; // ref to array theArray private int nElems;">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -37,24 +37,24 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Java Algorithms Sort Shell Sort</h1>
 <h2 id="description">Description</h2>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyArray {privatelong[] theArray; // ref to array theArrayprivateint nElems;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyArray { private long[] theArray; // ref to array theArray private int nElems;
    public MyArray(int max) {
-      theArray = newlong[max]; // create the array
+      theArray = new long[max]; // create the array
       nElems = 0;
    }
-   publicvoid insert(long value) // put element into array
+   public void insert(long value) // put element into array
    {
       theArray[nElems] = value;
       nElems++;
    }
-   publicvoid display() {
+   public void display() {
       System.out.print("A=");
-      for (int j = 0; j &lt; nElems; j++) // for each element,System.out.print(theArray[j] + " "); // display itSystem.out.println("");
+      for (int j = 0; j &lt; nElems; j++) // for each element, System.out.print(theArray[j] + " "); // display it System.out.println("");
    }
-   publicvoid shellSort() {
+   public void shellSort() {
       int inner, outer;
       long temp;
       int h = 1;
@@ -74,8 +74,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       }
    }
 }
-publicclass Main {
-   publicstaticvoid main(String[] args) {
+public class Main {
+   public static void main(String[] args) {
       int maxSize = 10;
       MyArray arr = new MyArray(maxSize);
       for (int j = 0; j &lt; maxSize; j++) {
@@ -90,7 +90,7 @@ publicclass Main {
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
 <ul><li>Java byte array compare for differences</li><li>Java byte array convert from hex string</li></ul>
-    <div class="pager"><a class="pager-btn" href="data-type-integercalculations.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Integer Calculations</span></a><a class="pager-btn pager-next" href="generics-javagenericgenericsandarrays.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java generic</span></a></div>
+    <div class="pager"><a class="pager-btn" href="math-save-decimal.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms How to - S...</span></a><a class="pager-btn pager-next" href="java-io-java-io-bufferedinputstream.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java Bu...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

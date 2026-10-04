@@ -22,9 +22,7 @@ public class MainClass {
     System.out.println(count);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 here
 9
 10

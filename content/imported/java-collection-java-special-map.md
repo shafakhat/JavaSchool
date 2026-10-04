@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50341
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0200__Java_Special_Map.html
 ---
-```java title=Example.java
-```
-
 ## Sorted Maps
 
 A sorted map keeps the map entries in order.

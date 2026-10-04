@@ -17,8 +17,6 @@ public class MainClass {
     System.out.println(sum);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 330
 ```

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20160731162533/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Math/Create_Calculator.htm
 ---
-```java title=Example.java
-Back to Math  ↑
-```
-
 ## Question
 
 We would like to know how to create Calculator.
@@ -207,8 +203,5 @@ publicclass Main extends JFrame implements ActionListener {
     s = "";
   }
 }
-```
-
-```java title=Example.java
-Back to Math  ↑
+java title=Example.java
 ```

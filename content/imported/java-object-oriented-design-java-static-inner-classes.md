@@ -3,12 +3,9 @@ title: Java Object Oriented Design - Java static Inner Classes
 nav: Java Object Oriented Desig...
 description: A member class defined within the body of another class may be declared static.
 section: Imported - java2s Archive
-order: 50162
-source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0260__Java_static_Inner_Classes.html
+order: 1004
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0260__Java_static_Inner_Classes.html
 ---
-```java title=Example.java
-```
-
 A static Member Class Is Not an Inner Class
 
 A member class defined within the body of another class may be declared static.
@@ -19,8 +16,8 @@ The following code declares a top-level class A and a static member class B:
 
 ```java title=Example.java
 class A {
-  // Static member classpublicstaticclass B {
-    // Body forclass B goes here
+  // Static member class public static class B {
+    // Body for class B goes here
   }
 }
 ```
@@ -61,8 +58,8 @@ We can also use the simple name B outside class A by importing the com.java2s.in
 The following code shows how to use static inner class.
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Car.Tire m = new Car.Tire(17);
     Car.Tire m2 = new Car.Tire(19);
     Car.Keyboard k = new Car.Keyboard(122);
@@ -75,23 +72,23 @@ publicclass Main {
 }
 class Car {
   // Static member class - Monitor
-publicstaticclass Tire {
-    privateint size;
+ public static class Tire {
+    private int size;
     public Tire(int size) {
       this.size = size;
     }
     public String toString() {
-      return"Monitor   - Size:" + this.size + "  inch";
+      return "Monitor   - Size:" + this.size + "  inch";
     }
   }
   // Static member class - Keyboard
-publicstaticclass Keyboard {
-    privateint keys;
+ public static class Keyboard {
+    private int keys;
     public Keyboard(int keys) {
       this.keys = keys;
     }
     public String toString() {
-      return"Keyboard  - Keys:" + this.keys;
+      return "Keyboard  - Keys:" + this.keys;
     }
   }
 }

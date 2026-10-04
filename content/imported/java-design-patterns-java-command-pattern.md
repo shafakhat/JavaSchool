@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50125
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0150__Java_Command_Pattern.html
 ---
-```java title=Example.java
-```
-
 Command pattern is a data driven design pattern It is one of the behavioral pattern.
 
 A request is wrapped under a object as command and passed to invoker object.

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50103
 source: https://www.java2s.com/Tutorials/Java/Scala/3030__Scala_Objects.html
 ---
-```java title=Example.java
-```
-
 In Scala, we can use object to refer to an instance of a class as in Java and we can also use object as a keyword.
 
 ## Singleton Objects

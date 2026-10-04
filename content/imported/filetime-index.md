@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50290
 source: https://www.java2s.com/Tutorials/Java/java.nio.file.attribute/FileTime/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java FileTime.compareTo(FileTime other)

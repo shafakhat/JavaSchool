@@ -35,9 +35,7 @@ publicclass MainClass {
     System.out.println("de = " + de);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Integer Arithmetic
 a = 2
 b = 6

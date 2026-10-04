@@ -21,16 +21,12 @@ publicclass Main {
       System.out.print("s1 " + ((s1 == s2) ? "==" : "!=") + " s2");
    }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 A.   s1 == s2
 B.   s1 != s2
 C.   s1
 D.   s1 == "abcd"
-```
-
-```java title=Example.java
+java title=Example.java
 B.
 ```
 

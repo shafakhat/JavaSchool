@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50335
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0160__Java_Queue.html
 ---
-```java title=Example.java
-```
-
 A queue is a collection of objects on which operations can only be performed at two ends of the queue.
 
 A queue has two ends known as head and tail.

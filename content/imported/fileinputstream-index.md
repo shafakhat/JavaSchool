@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50254
 source: https://www.java2s.com/Tutorials/Java/java.io/FileInputStream/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java FileInputStream(File file) Constructor

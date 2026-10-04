@@ -3,12 +3,9 @@ title: Java Tutorial - How to use Java generic interface
 nav: Java Tutorial - How to use...
 description: type-param-list is a comma-separated list of type parameters. When a generic interface is implemented, you must specify the type arguments, as shown here:
 section: Imported - java2s Archive
-order: 50459
-source: https://www.java2s.com/Tutorials/Java/Java_Language/8020__Java_generic_interface.html
+order: 1003
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Language/8020__Java_generic_interface.html
 ---
-```java title=Example.java
-```
-
 In Java we create generic interface.
 
 ## Syntax
@@ -16,14 +13,14 @@ In Java we create generic interface.
 Here is the generalized syntax for a generic interface:
 
 ```java title=Example.java
-interfaceinterface-name<type-param-list> { // ...
+interface interface-name<type-param-list> { // ...
 ```
 
 type-param-list is a comma-separated list of type parameters. When a generic interface is implemented, you must specify the type arguments, as shown here:
 
 ```java title=Example.java
-classclass-name<type-param-list>
-   implementsinterface-name<type-arg-list> {
+class class-name<type-param-list>
+   implements interface-name<type-arg-list> {
 ```
 
 ## Note
@@ -59,8 +56,8 @@ class MyClass<T extends Comparable<T>> implements MinMax<T> {
     return v;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Integer inums[] = { 3, 6, 2, 8, 6 };
     Character chs[] = { 'b', 'r', 'p', 'w' };
     MyClass<Integer> a = new MyClass<Integer>(inums);

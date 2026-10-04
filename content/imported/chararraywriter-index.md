@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50246
 source: https://www.java2s.com/Tutorials/Java/java.io/CharArrayWriter/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java CharArrayWriter() Constructor

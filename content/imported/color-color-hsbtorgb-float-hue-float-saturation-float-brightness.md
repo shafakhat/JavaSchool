@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Color/1160__Color.HSBtoRGB_float_hue_float_saturation_float_brightness_.htm
 ---
-```java title=Example.java
-Back to Color  ↑
-```
-
 ## Syntax
 
 Color.HSBtoRGB(float hue, float saturation, float brightness) has the following syntax.
@@ -33,5 +29,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-- Back to Color ↑

@@ -3,12 +3,9 @@ title: Java Collection Tutorial - Java Collections Algorithms
 nav: Java Collection Tutorial -...
 description: We can also use sort(Comparator c) in the List interface to sort a List without using the Collections class.
 section: Imported - java2s Archive
-order: 50342
-source: https://www.java2s.com/Tutorials/Java/Java_Collection/0400__Java_Collections_Algorithms.html
+order: 1017
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Collection/0400__Java_Collections_Algorithms.html
 ---
-```java title=Example.java
-```
-
 ## Sort a List
 
 Two static methods in the Collections class sorts List.
@@ -24,8 +21,8 @@ The following code demonstrates how to sort a List:
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     List<String> list = new ArrayList<>();
     list.add("J");
     list.add("R");
@@ -33,7 +30,7 @@ publicclass Main {
     list.add("X");
     System.out.println("List: " + list);
     // Uses Comparable implementation in String class
-// to sort the list in natural order
+ // to sort the list in natural order
     Collections.sort(list);
     System.out.println("Sorted List:  " + list);
   }
@@ -50,8 +47,8 @@ The following code sorts the list in ascending order of the length of their elem
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     List<String> list = new ArrayList<>();
     list.add("Java");
     list.add("R");
@@ -98,8 +95,8 @@ The following snippet of code shows how to use this method:
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     List<String> list = new ArrayList<>();
     list.add("Java");
     list.add("R");
@@ -136,8 +133,8 @@ The following code shows how to use the shuffle methods.
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     List<String> list = new ArrayList<>();
     list.add("Java");
     list.add("R");
@@ -169,8 +166,8 @@ The following code shows how to use the reverse() method.
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     List<String> list = new ArrayList<>();
     list.add("Java");
     list.add("R");
@@ -204,8 +201,8 @@ The following code shows how to reorder elements of a List using these methods.
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     List<String> list = new ArrayList<>();
     list.add("Java");
     list.add("R");
@@ -228,8 +225,8 @@ The code above generates the following result.
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     List<String> list = new ArrayList<>();
     list.add("Java");
     list.add("R");

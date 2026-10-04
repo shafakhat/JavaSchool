@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50292
 source: https://www.java2s.com/Tutorials/Java/java.nio.file.attribute/PosixFilePermissions/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java PosixFilePermissions .asFileAttribute (Set < PosixFilePermission > perms)

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/0280__BorderLayout.WEST.htm
 ---
-```java title=Example.java
-Back to BorderLayout  ↑
-```
-
 ## Syntax
 
 BorderLayout.WEST has the following syntax.
@@ -40,5 +36,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to BorderLayout ↑

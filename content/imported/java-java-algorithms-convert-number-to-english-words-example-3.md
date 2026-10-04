@@ -1,22 +1,22 @@
 ---
 title: Java Algorithms Convert number to English words example 3
 nav: Java Algorithms Convert nu...
-description: String string;//fromwww.java2s.comString st1[] = { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", };
+description: String string;//from w w w .j ava 2 s .c om String st1[] = { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", };
 section: Imported - java2s Archive
-order: 1023
-source: https://web.archive.org/web/20210102113325/http://www.java2s.com/ref/java/java-algorithms-convert-number-to-english-words-example-3.html
+order: 1002
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-algorithms-convert-number-to-english-words-example-3.html
 ---
 ## Description
 
 ```java title=Example.java
 import java.util.Scanner;
-publicclass Main {
+public class Main {
    String string;String st1[] = { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", };
    String st2[] = { "hundred", "thousand", "lakh", "crore" };
    String st3[] = { "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen",
          "ninteen", };
    String st4[] = { "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety" };
-   publicString convert(int number) {
+   public String convert(int number) {
       int n = 1;
       int word;
       string = "";
@@ -76,7 +76,7 @@ publicclass Main {
       }
       return string;
    }
-   publicvoid pass(int number) {
+   public void pass(int number) {
       int word, q;
       if (number < 10) {
          show(st1[number]);
@@ -97,15 +97,15 @@ publicclass Main {
          }
       }
    }
-   publicvoid show(String s) {
+   public void show(String s) {
       String st;
       st = string;
       string = s;
       string += st;
    }
-   publicstaticvoid main(String[] args) {
+   public static void main(String[] args) {
       Main w = new Main();
-      Scanner input = newScanner(System.in);
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter Number: ");
       int num = input.nextInt();
       String inwords = w.convert(num);

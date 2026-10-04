@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50086
 source: https://www.java2s.com/Tutorials/Java/Scala/0170__Scala_Option.html
 ---
-```java title=Example.java
-```
-
 Option lets us express null value explicitly without the null "hack".
 
 Option is an abstract class and its two concrete subclasses are Some, for when we have a value, and None, when we don't.

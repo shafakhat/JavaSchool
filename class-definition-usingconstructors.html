@@ -37,14 +37,15 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-05-class-definition.html">Class Definition</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-05-class-definition.html">Class Definition</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-05-02-constructor.html">Constructor</a></nav>
     <h1>Using Constructors</h1>
 <ul><li>Every class must have at least one constructor.</li><li>If there is no constructors for your class, the compiler will supply a default constructor(no-arg constructor).</li><li>A constructor is used to construct an object.</li><li>A constructor looks like a method and is sometimes called a constructor method.</li><li>A constructor never returns a value</li><li>A constructor always has the same name as the class.</li><li>A constructor may have zero argument, in which case it is called a no-argument (or no-arg, for short) constructor.</li><li>Constructor arguments can be used to initialize the fields in the object.</li></ul>
 <p>The syntax for a constructor is as follows.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">constructorName (listOfArguments) {
     [constructor body]
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+}
+java title=Example.java
+public class MainClass {
   double radius;
   // Class constructor
   MainClass(double theRadius) {

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50363
 source: https://www.java2s.com/Tutorials/Java/java.util/List/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java List.add(E e)

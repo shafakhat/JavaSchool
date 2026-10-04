@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50281
 source: https://www.java2s.com/Tutorials/Java/java.io/Reader/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Reader.close()

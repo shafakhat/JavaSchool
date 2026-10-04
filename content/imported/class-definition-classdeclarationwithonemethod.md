@@ -22,8 +22,6 @@ class GradeBook
       System.out.println( "Welcome to the Grade Book!" );
    }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Welcome to the Grade Book!
 ```

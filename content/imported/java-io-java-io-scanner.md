@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50215
 source: https://www.java2s.com/Tutorials/Java/Java_io/0730__Java_io_Scanner.html
 ---
-```java title=Example.java
-```
-
 To read numbers from the standard input, we have to read it as a string and parse it to a number.
 
 The Scanner class in java.util package reads and parses a text, based on a pattern, into primitive types and strings.

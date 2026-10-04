@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0060__CardLayout.CardLayout_int_hgap_int_vgap_.htm
 ---
-```java title=Example.java
-Back to CardLayout  ↑
-```
-
 ## Syntax
 
 CardLayout(int hgap, int vgap) constructor from CardLayout has the following syntax.
@@ -53,5 +49,3 @@ class CardLayoutPanel extends JPanel implements ActionListener {
   }
 }
 ```
-
-- Back to CardLayout ↑

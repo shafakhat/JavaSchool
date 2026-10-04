@@ -53,23 +53,23 @@ return a;</code></pre></div>
 <p>Listfill(byte[] arr) fill</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">List&lt;Byte&gt; list = null;
 if (arr == null) {
-    returnnewArrayList&lt;Byte&gt;(0);
+    return new ArrayList&lt;Byte&gt;(0);
 int size = arr.length;
-list = newArrayList&lt;Byte&gt;(size);
+list = new ArrayList&lt;Byte&gt;(size);
 for (byte by : arr) {
     list.add(by);
 ...</code></pre></div>
 <p>byte[]fill(byte[] val, byte b) fill</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (val == null)
-    thrownewIllegalArgumentException("val should not be null");
+    throw new IllegalArgumentException("val should not be null");
 Arrays.fill(val, b);
-returnval;</code></pre></div>
+return val;</code></pre></div>
 <p>char[]fill(char[] chars, int fromIndex, int toIndex, char c) fill</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int length = toIndex - fromIndex;
 if (length &lt; 20) {
     for (int i = fromIndex; i &lt; toIndex; i++)
         chars[i] = c;
-} elseif (c != ' ' || length &gt; WHITESPACE_BUFFER.length) {
+} else if (c != ' ' || length &gt; WHITESPACE_BUFFER.length) {
     Arrays.fill(chars, fromIndex, toIndex, c);
 } else {
     System.arraycopy(WHITESPACE_BUFFER, 0, chars, fromIndex, length);
@@ -81,14 +81,14 @@ if (length &lt; 20) {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for (double[] aD : d) {
     Arrays.fill(aD, val);</code></pre></div>
 <p>double[][]fill(final double[][] arr, final double val) Fills the given two-dimensional double array with the value val .</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for (finaldouble[] line : arr) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">for (final double[] line : arr) {
     Arrays.fill(line, val);
 return arr;</code></pre></div>
 <p>voidfill(final Object[] array, final int start, final int end, final Object value) Fill the specified segment of an array with the provided value.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">assert start &gt;= 0 &amp;&amp; start &lt;= end;
 assert end &lt;= array.length;
 assert array.length == 0 || array.length == pow2(array.length);
-finalint n = LINE_SIZE;
+final int n = LINE_SIZE;
 int i = Math.min(n, end);
 Arrays.fill(array, start, i, value);
 while (i &lt; end) {
@@ -102,7 +102,7 @@ return result;</code></pre></div>
 <p>T[]fill(final T[] array, final T value) Fill the given array with the given value</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Arrays.fill(array, value);
 return array;</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="java-utility-method-array-extract-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="java-utility-method-array-find-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="flowlayout-java-flowlayout-int-align-constructor.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java FlowL...</span></a><a class="pager-btn pager-next" href="jstl-jstlforeachandscopedvariable.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JSTL</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

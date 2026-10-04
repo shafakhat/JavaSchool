@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50154
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0180__Java_Object_Equals.html
 ---
-```java title=Example.java
-```
-
 The following code shows how to implement equals() and hashCode() Methods
 
 ```java title=Example.java

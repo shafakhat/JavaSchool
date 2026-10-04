@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50194
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0730__Java_Annotation_Usage.html
 ---
-```java title=Example.java
-```
-
 The supplied value for elements of an annotation must be a compile-time constant expression and we cannot use null as the value for any type of element in an annotation.
 
 ## Primitive Types
@@ -29,9 +26,7 @@ public @interface MyAnnotation {
   boolean g();
   char h();
 }
-```
-
-```java title=Example.java
+java title=Example.java
 @MyAnnotation(a=1, b=2,  c=3,  d=4,  e=12.34F, f=1.89, g=true, h='Y')
 ```
 

@@ -27,8 +27,6 @@ public class MainClass{
      System.out.println(date);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Tue Jan 13 12:38:31 PST 1970
 ```

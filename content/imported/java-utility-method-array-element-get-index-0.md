@@ -3,8 +3,8 @@ title: Java Utililty Methods Array Element Get
 nav: Java Utililty Methods Arra...
 description: The list of methods to do Array Element Get are organized into topic(s).
 section: Imported - java2s Archive
-order: 50061
-source: https://www.java2s.com/example/java-utility-method/array-element-get-index-0.html
+order: 1016
+source: https://web.archive.org/web/2016/https://www.java2s.com/example/java-utility-method/array-element-get-index-0.html
 ---
 List of utility methods to do Array Element Get
 
@@ -19,7 +19,7 @@ TarrayElement(T[] array, int index) Gets the element at an index in the array, b
 ```java title=Example.java
 if (index < 0 || index >= array.length)
     return null;
-elsereturn array[index];
+else return array[index];
 ```
 
 Tget(int index, final T[]... arrays) get
@@ -65,10 +65,10 @@ return array[index];
 ArrayListgetAllMatches(String[] target, String[] pattern) Input: array of strings, and a target array Output: the array of all the appearance
 
 ```java title=Example.java
-ArrayList<Integer> result = newArrayList<Integer>();
+ArrayList<Integer> result = new ArrayList<Integer>();
 int start = 0;
 while (start < target.length) {
-    String[] subArray = newString[target.length - start];
+    String[] subArray = new String[target.length - start];
     for (int iter = 0; iter < subArray.length; iter++) {
         subArray[iter] = target[iter + start];
     int index = getFirst(subArray, pattern);
@@ -78,7 +78,7 @@ while (start < target.length) {
 MapgetArgPairsSeparatedByChar(String[] args, String separator) get Arg Pairs Separated By Char
 
 ```java title=Example.java
-Map<String, String> argPairs = newHashMap<String, String>();
+Map<String, String> argPairs = new HashMap<String, String>();
 if (args != null) {
     for (String argPair : args) {
         String[] pair = argPair.split("=");
@@ -94,30 +94,30 @@ if (flags == null || flags.length == 0)
     return null;
 if (args == null || args.length == 0)
     return defaultValue;
-finalList<String> r = newArrayList<String>();
+final List<String> r = new ArrayList<String>();
 int i = 0;
 outer: for (; i < args.length; i++)
-    for (finalString flag : flags)
+    for (final String flag : flags)
 ...
 ```
 
 MapgetArgs(String[] args, String... singleArgs) Get CLI arguments.
 
 ```java title=Example.java
-Map<String, String[]> params = newHashMap<String, String[]>();
+Map<String, String[]> params = new HashMap<String, String[]>();
 for (int i = 0; i < args.length; i++) {
     String inArg = args[i];
     if (!inArg.startsWith("--")) {
-        thrownewException("Wrong argument syntax: " + inArg);
+        throw new Exception("Wrong argument syntax: " + inArg);
     } else {
         inArg = inArg.substring(2);
     for (int j = 0; j < singleArgs.length; j++) {
         if (singleArgs[j].equals(inArg)) {
-            params.put(inArg, newString[] {});
+            params.put(inArg, new String[] {});
     if (inArg.contains("=")) {
         String[] keyset = inArg.split("=", 2);
         if (keyset[1].startsWith("{") && keyset[1].endsWith("}")) {
-            params.put(keyset[0], newString[] { keyset[1].substring(1, keyset[1].length() - 1) });
+            params.put(keyset[0], new String[] { keyset[1].substring(1, keyset[1].length() - 1) });
         } else {
             params.put(keyset[0], keyset[1].split(","));
 return params;

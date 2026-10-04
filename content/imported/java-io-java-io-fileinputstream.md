@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java FileInputStream
 nav: Java IO Tutorial - Java Fi...
 description: In Java I/O, a stream means a flow of data. The data in the stream could be bytes, characters, objects, etc.
 section: Imported - java2s Archive
-order: 50201
-source: https://www.java2s.com/Tutorials/Java/Java_io/0100__Java_io_FileInputStream.html
+order: 1010
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/0100__Java_io_FileInputStream.html
 ---
-```java title=Example.java
-```
-
 In Java I/O, a stream means a flow of data. The data in the stream could be bytes, characters, objects, etc.
 
 To read from a file, we need to create an object of the FileInputStream class, which will represent the input stream.
@@ -75,8 +72,8 @@ The following code shows how to read a Byte at a Time from a File Input Stream.
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     String dataSourceFile = "asdf.txt";
     try (FileInputStream fin = new FileInputStream(dataSourceFile)) {
       byte byteData;

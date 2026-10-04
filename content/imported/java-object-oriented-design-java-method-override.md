@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50166
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0310__Java_Method_Override.html
 ---
-```java title=Example.java
-```
-
 ## Method Overriding
 
 Redefining an instance method in a class inherited from the superclass, is called method overriding.

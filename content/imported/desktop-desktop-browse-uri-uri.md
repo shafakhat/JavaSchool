@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Desktop/0040__Desktop.browse_URI_uri_.htm
 ---
-```java title=Example.java
-Back to Desktop  ↑
-```
-
 ## Syntax
 
 Desktop.browse(URI uri) has the following syntax.
@@ -45,5 +41,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to Desktop ↑

@@ -3,8 +3,8 @@ title: Java Utililty Methods Array Invert
 nav: Java Utililty Methods Arra...
 description: The list of methods to do Array Invert are organized into topic(s).
 section: Imported - java2s Archive
-order: 50076
-source: https://www.java2s.com/example/java-utility-method/array-invert-index-0.html
+order: 1019
+source: https://web.archive.org/web/2016/https://www.java2s.com/example/java-utility-method/array-invert-index-0.html
 ---
 List of utility methods to do Array Invert
 
@@ -17,7 +17,7 @@ The list of methods to do Array Invert are organized into topic(s).
 boolean[]invert(boolean[] binary) Invert binary array (apply a negation to each value).
 
 ```java title=Example.java
-finalboolean[] inverted = newboolean[binary.length];
+final boolean[] inverted = new boolean[binary.length];
 for (int i = 0; i < inverted.length; i++) {
     inverted[i] = !binary[i];
 return inverted;
@@ -36,7 +36,7 @@ byte[]invert(byte abyte0[]) invert
 ```java title=Example.java
 if (abyte0 == null || abyte0.length == 0)
     return abyte0;
-byte abyte1[] = newbyte[abyte0.length];
+byte abyte1[] = new byte[abyte0.length];
 for (int i = 0; i < abyte0.length; i++)
     abyte1[i] = abyte0[abyte0.length - i - 1];
 return abyte1;
@@ -45,7 +45,7 @@ return abyte1;
 byte[]invert(byte[] array) invert
 
 ```java title=Example.java
-byte[] newArray = newbyte[array.length];
+byte[] newArray = new byte[array.length];
 for (int i = 0; i < array.length; ++i)
     newArray[newArray.length - i - 1] = array[i];
 return newArray;
@@ -54,7 +54,7 @@ return newArray;
 byte[]invert(byte[] bytes) Invert the provided byte array.
 
 ```java title=Example.java
-byte[] invertedBytes = newbyte[bytes.length];
+byte[] invertedBytes = new byte[bytes.length];
 for (int i = 0; i < bytes.length; i++) {
     invertedBytes[i] = (byte) (~bytes[i]);
 return invertedBytes;
@@ -89,8 +89,8 @@ float[]invert(float[] a) invert
 
 ```java title=Example.java
 if (a == null) {
-    thrownewIllegalArgumentException("Argument cannot be null");
-float[] c = newfloat[a.length];
+    throw new IllegalArgumentException("Argument cannot be null");
+float[] c = new float[a.length];
 for (int i = 0; i < a.length; i++) {
     c[i] = 1.0f / a[i];
 return c;
@@ -100,7 +100,7 @@ return c;
 booleaninvert(float[] m, float[] invOut) invert
 
 ```java title=Example.java
-float[] inv = newfloat[16];
+float[] inv = new float[16];
 float det;
 int i;
 inv[0] = m[5] * m[10] * m[15] - m[5] * m[11] * m[14] - m[9] * m[6] * m[15] + m[9] * m[7] * m[14]

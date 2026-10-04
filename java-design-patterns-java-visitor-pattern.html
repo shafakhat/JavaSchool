@@ -29,49 +29,48 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-design-patterns.html">Java Design Patterns</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-design-patterns.html">Java Design Patterns</a></nav>
     <h1>Java Design Patterns Tutorial - Java Design Pattern - Visitor Pattern</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>In visitor pattern, element object accepts the visitor object and visitor object handles the operation on the element object.</p>
 <p>This pattern is a behavior pattern.</p>
 <p>By this way, execution algorithm of element can be changed from different visitors.</p>
 <h2 id="example">Example</h2>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class TreeNode {private String name;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class TreeNode { private String name;
   public TreeNode(String name) {
     this.name = name;
   }
   public String getName() {
     return name;
   }
-  publicvoid accept(NodeVisitor v) {
+  public void accept(NodeVisitor v) {
     v.visit(this);
   }
 }
 interface NodeVisitor {
-  publicvoid visit(TreeNode n);
+  public void visit(TreeNode n);
 }
 class ConsoleVisitor implements NodeVisitor {
   @Override
-  publicvoid visit(TreeNode n) {
+  public void visit(TreeNode n) {
     System.out.println("console:" + n.getName());
   }
 }
 class EmailVisitor implements NodeVisitor {
   @Override
-  publicvoid visit(TreeNode n) {
+  public void visit(TreeNode n) {
     System.out.println("email:" + n.getName());
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     TreeNode computer = new TreeNode("JavaSchool");
     computer.accept(new ConsoleVisitor());
     computer.accept(new EmailVisitor());
@@ -79,7 +78,7 @@ publicclass Main {
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-design-patterns-java-template-pattern.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Design Patterns Tutor...</span></a><a class="pager-btn pager-next" href="java-design-patterns-java-mvc-pattern.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Design Patterns Tutor...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="language-javacompileroptions.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Compiler Options</span></a><a class="pager-btn pager-next" href="color-java-java-awt-color.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java java.awt.Color</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

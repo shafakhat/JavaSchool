@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50152
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0160__Java_Object_Class.html
 ---
-```java title=Example.java
-```
-
 Java has an Object class in the java.lang package.
 
 All Java classes extend the Object class directly or indirectly.

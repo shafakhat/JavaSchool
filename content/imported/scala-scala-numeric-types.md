@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50083
 source: https://www.java2s.com/Tutorials/Java/Scala/0140__Scala_Numeric_Types.html
 ---
-```java title=Example.java
-```
-
 The numeric data types in Scala constitute Float and Double types along with Integral data types such as Byte, Short, Int, Long, and Char.
 
 The following table displays Scala's numeric data types.

@@ -29,17 +29,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">Java Object Oriented Design</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-object-oriented-design.html">Java Object Oriented Design</a></nav>
     <h1>Java Object Oriented Design - Java Data Type</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <h2 id="adding-bodies-to-an-enum-constant">Adding bodies to an Enum Constant</h2>
 <p>We can add a different body to each enum constant. The body can have fields and methods.</p>
 <p>The body for an enum constant is placed inside braces following its name.</p>
@@ -60,42 +59,42 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The following code creates Level enum type with body.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Level {
   LOW("Low Level", 30) {
-    publicdouble getDistance() {
+    public double getDistance() {
       return 30.0;
     }
   },
   MEDIUM("Medium Level", 15) {
-    publicdouble getDistance() {
+    public double getDistance() {
       return 15.0;
     }
   },
   HIGH("High Level", 7) {
-    publicdouble getDistance() {
+    public double getDistance() {
       return 7.0;
     }
   },
   URGENT("Urgent Level", 1) {
-    publicdouble getDistance() {
+    public double getDistance() {
       return 1.0;
     }
   };
-  privateint levelValue;
+  private int levelValue;
   private String description;
   private Level(String description, int levelValue) {
     this.description = description;
     this.levelValue = levelValue;
   }
-  publicint getLevelValue() {
+  public int getLevelValue() {
     return levelValue;
   }
   @Override
   public String toString() {
     return this.description;
   }
-  publicabstractdouble getDistance();
+  public abstract double getDistance();
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     for (Level s : Level.values()) {
       String name = s.name();
       String desc = s.toString();
@@ -113,7 +112,7 @@ publicclass Main {
 <p>It has overridden the toString() method in the Enum class.</p>
 <p>The code above generates the following result.</p>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-enum-methods.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-enum-compare.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-io-java-nio-bufer-read-write.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java Bu...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-110.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

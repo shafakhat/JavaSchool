@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50113
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0020__Java_Abstract_Factory_Pattern.html
 ---
-```java title=Example.java
-```
-
 Abstract Factory pattern is another creational pattern.
 
 Abstract Factory patterns, also called as Factory of factories, have a factory which creates other factories.

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50322
 source: https://www.java2s.com/Tutorials/Java/Java_XML/0100__Java_DOM_Intro.html
 ---
-```java title=Example.java
-```
-
 A DOM is a standard tree structure, where each node contains one of the components from an XML structure.
 
 The two most common types of nodes in XML document are element nodes and text nodes.

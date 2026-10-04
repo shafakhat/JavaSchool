@@ -17,8 +17,6 @@ publicclass MainClass{
      System.out.println(octValue);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 30
 ```

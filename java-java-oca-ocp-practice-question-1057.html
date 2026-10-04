@@ -42,26 +42,27 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="question">Question</h2>
 <p>Consider the following two classes defined in two .java files.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">//in file /root/com/foo/X.java package com .foo;
-publicclass X{
-  publicstaticint MyID = 10;
-  publicvoid apply (int i){
+public class X{
+  public static int MyID = 10;
+  public void apply (int i){
     System.out.println ("applied");
    }
 }
 //in file /root/com/bar/Y.java package com .bar;
-//1  &lt;== INSERT STATEMENT (s) HERE publicclass Y{
-    publicstaticvoid main (String [] args){
+//1  &lt;== INSERT STATEMENT (s) HERE public class Y{
+    public static void main (String [] args){
        System.out.println (X.MyID);
      }
 }</code></pre></div>
 <p>What should be inserted at // 1 so that Y.java can compile without any error?</p>
 <p>Select 1 option</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">A. importstatic X;
-B. importstatic com.foo.*;
-C. importstatic com.foo.X .*;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">A. import static X;
+B. import static com.foo.*;
+C. import static com.foo.X .*;
 D. import com .foo.*;
-E. import com .foo.X .MyID;</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Correct Option is  : D</code></pre></div>
+E. import com .foo.X .MyID;
+java title=Example.java
+Correct Option is  : D</code></pre></div>
 <h2 id="note">Note</h2>
 <p>A. and B. are wrong.</p>
 <p>Bad syntax. Package import does not use static keyword.</p>
@@ -76,7 +77,7 @@ E. import com .foo.X .MyID;</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
 <ul><li>Java OCA OCP Practice Question 1054</li><li>Java OCA OCP Practice Question 1055</li><li>Java OCA OCP Practice Question 1056</li><li>Java OCA OCP Practice Question 1058</li><li>Java OCA OCP Practice Question 1059</li></ul>
-    <div class="pager"><a class="pager-btn" href="class-javainstanceinitialization.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Instance Initialization</span></a><a class="pager-btn pager-next" href="flowlayout-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Swing Tutorial - Flow...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-java-oca-ocp-practice-question-1027.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a><a class="pager-btn pager-next" href="java-reflection-java-create-objects.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Reflection Object Cre...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

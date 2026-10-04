@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50144
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0070__Java_main_Method.html
 ---
-```java title=Example.java
-```
-
 Let's discuss the main() method that we have been using to run our classes.
 
 The main() method declaration is as follows:

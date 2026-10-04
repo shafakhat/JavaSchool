@@ -3,12 +3,9 @@ title: Java Object Oriented Design - Java Access Level Class Members
 nav: Java Object Oriented Desig...
 description: The access level for a class member determines what area of the program can access it. One of the following four access level modifiers can be used for a class member:
 section: Imported - java2s Archive
-order: 50148
-source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0090__Java_Access_Level_Class_Members.html
+order: 1013
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0090__Java_Access_Level_Class_Members.html
 ---
-```java title=Example.java
-```
-
 A class can be public or default (or package level).
 
 The access level for a class member determines what area of the program can access it. One of the following four access level modifiers can be used for a class member:
@@ -37,26 +34,26 @@ Access levels for a class member can be listed from the most restrictive to the 
 The following code shows how to use different access levels:
 
 ```java title=Example.java
-publicclass Main {
-  privateint num1; // private access level
-int num2; // package-level access
-protectedint num3; // protected access level
-publicint num4; // public access level
-publicstaticint count = 1; // public access level
-// private access level
-privatevoid m1() {
+public class Main {
+  private int num1; // private access level
+ int num2; // package-level access
+ protected int num3; // protected access level
+ public int num4; // public access level
+public static int count = 1; // public access level
+ // private access level
+ private void m1() {
   }
   // package-level access
-void m2() {
+ void m2() {
   }
   // protected access level
-protectedvoid m3() {
+ protected void m3() {
   }
   // public access level
-publicvoid m4() {
+ public void m4() {
   }
   // private access level
-privatestaticvoid doSometing() {
+ private static void doSometing() {
   }
 }
 ```
@@ -74,11 +71,11 @@ We must consider the access level of both the class and its member to determine 
 The following code shows how to use access level modifiers when creating a Java bean.
 
 ```java title=Example.java
-class Account {privatedouble balance;
-  publicdouble getBalance() {
+class Account { private double balance;
+  public double getBalance() {
     return this.balance;
   }
-  publicint save(double amount) {
+  public int save(double amount) {
     if (amount < 0.0 || Double.isNaN(amount) || Double.isInfinite(amount)) {
       System.out.println("Invalid credit amount:  " + amount);
       return -1;
@@ -86,7 +83,7 @@ class Account {privatedouble balance;
     this.balance = this.balance + amount;
     return 1;
   }
-  publicint spend(double amount) {
+  public int spend(double amount) {
     if (amount < 0.0 || Double.isNaN(amount) || Double.isInfinite(amount)) {
       System.out.println("Invalid debit amount:  " + amount);
       return -1;
@@ -99,8 +96,8 @@ class Account {privatedouble balance;
     return 1;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Account ac = new Account();
     double balance = ac.getBalance();
     System.out.println("Balance = " + balance);

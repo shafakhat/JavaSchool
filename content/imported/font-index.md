@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Font/index.htm
 ---
-```java title=Example.java
-```
-
 ## Field
 
 - Java Font BOLD

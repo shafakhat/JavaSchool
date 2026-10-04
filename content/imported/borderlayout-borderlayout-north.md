@@ -3,19 +3,15 @@ title: Java Swing Tutorial - Java BorderLayout NORTH
 nav: Java Swing Tutorial - Java...
 description: In the following code shows how to use BorderLayout.NORTH field.
 section: Imported - java2s Archive
-order: 1008
+order: 1005
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/0200__BorderLayout.NORTH.htm
 ---
-```java title=Example.java
-Back to BorderLayout  ↑
-```
-
 ## Syntax
 
 BorderLayout.NORTH has the following syntax.
 
 ```java title=Example.java
-publicstaticfinal String NORTH
+public static final String NORTH
 ```
 
 ## Example
@@ -26,8 +22,8 @@ In the following code shows how to use BorderLayout.NORTH field.
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JToggleButton;
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     JFrame f = new JFrame("JToggleButton Sample");
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     f.add(new JToggleButton("North"), BorderLayout.NORTH);
@@ -40,5 +36,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to BorderLayout ↑

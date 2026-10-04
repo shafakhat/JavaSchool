@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50276
 source: https://www.java2s.com/Tutorials/Java/java.io/PrintStream/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java PrintStream(File file) Constructor

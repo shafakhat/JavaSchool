@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50356
 source: https://www.java2s.com/Tutorials/Java/java.util/HashSet/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java HashSet() Constructor

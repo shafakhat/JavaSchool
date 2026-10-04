@@ -3,12 +3,9 @@ title: Java Object Oriented Design - Java Annotation Reflection
 nav: Java Object Oriented Desig...
 description: Program elements that let you access their annotations implement the java.lang.reflect.AnnotatedElement interface.
 section: Imported - java2s Archive
-order: 50197
-source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0760__Java_Annotation_Reflection.html
+order: 1014
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0760__Java_Annotation_Reflection.html
 ---
-```java title=Example.java
-```
-
 Annotations on a program element are Java objects.
 
 Program elements that let you access their annotations implement the java.lang.reflect.AnnotatedElement interface.
@@ -38,15 +35,15 @@ Suppose you have a Test class and you want to print all its annotations. The fol
 import java.lang.annotation.Annotation;
 @SuppressWarnings("unchecked")
 @Deprecated
-publicclass Main {
-  publicstaticvoid main(String[] argv) {
+public class Main {
+  public static void main(String[] argv) {
     // Get the class object reference
     Class<Main> c = Main.class;
     // Get all annotations on the class declaration
     Annotation[] allAnns = c.getAnnotations();
     System.out.println("Annotation count: " + allAnns.length);
     // Print all annotations
-for (Annotation ann : allAnns) {
+ for (Annotation ann : allAnns) {
       System.out.println(ann);
     }
   }
@@ -70,8 +67,8 @@ import java.lang.annotation.RetentionPolicy;
   int minor();
 }
 @Version(major=1,minor=2)
-publicclass Main {
-  publicstaticvoid main(String[] argv) {
+public class Main {
+  public static void main(String[] argv) {
     Class<Main> c = Main.class;
     Version v = c.getAnnotation(Version.class);
     if (v == null) {
@@ -106,15 +103,15 @@ import java.lang.reflect.Method;
 @Version(major = 1, minor = 0)
 class AccessAnnotation {
   @Version(major = 1, minor = 1)
-  publicvoid testMethod1() {
+  public void testMethod1() {
   }
   @Version(major = 1, minor = 2)
   @Deprecated
-  publicvoid testMethod2() {
+  public void testMethod2() {
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Class<AccessAnnotation> c = AccessAnnotation.class;
     System.out.println("Annotations for class:" + c.getName());
     printAnnotations(c);
@@ -125,7 +122,7 @@ publicclass Main {
       printAnnotations(m[i]);
     }
   }
-  publicstaticvoid printAnnotations(AnnotatedElement programElement) {
+  public static void printAnnotations(AnnotatedElement programElement) {
     Annotation[] annList = programElement.getAnnotations();
     for (int i = 0; i < annList.length; i++) {
       System.out.println(annList[i]);
@@ -162,8 +159,8 @@ import java.lang.annotation.RetentionPolicy;
 }
 @Log(date = "02/01/2014", comments = "A")
 @Log(date = "01/22/2014", comments = "B")
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Class<Main> mainClass = Main.class;
     Log[] annList = mainClass.getAnnotationsByType(Log.class);
     for (Log log : annList) {

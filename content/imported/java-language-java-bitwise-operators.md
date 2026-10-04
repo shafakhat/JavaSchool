@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50431
 source: https://www.java2s.com/Tutorials/Java/Java_Language/3040__Java_Bitwise_Operators.html
 ---
-```java title=Example.java
-```
-
 Bitwise Operators act upon the individual bits of their operands. Java bitwise operators can be applied to the integer types: long, int, short, char, byte.
 
 ## Bitwise operators List

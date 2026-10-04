@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50384
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/0060__Java_Regex_Boundaries.html
 ---
-```java title=Example.java
-```
-
 To the match the beginning of a line, or match whole word, not part of any word, we have to set the boundary for matchers.
 
 The following table lists Boundary Matchers Inside Regular Expressions

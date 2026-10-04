@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java File Lock
 nav: Java IO Tutorial - Java Fi...
 description: NIO supports file locking to synchronize access to a file. We have the ability to lock a region of a file or the entire file.
 section: Imported - java2s Archive
-order: 50227
-source: https://www.java2s.com/Tutorials/Java/Java_io/0950__Java_nio_File_Locks.html
+order: 1022
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/0950__Java_nio_File_Locks.html
 ---
-```java title=Example.java
-```
-
 NIO supports file locking to synchronize access to a file. We have the ability to lock a region of a file or the entire file.
 
 The file locking mechanism is handled by the operating system.
@@ -43,8 +40,8 @@ The following code shows different ways of obtaining locks on a file.
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     RandomAccessFile raf = new RandomAccessFile("test.txt", "rw");
     FileChannel fileChannel = raf.getChannel();
     FileLock lock = fileChannel.lock();
@@ -60,8 +57,8 @@ Get an exclusive lock on first 10 bytes
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     RandomAccessFile raf = new RandomAccessFile("test.txt", "rw");
     FileChannel fileChannel = raf.getChannel();
     // Get an exclusive lock on first 10 bytes
@@ -76,8 +73,8 @@ Try to get an exclusive lock on the entire file
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
-publicclass Main {
-  publicstatic void main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     RandomAccessFile raf = new RandomAccessFile("test.txt", "rw");
     FileChannel fileChannel = raf.getChannel();
     FileLock lock = fileChannel.tryLock();
@@ -96,8 +93,8 @@ Try to lock 100 bytes starting from the 11th byte in a shared mode
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
-publicclass Main {
-  publicstatic void main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     RandomAccessFile raf = new RandomAccessFile("test.txt", "rw");
     FileChannel fileChannel = raf.getChannel();
     FileLock lock = fileChannel.tryLock(11, 100, true);
@@ -117,8 +114,8 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
-publicclass Main {
-  publicstatic void main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     RandomAccessFile raf = new RandomAccessFile("test.txt", "rw");
     FileChannel fileChannel = raf.getChannel();
     FileLock lock = null;

@@ -12,9 +12,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/002
 
 ```java title=Example.java
 java.lang.Class<? extends Annotation> annotationType()
-```
-
-```java title=Example.java
+java title=Example.java
 In addition, any implementation of Annotation will override the equals, hashCode, and
 toString methods from the java.lang.Object class.
 ```

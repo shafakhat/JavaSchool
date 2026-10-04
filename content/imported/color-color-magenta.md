@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Color/0320__Color.magenta.htm
 ---
-```java title=Example.java
-Back to Color  ↑
-```
-
 ## Syntax
 
 Color.magenta has the following syntax.
@@ -38,5 +34,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to Color ↑

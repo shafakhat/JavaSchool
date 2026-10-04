@@ -3,8 +3,8 @@ title: Create a BigDecimal vis string
 nav: Create a BigDecimal vis st...
 description: Imported from the java2s.com archive: Create a BigDecimal vis string
 section: Imported - java2s Archive
-order: 1069
-source: https://web.archive.org/web/20110204050947/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/CreateaBigDecimalvisstring.htm
+order: 1017
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/CreateaBigDecimalvisstring.htm
 ---
 ```java title=Example.java
 import java.math.BigDecimal;

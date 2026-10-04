@@ -13,9 +13,7 @@ What is the output of the following code?
 ```java title=Example.java
 int x = 3;
 int answer = ++x * 10;
-```
-
-```java title=Example.java
+java title=Example.java
 40
 ```
 
@@ -28,9 +26,7 @@ The statement int?answer = ++x * 10 does the same thing, in order, as these stat
 ```java title=Example.java
 x++;
 int answer = x * 10;
-```
-
-```java title=Example.java
+java title=Example.java
 publicclass Main {
   publicstaticvoid main(String args[]) {
     int x = 3;int answer = ++x * 10;

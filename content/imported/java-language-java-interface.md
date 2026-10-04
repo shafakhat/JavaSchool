@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50446
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5080__Java_Interface.html
 ---
-```java title=Example.java
-```
-
 interface specifies what a class must do, but not how it does it.
 
 An interface in Java is like a contract. It defines certain rules through Java methods and the class which implements that interface must follow the rules by implementing the methods.

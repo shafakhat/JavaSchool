@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50074
 source: https://www.java2s.com/Tutorials/Java/Scala/0020__Scala_Variables.html
 ---
-```java title=Example.java
-```
-
 In Scala, there are three ways you can define variables: val, var,and lazy val.
 
 Scala allows you to decide whether or not a variable is immutable (read-only) when you declare it.
@@ -23,9 +20,7 @@ The following code creates a value with the name x and assigned with a literal n
 
 ```java title=Example.java
 val x= 10
-```
-
-```java title=Example.java
+java title=Example.java
 object Main {
   def main(args: Array[String]) {
         val x = 10

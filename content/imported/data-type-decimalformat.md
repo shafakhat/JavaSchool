@@ -3,7 +3,7 @@ title: Decimal Format
 nav: Decimal Format
 description: * Copyright (c) 1995 - 2008 Sun Microsystems, Inc. All rights reserved.
 section: Imported - java2s Archive
-order: 1012
+order: 1023
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/DecimalFormat.htm
 ---
 ```java title=Example.java
@@ -37,13 +37,13 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */import java.text.DecimalFormat;
-publicclass DecimalFormatDemo {
-  staticpublicvoid customFormat(String pattern, double value) {
+public class DecimalFormatDemo {
+  static public void customFormat(String pattern, double value) {
     DecimalFormat myFormatter = new DecimalFormat(pattern);
     String output = myFormatter.format(value);
     System.out.println(value + "  " + pattern + "  " + output);
   }
-  staticpublicvoid main(String[] args) {
+  static public void main(String[] args) {
     customFormat("###,###.###", 123456.789);
     customFormat("###.##", 123456.789);
     customFormat("000000.000", 123.78);

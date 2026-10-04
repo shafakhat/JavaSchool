@@ -42,9 +42,7 @@ public class MainClass {
     printArray(characterArray); // pass a Character array
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Array integerArray contains:
 1 2 3 4 5 6
 Array doubleArray contains:

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50325
 source: https://www.java2s.com/Tutorials/Java/Java_XML/0300__Java_StAX_Intro.html
 ---
-```java title=Example.java
-```
-
 StAX was created to address limitations in the SAX and DOM APIs.
 
 The StAX APIs allow us to ask for the next event (pull the event) and allows state to be stored in procedural fashion.

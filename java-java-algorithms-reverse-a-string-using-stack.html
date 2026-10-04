@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Java Algorithms Reverse a String using Stack - JavaSchool</title>
-<meta name="description" content="String output = theReverser.doRev(); // use itSystem.out.println(&quot;Reversed: &quot; + output);">
+<meta name="description" content="class Reverser {/* w ww . j a va 2s. c o m*/ private String input;">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -37,17 +37,17 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Java Algorithms Reverse a String using Stack</h1>
 <h2 id="description">Description</h2>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Stack;
-class Reverser {privateString input;
-   privateString output;
+class Reverser { private String input;
+   private String output;
    public Reverser(String in) {
       input = in;
    }
-   publicString doRev(){
-      Stack&lt;Character&gt; theStack = newStack&lt;&gt;();
+   public String doRev(){
+      Stack&lt;Character&gt; theStack = new Stack&lt;&gt;();
       for (int j = 0; j &lt; input.length(); j++) {
          char ch = input.charAt(j); // get a char from input
          theStack.push(ch); // push it
@@ -60,15 +60,15 @@ class Reverser {privateString input;
       return output;
    }
 }
-publicclass Main {
-   publicstaticvoid main(String[] args) {
+public class Main {
+   public static void main(String[] args) {
       Reverser theReverser = new Reverser("www.demo2s.com");
-      String output = theReverser.doRev(); // use itSystem.out.println("Reversed: " + output);
+      String output = theReverser.doRev(); // use it System.out.println("Reversed: " + output);
    }
 }</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
-    <div class="pager"><a class="pager-btn" href="java-java-actionevent-compare-event-source-to-component-instance.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java ActionEvent compare e...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1049.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="random-generate-random-numbers-in-a-range.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms How to - G...</span></a><a class="pager-btn pager-next" href="java-format-java-format-string.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Format - Java printf ...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

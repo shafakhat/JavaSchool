@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0400__CardLayout.setHgap_int_hgap_.htm
 ---
-```java title=Example.java
-Back to CardLayout  ↑
-```
-
 ## Syntax
 
 CardLayout.setHgap(int hgap) has the following syntax.
@@ -55,5 +51,3 @@ class CardLayoutPanel extends JPanel implements ActionListener {
   }
 }
 ```
-
-- Back to CardLayout ↑

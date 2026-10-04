@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50142
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0055__Java_Method_Overload.html
 ---
-```java title=Example.java
-```
-
 Having more than one method with the same name in the same class is called method overloading.
 
 Methods with the same name in a class could be declared methods, inherited methods, or a combination of both.

@@ -41,9 +41,7 @@ publicclass MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 All annotations for myMeth:
 @What(description=An annotation test method)
 @MyAnnotation(stringValue=Annotation Example, intValue=100)

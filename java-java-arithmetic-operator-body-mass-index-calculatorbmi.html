@@ -37,7 +37,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Java Arithmetic Operator Body Mass Index Calculator(BMI)</h1>
 <h2 id="question">Question</h2>
 <p>We would like to calculate Body Mass Index Calculator(BMI)</p>
@@ -49,11 +49,12 @@ BMI = ------------------------------------
 for metric
                weight In Kilograms
 BMI = ------------------------------------
-      heightInMeters times heightInMeters</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Scanner;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
-    Scanner input = newScanner(System.in);
+      heightInMeters times heightInMeters
+java title=Example.java
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
     int weight;
     int height;
     int bmi;
@@ -74,13 +75,13 @@ publicclass Main {
 <h2 id="note">Note</h2>
 <p>To support two systems:imperial and metric</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Scanner;
-publicclass Main{
-    publicstaticvoid main(String[] args){
-        Scanner input = newScanner(System.in);
+public class Main{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
         double weight, height, bmi;
         int choice;
         System.out.print("BMI calculator: 1 for imperial, 2 for metric: ");
-        choice = input.nextInt();System.out.printf("Input weight in %s: ",
+        choice = input.nextInt(); System.out.printf("Input weight in %s: ",
                 (choice == 1) ? "pounds" : "kilograms");
         weight = input.nextDouble();
         System.out.printf("Input height in %s: ",
@@ -90,13 +91,13 @@ publicclass Main{
         System.out.printf("Your BMI : %.1f\n", bmi);
         printBmiTable();
     }
-    // calculate using imperial measuresprivatestaticdouble calculateImperial(double weight, double height){
+    // calculate using imperial measures private static double calculateImperial(double weight, double height){
         return ((weight * 703) / (height * height));
     }
-    // calculate using metric measuresprivatestaticdouble calculateMetric(double weight, double height){
+    // calculate using metric measures private static double calculateMetric(double weight, double height){
         return weight / (height * height);
     }
-    // print BMI information from Department of Health and Human Services /// National Institutes of Health.privatestaticvoid printBmiTable(){
+    // print BMI information from Department of Health and Human Services / // National Institutes of Health. private static void printBmiTable(){
         System.out.printf("BMI VALUES:");
         System.out.println("Underweight: less than 18.5");
         System.out.println("Normal:      between 18.5 and 24.9");
@@ -107,7 +108,7 @@ publicclass Main{
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
 <ul><li>Java Operator Precedence</li><li>Java Operator Precedence Question 1</li><li>Java two's complement Integer in binary form</li><li>Java Arithmetic Operator calculate area and perimeter of a circle</li><li>Java Arithmetic Operator calculate area and perimeter of a rectangle</li></ul>
-    <div class="pager"><a class="pager-btn" href="jpa-idfortwoentitiesfromonetable.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">ID For Two Entities From O...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1069.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="random-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms How to - J...</span></a><a class="pager-btn pager-next" href="jsp-basics.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java examples (example sou...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

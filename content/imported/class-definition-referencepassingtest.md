@@ -30,9 +30,7 @@ public class MainClass {
     System.out.println(p.x); // prints 0
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 9
 0
 ```

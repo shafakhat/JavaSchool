@@ -25,8 +25,6 @@ if (day1.compareTo(day2) < 0)
       System.out.println(day1 + " equals " + day3);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Monday comes before Tuesday
 ```

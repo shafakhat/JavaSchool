@@ -21,9 +21,7 @@ public class MainClass {
     System.out.println("c = " + c);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 a = 6
 b = 8
 c = 3

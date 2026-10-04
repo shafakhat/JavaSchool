@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50150
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0110__Java_Constructors.html
 ---
-```java title=Example.java
-```
-
 A constructor is a block of code used to initialize an object immediately after the object is created.
 
 The structure of a constructor looks similar to a method.

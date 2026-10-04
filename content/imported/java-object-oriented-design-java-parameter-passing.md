@@ -3,12 +3,9 @@ title: Java Object Oriented Design - Java Parameter Passing
 nav: Java Object Oriented Desig...
 description: Java supports two kinds of data types: primitive data type and reference data type.
 section: Imported - java2s Archive
-order: 50145
-source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0075__Java_Parameter_Passing.html
+order: 1002
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0075__Java_Parameter_Passing.html
 ---
-```java title=Example.java
-```
-
 Java supports two kinds of data types: primitive data type and reference data type.
 
 A primitive data type is a simple data structure and it has only one value associated with it. A reference data type is a complex data structure and it represents an object.
@@ -33,11 +30,11 @@ The following code demonstrates the pass by reference mechanism in Java.
 
 ```java title=Example.java
 class Phone {public String model = "Unknown";
-  publicint year = 2014;
-  publicdouble price = 0.0;
+  public int year = 2014;
+  public double price = 0.0;
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Phone myPhone = new Phone();
     myPhone.model = "iPhone";
     myPhone.year = 2009;
@@ -48,7 +45,7 @@ publicclass Main {
     System.out.println("#4: model  = " + myPhone.model + ", year   = "
         + myPhone.year + ", price = " + myPhone.price);
   }
-  publicstaticvoid test(Phone xPhone) {
+  public static void test(Phone xPhone) {
     System.out.println("#2: model  = " + xPhone.model + ", year   = "
         + xPhone.year + ",  price = " + xPhone.price);
     // Let's make xyCar refer to a new object
@@ -74,25 +71,25 @@ The formal parameter itself can be modified to reference another object inside t
 To disable the method to change the reference type formal parameter to reference a different object, use the keyword final in the reference type formal parameter declaration.
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Phone myPhone = new Phone();
     myPhone.model = "iPhone";
     myPhone.year = 2009;
     myPhone.price = 16000.0;
     Main.test(myPhone);
   }
-  publicstaticvoid test(final Phone xPhone) {
+  public static void test(final Phone xPhone) {
     System.out.println("#2: model  = " + xPhone.model + ", year   = "
         + xPhone.year + ",  price = " + xPhone.price);
     // Let's make xyCar refer to a new object
-//xPhone = new Phone();
+ //xPhone = new Phone();
   }
 }
 class Phone {
   public String model = "Unknown";
-  publicint year = 2014;
-  publicdouble price = 0.0;
+  public int year = 2014;
+  public double price = 0.0;
 }
 ```
 

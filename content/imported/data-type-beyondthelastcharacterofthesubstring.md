@@ -14,8 +14,6 @@ publicclass MainClass{
     System.out.println(segment);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 hijk
 ```

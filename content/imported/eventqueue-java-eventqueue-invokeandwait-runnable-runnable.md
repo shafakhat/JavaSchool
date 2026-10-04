@@ -3,7 +3,7 @@ title: Java Tutorial - Java EventQueue .invokeAndWait (Runnable runnable)
 nav: Java Tutorial - Java Event...
 description: EventQueue.invokeAndWait(Runnable runnable) has the following syntax.
 section: Imported - java2s Archive
-order: 1022
+order: 1006
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/EventQueue/Java_EventQueue_invokeAndWait_Runnable_runnable_.htm
 ---
 ### Syntax
@@ -11,7 +11,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/ja
 EventQueue.invokeAndWait(Runnable runnable) has the following syntax.
 
 ```java title=Example.java
-publicstaticvoid invokeAndWait(Runnable runnable)    throws InterruptedException ,     InvocationTargetException
+public static void invokeAndWait(Runnable runnable)    throws InterruptedException ,     InvocationTargetException
 ```
 
 ### Example
@@ -21,12 +21,12 @@ In the following code shows how to use EventQueue.invokeAndWait(Runnable runnabl
 ```java title=Example.java
 import java.awt.EventQueue;
 import javax.swing.JFrame;
-publicclass Main {
-   publicstaticvoid main(String[] args)
+public class Main {
+   public static void main(String[] args)
    {
       EventQueue.invokeLater(new Runnable()
          {
-            publicvoid run()
+            public void run()
             {
                JFrame frame = new ImageProcessingFrame();
                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

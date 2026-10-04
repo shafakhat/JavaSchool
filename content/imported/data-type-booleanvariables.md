@@ -17,8 +17,6 @@ publicclass MainClass{
     System.out.println(state);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 false
 ```

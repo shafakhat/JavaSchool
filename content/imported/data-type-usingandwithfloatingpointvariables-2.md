@@ -16,9 +16,7 @@ publicclass MainClass{
      System.out.println( ++a );
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 12.12
 11.12
 11.12

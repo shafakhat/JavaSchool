@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50075
 source: https://www.java2s.com/Tutorials/Java/Scala/0040__Scala_Variable_Declarations.html
 ---
-```java title=Example.java
-```
-
 Scala allows you to decide whether a variable is immutable (read-only) or not (read-write) when you declare it.
 
 An immutable "variable" is declared with the keyword val:

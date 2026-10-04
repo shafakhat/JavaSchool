@@ -29,17 +29,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-language.html">Java Language</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-language.html">Java Language</a></nav>
     <h1>Java Tutorial - Java Nested Class</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>Classes that are declared outside of any class are top-level classes. Nested classes are classes declared as members of other classes or scopes.</p>
 <p>There are four kinds of nested classes:</p>
 <ul><li>static member classes,</li><li>nonstatic member classes,</li><li>anonymous classes</li><li>local classes.</li></ul>
@@ -47,10 +46,10 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>An anonymous class is a class without a name and simultaneously declared. You can instantiate an anonymous class where it is legal to specify an expression.</p>
 <p>An anonymous class instance can only access local final variables and final parameters.</p>
 <p>How to define an anonymous class?</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abstractclass People {
-  abstractvoid speak();
-}publicclass Main {
-  publicstaticvoid main(final String[] args) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abstract class People {
+  abstract void speak();
+}public class Main {
+  public static void main(final String[] args) {
     new People() {
       String msg = "test";
       @Override
@@ -64,13 +63,13 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="example">Example</h2>
 <p>The following code declares and instantiates an anonymous class that implements an interface.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface People {
-  abstractvoid speak();
-}publicclass Main {
-  publicstaticvoid main(final String[] args) {
+  abstract void speak();
+}public class Main {
+  public static void main(final String[] args) {
     new People() {
       String msg = (args.length == 1) ? args[0] : "nothing to say";
       @Override
-      publicvoid speak() {
+      public void speak() {
         System.out.println(msg);
       }
     }.speak();
@@ -81,8 +80,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A local class is a class that is declared anywhere that a local variable is declared. A local class has the same scope as a local variable.</p>
 <p>A local class has a name and can be reused. A local class instance can access the surrounding scope's local final variables and final parameters.</p>
 <p>Java Local Class</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {void myMethod(finalint x) {
-    finalint y = x;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass { void myMethod(final int x) {
+    final int y = x;
     class LocalClass {
       int a = x;
       int b = y;
@@ -92,8 +91,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     System.out.println(lc.b);
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     MyClass ec = new MyClass();
     ec.myMethod(10);
   }
@@ -117,7 +116,7 @@ interface Iterator {
 }
 class ItemManager {
   private Item[] itemArray;
-  privateint index = 0;
+  private int index = 0;
   ItemManager(int size) {
     itemArray = new Item[size];
   }
@@ -125,7 +124,7 @@ class ItemManager {
     class Iter implements Iterator {
       int index = 0;
       @Override
-      publicboolean hasMoreElements() {
+      public boolean hasMoreElements() {
         return index &lt; itemArray.length;
       }
       @Override
@@ -133,14 +132,14 @@ class ItemManager {
         return itemArray[index++];
       }
     }
-    returnnew Iter();
+    return new Iter();
   }
   void add(Item item) {
     itemArray[index++] = item;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     ItemManager itemManager = new ItemManager(5);
     itemManager.add(new Item("#1", "A"));
     itemManager.add(new Item("#2", "B"));
@@ -157,8 +156,8 @@ publicclass Main {
 <p>The member class's instance methods can call instance methods in the enclosing class and access the enclosing class instance's nonstatic fields.</p>
 <p>The following code has one outer class named EnclosingClass and a nonstatic member class named EnclosedClass.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class EnclosingClass {
-  privateint outerVariable;
-privatevoid privateOuterMethod() {
+  private int outerVariable;
+ private void privateOuterMethod() {
     System.out.println(outerVariable);
   }
   class EnclosedClass {
@@ -168,8 +167,8 @@ privatevoid privateOuterMethod() {
     }
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     EnclosingClass ec = new EnclosingClass();
     ec.new EnclosedClass().accessEnclosingClass(); // Output: 1
   }
@@ -177,7 +176,7 @@ publicclass Main {
 <p>The code above generates the following result.</p>
 <h2 id="example-3">Example 3</h2>
 <p>The following code uses inner class ItemList to store the items.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Item {private String name;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Item { private String name;
   private String desc;
   Item(String name, String desc) {
     this.name = name;
@@ -191,12 +190,12 @@ publicclass Main {
   }
   @Override
   public String toString() {
-    return"Name = " + getName() + ", Desc = " + getDesc();
+    return "Name = " + getName() + ", Desc = " + getDesc();
   }
 }
 class ItemManager {
   private ItemList itemList;
-  privateint index = 0;
+  private int index = 0;
   ItemManager() {
     itemList = new ItemList(2);
   }
@@ -209,9 +208,9 @@ class ItemManager {
   void add(Item item) {
     itemList.add(item);
   }
-  privateclass ItemList {
+  private class ItemList {
     private Item[] itemArray;
-    privateint index = 0;
+    private int index = 0;
     ItemList(int initSize) {
       itemArray = new Item[initSize];
     }
@@ -232,8 +231,8 @@ class ItemManager {
     }
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     ItemManager itemManager = new ItemManager();
     itemManager.add(new Item("1", "A"));
     itemManager.add(new Item("2", "B"));
@@ -245,7 +244,7 @@ publicclass Main {
 <p>The code above generates the following result.</p>
 <h2 id="example-4">Example 4</h2>
 <p>The following program illustrates how to define and use an inner class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Outer {int outer_x = 100;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> class Outer {int outer_x = 100;
   void test() {
     Inner inner = new Inner();
     inner.display();
@@ -256,8 +255,8 @@ publicclass Main {
     }
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Outer outer = new Outer();
     outer.test();
   }
@@ -265,12 +264,12 @@ publicclass Main {
 <p>Output from this application is shown here:</p>
 <h2 id="example-5">Example 5</h2>
 <p>The inner class members are accessible only within the inner class and may not be used by the outer class. If you try to compile the following code, you will get error message.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> public class Main {
   int outer_x = 100;
   // this is an inner class
-class Inner {
+ class Inner {
     int y = 10; // y is local to Inner
-void display() {
+ void display() {
       System.out.println("display: outer_x = " + outer_x);
     }
   }
@@ -283,22 +282,22 @@ void display() {
 <p>A static member class is a static member of an enclosing class. A static member class cannot access the enclosing class's instance fields and invoke its instance methods.</p>
 <p>A static member can access the enclosing class's static fields and invoke its static methods including private fields and methods.</p>
 <p>The following code has a static member class declaration.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Demo {publicstaticvoid main(String[] args) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Demo {public static void main(String[] args) {
     Main.EnclosedClass.accessEnclosingClass();
     Main.EnclosedClass ec = new Main.EnclosedClass();
     ec.accessEnclosingClass2();
   }
 }
 class Main {
-  privatestaticint outerVariable;
-  privatestaticvoid privateStaticOuterMethod() {
+  private static int outerVariable;
+  private static void privateStaticOuterMethod() {
     System.out.println(outerVariable);
   }
-  staticvoid staticOuterMethod() {
+  static void staticOuterMethod() {
     EnclosedClass.accessEnclosingClass();
   }
-  staticclass EnclosedClass {
-    staticvoid accessEnclosingClass() {
+  static class EnclosedClass {
+    static void accessEnclosingClass() {
       outerVariable = 1;
       privateStaticOuterMethod();
     }
@@ -310,13 +309,13 @@ class Main {
 <p>The static member classes can declare multiple implementations of their enclosing class.</p>
 <h2 id="example-6">Example 6</h2>
 <p>The following code declares a Rectangle class and it uses static member class to provide Rectangle implementation for different data types, one is for double type and another is for float type.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abstractclass Rectangle {
-  abstractdouble getX();
-abstractdouble getY();
-  abstractdouble getWidth();
-  abstractdouble getHeight();
-  staticclass Double extends Rectangle {
-    privatedouble x, y, width, height;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abstract class Rectangle {
+  abstract double getX();
+abstract double getY();
+  abstract double getWidth();
+  abstract double getHeight();
+  static class Double extends Rectangle {
+    private double x, y, width, height;
     Double(double x, double y, double width, double height) {
       this.x = x;
       this.y = y;
@@ -336,8 +335,8 @@ abstractdouble getY();
       return height;
     }
   }
-  staticclass Float extends Rectangle {
-    privatefloat x, y, width, height;
+  static class Float extends Rectangle {
+    private float x, y, width, height;
     Float(float x, float y, float width, float height) {
       this.x = x;
       this.y = y;
@@ -363,14 +362,14 @@ abstractdouble getY();
     return (x &gt;= getX() &amp;&amp; x &lt; getX() + getWidth()) &amp;&amp; (y &gt;= getY() &amp;&amp; y &lt; getY() + getHeight());
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Rectangle r = new Rectangle.Double(10.0, 10.0, 20.0, 30.0);
     r = new Rectangle.Float(10.0f, 10.0f, 20.0f, 30.0f);
   }
 }</code></pre></div>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-language-java-class-variable.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Class...</span></a><a class="pager-btn pager-next" href="java-language-java-inheritance.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java inher...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="graphicsconfiguration-java-graphicsconfiguration-createcompatiblevolatileimage-i.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Graph...</span></a><a class="pager-btn pager-next" href="jstl-jstlcatchexception.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JSTL</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

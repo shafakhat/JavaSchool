@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50122
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0120__Java_Facade_Pattern.html
 ---
-```java title=Example.java
-```
-
 Facade pattern hides the complexities of a system.
 
 It provides a simple interface to the client and the client uses the interface to interact with the system.

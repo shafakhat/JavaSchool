@@ -3,12 +3,9 @@ title: Java Tutorial - Java Relational Operators
 nav: Java Tutorial - Java Relat...
 description: Java relational operators determine the relationship between two operands.
 section: Imported - java2s Archive
-order: 50429
-source: https://www.java2s.com/Tutorials/Java/Java_Language/3020__Java_Relational_Operators.html
+order: 1010
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Language/3020__Java_Relational_Operators.html
 ---
-```java title=Example.java
-```
-
 Java relational operators determine the relationship between two operands.
 
 ## Relational Operators List
@@ -27,8 +24,8 @@ Operator  Result
 For example, the following code fragment is perfectly valid. It compares two int values and assign the result to boolean value c.
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] argv) {
+ public class Main {
+  public static void main(String[] argv) {
     int a = 4;
     int b = 1;
     boolean c = a < b;
@@ -44,8 +41,8 @@ The result of a < b (which is false) is stored in c.
 The outcome of a relational operator is a boolean value. In the following code, the System.out.println outputs the result of a relational operator.
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     // outcome of a relational operator is a boolean value
     System.out.println("10 > 9 is " + (10 > 9));
   }

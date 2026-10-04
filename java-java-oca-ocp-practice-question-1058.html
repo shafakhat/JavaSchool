@@ -41,8 +41,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     <h1>Java OCA OCP Practice Question 1058</h1>
 <h2 id="question">Question</h2>
 <p>What is printed besides the stack trace caused by the NullPointerException from line 16?</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">1: publicclass Main {
-2:   publicvoid go() {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">1: public class Main {
+2:   public void go() {
 3:     System.out.print("A");
 4:     try {
 5:         stop();
@@ -53,22 +53,24 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 10:    }
 11:    System.out.print("D");
 12:  }
-13:  publicvoid stop() {
+13:  public void stop() {
 14:    System.out.print("E");
 15:    Object x = null;
 16:    x.toString();
 17:    System.out.print("F");
 18:  }
-19:  publicstaticvoid main(String[] args) {
+19:  public static void main(String[] args) {
 20:    new Main().go();
 21:  }
-22: }</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">A.  AE
+22: }
+java title=Example.java
+A.  AE
 B.  AEBCD
 C.  AEC
 D.  AECD
-E.  No output appears other than the stack trace.</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">C.</code></pre></div>
+E.  No output appears other than the stack trace.
+java title=Example.java
+C.</code></pre></div>
 <h2 id="note">Note</h2>
 <p>The main() method invokes go and A is printed on line 3.</p>
 <p>The stop method is invoked and E is printed on line 14.</p>
@@ -78,7 +80,7 @@ E.  No output appears other than the stack trace.</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
 <ul><li>Java OCA OCP Practice Question 1055</li><li>Java OCA OCP Practice Question 1056</li><li>Java OCA OCP Practice Question 1057</li><li>Java OCA OCP Practice Question 1059</li><li>Java OCA OCP Practice Question 1060</li></ul>
-    <div class="pager"><a class="pager-btn" href="generics-javagenericgenericsandarrays.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java generic</span></a><a class="pager-btn pager-next" href="class-javastaticmembervariableexample.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java static member variabl...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-java-oca-ocp-practice-question-1028.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a><a class="pager-btn pager-next" href="java-reflection-java-field-reflection.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Reflection - Java Fie...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

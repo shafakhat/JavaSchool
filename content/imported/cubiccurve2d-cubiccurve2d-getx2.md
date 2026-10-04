@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/CubicCurve2D/0520__CubicCurve2D.getX2_.htm
 ---
-```java title=Example.java
-Back to CubicCurve2D  ↑
-```
-
 ## Syntax
 
 CubicCurve2D.getX2() has the following syntax.
@@ -44,5 +40,3 @@ publicclass Main extends Frame {
 ```
 
 The code above generates the following result.
-
-- Back to CubicCurve2D ↑

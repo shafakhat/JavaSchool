@@ -24,9 +24,7 @@ publicclass MainClass {
     System.out.println("utilDate:" + utilDate);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 date:2003/01/10
 utilDate:Fri Jan 10 00:00:00 PST 2003
 ```

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50158
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0220__Java_Immutable_Objects.html
 ---
-```java title=Example.java
-```
-
 An object whose state cannot be changed after it is created is called an immutable object.
 
 A class whose objects are immutable is called an immutable class.

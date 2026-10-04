@@ -3,13 +3,13 @@ title: Substract hours from current date using Calendar.add method
 nav: Substract hours from curre...
 description: System.out.println("Current Date : " + (now.get(Calendar.MONTH) + 1) + "-"
 section: Imported - java2s Archive
-order: 1037
+order: 1015
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/SubstracthoursfromcurrentdateusingCalendaraddmethod.htm
 ---
 ```java title=Example.java
 import java.util.Calendar;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Calendar now = Calendar.getInstance();
     System.out.println("Current Date : " + (now.get(Calendar.MONTH) + 1) + "-"
         + now.get(Calendar.DATE) + "-" + now.get(Calendar.YEAR));

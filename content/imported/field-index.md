@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50413
 source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Field/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Field.get(Object obj)

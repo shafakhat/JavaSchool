@@ -44,13 +44,13 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The list of methods to do AbstractMap Usage are organized into topic(s).</p>
 <h2 id="method">Method</h2>
 <p>Map.Entry&gt;buildClause(String key, String... values) build Clause</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">List&lt;String&gt; clauseValues = newArrayList&lt;String&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">List&lt;String&gt; clauseValues = new ArrayList&lt;String&gt;();
 if (values != null) {
     for (String value : values) {
         clauseValues.add(value);
 } else {
     clauseValues.add(null);
-returnnewAbstractMap.SimpleEntry&lt;String, List&lt;String&gt;&gt;(key, clauseValues);</code></pre></div>
+return new AbstractMap.SimpleEntry&lt;String, List&lt;String&gt;&gt;(key, clauseValues);</code></pre></div>
 <p>Map.EntrycountLinesColumns(String text, int initialLinesCnt, int initialColumnsCnt) Count lines and columns (in last line) in text.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int lines = initialLinesCnt;
 int columns = initialColumnsCnt;
@@ -76,13 +76,13 @@ case 2:
 Class&lt;?&gt; map = java.util.AbstractMap.class;
 if (collection.isInstance(obj)) {
     return 1;
-} elseif (map.isInstance(obj)) {
+} else if (map.isInstance(obj)) {
     return 2;
 } else {
     return 0;
 ...</code></pre></div>
 <p>Map&gt;getSymmetricPropertyValueDifference( Properties propertyFileOne, Properties propertyFileTwo) get Symmetric Property Value Difference</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, SimpleEntry&lt;String, String&gt;&gt; differences = newHashMap&lt;String, SimpleEntry&lt;String, String&gt;&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, SimpleEntry&lt;String, String&gt;&gt; differences = new HashMap&lt;String, SimpleEntry&lt;String, String&gt;&gt;();
 for (String key : propertyFileOne.stringPropertyNames()) {
     String propertyOneValue = propertyFileOne.getProperty(key);
     String propertyTwoValue = propertyFileTwo.getProperty(key);
@@ -91,18 +91,18 @@ for (String key : propertyFileOne.stringPropertyNames()) {
         differences.put(key, new SimpleEntry(propertyOneValue, propertyTwoValue));
 return differences;</code></pre></div>
 <p>Map.EntryparseEntityURI(final String uri) parse Entity URI</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">finalString relPath = uri.substring(uri.lastIndexOf("/"));
-finalint branchIndex = relPath.indexOf('(');
-finalString es = relPath.substring(0, branchIndex);
-finalString eid = relPath.substring(branchIndex + 1, relPath.indexOf(')'));
-returnnew SimpleEntry&lt;String, String&gt;(es, eid);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">final String relPath = uri.substring(uri.lastIndexOf("/"));
+final int branchIndex = relPath.indexOf('(');
+final String es = relPath.substring(0, branchIndex);
+final String eid = relPath.substring(branchIndex + 1, relPath.indexOf(')'));
+return new SimpleEntry&lt;String, String&gt;(es, eid);</code></pre></div>
 <p>Map.EntryparseExportedVariable(String exportedVariable) Parses an exported variable (&lt;variableName&gt; = &lt;defaultValue&gt;).</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int index = exportedVariable.indexOf('=');
 String varName = exportedVariable, defaultValue = null;
 if (index &gt; 0) {
     varName = exportedVariable.substring(0, index).trim();
     defaultValue = exportedVariable.substring(index + 1).trim();
-returnnewAbstractMap.SimpleEntry&lt;String, String&gt;(varName, defaultValue);</code></pre></div>
+return new AbstractMap.SimpleEntry&lt;String, String&gt;(varName, defaultValue);</code></pre></div>
 <p>Map.EntryparseSocketAddress(String address) parse Socket Address</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String hostName = null;
 Integer port = null;
@@ -119,14 +119,14 @@ int index = variableName.indexOf('.');
 if (index &gt;= 0) {
     componentOrFacetName = variableName.substring(0, index).trim();
     simpleName = variableName.substring(index + 1).trim();
-returnnewAbstractMap.SimpleEntry&lt;String, String&gt;(componentOrFacetName, simpleName);</code></pre></div>
+return new AbstractMap.SimpleEntry&lt;String, String&gt;(componentOrFacetName, simpleName);</code></pre></div>
 <p>EntrysplitByQualifier(String str) split By Qualifier</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int i = str.lastIndexOf(':');
 String name = i == -1 ? str : str.substring(0, i).trim();
 String qualifier = i == -1 ? "" : str.substring(i + 1).trim();
-Entry&lt;String, String&gt; result = newAbstractMap.SimpleEntry&lt;String, String&gt;(name, qualifier);
+Entry&lt;String, String&gt; result = new AbstractMap.SimpleEntry&lt;String, String&gt;(name, qualifier);
 return result;</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="java-reflection-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Reflection Overview</span></a><a class="pager-btn pager-next" href="java-language-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Hello...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-android-content.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java tutorial for android....</span></a><a class="pager-btn pager-next" href="tiny-application-jenuisajavabasedurlchecker.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Jenu is a Java based URL c...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

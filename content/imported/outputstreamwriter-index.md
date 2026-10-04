@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50271
 source: https://www.java2s.com/Tutorials/Java/java.io/OutputStreamWriter/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java OutputStreamWriter (OutputStream out) Constructor

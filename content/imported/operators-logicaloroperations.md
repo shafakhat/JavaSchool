@@ -24,9 +24,7 @@ publicclass MainClass {
     System.out.println(count);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 there
 9
 11

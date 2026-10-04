@@ -3,7 +3,7 @@ title: Checks if the String contains only certain characters.
 nav: Checks if the String conta...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1018
+order: 1000
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ChecksiftheStringcontainsonlycertaincharacters.htm
 ---
 ```java title=Example.java
@@ -48,10 +48,10 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */publicclass Main {
+ */public class Main {
   // ContainsOnly
-//-----------------------------------------------------------------------
-/**
+ //-----------------------------------------------------------------------
+ /**
    *
    * A <code>null</code> String will return <code>false</code>.
    * A <code>null</code> valid character array will return <code>false</code>.
@@ -70,9 +70,9 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param str  the String to check, may be null
    * @param valid  an array of valid chars, may be null
    * @return true if it only contains valid chars and is non-null
-   */publicstaticboolean containsOnly(String str, char[] valid) {
+   */ public static boolean containsOnly(String str, char[] valid) {
       // All these pre-checks are to maintain API with an older version
-if ((valid == null) || (str == null)) {
+ if ((valid == null) || (str == null)) {
           return false;
       }
       if (str.length() == 0) {
@@ -84,8 +84,8 @@ if ((valid == null) || (str == null)) {
       return indexOfAnyBut(str, valid) == -1;
   }
   // IndexOfAnyBut chars
-//-----------------------------------------------------------------------
-/**
+ //-----------------------------------------------------------------------
+ /**
    * Search a String to find the first index of any
    * character not in the given set of characters.
    *
@@ -106,7 +106,7 @@ if ((valid == null) || (str == null)) {
    * @param searchChars  the chars to search for, may be null
    * @return the index of any of the chars, -1 if no match or null input
    * @since 2.0
-   */publicstaticint indexOfAnyBut(String str, char[] searchChars) {
+   */ public static int indexOfAnyBut(String str, char[] searchChars) {
       if (isEmpty(str) || isEmpty(searchChars)) {
           return -1;
       }
@@ -122,21 +122,21 @@ if ((valid == null) || (str == null)) {
       return -1;
   }
   // ----------------------------------------------------------------------
-/**
+ /**
    * Checks if an array of Objects is empty or <code>null</code>.
    *
    * @param array  the array to test
    * @return <code>true</code> if the array is empty or <code>null</code>
    * @since 2.1
-   */publicstaticboolean isEmpty(char[] array) {
+   */ public static boolean isEmpty(char[] array) {
       if (array == null || array.length == 0) {
           return true;
       }
       return false;
   }
   // Empty checks
-//-----------------------------------------------------------------------
-/**
+ //-----------------------------------------------------------------------
+ /**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -153,7 +153,7 @@ if ((valid == null) || (str == null)) {
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */publicstaticboolean isEmpty(String str) {
+   */ public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }

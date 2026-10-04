@@ -3,19 +3,15 @@ title: Java Swing Tutorial - Java CardLayout .addLayoutComponent (Component comp
 nav: Java Swing Tutorial - Java...
 description: CardLayout.addLayoutComponent(Component comp, Object constraints) has the following syntax.
 section: Imported - java2s Archive
-order: 1009
+order: 1007
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/CardLayout/0080__CardLayout.addLayoutComponent_Component_comp_Object_constraints_.htm
 ---
-```java title=Example.java
-Back to CardLayout  ↑
-```
-
 ## Syntax
 
 CardLayout.addLayoutComponent(Component comp, Object constraints) has the following syntax.
 
 ```java title=Example.java
-publicvoid addLayoutComponent(Component comp,   Object constraints)
+public void addLayoutComponent(Component comp,   Object constraints)
 ```
 
 ## Example
@@ -29,8 +25,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     JFrame aWindow = new JFrame();
     aWindow.setSize(400, 400);
     aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,10 +52,8 @@ class CardLayoutPanel extends JPanel implements ActionListener {
     add(button);
     card.show(this, "2");
   }
-  publicvoid actionPerformed(ActionEvent e) {
+  public void actionPerformed(ActionEvent e) {
     card.next(this);
   }
 }
 ```
-
-- Back to CardLayout ↑

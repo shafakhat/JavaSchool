@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50372
 source: https://www.java2s.com/Tutorials/Java/java.util/SortedSet/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java SortedSet.comparator()

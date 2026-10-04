@@ -39,9 +39,7 @@ E. publicabstractclassShape  {
 F. publicinterfaceShape  {
    and
    class Circle  implementsShape  {
-```
-
-```java title=Example.java
+java title=Example.java
 Correct Options are  : D F
 ```
 

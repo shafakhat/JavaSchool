@@ -12,8 +12,6 @@ publicclass MainClass {
     System.out.println("\" It\'s good\".");
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 " It's good".
 ```

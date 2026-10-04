@@ -29,17 +29,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-io.html">Java io</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-io.html">Java io</a></nav>
     <h1>Java IO Tutorial - Java Zip Byte Array</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <h2 id="checksum">checksum</h2>
 <p>Java provides an Adler32 class in the java.util.zip package to compute the Adler-32 checksum for bytes of data.</p>
 <p>We need to call the update() method of this class to pass bytes to it.</p>
@@ -47,8 +46,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The following code illustrates how to use the Adler32 and CRC32 classes to compute checksums.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.zip.Adler32;
 import java.util.zip.CRC32;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     String str = "HELLO";
     byte[] data = str.getBytes("UTF-8");
     System.out.println("Adler32 and  CRC32  checksums  for " + str);
@@ -81,8 +80,8 @@ import java.io.IOException;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     String input = "Hello world!";
     byte[] uncompressedData = input.getBytes("UTF-8");
     byte[] compressedData = compress(uncompressedData,
@@ -93,13 +92,13 @@ publicclass Main {
     System.out.println("Compressed data length:  " + compressedData.length);
     System.out.println("Decompressed data length:  " + decompressedData.length);
   }
-  publicstaticbyte[] compress(byte[] input, int compressionLevel,
+  public static byte[] compress(byte[] input, int compressionLevel,
       boolean GZIPFormat) throws IOException {
     Deflater compressor = new Deflater(compressionLevel, GZIPFormat);
     compressor.setInput(input);
     compressor.finish();
     ByteArrayOutputStream bao = new ByteArrayOutputStream();
-    byte[] readBuffer = newbyte[1024];
+    byte[] readBuffer = new byte[1024];
     int readCount = 0;
     while (!compressor.finished()) {
       readCount = compressor.deflate(readBuffer);
@@ -110,12 +109,12 @@ publicclass Main {
     compressor.end();
     return bao.toByteArray();
   }
-  publicstaticbyte[] decompress(byte[] input, boolean GZIPFormat)
+  public static byte[] decompress(byte[] input, boolean GZIPFormat)
       throws IOException, DataFormatException {
     Inflater decompressor = new Inflater(GZIPFormat);
     decompressor.setInput(input);
     ByteArrayOutputStream bao = new ByteArrayOutputStream();
-    byte[] readBuffer = newbyte[1024];
+    byte[] readBuffer = new byte[1024];
     int readCount = 0;
     while (!decompressor.finished()) {
       readCount = decompressor.inflate(readBuffer);
@@ -129,7 +128,7 @@ publicclass Main {
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-io-java-io-tokenizer.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java To...</span></a><a class="pager-btn pager-next" href="java-io-java-io-zip-file.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java ZI...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-java-arithmetic-operator-calculate-area-of-a-triangle.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Arithmetic Operator c...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-annotation-reflection.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

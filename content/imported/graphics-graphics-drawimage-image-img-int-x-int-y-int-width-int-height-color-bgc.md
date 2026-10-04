@@ -3,19 +3,15 @@ title: Java Swing Tutorial - Java Graphics.drawImage(Image img, int x, int y, in
 nav: Java Swing Tutorial - Java...
 description: Graphics.drawImage(Image img, int x, int y, int width, int height, Color bgcolor, ImageObserver observer) has the following syntax.
 section: Imported - java2s Archive
-order: 1040
+order: 1021
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics/0300__Graphics.drawImage_Image_img_int_x_int_y_int_width_int_height_Color_bgcolor_ImageObserver_observer_.htm
 ---
-```java title=Example.java
-Back to Graphics  ↑
-```
-
 ## Syntax
 
 Graphics.drawImage(Image img, int x, int y, int width, int height, Color bgcolor, ImageObserver observer) has the following syntax.
 
 ```java title=Example.java
-publicabstractboolean drawImage(Image img,  int x,  int y,  int width,  int height,   Color bgcolor,   ImageObserver observer)
+public abstract boolean drawImage(Image img,  int x,  int y,  int width,  int height,   Color bgcolor,   ImageObserver observer)
 ```
 
 ## Example
@@ -29,8 +25,8 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     Image img = createImage();
     g.drawImage(img, 20,20,400,400,Color.RED,this);
   }
@@ -40,7 +36,7 @@ publicclass Main extends JPanel {
     g.drawString("JavaSchool", 20,20);
     return bufferedImage;
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -49,5 +45,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Graphics ↑

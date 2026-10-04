@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1028
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Font/0820__Font.deriveFont_int_style_AffineTransform_trans_.htm
 ---
-```java title=Example.java
-Back to Font  ↑
-```
-
 ## Syntax
 
 Font.deriveFont(int style, AffineTransform trans) has the following syntax.
@@ -36,5 +32,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to Font ↑

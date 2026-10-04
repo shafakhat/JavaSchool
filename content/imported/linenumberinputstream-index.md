@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50266
 source: https://www.java2s.com/Tutorials/Java/java.io/LineNumberInputStream/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java LineNumberInputStream (InputStream in) Constructor

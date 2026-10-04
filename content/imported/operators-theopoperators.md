@@ -18,9 +18,7 @@ publicclass MainClass {
     System.out.println(count);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 6
 11
 ```

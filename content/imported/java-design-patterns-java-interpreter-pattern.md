@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50129
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0200__Java_Interpreter_Pattern.html
 ---
-```java title=Example.java
-```
-
 We normally use Interpreter pattern to evaluate language grammar or expression.
 
 This type of pattern is one of the behavioral patterns.

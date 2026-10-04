@@ -3,17 +3,14 @@ title: Java Format - Java printf Value Index
 nav: Java Format - Java printf ...
 description: The following code use the s conversion to format its argument as string.
 section: Imported - java2s Archive
-order: 50392
-source: https://www.java2s.com/Tutorials/Java/Java_Format/0070__Java_Format_Value_Index.html
+order: 1005
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Format/0070__Java_Format_Value_Index.html
 ---
-```java title=Example.java
-```
-
 The following code use the s conversion to format its argument as string.
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     System.out.printf("%s, %s,  and  %s",  "A",  "B", "C");
   }
 }
@@ -52,8 +49,8 @@ A java.util.MissingFormatArgumentException is thrown if there are more format sp
 The following code will throw the exception because the number of arguments is one less than the number of format specifiers.
 
 ```java title=Example.java
-publicclass Main {
-  publicstatic void main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     System.out.printf("%s, %s,  and  %s",  "A",  "B");
   }
 }
@@ -72,8 +69,8 @@ An argument index, an integer ending with $, is specified just after the % sign 
 The following code uses three format specifiers with explicit indexing: "%1$s", "%2$s", and "%3$s".
 
 ```java title=Example.java
-publicclass Main {
-  publicstatic void main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     System.out.printf("%1$s, %2$s, and %3$s",  "A",  "B", "C");
   }
 }
@@ -84,8 +81,8 @@ The code above generates the following result.
 Explicit indexing can refer to an argument at any order in the argument list.
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     System.out.printf("%3$s, %2$s, and %1$s",  "A",  "B", "C");
   }
 }
@@ -96,8 +93,8 @@ The code above generates the following result.
 We can reference the same argument multiple times using explicit indexing and not to reference some arguments inside the format string.
 
 ```java title=Example.java
-publicclass Main {
-  publicstatic void main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     System.out.printf("%3$s, %2$s, and %2$s", "A", "B", "C");
   }
 }
@@ -116,8 +113,8 @@ We cannot use relative indexing as the first format specifier since there must b
 The following code uses relative indexing:
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     System.out.printf("%1$s, %<s, %<s, %2$s, and %<s",  "A",  "B");
   }
 }

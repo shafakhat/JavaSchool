@@ -13,8 +13,6 @@ publicclass MainClass {
     System.out.println(myString);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 fifty five is 55
 ```

@@ -17,9 +17,7 @@ public class MainClass {
     System.out.println(c);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 1
 2
 1

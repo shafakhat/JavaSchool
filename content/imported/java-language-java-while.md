@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50435
 source: https://www.java2s.com/Tutorials/Java/Java_Language/4040__Java_while.html
 ---
-```java title=Example.java
-```
-
 The while loop repeats a statement or block while its controlling condition is true.
 
 ## Java while Loop

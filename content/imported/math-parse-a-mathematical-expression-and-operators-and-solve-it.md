@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1016
 source: https://web.archive.org/web/20160731162408/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Math/Parse_a_mathematical_expression_and_operators_and_solve_it.htm
 ---
-```java title=Example.java
-Back to Math  ↑
-```
-
 ## Question
 
 We would like to know how to parse a mathematical expression and operators and solve it.
@@ -34,7 +30,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-```java title=Example.java
-Back to Math  ↑
-```

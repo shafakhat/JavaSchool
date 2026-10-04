@@ -3,8 +3,8 @@ title: The Basic Arithmetic Operators
 nav: The Basic Arithmetic Opera...
 description: Imported from the java2s.com archive: The Basic Arithmetic Operators
 section: Imported - java2s Archive
-order: 1007
-source: https://web.archive.org/web/20070612183258/http://www.java2s.com:80/Tutorial/Java/0060__Operators/TheBasicArithmeticOperators.htm
+order: 1016
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0060__Operators/TheBasicArithmeticOperators.htm
 ---
 ```java title=Example.java
 public class MainClass {
@@ -35,9 +35,7 @@ public class MainClass {
     System.out.println("de = " + de);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Integer Arithmetic
 a = 2
 b = 6

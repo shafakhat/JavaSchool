@@ -1,10 +1,10 @@
 ---
 title: Java Arithmetic Operator calculate/approximate PI
 nav: Java Arithmetic Operator c...
-description: }//www.java2s.comprivatestaticdouble approximatePi(int index) {
+description: }//ww w .ja v a 2s . co m private static double approximatePi(int index) {
 section: Imported - java2s Archive
-order: 1065
-source: https://web.archive.org/web/20210102113216/http://www.java2s.com/ref/java/java-arithmetic-operator-calculateapproximate-pi.html
+order: 1020
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-arithmetic-operator-calculateapproximate-pi.html
 ---
 ## Question
 
@@ -24,11 +24,9 @@ and
 
 ```java title=Example.java
 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + 1/13)
-```
-
-```java title=Example.java
-publicclass Main{
-  publicstaticvoid main(String[] args) {
+java title=Example.java
+public class Main{
+  public static void main(String[] args) {
     System.out.println(4 * (1.0 - (1 / 3) + (1 / 5) -
               (1 / 7) + (1 / 9) - (1 / 11)));
     System.out.println(4 * (1.0 - (1 / 3) + (1 / 5) - (1 / 7)
@@ -42,11 +40,11 @@ publicclass Main{
 We can also use loop:
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     System.out.println(approximatePi(11));
     System.out.println(approximatePi(13));
-  }privatestaticdouble approximatePi(int index) {
+  }private static double approximatePi(int index) {
     boolean positive = true;
     double sum = 0.0;
     for (int i = 1; i <= index; i += 2) {

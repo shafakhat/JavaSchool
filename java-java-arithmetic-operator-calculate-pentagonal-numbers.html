@@ -37,37 +37,39 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Java Arithmetic Operator calculate pentagonal numbers</h1>
 <h2 id="question">Question</h2>
 <p>A pentagonal number is defined as n(3n-1)/2 for n = 1, 2, . . ., and so on.</p>
 <p>The first few numbers are 1, 5, 12, 22, . . . .</p>
 <p>We would like to write a method with the following header that returns a pentagonal number:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicstaticint getPentagonalNumber(int n)</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-    publicstaticvoid main(String[] args) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public static int getPentagonalNumber(int n)
+java title=Example.java
+public class Main {
+    public static void main(String[] args) {
         for (int i = 1; i &lt;= 100; i++) {
             System.out.printf("%10s",(i % 8 != 0) ? getPentagonalNumber(i) + " " : getPentagonalNumber(i) + "\n");
         }
     }
-    publicstaticint getPentagonalNumber(int n) {
+    public static int getPentagonalNumber(int n) {
        //your code here
     }
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-    publicstaticvoid main(String[] args) {
+}
+java title=Example.java
+public class Main {
+    public static void main(String[] args) {
         for (int i = 1; i &lt;= 100; i++) {
             System.out.printf("%10s",(i % 8 != 0) ? getPentagonalNumber(i) + " " : getPentagonalNumber(i) + "\n");
         }
     }
-    publicstaticint getPentagonalNumber(int n) {
+    public static int getPentagonalNumber(int n) {
         return n * (3 * n - 1) / 2;
     }
 }</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
 <ul><li>Java Arithmetic Operator calculate leap year</li><li>Java Arithmetic Operator calculate minutes and seconds</li><li>Java Arithmetic Operator calculate on integer</li><li>Java Arithmetic Operator calculate tips</li><li>Java Arithmetic Operator calculate/approximate PI</li></ul>
-    <div class="pager"><a class="pager-btn" href="jdk-7-getparentpath.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Get parent Path</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1082.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="string-solve-hanoi-puzzle.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms How to - S...</span></a><a class="pager-btn pager-next" href="java-collection-java-deque.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Collection Tutorial -...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

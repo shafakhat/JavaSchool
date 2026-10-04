@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Color/0920__Color.getColorComponents_float_compArray_.htm
 ---
-```java title=Example.java
-Back to Color  ↑
-```
-
 ## Syntax
 
 Color.getColorComponents(float[] compArray) has the following syntax.
@@ -34,5 +30,3 @@ public class Main {
 ```
 
 The code above generates the following result.
-
-- Back to Color ↑

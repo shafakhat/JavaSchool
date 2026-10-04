@@ -38,9 +38,7 @@ B. mysq = new MyClass (20);
 C. mysq.setSide (20);
 D. side = 20;
 E. MyClass.mysql.side = 20;
-```
-
-```java title=Example.java
+java title=Example.java
 Correct Option is  : C
 ```
 

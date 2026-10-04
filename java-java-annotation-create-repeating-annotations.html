@@ -37,7 +37,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Java Annotation create repeating annotations</h1>
 <ul><li>java.lang.annotation</li><li>java.lang.annotation Annotation</li></ul>
 <h2 id="introduction">Introduction</h2>
@@ -52,24 +52,24 @@ import java.lang.reflect.Method;
 @Retention(RetentionPolicy.RUNTIME)
 @Repeatable(MyRepeatedAnnos.class)
 @interface MyAnno {
-  String str() default"Testing";
-  intval() default 999;
+  String str() default "Testing";
+  int val() default 999;
 }
 // This is the container annotation.
 @Retention(RetentionPolicy.RUNTIME)
 @interface MyRepeatedAnnos {
   MyAnno[] value();
 }
-publicclass Main {
+public class Main {
   // Repeat MyAnno on myMethod().
   @MyAnno(str = "First annotation", val = -1)
   @MyAnno(str = "Second annotation", val = 100)
-  publicstaticvoid myMethod(String str, int i) {
+  public static void myMethod(String str, int i) {
     Main ob = new Main();
     try {
       Class&lt;?&gt; c = ob.getClass();
-      // Obtain the annotations for myMethod().Method m = c.getMethod("myMethod", String.class, int.class);
-      // Display the repeated MyAnno annotations.Annotation anno = m.getAnnotation(MyRepeatedAnnos.class);
+      // Obtain the annotations for myMethod(). Method m = c.getMethod("myMethod", String.class, int.class);
+      // Display the repeated MyAnno annotations. Annotation anno = m.getAnnotation(MyRepeatedAnnos.class);
       System.out.println(anno);
       Annotation[] annos = m.getAnnotationsByType(MyAnno.class);
       for(Annotation a : annos)  {
@@ -79,14 +79,14 @@ publicclass Main {
       System.out.println("Method Not Found.");
     }
   }
-  publicstaticvoid main(String args[]) {
+  public static void main(String args[]) {
     myMethod("test", 10);
   }
 }</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
 <ul><li>Java ThreadGroup catch uncaught exceptions in a group of threads</li><li>Java ThreadLocal use local thread variables</li><li>Java Annotation</li><li>Java Annotation retention policy</li><li>Java Annotation reflection at run time</li></ul>
-    <div class="pager"><a class="pager-btn" href="data-type-integermaxminvalue.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Integer</span></a><a class="pager-btn pager-next" href="generics-javagenericuseawildcard.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java generic</span></a></div>
+    <div class="pager"><a class="pager-btn" href="random-generate-very-large-random-numbers.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms How to - G...</span></a><a class="pager-btn pager-next" href="java-catalogjava.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Articles Organized by...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

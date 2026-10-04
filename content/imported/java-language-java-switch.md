@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50433
 source: https://www.java2s.com/Tutorials/Java/Java_Language/4020__Java_switch.html
 ---
-```java title=Example.java
-```
-
 The switch statement is a multiway branch statement. It provides a better alternative than a large series of if-else-if statements.
 
 ## Java switch Statement

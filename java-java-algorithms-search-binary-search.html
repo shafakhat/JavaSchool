@@ -37,7 +37,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Java Algorithms Search Binary Search</h1>
 <h2 id="introduction">Introduction</h2>
 <p>For binary search to work, the elements in the array must be ordered.</p>
@@ -45,21 +45,21 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The binary search first compares the key with the element in the middle of the array.</p>
 <p>Consider the following three cases:</p>
 <ul><li>If the key is less than the middle element, continue to search for the key only in the first half of the array.</li><li>If the key is equal to the middle element, the search ends with a match.</li><li>If the key is greater than the middle element, continue to search for the key only in the second half of the array.</li></ul>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  /** Use binary search to find the key in the list */publicstaticint binarySearch(int[] list, int key) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  /** Use binary search to find the key in the list */ public static int binarySearch(int[] list, int key) {
     int low = 0;int high = list.length - 1;
     while (high &gt;= low) {
       int mid = (low + high) / 2;
       if (key &lt; list[mid])
         high = mid - 1;
-      elseif (key == list[mid])
+      else if (key == list[mid])
         return mid;
       else
         low = mid + 1;
     }
     return -low - 1; // Now high &lt; low
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     int[] list = {-3,2, 4, 6, 10, 11, 45, 50, 59, 60, 66, 69, 70, 79,100,109,200};
     int i = binarySearch(list, 2);
     System.out.println(i);
@@ -75,7 +75,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 }</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
-    <div class="pager"><a class="pager-btn" href="java-java-actionevent-create-for-key-event.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java ActionEvent create fo...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1051.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="random-generate-random-numbers-string.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms How to - G...</span></a><a class="pager-btn pager-next" href="java-format-java-format-value-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Format - Java printf ...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

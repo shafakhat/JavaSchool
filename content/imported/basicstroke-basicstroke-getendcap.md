@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BasicStroke/0340__BasicStroke.getEndCap_.htm
 ---
-```java title=Example.java
-Back to BasicStroke  ↑
-```
-
 ## Example
 
 In the following code shows how to use BasicStroke.getEndCap() method.
@@ -26,5 +22,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-- Back to BasicStroke ↑

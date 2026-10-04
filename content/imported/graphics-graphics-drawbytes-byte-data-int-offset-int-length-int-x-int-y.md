@@ -3,19 +3,15 @@ title: Java Swing Tutorial - Java Graphics.drawBytes(byte[] data, int offset, in
 nav: Java Swing Tutorial - Java...
 description: Graphics.drawBytes(byte[] data, int offset, int length, int x, int y) has the following syntax.
 section: Imported - java2s Archive
-order: 1033
+order: 1018
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics/0220__Graphics.drawBytes_byte_data_int_offset_int_length_int_x_int_y_.htm
 ---
-```java title=Example.java
-Back to Graphics  ↑
-```
-
 ## Syntax
 
 Graphics.drawBytes(byte[] data, int offset, int length, int x, int y) has the following syntax.
 
 ```java title=Example.java
-publicvoid drawBytes(byte[] data,  int offset,  int length,  int x,  int y)
+public void drawBytes(byte[] data,  int offset,  int length,  int x,  int y)
 ```
 
 ## Example
@@ -27,12 +23,12 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     byte [] barray = { 0x41, 0x42, 0x43 };
     g.drawBytes (barray, 0, barray.length, 10, 30);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,5 +37,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Graphics ↑

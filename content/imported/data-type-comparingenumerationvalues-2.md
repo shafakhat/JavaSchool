@@ -20,8 +20,6 @@ publicclass MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 It isn't Spring!
 ```

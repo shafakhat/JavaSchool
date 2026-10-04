@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Font/0720__Font.createGlyphVector_FontRenderContext_frc_String_str_.htm
 ---
-```java title=Example.java
-Back to Font  ↑
-```
-
 ## Syntax
 
 Font.createGlyphVector(FontRenderContext frc, String str) has the following syntax.
@@ -55,5 +51,3 @@ class MyCanvas extends JComponent {
   }
 }
 ```
-
-- Back to Font ↑

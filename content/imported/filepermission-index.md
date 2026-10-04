@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50257
 source: https://www.java2s.com/Tutorials/Java/java.io/FilePermission/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java FilePermission(String path, String actions) Constructor

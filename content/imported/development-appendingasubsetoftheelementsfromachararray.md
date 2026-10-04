@@ -15,8 +15,6 @@ public class MainClass {
     System.out.println(buf);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 :: exactly
 ```

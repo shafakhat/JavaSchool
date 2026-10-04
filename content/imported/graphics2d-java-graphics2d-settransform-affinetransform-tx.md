@@ -3,7 +3,7 @@ title: Java Tutorial - Java Graphics2D .setTransform (AffineTransform Tx)
 nav: Java Tutorial - Java Graph...
 description: Graphics2D.setTransform(AffineTransform Tx) has the following syntax.
 section: Imported - java2s Archive
-order: 1043
+order: 1004
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics2D/Java_Graphics2D_setTransform_AffineTransform_Tx_.htm
 ---
 ### Syntax
@@ -11,7 +11,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/ja
 Graphics2D.setTransform(AffineTransform Tx) has the following syntax.
 
 ```java title=Example.java
-publicabstractvoid setTransform(AffineTransform Tx)
+public abstract void setTransform(AffineTransform Tx)
 ```
 
 ### Example
@@ -27,8 +27,8 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.Rectangle2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
     g2.setPaint(Color.black);
@@ -38,7 +38,7 @@ publicclass Main extends JPanel {
     g2.setPaint(Color.red);
     g2.draw(new Rectangle2D.Float(10, 20, 30, 40));
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

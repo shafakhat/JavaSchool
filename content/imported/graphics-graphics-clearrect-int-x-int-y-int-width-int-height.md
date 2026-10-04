@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics/0060__Graphics.clearRect_int_x_int_y_int_width_int_height_.htm
 ---
-```java title=Example.java
-Back to Graphics  ↑
-```
-
 ## Syntax
 
 Graphics.clearRect(int x, int y, int width, int height) has the following syntax.
@@ -41,5 +37,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Graphics ↑

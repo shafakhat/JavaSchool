@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50259
 source: https://www.java2s.com/Tutorials/Java/java.io/FileWriter/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java FileWriter(File file) Constructor

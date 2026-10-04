@@ -3,13 +3,13 @@ title: Relational and logical operators
 nav: Relational and logical ope...
 description: System.out.println("(i < 10) && (j < 10) is " + ((i < 10) && (j < 10)));
 section: Imported - java2s Archive
-order: 1047
+order: 1014
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0060__Operators/Relationalandlogicaloperators.htm
 ---
 ```java title=Example.java
 import java.util.Random;
-publicclass MainClass {
-  publicstaticvoid main(String[] args) {
+public class MainClass {
+  public static void main(String[] args) {
     Random rand = new Random();
     int i = rand.nextInt(100);
     int j = rand.nextInt(100);
@@ -25,9 +25,7 @@ publicclass MainClass {
     System.out.println("(i < 10) || (j < 10) is " + ((i < 10) || (j < 10)));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 i = 92
 j = 22
 i > j is true

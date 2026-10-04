@@ -3,7 +3,7 @@ title: Java Tutorial - Java Graphics.setPaintMode()
 nav: Java Tutorial - Java Graph...
 description: In the following code shows how to use Graphics.setPaintMode() method.
 section: Imported - java2s Archive
-order: 1041
+order: 1003
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics/Java_Graphics_setPaintMode_.htm
 ---
 ### Syntax
@@ -11,7 +11,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/ja
 Graphics.setPaintMode() has the following syntax.
 
 ```java title=Example.java
-publicabstractvoid setPaintMode()
+public abstract void setPaintMode()
 ```
 
 ### Example
@@ -23,8 +23,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     int w = getSize().width;
     int midW = w / 2;
     g.drawString("XOR Mode", 0, 30);
@@ -40,7 +40,7 @@ publicclass Main extends JPanel {
         g.drawOval(midW + 10 + i, 40 + i, 50, 50);
     }
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

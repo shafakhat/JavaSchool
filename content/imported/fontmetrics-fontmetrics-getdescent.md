@@ -3,19 +3,15 @@ title: Java Swing Tutorial - Java FontMetrics.getDescent()
 nav: Java Swing Tutorial - Java...
 description: In the following code shows how to use FontMetrics.getDescent() method.
 section: Imported - java2s Archive
-order: 1030
+order: 1005
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/FontMetrics/0180__FontMetrics.getDescent_.htm
 ---
-```java title=Example.java
-Back to FontMetrics  ↑
-```
-
 ## Syntax
 
 FontMetrics.getDescent() has the following syntax.
 
 ```java title=Example.java
-publicint getDescent()
+public int getDescent()
 ```
 
 ## Example
@@ -28,12 +24,12 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
+public class Main extends JPanel {
   public Main() {
     setFont(new Font("TimesRoman", Font.BOLD | Font.ITALIC, 48));
     setSize(225, 175);
   }
-  publicvoid paint(Graphics g) {
+  public void paint(Graphics g) {
     g.translate(100, 100);
     FontMetrics fm = null;
     int ascent, descent, leading, width1, width2, height;
@@ -62,7 +58,7 @@ publicclass Main extends JPanel {
     g.drawLine(xPos, yPos + descent + height, xPos + width2, yPos + descent
         + height);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame f = new JFrame();
     f.add(new Main());
     f.setSize(300, 300);
@@ -70,5 +66,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to FontMetrics ↑

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1039
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics/0840__Graphics.getFontMetrics_.htm
 ---
-```java title=Example.java
-Back to Graphics  ↑
-```
-
 ## Syntax
 
 Graphics.getFontMetrics() has the following syntax.
@@ -65,5 +61,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Graphics ↑

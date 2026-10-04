@@ -1,29 +1,29 @@
 ---
 title: Java Algorithms Sort Shell Sort
 nav: Java Algorithms Sort Shell...
-description: class MyArray {/*fromwww.java2s.com*/privatelong[] theArray; // ref to array theArrayprivateint nElems;
+description: class MyArray {/*from w w w . j a v a2s .c o m*/ private long[] theArray; // ref to array theArray private int nElems;
 section: Imported - java2s Archive
-order: 1038
-source: https://web.archive.org/web/20210102113328/http://www.java2s.com/ref/java/java-algorithms-sort-shell-sort.html
+order: 1008
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-algorithms-sort-shell-sort.html
 ---
 ## Description
 
 ```java title=Example.java
-class MyArray {privatelong[] theArray; // ref to array theArrayprivateint nElems;
+class MyArray { private long[] theArray; // ref to array theArray private int nElems;
    public MyArray(int max) {
-      theArray = newlong[max]; // create the array
+      theArray = new long[max]; // create the array
       nElems = 0;
    }
-   publicvoid insert(long value) // put element into array
+   public void insert(long value) // put element into array
    {
       theArray[nElems] = value;
       nElems++;
    }
-   publicvoid display() {
+   public void display() {
       System.out.print("A=");
-      for (int j = 0; j < nElems; j++) // for each element,System.out.print(theArray[j] + " "); // display itSystem.out.println("");
+      for (int j = 0; j < nElems; j++) // for each element, System.out.print(theArray[j] + " "); // display it System.out.println("");
    }
-   publicvoid shellSort() {
+   public void shellSort() {
       int inner, outer;
       long temp;
       int h = 1;
@@ -43,8 +43,8 @@ class MyArray {privatelong[] theArray; // ref to array theArrayprivateint nElems
       }
    }
 }
-publicclass Main {
-   publicstaticvoid main(String[] args) {
+public class Main {
+   public static void main(String[] args) {
       int maxSize = 10;
       MyArray arr = new MyArray(maxSize);
       for (int j = 0; j < maxSize; j++) {

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50209
 source: https://www.java2s.com/Tutorials/Java/Java_io/0300__Java_io_Pipe.html
 ---
-```java title=Example.java
-```
-
 A pipe connects an input stream and an output stream.
 
 A piped I/O is based on the producer-consumer pattern, where the producer produces data and the consumer consumes the data.

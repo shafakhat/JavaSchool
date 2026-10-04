@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50160
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0240__Java_Inner_Classes.html
 ---
-```java title=Example.java
-```
-
 ## What Is an Inner Class?
 
 A class which is a member of a package is known as a top-level class.

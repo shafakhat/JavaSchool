@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50239
 source: https://www.java2s.com/Tutorials/Java/java.io/BufferedInputStream/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java BufferedInputStream (InputStream in) Constructor

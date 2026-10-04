@@ -3,8 +3,8 @@ title: OCA Java SE 8 Class Design - Java Class Design
 nav: OCA Java SE 8 Class Design...
 description: When creating a new class in Java, you can create the class to inherit from an existing class.
 section: Imported - java2s Archive
-order: 50003
-source: https://www.java2s.com/Tutorials/Java/OCA_Java_SE_8_Class_Design/index.html
+order: 1012
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/OCA_Java_SE_8_Class_Design/index.html
 ---
 When creating a new class in Java, you can create the class to inherit from an existing class.
 
@@ -79,7 +79,7 @@ One feature of using the default package private modifier is that you can define
 
 ```java title=Example.java
 class A {}
-publicclass G extends A{}
+public class G extends A{}
 ```
 
 There can be at most one public class or interface in a Java file.
@@ -97,9 +97,9 @@ The compiler automatically inserts code into any class you write that doesn't ex
 For example, consider the following two equivalent class definitions:
 
 ```java title=Example.java
-publicclass Main {
+public class Main {
 }
-publicclass Main extends java.lang.Object {
+public class Main extends java.lang.Object {
 }
 ```
 

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/FocusTraversalPolicy/0080__FocusTraversalPolicy.getComponentBefore_Container_aContainer_Component_aComponent_.htm
 ---
-```java title=Example.java
-Back to FocusTraversalPolicy  ↑
-```
-
 ## Syntax
 
 FocusTraversalPolicy.getComponentBefore(Container aContainer, Component aComponent) has the following syntax.
@@ -123,5 +119,3 @@ if (!buttons.isEmpty()) {
   }
 }
 ```
-
-- Back to FocusTraversalPolicy ↑

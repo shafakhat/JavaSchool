@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BorderLayout/index.htm
 ---
-```java title=Example.java
-```
-
 ## Field
 
 - Java BorderLayout AFTER_LAST_LINE

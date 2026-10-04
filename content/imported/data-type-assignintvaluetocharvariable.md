@@ -3,12 +3,12 @@ title: Assign int value to char variable
 nav: Assign int value to char v...
 description: Imported from the java2s.com archive: Assign int value to char variable
 section: Imported - java2s Archive
-order: 1003
+order: 1009
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Assignintvaluetocharvariable.htm
 ---
 ```java title=Example.java
-publicclass MainClass {
-  publicstaticvoid main(String args[]) {
+public class MainClass {
+  public static void main(String args[]) {
     char ch1, ch2;
     ch1 = 88; // code for X
     ch2 = 'Y';
@@ -16,8 +16,6 @@ publicclass MainClass {
     System.out.println(ch1 + " " + ch2);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 ch1 and ch2: X Y
 ```

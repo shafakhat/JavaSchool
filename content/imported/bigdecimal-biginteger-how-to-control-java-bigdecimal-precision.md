@@ -3,8 +3,8 @@ title: How to control Java BigDecimal precision
 nav: How to control Java BigDec...
 description: BigDecimal BigDecimal constants BigDecimal Rounding mode BigDecimal creation BigDecimal calculation BigDecimal convert BigDecimal Comparison BigDecimal to String BigDecim
 section: Imported - java2s Archive
-order: 1038
-source: https://web.archive.org/web/20130821180432/http://java2s.com/Tutorials/Java/BigDecimal_BigInteger/How_to_control_Java_BigDecimal_precision.htm
+order: 1000
+source: https://web.archive.org/web/2016/http://java2s.com/Tutorials/Java/BigDecimal_BigInteger/How_to_control_Java_BigDecimal_precision.htm
 ---
 In this chapter you will learn:
 
@@ -23,8 +23,8 @@ In this chapter you will learn:
 
 ```java title=Example.java
 import java.math.BigDecimal;
- publicclass Main {
-    publicstaticvoid main(String[] args) {
+ public class Main {
+    public static void main(String[] args) {
         BigDecimal first = new BigDecimal(10f);
         System.out.println(first);
         System.out.println(first.precision());

@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java Reader Writer
 nav: Java IO Tutorial - Java Re...
 description: A reader is used when we want to read character-based data from a data source. A writer is used when we want to write character-based data.
 section: Imported - java2s Archive
-order: 50211
-source: https://www.java2s.com/Tutorials/Java/Java_io/0500__Java_io_Reader_Writer.html
+order: 1013
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/0500__Java_io_Reader_Writer.html
 ---
-```java title=Example.java
-```
-
 Java readers and writers are character-based streams.
 
 A reader is used when we want to read character-based data from a data source. A writer is used when we want to write character-based data.
@@ -47,8 +44,8 @@ Sample
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-publicclass Main {
-  publicstatic void main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     String destFile = "test.txt";
     try (BufferedWriter bw = new BufferedWriter(new FileWriter(destFile))) {
       bw.append("test");
@@ -71,8 +68,8 @@ The following code reads the text from the test.txt file.
 ```java title=Example.java
 import java.io.BufferedReader;
 import java.io.FileReader;
-publicclass Main {
-  publicstatic void main(String[] args) throws Exception{
+public class Main {
+  public static void main(String[] args) throws Exception{
     String srcFile = "test.txt";
     BufferedReader br = new BufferedReader(new FileReader(srcFile));
     String text = null;
@@ -119,11 +116,11 @@ class LowerCaseReader extends FilterReader {
     super(in);
   }
   @Override
-  publicint read(char[] cbuf, int off, int len) throws IOException {
+  public int read(char[] cbuf, int off, int len) throws IOException {
     int count = super.read(cbuf, off, len);
     if (count != -1) {
       // Convert all read characters to lowercase
-int limit = off + count;
+ int limit = off + count;
       for (int i = off; i < limit; i++) {
         cbuf[i] = Character.toLowerCase(cbuf[i]);
       }
@@ -131,8 +128,8 @@ int limit = off + count;
     return count;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) throws Exception {
+public class Main {
+  public static void main(String[] args) throws Exception {
     String fileName = "test.txt";
     LowerCaseReader lcr = new LowerCaseReader(new FileReader(fileName));
     int c = -1;

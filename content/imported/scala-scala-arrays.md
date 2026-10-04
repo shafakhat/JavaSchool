@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50110
 source: https://www.java2s.com/Tutorials/Java/Scala/5000__Scala_Arrays.html
 ---
-```java title=Example.java
-```
-
 The array is a data structure consisting of a collection of elements of the same type.
 
 Elements are associated with an index, usually an integer, which is used to access or replace a particular element.

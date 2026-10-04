@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50182
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0530__Java_interface_as_type.html
 ---
-```java title=Example.java
-```
-
 An interface defines a new reference type.
 
 We can use an interface type to declare a variable, to declare a parameter type in a method, as a return type of a method, etc.

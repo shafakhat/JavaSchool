@@ -1,10 +1,10 @@
 ---
 title: Android ActivityManager get top Activity
 nav: Android ActivityManager ge...
-description: }/*fromwww.java2s.com*/publicstaticboolean isTopActivity(Context context, String activityClassName) {
+description: }/*from ww w . j a v a 2s.c om*/ public static boolean isTopActivity(Context context, String activityClassName) {
 section: Imported - java2s Archive
-order: 1000
-source: https://web.archive.org/web/20210102122033/http://www.java2s.com/ref/java/android-activitymanager-get-top-activity.html
+order: 1012
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/android-activitymanager-get-top-activity.html
 ---
 - android.app
 - android.app ActivityManager KeyguardManager
@@ -16,9 +16,9 @@ import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
 import android.content.Context;
 import java.util.List;
-publicclass Main {
-    publicstaticvoid main(String[] argv) throwsException {
-    }publicstaticboolean isTopActivity(Context context, String activityClassName) {
+public class Main {
+    public static void main(String[] argv) throws Exception {
+    } public static boolean isTopActivity(Context context, String activityClassName) {
         List<RunningTaskInfo> tasksInfo = ((ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE))
                 .getRunningTasks(1);
         if (tasksInfo.size() > 0) {
@@ -28,7 +28,7 @@ publicclass Main {
         }
         return false;
     }
-    publicstaticboolean isTopActivity(Context context) {
+    public static boolean isTopActivity(Context context) {
         String activityName = context.getClass().getName();
         return isTopActivity(context, activityName);
     }

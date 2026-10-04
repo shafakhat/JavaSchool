@@ -3,7 +3,7 @@ title: A number formatter for logarithmic values. This formatter does not suppor
 nav: A number formatter for log...
 description: * JFreeChart : a free chart library for the Java(tm) platform
 section: Imported - java2s Archive
-order: 1009
+order: 1008
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/AnumberformatterforlogarithmicvaluesThisformatterdoesnotsupportparsing.htm
 ---
 ```java title=Example.java
@@ -58,22 +58,22 @@ import java.text.ParsePosition;
  * parsing.
  *
  * @since 1.0.7
- */publicclass LogFormat extends NumberFormat {
-    /** The log base value. */privatedouble base;
-    /** The natural logarithm of the base value. */privatedouble baseLog;
-    /** The label for the log base (for example, "e"). */private String baseLabel;
+ */public class LogFormat extends NumberFormat {
+    /** The log base value. */ private double base;
+    /** The natural logarithm of the base value. */ private double baseLog;
+    /** The label for the log base (for example, "e"). */ private String baseLabel;
     /**
      * The label for the power symbol.
      *
      * @since 1.0.10
-     */private String powerLabel;
-    /** A flag that controls whether or not the base is shown. */privateboolean showBase;
-    /** The number formatter for the exponent. */private NumberFormat formatter = new DecimalFormat("0.0#");
+     */ private String powerLabel;
+    /** A flag that controls whether or not the base is shown. */ private boolean showBase;
+    /** The number formatter for the exponent. */ private NumberFormat formatter = new DecimalFormat("0.0#");
     /**
      * Creates a new instance using base 10.
      *
      * @since 1.0.13
-     */public LogFormat() {
+     */ public LogFormat() {
         this(10.0, "10", true);
     }
     /**
@@ -83,7 +83,7 @@ import java.text.ParsePosition;
      * @param baseLabel  the base label (<code>null</code> not permitted).
      * @param showBase  a flag that controls whether or not the base value is
      *                  shown.
-     */public LogFormat(double base, String baseLabel, boolean showBase) {
+     */ public LogFormat(double base, String baseLabel, boolean showBase) {
         this(base, baseLabel, "^", showBase);
     }
     /**
@@ -96,13 +96,13 @@ import java.text.ParsePosition;
      *                  shown.
      *
      * @since 1.0.10
-     */public LogFormat(double base, String baseLabel, String powerLabel,
+     */ public LogFormat(double base, String baseLabel, String powerLabel,
             boolean showBase) {
         if (baseLabel == null) {
-            thrownew IllegalArgumentException("Null 'baseLabel' argument.");
+            throw new IllegalArgumentException("Null 'baseLabel' argument.");
         }
         if (powerLabel == null) {
-            thrownew IllegalArgumentException("Null 'powerLabel' argument.");
+            throw new IllegalArgumentException("Null 'powerLabel' argument.");
         }
         this.base = base;
         this.baseLog = Math.log(this.base);
@@ -116,7 +116,7 @@ import java.text.ParsePosition;
      * @return The number format (never <code>null</code>).
      *
      * @since 1.0.13.
-     */public NumberFormat getExponentFormat() {
+     */ public NumberFormat getExponentFormat() {
         return (NumberFormat) this.formatter.clone();
     }
     /**
@@ -125,9 +125,9 @@ import java.text.ParsePosition;
      * @param format  the formatter (<code>null</code> not permitted).
      *
      * @since 1.0.13
-     */publicvoid setExponentFormat(NumberFormat format) {
+     */ public void setExponentFormat(NumberFormat format) {
         if (format == null) {
-            thrownew IllegalArgumentException("Null 'format' argument.");
+            throw new IllegalArgumentException("Null 'format' argument.");
         }
         this.formatter = format;
     }
@@ -137,7 +137,7 @@ import java.text.ParsePosition;
      * @param value  the value.
      *
      * @return The log of the value.
-     */privatedouble calculateLog(double value) {
+     */ private double calculateLog(double value) {
         return Math.log(value) / this.baseLog;
     }
     /**
@@ -148,7 +148,7 @@ import java.text.ParsePosition;
      * @param pos  the position.
      *
      * @return A string buffer containing the formatted value.
-     */public StringBuffer format(double number, StringBuffer toAppendTo,
+     */ public StringBuffer format(double number, StringBuffer toAppendTo,
             FieldPosition pos) {
         StringBuffer result = new StringBuffer();
         if (this.showBase) {
@@ -167,7 +167,7 @@ import java.text.ParsePosition;
      * @param pos  the field position (ignored here).
      *
      * @return The string buffer.
-     */public StringBuffer format(long number, StringBuffer toAppendTo,
+     */ public StringBuffer format(long number, StringBuffer toAppendTo,
             FieldPosition pos) {
         StringBuffer result = new StringBuffer();
         if (this.showBase) {
@@ -185,7 +185,7 @@ import java.text.ParsePosition;
      * @param parsePosition  ignored.
      *
      * @return Always <code>null</code>.
-     */public Number parse (String source, ParsePosition parsePosition) {
+     */ public Number parse (String source, ParsePosition parsePosition) {
         return null; // don't bother with parsing
     }
     /**
@@ -194,7 +194,7 @@ import java.text.ParsePosition;
      * @param obj  the object (<code>null</code> permitted).
      *
      * @return A boolean.
-     */publicboolean equals(Object obj) {
+     */ public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
@@ -223,7 +223,7 @@ import java.text.ParsePosition;
      * Returns a clone of this instance.
      *
      * @return A clone.
-     */public Object clone() {
+     */ public Object clone() {
         LogFormat clone = (LogFormat) super.clone();
         clone.formatter = (NumberFormat) this.formatter.clone();
         return clone;

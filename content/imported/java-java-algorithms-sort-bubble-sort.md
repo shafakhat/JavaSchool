@@ -1,18 +1,18 @@
 ---
 title: Java Algorithms Sort Bubble Sort
 nav: Java Algorithms Sort Bubbl...
-description: for (out = nElems - 1; out > 1; out--) // outer loop (backward)for (in = 0; in < out; in++) // inner loop (forward)if (a[in] > a[in + 1]) // out of order?
+description: int j = 0;/*from ww w .ja v a 2 s .c o m*/ Integer tmp;
 section: Imported - java2s Archive
-order: 1034
-source: https://web.archive.org/web/20210102113327/http://www.java2s.com/ref/java/java-algorithms-sort-bubble-sort.html
+order: 1007
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-algorithms-sort-bubble-sort.html
 ---
 ## Description
 
 ```java title=Example.java
 import java.util.Arrays;
-publicclass Main {
-   publicstaticvoid bubbleSort(Integer[] arr) {
-      int j = 0;Integer tmp;
+public class Main {
+   public static void bubbleSort(Integer[] arr) {
+      int j = 0; Integer tmp;
       boolean sorted = false;
       while (!sorted) {
          sorted = true;
@@ -27,43 +27,41 @@ publicclass Main {
          }
       }
    }
-   publicstaticvoid main(String[] args) {
+   public static void main(String[] args) {
       Integer[] myArray = { 15, 21, 17, 31, 19 };
       bubbleSort(myArray);
       System.out.println(Arrays.toString(myArray));
    }
 }
-```
-
-```java title=Example.java
-class MyArray {privatelong[] a;
-   privateint nElems;
+java title=Example.java
+class MyArray {private long[] a;
+   private int nElems;
    public MyArray(int max) {
-      a = newlong[max]; // create the array
+      a = new long[max]; // create the array
       nElems = 0; // no items yet
    }
-   publicvoid insert(long value) {
+   public void insert(long value) {
       a[nElems] = value;
       nElems++;
    }
-   publicvoid display() {
+   public void display() {
       for (int j = 0; j < nElems; j++)
          System.out.print(a[j] + " ");
       System.out.println("");
    }
-   publicvoid bubbleSort() {
+   public void bubbleSort() {
       int out, in;
-      for (out = nElems - 1; out > 1; out--) // outer loop (backward)for (in = 0; in < out; in++) // inner loop (forward)if (a[in] > a[in + 1]) // out of order?
+      for (out = nElems - 1; out > 1; out--) // outer loop (backward) for (in = 0; in < out; in++) // inner loop (forward) if (a[in] > a[in + 1]) // out of order?
                swap(in, in + 1); // swap them
    }
-   privatevoid swap(int one, int two) {
+   private void swap(int one, int two) {
       long temp = a[one];
       a[one] = a[two];
       a[two] = temp;
    }
 }
-publicclass Main {
-   publicstaticvoid main(String[] args) {
+public class Main {
+   public static void main(String[] args) {
       int maxSize = 100; // array size
       MyArray arr = new MyArray(maxSize); // create the array
       arr.insert(7);

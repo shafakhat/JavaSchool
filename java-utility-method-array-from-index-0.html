@@ -44,12 +44,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The list of methods to do Array From are organized into topic(s).</p>
 <h2 id="method">Method</h2>
 <p>byte[]arrayFromArrayWithLength(final byte[] array, final int length) array From Array With Length</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">finalbyte[] output = newbyte[length];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">final byte[] output = new byte[length];
 for (int j = 0; j &lt; length; j++) {
     output[j] = array[(j % array.length)];
 return output;</code></pre></div>
 <p>double[]arrayFromIndex(double[][] values, int index) array From Index</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">double[] array = newdouble[values.length];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">double[] array = new double[values.length];
 for (int i = 0; i &lt; values.length; i++) {
     array[i] = values[i][index];
 return array;</code></pre></div>
@@ -63,11 +63,11 @@ return aV;</code></pre></div>
 return fromString.split(";");</code></pre></div>
 <p>String[]arrayFromString(String s) array From String</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (s == null)
-    returnnewString[] {};
+    return new String[] {};
 if (!s.startsWith("[") || !s.endsWith("]"))
-    thrownewIllegalArgumentException();
+    throw new IllegalArgumentException();
 if (s.length() == 2)
-    returnnewString[] {};
+    return new String[] {};
 return s.substring(1, s.length() - 1).split(" *, *");</code></pre></div>
 <p>String[]arrayFromString(String str) array From String</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if ((str != null) &amp;&amp; (str.length() &gt; 0)) {
@@ -75,7 +75,7 @@ return s.substring(1, s.length() - 1).split(" *, *");</code></pre></div>
 } else {
     return null;</code></pre></div>
 <p>Boolean[]toArray(boolean[] array) to Array</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Boolean[] newArray = newBoolean[array.length];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Boolean[] newArray = new Boolean[array.length];
 for (int i = 0; i &lt; array.length; i++) {
     newArray[i] = Boolean.valueOf(array[i]);
 return newArray;</code></pre></div>
@@ -85,21 +85,21 @@ return newArray;</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">boolean</code></pre></div>
 <p>.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int len = input.length();
-boolean[] bools = newboolean[len];
+boolean[] bools = new boolean[len];
 for (int i = 0; i &lt; len; i++) {
     bools[i] = (input.charAt(i) == '1');
 return bools;</code></pre></div>
 <p>Class[]toArray(Class interfaceClass) to Array</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">returnnewClass[] { interfaceClass };</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">return new Class[] { interfaceClass };</code></pre></div>
 <p>double[]toArray(Double[] array) to Array</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (array == null) {
     return null;
-double[] data = newdouble[array.length];
+double[] data = new double[array.length];
 for (int i = 0; i &lt; array.length; i++) {
-    doubleval = (array[i] == null) ? 0 : array[i].intValue();
+    double val = (array[i] == null) ? 0 : array[i].intValue();
     data[i] = val;
 return data;</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="java-utility-method-array-flip-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="java-utility-method-array-has-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="flowlayout-java-flowlayout-getalignment.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java FlowL...</span></a><a class="pager-btn pager-next" href="jstl-jstlforeachloop.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JSTL</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -24,8 +24,6 @@ public class MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Choice1 selected
 ```

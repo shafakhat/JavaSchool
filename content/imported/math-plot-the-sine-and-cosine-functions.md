@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20160729101515/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Math/Plot_the_sine_and_cosine_functions.htm
 ---
-```java title=Example.java
-Back to Math  ↑
-```
-
 ## Question
 
 We would like to know how to plot the sine and cosine functions.
@@ -71,8 +67,5 @@ class DrawSine extends JPanel {
     g.drawPolyline(p2.xpoints, p2.ypoints, p2.npoints);
   }
 }
-```
-
-```java title=Example.java
-Back to Math  ↑
+java title=Example.java
 ```

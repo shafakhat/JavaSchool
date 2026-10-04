@@ -29,24 +29,23 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-object-oriented-design.html">Java Object Oriented Design</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-object-oriented-design.html">Java Object Oriented Design</a></nav>
     <h1>Java Object Oriented Design - Java Annotation Type</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <h2 id="marker-annotation-types">Marker Annotation Types</h2>
 <p>A marker annotation type is an annotation type with no elements, not even one with a default value.</p>
 <p>A marker annotation is used by the annotation processing tools.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public  @interface Marker  {
 }
 @Marker
-publicclass Main{
+public class Main{
 }</code></pre></div>
 <h2 id="meta-annotation-types">Meta-Annotation Types</h2>
 <p>Meta-annotations types are annotation types, which are used to annotate other annotation types.</p>
@@ -75,8 +74,8 @@ import java.lang.annotation.Target;
 @Target({ ElementType.TYPE_USE })
 @interface MyAnno2 {
 }
-publicclass Main {
-  publicvoid processData() throws @MyAnno Exception {
+public class Main {
+  public void processData() throws @MyAnno Exception {
     int roundedValue = (@MyAnno2 int) .02;
     Main t = new @MyAnno Main();
   }
@@ -135,7 +134,7 @@ class B extends A {
   int minor();
 }
 @Version(major = 1, minor = 0)
-publicclass Main {
+public class Main {
 }</code></pre></div>
 <p>When generating documentation for the Main class with the Javadoc tool, the Version annotation on the Main class declaration is also generated as part of the documentation.</p>
 <h2 id="repeatable-annotation">Repeatable Annotation</h2>
@@ -153,14 +152,14 @@ publicclass Main {
 }
 @Log(date = "01/01/2014", comments = "B")
 @Log(date = "01/21/2014", comments = "A")
-publicclass Main {
-  publicstaticvoid process() {
+public class Main {
+  public static void process() {
   }
 }</code></pre></div>
 <h2 id="the-native-annotation">The Native Annotation</h2>
 <p>The Native annotation type is a meta-annotation that is used to annotate fields which may be referenced from native code. It is a marker annotation.</p>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-annotation-usage.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-standard-annotations.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-io-java-io-zip-file.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java ZI...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1093.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

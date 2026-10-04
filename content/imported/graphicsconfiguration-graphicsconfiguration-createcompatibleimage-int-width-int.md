@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/GraphicsConfiguration/0080__GraphicsConfiguration.createCompatibleImage_int_width_int_height_int_transparency_.htm
 ---
-```java title=Example.java
-Back to GraphicsConfiguration  ↑
-```
-
 ## Syntax
 
 GraphicsConfiguration.createCompatibleImage(int width, int height, int transparency) has the following syntax.
@@ -100,5 +96,3 @@ int type = BufferedImage.TYPE_INT_RGB;
     }
 }
 ```
-
-- Back to GraphicsConfiguration ↑

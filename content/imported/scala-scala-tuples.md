@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50088
 source: https://www.java2s.com/Tutorials/Java/Scala/0190__Scala_Tuples.html
 ---
-```java title=Example.java
-```
-
 A tuple is an ordered container of two or more values of same or different types.
 
 Unlike lists and arrays, however, there is no way to iterate through elements in a tuple.

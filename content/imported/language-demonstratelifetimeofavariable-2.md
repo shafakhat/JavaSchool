@@ -18,9 +18,7 @@ publicclass MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 y is: -1
 y is now: 100
 y is: -1

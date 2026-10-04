@@ -3,12 +3,9 @@ title: Java Reflection Object Create
 nav: Java Reflection Object Cre...
 description: We can use reflection to create objects of a class dynamically. by invoking one of the constructors.
 section: Imported - java2s Archive
-order: 50407
-source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0070__Java_Create_Objects.html
+order: 1007
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Reflection/0070__Java_Create_Objects.html
 ---
-```java title=Example.java
-```
-
 We can use reflection to create objects of a class dynamically. by invoking one of the constructors.
 
 And then we can access the values of fields of objects, set their values, and invoke their methods.
@@ -26,15 +23,13 @@ This method takes no parameter and is equivalent to using the new operator on th
 
 ```java title=Example.java
 MyClass m  = myObject.newInstance();
-```
-
-```java title=Example.java
-class MyClass {public MyClass() {
+java title=Example.java
+class MyClass { public MyClass() {
      System.out.println("called");
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) throws InstantiationException {
+public class Main {
+  public static void main(String[] args) throws InstantiationException {
     Class<MyClass> personClass = MyClass.class;
     try {
       MyClass p = personClass.newInstance();
@@ -73,8 +68,8 @@ class MyClass {
     System.out.println(s);
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Class<MyClass> myClass = MyClass.class;
     try {
       Constructor<MyClass> cons = myClass.getConstructor(int.class,
@@ -108,12 +103,12 @@ import java.lang.reflect.Method;
 class MyClass {
   public MyClass() {
   }
-  publicvoid setName(String n) {
+  public void setName(String n) {
     System.out.println(n);
   }
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Class<MyClass> myClass = MyClass.class;
     try {
       MyClass p = myClass.newInstance();

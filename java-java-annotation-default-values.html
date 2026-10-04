@@ -37,7 +37,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Java Annotation default values</h1>
 <ul><li>java.lang.annotation</li><li>java.lang.annotation Annotation</li></ul>
 <h2 id="introduction">Introduction</h2>
@@ -51,8 +51,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// An annotation type declaration that includes defaults.
 @Retention(RetentionPolicy.RUNTIME)
 @interface MyAnno {
-  String str() default"DefaultStringValue";
-  intval() default 99999;
+  String str() default "DefaultStringValue";
+  int val() default 99999;
 }</code></pre></div>
 <p>The following are the four ways that we can use @MyAnno:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@MyAnno() // both str and val default
@@ -66,14 +66,14 @@ import java.lang.reflect.Method;
 // An annotation type declaration that includes defaults.
 @Retention(RetentionPolicy.RUNTIME)
 @interface MyAnno {
-  String str() default"Testing";
-  intval() default 9000;
+  String str() default "Testing";
+  int val() default 9000;
 }
-publicclass Main {
+public class Main {
   // Annotate a method using the default values.
-  @MyAnno()publicstaticvoid myMethod() {
+  @MyAnno()public static void myMethod() {
     Main ob = new Main();
-    // Obtain the annotation for this method// and display the values of the members.try {
+    // Obtain the annotation for this method // and display the values of the members. try {
       Class&lt;?&gt; c = ob.getClass();
       Method m = c.getMethod("myMethod");
       MyAnno anno = m.getAnnotation(MyAnno.class);
@@ -82,14 +82,14 @@ publicclass Main {
       System.out.println("Method Not Found.");
     }
   }
-  publicstaticvoid main(String args[]) {
+  public static void main(String args[]) {
     myMethod();
   }
 }</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
 <ul><li>Java Annotation retention policy</li><li>Java Annotation reflection at run time</li><li>Java Annotation get all annotations</li><li>Java Annotation marker annotations</li><li>Java Annotation with single member</li></ul>
-    <div class="pager"><a class="pager-btn" href="data-type-integerreversebytesreversestheorderofthebytesinnumandreturnstheresult.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Integer.reverseBytes( ) re...</span></a><a class="pager-btn pager-next" href="generics-javahierarchygenericclass.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java hierarchy generic class</span></a></div>
+    <div class="pager"><a class="pager-btn" href="number-print-a-table-of-fahrenheit-and-celsius-temperatures-1.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms How to - P...</span></a><a class="pager-btn pager-next" href="graphicsdevice-java-graphicsdevice-getavailableacceleratedmemory.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java GraphicsDevice.getAva...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

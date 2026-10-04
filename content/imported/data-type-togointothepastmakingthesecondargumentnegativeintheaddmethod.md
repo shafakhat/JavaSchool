@@ -17,8 +17,6 @@ publicclass MainClass {
     System.out.println(calendar.get(Calendar.YEAR));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 1993
 ```

@@ -35,9 +35,7 @@ publicclass MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Outer while loop
 i = 1
 continue

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Android ActivityManager get top Activity - JavaSchool</title>
-<meta name="description" content="Android ActivityManager get top Activity: Java tutorial page with examples and explanations.">
+<meta name="description" content="}/*from ww w . j a v a 2s.c om*/ public static boolean isTopActivity(Context context, String activityClassName) {">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -37,7 +37,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Android ActivityManager get top Activity</h1>
 <ul><li>android.app</li><li>android.app ActivityManager KeyguardManager</li></ul>
 <h2 id="description">Description</h2>
@@ -45,9 +45,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 import android.app.ActivityManager.RunningTaskInfo;
 import android.content.Context;
 import java.util.List;
-publicclass Main {
-    publicstaticvoid main(String[] argv) throwsException {
-    }publicstaticboolean isTopActivity(Context context, String activityClassName) {
+public class Main {
+    public static void main(String[] argv) throws Exception {
+    } public static boolean isTopActivity(Context context, String activityClassName) {
         List&lt;RunningTaskInfo&gt; tasksInfo = ((ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE))
                 .getRunningTasks(1);
         if (tasksInfo.size() &gt; 0) {
@@ -57,7 +57,7 @@ publicclass Main {
         }
         return false;
     }
-    publicstaticboolean isTopActivity(Context context) {
+    public static boolean isTopActivity(Context context) {
         String activityName = context.getClass().getName();
         return isTopActivity(context, activityName);
     }
@@ -65,7 +65,7 @@ publicclass Main {
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
 <ul><li>Java XML Element get text content</li><li>Java XML Element append child</li><li>Java XML Node get type</li><li>Android KeyguardManager key board lock mode</li><li>Android Intent send text</li></ul>
-    <div class="pager"><a class="pager-btn" href="applet-ajax.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">AJAX</span></a><a class="pager-btn pager-next" href="language-annotationsandannotationtypes-2.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Annotations and Annotation...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="2d-graphics-gui-addingimagedraggingbehavior.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Adding Image-Dragging Beha...</span></a><a class="pager-btn pager-next" href="swing-components-animatedicontreeexample2.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Animated Icon Tree Example 2</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

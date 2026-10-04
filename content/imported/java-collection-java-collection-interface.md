@@ -3,12 +3,9 @@ title: Java Collection Tutorial - Java Collection Interface
 nav: Java Collection Tutorial -...
 description: The Java Collection interface is the root of the collection interface hierarchy. It defines a generic collection.
 section: Imported - java2s Archive
-order: 50329
-source: https://www.java2s.com/Tutorials/Java/Java_Collection/0030__Java_Collection_Interface.html
+order: 1016
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Collection/0030__Java_Collection_Interface.html
 ---
-```java title=Example.java
-```
-
 The Java Collection interface is the root of the collection interface hierarchy. It defines a generic collection.
 
 The Collections Framework does not provide an implementation for the Collection interface.
@@ -80,8 +77,8 @@ The following code shows how to use Collection interface.
 Size = 0, Elements = []
 import java.util.ArrayList;
 import java.util.Collection;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Collection<String> names = new ArrayList<>();
     System.out.printf("Size = %d, Elements = %s%n", names.size(), names);
     names.add("XML");

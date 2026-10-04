@@ -9,9 +9,7 @@ source: https://web.archive.org/web/20070630140827/http://www.java2s.com:80/Tuto
 ```java title=Example.java
 public boolean addAll(Collection c)
 public boolean addAll(int index, Collection c)
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Vector;
 public class MainClass {
   public static void main(String args[]) {
@@ -26,9 +24,7 @@ public class MainClass {
     System.out.println(v2);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 ```

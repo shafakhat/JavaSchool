@@ -29,21 +29,20 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-design-patterns.html">Java Design Patterns</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-design-patterns.html">Java Design Patterns</a></nav>
     <h1>Java Design Patterns Tutorial - Java Design Pattern - Template Pattern</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>In Template pattern, a parent abstract class expose several abstract methods for the subclass to implement. In the parent abstract class there is another method or several methods which uses the abstract methods to achieve business logics.</p>
 <p>The abstract methods usually are for each step required by the parent class.</p>
 <p>For example, in order to use a new software we need to download, install, configuration, and run. If we are going to use template pattern to code the logic we would create a parent class as follows.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abstractclass UseSoftware{
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abstract class UseSoftware{
    abstract void download();
    abstract void install();
    abstract void configuration();
@@ -58,11 +57,11 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>For using different software we just need to inherit from the abstract class above and provide the detailed implementation.</p>
 <p>Template pattern is a behavior pattern.</p>
 <h2 id="example">Example</h2>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abstractclass Software {
-   abstractvoid initialize();
-   abstractvoid start();
-   abstractvoid end();
-   //template methodpublicfinalvoid play(){
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abstract class Software {
+   abstract void initialize();
+   abstract void start();
+   abstract void end();
+   //template methodpublic final void play(){
       //initialize
       initialize();
       //start
@@ -99,8 +98,8 @@ class Editor extends Software {
       System.out.println("Editor Started!");
    }
 }
-publicclass Main {
-   publicstaticvoid main(String[] args) {
+public class Main {
+   public static void main(String[] args) {
       Software s1 = new Browser();
       s1.play();
       s1 = new Editor();
@@ -109,7 +108,7 @@ publicclass Main {
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-design-patterns-java-strategy-pattern.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Design Patterns Tutor...</span></a><a class="pager-btn pager-next" href="java-design-patterns-java-visitor-pattern.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Design Patterns Tutor...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="random-generate-password.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms How to - G...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-objects-class.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

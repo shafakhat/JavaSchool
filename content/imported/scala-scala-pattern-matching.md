@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50095
 source: https://www.java2s.com/Tutorials/Java/Scala/0260__Scala_Pattern_Matching.html
 ---
-```java title=Example.java
-```
-
 Pattern matching allows us to make a programmatic choice between multiple conditions.
 
 ## Example

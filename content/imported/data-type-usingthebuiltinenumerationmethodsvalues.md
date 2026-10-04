@@ -29,9 +29,7 @@ publicclass MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Here are all Week constants
 Monday
 Tuesday

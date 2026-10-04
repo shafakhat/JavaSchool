@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50294
 source: https://www.java2s.com/Tutorials/Java/java.nio.file/Files/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Files.copy(InputStream in, Path target, CopyOption ... options)

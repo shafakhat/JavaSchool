@@ -13,8 +13,6 @@ public class MainClass {
     System.out.println(newString.capacity());
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 50
 ```

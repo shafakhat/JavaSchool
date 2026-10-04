@@ -3,8 +3,8 @@ title: An example of polymorphism
 nav: An example of polymorphism
 description: Imported from the java2s.com archive: An example of polymorphism
 section: Imported - java2s Archive
-order: 1001
-source: https://web.archive.org/web/20070430122330/http://www.java2s.com:80/Tutorial/Java/0100__Class-Definition/Anexampleofpolymorphism.htm
+order: 1011
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0100__Class-Definition/Anexampleofpolymorphism.htm
 ---
 ```java title=Example.java
 class Employee {

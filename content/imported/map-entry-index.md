@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50366
 source: https://www.java2s.com/Tutorials/Java/java.util/Map.Entry/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Map.Entry.equals(Object o)

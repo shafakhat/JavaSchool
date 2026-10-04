@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50102
 source: https://www.java2s.com/Tutorials/Java/Scala/3020__Scala_Case_Classes.html
 ---
-```java title=Example.java
-```
-
 Scala can create classes that have the common stuff filled in.
 
 Most of the time, when we define a class, we have to write the toString, hashCode, and equals methods.

@@ -29,17 +29,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-format.html">Java Format</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-format.html">Java Format</a></nav>
     <h1>Java Format - Java Number Format Class</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>The following two classes can be used to format and parse numbers:</p>
 <ul><li>java.text.NumberFormat</li><li>java.text.DecimalFormat</li></ul>
 <p>The NumberFormat class can format a number in a particular locale's predefined format.</p>
@@ -49,8 +48,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>If you call them without argument, they return a formatter object for the default locale.</p>
 <p>Call the format() method with the number argument to get the formatted number as a string.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.NumberFormat;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     NumberFormat formatter;
     // Get number formatter for default locale
     formatter = NumberFormat.getInstance();
@@ -62,8 +61,8 @@ publicclass Main {
 <p>The following code illustrates how to format numbers in default format for the current locale, French locale, and German locale.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.NumberFormat;
 import java.util.Locale;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     double value = 123456789.9876543;
     // Default locale
     printFormatted(Locale.getDefault(), value);
@@ -71,7 +70,7 @@ publicclass Main {
     Locale indianLocale = new Locale("en", "IN");
     printFormatted(indianLocale, value);
   }
-  publicstaticvoid printFormatted(Locale locale, double value) {
+  public static void printFormatted(Locale locale, double value) {
     // Get number and currency formatter
     NumberFormat nf = NumberFormat.getInstance(locale);
     NumberFormat cf = NumberFormat.getCurrencyInstance(locale);
@@ -91,9 +90,9 @@ publicclass Main {
 <p>,  Number  Grouping separator E  Number  Separates mantissa and exponent in scientific notation. ;  Subpattern boundary  Separates positive and negative subpatterns %  Prefix or suffix  Multiply by 100 and show as percentage \u2030  Prefix or suffix  Multiply by 1000 and show as per mille value</p>
 <p>Once we create an object of the DecimalFormat class, you can change the format pattern using its applyPattern() method.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
-publicclass Main {
-  privatestatic DecimalFormat formatter = new DecimalFormat();
-  publicstaticvoid main(String[] args) {
+public class Main {
+  private static DecimalFormat formatter = new DecimalFormat();
+  public static void main(String[] args) {
     formatNumber("##.##", 12.345);
     formatNumber("##.##", 12.345);
     formatNumber("0000.0000", 12.345);
@@ -101,7 +100,7 @@ publicclass Main {
     // Positive and negative number format
     formatNumber("#.##;(#.##)", -12.735);
   }
-  publicstaticvoid formatNumber(String pattern, double value) {
+  public static void formatNumber(String pattern, double value) {
     // Apply the pattern formatter.applyPattern ( pattern );
     String formattedNumber = formatter.format(value);
     System.out.println("Number:" + value + ", Pattern:" + pattern
@@ -114,16 +113,16 @@ publicclass Main {
 <p>We can use xxxValue() methods from java.lang.Number class to get the primitive value, where xxx can be byte, double, float, int, long, and short.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
 import java.text.ParsePosition;
-publicclass Main {
-  privatestatic DecimalFormat formatter = new DecimalFormat();
-  publicstaticvoid main(String[] args) {
+public class Main {
+  private static DecimalFormat formatter = new DecimalFormat();
+  public static void main(String[] args) {
     // Parse a string to decimal number
     String str = "qq1,234.567";
     String pattern = "#,###.###";
     formatter.applyPattern(pattern);
     // Create a ParsePosition object to specify the first digit of
-// number in the string. It is 1 in "qq1,234.567"
-// with the index 2.
+ // number in the string. It is 1 in "qq1,234.567"
+ // with the index 2.
     ParsePosition pp = new ParsePosition(2);
     Number numberObject = formatter.parse(str, pp);
     double value = numberObject.doubleValue();
@@ -132,7 +131,7 @@ publicclass Main {
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-format-java-date-format-symbol.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Format - Java Date Fo...</span></a><a class="pager-btn pager-next" href="java-format-java-printf-style-overview.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Format - Java printf-...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-java-algorithms-search-linear-search.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms Search Lin...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1008.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

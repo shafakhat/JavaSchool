@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50186
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0610__Java_Enum_Value.html
 ---
-```java title=Example.java
-```
-
 An enum type defines two things:
 
 - The enum constants

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Font/0840__Font.deriveFont_int_style_float_size_.htm
 ---
-```java title=Example.java
-Back to Font  ↑
-```
-
 ## Syntax
 
 Font.deriveFont(int style, float size) has the following syntax.
@@ -35,5 +31,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to Font ↑

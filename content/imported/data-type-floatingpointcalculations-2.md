@@ -18,8 +18,6 @@ double averageC = 0.0;
     System.out.println(averageC);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 7.5
 ```

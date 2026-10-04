@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics/0760__Graphics.getClipBounds_Rectangle_r_.htm
 ---
-```java title=Example.java
-Back to Graphics  ↑
-```
-
 ## Syntax
 
 Graphics.getClipBounds(Rectangle r) has the following syntax.
@@ -42,5 +38,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Graphics ↑

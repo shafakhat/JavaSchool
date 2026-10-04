@@ -44,44 +44,44 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The list of methods to do Array Append are organized into topic(s).</p>
 <h2 id="method">Method</h2>
 <p>intaddToArray(final int[] array, int index, final String csvString, final String delim) add To Array</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">finalStringTokenizer tokenizer = newStringTokenizer(csvString, delim);
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">final StringTokenizer tokenizer = new StringTokenizer(csvString, delim);
 while (tokenizer.hasMoreTokens()) {
     array[index++] = Integer.parseInt(tokenizer.nextToken());
 return index;</code></pre></div>
 <p>int[]addToArray(int[] a, int value) add To Array</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (a == null || a.length == 0) {
-    returnnewint[] { value };
+    return new int[] { value };
 int[] array = Arrays.copyOf(a, a.length + 1);
 array[a.length] = value;
 return array;</code></pre></div>
 <p>String[]addToArray(String[] items, String str) Adds a string to a string array.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">List&lt;String&gt; itemList;
 if (items == null) {
-    itemList = newArrayList&lt;String&gt;();
+    itemList = new ArrayList&lt;String&gt;();
 } else {
-    itemList = newArrayList&lt;String&gt;(Arrays.asList(items));
+    itemList = new ArrayList&lt;String&gt;(Arrays.asList(items));
 if (str != null) {
     itemList.add(str);
 ...</code></pre></div>
 <p>byte[]appendArray(final byte[] buffer1, final byte[] buffer2) Appends the second array to the first array.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">finalbyte[] newBuffer = newbyte[buffer1.length + buffer2.length];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">final byte[] newBuffer = new byte[buffer1.length + buffer2.length];
 int pos = 0;
 System.arraycopy(buffer1, 0, newBuffer, pos, buffer1.length);
 pos += buffer1.length;
 System.arraycopy(buffer2, 0, newBuffer, pos, buffer2.length);
 return newBuffer;</code></pre></div>
 <p>int[][]appendArray(int[][] array, int[] staple) append Array</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int[][] output = newint[array.length + 1][];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int[][] output = new int[array.length + 1][];
 System.arraycopy(array, 0, output, 0, array.length);
 output[array.length] = staple;
 return output;</code></pre></div>
 <p>Object[]appendArray(Object[] arr, Object obj) Append an Object at end of array</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Object[] newArr = newObject[arr.length + 1];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Object[] newArr = new Object[arr.length + 1];
 System.arraycopy(arr, 0, newArr, 0, arr.length);
 newArr[arr.length] = obj;
 return newArr;</code></pre></div>
 <p>Object[]appendArray(Object[] array1, Object[] array2) Appends array2 to the end of array1 and returns the result</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Object[] result = newObject[array1.length + array2.length];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Object[] result = new Object[array1.length + array2.length];
 System.arraycopy(array1, 0, result, 0, array1.length);
 System.arraycopy(array2, 0, result, array1.length, array2.length);
 return result;</code></pre></div>
@@ -98,7 +98,7 @@ for (Object obj : array) {
     sb.append(i);
     sb.append(System.getProperty("line.separator"));
 return sb;</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="javafx-how-to-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java JavaFX How to Example</span></a><a class="pager-btn pager-next" href="stream-how-to-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Stream How to Example</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-android-text.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java tutorial for android....</span></a><a class="pager-btn pager-next" href="jstl-jstlcoretagif.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JSTL core tag</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50277
 source: https://www.java2s.com/Tutorials/Java/java.io/PrintWriter/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java PrintWriter(File file) Constructor

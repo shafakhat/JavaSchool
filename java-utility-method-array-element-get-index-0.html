@@ -46,7 +46,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>TarrayElement(T[] array, int index) Gets the element at an index in the array, but returns null if the index is outside of the array bounds.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">if (index &lt; 0 || index &gt;= array.length)
     return null;
-elsereturn array[index];</code></pre></div>
+else return array[index];</code></pre></div>
 <p>Tget(int index, final T[]... arrays) get</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int shift = index;
 for (T[] tab : arrays) {
@@ -67,16 +67,16 @@ return null;</code></pre></div>
     return null;
 return array[index];</code></pre></div>
 <p>ArrayListgetAllMatches(String[] target, String[] pattern) Input: array of strings, and a target array Output: the array of all the appearance</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">ArrayList&lt;Integer&gt; result = newArrayList&lt;Integer&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">ArrayList&lt;Integer&gt; result = new ArrayList&lt;Integer&gt;();
 int start = 0;
 while (start &lt; target.length) {
-    String[] subArray = newString[target.length - start];
+    String[] subArray = new String[target.length - start];
     for (int iter = 0; iter &lt; subArray.length; iter++) {
         subArray[iter] = target[iter + start];
     int index = getFirst(subArray, pattern);
 ...</code></pre></div>
 <p>MapgetArgPairsSeparatedByChar(String[] args, String separator) get Arg Pairs Separated By Char</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; argPairs = newHashMap&lt;String, String&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String&gt; argPairs = new HashMap&lt;String, String&gt;();
 if (args != null) {
     for (String argPair : args) {
         String[] pair = argPair.split("=");
@@ -88,30 +88,30 @@ return argPairs;</code></pre></div>
     return null;
 if (args == null || args.length == 0)
     return defaultValue;
-finalList&lt;String&gt; r = newArrayList&lt;String&gt;();
+final List&lt;String&gt; r = new ArrayList&lt;String&gt;();
 int i = 0;
 outer: for (; i &lt; args.length; i++)
-    for (finalString flag : flags)
+    for (final String flag : flags)
 ...</code></pre></div>
 <p>MapgetArgs(String[] args, String... singleArgs) Get CLI arguments.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String[]&gt; params = newHashMap&lt;String, String[]&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String, String[]&gt; params = new HashMap&lt;String, String[]&gt;();
 for (int i = 0; i &lt; args.length; i++) {
     String inArg = args[i];
     if (!inArg.startsWith("--")) {
-        thrownewException("Wrong argument syntax: " + inArg);
+        throw new Exception("Wrong argument syntax: " + inArg);
     } else {
         inArg = inArg.substring(2);
     for (int j = 0; j &lt; singleArgs.length; j++) {
         if (singleArgs[j].equals(inArg)) {
-            params.put(inArg, newString[] {});
+            params.put(inArg, new String[] {});
     if (inArg.contains("=")) {
         String[] keyset = inArg.split("=", 2);
         if (keyset[1].startsWith("{") &amp;&amp; keyset[1].endsWith("}")) {
-            params.put(keyset[0], newString[] { keyset[1].substring(1, keyset[1].length() - 1) });
+            params.put(keyset[0], new String[] { keyset[1].substring(1, keyset[1].length() - 1) });
         } else {
             params.put(keyset[0], keyset[1].split(","));
 return params;</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="java-utility-method-array-duplicate-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="java-utility-method-array-empty-check-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="flowlayout-java-flowlayout-leading.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java FlowL...</span></a><a class="pager-btn pager-next" href="jstl-jstlforeach.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">JSTL For Each</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -3,8 +3,8 @@ title: Java OCA OCP Practice Question 109
 nav: Java OCA OCP Practice Ques...
 description: What is the result of compiling and executing the following application?
 section: Imported - java2s Archive
-order: 1071
-source: https://web.archive.org/web/20210101014438/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-109.html
+order: 1014
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-109.html
 ---
 ## Question
 
@@ -12,9 +12,9 @@ What is the result of compiling and executing the following application?
 
 ```java title=Example.java
 package mypkg;
-publicclass MyClass {
-        privatestaticboolean heatWave = true;
-        publicstaticvoid main() {
+public class MyClass {
+        private static boolean heatWave = true;
+        public static void main() {
            boolean heatWave = false;
            System.out.print(heatWave);
         }

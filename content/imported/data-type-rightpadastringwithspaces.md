@@ -3,8 +3,8 @@ title: Right pad a String with spaces (' ').
 nav: Right pad a String with sp...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1105
-source: https://web.archive.org/web/20100905051231/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/RightpadaStringwithspaces.htm
+order: 1005
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/RightpadaStringwithspaces.htm
 ---
 ```java title=Example.java
 /*
@@ -24,12 +24,10 @@ source: https://web.archive.org/web/20100905051231/http://www.java2s.com:80/Tuto
  *  limitations under the License.
  *
  *
- */
-public class Main {
+ */public class Main {
   /**
    * The maximum size to which the padding constant(s) can expand.
-   */
-  private static final int PAD_LIMIT = 8192;
+   */ private static final int PAD_LIMIT = 8192;
   /**
    *
    * The String is padded to the size of <code>size</code>.
@@ -47,8 +45,7 @@ public class Main {
    * @param size  the size to pad to
    * @return right padded String or original String if no padding is necessary,
    *  <code>null</code> if null String input
-   */
-  public static String rightPad(String str, int size) {
+   */ public static String rightPad(String str, int size) {
       return rightPad(str, size, ' ');
   }
   /**
@@ -71,8 +68,7 @@ public class Main {
    * @return right padded String or original String if no padding is necessary,
    *  <code>null</code> if null String input
    * @since 2.0
-   */
-  public static String rightPad(String str, int size, char padChar) {
+   */ public static String rightPad(String str, int size, char padChar) {
       if (str == null) {
           return null;
       }
@@ -107,8 +103,7 @@ public class Main {
    * @param padStr  the String to pad with, null or empty treated as single space
    * @return right padded String or original String if no padding is necessary,
    *  <code>null</code> if null String input
-   */
-  public static String rightPad(String str, int size, String padStr) {
+   */ public static String rightPad(String str, int size, String padStr) {
       if (str == null) {
           return null;
       }
@@ -159,8 +154,7 @@ public class Main {
    * @return String with repeated character
    * @throws IndexOutOfBoundsException if <code>repeat &lt; 0</code>
    * @see #repeat(String, int)
-   */
-  private static String padding(int repeat, char padChar) throws IndexOutOfBoundsException {
+   */ private static String padding(int repeat, char padChar) throws IndexOutOfBoundsException {
       if (repeat < 0) {
           throw new IndexOutOfBoundsException("Cannot pad a negative amount: " + repeat);
       }
@@ -171,8 +165,8 @@ public class Main {
       return new String(buf);
   }
   // Empty checks
-  //-----------------------------------------------------------------------
-  /**
+ //-----------------------------------------------------------------------
+ /**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -189,8 +183,7 @@ public class Main {
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */
-  public static boolean isEmpty(String str) {
+   */ public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }

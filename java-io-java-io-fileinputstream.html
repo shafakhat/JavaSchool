@@ -29,17 +29,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-io.html">Java io</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-io.html">Java io</a></nav>
     <h1>Java IO Tutorial - Java FileInputStream</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>In Java I/O, a stream means a flow of data. The data in the stream could be bytes, characters, objects, etc.</p>
 <p>To read from a file, we need to create an object of the FileInputStream class, which will represent the input stream.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String srcFile = "test.txt";
@@ -77,8 +76,8 @@ catch  (FileNotFoundException e)  {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     String dataSourceFile = "asdf.txt";
     try (FileInputStream fin = new FileInputStream(dataSourceFile)) {
       byte byteData;
@@ -93,7 +92,7 @@ publicclass Main {
   }
 }</code></pre></div>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-io-java-io-inputstream.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java In...</span></a><a class="pager-btn pager-next" href="java-io-java-io-bufferedinputstream.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java Bu...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="graphicsdevice-java-graphicsdevice-getavailableacceleratedmemory.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java GraphicsDevice.getAva...</span></a><a class="pager-btn pager-next" href="java-java-oca-ocp-practice-question-1014.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java OCA OCP Practice Ques...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

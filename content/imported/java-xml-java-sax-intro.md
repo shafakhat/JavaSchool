@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50321
 source: https://www.java2s.com/Tutorials/Java/Java_XML/0030__Java_SAX_Intro.html
 ---
-```java title=Example.java
-```
-
 Java SAX XML parser stands for Simple API for XML (SAX) parser.
 
 SAX is an event-driven, serial-access mechanism for accessing XML documents.

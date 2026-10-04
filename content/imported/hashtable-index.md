@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50357
 source: https://www.java2s.com/Tutorials/Java/java.util/Hashtable/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java Hashtable() Constructor

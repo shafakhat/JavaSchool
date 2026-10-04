@@ -3,8 +3,8 @@ title: Computation with Shorter Integer Types
 nav: Computation with Shorter I...
 description: Imported from the java2s.com archive: Computation with Shorter Integer Types
 section: Imported - java2s Archive
-order: 1039
-source: https://web.archive.org/web/20070701165307/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/ComputationwithShorterIntegerTypes.htm
+order: 1015
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ComputationwithShorterIntegerTypes.htm
 ---
 ```java title=Example.java
 public class MainClass {
@@ -16,8 +16,6 @@ public class MainClass {
     System.out.println(numC);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 15
 ```

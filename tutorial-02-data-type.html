@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Data Type (1/8) - Java Tutorial - JavaSchool</title>
-<meta name="description" content="Data Type: java2s tutorial chapter with tabs per sub-topic, 641 archived articles imported.">
+<title>Data Type - Java Tutorial - JavaSchool</title>
+<meta name="description" content="Data Type: java2s tutorial chapter with 47 sub-topics, 820 archived pages.">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -37,1173 +37,189 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a></nav>
-    <h1>2. Data Type (1/8)</h1>
-    <p><strong>47 sub-topics</strong> &middot; <strong>864 pages archived (2014-2020)</strong> &middot; <strong>641</strong> imported here, grouped into tabs below (part 1 of 8, 29 articles).</p>
-    <p class="part-pager"> <a class="btn btn-green" href="tutorial-02-data-type-2.html">Next part &rarr;</a></p>
-    <div class="tabs">
-      <div class="tab-bar"><button type="button" class="tab-btn active" data-tab="tab-0" aria-selected="true">Data Type Introduction <span class="tab-count">29</span></button></div>
-      <div class="tab-panel" id="tab-0"><h3 id="a-hexadecimal-literal-of-type-long">A hexadecimal literal of type long</h3>
-<p>Append L to the literal.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
-  publicstaticvoid main(String[] a) {
-    long hexLongValue = 0x0FL;
-    System.out.println(hexLongValue);
-  }
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">15</code></pre></div>
-<h3 id="automatic-type-promotion-in-expressions">Automatic Type Promotion in Expressions</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte b = 50;
-   b = (byte)(b * 2);</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
-  publicstaticvoid main(String args[]) {
-    byte b = 42;
-    char c = 'a';
-    short s = 1024;
-    int i = 50000;
-    float f = 5.67f;
-    double d = .1234;
-    double result = (f * b) + (i / c) - (d * s);
-    System.out.println((f * b) + " + " + (i / c) + " - " + (d * s));
-    System.out.println("result = " + result);
-  }
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">238.14 + 515 - 126.3616
-result = 626.7784146484375</code></pre></div>
-<h3 id="automatic-type-promotion-in-expressions-1">Automatic Type Promotion in Expressions</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte b = 50;
-   b = (byte)(b * 2);</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
-  public static void main(String args[]) {
-    byte b = 42;
-    char c = 'a';
-    short s = 1024;
-    int i = 50000;
-    float f = 5.67f;
-    double d = .1234;
-    double result = (f * b) + (i / c) - (d * s);
-    System.out.println((f * b) + " + " + (i / c) + " - " + (d * s));
-    System.out.println("result = " + result);
-  }
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">238.14 + 515 - 126.3616
-result = 626.7784146484375</code></pre></div>
-<h3 id="boolean-data-type">Boolean Data Type</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] args) {
-    boolean t = true;
-    System.out.println("t is " + t);
-    int x = 10;
-    boolean y = (x &gt; 15);
-    System.out.println("y is " + y);
-  }
-}</code></pre></div>
-<h3 id="compareto-and-equals-for-enum-data-type">compareTo() and equals() for enum data type</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Week {
-  Monday, Tuesday, Wednesday, Thursday, Friday, Saturaday, Sunday
-}
-publicclass MainClass {
-  publicstaticvoid main(String args[]) {
-    Week day1, day2, day3;
-    day1 = Week.Monday;
-    day2 = Week.Tuesday;
-    day3 = Week.Friday;
-    //
-if (day1.compareTo(day2) &lt; 0)
-      System.out.println(day1 + " comes before " + day2);
-    if (day2.compareTo(day3) &gt; 0)
-      System.out.println(day2 + " comes before " + day3);
-    if (day1.compareTo(day3) == 0)
-      System.out.println(day1 + " equals " + day3);
-  }
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Monday comes before Tuesday</code></pre></div>
-<h3 id="convert-an-unsigned-byte-to-a-java-type">Convert an UNSIGNED byte to a JAVA type</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
-    byte b1 = 127;
-    System.out.println(b1);
-    System.out.println(unsignedByteToInt(b1));
-  }
-  publicstaticint unsignedByteToInt(byte b) {
-    return (int) b &amp; 0xFF;
-  }
-}</code></pre></div>
-<h3 id="convert-byte-to-numeric-primitive-data-types-example">Convert Byte to numeric primitive data types example</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] args) {
-    Byte bObj = new Byte("10");
-    byte b = bObj.byteValue();
-    System.out.println(b);
-    short s = bObj.shortValue();
-    System.out.println(s);
-    int i = bObj.intValue();
-    System.out.println(i);
-    float f = bObj.floatValue();
-    System.out.println(f);
-    double d = bObj.doubleValue();
-    System.out.println(d);
-    long l = bObj.longValue();
-    System.out.println(l);
-  }
-}</code></pre></div>
-<h3 id="convert-java-double-to-numeric-primitive-data-types">Convert java Double to numeric primitive data types</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] args) {
-    Double dObj = new Double("10.50");
-    byte b = dObj.byteValue();
-    System.out.println(b);
-    short s = dObj.shortValue();
-    System.out.println(s);
-    int i = dObj.intValue();
-    System.out.println(i);
-    float f = dObj.floatValue();
-    System.out.println(f);
-    double d = dObj.doubleValue();
-    System.out.println(d);
-  }
-}
-/*
-10
-10
-10
-10.5
-10.5
-*/</code></pre></div>
-<h3 id="convert-long-to-numeric-primitive-data-types-example">Convert Long to numeric primitive data types example</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] args) {
-    Long lObj = new Long("10");
-    byte b = lObj.byteValue();
-    System.out.println(b);
-    short s = lObj.shortValue();
-    System.out.println(s);
-    int i = lObj.intValue();
-    System.out.println(i);
-    float f = lObj.floatValue();
-    System.out.println(f);
-    double d = lObj.doubleValue();
-    System.out.println(d);
-  }
-}</code></pre></div>
-<h3 id="convert-short-to-numeric-primitive-data-types">Convert Short to numeric primitive data types</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] args) {
-    Short sObj = new Short("10");
-    byte b = sObj.byteValue();
-    System.out.println(b);
-    short s = sObj.shortValue();
-    System.out.println(s);
-    int i = sObj.intValue();
-    System.out.println(i);
-    float f = sObj.floatValue();
-    System.out.println(f);
-    double d = sObj.doubleValue();
-    System.out.println(d);
-    long l = sObj.longValue();
-    System.out.println(l);
-  }
-}
-/*
-10
-10
-10
-10.0
-10.0
-10
-*/</code></pre></div>
-<h3 id="convert-short-to-numeric-primitive-data-types-1">Convert Short to numeric primitive data types</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
-  public static void main(String[] args) {
-    Short sObj = new Short("10");
-    byte b = sObj.byteValue();
-    System.out.println(b);
-    short s = sObj.shortValue();
-    System.out.println(s);
-    int i = sObj.intValue();
-    System.out.println(i);
-    float f = sObj.floatValue();
-    System.out.println(f);
-    double d = sObj.doubleValue();
-    System.out.println(d);
-    long l = sObj.longValue();
-    System.out.println(l);
-  }
-}
-/*
-10
-10
-10
-10.0
-10.0
-10
-*/</code></pre></div>
-<h3 id="converting-a-primitive-type-value-to-a-string">Converting a Primitive Type Value to a String</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    // Use String.valueOf()
-    String s = String.valueOf(true);
-    s = String.valueOf((byte) 0x11);
-    s = String.valueOf((byte) 0xFF);
-    s = String.valueOf('a');
-    s = String.valueOf((short) 123);
-    s = String.valueOf(123);
-    s = String.valueOf(123L);
-    s = String.valueOf(1.23F);
-    s = String.valueOf(1.23D);
-    // Use +
-    s = "" + true;
-    s = "" + ((byte) 0x12);
-    s = "" + ((byte) 0xFF);
-    s = "" + 'a';
-    s = "" + ((short) 123);
-    s = "" + 111;
-    s = "" + 111L;
-    s = "" + 1.11F;
-    s = "" + 1.11D;
-  }
-}</code></pre></div>
-<h3 id="create-biginteger-via-long-type-variable">Create BigInteger via long type variable</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-public class Main {
-  public static void main(String[] argv) throws Exception {
-    // Create via a string
-    BigInteger bi1 = new BigInteger("1234567890123456890");
-    // Create via a long
-    BigInteger bi2 = BigInteger.valueOf(123L);
-    bi1 = bi1.add(bi2);
-  }
-}</code></pre></div>
-<h3 id="data-type-caseinsensitiveremovalofasubstringifitisatthebeginingofasourcestringot">Data Type Caseinsensitiveremovalofasubstringifitisatthebeginingofasourcestringot</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */publicclass Main {
-  /**
-   * Case insensitive removal of a substring if it is at the begining of a source string,
-   * otherwise returns the source string.
-   *
-   * A &lt;code&gt;null&lt;/code&gt; source string will return &lt;code&gt;null&lt;/code&gt;.
-   * An empty ("") source string will return the empty string.
-   * A &lt;code&gt;null&lt;/code&gt; search string will return the source string.
-   *
-   * &lt;pre&gt;
-   * StringUtils.removeStartIgnoreCase(null, *)      = null
-   * StringUtils.removeStartIgnoreCase("", *)        = ""
-   * StringUtils.removeStartIgnoreCase(*, null)      = *
-   * StringUtils.removeStartIgnoreCase("www.domain.com", "www.")   = "domain.com"
-   * StringUtils.removeStartIgnoreCase("www.domain.com", "WWW.")   = "domain.com"
-   * StringUtils.removeStartIgnoreCase("domain.com", "www.")       = "domain.com"
-   * StringUtils.removeStartIgnoreCase("www.domain.com", "domain") = "www.domain.com"
-   * StringUtils.removeStartIgnoreCase("abc", "")    = "abc"
-   * &lt;/pre&gt;
-   *
-   * @param str  the source String to search, may be null
-   * @param remove  the String to search for (case insensitive) and remove, may be null
-   * @return the substring with the string removed if found,
-   *  &lt;code&gt;null&lt;/code&gt; if null String input
-   * @since 2.4
-   */publicstatic String removeStartIgnoreCase(String str, String remove) {
-      if (isEmpty(str) || isEmpty(remove)) {
-          return str;
-      }
-      if (startsWithIgnoreCase(str, remove)) {
-          return str.substring(remove.length());
-      }
-      return str;
-  }
-  /**
-   * Case insensitive check if a String starts with a specified prefix.
-   *
-   * &lt;code&gt;null&lt;/code&gt;s are handled without exceptions. Two &lt;code&gt;null&lt;/code&gt;
-   * references are considered to be equal. The comparison is case insensitive.
-   *
-   * &lt;pre&gt;
-   * StringUtils.startsWithIgnoreCase(null, null)      = true
-   * StringUtils.startsWithIgnoreCase(null, "abcdef")  = false
-   * StringUtils.startsWithIgnoreCase("abc", null)     = false
-   * StringUtils.startsWithIgnoreCase("abc", "abcdef") = true
-   * StringUtils.startsWithIgnoreCase("abc", "ABCDEF") = true
-   * &lt;/pre&gt;
-   *
-   * @see java.lang.String#startsWith(String)
-   * @param str  the String to check, may be null
-   * @param prefix the prefix to find, may be null
-   * @return &lt;code&gt;true&lt;/code&gt; if the String starts with the prefix, case insensitive, or
-   *  both &lt;code&gt;null&lt;/code&gt;
-   * @since 2.4
-   */publicstaticboolean startsWithIgnoreCase(String str, String prefix) {
-      return startsWith(str, prefix, true);
-  }
-  /**
-   * Check if a String starts with a specified prefix (optionally case insensitive).
-   *
-   * @see java.lang.String#startsWith(String)
-   * @param str  the String to check, may be null
-   * @param prefix the prefix to find, may be null
-   * @param ignoreCase inidicates whether the compare should ignore case
-   *  (case insensitive) or not.
-   * @return &lt;code&gt;true&lt;/code&gt; if the String starts with the prefix or
-   *  both &lt;code&gt;null&lt;/code&gt;
-   */privatestaticboolean startsWith(String str, String prefix, boolean ignoreCase) {
-      if (str == null || prefix == null) {
-          return (str == null &amp;&amp; prefix == null);
-      }
-      if (prefix.length() &gt; str.length()) {
-          return false;
-      }
-      return str.regionMatches(ignoreCase, 0, prefix, 0, prefix.length());
-  }
-  // Empty checks
-//-----------------------------------------------------------------------
-/**
-   * Checks if a String is empty ("") or null.
-   *
-   * &lt;pre&gt;
-   * StringUtils.isEmpty(null)      = true
-   * StringUtils.isEmpty("")        = true
-   * StringUtils.isEmpty(" ")       = false
-   * StringUtils.isEmpty("bob")     = false
-   * StringUtils.isEmpty("  bob  ") = false
-   * &lt;/pre&gt;
-   *
-   * NOTE: This method changed in Lang version 2.0.
-   * It no longer trims the String.
-   * That functionality is available in isBlank().
-   *
-   * @param str  the String to check, may be null
-   * @return &lt;code&gt;true&lt;/code&gt; if the String is empty or null
-   */publicstaticboolean isEmpty(String str) {
-      return str == null || str.length() == 0;
-  }
-}</code></pre></div>
-<h3 id="data-type-uncapitalizesastringchangingthefirstlettertotitlecaseaspercharactertol">Data Type Uncapitalizesastringchangingthefirstlettertotitlecaseaspercharactertol</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */publicclass Main {
-  /**
-   * Uncapitalizes a String changing the first letter to title case as
-   * per {@link Character#toLowerCase(char)}. No other letters are changed.
-   *
-   * For a word based algorithm, see {@link WordUtils#uncapitalize(String)}.
-   * A &lt;code&gt;null&lt;/code&gt; input String returns &lt;code&gt;null&lt;/code&gt;.
-   *
-   * &lt;pre&gt;
-   * StringUtils.uncapitalize(null)  = null
-   * StringUtils.uncapitalize("")    = ""
-   * StringUtils.uncapitalize("Cat") = "cat"
-   * StringUtils.uncapitalize("CAT") = "cAT"
-   * &lt;/pre&gt;
-   *
-   * @param str  the String to uncapitalize, may be null
-   * @return the uncapitalized String, &lt;code&gt;null&lt;/code&gt; if null String input
-   * @see WordUtils#uncapitalize(String)
-   * @see #capitalize(String)
-   * @since 2.0
-   */publicstatic String uncapitalize(String str) {
-      int strLen;
-      if (str == null || (strLen = str.length()) == 0) {
-          return str;
-      }
-      returnnew StringBuffer(strLen)
-          .append(Character.toLowerCase(str.charAt(0)))
-          .append(str.substring(1))
-          .toString();
-  }
-}</code></pre></div>
-<h3 id="data-type-uncapitalizesastringchangingthefirstlettertotitlecaseaspercharactertol-1">Data Type Uncapitalizesastringchangingthefirstlettertotitlecaseaspercharactertol</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-public class Main {
-  /**
-   * Uncapitalizes a String changing the first letter to title case as
-   * per {@link Character#toLowerCase(char)}. No other letters are changed.
-   *
-   * For a word based algorithm, see {@link WordUtils#uncapitalize(String)}.
-   * A &lt;code&gt;null&lt;/code&gt; input String returns &lt;code&gt;null&lt;/code&gt;.
-   *
-   * &lt;pre&gt;
-   * StringUtils.uncapitalize(null)  = null
-   * StringUtils.uncapitalize("")    = ""
-   * StringUtils.uncapitalize("Cat") = "cat"
-   * StringUtils.uncapitalize("CAT") = "cAT"
-   * &lt;/pre&gt;
-   *
-   * @param str  the String to uncapitalize, may be null
-   * @return the uncapitalized String, &lt;code&gt;null&lt;/code&gt; if null String input
-   * @see WordUtils#uncapitalize(String)
-   * @see #capitalize(String)
-   * @since 2.0
-   */
-  public static String uncapitalize(String str) {
-      int strLen;
-      if (str == null || (strLen = str.length()) == 0) {
-          return str;
-      }
-      return new StringBuffer(strLen)
-          .append(Character.toLowerCase(str.charAt(0)))
-          .append(str.substring(1))
-          .toString();
-  }
-}</code></pre></div>
-<h3 id="decodes-base64-data-into-octects">Decodes Base64 data into octects</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*   Copyright 2004 The Apache Software Foundation
- *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *  limitations under the License.
- */
-import java.io.UnsupportedEncodingException;
-/**
- * This class provides encode/decode for RFC 2045 Base64 as
- * defined by RFC 2045, N. Freed and N. Borenstein.
- * RFC 2045: Multipurpose Internet Mail Extensions (MIME)
- * Part One: Format of Internet Message Bodies. Reference
- * 1996 Available at: http://www.ietf.org/rfc/rfc2045.txt
- * This class is used by XML Schema binary format validation
- *
- * This implementation does not encode/decode streaming
- * data. You need the data that you will encode/decode
- * already on a byte arrray.
- *
- *
- * From xmlbeans
- * @author Jeffrey Rodriguez
- * @author Sandy Gao
- * @version $Id: Base64.java 111285 2004-12-08 16:54:26Z cezar $
- */
-public final class  Base64 {
-    static private final int  BASELENGTH         = 255;
-    static private final int  LOOKUPLENGTH       = 64;
-    static private final int  TWENTYFOURBITGROUP = 24;
-    static private final int  EIGHTBIT           = 8;
-    static private final int  SIXTEENBIT         = 16;
-    //static private final int  SIXBIT             = 6;
-    static private final int  FOURBYTE           = 4;
-    static private final int  SIGN               = -128;
-    static private final byte PAD                = ( byte ) '=';
-    static private final boolean fDebug          = false;
-    static private byte [] base64Alphabet        = new byte[BASELENGTH];
-    static private byte [] lookUpBase64Alphabet  = new byte[LOOKUPLENGTH];
-    static {
-        for (int i = 0; i&lt;BASELENGTH; i++) {
-            base64Alphabet[i] = -1;
-        }
-        for (int i = 'Z'; i &gt;= 'A'; i--) {
-            base64Alphabet[i] = (byte) (i-'A');
-        }
-        for (int i = 'z'; i&gt;= 'a'; i--) {
-            base64Alphabet[i] = (byte) ( i-'a' + 26);
-        }
-        for (int i = '9'; i &gt;= '0'; i--) {
-            base64Alphabet[i] = (byte) (i-'0' + 52);
-        }
-        base64Alphabet['+']  = 62;
-        base64Alphabet['/']  = 63;
-        for (int i = 0; i&lt;=25; i++)
-            lookUpBase64Alphabet[i] = (byte) ('A'+i );
-        for (int i = 26,  j = 0; i&lt;=51; i++, j++)
-            lookUpBase64Alphabet[i] = (byte) ('a'+ j );
-        for (int i = 52,  j = 0; i&lt;=61; i++, j++)
-            lookUpBase64Alphabet[i] = (byte) ('0' + j );
-        lookUpBase64Alphabet[62] = (byte) '+';
-        lookUpBase64Alphabet[63] = (byte) '/';
-    }
-    protected static boolean isWhiteSpace(byte octect) {
-        return (octect == 0x20 || octect == 0xd || octect == 0xa || octect == 0x9);
-    }
-    protected static boolean isPad(byte octect) {
-        return (octect == PAD);
-    }
-    protected static boolean isData(byte octect) {
-        return (base64Alphabet[octect] != -1);
-    }
-    protected static boolean isBase64(byte octect) {
-        return (isWhiteSpace(octect) || isPad(octect) || isData(octect));
-    }
-    /**
-     * Encodes hex octects into Base64
-     *
-     * @param binaryData Array containing binaryData
-     * @return Encoded Base64 array
-     */
-    public static byte[] encode(byte[] binaryData) {
-        if (binaryData == null)
-            return null;
-        int      lengthDataBits    = binaryData.length*EIGHTBIT;
-        int      fewerThan24bits   = lengthDataBits%TWENTYFOURBITGROUP;
-        int      numberTriplets    = lengthDataBits/TWENTYFOURBITGROUP;
-        byte     encodedData[]     = null;
-        if (fewerThan24bits != 0) //data not divisible by 24 bit
-            encodedData = new byte[ (numberTriplets + 1 )*4  ];
-        else // 16 or 8 bit
-            encodedData = new byte[ numberTriplets*4 ];
-        byte k=0, l=0, b1=0,b2=0,b3=0;
-        int encodedIndex = 0;
-        int dataIndex   = 0;
-        int i           = 0;
-        if (fDebug) {
-            System.out.println("number of triplets = " + numberTriplets );
-        }
-        for (i = 0; i&lt;numberTriplets; i++) {
-            dataIndex = i*3;
-            b1 = binaryData[dataIndex];
-            b2 = binaryData[dataIndex + 1];
-            b3 = binaryData[dataIndex + 2];
-            if (fDebug) {
-                System.out.println( "b1= " + b1 +", b2= " + b2 + ", b3= " + b3 );
-            }
-            l  = (byte)(b2 &amp; 0x0f);
-            k  = (byte)(b1 &amp; 0x03);
-            encodedIndex = i*4;
-            byte val1 = ((b1 &amp; SIGN)==0)?(byte)(b1&gt;&gt;2):(byte)((b1)&gt;&gt;2^0xc0);
-            byte val2 = ((b2 &amp; SIGN)==0)?(byte)(b2&gt;&gt;4):(byte)((b2)&gt;&gt;4^0xf0);
-            byte val3 = ((b3 &amp; SIGN)==0)?(byte)(b3&gt;&gt;6):(byte)((b3)&gt;&gt;6^0xfc);
-            encodedData[encodedIndex]   = lookUpBase64Alphabet[ val1 ];
-            if (fDebug) {
-                System.out.println( "val2 = " + val2 );
-                System.out.println( "k4   = " + (k&lt;&lt;4));
-                System.out.println( "vak  = " + (val2 | (k&lt;&lt;4)));
-            }
-            encodedData[encodedIndex+1] = lookUpBase64Alphabet[ val2 | ( k&lt;&lt;4 )];
-            encodedData[encodedIndex+2] = lookUpBase64Alphabet[ (l &lt;&lt;2 ) | val3 ];
-            encodedData[encodedIndex+3] = lookUpBase64Alphabet[ b3 &amp; 0x3f ];
-        }
-        // form integral number of 6-bit groups
-        dataIndex    = i*3;
-        encodedIndex = i*4;
-        if (fewerThan24bits == EIGHTBIT) {
-            b1 = binaryData[dataIndex];
-            k = (byte) ( b1 &amp;0x03 );
-            if (fDebug) {
-                System.out.println("b1=" + b1);
-                System.out.println("b1&lt;&lt;2 = " + (b1&gt;&gt;2) );
-            }
-            byte val1 = ((b1 &amp; SIGN)==0)?(byte)(b1&gt;&gt;2):(byte)((b1)&gt;&gt;2^0xc0);
-            encodedData[encodedIndex]     = lookUpBase64Alphabet[ val1 ];
-            encodedData[encodedIndex + 1] = lookUpBase64Alphabet[ k&lt;&lt;4 ];
-            encodedData[encodedIndex + 2] = PAD;
-            encodedData[encodedIndex + 3] = PAD;
-        } else if (fewerThan24bits == SIXTEENBIT) {
-            b1 = binaryData[dataIndex];
-            b2 = binaryData[dataIndex +1 ];
-            l = ( byte ) ( b2 &amp;0x0f );
-            k = ( byte ) ( b1 &amp;0x03 );
-            byte val1 = ((b1 &amp; SIGN)==0)?(byte)(b1&gt;&gt;2):(byte)((b1)&gt;&gt;2^0xc0);
-            byte val2 = ((b2 &amp; SIGN)==0)?(byte)(b2&gt;&gt;4):(byte)((b2)&gt;&gt;4^0xf0);
-            encodedData[encodedIndex]     = lookUpBase64Alphabet[ val1 ];
-            encodedData[encodedIndex + 1] = lookUpBase64Alphabet[ val2 | ( k&lt;&lt;4 )];
-            encodedData[encodedIndex + 2] = lookUpBase64Alphabet[ l&lt;&lt;2 ];
-            encodedData[encodedIndex + 3] = PAD;
-        }
-        return encodedData;
-    }
-    /**
-     *
-     * @param base64Data Byte array containing Base64 data
-     * @return Array containind decoded data.
-     */
-    public static byte[] decode(byte[] base64Data) {
-        if (base64Data == null)
-            return null;
-        // remove white spaces
-        base64Data = removeWhiteSpace(base64Data);
-        if (base64Data.length%FOURBYTE != 0) {
-            return null;//should be divisible by four
-        }
-        int      numberQuadruple    = (base64Data.length/FOURBYTE );
-        if (numberQuadruple == 0)
-            return new byte[0];
-        byte     decodedData[]      = null;
-        byte     b1=0,b2=0,b3=0, b4=0;//, marker0=0, marker1=0;
-        byte     d1=0,d2=0,d3=0,d4=0;
-        // Throw away anything not in normalizedBase64Data
-        // Adjust size
-        int i = 0;
-        int encodedIndex = 0;
-        int dataIndex    = 0;
-        decodedData      = new byte[ (numberQuadruple)*3];
-        for (; i&lt;numberQuadruple-1; i++) {
-            if (!isData( (d1 = base64Data[dataIndex++]) )||
-                !isData( (d2 = base64Data[dataIndex++]) )||
-                !isData( (d3 = base64Data[dataIndex++]) )||
-                !isData( (d4 = base64Data[dataIndex++]) ))
-                return null;//if found "no data" just return null
-            b1 = base64Alphabet[d1];
-            b2 = base64Alphabet[d2];
-            b3 = base64Alphabet[d3];
-            b4 = base64Alphabet[d4];
-            decodedData[encodedIndex++] = (byte)(  b1 &lt;&lt;2 | b2&gt;&gt;4 ) ;
-            decodedData[encodedIndex++] = (byte)(((b2 &amp; 0xf)&lt;&lt;4 ) |( (b3&gt;&gt;2) &amp; 0xf) );
-            decodedData[encodedIndex++] = (byte)( b3&lt;&lt;6 | b4 );
-        }
-        if (!isData( (d1 = base64Data[dataIndex++]) ) ||
-            !isData( (d2 = base64Data[dataIndex++]) )) {
-            return null;//if found "no data" just return null
-        }
-        b1 = base64Alphabet[d1];
-        b2 = base64Alphabet[d2];
-        d3 = base64Data[dataIndex++];
-        d4 = base64Data[dataIndex++];
-        if (!isData( (d3 ) ) ||
-            !isData( (d4 ) )) {//Check if they are PAD characters
-            if (isPad( d3 ) &amp;&amp; isPad( d4)) {               //Two PAD e.g. 3c[Pad][Pad]
-                if ((b2 &amp; 0xf) != 0)//last 4 bits should be zero
-                    return null;
-                byte[] tmp = new byte[ i*3 + 1 ];
-                System.arraycopy( decodedData, 0, tmp, 0, i*3 );
-                tmp[encodedIndex]   = (byte)(  b1 &lt;&lt;2 | b2&gt;&gt;4 ) ;
-                return tmp;
-            } else if (!isPad( d3) &amp;&amp; isPad(d4)) {               //One PAD  e.g. 3cQ[Pad]
-                b3 = base64Alphabet[ d3 ];
-                if ((b3 &amp; 0x3 ) != 0)//last 2 bits should be zero
-                    return null;
-                byte[] tmp = new byte[ i*3 + 2 ];
-                System.arraycopy( decodedData, 0, tmp, 0, i*3 );
-                tmp[encodedIndex++] = (byte)(  b1 &lt;&lt;2 | b2&gt;&gt;4 );
-                tmp[encodedIndex]   = (byte)(((b2 &amp; 0xf)&lt;&lt;4 ) |( (b3&gt;&gt;2) &amp; 0xf) );
-                return tmp;
-            } else {
-                return null;//an error  like "3c[Pad]r", "3cdX", "3cXd", "3cXX" where X is non data
-            }
-        } else { //No PAD e.g 3cQl
-            b3 = base64Alphabet[ d3 ];
-            b4 = base64Alphabet[ d4 ];
-            decodedData[encodedIndex++] = (byte)(  b1 &lt;&lt;2 | b2&gt;&gt;4 ) ;
-            decodedData[encodedIndex++] = (byte)(((b2 &amp; 0xf)&lt;&lt;4 ) |( (b3&gt;&gt;2) &amp; 0xf) );
-            decodedData[encodedIndex++] = (byte)( b3&lt;&lt;6 | b4 );
-        }
-        return decodedData;
-    }
-//    /**
-//     *
-//     * @param base64Data String containing Base64 data
-//     * @return string containing decoded data.
-//     */
-//    public static String decode(String base64Data) {
-//        if (base64Data == null)
-//            return null;
-//
-//        byte[] decoded = null;
-//        try {
-//            decoded = decode(base64Data.getBytes("utf-8"));
-//        }
-//        catch(UnsupportedEncodingException e) {
-//        }
-//        finally {
-//            return decoded == null ? null : new String(decoded);
-//        }
-//    }
-//
-//    /**
-//     * Encodes octects (using utf-8) into Base64 data
-//     *
-//     * @param binaryData String containing Hex data
-//     * @return string containing decoded data.
-//     */
-//    public static String encode(String binaryData) {
-//        if (binaryData == null)
-//            return null;
-//
-//        byte[] encoded = null;
-//         try {
-//          encoded = encode(binaryData.getBytes("utf-8"));
-//        }
-//        catch(UnsupportedEncodingException e) {}
-//        finally {
-//            return encoded == null ? null : new String(encoded);
-//        }
-//    }
-    /**
-     * remove WhiteSpace from MIME containing encoded Base64 data.
-     *
-     * @param data  the byte array of base64 data (with WS)
-     * @return      the byte array of base64 data (without WS)
-     */
-    protected static byte[] removeWhiteSpace(byte[] data) {
-        if (data == null)
-            return null;
-        // count characters that's not whitespace
-        int newSize = 0;
-        int len = data.length;
-        for (int i = 0; i &lt; len; i++) {
-            if (!isWhiteSpace(data[i]))
-                newSize++;
-        }
-        // if no whitespace, just return the input array
-        if (newSize == len)
-            return data;
-        // create the array to return
-        byte[] newArray = new byte[newSize];
-        int j = 0;
-        for (int i = 0; i &lt; len; i++) {
-            if (!isWhiteSpace(data[i]))
-                newArray[j++] = data[i];
-        }
-        return newArray;
-    }
-}</code></pre></div>
-<h3 id="decodes-hex-data-into-octects">Decodes Hex data into octects</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*   Copyright 2004 The Apache Software Foundation
- *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *  limitations under the License.
- */
-//xmlbeans
-import java.io.UnsupportedEncodingException;
-/**
- * format validation
- *
- * This class encodes/decodes hexadecimal data
- * @author Jeffrey Rodriguez
- * @version $Id: HexBin.java 125124 2005-01-14 00:23:54Z kkrouse $
- */
-public class Main {
-  static private final int  BASELENGTH   = 255;
-  static private final int  LOOKUPLENGTH = 16;
-  static private byte [] hexNumberTable    = new byte[BASELENGTH];
-  static private byte [] lookUpHexAlphabet = new byte[LOOKUPLENGTH];
-  static {
-      for (int i = 0; i&lt;BASELENGTH; i++ ) {
-          hexNumberTable[i] = -1;
-      }
-      for ( int i = '9'; i &gt;= '0'; i--) {
-          hexNumberTable[i] = (byte) (i-'0');
-      }
-      for ( int i = 'F'; i&gt;= 'A'; i--) {
-          hexNumberTable[i] = (byte) ( i-'A' + 10 );
-      }
-      for ( int i = 'f'; i&gt;= 'a'; i--) {
-         hexNumberTable[i] = (byte) ( i-'a' + 10 );
-      }
-      for(int i = 0; i&lt;10; i++ )
-          lookUpHexAlphabet[i] = (byte) ('0'+i );
-      for(int i = 10; i&lt;=15; i++ )
-          lookUpHexAlphabet[i] = (byte) ('A'+i -10);
-  }
-  /**
-   *
-   * @param binaryData String containing Hex data
-   * @return string containing decoded data.
-   */
-  public static String decode(String binaryData) {
-      if (binaryData == null)
-          return null;
-      byte[] decoded = null;
-      try {
-        decoded = decode(binaryData.getBytes("utf-8"));
-      }
-      catch(UnsupportedEncodingException e) {
-      }
-      return decoded == null ? null : new String(decoded);
-  }
-  static public byte[] decode(byte[] binaryData) {
-      if (binaryData == null)
-          return null;
-      int lengthData   = binaryData.length;
-      if (lengthData % 2 != 0)
-          return null;
-      int lengthDecode = lengthData / 2;
-      byte[] decodedData = new byte[lengthDecode];
-      for( int i = 0; i&lt;lengthDecode; i++ ){
-          if (!isHex(binaryData[i*2]) || !isHex(binaryData[i*2+1])) {
-              return null;
-          }
-          decodedData[i] = (byte)((hexNumberTable[binaryData[i*2]] &lt;&lt; 4) | hexNumberTable[binaryData[i*2+1]]);
-      }
-      return decodedData;
-  }
-  /**
-   * byte to be tested if it is Base64 alphabet
-   *
-   * @param octect
-   * @return
-   */
-  static boolean isHex(byte octect) {
-      return (hexNumberTable[octect] != -1);
-  }
-}</code></pre></div>
-<h3 id="dumps-data-in-hexadecimal-format">Dumps data in hexadecimal format</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-import java.io.IOException;
-import java.io.OutputStream;
-/**
- *
- * Provides a single function to take an array of bytes and display it
- * in hexadecimal form.
- *
- * Origin of code: POI.
- *
- * @author Scott Sanders
- * @author Marc Johnson
- * @version $Id: HexDump.java 596667 2007-11-20 13:50:14Z niallp $
- */
-public class HexDump {
-    /**
-     * Instances should NOT be constructed in standard programming.
-     */
-    public HexDump() {
-        super();
-    }
-    /**
-     * Dump an array of bytes to an OutputStream.
-     *
-     * @param data  the byte array to be dumped
-     * @param offset  its offset, whatever that might mean
-     * @param stream  the OutputStream to which the data is to be
-     *               written
-     * @param index initial index into the byte array
-     *
-     * @throws IOException is thrown if anything goes wrong writing
-     *         the data to stream
-     * @throws ArrayIndexOutOfBoundsException if the index is
-     *         outside the data array's bounds
-     * @throws IllegalArgumentException if the output stream is null
-     */
-    public static void dump(byte[] data, long offset,
-                            OutputStream stream, int index)
-            throws IOException, ArrayIndexOutOfBoundsException,
-            IllegalArgumentException {
-        if ((index &lt; 0) || (index &gt;= data.length)) {
-            throw new ArrayIndexOutOfBoundsException(
-                    "illegal index: " + index + " into array of length "
-                    + data.length);
-        }
-        if (stream == null) {
-            throw new IllegalArgumentException("cannot write to nullstream");
-        }
-        long display_offset = offset + index;
-        StringBuffer buffer = new StringBuffer(74);
-        for (int j = index; j &lt; data.length; j += 16) {
-            int chars_read = data.length - j;
-            if (chars_read &gt; 16) {
-                chars_read = 16;
-            }
-            dump(buffer, display_offset).append(' ');
-            for (int k = 0; k &lt; 16; k++) {
-                if (k &lt; chars_read) {
-                    dump(buffer, data[k + j]);
-                } else {
-                    buffer.append("  ");
-                }
-                buffer.append(' ');
-            }
-            for (int k = 0; k &lt; chars_read; k++) {
-                if ((data[k + j] &gt;= ' ') &amp;&amp; (data[k + j] &lt; 127)) {
-                    buffer.append((char) data[k + j]);
-                } else {
-                    buffer.append('.');
-                }
-            }
-            buffer.append(EOL);
-            stream.write(buffer.toString().getBytes());
-            stream.flush();
-            buffer.setLength(0);
-            display_offset += chars_read;
-        }
-    }
-    /**
-     * The line-separator (initializes to "line.separator" system property.
-     */
-    public static final String EOL =
-            System.getProperty("line.separator");
-    private static final char[] _hexcodes =
-            {
-                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-                'A', 'B', 'C', 'D', 'E', 'F'
-            };
-    private static final int[] _shifts =
-            {
-                28, 24, 20, 16, 12, 8, 4, 0
-            };
-    /**
-     * Dump a long value into a StringBuffer.
-     *
-     * @param _lbuffer the StringBuffer to dump the value in
-     * @param value  the long value to be dumped
-     * @return StringBuffer containing the dumped value.
-     */
-    private static StringBuffer dump(StringBuffer _lbuffer, long value) {
-        for (int j = 0; j &lt; 8; j++) {
-            _lbuffer
-                    .append(_hexcodes[((int) (value &gt;&gt; _shifts[j])) &amp; 15]);
-        }
-        return _lbuffer;
-    }
-    /**
-     * Dump a byte value into a StringBuffer.
-     *
-     * @param _cbuffer the StringBuffer to dump the value in
-     * @param value  the byte value to be dumped
-     * @return StringBuffer containing the dumped value.
-     */
-    private static StringBuffer dump(StringBuffer _cbuffer, byte value) {
-        for (int j = 0; j &lt; 2; j++) {
-            _cbuffer.append(_hexcodes[(value &gt;&gt; _shifts[j + 6]) &amp; 15]);
-        }
-        return _cbuffer;
-    }
-}</code></pre></div>
-<h3 id="enum-type-field">Enum type field</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass ShirtTest {
-  publicstaticvoid main(String[] args) {
-    Shirt shirt1 = new Shirt();
-    shirt1.setName("new name");
-    shirt1.setBid(23.5);
-    shirt1.setSize(Size.M);
-    System.out.println(shirt1);
-  }
-}
-class Shirt {
-  private String name;
-  privatedouble bid;
-  private Size size;
-  public Shirt() {
-  }
-  publicvoid setName(String name) {
-    this.name = name;
-  }
-  public String getName() {
-    return name;
-  }
-  publicvoid setBid(double bid) {
-    this.bid = bid;
-  }
-  publicdouble getBid() {
-    return bid;
-  }
-  publicvoid setSize(Size size) {
-    this.size = size;
-  }
-  public Size getSize() {
-    return size;
-  }
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append(" Name: " + this.getName() + ",");
-    sb.append(" Bid: " + this.getBid() + " Dollar,");
-    sb.append(" Size: " + this.getSize());
-    return sb.toString();
-  }
-}
-enum Size {
-  S, M, L, XL, XXL, XXXL;
-}</code></pre></div>
-<h3 id="enum-type-with-its-own-method">enum type with its own method</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass SizeIterator {
-  publicstaticvoid main(String[] args) {
-    Size[] sizes = Size.values();
-    for (Size s : sizes) {
-      System.out.println(s);
-    }
-  }
-}
-enum Size implements Countable {
-  S, M, L, XL, XXL, XXXL;
-  @Deprecated
-  public Size increase() {
-    Size sizes[] = this.values();
-    int pos = this.ordinal();
-    if (pos &lt; sizes.length - 1)
-      pos++;
-    return sizes[pos];
-  }
-}
-interface Countable {
-  public Size increase();
-}</code></pre></div>
-<h3 id="get-the-minimum-and-maximum-value-of-a-primitive-data-types">Get the minimum and maximum value of a primitive data types</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
-  public static void main(String[] args) {
-    System.out.println("Byte.MIN = " + Byte.MIN_VALUE);
-    System.out.println("Byte.MAX = " + Byte.MAX_VALUE);
-    System.out.println("Short.MIN = " + Short.MIN_VALUE);
-    System.out.println("Short.MAX = " + Short.MAX_VALUE);
-    System.out.println("Integer.MIN = " + Integer.MIN_VALUE);
-    System.out.println("Integer.MAX = " + Integer.MAX_VALUE);
-    System.out.println("Long.MIN = " + Long.MIN_VALUE);
-    System.out.println("Long.MAX = " + Long.MAX_VALUE);
-    System.out.println("Float.MIN = " + Float.MIN_VALUE);
-    System.out.println("Float.MAX = " + Float.MAX_VALUE);
-    System.out.println("Double.MIN = " + Double.MIN_VALUE);
-    System.out.println("Double.MAX = " + Double.MAX_VALUE);
-  }
-}</code></pre></div>
-<h3 id="min-and-max-values-of-data-type-double">Min and Max values of data type double</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-    publicstaticvoid main(String[] args) {
-        System.out.println(Double.MIN_VALUE);
-        System.out.println(Double.MAX_VALUE);
-    }
-}
-/*
-4.9E-324
-1.7976931348623157E308
-*/</code></pre></div>
-<h3 id="use-short-constructor-to-convert-short-primitive-type-to-short-object">Use Short constructor to convert short primitive type to Short object</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] args) {
-    short s = 10;
-    Short sObj = new Short(s);
-    System.out.println(sObj);
-  }
-}</code></pre></div>
-<h3 id="use-short-constructor-to-convert-short-primitive-type-to-short-object-1">Use Short constructor to convert short primitive type to Short object</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
-  public static void main(String[] args) {
-    short s = 10;
-    Short sObj = new Short(s);
-    System.out.println(sObj);
-  }
-}</code></pre></div>
-<h3 id="using-short-data-type">Using short data type</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
-  publicstaticvoid main(String[] arg) {
-    short smallNumber = 1234;
-    System.out.println(smallNumber);
-  }
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">1234</code></pre></div>
-<h3 id="using-short-data-type-1">Using short data type</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
-  public static void main(String[] arg) {
-    short smallNumber = 1234;
-    System.out.println(smallNumber);
-  }
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">1234</code></pre></div>
-<h3 id="using-the-boolean-type">Using the boolean type</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
-  publicstaticvoid main(String args[]) {
-    boolean b;
-    b = false;
-    System.out.println("b is " + b);
-    b = true;
-    System.out.println("b is " + b);
-    // a boolean value can control the if statement
-if(b) System.out.println("This is executed.");
-    b = false;
-    if(b) System.out.println("This is not executed.");
-    // outcome of a relational operator is a boolean value
-    System.out.println("10 &gt; 9 is " + (10 &gt; 9));
-  }
-}</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">b is false
-b is true
-This is executed.
-10 &gt; 9 is true</code></pre></div>
-<h3 id="wrapping-a-primitive-type-in-a-wrapper-object">Wrapping a Primitive Type in a Wrapper Object</h3>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] argv) throws Exception {
-    Boolean refBoolean = new Boolean(true);
-    boolean bool = refBoolean.booleanValue();
-    Byte refByte = new Byte((byte) 123);
-    byte b = refByte.byteValue();
-    Character refChar = new Character('x');
-    char c = refChar.charValue();
-    Short refShort = new Short((short) 123);
-    short s = refShort.shortValue();
-    Integer refInt = newInteger(123);
-    int i = refInt.intValue();
-    Long refLong = new Long(123L);
-    long l = refLong.longValue();
-    Float refFloat = new Float(12.3F);
-    float f = refFloat.floatValue();
-    Double refDouble = new Double(12.3D);
-    double d = refDouble.doubleValue();
-  }
-}</code></pre></div></div>
-    </div>
-<script>
-(function(){
-  document.querySelectorAll('.tabs').forEach(function(box){
-    var btns = box.querySelectorAll('.tab-btn');
-    btns.forEach(function(b){
-      b.addEventListener('click', function(){
-        var id = b.getAttribute('data-tab');
-        btns.forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
-        b.classList.add('active'); b.setAttribute('aria-selected','true');
-        box.querySelectorAll('.tab-panel').forEach(function(p){ p.style.display = (p.id === id) ? '' : 'none'; });
-      });
-    });
-  });
-})();
-</script>
-    <details class="sub-map"><summary>All sub-topics in this chapter (47)</summary><div class="sub-chips"><span class="sub-chip"><span class="sub-num">2.1</span> Data Type Introduction <b>11</b></span><span class="sub-chip"><span class="sub-num">2.25</span> Extracting String Characters <b>8</b></span><span class="sub-chip"><span class="sub-num">2.2</span> Boolean <b>24</b></span><span class="sub-chip"><span class="sub-num">2.26</span> Quote <b>1</b></span><span class="sub-chip"><span class="sub-num">2.3</span> Integer Data Type <b>12</b></span><span class="sub-chip"><span class="sub-num">2.27</span> String vs Byte Array <b>11</b></span><span class="sub-chip"><span class="sub-num">2.4</span> Byte <b>18</b></span><span class="sub-chip"><span class="sub-num">2.28</span> String vs Char Array <b>19</b></span><span class="sub-chip"><span class="sub-num">2.5</span> Short <b>13</b></span><span class="sub-chip"><span class="sub-num">2.29</span> String Find Search <b>21</b></span><span class="sub-chip"><span class="sub-num">2.6</span> Integer <b>43</b></span><span class="sub-chip"><span class="sub-num">2.30</span> String Format <b>38</b></span><span class="sub-chip"><span class="sub-num">2.7</span> Character Data Type <b>42</b></span><span class="sub-chip"><span class="sub-num">2.31</span> String Match <b>20</b></span><span class="sub-chip"><span class="sub-num">2.8</span> Long <b>20</b></span><span class="sub-chip"><span class="sub-num">2.32</span> String Split <b>11</b></span><span class="sub-chip"><span class="sub-num">2.9</span> Hex Oct <b>24</b></span><span class="sub-chip"><span class="sub-num">2.33</span> String Join <b>11</b></span><span class="sub-chip"><span class="sub-num">2.10</span> Float Point Data Type <b>5</b></span><span class="sub-chip"><span class="sub-num">2.34</span> Substring <b>15</b></span><span class="sub-chip"><span class="sub-num">2.11</span> Float <b>24</b></span><span class="sub-chip"><span class="sub-num">2.35</span> Escape Sequences <b>6</b></span><span class="sub-chip"><span class="sub-num">2.12</span> Double <b>23</b></span><span class="sub-chip"><span class="sub-num">2.36</span> Convert from String <b>13</b></span><span class="sub-chip"><span class="sub-num">2.13</span> Number <b>5</b></span><span class="sub-chip"><span class="sub-num">2.37</span> Convert to String <b>16</b></span><span class="sub-chip"><span class="sub-num">2.14</span> Number Format <b>14</b></span><span class="sub-chip"><span class="sub-num">2.38</span> Date <b>15</b></span><span class="sub-chip"><span class="sub-num">2.15</span> Cast <b>2</b></span><span class="sub-chip"><span class="sub-num">2.39</span> Calendar <b>23</b></span><span class="sub-chip"><span class="sub-num">2.16</span> Data Type Conversion <b>13</b></span><span class="sub-chip"><span class="sub-num">2.40</span> Gregorian Calendar <b>18</b></span><span class="sub-chip"><span class="sub-num">2.17</span> Wrapper Classes <b>6</b></span><span class="sub-chip"><span class="sub-num">2.41</span> Date Format <b>43</b></span><span class="sub-chip"><span class="sub-num">2.18</span> Autobox Unbox <b>13</b></span><span class="sub-chip"><span class="sub-num">2.42</span> Date Calculation <b>54</b></span><span class="sub-chip"><span class="sub-num">2.19</span> String <b>22</b></span><span class="sub-chip"><span class="sub-num">2.43</span> enum <b>10</b></span><span class="sub-chip"><span class="sub-num">2.20</span> String Start End <b>6</b></span><span class="sub-chip"><span class="sub-num">2.44</span> enum methods <b>9</b></span><span class="sub-chip"><span class="sub-num">2.21</span> String Replace <b>18</b></span><span class="sub-chip"><span class="sub-num">2.45</span> BigInteger <b>43</b></span><span class="sub-chip"><span class="sub-num">2.22</span> String Concatenation <b>9</b></span><span class="sub-chip"><span class="sub-num">2.46</span> BigDecimal <b>13</b></span><span class="sub-chip"><span class="sub-num">2.23</span> String Compare <b>12</b></span><span class="sub-chip"><span class="sub-num">2.47</span> Decimal <b>20</b></span><span class="sub-chip"><span class="sub-num">2.24</span> String Tokenize <b>3</b></span></div></details>
-
-    <p class="arc-crumb"><a href="java-tutorial.html">&larr; All tutorial chapters</a></p>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <span>Data Type</span></nav>
+    <h1>2. Data Type</h1>
+    <p><strong>47 sub-topics</strong> &middot; <strong>820 pages archived (2014-2020)</strong> &middot; <strong>719</strong> on the site. Every sub-topic below is a real java2s topic - open one to read its pages in the original order.</p>
+    <ol class="topic-list">
+<li class="topic-row"><a class="topic-link" href="tutorial-02-01-data-type-introduction.html"><span class="topic-num">2.1</span><span class="topic-name">Data Type Introduction</span><span class="topic-count">11/11</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-02-boolean.html"><span class="topic-num">2.2</span><span class="topic-name">Boolean</span><span class="topic-count">23/24</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-03-integer-data-type.html"><span class="topic-num">2.3</span><span class="topic-name">Integer Data Type</span><span class="topic-count">12/12</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-04-byte.html"><span class="topic-num">2.4</span><span class="topic-name">Byte</span><span class="topic-count">18/18</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-05-short.html"><span class="topic-num">2.5</span><span class="topic-name">Short</span><span class="topic-count">13/13</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-06-integer.html"><span class="topic-num">2.6</span><span class="topic-name">Integer</span><span class="topic-count">33/43</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-07-character-data-type.html"><span class="topic-num">2.7</span><span class="topic-name">Character Data Type</span><span class="topic-count">33/42</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-08-long.html"><span class="topic-num">2.8</span><span class="topic-name">Long</span><span class="topic-count">19/20</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-09-hex-oct.html"><span class="topic-num">2.9</span><span class="topic-name">Hex Oct</span><span class="topic-count">24/24</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-10-float-point-data-type.html"><span class="topic-num">2.10</span><span class="topic-name">Float Point Data Type</span><span class="topic-count">5/5</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-11-float.html"><span class="topic-num">2.11</span><span class="topic-name">Float</span><span class="topic-count">22/24</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-12-double.html"><span class="topic-num">2.12</span><span class="topic-name">Double</span><span class="topic-count">20/23</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-13-number.html"><span class="topic-num">2.13</span><span class="topic-name">Number</span><span class="topic-count">5/5</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-14-number-format.html"><span class="topic-num">2.14</span><span class="topic-name">Number Format</span><span class="topic-count">13/14</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-15-cast.html"><span class="topic-num">2.15</span><span class="topic-name">Cast</span><span class="topic-count">2/2</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-16-data-type-conversion.html"><span class="topic-num">2.16</span><span class="topic-name">Data Type Conversion</span><span class="topic-count">10/13</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-17-wrapper-classes.html"><span class="topic-num">2.17</span><span class="topic-name">Wrapper Classes</span><span class="topic-count">4/6</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-18-autobox-unbox.html"><span class="topic-num">2.18</span><span class="topic-name">Autobox Unbox</span><span class="topic-count">12/13</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-19-string.html"><span class="topic-num">2.19</span><span class="topic-name">String</span><span class="topic-count">22/22</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-20-string-start-end.html"><span class="topic-num">2.20</span><span class="topic-name">String Start End</span><span class="topic-count">6/6</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-21-string-replace.html"><span class="topic-num">2.21</span><span class="topic-name">String Replace</span><span class="topic-count">18/18</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-22-string-concatenation.html"><span class="topic-num">2.22</span><span class="topic-name">String Concatenation</span><span class="topic-count">9/9</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-23-string-compare.html"><span class="topic-num">2.23</span><span class="topic-name">String Compare</span><span class="topic-count">12/12</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-24-string-tokenize.html"><span class="topic-num">2.24</span><span class="topic-name">String Tokenize</span><span class="topic-count">3/3</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-25-extracting-string-characters.html"><span class="topic-num">2.25</span><span class="topic-name">Extracting String Characters</span><span class="topic-count">8/8</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-26-quote.html"><span class="topic-num">2.26</span><span class="topic-name">Quote</span><span class="topic-count">1/1</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-27-string-vs-byte-array.html"><span class="topic-num">2.27</span><span class="topic-name">String vs Byte Array</span><span class="topic-count">11/11</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-28-string-vs-char-array.html"><span class="topic-num">2.28</span><span class="topic-name">String vs Char Array</span><span class="topic-count">18/19</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-29-string-find-search.html"><span class="topic-num">2.29</span><span class="topic-name">String Find Search</span><span class="topic-count">20/21</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-30-string-format.html"><span class="topic-num">2.30</span><span class="topic-name">String Format</span><span class="topic-count">38/38</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-31-string-match.html"><span class="topic-num">2.31</span><span class="topic-name">String Match</span><span class="topic-count">20/20</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-32-string-split.html"><span class="topic-num">2.32</span><span class="topic-name">String Split</span><span class="topic-count">10/11</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-33-string-join.html"><span class="topic-num">2.33</span><span class="topic-name">String Join</span><span class="topic-count">11/11</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-34-substring.html"><span class="topic-num">2.34</span><span class="topic-name">Substring</span><span class="topic-count">15/15</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-35-escape-sequences.html"><span class="topic-num">2.35</span><span class="topic-name">Escape Sequences</span><span class="topic-count">5/6</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-36-convert-from-string.html"><span class="topic-num">2.36</span><span class="topic-name">Convert from String</span><span class="topic-count">13/13</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-37-convert-to-string.html"><span class="topic-num">2.37</span><span class="topic-name">Convert to String</span><span class="topic-count">13/16</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-38-date.html"><span class="topic-num">2.38</span><span class="topic-name">Date</span><span class="topic-count">15/15</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-39-calendar.html"><span class="topic-num">2.39</span><span class="topic-name">Calendar</span><span class="topic-count">18/23</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-40-gregorian-calendar.html"><span class="topic-num">2.40</span><span class="topic-name">Gregorian Calendar</span><span class="topic-count">16/18</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-41-date-format.html"><span class="topic-num">2.41</span><span class="topic-name">Date Format</span><span class="topic-count">32/43</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-42-date-calculation.html"><span class="topic-num">2.42</span><span class="topic-name">Date Calculation</span><span class="topic-count">39/54</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-43-enum.html"><span class="topic-num">2.43</span><span class="topic-name">enum</span><span class="topic-count">8/10</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-44-enum-methods.html"><span class="topic-num">2.44</span><span class="topic-name">enum methods</span><span class="topic-count">5/9</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-45-biginteger.html"><span class="topic-num">2.45</span><span class="topic-name">BigInteger</span><span class="topic-count">24/43</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-46-bigdecimal.html"><span class="topic-num">2.46</span><span class="topic-name">BigDecimal</span><span class="topic-count">10/13</span></a></li>
+<li class="topic-row"><a class="topic-link" href="tutorial-02-47-decimal.html"><span class="topic-num">2.47</span><span class="topic-name">Decimal</span><span class="topic-count">20/20</span></a></li>
+    </ol>
+    <h2>More pages archived in this chapter (127)</h2>
+    <ul class="arc-list">
+      <li><a href="data-type-astringcanbecomparedwithastringbuffer-3.html">A string can be compared w...</a></li>
+      <li><a href="data-type-abbreviatestring-2.html">Abbreviate string</a></li>
+      <li><a href="data-type-abbreviatesastringusingellipses-2.html">Abbreviates a String using...</a></li>
+      <li><a href="data-type-accessingstringcharacters-2.html">Accessing String Characters</a></li>
+      <li><a href="data-type-addtwointegerscheckingforoverflow-2.html">Add two integers, checking...</a></li>
+      <li><a href="data-type-addtwointegerscheckingforoverflow-3.html">Add two integers, checking...</a></li>
+      <li><a href="data-type-anintegersynchronizedcounterclass-2.html">An integer synchronized co...</a></li>
+      <li><a href="data-type-antnotoperationonbiginteger-2.html">antNot operation on BigInt...</a></li>
+      <li><a href="data-type-applyingthemodulusoperatortofloatingpointvalues-2.html">Applying the modulus opera...</a></li>
+      <li><a href="data-type-arraysofstringsdeclareanarrayofstringobjectswheretheinitialvaluesdeter-2.html">Arrays of Strings</a></li>
+      <li><a href="data-type-arraysofstringsusingnewoperator-2.html">Arrays of Strings</a></li>
+      <li><a href="data-type-assignstringvariabletonull-2.html">Assign String variable to ...</a></li>
+      <li><a href="data-type-attemptstousestringvariablebeforeithasbeeninitialized-2.html">Attempts to use string var...</a></li>
+      <li><a href="data-type-automatictypepromotioninexpressions-2.html">Automatic Type Promotion i...</a></li>
+      <li><a href="data-type-byterange-2.html">Byte Range</a></li>
+      <li><a href="data-type-centersastringinalargerstringofsizesizeusingthespacecharacter-2.html">Centers a String in a larg...</a></li>
+      <li><a href="data-type-centersastringinalargerstringofsizesizeusesasuppliedcharacterasthevalu-2.html">Centers a String in a larg...</a></li>
+      <li><a href="data-type-centersastringinalargerstringofsizesizeusesasuppliedstringasthevalueto-2.html">Centers a String in a larg...</a></li>
+      <li><a href="data-type-checknumberpropertiesandconvertfromnumber-2.html">Check Number properties an...</a></li>
+      <li><a href="data-type-checkingtheendofastring-2.html">Checking the End of a String</a></li>
+      <li><a href="data-type-checksiftwocalendarobjectsrepresentthesamelocaltime-2.html">Checks if two calendar obj...</a></li>
+      <li><a href="data-type-checksiftwodateobjectsrepresentthesameinstantintime-2.html">Checks if two date objects...</a></li>
+      <li><a href="data-type-chopicharactersofftheendofastring-2.html">Chop i characters off the ...</a></li>
+      <li><a href="data-type-comparesallstringsinanarrayandreturnstheindexatwhichthestringsbegintod-2.html">Compares all Strings in an...</a></li>
+      <li><a href="data-type-comparesallstringsinanarrayandreturnstheinitialsequenceofcharacterstha-2.html">Compares all Strings in an...</a></li>
+      <li><a href="data-type-comparestwofloatsfororder-2.html">Compares two floats for or...</a></li>
+      <li><a href="data-type-comparestwostringsandreturnstheindexatwhichthestringsbegintodiffer-2.html">Compares two Strings, and ...</a></li>
+      <li><a href="data-type-comparestwostringsandreturnstheportionwheretheydiffer-2.html">Compares two Strings, and ...</a></li>
+      <li><a href="data-type-comparingenumerationvalues-2.html">Comparing Enumeration Values</a></li>
+      <li><a href="data-type-comparingstringsforequality-2.html">Comparing Strings for Equa...</a></li>
+      <li><a href="data-type-comparingtwostrings-2.html">Comparing Two Strings</a></li>
+      <li><a href="data-type-computationwithshorterintegertypes-2.html">Computation with Shorter I...</a></li>
+      <li><a href="data-type-convertastringdatesuchas20030110intoajavautildateobject-2.html">Convert a String Date Such...</a></li>
+      <li><a href="data-type-convertbase64stringtoabytearray-2.html">Convert base64 string to a...</a></li>
+      <li><a href="data-type-convertbytearraytointegerandlong-2.html">Convert byte array to Inte...</a></li>
+      <li><a href="data-type-convertfromstringtolong-2.html">Convert from String to long</a></li>
+      <li><a href="data-type-convertjavastringtolongexample-2.html">Convert Java String to Lon...</a></li>
+      <li><a href="data-type-convertjavastringtoshort-2.html">Convert Java String to Short</a></li>
+      <li><a href="data-type-convertlinesintothecanonicalformatthatisterminatelineswiththecrlfseque-2.html">Convert lines into the can...</a></li>
+      <li><a href="data-type-convertshorttonumericprimitivedatatypes-2.html">Convert Short to numeric p...</a></li>
+      <li><a href="data-type-convertstringoftimetotimeobject-2.html">Convert string of time to ...</a></li>
+      <li><a href="data-type-convertstringtocharacterarray-2.html">Convert String to characte...</a></li>
+      <li><a href="data-type-convertstringtoshortprimitive-2.html">Convert String to short pr...</a></li>
+      <li><a href="data-type-convertstringtouppercase-2.html">Convert string to uppercase</a></li>
+      <li><a href="data-type-convertthebytestoahexstringrepresentationofthebytes-2.html">Convert the bytes to a hex...</a></li>
+      <li><a href="data-type-convertthecurrenttimetoajavasqldateobject-2.html">Convert the Current Time t...</a></li>
+      <li><a href="data-type-convertingastringtoaintintegernumber-2.html">Converting a String to a i...</a></li>
+      <li><a href="data-type-convertingastringtoashortnumber-2.html">Converting a String to a s...</a></li>
+      <li><a href="data-type-convertinghexadecimalstrings-2.html">Converting hexadecimal str...</a></li>
+      <li><a href="data-type-convertsabooleantoastringreturningyesorno-2.html">Converts a boolean to a St...</a></li>
+      <li><a href="data-type-convertsastringtoaboolean-2.html">Converts a String to a Boo...</a></li>
+      <li><a href="data-type-convertsaninttoabooleanspecifyingtheconversionvalues-2.html">Converts an int to a boole...</a></li>
+      <li><a href="data-type-countthenumberofinstancesofsubstringwithinastring-2.html">Count the number of instan...</a></li>
+      <li><a href="data-type-createabigdecimalvisstring-2.html">Create a BigDecimal vis st...</a></li>
+      <li><a href="data-type-uncapitalizesastringchangingthefirstlettertotitlecaseaspercharactertol-2.html">Uncapitalizes a String cha...</a></li>
+      <li><a href="data-type-dateparsingandformattingwithdateformat-2.html">Date Parsing and Formattin...</a></li>
+      <li><a href="data-type-decimalformate0exponentmustbemultipleof2-2.html">DecimalFormat("##E0") (exp...</a></li>
+      <li><a href="data-type-decimalformat000e00-2.html">DecimalFormat("000E00")</a></li>
+      <li><a href="data-type-determinethedayoftheweekfromtodaysdate-2.html">Determine the Day of the W...</a></li>
+      <li><a href="data-type-displaynumberswithcommas-2.html">Display numbers with commas</a></li>
+      <li><a href="data-type-divideonebigdecimalfromanotherbigdecimal-2.html">Divide one BigDecimal from...</a></li>
+      <li><a href="data-type-encodeshexoctectsintobase64-2.html">Encodes hex octects into B...</a></li>
+      <li><a href="data-type-enumerationfundamentals-2.html">Enumeration Fundamentals</a></li>
+      <li><a href="data-type-fixlineseparator-2.html">Fix Line Separator</a></li>
+      <li><a href="data-type-floatingpointcalculations-2.html">Floating-Point Calculations</a></li>
+      <li><a href="data-type-forafloatvaluexthismethodreturns10fifx0and10fifx0returnsnanifxisnan-2.html">For a float value x, this ...</a></li>
+      <li><a href="data-type-forceminimumnumberofdigitstoleftandrightofdecimalpoint-2.html">Force minimum number of di...</a></li>
+      <li><a href="data-type-fourdifferentdateformatsforfourcountriesusukgermanyfrance-2.html">Four different date format...</a></li>
+      <li><a href="data-type-fractionisanumberimplementationthatstoresfractionsaccurately-2.html">Fraction is a Number imple...</a></li>
+      <li><a href="data-type-getthedifferencebetweentwostrings-2.html">Get the difference between...</a></li>
+      <li><a href="data-type-getstheleftmostlencharactersofastring-2.html">Gets the leftmost len char...</a></li>
+      <li><a href="data-type-getstheminimumofthreeintvalues-2.html">Gets the minimum of three ...</a></li>
+      <li><a href="data-type-getstheminimumofthreelongvalues-2.html">Gets the minimum of three ...</a></li>
+      <li><a href="data-type-getstherightmostlencharactersofastring-2.html">Gets the rightmost len cha...</a></li>
+      <li><a href="data-type-givenahexstringthiswillreturnthebytearraycorrespondingtostring-2.html">Given a hexstring this wil...</a></li>
+      <li><a href="data-type-givenanintegerreturnastringthatisinanapproximatebuthumanreadableformat-2.html">Given an integer, return a...</a></li>
+      <li><a href="data-type-helperfunctionthatreturnsacharfromanhex-2.html">Helper function that retur...</a></li>
+      <li><a href="data-type-hexencoderdecoderimplementationborrowedfrombouncycastle-2.html">Hex encoder/decoder implem...</a></li>
+      <li><a href="data-type-intarraytobytearray-2.html">int array to byte array</a></li>
+      <li><a href="data-type-integermaxminvalue-2.html">Integer</a></li>
+      <li><a href="data-type-iso8601dateparsingutility-2.html">ISO 8601 date parsing util...</a></li>
+      <li><a href="data-type-leftpadastringwithaspecifiedcharacter-2.html">Left pad a String with a s...</a></li>
+      <li><a href="data-type-leftpadastringwithaspecifiedstring-2.html">Left pad a String with a s...</a></li>
+      <li><a href="data-type-lengthofastring-2.html">Length of a string</a></li>
+      <li><a href="data-type-makesthefirstlettercapsandtherestlowercase-2.html">Makes the first letter cap...</a></li>
+      <li><a href="data-type-minandmaxvaluesofdatatypeshort-2.html">Min and Max values of data...</a></li>
+      <li><a href="data-type-multiplytwointegerscheckingforoverflow-2.html">Multiply two integers, che...</a></li>
+      <li><a href="data-type-obtainingadateobjectfromastring-2.html">Obtaining a Date Object Fr...</a></li>
+      <li><a href="data-type-overlayspartofastringwithanotherstring-2.html">Overlays part of a String ...</a></li>
+      <li><a href="data-type-putquotesaroundthegivenstringifnecessary-2.html">Put quotes around the give...</a></li>
+      <li><a href="data-type-removeacharacterataspecifiedpositionusingstringsubstring-2.html">Remove a character at a sp...</a></li>
+      <li><a href="data-type-removetheleadingandtrailingquotesfromstr-2.html">Remove the leading and tra...</a></li>
+      <li><a href="data-type-removecollapsemultiplespaces-2.html">Remove/collapse multiple s...</a></li>
+      <li><a href="data-type-removesasubstringonlyifitisattheendofasourcestringotherwisereturnsthes-2.html">Removes a substring only i...</a></li>
+      <li><a href="data-type-removesonenewlinefromendofastringifitsthereotherwiseleaveitalone-2.html">Removes one newline from e...</a></li>
+      <li><a href="data-type-removesseparatorfromtheendofstrifitsthereotherwiseleaveitalone-2.html">Removes separator from the...</a></li>
+      <li><a href="data-type-repeatastringrepeattimestoformanewstring-2.html">Repeat a String repeat tim...</a></li>
+      <li><a href="data-type-replacenewlines-2.html">Replace New Lines</a></li>
+      <li><a href="data-type-representsarangeofnumberobjects-2.html">Represents a range of Numb...</a></li>
+      <li><a href="data-type-returnsadatesetjusttonoontotheclosestpossiblemillisecondoftheday-2.html">Returns a Date set just to...</a></li>
+      <li><a href="data-type-returnsadatesettothefirstpossiblemillisecondofthedayjustaftermidnight-2.html">Returns a Date set to the ...</a></li>
+      <li><a href="data-type-returnsadatesettothelastpossiblemillisecondofthemonthjustbeforemidnigh-2.html">Returns a Date set to the ...</a></li>
+      <li><a href="data-type-returnsthenumberofdayswithinthefragment-2.html">Returns the number of days...</a></li>
+      <li><a href="data-type-rightpadastringwithaspecifiedcharacter-2.html">Right pad a String with a ...</a></li>
+      <li><a href="data-type-rightpadastringwithspaces-2.html">Right pad a String with sp...</a></li>
+      <li><a href="data-type-searchesastringforsubstringsdelimitedbyastartandendtagreturningallmatc-2.html">Searches a String for subs...</a></li>
+      <li><a href="data-type-stringconcatenationcombiningastringandintegers-2.html">String concatenation</a></li>
+      <li><a href="data-type-stringconcatenationcombiningintegersandastring-2.html">String concatenation</a></li>
+      <li><a href="data-type-stringconcatenationconvertanintegertostringandjoinwithtwootherstrings-2.html">String concatenation</a></li>
+      <li><a href="data-type-stringliterals-2.html">String Literals</a></li>
+      <li><a href="data-type-subtracttwointegerscheckingforoverflow-2.html">Subtract two integers, che...</a></li>
+      <li><a href="data-type-subtracttwolongintegerscheckingforoverflow-2.html">Subtract two long integers...</a></li>
+      <li><a href="data-type-surprisejavaletsyouoverflow-2.html">Surprise! Java lets you ov...</a></li>
+      <li><a href="data-type-switchstatementwithenum-2.html">Switch statement with enum</a></li>
+      <li><a href="data-type-thenumberofstotheleftofthedecimalpointsetsthemultipleoftheexponent-2.html">The number of #'s to the l...</a></li>
+      <li><a href="data-type-toreplaceonespecificcharacterwithanotherthroughoutastring-2.html">To replace one specific ch...</a></li>
+      <li><a href="data-type-trimanyofthecharacters-2.html">Trim any of the characters</a></li>
+      <li><a href="data-type-trimofftrailingblanksbutnotleadingblanks-2.html">Trim off trailing blanks b...</a></li>
+      <li><a href="data-type-truncateastringtothegivenlengthwithnowarningsorerrorraisedifitisbigger-2.html">Truncate a String to the g...</a></li>
+      <li><a href="data-type-truncatethisdateleavingthefieldspecifiedasthemostsignificantfield-2.html">Truncate this date, leavin...</a></li>
+      <li><a href="data-type-truncatesthebigdecimalvalue-2.html">Truncates the big decimal ...</a></li>
+      <li><a href="data-type-usejavatextdecimalformattoformatinteger-2.html">Use java.text.DecimalForma...</a></li>
+      <li><a href="data-type-usenewdecimalformat0e0toformatdouble-2.html">Use new DecimalFormat("0.#...</a></li>
+      <li><a href="data-type-useshortconstructortoconvertshortprimitivetypetoshortobject-2.html">Use Short constructor to c...</a></li>
+      <li><a href="data-type-usestringindexoftolocateasubstringinastring-2.html">Use String.indexOf to loca...</a></li>
+      <li><a href="data-type-usingandwithfloatingpointvariables-2.html">Using ++ and -- with float...</a></li>
+      <li><a href="data-type-usingshortdatatype-2.html">Using short data type</a></li>
+    </ul>
+    <p class="arc-crumb"><a href="java-tutorial.html">&larr; All 39 chapters</a></p>
 
   </article>
 </main>

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50164
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0280__Java_Inner_Class_Members.html
 ---
-```java title=Example.java
-```
-
 An inner class has access to all instance members, instance fields, and instance methods of its enclosing class.
 
 ```java title=Example.java

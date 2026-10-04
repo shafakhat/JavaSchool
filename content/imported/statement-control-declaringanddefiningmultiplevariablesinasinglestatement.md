@@ -19,9 +19,7 @@ publicclass MainClass{
    System.out.println(d);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 999999999
 100000000
 0

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50179
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0500__Java_interface.html
 ---
-```java title=Example.java
-```
-
 ## What Is an Interface?
 
 An interface in Java defines a reference type to create an abstract concept. The interface is implemented by classes to provide an implementation of the concept.

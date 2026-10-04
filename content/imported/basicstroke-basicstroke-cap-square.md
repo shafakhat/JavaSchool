@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BasicStroke/0080__BasicStroke.CAP_SQUARE.htm
 ---
-```java title=Example.java
-Back to BasicStroke  ↑
-```
-
 ## Syntax
 
 BasicStroke.CAP_SQUARE has the following syntax.
@@ -44,5 +40,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to BasicStroke ↑

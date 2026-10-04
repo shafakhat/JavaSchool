@@ -3,8 +3,8 @@ title: How to create Java BigDecimal
 nav: How to create Java BigDeci...
 description: BigDecimal(BigInteger unscaledVal, int scale, MathContext mc) converts a BigInteger and an int scale into a BigDecimal, with rounding according to the context settings.
 section: Imported - java2s Archive
-order: 1039
-source: https://web.archive.org/web/20130831023920/http://java2s.com/Tutorials/Java/BigDecimal_BigInteger/How_to_create_Java_BigDecimal.htm
+order: 1001
+source: https://web.archive.org/web/2016/http://java2s.com/Tutorials/Java/BigDecimal_BigInteger/How_to_create_Java_BigDecimal.htm
 ---
 In this chapter you will learn:
 
@@ -16,8 +16,8 @@ BigDecimal(double val) converts a double into a BigDecimal.
 
 ```java title=Example.java
 import java.math.BigDecimal;
- publicclass Main {
-    publicstaticvoid main(String[] args) {
+ public class Main {
+    public static void main(String[] args) {
         System.out.println(new BigDecimal(1f));
         System.out.println(new BigDecimal(2f));
     }
@@ -33,8 +33,8 @@ BigDecimal(BigInteger unscaledVal, int scale, MathContext mc) converts a BigInte
 ```java title=Example.java
 import java.math.BigDecimal;
 import java.math.MathContext;
- publicclass Main {
-    publicstaticvoid main(String[] args) {
+ public class Main {
+    public static void main(String[] args) {
         BigDecimal first = new BigDecimal(1f);
         BigDecimal second = new BigDecimal(1000f);
         BigDecimal result1 = new BigDecimal(first.doubleValue() / second.doubleValue());

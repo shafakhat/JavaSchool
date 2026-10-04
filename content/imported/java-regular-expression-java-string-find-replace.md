@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50386
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/0080__Java_String_Find_Replace.html
 ---
-```java title=Example.java
-```
-
 We can find a pattern and replace it with some text and the replaced text is depending on the matched text.
 
 In Java we can use the following two methods in the Matcher class to accomplish this task.

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50430
 source: https://www.java2s.com/Tutorials/Java/Java_Language/3030__Java_ternary_operator.html
 ---
-```java title=Example.java
-```
-
 The ? operator is a ternary (three-way) operator.
 
 Java ternary operator is basically a short form of simple if statement.

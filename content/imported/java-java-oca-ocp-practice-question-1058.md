@@ -3,16 +3,16 @@ title: Java OCA OCP Practice Question 1058
 nav: Java OCA OCP Practice Ques...
 description: What is printed besides the stack trace caused by the NullPointerException from line 16?
 section: Imported - java2s Archive
-order: 1038
-source: https://web.archive.org/web/20210101014709/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1058.html
+order: 1008
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1058.html
 ---
 ## Question
 
 What is printed besides the stack trace caused by the NullPointerException from line 16?
 
 ```java title=Example.java
-1: publicclass Main {
-2:   publicvoid go() {
+1: public class Main {
+2:   public void go() {
 3:     System.out.print("A");
 4:     try {
 5:         stop();
@@ -23,27 +23,23 @@ What is printed besides the stack trace caused by the NullPointerException from 
 10:    }
 11:    System.out.print("D");
 12:  }
-13:  publicvoid stop() {
+13:  public void stop() {
 14:    System.out.print("E");
 15:    Object x = null;
 16:    x.toString();
 17:    System.out.print("F");
 18:  }
-19:  publicstaticvoid main(String[] args) {
+19:  public static void main(String[] args) {
 20:    new Main().go();
 21:  }
 22: }
-```
-
-```java title=Example.java
+java title=Example.java
 A.  AE
 B.  AEBCD
 C.  AEC
 D.  AECD
 E.  No output appears other than the stack trace.
-```
-
-```java title=Example.java
+java title=Example.java
 C.
 ```
 

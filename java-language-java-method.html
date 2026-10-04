@@ -29,17 +29,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-language.html">Java Language</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-language.html">Java Language</a></nav>
     <h1>Java Tutorial - Java Method</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>Classes usually consist of two things: instance variables and methods. Instance variables are the data part of a class, while the methods defines the behaviours of a class.</p>
 <h2 id="syntax">Syntax</h2>
 <p>This is the general form of a method:</p>
@@ -51,7 +50,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>Parameters receives the value of the arguments passed to the method.</p>
 <p>If the method has no parameters, then the parameter list will be empty.</p>
 <p>Add a method to Box,as shown here:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Box {int width;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> class Box { int width;
   int height;
   int depth;
   void calculateVolume() {
@@ -59,8 +58,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     System.out.println(width * height * depth);
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Box mybox1 = new Box();
     mybox1.width = 10;
     mybox1.height = 20;
@@ -75,14 +74,14 @@ publicclass Main {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">return value;</code></pre></div>
 <p>Here, value is the value returned.</p>
 <p>We can use return statement to return a value to the callers.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Rectangle {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> class Rectangle {
   int width;int height;
   int getArea() {
     return width * height;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Rectangle mybox1 = new Rectangle();
     int area;
     mybox1.width = 10;
@@ -99,7 +98,7 @@ publicclass Main {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">System.out.println("Area is " + mybox1.getArea());</code></pre></div>
 <h2 id="example">Example</h2>
 <p>A method can return class types.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {int myMemberValue = 2;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> class MyClass { int myMemberValue = 2;
   MyClass() {
   }
   MyClass doubleValue() {
@@ -108,8 +107,8 @@ publicclass Main {
     return temp;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     MyClass ob1 = new MyClass();
     ob1.myMemberValue =2;
     MyClass ob2;
@@ -129,8 +128,8 @@ publicclass Main {
 }</code></pre></div>
 <p>A parameterized method can operate on a variety of data.</p>
 <p>The new Rectangle class has a new method which accepts the dimensions of a rectangle and sets the dimensions with the passed-in value.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Rectangle {
-  double width;double height;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> class Rectangle {
+  double width; double height;
   double area() {
     return width * height;
   }
@@ -139,8 +138,8 @@ publicclass Main {
     height = h;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Rectangle mybox1 = new Rectangle();
     double vol;
     mybox1.setDim(10, 20);
@@ -151,18 +150,18 @@ publicclass Main {
 <p>The output:</p>
 <h2 id="example-2">Example 2</h2>
 <p>The following code passes objects to methods.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test {int a;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> class Test { int a;
   Test(int i) {
     a = i;
   }
   boolean equals(Test o) {
     if (o.a == a )
       return true;
-    elsereturn false;
+    else return false;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Test ob1 = new Test(100);
     Test ob2 = new Test(100);
     System.out.println("ob1 == ob2: " + ob1.equals(ob2));
@@ -174,7 +173,7 @@ publicclass Main {
 <p>When this is the case, the methods are said to be overloaded, and the process is referred to as method overloading.</p>
 <p>Overloaded methods have the same name but different parameters. Overloaded methods must differ in the type and/or number of their parameters. Overloaded methods may have different return types. return type alone is insufficient to distinguish two methods.</p>
 <p>The following example illustrates method overloading:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class OverloadDemo {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> class OverloadDemo {
   void test() {
     System.out.println("No parameters");
   }
@@ -189,8 +188,8 @@ publicclass Main {
     return a * a;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     OverloadDemo ob = new OverloadDemo();
     ob.test();
     ob.test(10);
@@ -202,7 +201,7 @@ publicclass Main {
 <p>This program generates the following output:</p>
 <h2 id="example-3">Example 3</h2>
 <p>The following code demonstrates method overloading and data type promotion.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class OverloadDemo {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> class OverloadDemo {
   void test() {
     System.out.println("No parameters");
   }
@@ -213,8 +212,8 @@ publicclass Main {
     System.out.println("Inside test(double) a: " + a);
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     OverloadDemo ob = new OverloadDemo();
     int i = 88;
     ob.test();
@@ -227,17 +226,17 @@ publicclass Main {
 <h2 id="java-method-recursion">Java Method Recursion</h2>
 <p>Recursion allows a method to call itself.</p>
 <p>The following code is an example of recursion. It calculates the factorial numbers.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Factorial {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> class Factorial {
   // this is a recursive function
-int fact(int n) {
+ int fact(int n) {
      int result;if (n == 1)
       return 1;
     result = fact(n - 1) * n;
     return result;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Factorial f = new Factorial();
     System.out.println("Factorial of 5 is " + f.fact(5));
   }
@@ -247,11 +246,11 @@ publicclass Main {
 <p>The main() method is the entry point for standalone Java applications. To create an application, you write a class definition that includes a main() method. To execute an application, type java at the command line, followed by the name of the class containing the main() method.</p>
 <h2 id="syntax-for-main-method">Syntax for main() method</h2>
 <p>The signature for main() is:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicstatic void main(String[] args)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public static void main(String[] args)</code></pre></div>
 <p>The return type must be void. The main() method must be public. It is static so that it can be executed without constructing an instance of the application class.</p>
 <p>A command-line argument is the information that follows the program's name on the command line. The command-line arguments are stored as string array passed to main(). For example, the following program displays all of the command-line arguments:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String args[]) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> public class Main {
+  public static void main(String args[]) {
     for (int i = 0; i &lt; args.length; i++)
       System.out.println("args[" + i + "]: " + args[i]);
   }
@@ -260,13 +259,13 @@ publicclass Main {
 <p>When you do, you will see the following output:</p>
 <h2 id="example-4">Example 4</h2>
 <p>The following code shows how to use of argv to get an integer value from command line.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  publicstaticvoid main(String[] argv) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] argv) {
     int number = 0;
     System.out.println("The number of words in argv is " + argv.length);
     if (argv.length == 0) {
       number = 1234;
-    } elseif (argv.length == 1) {
+    } else if (argv.length == 1) {
       try {
         number = Integer.parseInt(argv[0]);
       } catch(NumberFormatException e) {
@@ -282,7 +281,7 @@ publicclass Main {
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-language-java-class.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Class</span></a><a class="pager-btn pager-next" href="java-language-java-constructors.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Const...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="eventqueue-java-eventqueue-peekevent.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Tutorial - Java Event...</span></a><a class="pager-btn pager-next" href="generalpath-java-tutorial-generalpath.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial GeneralPath</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

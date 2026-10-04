@@ -3,7 +3,7 @@ title: Java Tutorial - Java FontMetrics.getHeight()
 nav: Java Tutorial - Java FontM...
 description: In the following code shows how to use FontMetrics.getHeight() method.
 section: Imported - java2s Archive
-order: 1032
+order: 1010
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/FontMetrics/Java_FontMetrics_getHeight_.htm
 ---
 ### Syntax
@@ -11,7 +11,7 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/ja
 FontMetrics.getHeight() has the following syntax.
 
 ```java title=Example.java
-publicint getHeight()
+public int getHeight()
 ```
 
 ### Example
@@ -23,14 +23,14 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import javax.swing.JFrame;
-publicclass Main extends JFrame {
+public class Main extends JFrame {
   public Main() {
     super("Demonstrating FontMetrics");
     setSize(510, 210);
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
-  publicvoid paint(Graphics g) {
+  public void paint(Graphics g) {
     g.setFont(new Font("SansSerif", Font.BOLD, 12));
     FontMetrics fm = g.getFontMetrics();
     g.drawString("Current font: " + g.getFont(), 10, 40);
@@ -47,7 +47,7 @@ publicclass Main extends JFrame {
     g.drawString("Height: " + fm.getHeight(), 10, 175);
     g.drawString("Leading: " + fm.getLeading(), 10, 190);
   }
-  publicstaticvoid main(String args[]) {
+  public static void main(String args[]) {
     Main app = new Main();
   }
 }

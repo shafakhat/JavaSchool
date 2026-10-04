@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50338
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0177__Java_Special_Queues.html
 ---
-```java title=Example.java
-```
-
 ## Blocking Queues
 
 A blocking queue extends a queue by adding two sets of methods:

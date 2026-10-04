@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50203
 source: https://www.java2s.com/Tutorials/Java/Java_io/0120__Java_io_PushbackInputStream.html
 ---
-```java title=Example.java
-```
-
 A PushbackInputStream adds functionality to an input stream allowing us to push back the read bytes using its unread() method.
 
 There are three versions of the unread() method. One lets us push back one byte and other two let us push back multiple bytes.

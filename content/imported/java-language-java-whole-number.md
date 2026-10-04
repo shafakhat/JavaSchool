@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50422
 source: https://www.java2s.com/Tutorials/Java/Java_Language/2020__Java_whole_number.html
 ---
-```java title=Example.java
-```
-
 ## Java byte type
 
 The smallest integer type is byte. byte type variables are useful when working with a stream of data from a network or file.

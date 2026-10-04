@@ -18,9 +18,7 @@ char ch2 = ch; // unbox a char
     System.out.println("ch2 is " + ch2);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 b is true
 ch2 is x
 ```

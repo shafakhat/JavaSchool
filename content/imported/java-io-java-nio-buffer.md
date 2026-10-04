@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50222
 source: https://www.java2s.com/Tutorials/Java/Java_io/0900__Java_nio_Buffer.html
 ---
-```java title=Example.java
-```
-
 ## What Is NIO?
 
 In NIO, we deal with channels and buffers for I/O operations.

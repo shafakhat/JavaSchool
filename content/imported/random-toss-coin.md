@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20160730060640/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Random/Toss_Coin.htm
 ---
-```java title=Example.java
-Back to Random  ↑
-```
-
 ## Question
 
 We would like to know how to toss Coin.
@@ -48,7 +44,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-```java title=Example.java
-Back to Random  ↑
-```

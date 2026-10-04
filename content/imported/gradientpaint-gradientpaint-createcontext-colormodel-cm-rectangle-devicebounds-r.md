@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/GradientPaint/0120__GradientPaint.createContext_ColorModel_cm_Rectangle_deviceBounds_Rectangle2D_userBounds_AffineTransform_xform_RenderingHints_hints_.htm
 ---
-```java title=Example.java
-Back to GradientPaint  ↑
-```
-
 ## Syntax
 
 GradientPaint.createContext(ColorModel cm, Rectangle deviceBounds, Rectangle2D userBounds, AffineTransform xform, RenderingHints hints) has the following syntax.
@@ -53,5 +49,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to GradientPaint ↑

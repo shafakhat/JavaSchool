@@ -30,6 +30,8 @@ JUNK_PATTERNS = [
     re.compile(r"Source\s*and\s*Support", re.I),
     re.compile(r"^\s*www\.java2s\.com\s*$", re.I),
     re.compile(r"^\s*Copyright\s*©\s*$", re.I),
+    # dead-end nav captured from the archived pages, e.g. "Back to Area  ↑"
+    re.compile(r"^\s*-?\s*Back to .{0,70}[\u2191\ufffd]\s*$"),
 ]
 
 # long nav-chain lines produced by the extractor, e.g.
@@ -95,6 +97,8 @@ def strip_junk(body: str, title: str) -> str:
     text = "\n".join(out_lines)
     # dead links pointing back into java2s (archive paths) -> keep the text only
     text = re.sub(r"\[([^\]]*)\]\((?:\.\./|/|https?://(?:www\.)?java2s\.com)[^)]*\)", r"\1", text)
+    # a code fence left empty after stripping nav lines is just noise
+    text = re.sub(r"^```[^\n]*\n\s*```\s*\n?", "", text, flags=re.M)
     text = re.sub(r"\n{3,}", "\n\n", text).strip()
     return text + "\n"
 
@@ -121,7 +125,7 @@ def main() -> int:
         m = re.search(r"^title:\s*(.+)$", fm, re.M)
         title = m.group(1).strip() if m else f.stem
         new_body = strip_junk(body, title)
-        if new_body != body:
+        if new_body != body.lstrip("\n"):
             f.write_text(fm + "\n" + new_body, encoding="utf-8")
             cleaned += 1
         h = body_hash(new_body)

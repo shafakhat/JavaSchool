@@ -20,8 +20,6 @@ publicclass MainClass {
     System.out.println("The phrase contains " + vowels + " vowels.");
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 The phrase contains 12 vowels.
 ```

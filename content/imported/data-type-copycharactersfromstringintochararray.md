@@ -22,9 +22,7 @@ public class MainClass
          System.out.print( character );
    }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 s1: hello theree r e h t   o l l e h
 The character array is: hello
 ```

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Graphics2D/0680__Graphics2D.setRenderingHint_RenderingHints_Key_hintKey_Object_hintValue_.htm
 ---
-```java title=Example.java
-Back to Graphics2D  ↑
-```
-
 ## Syntax
 
 Graphics2D.setRenderingHint(RenderingHints.Key hintKey, Object hintValue) has the following syntax.
@@ -47,5 +43,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Graphics2D ↑

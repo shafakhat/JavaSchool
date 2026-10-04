@@ -13,8 +13,6 @@ publicclass MainClass {
     System.out.println(String.valueOf(b));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 12
 ```

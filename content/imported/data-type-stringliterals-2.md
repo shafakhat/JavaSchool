@@ -17,9 +17,7 @@ publicclass MainClass {
     System.out.println(s2);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 1 2
 1 2 = 3
 ```

@@ -15,8 +15,6 @@ double c = Math.sqrt(a * a + b * b);
     System.out.println("Hypotenuse is " + c);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Hypotenuse is 5.0
 ```

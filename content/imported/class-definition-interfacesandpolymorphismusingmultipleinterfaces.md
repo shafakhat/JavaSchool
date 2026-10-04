@@ -29,9 +29,7 @@ public class MainClass {
     cls.thatMethod();
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 this
 that
 ```

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50388
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0030__Java_Date_Format_Symbol.html
 ---
-```java title=Example.java
-```
-
 SimpleDateFormat Date and time formats are specified by date and time pattern strings.
 
 Within format strings, unquoted letters from 'A' to 'Z' and from 'a' to 'z' are treated as format letters representing the components of a date or time string.

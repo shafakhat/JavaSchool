@@ -13,8 +13,6 @@ publicclass MainClass{
     System.out.println(f1);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 9.0E-28
 ```

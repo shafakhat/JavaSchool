@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50414
 source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Method/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java Method.getAnnotation(Class annotationClass)

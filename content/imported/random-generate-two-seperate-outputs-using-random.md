@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20160730060630/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Random/Generate_two_seperate_outputs_using_Random.htm
 ---
-```java title=Example.java
-Back to Random  ↑
-```
-
 ## Question
 
 We would like to know how to generate two seperate outputs using Random.
@@ -43,7 +39,3 @@ while (i <= 100) {
 ```
 
 The code above generates the following result.
-
-```java title=Example.java
-Back to Random  ↑
-```

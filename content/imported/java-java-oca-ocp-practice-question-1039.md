@@ -3,8 +3,8 @@ title: Java OCA OCP Practice Question 1039
 nav: Java OCA OCP Practice Ques...
 description: Given the following two declarations, which of the options will compile?
 section: Imported - java2s Archive
-order: 1020
-source: https://web.archive.org/web/20210101014706/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1039.html
+order: 1005
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1039.html
 ---
 ## Question
 
@@ -12,10 +12,10 @@ Consider the following classes:
 
 ```java title=Example.java
 class A  {
-      publicint getCode (){ return 2;}
+      public int getCode (){ return 2;}
 }
 class MySubClass extends A  {
-  publicvoid doStuff ()  {
+  public void doStuff ()  {
    }
 }
 ```
@@ -36,9 +36,7 @@ C. aa = new A ();
 D. aa =  (MySubClass) a;
 E. aa = a;
 F.  ((MySubClass)a).doStuff ();
-```
-
-```java title=Example.java
+java title=Example.java
 Correct Options are  : A B D F
 ```
 

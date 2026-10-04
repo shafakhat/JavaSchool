@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50442
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5040__Java_Access_Control.html
 ---
-```java title=Example.java
-```
-
 We can control the access level for class member variables and methods through access specifiers.
 
 Java's access specifiers are public, private, protected and a default access level.

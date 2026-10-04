@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50284
 source: https://www.java2s.com/Tutorials/Java/java.io/StringReader/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java StringReader(String s) Constructor

@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50084
 source: https://www.java2s.com/Tutorials/Java/Scala/0150__Scala_Literal_Values.html
 ---
-```java title=Example.java
-```
-
 ## Integer Literals
 
 Integer literals can be expressed in decimal, hexadecimal, or octal.

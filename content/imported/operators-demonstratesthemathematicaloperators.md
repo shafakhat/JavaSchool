@@ -61,9 +61,7 @@ public class MainClass {
     printFloat("u /= v", u);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 j = 31
 k = 84
 j + k = 115

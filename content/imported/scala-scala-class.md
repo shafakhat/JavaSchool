@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50099
 source: https://www.java2s.com/Tutorials/Java/Scala/3000__Scala_Class.html
 ---
-```java title=Example.java
-```
-
 A class is a blueprint for creating objects that are the concrete instances of a class.
 
 A class definition consists of field declarations and method definitions.

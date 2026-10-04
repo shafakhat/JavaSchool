@@ -3,12 +3,9 @@ title: Java Collection Tutorial - Java Lists
 nav: Java Collection Tutorial -...
 description: A list is an ordered collection of objects, defined in List interface. List interface represents a list in the Collections Framework.
 section: Imported - java2s Archive
-order: 50334
-source: https://www.java2s.com/Tutorials/Java/Java_Collection/0130__Java_List.html
+order: 1020
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Collection/0130__Java_List.html
 ---
-```java title=Example.java
-```
-
 A list is an ordered collection of objects, defined in List interface. List interface represents a list in the Collections Framework.
 
 A list can have duplicate elements. and we can store multiple null values in a list.
@@ -60,8 +57,8 @@ The LinkedList performs better than ArrayList for adding and removing elements f
 ```java title=Example.java
 import java.util.ArrayList;
 import java.util.List;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     List<String> list = new ArrayList<>();
     list.add("Java");
     list.add("Oracle");
@@ -71,7 +68,7 @@ publicclass Main {
     int count = list.size();
     System.out.println("Size of  List: " + count);
     // Print each element with its index
-for (int i = 0; i < count; i++) {
+ for (int i = 0; i < count; i++) {
       String element = list.get(i);
       System.out.println("Index=" + i + ", Element=" + element);
     }
@@ -114,8 +111,8 @@ The following code shows how to use the ListIterator.
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     List<String> list = new ArrayList<>();
     list.add("Oracle");
     list.add("SQL");
@@ -130,7 +127,7 @@ publicclass Main {
       System.out.println("Index=" + index + ", Element=" + element);
     }
     // Reuse the iterator to iterate from the end to the beginning
-while (iterator.hasPrevious()) {
+ while (iterator.hasPrevious()) {
       int index = iterator.previousIndex();
       String element = iterator.previous();
       System.out.println("Index=" + index + ",  Element=" + element);

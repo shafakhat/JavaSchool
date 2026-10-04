@@ -3,16 +3,16 @@ title: Java OCA OCP Practice Question 1077
 nav: Java OCA OCP Practice Ques...
 description: On the first iteration of the loop, the if statement executes and prints inflate-.
 section: Imported - java2s Archive
-order: 1057
-source: https://web.archive.org/web/20210101014712/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1077.html
+order: 1012
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1077.html
 ---
 ## Question
 
 What is the output of the following?
 
 ```java title=Example.java
-publicclass Main {
-   publicstaticvoid main(String[] args) {
+public class Main {
+   public static void main(String[] args) {
       boolean v = false;
       do {if (!v) {
             v = true;

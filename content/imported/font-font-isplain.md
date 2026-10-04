@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1027
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Font/1580__Font.isPlain_.htm
 ---
-```java title=Example.java
-Back to Font  ↑
-```
-
 ## Syntax
 
 Font.isPlain() has the following syntax.
@@ -39,5 +35,3 @@ publicclass Main extends JFrame {
   }
 }
 ```
-
-- Back to Font ↑

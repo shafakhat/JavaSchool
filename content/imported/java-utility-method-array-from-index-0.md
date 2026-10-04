@@ -3,8 +3,8 @@ title: Java Utililty Methods Array From
 nav: Java Utililty Methods Arra...
 description: The list of methods to do Array From are organized into topic(s).
 section: Imported - java2s Archive
-order: 50069
-source: https://www.java2s.com/example/java-utility-method/array-from-index-0.html
+order: 1018
+source: https://web.archive.org/web/2016/https://www.java2s.com/example/java-utility-method/array-from-index-0.html
 ---
 List of utility methods to do Array From
 
@@ -17,7 +17,7 @@ The list of methods to do Array From are organized into topic(s).
 byte[]arrayFromArrayWithLength(final byte[] array, final int length) array From Array With Length
 
 ```java title=Example.java
-finalbyte[] output = newbyte[length];
+final byte[] output = new byte[length];
 for (int j = 0; j < length; j++) {
     output[j] = array[(j % array.length)];
 return output;
@@ -26,7 +26,7 @@ return output;
 double[]arrayFromIndex(double[][] values, int index) array From Index
 
 ```java title=Example.java
-double[] array = newdouble[values.length];
+double[] array = new double[values.length];
 for (int i = 0; i < values.length; i++) {
     array[i] = values[i][index];
 return array;
@@ -52,11 +52,11 @@ String[]arrayFromString(String s) array From String
 
 ```java title=Example.java
 if (s == null)
-    returnnewString[] {};
+    return new String[] {};
 if (!s.startsWith("[") || !s.endsWith("]"))
-    thrownewIllegalArgumentException();
+    throw new IllegalArgumentException();
 if (s.length() == 2)
-    returnnewString[] {};
+    return new String[] {};
 return s.substring(1, s.length() - 1).split(" *, *");
 ```
 
@@ -72,7 +72,7 @@ if ((str != null) && (str.length() > 0)) {
 Boolean[]toArray(boolean[] array) to Array
 
 ```java title=Example.java
-Boolean[] newArray = newBoolean[array.length];
+Boolean[] newArray = new Boolean[array.length];
 for (int i = 0; i < array.length; i++) {
     newArray[i] = Boolean.valueOf(array[i]);
 return newArray;
@@ -94,7 +94,7 @@ boolean
 
 ```java title=Example.java
 int len = input.length();
-boolean[] bools = newboolean[len];
+boolean[] bools = new boolean[len];
 for (int i = 0; i < len; i++) {
     bools[i] = (input.charAt(i) == '1');
 return bools;
@@ -103,7 +103,7 @@ return bools;
 Class[]toArray(Class interfaceClass) to Array
 
 ```java title=Example.java
-returnnewClass[] { interfaceClass };
+return new Class[] { interfaceClass };
 ```
 
 double[]toArray(Double[] array) to Array
@@ -111,9 +111,9 @@ double[]toArray(Double[] array) to Array
 ```java title=Example.java
 if (array == null) {
     return null;
-double[] data = newdouble[array.length];
+double[] data = new double[array.length];
 for (int i = 0; i < array.length; i++) {
-    doubleval = (array[i] == null) ? 0 : array[i].intValue();
+    double val = (array[i] == null) ? 0 : array[i].intValue();
     data[i] = val;
 return data;
 ```

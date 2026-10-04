@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50354
 source: https://www.java2s.com/Tutorials/Java/java.util/EnumSet/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java EnumSet.allOf(Class elementType)

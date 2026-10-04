@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1029
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/FlowLayout/0220__FlowLayout.getAlignment_.htm
 ---
-```java title=Example.java
-Back to FlowLayout  ↑
-```
-
 ## Syntax
 
 FlowLayout.getAlignment() has the following syntax.
@@ -46,5 +42,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to FlowLayout ↑

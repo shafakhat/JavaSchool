@@ -3,8 +3,8 @@ title: Java OCA OCP Practice Question 1038
 nav: Java OCA OCP Practice Ques...
 description: Which of the following statements can be inserted in the blank so that the code will compile successfully?
 section: Imported - java2s Archive
-order: 1019
-source: https://web.archive.org/web/20210101014706/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1038.html
+order: 1004
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1038.html
 ---
 ## Question
 
@@ -13,13 +13,13 @@ Which of the following statements can be inserted in the blank so that the code 
 Choose all that apply
 
 ```java title=Example.java
-publicclass Animal {}
-publicclass Pet extends Animal {}
-publicclass Fish {}
-publicclass Main {
+public class Animal {}
+public class Pet extends Animal {}
+public class Fish {}
+public class Main {
   private Animal snake;
-  publicvoid setAnimal(Animal snake) { this.snake = snake; }
-  publicstaticvoid main(String[] args) {
+  public void setAnimal(Animal snake) { this.snake = snake; }
+  public static void main(String[] args) {
     new Main().setAnimal(  ___   );
   }
 }

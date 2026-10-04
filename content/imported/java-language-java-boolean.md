@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50421
 source: https://www.java2s.com/Tutorials/Java/Java_Language/2010__Java_boolean.html
 ---
-```java title=Example.java
-```
-
 Java has a boolean type for logical values. This is the type returned by all relational operators.
 
 ## Value

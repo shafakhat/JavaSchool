@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50141
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0050__Java_method_Return.html
 ---
-```java title=Example.java
-```
-
 Modifiers, return types, and parameter names are not part of the signature.
 
 The signature of a method uniquely identifies the method within a class. It is not allowed to have more than one method in a class with the same signature.

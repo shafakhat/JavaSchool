@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50373
 source: https://www.java2s.com/Tutorials/Java/java.util/Stack/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java Stack() Constructor

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1016
 source: https://web.archive.org/web/20160809084145/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/String/Implement_Soundex_Algorithm_as_described_by_Knuth.htm
 ---
-```java title=Example.java
-Back to String  ↑
-```
-
 ## Question
 
 We would like to know how to implement Soundex Algorithm, as described by Knuth.
@@ -148,7 +144,3 @@ if (i==0)
 ```
 
 The code above generates the following result.
-
-```java title=Example.java
-Back to String  ↑
-```

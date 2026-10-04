@@ -22,9 +22,7 @@ if(b) System.out.println("This is executed.");
     System.out.println("10 > 9 is " + (10 > 9));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 b is false
 b is true
 This is executed.

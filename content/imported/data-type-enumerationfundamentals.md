@@ -40,8 +40,6 @@ public class MainClass {
     System.out.println();
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Value of aWeekDay: Monday
 ```

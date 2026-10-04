@@ -21,9 +21,7 @@ The syntax for a constructor is as follows.
 constructorName (listOfArguments) {
     [constructor body]
 }
-```
-
-```java title=Example.java
+java title=Example.java
 public class MainClass {
   double radius;
   // Class constructor

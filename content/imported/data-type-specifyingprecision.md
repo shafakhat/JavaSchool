@@ -24,8 +24,6 @@ publicclass MainClass {
     System.out.println(fmt);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 1234567890.1235
 ```

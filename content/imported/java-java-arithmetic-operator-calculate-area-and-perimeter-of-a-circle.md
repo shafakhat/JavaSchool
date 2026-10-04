@@ -15,9 +15,7 @@ The following formula you can use:
 ```java title=Example.java
 perimeter   =  2  times  radius  times  pi
 area  =  radius  times  radius  times  pi
-```
-
-```java title=Example.java
+java title=Example.java
 publicclass Main {
   publicstaticvoid main(String[] args) {
     System.out.println("Perimeter = ");

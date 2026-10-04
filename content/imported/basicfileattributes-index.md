@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50287
 source: https://www.java2s.com/Tutorials/Java/java.nio.file.attribute/BasicFileAttributes/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - « Previous

@@ -3,12 +3,12 @@ title: Convert Long to numeric primitive data types example
 nav: Convert Long to numeric pr...
 description: Imported from the java2s.com archive: Convert Long to numeric primitive data types example
 section: Imported - java2s Archive
-order: 1011
+order: 1007
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ConvertLongtonumericprimitivedatatypesexample.htm
 ---
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Long lObj = new Long("10");
     byte b = lObj.byteValue();
     System.out.println(b);

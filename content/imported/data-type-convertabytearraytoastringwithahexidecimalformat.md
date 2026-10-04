@@ -3,7 +3,7 @@ title: Convert a byte array to a String with a hexidecimal format.
 nav: Convert a byte array to a ...
 description: Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1015
+order: 1018
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ConvertabytearraytoaStringwithahexidecimalformat.htm
 ---
 ```java title=Example.java
@@ -26,8 +26,8 @@ import java.util.Properties;
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
- */publicclass Main {
-  privatestaticchar[] hex_table = {
+ */public class Main {
+  private static char[] hex_table = {
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
     'a', 'b', 'c', 'd', 'e', 'f'
 };
@@ -43,7 +43,7 @@ import java.util.Properties;
   @param  offset  starting byte (zero based) to convert.
   @param  length  number of bytes to convert.
   @return the String (with hexidecimal format) form of the byte array
-*/publicstatic String toHexString(byte[] data, int offset, int length)
+*/public static String toHexString(byte[] data, int offset, int length)
 {
   StringBuffer s = new StringBuffer(length*2);
   int end = offset+length;

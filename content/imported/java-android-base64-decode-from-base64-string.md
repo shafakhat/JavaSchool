@@ -1,10 +1,10 @@
 ---
 title: Android Base64 decode from base64 String
 nav: Android Base64 decode from...
-description: }//fromwww.java2s.compublicstaticString decodeFromBase64(String base64Str) {
+description: }//from w ww . j ava2s.c om public static String decodeFromBase64(String base64Str) {
 section: Imported - java2s Archive
-order: 1001
-source: https://web.archive.org/web/20210102122034/http://www.java2s.com/ref/java/android-base64-decode-from-base64-string.html
+order: 1013
+source: https://web.archive.org/web/2016/http://www.java2s.com/ref/java/android-base64-decode-from-base64-string.html
 ---
 - android.util
 - android.util Base64
@@ -13,12 +13,12 @@ source: https://web.archive.org/web/20210102122034/http://www.java2s.com/ref/jav
 
 ```java title=Example.java
 import android.util.Base64;
-publicclass Main {
-    publicstaticvoid main(String[] argv) throwsException {
+public class Main {
+    public static void main(String[] argv) throws Exception {
         String base64Str = "";
         System.out.println(decodeFromBase64(base64Str));
-    }publicstaticString decodeFromBase64(String base64Str) {
-        returnnewString(Base64.decode(base64Str, Base64.DEFAULT));
+    }public static String decodeFromBase64(String base64Str) {
+        return new String(Base64.decode(base64Str, Base64.DEFAULT));
     }
 }
 ```

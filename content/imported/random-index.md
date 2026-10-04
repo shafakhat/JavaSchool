@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20160728172252/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Random/index.htm
 ---
-```java title=Example.java
-```
-
 - Java Create random name generator
 - Java Divide a number into smaller random ints
 - Java Draw random color
@@ -31,6 +28,3 @@ source: https://web.archive.org/web/20160728172252/http://www.java2s.com:80/Tuto
 - Java Make a rock paper scissor game
 - Java Random Roll Dice
 - Java Toss Coin
-
-```java title=Example.java
-```

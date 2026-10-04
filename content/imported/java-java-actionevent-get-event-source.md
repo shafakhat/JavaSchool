@@ -32,9 +32,7 @@ publicclass Main extendsJFrame {
     frame.setVisible(true);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;

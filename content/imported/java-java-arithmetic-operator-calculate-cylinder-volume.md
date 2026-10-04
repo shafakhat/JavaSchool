@@ -15,9 +15,7 @@ Compute the area and volume using the following formulas:
 ```java title=Example.java
 area = radius * radius * p
 volume = area * length
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Scanner;
 publicclass Main {
   publicstaticvoid main(String[] args) {
@@ -34,9 +32,7 @@ publicclass Main {
     return area * length;
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Scanner;
 publicclass Main {
   publicstaticvoid main(String[] args) {

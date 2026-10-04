@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50310
 source: https://www.java2s.com/Tutorials/Java/java.nio/DoubleBuffer/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java DoubleBuffer.allocate(int capacity)

@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt.geom/Area/0420__Area.isPolygonal_.htm
 ---
-```java title=Example.java
-Back to Area  ↑
-```
-
 ## Syntax
 
 Area.isPolygonal() has the following syntax.
@@ -54,5 +50,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to Area ↑

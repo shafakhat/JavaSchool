@@ -3,8 +3,8 @@ title: OCA Java SE 8 Building Blocks - Java Class Structure
 nav: OCA Java SE 8 Building Blo...
 description: Variables hold the state of the program, and methods operate on that state.
 section: Imported - java2s Archive
-order: 50000
-source: https://www.java2s.com/Tutorials/Java/OCA_Java_SE_8_Building_Blocks/index.html
+order: 1011
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/OCA_Java_SE_8_Building_Blocks/index.html
 ---
 In Java programs, classes are the basic building blocks.
 
@@ -25,7 +25,7 @@ Variables hold the state of the program, and methods operate on that state.
 The simplest Java class you can write looks like this:
 
 ```java title=Example.java
-publicclass Animal {
+public class Animal {
 }
 ```
 
@@ -40,7 +40,7 @@ Animal gives the name of the class.
 The following code adds field to the class:
 
 ```java title=Example.java
-publicclass Animal {
+public class Animal {
     String name;
 }
 ```
@@ -56,7 +56,7 @@ String is a class from Java language.
 The following code adds methods to the class:
 
 ```java title=Example.java
-publicclass Animal {
+public class Animal {
      String name;
      public String getName() {
            return name;
@@ -155,7 +155,7 @@ When putting two classes in one file, at most one of the classes in the file can
 That means a file containing the following is also fine:
 
 ```java title=Example.java
-publicclass Animal {
+public class Animal {
    private String name;
 }
 class Animal2 {
@@ -173,8 +173,8 @@ A Java program begins execution with its main() method.
 The following code defines a class with a main() method:
 
 ```java title=Example.java
-publicclass Main {
-  publicstatic void main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
   }
 }
 ```
@@ -201,8 +201,8 @@ The following code shows how to use the args parameter.
 First we modify the Main program to print out the first two arguments passed in:
 
 ```java title=Example.java
-publicclass Main {
-  publicstatic void main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
      System.out.println(args[0]);
      System.out.println(args[1]);
   }

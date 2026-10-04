@@ -3,18 +3,14 @@ title: Selection sort implementation in Java
 nav: Selection sort implementat...
 description: SelectionSort arr = new SelectionSort(maxSize); // create the array
 section: Imported - java2s Archive
-order: 1007
-source: https://web.archive.org/web/20130904183101/http://java2s.com/Tutorials/Java/Algorithms/Selection_sort_implementation_in_Java.htm
+order: 1001
+source: https://web.archive.org/web/2016/http://java2s.com/Tutorials/Java/Algorithms/Selection_sort_implementation_in_Java.htm
 ---
-In this chapter you will learn:
-
-- Selection sort implementation
-
 ### Selection sort implementation
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     int maxSize = 100;
     SelectionSort arr = new SelectionSort(maxSize); // create the array
     arr.insert(2);
@@ -33,34 +29,34 @@ publicclass Main {
   }
 }
 class SelectionSort {
-  privatelong[] a;
-  privateint nElems;
+  private long[] a;
+  private int nElems;
   public SelectionSort(int max) {
-    a = newlong[max];
+    a = new long[max];
     nElems = 0;
   }
-  publicvoid insert(long value) {
+  public void insert(long value) {
     a[nElems] = value;
     nElems++;
   }
-  publicvoid display() {
+  public void display() {
     for (int j = 0; j < nElems; j++)
       System.out.print(a[j] + " ");
     System.out.println("");
   }
-  publicvoid selectionSort() {
+  public void selectionSort() {
     int out, in, min;
     for (out = 0; out < nElems - 1; out++) // outer loop
     {
       min = out; // minimum
-for (in = out + 1; in < nElems; in++)
+ for (in = out + 1; in < nElems; in++)
         // inner loop
-if (a[in] < a[min]) // if min greater,
+ if (a[in] < a[min]) // if min greater,
           min = in; // a new min
       swap(out, min); // swap them
     }
   }
-  privatevoid swap(int one, int two) {
+  private void swap(int one, int two) {
     long temp = a[one];
     a[one] = a[two];
     a[two] = temp;

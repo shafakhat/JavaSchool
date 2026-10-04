@@ -3,12 +3,9 @@ title: Java Reflection - Java Field Reflection
 nav: Java Reflection - Java Fie...
 description: We can use java.lang.reflect.Field class to get information about a field in a class.
 section: Imported - java2s Archive
-order: 50404
-source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0040__Java_Field_Reflection.html
+order: 1008
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Reflection/0040__Java_Field_Reflection.html
 ---
-```java title=Example.java
-```
-
 We can use java.lang.reflect.Field class to get information about a field in a class.
 
 The following four methods in the Class class can return Field object about the fields.
@@ -33,15 +30,15 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 class MySuperClass {
-  publicint super_id = -1;
+  public int super_id = -1;
   public String super_name = "Unknown";
 }
 class MyClass extends MySuperClass{
-  publicint id = -1;
+  public int id = -1;
   public String name = "Unknown";
 }
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Class<MyClass> c = MyClass.class;
     // Print declared fields
     ArrayList<String> fieldsDesciption = getDeclaredFieldsList(c);
@@ -55,17 +52,17 @@ publicclass Main {
       System.out.println(desc);
     }
   }
-  publicstatic ArrayList<String> getFieldsList(Class c) {
+  public static ArrayList<String> getFieldsList(Class c) {
     Field[] fields = c.getFields();
     ArrayList<String> fieldsList = getFieldsDesciption(fields);
     return fieldsList;
   }
-  publicstatic ArrayList<String> getDeclaredFieldsList(Class c) {
+  public static ArrayList<String> getDeclaredFieldsList(Class c) {
     Field[] fields = c.getDeclaredFields();
     ArrayList<String> fieldsList = getFieldsDesciption(fields);
     return fieldsList;
   }
-  publicstatic ArrayList<String> getFieldsDesciption(Field[] fields) {
+  public static ArrayList<String> getFieldsDesciption(Field[] fields) {
     ArrayList<String> fieldList = new ArrayList<>();
     for (Field f : fields) {
       int mod = f.getModifiers() & Modifier.fieldModifiers();

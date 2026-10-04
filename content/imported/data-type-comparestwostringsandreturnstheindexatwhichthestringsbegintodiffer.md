@@ -3,8 +3,8 @@ title: Compares two Strings, and returns the index at which the Strings begin to
 nav: Compares two Strings, and ...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1032
-source: https://web.archive.org/web/20100831125901/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/ComparestwoStringsandreturnstheindexatwhichtheStringsbegintodiffer.htm
+order: 1009
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ComparestwoStringsandreturnstheindexatwhichtheStringsbegintodiffer.htm
 ---
 ```java title=Example.java
 /*
@@ -22,8 +22,7 @@ source: https://web.archive.org/web/20100831125901/http://www.java2s.com:80/Tuto
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-public class Main {
+ */public class Main {
   /**
    * Compares two Strings, and returns the index at which the
    * Strings begin to differ.
@@ -46,8 +45,7 @@ public class Main {
    * @param str2  the second String, may be null
    * @return the index where str2 and str1 begin to differ; -1 if they are equal
    * @since 2.0
-   */
-  public static int indexOfDifference(String str1, String str2) {
+   */ public static int indexOfDifference(String str1, String str2) {
       if (str1 == str2) {
           return -1;
       }

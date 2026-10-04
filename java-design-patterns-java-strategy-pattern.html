@@ -29,39 +29,38 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
 <div class="side-section">
 <a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
-<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
 <a class="side-link side-home top" href="certification.html">Certifications</a>
 <a class="side-link side-home top" href="interview.html">Interview Questions</a>
-<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
 </div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-design-patterns.html">Java Design Patterns</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java-design-patterns.html">Java Design Patterns</a></nav>
     <h1>Java Design Patterns Tutorial - Java Design Pattern - Strategy Pattern</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>In Strategy pattern, an algorithm can be changed at run time.</p>
 <p>Strategy pattern is a behavior pattern.</p>
 <p>In Strategy pattern, we create objects to represent various algorithms and a context object to run the algorithm.</p>
 <p>The strategy object changes the algorithm on the context object.</p>
 <h2 id="example">Example</h2>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface MathAlgorithm {
-   publicint calculate(int num1, int num2);
+   public int calculate(int num1, int num2);
 }class MathAdd implements MathAlgorithm{
    @Override
-   publicint calculate(int num1, int num2) {
+   public int calculate(int num1, int num2) {
       return num1 + num2;
    }
 }
 class MathSubstract implements MathAlgorithm{
    @Override
-   publicint calculate(int num1, int num2) {
+   public int calculate(int num1, int num2) {
       return num1 - num2;
    }
 }
 class MathMultiply implements MathAlgorithm{
    @Override
-   publicint calculate(int num1, int num2) {
+   public int calculate(int num1, int num2) {
       return num1 * num2;
    }
 }
@@ -70,12 +69,12 @@ class MathContext {
    public MathContext(MathAlgorithm strategy){
       this.algorithm = strategy;
    }
-   publicint execute(int num1, int num2){
+   public int execute(int num1, int num2){
       return algorithm.calculate(num1, num2);
    }
 }
-publicclass Main {
-   publicstaticvoid main(String[] args) {
+public class Main {
+   public static void main(String[] args) {
       MathContext context = new MathContext(new MathAdd());
       System.out.println("10 + 5 = " + context.execute(10, 5));
       context = new MathContext(new MathSubstract());
@@ -86,7 +85,7 @@ publicclass Main {
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <ul><li>« Previous</li></ul>
-    <div class="pager"><a class="pager-btn" href="java-design-patterns-java-null-object-pattern.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Design Patterns Tutor...</span></a><a class="pager-btn pager-next" href="java-design-patterns-java-template-pattern.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Design Patterns Tutor...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="random-generate-a-random-number-from-an-array.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms How to - G...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-object-tostring.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -3,12 +3,9 @@ title: Java IO Tutorial - Java Character Set
 nav: Java IO Tutorial - Java Ch...
 description: We can convert a Unicode character to a sequence of bytes and vice versa using an encoding scheme.
 section: Imported - java2s Archive
-order: 50224
-source: https://www.java2s.com/Tutorials/Java/Java_io/0920__Java_nio_Character_Set.html
+order: 1019
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_io/0920__Java_nio_Character_Set.html
 ---
-```java title=Example.java
-```
-
 We can convert a Unicode character to a sequence of bytes and vice versa using an encoding scheme.
 
 The java.nio.charset package provides classes to encode/decode a CharBuffer to a ByteBuffer and vice versa.
@@ -46,8 +43,8 @@ The following code demonstrates how to list all character sets supported by a JV
 import java.util.Map;
 import java.nio.charset.Charset;
 import java.util.Set;
-publicclass Main {
-  publicstatic void main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     Map<String, Charset> map = Charset.availableCharsets();
     Set<String> keys = map.keySet();
     System.out.println("Available  Character Set  Count:   " + keys.size());
@@ -64,8 +61,8 @@ A byte order is useful only in a multi-byte value stored in a byte buffer. To kn
 
 ```java title=Example.java
 import java.nio.ByteOrder;
-publicclass Main {
-  publicstatic void main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     ByteOrder b = ByteOrder.nativeOrder();
     if (b.equals(ByteOrder.BIG_ENDIAN)) {
       System.out.println("Big endian");
@@ -83,8 +80,8 @@ We use the order() method from the ByteBuffer to get or set the byte order.
 ```java title=Example.java
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-publicclass Main {
-  publicstaticvoid main(String[] args) {
+public class Main {
+  public static void main(String[] args) {
     ByteBuffer bb = ByteBuffer.allocate(2);
     System.out.println("Default  Byte  Order: " + bb.order());
     bb.putShort((short) 300);
@@ -96,7 +93,7 @@ publicclass Main {
     bb.flip();
     showByteOrder(bb);
   }
-  publicstaticvoid showByteOrder(ByteBuffer bb) {
+  public static void showByteOrder(ByteBuffer bb) {
     System.out.println("Byte  Order: " + bb.order());
     while (bb.hasRemaining()) {
       System.out.print(bb.get() + "    ");

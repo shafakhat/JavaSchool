@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50358
 source: https://www.java2s.com/Tutorials/Java/java.util/IdentityHashMap/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java IdentityHashMap() Constructor

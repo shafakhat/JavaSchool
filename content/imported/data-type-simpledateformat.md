@@ -56,9 +56,7 @@ public class MainClass {
     System.out.println(format.format(new Date()));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Sun Dec 31 00:00:00 PST 2006
 01/26/2007
 ```

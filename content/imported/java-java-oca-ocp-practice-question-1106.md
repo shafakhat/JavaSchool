@@ -27,18 +27,14 @@ What does the output of the following contain? (Choose all that apply)
 25:     thrownewRuntimeException("3");
 26:   }
 27: }
-```
-
-```java title=Example.java
+java title=Example.java
 A.   abce
 B.   abde
 C.   An exception with the message set to  "1"
 D.   An exception with the message set to  "2"
 E.   An exception with the message set to  "3"
 F.   Nothing; the code does not compile.
-```
-
-```java title=Example.java
+java title=Example.java
 A, E.
 ```
 

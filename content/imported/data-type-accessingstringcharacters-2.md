@@ -13,8 +13,6 @@ publicclass MainClass{
     System.out.println(str.charAt(2));
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 c
 ```

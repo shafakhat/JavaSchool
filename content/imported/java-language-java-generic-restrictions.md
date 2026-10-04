@@ -3,12 +3,9 @@ title: Java Tutorial - What are restrictions for Java generic types
 nav: Java Tutorial - What are r...
 description: It is not possible to create an instance of a type parameter. For example, consider this class:
 section: Imported - java2s Archive
-order: 50462
-source: https://www.java2s.com/Tutorials/Java/Java_Language/8050__Java_generic_restrictions.html
+order: 1005
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/Java_Language/8050__Java_generic_restrictions.html
 ---
-```java title=Example.java
-```
-
 ## Type Parameters Can't Be Instantiated
 
 It is not possible to create an instance of a type parameter. For example, consider this class:
@@ -30,13 +27,13 @@ No static member can use a type parameter declared by the enclosing class. For e
 ```java title=Example.java
 class Wrong<T> {
   // Wrong, no static variables of type T.
-static T ob;
-// Wrong, no static method can use T.
-static T getob() {
+ static T ob;
+ // Wrong, no static method can use T.
+ static T getob() {
     return ob;
   }
   // Wrong, no static method can access object of type T.
-staticvoid showob() {
+ static void showob() {
     System.out.println(ob);
   }
 }
@@ -59,12 +56,12 @@ class MyClass<T extends Number> {
     vals = nums;
   }
 }
-publicclass Main {
-  publicstaticvoid main(String args[]) {
+public class Main {
+  public static void main(String args[]) {
     Integer n[] = { 1 };
     MyClass<Integer> iOb = new MyClass<Integer>(50, n);
     // Can't create an array of type-specific generic references.
-// Gen<Integer> gens[] = new Gen<Integer>[10];
+ // Gen<Integer> gens[] = new Gen<Integer>[10];
     MyClass<?> gens[] = new MyClass<?>[10]; // OK
   }
 }

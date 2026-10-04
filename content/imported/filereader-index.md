@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50258
 source: https://www.java2s.com/Tutorials/Java/java.io/FileReader/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java FileReader(File file) Constructor

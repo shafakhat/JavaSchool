@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50378
 source: https://www.java2s.com/Tutorials/Java/java.util.concurrent/ArrayBlockingQueue/index.html
 ---
-```java title=Example.java
-```
-
 ## Constructor
 
 - Java ArrayBlockingQueue(int capacity) Constructor

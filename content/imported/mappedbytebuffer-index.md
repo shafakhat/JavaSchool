@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50314
 source: https://www.java2s.com/Tutorials/Java/java.nio/MappedByteBuffer/index.html
 ---
-```java title=Example.java
-```
-
 ## Method
 
 - Java MappedByteBuffer.force()

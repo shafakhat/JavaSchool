@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50232
 source: https://www.java2s.com/Tutorials/Java/Java_io/0990__Java_nio_Files.html
 ---
-```java title=Example.java
-```
-
 java.nio.file.Files consists of all static methods that let we perform most of the file operations on a Path object.
 
 ## Creating New Files

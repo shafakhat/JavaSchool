@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BasicStroke/0240__BasicStroke.BasicStroke_float_width_int_cap_int_join_float_miterlimit_float_dash_float_dash_phase_.htm
 ---
-```java title=Example.java
-Back to BasicStroke  ↑
-```
-
 ## Example
 
 In the following code shows how to use BasicStroke.BasicStroke(float width, int cap, int join, float miterlimit, float[] dash, float dash_phase) constructor.
@@ -41,5 +37,3 @@ publicclass Main extends JPanel {
   }
 }
 ```
-
-- Back to BasicStroke ↑

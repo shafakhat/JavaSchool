@@ -6,9 +6,6 @@ section: Imported - java2s Archive
 order: 50174
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0390__Java_Exception_Class.html
 ---
-```java title=Example.java
-```
-
 ## Exception Class Hierarchy
 
 The exception class hierarchy starts at the java.lang.Throwable class.

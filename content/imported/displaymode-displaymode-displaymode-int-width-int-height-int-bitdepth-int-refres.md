@@ -6,10 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/DisplayMode/0080__DisplayMode.DisplayMode_int_width_int_height_int_bitDepth_int_refreshRate_.htm
 ---
-```java title=Example.java
-Back to DisplayMode  ↑
-```
-
 ## Syntax
 
 DisplayMode(int width, int height, int bitDepth, int refreshRate) constructor from DisplayMode has the following syntax.
@@ -47,5 +43,3 @@ publicclass Main {
   }
 }
 ```
-
-- Back to DisplayMode ↑

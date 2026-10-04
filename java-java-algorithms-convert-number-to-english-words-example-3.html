@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Java Algorithms Convert number to English words example 3 - JavaSchool</title>
-<meta name="description" content="Java Algorithms Convert number to English words example 3: Java tutorial page with examples and explanations.">
+<meta name="description" content="String string;//from w w w .j ava 2 s .c om String st1[] = { &quot;&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;, &quot;seven&quot;, &quot;eight&quot;, &quot;nine&quot;, };">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -37,17 +37,17 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-java.html">java</a></nav>
     <h1>Java Algorithms Convert number to English words example 3</h1>
 <h2 id="description">Description</h2>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Scanner;
-publicclass Main {
+public class Main {
    String string;String st1[] = { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", };
    String st2[] = { "hundred", "thousand", "lakh", "crore" };
    String st3[] = { "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen",
          "ninteen", };
    String st4[] = { "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety" };
-   publicString convert(int number) {
+   public String convert(int number) {
       int n = 1;
       int word;
       string = "";
@@ -107,7 +107,7 @@ publicclass Main {
       }
       return string;
    }
-   publicvoid pass(int number) {
+   public void pass(int number) {
       int word, q;
       if (number &lt; 10) {
          show(st1[number]);
@@ -128,15 +128,15 @@ publicclass Main {
          }
       }
    }
-   publicvoid show(String s) {
+   public void show(String s) {
       String st;
       st = string;
       string = s;
       string += st;
    }
-   publicstaticvoid main(String[] args) {
+   public static void main(String[] args) {
       Main w = new Main();
-      Scanner input = newScanner(System.in);
+      Scanner input = new Scanner(System.in);
       System.out.print("Enter Number: ");
       int num = input.nextInt();
       String inwords = w.convert(num);
@@ -145,7 +145,7 @@ publicclass Main {
 }</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
-    <div class="pager"><a class="pager-btn" href="java-java-aclfileattributeview-get-from-path.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java AclFileAttributeView ...</span></a><a class="pager-btn pager-next" href="parser-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Algorithms How to - J...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="java-java-actionevent-get-action-id.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java ActionEvent get actio...</span></a><a class="pager-btn pager-next" href="random-generate-random-float-number-within-1-and-1.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Algorithms How to - G...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">
