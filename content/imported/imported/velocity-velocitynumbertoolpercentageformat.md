@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1092
 source: https://web.archive.org/web/20060717063649/http://www.java2s.com:80/Code/Java/Velocity/VelocityNumberToolPercentageFormat.htm
 ---
-Velocity Number Tool Percentage Format
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

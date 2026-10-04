@@ -7,10 +7,7 @@ order: 50298
 source: https://www.java2s.com/Tutorials/Java/java.nio.file/Path/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -43,5 +40,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio.file/Path/index.html
 - Java Path.toString()
 - Java Path.toUri()
 
-- Next »
 - « Previous

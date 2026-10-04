@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1106
 source: https://web.archive.org/web/20071013012028/http://www.java2s.com:80/Code/Java/Web-Services-SOA/ASOAPmessagewithanattachmentandXMLbinaryOptimizedPackaging.htm
 ---
-A SOAP message with an attachment and XML-binary Optimized Packaging
-
 ```java title=Example.java
 MTOM Demo for SWA & XOP
 =============================================

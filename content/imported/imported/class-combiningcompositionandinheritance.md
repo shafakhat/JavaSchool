@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1145
 source: https://web.archive.org/web/20081230140536/http://www.java2s.com:80/Code/Java/Class/Combiningcompositionandinheritance.htm
 ---
-Combining composition and inheritance
-
 ```java title=Example.java
 // : c06:PlaceSetting.java
 // Combining composition & inheritance.

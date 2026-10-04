@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20060505233850/http://www.java2s.com:80/Code/Java/Threads/AnimationSwingandthread.htm
 ---
-Animation: Swing and thread : Java examples (example source code) » Threads » Swing Thread
-
 Animation: Swing and thread
 
 ```java title=Example.java

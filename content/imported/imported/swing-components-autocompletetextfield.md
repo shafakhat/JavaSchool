@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20111007134803/http://java2s.com:80/Code/Java/Swing-Components/AutoCompleteTextField.htm
 ---
-Auto Complete TextField
-
 ```java title=Example.java
 //package util.autocomplete;
 import java.awt.Color;

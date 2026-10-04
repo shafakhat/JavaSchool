@@ -7,10 +7,7 @@ order: 50426
 source: https://www.java2s.com/Tutorials/Java/Java_Language/2060__Java_Array.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 An array is a named set of variables of the same type.
 
@@ -454,5 +451,4 @@ publicclass Main{
 
 When you run this program, you will get the following output:
 
-- Next »
 - « Previous

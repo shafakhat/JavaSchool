@@ -7,10 +7,7 @@ order: 50215
 source: https://www.java2s.com/Tutorials/Java/Java_io/0730__Java_io_Scanner.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 To read numbers from the standard input, we have to read it as a string and parse it to a number.
 
@@ -60,5 +57,4 @@ import java.util.Scanner;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

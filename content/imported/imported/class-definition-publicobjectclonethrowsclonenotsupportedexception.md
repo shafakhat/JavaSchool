@@ -22,7 +22,6 @@ class CloneDemo2 implements Cloneable {
 }
 class AnotherClass implements Cloneable {
   char gradeLetter = 'C';
-  public Object clone() throws CloneNotSupportedException {
     return super.clone();
   }
 }

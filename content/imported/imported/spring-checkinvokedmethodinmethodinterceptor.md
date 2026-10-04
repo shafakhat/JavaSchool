@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1036
 source: https://web.archive.org/web/20091124110534/http://www.java2s.com:80/Code/Java/Spring/CheckInvokedMethodInMethodInterceptor.htm
 ---
-Check InvokedMethod In MethodInterceptor
-
 ```java title=Example.java
 File: Main.java
 import java.lang.reflect.Method;

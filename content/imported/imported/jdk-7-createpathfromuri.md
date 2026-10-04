@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/20130821102206/http://java2s.com/Code/Java/JDK-7/CreatePathfromURI.htm
 ---
-Create Path from URI
-
 ```java title=Example.java
 import java.net.URI;
 import java.nio.file.Files;

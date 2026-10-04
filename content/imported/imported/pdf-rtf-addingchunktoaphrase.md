@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20100213224453/http://java2s.com/Code/Java/PDF-RTF/AddingChunktoaPhrase.htm
 ---
-Adding Chunk to a Phrase
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Chunk;

@@ -7,10 +7,7 @@ order: 50318
 source: https://www.java2s.com/Tutorials/Java/java.util.zip/ZipEntry/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Field
 
@@ -39,5 +36,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util.zip/ZipEntry/index.html
 - Java ZipEntry.setTime(long time)
 - Java ZipEntry.toString()
 
-- Next »
 - « Previous

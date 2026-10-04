@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1054
 source: https://web.archive.org/web/20111114171654/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Amapofvaluesbyclass.htm
 ---
-A map of values by class.
-
 ```java title=Example.java
 /*
  * SubclassMap.java Created Jul 9, 2009 by Andrew Butler, PSL

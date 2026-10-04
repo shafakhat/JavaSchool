@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060506060108/http://www.java2s.com:80/Code
 ---
 Component Hints Example : Java examples (example source code) » Swing Components » Data Validation
 
-Component Hints Example
-
 ```java title=Example.java
 /*
 Code revised from Desktop Java Live:

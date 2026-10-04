@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1128
 source: https://web.archive.org/web/20081006161213/http://www.java2s.com:80/Code/Java/Class/Aconstructorforcopyinganobjectofthesame.htm
 ---
-A constructor for copying an object of the same
-
 ```java title=Example.java
 // : appendixa:CopyConstructor.java
-// A constructor for copying an object of the same
 // type, as an attempt to create a local copy.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.

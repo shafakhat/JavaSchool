@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1070
 source: https://web.archive.org/web/20090530095650/http://www.java2s.com:80/Code/Java/Class/Simpleuseofthethiskeyword.htm
 ---
-Simple use of the this keyword
-
 ```java title=Example.java
 // : c04:Leaf.java
-// Simple use of the "this" keyword.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 public class Leaf {

@@ -7,10 +7,7 @@ order: 50409
 source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0090__Java_Array_Reflection.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We can use isArray() method from Class class to check if a class is an array.
 
@@ -143,5 +140,4 @@ import java.util.Arrays;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

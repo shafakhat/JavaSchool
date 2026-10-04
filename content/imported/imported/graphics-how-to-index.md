@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50028
 source: https://www.java2s.com/Tutorials/Java/Graphics_How_to/index.html
 ---
-- Next »
-
 - Color 2
 - Draw 14
 - Font 2
@@ -18,5 +16,3 @@ source: https://www.java2s.com/Tutorials/Java/Graphics_How_to/index.html
 - Shape 28
 - Text 14
 - Transform 6
-
-- Next »

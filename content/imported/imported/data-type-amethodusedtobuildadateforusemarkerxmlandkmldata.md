@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1130
 source: https://web.archive.org/web/20111125123828/http://java2s.com/Code/Java/Data-Type/AmethodusedtobuildadateforuseMarkerXMLandKMLdata.htm
 ---
-A method used to build a date for use Marker XML and KML data
-
 ```java title=Example.java
 /*
  * This file is part of the AusStage Utilities Package
@@ -36,7 +34,6 @@ import java.text.DateFormat;
  */
 public class DateUtils {
 /**
-   * A method used to build a date for use Marker XML and KML data
    *
    * @param year  the year component of the date
    * @param month the month component of the date

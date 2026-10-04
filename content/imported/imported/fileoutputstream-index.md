@@ -7,10 +7,7 @@ order: 50256
 source: https://www.java2s.com/Tutorials/Java/java.io/FileOutputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -30,5 +27,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/FileOutputStream/index.htm
 - Java FileOutputStream.write(byte[] b, int off, int len)
 - Java FileOutputStream.write(int b)
 
-- Next »
 - « Previous

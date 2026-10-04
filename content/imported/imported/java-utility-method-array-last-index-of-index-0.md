@@ -97,5 +97,3 @@ for (int i = s.length - 1; i >= 0; i--) {
         return i;
 return -1;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

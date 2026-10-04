@@ -7,10 +7,7 @@ order: 50278
 source: https://www.java2s.com/Tutorials/Java/java.io/PushbackInputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -31,5 +28,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/PushbackInputStream/index.
 - Java PushbackInputStream .unread (byte[] b, int off, int len)
 - Java PushbackInputStream .unread (int b)
 
-- Next »
 - « Previous

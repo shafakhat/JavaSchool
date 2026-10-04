@@ -7,10 +7,7 @@ order: 50105
 source: https://www.java2s.com/Tutorials/Java/Scala/3050__Scala_Inheritance.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Scala supports single inheritance, not multiple inheritance.
 
@@ -87,5 +84,4 @@ object Main extends App {
 }
 ```
 
-- Next »
 - « Previous

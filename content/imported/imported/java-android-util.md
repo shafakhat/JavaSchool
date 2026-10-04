@@ -7,7 +7,6 @@ order: 1014
 source: https://web.archive.org/web/20210101015620/http://www.java2s.com/ref/java/android.util.html
 ---
 - JDK
-- Java Basic java.beans java.io java.lang java.lang.annotation java.lang.management java.lang.reflect java.math java.net java.net.http java.nio java.nio.channels java.nio.charset java.nio.file java.nio.file.attribute java.security java.security.cert java.sql java.text java.time java.time.chrono java.time.format java.time.temporal java.time.zone java.util java.util.concurrent java.util.concurrent.atomic java.util.concurrent.locks java.util.function java.util.jar java.util.prefs java.util.regex java.util.stream java.util.zip javax.crypto javax.crypto.spec javax.jms javax.json javax.json.stream javax.mail javax.mail.internet javax.naming javax.naming.directory javax.net javax.net.ssl javax.script javax.servlet javax.servlet.http javax.sql.rowset javax.xml.bind javax.xml.parsers javax.xml.stream javax.xml.transform javax.xml.validation oracle.sql org.json org.w3c.dom
 - Android
 - android.app android.content android.content.pm android.graphics android.text android.util android.widget
 - AWT

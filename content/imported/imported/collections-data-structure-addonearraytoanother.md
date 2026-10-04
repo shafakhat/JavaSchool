@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/20111118051833/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Addonearraytoanother.htm
 ---
-Add one array to another
-
 ```java title=Example.java
 /*
  * Copyright 2008-2009 the T2 Project ant the Others.

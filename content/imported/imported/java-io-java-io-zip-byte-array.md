@@ -7,10 +7,7 @@ order: 50217
 source: https://www.java2s.com/Tutorials/Java/Java_io/0800__Java_io_Zip_Byte_Array.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## checksum
 
@@ -129,5 +126,4 @@ import java.util.zip.Inflater;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

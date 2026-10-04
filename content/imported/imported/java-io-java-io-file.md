@@ -7,10 +7,7 @@ order: 50198
 source: https://www.java2s.com/Tutorials/Java/Java_io/0010__Java_io_File.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 An object of the File class is an abstract representation of a pathname of a file or a directory.
 
@@ -149,5 +146,4 @@ The File.separator constant gives we the name separator as a String.
 
 Using the name separator in your program will make your Java code work on different platforms.
 
-- Next »
 - « Previous

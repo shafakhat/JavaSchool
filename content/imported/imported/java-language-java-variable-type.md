@@ -7,10 +7,7 @@ order: 50448
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5100__Java_Variable_Type.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Java Object Reference Variable
 
@@ -117,5 +114,4 @@ publicclass Main {
 
 This program generates the following output:
 
-- Next »
 - « Previous

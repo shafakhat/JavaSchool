@@ -56,7 +56,6 @@ import java.util.Date;
 public class Main {
   //-----------------------------------------------------------------------
   /**
-   * Checks if two date objects are on the same day ignoring time.
    *
    * 28 Mar 2002 13:45 and 28 Mar 2002 06:01 would return true.
    * 28 Mar 2002 13:45 and 12 Mar 2002 13:45 would return false.

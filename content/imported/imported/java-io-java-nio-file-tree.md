@@ -7,10 +7,7 @@ order: 50235
 source: https://www.java2s.com/Tutorials/Java/Java_io/1020__Java_nio_File_Tree.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 FileVisitor API can recursively process all files and directories in a file tree.
 
@@ -220,5 +217,4 @@ import java.nio.file.Paths;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

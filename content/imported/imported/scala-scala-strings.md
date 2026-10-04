@@ -7,10 +7,7 @@ order: 50082
 source: https://www.java2s.com/Tutorials/Java/Scala/0130__Scala_Strings.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Scala's String is built on Java's String and adds additional features such as string interpolation to Java's String.
 
@@ -49,5 +46,4 @@ object Main {
 }
 ```
 
-- Next »
 - « Previous

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513071043/http://www.java2s.com/Code/Ja
 ---
 Velocity Dollar Sign 2 : Java examples (example source code) » Velocity » Dollar Sign
 
-Velocity Dollar Sign 2
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

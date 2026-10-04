@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1016
 source: https://web.archive.org/web/20100212032502/http://java2s.com/Code/Java/Ant/Antscriptcallsanotherantscript.htm
 ---
-Ant script calls another ant script
-
 ```java title=Example.java
 //COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0
 <project name="ajax4jsf" default="distribute">

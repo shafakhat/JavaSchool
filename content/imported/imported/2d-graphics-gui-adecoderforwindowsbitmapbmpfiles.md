@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20100212035118/http://java2s.com/Code/Java/2D-Graphics-GUI/AdecoderforWindowsbitmapBMPfiles.htm
 ---
-A decoder for Windows bitmap (.BMP) files
-
 ```java title=Example.java
 /*
  * BMPLoader.
@@ -39,7 +37,6 @@ import java.awt.image.MemoryImageSource;
 import java.io.IOException;
 import java.io.InputStream;
 /**
- * A decoder for Windows bitmap (.BMP) files.
  * Compression not supported.
  */
 public class BMPLoader

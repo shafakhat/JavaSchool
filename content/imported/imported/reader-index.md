@@ -7,10 +7,7 @@ order: 50281
 source: https://www.java2s.com/Tutorials/Java/java.io/Reader/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -25,5 +22,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/Reader/index.html
 - Java Reader.reset()
 - Java Reader.skip(long n)
 
-- Next »
 - « Previous

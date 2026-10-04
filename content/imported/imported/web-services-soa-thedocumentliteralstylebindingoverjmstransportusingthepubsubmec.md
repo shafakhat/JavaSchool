@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1131
 source: https://web.archive.org/web/20071104162806/http://www.java2s.com:80/Code/Java/Web-Services-SOA/TheDocumentLiteralstylebindingoverJMStransportusingthepubsubmechanism.htm
 ---
-The Document-Literal style binding over JMS transport using the pub/sub mechanism
-
 ```java title=Example.java
 JMS Transport Demo using Document-Literal Style.
 ==========================================================

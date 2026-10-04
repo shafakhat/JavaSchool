@@ -15,7 +15,6 @@ source: https://web.archive.org/web/20111105140758/http://java2s.com/Tutorial/Ja
 import java.io.File;
 import java.util.ArrayList;
 /**
- * Class representing a standard operating system platform, WIN, MAC, or POSIX.
  *
  * @author Christopher Bach
  */

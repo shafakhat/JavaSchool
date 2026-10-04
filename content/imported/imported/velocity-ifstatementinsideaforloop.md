@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513075047/http://www.java2s.com/Code/Ja
 ---
 If statement inside a for loop : Java examples (example source code) » Velocity » If
 
-If statement inside a for loop
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;

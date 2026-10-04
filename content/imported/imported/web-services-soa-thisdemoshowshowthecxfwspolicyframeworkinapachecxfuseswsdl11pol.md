@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1140
 source: https://web.archive.org/web/20071105012742/http://www.java2s.com:80/Code/Java/Web-Services-SOA/ThisdemoshowshowtheCXFWSPolicyframeworkinApacheCXFusesWSDL11PolicyattachmentstoenabletheuseofWSAddressing.htm
 ---
-This demo shows how the CXF WS-Policy framework in Apache CXF uses WSDL 1.1 Policy attachments to enable the use of WS-Addressing
-
 ```java title=Example.java
 WS-Policy Demo
 ==============

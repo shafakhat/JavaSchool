@@ -7,10 +7,7 @@ order: 50187
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0620__Java_Enum_class.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Superclass of an Enum Type
 
@@ -63,5 +60,4 @@ int diff = s1.compareTo(s2);
 
 The code above generates the following result.
 
-- Next »
 - « Previous

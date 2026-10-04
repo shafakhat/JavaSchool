@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060702072859/http://www.java2s.com:80/Code
 ---
 Add border for dockable component : Java examples (example source code) » Swing Components » Dockable
 
-Add border for dockable component
-
 ```java title=Example.java
 package net.eleritec.docking.demos.border;
 import java.awt.BorderLayout;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1042
 source: https://web.archive.org/web/20081009150905/http://www.java2s.com:80/Code/Java/Generics/Overridingagenericmethodinagenericclass.htm
 ---
-Overriding a generic method in a generic class.
-
 ```java title=Example.java
 /*
 Java 2, v5.0 (Tiger) New Features

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20060504224336/http://www.java2s.com:80/Code/Java/JSP/AdvancedDynamicWebContentGeneration1.htm
 ---
-Advanced Dynamic Web Content Generation. 1 : Java examples (example source code) » JSP » Basics
-
 Advanced Dynamic Web Content Generation. 1
 
 ```java title=Example.java

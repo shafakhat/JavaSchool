@@ -7,10 +7,7 @@ order: 50090
 source: https://www.java2s.com/Tutorials/Java/Scala/0200__Scala_Conditional_Operators.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Scala conditional operators are listed in the following Table.
 
@@ -34,5 +31,4 @@ Scala uses == for logical equality, but it calls the equals method.
 
 A new method, eq, is available when you want to compare references, but not test for logical equality.
 
-- Next »
 - « Previous

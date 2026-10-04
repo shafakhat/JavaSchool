@@ -102,5 +102,3 @@ if (obj == null)
     return 0;
 returnArrays.hashCode(obj);
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

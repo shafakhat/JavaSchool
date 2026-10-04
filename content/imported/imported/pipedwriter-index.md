@@ -7,10 +7,7 @@ order: 50275
 source: https://www.java2s.com/Tutorials/Java/java.io/PipedWriter/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -25,5 +22,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/PipedWriter/index.html
 - Java PipedWriter.write(char[] cbuf, int off, int len)
 - Java PipedWriter.write(int c)
 
-- Next »
 - « Previous

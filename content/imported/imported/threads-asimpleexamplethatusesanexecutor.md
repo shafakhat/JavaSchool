@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1015
 source: https://web.archive.org/web/20090322093705/http://www.java2s.com:80/Code/Java/Threads/AsimpleexamplethatusesanExecutor.htm
 ---
-A simple example that uses an Executor.
-
 ```java title=Example.java
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

@@ -7,10 +7,7 @@ order: 50365
 source: https://www.java2s.com/Tutorials/Java/java.util/Map/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -29,5 +26,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/Map/index.html
 - Java Map.size()
 - Java Map.values()
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1053
 source: https://web.archive.org/web/20061018181036/http://www.java2s.com/Code/Java/Apache-Common/SetExample1.htm
 ---
-Set Example 1
-
 ```java title=Example.java
 import org.apache.commons.collections.set.MapBackedSet;
 import java.util.Map;

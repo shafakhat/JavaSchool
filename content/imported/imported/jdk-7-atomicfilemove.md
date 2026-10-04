@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20130111100921/http://www.java2s.com:80/Code/Java/JDK-7/AtomicFileMove.htm
 ---
-Atomic File Move
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

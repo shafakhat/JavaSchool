@@ -7,10 +7,7 @@ order: 50329
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0030__Java_Collection_Interface.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The Java Collection interface is the root of the collection interface hierarchy. It defines a generic collection.
 
@@ -104,5 +101,4 @@ import java.util.Collection;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

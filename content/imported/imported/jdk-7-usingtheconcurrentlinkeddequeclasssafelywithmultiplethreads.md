@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1148
 source: https://web.archive.org/web/20130821064049/http://java2s.com/Code/Java/JDK-7/UsingtheConcurrentLinkedDequeclasssafelywithmultiplethreads.htm
 ---
-Using the ConcurrentLinkedDeque class safely with multiple threads
-
 ```java title=Example.java
 import java.util.concurrent.ConcurrentLinkedDeque;
 public class Test {

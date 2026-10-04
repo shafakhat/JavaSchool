@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1016
 source: https://web.archive.org/web/20090210132118/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/Afilterclasswhichtranslatesmoderatelywhitepixelstogreen.htm
 ---
-A filter class which translates moderately white pixels to green.
-
 ```java title=Example.java
 import java.applet.Applet;
 import java.awt.Button;

@@ -33,7 +33,6 @@ public class Main{
   //                          Counting Methods                           //
   /////////////////////////////////////////////////////////////////////////
   /**
-   * Count the number of instances of substring within a string.
    *
    * @param string     String to look for substring in.
    * @param substring  Sub-string to look for.

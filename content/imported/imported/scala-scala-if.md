@@ -7,10 +7,7 @@ order: 50091
 source: https://www.java2s.com/Tutorials/Java/Scala/0220__Scala_If.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The result of if expressions in Scala is always Unit.
 
@@ -56,5 +53,4 @@ val i: Int = if (exp)
              }
 ```
 
-- Next »
 - « Previous

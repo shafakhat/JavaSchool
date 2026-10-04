@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1075
 source: https://web.archive.org/web/20081026080013/http://www.java2s.com:80/Code/Java/Class/Subclassdefinition.htm
 ---
-Subclass definition
-
 ```java title=Example.java
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

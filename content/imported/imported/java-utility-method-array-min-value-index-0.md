@@ -122,5 +122,3 @@ for (int i = 0; i < array.length; i++) {
         min = array[i];
 return min;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

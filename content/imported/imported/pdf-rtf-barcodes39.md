@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20071201174303/http://www.java2s.com:80/Code/Java/PDF-RTF/Barcodes39.htm
 ---
-Barcodes 39
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Chunk;

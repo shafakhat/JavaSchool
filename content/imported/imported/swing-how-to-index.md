@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50032
 source: https://www.java2s.com/Tutorials/Java/Swing_How_to/index.html
 ---
-- Next »
-
 - Basic 18
 - Border 5
 - Dialog 1
@@ -54,5 +52,3 @@ source: https://www.java2s.com/Tutorials/Java/Swing_How_to/index.html
 - Timer 5
 - Tooltip 5
 - UIManager 1
-
-- Next »

@@ -126,5 +126,3 @@ for (int i = 0; i < thisArray.length; i++) {
     outputArray[i] = thisArray[i].replaceAll(findThis, replaceWithThis);
 return outputArray;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

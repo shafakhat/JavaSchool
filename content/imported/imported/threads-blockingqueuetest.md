@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1021
 source: https://web.archive.org/web/20111125081024/http://java2s.com/Code/Java/Threads/BlockingQueueTest.htm
 ---
-BlockingQueue Test
-
 ```java title=Example.java
 /*
    This program is a part of the companion code for Core Java 8th ed.

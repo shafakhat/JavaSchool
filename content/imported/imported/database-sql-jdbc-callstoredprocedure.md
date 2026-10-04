@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20090502104857/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/Callstoredprocedure.htm
 ---
-Call stored procedure
-
 ```java title=Example.java
 import java.sql.CallableStatement;
 import java.sql.Connection;

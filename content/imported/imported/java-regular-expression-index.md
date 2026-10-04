@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50006
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/index.html
 ---
-- Next »
-
 A regular expression describes a pattern in a sequence of characters. A regular expression is a string that describes a character sequence.
 
 We can then use pattern to
@@ -29,5 +27,3 @@ We can specify a regular expression that represents a general form that can matc
 There are two classes that support regular expression processing: Pattern and Matcher.
 
 These classes work together: use Pattern to define a regular expression. and match the pattern against another sequence using Matcher.
-
-- Next »

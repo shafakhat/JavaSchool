@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50048
 source: https://www.java2s.com/Tutorials/Java/JavaFX/index.html
 ---
-- Next »
-
 JavaFX is Java's next-generation graphical user interface toolkit.
 
 JavaFX is a set of graphics and media APIs that we can use to create and deploy rich client applications.
@@ -78,5 +76,3 @@ The following lists some built-in JavaFX UI controls available in the JavaFX API
 JavaFX allows UI control nodes and shape nodes to coexist on the scene graph.
 
 We can treat any UI control like any other JavaFX node, for example we can scale, rotate, style, and add effects.
-
-- Next »

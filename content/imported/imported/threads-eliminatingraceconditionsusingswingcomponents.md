@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1052
 source: https://web.archive.org/web/20060505234047/http://www.java2s.com:80/Code/Java/Threads/EliminatingraceConditionsusingSwingComponents.htm
 ---
-Eliminating race Conditions using Swing Components : Java examples (example source code) » Threads » Swing Thread
-
 Eliminating race Conditions using Swing Components
 
 ```java title=Example.java

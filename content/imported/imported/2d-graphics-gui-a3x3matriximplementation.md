@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20111019171447/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/A3x3matriximplementation.htm
 ---
-A 3x3 matrix implementation
-
 ```java title=Example.java
 /**
  * Copyright (c) 2008-2010  Morten Silcowitz.
@@ -21,7 +19,6 @@ A 3x3 matrix implementation
 import java.io.Serializable;
 //3x3 matrix for optimized matrix ops
 /**
- * A 3x3 matrix implementation
  */
 public class Matrix3 {
   public double a11, a12, a13;

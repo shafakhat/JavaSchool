@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1132
 source: https://web.archive.org/web/20071105210633/http://www.java2s.com:80/Code/Java/Web-Services-SOA/TheRPCLiteralstylebinding.htm
 ---
-The RPC-Literal style binding
-
 ```java title=Example.java
 Hello World Demo using RPC-Literal Style
 ========================================

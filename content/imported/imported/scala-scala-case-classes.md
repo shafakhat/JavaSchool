@@ -7,10 +7,7 @@ order: 50102
 source: https://www.java2s.com/Tutorials/Java/Scala/3020__Scala_Case_Classes.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Scala can create classes that have the common stuff filled in.
 
@@ -64,5 +61,4 @@ s.name
 s.age
 ```
 
-- Next »
 - « Previous

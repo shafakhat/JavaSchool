@@ -7,10 +7,7 @@ order: 1012
 source: https://web.archive.org/web/20160728172252/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Random/index.htm
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 - Java Create random name generator
 - Java Divide a number into smaller random ints
@@ -36,7 +33,4 @@ source: https://web.archive.org/web/20160728172252/http://www.java2s.com:80/Tuto
 - Java Toss Coin
 
 ```java title=Example.java
-« Previous
 ```
-
-- Next »

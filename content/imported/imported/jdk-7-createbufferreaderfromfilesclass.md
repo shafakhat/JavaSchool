@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1028
 source: https://web.archive.org/web/20130111100926/http://www.java2s.com:80/Code/Java/JDK-7/CreateBufferReaderfromFilesclass.htm
 ---
-Create BufferReader from Files class
-
 ```java title=Example.java
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

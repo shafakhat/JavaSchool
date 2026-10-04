@@ -7,10 +7,7 @@ order: 50138
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0020__Java_Class_Access_Level.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Class simple name is the name between class keyword and {.
 
@@ -48,5 +45,4 @@ publicclass Dog  {
 }
 ```
 
-- Next »
 - « Previous

@@ -108,5 +108,3 @@ if (_sMultiDimArray != null) {
 return sRetArray;
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

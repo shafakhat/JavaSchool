@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1036
 source: https://web.archive.org/web/20070109002037/http://www.java2s.com:80/Code/Java/Velocity/HowtheVelocityTemplateEnginecanbeusedinastandaloneapplication.htm
 ---
-How the Velocity Template Engine can be used in a standalone application
-
 ```java title=Example.java
 /*
  * Copyright 2000-2001,2004 The Apache Software Foundation.

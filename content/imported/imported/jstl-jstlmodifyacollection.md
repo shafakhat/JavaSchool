@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513070933/http://www.java2s.com/Code/Ja
 ---
 JSTL Modify a collection : Java examples (example source code) » JSTL » Collections
 
-JSTL Modify a collection
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <c:if test="${pageContext.request.method=='POST'}">

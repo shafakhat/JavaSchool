@@ -7,10 +7,7 @@ order: 50189
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0640__Java_Enum_Body.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Adding bodies to an Enum Constant
 
@@ -101,5 +98,4 @@ It has overridden the toString() method in the Enum class.
 
 The code above generates the following result.
 
-- Next »
 - « Previous

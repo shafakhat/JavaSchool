@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1076
 source: https://web.archive.org/web/20061026204231/http://www.java2s.com/Code/Java/Velocity/Velocityinputencoding.htm
 ---
-Velocity input encoding
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

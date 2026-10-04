@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060412165216/http://www.java2s.com:80/Code
 ---
 Http Server : Java examples (example source code) » Tiny Application » Web Server
 
-Http Server
-
 ```java title=Example.java
 import java.io.BufferedReader;
 import java.io.FileInputStream;

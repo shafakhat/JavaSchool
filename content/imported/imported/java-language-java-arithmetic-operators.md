@@ -7,10 +7,7 @@ order: 50427
 source: https://www.java2s.com/Tutorials/Java/Java_Language/3005__Java_Arithmetic_Operators.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Arithmetic operators are used in mathematical expressions.
 
@@ -230,5 +227,4 @@ publicclass Main {
 
 The output of this program follows:
 
-- Next »
 - « Previous

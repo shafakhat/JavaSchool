@@ -7,10 +7,7 @@ order: 50202
 source: https://www.java2s.com/Tutorials/Java/Java_io/0110__Java_io_BufferedInputStream.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A BufferedInputStream adds functionality to an input stream by buffering the data.
 
@@ -44,5 +41,4 @@ byte byteData;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

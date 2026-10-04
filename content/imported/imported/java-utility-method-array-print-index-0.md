@@ -94,5 +94,3 @@ for (int i = 0; i < a.length; i++) {
     System.out.format("%.2f  ", a[i]);
 System.out.println();
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

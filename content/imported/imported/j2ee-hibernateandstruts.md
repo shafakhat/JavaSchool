@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20060307045030/http://www.java2s.com:80/Code/Java/J2EE/HibernateandStruts.htm
 ---
-Hibernate and Struts
-
 ```java title=Example.java
 /*
 Struts Recipes

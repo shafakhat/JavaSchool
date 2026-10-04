@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20090531122122/http://www.java2s.com:80/Code/Java/Class/Demonstrationofbothconstructorandordinarymethodoverloading.htm
 ---
-Demonstration of both constructor and ordinary method overloading
-
 ```java title=Example.java
 // : c04:JavaOverloading.java
-// Demonstration of both constructor and ordinary method overloading.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Tree {

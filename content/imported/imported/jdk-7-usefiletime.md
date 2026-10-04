@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1135
 source: https://web.archive.org/web/20130820181643/http://java2s.com/Code/Java/JDK-7/UseFileTime.htm
 ---
-Use FileTime
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

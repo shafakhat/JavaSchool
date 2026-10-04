@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20130111101309/http://www.java2s.com:80/Code/Java/JDK-7/Determiningoperatingsystemsupportforattributeviews.htm
 ---
-Determining operating system support for attribute views
-
 ```java title=Example.java
 import java.nio.file.FileSystem;
 import java.nio.file.Path;

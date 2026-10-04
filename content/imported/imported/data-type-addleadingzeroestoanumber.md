@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1110
 source: https://web.archive.org/web/20091129091529/http://www.java2s.com:80/Code/Java/Data-Type/Addleadingzeroestoanumber.htm
 ---
-Add leading zeroes to a number
-
 ```java title=Example.java
 public class Main {
   public static void main(String[] args) {

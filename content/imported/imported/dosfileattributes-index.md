@@ -7,10 +7,7 @@ order: 50289
 source: https://www.java2s.com/Tutorials/Java/java.nio.file.attribute/DosFileAttributes/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -19,5 +16,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio.file.attribute/DosFileAtt
 - Java DosFileAttributes .isReadOnly ()
 - Java DosFileAttributes.isSystem()
 
-- Next »
 - « Previous

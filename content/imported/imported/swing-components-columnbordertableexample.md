@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513064708/http://www.java2s.com/Code/Ja
 ---
 Column Border Table Example : Java examples (example source code) » Swing Components » Grid Table
 
-Column Border Table Example
-
 ```java title=Example.java
 // Example from http://www.crionics.com/products/opensource/faq/swing_ex/SwingExamples.html
 /* (swing1.1) */

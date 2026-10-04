@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1127
 source: https://web.archive.org/web/20090203010344/http://www.java2s.com:80/Code/Java/Web-Services-SOA/Simplewebservicebasedonjaxws.htm
 ---
-Simple web service based on jaxws
-
 ```java title=Example.java
 /*
  * Client.java

@@ -7,10 +7,7 @@ order: 50142
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0055__Java_Method_Overload.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Having more than one method with the same name in the same class is called method overloading.
 
@@ -100,5 +97,4 @@ double d2 = a.add(2, (double) 3); // OK. Will use add(int, double)
 }
 ```
 
-- Next »
 - « Previous

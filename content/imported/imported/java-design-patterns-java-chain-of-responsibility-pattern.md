@@ -7,10 +7,7 @@ order: 50124
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0140__Java_Chain_of_Responsibility_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The chain of responsibility pattern creates a list of receiver objects for a request.
 
@@ -80,5 +77,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

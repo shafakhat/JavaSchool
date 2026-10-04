@@ -7,10 +7,7 @@ order: 50393
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0080__Java_Format_Flags.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java printf flags changes the formatted output.
 
@@ -46,5 +43,4 @@ Format String  Argument  Result
 "%(d"  -2014  (2014)
 "%s and %<s"  "abc"  abc and abc
 
-- Next »
 - « Previous

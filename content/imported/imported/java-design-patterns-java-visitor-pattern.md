@@ -7,10 +7,7 @@ order: 50134
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0280__Java_Visitor_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 In visitor pattern, element object accepts the visitor object and visitor object handles the operation on the element object.
 
@@ -58,5 +55,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50324
 source: https://www.java2s.com/Tutorials/Java/Java_XML/0200__Java_XSLT_Intro.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The Extensible Stylesheet Language Transformations (XSLT) standard defines class for addressing XML data with XPath and for transforming the data to other forms.
 
@@ -285,5 +282,4 @@ publicclass Main {
 }
 ```
 
-- Next »
 - « Previous

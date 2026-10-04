@@ -7,10 +7,7 @@ order: 50094
 source: https://www.java2s.com/Tutorials/Java/Scala/0250__Scala_try_expressions.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Exception handling in Scala is implemented differently, but it behaves exactly like Java and works seamlessly with existing Java libraries.
 
@@ -65,5 +62,4 @@ try{
 }
 ```
 
-- Next »
 - « Previous

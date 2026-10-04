@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1090
 source: https://web.archive.org/web/20060717063235/http://www.java2s.com:80/Code/Java/Velocity/VelocityNumberToolCurrencyLocale.htm
 ---
-Velocity Number Tool Currency Locale
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

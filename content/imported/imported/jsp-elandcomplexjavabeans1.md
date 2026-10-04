@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20070428132819/http://www.java2s.com:80/Code/Java/JSP/ELandComplexJavaBeans1.htm
 ---
-EL and Complex JavaBeans 1
-
 ```java title=Example.java
 <jsp:useBean id="person" class="com.java2s.Person" scope="request" />
 <html>

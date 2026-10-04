@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1052
 source: https://web.archive.org/web/20100212033408/http://java2s.com/Code/Java/Apache-Common/PredicateChainChainingoftwoormorepredicates.htm
 ---
-Predicate Chain ( Chaining of two or more predicate's )
-
 ```java title=Example.java
 package com.googelcode.jpractices.common;
 import org.apache.commons.lang.builder.ToStringBuilder;

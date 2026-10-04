@@ -7,10 +7,7 @@ order: 50300
 source: https://www.java2s.com/Tutorials/Java/java.nio.file/WatchService/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -19,5 +16,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio.file/WatchService/index.h
 - Java WatchService.poll(long timeout, TimeUnit unit)
 - Java WatchService.take()
 
-- Next »
 - « Previous

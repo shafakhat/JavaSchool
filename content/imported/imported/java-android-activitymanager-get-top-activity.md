@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102122033/http://www.java2s.com/ref/jav
 
 ## Description
 
-Android ActivityManager get top Activity
-
 ```java title=Example.java
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;

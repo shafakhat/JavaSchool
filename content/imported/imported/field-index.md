@@ -7,10 +7,7 @@ order: 50413
 source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Field/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -45,5 +42,4 @@ source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Field/index.html
 - Java Field.toGenericString()
 - Java Field.toString()
 
-- Next »
 - « Previous

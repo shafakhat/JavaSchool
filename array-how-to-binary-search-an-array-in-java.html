@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to binary search an Array in Java - JavaSchool</title>
+<meta name="description" content="System.out.println(&quot;Result of binary search of 2 is : &quot; + intResult);">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-array-how-to-binary-search-an-array-in-java">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-array.html">Array</a></nav>
+    <h1>How to binary search an Array in Java</h1>
+<p>In this chapter you will learn:</p>
+<ul><li>Binary search an Array</li><li>Binary Search on byte Array</li><li>Insert an Element into a Sorted Array</li></ul>
+<h3 id="binary-search-an-array">Binary search an Array</h3>
+<p>The following methods binary search array elements.</p>
+<ul><li>static int binarySearch(byte[] a, byte key)</li><li>static int binarySearch(byte[] a, int fromIndex, int toIndex, byte key)</li><li>static int binarySearch(char[] a, char key)</li><li>static int binarySearch(char[] a, int fromIndex, int toIndex, char key)</li><li>static int binarySearch(double[] a, double key)</li><li>static int binarySearch(double[] a, int fromIndex, int toIndex, double key)</li><li>static int binarySearch(float[] a, float key)</li><li>static int binarySearch(float[] a, int fromIndex, int toIndex, float key)</li><li>static int binarySearch(int[] a, int key)</li><li>static int binarySearch(int[] a, int fromIndex, int toIndex, int key)</li><li>static int binarySearch(long[] a, int fromIndex, int toIndex, long key)</li><li>static int binarySearch(long[] a, long key)</li><li>static int binarySearch(Object[] a, int fromIndex, int toIndex, Object key)</li><li>static int binarySearch(Object[] a, Object key)</li><li>static int binarySearch(short[] a, int fromIndex, int toIndex, short key)</li><li>static int binarySearch(short[] a, short key)</li><li>static&lt;T&gt; int binarySearch(T[] a, int fromIndex, int toIndex, T key, Comparator&lt;? super T&gt; c)</li><li>static&lt;T&gt; int binarySearch(T[] a, T key, Comparator&lt;? super T&gt; c)</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
+//fromjava2s.compublicclass Main{
+  publicstaticvoid main(String args[]) {
+    int array[] = newint[10];
+    for (int i = 0; i &lt; 10; i++){
+      array[i] = -3 * i;
+    }
+    System.out.print("Original contents: ");
+    System.out.println(Arrays.toString(array));
+    Arrays.sort(array);
+    System.out.print("Sorted: ");
+    System.out.println(Arrays.toString(array));
+
+    System.out.print("The value -9 is at location ");
+    int index = Arrays.binarySearch(array, -9);
+    System.out.println(index);
+  }
+
+}</code></pre></div>
+<p>The output:</p>
+<h3 id="binary-search-on-byte-array">Binary Search on byte Array</h3>
+<p>Performing Binary Search on byte Array</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
+/*java2s.com*/publicclass Main {
+  publicstaticvoid main(String[] args) {
+    byte bArray[] = {1, 2, 3, 4, 5};
+    Arrays.sort(bArray);
+    byte searchValue = 2;
+    int intResult = Arrays.binarySearch(bArray, searchValue);
+    System.out.println("Result of binary search of 2 is : " + intResult);
+    searchValue = 3;
+    intResult = Arrays.binarySearch(bArray, searchValue);
+    System.out.println("Result of binary search of 3 is : " + intResult);
+  }
+}</code></pre></div>
+<p>The output:</p>
+<h3 id="insert-an-element-into-a-sorted-array">Insert an Element into a Sorted Array</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
+/*java2s.com*/publicclass Main {
+  publicstaticvoid main(String[] argv) {
+
+    String[] oldArray = new String[] { "a", "b", "c", "d" };
+
+    int index = Arrays.binarySearch(oldArray, "e");
+    if (index &lt; 0) {
+      int insertIndex = -index - 1;
+
+      String[] newArray = new String[oldArray.length + 1];
+      System.arraycopy(oldArray, 0, newArray, 0, insertIndex);
+      System.arraycopy(oldArray, insertIndex, newArray, insertIndex + 1,
+          oldArray.length - insertIndex);
+      newArray[insertIndex] = "e";
+      oldArray = newArray;
+    }
+    System.out.println(Arrays.toString(oldArray));
+  }
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<h4 id="next-chapter">Next chapter...</h4>
+<p>What you will learn in the next chapter:</p>
+<ul><li>Search an element in an array and return the index and last index</li><li>Search a double type array</li></ul>
+    <div class="pager"><a class="pager-btn" href="class-holdsasequenceofobjects.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Holds a sequence of Objects</span></a><a class="pager-btn pager-next" href="struts-html.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">HTML</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

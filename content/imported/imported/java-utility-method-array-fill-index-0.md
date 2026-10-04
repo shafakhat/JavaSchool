@@ -120,5 +120,3 @@ T[]fill(final T[] array, final T value) Fill the given array with the given valu
 Arrays.fill(array, value);
 return array;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

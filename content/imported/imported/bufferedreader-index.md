@@ -7,10 +7,7 @@ order: 50241
 source: https://www.java2s.com/Tutorials/Java/java.io/BufferedReader/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -29,5 +26,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/BufferedReader/index.html
 - Java BufferedReader.reset()
 - Java BufferedReader.skip(long n)
 
-- Next »
 - « Previous

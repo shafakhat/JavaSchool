@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20100618041203/http://www.java2s.com:80/Code/Java/GWT/AccordionLayoutExampleExtGWT.htm
 ---
-Accordion Layout Example (Ext GWT)
-
 ```java title=Example.java
 /*
  * Ext GWT - Ext for GWT

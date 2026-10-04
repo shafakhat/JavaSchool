@@ -8,7 +8,6 @@ source: https://web.archive.org/web/20060503054341/http://www.java2s.com:80/Code
 ---
 Builds an editor that copies data from the domain back and forth : Java examples (example source code) » Swing Components » Data Binding
 
-Builds an editor that copies data from the domain back and forth
 ---
 Download: binding.zip (506 K)
 Related examples in the same category

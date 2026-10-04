@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/20061026220107/http://www.java2s.com/Code/Java/Ant/Antbuildinproperties.htm
 ---
-Ant buildin properties
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Apache Ant Properties Project" default="properties.built-in" basedir=".">

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20061025044342/http://www.java2s.com:80/Code/Java/Servlets/CheckerFilter.htm
 ---
-Checker Filter
-
 ```java title=Example.java
 import java.io.IOException;
 import java.util.Enumeration;

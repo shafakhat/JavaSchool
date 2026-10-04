@@ -48,7 +48,6 @@ public class Main {
   // Chopping
   //-----------------------------------------------------------------------
   /**
-   * Remove the last character from a String.
    *
    * If the String ends in <code>\r\n</code>, then remove both
    * of them.

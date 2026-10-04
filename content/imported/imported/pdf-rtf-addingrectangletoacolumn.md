@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1024
 source: https://web.archive.org/web/20080829120746/http://www.java2s.com/Code/Java/PDF-RTF/AddingRectangletoaColumn.htm
 ---
-Adding Rectangle to a Column
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

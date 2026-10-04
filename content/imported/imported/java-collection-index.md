@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50005
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/index.html
 ---
-- Next »
-
 A collection is an object that contains a group of objects.
 
 Each object in a collection is called an element. Every collection contains a group of objects.
@@ -58,5 +56,3 @@ We can perform different actions on a collection.
 - converting a collection of one type to another type
 - copying elements from one collection to another
 - sorting elements of a collection in a specific order
-
-- Next »

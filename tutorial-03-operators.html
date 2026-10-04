@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operators - Java Tutorial - JavaSchool</title>
+<meta name="description" content="Operators: java2s tutorial chapter with tabs per sub-topic, 7 archived articles imported.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-chapter">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-03-operators.html">Operators</a></nav>
+    <h1>3. Operators</h1>
+    <p><strong>10 sub-topics</strong> &middot; <strong>58 articles</strong> on java2s &middot; <strong>7</strong> imported here, grouped into tabs below.</p>
+    
+    <div class="tabs">
+      <div class="tab-bar"><button type="button" class="tab-btn active" data-tab="tab-0" aria-selected="true">Operators <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-1" aria-selected="false">Assignment Operators <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-2" aria-selected="false">Ternary Operator <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-3" aria-selected="false">Arithmetic Operators <span class="tab-count">2</span></button><button type="button" class="tab-btn" data-tab="tab-4" aria-selected="false">Other examples <span class="tab-count">2</span></button></div>
+      <div class="tab-panel" id="tab-0"><h3 id="demonstrates-the-mathematical-operators">Demonstrates the mathematical operators</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Random;
+public class MainClass {
+  static void printInt(String s, int i) {
+    System.out.println(s + " = " + i);
+  }
+  static void printFloat(String s, float f) {
+    System.out.println(s + " = " + f);
+  }
+  public static void main(String[] args) {
+    Random rand = new Random();
+    int i, j, k;
+    j = rand.nextInt(100) + 1;
+    k = rand.nextInt(100) + 1;
+    printInt("j", j);
+    printInt("k", k);
+    i = j + k;
+    printInt("j + k", i);
+    i = j - k;
+    printInt("j - k", i);
+    i = k / j;
+    printInt("k / j", i);
+    i = k * j;
+    printInt("k * j", i);
+    i = k % j;
+    printInt("k % j", i);
+    j %= k;
+    printInt("j %= k", j);
+    // Floating-point number tests:
+    float u, v, w; // applies to doubles, too
+    v = rand.nextFloat();
+    w = rand.nextFloat();
+    printFloat("v", v);
+    printFloat("w", w);
+    u = v + w;
+    printFloat("v + w", u);
+    u = v - w;
+    printFloat("v - w", u);
+    u = v * w;
+    printFloat("v * w", u);
+    u = v / w;
+    printFloat("v / w", u);
+    // the following also works for
+    // char, byte, short, int, long,
+    // and double:
+    u += v;
+    printFloat("u += v", u);
+    u -= v;
+    printFloat("u -= v", u);
+    u *= v;
+    printFloat("u *= v", u);
+    u /= v;
+    printFloat("u /= v", u);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+j = 31
+k = 84
+j + k = 115
+j - k = -53
+k / j = 2
+k * j = 2604
+k % j = 22
+j %= k = 31
+v = 0.79780066
+w = 0.9309381
+v + w = 1.7287388
+v - w = -0.13313746
+v * w = 0.7427031
+v / w = 0.8569857
+u += v = 1.6547863
+u -= v = 0.8569857
+u *= v = 0.6837037
+u /= v = 0.8569856</code></pre></div></div>
+      <div class="tab-panel" id="tab-1" style="display:none"><h3 id="several-assignment-operators">Several assignment operators</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String args[]) {
+    int a = 1;
+    int b = 2;
+    int c = 3;
+    a += 5;
+    b *= 4;
+    c += a * b;
+    c %= 6;
+    System.out.println("a = " + a);
+    System.out.println("b = " + b);
+    System.out.println("c = " + c);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+a = 6
+b = 8
+c = 3</code></pre></div></div>
+      <div class="tab-panel" id="tab-2" style="display:none"><h3 id="modulus-operator">Modulus operator %</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] argv) {
+    int a = 3 % 2;
+    int b = 11 % 3;
+    int c = 7 % -3;
+    System.out.println(a);
+    System.out.println(b);
+    System.out.println(c);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+1
+2
+1</code></pre></div></div>
+      <div class="tab-panel" id="tab-3" style="display:none"><h3 id="arithmetic-calculations">Arithmetic Calculations</h3>
+<p>An assignment statement has three elements:</p>
+<ul><li>the variable to store the result,</li><li>the assignment operator: =,</li><li>an arithmetic expression</li></ul>
+<p>The statement is terminated by a semicolon.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass{
+  public static void main(String[] argv){
+     int a = 1;
+     int b = 2;
+     int c = 0;
+     c = a + b;
+     System.out.println(c);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">3</code></pre></div>
+<h3 id="the-basic-arithmetic-operators">The Basic Arithmetic Operators</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String args[]) {
+    // arithmetic using integers
+    System.out.println("Integer Arithmetic");
+    int a = 1 + 1;
+    int b = a * 3;
+    int c = b / 4;
+    int d = c - a;
+    int e = -d;
+    System.out.println("a = " + a);
+    System.out.println("b = " + b);
+    System.out.println("c = " + c);
+    System.out.println("d = " + d);
+    System.out.println("e = " + e);
+    // arithmetic using doubles
+    System.out.println("\nFloating Point Arithmetic");
+    double da = 1 + 1;
+    double db = da * 3;
+    double dc = db / 4;
+    double dd = dc - a;
+    double de = -dd;
+    System.out.println("da = " + da);
+    System.out.println("db = " + db);
+    System.out.println("dc = " + dc);
+    System.out.println("dd = " + dd);
+    System.out.println("de = " + de);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Integer Arithmetic
+a = 2
+b = 6
+c = 1
+d = -1
+e = 1
+
+Floating Point Arithmetic
+da = 2.0
+db = 6.0
+dc = 1.5
+dd = -0.5
+de = 0.5</code></pre></div></div>
+      <div class="tab-panel" id="tab-4" style="display:none"><h3 id="operations-on-bit-mapped-fields">Operations on bit-mapped fields.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ *
+ * @author Apache Jakarta POI
+ * @author Scott Sanders (sanders at apache dot org)
+ * @author Marc Johnson (mjohnson at apache dot org)
+ * @author Andrew C. Oliver (acoliver at apache dot org)
+ * @author Stephen Colebourne
+ * @author Pete Gieser
+ * @author Gary Gregory
+ * @since 2.0
+ * @version $Id: BitField.java 437554 2006-08-28 06:21:41Z bayard $
+ */
+public class BitField {
+    private final int _mask;
+    private final int _shift_count;
+    /**
+     * Creates a BitField instance.
+     *
+     * @param mask the mask specifying which bits apply to this
+     *  BitField. Bits that are set in this mask are the bits
+     *  that this BitField operates on
+     */
+    public BitField(int mask) {
+        _mask = mask;
+        int count = 0;
+        int bit_pattern = mask;
+        if (bit_pattern != 0) {
+            while ((bit_pattern &amp; 1) == 0) {
+                count++;
+                bit_pattern &gt;&gt;= 1;
+            }
+        }
+        _shift_count = count;
+    }
+    /**
+     * Obtains the value for the specified BitField, appropriately
+     * shifted right.
+     *
+     * Many users of a BitField will want to treat the specified
+     * bits as an int value, and will not want to be aware that the
+     * value is stored as a BitField (and so shifted left so many
+     * bits).
+     *
+     * @see #setValue(int,int)
+     * @param holder the int data containing the bits we're interested
+     *  in
+     * @return the selected bits, shifted right appropriately
+     */
+    public int getValue(int holder) {
+        return getRawValue(holder) &gt;&gt; _shift_count;
+    }
+    /**
+     * Obtains the value for the specified BitField, appropriately
+     * shifted right, as a short.
+     *
+     * Many users of a BitField will want to treat the specified
+     * bits as an int value, and will not want to be aware that the
+     * value is stored as a BitField (and so shifted left so many
+     * bits).
+     *
+     * @see #setShortValue(short,short)
+     * @param holder the short data containing the bits we're
+     *  interested in
+     * @return the selected bits, shifted right appropriately
+     */
+    public short getShortValue(short holder) {
+        return (short) getValue(holder);
+    }
+    /**
+     * Obtains the value for the specified BitField, unshifted.
+     *
+     * @param holder the int data containing the bits we're
+     *  interested in
+     * @return the selected bits
+     */
+    public int getRawValue(int holder) {
+        return holder &amp; _mask;
+    }
+    /**
+     * Obtains the value for the specified BitField, unshifted.
+     *
+     * @param holder the short data containing the bits we're
+     *  interested in
+     * @return the selected bits
+     */
+    public short getShortRawValue(short holder) {
+        return (short) getRawValue(holder);
+    }
+    /**
+     * Returns whether the field is set or not.
+     *
+     * This is most commonly used for a single-bit field, which is
+     * often used to represent a boolean value; the results of using
+     * it for a multi-bit field is to determine whether *any* of its
+     * bits are set.
+     *
+     * @param holder the int data containing the bits we're interested
+     *  in
+     * @return &lt;code&gt;true&lt;/code&gt; if any of the bits are set,
+     *  else &lt;code&gt;false&lt;/code&gt;
+     */
+    public boolean isSet(int holder) {
+        return (holder &amp; _mask) != 0;
+    }
+    /**
+     * Returns whether all of the bits are set or not.
+     *
+     * This is a stricter test than {@link #isSet(int)},
+     * in that all of the bits in a multi-bit set must be set
+     * for this method to return &lt;code&gt;true&lt;/code&gt;.
+     *
+     * @param holder the int data containing the bits we're
+     *  interested in
+     * @return &lt;code&gt;true&lt;/code&gt; if all of the bits are set,
+     *  else &lt;code&gt;false&lt;/code&gt;
+     */
+    public boolean isAllSet(int holder) {
+        return (holder &amp; _mask) == _mask;
+    }
+    /**
+     * Replaces the bits with new values.
+     *
+     * @see #getValue(int)
+     * @param holder the int data containing the bits we're
+     *  interested in
+     * @param value the new value for the specified bits
+     * @return the value of holder with the bits from the value
+     *  parameter replacing the old bits
+     */
+    public int setValue(int holder, int value) {
+        return (holder &amp; ~_mask) | ((value &lt;&lt; _shift_count) &amp; _mask);
+    }
+    /**
+     * Replaces the bits with new values.
+     *
+     * @see #getShortValue(short)
+     * @param holder the short data containing the bits we're
+     *  interested in
+     * @param value the new value for the specified bits
+     * @return the value of holder with the bits from the value
+     *  parameter replacing the old bits
+     */
+    public short setShortValue(short holder, short value) {
+        return (short) setValue(holder, value);
+    }
+    /**
+     * Clears the bits.
+     *
+     * @param holder the int data containing the bits we're
+     *  interested in
+     * @return the value of holder with the specified bits cleared
+     *  (set to &lt;code&gt;0&lt;/code&gt;)
+     */
+    public int clear(int holder) {
+        return holder &amp; ~_mask;
+    }
+    /**
+     * Clears the bits.
+     *
+     * @param holder the short data containing the bits we're
+     *  interested in
+     * @return the value of holder with the specified bits cleared
+     *  (set to &lt;code&gt;0&lt;/code&gt;)
+     */
+    public short clearShort(short holder) {
+        return (short) clear(holder);
+    }
+    /**
+     * Clears the bits.
+     *
+     * @param holder the byte data containing the bits we're
+     *  interested in
+     *
+     * @return the value of holder with the specified bits cleared
+     *  (set to &lt;code&gt;0&lt;/code&gt;)
+     */
+    public byte clearByte(byte holder) {
+        return (byte) clear(holder);
+    }
+    /**
+     * Sets the bits.
+     *
+     * @param holder the int data containing the bits we're
+     *  interested in
+     * @return the value of holder with the specified bits set
+     *  to &lt;code&gt;1&lt;/code&gt;
+     */
+    public int set(int holder) {
+        return holder | _mask;
+    }
+    /**
+     * Sets the bits.
+     *
+     * @param holder the short data containing the bits we're
+     *  interested in
+     * @return the value of holder with the specified bits set
+     *  to &lt;code&gt;1&lt;/code&gt;
+     */
+    public short setShort(short holder) {
+        return (short) set(holder);
+    }
+    /**
+     * Sets the bits.
+     *
+     * @param holder the byte data containing the bits we're
+     *  interested in
+     *
+     * @return the value of holder with the specified bits set
+     *  to &lt;code&gt;1&lt;/code&gt;
+     */
+    public byte setByte(byte holder) {
+        return (byte) set(holder);
+    }
+    /**
+     * Sets a boolean BitField.
+     *
+     * @param holder the int data containing the bits we're
+     *  interested in
+     * @param flag indicating whether to set or clear the bits
+     * @return the value of holder with the specified bits set or
+     *         cleared
+     */
+    public int setBoolean(int holder, boolean flag) {
+        return flag ? set(holder) : clear(holder);
+    }
+    /**
+     * Sets a boolean BitField.
+     *
+     * @param holder the short data containing the bits we're
+     *  interested in
+     * @param flag indicating whether to set or clear the bits
+     * @return the value of holder with the specified bits set or
+     *  cleared
+     */
+    public short setShortBoolean(short holder, boolean flag) {
+        return flag ? setShort(holder) : clearShort(holder);
+    }
+    /**
+     * Sets a boolean BitField.
+     *
+     * @param holder the byte data containing the bits we're
+     *  interested in
+     * @param flag indicating whether to set or clear the bits
+     * @return the value of holder with the specified bits set or
+     *  cleared
+     */
+    public byte setByteBoolean(byte holder, boolean flag) {
+        return flag ? setByte(holder) : clearByte(holder);
+    }
+}</code></pre></div>
+<h3 id="represents-a-collection-of-64-boolean-onoff-flags">Represents a collection of 64 boolean (on/off) flags.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import java.io.Serializable;
+/**
+ * Represents a collection of 64 boolean (on/off) flags.  Individual flags
+ * are represented by powers of 2.  For example,&lt;br/&gt;
+ * Flag 1 = 1&lt;br/&gt;
+ * Flag 2 = 2&lt;br/&gt;
+ * Flag 3 = 4&lt;br/&gt;
+ * Flag 4 = 8&lt;br/&gt;&lt;br/&gt;
+ * or using shift operator to make numbering easier:&lt;br/&gt;
+ * Flag 1 = 1 &amp;lt;&amp;lt; 0&lt;br/&gt;
+ * Flag 2 = 1 &amp;lt;&amp;lt; 1&lt;br/&gt;
+ * Flag 3 = 1 &amp;lt;&amp;lt; 2&lt;br/&gt;
+ * Flag 4 = 1 &amp;lt;&amp;lt; 3&lt;br/&gt;
+ *
+ *
+ * There cannot be a flag with a value of 3 because that represents Flag 1
+ * and Flag 2 both being on/true.
+ *
+ *
+ * @version $Revision: 478334 $ $Date: 2006-11-22 21:31:54 +0000 (Wed, 22 Nov 2006) $
+ */
+public class Flags implements Serializable {
+    /**
+     * Represents the current flag state.
+     */
+    private long flags = 0;
+    /**
+     * Create a new Flags object.
+     */
+    public Flags() {
+        super();
+    }
+    /**
+     * Initialize a new Flags object with the given flags.
+     *
+     * @param flags collection of boolean flags to represent.
+     */
+    public Flags(long flags) {
+        super();
+        this.flags = flags;
+    }
+    /**
+     * Returns the current flags.
+     *
+     * @return collection of boolean flags represented.
+     */
+    public long getFlags() {
+        return this.flags;
+    }
+    /**
+     * Tests whether the given flag is on.  If the flag is not a power of 2
+     * (ie. 3) this tests whether the combination of flags is on.
+     *
+     * @param flag Flag value to check.
+     *
+     * @return whether the specified flag value is on.
+     */
+    public boolean isOn(long flag) {
+        return (this.flags &amp; flag) &gt; 0;
+    }
+    /**
+     * Tests whether the given flag is off.  If the flag is not a power of 2
+     * (ie. 3) this tests whether the combination of flags is off.
+     *
+     * @param flag Flag value to check.
+     *
+     * @return whether the specified flag value is off.
+     */
+    public boolean isOff(long flag) {
+        return (this.flags &amp; flag) == 0;
+    }
+    /**
+     * Turns on the given flag.  If the flag is not a power of 2 (ie. 3) this
+     * turns on multiple flags.
+     *
+     * @param flag Flag value to turn on.
+     */
+    public void turnOn(long flag) {
+        this.flags |= flag;
+    }
+    /**
+     * Turns off the given flag.  If the flag is not a power of 2 (ie. 3) this
+     * turns off multiple flags.
+     *
+     * @param flag Flag value to turn off.
+     */
+    public void turnOff(long flag) {
+        this.flags &amp;= ~flag;
+    }
+    /**
+     * Turn off all flags.
+     */
+    public void turnOffAll() {
+        this.flags = 0;
+    }
+    /**
+     * Turn off all flags.  This is a synonym for &lt;code&gt;turnOffAll()&lt;/code&gt;.
+     * @since Validator 1.1.1
+     */
+    public void clear() {
+        this.flags = 0;
+    }
+    /**
+     * Turn on all 64 flags.
+     */
+    public void turnOnAll() {
+        this.flags = Long.MAX_VALUE;
+    }
+    /**
+     * Clone this Flags object.
+     *
+     * @return a copy of this object.
+     * @see java.lang.Object#clone()
+     */
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch(CloneNotSupportedException e) {
+            throw new RuntimeException("Couldn't clone Flags object.");
+        }
+    }
+    /**
+     * Tests if two Flags objects are in the same state.
+     * @param obj object being tested
+     * @see java.lang.Object#equals(java.lang.Object)
+     *
+     * @return whether the objects are equal.
+     */
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Flags)) {
+            return false;
+        }
+        if (obj == this) {
+            return true;
+        }
+        Flags f = (Flags) obj;
+        return this.flags == f.flags;
+    }
+    /**
+     * The hash code is based on the current state of the flags.
+     * @see java.lang.Object#hashCode()
+     *
+     * @return the hash code for this object.
+     */
+    public int hashCode() {
+        return (int) this.flags;
+    }
+    /**
+     * Returns a 64 length String with the first flag on the right and the
+     * 64th flag on the left.  A 1 indicates the flag is on, a 0 means it's
+     * off.
+     *
+     * @return string representation of this object.
+     */
+    public String toString() {
+        StringBuffer bin = new StringBuffer(Long.toBinaryString(this.flags));
+        for (int i = 64 - bin.length(); i &gt; 0; i--) {
+            bin.insert(0, "0");
+        }
+        return bin.toString();
+    }
+}</code></pre></div></div>
+    </div>
+<script>
+(function(){
+  document.querySelectorAll('.tabs').forEach(function(box){
+    var btns = box.querySelectorAll('.tab-btn');
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){
+        var id = b.getAttribute('data-tab');
+        btns.forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+        b.classList.add('active'); b.setAttribute('aria-selected','true');
+        box.querySelectorAll('.tab-panel').forEach(function(p){ p.style.display = (p.id === id) ? '' : 'none'; });
+      });
+    });
+  });
+})();
+</script>
+    <details class="sub-map"><summary>All sub-topics in this chapter (10)</summary><div class="sub-chips"><span class="sub-chip"><span class="sub-num">3.1</span> Operators <b>5</b></span><span class="sub-chip"><span class="sub-num">3.6</span> Relational Operators <b>2</b></span><span class="sub-chip"><span class="sub-num">3.2</span> Assignment Operators <b>1</b></span><span class="sub-chip"><span class="sub-num">3.7</span> Logical Operators <b>10</b></span><span class="sub-chip"><span class="sub-num">3.3</span> Increment Decrement Operators <b>5</b></span><span class="sub-chip"><span class="sub-num">3.8</span> Ternary Operator <b>1</b></span><span class="sub-chip"><span class="sub-num">3.4</span> Arithmetic Operators <b>6</b></span><span class="sub-chip"><span class="sub-num">3.9</span> Comma Operator <b>1</b></span><span class="sub-chip"><span class="sub-num">3.5</span> Bitwise Operators <b>23</b></span><span class="sub-chip"><span class="sub-num">3.10</span> instanceof <b>4</b></span></div></details>
+
+    <p class="arc-crumb"><a href="java-tutorial.html">&larr; All tutorial chapters</a></p>
+
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1049
 source: https://web.archive.org/web/20061018192723/http://www.java2s.com/Code/Java/JSTL/JSTLSimpleCalculation.htm
 ---
-JSTL Simple Calculation
-
 ```java title=Example.java
 <%@ page contentType="text/html" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>

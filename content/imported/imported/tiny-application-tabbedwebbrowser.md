@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20061018210630/http://www.java2s.com/Code/Java/Tiny-Application/TabbedWebbrowser.htm
 ---
-Tabbed Web browser
-
 ```java title=Example.java
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;

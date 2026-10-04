@@ -7,10 +7,7 @@ order: 50385
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/0070__Java_Regex_Groups.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We can group multiple characters as a unit by parentheses. For example, (ab).
 
@@ -192,5 +189,4 @@ import java.util.regex.Pattern;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

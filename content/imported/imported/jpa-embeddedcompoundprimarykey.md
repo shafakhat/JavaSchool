@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1036
 source: https://web.archive.org/web/20090926070742/http://www.java2s.com:80/Code/Java/JPA/EmbeddedCompoundPrimaryKey.htm
 ---
-Embedded Compound Primary Key
-
 ```java title=Example.java
 File: Professor.java
 import javax.persistence.EmbeddedId;

@@ -7,10 +7,7 @@ order: 50458
 source: https://www.java2s.com/Tutorials/Java/Java_Language/8010__Java_generic_method.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 It is possible to create a generic method that is enclosed within a non-generic class.
 
@@ -92,5 +89,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

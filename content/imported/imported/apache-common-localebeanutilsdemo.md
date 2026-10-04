@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20080908044842/http://www.java2s.com/Code/Java/Apache-Common/LocaleBeanUtilsDemo.htm
 ---
-Locale Bean Utils Demo
-
 ```java title=Example.java
 import org.apache.commons.beanutils.locale.LocaleBeanUtils;
 import java.util.Date;

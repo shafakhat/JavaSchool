@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1041
 source: https://web.archive.org/web/20060513075042/http://www.java2s.com/Code/Java/Velocity/IfElseandEnd.htm
 ---
-If Else and End
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

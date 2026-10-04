@@ -113,5 +113,3 @@ for (final T element : array)
         return true;
 return false;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

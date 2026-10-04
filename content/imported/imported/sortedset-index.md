@@ -7,10 +7,7 @@ order: 50372
 source: https://www.java2s.com/Tutorials/Java/java.util/SortedSet/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -21,5 +18,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/SortedSet/index.html
 - Java SortedSet.subSet(E fromElement, E toElement)
 - Java SortedSet.tailSet(E fromElement)
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50326
 source: https://www.java2s.com/Tutorials/Java/org.w3c.dom/CharacterData/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -23,5 +20,4 @@ source: https://www.java2s.com/Tutorials/Java/org.w3c.dom/CharacterData/index.ht
 - Java CharacterData.setData(String data)
 - Java CharacterData .substringData (int offset, int count)
 
-- Next »
 - « Previous

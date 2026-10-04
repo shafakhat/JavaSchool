@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20130720010037/http://www.java2s.com:80/Code/Java/JDK-7/ControllingthetypevalueoftheOUTparameter.htm
 ---
-Controlling the type value of the OUT parameter
-
 ```java title=Example.java
 import java.sql.CallableStatement;
 import java.sql.Connection;

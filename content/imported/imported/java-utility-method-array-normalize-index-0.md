@@ -106,5 +106,3 @@ for (double i : vec) {
     s += Math.pow(i, 2);
 returnMath.sqrt(s);
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

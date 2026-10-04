@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1038
 source: https://web.archive.org/web/20090719081119/http://www.java2s.com:80/Code/Java/Servlets/Definewelcomefilesforwebapplication.htm
 ---
-Define welcome files for web application
-
 ```java title=Example.java
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app

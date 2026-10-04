@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20130905021518/http://java2s.com/Tutorials/Java/Algorithms/Shell_sort_implementation_in_Java.htm
 ---
-Next »332/677« Previous
-
 In this chapter you will learn:
 
 - Shell sort implementation
@@ -85,5 +83,3 @@ The code above generates the following result.
 What you will learn in the next chapter:
 
 - Heap Sort Implementation
-
-Next »« PreviousHome » Java Tutorial » AlgorithmsBubble sortBinary SearchInsertion SortSelection sortShell sortHeap SortMerge SortQuick SortFibonacciHanoi puzzleFahrenheit to Celsius

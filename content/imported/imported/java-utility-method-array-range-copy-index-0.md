@@ -103,5 +103,3 @@ int lastIndex = Math.min(original.length, newLength);
 System.arraycopy(original, 0, buf, 0, lastIndex);
 return buf;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

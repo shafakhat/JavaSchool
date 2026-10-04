@@ -7,10 +7,7 @@ order: 50315
 source: https://www.java2s.com/Tutorials/Java/java.nio/ShortBuffer/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -40,5 +37,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio/ShortBuffer/index.html
 - Java ShortBuffer.wrap(short[] array)
 - Java ShortBuffer.wrap(short[] array, int offset, int length)
 
-- Next »
 - « Previous

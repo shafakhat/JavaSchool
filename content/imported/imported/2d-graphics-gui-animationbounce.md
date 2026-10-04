@@ -181,7 +181,6 @@ public class Bouncer extends JPanel implements Runnable {
       Dimension d = getSize();
       FontRenderContext frc = g2.getFontRenderContext();
       Font font = new Font("Serif", Font.PLAIN, 144);
-      String s = "Java Source and Support!";
       GlyphVector gv = font.createGlyphVector(frc, s);
       Rectangle2D bounds = font.getStringBounds(s, frc);
       mClipShape = gv.getOutline(

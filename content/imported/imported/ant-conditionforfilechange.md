@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1050
 source: https://web.archive.org/web/20061027015614/http://www.java2s.com/Code/Java/Ant/Conditionforfilechange.htm
 ---
-Condition for file change
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Apache Ant Properties Project" default="compile" basedir=".">

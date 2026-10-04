@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20081209042746/http://www.java2s.com:80/Code/Java/JPA/GetStringPropertiesFromEntities.htm
 ---
-Get String Properties From Entities
-
 ```java title=Example.java
 File: Main.java
 import javax.persistence.EntityManager;

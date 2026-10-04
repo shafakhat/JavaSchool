@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50002
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/index.html
 ---
-- Next »
-
 ## What Is a Class?
 
 Classes are the basic units of programming in the object-oriented paradigm. They are used as templates to create objects.
@@ -125,5 +123,3 @@ class Dog  {
 ```
 
 A class variable is known as a static variable. An instance variable is known as a non-static variable.
-
-- Next »

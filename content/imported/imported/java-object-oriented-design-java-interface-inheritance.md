@@ -7,10 +7,7 @@ order: 50184
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0550__Java_Interface_Inheritance.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 An interface can inherit from another interface. Unlike a class, an interface can inherit from multiple interfaces.
 
@@ -136,5 +133,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

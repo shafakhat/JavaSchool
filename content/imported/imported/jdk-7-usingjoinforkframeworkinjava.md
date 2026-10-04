@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1144
 source: https://web.archive.org/web/20130820174838/http://java2s.com/Code/Java/JDK-7/UsingjoinforkframeworkinJava.htm
 ---
-Using joinfork framework in Java
-
 ```java title=Example.java
 import java.util.ArrayList;
 import java.util.List;

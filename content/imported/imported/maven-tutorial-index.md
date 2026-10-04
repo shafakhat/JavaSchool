@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50044
 source: https://www.java2s.com/Tutorials/Java/Maven_Tutorial/index.html
 ---
-- Next »
-
 When creating software project we normally use a build tool to automate processes.
 
 Building a software project typically includes the following activities:
@@ -97,5 +95,3 @@ Ant has no default directory layout.
 Maven uses a more declarative approach. By using Maven we only specify in the POM file what to build, not how to build it.
 
 In Maven, how to build your project is predefined in the Maven Build Life Cycles, Phases and Goals.
-
-- Next »

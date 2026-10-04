@@ -33,5 +33,3 @@ if (srcOff > dstOff) {
     for (i = srcOff + Len - 1, j = k; i >= srcOff; i--, j--) {
         b[j] = b[i];
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

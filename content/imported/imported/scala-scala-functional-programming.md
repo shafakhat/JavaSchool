@@ -7,10 +7,7 @@ order: 50098
 source: https://www.java2s.com/Tutorials/Java/Scala/2100__Scala_Functional_Programming.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Scala allows us to express functions as literals.
 
@@ -209,5 +206,4 @@ object Main extends App {
 }
 ```
 
-- Next »
 - « Previous

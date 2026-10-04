@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1069
 source: https://web.archive.org/web/20061016093540/http://www.java2s.com/Code/Java/Apache-Common/TestRedundantObjectPool.htm
 ---
-Test Redundant Object Pool
-
 ```java title=Example.java
 import java.util.HashMap;
 import org.apache.commons.pool.impl.SoftReferenceObjectPool;

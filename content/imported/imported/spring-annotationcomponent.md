@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/20081209070032/http://www.java2s.com:80/Code/Java/Spring/AnnotationComponent.htm
 ---
-Annotation Component
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

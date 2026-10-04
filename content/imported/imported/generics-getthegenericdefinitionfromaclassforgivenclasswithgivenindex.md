@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/20111124225431/http://java2s.com/Code/Java/Generics/GettheGenericdefinitionfromaclassforgivenclasswithgivenindex.htm
 ---
-Get the Generic definition from a class for given class with given index.
-
 ```java title=Example.java
 /**
  * Copyright (C) 2010 altuure <altuure [AT] gmail [DOT] com> http://www.altuure.com/projects/yagdao
@@ -36,7 +34,6 @@ import java.lang.reflect.Type;
  */
 public class GenericUtils {
     /**
-     * Get the Generic definition from a class for given class with given index.
      * @param clz Implementing class
      * @param class1 class with generic definition
      * @param index generic index

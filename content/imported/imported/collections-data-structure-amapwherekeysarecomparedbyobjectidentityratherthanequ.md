@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1057
 source: https://web.archive.org/web/20100213172019/http://java2s.com/Code/Java/Collections-Data-Structure/AMapwherekeysarecomparedbyobjectidentityratherthanequals.htm
 ---
-A Map where keys are compared by object identity, rather than equals()
-
 ```java title=Example.java
 /*
  * Hibernate, Relational Persistence for Idiomatic Java

@@ -7,10 +7,7 @@ order: 50137
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0010__Java_Class_Instance.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The following is the general syntax to create an instance of a class:
 
@@ -188,5 +185,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50450
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5120__Java_Package.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Packages are containers for classes. Packages are used to keep the class name space compartmentalized. In Java, package is mapped to a folder on your hard drive.
 
@@ -139,5 +136,4 @@ publicclass Main {
 }
 ```
 
-- Next »
 - « Previous

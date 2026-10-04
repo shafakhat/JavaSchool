@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20070504160703/http://www.java2s.com:80/Code/Java/Spring/AfterAdviceExample.htm
 ---
-After Advice Example
-
 ```java title=Example.java
 /*
 Pro Spring

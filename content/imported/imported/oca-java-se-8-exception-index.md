@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50005
 source: https://www.java2s.com/Tutorials/Java/OCA_Java_SE_8_Exception/index.html
 ---
-- Next »
-
 ## Understanding Exception Types
 
 An exception is an event that alters program flow.
@@ -83,5 +81,3 @@ The first type is Runtime exception which is the subclass of RuntimeException. F
 The second type is the Checked exception which is Subclass of Exception but not subclass of RuntimeException. For the checked exception we are required to catch them.
 
 The last type is the Error which is the Subclass of Error. We cannot catch them and are not required to catch them.
-
-- Next »

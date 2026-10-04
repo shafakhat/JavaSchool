@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20061026234750/http://www.java2s.com/Code/Java/Tiny-Application/FileDownloadManager.htm
 ---
-File Download Manager
-
 ```java title=Example.java
 import java.awt.BorderLayout;
 import java.awt.Component;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1142
 source: https://web.archive.org/web/20071106044930/http://www.java2s.com:80/Code/Java/Web-Services-SOA/Thisdemoshowshowtodevelopeanuserinterceptorandaddtheinterceptorintotheinterceptorchainthroughconfiguration.htm
 ---
-This demo shows how to develope an user interceptor and add the interceptor into the interceptor chain through configuration
-
 ```java title=Example.java
 Stream GZIP Interceptor Demo
 ============================

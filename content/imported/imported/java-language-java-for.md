@@ -7,10 +7,7 @@ order: 50434
 source: https://www.java2s.com/Tutorials/Java/Java_Language/4030__Java_for.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java for loop statement provides a powerful way of writing loop statement.
 
@@ -215,5 +212,4 @@ for (int x : nums) {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

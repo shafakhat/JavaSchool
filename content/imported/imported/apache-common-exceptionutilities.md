@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1028
 source: https://web.archive.org/web/20061027010112/http://www.java2s.com/Code/Java/Apache-Common/ExceptionUtilities.htm
 ---
-Exception Utilities
-
 ```java title=Example.java
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.commons.lang.exception.NestableException;

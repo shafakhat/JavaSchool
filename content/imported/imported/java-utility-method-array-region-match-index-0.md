@@ -58,5 +58,3 @@ else {
             return false;
     return true;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

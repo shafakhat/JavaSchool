@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50000
 source: https://www.java2s.com/Tutorials/Java/OCA_Java_SE_8_Building_Blocks/index.html
 ---
-- Next »
-
 In Java programs, classes are the basic building blocks.
 
 To use most classes, you have to create objects.
@@ -285,5 +283,3 @@ Exception in thread "main"
 java.lang.ArrayIndexOutOfBoundsException: 1
        at mainmethod.Main.main(Main.java:4)
 ```
-
-- Next »

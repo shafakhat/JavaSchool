@@ -7,10 +7,7 @@ order: 50251
 source: https://www.java2s.com/Tutorials/Java/java.io/File/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Field
 
@@ -79,5 +76,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/File/index.html
 - Java File.toURI()
 - Java File.toURL()
 
-- Next »
 - « Previous

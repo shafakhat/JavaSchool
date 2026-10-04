@@ -124,5 +124,3 @@ finalint[] result = Arrays.copyOf(original, original.length + appender.length);
 System.arraycopy(appender, 0, result, original.length, appender.length);
 return result;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1147
 source: https://web.archive.org/web/20130301041103/http://www.java2s.com:80/Code/Java/JDK-7/Usingstringliteralsinswitchstatements.htm
 ---
-Using string literals in switch statements
-
 ```java title=Example.java
 public class Test {
   public static void main(String[] args) {

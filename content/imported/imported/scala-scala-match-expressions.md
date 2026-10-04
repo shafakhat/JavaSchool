@@ -7,10 +7,7 @@ order: 50096
 source: https://www.java2s.com/Tutorials/Java/Scala/0270__Scala_Match_Expressions.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Scala's match expressions are used for pattern matching.
 
@@ -45,5 +42,4 @@ The following code shows how to match against a String.
 }
 ```
 
-- Next »
 - « Previous

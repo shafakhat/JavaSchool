@@ -7,10 +7,7 @@ order: 50302
 source: https://www.java2s.com/Tutorials/Java/java.nio.charset/CharsetDecoder/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -26,5 +23,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio.charset/CharsetDecoder/in
 - Java CharsetDecoder .maxCharsPerByte ()
 - Java CharsetDecoder.replacement()
 
-- Next »
 - « Previous

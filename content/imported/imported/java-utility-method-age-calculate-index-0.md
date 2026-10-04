@@ -142,5 +142,3 @@ if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
 return age;
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

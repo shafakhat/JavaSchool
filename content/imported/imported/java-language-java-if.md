@@ -7,10 +7,7 @@ order: 50432
 source: https://www.java2s.com/Tutorials/Java/Java_Language/4010__Java_if.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java if statement is used to execute a block of code based on a condition.
 
@@ -212,5 +209,4 @@ publicclass Main {
 
 The output:
 
-- Next »
 - « Previous

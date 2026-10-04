@@ -7,10 +7,7 @@ order: 50238
 source: https://www.java2s.com/Tutorials/Java/Java_io/1050__Java_nio_Asynchronous.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 In a synchronous file I/O, the request to the I/O operation waits until the I/O operation is complete.
 
@@ -320,5 +317,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

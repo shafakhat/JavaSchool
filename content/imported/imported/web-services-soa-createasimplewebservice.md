@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1111
 source: https://web.archive.org/web/20100209023559/http://java2s.com/Code/Java/Web-Services-SOA/CreateasimpleWebService.htm
 ---
-Create a simple Web Service
-
 ```java title=Example.java
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

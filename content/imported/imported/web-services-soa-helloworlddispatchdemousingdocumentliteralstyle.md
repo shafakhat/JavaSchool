@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1118
 source: https://web.archive.org/web/20071105012717/http://www.java2s.com:80/Code/Java/Web-Services-SOA/HelloWorldDispatchDemousingDocumentLiteralStyle.htm
 ---
-Hello World Dispatch Demo using Document/Literal Style
-
 ```java title=Example.java
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -27,7 +25,6 @@ Hello World Dispatch Demo using Document/Literal Style
  * specific language governing permissions and limitations
  * under the License.
  */
-Hello World Dispatch Demo using Document/Literal Style
 ======================================================
 The demo demonstrates the use of JAX-WS Dispatch and Provider interface.
 The client side Dispatch instance invokes upon an endpoint using a JAX-WS

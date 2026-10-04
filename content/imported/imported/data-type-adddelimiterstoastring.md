@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1109
 source: https://web.archive.org/web/20111125121433/http://java2s.com/Code/Java/Data-Type/Adddelimiterstoastring.htm
 ---
-Add delimiters to a string.
-
 ```java title=Example.java
 /**
  * This software is provided as IS by Antilia-Soft SL.
@@ -16,7 +14,6 @@ Add delimiters to a string.
 //package com.antilia.common.util;
 public class StringUtils {
   /**
-   * Add delimiters to a string.
    * If the string itself contains the delimiter character,
    * the character will be escaped by repeating the delimitter character.
    *

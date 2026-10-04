@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50034
 source: https://www.java2s.com/Tutorials/Java/JSF/index.html
 ---
-- Next »
-
 JavaServer Faces or JSF is a Java-based web application framework to develop web-based user interfaces.
 
 JSF is a standardized technology in a specification.
@@ -21,5 +19,3 @@ The JSF specification defines a set of standard UI components and provides an Ap
 JSF makes Web application development easier by providing reusable UI components.
 
 We can easily do data transfer between UI components. With JSF we can create custom UI components.
-
-- Next »

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1131
 source: https://web.archive.org/web/20130820180423/http://java2s.com/Code/Java/JDK-7/Underscorebinaryliteral.htm
 ---
-Underscore binary literal
-
 ```java title=Example.java
 public class Test {
   public static void main(String[] args) {

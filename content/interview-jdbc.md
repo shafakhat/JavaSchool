@@ -2,7 +2,7 @@
 title: JDBC & Database Interview Questions
 nav: Interview - JDBC
 description: 20 JDBC interview questions - drivers, connections, statements, transactions, isolation levels, pooling, batch and result set handling.
-section: Interview & Certification
+section: Interview Prep
 order: 70
 ---
 

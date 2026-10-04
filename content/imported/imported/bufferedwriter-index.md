@@ -7,10 +7,7 @@ order: 50242
 source: https://www.java2s.com/Tutorials/Java/java.io/BufferedWriter/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -26,5 +23,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/BufferedWriter/index.html
 - Java BufferedWriter.write(int c)
 - Java BufferedWriter.write(String s, int off, int len)
 
-- Next »
 - « Previous

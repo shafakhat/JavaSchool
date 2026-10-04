@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20081209042639/http://www.java2s.com:80/Code/Java/JPA/AllOperatorinEJBQL.htm
 ---
-All Operator in EJB QL
-
 ```java title=Example.java
 File: Address.java
 import javax.persistence.Entity;

@@ -7,10 +7,7 @@ order: 50185
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0600__Java_Enum_Types.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## What Is an Enum Type?
 
@@ -182,5 +179,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

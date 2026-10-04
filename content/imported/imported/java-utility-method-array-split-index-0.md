@@ -141,5 +141,3 @@ int copied = 0;
 for (int i = 0; i < count; i++) {
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

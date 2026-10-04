@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1051
 source: https://web.archive.org/web/20091010112400/http://www.java2s.com:80/Code/Java/GWT/AddtwocontrolstoRootPanel.htm
 ---
-Add two controls to RootPanel
-
 ```java title=Example.java
 package com.java2s.gwt.client;
 import com.google.gwt.core.client.*;

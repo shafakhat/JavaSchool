@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20090502034900/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AlphaCompositeDSTOUT.htm
 ---
-AlphaComposite.DST_OUT
-
 ```java title=Example.java
 import java.awt.AlphaComposite;
 import java.awt.Color;

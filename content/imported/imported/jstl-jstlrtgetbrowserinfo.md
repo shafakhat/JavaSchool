@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20060307045659/http://www.java2s.com:80/Code/Java/JSTL/JSTLRTGetBrowserInfo.htm
 ---
-JSTL RT Get Browser Info
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/core-rt" prefix="c-rt" %>

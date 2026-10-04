@@ -7,10 +7,7 @@ order: 50366
 source: https://www.java2s.com/Tutorials/Java/java.util/Map.Entry/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -20,5 +17,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/Map.Entry/index.html
 - Java Map.Entry.hashCode()
 - Java Map.Entry.setValue(V value)
 
-- Next »
 - « Previous

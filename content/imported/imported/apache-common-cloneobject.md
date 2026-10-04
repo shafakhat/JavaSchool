@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20070110030518/http://www.java2s.com:80/Code/Java/Apache-Common/CloneObject.htm
 ---
-Clone Object
-
 ```java title=Example.java
 import org.apache.commons.beanutils.BeanUtils;
 import java.util.Map;

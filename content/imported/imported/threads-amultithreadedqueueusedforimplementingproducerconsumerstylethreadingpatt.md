@@ -7,7 +7,6 @@ order: 1003
 source: https://web.archive.org/web/20090904113058/http://www.java2s.com:80/Code/Java/Threads/Amultithreadedqueueusedforimplementingproducerconsumerstylethreadingpatterns.htm
 ---
 A multithreaded queue used for implementing producer-consumer style threading patterns : Collections Threads « Threads « Java
-A multithreaded queue used for implementing producer-consumer style threading patterns
 
 ```java title=Example.java
 /*

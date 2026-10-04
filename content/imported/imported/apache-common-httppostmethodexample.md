@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1041
 source: https://web.archive.org/web/20060822142759/http://www.java2s.com:80/Code/Java/Apache-Common/HttppostmethodExample.htm
 ---
-Http post method Example
-
 ```java title=Example.java
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;

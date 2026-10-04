@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20081201192136/http://www.java2s.com:80/Code/Java/Generics/BoxingGenericExample.htm
 ---
-Boxing Generic Example
-
 ```java title=Example.java
 import java.util.*;
 public class BoxingGenericsExample {

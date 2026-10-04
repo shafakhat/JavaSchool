@@ -7,10 +7,7 @@ order: 50201
 source: https://www.java2s.com/Tutorials/Java/Java_io/0100__Java_io_FileInputStream.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 In Java I/O, a stream means a flow of data. The data in the stream could be bytes, characters, objects, etc.
 
@@ -98,5 +95,4 @@ import java.io.IOException;
 }
 ```
 
-- Next »
 - « Previous

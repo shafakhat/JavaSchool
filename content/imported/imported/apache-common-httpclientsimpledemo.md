@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20061026233635/http://www.java2s.com/Code/Java/Apache-Common/HttpClientSimpleDemo.htm
 ---
-Http Client Simple Demo
-
 ```java title=Example.java
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;

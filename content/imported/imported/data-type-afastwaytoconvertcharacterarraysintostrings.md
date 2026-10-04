@@ -6,7 +6,6 @@ section: Imported - java2s Archive
 order: 1124
 source: https://web.archive.org/web/20111031021110/http://www.java2s.com:80/Code/Java/Data-Type/AfastwaytoconvertcharacterarraysintoStrings.htm
 ---
-A fast way to convert character arrays into Strings.
 1.  StrCharAt - show String.charAt()
 2.  Basic tab-character handling stuff
 3.  Convert Characters to Lower Case

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50051
 source: https://www.java2s.com/Tutorials/Java/Java_Lambda/index.html
 ---
-- Next »
-
 A lambda expression is an unnamed function with parameters and a body.
 
 The lambda expression body can be a block statement or an expression.
@@ -71,5 +69,3 @@ the lambda expression.
 In the lambda expression the parameter e is not declared with a type. javac is inferring the type of e from its context, the signature of addActionListener.
 
 We don't need to explicitly write out the type when it's obvious. The lambda method parameters are still statically typed.
-
-- Next »

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1097
 source: https://web.archive.org/web/20061018193115/http://www.java2s.com/Code/Java/Velocity/VelocityVariableAdd.htm
 ---
-Velocity Variable Add
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20130111100544/http://www.java2s.com:80/Code/Java/JDK-7/Createanewfileandsavebytearray.htm
 ---
-Create a new file and save byte array
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.file.Files;

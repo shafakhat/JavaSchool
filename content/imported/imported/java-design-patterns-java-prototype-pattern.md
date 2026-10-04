@@ -7,10 +7,7 @@ order: 50116
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0050__Java_Prototype_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Prototype pattern is one of the creational patterns.
 
@@ -121,5 +118,4 @@ publicclass Main{
 
 The code above generates the following result.
 
-- Next »
 - « Previous

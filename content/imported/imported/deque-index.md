@@ -7,10 +7,7 @@ order: 50350
 source: https://www.java2s.com/Tutorials/Java/java.util/Deque/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -42,5 +39,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/Deque/index.html
 - Java Deque .removeLastOccurrence (Object o)
 - Java Deque.size()
 
-- Next »
 - « Previous

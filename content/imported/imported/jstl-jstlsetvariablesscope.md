@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513071552/http://www.java2s.com/Code/Ja
 ---
 JSTL Set Variables Scope : Java examples (example source code) » JSTL » Variable Scope
 
-JSTL Set Variables Scope
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <html>

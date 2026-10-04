@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060307044641/http://www.java2s.com:80/Code
 ---
 JavaServer Faces : Java examples (example source code) » J2EE » JavaServer Faces
 
-JavaServer Faces
-
 ```java title=Example.java
 /*
 Beginning JavaServer Pages

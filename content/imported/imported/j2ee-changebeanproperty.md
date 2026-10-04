@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20071018111850/http://java2s.com:80/Code/Java/J2EE/ChangeBeanProperty.htm
 ---
-Change Bean Property
-
 ```java title=Example.java
 //This example is from Jakub Czeczotka <jakub.czeczotka at gmail.com>
 //web.xml
@@ -16,7 +14,6 @@ Change Bean Property
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
     <display-name>
-  ChangeBeanProperty
     </display-name>
     <description>
   Change a property of a simple bean

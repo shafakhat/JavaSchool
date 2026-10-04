@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1024
 source: https://web.archive.org/web/20090322131248/http://www.java2s.com:80/Code/Java/Spring/BeanFactoryPreInstantiateSingletonsIntegration.htm
 ---
-BeanFactory PreInstantiate Singletons Integration
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

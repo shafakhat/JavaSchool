@@ -7,10 +7,7 @@ order: 50402
 source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0020__Java_java.lang.Class.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The java.lang.Class class is the center of reflection in Java.
 
@@ -143,5 +140,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

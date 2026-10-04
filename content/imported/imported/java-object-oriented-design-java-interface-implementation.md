@@ -7,10 +7,7 @@ order: 50183
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0540__Java_interface_implementation.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Implementing an Interface
 
@@ -151,5 +148,4 @@ abstractclass Main implements Calculator{
 }
 ```
 
-- Next »
 - « Previous

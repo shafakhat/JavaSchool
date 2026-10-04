@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20100213071200/http://java2s.com/Code/Java/Class/Initializationorder.htm
 ---
-Initialization order
-
 ```java title=Example.java
 // : c04:OrderOfInitialization.java
 // Demonstrates initialization order.

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513070942/http://www.java2s.com/Code/Ja
 ---
 JSTL Iteration over tokens : Java examples (example source code) » JSTL » Collections
 
-JSTL Iteration over tokens
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <html>

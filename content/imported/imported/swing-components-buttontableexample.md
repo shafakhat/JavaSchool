@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513064955/http://www.java2s.com/Code/Ja
 ---
 Button Table Example : Java examples (example source code) » Swing Components » Grid Table
 
-Button Table Example
-
 ```java title=Example.java
 // Example from http://www.crionics.com/products/opensource/faq/swing_ex/SwingExamples.html
 import java.awt.Component;

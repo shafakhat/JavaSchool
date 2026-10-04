@@ -7,10 +7,7 @@ order: 50159
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0230__Java_Objects_Class.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java has a utility class Objects in the java.util package for working with objects.
 
@@ -120,5 +117,4 @@ import java.util.function.Supplier;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

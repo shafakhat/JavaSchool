@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1042
 source: https://web.archive.org/web/20100213232647/http://java2s.com/Code/Java/Apache-Common/Implementequalsmethodusingcommonslang.htm
 ---
-Implement equals method using commons-lang
-
 ```java title=Example.java
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.EqualsBuilder;

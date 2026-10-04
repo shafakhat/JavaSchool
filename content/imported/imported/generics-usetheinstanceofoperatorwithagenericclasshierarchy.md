@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20090129173435/http://java2s.com:80/Code/Java/Generics/Usetheinstanceofoperatorwithagenericclasshierarchy.htm
 ---
-Use the instanceof operator with a generic class hierarchy.
-
 ```java title=Example.java
 /*
 Java 2, v5.0 (Tiger) New Features

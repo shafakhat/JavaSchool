@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1038
 source: https://web.archive.org/web/20061016095959/http://www.java2s.com/Code/Java/Database-SQL-JDBC/CheckBatchUpdateResult.htm
 ---
-Check Batch Update Result
-
 ```java title=Example.java
 import java.sql.BatchUpdateException;
 import java.sql.Connection;

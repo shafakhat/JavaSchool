@@ -7,10 +7,7 @@ order: 50439
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5010__Java_Class.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A class defines a new data type.
 
@@ -204,5 +201,4 @@ if (a instanceof Object)
 
 The output from this program is shown here:
 
-- Next »
 - « Previous

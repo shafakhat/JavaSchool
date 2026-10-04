@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20070504050912/http://www.java2s.com:80/Code/Java/Velocity/ParseAnotherpage.htm
 ---
-Parse Another page
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

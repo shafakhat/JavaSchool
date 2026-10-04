@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1145
 source: https://web.archive.org/web/20130820182109/http://java2s.com/Code/Java/JDK-7/UsingPosixFileAttributes.htm
 ---
-Using PosixFileAttributes
-
 ```java title=Example.java
 import static java.nio.file.attribute.PosixFilePermission.GROUP_READ;
 import static java.nio.file.attribute.PosixFilePermission.OWNER_READ;

@@ -7,10 +7,7 @@ order: 50177
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0420__Java_finally_block.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A try block can also have zero or one finally block. A finally block is always used with a try block.
 
@@ -173,5 +170,4 @@ class MyException extends Exception {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

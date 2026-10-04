@@ -7,10 +7,7 @@ order: 50383
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/0050__Java_Regex_Quantifiers.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We can specify the number of times a character in a regular expression may match the sequence of characters.
 
@@ -73,5 +70,4 @@ import java.util.regex.Pattern;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

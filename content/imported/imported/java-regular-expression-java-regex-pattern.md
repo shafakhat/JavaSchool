@@ -7,10 +7,7 @@ order: 50381
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/0030__Java_Regex_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The package java.util.regex contains three classes to support the full version of regular expressions.
 
@@ -107,5 +104,4 @@ import java.util.regex.Pattern;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

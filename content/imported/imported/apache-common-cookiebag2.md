@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20061018180948/http://www.java2s.com/Code/Java/Apache-Common/CookieBag2.htm
 ---
-Cookie Bag 2
-
 ```java title=Example.java
 import org.apache.commons.collections.Bag;
 import org.apache.commons.collections.bag.HashBag;

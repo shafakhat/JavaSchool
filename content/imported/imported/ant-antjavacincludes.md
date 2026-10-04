@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20100709054147/http://www.java2s.com:80/Code/Java/Ant/Antjavacincludes.htm
 ---
-Ant javac includes
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="yourname" basedir=".." default="all">

@@ -102,5 +102,3 @@ for (int i = 0; i < nums.length; i++)
     nums[i] /= n;
 return nums;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

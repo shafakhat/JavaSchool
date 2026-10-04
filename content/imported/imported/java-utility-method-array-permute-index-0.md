@@ -111,5 +111,3 @@ for (int i = 0; i < output.length; i++) {
     output[i] = array[permutation[i]];
 return output;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

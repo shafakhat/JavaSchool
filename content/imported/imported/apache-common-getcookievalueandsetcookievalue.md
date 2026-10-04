@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20061026233630/http://www.java2s.com/Code/Java/Apache-Common/GetCookievalueandsetcookievalue.htm
 ---
-Get Cookie value and set cookie value
-
 ```java title=Example.java
 import org.apache.commons.httpclient.Cookie;
 import org.apache.commons.httpclient.HttpState;

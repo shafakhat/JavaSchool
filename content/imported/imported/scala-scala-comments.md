@@ -7,10 +7,7 @@ order: 50078
 source: https://www.java2s.com/Tutorials/Java/Scala/0090__Scala_Comments.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Scala comments are much like Java and C++ comments.
 
@@ -43,5 +40,4 @@ Outer comment
 */
 ```
 
-- Next »
 - « Previous

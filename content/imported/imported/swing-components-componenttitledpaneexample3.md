@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513085052/http://www.java2s.com/Code/Ja
 ---
 Component TitledPane Example 3 : Java examples (example source code) » Swing Components » Border
 
-Component TitledPane Example 3
-
 ```java title=Example.java
 // Example from http://www.crionics.com/products/opensource/faq/swing_ex/SwingExamples.html
 /* (swing1.1.1) */

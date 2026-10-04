@@ -93,5 +93,3 @@ if (Float.isNaN(f))
     return f;
 return (float) Math.PI / 2 - f;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

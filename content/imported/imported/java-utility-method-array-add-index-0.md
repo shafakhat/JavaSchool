@@ -127,5 +127,3 @@ for (int i = 0; i < l; i++) {
     res[i] = arr1[i] + arr2[i] + arr3[i];
 return res;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

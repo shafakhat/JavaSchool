@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1042
 source: https://web.archive.org/web/20060713173618/http://www.java2s.com:80/Code/Java/JSP/Errorwithouthandler.htm
 ---
-Error without handler
-
 ```java title=Example.java
 //File Name: generateErrorNoHandler.jsp
 <%-- This scriptlet checks a hidden field to see whether or not to throw an exception --%>

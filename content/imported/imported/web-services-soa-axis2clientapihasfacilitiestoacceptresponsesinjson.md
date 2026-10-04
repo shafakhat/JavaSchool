@@ -6,14 +6,11 @@ section: Imported - java2s Archive
 order: 1107
 source: https://web.archive.org/web/20080513025530/http://www.java2s.com/Code/Java/Web-Services-SOA/Axis2clientAPIhasfacilitiestoacceptresponsesinJSON.htm
 ---
-Axis2 client API has facilities to accept responses in JSON
-
 ```java title=Example.java
 Sample for Yahoo - Search - JSON
 =================================
 Introduction
 ============
-Axis2 client API has facilities to accept responses in JSON.
 Yahoo provides an API to call its search service and retrieve JSON responses. This sample demonstrates how to call Yahoo
 search service using an Axis2 client which accepts a JSON response.
 Pre-Requisites

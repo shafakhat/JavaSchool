@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20130905031432/http://java2s.com/Tutorials/Java/Algorithms/Quick_Sort_implementation_in_Java.htm
 ---
-Next »335/677« Previous
-
 In this chapter you will learn:
 
 - Quick Sort implementation
@@ -465,5 +463,3 @@ long n = (int) (java.lang.Math.random() * 99);
 What you will learn in the next chapter:
 
 - Fibonacci implementation
-
-Next »« PreviousHome » Java Tutorial » AlgorithmsBubble sortBinary SearchInsertion SortSelection sortShell sortHeap SortMerge SortQuick SortFibonacciHanoi puzzleFahrenheit to Celsius

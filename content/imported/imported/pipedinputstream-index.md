@@ -7,10 +7,7 @@ order: 50272
 source: https://www.java2s.com/Tutorials/Java/java.io/PipedInputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -28,5 +25,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/PipedInputStream/index.htm
 - Java PipedInputStream.read(byte[] b, int off, int len)
 - Java PipedInputStream.receive(int b)
 
-- Next »
 - « Previous

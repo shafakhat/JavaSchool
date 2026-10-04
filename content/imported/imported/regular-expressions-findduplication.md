@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513094113/http://www.java2s.com/Code/Ja
 ---
 Find duplication : Java examples (example source code) » Regular Expressions » Validation
 
-Find duplication
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

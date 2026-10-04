@@ -7,10 +7,7 @@ order: 50406
 source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0060__Java_Constructor_Reflection.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The following four methods from the Class class get information about the constructors:
 
@@ -106,5 +103,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50311
 source: https://www.java2s.com/Tutorials/Java/java.nio/FloatBuffer/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -40,5 +37,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio/FloatBuffer/index.html
 - Java FloatBuffer.wrap(float[] array)
 - Java FloatBuffer.wrap(float[] array, int offset, int length)
 
-- Next »
 - « Previous

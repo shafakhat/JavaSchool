@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/20091006130310/http://www.java2s.com:80/Code/Java/Servlets/breakLineswithHTML.htm
 ---
-break Lines with HTML
-
 ```java title=Example.java
 /**
  * @author matthew_hicks

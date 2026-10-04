@@ -7,7 +7,6 @@ order: 50328
 source: https://www.java2s.com/Tutorials/Java/org.w3c.dom/NodeList/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
 
 ## Method

@@ -42,5 +42,3 @@ voidzeros(final float[] input) zeros
 ```java title=Example.java
 Arrays.fill(input, 0, input.length, 0.0f);
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

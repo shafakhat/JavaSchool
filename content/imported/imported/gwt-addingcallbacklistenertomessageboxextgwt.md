@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20100523193814/http://www.java2s.com:80/Code/Java/GWT/AddingcallbacklistenertoMessageBoxExtGWT.htm
 ---
-Adding callback listener to MessageBox (Ext GWT)
-
 ```java title=Example.java
 /*
  * Ext GWT - Ext for GWT

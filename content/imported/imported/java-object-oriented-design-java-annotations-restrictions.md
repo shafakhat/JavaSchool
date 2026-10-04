@@ -7,10 +7,7 @@ order: 50192
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0710__Java_Annotations_Restrictions.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Restrictions on Annotation Types
 
@@ -56,5 +53,4 @@ public  @interface MyAnnotation {
 
 An annotation type cannot be generic.
 
-- Next »
 - « Previous

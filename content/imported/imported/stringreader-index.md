@@ -7,10 +7,7 @@ order: 50284
 source: https://www.java2s.com/Tutorials/Java/java.io/StringReader/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -27,5 +24,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/StringReader/index.html
 - Java StringReader.reset()
 - Java StringReader.skip(long ns)
 
-- Next »
 - « Previous

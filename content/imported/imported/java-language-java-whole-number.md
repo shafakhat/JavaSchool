@@ -7,10 +7,7 @@ order: 50422
 source: https://www.java2s.com/Tutorials/Java/Java_Language/2020__Java_whole_number.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Java byte type
 
@@ -135,5 +132,4 @@ publicclass Main{
 
 The code above generates the following result.
 
-- Next »
 - « Previous

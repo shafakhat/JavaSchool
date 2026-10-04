@@ -7,7 +7,6 @@ order: 1004
 source: https://web.archive.org/web/20051214141430/http://www.java2s.com:80/Code/Java/Tiny-Application/BrowerbasedonJEditorPane.htm
 ---
 Brower based on JEditorPane : Java examples (example source code) » Tiny Application » Browser
-Brower based on JEditorPane
 
 ```java title=Example.java
 import java.awt.BorderLayout;

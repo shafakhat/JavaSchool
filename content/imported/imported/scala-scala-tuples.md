@@ -7,10 +7,7 @@ order: 50088
 source: https://www.java2s.com/Tutorials/Java/Scala/0190__Scala_Tuples.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A tuple is an ordered container of two or more values of same or different types.
 
@@ -51,5 +48,4 @@ val tuple = (1, false, "Scala")
 val third = tuple._3
 ```
 
-- Next »
 - « Previous

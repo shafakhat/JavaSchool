@@ -7,10 +7,7 @@ order: 50334
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0130__Java_List.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A list is an ordered collection of objects, defined in List interface. List interface represents a list in the Collections Framework.
 
@@ -90,9 +87,9 @@ for (int i = 0; i < count; i++) {
 
 The code above generates the following result.
 
-[ArrayList APIs](../../../Tutorials/Java/java.util/ArrayList/index.html)
+ArrayList APIs
 
-[LinkedList APIs](../../../Tutorials/Java/java.util/LinkedList/index.html)
+LinkedList APIs
 
 ## ListIterator
 
@@ -153,7 +150,6 @@ The next() method moves one index forward and the previous() method moves one in
 
 If you use its next() method followed by the previous() method, the iterator goes back to the same position.
 
-[ListIterator APIs](../../../Tutorials/Java/java.util/ListIterator/index.html)
+ListIterator APIs
 
-- Next »
 - « Previous

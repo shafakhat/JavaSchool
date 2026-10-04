@@ -43,5 +43,3 @@ doubletoDegrees(Short angrad) To degrees.
 ```java title=Example.java
 returnMath.toDegrees(angrad.doubleValue());
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

@@ -7,10 +7,7 @@ order: 50168
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0330__Java_Inheritance_Hiding.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method Hiding
 
@@ -128,5 +125,4 @@ A class should use the keyword super to access the hidden fields of the supercla
 
 The class can use the simple names to access the redefined fields in its body.
 
-- Next »
 - « Previous

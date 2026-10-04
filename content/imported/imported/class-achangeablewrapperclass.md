@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1124
 source: https://web.archive.org/web/20090504072712/http://www.java2s.com:80/Code/Java/Class/Achangeablewrapperclass.htm
 ---
-A changeable wrapper class
-
 ```java title=Example.java
 // : appendixa:MutableInteger.java
-// A changeable wrapper class.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 import java.util.ArrayList;

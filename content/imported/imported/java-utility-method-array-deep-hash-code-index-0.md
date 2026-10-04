@@ -64,5 +64,3 @@ for (Object element : a) {
         elementHash = deepHashCode((Object[]) element);
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

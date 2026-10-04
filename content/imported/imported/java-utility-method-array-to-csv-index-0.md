@@ -89,5 +89,3 @@ for (Iterator<String> itr = Arrays.asList(strArray).iterator(); itr.hasNext();) 
         sb.append(",");
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

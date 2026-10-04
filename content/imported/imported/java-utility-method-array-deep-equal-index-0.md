@@ -70,5 +70,3 @@ if (len != a2.length)
 for (int i = 0; i < len; i++) {
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

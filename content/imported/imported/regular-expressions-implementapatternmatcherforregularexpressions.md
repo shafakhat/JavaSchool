@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20090422124102/http://www.java2s.com:80/Code/Java/Regular-Expressions/Implementapatternmatcherforregularexpressions.htm
 ---
-Implement a pattern matcher for regular expressions
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

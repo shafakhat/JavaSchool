@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1027
 source: https://web.archive.org/web/20060504224116/http://www.java2s.com:80/Code/Java/JSP/CSSJavaScriptVBScriptandJSP2.htm
 ---
-CSS, JavaScript, VBScript, and JSP 2 : Java examples (example source code) » JSP » Basics
-
 CSS, JavaScript, VBScript, and JSP 2
 
 ```java title=Example.java

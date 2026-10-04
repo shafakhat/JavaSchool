@@ -7,10 +7,7 @@ order: 50220
 source: https://www.java2s.com/Tutorials/Java/Java_io/0840__Java_io_Jar_Manifest.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Manifest File
 
@@ -224,5 +221,4 @@ Name: book/tutorial/
 Sealed: false
 ```
 
-- Next »
 - « Previous

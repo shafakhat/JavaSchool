@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1056
 source: https://web.archive.org/web/20081201073549/http://www.java2s.com:80/Code/Java/Class/OverrideShape.htm
 ---
-Override Shape
-
 ```java title=Example.java
 // : c10:Shapes.java
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002

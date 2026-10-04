@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1029
 source: https://web.archive.org/web/20070831234951/http://www.java2s.com:80/Code/Java/PDF-RTF/AddPageNumberstoExistingPDFdocument.htm
 ---
-Add Page Numbers to Existing PDF document
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Element;

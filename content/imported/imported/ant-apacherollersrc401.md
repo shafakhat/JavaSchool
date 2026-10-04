@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20100814052009/http://www.java2s.com:80/Code/Java/Ant/apacherollersrc401.htm
 ---
-apache-roller-src-4.0.1
-
 ```java title=Example.java
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="toplevel" default="build" basedir="." xmlns:artifact="urn:maven-artifact-ant">

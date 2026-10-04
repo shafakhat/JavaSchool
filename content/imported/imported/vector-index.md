@@ -7,10 +7,7 @@ order: 50376
 source: https://www.java2s.com/Tutorials/Java/java.util/Vector/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -66,5 +63,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/Vector/index.html
 - Java Vector.toString()
 - Java Vector.trimToSize()
 
-- Next »
 - « Previous

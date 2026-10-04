@@ -7,10 +7,7 @@ order: 50258
 source: https://www.java2s.com/Tutorials/Java/java.io/FileReader/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -20,5 +17,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/FileReader/index.html
 
 ## Method
 
-- Next »
 - « Previous

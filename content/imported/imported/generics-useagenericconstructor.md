@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1054
 source: https://web.archive.org/web/20090227183655/http://www.java2s.com:80/Code/Java/Generics/Useagenericconstructor.htm
 ---
-Use a generic constructor.
-
 ```java title=Example.java
 class GenCons {
   private double val;

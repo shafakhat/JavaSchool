@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513083623/http://www.java2s.com/Code/Ja
 ---
 Event For Cancel Query : Java examples (example source code) » Hibernate » Event
 
-Event For Cancel Query
-
 ```java title=Example.java
 /////////////////////////////////////////////////////////////////////////
 <?xml version='1.0' encoding='utf-8'?>

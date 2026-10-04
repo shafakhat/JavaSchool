@@ -7,10 +7,7 @@ order: 50343
 source: https://www.java2s.com/Tutorials/Java/java.util/ArrayDeque/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -53,5 +50,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/ArrayDeque/index.html
 - Java ArrayDeque.toArray()
 - Java ArrayDeque.toArray(T[] a)
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1027
 source: https://web.archive.org/web/20061026235124/http://www.java2s.com/Code/Java/Apache-Common/Databaseconnectionpooldemo.htm
 ---
-Database connection pool demo
-
 ```java title=Example.java
 import org.apache.commons.pool.impl.GenericObjectPool;
 import org.apache.commons.dbcp.*;

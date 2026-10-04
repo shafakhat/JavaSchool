@@ -7,10 +7,7 @@ order: 50440
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5020__Java_Method.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Classes usually consist of two things: instance variables and methods. Instance variables are the data part of a class, while the methods defines the behaviours of a class.
 
@@ -360,5 +357,4 @@ The following code shows how to use of argv to get an integer value from command
 
 The code above generates the following result.
 
-- Next »
 - « Previous

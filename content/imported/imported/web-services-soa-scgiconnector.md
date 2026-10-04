@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1126
 source: https://web.archive.org/web/20111124195932/http://java2s.com/Code/Java/Web-Services-SOA/SCGIconnector.htm
 ---
-SCGI connector
-
 ```java title=Example.java
 //package redstone.xmlrpc.util;
 /**

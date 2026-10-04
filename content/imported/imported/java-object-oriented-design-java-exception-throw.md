@@ -7,10 +7,7 @@ order: 50175
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0400__Java_Exception_Throw.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 If a piece of code may throw a checked exception, we have two options:
 
@@ -125,5 +122,4 @@ If we throw a checked exception, we must handle it with a try-catch block, or us
 
 These rules do not apply if you throw an unchecked exception.
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1054
 source: https://web.archive.org/web/20091202082605/http://java2s.com:80/Code/Java/Threads/Executesataskwithaspecifiedtimeout.htm
 ---
-Executes a task with a specified timeout
-
 ```java title=Example.java
 /*
  * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//httpclient/src/java/org/apache/commons/httpclient/util/TimeoutController.java,v 1.6 2004/04/18 23:51:38 jsdever Exp $
@@ -40,7 +38,6 @@ Executes a task with a specified timeout
  */
 /**
  * <p>
- * Executes a task with a specified timeout.
  * </p>
  * @author Ortwin Glueck
  * @author <a href="mailto:mbowler@GargoyleSoftware.com">Mike Bowler</a>

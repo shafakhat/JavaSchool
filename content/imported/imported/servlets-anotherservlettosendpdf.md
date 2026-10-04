@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/20061018193005/http://www.java2s.com/Code/Java/Servlets/AnotherservlettoSendPDF.htm
 ---
-Another servlet to Send PDF
-
 ```java title=Example.java
 import java.io.BufferedInputStream;
 import java.io.File;

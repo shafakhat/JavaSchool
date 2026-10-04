@@ -7,10 +7,7 @@ order: 50435
 source: https://www.java2s.com/Tutorials/Java/Java_Language/4040__Java_while.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The while loop repeats a statement or block while its controlling condition is true.
 
@@ -185,5 +182,4 @@ publicclass Main {
 
 Here is a sample run produced by this program:
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50150
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0110__Java_Constructors.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A constructor is a block of code used to initialize an object immediately after the object is created.
 
@@ -202,5 +199,4 @@ The default constructor is also called a no-args constructor.
 
 If the class already had a constructor, the compiler does not add any constructor.
 
-- Next »
 - « Previous

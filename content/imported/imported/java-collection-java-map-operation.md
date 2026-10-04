@@ -7,10 +7,7 @@ order: 50340
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0190__Java_Map_Operation.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Map Iteration
 
@@ -145,5 +142,4 @@ import java.util.Set;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

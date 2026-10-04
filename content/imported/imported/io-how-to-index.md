@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50027
 source: https://www.java2s.com/Tutorials/Java/IO_How_to/index.html
 ---
-- Next »
-
 - Buffer Operation 7
 - Byte Array 14
 - Console 18
@@ -41,5 +39,3 @@ source: https://www.java2s.com/Tutorials/Java/IO_How_to/index.html
 - Writer 2
 - XML Delete 1
 - Zip 15
-
-- Next »

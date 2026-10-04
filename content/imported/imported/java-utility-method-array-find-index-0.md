@@ -88,5 +88,3 @@ for (int index = 0; index < array.length; index++) {
         result.add(index);
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

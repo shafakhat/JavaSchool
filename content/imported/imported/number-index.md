@@ -7,10 +7,7 @@ order: 1020
 source: https://web.archive.org/web/20150330220150/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Number/index.htm
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 - Java Compute prime numbers
 - Java Compute prime numbers using the Sieve of Eratosthenes algorithm
@@ -20,7 +17,4 @@ source: https://web.archive.org/web/20150330220150/http://www.java2s.com:80/Tuto
 - Java Print a table of fahrenheit and celsius temperatures 1
 
 ```java title=Example.java
-« Previous
 ```
-
-- Next »

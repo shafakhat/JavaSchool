@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50008
 source: https://www.java2s.com/Tutorials/Java/Java_Reflection/index.html
 ---
-- Next »
-
 ## What Is Reflection?
 
 Reflection is the ability of a program to query and modify its state during the execution.
@@ -51,5 +49,3 @@ With Java reflection we can do the following tasks.
 - Create an object of the class using one of its constructors.
 - Invoke method with the method's name and method's parameter types.
 - Create an array of a type dynamically at runtime and manipulate its elements.
-
-- Next »

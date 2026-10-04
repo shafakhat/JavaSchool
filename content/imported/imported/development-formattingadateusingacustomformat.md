@@ -1,10 +1,10 @@
 ---
 title: Formatting a Date Using a Custom Format
 nav: Formatting a Date Using a ...
-description: Imported from java2s.com: Formatting a Date Using a Custom Format
-section: Imported
-order: 20013
-source: http://www.java2s.com:80/Tutorial/Java/0120__Development/FormattingaDateUsingaCustomFormat.htm
+description: Imported from the java2s.com archive: Formatting a Date Using a Custom Format
+section: Imported - java2s Archive
+order: 1023
+source: https://web.archive.org/web/20100505183225/http://www.java2s.com:80/Tutorial/Java/0120__Development/FormattingaDateUsingaCustomFormat.htm
 ---
 ```java title=Example.java
 import java.text.Format;

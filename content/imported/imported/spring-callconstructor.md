@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20090404102137/http://www.java2s.com:80/Code/Java/Spring/CallConstructor.htm
 ---
-Call Constructor
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

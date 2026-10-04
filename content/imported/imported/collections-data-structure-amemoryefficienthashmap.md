@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1059
 source: https://web.archive.org/web/20100213173039/http://java2s.com/Code/Java/Collections-Data-Structure/Amemoryefficienthashmap.htm
 ---
-A memory-efficient hash map.
-
 ```java title=Example.java
 /*
  * Copyright 2009 Google Inc.
@@ -36,7 +34,6 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 /**
- * A memory-efficient hash map.
  *
  * @param <K> the key type
  * @param <V> the value type

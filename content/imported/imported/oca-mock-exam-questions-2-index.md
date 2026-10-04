@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50007
 source: https://www.java2s.com/Tutorials/Java/OCA_Mock_Exam_Questions_2/index.html
 ---
-- Next »
-
 ## Question
 
 What will happen when you compile and run the following code?
@@ -38,5 +36,3 @@ C
 ## Note
 
 You cannot access an instance variable from a static method.
-
-- Next »

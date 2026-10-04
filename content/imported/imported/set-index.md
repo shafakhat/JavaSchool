@@ -7,10 +7,7 @@ order: 50370
 source: https://www.java2s.com/Tutorials/Java/java.util/Set/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -30,5 +27,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/Set/index.html
 - Java Set.toArray()
 - Java Set.toArray(T[] a)
 
-- Next »
 - « Previous

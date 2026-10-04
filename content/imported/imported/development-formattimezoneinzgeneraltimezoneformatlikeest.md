@@ -2,9 +2,9 @@
 title: Format TimeZone in z (General time zone) format like EST.
 nav: Format TimeZone in z (Gene...
 description: System.out.println("TimeZone in z format : " + sdf.format(date));
-section: Imported
-order: 20012
-source: http://www.java2s.com:80/Tutorial/Java/0120__Development/FormatTimeZoneinzGeneraltimezoneformatlikeEST.htm
+section: Imported - java2s Archive
+order: 1020
+source: https://web.archive.org/web/20100505183143/http://www.java2s.com:80/Tutorial/Java/0120__Development/FormatTimeZoneinzGeneraltimezoneformatlikeEST.htm
 ---
 ```java title=Example.java
 import java.text.SimpleDateFormat;

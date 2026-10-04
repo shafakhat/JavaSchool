@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1096
 source: https://web.archive.org/web/20070117161630/http://www.java2s.com:80/Code/Java/Velocity/VelocityStandaloneapplication.htm
 ---
-Velocity Standalone application
-
 ```java title=Example.java
 /*
  * Copyright 2001,2004 The Apache Software Foundation.

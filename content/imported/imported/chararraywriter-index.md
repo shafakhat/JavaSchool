@@ -7,10 +7,7 @@ order: 50246
 source: https://www.java2s.com/Tutorials/Java/java.io/CharArrayWriter/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -33,5 +30,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/CharArrayWriter/index.html
 - Java CharArrayWriter.write(String str, int off, int len)
 - Java CharArrayWriter .writeTo (Writer out)
 
-- Next »
 - « Previous

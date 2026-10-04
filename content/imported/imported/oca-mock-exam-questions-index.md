@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50006
 source: https://www.java2s.com/Tutorials/Java/OCA_Mock_Exam_Questions/index.html
 ---
-- Next »
-
 ## Question
 
 What is the output of the following program?
@@ -73,5 +71,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-- Next »

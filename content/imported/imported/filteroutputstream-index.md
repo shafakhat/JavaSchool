@@ -7,10 +7,7 @@ order: 50261
 source: https://www.java2s.com/Tutorials/Java/java.io/FilterOutputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -20,5 +17,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/FilterOutputStream/index.h
 - Java FilterOutputStream .write (byte[] b, int off, int len)
 - Java FilterOutputStream .write(int b)
 
-- Next »
 - « Previous

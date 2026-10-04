@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1065
 source: https://web.archive.org/web/20061026215433/http://www.java2s.com/Code/Java/Velocity/UsejavautilPropertiestopassinproperties.htm
 ---
-Use java.util.Properties to pass in properties
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

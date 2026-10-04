@@ -7,10 +7,7 @@ order: 50341
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0200__Java_Special_Map.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Sorted Maps
 
@@ -155,5 +152,4 @@ import java.util.concurrent.ConcurrentMap;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

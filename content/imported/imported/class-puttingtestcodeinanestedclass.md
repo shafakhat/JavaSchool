@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1062
 source: https://web.archive.org/web/20090106075801/http://www.java2s.com:80/Code/Java/Class/Puttingtestcodeinanestedclass.htm
 ---
-Putting test code in a nested class
-
 ```java title=Example.java
 // : c08:TestBed.java
-// Putting test code in a nested class.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 public class TestBed {

@@ -26,7 +26,6 @@ source: https://web.archive.org/web/20111105134708/http://java2s.com/Tutorial/Ja
  */
 import java.util.Locale;
 /**
- * Condition that tests the OS type.
  */
 public final class OS {
     private static final String FAMILY_OS_400 = "os/400";

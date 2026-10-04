@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20130904183101/http://java2s.com/Tutorials/Java/Algorithms/Selection_sort_implementation_in_Java.htm
 ---
-Next »331/677« Previous
-
 In this chapter you will learn:
 
 - Selection sort implementation
@@ -86,5 +84,3 @@ The code above generates the following result.
 What you will learn in the next chapter:
 
 - Shell sort implementation
-
-Next »« PreviousHome » Java Tutorial » AlgorithmsBubble sortBinary SearchInsertion SortSelection sortShell sortHeap SortMerge SortQuick SortFibonacciHanoi puzzleFahrenheit to Celsius

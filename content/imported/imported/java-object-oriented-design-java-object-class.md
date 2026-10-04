@@ -7,10 +7,7 @@ order: 50152
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0160__Java_Object_Class.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java has an Object class in the java.lang package.
 
@@ -78,5 +75,4 @@ We can rewrite the above statement using generics.
 Class<Cat>   catClass = c.getClass();
 ```
 
-- Next »
 - « Previous

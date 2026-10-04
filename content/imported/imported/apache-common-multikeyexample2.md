@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1051
 source: https://web.archive.org/web/20061018181040/http://www.java2s.com/Code/Java/Apache-Common/MultiKeyExample2.htm
 ---
-MultiKey Example 2
-
 ```java title=Example.java
 import java.util.HashMap;
 import org.apache.commons.collections.keyvalue.MultiKey;

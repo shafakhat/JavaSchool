@@ -8,7 +8,6 @@ source: https://web.archive.org/web/20060513070742/http://www.java2s.com/Code/Ja
 ---
 ComboBox color chooser (Windows Color Chooser) : Java examples (example source code) » Swing Components » ComboBox
 
-ComboBox color chooser (Windows Color Chooser)
 ---
 Download: swingx.zip (2003 K)
 Related examples in the same category

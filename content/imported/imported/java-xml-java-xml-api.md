@@ -7,10 +7,7 @@ order: 50320
 source: https://www.java2s.com/Tutorials/Java/Java_XML/0020__Java_XML_API.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## SAX APIs
 
@@ -97,5 +94,4 @@ Package  Description
 javax.xml.stream  Defines the XMLStreamReader interface which iterates over the elements of an XML document. Defines the XMLStreamWriter interface which specifies how the XML should be written.
 javax.xml.transform.stax  Provides StAX-specific transformation APIs.
 
-- Next »
 - « Previous

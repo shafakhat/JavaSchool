@@ -2,7 +2,7 @@
 title: Coding & Output Puzzles - Interview Bank
 nav: Interview - Coding
 description: 20 classic Java coding questions and output puzzles with worked answers - string/array problems, tricky snippets, complexity notes.
-section: Interview & Certification
+section: Interview Prep
 order: 90
 ---
 

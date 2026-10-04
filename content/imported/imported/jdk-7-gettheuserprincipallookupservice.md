@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1076
 source: https://web.archive.org/web/20130820201654/http://java2s.com/Code/Java/JDK-7/GettheUserPrincipalLookupService.htm
 ---
-Get the UserPrincipalLookupService
-
 ```java title=Example.java
 import java.nio.file.FileSystems;
 import java.nio.file.Files;

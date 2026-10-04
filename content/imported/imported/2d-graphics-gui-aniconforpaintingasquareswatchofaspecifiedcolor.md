@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20100204224526/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AniconforpaintingasquareswatchofaspecifiedColor.htm
 ---
-An icon for painting a square swatch of a specified Color.
-
 ```java title=Example.java
 /*
  *  ColorSwatch.java
@@ -19,7 +17,6 @@ import java.awt.Component;
 import java.awt.Graphics;
 import javax.swing.Icon;
 /**
- * An icon for painting a square swatch of a specified Color.
  *
  * @author Christopher Bach
  */

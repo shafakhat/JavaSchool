@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20100422205935/http://www.java2s.com:80/Code/Java/GWT/AddatabremoveatabSmartGWT.htm
 ---
-Add a tab, remove a tab (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

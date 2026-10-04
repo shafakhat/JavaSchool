@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1115
 source: https://web.archive.org/web/20130820192947/http://java2s.com/Code/Java/JDK-7/ReadBasicFileAttributes.htm
 ---
-Read BasicFileAttributes
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

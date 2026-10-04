@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1031
 source: https://web.archive.org/web/20090622104011/http://www.java2s.com:80/Code/Java/Threads/CreateathreadbyextendingThread.htm
 ---
-Create a thread by extending Thread.
-
 ```java title=Example.java
 class MyThread extends Thread {
   int count;

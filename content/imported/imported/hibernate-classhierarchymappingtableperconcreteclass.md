@@ -7,7 +7,6 @@ order: 1003
 source: https://web.archive.org/web/20090824125208/http://www.java2s.com:80/Code/Java/Hibernate/ClassHierarchyMappingTablePerConcreteClass.htm
 ---
 Class Hierarchy Mapping Table Per Concrete Class : Class Hiearchy Mapping « Hibernate « Java
-Class Hierarchy Mapping Table Per Concrete Class
 
 ```java title=Example.java
 /////////////////////////////////////////////////////////////////////////

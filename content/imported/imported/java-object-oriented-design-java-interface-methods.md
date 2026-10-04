@@ -7,10 +7,7 @@ order: 50181
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0520__Java_interface_Methods.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Methods Declarations
 
@@ -270,5 +267,4 @@ publicclass Main {
 }
 ```
 
-- Next »
 - « Previous

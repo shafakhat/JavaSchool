@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20100213172746/http://java2s.com/Code/Java/Collections-Data-Structure/AjavautilMapinterfacewhichcanonlyholdasingleobject.htm
 ---
-A java.util.Map interface which can only hold a single object
-
 ```java title=Example.java
 /*
  * $Id: MicroMap.java 458489 2006-01-04 09:28:14Z ivaynberg $ $Revision:

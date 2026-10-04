@@ -7,10 +7,7 @@ order: 50425
 source: https://www.java2s.com/Tutorials/Java/Java_Language/2050__Java_String.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The String class represents character strings. A quoted string constant can be assigned to a String variable.
 
@@ -192,5 +189,4 @@ publicclass Main {
 
 Here is the output of the preceding example:
 
-- Next »
 - « Previous

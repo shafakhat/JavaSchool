@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060307045037/http://www.java2s.com:80/Code
 ---
 Logging Bean Example : Java examples (example source code) » J2EE » Spring IoC Factory Beans
 
-Logging Bean Example
-
 ```java title=Example.java
 /*
 Pro Spring

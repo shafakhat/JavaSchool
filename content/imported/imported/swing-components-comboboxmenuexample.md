@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20060717061640/http://www.java2s.com:80/Code/Java/Swing-Components/ComboBoxMenuExample.htm
 ---
-ComboBox Menu Example
-
 ```java title=Example.java
 // Example from http://www.crionics.com/products/opensource/faq/swing_ex/SwingExamples.html
 import java.awt.Color;

@@ -27,14 +27,19 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
 </header>
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
-  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Tutorials & How-To</span></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-collection.html">Java Collection</a></nav>
     <h1>Java Collection Tutorial - Java Lists</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
-<ul><li>Next »</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>A list is an ordered collection of objects, defined in List interface. List interface represents a list in the Collections Framework.</p>
 <p>A list can have duplicate elements. and we can store multiple null values in a list.</p>
 <p>The List interface inherits the Collection interface and it adds methods to support access to its elements using indexes.</p>
@@ -85,8 +90,8 @@ for (int i = 0; i &lt; count; i++) {
   }
 }</code></pre></div>
 <p>The code above generates the following result.</p>
-<p><a href="../../../Tutorials/Java/java.util/ArrayList/index.html">ArrayList APIs</a></p>
-<p><a href="../../../Tutorials/Java/java.util/LinkedList/index.html">LinkedList APIs</a></p>
+<p>ArrayList APIs</p>
+<p>LinkedList APIs</p>
 <h2 id="listiterator">ListIterator</h2>
 <p>We can use ListIterator interface to iterate over a list.</p>
 <p>The ListIterator interface inherits the Iterator interface and it adds a few more methods to access elements in the list from the current position in the backward direction.</p>
@@ -127,8 +132,8 @@ while (iterator.hasPrevious()) {
 <p>A ListIterator can look ahead or look back in a List.</p>
 <p>The next() method moves one index forward and the previous() method moves one index backward.</p>
 <p>If you use its next() method followed by the previous() method, the iterator goes back to the same position.</p>
-<p><a href="../../../Tutorials/Java/java.util/ListIterator/index.html">ListIterator APIs</a></p>
-<ul><li>Next »</li><li>« Previous</li></ul>
+<p>ListIterator APIs</p>
+<ul><li>« Previous</li></ul>
     <div class="pager"><a class="pager-btn" href="java-collection-java-navigable-set.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Collection Tutorial -...</span></a><a class="pager-btn pager-next" href="java-collection-java-queue.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Collection Tutorial -...</span></a></div>
   </article>
 </main>

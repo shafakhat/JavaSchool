@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Algorithms How to - Implement Soundex Algorithm, as described by Knuth - JavaSchool</title>
+<meta name="description" content="We would like to know how to implement Soundex Algorithm, as described by Knuth.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-string-implement-soundex-algorithm-as-described-by-knuth">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-algorithms-how-to.html">Algorithms How to</a></nav>
+    <h1>Java Algorithms How to - Implement Soundex Algorithm, as described by Knuth</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Back to String  ↑</code></pre></div>
+<h2 id="question">Question</h2>
+<p>We would like to know how to implement Soundex Algorithm, as described by Knuth.</p>
+<h2 id="answer">Answer</h2>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*www.java2s.com*//*
+ * Copyright (c) Ian F. Darwin, http://www.darwinsys.com/, 1996-2002.
+ * All rights reserved. Software written by Ian F. Darwin and others.
+ * $Id: LICENSE,v 1.8 2004/02/09 03:33:38 ian Exp $
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS''
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+ * TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS
+ * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * Java, the Duke mascot, and all variants of Sun's Java "steaming coffee
+ * cup" logo are trademarks of Sun Microsystems. Sun's, and James Gosling's,
+ * pioneering role in inventing and promulgating (and standardizing) the Java
+ * language and environment is gratefully acknowledged.
+ *
+ * The pioneering role of Dennis Ritchie and Bjarne Stroustrup, of AT&amp;T, for
+ * inventing predecessor languages C and C++ is also gratefully acknowledged.
+ *//**
+ * Soundex - the Soundex Algorithm, as described by Knuth
+ * &lt;p&gt;
+ * This class implements the soundex algorithm as described by Donald
+ * Knuth in Volume 3 of &lt;I&gt;The Art of Computer Programming&lt;/I&gt;.  The
+ * algorithm is intended to hash words (in particular surnames) into
+ * a small space using a simple model which approximates the sound of
+ * the word when spoken by an English speaker.  Each word is reduced
+ * to a four character string, the first character being an upper case
+ * letter and the remaining three being digits. Double letters are
+ * collapsed to a single digit.
+ *
+ * &lt;h2&gt;EXAMPLES&lt;/h2&gt;
+ * Knuth's examples of various names and the soundex codes they map
+ * to are:
+ * &lt;b&gt;Euler, Ellery -&gt; E460
+ * &lt;b&gt;Gauss, Ghosh -&gt; G200
+ * &lt;b&gt;Hilbert, Heilbronn -&gt; H416
+ * &lt;b&gt;Knuth, Kant -&gt; K530
+ * &lt;b&gt;Lloyd, Ladd -&gt; L300
+ * &lt;b&gt;Lukasiewicz, Lissajous -&gt; L222
+ *
+ * &lt;h2&gt;LIMITATIONS&lt;/h2&gt;
+ * As the soundex algorithm was originally used a &lt;B&gt;long&lt;/B&gt; time ago
+ * in the United States of America, it uses only the English alphabet
+ * and pronunciation.
+ * &lt;p&gt;
+ * As it is mapping a large space (arbitrary length strings) onto a
+ * small space (single letter plus 3 digits) no inference can be made
+ * about the similarity of two strings which end up with the same
+ * soundex code.  For example, both "Hilbert" and "Heilbronn" end up
+ * with a soundex code of "H416".
+ * &lt;p&gt;
+ * The soundex() method is static, as it maintains no per-instance
+ * state; this means you never need to instantiate this class.
+ *
+ * @author Perl implementation by Mike Stok (&lt;stok@cybercom.net&gt;) from
+ * the description given by Knuth.  Ian Phillips (&lt;ian@pipex.net&gt;) and
+ * Rich Pinder (&lt;rpinder@hsc.usc.edu&gt;) supplied ideas and spotted
+ * mistakes.
+ * @author Ian Darwin, http://www.darwinsys.com/ (Java Version)
+ * @version $Id: Soundex.java,v 1.9 2004/02/23 00:30:49 ian Exp $
+ */publicclass Soundex {
+
+  /* Implements the mapping
+   * from: AEHIOUWYBFPVCGJKQSXZDTLMNR
+   * to:   00000000111122222222334556
+   */publicstaticfinalchar[] MAP = {
+    //A  B   C   D   E   F   G   H   I   J   K   L   M
+'0','1','2','3','0','1','2','0','0','2','2','4','5',
+    //N  O   P   W   R   S   T   U   V   W   X   Y   Z
+'5','0','1','2','6','2','3','0','1','0','2','0','2'
+  };
+
+  /** Convert the given String to its Soundex code.
+   * @return null If the given string can't be mapped to Soundex.
+   */publicstatic String soundex(String s) {
+
+    // Algorithm works on uppercase (mainframe era).
+    String t = s.toUpperCase();
+
+    StringBuffer res = new StringBuffer();
+    char c, prev = '?';
+
+    // Main loop: find up to 4 chars that map.
+for (int i=0; i&lt;t.length() &amp;&amp; res.length() &lt; 4 &amp;&amp;
+      (c = t.charAt(i)) != ','; i++) {
+
+      // Check to see if the given character is alphabetic.
+// Text is already converted to uppercase. Algorithm
+// only handles ASCII letters, do NOT use Character.isLetter()!
+// Also, skip double letters.
+if (c&gt;='A' &amp;&amp; c&lt;='Z' &amp;&amp; c != prev) {
+        prev = c;
+
+        // First char is installed unchanged, for sorting.
+if (i==0)
+          res.append(c);
+        else {
+          char m = MAP[c-'A'];
+          if (m != '0')
+            res.append(m);
+        }
+      }
+    }
+    if (res.length() == 0)
+      return null;
+    for (int i=res.length(); i&lt;4; i++)
+      res.append('0');
+    return res.toString();
+  }
+  /** main */publicstaticvoid main(String[] args) {
+    String[] names = {
+      "Darwin, Ian",
+      "Davidson, Greg",
+      "Darwent, William",
+      "Derwin, Daemon"
+    };
+    for (int i = 0; i&lt; names.length; i++)
+      System.out.println(Soundex.soundex(names[i]) + ' ' + names[i]);
+  }
+
+}</code></pre></div>
+<p>The code above generates the following result.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Back to String  ↑</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="java-java-adler32-calculate-checksum.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Adler32 calculate che...</span></a><a class="pager-btn pager-next" href="math-parse-a-mathematical-expression-and-operators-and-solve-it.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Algorithms How to - P...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

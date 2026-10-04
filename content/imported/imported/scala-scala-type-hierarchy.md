@@ -7,10 +7,7 @@ order: 50079
 source: https://www.java2s.com/Tutorials/Java/Scala/0100__Scala_Type_Hierarchy.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Unlike Java, there are no primitive types in Scala.
 
@@ -46,5 +43,4 @@ All other types descend from AnyVal and AnyRef.
 
 The types that extend AnyVal are known as value types.
 
-- Next »
 - « Previous

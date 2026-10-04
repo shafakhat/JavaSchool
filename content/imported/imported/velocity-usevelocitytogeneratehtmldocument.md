@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513101043/http://www.java2s.com/Code/Ja
 ---
 Use Velocity to generate HTML document : Java examples (example source code) » Velocity » HTML
 
-Use Velocity to generate HTML document
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;

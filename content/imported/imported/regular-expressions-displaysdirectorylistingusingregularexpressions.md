@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1024
 source: https://web.archive.org/web/20061018194939/http://www.java2s.com/Code/Java/Regular-Expressions/Displaysdirectorylistingusingregularexpressions.htm
 ---
-Displays directory listing using regular expressions
-
 ```java title=Example.java
 // : c12:DirList.java
-// Displays directory listing using regular expressions.
 // {Args: "D.*\.java"}
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.

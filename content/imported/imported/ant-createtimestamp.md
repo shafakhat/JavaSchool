@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1054
 source: https://web.archive.org/web/20100211103101/http://java2s.com/Code/Java/Ant/CreateTimestamp.htm
 ---
-Create Timestamp
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="yourname" basedir=".." default="all">

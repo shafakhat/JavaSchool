@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20100529234214/http://www.java2s.com:80/Code/Java/GWT/AddpagingsupportforalocalcollectionofmodelsExtGWT.htm
 ---
-Add paging support for a local collection of models (Ext GWT)
-
 ```java title=Example.java
 /*
  * Ext GWT - Ext for GWT

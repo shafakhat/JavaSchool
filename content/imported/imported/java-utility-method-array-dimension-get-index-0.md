@@ -63,5 +63,3 @@ if (arr.length > 1) {
 return null;
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

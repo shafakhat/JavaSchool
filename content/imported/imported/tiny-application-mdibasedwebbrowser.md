@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20061018210623/http://www.java2s.com/Code/Java/Tiny-Application/MDIbasedwebbrowser.htm
 ---
-MDI based web browser
-
 ```java title=Example.java
 import java.awt.BorderLayout;
 import java.awt.Container;

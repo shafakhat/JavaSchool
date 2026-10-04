@@ -7,10 +7,7 @@ order: 50211
 source: https://www.java2s.com/Tutorials/Java/Java_io/0500__Java_io_Reader_Writer.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java readers and writers are character-based streams.
 
@@ -165,5 +162,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

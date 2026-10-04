@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1068
 source: https://web.archive.org/web/20061016093854/http://www.java2s.com/Code/Java/Apache-Common/TestObjectPool.htm
 ---
-Test Object Pool
-
 ```java title=Example.java
 import org.apache.commons.pool.impl.GenericObjectPool;
 public class TestObjectPool {

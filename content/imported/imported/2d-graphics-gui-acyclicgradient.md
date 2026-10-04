@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/20090615220743/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/Acyclicgradient.htm
 ---
-A cyclic gradient
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.GradientPaint;

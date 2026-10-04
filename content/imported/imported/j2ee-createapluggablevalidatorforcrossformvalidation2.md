@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513073712/http://www.java2s.com/Code/Ja
 ---
 Create a pluggable validator for cross-form validation 2 : Java examples (example source code) » J2EE » Struts
 
-Create a pluggable validator for cross-form validation 2
-
 ```java title=Example.java
 /*
 Struts Recipes

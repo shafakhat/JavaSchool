@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20090216142901/http://java2s.com:80/Code/Java/PDF-RTF/AddingaNewLinetoPDFdocument.htm
 ---
-Adding a New Line to PDF document
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import java.io.IOException;

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513072910/http://www.java2s.com/Code/Ja
 ---
 Output a string from Velocity : Java examples (example source code) » Velocity » Output
 
-Output a string from Velocity
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;

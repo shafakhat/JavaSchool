@@ -7,10 +7,7 @@ order: 50213
 source: https://www.java2s.com/Tutorials/Java/Java_io/0700__Java_io_Standard_Input_Output_Error_Streams.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We can use the System.out and System.err object references wherever we can use an OutputStream object.
 
@@ -109,5 +106,4 @@ The standard error device is used to display any error message. Java provides a 
 System.err.println("This is  an  error message.");
 ```
 
-- Next »
 - « Previous

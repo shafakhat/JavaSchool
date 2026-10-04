@@ -7,10 +7,7 @@ order: 50441
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5030__Java_Constructors.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A constructor initializes an object during object creation when using new operator.
 
@@ -285,5 +282,4 @@ class MyClass {/*fromwww.java2s.com*/int a;
 }
 ```
 
-- Next »
 - « Previous

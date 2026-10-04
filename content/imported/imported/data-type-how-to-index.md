@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50025
 source: https://www.java2s.com/Tutorials/Java/Data_Type_How_to/index.html
 ---
-- Next »
-
 - BigDecimal 9
 - BigInteger 10
 - boolean 3
@@ -31,5 +29,3 @@ source: https://www.java2s.com/Tutorials/Java/Data_Type_How_to/index.html
 - long 4
 - number format 29
 - String 123
-
-- Next »

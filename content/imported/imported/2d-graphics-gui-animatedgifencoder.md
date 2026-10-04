@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20061018125534/http://www.java2s.com/Code/Java/2D-Graphics-GUI/AnimatedGifEncoder.htm
 ---
-Animated Gif Encoder
-
 ```java title=Example.java
 import java.io.*;
 import java.awt.*;

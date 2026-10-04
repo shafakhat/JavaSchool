@@ -146,5 +146,3 @@ double mean1 = mean(data, col1);
 double mean2 = mean(data, col2);
 return covarianceTwoColumns(data, col1, col2, mean1, mean2);
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

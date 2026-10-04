@@ -7,10 +7,7 @@ order: 50099
 source: https://www.java2s.com/Tutorials/Java/Scala/3000__Scala_Class.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A class is a blueprint for creating objects that are the concrete instances of a class.
 
@@ -103,5 +100,4 @@ val rectangle = draw(new Rectangle(2,3))
 
 Inheritance guarantees that any method we could call on an instance of Shape will be defined in the subtypes.
 
-- Next »
 - « Previous

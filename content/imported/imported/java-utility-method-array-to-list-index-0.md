@@ -101,5 +101,3 @@ List<T> list = newArrayList<T>(t.length);
 Collections.addAll(list, t);
 return list;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20090422182851/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AddorinsertanelementtoArrayListusingJavaListIteratorExample.htm
 ---
-Add or insert an element to ArrayList using Java ListIterator Example
-
 ```java title=Example.java
 import java.util.ArrayList;
 import java.util.ListIterator;

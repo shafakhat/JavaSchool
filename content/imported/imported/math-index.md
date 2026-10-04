@@ -7,10 +7,7 @@ order: 1015
 source: https://web.archive.org/web/20160729082809/http://www.java2s.com:80/Tutorials/Java/Algorithms_How_to/Math/index.htm
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 - Java Calculate powers
 - Java Compare BigDecimal movePointRight and scaleByPowerOfTen
@@ -27,7 +24,4 @@ source: https://web.archive.org/web/20160729082809/http://www.java2s.com:80/Tuto
 - Java Save decimal
 
 ```java title=Example.java
-« Previous
 ```
-
-- Next »

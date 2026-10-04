@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20090515021134/http://www.java2s.com:80/Code/Java/JPA/ConvertJavaStringTypeToVarchar40.htm
 ---
-Convert Java String Type To Varchar 40
-
 ```java title=Example.java
 File: Professor.java
 import javax.persistence.Column;

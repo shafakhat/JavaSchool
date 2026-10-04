@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20071202121005/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingBookmarkswithoutlineforPDFdocument.htm
 ---
-Adding Bookmarks with outline for PDF document
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

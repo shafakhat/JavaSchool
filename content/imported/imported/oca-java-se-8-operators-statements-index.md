@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50001
 source: https://www.java2s.com/Tutorials/Java/OCA_Java_SE_8_Operators_Statements/index.html
 ---
-- Next »
-
 A Java operator can be applied to a set of variables, values, or literals (operands) and that returns a result.
 
 Three kinds of operators are available in Java:
@@ -117,5 +115,3 @@ The modulus operation is not limited to positive integer values in Java and may 
 For a given divisor y and negative dividend, the resulting modulus value is between and (-y + 1) and 0.
 
 The code above generates the following result.
-
-- Next »

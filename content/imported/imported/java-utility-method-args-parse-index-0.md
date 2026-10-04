@@ -143,5 +143,3 @@ if (args != null) {
             Stringval = s.substring(s.indexOf("=") + 1);
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

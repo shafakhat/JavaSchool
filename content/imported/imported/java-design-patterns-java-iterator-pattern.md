@@ -7,10 +7,7 @@ order: 50126
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0160__Java_Iterator_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Iterator pattern accesses the elements of a collection object in sequential manner without knowing its underlying representation.
 
@@ -58,5 +55,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1024
 source: https://web.archive.org/web/20090502025243/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AlphaCompositeDSTATOP.htm
 ---
-AlphaComposite.DST_ATOP
-
 ```java title=Example.java
 import java.awt.AlphaComposite;
 import java.awt.Color;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20090606190555/http://www.java2s.com:80/Code/Java/Regular-Expressions/findthestartingpointofthefirstsubgroup.htm
 ---
-find the starting point of the first subgroup
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

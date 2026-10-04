@@ -7,10 +7,7 @@ order: 50362
 source: https://www.java2s.com/Tutorials/Java/java.util/LinkedList/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -59,5 +56,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/LinkedList/index.html
 - Java LinkedList.toArray()
 - Java LinkedList.toArray(T[] a)
 
-- Next »
 - « Previous

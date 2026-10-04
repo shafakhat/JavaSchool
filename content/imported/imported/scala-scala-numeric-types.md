@@ -7,10 +7,7 @@ order: 50083
 source: https://www.java2s.com/Tutorials/Java/Scala/0140__Scala_Numeric_Types.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The numeric data types in Scala constitute Float and Double types along with Integral data types such as Byte, Short, Int, Long, and Char.
 
@@ -57,5 +54,4 @@ val z: Double = y
 
 Scala does not allow automatic conversion in the order reverse from mentioned earlier.
 
-- Next »
 - « Previous

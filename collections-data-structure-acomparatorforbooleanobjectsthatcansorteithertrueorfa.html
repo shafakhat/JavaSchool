@@ -27,13 +27,19 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
 </header>
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
-  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top active" href="archive-index.html">Java Examples</a>
+</div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Java Examples</span></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-collections-data-structure.html">Collections Data Structure</a></nav>
     <h1>A Comparator for Boolean objects that can sort either true or false first</h1>
-<p>A Comparator for Boolean objects that can sort either true or false first : Comparator « Collections Data Structure « Java A Comparator for Boolean objects that can sort either true or false first</p>
+<p>A Comparator for Boolean objects that can sort either true or false first : Comparator « Collections Data Structure « Java</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
  * Copyright 2002-2005 the original author or authors.
  *
@@ -52,7 +58,6 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 import java.io.Serializable;
 import java.util.Comparator;
 /**
- * A Comparator for Boolean objects that can sort either true or false first.
  *
  * @author Keith Donald
  * @since 1.2.2

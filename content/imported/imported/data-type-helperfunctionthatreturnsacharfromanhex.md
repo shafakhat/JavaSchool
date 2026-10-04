@@ -44,7 +44,6 @@ public class Main {
   private static final byte[] HEX_CHAR = new byte[]
       { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
   /**
-   * Helper function that returns a char from an hex
    *
    * @param hex The hex to dump
    * @return A char representation of the hex

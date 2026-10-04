@@ -7,10 +7,7 @@ order: 50214
 source: https://www.java2s.com/Tutorials/Java/Java_io/0720__Java_io_Console.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The purpose of the Console class is to make the interaction between a Java program and the console easier.
 
@@ -59,5 +56,4 @@ import java.io.Console;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

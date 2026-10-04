@@ -62,5 +62,3 @@ Cipher cipher = Cipher.getInstance("AES");
 cipher.init(Cipher.ENCRYPT_MODE, newSecretKeySpec(kgen.generateKey().getEncoded(), "AES"));
 return cipher.doFinal(content.getBytes("utf-8"));
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1095
 source: https://web.archive.org/web/20091030212836/http://www.java2s.com:80/Code/Java/Class/toStringObjectarray.htm
 ---
-toString(Object[] array)
-
 ```java title=Example.java
 /* ------------------------------------------------------------------------
  * $Id: ToString.java,v 1.1 2005/07/23 12:56:13 tpv Exp $

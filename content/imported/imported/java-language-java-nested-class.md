@@ -7,10 +7,7 @@ order: 50444
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5060__Java_Nested_Class.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Classes that are declared outside of any class are top-level classes. Nested classes are classes declared as members of other classes or scopes.
 
@@ -414,5 +411,4 @@ publicclass Main {
 }
 ```
 
-- Next »
 - « Previous

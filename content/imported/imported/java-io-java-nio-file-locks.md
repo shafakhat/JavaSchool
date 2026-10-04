@@ -7,10 +7,7 @@ order: 50227
 source: https://www.java2s.com/Tutorials/Java/Java_io/0950__Java_nio_File_Locks.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 NIO supports file locking to synchronize access to a file. We have the ability to lock a region of a file or the entire file.
 
@@ -145,5 +142,4 @@ publicclass Main {
 }
 ```
 
-- Next »
 - « Previous

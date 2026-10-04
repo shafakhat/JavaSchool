@@ -7,15 +7,11 @@ order: 50299
 source: https://www.java2s.com/Tutorials/Java/java.nio.file/Paths/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
 - Java Paths.get(String first, String ... more)
 - Java Paths.get(URI uri)
 
-- Next »
 - « Previous

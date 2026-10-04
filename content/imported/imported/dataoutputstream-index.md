@@ -7,10 +7,7 @@ order: 50249
 source: https://www.java2s.com/Tutorials/Java/java.io/DataOutputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -34,5 +31,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/DataOutputStream/index.htm
 - Java DataOutputStream .writeShort (int v)
 - Java DataOutputStream .writeUTF (String str)
 
-- Next »
 - « Previous

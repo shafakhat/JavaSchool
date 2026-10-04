@@ -7,10 +7,7 @@ order: 50229
 source: https://www.java2s.com/Tutorials/Java/Java_io/0970__Java_nio_Paths.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A Path object represents a path in a file system for a file, a directory, and a symbolic link.
 
@@ -202,5 +199,4 @@ import java.nio.file.Paths;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

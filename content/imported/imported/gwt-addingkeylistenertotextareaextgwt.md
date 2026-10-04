@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1031
 source: https://web.archive.org/web/20100615082857/http://www.java2s.com:80/Code/Java/GWT/AddingkeylistenertoTextAreaExtGWT.htm
 ---
-Adding key listener to TextArea (Ext GWT)
-
 ```java title=Example.java
 /*
  * Ext GWT - Ext for GWT

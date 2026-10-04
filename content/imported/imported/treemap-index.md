@@ -7,10 +7,7 @@ order: 50374
 source: https://www.java2s.com/Tutorials/Java/java.util/TreeMap/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -58,5 +55,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/TreeMap/index.html
 - Java TreeMap.tailMap(K fromKey, boolean inclusive)
 - Java TreeMap.values()
 
-- Next »
 - « Previous

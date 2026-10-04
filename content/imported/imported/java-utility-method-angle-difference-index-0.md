@@ -110,5 +110,3 @@ if (diff <= 180) {
 } else {
     return 360 - diff;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

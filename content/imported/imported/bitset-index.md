@@ -7,10 +7,7 @@ order: 50346
 source: https://www.java2s.com/Tutorials/Java/java.util/BitSet/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -54,5 +51,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/BitSet/index.html
 - Java BitSet.valueOf(LongBuffer lb)
 - Java BitSet.xor(BitSet set)
 
-- Next »
 - « Previous

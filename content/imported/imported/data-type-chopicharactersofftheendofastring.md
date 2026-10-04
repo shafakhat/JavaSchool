@@ -38,7 +38,6 @@ public class Main {
    */
   private static final String EOL = System.getProperty("line.separator");
   /**
-   * Chop i characters off the end of a string.
    * This method assumes that any EOL characters in String s
    * and the platform EOL will be the same.
    * A 2 character EOL will count as 1 character.
@@ -52,7 +51,6 @@ public class Main {
       return chop(s, i, EOL);
   }
   /**
-   * Chop i characters off the end of a string.
    * A 2 character EOL will count as 1 character.
    *
    * @param s String to chop.

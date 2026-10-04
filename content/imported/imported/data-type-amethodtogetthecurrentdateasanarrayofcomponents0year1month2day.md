@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1127
 source: https://web.archive.org/web/20111125120615/http://java2s.com/Code/Java/Data-Type/Amethodtogetthecurrentdateasanarrayofcomponents0year1month2day.htm
 ---
-A method to get the current date as an array of components 0 = year, 1 = month, 2 = day
-
 ```java title=Example.java
 /*
  * This file is part of the AusStage Utilities Package

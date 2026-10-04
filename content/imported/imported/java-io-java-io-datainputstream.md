@@ -7,10 +7,7 @@ order: 50204
 source: https://www.java2s.com/Tutorials/Java/Java_io/0130__Java_io_DataInputStream.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 DataInputStream can read Java primitive data type values from an input stream.
 
@@ -45,5 +42,4 @@ int intValue = dis.readInt();
 
 The code above generates the following result.
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50237
 source: https://www.java2s.com/Tutorials/Java/Java_io/1040__Java_nio_Directory_Event.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We can listen to a watch service to get alert when an object in a file system is modified.
 
@@ -162,5 +159,4 @@ publicclass Main {
 }
 ```
 
-- Next »
 - « Previous

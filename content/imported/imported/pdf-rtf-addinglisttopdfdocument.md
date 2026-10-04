@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1015
 source: https://web.archive.org/web/20080121105238/http://www.java2s.com:80/Code/Java/PDF-RTF/AddinglisttoPdfdocument.htm
 ---
-Adding list to Pdf document
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

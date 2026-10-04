@@ -7,7 +7,6 @@ order: 50197
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0760__Java_Annotation_Reflection.html
 ---
 ```java title=Example.java
-« Previous
 ```
 
 Annotations on a program element are Java objects.

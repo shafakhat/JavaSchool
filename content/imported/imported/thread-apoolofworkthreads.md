@@ -34,7 +34,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.EventListenerList;
 //}}}
 /**
- * A pool of work threads.
  *
  * @author Slava Pestov
  * @version $Id: WorkThreadPool.java 12504 2008-04-22 23:12:43Z ezust $

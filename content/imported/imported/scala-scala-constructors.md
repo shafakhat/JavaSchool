@@ -7,10 +7,7 @@ order: 50106
 source: https://www.java2s.com/Tutorials/Java/Scala/3060__Scala_Constructors.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A class consists of class members such as fields and methods.
 
@@ -177,5 +174,4 @@ val book3 = new Book("Scala", 3333)
 
 An auxiliary constructor just needs to call one of the previously defined constructors.
 
-- Next »
 - « Previous

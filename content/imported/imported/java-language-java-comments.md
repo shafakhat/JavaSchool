@@ -7,10 +7,7 @@ order: 50438
 source: https://www.java2s.com/Tutorials/Java/Java_Language/4070__Java_Comments.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Comments in source provide information about the source code. It is a good practice to write comments to document the source code
 
@@ -103,5 +100,4 @@ We can extract these documentation comments into a set of HTML files by using th
 
 javadoc command defaults to generating HTML-based documentation for public classes and public/protected members of these classes.
 
-- Next »
 - « Previous

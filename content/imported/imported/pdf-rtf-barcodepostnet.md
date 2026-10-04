@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1038
 source: https://web.archive.org/web/20071201174637/http://www.java2s.com:80/Code/Java/PDF-RTF/BarcodePostnet.htm
 ---
-BarcodePostnet
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Chunk;

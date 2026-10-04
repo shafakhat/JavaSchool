@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20071106044640/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingGifimagetoPdfdocument.htm
 ---
-Adding Gif image to Pdf document
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import java.io.IOException;

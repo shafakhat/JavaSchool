@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1094
 source: https://web.archive.org/web/20070503161212/http://www.java2s.com:80/Code/Java/Velocity/VelocityParseInnerVariables.htm
 ---
-Velocity Parse Inner Variables
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

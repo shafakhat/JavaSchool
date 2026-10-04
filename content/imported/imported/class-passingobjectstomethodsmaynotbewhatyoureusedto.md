@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1057
 source: https://web.archive.org/web/20090504072516/http://www.java2s.com:80/Code/Java/Class/Passingobjectstomethodsmaynotbewhatyoureusedto.htm
 ---
-Passing objects to methods may not be what you're used to.
-
 ```java title=Example.java
 //: c03:PassObject.java
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002

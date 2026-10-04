@@ -57,5 +57,3 @@ doubleacosh(double x) Returns the arc hyperbolic cosine of a value.
 ```java title=Example.java
 returnMath.log(x + Math.sqrt(x * x - 1.0));
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20100211073150/http://java2s.com/Code/Java/Regular-Expressions/AppendReplacementMethod.htm
 ---
-Append Replacement Method
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

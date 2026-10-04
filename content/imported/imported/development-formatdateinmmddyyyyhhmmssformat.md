@@ -2,9 +2,9 @@
 title: Format date in mm-dd-yyyy hh
 nav: Format date in mm-dd-yyyy hh
 description: System.out.println("formatted date in mm/dd/yy : " + strDate);
-section: Imported
-order: 20001
-source: http://www.java2s.com:80/Tutorial/Java/0120__Development/Formatdateinmmddyyyyhhmmssformat.htm
+section: Imported - java2s Archive
+order: 1010
+source: https://web.archive.org/web/20100505183153/http://www.java2s.com:80/Tutorial/Java/0120__Development/Formatdateinmmddyyyyhhmmssformat.htm
 ---
 ```java title=Example.java
 import java.text.SimpleDateFormat;

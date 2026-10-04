@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20070430052327/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AJavaimplementationoftheX11region.htm
 ---
-A Java implementation of the X11 region
-
 ```java title=Example.java
 /*
  * (C) 2004 - Geotechnical Software Services

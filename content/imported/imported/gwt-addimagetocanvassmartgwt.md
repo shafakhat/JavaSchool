@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20100411202823/http://www.java2s.com:80/Code/Java/GWT/AddImagetoCanvasSmartGWT.htm
 ---
-Add Image to Canvas (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20090107020359/http://www.java2s.com:80/Code/Java/Class/NestedClassStatic.htm
 ---
-Nested Class Static
-
 ```java title=Example.java
 public class NestedClassStatic {
   /** Just show that Nested Classes may be static */

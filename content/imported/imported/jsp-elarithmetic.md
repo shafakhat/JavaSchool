@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1038
 source: https://web.archive.org/web/20070428084706/http://www.java2s.com:80/Code/Java/JSP/ELArithmetic.htm
 ---
-EL Arithmetic
-
 ```java title=Example.java
 <html>
 <body>

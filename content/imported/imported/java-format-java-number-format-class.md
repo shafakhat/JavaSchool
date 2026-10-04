@@ -7,10 +7,7 @@ order: 50389
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0040__Java_Number_Format_Class.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The following two classes can be used to format and parse numbers:
 
@@ -145,5 +142,4 @@ import java.text.ParsePosition;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

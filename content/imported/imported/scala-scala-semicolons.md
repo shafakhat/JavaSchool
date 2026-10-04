@@ -7,10 +7,7 @@ order: 50076
 source: https://www.java2s.com/Tutorials/Java/Scala/0060__Scala_Semicolons.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Semicolons are expression delimiters and they are inferred.
 
@@ -45,5 +42,4 @@ The following Trailing commas, periods, and operators indicate more code on the 
                ", " + s2)
 ```
 
-- Next »
 - « Previous

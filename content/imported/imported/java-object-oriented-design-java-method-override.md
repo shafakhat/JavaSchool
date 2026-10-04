@@ -7,10 +7,7 @@ order: 50166
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0310__Java_Method_Override.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method Overriding
 
@@ -112,5 +109,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

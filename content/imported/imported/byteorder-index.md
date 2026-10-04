@@ -7,10 +7,7 @@ order: 50308
 source: https://www.java2s.com/Tutorials/Java/java.nio/ByteOrder/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Field
 
@@ -22,5 +19,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio/ByteOrder/index.html
 - Java ByteOrder.nativeOrder()
 - Java ByteOrder.toString()
 
-- Next »
 - « Previous

@@ -138,5 +138,3 @@ for (int i = 0; i < g1.length; i++)
     b = b && g1[i] == g2[i];
 return b;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

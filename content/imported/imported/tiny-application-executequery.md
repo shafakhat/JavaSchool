@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20070220094953/http://www.java2s.com:80/Code/Java/Tiny-Application/ExecuteQuery.htm
 ---
-Execute Query
-
 ```java title=Example.java
 --- RELEASE NOTES ---
 Date: 17 September 2006

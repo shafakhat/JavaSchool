@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060424151504/http://www.java2s.com:80/Code
 ---
 Show basic XML handling in a template : Java examples (example source code) » Velocity » XML
 
-Show basic XML handling in a template
-
 ```java title=Example.java
 /*
  * Copyright 2000,2004 The Apache Software Foundation.

@@ -106,5 +106,3 @@ for (int i = 0; i < array.length; i++) {
     copy[i] = array[i];
 return copy;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

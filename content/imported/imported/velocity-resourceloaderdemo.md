@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513085544/http://www.java2s.com/Code/Ja
 ---
 Resource Loader Demo : Java examples (example source code) » Velocity » Resource Loader
 
-Resource Loader Demo
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

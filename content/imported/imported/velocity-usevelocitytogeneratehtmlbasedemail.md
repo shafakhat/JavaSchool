@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513101047/http://www.java2s.com/Code/Ja
 ---
 Use Velocity to generate HTML based email : Java examples (example source code) » Velocity » HTML
 
-Use Velocity to generate HTML based email
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.util.List;
@@ -91,7 +89,6 @@ public class EmailDemo
       </TABLE>
      <I>Call Today!</I>
      Bests <br>
-     www.java2s.com
       </CENTER>
     </BODY>
   </HTML>

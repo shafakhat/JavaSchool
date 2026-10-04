@@ -8,7 +8,6 @@ source: https://web.archive.org/web/20060503054411/http://www.java2s.com:80/Code
 ---
 Builds an editor with components bound to the domain object properties : Java examples (example source code) » Swing Components » Data Binding
 
-Builds an editor with components bound to the domain object properties
 ---
 Download: binding.zip (506 K)
 Related examples in the same category

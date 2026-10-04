@@ -110,5 +110,3 @@ booleanisInArray(final T ch, final T[] a) is In Array
 ```java title=Example.java
 returnArrays.stream(a).anyMatch(item -> ch.equals(item));
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

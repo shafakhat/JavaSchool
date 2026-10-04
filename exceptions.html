@@ -27,11 +27,17 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
 </header>
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
-  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Core Java</span></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Java Tutorial</span></nav>
     <h1>Java Exceptions</h1>
 <h2 id="what-is-an-exception">What is an exception?</h2>
 <p>An <strong>exception</strong> is an object describing something that went wrong. Instead of silently returning bad data, Java <em>throws</em> an exception that interrupts the normal flow until someone catches it.</p>
@@ -207,7 +213,7 @@ class Account {
 <p>Read <strong>top down</strong>: the first line gives type + message; the frames below show the exact path. The first frame <em>in your own code</em> is usually where the fix belongs.</p>
 <div class="callout callout-remember"><span class="callout-title">&#128218; Remember</span> Exceptions are for <strong>exceptional situations</strong>, not for normal control flow. Using exceptions to replace <code>if/else</code> is slow and hard to read.</div>
 <p>Next: <a href="file-io.html">File I/O</a> - reading and writing files safely.</p>
-    <div class="pager"><a class="pager-btn" href="inner-classes.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Inner Classes</span></a><a class="pager-btn pager-next" href="file-io.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">File I/O</span></a></div>
+    <div class="pager"><a class="pager-btn" href="collections.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Collections</span></a><a class="pager-btn pager-next" href="keywords.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Keywords</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

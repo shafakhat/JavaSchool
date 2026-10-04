@@ -7,7 +7,6 @@ order: 50319
 source: https://www.java2s.com/Tutorials/Java/java.util.zip/ZipFile/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
 
 ## Field

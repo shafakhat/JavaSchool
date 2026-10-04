@@ -57,5 +57,3 @@ for (int i = 0; i < array.length; i++) {
 return buffer.toString();
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

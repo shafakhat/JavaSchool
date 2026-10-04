@@ -7,10 +7,7 @@ order: 50243
 source: https://www.java2s.com/Tutorials/Java/java.io/ByteArrayInputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -28,5 +25,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/ByteArrayInputStream/index
 - Java ByteArrayInputStream.reset()
 - Java ByteArrayInputStream .skip (long n)
 
-- Next »
 - « Previous

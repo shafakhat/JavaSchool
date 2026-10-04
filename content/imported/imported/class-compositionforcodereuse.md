@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1148
 source: https://web.archive.org/web/20081230140541/http://www.java2s.com:80/Code/Java/Class/Compositionforcodereuse.htm
 ---
-Composition for code reuse
-
 ```java title=Example.java
 // : c06:SprinklerSystem.java
-// Composition for code reuse.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class WaterSource {

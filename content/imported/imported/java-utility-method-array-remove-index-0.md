@@ -117,5 +117,3 @@ T[]removeAt(T[] array, int index) Removes the element at the index from the arra
 System.arraycopy(array, index + 1, array, index, array.length - index - 1);
 returnArrays.copyOf(array, array.length - 1);
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

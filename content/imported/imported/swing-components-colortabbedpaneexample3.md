@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20061018145507/http://www.java2s.com/Code/Java/Swing-Components/ColorTabbedPaneExample3.htm
 ---
-Color TabbedPane Example 3
-
 ```java title=Example.java
 // Example from http://www.crionics.com/products/opensource/faq/swing_ex/SwingExamples.html
 /* (swing1.1.1) */

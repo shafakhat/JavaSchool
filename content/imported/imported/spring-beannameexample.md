@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060504200341/http://www.java2s.com:80/Code
 ---
 Bean Name Example : Java examples (example source code) » Spring » IoC Bean Name
 
-Bean Name Example
-
 ```java title=Example.java
 /*
 Pro Spring

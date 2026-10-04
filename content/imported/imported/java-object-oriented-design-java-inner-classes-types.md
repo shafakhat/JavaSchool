@@ -7,10 +7,7 @@ order: 50161
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0250__Java_Inner_Classes_Types.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 You can define an inner class anywhere inside a class where you can write a Java statement.
 
@@ -231,5 +228,4 @@ return iterator;
 }
 ```
 
-- Next »
 - « Previous

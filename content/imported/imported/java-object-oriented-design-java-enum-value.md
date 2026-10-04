@@ -7,10 +7,7 @@ order: 50186
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0610__Java_Enum_Value.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 An enum type defines two things:
 
@@ -144,5 +141,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

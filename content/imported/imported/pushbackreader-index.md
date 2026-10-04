@@ -7,10 +7,7 @@ order: 50279
 source: https://www.java2s.com/Tutorials/Java/java.io/PushbackReader/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -31,5 +28,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/PushbackReader/index.html
 - Java PushbackReader.unread(char[] cbuf, int off, int len)
 - Java PushbackReader.unread(int c)
 
-- Next »
 - « Previous

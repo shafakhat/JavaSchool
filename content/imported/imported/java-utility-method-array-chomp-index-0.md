@@ -35,5 +35,3 @@ for (int i = 0, j = start; j < end; i++, j++) {
     newArray[i] = array[j];
 return newArray;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

@@ -7,10 +7,7 @@ order: 50122
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0120__Java_Facade_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Facade pattern hides the complexities of a system.
 
@@ -70,5 +67,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

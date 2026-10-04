@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20111125081728/http://java2s.com/Code/Java/Threads/DemoforjavautilconcurrentFuture.htm
 ---
-Demo for java.util.concurrent.Future
-
 ```java title=Example.java
 /*
    This program is a part of the companion code for Core Java 8th ed.

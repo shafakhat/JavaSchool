@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20100123004033/http://www.java2s.com:80/Code/Java/Swing-Components/AJLabelthatcanbeunderlinedimplementsScrollable.htm
 ---
-A JLabel that can be underlined, implements Scrollable
-
 ```java title=Example.java
 /*
     This library is free software; you can redistribute it and/or

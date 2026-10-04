@@ -7,10 +7,7 @@ order: 50104
 source: https://www.java2s.com/Tutorials/Java/Scala/3040__Scala_Traits.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Traits are like interfaces in Java, which can also contain code.
 
@@ -64,5 +61,4 @@ object Main extends App {
 }
 ```
 
-- Next »
 - « Previous

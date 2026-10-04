@@ -7,10 +7,7 @@ order: 50218
 source: https://www.java2s.com/Tutorials/Java/Java_io/0810__Java_io_Zip_File.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java has direct support for the ZIP file format. Typically, we would be using the following four classes from the java.util.zip package to work with the ZIP file format:
 
@@ -203,5 +200,4 @@ publicclass Main {
 
 The GZIPInputStream and GZIPOutputStream classes are used to work with the GZIP file format.
 
-- Next »
 - « Previous

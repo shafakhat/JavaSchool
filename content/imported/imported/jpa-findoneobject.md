@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1045
 source: https://web.archive.org/web/20090509214328/http://www.java2s.com:80/Code/Java/JPA/FindOneObject.htm
 ---
-Find One Object
-
 ```java title=Example.java
 File: Professor.java
 import javax.persistence.Entity;

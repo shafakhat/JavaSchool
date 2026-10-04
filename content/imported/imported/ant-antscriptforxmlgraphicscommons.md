@@ -6,7 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20100814093442/http://www.java2s.com:80/Code/Java/Ant/Antscriptforxmlgraphicscommons.htm
 ---
-Ant script for xmlgraphics-commons
 1.  nutch ant script
 2.  rhino ant build script
 3.  apache solr ant script

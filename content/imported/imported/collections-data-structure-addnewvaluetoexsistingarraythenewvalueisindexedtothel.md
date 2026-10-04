@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20111109124543/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AddnewvaluetoexsistingarrayThenewvalueisindexedtothelast.htm
 ---
-Add new value to exsisting array.The new value is indexed to the last.
-
 ```java title=Example.java
 /*
  * Copyright 2008-2009 the T2 Project ant the Others.
@@ -33,7 +31,6 @@ import java.lang.reflect.Array;
  */
 public class ArrayUtil {
   /**
-   * Add new value to exsisting array.The new value is indexed to the last.
    *
    * @param <T>
    * @param current

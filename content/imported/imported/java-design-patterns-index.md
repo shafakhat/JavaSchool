@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50001
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/index.html
 ---
-- Next »
-
 A design pattern is a **well-proved solution** for solving the specific problem/task.
 
 For example, to create a class for which only a single instance should be created and that single object can be used by all other classes, use Singleton design pattern.
@@ -38,5 +36,3 @@ Design patterns are based on the following principles of object orientated desig
 
 - Program to an interface not an implementation
 - Favor object composition over inheritance
-
-- Next »

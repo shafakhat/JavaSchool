@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1016
 source: https://web.archive.org/web/20061018181015/http://www.java2s.com/Code/Java/Apache-Common/CollectionBag.htm
 ---
-Collection Bag
-
 ```java title=Example.java
 import org.apache.commons.collections.Bag;
 import org.apache.commons.collections.bag.HashBag;

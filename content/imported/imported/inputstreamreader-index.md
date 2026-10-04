@@ -7,10 +7,7 @@ order: 50265
 source: https://www.java2s.com/Tutorials/Java/java.io/InputStreamReader/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -27,5 +24,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/InputStreamReader/index.ht
 - Java InputStreamReader.read(char[] cbuf, int offset, int length)
 - Java InputStreamReader.ready()
 
-- Next »
 - « Previous

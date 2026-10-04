@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20090426081319/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/Adashedstroke.htm
 ---
-A dashed stroke
-
 ```java title=Example.java
 import java.awt.BasicStroke;
 import java.awt.Graphics;

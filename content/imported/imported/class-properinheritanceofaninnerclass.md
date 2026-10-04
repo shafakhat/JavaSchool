@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1061
 source: https://web.archive.org/web/20081230140552/http://www.java2s.com:80/Code/Java/Class/Properinheritanceofaninnerclass.htm
 ---
-Proper inheritance of an inner class
-
 ```java title=Example.java
 // : c08:BigEgg2.java
-// Proper inheritance of an inner class.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Egg2 {

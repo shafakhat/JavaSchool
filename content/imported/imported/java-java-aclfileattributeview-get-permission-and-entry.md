@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102121723/http://www.java2s.com/ref/jav
 
 ## Description
 
-Java AclFileAttributeView get permission and entry
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.file.Files;
@@ -77,5 +75,3 @@ PreviousNext
 - Java AclEntry get file flag and permissions
 - Java AclFileAttributeView update
 - Java AclFileAttributeView get from Path
-- Java BasicFileAttributeView set file time
-- Java BasicFileAttributeView get file attributes

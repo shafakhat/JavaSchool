@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1119
 source: https://web.archive.org/web/20100214083500/http://java2s.com/Code/Java/Data-Type/Addsspacesinsuitablelocationsoftheinputstring.htm
 ---
-Adds spaces in suitable locations of the input string
-
 ```java title=Example.java
 /*
     JSPWiki - a JSP-based WikiWiki clone.

@@ -7,10 +7,7 @@ order: 50162
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0260__Java_static_Inner_Classes.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A static Member Class Is Not an Inner Class
 
@@ -105,5 +102,4 @@ publicstaticclass Keyboard {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

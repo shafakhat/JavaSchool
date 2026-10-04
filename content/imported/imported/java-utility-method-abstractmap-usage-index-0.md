@@ -136,5 +136,3 @@ String qualifier = i == -1 ? "" : str.substring(i + 1).trim();
 Entry<String, String> result = newAbstractMap.SimpleEntry<String, String>(name, qualifier);
 return result;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50031
 source: https://www.java2s.com/Tutorials/Java/Stream_How_to/index.html
 ---
-- Next »
-
 - IntStream 14
 - Lambda 35
 - Lambda API 52
@@ -28,5 +26,3 @@ source: https://www.java2s.com/Tutorials/Java/Stream_How_to/index.html
 - Stream Reduce 24
 - Stream Sort 22
 - Stream Sum 8
-
-- Next »

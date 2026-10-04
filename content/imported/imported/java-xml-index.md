@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50004
 source: https://www.java2s.com/Tutorials/Java/Java_XML/index.html
 ---
-- Next »
-
 The Java API for XML Processing (JAXP) is for processing XML data in the Java.
 
 JAXP contains standards Simple API for XML Parsing (SAX), Document Object Model (DOM), and the Streaming API for XML (StAX) standard.
@@ -49,5 +47,3 @@ We can use the XSLT APIs defined in javax.xml.transform to write XML data to a f
 The StAX APIs defined in javax.xml.stream provide a streaming based, event-driven, pull-parsing API for reading and writing XML documents using Java.
 
 StAX is a simpler than SAX and consumes less memory than DOM.
-
-- Next »

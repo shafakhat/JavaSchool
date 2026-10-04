@@ -7,10 +7,7 @@ order: 50403
 source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0030__Java_Class_Reflection.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We can use Java reflection to get the information about a class, such as its package name, its access modifiers, etc.
 
@@ -140,5 +137,4 @@ class MyClass<T>  extends Object  implements Cloneable, Serializable
 
 The code above generates the following result.
 
-- Next »
 - « Previous

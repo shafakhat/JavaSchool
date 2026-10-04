@@ -102,5 +102,3 @@ System.out.printf("Old array of type %s resized without auto-init. New capacity:
         tmp.getClass().getComponentType(), newsize);
 return tmp;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

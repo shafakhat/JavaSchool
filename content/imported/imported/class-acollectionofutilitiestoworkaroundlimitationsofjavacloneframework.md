@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1126
 source: https://web.archive.org/web/20100212194927/http://java2s.com/Code/Java/Class/AcollectionofutilitiestoworkaroundlimitationsofJavacloneframework.htm
 ---
-A collection of utilities to workaround limitations of Java clone framework
-
 ```java title=Example.java
 /*
  * $HeadURL$
@@ -41,7 +39,6 @@ A collection of utilities to workaround limitations of Java clone framework
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 /**
- * A collection of utilities to workaround limitations of Java clone framework.
  */
 public class CloneUtils {
     public static Object clone(final Object obj) throws CloneNotSupportedException {

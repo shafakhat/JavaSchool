@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50005
 source: https://www.java2s.com/example/javascript/javascript.html
 ---
-Javascript tutorial
-
 ## Introduction
 
 The tutorial for Javascript are organized in the following chapters.
@@ -39,5 +37,3 @@ jQuery jQuery Method and Property jQuery Selector
 ### Library
 
 Chart.js CodeMirror Google Chart highcharts highmap Leaflet
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

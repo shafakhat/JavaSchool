@@ -58,5 +58,3 @@ try {
     cipher.init(Cipher.DECRYPT_MODE, newSecretKeySpec(kgen.generateKey().getEncoded(), "AES"));
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

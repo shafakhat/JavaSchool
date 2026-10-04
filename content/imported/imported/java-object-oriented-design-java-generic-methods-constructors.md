@@ -7,10 +7,7 @@ order: 50172
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0370__Java_Generic_Methods_Constructors.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Generic Methods
 
@@ -179,5 +176,4 @@ List<String> list = new ArrayList(); // Generates an  unchecked  warning
 
 We cannot create generic exception classes. and there is no generic anonymous classes.
 
-- Next »
 - « Previous

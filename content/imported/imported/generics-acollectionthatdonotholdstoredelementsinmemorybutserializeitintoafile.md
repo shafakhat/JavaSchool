@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20111010003013/http://java2s.com:80/Code/Java/Generics/Acollectionthatdonotholdstoredelementsinmemorybutserializeitintoafile.htm
 ---
-A collection that do not hold stored elements in memory, but serialize it into a file
-
 ```java title=Example.java
 /**
  * created Sep 30, 2006

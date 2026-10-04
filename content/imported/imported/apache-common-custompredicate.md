@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1026
 source: https://web.archive.org/web/20100212033353/http://java2s.com/Code/Java/Apache-Common/CustomPredicate.htm
 ---
-Custom Predicate
-
 ```java title=Example.java
 package com.googelcode.jpractices;
 import java.io.Serializable;

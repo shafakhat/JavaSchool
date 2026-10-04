@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20100212020820/http://java2s.com/Code/Java/J2EE/LoadJettyServer.htm
 ---
-Load Jetty Server
-
 ```java title=Example.java
 /* ------------------------------------------------------------------------
  * $Id: JettyServer.java,v 1.1 2005/12/26 12:59:25 tpv Exp $

@@ -7,10 +7,7 @@ order: 50390
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0050__Java_Printf_Style_Overview.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The java.util.Formatter class supports printf-style formatting.
 
@@ -143,5 +140,4 @@ The first version of the format() method uses the default locale for formatting.
 
 The format()/printf() method of the PrintStream class and the format() method of the String class support these two versions of the format() method.
 
-- Next »
 - « Previous

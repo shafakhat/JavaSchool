@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20081212073650/http://www.java2s.com:80/Code/Java/Generics/Useawildcard.htm
 ---
-Use a wildcard.
-
 ```java title=Example.java
 class Stats<T extends Number> {
   T[] nums;

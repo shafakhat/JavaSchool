@@ -7,10 +7,7 @@ order: 50127
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0170__Java_Observer_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Observer pattern is used to notify its depenedent objects if one object is modified,.
 
@@ -89,5 +86,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

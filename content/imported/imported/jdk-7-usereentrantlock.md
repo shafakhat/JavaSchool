@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1137
 source: https://web.archive.org/web/20130821043250/http://java2s.com/Code/Java/JDK-7/UseReentrantLock.htm
 ---
-Use ReentrantLock
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import java.util.Random;

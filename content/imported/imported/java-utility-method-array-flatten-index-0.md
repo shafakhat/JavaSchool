@@ -124,5 +124,3 @@ for (int i = 0; i < arguments.length; i++) {
         if (Character.isWhitespace(chars[j])) {
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

@@ -7,10 +7,7 @@ order: 50314
 source: https://www.java2s.com/Tutorials/Java/java.nio/MappedByteBuffer/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -18,5 +15,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio/MappedByteBuffer/index.ht
 - Java MappedByteBuffer.isLoaded()
 - Java MappedByteBuffer.load()
 
-- Next »
 - « Previous

@@ -7,7 +7,6 @@ order: 50379
 source: https://www.java2s.com/Tutorials/Java/java.util.concurrent/BlockingDeque/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
 
 ## Method

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20111124202845/http://java2s.com/Code/Java/Collections-Data-Structure/Allowsthreadstocommunicateasynchronouslybyputtingmessagesintoandreadingmessagesoutofasynchronizedqueue.htm
 ---
-Allows threads to communicate asynchronously by putting messages into and reading messages out of a synchronized queue.
-
 ```java title=Example.java
 // $Id: SynchronizedQueue.java 23 2009-11-24 21:09:08Z gabe.johnson $
 //package org.six11.util.adt;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1015
 source: https://web.archive.org/web/20111115133938/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Addarraytocollection.htm
 ---
-Add array to collection
-
 ```java title=Example.java
 import java.util.Arrays;
 import java.util.Collection;

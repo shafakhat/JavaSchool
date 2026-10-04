@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1015
 source: https://web.archive.org/web/20090530100136/http://www.java2s.com:80/Code/Java/Class/Equivalence.htm
 ---
-Equivalence
-
 ```java title=Example.java
 //: c03:Equivalence.java
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002

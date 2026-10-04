@@ -7,10 +7,7 @@ order: 50277
 source: https://www.java2s.com/Tutorials/Java/java.io/PrintWriter/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -62,5 +59,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/PrintWriter/index.html
 - Java PrintWriter.write(String s)
 - Java PrintWriter.write(String s, int off, int len)
 
-- Next »
 - « Previous

@@ -108,5 +108,3 @@ for (int i : arr) {
     sb.append(System.getProperty("line.separator"));
 return sb;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

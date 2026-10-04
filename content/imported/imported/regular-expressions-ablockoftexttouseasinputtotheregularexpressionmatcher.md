@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20070115014418/http://www.java2s.com:80/Code/Java/Regular-Expressions/Ablockoftexttouseasinputtotheregularexpressionmatcher.htm
 ---
-A block of text to use as input to the regular expression matcher
-
 ```java title=Example.java
 // : c12:TheReplacements.java
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002

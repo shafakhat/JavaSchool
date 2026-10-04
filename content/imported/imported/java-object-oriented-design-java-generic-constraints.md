@@ -7,10 +7,7 @@ order: 50171
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0360__Java_Generic_Constraints.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Unbounded Wildcards
 
@@ -107,5 +104,4 @@ publicclass Main {
 }
 ```
 
-- Next »
 - « Previous

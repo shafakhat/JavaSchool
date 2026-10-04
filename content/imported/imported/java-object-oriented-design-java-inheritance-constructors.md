@@ -7,10 +7,7 @@ order: 50167
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0320__Java_Inheritance_Constructors.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Constructors are not members of a class and they are not inherited by subclasses.
 
@@ -102,5 +99,4 @@ Every class must call the constructor of its superclass from its constructors di
 
 If the superclass does not have a no-args constructor, we must call any other constructors of the superclass explicitly.
 
-- Next »
 - « Previous

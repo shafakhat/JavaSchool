@@ -42,5 +42,3 @@ voidrotateArrayRange(int[] array, int from, int to, int n) rotate Array Range
 ```java title=Example.java
 rotateArrayRange(array, from, to, n, Arrays.copyOfRange(array, from, to));
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

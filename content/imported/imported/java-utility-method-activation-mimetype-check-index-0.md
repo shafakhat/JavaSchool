@@ -110,5 +110,3 @@ mimeTypes.addMimeTypes("text/csv csv");
 mimeTypes.addMimeTypes("application/vnd.ms-powerpoint ppt pps pot");
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

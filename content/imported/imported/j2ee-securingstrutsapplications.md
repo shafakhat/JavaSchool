@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060506000214/http://www.java2s.com:80/Code
 ---
 Securing Struts Applications : Java examples (example source code) » J2EE » Struts
 
-Securing Struts Applications
-
 ```java title=Example.java
 /*
 ## Title:      Struts: The Complete Reference

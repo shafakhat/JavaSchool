@@ -7,10 +7,7 @@ order: 50129
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0200__Java_Interpreter_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We normally use Interpreter pattern to evaluate language grammar or expression.
 
@@ -76,5 +73,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

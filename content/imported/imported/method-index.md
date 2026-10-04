@@ -7,10 +7,7 @@ order: 50414
 source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Method/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -36,5 +33,4 @@ source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Method/index.htm
 - Java Method.toGenericString()
 - Java Method.toString()
 
-- Next »
 - « Previous

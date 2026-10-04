@@ -7,14 +7,10 @@ order: 50255
 source: https://www.java2s.com/Tutorials/Java/java.io/FilenameFilter/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
 - Java FilenameFilter.accept(File dir, String name)
 
-- Next »
 - « Previous

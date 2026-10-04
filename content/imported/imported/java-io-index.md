@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50003
 source: https://www.java2s.com/Tutorials/Java/Java_io/index.html
 ---
-- Next »
-
 Java Input/output (I/O) deals with reading data from a source and writing data to a destination.
 
 Typically, we read data stored in a file or write data to a file using I/O.
@@ -49,5 +47,3 @@ New Input/Output 2 API supports basic file operations (copy, move, and delete) o
 It supports for accessing the attributes of file systems and files.
 
 We can creates a watch service to watch for any events on a directory such as adding a new file or a subdirectory, deleting a file, etc.
-
-- Next »

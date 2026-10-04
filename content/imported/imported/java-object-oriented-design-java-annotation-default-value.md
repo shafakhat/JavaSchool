@@ -7,10 +7,7 @@ order: 50193
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0720__Java_Annotation_Default_Value.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We can define a default value for elements in an annotation. We are not required to provide a value for an annotation element with a default value.
 
@@ -60,5 +57,4 @@ public @interface Version {
 }
 ```
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50267
 source: https://www.java2s.com/Tutorials/Java/java.io/LineNumberReader/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -28,5 +25,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/LineNumberReader/index.htm
 - Java LineNumberReader .setLineNumber (int lineNumber)
 - Java LineNumberReader.skip(long n)
 
-- Next »
 - « Previous

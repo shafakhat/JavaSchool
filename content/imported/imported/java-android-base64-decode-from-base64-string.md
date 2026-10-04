@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102122034/http://www.java2s.com/ref/jav
 
 ## Description
 
-Android Base64 decode from base64 String
-
 ```java title=Example.java
 import android.util.Base64;
 

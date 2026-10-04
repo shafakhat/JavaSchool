@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20090504072510/http://www.java2s.com:80/Code/Java/Class/Examinationofthewaytheclassloaderworks.htm
 ---
-Examination of the way the class loader works
-
 ```java title=Example.java
 // : c10:SweetShop.java
-// Examination of the way the class loader works.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Candy {

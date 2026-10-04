@@ -7,10 +7,7 @@ order: 50206
 source: https://www.java2s.com/Tutorials/Java/Java_io/0210__Java_io_FileOutputStream.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Creating the Output Stream
 
@@ -121,5 +118,4 @@ import java.io.FileOutputStream;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

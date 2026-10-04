@@ -7,10 +7,7 @@ order: 50400
 source: https://www.java2s.com/Tutorials/Java/java.text/SimpleDateFormat/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -36,5 +33,4 @@ source: https://www.java2s.com/Tutorials/Java/java.text/SimpleDateFormat/index.h
 - Java SimpleDateFormat .toLocalizedPattern ()
 - Java SimpleDateFormat.toPattern()
 
-- Next »
 - « Previous

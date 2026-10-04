@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1028
 source: https://web.archive.org/web/20090605074211/http://www.java2s.com:80/Code/Java/JPA/DetachmentWithTriggeredLazyLoading.htm
 ---
-Detachment With Triggered Lazy Loading
-
 ```java title=Example.java
 File: Main.java
 import java.util.Collection;

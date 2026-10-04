@@ -7,7 +7,6 @@ order: 50111
 source: https://www.java2s.com/Tutorials/Java/Scala/5000__Scala_Lists.html
 ---
 ```java title=Example.java
-« Previous
 ```
 
 In Scala Lists, all elements have the same type like arrays, but unlike arrays, elements of a list cannot by changed by assignment.

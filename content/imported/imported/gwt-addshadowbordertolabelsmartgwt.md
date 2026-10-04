@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1048
 source: https://web.archive.org/web/20100615030620/http://www.java2s.com:80/Code/Java/GWT/AddshadowbordertolabelSmartGWT.htm
 ---
-Add shadow border to label (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

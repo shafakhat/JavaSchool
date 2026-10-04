@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1080
 source: https://web.archive.org/web/20090531085254/http://www.java2s.com:80/Code/Java/Class/Thefullprocessofinitialization.htm
 ---
-The full process of initialization
-
 ```java title=Example.java
 // : c06:Beetle.java
-// The full process of initialization.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Insect {

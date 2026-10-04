@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/20061026221428/http://www.java2s.com/Code/Java/Ant/CheckoutfromCVS.htm
 ---
-Check out from CVS
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Java XP Cookbook" default="build" basedir=".">

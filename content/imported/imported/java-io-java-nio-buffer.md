@@ -7,10 +7,7 @@ order: 50222
 source: https://www.java2s.com/Tutorials/Java/Java_io/0900__Java_nio_Buffer.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## What Is NIO?
 
@@ -157,5 +154,4 @@ try {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

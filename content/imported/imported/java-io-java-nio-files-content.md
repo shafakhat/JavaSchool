@@ -7,10 +7,7 @@ order: 50234
 source: https://www.java2s.com/Tutorials/Java/Java_io/1010__Java_nio_Files_Content.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Content Type of a File
 
@@ -255,5 +252,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

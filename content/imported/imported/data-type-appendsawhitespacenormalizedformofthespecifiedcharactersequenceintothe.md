@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1144
 source: https://web.archive.org/web/20111031020808/http://www.java2s.com:80/Code/Java/Data-Type/Appendsawhitespacenormalizedformofthespecifiedcharactersequenceintothespecifiedstringbuffer.htm
 ---
-Appends a whitespace-normalized form of the specified character sequence into the specified string buffer.
-
 ```java title=Example.java
 /*
  * LingPipe v. 3.9

@@ -25,5 +25,3 @@ if (ar1 == null) {
 if (ar1.length != ar2.length) {
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

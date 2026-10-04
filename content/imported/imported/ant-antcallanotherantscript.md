@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20100212032454/http://java2s.com/Code/Java/Ant/Antcallanotherantscript.htm
 ---
-Ant call another ant script
-
 ```java title=Example.java
 <project name="foo" default="deploy" basedir=".">
   <target name="init">

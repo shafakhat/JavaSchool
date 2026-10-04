@@ -7,10 +7,7 @@ order: 50119
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0080__Java_Filter_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Filter pattern filters objects using different criteria.
 
@@ -151,5 +148,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

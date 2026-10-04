@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1094
 source: https://web.archive.org/web/20130223094553/http://www.java2s.com:80/Code/Java/JDK-7/Managingextramousebuttonsandhighresolutionmousewheels.htm
 ---
-Managing extra mouse buttons and high resolution mouse wheels
-
 ```java title=Example.java
 import java.awt.FlowLayout;
 import java.awt.MouseInfo;

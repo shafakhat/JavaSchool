@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1063
 source: https://web.archive.org/web/20130821062722/http://java2s.com/Code/Java/JDK-7/GetparentPath.htm
 ---
-Get parent Path
-
 ```java title=Example.java
 import java.nio.file.Path;
 import java.nio.file.Paths;

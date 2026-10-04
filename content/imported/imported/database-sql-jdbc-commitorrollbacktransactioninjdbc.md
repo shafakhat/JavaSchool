@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20090418001818/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/CommitorrollbacktransactioninJDBC.htm
 ---
-Commit or rollback transaction in JDBC
-
 ```java title=Example.java
 import java.sql.Connection;
 import java.sql.DriverManager;

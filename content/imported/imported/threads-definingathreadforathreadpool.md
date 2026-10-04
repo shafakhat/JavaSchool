@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1045
 source: https://web.archive.org/web/20060503143830/http://www.java2s.com:80/Code/Java/Threads/Definingathreadforathreadpool.htm
 ---
-Defining a thread for a thread pool : Java examples (example source code) » Threads » Thread Pool
-
 Defining a thread for a thread pool
 
 ```java title=Example.java

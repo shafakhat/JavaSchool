@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20090622103303/http://www.java2s.com:80/Code/Java/Threads/CreateathreadbyimplementingRunnable.htm
 ---
-Create a thread by implementing Runnable.
-
 ```java title=Example.java
 class MyThread implements Runnable {
   int count;

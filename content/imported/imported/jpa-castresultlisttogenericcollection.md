@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20090528095054/http://www.java2s.com:80/Code/Java/JPA/CastResultListToGenericCollection.htm
 ---
-Cast Result List To Generic Collection
-
 ```java title=Example.java
 File: Department.java
 import java.util.ArrayList;

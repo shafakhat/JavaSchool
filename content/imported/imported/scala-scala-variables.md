@@ -7,10 +7,7 @@ order: 50074
 source: https://www.java2s.com/Tutorials/Java/Scala/0020__Scala_Variables.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 In Scala, there are three ways you can define variables: val, var,and lazy val.
 
@@ -82,5 +79,4 @@ object Main {
 }
 ```
 
-- Next »
 - « Previous

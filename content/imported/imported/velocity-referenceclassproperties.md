@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1051
 source: https://web.archive.org/web/20070303101815/http://www.java2s.com:80/Code/Java/Velocity/ReferenceClassProperties.htm
 ---
-Reference Class Properties
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

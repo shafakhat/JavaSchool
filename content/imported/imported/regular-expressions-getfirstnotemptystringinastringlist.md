@@ -7,7 +7,6 @@ order: 1036
 source: https://web.archive.org/web/20090828181247/http://www.java2s.com:80/Code/Java/Regular-Expressions/GetFirstNotEmptyStringinaStringlist.htm
 ---
 Get First Not Empty String in a String list : String Operation « Regular Expressions « Java
-Get First Not Empty String in a String list
 
 ```java title=Example.java
 /**

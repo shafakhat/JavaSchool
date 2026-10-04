@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060514222757/http://www.java2s.com:80/Code
 ---
 AffineTransform demo : Java examples (example source code) » 2D Graphics GUI » Transform
 
-AffineTransform demo
-
 ```java title=Example.java
 import java.awt.BorderLayout;
 import java.awt.Color;

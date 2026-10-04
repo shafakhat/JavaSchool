@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1109
 source: https://web.archive.org/web/20071026130402/http://www.java2s.com:80/Code/Java/Web-Services-SOA/AXIS2Event.htm
 ---
-AXIS2 Event
-
 ```java title=Example.java
 Steps to build and run the Savan-Eventing sample
 ------------------------------------------------

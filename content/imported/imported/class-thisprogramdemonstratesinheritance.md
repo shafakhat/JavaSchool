@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1085
 source: https://web.archive.org/web/20111124232313/http://java2s.com/Code/Java/Class/Thisprogramdemonstratesinheritance.htm
 ---
-This program demonstrates inheritance
-
 ```java title=Example.java
 /*
  This program is a part of the companion code for Core Java 8th ed.
@@ -26,7 +24,6 @@ This program demonstrates inheritance
 import java.util.Date;
 import java.util.GregorianCalendar;
 /**
- * This program demonstrates inheritance.
  *
  * @version 1.21 2004-02-21
  * @author Cay Horstmann

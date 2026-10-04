@@ -7,10 +7,7 @@ order: 50356
 source: https://www.java2s.com/Tutorials/Java/java.util/HashSet/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -30,5 +27,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/HashSet/index.html
 - Java HashSet.remove(Object o)
 - Java HashSet.size()
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50092
 source: https://www.java2s.com/Tutorials/Java/Scala/0230__Scala_for_Loops.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A For Comprehension is a very powerful control structure of Scala language.
 
@@ -207,5 +204,4 @@ object Main {
 }
 ```
 
-- Next »
 - « Previous

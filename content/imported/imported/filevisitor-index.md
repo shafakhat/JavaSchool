@@ -7,10 +7,7 @@ order: 50297
 source: https://www.java2s.com/Tutorials/Java/java.nio.file/FileVisitor/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -19,5 +16,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio.file/FileVisitor/index.ht
 - Java FileVisitor.visitFile(T file, BasicFileAttributes attrs)
 - Java FileVisitor.visitFileFailed(T file, IOException exc)
 
-- Next »
 - « Previous

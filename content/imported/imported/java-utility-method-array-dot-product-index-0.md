@@ -112,5 +112,3 @@ for (int i = 0; i < indices.length; i++) {
     result += array[indices[i]] * values[i];
 return result;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

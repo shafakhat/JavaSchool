@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/20100213225255/http://java2s.com/Code/Java/Database-SQL-JDBC/CommittingandRollingBackUpdatestoaDatabase.htm
 ---
-Committing and Rolling Back Updates to a Database
-
 ```java title=Example.java
 import java.sql.Connection;
 import java.sql.DriverManager;

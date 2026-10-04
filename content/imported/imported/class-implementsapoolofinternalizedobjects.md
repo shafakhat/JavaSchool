@@ -6,7 +6,6 @@ section: Imported - java2s Archive
 order: 1027
 source: https://web.archive.org/web/20100212194755/http://java2s.com/Code/Java/Class/Implementsapoolofinternalizedobjects.htm
 ---
-Implements a pool of internalized objects
 1.  A Cloning Example
 2.  Class is declared to be cloneable.
 3.  Arrays are automatically cloneable

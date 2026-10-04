@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20090603182345/http://www.java2s.com:80/Code/Java/Generics/CreatingaTypeSpecificList.htm
 ---
-Creating a Type-Specific List
-
 ```java title=Example.java
 import java.util.ArrayList;
 import java.util.List;

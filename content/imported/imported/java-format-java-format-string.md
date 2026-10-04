@@ -7,10 +7,7 @@ order: 50391
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0060__Java_Format_String.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Formatting data using a Formatter requires two types of inputs:
 
@@ -140,5 +137,4 @@ B
 
 The code above generates the following result.
 
-- Next »
 - « Previous

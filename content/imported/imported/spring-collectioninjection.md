@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513091011/http://www.java2s.com/Code/Ja
 ---
 Collection Injection : Java examples (example source code) » Spring » IoC Collections
 
-Collection Injection
-
 ```java title=Example.java
 /*
 Pro Spring

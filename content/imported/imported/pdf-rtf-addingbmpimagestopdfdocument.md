@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20080102042331/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingBMPimagestoPdfdocument.htm
 ---
-Adding BMP images to Pdf document
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import java.io.IOException;

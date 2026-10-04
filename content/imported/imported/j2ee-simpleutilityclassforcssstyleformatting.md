@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1038
 source: https://web.archive.org/web/20100212185235/http://java2s.com/Code/Java/J2EE/SimpleutilityclassforCSSstyleformatting.htm
 ---
-Simple utility class for CSS style formatting
-
 ```java title=Example.java
 /**
  * Licensed under the Common Development and Distribution License,
@@ -26,7 +24,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 /**
- * Simple utility class for CSS style formatting
  * Current version isn't thread-safe and doesn't provide any validation
  *
  * Usage is simle

@@ -2,9 +2,9 @@
 title: Formatting Data into a String
 nav: Formatting Data into a Str...
 description: String outString = String.format("x = %15.2f y = %14.3g", x, y);
-section: Imported
-order: 20019
-source: http://www.java2s.com:80/Tutorial/Java/0120__Development/FormattingDataintoaString.htm
+section: Imported - java2s Archive
+order: 1024
+source: https://web.archive.org/web/20070701232725/http://www.java2s.com:80/Tutorial/Java/0120__Development/FormattingDataintoaString.htm
 ---
 ```java title=Example.java
 public class MainClass {

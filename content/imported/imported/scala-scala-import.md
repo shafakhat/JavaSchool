@@ -7,10 +7,7 @@ order: 50109
 source: https://www.java2s.com/Tutorials/Java/Scala/3090__Scala_Import.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Importing Types and Their Members
 
@@ -139,5 +136,4 @@ Note the comments for the following imports:
      import _root_.scala.collection.parallel._  // full path from real "root"
 ```
 
-- Next »
 - « Previous

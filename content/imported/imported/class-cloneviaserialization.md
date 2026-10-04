@@ -6,7 +6,6 @@ section: Imported - java2s Archive
 order: 1143
 source: https://web.archive.org/web/20100212195215/http://java2s.com/Code/Java/Class/CloneViaSerialization.htm
 ---
-Clone Via Serialization
 1.  A Cloning Example
 2.  Class is declared to be cloneable.
 3.  Arrays are automatically cloneable

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1024
 source: https://web.archive.org/web/20070403123432/http://www.java2s.com:80/Code/Java/Apache-Common/ConvertUtilsDemo.htm
 ---
-Convert Utils Demo
-
 ```java title=Example.java
 import org.apache.commons.beanutils.Converter;
 import org.apache.commons.beanutils.PropertyUtils;

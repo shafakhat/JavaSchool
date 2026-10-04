@@ -7,10 +7,7 @@ order: 50221
 source: https://www.java2s.com/Tutorials/Java/Java_io/0850__Java_io_Jar_API.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## JAR API
 
@@ -190,5 +187,4 @@ You can also get a URL object for an entry in your JAR file, which is in your cl
 URL  url = cls.getResource("/images/logo.bmp");
 ```
 
-- Next »
 - « Previous

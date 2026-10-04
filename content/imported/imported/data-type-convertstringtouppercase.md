@@ -28,7 +28,6 @@ import java.util.Properties;
    limitations under the License.
  */
 public class Main {
-  /** Convert string to uppercase
    * Always use the java.util.ENGLISH locale
    * @param s   string to uppercase
    * @return uppercased string

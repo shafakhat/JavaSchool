@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1121
 source: https://web.archive.org/web/20130111100210/http://www.java2s.com:80/Code/Java/JDK-7/ResolveSiblingduringfilemoving.htm
 ---
-Resolve Sibling during file moving
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

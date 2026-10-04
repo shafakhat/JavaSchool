@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20061018192931/http://www.java2s.com/Code/Java/Velocity/AsimpledemonstrationofhowtheeventhandlingfeaturesoftheVelocityServletEngineareused.htm
 ---
-A simple demonstration of how the event handling features of the Velocity Servlet Engine are used
-
 ```java title=Example.java
 /*
  * Copyright 2001,2004 The Apache Software Foundation.

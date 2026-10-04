@@ -7,10 +7,7 @@ order: 50460
 source: https://www.java2s.com/Tutorials/Java/Java_Language/8030__Java_generic_hierarchy.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A generic class can act as a superclass or be a subclass. In a generic hierarchy, any type arguments needed by a generic superclass must be passed up the hierarchy by all subclasses.
 
@@ -215,5 +212,4 @@ publicclass Main {
 
 is not legal because iOb2 is not an instance of Gen<Long>.
 
-- Next »
 - « Previous

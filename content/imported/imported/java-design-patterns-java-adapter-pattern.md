@@ -7,10 +7,7 @@ order: 50117
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0060__Java_Adapter_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We use the adapter in real life a lot. For example, we use a memory card adapter to connect a memory card and a computer since the computer only support one type of memory card and our card is not compatible with the computer.
 
@@ -72,5 +69,4 @@ publicclass Main{
 
 The code above generates the following result.
 
-- Next »
 - « Previous

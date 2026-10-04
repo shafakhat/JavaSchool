@@ -112,5 +112,3 @@ else {
         sum += a[i];
     return sum;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

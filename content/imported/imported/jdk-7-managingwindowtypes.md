@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1098
 source: https://web.archive.org/web/20130223095901/http://www.java2s.com:80/Code/Java/JDK-7/ManagingWindowtypes.htm
 ---
-Managing Window types
-
 ```java title=Example.java
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;

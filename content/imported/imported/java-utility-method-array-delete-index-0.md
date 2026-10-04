@@ -34,5 +34,3 @@ for (int i = 0; i < arr.length; i++) {
     narr[i - offs] = arr[i];
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

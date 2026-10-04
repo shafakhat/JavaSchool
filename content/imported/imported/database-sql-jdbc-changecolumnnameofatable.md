@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1036
 source: https://web.archive.org/web/20090502104234/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/ChangeColumnNameofaTable.htm
 ---
-Change Column Name of a Table
-
 ```java title=Example.java
 import java.sql.Connection;
 import java.sql.DriverManager;

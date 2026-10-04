@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to append element to an array - JavaSchool</title>
+<meta name="description" content="Class clazz = obj != null ? obj.getClass() : array.getClass().getComponentType();">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-array-how-to-append-element-to-an-array">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-array.html">Array</a></nav>
+    <h1>How to append element to an array</h1>
+<p>In this chapter you will learn:</p>
+<ul><li>Append an object to an array.</li><li>Append one array to another</li></ul>
+<h3 id="append-an-object-to-an-array">Append an object to an array.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.Array;
+/*fromjava2s.com*/publicclass Main {
+
+  publicstatic &lt;T&gt; T[] add(T[] array, T obj) {
+    if (array == null &amp;&amp; obj == null) {
+      return null;
+    }
+    Class&lt;?&gt; clazz = obj != null ? obj.getClass() : array.getClass().getComponentType();
+    int length = array != null ? array.length : 0;
+    T[] newArray = (T[]) Array.newInstance(clazz, length + 1);
+    if (array != null) {
+      System.arraycopy(array, 0, newArray, 0, length);
+    }
+    newArray[length] = obj;
+    return newArray;
+  }
+}</code></pre></div>
+<h3 id="append-one-array-to-another">Append one array to another</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.Array;
+publicclass Util {
+  /**//java2s.com
+   * Returns a new array that is the concatenation of a1 and a2.
+   *
+   * @param a1
+   * @param a2
+   * @return
+   */publicstaticint[] append(int[] a1, int[] a2) {
+    int[] ret = newint[a1.length + a2.length];
+    System.arraycopy(a1, 0, ret, 0, a1.length);
+    System.arraycopy(a2, 0, ret, a1.length, a2.length);
+    return ret;
+  }
+
+  /**
+   * Returns a new array that is the concatenation of a1 and a2.
+   *
+   * @param a1
+   * @param a2
+   * @return
+   */publicstaticdouble[] append(double[] a1, double[] a2) {
+    double[] ret = newdouble[a1.length + a2.length];
+    System.arraycopy(a1, 0, ret, 0, a1.length);
+    System.arraycopy(a2, 0, ret, a1.length, a2.length);
+    return ret;
+  }
+
+  /**
+   * Returns a new array with a single element appended at the end. Use this
+   * sparingly, for it will allocate a new array. You can easily turn a
+   * linear-time algorithm to quadratic this way.
+   *
+   * @param v
+   *            Original array
+   * @param elem
+   *            Element to add to end
+   */publicstaticint[] append(int[] v, int elem) {
+    int[] ret = newint[v.length + 1];
+    System.arraycopy(v, 0, ret, 0, v.length);
+    ret[v.length] = elem;
+    return ret;
+  }
+
+  /**
+   * Returns a new array with a single element appended at the end. Use this
+   * sparingly, for it will allocate a new array. You can easily turn a
+   * linear-time algorithm to quadratic this way.
+   *
+   * @param v
+   *            Original array
+   * @param elem
+   *            Element to add to end
+   */publicstaticboolean[] append(boolean[] v, boolean elem) {
+    boolean[] ret = newboolean[v.length + 1];
+    System.arraycopy(v, 0, ret, 0, v.length);
+    ret[v.length] = elem;
+    return ret;
+  }
+
+  /**
+   * Returns a new array with a single element appended at the end. Use this
+   * sparingly, for it will allocate a new array. You can easily turn a
+   * linear-time algorithm to quadratic this way.
+   *
+   * @param v
+   *            Original array
+   * @param elem
+   *            Element to add to end
+   * @return Array with length v+1 that is (v0,v1,...,vn,elem). Runtime type
+   *         will be same as he pased-in array.
+   */publicstatic Object[] append(Object[] v, Object elem) {
+    Object[] ret = (Object[]) Array.newInstance(v.getClass()
+        .getComponentType(), v.length + 1);
+    System.arraycopy(v, 0, ret, 0, v.length);
+    ret[v.length] = elem;
+    return ret;
+  }
+
+}</code></pre></div>
+<h4 id="next-chapter">Next chapter...</h4>
+<p>What you will learn in the next chapter:</p>
+<ul><li>Maximum value in a byte array</li><li>Maximum value in a double-type array</li><li>Returns the minimum value in a double-type array</li></ul>
+    <div class="pager"><a class="pager-btn" href="j2ee-helloworldjsf.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Hello World JSF</span></a><a class="pager-btn pager-next" href="java-java-aclfileattributeview-get-permission-and-entry.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java AclFileAttributeView ...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

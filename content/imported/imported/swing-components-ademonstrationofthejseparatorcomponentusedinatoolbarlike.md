@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060523170346/http://www.java2s.com:80/Code
 ---
 A demonstration of the JSeparator() component used in a toolbar-like : Java examples (example source code) » Swing Components » Separator
 
-A demonstration of the JSeparator() component used in a toolbar-like
-
 ```java title=Example.java
 /*
 Java Swing, 2nd Edition

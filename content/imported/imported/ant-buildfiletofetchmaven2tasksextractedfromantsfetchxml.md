@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1036
 source: https://web.archive.org/web/20100723171616/http://www.java2s.com:80/Code/Java/Ant/Buildfiletofetchmaven2tasksextractedfromAntsfetchxml.htm
 ---
-Build file to fetch maven2 tasks; extracted from (Ant's) fetch.xml
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <!--
@@ -25,7 +23,6 @@ Build file to fetch maven2 tasks; extracted from (Ant's) fetch.xml
    limitations under the License.
 -->
 <!--
-   Build file to fetch maven2 tasks; extracted from (Ant's) fetch.xml
 -->
 <project name="get-m2" default="get-m2" basedir=".">
 <description>

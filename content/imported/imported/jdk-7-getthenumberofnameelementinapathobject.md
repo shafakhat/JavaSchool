@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1072
 source: https://web.archive.org/web/20130821095101/http://java2s.com/Code/Java/JDK-7/GetthenumberofnameelementinaPathobject.htm
 ---
-Get the number of name element in a Path object
-
 ```java title=Example.java
 import java.nio.file.Path;
 import java.nio.file.Paths;

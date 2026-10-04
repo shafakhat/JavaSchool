@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50002
 source: https://www.java2s.com/Tutorials/Java/OCA_Java_SE_8_Method_Class/index.html
 ---
-- Next »
-
 For example, we can write a basic method.
 
 ```java title=Example.java
@@ -184,5 +182,3 @@ int long1() {
   return 9L; // DOES NOT COMPILE
 }
 ```
-
-- Next »

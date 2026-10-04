@@ -7,10 +7,7 @@ order: 50176
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0410__Java_Custom_Exception.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We can create our own exception classes.
 
@@ -194,5 +191,4 @@ class MyException extends Exception {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

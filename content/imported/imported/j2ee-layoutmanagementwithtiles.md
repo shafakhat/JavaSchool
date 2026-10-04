@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513070651/http://www.java2s.com/Code/Ja
 ---
 Layout Management with Tiles : Java examples (example source code) » J2EE » Tiles
 
-Layout Management with Tiles
-
 ```java title=Example.java
 /*
 Beginning JavaServer Pages

@@ -7,10 +7,7 @@ order: 50323
 source: https://www.java2s.com/Tutorials/Java/Java_XML/0110__Java_DOM_Edit.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Attribute
 
@@ -322,5 +319,4 @@ public void duplicatePerson(Document doc) {
     }
 ```
 
-- Next »
 - « Previous

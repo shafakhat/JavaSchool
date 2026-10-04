@@ -7,10 +7,7 @@ order: 50207
 source: https://www.java2s.com/Tutorials/Java/Java_io/0240__Java_io_PrintStream.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The PrintStream class is a concrete decorator for the output stream.
 
@@ -49,5 +46,4 @@ import java.io.PrintStream;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

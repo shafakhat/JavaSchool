@@ -6,12 +6,9 @@ section: Imported - java2s Archive
 order: 1143
 source: https://web.archive.org/web/20071106044925/http://www.java2s.com:80/Code/Java/Web-Services-SOA/ThisdemoshowshowWSAddressingsupportinApacheCXFmaybeenabled.htm
 ---
-This demo shows how WS-Addressing support in Apache CXF may be enabled
-
 ```java title=Example.java
 WS-Addressing Demo
 ==================
-This demo shows how WS-Addressing support in Apache CXF may be enabled.
 The client and server both use interceptor configuration to install the
 WS-Addressing interceptor, comprising a logical interceptor (MAPAggregator)
 responsible for aggregating the WS-A MessageAddressingProperties for

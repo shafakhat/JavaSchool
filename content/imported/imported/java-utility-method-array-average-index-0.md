@@ -86,5 +86,3 @@ doubleaverage(double[] array) Returns the average value of an array.
 ```java title=Example.java
 return array.length == 0 ? 0 : sum(array) / array.length;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

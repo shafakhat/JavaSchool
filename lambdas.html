@@ -27,11 +27,17 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
 </header>
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
-  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Core Java</span></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Java Tutorial</span></nav>
     <h1>Java Lambda Expressions</h1>
 <h2 id="behavior-as-a-value">Behavior as a value</h2>
 <p>A <strong>lambda</strong> is a compact anonymous function. It lets you pass <em>code</em> (comparisons, filters, callbacks) the same way you pass data.</p>
@@ -173,7 +179,7 @@ public class LambdaThrows {
 <h2 id="style-tips">Style tips</h2>
 <ul><li><strong>One line?</strong> Keep it on one line. If it grows past ~3 lines, extract a named method and use <code>ClassName::thatMethod</code>.</li><li><strong>Name the intent.</strong> <code>(user) -&gt; user.isActive()</code> reads great as <code>.filter(User::isActive)</code> when possible.</li><li>Don't fight type inference with redundant type declarations.</li></ul>
 <p>Next: <a href="streams.html">Streams</a> - process collections declaratively.</p>
-    <div class="pager"><a class="pager-btn" href="threads.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Threads</span></a><a class="pager-btn pager-next" href="streams.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Streams</span></a></div>
+    <div class="pager"><a class="pager-btn" href="design-patterns.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Design Patterns</span></a><a class="pager-btn pager-next" href="operators.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Operators</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

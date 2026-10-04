@@ -7,10 +7,7 @@ order: 50247
 source: https://www.java2s.com/Tutorials/Java/java.io/Console/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -24,5 +21,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/Console/index.html
 - Java Console.readPassword(String fmt, Object ... args)
 - Java Console.writer()
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50097
 source: https://www.java2s.com/Tutorials/Java/Scala/2000__Scala_Functions.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Scala has both functions and methods.
 
@@ -110,5 +107,4 @@ object Main {
 }
 ```
 
-- Next »
 - « Previous

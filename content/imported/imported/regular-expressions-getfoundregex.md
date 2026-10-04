@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20090828181046/http://www.java2s.com:80/Code/Java/Regular-Expressions/GetFoundregex.htm
 ---
-Get Found regex
-
 ```java title=Example.java
 /**
  * Licensed to the Apache Software Foundation (ASF) under one

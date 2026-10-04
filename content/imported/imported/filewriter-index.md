@@ -7,10 +7,7 @@ order: 50259
 source: https://www.java2s.com/Tutorials/Java/java.io/FileWriter/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -22,5 +19,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/FileWriter/index.html
 
 ## Method
 
-- Next »
 - « Previous

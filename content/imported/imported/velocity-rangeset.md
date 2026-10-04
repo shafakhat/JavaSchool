@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1048
 source: https://web.archive.org/web/20070428130853/http://www.java2s.com:80/Code/Java/Velocity/Rangeset.htm
 ---
-Range set
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

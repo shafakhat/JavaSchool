@@ -31,7 +31,6 @@ public class Main {
    */
   private static final int PAD_LIMIT = 8192;
   /**
-   * Right pad a String with a specified character.
    *
    * The String is padded to the size of <code>size</code>.
    *

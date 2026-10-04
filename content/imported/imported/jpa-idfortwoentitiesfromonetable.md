@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1050
 source: https://web.archive.org/web/20090124012740/http://java2s.com:80/Code/Java/JPA/IDForTwoEntitiesFromOneTable.htm
 ---
-ID For Two Entities From One Table
-
 ```java title=Example.java
 File: Address.java
 import javax.persistence.Entity;

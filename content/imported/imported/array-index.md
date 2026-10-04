@@ -7,10 +7,7 @@ order: 50411
 source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Array/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -36,5 +33,4 @@ source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Array/index.html
 - Java Array.setLong(Object array, int index, long l)
 - Java Array.setShort(Object array, int index, short s)
 
-- Next »
 - « Previous

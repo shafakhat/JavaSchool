@@ -7,10 +7,7 @@ order: 50359
 source: https://www.java2s.com/Tutorials/Java/java.util/Iterator/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -18,5 +15,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/Iterator/index.html
 - Java Iterator.next()
 - Java Iterator.remove()
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50405
 source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0050__Java_Method_Reflection.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 An instance of the java.lang.reflect.Method class represents a method. An instance of the java.lang.reflect.Constructor class represents a constructor.
 
@@ -204,5 +201,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

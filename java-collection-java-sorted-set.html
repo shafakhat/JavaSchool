@@ -27,14 +27,19 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
 </header>
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
-  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Tutorials & How-To</span></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-collection.html">Java Collection</a></nav>
     <h1>Java Collection Tutorial - Java Sorted Set</h1>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">« Previous</code></pre></div>
-<ul><li>Next »</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>A sorted set is a set with ordering on its elements.</p>
 <p>SortedSet interface represents a sorted set in Java Collection Framework.</p>
 <p>The elements in a SortedSet can be sorted in a natural order with Comparable interface or using a Comparator.</p>
@@ -42,8 +47,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <ul><li>If its elements implement the Comparable interface, it will use the compareTo() method to sort items. We can call this as sorting in natural order.</li><li>We can passin a Comparator to do custom sorting.</li></ul>
 <p>If a Comparator is specified, the Comparator is used for sorting and ignore the Comparable interface.</p>
 <p>The TreeSet class is an implementation for the SortedSet interface in the Collections Framework.</p>
-<p><a href="../../../Tutorials/Java/java.util/TreeSet/index.html">TreeSet API</a></p>
-<p><a href="../../../Tutorials/Java/java.util/SortedSet/index.html">SortedSet API</a></p>
+<p>TreeSet API</p>
+<p>SortedSet API</p>
 <h2 id="example">Example</h2>
 <p>In the following code we add String objects to the SortedSet.</p>
 <p>The String class implements the Comparable interface.</p>
@@ -181,7 +186,7 @@ import java.util.TreeSet;
   }
 }</code></pre></div>
 <p>The code above generates the following result.</p>
-<ul><li>Next »</li><li>« Previous</li></ul>
+<ul><li>« Previous</li></ul>
     <div class="pager"><a class="pager-btn" href="java-collection-java-set.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Collection Tutorial -...</span></a><a class="pager-btn pager-next" href="java-collection-java-navigable-set.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Collection Tutorial -...</span></a></div>
   </article>
 </main>

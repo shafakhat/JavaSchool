@@ -7,10 +7,7 @@ order: 50212
 source: https://www.java2s.com/Tutorials/Java/Java_io/0600__Java_io_Random_Access_Files.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Using a random access file, we can read from a file as well as write to the file.
 
@@ -106,5 +103,4 @@ import java.io.RandomAccessFile;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

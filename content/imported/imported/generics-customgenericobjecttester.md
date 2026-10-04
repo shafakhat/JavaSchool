@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20090408024048/http://www.java2s.com:80/Code/Java/Generics/CustomGenericObjectTester.htm
 ---
-Custom Generic Object Tester
-
 ```java title=Example.java
 /*
 License for Java 1.5 'Tiger': A Developer's Notebook

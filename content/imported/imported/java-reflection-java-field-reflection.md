@@ -7,10 +7,7 @@ order: 50404
 source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0040__Java_Field_Reflection.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We can use java.lang.reflect.Field class to get information about a field in a class.
 
@@ -86,5 +83,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

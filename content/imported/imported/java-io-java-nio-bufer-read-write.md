@@ -7,10 +7,7 @@ order: 50223
 source: https://www.java2s.com/Tutorials/Java/Java_io/0910__Java_nio_Bufer_Read_Write.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Buffer Read
 
@@ -171,5 +168,4 @@ CharBuffer cb  = bb.asCharBuffer();
 FloatBuffer fb  = bb.asFloatBuffer();
 ```
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50336
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0170__Java_Priority_Queues.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A priory queue is a queue in which each element has an associated priority. The element with the highest priority is removed next from the queue.
 
@@ -22,7 +19,7 @@ Or we can supply a Comparator object, which will determine the priority order of
 
 When adding a new element to a priority queue, it is positioned in the queue based on its priority.
 
-[PriorityQueue APIs](../../../Tutorials/Java/java.util/PriorityQueue/index.html)
+PriorityQueue APIs
 
 ## Example
 
@@ -196,5 +193,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

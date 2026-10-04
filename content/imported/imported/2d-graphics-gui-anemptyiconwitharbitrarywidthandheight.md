@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1031
 source: https://web.archive.org/web/20100204224520/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/Anemptyiconwitharbitrarywidthandheight.htm
 ---
-An empty icon with arbitrary width and height.
-
 ```java title=Example.java
 /**
  * @PROJECT.FULLNAME@ @VERSION@ License.
@@ -30,7 +28,6 @@ import java.awt.Component;
 import java.awt.Graphics;
 import javax.swing.Icon;
 /**
- * An empty icon with arbitrary width and height.
  */
 public final class EmptyIcon implements Icon {
   private int width;

@@ -7,10 +7,7 @@ order: 50208
 source: https://www.java2s.com/Tutorials/Java/Java_io/0250__Java_io_DataOutputStream.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 DataOutputStream can write Java primitive data type values to an output stream.
 
@@ -52,5 +49,4 @@ import java.io.FileOutputStream;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

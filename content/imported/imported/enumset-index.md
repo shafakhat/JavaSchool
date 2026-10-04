@@ -7,10 +7,7 @@ order: 50354
 source: https://www.java2s.com/Tutorials/Java/java.util/EnumSet/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -28,5 +25,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/EnumSet/index.html
 - Java EnumSet.of(E e1, E e2, E e3, E e4, E e5)
 - Java EnumSet.range(E from, E to)
 
-- Next »
 - « Previous

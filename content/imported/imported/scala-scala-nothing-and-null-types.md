@@ -7,10 +7,7 @@ order: 50085
 source: https://www.java2s.com/Tutorials/Java/Scala/0160__Scala_Nothing_and_Null_Types.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Null is a subtype of all reference types. It is a subtype of all AnyRef types to provide a type for the keyword null.
 
@@ -24,5 +21,4 @@ One of the usages of Nothing is that it signals abnormal termination.
 
 Any time you feel like using a null, use an Option instead.
 
-- Next »
 - « Previous

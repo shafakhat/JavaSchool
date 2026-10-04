@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20060513101518/http://www.java2s.com/Code/Java/Threads/Anotherdeadlockdemo.htm
 ---
-Another deadlock demo : Java examples (example source code) » Threads » Deadlock
-
 Another deadlock demo
 
 ```java title=Example.java

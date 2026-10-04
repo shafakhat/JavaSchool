@@ -7,10 +7,7 @@ order: 50433
 source: https://www.java2s.com/Tutorials/Java/Java_Language/4020__Java_switch.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The switch statement is a multiway branch statement. It provides a better alternative than a large series of if-else-if statements.
 
@@ -195,5 +192,4 @@ The following code shows how to use string literals in switch statements.
 
 The code above generates the following result.
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1049
 source: https://web.archive.org/web/20081208084440/http://www.java2s.com:80/Code/Java/JPA/GroupByWithCount.htm
 ---
-Group By With Count
-
 ```java title=Example.java
 File: Main.java
 import javax.persistence.EntityManager;

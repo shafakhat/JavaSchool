@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1048
 source: https://web.archive.org/web/20060307054455/http://www.java2s.com:80/Code/Java/Threads/Demonstrateshowdeadlockcanbehiddeninaprogram.htm
 ---
-Demonstrates how deadlock can be hidden in a program : Java examples (example source code) » Threads » Deadlock
-
 Demonstrates how deadlock can be hidden in a program
 
 ```java title=Example.java

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20090328224408/http://www.java2s.com:80/Code/Java/J2EE/GetObjectFromiBatis.htm
 ---
-Get Object From iBatis
-
 ```java title=Example.java
 File: Account.java
 public class Account {

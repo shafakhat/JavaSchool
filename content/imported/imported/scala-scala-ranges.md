@@ -7,10 +7,7 @@ order: 50087
 source: https://www.java2s.com/Tutorials/Java/Scala/0180__Scala_Ranges.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Some code need to create a sequence of numbers from some start to finish. A Range literal is what we need.
 
@@ -89,5 +86,4 @@ object Main {
 
 You can create ranges with an inclusive or exclusive upper bound, and you can specify an interval not equal to one:
 
-- Next »
 - « Previous

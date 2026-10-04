@@ -7,10 +7,7 @@ order: 50291
 source: https://www.java2s.com/Tutorials/Java/java.nio.file.attribute/PosixFileAttributes/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -18,5 +15,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio.file.attribute/PosixFileA
 - Java PosixFileAttributes.owner()
 - Java PosixFileAttributes .permissions ()
 
-- Next »
 - « Previous

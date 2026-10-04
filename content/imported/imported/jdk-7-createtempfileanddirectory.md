@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20130111100155/http://www.java2s.com:80/Code/Java/JDK-7/Createtempfileanddirectory.htm
 ---
-Create temp file and directory
-
 ```java title=Example.java
 import java.nio.file.FileSystems;
 import java.nio.file.Files;

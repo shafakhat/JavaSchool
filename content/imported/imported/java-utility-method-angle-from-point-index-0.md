@@ -90,5 +90,3 @@ if (a2 < 0) {
         return 360 - a1;
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

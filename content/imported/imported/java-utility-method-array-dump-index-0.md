@@ -115,5 +115,3 @@ if (refs == null) {
 for (int i = 0; i < refs.length; i++)
     System.out.println(refs[i].toString());
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

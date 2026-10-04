@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1074
 source: https://web.archive.org/web/20090106043645/http://www.java2s.com:80/Code/Java/Class/StaticInnerClass.htm
 ---
-Static Inner Class
-
 ```java title=Example.java
 /**
  * @version 1.00 07 Apr 1998

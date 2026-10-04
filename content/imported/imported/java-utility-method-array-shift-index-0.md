@@ -127,5 +127,3 @@ for (int i = 0; i < 4; i++)
     result[i] = shift(array[i], inverse ? i : -i);
 return result;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

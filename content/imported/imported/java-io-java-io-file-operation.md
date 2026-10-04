@@ -7,10 +7,7 @@ order: 50199
 source: https://www.java2s.com/Tutorials/Java/Java_io/0020__Java_io_File_Operation.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## File Create
 
@@ -308,5 +305,4 @@ import java.io.FileFilter;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

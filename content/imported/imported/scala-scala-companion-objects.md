@@ -7,10 +7,7 @@ order: 50107
 source: https://www.java2s.com/Tutorials/Java/Scala/3070__Scala_Companion_Objects.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 In Scala, both a class and an object can share the same name.
 
@@ -57,5 +54,4 @@ object Main extends App {
 
 A singleton object that does not share the same name with a companion class is called a standalone object.
 
-- Next »
 - « Previous

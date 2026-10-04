@@ -7,10 +7,7 @@ order: 50330
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0040__Java_Collections_Traversing.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 In Java Collections Framework, different types of collections store their elements differently using different types of data structures.
 
@@ -244,5 +241,4 @@ import java.util.List;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

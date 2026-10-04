@@ -7,10 +7,7 @@ order: 50461
 source: https://www.java2s.com/Tutorials/Java/Java_Language/8040__Java_Generic_Constraints.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 When specifying a type parameter, you can create an upper bound from which all type arguments must be derived.
 
@@ -214,5 +211,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

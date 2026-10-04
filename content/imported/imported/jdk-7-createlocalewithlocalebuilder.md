@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1031
 source: https://web.archive.org/web/20130821153903/http://java2s.com/Code/Java/JDK-7/CreateLocalewithLocaleBuilder.htm
 ---
-Create Locale with Locale Builder
-
 ```java title=Example.java
 import java.text.DateFormat;
 import java.text.NumberFormat;

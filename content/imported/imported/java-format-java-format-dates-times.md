@@ -7,10 +7,7 @@ order: 50396
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0120__Java_Format_Dates_Times.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java printf Date/time formatting deals with date, time, and datetime values.
 
@@ -117,5 +114,4 @@ import java.time.ZonedDateTime;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

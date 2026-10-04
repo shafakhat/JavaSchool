@@ -27,5 +27,3 @@ conn.putObject(bucketName, key, (InputStream) input, metadata);
 conn.setObjectAcl(bucketName, key, acl);
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

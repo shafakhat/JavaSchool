@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20090810171618/http://www.java2s.com:80/Code/Java/Threads/Asimpledemonstrationofwaitandnotify.htm
 ---
-A simple demonstration of wait() and notify().
-
 ```java title=Example.java
 class MyResource {
   boolean ready = false;

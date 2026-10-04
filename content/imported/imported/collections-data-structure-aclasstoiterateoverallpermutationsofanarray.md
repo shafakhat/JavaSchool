@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20110926030351/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Aclasstoiterateoverallpermutationsofanarray.htm
 ---
-A class to iterate over all permutations of an array.
-
 ```java title=Example.java
 /*
  * Copyright 2004-2011 H2 Group. Multiple-Licensed under the H2 License,
@@ -33,7 +31,6 @@ A class to iterate over all permutations of an array.
 //package org.h2.util;
 //import org.h2.message.DbException;
 /**
- * A class to iterate over all permutations of an array.
  * The algorithm is from Applied Combinatorics, by Alan Tucker as implemented in
  * http://www.koders.com/java/fidD3445CD11B1DC687F6B8911075E7F01E23171553.aspx
  *

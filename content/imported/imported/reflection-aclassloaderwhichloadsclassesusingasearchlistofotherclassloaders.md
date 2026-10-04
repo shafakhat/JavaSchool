@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20100210173700/http://java2s.com/Code/Java/Reflection/Aclassloaderwhichloadsclassesusingasearchlistofotherclassloaders.htm
 ---
-A class loader which loads classes using a searchlist of other classloaders
-
 ```java title=Example.java
 /*
  * SearchlistClassLoader: class loader which loads classes using a searchlist

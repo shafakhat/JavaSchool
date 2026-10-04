@@ -7,10 +7,7 @@ order: 50086
 source: https://www.java2s.com/Tutorials/Java/Scala/0170__Scala_Option.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Option lets us express null value explicitly without the null "hack".
 
@@ -54,5 +51,4 @@ getOrElse in the last two println statements returns either the value in the Opt
 
 getOrElse argument behaves as the default return value.
 
-- Next »
 - « Previous

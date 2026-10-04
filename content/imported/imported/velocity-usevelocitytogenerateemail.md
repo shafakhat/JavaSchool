@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060505074302/http://www.java2s.com:80/Code
 ---
 Use Velocity to Generate Email : Java examples (example source code) » Velocity » Email
 
-Use Velocity to Generate Email
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;
@@ -76,7 +74,6 @@ public class EmailDemo
   #end
   Call Today!
   Bests
-  www.java2s.com
 ```
 
 Download: velocity-GenerateEmail.zip (2191 K)

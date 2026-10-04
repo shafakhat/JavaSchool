@@ -137,5 +137,3 @@ for (String str : arr1) {
 for (String str : arr2) {
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

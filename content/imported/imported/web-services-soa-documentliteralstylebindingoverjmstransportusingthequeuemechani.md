@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1116
 source: https://web.archive.org/web/20071105053952/http://www.java2s.com:80/Code/Java/Web-Services-SOA/DocumentLiteralstylebindingoverJMSTransportusingthequeuemechanism.htm
 ---
-Document-Literal style binding over JMS Transport using the queue mechanism
-
 ```java title=Example.java
 JMS Transport Demo using Document-Literal Style
 ==========================================================

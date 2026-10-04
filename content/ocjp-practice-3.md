@@ -2,7 +2,7 @@
 title: OCJP Practice Test 3
 nav: OCJP Practice Test 3
 description: Third 50-question OCJP/OCJA style practice test - OOP design, inner classes, API knowledge, tricky output questions and version awareness.
-section: Interview & Certification
+section: Certifications
 order: 40
 ---
 

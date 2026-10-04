@@ -7,10 +7,7 @@ order: 50416
 source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/ParameterizedType/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -18,5 +15,4 @@ source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/ParameterizedTyp
 - Java ParameterizedType .getOwnerType ()
 - Java ParameterizedType .getRawType ()
 
-- Next »
 - « Previous

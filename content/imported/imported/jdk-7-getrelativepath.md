@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1065
 source: https://web.archive.org/web/20130821090041/http://java2s.com/Code/Java/JDK-7/Getrelativepath.htm
 ---
-Get relative path
-
 ```java title=Example.java
 import java.nio.file.Path;
 import java.nio.file.Paths;

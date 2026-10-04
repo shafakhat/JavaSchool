@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1082
 source: https://web.archive.org/web/20130111100205/http://www.java2s.com:80/Code/Java/JDK-7/InteroperabilitybetweenjavaioFileandjavaniofileFiles.htm
 ---
-Interoperability between java.io.File and java.nio.file.Files
-
 ```java title=Example.java
 import java.io.File;
 import java.net.URI;

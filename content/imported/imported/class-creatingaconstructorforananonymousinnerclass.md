@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1156
 source: https://web.archive.org/web/20090106045121/http://www.java2s.com:80/Code/Java/Class/Creatingaconstructorforananonymousinnerclass.htm
 ---
-Creating a constructor for an anonymous inner class
-
 ```java title=Example.java
 // : c08:AnonymousConstructor.java
-// Creating a constructor for an anonymous inner class.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 abstract class Base {

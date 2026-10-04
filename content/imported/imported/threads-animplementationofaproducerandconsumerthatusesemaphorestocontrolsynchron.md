@@ -7,7 +7,6 @@ order: 1009
 source: https://web.archive.org/web/20091002211221/http://www.java2s.com:80/Code/Java/Threads/Animplementationofaproducerandconsumerthatusesemaphorestocontrolsynchronization.htm
 ---
 An implementation of a producer and consumer that use semaphores to control synchronization. : Semaphore « Threads « Java
-An implementation of a producer and consumer that use semaphores to control synchronization.
 
 ```java title=Example.java
 import java.util.concurrent.Semaphore;

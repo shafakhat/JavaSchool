@@ -7,10 +7,7 @@ order: 50200
 source: https://www.java2s.com/Tutorials/Java/Java_io/0080__Java_io_InputStream.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The abstract base component is the InputStream class.
 
@@ -43,5 +40,4 @@ ID  Method/Description
 3  close() Closes the input stream
 4  available() Returns the estimated number of bytes that can be read from this input stream without blocking.
 
-- Next »
 - « Previous

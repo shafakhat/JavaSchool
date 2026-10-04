@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1021
 source: https://web.archive.org/web/20061026224421/http://www.java2s.com/Code/Java/Spring/AutoWiring.htm
 ---
-Auto Wiring
-
 ```java title=Example.java
 /*
 Pro Spring

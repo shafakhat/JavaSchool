@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1039
 source: https://web.archive.org/web/20081219151310/http://www.java2s.com:80/Code/Java/JPA/EnumeratedEnumTypeORDINAL.htm
 ---
-Enumerated EnumType ORDINAL
-
 ```java title=Example.java
 File: Student.java
 import java.util.Date;
@@ -21,7 +19,6 @@ public class Student {
   private long id = 0;
   private String name;
   private Date dateOfBirth = new Date();
-  @Enumerated(EnumType.ORDINAL)
   private Gender gender;
   public Date getDateOfBirth() {
     return dateOfBirth;

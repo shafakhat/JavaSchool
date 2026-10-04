@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1048
 source: https://web.archive.org/web/20080611232848/http://www.java2s.com:80/Code/Java/PDF-RTF/CellAlignmentCenter.htm
 ---
-Cell Alignment Center
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

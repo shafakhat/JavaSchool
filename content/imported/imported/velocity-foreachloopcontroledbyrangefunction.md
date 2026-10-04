@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20071106044858/http://www.java2s.com:80/Code/Java/Velocity/ForeachloopcontroledbyRangefunction.htm
 ---
-For each loop controled by Range function
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;

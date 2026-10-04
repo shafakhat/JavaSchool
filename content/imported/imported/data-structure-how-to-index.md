@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50026
 source: https://www.java2s.com/Tutorials/Java/Data_Structure_How_to/index.html
 ---
-- Next »
-
 - Cache 3
 - Graph 1
 - List 10
@@ -17,5 +15,3 @@ source: https://www.java2s.com/Tutorials/Java/Data_Structure_How_to/index.html
 - Sort 27
 - Stack 2
 - Tree 3
-
-- Next »

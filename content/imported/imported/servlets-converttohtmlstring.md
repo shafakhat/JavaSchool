@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1026
 source: https://web.archive.org/web/20091006231101/http://www.java2s.com:80/Code/Java/Servlets/ConverttoHTMLstring.htm
 ---
-Convert to HTML string
-
 ```java title=Example.java
 import java.io.BufferedReader;
 import java.io.IOException;

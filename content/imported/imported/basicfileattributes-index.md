@@ -7,22 +7,8 @@ order: 50287
 source: https://www.java2s.com/Tutorials/Java/java.nio.file.attribute/BasicFileAttributes/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
-- Java BasicFileAttributes .creationTime ()
-- Java BasicFileAttributes.fileKey()
-- Java BasicFileAttributes .isDirectory ()
-- Java BasicFileAttributes.isOther()
-- Java BasicFileAttributes .isRegularFile ()
-- Java BasicFileAttributes .isSymbolicLink ()
-- Java BasicFileAttributes .lastAccessTime ()
-- Java BasicFileAttributes .lastModifiedTime ()
-- Java BasicFileAttributes.size()
-
-- Next »
 - « Previous

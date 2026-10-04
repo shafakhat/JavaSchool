@@ -7,10 +7,7 @@ order: 50306
 source: https://www.java2s.com/Tutorials/Java/java.nio/Buffer/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -32,5 +29,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio/Buffer/index.html
 - Java Buffer.reset()
 - Java Buffer.rewind()
 
-- Next »
 - « Previous

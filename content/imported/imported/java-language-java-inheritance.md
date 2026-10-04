@@ -7,10 +7,7 @@ order: 50445
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5070__Java_inheritance.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 In Java the classes can inherit attributes and behavior from pre-existing classes. The pre-existing classes are called base classes, superclasses, or parent classes. The new classes are known as derived classes, subclasses, or child classes. The relationships of classes through inheritance form a hierarchy.
 
@@ -393,5 +390,4 @@ publicclass Main {
 
 The output from the program is shown here:
 
-- Next »
 - « Previous

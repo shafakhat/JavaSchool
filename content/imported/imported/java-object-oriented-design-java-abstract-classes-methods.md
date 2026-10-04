@@ -7,10 +7,7 @@ order: 50169
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0340__Java_Abstract_Classes_Methods.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java can define a class whose objects cannot be created.
 
@@ -98,5 +95,4 @@ class Rectangle extends Shape {
 }
 ```
 
-- Next »
 - « Previous

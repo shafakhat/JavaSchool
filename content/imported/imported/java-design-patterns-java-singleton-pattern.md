@@ -7,10 +7,7 @@ order: 50114
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0030__Java_Singleton_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Singleton pattern is a creational pattern.
 
@@ -58,5 +55,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

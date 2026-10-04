@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50042
 source: https://www.java2s.com/Tutorials/Java/JSON/index.html
 ---
-- Next »
-
 JSON stands for JavaScript Object Notation. It is a lightweight, text-based, human-readable data format.
 
 JSON is Language independent.
@@ -95,5 +93,3 @@ Rewrite the above JSON in XML as follows.
    <name>Java2s</name>
 </car>
 ```
-
-- Next »

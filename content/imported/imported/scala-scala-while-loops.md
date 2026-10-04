@@ -7,10 +7,7 @@ order: 50093
 source: https://www.java2s.com/Tutorials/Java/Scala/0240__Scala_while_Loops.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The while loop executes a block of code as long as a condition is true.
 
@@ -55,5 +52,4 @@ object Main {
 }
 ```
 
-- Next »
 - « Previous

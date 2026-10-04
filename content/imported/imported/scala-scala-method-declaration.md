@@ -7,10 +7,7 @@ order: 50101
 source: https://www.java2s.com/Tutorials/Java/Scala/3010__Scala_Method_Declaration.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Scala method declarations have the def keyword, the method name, parameters, optional return type, the = keyword, and the method body.myMethod takes no parameters and returns a String:
 
@@ -194,5 +191,4 @@ If a Scala method takes a type parameter, wecan also explicitly pass the type pa
 instance.method[TypeParam](p1,p2)
 ```
 
-- Next »
 - « Previous

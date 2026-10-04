@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20090603182340/http://www.java2s.com:80/Code/Java/Generics/Avalueretrievedfromatypespecificlistdoesnotneedtobecasted.htm
 ---
-A value retrieved from a type-specific list does not need to be casted
-
 ```java title=Example.java
 import java.net.MalformedURLException;
 import java.net.URL;

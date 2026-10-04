@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20061024122615/http://www.java2s.com:80/Code/Java/Swing-Components/AnimatedIconTreeExample.htm
 ---
-Animated Icon Tree Example
-
 ```java title=Example.java
 // Example from http://www.crionics.com/products/opensource/faq/swing_ex/SwingExamples.html
 /* (swing1.1.1beta2) */

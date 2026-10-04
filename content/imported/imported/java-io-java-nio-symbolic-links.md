@@ -7,10 +7,7 @@ order: 50231
 source: https://www.java2s.com/Tutorials/Java/Java_io/0980__Java_nio_Symbolic_Links.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A symbolic link contains a reference to another file or directory.
 
@@ -41,5 +38,4 @@ The LinkOption enum is declared in the java.nio.file package. Methods supporting
 
 We can use the createLink(Path newLink, Path existingPath) method of the Files class to create a hard link.
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1015
 source: https://web.archive.org/web/20100807023003/http://www.java2s.com:80/Code/Java/GWT/AddcontrolstoTabpageSmartGWT.htm
 ---
-Add controls to Tab page (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

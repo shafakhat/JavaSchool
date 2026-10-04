@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20071104100032/http://www.java2s.com:80/Code/Java/Velocity/Callclassmethods.htm
 ---
-Call class methods
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

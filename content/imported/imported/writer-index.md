@@ -7,10 +7,7 @@ order: 50286
 source: https://www.java2s.com/Tutorials/Java/java.io/Writer/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -25,5 +22,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/Writer/index.html
 - Java Writer.write(String str)
 - Java Writer.write(String str, int off, int len)
 
-- Next »
 - « Previous

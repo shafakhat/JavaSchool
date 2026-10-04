@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1036
 source: https://web.archive.org/web/20091101182022/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AnimatedMessagePanel.htm
 ---
-Animated Message Panel
-
 ```java title=Example.java
 /**
  *   Arsenal Real-Time Collaboration Server Project

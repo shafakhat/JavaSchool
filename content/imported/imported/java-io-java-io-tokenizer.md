@@ -7,10 +7,7 @@ order: 50216
 source: https://www.java2s.com/Tutorials/Java/Java_io/0740__Java_io_Tokenizer.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java has some utility classes that let we break a string into parts called tokens.
 
@@ -119,5 +116,4 @@ If it returns TT_NUBMER, its number value is stored in nval field.
 
 The code above generates the following result.
 
-- Next »
 - « Previous

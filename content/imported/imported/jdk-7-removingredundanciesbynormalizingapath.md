@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1120
 source: https://web.archive.org/web/20130821072027/http://java2s.com/Code/Java/JDK-7/Removingredundanciesbynormalizingapath.htm
 ---
-Removing redundancies by normalizing a path
-
 ```java title=Example.java
 import java.nio.file.Path;
 import java.nio.file.Paths;

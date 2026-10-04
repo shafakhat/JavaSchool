@@ -27,11 +27,17 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
 </header>
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
-  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Collections</span></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Java Tutorial</span></nav>
     <h1>Java HashMap</h1>
 <h2 id="the-map-youll-use-most">The map you'll use most</h2>
 <p><code>HashMap</code> stores <strong>key -&gt; value</strong> pairs with near-constant time lookups:</p>
@@ -207,7 +213,7 @@ public class HashDemo {
 <div class="table-wrap"><table><thead><tr><th>Need</th><th>Use</th></tr></thead><tbody><tr><td>General lookup</td><td><code>HashMap</code></td></tr><tr><td>Insertion/iteration order matters</td><td><code>LinkedHashMap</code></td></tr><tr><td>Sorted keys / floor / ceiling ops</td><td><code>TreeMap</code></td></tr><tr><td>Concurrent access</td><td><code>ConcurrentHashMap</code></td></tr><tr><td>Tiny map, immutable</td><td><code>Map.of(...)</code></td></tr><tr><td>Count things frequently</td><td><code>HashMap</code> + <code>merge</code> / <code>getOrDefault</code></td></tr></tbody></table></div>
 <div class="callout callout-remember"><span class="callout-title">&#128218; Remember</span> <code>HashMap</code> allows one <code>null</code> key (it hashes to bucket 0) - but relying on it is poor style; <code>TreeMap</code> forbids <code>null</code> keys entirely.</div>
 <p>Next: <a href="jdbc.html">JDBC</a> - connecting Java to a database.</p>
-    <div class="pager"><a class="pager-btn" href="arraylist.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">ArrayList</span></a><a class="pager-btn pager-next" href="enumeration.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Enumerations</span></a></div>
+    <div class="pager"><a class="pager-btn" href="install.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Install / Setup</span></a><a class="pager-btn pager-next" href="inheritance.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Inheritance</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -7,10 +7,7 @@ order: 50209
 source: https://www.java2s.com/Tutorials/Java/Java_io/0300__Java_io_Pipe.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A pipe connects an input stream and an output stream.
 
@@ -105,5 +102,4 @@ import java.io.PipedOutputStream;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

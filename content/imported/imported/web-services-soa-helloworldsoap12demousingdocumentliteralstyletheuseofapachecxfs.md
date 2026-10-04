@@ -9,7 +9,6 @@ source: https://web.archive.org/web/20071013163054/http://java2s.com:80/Code/Jav
 Hello World SOAP12 Demo using Document/Literal Style: the use of Apache CXF's SOAP 1.2 capabilities
 
 ```java title=Example.java
-Hello World SOAP12 Demo using Document/Literal Style
 ====================================================
 This demo shows the use of Apache CXF's SOAP 1.2 capabilities.
 Please review the README in the samples directory before

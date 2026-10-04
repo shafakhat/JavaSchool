@@ -7,15 +7,11 @@ order: 50352
 source: https://www.java2s.com/Tutorials/Java/java.util/Enumeration/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
 - Java Enumeration.hasMoreElements()
 - Java Enumeration.nextElement()
 
-- Next »
 - « Previous

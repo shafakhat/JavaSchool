@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20100211015426/http://java2s.com/Code/Java/Servlets/AutilityclassforparsingHTTPdatesasusedincookiesandotherheaders.htm
 ---
-A utility class for parsing HTTP dates as used in cookies and other headers
-
 ```java title=Example.java
 /*
  * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//httpclient/src/java/org/apache/commons/httpclient/util/DateParser.java,v 1.11 2004/11/06 19:15:42 mbecke Exp $
@@ -47,7 +45,6 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.TimeZone;
 /**
- * A utility class for parsing HTTP dates as used in cookies and other headers.
  * This class handles dates as defined by RFC 2616 section 3.3.1 as well as
  * some other common non-standard formats.
  *

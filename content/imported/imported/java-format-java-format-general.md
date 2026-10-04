@@ -7,10 +7,7 @@ order: 50394
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0090__Java_Format_General.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Different format characters can format values of different data types. For example, 's' is used to format a value as a string.
 
@@ -183,5 +180,4 @@ The flag '-' and width controls the width and alignment as in the general format
 
 The code above generates the following result.
 
-- Next »
 - « Previous

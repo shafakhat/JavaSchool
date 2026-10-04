@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20060503213509/http://www.java2s.com:80/Code/Java/Threads/Daemonthreadsdontpreventtheprogramfromending.htm
 ---
-Daemon threads don't prevent the program from ending. : Java examples (example source code) » Threads » Simple Threads
-
 Daemon threads don't prevent the program from ending.
 
 ```java title=Example.java

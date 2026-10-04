@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20070129131744/http://www.java2s.com:80/Code/Java/Swing-Components/AnimatedIconTableExample.htm
 ---
-Animated Icon Table Example
-
 ```java title=Example.java
 // Example from http://www.crionics.com/products/opensource/faq/swing_ex/SwingExamples.html
 /* (swing1.1.1beta2) */

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1038
 source: https://web.archive.org/web/20091030091045/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AnimatedTextField.htm
 ---
-Animated TextField
-
 ```java title=Example.java
 /**
  *   Arsenal Real-Time Collaboration Server Project

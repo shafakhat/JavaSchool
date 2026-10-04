@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/20111124230806/http://java2s.com/Code/Java/Swing-Components/AutoCompleteComboBox2.htm
 ---
-Auto Complete ComboBox 2
-
 ```java title=Example.java
 //package util.autocomplete;
 import java.awt.Color;

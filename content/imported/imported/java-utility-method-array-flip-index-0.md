@@ -54,5 +54,3 @@ for (int i = 0; i < len; i++) {
     newChessboard[i] = chessboard[len - 1 - i];
 return newChessboard;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

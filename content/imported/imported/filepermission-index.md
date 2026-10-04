@@ -7,10 +7,7 @@ order: 50257
 source: https://www.java2s.com/Tutorials/Java/java.io/FilePermission/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -24,5 +21,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/FilePermission/index.html
 - Java FilePermission .implies (Permission p)
 - Java FilePermission .newPermissionCollection ()
 
-- Next »
 - « Previous

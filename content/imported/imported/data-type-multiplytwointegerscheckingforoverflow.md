@@ -28,7 +28,6 @@ import java.io.File;
  */
 public class Main {
   /**
-   * Multiply two integers, checking for overflow.
    *
    * @param x a factor
    * @param y a factor

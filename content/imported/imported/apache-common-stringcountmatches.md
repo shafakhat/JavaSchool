@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1064
 source: https://web.archive.org/web/20071025002405/http://www.java2s.com:80/Code/Java/Apache-Common/Stringcountmatches.htm
 ---
-String count matches
-
 ```java title=Example.java
 /*
 2

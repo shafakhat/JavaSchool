@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102121723/http://www.java2s.com/ref/jav
 
 ## Description
 
-Java AclEntry get file flag and permissions
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.file.Files;

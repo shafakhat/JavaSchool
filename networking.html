@@ -27,11 +27,17 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
 </header>
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
-  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Advanced Java</span></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Java Tutorial</span></nav>
     <h1>Java Networking</h1>
 <h2 id="the-networking-stack">The networking stack</h2>
 <p>Java ships a complete networking API in <code>java.net</code> (and <code>java.net.http</code> since Java 11):</p>
@@ -175,7 +181,7 @@ public class Timeouts {
 }</code></pre></div>
 <p>Always set connect/read timeouts - a production service without them hangs forever on a dead peer.</p>
 <p>Next: <a href="regex.html">Regular Expressions</a> or <a href="reflection.html">Reflection</a>.</p>
-    <div class="pager"><a class="pager-btn" href="collections-map.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Map (HashMap, TreeMap, Hashtable)</span></a><a class="pager-btn pager-next" href="regex.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Regular Expressions</span></a></div>
+    <div class="pager"><a class="pager-btn" href="keywords.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Keywords</span></a><a class="pager-btn pager-next" href="syntax.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Syntax</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

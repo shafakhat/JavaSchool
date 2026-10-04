@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102122012/http://www.java2s.com/ref/jav
 
 ## Description
 
-Java Adler32 calculate checksum
-
 ```java title=Example.java
 import java.util.zip.Adler32;
 

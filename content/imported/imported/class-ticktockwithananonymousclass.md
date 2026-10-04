@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1094
 source: https://web.archive.org/web/20090531215018/http://www.java2s.com:80/Code/Java/Class/TickTockwithanAnonymousClass.htm
 ---
-Tick Tock with an Anonymous Class
-
 ```java title=Example.java
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

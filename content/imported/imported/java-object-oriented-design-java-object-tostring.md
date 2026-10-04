@@ -7,10 +7,7 @@ order: 50155
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0190__Java_Object_toString.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The string representation of an object should contain enough information about the state of the object in a readable format.
 
@@ -96,5 +93,4 @@ The above statement is the same as the following one:
 String str = "Hello" + new Point(10, 20).toString();
 ```
 
-- Next »
 - « Previous

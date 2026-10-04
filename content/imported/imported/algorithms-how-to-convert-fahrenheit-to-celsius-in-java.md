@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20130831232422/http://java2s.com/Tutorials/Java/Algorithms/How_to_Convert_Fahrenheit_to_Celsius_in_Java.htm
 ---
-Next »338/677« Previous
-
 In this chapter you will learn:
 
 - Convert Fahrenheit to Celsius
@@ -44,5 +42,3 @@ To Convert Celsius to Fahrenheit
 What you will learn in the next chapter:
 
 - A growable int array
-
-Next »« PreviousHome » Java Tutorial » AlgorithmsBubble sortBinary SearchInsertion SortSelection sortShell sortHeap SortMerge SortQuick SortFibonacciHanoi puzzleFahrenheit to Celsius

@@ -7,10 +7,7 @@ order: 50331
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0100__Java_Set.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A set represents a collection of unique objects. The ordering of elements in a set is irrelevant.
 
@@ -163,5 +160,4 @@ import java.util.Set;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/20090517212340/http://www.java2s.com:80/Code/Java/EJB3/EJBMethodWithInterceptors.htm
 ---
-EJB Method With Interceptors
-
 ```java title=Example.java
 File: Employee.java
 import javax.persistence.Entity;

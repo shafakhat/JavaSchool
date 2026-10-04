@@ -7,10 +7,7 @@ order: 50423
 source: https://www.java2s.com/Tutorials/Java/Java_Language/2030__Java_Floating_Point.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## float type
 
@@ -168,5 +165,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

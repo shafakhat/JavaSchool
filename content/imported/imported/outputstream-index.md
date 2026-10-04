@@ -7,10 +7,7 @@ order: 50270
 source: https://www.java2s.com/Tutorials/Java/java.io/OutputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -20,5 +17,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/OutputStream/index.html
 - Java OutputStream.write(byte[] b, int off, int len)
 - Java OutputStream.write(int b)
 
-- Next »
 - « Previous

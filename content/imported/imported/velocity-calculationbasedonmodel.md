@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060411091828/http://www.java2s.com:80/Code
 ---
 Calculation Based on Model : Java examples (example source code) » Velocity » Calculation
 
-Calculation Based on Model
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

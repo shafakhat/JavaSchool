@@ -7,10 +7,7 @@ order: 50128
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0180__Java_Mediator_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Mediator pattern reduces communication between multiple objects.
 
@@ -51,5 +48,4 @@ class Main {
 }
 ```
 
-- Next »
 - « Previous

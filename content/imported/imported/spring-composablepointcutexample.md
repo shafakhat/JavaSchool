@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20070503114751/http://www.java2s.com:80/Code/Java/Spring/ComposablePointcutExample.htm
 ---
-Composable Pointcut Example
-
 ```java title=Example.java
 /*
 Pro Spring

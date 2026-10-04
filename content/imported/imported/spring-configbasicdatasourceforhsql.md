@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1051
 source: https://web.archive.org/web/20090327131055/http://www.java2s.com:80/Code/Java/Spring/ConfigBasicDataSourceforHSQL.htm
 ---
-Config BasicDataSource for HSQL
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

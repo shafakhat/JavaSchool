@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20091128185318/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/CachedRS.htm
 ---
-Cached RS
-
 ```java title=Example.java
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

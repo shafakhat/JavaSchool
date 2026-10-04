@@ -7,10 +7,7 @@ order: 50387
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0020__Java_Date_Format_Class.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java 8 has new Date-Time API to work with dates and times. We should use the new Java 8 Date-Time API to format and parse date time value.
 
@@ -148,5 +145,4 @@ import java.util.Date;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

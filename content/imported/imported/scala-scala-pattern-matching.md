@@ -7,10 +7,7 @@ order: 50095
 source: https://www.java2s.com/Tutorials/Java/Scala/0260__Scala_Pattern_Matching.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Pattern matching allows us to make a programmatic choice between multiple conditions.
 
@@ -92,5 +89,4 @@ def test2(in: Any) = in match {
 }
 ```
 
-- Next »
 - « Previous

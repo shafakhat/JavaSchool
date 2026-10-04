@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20130905043900/http://java2s.com/Tutorials/Java/Algorithms/Heap_Sort_Implementation_in_Java.htm
 ---
-Next »333/677« Previous
-
 In this chapter you will learn:
 
 - Heap Sort Implementation
@@ -141,5 +139,3 @@ What you will learn in the next chapter:
 
 - Merge Sort implementation
 - Fast Merge Sort
-
-Next »« PreviousHome » Java Tutorial » AlgorithmsBubble sortBinary SearchInsertion SortSelection sortShell sortHeap SortMerge SortQuick SortFibonacciHanoi puzzleFahrenheit to Celsius

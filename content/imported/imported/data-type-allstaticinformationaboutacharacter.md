@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1126
 source: https://web.archive.org/web/20090124230322/http://www.java2s.com:80/Code/Java/Data-Type/Allstaticinformationaboutacharacter.htm
 ---
-All static information about a character
-
 ```java title=Example.java
 public class Classify {
   public static void main(String[] args) throws java.io.IOException {

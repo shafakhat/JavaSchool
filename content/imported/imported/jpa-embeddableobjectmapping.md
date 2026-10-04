@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20090329091025/http://www.java2s.com:80/Code/Java/JPA/EmbeddableObjectMapping.htm
 ---
-Embeddable Object Mapping
-
 ```java title=Example.java
 File: Address.java
 import javax.persistence.Column;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20060822142531/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/BatchUpdateDemo.htm
 ---
-Batch Update Demo
-
 ```java title=Example.java
 import java.sql.Connection;
 import java.sql.DriverManager;

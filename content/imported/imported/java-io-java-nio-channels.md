@@ -7,10 +7,7 @@ order: 50225
 source: https://www.java2s.com/Tutorials/Java/Java_io/0930__Java_nio_Channels.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A channel is an open connection between a data source and a Java program to perform I/O operations.
 
@@ -198,5 +195,4 @@ import java.nio.channels.FileChannel;
 }
 ```
 
-- Next »
 - « Previous

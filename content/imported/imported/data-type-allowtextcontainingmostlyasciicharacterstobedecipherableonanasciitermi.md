@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1125
 source: https://web.archive.org/web/20091221014805/http://www.java2s.com:80/Code/Java/Data-Type/AllowtextcontainingmostlyASCIIcharacterstobedecipherableonanASCIIterminalwithoutdecoding.htm
 ---
-Allow text containing mostly ASCII characters to be decipherable on an ASCII terminal without decoding.
-
 ```java title=Example.java
 /*
  * Copyright 2001-2004 The Apache Software Foundation.

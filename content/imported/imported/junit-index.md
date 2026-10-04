@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50043
 source: https://www.java2s.com/Tutorials/Java/JUnit/index.html
 ---
-- Next »
-
 Testing is the process of checking the functionality of an application.
 
 Unit testing is the testing of single entity, a class or a method.
@@ -54,5 +52,3 @@ JUnit Framework can be easily integrated with either of the followings:
 - Eclipse
 - Ant
 - Maven
-
-- Next »

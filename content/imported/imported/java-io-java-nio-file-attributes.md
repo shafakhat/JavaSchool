@@ -7,10 +7,7 @@ order: 50233
 source: https://www.java2s.com/Tutorials/Java/Java_io/1000__Java_nio_File_Attributes.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Files class can access the commonly used attributes of a file.
 
@@ -306,5 +303,4 @@ import java.time.Instant;
 }
 ```
 
-- Next »
 - « Previous

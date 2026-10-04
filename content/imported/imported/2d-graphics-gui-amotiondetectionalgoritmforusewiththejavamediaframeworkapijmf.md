@@ -7,11 +7,9 @@ order: 1029
 source: https://web.archive.org/web/20090924013217/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AmotiondetectionalgoritmforusewiththeJavaMediaFrameworkAPIJMF.htm
 ---
 A motion detection algoritm for use with the Java Media Framework API (JMF). : JMF « 2D Graphics GUI « Java
-A motion detection algoritm for use with the Java Media Framework API (JMF).
 
 ```java title=Example.java
 /**
- * A motion detection algoritm for use with the Java Media Framework API (JMF).
  * The main idea of the algorithm is to compare the pixelcolours of two successive frames in an incoming videostream.
  * To prevent noise to be mistaken for motion each frame is divided into many small squares for which only the mean colour is used for compairson.
  * @version 2002-09-26

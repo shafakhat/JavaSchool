@@ -122,5 +122,3 @@ for (int i = 0; i < image.length; i++) {
         out_float_mat[i][j] = Math.abs(image[i][j]);
 return out_float_mat;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

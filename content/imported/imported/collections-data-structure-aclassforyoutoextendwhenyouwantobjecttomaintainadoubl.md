@@ -7,7 +7,6 @@ order: 1003
 source: https://web.archive.org/web/20091108200406/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Aclassforyoutoextendwhenyouwantobjecttomaintainadoublylinkedlist.htm
 ---
 A class for you to extend when you want object to maintain a doubly linked list : Link List « Collections Data Structure « Java
-A class for you to extend when you want object to maintain a doubly linked list
 
 ```java title=Example.java
 /**

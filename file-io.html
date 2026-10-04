@@ -27,11 +27,17 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
 </header>
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
-  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Core Java</span></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Java Tutorial</span></nav>
     <h1>Java File I/O</h1>
 <h2 id="two-worlds-javaio-and-javanio">Two worlds: <code>java.io</code> and <code>java.nio</code></h2>
 <ul><li><strong>Classic streams</strong> (<code>FileReader</code>, <code>BufferedReader</code>) - byte/char streams, great for incremental reading.</li><li><strong>NIO (<code>java.nio.file</code>)</strong> - <code>Path</code>, <code>Files</code>, one-liners for whole-file operations.</li></ul>
@@ -210,7 +216,7 @@ public class Charset {
 <h2 id="which-api-should-i-use">Which API should I use?</h2>
 <div class="table-wrap"><table><thead><tr><th>Task</th><th>Use</th></tr></thead><tbody><tr><td>Read whole file (&lt; ~100 MB)</td><td><code>Files.readString</code> / <code>readAllLines</code></td></tr><tr><td>Write whole file / list</td><td><code>Files.writeString</code> / <code>Files.write</code></td></tr><tr><td>Huge files, line processing</td><td><code>Files.lines</code> or <code>BufferedReader</code></td></tr><tr><td>Binary data</td><td><code>InputStream</code>/<code>OutputStream</code> with buffers</td></tr><tr><td>Structured data (CSV/JSON)</td><td>parser library on top of the above</td></tr></tbody></table></div>
 <p>Next: <a href="threads.html">Threads</a> - doing multiple things at once.</p>
-    <div class="pager"><a class="pager-btn" href="exceptions.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Exceptions</span></a><a class="pager-btn pager-next" href="threads.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Threads</span></a></div>
+    <div class="pager"><a class="pager-btn" href="constructors.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Constructors</span></a><a class="pager-btn pager-next" href="intro.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Introduction</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

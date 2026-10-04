@@ -7,10 +7,7 @@ order: 50451
 source: https://www.java2s.com/Tutorials/Java/Java_Language/6000__Java_Exception.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 An exception is an abnormal condition that arises in a code sequence at run time. For example, read a non-existing file.
 
@@ -104,5 +101,4 @@ import java.util.Random;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

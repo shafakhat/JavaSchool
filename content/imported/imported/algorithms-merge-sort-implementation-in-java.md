@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20130905010011/http://java2s.com/Tutorials/Java/Algorithms/Merge_Sort_implementation_in_Java.htm
 ---
-Next »334/677« Previous
-
 In this chapter you will learn:
 
 - Merge Sort implementation
@@ -212,5 +210,3 @@ What you will learn in the next chapter:
 - Quick Sort implementation from jodd.org
 - QuickSort dealing with small amount of elements
 - Quick sort with median-of-three partitioning
-
-Next »« PreviousHome » Java Tutorial » AlgorithmsBubble sortBinary SearchInsertion SortSelection sortShell sortHeap SortMerge SortQuick SortFibonacciHanoi puzzleFahrenheit to Celsius

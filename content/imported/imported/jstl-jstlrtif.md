@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/20060423084306/http://www.java2s.com:80/Code/Java/JSTL/JSTLRTIf.htm
 ---
-JSTL RT If
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/core-rt" prefix="c-rt" %>

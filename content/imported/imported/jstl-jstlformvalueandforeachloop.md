@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060503161918/http://www.java2s.com:80/Code
 ---
 JSTL Form Value and ForEach Loop : Java examples (example source code) » JSTL » Loop
 
-JSTL Form Value and ForEach Loop
-
 ```java title=Example.java
 <html>
   <head>

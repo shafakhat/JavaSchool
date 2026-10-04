@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/20061018180952/http://www.java2s.com/Code/Java/Apache-Common/CollectionClosure.htm
 ---
-Collection Closure
-
 ```java title=Example.java
 import org.apache.commons.collections.Closure;
 import org.apache.commons.collections.ClosureUtils;

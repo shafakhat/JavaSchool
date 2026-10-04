@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513071016/http://www.java2s.com/Code/Ja
 ---
 Reference Dollar Sign in String : Java examples (example source code) » Velocity » Dollar Sign
 
-Reference Dollar Sign in String
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;

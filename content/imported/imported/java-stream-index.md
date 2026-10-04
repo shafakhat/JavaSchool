@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50049
 source: https://www.java2s.com/Tutorials/Java/Java_Stream/index.html
 ---
-- Next »
-
 A stream is a sequence of data values supporting sequential and parallel aggregate operations.
 
 We use the aggregate functions in SQL more often. For example we can sum all sale figures for a month or a year. We can also get the max value for a give range.
@@ -55,5 +53,3 @@ A stream cannot be reused after calling a terminal operation.
 To perform a computation on the same elements from the same data source, we have to recreate the stream pipeline.
 
 A stream may throw an IllegalStateException in case of reusing.
-
-- Next »

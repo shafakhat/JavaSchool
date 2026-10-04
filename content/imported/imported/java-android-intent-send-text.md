@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102122034/http://www.java2s.com/ref/jav
 
 ## Description
 
-Android Intent send text
-
 ```java title=Example.java
 import android.content.Context;
 import android.content.Intent;

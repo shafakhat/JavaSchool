@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1108
 source: https://web.archive.org/web/20130820191356/http://java2s.com/Code/Java/JDK-7/ObtainingasingleattributeatatimeusingthegetAttributemethod.htm
 ---
-Obtaining a single attribute at a time using the getAttribute method
-
 ```java title=Example.java
 import java.nio.file.FileSystems;
 import java.nio.file.Files;

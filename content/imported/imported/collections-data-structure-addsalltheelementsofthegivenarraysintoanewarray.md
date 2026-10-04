@@ -7,7 +7,6 @@ order: 1021
 source: https://web.archive.org/web/20091117172534/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Addsalltheelementsofthegivenarraysintoanewarray.htm
 ---
 Adds all the elements of the given arrays into a new array. : Auto Growth Array « Collections Data Structure « Java
-Adds all the elements of the given arrays into a new array.
 
 ```java title=Example.java
 /*   Copyright 2004 The Apache Software Foundation

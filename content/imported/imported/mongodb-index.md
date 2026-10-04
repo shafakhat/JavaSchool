@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50040
 source: https://www.java2s.com/Tutorials/Java/MongoDB/index.html
 ---
-- Next »
-
 MongoDB written in c++ is an open-source document/NoSQL database.
 
 Relational database has a schema and keeps the relationship between tables. While in MongoDB is schema-less.
@@ -73,5 +71,3 @@ _id is a 12 bytes hexadecimal number which assures the uniqueness of every docum
 We can provide _id when inserting the document. MongoDB can generate a unique id for every document if we don't provide.
 
 In those 12 bytes, first 4 bytes for the current timestamp, next 3 bytes for machine id, next 2 bytes for process id of mongodb server and remaining 3 bytes are incremental value.
-
-- Next »

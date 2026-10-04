@@ -7,10 +7,7 @@ order: 50148
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0090__Java_Access_Level_Class_Members.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A class can be public or default (or package level).
 
@@ -126,5 +123,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

@@ -50,7 +50,6 @@ public class ExceptionUtils
                 RuntimeException.class, message, cause);
     }
     /**
-     * Create a new Exception, setting the cause if possible.
      * @param clazz
      * @param message
      * @param cause

@@ -7,10 +7,7 @@ order: 50182
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0530__Java_interface_as_type.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 An interface defines a new reference type.
 
@@ -60,5 +57,4 @@ A variable of an interface type can invoke any method of the java.lang.Object cl
 
 An instance or static variable of an interface type is initialized to null by default.
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20090502015317/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/CallafunctionwithoneOUTparameterthefunctionreturnsaVARCHAR.htm
 ---
-Call a function with one OUT parameter; the function returns a VARCHAR
-
 ```java title=Example.java
 import java.sql.CallableStatement;
 import java.sql.Connection;

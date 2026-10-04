@@ -7,10 +7,7 @@ order: 50418
 source: https://www.java2s.com/Tutorials/Java/Java_Language/1010__Java_Keywords.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Full list of keywords in Java
 
@@ -67,5 +64,4 @@ publicclass Main {
 
 If you try to compile this code, you will get the following error message:
 
-- Next »
 - « Previous

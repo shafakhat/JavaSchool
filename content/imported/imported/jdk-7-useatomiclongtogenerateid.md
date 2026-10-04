@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1132
 source: https://web.archive.org/web/20130820200128/http://java2s.com/Code/Java/JDK-7/UseAtomicLongtogenerateID.htm
 ---
-Use AtomicLong to generate ID
-
 ```java title=Example.java
 import java.util.ArrayList;
 import java.util.Collections;

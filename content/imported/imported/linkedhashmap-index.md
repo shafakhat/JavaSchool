@@ -7,10 +7,7 @@ order: 50360
 source: https://www.java2s.com/Tutorials/Java/java.util/LinkedHashMap/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -26,5 +23,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/LinkedHashMap/index.html
 - Java LinkedHashMap.get(Object key)
 - Java LinkedHashMap .removeEldestEntry ( Map .Entry < K , V > eldest)
 
-- Next »
 - « Previous

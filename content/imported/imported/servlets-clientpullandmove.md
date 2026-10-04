@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20071017021314/http://www.java2s.com:80/Code/Java/Servlets/ClientPullandMove.htm
 ---
-Client Pull and Move
-
 ```java title=Example.java
 import java.io.*;
 import java.util.*;

@@ -98,5 +98,3 @@ byte[]clone(final byte[] array) Clones an array of bytes.
 ```java title=Example.java
 return clone(array, 0, array.length);
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

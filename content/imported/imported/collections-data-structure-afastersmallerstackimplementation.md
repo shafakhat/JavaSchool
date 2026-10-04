@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20100603022835/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Afastersmallerstackimplementation.htm
 ---
-A faster, smaller stack implementation.
-
 ```java title=Example.java
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more

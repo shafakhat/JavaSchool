@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1027
 source: https://web.archive.org/web/20090615220857/http://www.java2s.com:80/Code/Java/Threads/CommunicatebetweenthreadsusingaQueue.htm
 ---
-Communicate between threads using a Queue
-
 ```java title=Example.java
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

@@ -7,10 +7,7 @@ order: 50190
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0650__Java_Enum_Compare.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 You can compare two enum constants in three ways:
 
@@ -68,5 +65,4 @@ We can use the equality operator == to compare two enum constants for equality.
 
 Both operands to the == operator must be of the same enum type.
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50158
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0220__Java_Immutable_Objects.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 An object whose state cannot be changed after it is created is called an immutable object.
 
@@ -51,5 +48,4 @@ Therefore, the IntWrapper class is an immutable class and its objects are immuta
 
 It is good practice to declare all instance variables final so the Java compiler will enforce the immutability during compile time.
 
-- Next »
 - « Previous

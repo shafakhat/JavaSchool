@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20090417174846/http://www.java2s.com:80/Code/Java/JPA/ChangeInheritanceTypeInHierarchy.htm
 ---
-Change Inheritance Type In Hierarchy
-
 ```java title=Example.java
 File: BadProfessor.java
 import javax.persistence.Column;

@@ -7,10 +7,7 @@ order: 50244
 source: https://www.java2s.com/Tutorials/Java/java.io/ByteArrayOutputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -29,5 +26,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/ByteArrayOutputStream/inde
 - Java ByteArrayOutputStream .write (int b)
 - Java ByteArrayOutputStream .writeTo (OutputStream out)
 
-- Next »
 - « Previous

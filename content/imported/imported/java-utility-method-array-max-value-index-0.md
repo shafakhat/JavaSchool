@@ -128,5 +128,3 @@ for (int i = 0; i < vals.length; i++) {
     out[i] = Math.max(maxVal, vals[i]);
 return out;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

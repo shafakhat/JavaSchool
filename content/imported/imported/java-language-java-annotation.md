@@ -7,10 +7,7 @@ order: 50454
 source: https://www.java2s.com/Tutorials/Java/Java_Language/7000__Java_Annotation.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Annotations embeds supplemental information into a source file. An annotation does not change the semantics of a program.
 
@@ -235,5 +232,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

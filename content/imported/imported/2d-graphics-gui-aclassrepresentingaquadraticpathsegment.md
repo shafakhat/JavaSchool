@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20100206135706/http://java2s.com/Code/Java/2D-Graphics-GUI/Aclassrepresentingaquadraticpathsegment.htm
 ---
-A class representing a quadratic path segment
-
 ```java title=Example.java
 /*
    Licensed to the Apache Software Foundation (ASF) under one or more
@@ -28,7 +26,6 @@ import java.awt.geom.QuadCurve2D;
 import java.awt.geom.Rectangle2D;
 import java.util.Arrays;
 /**
- * A class representing a quadratic path segment.
  *
  * @version $Id: Quadradic.java 478249 2006-11-22 17:29:37Z dvholten $
  */

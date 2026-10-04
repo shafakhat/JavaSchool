@@ -7,10 +7,7 @@ order: 50112
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0010__Java_Factory_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Factory pattern is a creational pattern as this pattern provides better ways to create an object.
 
@@ -112,5 +109,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

@@ -102,5 +102,3 @@ ArrayList<T> result = newArrayList<T>();
 Collections.addAll(result, values);
 return result;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

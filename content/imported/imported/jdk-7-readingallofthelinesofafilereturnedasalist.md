@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1116
 source: https://web.archive.org/web/20130111101319/http://www.java2s.com:80/Code/Java/JDK-7/Readingallofthelinesofafilereturnedasalist.htm
 ---
-Reading all of the lines of a file returned as a list
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.charset.Charset;

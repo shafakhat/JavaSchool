@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20060504224048/http://www.java2s.com:80/Code/Java/JSP/ExpressionLanguageExamples.htm
 ---
-Expression Language Examples : Java examples (example source code) » JSP » Basics
-
 Expression Language Examples
 
 ```java title=Example.java

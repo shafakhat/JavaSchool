@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1149
 source: https://web.archive.org/web/20071106044935/http://www.java2s.com:80/Code/Java/Web-Services-SOA/WearedeployinganAXIOMbasedPOJOserviceafterwritingaservicesxmlandcreatinganaar.htm
 ---
-We are deploying an AXIOM based POJO service after writing a services.xml and creating an aar
-
 ```java title=Example.java
 Axis2 Quick Start Guide - Sample 3 (AXIOM)
 ==========================================

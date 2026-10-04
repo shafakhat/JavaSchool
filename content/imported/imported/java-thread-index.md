@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50045
 source: https://www.java2s.com/Tutorials/Java/Java_Thread/index.html
 ---
-- Next »
-
 Java represents a thread as an object. An object of the java.lang.Thread class represents a thread.
 
 There are at least two steps involved in working with a thread:
@@ -140,5 +138,3 @@ publicclass Main {
 ```
 
 The code above generates the following result.
-
-- Next »

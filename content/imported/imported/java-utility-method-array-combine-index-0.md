@@ -126,5 +126,3 @@ for (int x = 0; x < w; ++x) {
     for (int y = 0; y < h; ++y) {
         pixels[x][y] = (a[x][y] << 24) | (r[x][y] << 16) | (g[x][y] << 8) | b[x][y];
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

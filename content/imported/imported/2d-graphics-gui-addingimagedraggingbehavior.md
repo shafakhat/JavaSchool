@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060514223114/http://www.java2s.com:80/Code
 ---
 Adding Image-Dragging Behavior : Java examples (example source code) » 2D Graphics GUI » Image
 
-Adding Image-Dragging Behavior
-
 ```java title=Example.java
 import java.awt.BorderLayout;
 import java.awt.Container;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20061026234627/http://www.java2s.com/Code/Java/Ant/Checkingthatthedocumentationisuptodate.htm
 ---
-Checking that the documentation is up to date
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Example Application Build" default="build-both" basedir=".">
@@ -284,7 +282,6 @@ Checking that the documentation is up to date
          verbose="true"/>
   </target>
   <!-- Building the documentation bundle        -->
-  <!-- Checking that the documentation is up to date -->
   <target name="check-docs"
           description="Check that the documentation is up to date">
     <echo message="Checking that the documentation is up to date"/>

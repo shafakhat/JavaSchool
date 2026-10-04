@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50036
 source: https://www.java2s.com/Tutorials/Java/JPA/index.html
 ---
-- Next »
-
 ## Object-Relational Mapping
 
 The domain model has a class. The database has a table. JPA is a simple way to convert one to the other automatically.
@@ -80,5 +78,3 @@ publicclass Employee {
   }
 }
 ```
-
-- Next »

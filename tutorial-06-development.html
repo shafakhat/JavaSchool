@@ -1,0 +1,3799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Development - Java Tutorial - JavaSchool</title>
+<meta name="description" content="Development: java2s tutorial chapter with tabs per sub-topic, 97 archived articles imported.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-chapter">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-06-development.html">Development</a></nav>
+    <h1>6. Development</h1>
+    <p><strong>62 sub-topics</strong> &middot; <strong>752 articles</strong> on java2s &middot; <strong>97</strong> imported here, grouped into tabs below.</p>
+    
+    <div class="tabs">
+      <div class="tab-bar"><button type="button" class="tab-btn active" data-tab="tab-0" aria-selected="true">System Class <span class="tab-count">6</span></button><button type="button" class="tab-btn" data-tab="tab-1" aria-selected="false">Console Read <span class="tab-count">2</span></button><button type="button" class="tab-btn" data-tab="tab-2" aria-selected="false">Preference <span class="tab-count">5</span></button><button type="button" class="tab-btn" data-tab="tab-3" aria-selected="false">Random <span class="tab-count">3</span></button><button type="button" class="tab-btn" data-tab="tab-4" aria-selected="false">RuntimeMXBean <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-5" aria-selected="false">Formatting Date Time <span class="tab-count">10</span></button><button type="button" class="tab-btn" data-tab="tab-6" aria-selected="false">Compiler Diagnostic <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-7" aria-selected="false">Formatter Argument Index <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-8" aria-selected="false">printf Method <span class="tab-count">2</span></button><button type="button" class="tab-btn" data-tab="tab-9" aria-selected="false">StringBuffer StringBuilder <span class="tab-count">5</span></button><button type="button" class="tab-btn" data-tab="tab-10" aria-selected="false">Math Functions <span class="tab-count">4</span></button><button type="button" class="tab-btn" data-tab="tab-11" aria-selected="false">ScriptEngines <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-12" aria-selected="false">WAV Sound <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-13" aria-selected="false">Audio <span class="tab-count">8</span></button><button type="button" class="tab-btn" data-tab="tab-14" aria-selected="false">TimeZone <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-15" aria-selected="false">Exception <span class="tab-count">3</span></button><button type="button" class="tab-btn" data-tab="tab-16" aria-selected="false">UUID <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-17" aria-selected="false">Assertions <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-18" aria-selected="false">Cache <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-19" aria-selected="false">Debug <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-20" aria-selected="false">JDK <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-21" aria-selected="false">HTML Parser <span class="tab-count">4</span></button><button type="button" class="tab-btn" data-tab="tab-22" aria-selected="false">Other examples <span class="tab-count">34</span></button></div>
+      <div class="tab-panel" id="tab-0"><h3 id="a-helper-class-for-printing-indented-text">A helper class for printing indented text</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import java.io.PrintWriter;
+/**
+ *
+ * @version $Revision: 1.2 $
+ */
+public class IndentPrinter {
+    private int indentLevel;
+    private String indent;
+    private PrintWriter out;
+    public IndentPrinter() {
+        this(new PrintWriter(System.out), "  ");
+    }
+    public IndentPrinter(PrintWriter out) {
+        this(out, "  ");
+    }
+    public IndentPrinter(PrintWriter out, String indent) {
+        this.out = out;
+        this.indent = indent;
+    }
+    public void println(Object value) {
+        out.print(value.toString());
+        out.println();
+    }
+    public void println(String text) {
+        out.print(text);
+        out.println();
+    }
+    public void print(String text) {
+        out.print(text);
+    }
+    public void printIndent() {
+        for (int i = 0; i &lt; indentLevel; i++) {
+            out.print(indent);
+        }
+    }
+    public void println() {
+        out.println();
+    }
+    public void incrementIndent() {
+        ++indentLevel;
+    }
+    public void decrementIndent() {
+        --indentLevel;
+    }
+    public int getIndentLevel() {
+        return indentLevel;
+    }
+    public void setIndentLevel(int indentLevel) {
+        this.indentLevel = indentLevel;
+    }
+    public void flush() {
+        out.flush();
+    }
+}</code></pre></div>
+<h3 id="class-representing-a-standard-operating-system-platform-win-mac-or-posix">Class representing a standard operating system platform, WIN, MAC, or POSIX.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ *  OS.java
+ *  2007-04-14
+ */
+//cb.aloe.util;
+import java.io.File;
+import java.util.ArrayList;
+/**
+ *
+ * @author Christopher Bach
+ */
+public final class OS {
+  public static final OS WIN = new OS("WIN");
+  public static final OS MAC = new OS("MAC");
+  public static final OS POSIX = new OS("POSIX");
+  private String ourOS = "";
+  /**
+   * Private constructor to avert instantiation.
+   */
+  private OS(String os) {
+    ourOS = os;
+  }
+  /**
+   * Returns a String representing this OS object.
+   */
+  public String toString() {
+    return ourOS;
+  }
+  /**
+   * Returns the first readable and writable application data folder appropriate
+   * to this OS.
+   */
+  public static File getAppDataFolder() {
+    File[] folders = listAppDataFolders();
+    for (int i = 0; i &lt; folders.length; i++) {
+      File folder = folders[i];
+      if (folder.canRead() &amp;&amp; folder.canWrite())
+        return folder;
+    }
+    return null;
+  }
+  /**
+   * Returns the first readable and writable user data folder appropriate to
+   * this OS.
+   */
+  public static File getUserDataFolder() {
+    File[] folders = listUserDataFolders();
+    for (int i = 0; i &lt; folders.length; i++) {
+      File folder = folders[i];
+      if (folder.canRead() &amp;&amp; folder.canWrite())
+        return folder;
+    }
+    return null;
+  }
+  /**
+   * Returns a list of the preferred locations for storing application- specific
+   * data in descending order.
+   */
+  public static File[] listAppDataFolders() {
+    String home = System.getProperty("user.home");
+    ArrayList folders = new ArrayList();
+    if (isWinNT()) // NT/2000/XP
+    {
+      // C:\Documents and Settings\All Users\Application Data
+      // Surmise that the "All Users" folder will be a child of the
+      // parent of the current user's home folder:
+      File folder = new File(home).getParentFile();
+      folders.add(new File(folder, "All Users\\Application Data"));
+    }
+    else if (isWin9X()) // 95/98/ME
+    {
+      // C:\Windows
+      folders.add(new File(home));
+    }
+    else if (isVista()) {
+      // C:\ProgramData
+      File folder = new File(home).getParentFile().getParentFile();
+      folders.add(new File(folder, "ProgramData"));
+      // C:\Users\Public\AppData
+      folder = new File(home).getParentFile();
+      folders.add(new File(folder, "Public\\AppData"));
+    }
+    else if (isMac()) {
+      folders.add(new File("/Library/Application Support"));
+    }
+    else {
+      folders.add(new File("/var/local"));
+      folders.add(new File("/var"));
+    }
+    // folders.addAll(Arrays.asList(listUserDataFolders()));
+    File[] files = new File[folders.size()];
+    return (File[]) folders.toArray(files);
+  }
+  /**
+   * Returns a list of the preferred locations for storing user- specific data
+   * in descending order.
+   */
+  public static File[] listUserDataFolders() {
+    String home = System.getProperty("user.home");
+    ArrayList folders = new ArrayList();
+    if (isWinNT()) {
+      folders.add(new File(home + "\\Application Data"));
+      folders.add(new File(home + "\\Local Settings\\Application Data"));
+    }
+    else if (isVista()) {
+      folders.add(new File(home + "\\AppData"));
+      folders.add(new File(home + "\\AppData\\Local"));
+    }
+    else if (isMac()) {
+      folders.add(new File(home + "/Library/Application Support"));
+    }
+    folders.add(new File(home));
+    File[] files = new File[folders.size()];
+    return (File[]) folders.toArray(files);
+  }
+  /**
+   * Returns the name of the current operating system platform as listed in the
+   * System properties.
+   */
+  public static final String getOSName() {
+    return System.getProperty("os.name");
+  }
+  /**
+   * Returns the OS representing the current operating system platform.
+   */
+  public static final OS getOS() {
+    String os = System.getProperty("os.name").toLowerCase();
+    if (os.indexOf("windows") &gt;= 0)
+      return WIN;
+    else if (os.indexOf("mac os") &gt;= 0)
+      return MAC;
+    else
+      return POSIX;
+  }
+  /**
+   * Returns whether or not the current operating system is a Microsoft Windows
+   * platform.
+   */
+  public static final boolean isWindows() {
+    return getOS() == WIN;
+  }
+  /**
+   * Returns whether or not the current operating system is a Microsoft Windows
+   * 9X platform (Windows 95/98/ME).
+   */
+  public static boolean isWin9X() {
+    if (getOS() != WIN)
+      return false;
+    String os = getOSName();
+    if (os.indexOf("95") &gt;= 0 || os.indexOf("98") &gt;= 0 || os.indexOf("me") &gt;= 0)
+      return true;
+    return false;
+  }
+  /**
+   * Returns whether or not the current operating system is a Microsoft Windows
+   * NT platform (Windows NT/2000/2003/XP).
+   */
+  public static boolean isWinNT() {
+    if (getOS() != WIN)
+      return false;
+    String os = getOSName();
+    if (os.indexOf("NT") &gt;= 0 || os.indexOf("2000") &gt;= 0 || os.indexOf("2003") &gt;= 0
+        || os.indexOf("XP") &gt;= 0)
+      return true;
+    return false;
+  }
+  /**
+   * Returns whether or not the current operating system is a Microsoft Windows
+   * Vista platform.
+   */
+  public static boolean isVista() {
+    if (getOS() != WIN)
+      return false;
+    String os = getOSName();
+    return (os.indexOf("Vista") &gt;= 0);
+  }
+  /**
+   * Returns whether or not the current operating system is the Apple Macintosh
+   * OS X platform.
+   */
+  public static final boolean isMac() {
+    return getOS() == MAC;
+  }
+  /**
+   * Returns whether or not the current operating system is a Posix-compatible
+   * platform (Unix, Linux, Solaris, etc).
+   */
+  public static final boolean isPosix() {
+    return getOS() == POSIX;
+  }
+}</code></pre></div>
+<h3 id="class-to-help-determining-the-os">Class to help determining the OS</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Set;
+/**
+ *
+ * @author &lt;a href="mailto:stefan.bodewig@epost.de"&gt;Stefan Bodewig&lt;/a&gt;
+ * @author &lt;a href="mailto:umagesh@apache.org"&gt;Magesh Umasankar&lt;/a&gt;
+ * @author &lt;a href="mailto:peter@apache.org"&gt;Peter Donald&lt;/a&gt;
+ */
+public final class Os
+{
+    private static final String OS_NAME =
+        System.getProperty("os.name").toLowerCase(Locale.US);
+    private static final String OS_ARCH =
+        System.getProperty("os.arch").toLowerCase(Locale.US);
+    private static final String OS_VERSION =
+        System.getProperty("os.version").toLowerCase(Locale.US);
+    private static final String PATH_SEP =
+        System.getProperty("path.separator");
+    private static final OsFamily OS_FAMILY;
+    private static final OsFamily[] OS_ALL_FAMILIES;
+    /**
+     * All Windows based OSes.
+     */
+    public static final OsFamily OS_FAMILY_WINDOWS = new OsFamily("windows");
+    /**
+     * All DOS based OSes.
+     */
+    public static final OsFamily OS_FAMILY_DOS = new OsFamily("dos");
+    /**
+     * All Windows NT based OSes.
+     */
+    public static final OsFamily OS_FAMILY_WINNT =
+        new OsFamily("nt", new OsFamily[]{OS_FAMILY_WINDOWS});
+    /**
+     * All Windows 9x based OSes.
+     */
+    public static final OsFamily OS_FAMILY_WIN9X =
+        new OsFamily("win9x", new OsFamily[]{OS_FAMILY_WINDOWS, OS_FAMILY_DOS});
+    /**
+     * OS/2
+     */
+    public static final OsFamily OS_FAMILY_OS2 =
+        new OsFamily("os/2", new OsFamily[]{OS_FAMILY_DOS});
+    /**
+     * Netware
+     */
+    public static final OsFamily OS_FAMILY_NETWARE =
+        new OsFamily("netware");
+    /**
+     * All UNIX based OSes.
+     */
+    public static final OsFamily OS_FAMILY_UNIX = new OsFamily("unix");
+    /**
+     * All Mac based OSes.
+     */
+    public static final OsFamily OS_FAMILY_MAC = new OsFamily("mac");
+    /**
+     * OSX
+     */
+    public static final OsFamily OS_FAMILY_OSX =
+        new OsFamily("osx", new OsFamily[]{OS_FAMILY_UNIX, OS_FAMILY_MAC});
+    private static final OsFamily[] ALL_FAMILIES = new OsFamily[]
+    {
+        OS_FAMILY_DOS,
+        OS_FAMILY_MAC,
+        OS_FAMILY_NETWARE,
+        OS_FAMILY_OS2,
+        OS_FAMILY_OSX,
+        OS_FAMILY_UNIX,
+        OS_FAMILY_WINDOWS,
+        OS_FAMILY_WINNT,
+        OS_FAMILY_WIN9X
+    };
+    static
+    {
+        OS_FAMILY = determineOsFamily();
+        OS_ALL_FAMILIES = determineAllFamilies();
+    }
+    /**
+     * Private constructor to block instantiation.
+     */
+    private Os()
+    {
+    }
+    /**
+     * Determines if the OS on which Ant is executing matches the given OS
+     * version.
+     */
+    public static boolean isVersion(final String version)
+    {
+        return isOs((OsFamily) null, null, null, version);
+    }
+    /**
+     * Determines if the OS on which Ant is executing matches the given OS
+     * architecture.
+     */
+    public static boolean isArch(final String arch)
+    {
+        return isOs((OsFamily) null, null, arch, null);
+    }
+    /**
+     * Determines if the OS on which Ant is executing matches the given OS
+     * family.
+     */
+    public static boolean isFamily(final String family)
+    {
+        return isOs(family, null, null, null);
+    }
+    /**
+     * Determines if the OS on which Ant is executing matches the given OS
+     * family.
+     */
+    public static boolean isFamily(final OsFamily family)
+    {
+        return isOs(family, null, null, null);
+    }
+    /**
+     * Determines if the OS on which Ant is executing matches the given OS name.
+     *
+     * @param name Description of Parameter
+     * @return The Name value
+     * @since 1.7
+     */
+    public static boolean isName(final String name)
+    {
+        return isOs((OsFamily) null, name, null, null);
+    }
+    /**
+     * Determines if the OS on which Ant is executing matches the given OS
+     * family, name, architecture and version.
+     *
+     * @param family  The OS family
+     * @param name    The OS name
+     * @param arch    The OS architecture
+     * @param version The OS version
+     * @return The Os value
+     */
+    public static boolean isOs(final String family,
+                               final String name,
+                               final String arch,
+                               final String version)
+    {
+        return isOs(getFamily(family), name, arch, version);
+    }
+    /**
+     * Determines if the OS on which Ant is executing matches the given OS
+     * family, name, architecture and version
+     *
+     * @param family  The OS family
+     * @param name    The OS name
+     * @param arch    The OS architecture
+     * @param version The OS version
+     * @return The Os value
+     */
+    public static boolean isOs(final OsFamily family,
+                               final String name,
+                               final String arch,
+                               final String version)
+    {
+        if (family != null || name != null || arch != null || version != null)
+        {
+            final boolean isFamily = familyMatches(family);
+            final boolean isName = nameMatches(name);
+            final boolean isArch = archMatches(arch);
+            final boolean isVersion = versionMatches(version);
+            return isFamily &amp;&amp; isName &amp;&amp; isArch &amp;&amp; isVersion;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    /**
+     * Locates an OsFamily by name (case-insensitive).
+     *
+     * @return the OS family, or null if not found.
+     */
+    public static OsFamily getFamily(final String name)
+    {
+        for (int i = 0; i &lt; ALL_FAMILIES.length; i++)
+        {
+            final OsFamily osFamily = ALL_FAMILIES[i];
+            if (osFamily.getName().equalsIgnoreCase(name))
+            {
+                return osFamily;
+            }
+        }
+        return null;
+    }
+    private static boolean versionMatches(final String version)
+    {
+        boolean isVersion = true;
+        if (version != null)
+        {
+            isVersion = version.equalsIgnoreCase(OS_VERSION);
+        }
+        return isVersion;
+    }
+    private static boolean archMatches(final String arch)
+    {
+        boolean isArch = true;
+        if (arch != null)
+        {
+            isArch = arch.equalsIgnoreCase(OS_ARCH);
+        }
+        return isArch;
+    }
+    private static boolean nameMatches(final String name)
+    {
+        boolean isName = true;
+        if (name != null)
+        {
+            isName = name.equalsIgnoreCase(OS_NAME);
+        }
+        return isName;
+    }
+    private static boolean familyMatches(final OsFamily family)
+    {
+        if (family == null)
+        {
+            return false;
+        }
+        for (int i = 0; i &lt; OS_ALL_FAMILIES.length; i++)
+        {
+            final OsFamily osFamily = OS_ALL_FAMILIES[i];
+            if (family == osFamily)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    private static OsFamily[] determineAllFamilies()
+    {
+        // Determine all families the current OS belongs to
+        Set allFamilies = new HashSet();
+        if (OS_FAMILY != null)
+        {
+            List queue = new ArrayList();
+            queue.add(OS_FAMILY);
+            while (queue.size() &gt; 0)
+            {
+                final OsFamily family = (OsFamily) queue.remove(0);
+                allFamilies.add(family);
+                final OsFamily[] families = family.getFamilies();
+                for (int i = 0; i &lt; families.length; i++)
+                {
+                    OsFamily parent = families[i];
+                    queue.add(parent);
+                }
+            }
+        }
+        return (OsFamily[]) allFamilies.toArray(new OsFamily[allFamilies.size()]);
+    }
+    private static OsFamily determineOsFamily()
+    {
+        // Determine the most specific OS family
+        if (OS_NAME.indexOf("windows") &gt; -1)
+        {
+            if (OS_NAME.indexOf("xp") &gt; -1
+                || OS_NAME.indexOf("2000") &gt; -1
+                || OS_NAME.indexOf("nt") &gt; -1)
+            {
+                return OS_FAMILY_WINNT;
+            }
+            else
+            {
+                return OS_FAMILY_WIN9X;
+            }
+        }
+        else if (OS_NAME.indexOf("os/2") &gt; -1)
+        {
+            return OS_FAMILY_OS2;
+        }
+        else if (OS_NAME.indexOf("netware") &gt; -1)
+        {
+            return OS_FAMILY_NETWARE;
+        }
+        else if (OS_NAME.indexOf("mac") &gt; -1)
+        {
+            if (OS_NAME.endsWith("x"))
+            {
+                return OS_FAMILY_OSX;
+            }
+            else
+            {
+                return OS_FAMILY_MAC;
+            }
+        }
+        else if (PATH_SEP.equals(":"))
+        {
+            return OS_FAMILY_UNIX;
+        }
+        else
+        {
+            return null;
+        }
+    }
+}
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * An enumerated type, which represents an OS family.
+ *
+ * @author &lt;a href="mailto:adammurdoch@apache.org"&gt;Adam Murdoch&lt;/a&gt;
+ * @version $Revision: 480428 $ $Date: 2006-11-29 07:15:24 +0100 (Mi, 29 Nov 2006) $
+ */
+ final class OsFamily
+{
+    private final String name;
+    private final OsFamily[] families;
+    OsFamily(final String name)
+    {
+        this.name = name;
+        families = new OsFamily[0];
+    }
+    OsFamily(final String name, final OsFamily[] families)
+    {
+        this.name = name;
+        this.families = families;
+    }
+    /**
+     * Returns the name of this family.
+     */
+    public String getName()
+    {
+        return name;
+    }
+    /**
+     * Returns the OS families that this family belongs to.
+     */
+    public OsFamily[] getFamilies()
+    {
+        return families;
+    }
+}</code></pre></div>
+<h3 id="copying-data-to-system-clipboard">Copying data to system clipboard</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+  }
+  // This method writes a string to the system clipboard.
+  public static void copyToSystemClipboard(String str) {
+    StringSelection ss = new StringSelection(str);
+    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+  }
+}</code></pre></div>
+<h3 id="determining-when-an-item-is-no-longer-on-the-system-clipboard">Determining When an Item Is No Longer on the System Clipboard</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.ClipboardOwner;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.Transferable;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    ClipboardOwner owner = new MyClipboardOwner();
+    StringSelection ss = new StringSelection("A String");
+    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, owner);
+  }
+}
+class MyClipboardOwner implements ClipboardOwner {
+  public void lostOwnership(Clipboard clipboard, Transferable contents) {
+    System.out.println("lost");
+  }
+}</code></pre></div>
+<h3 id="execute-system-command">Execute system command</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
+public class Main {
+  public static void main(String[] args) throws IOException {
+    String cmd = "cmd.exe /c start ";
+    // String file = "c:\\version.txt";
+    // String file = "http://www.google.com";
+    // String file = "c:\\";
+    // String file = "mailto:author@my.com";
+    String file = "mailto:";
+    Runtime.getRuntime().exec(cmd + file);
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-1" style="display:none"><h3 id="console-based-login">Console based login</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.Console;
+public class Login {
+  public static void main(String[] args) throws Exception {
+    Console console = System.console();
+    String username = console.readLine("Username:");
+    char[] pwd = console.readPassword("Password:");
+    System.out.println("Username = " + username);
+    System.out.println("Password = " + new String(pwd));
+    username = "";
+    for (int i = 0; i &lt; pwd.length; i++)
+      pwd[i] = 0;
+  }
+}</code></pre></div>
+<h3 id="consolereadline">Console.ReadLine</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.Console;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.text.MessageFormat;
+import java.util.Date;
+import java.util.Locale;
+public class DateServer {
+  public final static int PORT = 5000;
+  private ServerSocket ss;
+  public DateServer(int port) {
+    try {
+      ss = new ServerSocket(port);
+    } catch (IOException ioe) {
+      System.err.println("Unable to create server socket: " + ioe);
+      System.exit(1);
+    }
+  }
+  private void runServer() {
+    Console console = System.console();
+    Handler h = new Handler(ss);
+    h.start();
+    while (true) {
+      String cmd = console.readLine("&gt;");
+      if (cmd == null)
+        continue;
+      if (cmd.equals("exit"))
+        System.exit(0);
+    }
+  }
+  public static void main(String[] args) {
+    new DateServer(PORT).runServer();
+  }
+}
+class Handler extends Thread {
+  private ServerSocket ss;
+  Handler(ServerSocket ss) {
+    this.ss = ss;
+  }
+  public void run() {
+    while (true) {
+      try {
+        Socket s = ss.accept();
+        ObjectInputStream ois;
+        ois = new ObjectInputStream(s.getInputStream());
+        Locale l = (Locale) ois.readObject();
+        PrintWriter pw;
+        pw = new PrintWriter(s.getOutputStream());
+        MessageFormat mf;
+        mf = new MessageFormat("The date is {0, date, long}", l);
+        Object[] args = { new Date() };
+        pw.println(mf.format(args));
+        pw.close();
+      } catch (Exception e) {
+        System.err.println(e);
+      }
+    }
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-2" style="display:none"><h3 id="determining-if-a-preference-node-contains-a-specific-key">Determining If a Preference Node Contains a Specific Key</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.prefs.Preferences;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+  }
+  // Returns true if node contains the specified key; false otherwise.
+  public static boolean contains(Preferences node, String key) {
+    return node.get(key, null) != null;
+  }
+}</code></pre></div>
+<h3 id="determining-if-a-preference-node-contains-a-specific-value">Determining If a Preference Node Contains a Specific Value</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.prefs.BackingStoreException;
+import java.util.prefs.Preferences;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+  }
+  public static String containsValue(Preferences node, String value) {
+    try {
+      String[] keys = node.keys();
+      for (int i = 0; i &lt; keys.length; i++) {
+        if (value.equals(node.get(keys[i], null))) {
+          return keys[i];
+        }
+      }
+    } catch (BackingStoreException e) {
+    }
+    return null;
+  }
+}</code></pre></div>
+<h3 id="determining-if-a-preference-node-exists">Determining If a Preference Node Exists</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.prefs.Preferences;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    boolean exists = Preferences.userRoot().nodeExists("/yourValue"); // false
+    Preferences.userRoot().node("/yourValue");
+    exists = Preferences.userRoot().nodeExists("/yourValue"); // true
+    Preferences prefs = Preferences.userRoot().node("/yourValue");
+    prefs.removeNode();
+    // exists = prefs.nodeExists("/yourValue");
+    exists = prefs.nodeExists(""); // false
+  }
+}</code></pre></div>
+<h3 id="determining-when-a-preference-node-is-added-or-removed">Determining When a Preference Node Is Added or Removed</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.prefs.NodeChangeEvent;
+import java.util.prefs.NodeChangeListener;
+import java.util.prefs.Preferences;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    Preferences prefs = Preferences.userNodeForPackage(String.class);
+    prefs.addNodeChangeListener(new NodeChangeListener() {
+      public void childAdded(NodeChangeEvent evt) {
+        Preferences parent = evt.getParent();
+        Preferences child = evt.getChild();
+      }
+      public void childRemoved(NodeChangeEvent evt) {
+        Preferences parent = evt.getParent();
+        Preferences child = evt.getChild();
+      }
+    });
+    Preferences child = prefs.node("new node");
+    child.removeNode();
+    prefs.removeNode();
+  }
+}</code></pre></div>
+<h3 id="exporting-the-preferences-in-a-preference-node">Exporting the Preferences in a Preference Node</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.FileOutputStream;
+import java.util.prefs.Preferences;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    Preferences prefs = Preferences.userNodeForPackage(String.class);
+    // Save some values
+    prefs.put("myString", "a string"); // String
+    prefs.putBoolean("myBoolean", true); // boolean
+    prefs.putInt("myInt", 123); // int
+    prefs.putLong("myLong", 123L); // long
+    prefs.putFloat("myFloat", 12.3F); // float
+    prefs.putDouble("myDouble", 12.3); // double
+    byte[] bytes = new byte[10];
+    prefs.putByteArray("myByteArray", bytes); // byte[]
+    // Export the node to a file
+    prefs.exportNode(new FileOutputStream("output.xml"));
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-3" style="display:none"><h3 id="create-two-random-number-generators-with-the-same-seed">Create two random number generators with the same seed</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Random;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    Random rand = new Random();
+    long seed = rand.nextLong();
+    rand = new Random(seed);
+    Random rand2 = new Random(seed);
+  }
+}</code></pre></div>
+<h3 id="generate-a-random-array-of-numbers">Generate a random array of numbers</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Random;
+public class Main {
+  public static void main(String[] args) {
+    Random r = new Random();
+    // generate some random boolean values
+    boolean[] booleans = new boolean[10];
+    for (int i = 0; i &lt; booleans.length; i++) {
+      booleans[i] = r.nextBoolean();
+    }
+    for (boolean b : booleans) {
+      System.out.print(b + ", ");
+    }
+    // generate a uniformly distributed int random numbers
+    int[] integers = new int[10];
+    for (int i = 0; i &lt; integers.length; i++) {
+      integers[i] = r.nextInt();
+    }
+    for (int i : integers) {
+      System.out.print(i + ", ");
+    }
+    // generate a uniformly distributed float random numbers
+    float[] floats = new float[10];
+    for (int i = 0; i &lt; floats.length; i++) {
+      floats[i] = r.nextFloat();
+    }
+    for (float f : floats) {
+      System.out.print(f + ", ");
+    }
+    // generate a Gaussian normally distributed random numbers
+    double[] gaussians = new double[10];
+    for (int i = 0; i &lt; gaussians.length; i++) {
+      gaussians[i] = r.nextGaussian();
+    }
+    for (double d : gaussians) {
+      System.out.print(d + ", ");
+    }
+  }
+}</code></pre></div>
+<h3 id="generates-random-uuids">Generates random UUIDs</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *
+ */
+import java.security.SecureRandom;
+/**
+ *
+ * RandomUuidFactory is a {@linkplain UuidFactory UuidFactory} that generates
+ * random UUIDs. This implementation uses the JDK's java.security.SecureRandom
+ * to generate sufficiently random values for the UUIDs.
+ * &lt;br&gt;&lt;br&gt;
+ * This class is a singleton, so it must be constructed through the static
+ * getInstance() method.
+ *
+ * @author Dan Jemiolo (danj)
+ *
+ */
+public class RandomUuidFactory
+{
+    private static final RandomUuidFactory _SINGLETON = new RandomUuidFactory();
+    private static final char[] _HEX_VALUES = new char[] {
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+            'a', 'b', 'c', 'd', 'e', 'f'
+    };
+    //
+    // Used to create all random numbers - guarantees unique strings
+    // during the process lifetime
+    //
+    private static final SecureRandom _RNG = new SecureRandom();
+    /**
+     *
+     * The default constructor is explicit so we can make it private and
+     * require use of getInstance() for instantiation.
+     *
+     * @see #getInstance()
+     *
+     */
+    private RandomUuidFactory()
+    {
+        //
+        // this is just to prevent instantiation
+        //
+    }
+    /**
+     *
+     * @return A unique UUID of the form &lt;em&gt;uuid:&lt;b&gt;X&lt;/b&gt;&lt;/em&gt;, where
+     *        &lt;b&gt;X&lt;/b&gt; is the generated value.
+     *
+     */
+    public String createUUID()
+    {
+        //
+        // first get 16 random bytes...
+        //
+        byte[] bytes = new byte[16];
+        _RNG.nextBytes(bytes);
+        StringBuffer uuid = new StringBuffer(41);
+        uuid.append("uuid:");
+        //
+        // ...then we need to shift so they're valid hex (0-9, a-f)
+        //
+        for (int n = 0; n &lt; 16; ++n)
+        {
+            //
+            // (there's really no elegant way to add the dashes...)
+            //
+            if (n == 4 || n == 6 || n == 8 || n == 10)
+                uuid.append('-');
+            //
+            // shift the bits so they are proper hex
+            //
+            int hex = bytes[n] &amp; 255;
+            uuid.append(_HEX_VALUES[hex &gt;&gt; 4]);
+            uuid.append(_HEX_VALUES[hex &amp; 15]);
+        }
+        return uuid.toString();
+    }
+    /**
+     *
+     * @return The singleton instance of this class.
+     *
+     */
+    public static RandomUuidFactory getInstance()
+    {
+        return _SINGLETON;
+    }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-4" style="display:none"><h3 id="get-classpath-from-runtimemxbean">Get ClassPath from RuntimeMXBean</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.management.ManagementFactory;
+import java.lang.management.RuntimeMXBean;
+import java.util.Date;
+public class Main {
+  public static void main(String args[]) throws Exception {
+    RuntimeMXBean mx = ManagementFactory.getRuntimeMXBean();
+    System.out.println(mx.getClassPath());
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-5" style="display:none"><h3 id="add-am-pm-to-time-using-simpledateformat">Add AM PM to time using SimpleDateFormat</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    String strDateFormat = "HH:mm:ss a";
+    SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+    System.out.println(sdf.format(date));
+  }
+}
+//10:20:12 AM</code></pre></div>
+<h3 id="check-if-a-string-is-a-valid-date">Check if a String is a valid date</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.ParseException;
+import java.text.SimpleDateFormat;
+public class Main {
+  public static boolean isValidDate(String inDate) {
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    dateFormat.setLenient(false);
+    try {
+      dateFormat.parse(inDate.trim());
+    } catch (ParseException pe) {
+      return false;
+    }
+    return true;
+  }
+  public static void main(String[] args) {
+    System.out.println(isValidDate("2004-02-29"));
+    System.out.println(isValidDate("2005-02-29"));
+  }
+}
+/*
+true
+false
+*/</code></pre></div>
+<h3 id="date-formatting-and-localization">Date Formatting and Localization</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+public class Main {
+  public static void main(String[] args) {
+    DateFormat df = DateFormat.getDateInstance();
+    if (df instanceof SimpleDateFormat) {
+      SimpleDateFormat sdf = (SimpleDateFormat) df;
+      System.out.println(sdf.toPattern());
+    } else {
+      System.out.println("sorry");
+    }
+  }
+}</code></pre></div>
+<h3 id="format-date-in-mm-dd-yyyy-hh">Format date in mm-dd-yyyy hh</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");
+    String strDate = sdf.format(date);
+    System.out.println("formatted date in mm/dd/yy : " + strDate);
+    sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss");
+    strDate = sdf.format(date);
+    System.out.println("formatted date in mm-dd-yyyy hh:mm:ss : " + strDate);
+  }
+}</code></pre></div>
+<h3 id="format-timezone-in-z-general-time-zone-format-like-est">Format TimeZone in z (General time zone) format like EST.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("zzz");
+    System.out.println("TimeZone in z format : " + sdf.format(date));
+  }
+}
+//TimeZone in z format : PST</code></pre></div>
+<h3 id="format-timezone-in-zzzz-format-eastern-standard-time">Format TimeZone in zzzz format Eastern Standard Time.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("zzzz");
+    System.out.println("TimeZone in zzzz format : " + sdf.format(date));
+  }
+}
+//TimeZone in zzzz format : Pacific Standard Time</code></pre></div>
+<h3 id="formatting-a-date-using-a-custom-format">Formatting a Date Using a Custom Format</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    Format formatter = new SimpleDateFormat("yy");
+    String s = formatter.format(new Date());
+    System.out.println(s);
+  }
+}</code></pre></div>
+<h3 id="formatting-data-into-a-string">Formatting Data into a String</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] a) {
+    double x = 27.5, y = 33.75;
+    String outString = String.format("x = %15.2f y = %14.3g", x, y);
+    System.out.println(outString);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+x =           27.50 y =           33.8</code></pre></div>
+<h3 id="formatting-date-with-full-day-and-month-name-and-show-time-up-to-milliseconds-with-ampm">Formatting date with full day and month name and show time up to milliseconds with AM/PM</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    Format formatter = new SimpleDateFormat("EEEE, dd MMMM yyyy, hh:mm:ss.SSS a");
+    String today = formatter.format(new Date());
+    System.out.println("Today : " + today);
+  }
+}</code></pre></div>
+<h3 id="formatting-day-in-dd-format-like-01-02-etc">Formatting day in dd format like 01, 02 etc.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    String strDateFormat = "dd";
+    SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+    System.out.println("Current day in dd format : " + sdf.format(new Date()));
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-6" style="display:none"><h3 id="compiler-info">Compiler Info</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Set;
+import javax.lang.model.SourceVersion;
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
+public class CompilerInfo {
+  public static void main(String[] args) {
+    JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+    System.out.println("Supported source versions:");
+    Set&lt;SourceVersion&gt; srcVer = compiler.getSourceVersions();
+    for (SourceVersion sv : srcVer)
+      System.out.println("  " + sv.name());
+    int nargs = compiler.isSupportedOption(args[0]);
+    if (nargs == -1)
+      System.out.println("Option " + args[0] + " is not supported");
+    else
+      System.out.println("Option " + args[0] + " takes " + nargs + " arguments");
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-7" style="display:none"><h3 id="execute-a-command-with-more-than-one-argument">Execute a command with more than one argument</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] argv) throws Exception {
+    // Execute a command with an argument that contains a space
+    String[] commands = new String[] { "grep", "hello world", "/tmp/f.txt" };
+    commands = new String[] { "grep", "hello world", "c:\\f.txt" };
+    Process child = Runtime.getRuntime().exec(commands);
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-8" style="display:none"><h3 id="array-copy-method">Array copy method</h3>
+<p>Copy the content of an array (source) to another array (destination), beginning at the specified position, to the specified position of the destination array.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public static void arraycopy (Object source, int sourcePos, Object destination, int destPos, int length)</code></pre></div>
+<p>For example, the following code uses arraycopy to copy the contents of array1 to array2.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] a) {
+    int[] array1 = { 1, 2, 3, 4 };
+    int[] array2 = new int[array1.length];
+    System.arraycopy(array1, 0, array2, 0, array1.length);
+    for(int i: array2){
+      System.out.println(i);
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+1
+2
+3
+4</code></pre></div>
+<h3 id="calling-append-method-to-construct-a-stringbuffer-object">Calling append() method to construct a StringBuffer object</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    StringBuffer proverb = new StringBuffer(); // Capacity is 16
+    proverb.append("A").append("B").append("C").append("D").append("E");
+    System.out.println(proverb);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">ABCDE</code></pre></div></div>
+      <div class="tab-panel" id="tab-9" style="display:none"><h3 id="adding-string-to-a-stringbuffer-object">Adding String to a StringBuffer Object</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    StringBuffer newString = new StringBuffer("abcde1234567890");
+    newString.append("saves nine");
+    System.out.println(newString);
+   }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abcde1234567890saves nine</code></pre></div>
+<h3 id="changing-a-single-character-in-a-stringbuffer-object">Changing a single character in a StringBuffer object</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    StringBuffer phrase = new StringBuffer("one two three four");
+    phrase.setCharAt(3, 'Z');
+    System.out.println(phrase);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">oneZtwo three four</code></pre></div>
+<h3 id="changing-the-stringbufer-length-for-a-stringbuffer-object">Changing the StringBufer Length for a StringBuffer Object</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    StringBuffer newString = new StringBuffer("abcde1234567890");
+    System.out.println(newString.capacity());
+    System.out.println(newString.length());
+    System.out.println(newString);
+    newString.setLength(8);
+    System.out.println(newString.capacity());
+    System.out.println(newString.length());
+    System.out.println(newString);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+31
+15
+abcde1234567890
+31
+8
+abcde123</code></pre></div>
+<h3 id="creating-a-string-object-from-a-stringbuffer-object">Creating a String Object From a StringBuffer Object</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    StringBuffer palindrome = new StringBuffer("so many dynamos");
+    String aString = palindrome.toString();
+    System.out.println(aString);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">so many dynamos</code></pre></div>
+<h3 id="creating-a-stringbuffer-object-with-a-specific-value-for-the-capacity">Creating a StringBuffer object with a specific value for the capacity</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    StringBuffer newString = new StringBuffer(50);
+    System.out.println(newString.capacity());
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">50</code></pre></div></div>
+      <div class="tab-panel" id="tab-10" style="display:none"><h3 id="find-exponential-value-of-a-number-using-mathexp">Find exponential value of a number using Math.exp</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] args) {
+    System.out.println("Exponential of 2 is : " + Math.exp(2));
+  }
+}</code></pre></div>
+<h3 id="find-floor-value-of-a-number-using-mathfloor">Find floor value of a number using Math.floor</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] args) {
+    System.out.println(Math.floor(31.1));
+  }
+}</code></pre></div>
+<h3 id="find-natural-logarithm-value-of-a-number-using-mathlog">Find natural logarithm value of a number using Math.log</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] args) {
+    System.out.println("Natural logarithm value of 2 is : " + Math.log(2));
+  }
+}
+//Natural logarithm value of 2 is : 0.6931471805599453</code></pre></div>
+<h3 id="find-square-root-of-a-number-using-mathsqrt">Find square root of a number using Math.sqrt</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] args) {
+    // returns square root of 9, i.e. 3
+    System.out.println(Math.sqrt(9));
+    // returns square root of 25.5
+    System.out.println(Math.sqrt(25.5));
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-11" style="display:none"><h3 id="enumerate-scriptengines">Enumerate ScriptEngines</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.List;
+import javax.script.ScriptEngineFactory;
+import javax.script.ScriptEngineManager;
+public class EnumerateScriptEngines {
+  public static void main(String[] args) {
+    ScriptEngineManager manager = new ScriptEngineManager();
+    List&lt;ScriptEngineFactory&gt; factories = manager.getEngineFactories();
+    for (ScriptEngineFactory factory : factories) {
+      System.out.println("Engine name (full): " + factory.getEngineName());
+      System.out.println("Engine version: " + factory.getEngineVersion());
+      System.out.println("Supported extensions:");
+      List&lt;String&gt; extensions = factory.getExtensions();
+      for (String extension : extensions)
+        System.out.println("  " + extension);
+      System.out.println("Language name: " + factory.getLanguageName());
+      System.out.println("Language version: " + factory.getLanguageVersion());
+      System.out.println("Supported MIME types:");
+      List&lt;String&gt; mimetypes = factory.getMimeTypes();
+      for (String mimetype : mimetypes)
+        System.out.println("  " + mimetype);
+      System.out.println("Supported short names:");
+      List&lt;String&gt; shortnames = factory.getNames();
+      for (String shortname : shortnames)
+        System.out.println("  " + shortname);
+      System.out.println();
+    }
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-12" style="display:none"><h3 id="capturing-audio-with-java-sound-api">Capturing Audio with Java Sound API</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.DataLine;
+import javax.sound.sampled.SourceDataLine;
+import javax.sound.sampled.TargetDataLine;
+public class Main {
+  public static void main(String args[]) throws Exception {
+    final ByteArrayOutputStream out = new ByteArrayOutputStream();
+    float sampleRate = 8000;
+    int sampleSizeInBits = 8;
+    int channels = 1;
+    boolean signed = true;
+    boolean bigEndian = true;
+    final AudioFormat format = new AudioFormat(sampleRate, sampleSizeInBits, channels, signed,
+        bigEndian);
+    DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
+    final TargetDataLine line = (TargetDataLine) AudioSystem.getLine(info);
+    line.open(format);
+    line.start();
+    Runnable runner = new Runnable() {
+      int bufferSize = (int) format.getSampleRate() * format.getFrameSize();
+      byte buffer[] = new byte[bufferSize];
+      public void run() {
+        try {
+          int count = line.read(buffer, 0, buffer.length);
+          if (count &gt; 0) {
+            out.write(buffer, 0, count);
+          }
+          out.close();
+        } catch (IOException e) {
+          System.err.println("I/O problems: " + e);
+          System.exit(-1);
+        }
+      }
+    };
+    Thread captureThread = new Thread(runner);
+    captureThread.start();
+    byte audio[] = out.toByteArray();
+    InputStream input = new ByteArrayInputStream(audio);
+    final SourceDataLine line1 = (SourceDataLine) AudioSystem.getLine(info);
+    final AudioInputStream ais = new AudioInputStream(input, format, audio.length
+        / format.getFrameSize());
+    line1.open(format);
+    line1.start();
+    runner = new Runnable() {
+      int bufferSize = (int) format.getSampleRate() * format.getFrameSize();
+      byte buffer[] = new byte[bufferSize];
+      public void run() {
+        try {
+          int count;
+          while ((count = ais.read(buffer, 0, buffer.length)) != -1) {
+            if (count &gt; 0) {
+              line1.write(buffer, 0, count);
+            }
+          }
+          line1.drain();
+          line1.close();
+        } catch (IOException e) {
+          System.err.println("I/O problems: " + e);
+          System.exit(-3);
+        }
+      }
+    };
+    Thread playThread = new Thread(runner);
+    playThread.start();
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-13" style="display:none"><h3 id="determine-the-duration-of-a-midi-audio-file">Determine the duration of a Midi audio file</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
+import java.net.URL;
+import javax.sound.midi.MidiSystem;
+import javax.sound.midi.Sequence;
+import javax.sound.midi.Sequencer;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    Sequence sequence = MidiSystem.getSequence(new File("midiaudiofile"));
+    sequence = MidiSystem.getSequence(new URL("http://hostname/midiaudiofile"));
+    // Create a sequencer for the sequence
+    Sequencer sequencer = MidiSystem.getSequencer();
+    sequencer.open();
+    sequencer.setSequence(sequence);
+    double durationInSecs = sequencer.getMicrosecondLength() / 1000000.0;
+  }
+}</code></pre></div>
+<h3 id="determining-the-duration-of-a-sampled-audio-file">Determining the Duration of a Sampled Audio File</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    DataLine.Info info = null;
+    Clip clip = (Clip) AudioSystem.getLine(info);
+    double durationInSecs = clip.getBufferSize()
+        / (clip.getFormat().getFrameSize() * clip.getFormat().getFrameRate());
+  }
+}</code></pre></div>
+<h3 id="determining-the-encoding-of-a-sampled-audio-file">Determining the Encoding of a Sampled Audio File</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
+import java.net.URL;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    AudioInputStream stream = AudioSystem.getAudioInputStream(new File(
+        "audiofile"));
+  }
+}</code></pre></div>
+<h3 id="determining-the-file-format-of-a-midi-audio-file">Determining the File Format of a Midi Audio File</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
+import java.net.URL;
+import javax.sound.midi.MidiFileFormat;
+import javax.sound.midi.MidiSystem;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    // From file
+    MidiFileFormat fformat = MidiSystem.getMidiFileFormat(new File("midifile"));
+    // From URL
+ //   fformat = MidiSystem.getMidiFileFormat(new URL("http://hostname/midifile"));
+    // Get file format
+    switch (fformat.getType()) {
+    case 0:
+      // mid
+      break;
+    case 1:
+      // rmf
+      break;
+    }
+  }
+}</code></pre></div>
+<h3 id="determining-the-file-format-of-a-sampled-audio-file">Determining the File Format of a Sampled Audio File</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
+import java.net.URL;
+import javax.sound.sampled.AudioFileFormat;
+import javax.sound.sampled.AudioSystem;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    AudioFileFormat fformat = AudioSystem.getAudioFileFormat(new File(
+        "audiofile"));
+    fformat = AudioSystem.getAudioFileFormat(new URL(
+        "http://hostname/audiofile"));
+    if (fformat.getType() == AudioFileFormat.Type.AIFC) {
+    } else if (fformat.getType() == AudioFileFormat.Type.AIFF) {
+    } else if (fformat.getType() == AudioFileFormat.Type.AU) {
+    } else if (fformat.getType() == AudioFileFormat.Type.WAVE) {
+    }
+  }
+}</code></pre></div>
+<h3 id="determining-the-position-of-a-sampled-audio-player">Determining the Position of a Sampled Audio Player</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    DataLine.Info info = null;
+    Clip clip = (Clip) AudioSystem.getLine(info);
+    double timeInSeconds = clip.getMicrosecondPosition() / 1000000.0d;
+  }
+}</code></pre></div>
+<h3 id="determining-when-a-midi-audio-player-has-finished-playing">Determining When a Midi Audio Player Has Finished Playing</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import javax.sound.midi.MetaEventListener;
+import javax.sound.midi.MetaMessage;
+import javax.sound.midi.MidiSystem;
+import javax.sound.midi.Sequencer;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    Sequencer sequencer = MidiSystem.getSequencer();
+    sequencer.open();
+    sequencer.addMetaEventListener(new MetaEventListener() {
+      public void meta(MetaMessage event) {
+        if (event.getType() == 47) {
+          // Sequencer is done playing
+        }
+      }
+    });
+  }
+}</code></pre></div>
+<h3 id="determining-when-a-sampled-audio-player-has-finished-playing">Determining When a Sampled Audio Player Has Finished Playing</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
+import javax.sound.sampled.LineEvent;
+import javax.sound.sampled.LineListener;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    DataLine.Info info = null;
+    Clip clip = (Clip) AudioSystem.getLine(info);
+    clip.addLineListener(new LineListener() {
+      public void update(LineEvent evt) {
+        if (evt.getType() == LineEvent.Type.STOP) {
+        }
+      }
+    });
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-14" style="display:none"><h3 id="format-timezone-in-z-rfc-822-format-like--8000">Format TimeZone in Z (RFC 822) format like -8000.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("Z");
+    System.out.println("TimeZone in Z format : " + sdf.format(date));
+  }
+}
+//TimeZone in Z format : -0800</code></pre></div></div>
+      <div class="tab-panel" id="tab-15" style="display:none"><h3 id="catch-assert-exception-with-message">Catch assert exception with message</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] argv) throws Exception {
+    try {
+      assert argv.length &gt; 0 : "my message";
+    } catch (AssertionError e) {
+      String message = e.getMessage();
+      System.out.println(message);
+    }
+  }
+}</code></pre></div>
+<h3 id="check-whether-given-exception-is-compatible-with-the-exceptions-declared-in-a-throws-clause">Check whether given exception is compatible with the exceptions declared in a throws clause</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.Array;
+import java.util.Arrays;
+/*
+ * Copyright 2002-2007 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+//Revised from springframework
+/**
+ * Miscellaneous object utility methods. Mainly for internal use within the
+ * framework; consider Jakarta's Commons Lang for a more comprehensive suite
+ * of object utilities.
+ *
+ * @author Juergen Hoeller
+ * @author Keith Donald
+ * @author Rod Johnson
+ * @author Rob Harrop
+ * @author Alex Ruiz
+ * @since 19.03.2004
+ * @see org.apache.commons.lang.ObjectUtils
+ */
+abstract class ObjectUtils {
+  private static final int INITIAL_HASH = 7;
+  private static final int MULTIPLIER = 31;
+  private static final String EMPTY_STRING = "";
+  private static final String NULL_STRING = "null";
+  private static final String ARRAY_START = "{";
+  private static final String ARRAY_END = "}";
+  private static final String EMPTY_ARRAY = ARRAY_START + ARRAY_END;
+  private static final String ARRAY_ELEMENT_SEPARATOR = ", ";
+  /**
+   * Check whether the given exception is compatible with the exceptions
+   * declared in a throws clause.
+   * @param ex the exception to checked
+   * @param declaredExceptions the exceptions declared in the throws clause
+   * @return whether the given exception is compatible
+   */
+  public static boolean isCompatibleWithThrowsClause(Throwable ex, Class[] declaredExceptions) {
+    if (!isCheckedException(ex)) {
+      return true;
+    }
+    if (declaredExceptions != null) {
+      for (int i = 0; i &lt; declaredExceptions.length; i++) {
+        if (declaredExceptions[i].isAssignableFrom(ex.getClass())) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  /**
+   * Return whether the given throwable is a checked exception:
+   * that is, neither a RuntimeException nor an Error.
+   * @param ex the throwable to check
+   * @return whether the throwable is a checked exception
+   * @see java.lang.Exception
+   * @see java.lang.RuntimeException
+   * @see java.lang.Error
+   */
+  public static boolean isCheckedException(Throwable ex) {
+    return !(ex instanceof RuntimeException || ex instanceof Error);
+  }
+}</code></pre></div>
+<h3 id="create-a-new-exception-setting-the-cause-if-possible">Create a new Exception, setting the cause if possible.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+/**
+ * Use this to create a new Exception.  This will run under JDK 1.3 or greater.
+ * However, it running under JDK 1.4 it will set the cause.
+ *
+ * @author &lt;a href="mailto:isidore@setgame.com"&gt;Llewellyn Falco&lt;/a&gt;
+ * @since 1.5
+ */
+public class ExceptionUtils
+{
+    private static boolean causesAllowed = true;
+    /**
+     * Create a new RuntimeException, setting the cause if possible.
+     * @param message
+     * @param cause
+     * @return A runtime exception object.
+     */
+    public static RuntimeException createRuntimeException(
+            String message, Throwable cause)
+    {
+        return (RuntimeException) createWithCause(
+                RuntimeException.class, message, cause);
+    }
+    /**
+     * @param clazz
+     * @param message
+     * @param cause
+     * @return A Throwable.
+     */
+    public static Throwable createWithCause(Class clazz,
+            String message, Throwable cause)
+    {
+        Throwable re = null;
+        if (causesAllowed)
+        {
+            try
+            {
+                Constructor constructor = clazz
+                        .getConstructor(new Class[]{String.class,
+                                Throwable.class});
+                re = (Throwable) constructor
+                        .newInstance(new Object[]{message, cause});
+            }
+            catch (RuntimeException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                causesAllowed = false;
+            }
+        }
+        if (re == null)
+        {
+            try
+            {
+                Constructor constructor = clazz
+                        .getConstructor(new Class[]{String.class});
+                re = (Throwable) constructor
+                        .newInstance(new Object[]{message
+                                + " caused by " + cause});
+            }
+            catch (RuntimeException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw new RuntimeException("Error caused " + e); // should be impossible
+            }
+        }
+        return re;
+    }
+    /**
+     * Set the cause of the Exception.  Will detect if this is not allowed.
+     * @param onObject
+     * @param cause
+     */
+    public static void setCause(Throwable onObject, Throwable cause)
+    {
+        if (causesAllowed)
+        {
+            try
+            {
+                Method method = onObject.getClass().getMethod("initCause", new Class[]{Throwable.class});
+                method.invoke(onObject, new Object[]{cause});
+            }
+            catch (RuntimeException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                causesAllowed = false;
+            }
+        }
+    }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-16" style="display:none"><h3 id="create-your-own-basic-uuid">Create your own basic UUID</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ Derby - Class org.apache.derby.impl.services.uuid.BasicUUID
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to you under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+ http://www.apache.org/licenses/LICENSE-2.0
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
+import java.io.StringReader;
+public class BasicUUID {
+  /*
+   * * Fields of BasicUUID
+   */
+  private long majorId; // only using 48 bits
+  private long timemillis;
+  private int sequence;
+  /*
+   * * Methods of BasicUUID
+   */
+  /**
+   * Constructor only called by BasicUUIDFactory.
+   */
+  public BasicUUID(long majorId, long timemillis, int sequence) {
+    this.majorId = majorId;
+    this.timemillis = timemillis;
+    this.sequence = sequence;
+  }
+  /**
+   * Constructor only called by BasicUUIDFactory. Constructs a UUID from the
+   * string representation produced by toString.
+   *
+   * @see BasicUUID#toString
+   */
+  public BasicUUID(String uuidstring) {
+    StringReader sr = new StringReader(uuidstring);
+    sequence = (int) readMSB(sr);
+    long ltimemillis = readMSB(sr) &lt;&lt; 32;
+    ltimemillis += readMSB(sr) &lt;&lt; 16;
+    ltimemillis += readMSB(sr);
+    timemillis = ltimemillis;
+    majorId = readMSB(sr);
+  }
+  /**
+   * Constructor only called by BasicUUIDFactory. Constructs a UUID from the
+   * byte array representation produced by toByteArrayio.
+   *
+   * @see BasicUUID#toByteArray
+   */
+  public BasicUUID(byte[] b) {
+    int lsequence = 0;
+    for (int ix = 0; ix &lt; 4; ix++) {
+      lsequence = lsequence &lt;&lt; 8;
+      lsequence = lsequence | (0xff &amp; b[ix]);
+    }
+    long ltimemillis = 0;
+    for (int ix = 4; ix &lt; 10; ix++) {
+      ltimemillis = ltimemillis &lt;&lt; 8;
+      ltimemillis = ltimemillis | (0xff &amp; b[ix]);
+    }
+    long linetaddr = 0;
+    for (int ix = 10; ix &lt; 16; ix++) {
+      linetaddr = linetaddr &lt;&lt; 8;
+      linetaddr = linetaddr | (0xff &amp; b[ix]);
+    }
+    sequence = lsequence;
+    timemillis = ltimemillis;
+    majorId = linetaddr;
+  }
+  /*
+   * Formatable methods
+   */
+  // no-arg constructor, required by Formatable
+  public BasicUUID() {
+    super();
+  }
+  /**
+   * Write this out.
+   *
+   * @exception IOException
+   *              error writing to log stream
+   */
+  public void writeExternal(ObjectOutput out) throws IOException {
+    // RESOLVE: write out the byte array instead?
+    out.writeLong(majorId);
+    out.writeLong(timemillis);
+    out.writeInt(sequence);
+  }
+  /**
+   * Read this in
+   *
+   * @exception IOException
+   *              error reading from log stream
+   */
+  public void readExternal(ObjectInput in) throws IOException {
+    majorId = in.readLong();
+    timemillis = in.readLong();
+    sequence = in.readInt();
+  }
+  private static void writeMSB(char[] data, int offset, long value, int nbytes) {
+    for (int i = nbytes - 1; i &gt;= 0; i--) {
+      long b = (value &amp; (255L &lt;&lt; (8 * i))) &gt;&gt;&gt; (8 * i);
+      int c = (int) ((b &amp; 0xf0) &gt;&gt; 4);
+      data[offset++] = (char) (c &lt; 10 ? c + '0' : (c - 10) + 'a');
+      c = (int) (b &amp; 0x0f);
+      data[offset++] = (char) (c &lt; 10 ? c + '0' : (c - 10) + 'a');
+    }
+  }
+  /**
+   * Read a long value, msb first, from its character representation in the
+   * string reader, using '-' or end of string to delimit.
+   */
+  private static long readMSB(StringReader sr) {
+    long value = 0;
+    try {
+      int c;
+      while ((c = sr.read()) != -1) {
+        if (c == '-')
+          break;
+        value &lt;&lt;= 4;
+        int nibble;
+        if (c &lt;= '9')
+          nibble = c - '0';
+        else if (c &lt;= 'F')
+          nibble = c - 'A' + 10;
+        else
+          nibble = c - 'a' + 10;
+        value += nibble;
+      }
+    } catch (Exception e) {
+    }
+    return value;
+  }
+  /*
+   * * Methods of UUID
+   */
+  /**
+   * Implement value equality.
+   *
+   */
+  public boolean equals(Object otherObject) {
+    if (!(otherObject instanceof BasicUUID))
+      return false;
+    BasicUUID other = (BasicUUID) otherObject;
+    return (this.sequence == other.sequence) &amp;&amp; (this.timemillis == other.timemillis)
+        &amp;&amp; (this.majorId == other.majorId);
+  }
+  /**
+   * Provide a hashCode which is compatible with the equals() method.
+   */
+  public int hashCode() {
+    long hc = majorId ^ timemillis;
+    return sequence ^ ((int) (hc &gt;&gt; 4));
+  }
+  /**
+   * Produce a string representation of this UUID which can be passed to
+   * UUIDFactory.recreateUUID later on to reconstruct it. The funny
+   * representation is designed to (sort of) match the format of Microsoft's
+   * UUIDGEN utility.
+   */
+  public String toString() {
+    return stringWorkhorse('-');
+  }
+  /**
+   * Produce a string representation of this UUID which is suitable for use as a
+   * unique ANSI identifier.
+   */
+  public String toANSIidentifier() {
+    return "U" + stringWorkhorse('X');
+  }
+  /**
+   * Private workhorse of the string making routines.
+   *
+   * @param separator
+   *          Character to separate number blocks. Null means do not include a
+   *          separator.
+   *
+   * @return string representation of UUID.
+   */
+  public String stringWorkhorse(char separator) {
+    char[] data = new char[36];
+    writeMSB(data, 0, (long) sequence, 4);
+    int offset = 8;
+    if (separator != 0)
+      data[offset++] = separator;
+    long ltimemillis = timemillis;
+    writeMSB(data, offset, (ltimemillis &amp; 0x0000ffff00000000L) &gt;&gt;&gt; 32, 2);
+    offset += 4;
+    if (separator != 0)
+      data[offset++] = separator;
+    writeMSB(data, offset, (ltimemillis &amp; 0x00000000ffff0000L) &gt;&gt;&gt; 16, 2);
+    offset += 4;
+    if (separator != 0)
+      data[offset++] = separator;
+    writeMSB(data, offset, (ltimemillis &amp; 0x000000000000ffffL), 2);
+    offset += 4;
+    if (separator != 0)
+      data[offset++] = separator;
+    writeMSB(data, offset, majorId, 6);
+    offset += 12;
+    return new String(data, 0, offset);
+  }
+  /**
+   * Store this UUID in a byte array. Arrange the bytes in the UUID in the same
+   * order the code which stores a UUID in a string does.
+   *
+   * @see org.apache.derby.catalog.UUID#toByteArray
+   */
+  public byte[] toByteArray() {
+    byte[] result = new byte[16];
+    int lsequence = sequence;
+    result[0] = (byte) (lsequence &gt;&gt;&gt; 24);
+    result[1] = (byte) (lsequence &gt;&gt;&gt; 16);
+    result[2] = (byte) (lsequence &gt;&gt;&gt; 8);
+    result[3] = (byte) lsequence;
+    long ltimemillis = timemillis;
+    result[4] = (byte) (ltimemillis &gt;&gt;&gt; 40);
+    result[5] = (byte) (ltimemillis &gt;&gt;&gt; 32);
+    result[6] = (byte) (ltimemillis &gt;&gt;&gt; 24);
+    result[7] = (byte) (ltimemillis &gt;&gt;&gt; 16);
+    result[8] = (byte) (ltimemillis &gt;&gt;&gt; 8);
+    result[9] = (byte) ltimemillis;
+    long linetaddr = majorId;
+    result[10] = (byte) (linetaddr &gt;&gt;&gt; 40);
+    result[11] = (byte) (linetaddr &gt;&gt;&gt; 32);
+    result[12] = (byte) (linetaddr &gt;&gt;&gt; 24);
+    result[13] = (byte) (linetaddr &gt;&gt;&gt; 16);
+    result[14] = (byte) (linetaddr &gt;&gt;&gt; 8);
+    result[15] = (byte) linetaddr;
+    return result;
+  }
+  /**
+   * Clone this UUID.
+   *
+   * @return a copy of this UUID
+   */
+  public BasicUUID cloneMe() {
+    return new BasicUUID(majorId, timemillis, sequence);
+  }
+  public String toHexString() {
+    return stringWorkhorse((char) 0);
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-17" style="display:none"><h3 id="a-program-with-assertions">A Program with Assertions</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] args) {
+    assert args.length &gt; 0;
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-18" style="display:none"><h3 id="generic-lru-cache">Generic LRU Cache</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ *  Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+import java.util.Hashtable;
+/**
+ * This class implements a Generic LRU Cache
+ *
+ *
+ * @author Ignacio J. Ortega
+ *
+ */
+public class LRUCache
+{
+    class CacheNode
+    {
+        CacheNode prev;
+        CacheNode next;
+        Object value;
+        Object key;
+        CacheNode()
+        {
+        }
+    }
+    public LRUCache(int i)
+    {
+        currentSize = 0;
+        cacheSize = i;
+        nodes = new Hashtable(i);
+    }
+    public Object get(Object key)
+    {
+        CacheNode node = (CacheNode)nodes.get(key);
+        if(node != null)
+        {
+            moveToHead(node);
+            return node.value;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    public void put(Object key, Object value)
+    {
+        CacheNode node = (CacheNode)nodes.get(key);
+        if(node == null)
+        {
+            if(currentSize &gt;= cacheSize)
+            {
+                if(last != null)
+                    nodes.remove(last.key);
+                removeLast();
+            }
+            else
+            {
+                currentSize++;
+            }
+            node = new CacheNode();
+        }
+        node.value = value;
+        node.key = key;
+        moveToHead(node);
+        nodes.put(key, node);
+    }
+    public Object remove(Object key) {
+        CacheNode node = (CacheNode)nodes.get(key);
+        if (node != null) {
+            if (node.prev != null) {
+                node.prev.next = node.next;
+            }
+            if (node.next != null) {
+                node.next.prev = node.prev;
+            }
+            if (last == node)
+                last = node.prev;
+            if (first == node)
+                first = node.next;
+        }
+        return node;
+    }
+    public void clear()
+    {
+        first = null;
+        last = null;
+    }
+    private void removeLast()
+    {
+        if(last != null)
+        {
+            if(last.prev != null)
+                last.prev.next = null;
+            else
+                first = null;
+            last = last.prev;
+        }
+    }
+    private void moveToHead(CacheNode node)
+    {
+        if(node == first)
+            return;
+        if(node.prev != null)
+            node.prev.next = node.next;
+        if(node.next != null)
+            node.next.prev = node.prev;
+        if(last == node)
+            last = node.prev;
+        if(first != null)
+        {
+            node.next = first;
+            first.prev = node;
+        }
+        first = node;
+        node.prev = null;
+        if(last == null)
+            last = first;
+    }
+    private int cacheSize;
+    private Hashtable nodes;
+    private int currentSize;
+    private CacheNode first;
+    private CacheNode last;
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-19" style="display:none"><h3 id="debug-utility">Debug Utility</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright (c) 1998-2002 Carnegie Mellon University.  All rights
+ * reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY ``AS IS'' AND
+ * ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY
+ * NOR ITS EMPLOYEES BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+import java.io.PrintStream;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+public abstract class Debug {
+    public static final Debug VERBOSE = new Verbose ();
+    public static final Debug QUIET = new Quiet ();
+    public static final Debug NONE = new NoDebug ();
+    public static Debug getDebugLevel (Class cls)
+        throws NoSuchFieldException {
+        try {
+            Field fld = cls.getField ("debug");
+            if (fld.getType () != Debug.class
+                || !Modifier.isStatic (fld.getModifiers ()))
+                throw new NoSuchFieldException ();
+            return (Debug) fld.get (null);
+        } catch (IllegalArgumentException e) {
+            throw new NoSuchFieldException ();
+        } catch (IllegalAccessException e) {
+            throw new NoSuchFieldException ();
+        } catch (SecurityException e) {
+            throw new NoSuchFieldException ();
+        }
+    }
+    public static void setDebugLevel (Class cls, Debug level)
+        throws NoSuchFieldException {
+        try {
+            Field fld = cls.getField ("debug");
+            if (fld.getType () != Debug.class
+                || !Modifier.isStatic (fld.getModifiers ()))
+                throw new NoSuchFieldException ();
+            fld.set (null, level);
+        } catch (IllegalArgumentException e) {
+            throw new NoSuchFieldException ();
+        } catch (IllegalAccessException e) {
+            throw new NoSuchFieldException ();
+        } catch (SecurityException e) {
+            throw new NoSuchFieldException ();
+        }
+    }
+    public abstract boolean isEnabled ();
+    public abstract void print (String message);
+    public abstract void println (String message);
+    public abstract void print (Object obj);
+    public abstract void println (Object obj);
+    public abstract void report (Throwable t);
+    public abstract void printThreadInfo ();
+    public abstract void printStackTrace ();
+    public abstract void assertion (boolean f);
+    public static class Verbose extends Debug {
+        protected PrintStream out;
+        public Verbose () {
+            this (System.err);
+        }
+        public Verbose (PrintStream out) {
+            this.out = out;
+        }
+        public boolean isEnabled () {
+            return true;
+        }
+        public void print (String message) {
+            out.print (message);
+            out.flush ();
+        }
+        public void println (String message) {
+            out.println (message);
+            out.flush ();
+        }
+        public void print (Object obj) {
+            print (obj.toString ());
+        }
+        public void println (Object obj) {
+            println (obj.toString ());
+        }
+        public void report (Throwable t) {
+            t.printStackTrace (out);
+            out.flush ();
+        }
+        public void printThreadInfo () {
+            ThreadGroup g = Thread.currentThread().getThreadGroup ();
+            Thread[] t = new Thread[g.activeCount ()];
+            g.enumerate (t);
+            out.println ("Active threads in " + g);
+            for (int i=0; i&lt;t.length; ++i)
+                out.println (t[i]);
+            out.flush ();
+        }
+        public void printStackTrace () {
+            try {
+                throw new Exception ();
+            } catch (Exception e) {
+                e.printStackTrace (out);
+                out.flush ();
+            }
+        }
+        public void assertion (boolean f) {
+            if (!f)
+                throw new RuntimeException ("assertion failure");
+        }
+    }
+    public static class Quiet extends Verbose {
+        public Quiet () {
+        }
+        public Quiet (PrintStream out) {
+            super (out);
+        }
+        public boolean isEnabled () {
+            return false;
+        }
+        public void print (String message) {
+        }
+        public void println (String message) {
+        }
+        public void print (Object message) {
+        }
+        public void println (Object message) {
+        }
+        public void report (Throwable t) {
+            t.printStackTrace (out);
+            out.flush ();
+        }
+        public void printThreadInfo () {
+        }
+        public void printStackTrace () {
+        }
+        public void assertion (boolean f) {
+            if (!f) {
+                try {
+                    throw new RuntimeException ("assertion failure");
+                } catch (RuntimeException e) {
+                    e.printStackTrace (out);
+                    out.flush ();
+                }
+            }
+        }
+    }
+    public static class NoDebug extends Debug {
+        public boolean isEnabled () {
+            return false;
+        }
+        public void print (String message) {
+        }
+        public void println (String message) {
+        }
+        public void print (Object message) {
+        }
+        public void println (Object message) {
+        }
+        public void report (Throwable t) {
+        }
+        public void printThreadInfo () {
+        }
+        public void printStackTrace () {
+        }
+        public void assertion (boolean f) {
+        }
+    }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-20" style="display:none"><h3 id="determine-the-jdk-version-number">Determine the JDK Version Number</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"> *
+ * There is a human readible JDK version number available as a Java property. The property name is called "java.version".
+ * Unfortunately it is complicated to parse it mechanically. A somewhat better choice is the Java property called
+ * "java.class.version". The property value can be converted to a floating pointer value. JDK 1.1 implies 45.3. JDK 1.2
+ * implies 46.0. JDK 1.3 implies 47.0. JDK 1.4 implies 48.0.
+ *
+ * java.class.version property value
+ * &lt;ul&gt;
+ * &lt;li&gt; JDK 1.1 = 45.3
+ * &lt;li&gt; JDK 1.2 = 46.0
+ * &lt;li&gt; JDK 1.3 = 47.0
+ * &lt;li&gt; JDK 1.4 = 48.0
+ * &lt;/ul&gt;
+ *
+ * @author Thomas Rischbeck &lt;thomas.rischbeck@arjuna.com&gt;
+ * @version $Id: VersionCheck.java 2342 2006-03-30 13:06:17Z  $
+ */
+public class VersionCheck {
+   private static final String CLASS_VERSION = System.getProperty("java.class.version","44.0");
+   private static final boolean IS_JDK_11 = ("46.0".compareTo(CLASS_VERSION) &gt; 0) &amp;&amp; ("45.3".compareTo(CLASS_VERSION) &lt;= 0);
+   private static final boolean IS_JDK_12 = ("47.0".compareTo(CLASS_VERSION) &gt; 0) &amp;&amp; ("46.0".compareTo(CLASS_VERSION) &lt;= 0);
+   private static final boolean IS_JDK_13 = ("48.0".compareTo(CLASS_VERSION) &gt; 0) &amp;&amp; ("47.0".compareTo(CLASS_VERSION) &lt;= 0);
+   private static final boolean IS_JDK_14 = ("49.0".compareTo(CLASS_VERSION) &gt; 0) &amp;&amp; ("48.0".compareTo(CLASS_VERSION) &lt;= 0);
+   private static final boolean IS_JDK_13_OR_BELOW = IS_JDK_11 || IS_JDK_12 || IS_JDK_13;
+   private static final boolean IS_JDK_14_OR_ABOVE = ("48.0".compareTo(CLASS_VERSION) &lt;= 0);
+   public static final boolean isJDK11only()
+   {
+     return IS_JDK_11;
+   }
+   public static final boolean isJDK12only()
+   {
+     return IS_JDK_12;
+   }
+   public static final boolean isJDK13only()
+   {
+     return IS_JDK_13;
+   }
+   public static final boolean isJDK14only()
+   {
+     return IS_JDK_14;
+   }
+   public static final boolean isJDK13orBelow()
+   {
+      return IS_JDK_13_OR_BELOW;
+   }
+   public static final boolean isJDK14orAbove()
+   {
+      return IS_JDK_14_OR_ABOVE;
+   }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-21" style="display:none"><h3 id="decode-an-html-color-string-like-f567ba-into-a-color">Decode an HTML color string like '#F567BA;' into a Color</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright 2005 Joe Walker
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import java.awt.Color;
+/**
+ * Utilities for working with colors.
+ * @author Joe Walker [joe at getahead dot ltd dot uk]
+ */
+public class ColorUtil
+{
+    /**
+     * Decode an HTML color string like '#F567BA;' into a {@link Color}
+     * @param colorString The string to decode
+     * @return The decoded color
+     * @throws IllegalArgumentException if the color sequence is not valid
+     */
+    public static Color decodeHtmlColorString(String colorString)
+    {
+        Color color;
+        if (colorString.startsWith("#"))
+        {
+            colorString = colorString.substring(1);
+        }
+        if (colorString.endsWith(";"))
+        {
+            colorString = colorString.substring(0, colorString.length() - 1);
+        }
+        int red, green, blue;
+        switch (colorString.length())
+        {
+        case 6:
+            red = Integer.parseInt(colorString.substring(0, 2), 16);
+            green = Integer.parseInt(colorString.substring(2, 4), 16);
+            blue = Integer.parseInt(colorString.substring(4, 6), 16);
+            color = new Color(red, green, blue);
+            break;
+        case 3:
+            red = Integer.parseInt(colorString.substring(0, 1), 16);
+            green = Integer.parseInt(colorString.substring(1, 2), 16);
+            blue = Integer.parseInt(colorString.substring(2, 3), 16);
+            color = new Color(red, green, blue);
+            break;
+        case 1:
+            red = green = blue = Integer.parseInt(colorString.substring(0, 1), 16);
+            color = new Color(red, green, blue);
+            break;
+        default:
+            throw new IllegalArgumentException("Invalid color: " + colorString);
+        }
+        return color;
+    }
+}</code></pre></div>
+<h3 id="escape-html">Escape HTML</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Static String formatting and query routines.
+ * Copyright (C) 2001-2005 Stephen Ostermiller
+ * http://ostermiller.org/contact.pl?regarding=Java+Utilities
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * See COPYING.TXT for details.
+ */
+import java.util.HashMap;
+import java.util.regex.Pattern;
+/**
+ * Utilities for String formatting, manipulation, and queries.
+ * More information about this class is available from &lt;a target="_top" href=
+ * "http://ostermiller.org/utils/StringHelper.html"&gt;ostermiller.org&lt;/a&gt;.
+ *
+ * @author Stephen Ostermiller http://ostermiller.org/contact.pl?regarding=Java+Utilities
+ * @since ostermillerutils 1.00.00
+ */
+public class StringHelper {
+  /**
+   * Replaces characters that may be confused by a HTML
+   * parser with their equivalent character entity references.
+   *
+   * Any data that will appear as text on a web page should
+   * be be escaped.  This is especially important for data
+   * that comes from untrusted sources such as Internet users.
+   * A common mistake in CGI programming is to ask a user for
+   * data and then put that data on a web page.  For example:&lt;pre&gt;
+   * Server: What is your name?
+   * User: &amp;lt;b&amp;gt;Joe&amp;lt;b&amp;gt;
+   * Server: Hello &lt;b&gt;Joe&lt;/b&gt;, Welcome&lt;/pre&gt;
+   * If the name is put on the page without checking that it doesn't
+   * contain HTML code or without sanitizing that HTML code, the user
+   * could reformat the page, insert scripts, and control the the
+   * content on your web server.
+   *
+   * This method will replace HTML characters such as &amp;gt; with their
+   * HTML entity reference (&amp;amp;gt;) so that the html parser will
+   * be sure to interpret them as plain text rather than HTML or script.
+   *
+   * This method should be used for both data to be displayed in text
+   * in the html document, and data put in form elements. For example:&lt;br&gt;
+   * &lt;code&gt;&amp;lt;html&amp;gt;&amp;lt;body&amp;gt;&lt;i&gt;This in not a &amp;amp;lt;tag&amp;amp;gt;
+   * in HTML&lt;/i&gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;br&gt;
+   * and&lt;br&gt;
+   * &lt;code&gt;&amp;lt;form&amp;gt;&amp;lt;input type="hidden" name="date" value="&lt;i&gt;This data could
+   * be &amp;amp;quot;malicious&amp;amp;quot;&lt;/i&gt;"&amp;gt;&amp;lt;/form&amp;gt;&lt;/code&gt;&lt;br&gt;
+   * In the second example, the form data would be properly be resubmitted
+   * to your cgi script in the URLEncoded format:&lt;br&gt;
+   * &lt;code&gt;&lt;i&gt;This data could be %22malicious%22&lt;/i&gt;&lt;/code&gt;
+   *
+   * @param s String to be escaped
+   * @return escaped String
+   * @throws NullPointerException if s is null.
+   *
+   * @since ostermillerutils 1.00.00
+   */
+  public static String escapeHTML(String s){
+    int length = s.length();
+    int newLength = length;
+    boolean someCharacterEscaped = false;
+    // first check for characters that might
+    // be dangerous and calculate a length
+    // of the string that has escapes.
+    for (int i=0; i&lt;length; i++){
+      char c = s.charAt(i);
+      int cint = 0xffff &amp; c;
+      if (cint &lt; 32){
+        switch(c){
+          case '\r':
+          case '\n':
+          case '\t':
+          case '\f':{
+          } break;
+          default: {
+            newLength -= 1;
+            someCharacterEscaped = true;
+          }
+        }
+      } else {
+        switch(c){
+          case '\"':{
+            newLength += 5;
+            someCharacterEscaped = true;
+          } break;
+          case '&amp;':
+          case '\'':{
+            newLength += 4;
+            someCharacterEscaped = true;
+          } break;
+          case '&lt;':
+          case '&gt;':{
+            newLength += 3;
+            someCharacterEscaped = true;
+          } break;
+        }
+      }
+    }
+    if (!someCharacterEscaped){
+      // nothing to escape in the string
+      return s;
+    }
+    StringBuffer sb = new StringBuffer(newLength);
+    for (int i=0; i&lt;length; i++){
+      char c = s.charAt(i);
+      int cint = 0xffff &amp; c;
+      if (cint &lt; 32){
+        switch(c){
+          case '\r':
+          case '\n':
+          case '\t':
+          case '\f':{
+            sb.append(c);
+          } break;
+          default: {
+            // Remove this character
+          }
+        }
+      } else {
+        switch(c){
+          case '\"':{
+            sb.append("&amp;quot;");
+          } break;
+          case '\'':{
+            sb.append("&amp;#39;");
+          } break;
+          case '&amp;':{
+            sb.append("&amp;amp;");
+          } break;
+          case '&lt;':{
+            sb.append("&amp;lt;");
+          } break;
+          case '&gt;':{
+            sb.append("&amp;gt;");
+          } break;
+          default: {
+            sb.append(c);
+          }
+        }
+      }
+    }
+    return sb.toString();
+  }
+}</code></pre></div>
+<h3 id="filter-message-string-for-characters-that-are-sensitive-in-html">Filter message string for characters that are sensitive in HTML</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+* Licensed to the Apache Software Foundation (ASF) under one or more
+* contributor license agreements.  See the NOTICE file distributed with
+* this work for additional information regarding copyright ownership.
+* The ASF licenses this file to You under the Apache License, Version 2.0
+* (the "License"); you may not use this file except in compliance with
+* the License.  You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/**
+ * HTML filter utility.
+ *
+ * @author Craig R. McClanahan
+ * @author Tim Tye
+ * @version $Revision: 467217 $ $Date: 2006-10-24 05:14:34 +0200 (mar., 24 oct. 2006) $
+ */
+public final class HTMLFilter {
+    /**
+     * Filter the specified message string for characters that are sensitive
+     * in HTML.  This avoids potential attacks caused by including JavaScript
+     * codes in the request URL that is often reported in error messages.
+     *
+     * @param message The message string to be filtered
+     */
+    public static String filter(String message) {
+        if (message == null)
+            return (null);
+        char content[] = new char[message.length()];
+        message.getChars(0, message.length(), content, 0);
+        StringBuffer result = new StringBuffer(content.length + 50);
+        for (int i = 0; i &lt; content.length; i++) {
+            switch (content[i]) {
+            case '&lt;':
+                result.append("&amp;lt;");
+                break;
+            case '&gt;':
+                result.append("&amp;gt;");
+                break;
+            case '&amp;':
+                result.append("&amp;amp;");
+                break;
+            case '"':
+                result.append("&amp;quot;");
+                break;
+            default:
+                result.append(content[i]);
+            }
+        }
+        return (result.toString());
+    }
+}</code></pre></div>
+<h3 id="filter-the-specified-message-string-for-characters-that-are-sensitive-in-html">Filter the specified message string for characters that are sensitive in HTML</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+* Licensed to the Apache Software Foundation (ASF) under one or more
+* contributor license agreements.  See the NOTICE file distributed with
+* this work for additional information regarding copyright ownership.
+* The ASF licenses this file to You under the Apache License, Version 2.0
+* (the "License"); you may not use this file except in compliance with
+* the License.  You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/**
+ * HTML filter utility.
+ *
+ * @author Craig R. McClanahan
+ * @author Tim Tye
+ * @version $Revision: 467217 $ $Date: 2006-10-24 05:14:34 +0200 (Tue, 24 Oct 2006) $
+ */
+public final class HTMLFilter {
+    /**
+     * Filter the specified message string for characters that are sensitive
+     * in HTML.  This avoids potential attacks caused by including JavaScript
+     * codes in the request URL that is often reported in error messages.
+     *
+     * @param message The message string to be filtered
+     */
+    public static String filter(String message) {
+        if (message == null)
+            return (null);
+        char content[] = new char[message.length()];
+        message.getChars(0, message.length(), content, 0);
+        StringBuffer result = new StringBuffer(content.length + 50);
+        for (int i = 0; i &lt; content.length; i++) {
+            switch (content[i]) {
+            case '&lt;':
+                result.append("&amp;lt;");
+                break;
+            case '&gt;':
+                result.append("&amp;gt;");
+                break;
+            case '&amp;':
+                result.append("&amp;amp;");
+                break;
+            case '"':
+                result.append("&amp;quot;");
+                break;
+            default:
+                result.append(content[i]);
+            }
+        }
+        return (result.toString());
+    }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-22" style="display:none"><h3 id="appending-a-subset-of-the-elements-from-a-char-array">Appending a subset of the elements from a char array</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    StringBuffer buf = new StringBuffer("::");
+    char[] text = { 'i', 's', ' ', 'e', 'x', 'a', 'c', 't', 'l', 'y'};
+    buf.append(text, 2, 8);
+    System.out.println(buf);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">:: exactly</code></pre></div>
+<h3 id="appending-a-substring">Appending a Substring</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    StringBuffer buf = new StringBuffer("1234567890");
+    String aString = "abcdefghijk";
+    buf.append(aString, 3, 4);
+    System.out.println(buf);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">1234567890d</code></pre></div>
+<h3 id="appending-basic-types">Appending Basic Types</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    StringBuffer buf = new StringBuffer("The number is ");
+    long number = 999;
+    buf.append(number);
+    buf.append(12.34);
+    System.out.println(buf);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">The number is 99912.34</code></pre></div>
+<h3 id="bean-has-a-single-property-called-property">Bean has a single property called property.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.Serializable;
+public class BasicBean implements Serializable {
+  boolean property;
+  public BasicBean() {
+  }
+  public boolean getProperty() {
+    return property;
+  }
+  public boolean isProperty() {
+    return property;
+  }
+  public void setProperty(boolean newValue) {
+    property = newValue;
+  }
+}</code></pre></div>
+<h3 id="bindings-and-scopes">Bindings And Scopes</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import javax.script.Bindings;
+import javax.script.ScriptContext;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+public class GetToKnowBindingsAndScopes {
+  public static void main(String[] args) {
+    ScriptEngineManager manager = new ScriptEngineManager();
+    manager.put("global", "global bindings");
+    dumpBindings(manager.getBindings());
+    ScriptEngine engine = manager.getEngineByExtension("js");
+    engine.put("engine", "engine bindings");
+    dumpBindings(engine.getBindings(ScriptContext.GLOBAL_SCOPE));
+    dumpBindings(engine.getBindings(ScriptContext.ENGINE_SCOPE));
+    try {
+      Bindings bindings = engine.createBindings();
+      bindings.put("engine", "overridden engine bindings");
+      bindings.put("app", new GetToKnowBindingsAndScopes());
+      bindings.put("bindings", bindings);
+      engine.eval("app.dumpBindings (bindings);", bindings);
+    } catch (ScriptException se) {
+      System.err.println(se.getMessage());
+    }
+    ScriptEngine engine2 = manager.getEngineByExtension("js");
+    engine2.put("engine2", "engine2 bindings");
+    dumpBindings(engine2.getBindings(ScriptContext.GLOBAL_SCOPE));
+    dumpBindings(engine2.getBindings(ScriptContext.ENGINE_SCOPE));
+    dumpBindings(engine.getBindings(ScriptContext.ENGINE_SCOPE));
+  }
+  public static void dumpBindings(Bindings bindings) {
+    if (bindings == null)
+      System.out.println("  No bindings");
+    else
+      for (String key : bindings.keySet())
+        System.out.println("  " + key + ": " + bindings.get(key));
+    System.out.println();
+  }
+}</code></pre></div>
+<h3 id="calculate-the-floor-of-the-log-base-2">Calculate the floor of the log, base 2</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * $RCSfile: MathUtil.java,v $
+ * $Revision: 1.1 $
+ * $Date: 2005/02/11 05:02:25 $
+ * $State: Exp $
+ *
+ * Class:                   MathUtil
+ *
+ * Description:             Utility mathematical methods
+ *
+ *
+ *
+ * COPYRIGHT:
+ *
+ * This software module was originally developed by Raphaël Grosbois and
+ * Diego Santa Cruz (Swiss Federal Institute of Technology-EPFL); Joel
+ * Askelöf (Ericsson Radio Systems AB); and Bertrand Berthelot, David
+ * Bouchard, Félix Henry, Gerard Mozelle and Patrice Onno (Canon Research
+ * Centre France S.A) in the course of development of the JPEG2000
+ * standard as specified by ISO/IEC 15444 (JPEG 2000 Standard). This
+ * software module is an implementation of a part of the JPEG 2000
+ * Standard. Swiss Federal Institute of Technology-EPFL, Ericsson Radio
+ * Systems AB and Canon Research Centre France S.A (collectively JJ2000
+ * Partners) agree not to assert against ISO/IEC and users of the JPEG
+ * 2000 Standard (Users) any of their rights under the copyright, not
+ * including other intellectual property rights, for this software module
+ * with respect to the usage by ISO/IEC and Users of this software module
+ * or modifications thereof for use in hardware or software products
+ * claiming conformance to the JPEG 2000 Standard. Those intending to use
+ * this software module in hardware or software products are advised that
+ * their use may infringe existing patents. The original developers of
+ * this software module, JJ2000 Partners and ISO/IEC assume no liability
+ * for use of this software module or modifications thereof. No license
+ * or right to this software module is granted for non JPEG 2000 Standard
+ * conforming products. JJ2000 Partners have full right to use this
+ * software module for his/her own purpose, assign or donate this
+ * software module to any third party and to inhibit third parties from
+ * using this software module for non JPEG 2000 Standard conforming
+ * products. This copyright notice must be included in all copies or
+ * derivative works of this software module.
+ *
+ * Copyright (c) 1999/2000 JJ2000 Partners.
+ * */
+/**
+ * This class contains a collection of utility methods fro mathematical
+ * operations. All methods are static.
+ * */
+public class MathUtil {
+    /**
+     * Method that calculates the floor of the log, base 2,
+     * of 'x'. The calculation is performed in integer arithmetic,
+     * therefore, it is exact.
+     *
+     * @param x The value to calculate log2 on.
+     *
+     * @return floor(log(x)/log(2)), calculated in an exact way.
+     * */
+    public static int log2(int x) {
+        int y,v;
+        // No log of 0 or negative
+        if (x &lt;= 0) {
+            throw new IllegalArgumentException(""+x+" &lt;= 0");
+        }
+        // Calculate log2 (it's actually floor log2)
+        v = x;
+        y = -1;
+        while (v&gt;0) {
+            v &gt;&gt;=1;
+            y++;
+        }
+        return y;
+    }
+}</code></pre></div>
+<h3 id="condition-that-tests-the-os-type">Condition that tests the OS type.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ */
+import java.util.Locale;
+/**
+ */
+public final class OS {
+    private static final String FAMILY_OS_400 = "os/400";
+    private static final String FAMILY_Z_OS = "z/os";
+    private static final String FAMILY_WIN9X = "win9x";
+    private static final String FAMILY_OPENVMS = "openvms";
+    private static final String FAMILY_UNIX = "unix";
+    private static final String FAMILY_TANDEM = "tandem";
+    private static final String FAMILY_MAC = "mac";
+    private static final String FAMILY_DOS = "dos";
+    private static final String FAMILY_NETWARE = "netware";
+    private static final String FAMILY_OS_2 = "os/2";
+    private static final String FAMILY_WINDOWS = "windows";
+    private static final String OS_NAME = System.getProperty("os.name")
+            .toLowerCase(Locale.US);
+    private static final String OS_ARCH = System.getProperty("os.arch")
+            .toLowerCase(Locale.US);
+    private static final String OS_VERSION = System.getProperty("os.version")
+            .toLowerCase(Locale.US);
+    private static final String PATH_SEP = System.getProperty("path.separator");
+    /**
+     * Default constructor
+     */
+    private OS() {
+    }
+    /**
+     * Determines if the OS on which Ant is executing matches the given OS
+     * family. * Possible values:&lt;br /&gt;
+     * &lt;ul&gt;
+     * &lt;li&gt;dos&lt;/li&gt;
+     * &lt;li&gt;mac&lt;/li&gt;
+     * &lt;li&gt;netware&lt;/li&gt;
+     * &lt;li&gt;os/2&lt;/li&gt;
+     * &lt;li&gt;tandem&lt;/li&gt;
+     * &lt;li&gt;unix&lt;/li&gt;
+     * &lt;li&gt;windows&lt;/li&gt;
+     * &lt;li&gt;win9x&lt;/li&gt;
+     * &lt;li&gt;z/os&lt;/li&gt;
+     * &lt;li&gt;os/400&lt;/li&gt;
+     * &lt;/ul&gt;
+     *
+     * @param family
+     *            the family to check for
+     * @return true if the OS matches
+     */
+    private static boolean isFamily(final String family) {
+        return isOs(family, null, null, null);
+    }
+    public static boolean isFamilyDOS() {
+        return isFamily(FAMILY_DOS);
+    }
+    public static boolean isFamilyMac() {
+        return isFamily(FAMILY_MAC);
+    }
+    public static boolean isFamilyNetware() {
+        return isFamily(FAMILY_NETWARE);
+    }
+    public static boolean isFamilyOS2() {
+        return isFamily(FAMILY_OS_2);
+    }
+    public static boolean isFamilyTandem() {
+        return isFamily(FAMILY_TANDEM);
+    }
+    public static boolean isFamilyUnix() {
+        return isFamily(FAMILY_UNIX);
+    }
+    public static boolean isFamilyWindows() {
+        return isFamily(FAMILY_WINDOWS);
+    }
+    public static boolean isFamilyWin9x() {
+        return isFamily(FAMILY_WIN9X);
+    }
+    public static boolean isFamilyZOS() {
+        return isFamily(FAMILY_Z_OS);
+    }
+    public static boolean isFamilyOS400() {
+        return isFamily(FAMILY_OS_400);
+    }
+    public static boolean isFamilyOpenVms() {
+        return isFamily(FAMILY_OPENVMS);
+    }
+    /**
+     * Determines if the OS on which Ant is executing matches the given OS name.
+     *
+     * @param name
+     *            the OS name to check for
+     * @return true if the OS matches
+     */
+    public static boolean isName(final String name) {
+        return isOs(null, name, null, null);
+    }
+    /**
+     * Determines if the OS on which Ant is executing matches the given OS
+     * architecture.
+     *
+     * @param arch
+     *            the OS architecture to check for
+     * @return true if the OS matches
+     */
+    public static boolean isArch(final String arch) {
+        return isOs(null, null, arch, null);
+    }
+    /**
+     * Determines if the OS on which Ant is executing matches the given OS
+     * version.
+     *
+     * @param version
+     *            the OS version to check for
+     * @return true if the OS matches
+     */
+    public static boolean isVersion(final String version) {
+        return isOs(null, null, null, version);
+    }
+    /**
+     * Determines if the OS on which Ant is executing matches the given OS
+     * family, name, architecture and version
+     *
+     * @param family
+     *            The OS family
+     * @param name
+     *            The OS name
+     * @param arch
+     *            The OS architecture
+     * @param version
+     *            The OS version
+     * @return true if the OS matches
+     */
+    public static boolean isOs(final String family, final String name,
+            final String arch, final String version) {
+        boolean retValue = false;
+        if (family != null || name != null || arch != null || version != null) {
+            boolean isFamily = true;
+            boolean isName = true;
+            boolean isArch = true;
+            boolean isVersion = true;
+            if (family != null) {
+                if (family.equals(FAMILY_WINDOWS)) {
+                    isFamily = OS_NAME.indexOf(FAMILY_WINDOWS) &gt; -1;
+                } else if (family.equals(FAMILY_OS_2)) {
+                    isFamily = OS_NAME.indexOf(FAMILY_OS_2) &gt; -1;
+                } else if (family.equals(FAMILY_NETWARE)) {
+                    isFamily = OS_NAME.indexOf(FAMILY_NETWARE) &gt; -1;
+                } else if (family.equals(FAMILY_DOS)) {
+                    isFamily = PATH_SEP.equals(";")
+                            &amp;&amp; !isFamily(FAMILY_NETWARE);
+                } else if (family.equals(FAMILY_MAC)) {
+                    isFamily = OS_NAME.indexOf(FAMILY_MAC) &gt; -1;
+                } else if (family.equals(FAMILY_TANDEM)) {
+                    isFamily = OS_NAME.indexOf("nonstop_kernel") &gt; -1;
+                } else if (family.equals(FAMILY_UNIX)) {
+                    isFamily = PATH_SEP.equals(":")
+                            &amp;&amp; !isFamily(FAMILY_OPENVMS)
+                            &amp;&amp; (!isFamily(FAMILY_MAC) || OS_NAME.endsWith("x"));
+                } else if (family.equals(FAMILY_WIN9X)) {
+                    isFamily = isFamily(FAMILY_WINDOWS)
+                            &amp;&amp; (OS_NAME.indexOf("95") &gt;= 0
+                                    || OS_NAME.indexOf("98") &gt;= 0
+                                    || OS_NAME.indexOf("me") &gt;= 0 || OS_NAME
+                                    .indexOf("ce") &gt;= 0);
+                } else if (family.equals(FAMILY_Z_OS)) {
+                    isFamily = OS_NAME.indexOf(FAMILY_Z_OS) &gt; -1
+                            || OS_NAME.indexOf("os/390") &gt; -1;
+                } else if (family.equals(FAMILY_OS_400)) {
+                    isFamily = OS_NAME.indexOf(FAMILY_OS_400) &gt; -1;
+                } else if (family.equals(FAMILY_OPENVMS)) {
+                    isFamily = OS_NAME.indexOf(FAMILY_OPENVMS) &gt; -1;
+                } else {
+                    throw new IllegalArgumentException(
+                            "Don\'t know how to detect os family \"" + family
+                                    + "\"");
+                }
+            }
+            if (name != null) {
+                isName = name.equals(OS_NAME);
+            }
+            if (arch != null) {
+                isArch = arch.equals(OS_ARCH);
+            }
+            if (version != null) {
+                isVersion = version.equals(OS_VERSION);
+            }
+            retValue = isFamily &amp;&amp; isName &amp;&amp; isArch &amp;&amp; isVersion;
+        }
+        return retValue;
+    }
+}</code></pre></div>
+<h3 id="convert-a-bean-to-xml-persistence">Convert a bean to XML persistence</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.beans.XMLEncoder;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+public class Main {
+  public static void main(String[] args) throws Exception {
+    Item bean = new Item();
+    bean.setId(new Long(1));
+    bean.setItemName("a");
+    bean.setItemColour("Red");
+    bean.setItemQuantities(new Integer(100));
+    XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("Bean.xml")));
+    encoder.writeObject(bean);
+    encoder.close();
+  }
+}
+class Item {
+  private Long id;
+  private String itemName;
+  private String itemColour;
+  private Integer itemQuantities;
+  public Long getId() {
+    return id;
+  }
+  public void setId(Long id) {
+    this.id = id;
+  }
+  public String getItemName() {
+    return itemName;
+  }
+  public void setItemName(String itemName) {
+    this.itemName = itemName;
+  }
+  public String getItemColour() {
+    return itemColour;
+  }
+  public void setItemColour(String itemColour) {
+    this.itemColour = itemColour;
+  }
+  public Integer getItemQuantities() {
+    return itemQuantities;
+  }
+  public void setItemQuantities(Integer itemQuantities) {
+    this.itemQuantities = itemQuantities;
+  }
+}</code></pre></div>
+<h3 id="convert-an-xml-persistence-to-bean">Convert an XML persistence to bean</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.beans.XMLDecoder;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.Serializable;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream("Bean.xml")));
+    Bean bean = (Bean) decoder.readObject();
+    decoder.close();
+    System.out.println("ID = " + bean.getId());
+  }
+}
+class Bean implements Serializable {
+  private Long id;
+  public Long getId() {
+    return id;
+  }
+  public void setId(Long id) {
+    this.id = id;
+  }
+}
+Here is our Bean.xml persistence file:
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;java version="1.6.0_02" class="java.beans.XMLDecoder"&gt;
+ &lt;object class="org.username.example.bean.BeanToXML"&gt;
+  &lt;void property="id"&gt;
+   &lt;long&gt;1&lt;/long&gt;
+  &lt;/void&gt;
+ &lt;/object&gt;
+&lt;/java&gt;</code></pre></div>
+<h3 id="convert-milliseconds-to-readable-string">Convert milliseconds to readable string</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+    GNU LESSER GENERAL PUBLIC LICENSE
+    Copyright (C) 2006 The Lobo Project
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+    Contact info: lobochief@users.sourceforge.net
+*/
+public class Timing {
+  public static double round1(double value) {
+    return Math.round(value * 10.0) / 10.0;
+  }
+  public static String getElapsedText(long elapsedMillis) {
+    if(elapsedMillis &lt; 60000) {
+      double unit = round1(elapsedMillis / 1000.0);
+      return unit + (unit == 1 ? " second" : " seconds");
+    }
+    else if(elapsedMillis &lt; 60000 * 60) {
+      double unit = round1(elapsedMillis / 60000.0);
+      return unit + (unit == 1 ? " minute" : " minutes");
+    }
+    else if(elapsedMillis &lt; 60000 * 60 * 24) {
+      double unit = round1(elapsedMillis / (60000.0 * 60));
+      return unit + (unit == 1 ? " hour" : " hours");
+    }
+    else {
+      double unit = round1(elapsedMillis / (60000.0 * 60 * 24));
+      return unit + (unit == 1 ? " day" : " days");
+    }
+  }
+}</code></pre></div>
+<h3 id="create-a-user-defined-property-or-change-the-value-of-the-current-property">Create a user-defined property or change the value of the current property</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] args) {
+    System.setProperty("password", "myPassword");
+    System.out.println(System.getProperty("password"));
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+myPassword</code></pre></div>
+<h3 id="create-an-instance-a-bean">Create an instance a Bean</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.beans.Beans;
+import java.io.Serializable;
+public class Main implements Serializable {
+  private Long id;
+  private String name;
+  public Main() {
+  }
+  public static void main(String[] args) throws Exception {
+    Main bean = (Main) Beans.instantiate(ClassLoader.getSystemClassLoader(),
+        "Main");
+    System.out.println("The Bean = " + bean);
+  }
+  public Long getId() {
+    return id;
+  }
+  public void setId(Long id) {
+    this.id = id;
+  }
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+  @Override
+  public String toString() {
+    return "[id=" + id + "; name=" + name + "]";
+  }
+}</code></pre></div>
+<h3 id="deserializing-a-bean-from-xml">Deserializing a Bean from XML</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.beans.XMLDecoder;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(
+        new FileInputStream("infilename.xml")));
+    MyClass o = (MyClass) decoder.readObject();
+    decoder.close();
+    int prop = o.getProp(); // 1
+    int[] props = o.getProps(); // [1, 2, 3]
+  }
+}
+class MyClass {
+  // The prop property
+  int i;
+  public int getProp() {
+    return i;
+  }
+  public void setProp(int i) {
+    this.i = i;
+  }
+  // The props property
+  int[] iarray = new int[0];
+  public int[] getProps() {
+    return iarray;
+  }
+  public void setProps(int[] iarray) {
+    this.iarray = iarray;
+  }
+}
+/*
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;java version="1.4.0" class="java.beans.XMLDecoder"&gt;
+        &lt;object class="MyClass"&gt;
+            &lt;void property="prop"&gt;
+                &lt;int&gt;1&lt;/int&gt;
+            &lt;/void&gt;
+            &lt;void property="props"&gt;
+                &lt;array class="int" length="3"&gt;
+                    &lt;void index="0"&gt;
+                        &lt;int&gt;1&lt;/int&gt;
+                    &lt;/void&gt;
+                    &lt;void index="1"&gt;
+                        &lt;int&gt;2&lt;/int&gt;
+                    &lt;/void&gt;
+                    &lt;void index="2"&gt;
+                        &lt;int&gt;3&lt;/int&gt;
+                    &lt;/void&gt;
+                &lt;/array&gt;
+            &lt;/void&gt;
+        &lt;/object&gt;
+    &lt;/java&gt;
+*/</code></pre></div>
+<h3 id="determine-beans-property-type">Determine bean's property type</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import org.apache.commons.beanutils.PropertyUtils;
+public class Main {
+  public static void main(String[] args) throws Exception {
+    Recording recording = new Recording();
+    recording.setTitle("Magical Mystery Tour");
+    Class type = PropertyUtils.getPropertyType(recording, "title");
+    System.out.println("type = " + type.getName());
+    String value = (String) PropertyUtils.getProperty(recording, "title");
+    System.out.println("value = " + value);
+  }
+}</code></pre></div>
+<h3 id="display-the-amount-of-free-memory-in-the-java-virtual-machine">Display the amount of free memory in the Java Virtual Machine.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+public class Main {
+  public static void main(String[] args) {
+    DecimalFormat df = new DecimalFormat("0.00");
+    long freeMem = Runtime.getRuntime().freeMemory();
+    System.out.println(df.format(freeMem / 1000000F) + " MB");
+  }
+}</code></pre></div>
+<h3 id="execute-a-command-from-code">Execute a command from code</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] argv) throws Exception {
+    // Execute a command without arguments
+    String command = "ls";
+    Process child = Runtime.getRuntime().exec(command);
+    // Execute a command with an argument
+    command = "ls /tmp";
+    child = Runtime.getRuntime().exec(command);
+  }
+}</code></pre></div>
+<h3 id="execute-external-command-and-obtain-the-result">Execute external command and obtain the result</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class Main {
+  public static void main(String[] args) throws Exception{
+    Process process = Runtime.getRuntime().exec("ls -al");
+    process.waitFor();
+    int exitValue = process.exitValue();
+    System.out.println("exitValue = " + exitValue);
+    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+    String line = "";
+    while ((line = reader.readLine()) != null) {
+      System.out.println(line);
+    }
+  }
+}</code></pre></div>
+<h3 id="extends-htmleditorkitparsercallback">extends HTMLEditorKit.ParserCallback</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Writer;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Enumeration;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.MutableAttributeSet;
+import javax.swing.text.html.HTML;
+import javax.swing.text.html.HTMLEditorKit;
+public class MainClass {
+  public static void main(String[] args) throws Exception {
+    ParserGetter kit = new ParserGetter();
+    HTMLEditorKit.Parser parser = kit.getParser();
+    URL u = new URL("http://www.java2s.com");
+    InputStream in = u.openStream();
+    InputStreamReader r = new InputStreamReader(in);
+    String remoteFileName = u.getFile();
+    if (remoteFileName.endsWith("/")) {
+      remoteFileName += "index.html";
+    }
+    if (remoteFileName.startsWith("/")) {
+      remoteFileName = remoteFileName.substring(1);
+    }
+    File localDirectory = new File(u.getHost());
+    while (remoteFileName.indexOf('/') &gt; -1) {
+      String part = remoteFileName.substring(0, remoteFileName.indexOf('/'));
+      remoteFileName = remoteFileName.substring(remoteFileName.indexOf('/') + 1);
+      localDirectory = new File(localDirectory, part);
+    }
+    if (localDirectory.mkdirs()) {
+      File output = new File(localDirectory, remoteFileName);
+      FileWriter out = new FileWriter(output);
+      HTMLEditorKit.ParserCallback callback = new PageSaver(out, u);
+      parser.parse(r, callback, false);
+    }
+  }
+}
+class PageSaver extends HTMLEditorKit.ParserCallback {
+  private Writer out;
+  private URL base;
+  public PageSaver(Writer out, URL base) {
+    this.out = out;
+    this.base = base;
+  }
+  public void handleStartTag(HTML.Tag tag, MutableAttributeSet attributes, int position) {
+    try {
+      out.write("&lt;" + tag);
+      this.writeAttributes(attributes);
+       if (tag == HTML.Tag.APPLET &amp;&amp; attributes.getAttribute(HTML.Attribute.CODEBASE) == null) {
+        String codebase = base.toString();
+        if (codebase.endsWith(".htm") || codebase.endsWith(".html")) {
+          codebase = codebase.substring(0, codebase.lastIndexOf('/'));
+        }
+        out.write(" codebase=\"" + codebase + "\"");
+      }
+      out.write("&gt;");
+      out.flush();
+    } catch (IOException ex) {
+      System.err.println(ex);
+    }
+  }
+  public void handleEndTag(HTML.Tag tag, int position) {
+    try {
+      out.write("&lt;/" + tag + "&gt;");
+      out.flush();
+    } catch (IOException ex) {
+      System.err.println(ex);
+    }
+  }
+  private void writeAttributes(AttributeSet attributes) throws IOException {
+    Enumeration e = attributes.getAttributeNames();
+    while (e.hasMoreElements()) {
+      Object name = e.nextElement();
+      String value = (String) attributes.getAttribute(name);
+      try {
+        if (name == HTML.Attribute.HREF || name == HTML.Attribute.SRC
+            || name == HTML.Attribute.LOWSRC || name == HTML.Attribute.CODEBASE) {
+          URL u = new URL(base, value);
+          out.write(" " + name + "=\"" + u + "\"");
+        } else {
+          out.write(" " + name + "=\"" + value + "\"");
+        }
+      } catch (MalformedURLException ex) {
+        System.err.println(ex);
+        System.err.println(base);
+        System.err.println(value);
+        ex.printStackTrace();
+      }
+    }
+  }
+  public void handleComment(char[] text, int position) {
+    try {
+      out.write("&lt;!-- ");
+      out.write(text);
+      out.write(" --&gt;");
+      out.flush();
+    } catch (IOException ex) {
+      System.err.println(ex);
+    }
+  }
+  public void handleText(char[] text, int position) {
+    try {
+      out.write(text);
+      out.flush();
+    } catch (IOException ex) {
+      System.err.println(ex);
+    }
+  }
+  public void handleSimpleTag(HTML.Tag tag, MutableAttributeSet attributes, int position) {
+    try {
+      out.write("&lt;" + tag);
+      this.writeAttributes(attributes);
+      out.write("&gt;");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+}
+class ParserGetter extends HTMLEditorKit {
+  public HTMLEditorKit.Parser getParser() {
+    return super.getParser();
+  }
+}</code></pre></div>
+<h3 id="extracting-characters-from-a-mutable-string">Extracting Characters From a Mutable String</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    StringBuffer phrase = new StringBuffer("one two three four");
+    System.out.println(phrase.charAt(5));
+    char[] textArray = new char[3];
+    phrase.getChars(9, 12, textArray, 0);
+    for(char ch: textArray){
+      System.out.println(ch);
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+w
+h
+r
+e</code></pre></div>
+<h3 id="float-control-component">Float Control Component</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import javax.sound.sampled.FloatControl;
+public class Main {
+  FloatControl control;
+  public Main(FloatControl c) {
+    control = c;
+    control.setValue(3);
+  }
+}</code></pre></div>
+<h3 id="format-hour-in-h-0-23-format-like-0-123">Format hour in H (0-23) format like 0, 1...23.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("H");
+    System.out.println("hour in H format : " + sdf.format(date));
+  }
+}
+//hour in h format : 11</code></pre></div>
+<h3 id="format-hour-in-h-1-12-in-ampm-format-like-1-212">Format hour in h (1-12 in AM/PM) format like 1, 2..12.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    String strDateFormat = "h";
+    SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+    System.out.println("hour in h format : " + sdf.format(date));
+  }
+}
+//hour in h format : 11</code></pre></div>
+<h3 id="format-hour-in-hh-00-23-format-like-00-0123">Format hour in HH (00-23) format like 00, 01..23.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("HH");
+    System.out.println("hour in HH format : " + sdf.format(date));
+  }
+}
+//hour in h format : 11</code></pre></div>
+<h3 id="format-hour-in-k-1-24-format-like-1-224">Format hour in k (1-24) format like 1, 2..24.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("k");
+    System.out.println("hour in k format : " + sdf.format(date));
+  }
+}
+//hour in h format : 11</code></pre></div>
+<h3 id="format-month-in-m-format-like-12-etc">Format month in M format like 1,2 etc</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("M");
+    System.out.println("Current Month in M format : " + sdf.format(date));
+  }
+}
+//Current Month in M format : 2</code></pre></div>
+<h3 id="format-month-in-mm-format-like-01-02-etc">Format Month in MM format like 01, 02 etc.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat  sdf = new SimpleDateFormat("MM");
+    System.out.println("Current Month in MM format : " + sdf.format(date));  }
+}
+//Current Month in M format : 02</code></pre></div>
+<h3 id="format-month-in-mmm-format-like-jan-feb-etc">Format Month in MMM format like Jan, Feb etc.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("MMM");
+    System.out.println("Current Month in MMM format : " + sdf.format(date));
+    }
+}
+//Current Month in MMM format : Feb</code></pre></div>
+<h3 id="format-year-in-yy-format-like-07-08-etc">Format year in yy format like 07, 08 etc</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("yy");
+    System.out.println("Current year in yy format : " + sdf.format(date));
+  }
+}
+//Current year in yy format : 09</code></pre></div>
+<h3 id="format-year-in-yyyy-format-like-2007-2008-etc">Format year in yyyy format like 2007, 2008 etc.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    Date date = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+    System.out.println("Current year in yyyy format : " + sdf.format(date));
+  }
+}
+//Current year in yyyy format : 2009</code></pre></div>
+<h3 id="full-day-name">Full day name</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    Format formatter = new SimpleDateFormat("EEEE");
+    String s = formatter.format(new Date());
+    System.out.println(s);
+  }
+}</code></pre></div>
+<h3 id="function-evaluator">Function Evaluator</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.FileReader;
+import java.io.IOException;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+public class FuncEvaluator {
+  public static void main(String[] args) {
+    if (args.length != 2) {
+      System.err
+          .println("usage: java FuncEvaluator scriptfile " + "script-exp");
+      return;
+    }
+    ScriptEngineManager manager = new ScriptEngineManager();
+    ScriptEngine engine = manager.getEngineByName("rhino");
+    try {
+      System.out.println(engine.eval(new FileReader(args[0])));
+      System.out.println(engine.eval(args[1]));
+    } catch (ScriptException se) {
+      System.err.println(se.getMessage());
+    } catch (IOException ioe) {
+      System.err.println(ioe.getMessage());
+    }
+  }
+}
+//////////////
+function combinations (n, r)
+{
+   return fact (n)/(fact (r)*fact (n-r))
+}
+function fact (n)
+{
+   if (n == 0)
+       return 1;
+   else
+       return n*fact (n-1);
+}</code></pre></div>
+<h3 id="get-a-list-of-selected-files">Get a list of selected files</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.io.File;
+import javax.swing.JFileChooser;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    JFileChooser chooser = new JFileChooser();
+    chooser.addPropertyChangeListener(new PropertyChangeListener() {
+      public void propertyChange(PropertyChangeEvent evt) {
+        if (JFileChooser.SELECTED_FILES_CHANGED_PROPERTY.equals(evt.getPropertyName())) {
+          JFileChooser chooser = (JFileChooser) evt.getSource();
+          File[] oldFiles = (File[]) evt.getOldValue();
+          File[] newFiles = (File[]) evt.getNewValue();
+          // Get list of selected files
+          File[] files = chooser.getSelectedFiles();
+        }
+      }
+    });
+  }
+}</code></pre></div>
+<h3 id="get-and-set-an-object-type-property">Get and set an Object type property</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.beans.Expression;
+import java.beans.Statement;
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    Object o = new MyBean();
+    // Get the value of prop1
+    Expression expr = new Expression(o, "getProp1", new Object[0]);
+    expr.execute();
+    String s = (String) expr.getValue();
+    // Set the value of prop1
+    Statement stmt = new Statement(o, "setProp1", new Object[] { "new string" });
+    stmt.execute();
+  }
+}
+class MyBean {
+  String prop1;
+  public String getProp1() {
+    return prop1;
+  }
+  public void setProp1(String s) {
+    prop1 = s;
+  }
+  int prop2;
+  public int getProp2() {
+    return prop2;
+  }
+  public void setProp2(int i) {
+    prop2 = i;
+  }
+  byte[] prop3;
+  public byte[] getProp3() {
+    return prop3;
+  }
+  public void setProp3(byte[] bytes) {
+    prop3 = bytes;
+  }
+}</code></pre></div>
+<h3 id="get-deepest-throwable">Get Deepest Throwable</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright (C) 2001-2003 Colin Bell
+ * colbell@users.sourceforge.net
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+import java.io.*;
+import java.text.NumberFormat;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+/**
+ * General purpose utilities functions.
+ *
+ * @author &lt;A HREF="mailto:colbell@users.sourceforge.net"&gt;Colin Bell&lt;/A&gt;
+ */
+public class Utilities
+{
+  public static Throwable getDeepestThrowable(Throwable t)
+  {
+     Throwable parent = t;
+     Throwable child = t.getCause();
+     while(null != child)
+     {
+        parent = child;
+        child = parent.getCause();
+     }
+     return parent;
+  }
+}</code></pre></div></div>
+    </div>
+<script>
+(function(){
+  document.querySelectorAll('.tabs').forEach(function(box){
+    var btns = box.querySelectorAll('.tab-btn');
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){
+        var id = b.getAttribute('data-tab');
+        btns.forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+        b.classList.add('active'); b.setAttribute('aria-selected','true');
+        box.querySelectorAll('.tab-panel').forEach(function(p){ p.style.display = (p.id === id) ? '' : 'none'; });
+      });
+    });
+  });
+})();
+</script>
+    <details class="sub-map"><summary>All sub-topics in this chapter (62)</summary><div class="sub-chips"><span class="sub-chip"><span class="sub-num">6.1</span> System Class <b>18</b></span><span class="sub-chip"><span class="sub-num">6.32</span> Regular Expressions <b>11</b></span><span class="sub-chip"><span class="sub-num">6.2</span> System Properties <b>26</b></span><span class="sub-chip"><span class="sub-num">6.33</span> Matcher <b>3</b></span><span class="sub-chip"><span class="sub-num">6.3</span> Console Read <b>5</b></span><span class="sub-chip"><span class="sub-num">6.34</span> Pattern <b>6</b></span><span class="sub-chip"><span class="sub-num">6.4</span> Formatter <b>4</b></span><span class="sub-chip"><span class="sub-num">6.35</span> Pack200 <b>1</b></span><span class="sub-chip"><span class="sub-num">6.5</span> Formatter Specifiers <b>13</b></span><span class="sub-chip"><span class="sub-num">6.36</span> Preference <b>24</b></span><span class="sub-chip"><span class="sub-num">6.6</span> Formatter Flags <b>12</b></span><span class="sub-chip"><span class="sub-num">6.37</span> Random <b>15</b></span><span class="sub-chip"><span class="sub-num">6.7</span> Formatter Field Width <b>6</b></span><span class="sub-chip"><span class="sub-num">6.38</span> Special Directories <b>4</b></span><span class="sub-chip"><span class="sub-num">6.8</span> RuntimeMXBean <b>5</b></span><span class="sub-chip"><span class="sub-num">6.39</span> Desktop <b>8</b></span><span class="sub-chip"><span class="sub-num">6.9</span> Formatting Date Time <b>13</b></span><span class="sub-chip"><span class="sub-num">6.40</span> Java Console <b>4</b></span><span class="sub-chip"><span class="sub-num">6.10</span> Formatter Uppercase Option <b>3</b></span><span class="sub-chip"><span class="sub-num">6.41</span> Compiler Diagnostic <b>6</b></span><span class="sub-chip"><span class="sub-num">6.11</span> Formatter Argument Index <b>4</b></span><span class="sub-chip"><span class="sub-num">6.42</span> Script Engines <b>28</b></span><span class="sub-chip"><span class="sub-num">6.12</span> SimpleDateFormat <b>59</b></span><span class="sub-chip"><span class="sub-num">6.43</span> Activation Framework <b>3</b></span><span class="sub-chip"><span class="sub-num">6.13</span> DateFormat <b>18</b></span><span class="sub-chip"><span class="sub-num">6.44</span> Clipboard <b>12</b></span><span class="sub-chip"><span class="sub-num">6.14</span> printf Method <b>75</b></span><span class="sub-chip"><span class="sub-num">6.45</span> Console <b>5</b></span><span class="sub-chip"><span class="sub-num">6.15</span> StringBuffer StringBuilder <b>29</b></span><span class="sub-chip"><span class="sub-num">6.46</span> Java Compiler <b>7</b></span><span class="sub-chip"><span class="sub-num">6.16</span> Unicode <b>25</b></span><span class="sub-chip"><span class="sub-num">6.47</span> Runtime System <b>20</b></span><span class="sub-chip"><span class="sub-num">6.17</span> Math Functions <b>37</b></span><span class="sub-chip"><span class="sub-num">6.48</span> ScriptEngines <b>8</b></span><span class="sub-chip"><span class="sub-num">6.18</span> Timer <b>12</b></span><span class="sub-chip"><span class="sub-num">6.49</span> WAV Sound <b>2</b></span><span class="sub-chip"><span class="sub-num">6.19</span> TimeUnit <b>2</b></span><span class="sub-chip"><span class="sub-num">6.50</span> Audio <b>15</b></span><span class="sub-chip"><span class="sub-num">6.20</span> Timing <b>10</b></span><span class="sub-chip"><span class="sub-num">6.51</span> MIDI Sound <b>8</b></span><span class="sub-chip"><span class="sub-num">6.21</span> TimeZone <b>15</b></span><span class="sub-chip"><span class="sub-num">6.52</span> JNI <b>3</b></span><span class="sub-chip"><span class="sub-num">6.22</span> Documentation <b>1</b></span><span class="sub-chip"><span class="sub-num">6.53</span> CommPortIdentifier <b>4</b></span><span class="sub-chip"><span class="sub-num">6.23</span> Exception <b>28</b></span><span class="sub-chip"><span class="sub-num">6.54</span> UUID <b>11</b></span><span class="sub-chip"><span class="sub-num">6.24</span> Assertions <b>9</b></span><span class="sub-chip"><span class="sub-num">6.55</span> Robot <b>9</b></span><span class="sub-chip"><span class="sub-num">6.25</span> Toolkit <b>3</b></span><span class="sub-chip"><span class="sub-num">6.56</span> JavaBeans <b>36</b></span><span class="sub-chip"><span class="sub-num">6.26</span> ProcessBuilder <b>2</b></span><span class="sub-chip"><span class="sub-num">6.57</span> Base64 <b>3</b></span><span class="sub-chip"><span class="sub-num">6.27</span> Process <b>4</b></span><span class="sub-chip"><span class="sub-num">6.58</span> Cache <b>1</b></span><span class="sub-chip"><span class="sub-num">6.28</span> Applet <b>16</b></span><span class="sub-chip"><span class="sub-num">6.59</span> Debug <b>10</b></span><span class="sub-chip"><span class="sub-num">6.29</span> JNLP <b>2</b></span><span class="sub-chip"><span class="sub-num">6.60</span> JDK <b>2</b></span><span class="sub-chip"><span class="sub-num">6.30</span> CRC32 <b>1</b></span><span class="sub-chip"><span class="sub-num">6.61</span> OS <b>5</b></span><span class="sub-chip"><span class="sub-num">6.31</span> HTML Parser <b>16</b></span><span class="sub-chip"><span class="sub-num">6.62</span> Stop Watch <b>5</b></span></div></details>
+
+    <p class="arc-crumb"><a href="java-tutorial.html">&larr; All tutorial chapters</a></p>
+
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -7,10 +7,7 @@ order: 50174
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0390__Java_Exception_Class.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Exception Class Hierarchy
 
@@ -84,5 +81,4 @@ import java.io.IOException;
 }
 ```
 
-- Next »
 - « Previous

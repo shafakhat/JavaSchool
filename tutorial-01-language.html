@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Language - Java Tutorial - JavaSchool</title>
+<meta name="description" content="Language: java2s tutorial chapter with tabs per sub-topic, 25 archived articles imported.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-chapter">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-01-language.html">Language</a></nav>
+    <h1>1. Language</h1>
+    <p><strong>15 sub-topics</strong> &middot; <strong>75 articles</strong> on java2s &middot; <strong>25</strong> imported here, grouped into tabs below.</p>
+    
+    <div class="tabs">
+      <div class="tab-bar"><button type="button" class="tab-btn active" data-tab="tab-0" aria-selected="true">Java Keywords <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-1" aria-selected="false">Variable Scope <span class="tab-count">4</span></button><button type="button" class="tab-btn" data-tab="tab-2" aria-selected="false">Annotations Create <span class="tab-count">3</span></button><button type="button" class="tab-btn" data-tab="tab-3" aria-selected="false">Comments <span class="tab-count">2</span></button><button type="button" class="tab-btn" data-tab="tab-4" aria-selected="false">Annotations Types <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-5" aria-selected="false">Constant <span class="tab-count">2</span></button><button type="button" class="tab-btn" data-tab="tab-6" aria-selected="false">Main <span class="tab-count">2</span></button><button type="button" class="tab-btn" data-tab="tab-7" aria-selected="false">Other examples <span class="tab-count">10</span></button></div>
+      <div class="tab-panel" id="tab-0"><h3 id="the-following-keywords-are-reserved-in-java">The following keywords are reserved in Java</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abstract     assert     boolean      break      byte     case    catch      char    class
+const        continue   default      do         double   else    enum       extends final
+finally      float      for          goto       if       implements         import   instanceof
+int          interface  long         native     new      package private    protected public
+return       short      static       strictfp   super    switch  synchronized   this throw
+throws       transient  try          void       volatile while</code></pre></div></div>
+      <div class="tab-panel" id="tab-1" style="display:none"><h3 id="demonstrate-lifetime-of-a-variable">Demonstrate lifetime of a variable</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String args[]) {
+    int x;
+    for (x = 0; x &lt; 3; x++) {
+      int y = -1; // y is initialized each time block is entered
+      System.out.println("y is: " + y); // this always prints -1
+      y = 100;
+      System.out.println("y is now: " + y);
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+y is: -1
+y is now: 100
+y is: -1
+y is now: 100
+y is: -1
+y is now: 100</code></pre></div>
+<h3 id="variable-dynamic-initialization">Variable Dynamic Initialization</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String args[]) {
+    double a = 3.0, b = 4.0;
+    // c is dynamically initialized
+    double c = Math.sqrt(a * a + b * b);
+    System.out.println("Hypotenuse is " + c);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+Hypotenuse is 5.0</code></pre></div>
+<h3 id="variable-scope">Variable Scope</h3>
+<p>The scope of a variable is the part of the program over which the variable name can be referenced. (from Ivor Horton's Beginning Java 2, JDK 5 Edition by Ivor Horton)</p>
+<p>You cannot refer to a variable before its declaration.</p>
+<p>You can declare variables in several different places:</p>
+<ul><li>In a class body as class fields. Variables declared here are referred to as class-level variables.</li><li>As parameters of a method or constructor.</li><li>In a method's body or a constructor's body.</li><li>Within a statement block, such as inside a while or for block.</li></ul>
+<p>Variable scope refers to the accessibility of a variable.</p>
+<p>The rule 1 is that variables defined in a block are only accessible from within the block. The scope of the variable is the block in which it is defined. For example, consider the following for statement.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] args) {
+    for (int x = 0; x &lt; 5; x++) {
+        System.out.println(x);
+    }
+  }
+}</code></pre></div>
+<p>Rule number 2 is a nested block can access variables declared in the outer block. Consider this code.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] args) {
+    for (int x = 0; x &lt; 5; x++) {
+        for (int y = 0; y &lt; 3; y++) {
+            System.out.println(x);
+            System.out.println(y);
+        }
+    }
+  }
+}</code></pre></div>
+<p>Variables declared as method parameters can be accessed from within the method body. Class-level variables are accessible from anywhere in the class.</p>
+<p>If a method declares a local variable that has the same name as a class-level variable, the former will 'shadow' the latter. To access the class-level variable from inside the method body, use the this keyword.</p>
+<h3 id="variable-scope-in-a-block">Variable Scope in a block</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] args) {
+    int outer = 1;
+    {
+      int inner = 2;
+      System.out.println("inner = " + inner);
+      System.out.println("outer = " + outer);
+    }
+    int inner = 3;
+    System.out.println("inner = " + inner);
+    System.out.println("outer = " + outer);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+inner = 2
+outer = 1
+inner = 3
+outer = 1</code></pre></div></div>
+      <div class="tab-panel" id="tab-2" style="display:none"><h3 id="creating-annotations">Creating Annotations</h3>
+<p>Annotation is created based on the interface.</p>
+<ul><li>Adding '@' before the keyword interface to declare an annotation type.</li><li>All annotations consist only method declarations.</li><li>These methods act much like fields.</li></ul>
+<p>Our first annotation type:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// A simple annotation type.
+@interface MyAnnotation {
+  String stringValue();
+  int intValue();
+}</code></pre></div>
+<h3 id="marker-annotations">Marker Annotations</h3>
+<ul><li>Marker Annotations are used to mark a declaration.</li><li>A marker annotation is a special kind of annotation.</li><li>A marker annotation contains no members.</li><li>Using isAnnotationPresent( ) to determine if the marker is present.</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.annotation.Annotation;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.reflect.Method;
+@Retention(RetentionPolicy.RUNTIME)
+@interface MyAnnotation {
+}
+@MyAnnotation
+public class MainClass {
+  // Annotate a method.
+  @MyAnnotation()
+  public static void myMethod() {
+  }
+  public static void main(String[] arg) {
+    try {
+      MainClass ob = new MainClass();
+      Method m = ob.getClass( ).getMethod("myMethod");
+      Annotation[] annos = m.getAnnotations();
+      System.out.println("All annotations for myMeth:");
+      for(Annotation a : annos)
+      System.out.println(a);
+    } catch (Exception exc) {
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+All annotations for myMeth:
+@MyAnnotation()</code></pre></div>
+<h3 id="single-member-annotations">Single-Member Annotations</h3>
+<ul><li>Single-Member Annotations contains only one member.</li><li>Single-Member Annotations allow a shorthand form of specifying the value.</li><li>The name of the member must be value.</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.annotation.Annotation;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.reflect.Method;
+@Retention(RetentionPolicy.RUNTIME)
+@interface MyAnnotation {
+  int value();
+}
+@MyAnnotation(102)
+public class MainClass {
+  // Annotate a method.
+  @MyAnnotation(101)
+  public static void myMethod() {
+  }
+  public static void main(String[] arg) {
+    try {
+      MainClass ob = new MainClass();
+      Method m = ob.getClass( ).getMethod("myMethod");
+      Annotation[] annos = m.getAnnotations();
+      System.out.println("All annotations for myMeth:");
+      for(Annotation a : annos)
+      System.out.println(a);
+    } catch (Exception exc) {
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+All annotations for myMeth:
+@MyAnnotation(value=101)</code></pre></div></div>
+      <div class="tab-panel" id="tab-3" style="display:none"><h3 id="comments-in-general">Comments in general</h3>
+<p>It is good practice to write comments explaining your code.</p>
+<p>There are two types of comments in Java, both with syntax similar to comments in C and C++.</p>
+<ul><li>Traditional comments: Enclose a traditional comment in /<em> and </em>/.</li><li>End-of-line comments: Use double slashes (//) which causes the rest of the line ignored by the compiler.</li></ul>
+<p>Traditional comments do not nest, which means</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+  /* comment 1 */
+  comment 2 */</code></pre></div>
+<ul><li>is invalid because the first <em>/ after the first /</em> will terminate</li><li>which will generate a compiler error</li></ul>
+<p>End-of-line comments can contain anything, including the sequences of characters /<em> and </em>/, such as this:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// /* this comment is okay */</code></pre></div>
+<h3 id="program-comments">Program Comments</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">//   Single line of comment
+public class MainClass{
+  public static void main(String[] arg){
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-4" style="display:none"><h3 id="annotations-and-annotation-types-annotations-types-language-java-tutorial">Annotations and Annotation Types : Annotations Types : Language : Java Tutorial</h3>
+<p>Annotations are notes in Java programs to instruct the Java compiler to do something. Java provides three standard annotations and four standard meta-annotations. An annotation type is a special interface type. An annotation is an instance of an annotation type. An annotation type has a name and members. The information contained in an annotation takes the form of key/value pairs. There can be zero or multiple pairs and each key has a specific type. It can be a String, int, or other Java types. Annotation types with no key/value pairs are called marker annotation types. Those with one key/value pair are referred to single-value annotation types. There are three annotation types in Java 5: Deprecated, Override, and Suppress Warnings. There are four other annotation types that are part of the java.lang.annotation package: Documented, Inherited, Retention, and Target. These four annotation types are used to annotate annotations,</p></div>
+      <div class="tab-panel" id="tab-5" style="display:none"><h3 id="define-a-constant-value-and-use-it">Define a constant value and use it</h3>
+<ul><li>Using the final keyword to declare a variable.</li><li>The final keyword specifies that the value of a variable is final and cannot be changed.</li><li>It is a convention in Java to write constants in uppercase letters.</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] arg) {
+    final int FEET_PER_YARD = 3;          // Constant values
+    final double MM_PER_INCH = 25.4;      // that cannot be changed
+    System.out.println(FEET_PER_YARD);
+    System.out.println(MM_PER_INCH);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+3
+25.4</code></pre></div>
+<h3 id="define-constant">Define constant</h3>
+<p>'public static final' variables are constant.</p>
+<p>The naming convention for static final variables is to have them in upper case and separate two words with an underscore. For example:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">static final int NUMBER_OF_MONTHS = 12;
+static final float PI = (float) 22 / 7;</code></pre></div>
+<p>If you want to make a static final variable accessible from outside the class, you can make it public too:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public static final int NUMBER_OF_MONTHS = 12;
+public static final float PI = (float) 22 / 7;</code></pre></div></div>
+      <div class="tab-panel" id="tab-6" style="display:none"><h3 id="the-method-main">The Method main</h3>
+<ul><li>A special method called main provides the entry point to an application.</li><li>An application can have many classes and only one of the classes needs to have the method main.</li><li>This method allows the class containing it to be invoked.</li></ul>
+<p>The signature of the method main is as follows.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] args) {
+  }
+}</code></pre></div>
+<ul><li>In addition, you can pass arguments to main when using 'java' to run a class.</li><li>To pass arguments, type them after the class name. Two arguments are separated by a space.</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">java className arg1 arg2 arg3 ...</code></pre></div>
+<p>All arguments must be passed as strings. For instance, to pass two arguments, "1" and "mode" when running the Test class, you type this:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+java Test 1 mode</code></pre></div>
+<h3 id="throw-exception-through-main-method">Throw Exception through main method</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+  public static void main(String[] args) throws Throwable {
+    try {
+      throw new Throwable();
+    } catch (Exception e) {
+      System.err.println("Caught in main()");
+    }
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-7" style="display:none"><h3 id="a-profiler-is-used-to-analyze-how-much-time-a-program-spends-in-each-part-of-the-code">A profiler is used to analyze how much time a program spends in each part of the code.</h3>
+<p>You can use this information to determine which parts of a program to optimize.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+java -prof TestDrive</code></pre></div>
+<h3 id="define-new-annotation-type">Define new annotation type</h3>
+<ul><li>All annotation types automatically extend the Annotation interface.</li><li>Annotation is a super-interface of all annotations.</li><li>It overrides hashCode( ), equals( ), and toString() defined by Object.</li><li>It defines annotationType( ), which returns a Class object that represents the invoking annotation.</li><li>When you apply an annotation, you give values to its members.</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// A simple annotation type.
+@interface MyAnnotation {
+  String stringValue();
+  int intValue();
+}
+public class MainClass {
+  // Annotate a method.
+  @MyAnnotation(stringValue = "Annotation Example", intValue = 100)
+  public static void myMethod() {
+  }
+}</code></pre></div>
+<h3 id="developing-a-java-program-involves">Developing a Java program involves</h3>
+<ul><li>writing code,</li><li>compiling it into bytecode</li><li>running the bytecode.</li></ul>
+<p>Your First Java Program.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass {
+    public static void main(String[] args) {
+        System.out.println("Java");
+    }
+}</code></pre></div>
+<h3 id="insert-an-annotation-to-suppress-warning">Insert an annotation to suppress warning</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
+import java.util.Iterator;
+public class Main {
+  @SuppressWarnings("unchecked")
+  public static void main(String[] args) {
+    ArrayList data = new ArrayList();
+    data.add("hello");
+    data.add("world");
+    Iterator it = data.iterator();
+    while (it.hasNext()) {
+      System.out.println(it.next());
+    }
+  }
+}</code></pre></div>
+<h3 id="jdk-utilities">JDK Utilities</h3>
+<p>Tool Function javac The Java compiler. Converts Java source code into bytecodes. java The Java interpreter. Executes Java application bytecodes directly from class files. appletviewer A Java interpreter that executes Java applet classes hosted by HTML files. javadoc Creates HTML documentation based on Java source code and the comments it contains. rmic Creates class files that support Remote Method Invocation (RMI). rmiregistry Registry used to gain access to RMI objects on a specific machine. rmid Activation system daemon for RMI object registration and activation. native2ascii Special program used to convert between standard Latin-1 Unicode characters and other international encoding schemes. jar Java Archive (JAR) file generator. JAR files allow multiple Java classes and resources to be distributed in one compressed file. keytool Used for security key generation and management. jarsigner Implements digital signing of JAR and class files. Allows applets to be certified by trusted authorities. policytool Allows user-installation-level security policy configuration.</p>
+<h3 id="multiple-lines-of-comment">Multiple lines of comment</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">another line
+ */
+public class MainClass{
+  public static void main(String[] arg){
+  }
+}</code></pre></div>
+<h3 id="see-the-details-of-the-compilation">See the details of the compilation</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+javac -verbose TestDrive.java</code></pre></div>
+<h3 id="specifying-a-retention-policy">Specifying a Retention Policy</h3>
+<p>A retention policy determines at what point an annotation is discarded.</p>
+<ul><li>SOURCE: annotation retained only in the source file and is discarded during compilation.</li><li>CLASS: annotation stored in the .class file during compilation, not available int the run time.</li><li>RUNTIME: annotation stored in the .class file and available in the run time.</li><li>They are defined java.lang.annotation.RetentionPolicy enumeration.</li></ul>
+<p>A retention policy is specified using Java's built-in annotations: @Retention.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">    @Retention(retention-policy)</code></pre></div>
+<p>the default policy is CLASS.</p>
+<p>MyAnnotation uses @Retention to specify the RUNTIME retention policy.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+// A simple annotation type.
+@Retention(RetentionPolicy.RUNTIME)
+@interface MyAnnotation {
+  String stringValue();
+  int intValue();
+}
+public class MainClass {
+  // Annotate a method.
+  @MyAnnotation(stringValue = "Annotation Example", intValue = 100)
+  public static void myMethod() {
+  }
+}</code></pre></div>
+<h3 id="the-lifetime-of-an-object">The Lifetime of an Object</h3>
+<ul><li>The process of disposing of dead objects is called garbage collection.</li><li>Encouraging the Java Virtual Machine (JVM) to do some garbage collecting and recover the memory.</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Sphere {
+  double radius; // Radius of a sphere
+  Sphere() {
+  }
+  // Class constructor
+  Sphere(double theRadius) {
+    radius = theRadius; // Set the radius
+  }
+}
+public class MainClass {
+  public static void main(String[] arg){
+    Sphere sp = new Sphere();
+    System.gc();
+  }
+}</code></pre></div>
+<h3 id="what-is-suppresswarnings-annotation">What is SuppressWarnings annotation?</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Date;
+public class Main {
+    @SuppressWarnings(value={"deprecation"})
+    public static void main(String[] args) {
+        Date date = new Date(2009, 9, 30);
+        System.out.println("date = " + date);
+    }
+}</code></pre></div></div>
+    </div>
+<script>
+(function(){
+  document.querySelectorAll('.tabs').forEach(function(box){
+    var btns = box.querySelectorAll('.tab-btn');
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){
+        var id = b.getAttribute('data-tab');
+        btns.forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+        b.classList.add('active'); b.setAttribute('aria-selected','true');
+        box.querySelectorAll('.tab-panel').forEach(function(p){ p.style.display = (p.id === id) ? '' : 'none'; });
+      });
+    });
+  });
+})();
+</script>
+    <details class="sub-map"><summary>All sub-topics in this chapter (15)</summary><div class="sub-chips"><span class="sub-chip"><span class="sub-num">1.1</span> Introduction <b>17</b></span><span class="sub-chip"><span class="sub-num">1.9</span> Variables <b>6</b></span><span class="sub-chip"><span class="sub-num">1.2</span> Java Keywords <b>1</b></span><span class="sub-chip"><span class="sub-num">1.10</span> Variable Scope <b>2</b></span><span class="sub-chip"><span class="sub-num">1.3</span> Jar <b>4</b></span><span class="sub-chip"><span class="sub-num">1.11</span> Annotations Create <b>4</b></span><span class="sub-chip"><span class="sub-num">1.4</span> Comments <b>3</b></span><span class="sub-chip"><span class="sub-num">1.12</span> Annotations Reflection <b>4</b></span><span class="sub-chip"><span class="sub-num">1.5</span> Javadoc <b>1</b></span><span class="sub-chip"><span class="sub-num">1.13</span> Annotations Types <b>9</b></span><span class="sub-chip"><span class="sub-num">1.6</span> Constant <b>2</b></span><span class="sub-chip"><span class="sub-num">1.14</span> Standard Annotations <b>14</b></span><span class="sub-chip"><span class="sub-num">1.7</span> Main <b>4</b></span><span class="sub-chip"><span class="sub-num">1.15</span> transient <b>1</b></span><span class="sub-chip"><span class="sub-num">1.8</span> Garbage Collection <b>3</b></span></div></details>
+
+    <p class="arc-crumb"><a href="java-tutorial.html">&larr; All tutorial chapters</a></p>
+
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

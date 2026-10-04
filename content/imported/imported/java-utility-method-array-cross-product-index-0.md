@@ -94,5 +94,3 @@ floatcross2D(final float[] v1, final float[] v2) Computes the cross product of t
 ```java title=Example.java
 return v1[0] * v2[1] - v1[1] * v2[0];
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

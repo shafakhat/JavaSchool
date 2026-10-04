@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1041
 source: https://web.archive.org/web/20070310200806/http://www.java2s.com:80/Code/Java/Ant/BuildtheJSTLfromsource.htm
 ---
-Build the JSTL from source
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Example Application Build" default="build-both" basedir=".">
@@ -51,7 +49,6 @@ Build the JSTL from source
          command="checkout" package="${mysql.build}"
          dest="${build}" compression="true" />
   </target>
-  <!-- Build the JSTL from source -->
   <target name="build-jstl" depends="checkout-jstl"
           description="Build the JSTL from source">
     <echo message="Building the JSTL from source"/>

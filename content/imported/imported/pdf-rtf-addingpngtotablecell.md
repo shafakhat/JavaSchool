@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20090422124811/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingPNGtotablecell.htm
 ---
-Adding PNG to table cell
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

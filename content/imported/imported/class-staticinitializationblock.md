@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1073
 source: https://web.archive.org/web/20100213071119/http://java2s.com/Code/Java/Class/staticInitializationblock.htm
 ---
-static Initialization block
-
 ```java title=Example.java
 class TryInitialization {
   static int[] values = new int[10];

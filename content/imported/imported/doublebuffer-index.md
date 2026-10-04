@@ -7,10 +7,7 @@ order: 50310
 source: https://www.java2s.com/Tutorials/Java/java.nio/DoubleBuffer/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -40,5 +37,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio/DoubleBuffer/index.html
 - Java DoubleBuffer.wrap(double[] array)
 - Java DoubleBuffer.wrap(double[] array, int offset, int length)
 
-- Next »
 - « Previous

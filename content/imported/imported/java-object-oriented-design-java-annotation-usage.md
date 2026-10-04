@@ -7,10 +7,7 @@ order: 50194
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0730__Java_Annotation_Usage.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The supplied value for elements of an annotation must be a compile-time constant expression and we cannot use null as the value for any type of element in an annotation.
 
@@ -256,5 +253,4 @@ publicclass Test   {
 
 If we supply only one value when using an annotation, the name of the element is assumed value.
 
-- Next »
 - « Previous

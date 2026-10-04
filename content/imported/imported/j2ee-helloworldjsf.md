@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1024
 source: https://web.archive.org/web/20071018112447/http://java2s.com:80/Code/Java/J2EE/HelloWorldJSF.htm
 ---
-Hello World JSF
-
 ```java title=Example.java
 //This example is from Jakub Czeczotka <jakub.czeczotka at gmail.com>
 //web.xml
@@ -16,7 +14,6 @@ Hello World JSF
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
     <display-name>
-  HelloWorldJSF
     </display-name>
     <description>
   Hello in the JavaServer Faces World!

@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102122101/http://www.java2s.com/ref/jav
 
 ## Description
 
-Java ActionListener handle action event on JComboBox
-
 ```java title=Example.java
 import java.awt.FlowLayout;
 

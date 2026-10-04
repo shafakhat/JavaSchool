@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20060411085111/http://www.java2s.com:80/Code/Java/JSTL/JSTLParseNumber.htm
 ---
-JSTL Parse Number
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %><%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <html>

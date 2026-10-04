@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20060513085508/http://www.java2s.com/Code/Java/JSP/CallingaStoredprocedurewithinaJSP.htm
 ---
-Calling a Stored procedure within a JSP : Java examples (example source code) » JSP » Database
-
 Calling a Stored procedure within a JSP
 
 ```java title=Example.java

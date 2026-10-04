@@ -7,10 +7,7 @@ order: 50149
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0095__Java_final_Keyword.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The final keyword does not allow modifying or replacing its original value or definition.
 
@@ -74,5 +71,4 @@ If a class is declared final, it cannot be extended (or subclassed).
 
 If a method is declared final, it cannot be redefined (overridden or hidden) in the subclasses of the class that contains the method.
 
-- Next »
 - « Previous

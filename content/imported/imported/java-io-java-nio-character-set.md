@@ -7,10 +7,7 @@ order: 50224
 source: https://www.java2s.com/Tutorials/Java/Java_io/0920__Java_nio_Character_Set.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We can convert a Unicode character to a sequence of bytes and vice versa using an encoding scheme.
 
@@ -115,5 +112,4 @@ import java.nio.ByteOrder;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

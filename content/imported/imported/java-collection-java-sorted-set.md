@@ -7,10 +7,7 @@ order: 50332
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0110__Java_Sorted_Set.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A sorted set is a set with ordering on its elements.
 
@@ -27,9 +24,9 @@ If a Comparator is specified, the Comparator is used for sorting and ignore the 
 
 The TreeSet class is an implementation for the SortedSet interface in the Collections Framework.
 
-[TreeSet API](../../../Tutorials/Java/java.util/TreeSet/index.html)
+TreeSet API
 
-[SortedSet API](../../../Tutorials/Java/java.util/SortedSet/index.html)
+SortedSet API
 
 ## Example
 
@@ -201,5 +198,4 @@ import java.util.TreeSet;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

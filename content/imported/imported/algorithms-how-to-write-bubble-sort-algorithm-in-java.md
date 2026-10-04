@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20130807082531/http://java2s.com/Tutorials/Java/Algorithms/How_to_write_Bubble_sort_algorithm_in_Java.htm
 ---
-Next »328/677« Previous
-
 In this chapter you will learn:
 
 - Bubble sort implementation
@@ -90,5 +88,3 @@ What you will learn in the next chapter:
 - Recursive Binary Search Implementation
 - Binary search without recursive
 - Binary Search Insert
-
-Next »« PreviousHome » Java Tutorial » AlgorithmsBubble sortBinary SearchInsertion SortSelection sortShell sortHeap SortMerge SortQuick SortFibonacciHanoi puzzleFahrenheit to Celsius

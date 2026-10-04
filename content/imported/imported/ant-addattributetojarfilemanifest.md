@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20100213130420/http://java2s.com/Code/Java/Ant/Addattributetojarfilemanifest.htm
 ---
-Add attribute to jar file manifest
-
 ```java title=Example.java
 //https://amateur.dev.java.net/
 //GNU General Public License (GPL v. 2.0)

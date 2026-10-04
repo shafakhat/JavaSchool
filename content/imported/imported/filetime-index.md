@@ -7,10 +7,7 @@ order: 50290
 source: https://www.java2s.com/Tutorials/Java/java.nio.file.attribute/FileTime/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -23,5 +20,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio.file.attribute/FileTime/i
 - Java FileTime.toMillis()
 - Java FileTime.toString()
 
-- Next »
 - « Previous

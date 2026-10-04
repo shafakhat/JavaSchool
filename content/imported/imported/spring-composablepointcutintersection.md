@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1048
 source: https://web.archive.org/web/20081209070105/http://www.java2s.com:80/Code/Java/Spring/ComposablePointcutIntersection.htm
 ---
-ComposablePointcut Intersection
-
 ```java title=Example.java
 File: Main.java
 import java.lang.reflect.Method;

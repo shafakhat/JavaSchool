@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1048
 source: https://web.archive.org/web/20061018180935/http://www.java2s.com/Code/Java/Apache-Common/MapHeaven1.htm
 ---
-MapHeaven 1
-
 ```java title=Example.java
 import java.util.Map;
 import java.util.Date;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20090531212025/http://www.java2s.com:80/Code/Java/Regular-Expressions/Checkifgivenstringisnumeric0909.htm
 ---
-Check if given string is numeric (-+0..9(.)0...9)
-
 ```java title=Example.java
 public class Main {
   public static boolean isNumeric(String string) {

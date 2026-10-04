@@ -7,10 +7,7 @@ order: 50144
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0070__Java_main_Method.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Let's discuss the main() method that we have been using to run our classes.
 
@@ -40,5 +37,4 @@ java  com.java2s.Main
 
 The main() method is invoked by the JVM when you run a class.
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20061018181009/http://www.java2s.com/Code/Java/Apache-Common/ComparatorExampleForBuildInDataType.htm
 ---
-Comparator Example For BuildIn Data Type
-
 ```java title=Example.java
 import org.apache.commons.collections.ComparatorUtils;
 import org.apache.commons.collections.comparators.BooleanComparator;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20090208172717/http://java2s.com:80/Code/Java/Spring/CallableStatementCallbackAndProcedure.htm
 ---
-CallableStatement Callback And Procedure
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

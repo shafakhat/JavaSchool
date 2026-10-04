@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1111
 source: https://web.archive.org/web/20130821021311/http://java2s.com/Code/Java/JDK-7/ProcessingthecontentsoftheentirefileReadtheentirefile.htm
 ---
-Processing the contents of the entire file, Read the entire file
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.ByteBuffer;

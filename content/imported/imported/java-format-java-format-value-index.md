@@ -7,10 +7,7 @@ order: 50392
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0070__Java_Format_Value_Index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The following code use the s conversion to format its argument as string.
 
@@ -131,5 +128,4 @@ The code above generates the following result.
 
 It is possible to have less number of arguments than the number of format specifiers for relative indexing.
 
-- Next »
 - « Previous

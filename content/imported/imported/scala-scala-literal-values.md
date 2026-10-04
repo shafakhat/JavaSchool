@@ -7,10 +7,7 @@ order: 50084
 source: https://www.java2s.com/Tutorials/Java/Scala/0150__Scala_Literal_Values.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Integer Literals
 
@@ -269,5 +266,4 @@ We can use the "arrow operator" between two values, as well as special factory m
      Tuple2(1, "one")
 ```
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20100427005918/http://www.java2s.com:80/Code/Java/GWT/AddclickhandlerforMenuitemSmartGWT.htm
 ---
-Add click handler for Menu item (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

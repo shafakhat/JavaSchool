@@ -7,10 +7,7 @@ order: 50248
 source: https://www.java2s.com/Tutorials/Java/java.io/DataInputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -36,5 +33,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/DataInputStream/index.html
 - Java DataInputStream .readUTF (DataInput in)
 - Java DataInputStream.skipBytes(int n)
 
-- Next »
 - « Previous

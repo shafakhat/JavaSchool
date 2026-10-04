@@ -7,10 +7,7 @@ order: 50420
 source: https://www.java2s.com/Tutorials/Java/Java_Language/2005__Java_Data_Type.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java defines eight primitive types of data: byte, short, int, long, char, float, double, and boolean.
 
@@ -55,5 +52,4 @@ Name  Width in Bits  Approximate Range
 double  64  4.9e-324 to 1.8e+308
 float  32  1.4e-045 to 3.4e+038
 
-- Next »
 - « Previous

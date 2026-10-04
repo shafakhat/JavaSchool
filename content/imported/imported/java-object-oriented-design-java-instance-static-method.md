@@ -7,10 +7,7 @@ order: 50143
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0060__Java_Instance_Static_Method.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A class can have two types of methods: instance methods and class methods. Instance methods and class methods are also called non-static methods and static methods, respectively.
 
@@ -111,5 +108,4 @@ mt.printM(); // Call the   class method  using an  instance mt
 
 Using the class name to invoke a class method is more intuitive than using an instance reference.
 
-- Next »
 - « Previous

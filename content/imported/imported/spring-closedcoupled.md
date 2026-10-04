@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1039
 source: https://web.archive.org/web/20100213131543/http://java2s.com/Code/Java/Spring/ClosedCoupled.htm
 ---
-Closed Coupled
-
 ```java title=Example.java
 File: Main.java
 import java.io.PrintStream;

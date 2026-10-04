@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1115
 source: https://web.archive.org/web/20090517212147/http://www.java2s.com:80/Code/Java/Web-Services-SOA/DevelopingWebServicesUsingJAXWS.htm
 ---
-Developing Web Services Using JAX-WS
-
 ```java title=Example.java
 import javax.jws.WebService;
 import javax.jws.WebMethod;

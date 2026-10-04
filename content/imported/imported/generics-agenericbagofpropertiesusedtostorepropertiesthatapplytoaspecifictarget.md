@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20111010003018/http://java2s.com:80/Code/Java/Generics/Agenericbagofpropertiesusedtostorepropertiesthatapplytoaspecifictarget.htm
 ---
-A generic bag of properties used to store properties that apply to a specific target.
-
 ```java title=Example.java
 /*
  * XAdES4j - A Java library for generation and verification of XAdES signatures.

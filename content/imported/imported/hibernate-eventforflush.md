@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1038
 source: https://web.archive.org/web/20060513083801/http://www.java2s.com/Code/Java/Hibernate/EventForFlush.htm
 ---
-Event For Flush
-
 ```java title=Example.java
 /////////////////////////////////////////////////////////////////////////
 import java.io.Serializable;

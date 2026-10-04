@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20130821170442/http://java2s.com/Code/Java/JDK-7/CreateLocalefromLanguage.htm
 ---
-Create Locale from Language
-
 ```java title=Example.java
 import java.text.DateFormat;
 import java.text.NumberFormat;

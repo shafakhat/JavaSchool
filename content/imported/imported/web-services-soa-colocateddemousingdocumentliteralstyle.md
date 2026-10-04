@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1110
 source: https://web.archive.org/web/20071105161220/http://www.java2s.com:80/Code/Java/Web-Services-SOA/ColocatedDemousingDocumentLiteralStyle.htm
 ---
-Colocated Demo using Document/Literal Style
-
 ```java title=Example.java
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -27,7 +25,6 @@ Colocated Demo using Document/Literal Style
  * specific language governing permissions and limitations
  * under the License.
  */
-Colocated Demo using Document/Literal Style
 =============================================
 Please review the README in the samples directory before
 continuing.

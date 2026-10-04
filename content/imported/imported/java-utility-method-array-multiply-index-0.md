@@ -113,5 +113,3 @@ for (int i = 0; i < a.length; i++) {
     out[i] = a[i] * b[i];
 return out;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

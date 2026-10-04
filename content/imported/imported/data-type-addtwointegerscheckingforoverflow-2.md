@@ -28,7 +28,6 @@ import java.io.File;
  */
 public class Main {
   /**
-   * Add two integers, checking for overflow.
    *
    * @param x an addend
    * @param y an addend

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1112
 source: https://web.archive.org/web/20130820234445/http://java2s.com/Code/Java/JDK-7/RandomaccessIOusingtheSeekableByteChannel.htm
 ---
-Random access IO using the SeekableByteChannel
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.ByteBuffer;

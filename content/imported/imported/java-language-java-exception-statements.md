@@ -7,10 +7,7 @@ order: 50452
 source: https://www.java2s.com/Tutorials/Java/Java_Language/6010__Java_Exception_Statements.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 To guard against and handle a run-time error, enclose the code to monitor inside a try block.
 
@@ -238,5 +235,4 @@ staticvoid methodA() {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

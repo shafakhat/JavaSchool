@@ -6,14 +6,11 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20111124232338/http://java2s.com/Code/Java/2D-Graphics-GUI/AclassthatmodelsaCubicBeziercurve.htm
 ---
-A class that models a Cubic-Bezier curve
-
 ```java title=Example.java
 //package graphicsEngine.math;
 import java.io.Serializable;
 import javax.vecmath.Vector3d;
 /**
- * a class that models a Cubic-Bezier curve
  * @author Adam Levi, Marina Skarbovsky
  */
 public class CubicBezierCurve implements Serializable

@@ -65,7 +65,6 @@ public class Main {
       return str.concat(padding(pads, padChar));
   }
   /**
-   * Right pad a String with a specified String.
    *
    * The String is padded to the size of <code>size</code>.
    *

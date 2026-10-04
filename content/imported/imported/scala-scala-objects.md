@@ -7,10 +7,7 @@ order: 50103
 source: https://www.java2s.com/Tutorials/Java/Scala/3030__Scala_Objects.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 In Scala, we can use object to refer to an instance of a class as in Java and we can also use object as a keyword.
 
@@ -61,5 +58,4 @@ Scala provides a trait, scala.Application that your singleton object should exte
 
 Then you place the code you would have put in the main method directly in the singleton object.
 
-- Next »
 - « Previous

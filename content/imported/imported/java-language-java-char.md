@@ -7,10 +7,7 @@ order: 50424
 source: https://www.java2s.com/Tutorials/Java/Java_Language/2040__Java_char.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 In Java, char stores characters. Java uses Unicode to represent characters. Unicode can represent all of the characters found in all human languages.
 
@@ -145,5 +142,4 @@ Escape Sequence  Description
 \t  Tab
 \b  Backspace
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1076
 source: https://web.archive.org/web/20081009143516/http://www.java2s.com:80/Code/Java/Class/Testscloningtoseeifdestinationofreferencesarealsocloned.htm
 ---
-Tests cloning to see if destination of references are also cloned
-
 ```java title=Example.java
 // : appendixa:Snake.java
 // Tests cloning to see if destination

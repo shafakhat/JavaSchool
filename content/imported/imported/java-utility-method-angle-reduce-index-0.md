@@ -55,5 +55,3 @@ if (abs(theta) > HALF_PI) {
 return theta;
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

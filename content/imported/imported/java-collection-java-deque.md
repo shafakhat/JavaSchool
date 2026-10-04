@@ -7,10 +7,7 @@ order: 50337
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0175__Java_deque.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A doubly ended queue or deque extends a queue to allow insertion and removal of elements from both ends.
 
@@ -90,5 +87,4 @@ while (deque.peek() != null) {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

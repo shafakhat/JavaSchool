@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20080128152702/http://www.java2s.com:80/Code/Java/Apache-Common/CharSetExample.htm
 ---
-CharSet Example
-
 ```java title=Example.java
 import org.apache.commons.lang.CharSet;
 import org.apache.commons.lang.CharRange;

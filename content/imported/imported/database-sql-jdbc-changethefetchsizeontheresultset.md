@@ -7,7 +7,6 @@ order: 1037
 source: https://web.archive.org/web/20091120104229/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/Changethefetchsizeontheresultset.htm
 ---
 Change the fetch size on the result set : ResultSet Scrollable « Database SQL JDBC « Java
-Change the fetch size on the result set
 
 ```java title=Example.java
 import java.sql.Connection;
@@ -32,7 +31,6 @@ public class Main {
     stmt.setFetchSize(100);
     // Create a result set
     ResultSet resultSet = stmt.executeQuery("SELECT * FROM my_table");
-    // Change the fetch size on the result set
     resultSet.setFetchSize(100);
   }
 }

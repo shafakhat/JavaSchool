@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1088
 source: https://web.archive.org/web/20111125063925/http://java2s.com/Code/Java/Class/Thisprogramdemonstratesstaticmethods.htm
 ---
-This program demonstrates static methods
-
 ```java title=Example.java
 /*
  This program is a part of the companion code for Core Java 8th ed.
@@ -24,7 +22,6 @@ This program demonstrates static methods
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /**
- * This program demonstrates static methods.
  *
  * @version 1.01 2004-02-19
  * @author Cay Horstmann

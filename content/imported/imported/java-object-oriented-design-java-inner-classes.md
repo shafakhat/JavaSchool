@@ -7,10 +7,7 @@ order: 50160
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0240__Java_Inner_Classes.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## What Is an Inner Class?
 
@@ -166,5 +163,4 @@ class Inner {
 }
 ```
 
-- Next »
 - « Previous

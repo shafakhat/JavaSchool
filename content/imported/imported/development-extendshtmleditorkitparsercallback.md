@@ -2,9 +2,9 @@
 title: extends HTMLEditorKit.ParserCallback
 nav: extends HTMLEditorKit.Pars...
 description: String part = remoteFileName.substring(0, remoteFileName.indexOf('/'));
-section: Imported
-order: 20007
-source: http://www.java2s.com:80/Tutorial/Java/0120__Development/extendsHTMLEditorKitParserCallback.htm
+section: Imported - java2s Archive
+order: 1001
+source: https://web.archive.org/web/20070614205946/http://www.java2s.com:80/Tutorial/Java/0120__Development/extendsHTMLEditorKitParserCallback.htm
 ---
 ```java title=Example.java
 import java.io.File;

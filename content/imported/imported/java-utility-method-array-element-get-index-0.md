@@ -122,5 +122,3 @@ for (int i = 0; i < args.length; i++) {
             params.put(keyset[0], keyset[1].split(","));
 return params;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

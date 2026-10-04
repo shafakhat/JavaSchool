@@ -7,10 +7,7 @@ order: 50367
 source: https://www.java2s.com/Tutorials/Java/java.util/NavigableMap/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -36,5 +33,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/NavigableMap/index.html
 - Java NavigableMap.tailMap(K fromKey)
 - Java NavigableMap.tailMap(K fromKey, boolean inclusive)
 
-- Next »
 - « Previous

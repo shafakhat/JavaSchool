@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20090615215854/http://www.java2s.com:80/Code/Java/Threads/Aworkqueueisusedtocoordinateworkbetweenaproducerandasetofworkerthreads.htm
 ---
-A work queue is used to coordinate work between a producer and a set of worker threads.
-
 ```java title=Example.java
 import java.util.LinkedList;
 public class Main {

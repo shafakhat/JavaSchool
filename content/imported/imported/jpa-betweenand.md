@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20081209042649/http://www.java2s.com:80/Code/Java/JPA/BetweenAnd.htm
 ---
-Between...And
-
 ```java title=Example.java
 File: Main.java
 import javax.persistence.EntityManager;

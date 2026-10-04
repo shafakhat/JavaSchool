@@ -7,10 +7,7 @@ order: 50157
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0210__Java_Object_Finalize.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java provides a way to perform resource release, when an object is about to be destroyed.
 
@@ -56,5 +53,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

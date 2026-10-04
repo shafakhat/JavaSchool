@@ -31,7 +31,6 @@ import java.util.Map;
   */
 public class Main{
   /**
-   * Capitalize the first character of the given string.
    *
    * @param string     String to capitalize.
    * @return           Capitalized string.

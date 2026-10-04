@@ -2,9 +2,9 @@
 title: Extracting Characters From a Mutable String
 nav: Extracting Characters From...
 description: StringBuffer phrase = new StringBuffer("one two three four");
-section: Imported
-order: 20005
-source: http://www.java2s.com:80/Tutorial/Java/0120__Development/ExtractingCharactersFromaMutableStringcharAtandgetCharsmethods.htm
+section: Imported - java2s Archive
+order: 1002
+source: https://web.archive.org/web/20070329224151/http://www.java2s.com:80/Tutorial/Java/0120__Development/ExtractingCharactersFromaMutableStringcharAtandgetCharsmethods.htm
 ---
 ```java title=Example.java
 public class MainClass {

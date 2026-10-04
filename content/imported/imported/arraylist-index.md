@@ -7,10 +7,7 @@ order: 50344
 source: https://www.java2s.com/Tutorials/Java/java.util/ArrayList/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Example
 
@@ -147,5 +144,4 @@ The code above generates the following result.
 - Java ArrayList.toArray(T[] a)
 - Java ArrayList.trimToSize()
 
-- Next »
 - « Previous

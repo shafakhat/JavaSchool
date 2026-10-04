@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1098
 source: https://web.archive.org/web/20090602121557/http://www.java2s.com:80/Code/Java/Class/Usingfinalwithmethodarguments.htm
 ---
-Using final with method arguments
-
 ```java title=Example.java
 // : c06:FinalArguments.java
-// Using final with method arguments.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Gizmo {

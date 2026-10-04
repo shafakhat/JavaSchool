@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20130821060834/http://java2s.com/Code/Java/JDK-7/Checkexistancewithoutfollowingthesymboliclinks.htm
 ---
-Check existance without following the symbolic links
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.LinkOption;

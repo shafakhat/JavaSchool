@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20061018193158/http://www.java2s.com/Code/Java/Velocity/PassvariableintoVelocity.htm
 ---
-Pass variable into Velocity
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;

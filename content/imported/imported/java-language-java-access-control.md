@@ -7,10 +7,7 @@ order: 50442
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5040__Java_Access_Control.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We can control the access level for class member variables and methods through access specifiers.
 
@@ -105,5 +102,4 @@ The following table shows all possible combinations of features and modifiers. y
 | volatile | no | yes | no | no | no |
 | synchronized | no | no | yes | no | yes |
 
-- Next »
 - « Previous

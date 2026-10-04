@@ -7,7 +7,6 @@ order: 1004
 source: https://web.archive.org/web/20091101181649/http://www.java2s.com:80/Code/Java/J2EE/ConvertsUISelectManysubmittedvaluetoconvertedvalue.htm
 ---
 Converts UISelectMany submitted value to converted value : JavaServer Faces « J2EE « Java
-Converts UISelectMany submitted value to converted value
 
 ```java title=Example.java
 /**
@@ -105,7 +104,6 @@ public class SelectUtils {
         return list;
   }
   /**
-   * Converts UISelectMany submitted value to converted value
    *
    * @author Manfred Geiler
    * @param facesContext

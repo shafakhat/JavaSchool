@@ -78,5 +78,3 @@ for (int i = 0; i < points.length; i++) {
         maxValue = points[i];
 return scalePoints(points, height, maxValue);
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

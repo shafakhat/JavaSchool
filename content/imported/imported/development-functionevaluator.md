@@ -2,9 +2,9 @@
 title: Function Evaluator
 nav: Function Evaluator
 description: .println("usage: java FuncEvaluator scriptfile " + "script-exp");
-section: Imported
-order: 20022
-source: http://java2s.com/Tutorial/Java/0120__Development/FunctionEvaluator.htm
+section: Imported - java2s Archive
+order: 1030
+source: https://web.archive.org/web/20111105115342/http://java2s.com/Tutorial/Java/0120__Development/FunctionEvaluator.htm
 ---
 ```java title=Example.java
 import java.io.FileReader;

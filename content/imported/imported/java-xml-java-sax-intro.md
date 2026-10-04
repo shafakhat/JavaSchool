@@ -7,10 +7,7 @@ order: 50321
 source: https://www.java2s.com/Tutorials/Java/Java_XML/0030__Java_SAX_Intro.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java SAX XML parser stands for Simple API for XML (SAX) parser.
 
@@ -501,5 +498,4 @@ class SampleOfXmlLocator extends DefaultHandler {
 }
 ```
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50100
 source: https://www.java2s.com/Tutorials/Java/Scala/3000__Scala_Value_Classes.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 With value classes, Scala allows user-defined value classes that extend AnyVal.
 
@@ -58,5 +55,4 @@ val v = new SomeClass(9)
 v.twice()
 ```
 
-- Next »
 - « Previous

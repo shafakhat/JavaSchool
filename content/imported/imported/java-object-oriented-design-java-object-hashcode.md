@@ -7,10 +7,7 @@ order: 50153
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0170__Java_Object_HashCode.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Hash Code of an Object
 
@@ -61,5 +58,4 @@ class Book {//www.java2s.comprivate String title;
 }
 ```
 
-- Next »
 - « Previous

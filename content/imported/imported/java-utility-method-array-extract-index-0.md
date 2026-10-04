@@ -21,5 +21,3 @@ byte[] out = newbyte[len];
 System.arraycopy(in, offset, out, 0, len);
 return out;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

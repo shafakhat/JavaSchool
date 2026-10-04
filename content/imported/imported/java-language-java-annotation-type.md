@@ -7,10 +7,7 @@ order: 50455
 source: https://www.java2s.com/Tutorials/Java/Java_Language/7010__Java_Annotation_Type.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Java Marker annotation
 
@@ -107,5 +104,4 @@ by specifying the value using the single-member syntax.
 
 In this case, xyz defaults to zero, and value gets the value 1.
 
-- Next »
 - « Previous

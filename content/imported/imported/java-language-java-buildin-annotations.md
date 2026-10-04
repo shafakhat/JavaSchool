@@ -7,10 +7,7 @@ order: 50456
 source: https://www.java2s.com/Tutorials/Java/Java_Language/7030__Java_Buildin_annotations.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Built-In Annotations
 
@@ -72,5 +69,4 @@ You can specify one or more of these values in a @Target annotation. To specify 
 
 @SuppressWarnings specifies that one or more warnings that might be issued by the compiler are to be suppressed. The warnings to suppress are specified by name, in string form. This annotation can be applied to any type of declaration.
 
-- Next »
 - « Previous

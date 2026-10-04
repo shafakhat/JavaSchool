@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1070
 source: https://web.archive.org/web/20061018194856/http://www.java2s.com/Code/Java/Velocity/VelocityComments.htm
 ---
-Velocity Comments
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1078
 source: https://web.archive.org/web/20060923034756/http://www.java2s.com:80/Code/Java/Velocity/VelocityMacroWithParameters.htm
 ---
-Velocity Macro With Parameters
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

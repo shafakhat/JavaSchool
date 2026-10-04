@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1028
 source: https://web.archive.org/web/20100211200112/http://java2s.com/Code/Java/Threads/Coordinatesthreadsformultithreadedoperations.htm
 ---
-Coordinates threads for multi-threaded operations
-
 ```java title=Example.java
 /* Copyright (C) 2005-2008 by Peter Eastman
    This program is free software; you can redistribute it and/or modify it under the

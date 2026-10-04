@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1129
 source: https://web.archive.org/web/20080513030309/http://www.java2s.com/Code/Java/Web-Services-SOA/TheclientdemodemonstratestheuseofnonbrowserJavaScripttocallaCXFserver.htm
 ---
-The client demo demonstrates the use of (non-browser) JavaScript to call a CXF server
-
 ```java title=Example.java
 Hello World Client Demo using JavaScript
 =========================================================

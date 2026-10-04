@@ -7,10 +7,7 @@ order: 50219
 source: https://www.java2s.com/Tutorials/Java/Java_io/0830__Java_io_Jar_File.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## JAR File Format
 
@@ -214,5 +211,4 @@ Use the option t with the jar command to list the table of contents of a JAR fil
 jar tf test.jar
 ```
 
-- Next »
 - « Previous

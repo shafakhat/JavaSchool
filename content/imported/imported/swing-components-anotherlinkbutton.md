@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060524074236/http://www.java2s.com:80/Code
 ---
 Another Link button : Java examples (example source code) » Swing Components » Link Button
 
-Another Link button
-
 ```java title=Example.java
 /**
  * $ $ License.

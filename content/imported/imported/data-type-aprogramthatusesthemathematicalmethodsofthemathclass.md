@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1145
 source: https://web.archive.org/web/20081019004537/http://www.java2s.com:80/Code/Java/Data-Type/AProgramThatUsestheMathematicalMethodsoftheMathClass.htm
 ---
-A Program That Uses the Mathematical Methods of the Math Class
-
 ```java title=Example.java
 public class MainCLass {
   public static void main(String[] args) {

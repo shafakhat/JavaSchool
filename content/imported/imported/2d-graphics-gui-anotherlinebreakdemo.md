@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1042
 source: https://web.archive.org/web/20061018121110/http://www.java2s.com/Code/Java/2D-Graphics-GUI/AnotherLineBreakDemo.htm
 ---
-Another Line Break Demo
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.Dimension;

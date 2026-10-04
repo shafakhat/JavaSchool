@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1124
 source: https://web.archive.org/web/20130821004608/http://java2s.com/Code/Java/JDK-7/SeekableByteChannelfromFilesnewByteChannel.htm
 ---
-SeekableByteChannel from Files.newByteChannel
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.ByteBuffer;

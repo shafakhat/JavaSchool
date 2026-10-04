@@ -7,10 +7,7 @@ order: 50443
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5050__Java_class_variable.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Three types of class variables
 
@@ -154,5 +151,4 @@ publicclass Main{
 
 The code above generates the following result.
 
-- Next »
 - « Previous

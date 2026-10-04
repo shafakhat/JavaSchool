@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1026
 source: https://web.archive.org/web/20090924012627/http://www.java2s.com:80/Code/Java/JPA/DeleteWithCondition.htm
 ---
-Delete With Condition
-
 ```java title=Example.java
 File: Main.java
 import javax.persistence.EntityManager;

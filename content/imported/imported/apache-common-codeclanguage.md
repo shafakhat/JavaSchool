@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20061016100618/http://www.java2s.com/Code/Java/Apache-Common/CodecLanguage.htm
 ---
-Codec Language
-
 ```java title=Example.java
 import org.apache.commons.codec.*;
 import org.apache.commons.codec.language.*;

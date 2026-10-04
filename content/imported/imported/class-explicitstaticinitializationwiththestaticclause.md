@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20090602110626/http://www.java2s.com:80/Code/Java/Class/Explicitstaticinitializationwiththestaticclause.htm
 ---
-Explicit static initialization with the static clause
-
 ```java title=Example.java
 // : c04:ExplicitStatic.java
-// Explicit static initialization with the "static" clause.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Cup {

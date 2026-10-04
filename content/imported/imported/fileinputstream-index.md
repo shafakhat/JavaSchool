@@ -7,10 +7,7 @@ order: 50254
 source: https://www.java2s.com/Tutorials/Java/java.io/FileInputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -30,5 +27,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/FileInputStream/index.html
 - Java FileInputStream.read(byte[] b, int off, int len)
 - Java FileInputStream.skip(long n)
 
-- Next »
 - « Previous

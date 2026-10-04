@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20070706225639/http://www.java2s.com:80/Code/Java/JSTL/JSTLConstructingURLs.htm
 ---
-JSTL Constructing URLs
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %><%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <html>

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060503161810/http://www.java2s.com:80/Code
 ---
 JSTL Tag collaboration with a fixed loop : Java examples (example source code) » JSTL » Loop
 
-JSTL Tag collaboration with a fixed loop
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/core-rt" prefix="c-rt" %>

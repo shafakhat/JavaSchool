@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20060715205909/http://www.java2s.com:80/Code/Java/JSTL/JSTLCookiebasedChatRoom.htm
 ---
-JSTL Cookie based Chat Room
-
 ```java title=Example.java
 //File: chat.jsp
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>

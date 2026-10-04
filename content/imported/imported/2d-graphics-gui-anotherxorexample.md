@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/20060903002913/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AnotherXORexample.htm
 ---
-Another XOR example
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.Graphics;

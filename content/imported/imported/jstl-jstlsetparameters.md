@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20061018125357/http://www.java2s.com/Code/Java/JSTL/JSTLSetParameters.htm
 ---
-JSTL Set Parameters
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <html>

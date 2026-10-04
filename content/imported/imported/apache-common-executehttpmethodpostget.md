@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1029
 source: https://web.archive.org/web/20061026233639/http://www.java2s.com/Code/Java/Apache-Common/ExecuteHttpmethodpostget.htm
 ---
-Execute Http method (post/get)
-
 ```java title=Example.java
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HostConfiguration;

@@ -7,10 +7,7 @@ order: 50151
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0120__Java_Initialization_Block.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Instance Initialization Block
 
@@ -109,5 +106,4 @@ The code above generates the following result.
 
 static initializer cannot throw checked exceptions and it cannot have a return statement.
 
-- Next »
 - « Previous

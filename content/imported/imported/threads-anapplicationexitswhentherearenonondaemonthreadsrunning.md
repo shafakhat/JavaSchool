@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20090602123915/http://www.java2s.com:80/Code/Java/Threads/Anapplicationexitswhentherearenonondaemonthreadsrunning.htm
 ---
-An application exits when there are no non-daemon threads running.
-
 ```java title=Example.java
 class MyThread extends Thread {
   MyThread() {

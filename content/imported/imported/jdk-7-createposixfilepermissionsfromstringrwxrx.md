@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20130820194946/http://java2s.com/Code/Java/JDK-7/CreatePosixFilePermissionsfromstringrwxrx.htm
 ---
-Create PosixFilePermissions from string rwxr-x---
-
 ```java title=Example.java
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;

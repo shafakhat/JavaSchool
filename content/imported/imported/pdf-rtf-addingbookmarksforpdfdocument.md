@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20070505041602/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingBookmarksforPDFdocument.htm
 ---
-Adding Bookmarks for PDF document
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

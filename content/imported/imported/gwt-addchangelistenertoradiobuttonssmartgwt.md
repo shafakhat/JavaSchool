@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20111124233228/http://java2s.com/Code/Java/GWT/AddchangelistenertoRadiobuttonsSmartGWT.htm
 ---
-Add change listener to Radio buttons (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

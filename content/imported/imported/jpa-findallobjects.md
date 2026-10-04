@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20090509084107/http://www.java2s.com:80/Code/Java/JPA/FindAllObjects.htm
 ---
-Find All Objects
-
 ```java title=Example.java
 File: Professor.java
 import javax.persistence.Entity;

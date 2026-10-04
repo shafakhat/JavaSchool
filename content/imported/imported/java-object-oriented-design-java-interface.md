@@ -7,10 +7,7 @@ order: 50179
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0500__Java_interface.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## What Is an Interface?
 
@@ -209,5 +206,4 @@ polymorphism is an ability of an object to provide its different views.
 
 Interfaces let us create a polymorphic object.
 
-- Next »
 - « Previous

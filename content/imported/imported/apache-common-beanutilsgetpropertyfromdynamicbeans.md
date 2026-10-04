@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20070116160757/http://www.java2s.com:80/Code/Java/Apache-Common/BeanUtilsgetPropertyfromDynamicBeans.htm
 ---
-BeanUtils get Property from Dynamic Beans
-
 ```java title=Example.java
 import org.apache.commons.beanutils.DynaBean;
 import org.apache.commons.beanutils.DynaClass;

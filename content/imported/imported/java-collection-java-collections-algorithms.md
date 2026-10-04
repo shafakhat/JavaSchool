@@ -7,10 +7,7 @@ order: 50342
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0400__Java_Collections_Algorithms.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Sort a List
 
@@ -390,5 +387,4 @@ Set<String> singletonSet  = Collections.singleton("Lonely");
 // Throws a  runtime exception since a singleton set is immutable singletonSet.add("Hello");
 ```
 
-- Next »
 - « Previous

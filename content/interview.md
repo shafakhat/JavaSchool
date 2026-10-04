@@ -2,7 +2,7 @@
 title: Java Interview Questions
 nav: Interview Questions
 description: Interview preparation hub - 115-question master list plus focused topic banks (collections, threads, strings, Java 8, JDBC, web) and OCJP practice tests.
-section: Interview & Certification
+section: Interview Prep
 order: 10
 ---
 

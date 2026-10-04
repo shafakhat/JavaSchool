@@ -7,10 +7,7 @@ order: 50355
 source: https://www.java2s.com/Tutorials/Java/java.util/HashMap/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -34,5 +31,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/HashMap/index.html
 - Java HashMap.size()
 - Java HashMap.values()
 
-- Next »
 - « Previous

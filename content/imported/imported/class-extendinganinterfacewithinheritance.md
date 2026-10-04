@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/20081230150644/http://www.java2s.com:80/Code/Java/Class/Extendinganinterfacewithinheritance.htm
 ---
-Extending an interface with inheritance
-
 ```java title=Example.java
 // : c08:HorrorShow.java
-// Extending an interface with inheritance.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 interface Monster {

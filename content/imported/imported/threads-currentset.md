@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20100210133714/http://java2s.com/Code/Java/Threads/Currentset.htm
 ---
-Current set
-
 ```java title=Example.java
 /*
  * Copyright Ben Meadowcroft 2006

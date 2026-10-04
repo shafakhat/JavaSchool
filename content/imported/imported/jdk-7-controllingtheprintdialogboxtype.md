@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20130820205858/http://java2s.com/Code/Java/JDK-7/Controllingtheprintdialogboxtype.htm
 ---
-Controlling the print dialog box type
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.FlowLayout;

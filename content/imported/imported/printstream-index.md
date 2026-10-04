@@ -7,10 +7,7 @@ order: 50276
 source: https://www.java2s.com/Tutorials/Java/java.io/PrintStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -58,5 +55,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/PrintStream/index.html
 - Java PrintStream.write(byte[] buf, int off, int len)
 - Java PrintStream.write(int b)
 
-- Next »
 - « Previous

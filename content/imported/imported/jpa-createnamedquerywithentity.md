@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/20081220113651/http://www.java2s.com:80/Code/Java/JPA/CreateNamedQueryWithEntity.htm
 ---
-Create Named Query With Entity
-
 ```java title=Example.java
 File: Professor.java
 import java.util.ArrayList;

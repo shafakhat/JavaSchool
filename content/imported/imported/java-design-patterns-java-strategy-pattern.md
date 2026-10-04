@@ -7,10 +7,7 @@ order: 50132
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0240__Java_Strategy_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 In Strategy pattern, an algorithm can be changed at run time.
 
@@ -66,5 +63,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

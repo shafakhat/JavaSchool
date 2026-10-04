@@ -7,10 +7,7 @@ order: 50147
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0080__Java_this.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## What Is this?
 
@@ -86,5 +83,4 @@ publicclass Main {
 }
 ```
 
-- Next »
 - « Previous

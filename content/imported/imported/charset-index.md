@@ -7,10 +7,7 @@ order: 50301
 source: https://www.java2s.com/Tutorials/Java/java.nio.charset/Charset/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -35,5 +32,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio.charset/Charset/index.htm
 - Java Charset.newEncoder()
 - Java Charset.toString()
 
-- Next »
 - « Previous

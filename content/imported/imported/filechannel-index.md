@@ -7,10 +7,7 @@ order: 50305
 source: https://www.java2s.com/Tutorials/Java/java.nio.channels/FileChannel/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -26,5 +23,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio.channels/FileChannel/inde
 - Java FileChannel.tryLock()
 - Java FileChannel.write(ByteBuffer src)
 
-- Next »
 - « Previous

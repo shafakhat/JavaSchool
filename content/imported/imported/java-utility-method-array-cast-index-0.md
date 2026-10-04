@@ -31,5 +31,3 @@ for (int i = 0; i < b.length; i++)
     b[i] = (int) a[i];
 return b;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

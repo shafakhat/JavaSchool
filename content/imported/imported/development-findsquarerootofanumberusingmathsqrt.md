@@ -1,10 +1,10 @@
 ---
 title: Find square root of a number using Math.sqrt
 nav: Find square root of a numb...
-description: Imported from java2s.com: Find square root of a number using Math.sqrt
-section: Imported
-order: 20011
-source: http://www.java2s.com:80/Tutorial/Java/0120__Development/FindsquarerootofanumberusingMathsqrt.htm
+description: Imported from the java2s.com archive: Find square root of a number using Math.sqrt
+section: Imported - java2s Archive
+order: 1008
+source: https://web.archive.org/web/20091215012254/http://www.java2s.com:80/Tutorial/Java/0120__Development/FindsquarerootofanumberusingMathsqrt.htm
 ---
 ```java title=Example.java
 public class Main {

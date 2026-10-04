@@ -7,10 +7,7 @@ order: 50407
 source: https://www.java2s.com/Tutorials/Java/Java_Reflection/0070__Java_Create_Objects.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 We can use reflection to create objects of a class dynamically. by invoking one of the constructors.
 
@@ -135,5 +132,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

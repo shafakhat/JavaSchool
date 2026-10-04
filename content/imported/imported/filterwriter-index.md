@@ -7,10 +7,7 @@ order: 50263
 source: https://www.java2s.com/Tutorials/Java/java.io/FilterWriter/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -20,5 +17,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/FilterWriter/index.html
 - Java FilterWriter.write(int c)
 - Java FilterWriter.write(String str, int off, int len)
 
-- Next »
 - « Previous

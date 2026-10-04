@@ -6,12 +6,9 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20111124051228/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Adaptiteratortoiterable.htm
 ---
-Adapt iterator to iterable
-
 ```java title=Example.java
 import java.util.Iterator;
 /**
- * Adapt iterator to iterable
  *
  * @author Hong Hong
  *

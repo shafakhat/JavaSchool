@@ -7,10 +7,7 @@ order: 50165
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0300__Java_Inheritance.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A subclass can inherit from the superclass. A superclass is also known as a base class or a parent class. A subclass is also known as a derived class or a child class.
 
@@ -223,5 +220,4 @@ publicclass A  {
 }
 ```
 
-- Next »
 - « Previous

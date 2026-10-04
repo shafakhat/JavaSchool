@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20090813161524/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/booleanjavasqlDriverjdbcCompliant.htm
 ---
-boolean java.sql.Driver.jdbcCompliant()
-
 ```java title=Example.java
 import java.sql.Driver;
 import java.sql.DriverManager;

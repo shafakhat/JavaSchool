@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20090119071857/http://java2s.com:80/Code/Java/EJB3/DeleteEntityWithEjb.htm
 ---
-Delete Entity With Ejb
-
 ```java title=Example.java
 File: EmployeeService.java
 import java.util.Collection;

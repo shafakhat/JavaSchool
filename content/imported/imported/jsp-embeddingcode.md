@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20070119000732/http://www.java2s.com:80/Code/Java/JSP/EmbeddingCode.htm
 ---
-Embedding Code
-
 ```java title=Example.java
 <%!
   String[] names = {"Green", "White", "Black", "Red"};

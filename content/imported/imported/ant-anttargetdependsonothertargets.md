@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20091106091539/http://www.java2s.com:80/Code/Java/Ant/Anttargetdependsonothertargets.htm
 ---
-Ant target depends on other targets
-
 ```java title=Example.java
 <project name="YourName" default="all">
   <target name="all" depends="init,clean,compile,createJars,copyBuild" >

@@ -7,10 +7,7 @@ order: 50140
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0040__Java_Method.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A method in a class defines the behavior of the objects.
 
@@ -119,5 +116,4 @@ You need to observe the following rules about the usage of local variables.
 - A local variable can be declared anywhere in the body of a method. However, it must be declared before it is used.
 - A local variable hides the name of an instance variable and a class variable with the same name.
 
-- Next »
 - « Previous

@@ -56,7 +56,6 @@ import java.util.Date;
 public class Main {
   //-----------------------------------------------------------------------
   /**
-   * Checks if two date objects represent the same instant in time.
    *
    * This method compares the long millisecond time of the two objects.
    *

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1050
 source: https://web.archive.org/web/20090602102412/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AmapdeclaredtoholdobjectsofatypeTcanalsoholdobjectsthatextendfromT.htm
 ---
-A map declared to hold objects of a type T can also hold objects that extend from T
-
 ```java title=Example.java
 import java.util.HashMap;
 import java.util.Map;

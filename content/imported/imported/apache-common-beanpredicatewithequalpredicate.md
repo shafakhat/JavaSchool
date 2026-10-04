@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20100212033357/http://java2s.com/Code/Java/Apache-Common/BeanPredicatewithEqualPredicate.htm
 ---
-Bean Predicate with Equal Predicate
-
 ```java title=Example.java
 package com.googelcode.jpractices.common;
 import org.apache.commons.lang.builder.ToStringBuilder;

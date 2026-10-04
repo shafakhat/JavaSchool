@@ -7,10 +7,7 @@ order: 50230
 source: https://www.java2s.com/Tutorials/Java/Java_io/0975__Java_nio_Paths_Operations.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Comparing Paths
 
@@ -218,5 +215,4 @@ import java.nio.file.Paths;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

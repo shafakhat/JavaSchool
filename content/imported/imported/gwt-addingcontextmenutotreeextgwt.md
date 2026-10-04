@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20100821202549/http://www.java2s.com:80/Code/Java/GWT/AddingContextMenutoTreeExtGWT.htm
 ---
-Adding Context Menu to Tree (Ext GWT)
-
 ```java title=Example.java
 /*
  * Ext GWT - Ext for GWT

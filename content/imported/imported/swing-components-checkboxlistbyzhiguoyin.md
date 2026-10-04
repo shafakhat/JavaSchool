@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/20081227095549/http://www.java2s.com:80/Code/Java/Swing-Components/CheckBoxListbyZhiguoYin.htm
 ---
-CheckBox List by Zhiguo Yin
-
 ```java title=Example.java
 /*
 author: yinzhiguo

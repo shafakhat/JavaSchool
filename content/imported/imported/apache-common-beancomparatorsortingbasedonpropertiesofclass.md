@@ -7,7 +7,6 @@ order: 1004
 source: https://web.archive.org/web/20091208131033/http://www.java2s.com:80/Code/Java/Apache-Common/BeanComparatorSortingbasedonPropertiesofclass.htm
 ---
 Bean Comparator ( Sorting based on Properties of class ) : Collection « Apache Common « Java
-Bean Comparator ( Sorting based on Properties of class )
 
 ```java title=Example.java
 package com.googelcode.jpractices.common;

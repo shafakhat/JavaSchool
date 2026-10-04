@@ -7,10 +7,7 @@ order: 50236
 source: https://www.java2s.com/Tutorials/Java/Java_io/1030__Java_nio_File_Owner_Permissions.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 There are three ways to manage the owner of a file:
 
@@ -303,5 +300,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

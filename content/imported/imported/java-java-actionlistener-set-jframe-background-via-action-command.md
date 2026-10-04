@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102122101/http://www.java2s.com/ref/jav
 
 ## Description
 
-Java ActionListener set JFrame background via action command
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.FlowLayout;

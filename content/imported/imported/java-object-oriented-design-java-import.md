@@ -7,10 +7,7 @@ order: 50139
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0030__Java_import.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 An import declaration is used to import any type into a compilation unit.
 
@@ -222,5 +219,4 @@ The following are some important rules about static import declaration.
 - Using single-static-import declaration to import two static members with the same simple name is not allowed.
 - If a static member is imported using a single-static import declaration and there exists a static member in the same class with the same name, the static member in the class is used.
 
-- Next »
 - « Previous

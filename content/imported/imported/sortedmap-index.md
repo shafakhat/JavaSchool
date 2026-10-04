@@ -7,10 +7,7 @@ order: 50371
 source: https://www.java2s.com/Tutorials/Java/java.util/SortedMap/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -24,5 +21,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/SortedMap/index.html
 - Java SortedMap.tailMap(K fromKey)
 - Java SortedMap.values()
 
-- Next »
 - « Previous

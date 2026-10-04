@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1050
 source: https://web.archive.org/web/20061026215655/http://www.java2s.com/Code/Java/JSP/GetSetPropertiesJSTL.htm
 ---
-Get Set Properties JSTL
-
 ```java title=Example.java
 //File: index.jsp
 <html>

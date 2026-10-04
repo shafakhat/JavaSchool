@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/20070128200516/http://www.java2s.com:80/Code/Java/JSP/DeclaringMultipleMethods.htm
 ---
-Declaring Multiple Methods
-
 ```java title=Example.java
 <HTML>
   <HEAD>

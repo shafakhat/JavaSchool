@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1102
 source: https://web.archive.org/web/20090106012414/http://www.java2s.com:80/Code/Java/Class/Withconcreteorabstractclassesinnerclassesaretheonlywaytoproducetheeffect.htm
 ---
-With concrete or abstract classes, inner classes are the only way to produce the effect
-
 ```java title=Example.java
 // : c08:MultiImplementation.java
-// With concrete or abstract classes, inner classes are the only way to produce the effect
 // of "multiple implementation inheritance."
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.

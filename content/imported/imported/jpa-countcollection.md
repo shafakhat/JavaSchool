@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1015
 source: https://web.archive.org/web/20081209042659/http://www.java2s.com:80/Code/Java/JPA/CountCollection.htm
 ---
-Count Collection
-
 ```java title=Example.java
 File: Main.java
 import javax.persistence.EntityManager;

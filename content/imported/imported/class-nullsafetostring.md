@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1048
 source: https://web.archive.org/web/20091030211159/http://www.java2s.com:80/Code/Java/Class/NullSafeToString.htm
 ---
-Null Safe To String
-
 ```java title=Example.java
 import java.lang.reflect.Array;
 import java.util.Arrays;

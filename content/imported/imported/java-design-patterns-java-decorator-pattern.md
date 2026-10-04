@@ -7,10 +7,7 @@ order: 50121
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0100__Java_Decorator_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Decorator pattern adds new functionality an existing object without chaining its structure.
 
@@ -69,5 +66,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

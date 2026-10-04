@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20071130085318/http://www.java2s.com:80/Code/Java/PDF-RTF/BigTableWithHeaderRows.htm
 ---
-Big Table With Header Rows
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

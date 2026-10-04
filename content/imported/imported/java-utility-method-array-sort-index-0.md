@@ -126,5 +126,3 @@ for (int i = 0; i < counts.length; i++) {
     current += counts[i];
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

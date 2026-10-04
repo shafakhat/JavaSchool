@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20070503171642/http://www.java2s.com:80/Code/Java/Spring/AspectHelloWorldExample.htm
 ---
-Aspect Hello World Example
-
 ```java title=Example.java
 /*
 Pro Spring

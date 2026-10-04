@@ -7,10 +7,7 @@ order: 50154
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0180__Java_Object_Equals.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The following code shows how to implement equals() and hashCode() Methods
 
@@ -78,5 +75,4 @@ Here are specifications for the equals() method's implementation. Assume that x,
 - Comparison with null reference: An object of any class should not be equal to a null reference. The expression x.equals(null) should always return false.
 - Relationship with hashCode() method: If x.equals(y) returns true, x.hashCode() must return the same value as y.hashCode().
 
-- Next »
 - « Previous

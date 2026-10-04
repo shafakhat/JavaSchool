@@ -7,10 +7,7 @@ order: 50282
 source: https://www.java2s.com/Tutorials/Java/java.io/SequenceInputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -24,5 +21,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/SequenceInputStream/index.
 - Java SequenceInputStream.read()
 - Java SequenceInputStream .read (byte[] b, int off, int len)
 
-- Next »
 - « Previous

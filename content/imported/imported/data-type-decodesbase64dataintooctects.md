@@ -167,7 +167,6 @@ public final class  Base64 {
         return encodedData;
     }
     /**
-     * Decodes Base64 data into octects
      *
      * @param base64Data Byte array containing Base64 data
      * @return Array containind decoded data.
@@ -245,7 +244,6 @@ public final class  Base64 {
         return decodedData;
     }
 //    /**
-//     * Decodes Base64 data into octects
 //     *
 //     * @param base64Data String containing Base64 data
 //     * @return string containing decoded data.

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1080
 source: https://web.archive.org/web/20071105053931/http://www.java2s.com:80/Code/Java/Velocity/VelocityMathToolDivide.htm
 ---
-Velocity MathTool Divide
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

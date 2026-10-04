@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1100
 source: https://web.archive.org/web/20130223214959/http://www.java2s.com:80/Code/Java/JDK-7/Mixingheavyweightandlightweightcomponents.htm
 ---
-Mixing heavyweight and lightweight components
-
 ```java title=Example.java
 import javax.swing.SwingUtilities;
 import java.awt.Button;

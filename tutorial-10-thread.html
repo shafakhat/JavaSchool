@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thread - Java Tutorial - JavaSchool</title>
+<meta name="description" content="Thread: java2s tutorial chapter with tabs per sub-topic, 25 archived articles imported.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-chapter">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-10-thread.html">Thread</a></nav>
+    <h1>10. Thread</h1>
+    <p><strong>22 sub-topics</strong> &middot; <strong>73 articles</strong> on java2s &middot; <strong>25</strong> imported here, grouped into tabs below.</p>
+    
+    <div class="tabs">
+      <div class="tab-bar"><button type="button" class="tab-btn active" data-tab="tab-0" aria-selected="true">Create Thread <span class="tab-count">13</span></button><button type="button" class="tab-btn" data-tab="tab-1" aria-selected="false">Producer and consumer <span class="tab-count">2</span></button><button type="button" class="tab-btn" data-tab="tab-2" aria-selected="false">Thread Priority <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-3" aria-selected="false">Thread Join <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-4" aria-selected="false">Semaphore <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-5" aria-selected="false">Thread Safe Collections <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-6" aria-selected="false">Wait Notify <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-7" aria-selected="false">Thread Pool <span class="tab-count">2</span></button><button type="button" class="tab-btn" data-tab="tab-8" aria-selected="false">Other examples <span class="tab-count">3</span></button></div>
+      <div class="tab-panel" id="tab-0"><h3 id="add-thread-to-thread-group">Add thread to thread group</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class ThreadGroupDemo1 {
+  public static void main(String[] args) {
+    ThreadGroup tg = new ThreadGroup("My ThreadGroup");
+    MyThread mt = new MyThread(tg, "My Thread");
+    mt.start();
+  }
+}
+class MyThread extends Thread {
+  MyThread(ThreadGroup tg, String name) {
+    super(tg, name);
+  }
+  public void run() {
+    ThreadGroup tg = getThreadGroup();
+    System.out.println(tg.getName());
+  }
+}</code></pre></div>
+<h3 id="creating-a-thread-create-thread-thread-java-tutorial">Creating a Thread : Create Thread : Thread : Java Tutorial</h3>
+<p>A thread is a basic processing unit to which an operating system allocates processor time, and more than one thread can be executing code inside a process. (Java 5: A Beginner's Tutorial by Budi Kurniawan Brainy Software Corp. ?006 Every Java program has at least one thread, the thread that executes the Java program. It is created when you invoke the static main method of your Java class. There are two ways to create a thread. Extend the java.lang.Thread class Implement the java.lang.Runnable interface. Once you have a Thread object, you call its start method to start the thread. When a thread is started, its run method is executed. Once the run method returns or throws an exception, the thread dies and will be garbage-collected. Every Thread has a state and a Thread can be in one of these six states. new. A state in which a thread has not been started. runnable. A state in which a thread is executing. blocked. A state in which a thread is waiting for a lock to access an object. waiting. A state in which a thread is waiting indefinitely for another thread to perform an action. timed__waiting. A state in which a thread is waiting for up to a specified period of time for another thread to perform an action. terminated. A state in which a thread has exited. The values that represent these states are encapsulated in the java.lang.Thread.State enum. The members of this enum are NEW, RUNNABLE, BLOCKED, WAITING, TIMED__WAITING, and TERMINATED.</p>
+<h3 id="creating-thread">Creating Thread</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
+class TryThread extends Thread {
+  public TryThread(String firstName, String secondName, long delay) {
+    this.firstName = firstName;
+    this.secondName = secondName;
+    aWhile = delay;
+    setDaemon(true);
+  }
+  public void run() {
+    try {
+      while (true) {
+        System.out.print(firstName);
+        sleep(aWhile);
+        System.out.print(secondName + "\n");
+      }
+    } catch (InterruptedException e) {
+      System.out.println(firstName + secondName + e);
+    }
+  }
+  private String firstName;
+  private String secondName;
+  private long aWhile;
+}
+public class MainClass {
+  public static void main(String[] args) {
+    Thread first = new TryThread("A ", "a  ", 200L);
+    Thread second = new TryThread("B ", "b ", 300L);
+    Thread third = new TryThread("C ", "c ", 500L);
+    System.out.println("Press Enter when you have had enough...\n");
+    first.start();
+    second.start();
+    third.start();
+    try {
+      System.in.read();
+      System.out.println("Enter pressed...\n");
+    } catch (IOException e) {
+      System.out.println(e);
+    }
+    return;
+  }
+}</code></pre></div>
+<h3 id="creating-thread-objects">Creating Thread Objects</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
+class TryThread implements Runnable {
+  public TryThread(String firstName, String secondName, long delay) {
+    this.firstName = firstName;
+    this.secondName = secondName;
+    aWhile = delay;
+  }
+  public void run() {
+    try {
+      while (true) {
+        System.out.print(firstName);
+        Thread.sleep(aWhile);
+        System.out.print(secondName + "\n");
+      }
+    } catch (InterruptedException e) {
+      System.out.println(firstName + secondName + e);
+    }
+  }
+  private String firstName;
+  private String secondName;
+  private long aWhile;
+}
+public class MainClass {
+  public static void main(String[] args) {
+    Thread first = new Thread(new TryThread("A ", "a ", 200L));
+    Thread second = new Thread(new TryThread("B ", "b ", 300L));
+    Thread third = new Thread(new TryThread("C ", "c ", 500L));
+    System.out.println("Press Enter when you have had enough...\n");
+    first.start();
+    second.start();
+    third.start();
+    try {
+      System.in.read();
+      System.out.println("Enter pressed...\n");
+    } catch (IOException e) {
+      System.out.println(e);
+    }
+    System.out.println("Ending main()");
+    return;
+  }
+}</code></pre></div>
+<h3 id="determining-if-the-current-thread-is-holding-a-synchronized-lock">Determining If the Current Thread Is Holding a Synchronized Lock</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] argv) throws Exception {
+    Object o = new Object();
+    System.out.println(Thread.holdsLock(o));
+    synchronized (o) {
+      System.out.println(Thread.holdsLock(o));
+    }
+  }
+}</code></pre></div>
+<h3 id="interrupt-a-thread">Interrupt a thread.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyThread implements Runnable {
+  public void run() {
+    try {
+      Thread.sleep(30000);
+      for (int i = 1; i &lt; 10; i++) {
+        if (Thread.interrupted()) {
+          System.out.println("interrupted.");
+          break;
+        }
+      }
+    } catch (Exception exc) {
+      System.out.println(Thread.currentThread().getName() + " interrupted.");
+    }
+    System.out.println(Thread.currentThread().getName() + " exiting.");
+  }
+}
+public class Main {
+  public static void main(String args[]) throws Exception {
+    Thread thrd = new Thread(new MyThread(), "MyThread #1");
+    Thread thrd2 = new Thread(new MyThread(), "MyThread #2");
+    thrd.start();
+    Thread.sleep(100);
+    thrd.interrupt();
+    thrd2.start();
+    Thread.sleep(400);
+    thrd2.interrupt();
+  }
+}</code></pre></div>
+<h3 id="monitor-a-threads-status">Monitor a thread's status.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyThread extends Thread{
+  boolean waiting= true;
+  boolean ready= false;
+  public void run() {
+    String thrdName = Thread.currentThread().getName();
+    System.out.println(thrdName + " starting.");
+    while(waiting)
+      System.out.println("waiting:"+waiting);
+    System.out.println("waiting...");
+    startWait();
+    try {
+      Thread.sleep(10000);
+    } catch(Exception exc) {
+      System.out.println(thrdName + " interrupted.");
+    }
+    System.out.println(thrdName + " terminating.");
+  }
+  synchronized void startWait() {
+    try {
+      while(!ready){
+        wait();
+      }
+    } catch(InterruptedException exc) {
+      System.out.println("wait() interrupted");
+    }
+  }
+  synchronized void startWork() {
+    ready = true;
+    notify();
+  }
+}
+public class Main {
+  public static void main(String args[]) throws Exception{
+      MyThread thrd = new MyThread();
+      thrd.setName("MyThread #1");
+      System.out.println(thrd.getName()+" Alive:"+thrd.isAlive()+" State:" + thrd.getState() );
+      thrd.start();
+      Thread.sleep(50);
+      System.out.println(thrd.getName()+" Alive:"+thrd.isAlive()+" State:" + thrd.getState() );
+      thrd.waiting = false;
+      Thread.sleep(50);
+      System.out.println(thrd.getName()+" Alive:"+thrd.isAlive()+" State:" + thrd.getState() );
+      thrd.startWork();
+      Thread.sleep(50);
+      System.out.println(thrd.getName()+" Alive:"+thrd.isAlive()+" State:" + thrd.getState() );
+      if(thrd.isAlive())
+        System.out.println("alive");
+      System.out.println(thrd.getName()+" Alive:"+thrd.isAlive()+" State:" + thrd.getState() );
+  }
+}</code></pre></div>
+<h3 id="pausing-a-thread">Pausing a Thread</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] argv) throws Exception {
+    MyThread thread = new MyThread();
+    thread.start();
+    while (true) {
+      synchronized (thread) {
+        thread.pause = true;
+      }
+      synchronized (thread) {
+        thread.pause = false;
+        thread.notify();
+      }
+    }
+  }
+}
+class MyThread extends Thread {
+  boolean pause = false;
+  public void run() {
+    while (true) {
+      synchronized (this) {
+        while (pause) {
+          try {
+            wait();
+          } catch (Exception e) {
+          }
+        }
+      }
+    }
+  }
+}</code></pre></div>
+<h3 id="stopping-a-thread">Stopping a Thread</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] argv) throws Exception {
+    MyThread thread = new MyThread();
+    thread.start();
+    thread.stop = true;
+  }
+}
+class MyThread extends Thread {
+  boolean stop = false;
+  public void run() {
+    while (true) {
+      if (stop) {
+        return;
+      }
+    }
+  }
+}</code></pre></div>
+<h3 id="stopping-a-thread-1">Stopping a Thread</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class CounterThread extends Thread {
+  public boolean stopped = false;
+  int count = 0;
+  public void run() {
+    while (!stopped) {
+      try {
+        sleep(1000);
+      } catch (InterruptedException e) {
+      }
+      System.out.println(count++);
+      ;
+    }
+  }
+}
+public class MainClass {
+  public static void main(String[] args) {
+    CounterThread thread = new CounterThread();
+    thread.start();
+    try {
+      Thread.sleep(10000);
+    } catch (InterruptedException e) {
+    }
+    thread.stopped = true;
+    System.out.println("exit");
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+exit</code></pre></div>
+<h3 id="stopping-a-thread-with-interrupt">Stopping a Thread with interrupt()</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class TryThread extends Thread {
+  public TryThread(String firstName, String secondName, long delay) {
+    this.firstName = firstName;
+    this.secondName = secondName;
+    aWhile = delay;
+    setDaemon(true);
+  }
+  public void run() {
+    try {
+      while (true) {
+        System.out.print(firstName);
+        sleep(aWhile);
+        System.out.print(secondName + "\n");
+      }
+    } catch (InterruptedException e) {
+      System.out.println(firstName + secondName + e);
+    }
+  }
+  private String firstName;
+  private String secondName;
+  private long aWhile;
+}
+public class MainClass {
+  public static void main(String[] args) {
+    Thread first = new TryThread("A ", "a ", 200L);
+    Thread second = new TryThread("B ", "b ", 300L);
+    Thread third = new TryThread("C ", "c ", 500L);
+    first.start();
+    second.start();
+    third.start();
+    try {
+      Thread.sleep(3000);
+      first.interrupt();
+      second.interrupt();
+      third.interrupt();
+    } catch (Exception e) {
+      System.out.println(e);
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+A B C a
+A b
+B a
+A c
+C a
+A b
+B a
+A b
+B c
+a
+C A a
+A b
+B a
+A c
+C b
+B a
+A a
+A b
+B c
+C a
+A b
+B a
+A a
+A b
+B c
+C a
+A b
+B a
+A c
+B b java.lang.InterruptedException: sleep interrupted
+C A a java.lang.InterruptedException: sleep interrupted
+C c java.lang.InterruptedException: sleep interrupted</code></pre></div>
+<h3 id="to-determine-whether-a-thread-has-been-interrupted">To determine whether a thread has been interrupted</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class TryThread extends Thread {
+  public TryThread(String firstName, String secondName, long delay) {
+    this.firstName = firstName;
+    this.secondName = secondName;
+    aWhile = delay;
+    setDaemon(true);
+  }
+  public void run() {
+    try {
+      while (true) {
+        System.out.print(firstName);
+        sleep(aWhile);
+        System.out.print(secondName + "\n");
+      }
+    } catch (InterruptedException e) {
+      System.out.println(firstName + secondName + e);
+    }
+  }
+  private String firstName;
+  private String secondName;
+  private long aWhile;
+}
+public class MainClass {
+  public static void main(String[] args) {
+    Thread first = new TryThread("A ", "a ", 200L);
+    Thread second = new TryThread("B ", "b ", 300L);
+    Thread third = new TryThread("C ", "c ", 500L);
+    first.start();
+    second.start();
+    third.start();
+    try {
+      Thread.sleep(3000);
+    } catch (Exception e) {
+      System.out.println(e);
+    }
+      first.interrupt();
+      second.interrupt();
+      third.interrupt();
+    if (first.isInterrupted()) {
+      System.out.println("First thread has been interrupted.");
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+A B C a
+A b
+B a
+A c
+C a
+A b
+B a
+A b
+B c
+C a
+A a
+A b
+B a
+A c
+C b
+B a
+A a
+A b
+B c
+C a
+A b
+B a
+A a
+A b
+B c
+C a
+A b
+B a
+A c
+C C c java.lang.InterruptedException: sleep interrupted
+First thread has been interrupted.
+B b java.lang.InterruptedException: sleep interrupted
+A a java.lang.InterruptedException: sleep interrupted</code></pre></div>
+<h3 id="using-a-thread-local-variable">Using a Thread-Local Variable</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String[] argv) throws Exception {
+    ThreadLocal localThread = new ThreadLocal();
+    Object o = localThread.get();
+    localThread.set(o);
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-1" style="display:none"><h3 id="a-queuelinkedlist-is-used-to-coordinate-work-between-a-producer-and-a-set-of-worker-threads">A queue(LinkedList) is used to coordinate work between a producer and a set of worker threads.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.LinkedList;
+public class Main {
+  public static void main(String[] argv) {
+    WorkQueue queue = new WorkQueue();
+    int numWorkers = 2;
+    Worker[] workers = new Worker[numWorkers];
+    for (int i = 0; i &lt; workers.length; i++) {
+      workers[i] = new Worker(queue);
+      workers[i].start();
+    }
+    for (int i = 0; i &lt; 100; i++) {
+      queue.addWork(i);
+    }
+  }
+}
+class WorkQueue {
+  LinkedList&lt;Object&gt; queue = new LinkedList&lt;Object&gt;();
+  public synchronized void addWork(Object o) {
+    queue.addLast(o);
+    notify();
+  }
+  public synchronized Object getWork() throws InterruptedException {
+    while (queue.isEmpty()) {
+      wait();
+    }
+    return queue.removeFirst();
+  }
+}
+class Worker extends Thread {
+  WorkQueue q;
+  Worker(WorkQueue q) {
+    this.q = q;
+  }
+  public void run() {
+    try {
+      while (true) {
+        Object x = q.getWork();
+        if (x == null) {
+          break;
+        }
+        System.out.println(x);
+      }
+    } catch (InterruptedException e) {
+    }
+  }
+}</code></pre></div>
+<h3 id="producer-consumer-and-queue">Producer, consumer and Queue</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Vector;
+class Producer extends Thread {
+  Queue queue;
+  Producer(Queue queue) {
+    this.queue = queue;
+  }
+  public void run() {
+    int i = 0;
+    while(true) {
+      queue.add(i++);
+    }
+  }
+}
+class Consumer extends Thread {
+  String str;
+  Queue queue;
+  Consumer(String str, Queue queue) {
+    this.str = str;
+    this.queue = queue;
+  }
+  public void run() {
+    while(true) {
+      System.out.println(str + ": " + queue.remove());
+    }
+  }
+}
+class Queue {
+  private final static int SIZE = 5;
+  private Vector queue = new Vector();
+  private int count = 0;
+  synchronized void add(int i) {
+    while(count == SIZE) {
+      try {
+        wait();
+      }
+      catch(InterruptedException ie) {
+        ie.printStackTrace();
+        System.exit(0);
+      }
+    }
+    queue.addElement(new Integer(i));
+    ++count;
+    notifyAll();
+  }
+  synchronized int remove() {
+    while(count == 0) {
+      try {
+        wait();
+      }
+      catch(InterruptedException ie) {
+        ie.printStackTrace();
+        System.exit(0);
+      }
+    }
+    Integer iobj = (Integer)queue.firstElement();
+    queue.removeElement(iobj);
+    --count;
+    notifyAll();
+    return iobj.intValue();
+  }
+}
+class ProducerConsumers {
+  public static void main(String args[]) {
+    Queue queue = new Queue();
+    new Producer(queue).start();
+    new Consumer("ConsumerA", queue).start();
+    new Consumer("ConsumerB", queue).start();
+    new Consumer("ConsumerC", queue).start();
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-2" style="display:none"><h3 id="change-thread-priority">Change Thread Priority</h3>
+<ul><li>A priority tells the operating system how much resource should be given to each thread.</li><li>A high-priority thread is scheduled to receive more time on the CPU than a low-priority thread. A method called Thread.setPriority() sets the priority of a thread. Thread class constants can be used to set these.</li></ul>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class CounterThread extends Thread {
+  String name;
+  public CounterThread(String name) {
+    super();
+    this.name = name;
+  }
+  public void run() {
+    int count = 0;
+    while (true) {
+      try {
+        sleep(100);
+      } catch (InterruptedException e) {
+      }
+      if (count == 50000)
+        count = 0;
+      System.out.println(name+":" + count++);
+    }
+  }
+}
+public class MainClass{
+    public static void main(String[] args) {
+      CounterThread thread1 = new CounterThread("thread1");
+      thread1.setPriority(10);
+      CounterThread thread2 = new CounterThread("thread2");
+      thread2.setPriority(1);
+      thread2.start();
+      thread1.start();
+    }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-3" style="display:none"><h3 id="thread-join-demo">Thread Join Demo</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Thread Joinclass TryThread extends Thread {
+  public TryThread(String firstName, String secondName, long delay) {
+    this.firstName = firstName;
+    this.secondName = secondName;
+    aWhile = delay;
+    setDaemon(true);
+  }
+  public void run() {
+    try {
+      while (total &lt; 1000) {
+        System.out.print(firstName);
+        sleep(aWhile);
+        total += aWhile;
+        System.out.print(secondName + "\n");
+      }
+      System.out.print(secondName + " stoped.\n");
+    } catch (InterruptedException e) {
+      System.out.println(firstName + secondName + e);
+    }
+  }
+  private String firstName;
+  private String secondName;
+  private long aWhile;
+  private long total;
+}
+public class MainClass {
+  public static void main(String[] args) {
+    Thread first = new TryThread("A ", "a ", 200L);
+    Thread second = new TryThread("B ", "b ", 300L);
+    Thread third = new TryThread("C ", "c ", 500L);
+    first.start();
+    second.start();
+    third.start();
+    try {
+      first.join();
+    } catch (InterruptedException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+A B C a
+A b
+B a
+A c
+C a
+A b
+B a
+A b
+B c
+c  stoped.
+a
+a  stoped.</code></pre></div></div>
+      <div class="tab-panel" id="tab-4" style="display:none"><h3 id="a-semaphore-based-coordination">A semaphore based coordination</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.concurrent.Semaphore;
+public class Main {
+  public static void main(String args[]) throws Exception {
+    Semaphore sem = new Semaphore(1, true);
+    Thread thrdA = new Thread(new MyThread(sem, "Message 1"));
+    Thread thrdB = new Thread(new MyThread(sem, "Message 2"));
+    thrdA.start();
+    thrdB.start();
+    thrdA.join();
+    thrdB.join();
+  }
+}
+class MyThread implements Runnable {
+  Semaphore sem;
+  String msg;
+  MyThread(Semaphore s, String m) {
+    sem = s;
+    msg = m;
+  }
+  public void run() {
+    try {
+      sem.acquire();
+      System.out.println(msg);
+      Thread.sleep(10);
+      sem.release();
+    } catch (Exception exc) {
+      System.out.println("Error Writing File");
+    }
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-5" style="display:none"><h3 id="a-synchronized-collection-with-collectionssynchronizedcollection">A synchronized collection with Collections.synchronizedCollection</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Collection;
+import java.util.Collections;
+import java.util.Set;
+import java.util.TreeSet;
+class MyThread implements Runnable {
+  Thread t;
+  Collection&lt;String&gt; col;
+  MyThread(Collection&lt;String&gt; c) {
+    col = c;
+    t = new Thread(this, "MyThread");
+    t.start();
+  }
+  public void run() {
+    try {
+      Thread.sleep(100);
+      col.add("D");
+      synchronized (col) {
+        for (String str : col) {
+          System.out.println("MyThread: " + str);
+          Thread.sleep(50);
+        }
+      }
+    } catch (Exception exc) {
+      exc.printStackTrace();
+    }
+  }
+}
+public class Main {
+  public static void main(String args[]) throws Exception {
+    Set&lt;String&gt; tsStr = new TreeSet&lt;String&gt;();
+    Collection&lt;String&gt; syncCol = Collections.synchronizedCollection(tsStr);
+    syncCol.add("A");
+    syncCol.add("B");
+    syncCol.add("C");
+    new MyThread(syncCol);
+    synchronized (syncCol) {
+      for (String str : syncCol) {
+        System.out.println("Main thread: " + str);
+        Thread.sleep(500);
+      }
+    }
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-6" style="display:none"><h3 id="use-wait-and-notify-from-object-class">Use wait() and notify() from Object class</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyResource {
+  boolean ready = false;
+  synchronized void waitFor() throws Exception {
+    System.out.println(Thread.currentThread().getName()+ " is entering waitFor().");
+      while (!ready)
+        wait();
+    System.out.println(Thread.currentThread().getName() + " resuming execution.");
+  }
+  synchronized void start() {
+    ready = true;
+    notify();
+  }
+}
+class MyThread implements Runnable {
+  MyResource myResource;
+  MyThread(String name, MyResource so) {
+    myResource = so;
+    new Thread(this, name).start();
+  }
+  public void run() {
+    try {
+      myResource.waitFor();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+public class Main {
+  public static void main(String args[]) throws Exception {
+    MyResource sObj = new MyResource();
+    new MyThread("MyThread", sObj);
+    for (int i = 0; i &lt; 10; i++) {
+      Thread.sleep(50);
+      System.out.print(".");
+    }
+    sObj.start();
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-7" style="display:none"><h3 id="a-pool-of-work-threads">A pool of work threads</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * WorkThreadPool.java - Background thread pool that does stuff
+ * :tabSize=8:indentSize=8:noTabs=false:
+ * :folding=explicit:collapseFolds=1:
+ *
+ * Copyright (C) 2000 Slava Pestov
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ */
+//{{{ Imports
+import java.util.EventListener;
+import javax.swing.SwingUtilities;
+import javax.swing.event.EventListenerList;
+//}}}
+/**
+ *
+ * @author Slava Pestov
+ * @version $Id: WorkThreadPool.java 12504 2008-04-22 23:12:43Z ezust $
+ * @see org.gjt.sp.util.WorkThread
+ * @since jEdit 2.6pre1
+ */
+public class WorkThreadPool {
+  // {{{ WorkThreadPool constructor
+  /**
+   * Creates a new work thread pool with the specified number of work threads.
+   *
+   * @param name
+   *          The thread name prefix
+   * @param count
+   *          The number of work threads
+   */
+  public WorkThreadPool(String name, int count) {
+    listenerList = new EventListenerList();
+    if (count != 0) {
+      threadGroup = new ThreadGroup(name);
+      threads = new WorkThread[count];
+      for (int i = 0; i &lt; threads.length; i++) {
+        threads[i] = new WorkThread(this, threadGroup, name + " #" + (i + 1));
+      }
+    }
+  } // }}}
+  // {{{ start() method
+  /**
+   * Starts all the threads in this thread pool.
+   */
+  public void start() {
+    /* not really needed since threads don't start until after */
+    synchronized (lock) {
+      started = true;
+      if (awtRequestCount != 0 &amp;&amp; requestCount == 0)
+        queueAWTRunner();
+    }
+    if (threads != null) {
+      for (int i = 0; i &lt; threads.length; i++) {
+        threads[i].start();
+      }
+    }
+  } // }}}
+  // {{{ addWorkRequest() method
+  /**
+   * Adds a work request to the queue.
+   *
+   * @param run
+   *          The runnable
+   * @param inAWT
+   *          If true, will be executed in AWT thread. Otherwise, will be
+   *          executed in work thread
+   */
+  public void addWorkRequest(Runnable run, boolean inAWT) {
+    if (threads == null) {
+      run.run();
+      return;
+    }
+    synchronized (lock) {
+      // {{{ if there are no requests, execute AWT requests immediately
+      if (started &amp;&amp; inAWT &amp;&amp; requestCount == 0 &amp;&amp; awtRequestCount == 0) {
+        // Log.log(Log.DEBUG,this,"AWT immediate: " + run);
+        if (SwingUtilities.isEventDispatchThread())
+          run.run();
+        else
+          SwingUtilities.invokeLater(run);
+        return;
+      } // }}}
+      Request request = new Request(run);
+      // {{{ Add to AWT queue...
+      if (inAWT) {
+        if (firstAWTRequest == null &amp;&amp; lastAWTRequest == null)
+          firstAWTRequest = lastAWTRequest = request;
+        else {
+          lastAWTRequest.next = request;
+          lastAWTRequest = request;
+        }
+        awtRequestCount++;
+        // if no requests are running, requestDone()
+        // will not be called, so we must queue the
+        // AWT runner ourselves.
+        if (started &amp;&amp; requestCount == 0)
+          queueAWTRunner();
+      } // }}}
+      // {{{ Add to work thread queue...
+      else {
+        if (firstRequest == null &amp;&amp; lastRequest == null)
+          firstRequest = lastRequest = request;
+        else {
+          lastRequest.next = request;
+          lastRequest = request;
+        }
+        requestCount++;
+      } // }}}
+      lock.notifyAll();
+    }
+  } // }}}
+  // {{{ waitForRequests() method
+  /**
+   * Waits until all requests are complete.
+   */
+  public void waitForRequests() {
+    if (threads == null)
+      return;
+    synchronized (waitForAllLock) {
+      while (requestCount != 0) {
+        try {
+          waitForAllLock.wait();
+        } catch (InterruptedException ie) {
+        }
+      }
+    }
+    if (SwingUtilities.isEventDispatchThread()) {
+      // do any queued AWT runnables
+      doAWTRequests();
+    } else {
+      try {
+        SwingUtilities.invokeAndWait(new RunRequestsInAWTThread());
+      } catch (Exception e) {
+      }
+    }
+  } // }}}
+  // {{{ getRequestCount() method
+  /**
+   * Returns the number of pending requests.
+   *
+   * @return the pending request count
+   */
+  public int getRequestCount() {
+    return requestCount;
+  } // }}}
+  // {{{ getThreadCount() method
+  /**
+   * Returns the number of threads in this pool.
+   *
+   * @return the thread count
+   */
+  public int getThreadCount() {
+    if (threads == null)
+      return 0;
+    else
+      return threads.length;
+  } // }}}
+  // {{{ getThread() method
+  /**
+   * Returns the specified thread.
+   *
+   * @param index
+   *          The index of the thread
+   * @return a WorkThread
+   */
+  public WorkThread getThread(int index) {
+    return threads[index];
+  } // }}}
+  // {{{ addProgressListener() method
+  /**
+   * Adds a progress listener to this thread pool.
+   *
+   * @param listener
+   *          The listener
+   */
+  public void addProgressListener(WorkThreadProgressListener listener) {
+    listenerList.add(WorkThreadProgressListener.class, listener);
+  } // }}}
+  // {{{ removeProgressListener() method
+  /**
+   * Removes a progress listener from this thread pool.
+   *
+   * @param listener
+   *          The listener
+   */
+  public void removeProgressListener(WorkThreadProgressListener listener) {
+    listenerList.remove(WorkThreadProgressListener.class, listener);
+  } // }}}
+  // {{{ Package-private members
+  final Object lock = new Object();
+  final Object waitForAllLock = new Object();
+  // {{{ fireStatusChanged() method
+  void fireStatusChanged(WorkThread thread) {
+    final Object[] listeners = listenerList.getListenerList();
+    if (listeners.length != 0) {
+      int index = 0;
+      for (int i = 0; i &lt; threads.length; i++) {
+        if (threads[i] == thread) {
+          index = i;
+          break;
+        }
+      }
+      for (int i = listeners.length - 2; i &gt;= 0; i--) {
+        if (listeners[i] == WorkThreadProgressListener.class) {
+          ((WorkThreadProgressListener) listeners[i + 1]).statusUpdate(WorkThreadPool.this, index);
+        }
+      }
+    }
+  } // }}}
+  // {{{ fireProgressChanged() method
+  void fireProgressChanged(WorkThread thread) {
+    final Object[] listeners = listenerList.getListenerList();
+    if (listeners.length != 0) {
+      int index = 0;
+      for (int i = 0; i &lt; threads.length; i++) {
+        if (threads[i] == thread) {
+          index = i;
+          break;
+        }
+      }
+      for (int i = listeners.length - 2; i &gt;= 0; i--) {
+        if (listeners[i] == WorkThreadProgressListener.class) {
+          ((WorkThreadProgressListener) listeners[i + 1])
+              .progressUpdate(WorkThreadPool.this, index);
+        }
+      }
+    }
+  } // }}}
+  // {{{ requestDone() method
+  void requestDone() {
+    synchronized (lock) {
+      requestCount--;
+      if (requestCount == 0 &amp;&amp; firstAWTRequest != null)
+        queueAWTRunner();
+    }
+  } // }}}
+  // {{{ getNextRequest() method
+  Request getNextRequest() {
+    synchronized (lock) {
+      Request request = firstRequest;
+      if (request == null)
+        return null;
+      firstRequest = firstRequest.next;
+      if (firstRequest == null)
+        lastRequest = null;
+      if (request.alreadyRun)
+        throw new InternalError("AIEE!!! Request run twice!!! " + request.run);
+      request.alreadyRun = true;
+      /*
+       * StringBuffer buf = new StringBuffer("request queue is now: "); Request
+       * _request = request.next; while(_request != null) {
+       * buf.append(_request.id); if(_request.next != null) buf.append(",");
+       * _request = _request.next; } Log.log(Log.DEBUG,this,buf.toString());
+       */
+      return request;
+    }
+  } // }}}
+  // }}}
+  // {{{ Private members
+  // {{{ Instance variables
+  private boolean started;
+  private ThreadGroup threadGroup;
+  private WorkThread[] threads;
+  // Request queue
+  private Request firstRequest;
+  private Request lastRequest;
+  private int requestCount;
+  // AWT thread magic
+  private boolean awtRunnerQueued;
+  private Request firstAWTRequest;
+  private Request lastAWTRequest;
+  private int awtRequestCount;
+  private EventListenerList listenerList;
+  // }}}
+  // {{{ doAWTRequests() method
+  /** Must always be called with the lock held. */
+  private void doAWTRequests() {
+    while (requestCount == 0 &amp;&amp; firstAWTRequest != null) {
+      doAWTRequest(getNextAWTRequest());
+    }
+  } // }}}
+  // {{{ doAWTRequest() method
+  /**
+   * Must always be called with the lock held.
+   *
+   * @param request
+   *          the request to run
+   */
+  private void doAWTRequest(Request request) {
+    // Log.log(Log.DEBUG,this,"Running in AWT thread: " + request);
+    try {
+      request.run.run();
+    } catch (Throwable t) {
+    }
+    awtRequestCount--;
+  } // }}}
+  // {{{ queueAWTRunner() method
+  /** Must always be called with the lock held. */
+  private void queueAWTRunner() {
+    if (!awtRunnerQueued) {
+      awtRunnerQueued = true;
+      SwingUtilities.invokeLater(new RunRequestsInAWTThread());
+      // Log.log(Log.DEBUG,this,"AWT runner queued");
+    }
+  } // }}}
+  // {{{ getNextAWTRequest() method
+  private Request getNextAWTRequest() {
+    Request request = firstAWTRequest;
+    firstAWTRequest = firstAWTRequest.next;
+    if (firstAWTRequest == null)
+      lastAWTRequest = null;
+    if (request.alreadyRun)
+      throw new InternalError("AIEE!!! Request run twice!!! " + request.run);
+    request.alreadyRun = true;
+    /*
+     * StringBuffer buf = new StringBuffer("AWT request queue is now: ");
+     * Request _request = request.next; while(_request != null) {
+     * buf.append(_request.id); if(_request.next != null) buf.append(",");
+     * _request = _request.next; } Log.log(Log.DEBUG,this,buf.toString());
+     */
+    return request;
+  } // }}}
+  // }}}
+  static int ID;
+  // {{{ Request class
+  static class Request {
+    int id = ++ID;
+    Runnable run;
+    boolean alreadyRun;
+    Request next;
+    Request(Runnable run) {
+      this.run = run;
+    }
+    public String toString() {
+      return "[id=" + id + ",run=" + run + "]";
+    }
+  } // }}}
+  // {{{ RunRequestsInAWTThread class
+  class RunRequestsInAWTThread implements Runnable {
+    public void run() {
+      synchronized (lock) {
+        awtRunnerQueued = false;
+        if (requestCount == 0)
+          doAWTRequests();
+      }
+    }
+  } // }}}
+}
+/*
+ * WorkThread.java - Background thread that does stuff Copyright (C) 2000 Slava
+ * Pestov
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 2 of the License, or any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * Place - Suite 330, Boston, MA 02111-1307, USA.
+ */
+/**
+ * Services work requests in the background.
+ *
+ * @author Slava Pestov
+ * @version $Id: WorkThread.java 12504 2008-04-22 23:12:43Z ezust $
+ */
+class WorkThread extends Thread implements ThreadAbortMonitor {
+  public WorkThread(WorkThreadPool pool, ThreadGroup group, String name) {
+    super(group, name);
+    // so that jEdit doesn't exit with no views open automatically
+    // setDaemon(true);
+    setPriority(Thread.MIN_PRIORITY);
+    this.pool = pool;
+  }
+  /**
+   * Sets if the current request can be aborted. If set to true and already
+   * aborted, the thread will be stopped
+   *
+   * @param abortable
+   *          true if the WorkThread is abortable
+   * @since jEdit 2.6pre1
+   */
+  public void setAbortable(boolean abortable) {
+    synchronized (abortLock) {
+      this.abortable = abortable;
+      if (aborted)
+        stop(new Abort());
+    }
+  }
+  /**
+   * Returns if the work thread is currently running a request.
+   *
+   * @return true if a request is currently running
+   */
+  public boolean isRequestRunning() {
+    return requestRunning;
+  }
+  public boolean isAborted() {
+    synchronized (abortLock) {
+      return aborted;
+    }
+  }
+  /**
+   * Returns the status text.
+   *
+   * @return the status label
+   */
+  public String getStatus() {
+    return status;
+  }
+  /**
+   * Sets the status text.
+   *
+   * @param status
+   *          the new status of the thread
+   * @since jEdit 2.6pre1
+   */
+  public void setStatus(String status) {
+    this.status = status;
+    pool.fireProgressChanged(this);
+  }
+  /**
+   * Returns the progress value.
+   *
+   * @return the progress value
+   */
+  public int getProgressValue() {
+    return progressValue;
+  }
+  /**
+   * Sets the progress value.
+   *
+   * @param progressValue
+   *          the new progress value
+   * @since jEdit 2.6pre1
+   */
+  public void setProgressValue(int progressValue) {
+    this.progressValue = progressValue;
+    pool.fireProgressChanged(this);
+  }
+  /**
+   * Returns the progress maximum.
+   *
+   * @return the maximum value of the progression
+   */
+  public int getProgressMaximum() {
+    return progressMaximum;
+  }
+  /**
+   * Sets the maximum progress value.
+   *
+   * @param progressMaximum
+   *          the maximum value of the progression
+   * @since jEdit 2.6pre1
+   */
+  public void setProgressMaximum(int progressMaximum) {
+    this.progressMaximum = progressMaximum;
+    pool.fireProgressChanged(this);
+  }
+  /**
+   * Aborts the currently running request, if allowed.
+   *
+   * @since jEdit 2.6pre1
+   */
+  public void abortCurrentRequest() {
+    synchronized (abortLock) {
+      if (abortable &amp;&amp; !aborted)
+        stop(new Abort());
+      aborted = true;
+    }
+  }
+  public void run() {
+    for (;;) {
+      doRequests();
+    }
+  }
+  // private members
+  private WorkThreadPool pool;
+  private final Object abortLock = new Object();
+  private boolean requestRunning;
+  private boolean abortable;
+  private boolean aborted;
+  private String status;
+  private int progressValue;
+  private int progressMaximum;
+  private void doRequests() {
+    WorkThreadPool.Request request;
+    for (;;) {
+      request = pool.getNextRequest();
+      if (request == null)
+        break;
+      else {
+        requestRunning = true;
+        pool.fireStatusChanged(this);
+        doRequest(request);
+        requestRunning = false;
+      }
+    }
+    pool.fireStatusChanged(this);
+    synchronized (pool.waitForAllLock) {
+      // notify a running waitForRequests() method
+      pool.waitForAllLock.notifyAll();
+    }
+    synchronized (pool.lock) {
+      // wait for more requests
+      try {
+        pool.lock.wait();
+      } catch (InterruptedException ie) {
+      }
+    }
+  }
+  private void doRequest(WorkThreadPool.Request request) {
+    try {
+      request.run.run();
+    } catch (Throwable t) {
+    } finally {
+      synchronized (abortLock) {
+        aborted = abortable = false;
+      }
+      status = null;
+      progressValue = progressMaximum = 0;
+      pool.requestDone();
+      pool.fireStatusChanged(this);
+    }
+  }
+  public static class Abort extends Error {
+    public Abort() {
+      super("Work request aborted");
+    }
+  }
+}
+/*
+ * ThreadAbortMonitor.java - Thread Abort Monitor
+ * :tabSize=8:indentSize=8:noTabs=false: :folding=explicit:collapseFolds=1:
+ *
+ * Copyright (C) 2006 Matthieu Casanova
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 2 of the License, or any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * Place - Suite 330, Boston, MA 02111-1307, USA.
+ */
+/**
+ * @author Matthieu Casanova
+ * @author $Id: VFS.java 7129 2006-09-25 20:05:57Z kpouer $
+ */
+interface ThreadAbortMonitor {
+  boolean isAborted();
+}
+/*
+ * WorkThreadProgressListener.java - Progress listener Copyright (C) 2000 Slava
+ * Pestov
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 2 of the License, or any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * Place - Suite 330, Boston, MA 02111-1307, USA.
+ */
+/**
+ * A work thread execution progress listener.
+ *
+ * @since jEdit 2.6pre1
+ */
+interface WorkThreadProgressListener extends EventListener {
+  // status message changed, operation started, operation ends, ...
+  void statusUpdate(WorkThreadPool threadPool, int threadIndex);
+  // progress bar value change
+  void progressUpdate(WorkThreadPool threadPool, int threadIndex);
+}</code></pre></div>
+<h3 id="simple-thread-pool-a-task-is-executed-by-obtaining-a-thread-from-the-pool">Simple thread pool. A task is executed by obtaining a thread from the pool</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+import java.util.ArrayList;
+import java.util.List;
+/** Simple thread pool. A task is executed by obtaining a thread from
+ * the pool
+ */
+public class ThreadPool {
+  /** The thread pool contains instances of {@link ThreadPool.Task}.
+   */
+  public interface Task {
+    /** Performs the task.
+     * @throws Throwable The task failed, and the worker thread won't be used again.
+     */
+    void run() throws Throwable;
+  }
+    /** A task, which may be interrupted, if the pool is shutting down.
+     */
+    public interface InterruptableTask extends Task {
+        /** Interrupts the task.
+         * @throws Throwable Shutting down the task failed.
+         */
+        void shutdown() throws Throwable;
+    }
+    private class Poolable {
+        private boolean shuttingDown;
+        private Task task;
+        private Thread thread;
+        Poolable(ThreadGroup pGroup, int pNum) {
+            thread = new Thread(pGroup, pGroup.getName() + "-" + pNum){
+                public void run() {
+                    while (!isShuttingDown()) {
+                        final Task t = getTask();
+                        if (t == null) {
+                            try {
+                                synchronized (this) {
+                                    if (!isShuttingDown()  &amp;&amp;  getTask() == null) {
+                                        wait();
+                                    }
+                                }
+                            } catch (InterruptedException e) {
+                                // Do nothing
+                            }
+                        } else {
+                            try {
+                                t.run();
+                                resetTask();
+                                repool(Poolable.this);
+                            } catch (Throwable e) {
+                                discard(Poolable.this);
+                                resetTask();
+                            }
+                        }
+                    }
+                }
+            };
+            thread.start();
+        }
+        synchronized void shutdown() {
+            shuttingDown = true;
+            final Task t = getTask();
+            if (t != null  &amp;&amp;  t instanceof InterruptableTask) {
+                try {
+                    ((InterruptableTask) t).shutdown();
+                } catch (Throwable th) {
+                    // Ignore me
+                }
+            }
+            task = null;
+            synchronized (thread) {
+                thread.notify();
+            }
+        }
+        private synchronized boolean isShuttingDown() { return shuttingDown; }
+        String getName() { return thread.getName(); }
+        private synchronized Task getTask() {
+            return task;
+        }
+        private synchronized void resetTask() {
+            task = null;
+        }
+        synchronized void start(Task pTask) {
+            task = pTask;
+            synchronized (thread) {
+                thread.notify();
+            }
+        }
+    }
+  private final ThreadGroup threadGroup;
+  private final int maxSize;
+  private final List waitingThreads = new ArrayList();
+  private final List runningThreads = new ArrayList();
+  private final List waitingTasks = new ArrayList();
+  private int num;
+  /** Creates a new instance.
+   * @param pMaxSize Maximum number of concurrent threads.
+   * @param pName Thread group name.
+   */
+  public ThreadPool(int pMaxSize, String pName) {
+    maxSize = pMaxSize;
+    threadGroup = new ThreadGroup(pName);
+  }
+  synchronized void discard(Poolable pPoolable) {
+    pPoolable.shutdown();
+        runningThreads.remove(pPoolable);
+        waitingThreads.remove(pPoolable);
+  }
+  synchronized void repool(Poolable pPoolable) {
+        if (runningThreads.remove(pPoolable)) {
+            if (maxSize != 0  &amp;&amp;  runningThreads.size() + waitingThreads.size() &gt;= maxSize) {
+                discard(pPoolable);
+            } else {
+                waitingThreads.add(pPoolable);
+                if (waitingTasks.size() &gt; 0) {
+                    Task task = (Task) waitingTasks.remove(waitingTasks.size() - 1);
+                    startTask(task);
+                }
+            }
+        } else {
+            discard(pPoolable);
+        }
+  }
+  /** Starts a task immediately.
+   * @param pTask The task being started.
+   * @return True, if the task could be started immediately. False, if
+   * the maxmimum number of concurrent tasks was exceeded. If so, you
+   * might consider to use the {@link #addTask(ThreadPool.Task)} method instead.
+   */
+  public synchronized boolean startTask(Task pTask) {
+    if (maxSize != 0  &amp;&amp;  runningThreads.size() &gt;= maxSize) {
+      return false;
+    }
+        Poolable poolable;
+    if (waitingThreads.size() &gt; 0) {
+        poolable = (Poolable) waitingThreads.remove(waitingThreads.size()-1);
+    } else {
+            poolable = new Poolable(threadGroup, num++);
+    }
+    runningThreads.add(poolable);
+        poolable.start(pTask);
+    return true;
+  }
+  /** Adds a task for immediate or deferred execution.
+   * @param pTask The task being added.
+   * @return True, if the task was started immediately. False, if
+   * the task will be executed later.
+   */
+  public synchronized boolean addTask(Task pTask) {
+    if (startTask(pTask)) {
+      return true;
+    }
+    waitingTasks.add(pTask);
+    return false;
+  }
+  /** Closes the pool.
+   */
+  public synchronized void shutdown() {
+        while (!waitingThreads.isEmpty()) {
+            Poolable poolable = (Poolable) waitingThreads.remove(waitingThreads.size()-1);
+            poolable.shutdown();
+        }
+        while (!runningThreads.isEmpty()) {
+            Poolable poolable = (Poolable) runningThreads.remove(runningThreads.size()-1);
+            poolable.shutdown();
+        }
+  }
+  /** Returns the maximum number of concurrent threads.
+   * @return Maximum number of threads.
+   */
+  public int getMaxThreads() { return maxSize; }
+  /** Returns the number of threads, which have actually been created,
+     * as opposed to the number of currently running threads.
+   */
+    public synchronized int getNumThreads() { return num; }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-8" style="display:none"><h3 id="handle-concurrent-readwrite">Handle concurrent read/write</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Iterator;
+import java.util.Vector;
+public class Main {
+  public static void main(String[] args) throws Exception {
+    Vector data = new Vector();
+    new Producer(data).start();
+    new Consumer(data).start();
+  }
+}
+class Producer extends Thread {
+  Vector data;
+  Producer(Vector data) {
+    super("Producer");
+    this.data = data;
+  }
+  public void run() {
+    while (true) {
+      data.addElement(new Object());
+      if (data.size() &gt; 1000)
+        data.removeAllElements();
+    }
+  }
+}
+class Consumer extends Thread {
+  Vector data;
+  Consumer(Vector data) {
+    super("Consumer");
+    this.data = data;
+  }
+  public void run() {
+    while (true) {
+      synchronized (data) {
+        Iterator it = data.iterator();
+        while (it.hasNext())
+          it.next();
+      }
+    }
+  }
+}</code></pre></div>
+<h3 id="test-unsynchronized-method">Test Unsynchronized method</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class TestUnsynchronized {
+  int taskID;
+  public void doAction(int val) {
+    print("entering doAction()");
+    taskID = val;
+    print("doAction() taskID " + taskID);
+    try {
+      Thread.sleep(4000);
+    } catch (InterruptedException x) {
+    }
+    print("doAction() sleep after taskID " + taskID);
+    print("leaving performATask()");
+  }
+  public static void print(String msg) {
+    String threadName = Thread.currentThread().getName();
+    System.out.println(threadName + ": " + msg);
+  }
+  public static void main(String[] args) throws Exception {
+    final TestUnsynchronized tus = new TestUnsynchronized();
+    Runnable runA = new Runnable() {
+      public void run() {
+        tus.doAction(3);
+      }
+    };
+    Thread ta = new Thread(runA, "threadA");
+    ta.start();
+    Thread.sleep(2000);
+    Runnable runB = new Runnable() {
+      public void run() {
+        tus.doAction(7);
+      }
+    };
+    Thread tb = new Thread(runB, "threadB");
+    tb.start();
+  }
+}</code></pre></div>
+<h3 id="waiting-on-an-object">Waiting on an object</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Main {
+  public static void main(String str[]) {
+    final Object monitor = new Object();
+    new Thread() {
+      public void run() {
+        try {
+          synchronized (monitor) {
+            System.out.println("10 seconds ...");
+            monitor.wait(10000);
+            System.out.println("Wait over");
+          }
+        } catch (Throwable t) {
+          t.printStackTrace();
+        }
+      }
+    }.start();
+  }
+}</code></pre></div></div>
+    </div>
+<script>
+(function(){
+  document.querySelectorAll('.tabs').forEach(function(box){
+    var btns = box.querySelectorAll('.tab-btn');
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){
+        var id = b.getAttribute('data-tab');
+        btns.forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+        b.classList.add('active'); b.setAttribute('aria-selected','true');
+        box.querySelectorAll('.tab-panel').forEach(function(p){ p.style.display = (p.id === id) ? '' : 'none'; });
+      });
+    });
+  });
+})();
+</script>
+    <details class="sub-map"><summary>All sub-topics in this chapter (22)</summary><div class="sub-chips"><span class="sub-chip"><span class="sub-num">10.1</span> Create Thread <b>6</b></span><span class="sub-chip"><span class="sub-num">10.12</span> Suspend resume <b>2</b></span><span class="sub-chip"><span class="sub-num">10.2</span> Thread Properties <b>2</b></span><span class="sub-chip"><span class="sub-num">10.13</span> Producer and consumer <b>5</b></span><span class="sub-chip"><span class="sub-num">10.3</span> Thread Priority <b>4</b></span><span class="sub-chip"><span class="sub-num">10.14</span> Thread Buffer <b>1</b></span><span class="sub-chip"><span class="sub-num">10.4</span> Thread Stop <b>4</b></span><span class="sub-chip"><span class="sub-num">10.15</span> ScheduledThreadPoolExecutor <b>3</b></span><span class="sub-chip"><span class="sub-num">10.5</span> Thread Join <b>5</b></span><span class="sub-chip"><span class="sub-num">10.16</span> Deadlock <b>2</b></span><span class="sub-chip"><span class="sub-num">10.6</span> ThreadGroup <b>4</b></span><span class="sub-chip"><span class="sub-num">10.17</span> Semaphore <b>1</b></span><span class="sub-chip"><span class="sub-num">10.7</span> Daemon Thread <b>5</b></span><span class="sub-chip"><span class="sub-num">10.18</span> Sleep Pause <b>4</b></span><span class="sub-chip"><span class="sub-num">10.8</span> Thread Safe Collections <b>1</b></span><span class="sub-chip"><span class="sub-num">10.19</span> BlockingQueue <b>3</b></span><span class="sub-chip"><span class="sub-num">10.9</span> Thread Swing <b>1</b></span><span class="sub-chip"><span class="sub-num">10.20</span> ThreadLocal <b>1</b></span><span class="sub-chip"><span class="sub-num">10.10</span> ExecutorService <b>1</b></span><span class="sub-chip"><span class="sub-num">10.21</span> Wait Notify <b>4</b></span><span class="sub-chip"><span class="sub-num">10.11</span> synchronized <b>12</b></span><span class="sub-chip"><span class="sub-num">10.22</span> Thread Pool <b>2</b></span></div></details>
+
+    <p class="arc-crumb"><a href="java-tutorial.html">&larr; All tutorial chapters</a></p>
+
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1056
 source: https://web.archive.org/web/20111114172152/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AMapthatstoresthevaluesinfileswithinadirectory.htm
 ---
-A Map that stores the values in files within a directory.
-
 ```java title=Example.java
 //     package com.croftsoft.core.util.filemap;
 import java.io.BufferedOutputStream;
@@ -23,7 +21,6 @@ import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Set;
 /*********************************************************************
- * A Map that stores the values in files within a directory.
  *
  * Uses filenames as the keys and InputStreams as the values.
  *

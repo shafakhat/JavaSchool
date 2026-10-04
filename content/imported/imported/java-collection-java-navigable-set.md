@@ -7,10 +7,7 @@ order: 50333
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0120__Java_Navigable_Set.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A navigable set is a sorted set that lets you work with its subsets in a variety of ways.
 
@@ -34,7 +31,7 @@ pollFirst() and pollLast() retrieve and remove the first and the last element of
 
 The TreeSet class is one of the implementation classes for the NavigableSet interface. We can use TreeSet as a set, a sorted set, and a navigable set.
 
-[TreeSet APIs](../../../Tutorials/Java/java.util/TreeSet/index.html)
+TreeSet APIs
 
 ## Example
 
@@ -80,5 +77,4 @@ import java.util.TreeSet;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

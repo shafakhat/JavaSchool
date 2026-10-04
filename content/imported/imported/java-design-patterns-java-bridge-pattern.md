@@ -7,10 +7,7 @@ order: 50118
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0070__Java_Bridge_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Bridge pattern decouples an definition from its implementation. It is a structural pattern.
 
@@ -66,5 +63,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

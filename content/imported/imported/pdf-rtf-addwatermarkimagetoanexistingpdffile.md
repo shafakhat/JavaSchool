@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20071106044635/http://www.java2s.com:80/Code/Java/PDF-RTF/AddWatermarkImagetoanExistingPDFFile.htm
 ---
-Add Watermark Image to an Existing PDF File
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import java.util.HashMap;

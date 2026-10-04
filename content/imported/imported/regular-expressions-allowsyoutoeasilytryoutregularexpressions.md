@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20090814170858/http://www.java2s.com:80/Code/Java/Regular-Expressions/Allowsyoutoeasilytryoutregularexpressions.htm
 ---
-Allows you to easily try out regular expressions
-
 ```java title=Example.java
 // : c12:TestRegularExpression.java
 // Allows you to easly try out regular expressions.

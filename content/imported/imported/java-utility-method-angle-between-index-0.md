@@ -105,5 +105,3 @@ double absoluteSecond = vectorAbsoluteValue(X2, Y2, Z2);
 double angleResult = Math.acos(dotproduct / (absoluteFirst * absoluteSecond));
 return angleResult;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

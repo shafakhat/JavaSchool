@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20090422124057/http://www.java2s.com:80/Code/Java/Regular-Expressions/AddingCommentstoaRegularExpression.htm
 ---
-Adding Comments to a Regular Expression
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

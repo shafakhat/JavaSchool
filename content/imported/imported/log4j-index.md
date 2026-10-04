@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50041
 source: https://www.java2s.com/Tutorials/Java/log4j/index.html
 ---
-- Next »
-
 Log4j is a Reliable, Fast and Flexible Logging Framework (APIs) written in Java and distributed under the Apache Software License.
 
 Log4j is configurable via external configuration files at runtime. It controls the logging process in levels of priorities and has abilities to log information to a variety of destinations, such as a database, file, console, UNIX Syslog etc.
@@ -43,5 +41,3 @@ An Appender objects can have several Filter objects.
 The ObjectRenderer object provides a String representation of different objects passed to the logging framework.
 
 The LogManager object manages the logging framework. It reads the initial configuration parameters from a configuration file or a configuration class.
-
-- Next »

@@ -117,5 +117,3 @@ if (array != null && array.length > 1) {
         swap(array, i, array.length);
 return array;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

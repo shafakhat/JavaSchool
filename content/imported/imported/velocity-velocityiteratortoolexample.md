@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513091101/http://www.java2s.com/Code/Ja
 ---
 Velocity Iterator Tool Example : Java examples (example source code) » Velocity » Iterator Tool
 
-Velocity Iterator Tool Example
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

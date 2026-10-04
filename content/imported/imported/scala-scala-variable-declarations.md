@@ -7,10 +7,7 @@ order: 50075
 source: https://www.java2s.com/Tutorials/Java/Scala/0040__Scala_Variable_Declarations.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Scala allows you to decide whether a variable is immutable (read-only) or not (read-write) when you declare it.
 
@@ -73,5 +70,4 @@ object Main {
 }
 ```
 
-- Next »
 - « Previous

@@ -44,5 +44,3 @@ List<String> list = newArrayList<String>(values.length);
 Collections.addAll(list, values);
 return list;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

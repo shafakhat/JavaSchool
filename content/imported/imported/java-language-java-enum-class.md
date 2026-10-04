@@ -7,7 +7,6 @@ order: 50464
 source: https://www.java2s.com/Tutorials/Java/Java_Language/9010__Java_enum_class.html
 ---
 ```java title=Example.java
-« Previous
 ```
 
 You can give constructors, add instance variables and methods, and implement interfaces for enum types.

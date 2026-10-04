@@ -7,10 +7,7 @@ order: 50380
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/0020__Java_Regex_Character_Classes.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Metacharacters are characters with special meanings in Java regular expression.
 
@@ -118,5 +115,4 @@ import java.util.regex.Pattern;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

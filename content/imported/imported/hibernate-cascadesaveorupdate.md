@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20061027011522/http://www.java2s.com:80/Code/Java/Hibernate/CascadeSaveOrUpdate.htm
 ---
-Cascade Save Or Update
-
 ```java title=Example.java
 /////////////////////////////////////////////////////////////////////////
 import java.util.*;

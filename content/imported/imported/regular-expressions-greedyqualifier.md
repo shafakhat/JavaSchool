@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1041
 source: https://web.archive.org/web/20100206192627/http://java2s.com/Code/Java/Regular-Expressions/GreedyQualifier.htm
 ---
-Greedy Qualifier
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

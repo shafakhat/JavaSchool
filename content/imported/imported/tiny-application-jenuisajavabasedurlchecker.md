@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20070220095702/http://www.java2s.com:80/Code/Java/Tiny-Application/JenuisaJavabasedURLchecker.htm
 ---
-Jenu is a Java based URL checker
-
 ```java title=Example.java
 Jenu is a Java based URL checker.  It's multi-threaded, and can check
 links pretty quickly.  It has the beginnings of what could be a very

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20060506000123/http://www.java2s.com:80/Code/Java/J2EE/BlankStrutstemplate.htm
 ---
-Blank Struts template
-
 ```java title=Example.java
 /*
 This product includes software developed by

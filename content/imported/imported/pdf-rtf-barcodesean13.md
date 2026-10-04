@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1042
 source: https://web.archive.org/web/20071201173849/http://www.java2s.com:80/Code/Java/PDF-RTF/BarcodesEAN13.htm
 ---
-BarcodesEAN 13
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Chunk;

@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102122034/http://www.java2s.com/ref/jav
 
 ## Description
 
-Android ClipboardManager set text
-
 ```java title=Example.java
 import android.app.Activity;
 import android.content.Context;

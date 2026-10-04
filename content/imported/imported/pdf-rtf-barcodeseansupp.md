@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20071201173857/http://www.java2s.com:80/Code/Java/PDF-RTF/BarcodesEANSUPP.htm
 ---
-BarcodesEAN SUPP
-
 ```java title=Example.java
 import java.awt.Color;
 import java.io.FileOutputStream;

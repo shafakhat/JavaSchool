@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1021
 source: https://web.archive.org/web/20061018181023/http://www.java2s.com/Code/Java/Apache-Common/ComparatorExampleForUserDefinedClass.htm
 ---
-Comparator Example For User Defined Class
-
 ```java title=Example.java
 import org.apache.commons.collections.comparators.ComparatorChain;
 import java.util.Arrays;

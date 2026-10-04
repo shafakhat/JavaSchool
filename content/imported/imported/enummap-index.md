@@ -7,10 +7,7 @@ order: 50353
 source: https://www.java2s.com/Tutorials/Java/java.util/EnumMap/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -35,5 +32,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/EnumMap/index.html
 - Java EnumMap.size()
 - Java EnumMap.values()
 
-- Next »
 - « Previous

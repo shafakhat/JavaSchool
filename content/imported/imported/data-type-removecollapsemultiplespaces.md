@@ -33,7 +33,6 @@ source: https://web.archive.org/web/20100131052523/http://www.java2s.com:80/Tuto
  */
 public class Main {
   /**
-   * Remove/collapse multiple spaces.
    *
    * @param argStr string to remove multiple spaces from.
    * @return String

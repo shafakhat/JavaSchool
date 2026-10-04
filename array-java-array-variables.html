@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Array Variables - JavaSchool</title>
+<meta name="description" content="A Java array variable has two parts: array type and array object.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-array-java-array-variables">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-array.html">Array</a></nav>
+    <h1>Java Array Variables</h1>
+<p>In this chapter you will learn:</p>
+<ul><li>What is Java array variable</li><li>Syntax for Java array variable definition</li><li>Note for Java array variable definition</li><li>Alternative Syntax for Java array variable definition</li><li>Create an array</li><li>Single statement for declare and create an array</li></ul>
+<h3 id="description">Description</h3>
+<p>A Java array variable has two parts: array type and array object.</p>
+<p>The array type is the type of the array variable. The array object is the memory allocated for an array variable.</p>
+<p>When defining an array we can first define the array type and allocate the memory later.</p>
+<h3 id="syntax">Syntax</h3>
+<p>You could declare the integer array variable myIntArray with the following statement:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int[] myIntArray;                // Declare an integer array variable</code></pre></div>
+<h3 id="note">Note</h3>
+<p>The variable myIntArray is now a type for an integer array. No memory has been allocated to hold an array itself.</p>
+<p>Later we will create the array by allocating memory and specify how many elements it can contain.</p>
+<p>The square brackets following the type indicates that the variable is for an array of int values, and not for storing a single value of type int.</p>
+<p>The type of the array variable is int[].</p>
+<h3 id="alternative-syntax">Alternative Syntax</h3>
+<p>We can use an alternative notation for declaring an array variable:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int myIntArray[];                // Declare an integer array variable</code></pre></div>
+<p>Here the square brackets appear after the variable name, rather than after the type name.</p>
+<p>This is exactly equivalent to the previous statement. int[] form is preferred since it indicates more clearly that the type is an array of values of type int.</p>
+<p>The following two declarations are equivalent:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int a1[] = newint[3];
+int[] a2 = newint[3];</code></pre></div>
+<h3 id="array-create">Array create</h3>
+<p>After you have declared an array variable, you can define an array that it references:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
+myIntArray = newint[10];        // Define an array of 10 integers</code></pre></div>
+<p>This statement creates an array that stores 10 values of type int and stores a reference to the array in the variable myIntArray.</p>
+<p>The reference is simply where the array is in memory.</p>
+<h3 id="single-statement">Single Statement</h3>
+<p>You could also declare the array variable and define the array of type int to hold 10 integers with a single statement.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int[] myIntArray = newint[10];            //An array of 10 integers</code></pre></div>
+<p>The first part of the definition specifies the type of the array. The element type name, int in this case, is followed by an empty pair of square brackets.</p>
+<p>The part of the statement that follows the equal sign defines the array.</p>
+<p>The keyword new indicates that you are allocating new memory for the array, and int[10] specifies that the capacity is 10 variables of type int in the array.</p>
+<h4 id="next-chapter">Next chapter...</h4>
+<p>What you will learn in the next chapter:</p>
+<ul><li>What are the Java Array Initial Values</li><li>Initial value for Java array</li></ul>
+    <div class="pager"><a class="pager-btn" href="java-java-algorithms-sort-insertion-sort-on-custom-objects.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Algorithms Sort Inser...</span></a><a class="pager-btn pager-next" href="class-javafinalvariableoncecreatedandinitializeditsvaluecannotbechanged.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Final variable</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tutorial</h4>
+      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="keywords.html">Java Keywords</a>
+      <a href="string-methods.html">String Methods</a>
+      <a href="java-api.html">Useful Java Classes</a>
+      <a href="how-java-works.html">How Java Works</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

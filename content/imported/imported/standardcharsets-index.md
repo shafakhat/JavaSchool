@@ -7,10 +7,7 @@ order: 50304
 source: https://www.java2s.com/Tutorials/Java/java.nio.charset/StandardCharsets/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Field
 
@@ -23,5 +20,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio.charset/StandardCharsets/
 
 ## Method
 
-- Next »
 - « Previous

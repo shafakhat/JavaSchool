@@ -63,5 +63,3 @@ for (int t = 0; t < data.length; t++) {
     diffFunction[t] = sum;
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

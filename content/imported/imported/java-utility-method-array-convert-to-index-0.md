@@ -143,5 +143,3 @@ for (int i = 0; i < objectArray.length; i++) {
         value = value + arrayToHTMLString((Object[]) obj, indent + INDENT);
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

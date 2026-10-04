@@ -7,7 +7,6 @@ order: 50386
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/0080__Java_String_Find_Replace.html
 ---
 ```java title=Example.java
-« Previous
 ```
 
 We can find a pattern and replace it with some text and the replaced text is depending on the matched text.

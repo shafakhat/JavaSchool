@@ -94,5 +94,3 @@ for (int i = 0; i < strings.length; ret[i] = strings[i], i++)
     ;
 return ret;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

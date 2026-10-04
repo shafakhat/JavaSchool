@@ -7,10 +7,7 @@ order: 50156
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0200__Java_Object_Clone.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java does not provide an automatic mechanism to clone (copy) an object.
 
@@ -230,5 +227,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

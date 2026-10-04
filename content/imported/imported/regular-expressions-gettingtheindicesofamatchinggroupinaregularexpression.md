@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1038
 source: https://web.archive.org/web/20090606185140/http://www.java2s.com:80/Code/Java/Regular-Expressions/GettingtheIndicesofaMatchingGroupinaRegularExpression.htm
 ---
-Getting the Indices of a Matching Group in a Regular Expression
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

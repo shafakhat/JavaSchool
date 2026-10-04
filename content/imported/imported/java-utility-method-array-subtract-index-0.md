@@ -123,5 +123,3 @@ for (int i = 0; i < returnValues.length; i++) {
     returnValues[i] = array[i] - value;
 return returnValues;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

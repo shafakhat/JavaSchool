@@ -7,10 +7,7 @@ order: 50273
 source: https://www.java2s.com/Tutorials/Java/java.io/PipedOutputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -25,5 +22,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/PipedOutputStream/index.ht
 - Java PipedOutputStream .write (byte[] b, int off, int len)
 - Java PipedOutputStream.write(int b)
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20090202201252/http://www.java2s.com:80/Code/Java/Regular-Expressions/CharacterClassMatches.htm
 ---
-Character Class Matches
-
 ```java title=Example.java
 \p{javaLowerCase}               Everything that Character.isLowerCase() matches
 \p{javaUpperCase}               Everything that Character.isUpperCase() matches

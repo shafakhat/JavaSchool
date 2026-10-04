@@ -7,10 +7,7 @@ order: 50133
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0260__Java_Template_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 In Template pattern, a parent abstract class expose several abstract methods for the subclass to implement. In the parent abstract class there is another method or several methods which uses the abstract methods to achieve business logics.
 
@@ -93,5 +90,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

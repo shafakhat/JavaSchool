@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50003
 source: https://www.java2s.com/Tutorials/Java/OCA_Java_SE_8_Class_Design/index.html
 ---
-- Next »
-
 When creating a new class in Java, you can create the class to inherit from an existing class.
 
 During class inheritance the new child subclass includes any public or protected primitives, objects, or methods defined in the parent class.
@@ -106,5 +104,3 @@ publicclass Main extends java.lang.Object {
 ```
 
 when Java sees you define a class without extending another class, it adds the syntax extends java.lang.Object to the class definition.
-
-- Next »

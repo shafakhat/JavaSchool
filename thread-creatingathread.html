@@ -27,11 +27,17 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
 </header>
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
-  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tut-10-thread.html">Thread</a></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-10-thread.html">Thread</a></nav>
     <h1>Creating a Thread : Create Thread : Thread : Java Tutorial</h1>
 <p>A thread is a basic processing unit to which an operating system allocates processor time, and more than one thread can be executing code inside a process. (Java 5: A Beginner's Tutorial by Budi Kurniawan Brainy Software Corp. ?006 Every Java program has at least one thread, the thread that executes the Java program. It is created when you invoke the static main method of your Java class. There are two ways to create a thread. Extend the java.lang.Thread class Implement the java.lang.Runnable interface. Once you have a Thread object, you call its start method to start the thread. When a thread is started, its run method is executed. Once the run method returns or throws an exception, the thread dies and will be garbage-collected. Every Thread has a state and a Thread can be in one of these six states. new. A state in which a thread has not been started. runnable. A state in which a thread is executing. blocked. A state in which a thread is waiting for a lock to access an object. waiting. A state in which a thread is waiting indefinitely for another thread to perform an action. timed__waiting. A state in which a thread is waiting for up to a specified period of time for another thread to perform an action. terminated. A state in which a thread has exited. The values that represent these states are encapsulated in the java.lang.Thread.State enum. The members of this enum are NEW, RUNNABLE, BLOCKED, WAITING, TIMED__WAITING, and TERMINATED.</p>
     <div class="pager"><a class="pager-btn" href="hibernate-collectionmappingbag.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Collection Mapping</span></a><a class="pager-btn pager-next" href="j2ee-creatingcustomtags.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Creating Custom Tags</span></a></div>

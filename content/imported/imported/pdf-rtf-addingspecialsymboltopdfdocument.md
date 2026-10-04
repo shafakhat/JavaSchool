@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20071020034557/http://java2s.com:80/Code/Java/PDF-RTF/AddingSpecialSymboltoPdfdocument.htm
 ---
-Adding Special Symbol to Pdf document
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import java.io.IOException;

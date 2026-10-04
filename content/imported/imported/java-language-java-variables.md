@@ -7,10 +7,7 @@ order: 50419
 source: https://www.java2s.com/Tutorials/Java/Java_Language/1020__Java_Variables.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A variable is defined by an identifier, a type, and an optional initializer. The variables also have a scope(visibility / lifetime).
 
@@ -102,5 +99,4 @@ double c = Math.sqrt(2 * 2);
 
 The output from the code above is
 
-- Next »
 - « Previous

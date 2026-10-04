@@ -7,14 +7,10 @@ order: 50349
 source: https://www.java2s.com/Tutorials/Java/java.util/Comparator/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
 - Java Comparator.compare(T o1, T o2)
 
-- Next »
 - « Previous

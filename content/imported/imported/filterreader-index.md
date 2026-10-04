@@ -7,10 +7,7 @@ order: 50262
 source: https://www.java2s.com/Tutorials/Java/java.io/FilterReader/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -23,5 +20,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/FilterReader/index.html
 - Java FilterReader.reset()
 - Java FilterReader.skip(long n)
 
-- Next »
 - « Previous

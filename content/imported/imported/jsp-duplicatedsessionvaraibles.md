@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20060428120329/http://www.java2s.com:80/Code/Java/JSP/Duplicatedsessionvaraibles.htm
 ---
-Duplicated session varaibles : Java examples (example source code) » JSP » Session
-
 Duplicated session varaibles
 
 ```java title=Example.java

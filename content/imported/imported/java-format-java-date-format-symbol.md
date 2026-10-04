@@ -7,10 +7,7 @@ order: 50388
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0030__Java_Date_Format_Symbol.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 SimpleDateFormat Date and time formats are specified by date and time pattern strings.
 
@@ -192,5 +189,4 @@ import java.util.Date;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

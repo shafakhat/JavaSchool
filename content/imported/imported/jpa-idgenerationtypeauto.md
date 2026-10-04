@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1051
 source: https://web.archive.org/web/20090126060642/http://www.java2s.com:80/Code/Java/JPA/IDGenerationTypeAUTO.htm
 ---
-ID Generation Type AUTO
-
 ```java title=Example.java
 File: Professor.java
 import javax.persistence.Entity;

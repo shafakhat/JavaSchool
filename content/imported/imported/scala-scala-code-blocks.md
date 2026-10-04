@@ -7,10 +7,7 @@ order: 50077
 source: https://www.java2s.com/Tutorials/Java/Scala/0080__Scala_Code_Blocks.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Method and variable definitions can be single lines as follows:
 
@@ -50,5 +47,4 @@ val x3:String= {
 }
 ```
 
-- Next »
 - « Previous

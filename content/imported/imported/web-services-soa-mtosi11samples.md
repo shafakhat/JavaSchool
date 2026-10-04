@@ -6,10 +6,7 @@ section: Imported - java2s Archive
 order: 1124
 source: https://web.archive.org/web/20071105161255/http://www.java2s.com:80/Code/Java/Web-Services-SOA/MTOSI11Samples.htm
 ---
-MTOSI 1.1 Samples
-
 ```java title=Example.java
-MTOSI 1.1 Samples
 =================
 mtosi_1.1 contains the following subdirectories:
 wsdl            - contains the mtosi 1.1 wsdls

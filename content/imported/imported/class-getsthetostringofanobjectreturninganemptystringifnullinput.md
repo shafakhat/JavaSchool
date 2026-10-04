@@ -7,7 +7,6 @@ order: 1021
 source: https://web.archive.org/web/20091030210731/http://www.java2s.com:80/Code/Java/Class/GetsthetoStringofanObjectreturninganemptystringifnullinput.htm
 ---
 Gets the toString of an Object returning an empty string ("") if null input. : toString « Class « Java
-Gets the toString of an Object returning an empty string ("") if null input.
 
 ```java title=Example.java
 /*

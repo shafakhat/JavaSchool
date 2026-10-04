@@ -108,5 +108,3 @@ doublelength(double[] point) length
 ```java title=Example.java
 returnMath.sqrt(stScalarProd(point, point));
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1045
 source: https://web.archive.org/web/20111125083158/http://java2s.com/Code/Java/2D-Graphics-GUI/Anundirectedgraphthatkeepstrackofconnectedcomponentsgroups.htm
 ---
-An undirected graph that keeps track of connected components (groups).
-
 ```java title=Example.java
 /**
  * Copyright (c) 2008-2010  Morten Silcowitz.

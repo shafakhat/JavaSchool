@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20090414062717/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingImagetoaTableCell.htm
 ---
-Adding Image to a Table Cell
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Chunk;

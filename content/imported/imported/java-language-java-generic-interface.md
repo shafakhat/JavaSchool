@@ -7,10 +7,7 @@ order: 50459
 source: https://www.java2s.com/Tutorials/Java/Java_Language/8020__Java_generic_interface.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 In Java we create generic interface.
 
@@ -76,5 +73,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

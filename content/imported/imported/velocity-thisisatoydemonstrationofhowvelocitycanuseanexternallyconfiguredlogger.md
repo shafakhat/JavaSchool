@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513091848/http://www.java2s.com/Code/Ja
 ---
 This is a toy demonstration of how Velocity can use an externally configured logger : Java examples (example source code) » Velocity » Velocity Log
 
-This is a toy demonstration of how Velocity can use an externally configured logger
-
 ```java title=Example.java
 /*
  * Copyright 2000-2001,2004 The Apache Software Foundation.

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20111125105220/http://java2s.com/Code/Java/Swing-Components/AJOutlookBarprovidesacomponentthatissimilartoaJTabbedPanebutinsteadofmaintainingtabs.htm
 ---
-A JOutlookBar provides a component that is similar to a JTabbedPane, but instead of maintaining tabs
-
 ```java title=Example.java
 //package net.jcdev.utils;
 //Import the GUI classes

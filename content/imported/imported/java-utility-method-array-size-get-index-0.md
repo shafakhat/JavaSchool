@@ -48,5 +48,3 @@ if (array == null)
     return 0;
 return calArraySize(array.length, SIZE_OF_INT);
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20111125071912/http://java2s.com/Code/Java/Collections-Data-Structure/ACompactHashSetimplementsthesetinterfacemoretightlyinmemoryandmoreefficientlythanJavasjavautilHashSet.htm
 ---
-A CompactHashSet implements the set interface more tightly in memory and more efficiently than Java's java.util.HashSet.
-
 ```java title=Example.java
 /*
  * LingPipe v. 3.9

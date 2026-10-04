@@ -143,5 +143,3 @@ invcoef = 1.0f - coef;
 for (i = 0; i < length; i++) {
     out[i] = coef * in1[i] + invcoef * in2[i + in2_idx];
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

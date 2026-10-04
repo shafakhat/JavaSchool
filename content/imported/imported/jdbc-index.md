@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50038
 source: https://www.java2s.com/Tutorials/Java/JDBC/index.html
 ---
-- Next »
-
 JDBC API is a Java API that can access a Relational Database.
 
 JDBC stands for Java Database Connectivity It is a standard Java API for database-independent connectivity between the Java programming language and databases.
@@ -29,5 +27,3 @@ The JDBC API provides the following interfaces and classes:
 - SQLException: handles any errors that occur in a database application.
 
 The java.sql and javax.sql are the primary packages for JDBC 4.0.
-
-- Next »

@@ -7,10 +7,7 @@ order: 50180
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0510__Java_interface_fields.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 An interface can have three types of members:
 
@@ -83,5 +80,4 @@ It is a convention to use all uppercase letters in the name of a field in an int
 
 The fields of an interface are always public.
 
-- Next »
 - « Previous

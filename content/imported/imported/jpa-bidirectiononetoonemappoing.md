@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20090119164051/http://www.java2s.com:80/Code/Java/JPA/BiDirectionOneToOneMappoing.htm
 ---
-BiDirection One To One Mappoing
-
 ```java title=Example.java
 File: Address.java
 import javax.persistence.CascadeType;

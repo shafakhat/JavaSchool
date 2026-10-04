@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20100212020849/http://java2s.com/Code/Java/J2EE/LaunchJettyembedded.htm
 ---
-Launch Jetty embedded.
-
 ```java title=Example.java
 /*
  * Copyright 2005 Joe Walker
@@ -28,7 +26,6 @@ import org.mortbay.jetty.Server;
 import org.mortbay.jetty.nio.SelectChannelConnector;
 import org.mortbay.jetty.webapp.WebAppContext;
 /**
- * Launch Jetty embedded.
  */
 public class JettyLauncher
 {

@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102122033/http://www.java2s.com/ref/jav
 
 ## Description
 
-Android KeyguardManager key board lock mode
-
 ```java title=Example.java
 import android.app.KeyguardManager;
 

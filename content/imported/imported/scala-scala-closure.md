@@ -7,10 +7,7 @@ order: 50108
 source: https://www.java2s.com/Tutorials/Java/Scala/3080__Scala_Closure.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A closure is a function, whose return value depends on the value of one or more variables declared outside this function.
 
@@ -103,5 +100,4 @@ def curriedAdd(a: Int)(b: Int) = a + b
 curriedAdd(2)(2)
 ```
 
-- Next »
 - « Previous

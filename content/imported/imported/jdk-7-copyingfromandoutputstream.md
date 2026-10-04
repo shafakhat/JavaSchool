@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20130111095509/http://www.java2s.com:80/Code/Java/JDK-7/CopyingFromandOutputStream.htm
 ---
-Copying From and Output Stream
-
 ```java title=Example.java
 import java.io.ByteArrayOutputStream;
 import java.nio.file.FileSystems;

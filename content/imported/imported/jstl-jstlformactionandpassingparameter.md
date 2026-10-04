@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513090332/http://www.java2s.com/Code/Ja
 ---
 JSTL-Form Action And Passing Parameter : Java examples (example source code) » JSTL » Form Parameter
 
-JSTL-Form Action And Passing Parameter
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <c:if test="${pageContext.request.method=='POST'}">

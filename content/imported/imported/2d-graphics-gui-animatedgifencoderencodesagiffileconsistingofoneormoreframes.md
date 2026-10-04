@@ -7,7 +7,6 @@ order: 1035
 source: https://web.archive.org/web/20091009091521/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AnimatedGifEncoderEncodesaGIFfileconsistingofoneormoreframes.htm
 ---
 AnimatedGifEncoder - Encodes a GIF file consisting of one or more frames : GIF « 2D Graphics GUI « Java
-AnimatedGifEncoder - Encodes a GIF file consisting of one or more frames
 
 ```java title=Example.java
 import java.awt.Color;

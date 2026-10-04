@@ -7,7 +7,6 @@ order: 50053
 source: https://www.java2s.com/ref/java/java.html
 ---
 - JDK
-- Java Basic java.beans java.io java.lang java.lang.annotation java.lang.management java.lang.reflect java.math java.net java.net.http java.nio java.nio.channels java.nio.charset java.nio.file java.nio.file.attribute java.security java.security.cert java.sql java.text java.time java.time.chrono java.time.format java.time.temporal java.time.zone java.util java.util.concurrent java.util.concurrent.atomic java.util.concurrent.locks java.util.function java.util.jar java.util.prefs java.util.regex java.util.stream java.util.zip javax.crypto javax.crypto.spec javax.jms javax.json javax.json.stream javax.mail javax.mail.internet javax.naming javax.naming.directory javax.net javax.net.ssl javax.script javax.servlet javax.servlet.http javax.sql.rowset javax.xml.bind javax.xml.parsers javax.xml.stream javax.xml.transform javax.xml.validation oracle.sql org.json org.w3c.dom
 - Android
 - android.app android.content android.content.pm android.graphics android.text android.util android.widget
 - AWT
@@ -17,8 +16,6 @@ source: https://www.java2s.com/ref/java/java.html
 - JavaFX
 - javafx.animation javafx.application javafx.beans javafx.beans.binding javafx.beans.property javafx.beans.value javafx.collections javafx.concurrent javafx.embed.swing javafx.event javafx.fxml javafx.geometry javafx.print javafx.scene javafx.scene.canvas javafx.scene.control javafx.scene.effect javafx.scene.image javafx.scene.input javafx.scene.layout javafx.scene.media javafx.scene.paint javafx.scene.shape javafx.scene.text javafx.scene.transform javafx.scene.web javafx.stage javafx.util
 
-- Java Basic
-- Java Language Basics Java Language (29) Data Types (70) Operator (91) Statement (128) String (38) enum (7) Array (62) Autobox (7) class (40) Method (35) interface (6) Generics (23) Exception (29) Javadoc (2) Lambda (21) package import (1) Java Features Algorithms (23) Byte Array (12) Data Structures (13) Design Patterns (35) Directory (7) Network (4) Regular Expression (27) Text File (10) OCA OCP Exam OCA OCP Exam 1 (100) OCA OCP Exam 2 (100) OCA OCP Exam 3 (100) OCA OCP Exam 4 (100) OCA OCP Exam 5 (100) OCA OCP Exam 6 (100) OCA OCP Exam 7 (100) OCA OCP Exam 8 (100) OCA OCP Exam 9 (100) OCA OCP Exam 10 (100) OCA OCP Exam 11 (100) OCA OCP Exam 12 (100) OCA OCP Exam 13 (100) OCA OCP Exam 14 (100) OCA OCP Exam 15 (100) OCA OCP Exam 16 (100) OCA OCP Exam 17 (100) OCA OCP Exam 18 (100) OCA OCP Exam 19 (100) OCA OCP Exam 20 (100) OCA OCP Exam 21 (100) OCA OCP Exam 22 (100) OCA OCP Exam 23 (100) OCA OCP Exam 24 (100) OCA OCP Exam 25 (100) OCA OCP Exam 26 (100) OCA OCP Exam 27 (100) OCA OCP Exam 28 (100) OCA OCP Exam 29 (100) OCA OCP Exam 30 (100) OCA OCP Exam 31 (100) OCA OCP Exam 32 (100) OCA OCP Exam 33 (84)
 - java.beans
 - Expression (1) PropertyChangeListener (1) VetoableChangeListener (2) XMLDecoder (1) XMLEncoder (1)
 

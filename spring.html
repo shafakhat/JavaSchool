@@ -27,11 +27,17 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
 </header>
 <nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
-  <div class="side-section"><a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a></div>
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
 </nav>
 <main class="main">
   <article class="ws-content">
-    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Advanced Java</span></nav>
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <span>Java Tutorial</span></nav>
     <h1>Spring Framework, Spring IO and Spring Boot</h1>
 <h2 id="the-spring-family-in-one-map">The Spring family in one map</h2>
 <div class="table-wrap"><table><thead><tr><th>Project</th><th>What it is</th></tr></thead><tbody><tr><td><strong>Spring Framework</strong> (core)</td><td>IoC container, AOP, data access, MVC, transactions - the original (2003)</td></tr><tr><td><strong>Spring IO</strong></td><td>An umbrella <em>platform/dependency descriptor</em> - curated compatible versions of many Spring projects (BOM-style), not a runtime you "start"</td></tr><tr><td><strong>Spring Boot</strong></td><td>Opinionated auto-configured way to <em>build</em> Spring apps (embedded server, starters, actuator) - since 2014, the default entry point</td></tr><tr><td>Spring Security / Data / Cloud / Batch...</td><td>Projects built <em>on</em> the core, versioned in the platform</td></tr></tbody></table></div>
@@ -143,7 +149,7 @@ public interface UserRepo extends JpaRepository&lt;User, Long&gt; {
 <h2 id="migration-notes-legacy-boot">Migration notes (legacy → Boot)</h2>
 <ol><li>WAR + <code>web.xml</code> servlet app → add <code>spring-boot-starter-web</code>, move <code>web.xml</code> filters to <code>FilterRegistrationBean</code>.</li><li>XML <code>&lt;beans&gt;</code> context → <code>@Configuration</code> + component scan; keep XML via <code>@ImportResource</code> while strangling.</li><li>Struts/jQuery frontends → serve static assets + new MVC endpoints route by route (see <a href="struts.html">Struts</a>).</li><li>Drop the app into Boot's embedded server; keep Oracle/MySQL drivers as starters.</li></ol>
 <p>Related: <a href="hibernate-jpa.html">Hibernate &amp; JPA</a> · <a href="servlets-jsp.html">Servlets &amp; JSP</a> · <a href="spring-aspecthelloworldexample.html">Spring examples imported from the archive</a></p>
-    <div class="pager"><a class="pager-btn" href="struts.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Struts</span></a><a class="pager-btn pager-next" href="hibernate-jpa.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Hibernate &amp; JPA</span></a></div>
+    <div class="pager"><a class="pager-btn" href="methods.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Methods</span></a><a class="pager-btn pager-next" href="hibernate-jpa.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Hibernate &amp; JPA</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

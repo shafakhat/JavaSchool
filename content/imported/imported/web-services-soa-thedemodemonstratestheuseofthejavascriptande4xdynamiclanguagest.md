@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1130
 source: https://web.archive.org/web/20080513031103/http://www.java2s.com/Code/Java/Web-Services-SOA/ThedemodemonstratestheuseoftheJavaScriptandE4XdynamiclanguagestoimplementJAXWSProviders.htm
 ---
-The demo demonstrates the use of the JavaScript and E4X dynamic languages to implement JAX-WS Providers
-
 ```java title=Example.java
 Hello World Demo using JavaScript and E4X Implementations
 =========================================================

@@ -7,10 +7,7 @@ order: 50125
 source: https://www.java2s.com/Tutorials/Java/Java_Design_Patterns/0150__Java_Command_Pattern.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Command pattern is a data driven design pattern It is one of the behavioral pattern.
 
@@ -86,5 +83,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

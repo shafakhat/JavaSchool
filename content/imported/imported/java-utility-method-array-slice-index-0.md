@@ -106,5 +106,3 @@ String[] result = newString[length];
 System.arraycopy(strings, begin, result, 0, length);
 return result;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

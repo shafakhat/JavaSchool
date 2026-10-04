@@ -7,10 +7,7 @@ order: 50358
 source: https://www.java2s.com/Tutorials/Java/java.util/IdentityHashMap/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -36,5 +33,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/IdentityHashMap/index.ht
 - Java IdentityHashMap.size()
 - Java IdentityHashMap.values()
 
-- Next »
 - « Previous

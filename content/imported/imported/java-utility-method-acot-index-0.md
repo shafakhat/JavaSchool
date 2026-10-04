@@ -42,5 +42,3 @@ else {
     rc = Math.PI + Math.atan(1D / d);
 return rc;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

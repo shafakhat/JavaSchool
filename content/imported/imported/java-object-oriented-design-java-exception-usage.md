@@ -7,10 +7,7 @@ order: 50178
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0430__Java_Exception_Usage.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Accessing the Stack of a Thread
 
@@ -143,5 +140,4 @@ catch (Exception1 | Exception2 | Throwable    e)  {
 }
 ```
 
-- Next »
 - « Previous

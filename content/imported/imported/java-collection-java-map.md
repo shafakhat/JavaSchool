@@ -7,10 +7,7 @@ order: 50339
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0180__Java_Map.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A map represents a collection that contains key-value mappings.
 
@@ -157,5 +154,4 @@ If a key is garbage collected, its associated entry is removed from the WeakHash
 
 The WeakHashMap allows a null key and multiple null values.
 
-- Next »
 - « Previous

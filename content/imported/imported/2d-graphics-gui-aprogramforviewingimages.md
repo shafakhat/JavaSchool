@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20101018030853/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/Aprogramforviewingimages.htm
 ---
-A program for viewing images
-
 ```java title=Example.java
 /*
  This program is a part of the companion code for Core Java 8th ed.
@@ -35,7 +33,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 /**
- * A program for viewing images.
  *
  * @version 1.22 2007-05-21
  * @author Cay Horstmann

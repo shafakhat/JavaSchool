@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1045
 source: https://web.archive.org/web/20060513094218/http://www.java2s.com/Code/Java/JSP/FieldsoftheCalendarClass.htm
 ---
-Fields of the Calendar Class : Java examples (example source code) » JSP » Date Calendar
-
 Fields of the Calendar Class
 
 ```java title=Example.java

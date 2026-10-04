@@ -7,10 +7,7 @@ order: 50309
 source: https://www.java2s.com/Tutorials/Java/java.nio/CharBuffer/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -51,5 +48,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio/CharBuffer/index.html
 - Java CharBuffer.wrap(CharSequence csq)
 - Java CharBuffer.wrap(CharSequence csq, int start, int end)
 
-- Next »
 - « Previous

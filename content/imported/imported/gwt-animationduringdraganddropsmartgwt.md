@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1054
 source: https://web.archive.org/web/20100921012303/http://www.java2s.com:80/Code/Java/GWT/AnimationduringdraganddropSmartGWT.htm
 ---
-Animation during drag and drop (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

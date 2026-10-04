@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1039
 source: https://web.archive.org/web/20100204195229/http://java2s.com/Code/Java/Collections-Data-Structure/AhashtablebasedMapimplementationwithweakkeysandusingreferenceequalityinplaceofobjectequalitywhencomparingkeysandvalues.htm
 ---
-A hashtable-based Map implementation with weak keys and using reference-equality in place of object-equality when comparing keys (and values).
-
 ```java title=Example.java
 /*
  * JBoss, Home of Professional Open Source

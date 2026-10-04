@@ -12,7 +12,7 @@ A complete, self-contained static website — **2,393 pages, zero build step req
   - **Master list**: all **115 core interview questions** on one expandable page
   - **3 OCJP/OCJA practice tests** — 50 questions each (**150 total**), timed scoring + explanations
   - Interactive topic quiz (10 questions)
-- **2,328 pages imported from the java2s.com Wayback archive** — the dead site's Java content,
+- **3,103 pages restored from the java2s.com archive** — the dead site's Java content,
   restored page by page (bytecode examples, tutorial chapters, collections, threads, generics,
   servlets/JSP, J2EE/EJB, Spring, Hibernate/JPA, Struts, JDBC, regex, file I/O, networking,
   design patterns, 2D/3D graphics, SWT/JFace, XML, web services, i18n and more) — all reachable from the
@@ -112,7 +112,22 @@ java-school/
 └── README.md
 ```
 
-## 5. Content notes
+## 5. Site structure (v3)
+
+Four top sections, reachable from the home-page cards and the slim sidebar:
+
+1. **Java Tutorial** - written lessons + the 39 java2s tutorial chapters. Each chapter is ONE page
+   per part with its sub-topics as **tabs** (thin pages are merged; huge chapters auto-split).
+2. **Certifications** - OCA/OCP practice questions, OCA Java SE 8 modules, exam papers, SCJP and
+   the three original OCJP practice tests (50 Q each).
+3. **Interview Questions** - 8 cross-linked topic banks (205 Q&A) + 115-question master list.
+4. **Java Examples** - the code-example categories.
+
+Colours: SeaGreen `#2E8B57`, Dark Gray `#404040`, AccentBlue `#2F6FED`.
+`tools/clean_imported.py` de-duplicates and strips java2s boilerplate before every build.
+
+## 6. Content notes
+
 
 - **Interview & certification content is original** — the java2s.com archive had no interview
   question bank or exam dumps, so those pages (115 master questions, 205 topic-bank questions,

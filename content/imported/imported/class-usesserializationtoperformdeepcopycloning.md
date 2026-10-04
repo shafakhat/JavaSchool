@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1097
 source: https://web.archive.org/web/20090531211856/http://www.java2s.com:80/Code/Java/Class/Usesserializationtoperformdeepcopycloning.htm
 ---
-Uses serialization to perform deep copy cloning.
-
 ```java title=Example.java
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

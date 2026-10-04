@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1069
 source: https://web.archive.org/web/20100213071226/http://java2s.com/Code/Java/Class/Sharedarray.htm
 ---
-Shared array
-
 ```java title=Example.java
 class TryInitialization {
   static int[] values = new int[10];

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20070116152035/http://www.java2s.com:80/Code/Java/Apache-Common/BeanUtilsDateUtils.htm
 ---
-BeanUtils Date Utils
-
 ```java title=Example.java
 import org.apache.commons.lang.time.DateUtils;
 import java.util.Date;

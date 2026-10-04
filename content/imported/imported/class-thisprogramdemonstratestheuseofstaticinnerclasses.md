@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1092
 source: https://web.archive.org/web/20111102044837/http://www.java2s.com:80/Code/Java/Class/Thisprogramdemonstratestheuseofstaticinnerclasses.htm
 ---
-This program demonstrates the use of static inner classes
-
 ```java title=Example.java
 /*
    This program is a part of the companion code for Core Java 8th ed.
@@ -24,7 +22,6 @@ This program demonstrates the use of static inner classes
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 /**
- * This program demonstrates the use of static inner classes.
  * @version 1.01 2004-02-27
  * @author Cay Horstmann
  */

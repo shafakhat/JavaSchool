@@ -43,5 +43,3 @@ for (finalbyte b : byteArray) {
         space = true;
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

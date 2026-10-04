@@ -49,5 +49,3 @@ booleanisNullArray(String[] array) is Null Array
 ```java title=Example.java
 return (array == null || array.length == 0 || (array.length == 1 && "".equals(array[0])));
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

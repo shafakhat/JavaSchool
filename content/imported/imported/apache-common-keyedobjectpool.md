@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1045
 source: https://web.archive.org/web/20061016093642/http://www.java2s.com/Code/Java/Apache-Common/KeyedObjectPool.htm
 ---
-Keyed Object Pool
-
 ```java title=Example.java
 import org.apache.commons.pool.impl.GenericKeyedObjectPool;
 public class TestKeyedObjectPool {

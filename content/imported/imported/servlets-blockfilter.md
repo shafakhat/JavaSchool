@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20061128202409/http://www.java2s.com:80/Code/Java/Servlets/BlockFilter.htm
 ---
-Block Filter
-
 ```java title=Example.java
 import java.io.IOException;
 import java.io.PrintWriter;

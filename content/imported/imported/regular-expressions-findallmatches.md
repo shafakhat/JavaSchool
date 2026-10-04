@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1027
 source: https://web.archive.org/web/20090422123407/http://www.java2s.com:80/Code/Java/Regular-Expressions/Findallmatches.htm
 ---
-Find all matches
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,7 +13,6 @@ public class Main {
   public static void main(String[] argv) throws Exception {
     Pattern pattern = Pattern.compile("pattern");
     Matcher matcher = pattern.matcher("infile.txt");
-    // Find all matches
     while (matcher.find()) {
       // Get the matching string
       String match = matcher.group();

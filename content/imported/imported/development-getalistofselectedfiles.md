@@ -2,9 +2,9 @@
 title: Get a list of selected files
 nav: Get a list of selected files
 description: chooser.addPropertyChangeListener(new PropertyChangeListener() {
-section: Imported
-order: 20025
-source: http://www.java2s.com:80/Tutorial/Java/0120__Development/Getalistofselectedfiles.htm
+section: Imported - java2s Archive
+order: 1034
+source: https://web.archive.org/web/20100624050829/http://www.java2s.com:80/Tutorial/Java/0120__Development/Getalistofselectedfiles.htm
 ---
 ```java title=Example.java
 import java.beans.PropertyChangeEvent;

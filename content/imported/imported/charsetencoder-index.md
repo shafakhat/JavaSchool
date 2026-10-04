@@ -7,10 +7,7 @@ order: 50303
 source: https://www.java2s.com/Tutorials/Java/java.nio.charset/CharsetEncoder/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -21,5 +18,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio.charset/CharsetEncoder/in
 - Java CharsetEncoder .isLegalReplacement (byte[] repl)
 - Java CharsetEncoder .maxBytesPerChar ()
 
-- Next »
 - « Previous

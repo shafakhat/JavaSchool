@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20061027021051/http://www.java2s.com/Code/Java/JSP/CallingSuperclassConstructors.htm
 ---
-Calling Superclass Constructors
-
 ```java title=Example.java
 <HTML>
     <HEAD>

@@ -115,5 +115,3 @@ for (int i = 0; i < kernel.length; i++) {
 Collections.shuffle(Arrays.asList(kernelDouble), newRandom(seed));
 return convert2DoublePrimitives(kernelDouble);
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

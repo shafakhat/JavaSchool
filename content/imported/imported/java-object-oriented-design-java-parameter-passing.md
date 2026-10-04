@@ -7,10 +7,7 @@ order: 50145
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0075__Java_Parameter_Passing.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java supports two kinds of data types: primitive data type and reference data type.
 
@@ -102,5 +99,4 @@ class Phone {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

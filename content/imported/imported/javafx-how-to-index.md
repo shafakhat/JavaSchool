@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50030
 source: https://www.java2s.com/Tutorials/Java/JavaFX_How_to/index.html
 ---
-- Next »
-
 - Accordion 1
 - Animation 3
 - Application 10
@@ -44,5 +42,3 @@ source: https://www.java2s.com/Tutorials/Java/JavaFX_How_to/index.html
 - ToolBar 1
 - Transform 1
 - VBox 1
-
-- Next »

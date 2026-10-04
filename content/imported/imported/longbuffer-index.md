@@ -7,10 +7,7 @@ order: 50313
 source: https://www.java2s.com/Tutorials/Java/java.nio/LongBuffer/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -40,5 +37,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio/LongBuffer/index.html
 - Java LongBuffer.wrap(long[] array)
 - Java LongBuffer.wrap(long[] array, int offset, int length)
 
-- Next »
 - « Previous

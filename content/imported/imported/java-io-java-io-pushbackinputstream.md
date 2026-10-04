@@ -7,10 +7,7 @@ order: 50203
 source: https://www.java2s.com/Tutorials/Java/Java_io/0120__Java_io_PushbackInputStream.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A PushbackInputStream adds functionality to an input stream allowing us to push back the read bytes using its unread() method.
 
@@ -43,5 +40,4 @@ import java.io.PushbackInputStream;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

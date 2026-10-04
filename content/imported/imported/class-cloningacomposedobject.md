@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1144
 source: https://web.archive.org/web/20081009143441/http://www.java2s.com:80/Code/Java/Class/Cloningacomposedobject.htm
 ---
-Cloning a composed object
-
 ```java title=Example.java
 // : appendixa:DeepCopy.java
-// Cloning a composed object.
 // {Depends: junit.jar}
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.

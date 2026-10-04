@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20100529232609/http://www.java2s.com:80/Code/Java/GWT/AddingSelectionlistenertoListGridSmartGWT.htm
 ---
-Adding Selection listener to ListGrid (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

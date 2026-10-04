@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/20090606190525/http://www.java2s.com:80/Code/Java/Regular-Expressions/Findthestartingpointofthesecondsubgroup.htm
 ---
-Find the starting point of the second subgroup
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

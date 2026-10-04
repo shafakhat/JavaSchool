@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20070111183334/http://www.java2s.com:80/Code/Java/Servlets/Contextbinder.htm
 ---
-Context binder
-
 ```java title=Example.java
 import java.util.Collections;
 import java.util.HashMap;

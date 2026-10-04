@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20100705152734/http://www.java2s.com:80/Code/Java/GWT/AccordionPanelbySectionStackSmartGWT.htm
 ---
-Accordion Panel by SectionStack (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20090502034201/http://www.java2s.com:80/Code/Java/Regular-Expressions/Getalldigitsfromastring.htm
 ---
-Get all digits from a string
-
 ```java title=Example.java
 public class Main {
   public static void main(String[] argv) throws Exception {

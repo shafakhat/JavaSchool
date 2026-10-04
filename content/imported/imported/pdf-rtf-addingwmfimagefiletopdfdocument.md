@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1028
 source: https://web.archive.org/web/20071104162545/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingWMFimagefiletoPdfdocument.htm
 ---
-Adding WMF image file to Pdf document
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

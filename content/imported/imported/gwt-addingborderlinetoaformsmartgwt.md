@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1021
 source: https://web.archive.org/web/20100511205923/http://www.java2s.com:80/Code/Java/GWT/AddingborderlinetoaformSmartGWT.htm
 ---
-Adding border line to a form (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

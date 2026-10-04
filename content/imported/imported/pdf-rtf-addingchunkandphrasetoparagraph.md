@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20100212120825/http://java2s.com/Code/Java/PDF-RTF/AddingChunkandPhrasetoParagraph.htm
 ---
-Adding Chunk and Phrase to Paragraph
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import java.io.IOException;

@@ -112,5 +112,3 @@ double distance_between_a1_a2 = calculateDifference(a1, a2);
 double distance_between_b1_b2 = calculateDifference(b1, b2);
 returnMath.atan(distance_between_b1_b2 / distance_between_a1_a2);
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

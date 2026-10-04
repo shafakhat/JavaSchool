@@ -7,10 +7,7 @@ order: 50269
 source: https://www.java2s.com/Tutorials/Java/java.io/ObjectOutputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -41,5 +38,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/ObjectOutputStream/index.h
 - Java ObjectOutputStream .writeUnshared (Object obj)
 - Java ObjectOutputStream .writeUTF (String str)
 
-- Next »
 - « Previous

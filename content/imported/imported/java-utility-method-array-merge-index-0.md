@@ -132,5 +132,3 @@ int index = 0;
 for (byte[] t : bytes) {
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

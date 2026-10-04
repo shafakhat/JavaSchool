@@ -7,10 +7,7 @@ order: 50397
 source: https://www.java2s.com/Tutorials/Java/java.text/DateFormat/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Field
 
@@ -45,5 +42,4 @@ source: https://www.java2s.com/Tutorials/Java/java.text/DateFormat/index.html
 - Java DateFormat.parse(String source)
 - Java DateFormat.setLenient(boolean lenient)
 
-- Next »
 - « Previous

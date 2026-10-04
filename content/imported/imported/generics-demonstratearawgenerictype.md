@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1021
 source: https://web.archive.org/web/20100213125851/http://java2s.com/Code/Java/Generics/Demonstratearawgenerictype.htm
 ---
-Demonstrate a raw generic type.
-
 ```java title=Example.java
 /*
 Java 2, v5.0 (Tiger) New Features

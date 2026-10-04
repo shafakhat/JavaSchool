@@ -7,10 +7,7 @@ order: 50462
 source: https://www.java2s.com/Tutorials/Java/Java_Language/8050__Java_generic_restrictions.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Type Parameters Can't Be Instantiated
 
@@ -73,5 +70,4 @@ publicclass Main {
 }
 ```
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50024
 source: https://www.java2s.com/Tutorials/Java/Collection_How_to/index.html
 ---
-- Next »
-
 - Array 46
 - Comparable 4
 - Comparator 6
@@ -18,5 +16,3 @@ source: https://www.java2s.com/Tutorials/Java/Collection_How_to/index.html
 - Properties 13
 - Queue 4
 - Set 44
-
-- Next »

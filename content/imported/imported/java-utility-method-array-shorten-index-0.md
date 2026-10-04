@@ -92,5 +92,3 @@ for (int index = 0; index < anArray.length; index++)
     output[index] = Short.parseShort(anArray[index]);
 return output;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

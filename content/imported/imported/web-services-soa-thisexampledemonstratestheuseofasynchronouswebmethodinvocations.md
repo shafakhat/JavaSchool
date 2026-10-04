@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1145
 source: https://web.archive.org/web/20071013001427/http://www.java2s.com:80/Code/Java/Web-Services-SOA/ThisexampledemonstratestheuseofasynchronousWebmethodinvocations.htm
 ---
-This example demonstrates the use of asynchronous Web method invocations
-
 ```java title=Example.java
 Sample: Google Spell Checker
 =============================

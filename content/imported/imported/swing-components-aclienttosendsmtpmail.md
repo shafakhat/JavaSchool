@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060412165909/http://www.java2s.com:80/Code
 ---
 A Client to Send SMTP Mail : Java examples (example source code) » Swing Components » Email Client
 
-A Client to Send SMTP Mail
-
 ```java title=Example.java
 import java.awt.*;
 import javax.swing.*;

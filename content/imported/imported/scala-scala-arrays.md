@@ -7,10 +7,7 @@ order: 50110
 source: https://www.java2s.com/Tutorials/Java/Scala/5000__Scala_Arrays.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The array is a data structure consisting of a collection of elements of the same type.
 
@@ -58,5 +55,4 @@ object Main {
 
 The index of the first element of an array is the number 0 and the index of the last element is the total number of elements minus one.
 
-- Next »
 - « Previous

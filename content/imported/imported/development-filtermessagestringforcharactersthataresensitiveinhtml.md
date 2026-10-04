@@ -2,9 +2,9 @@
 title: Filter message string for characters that are sensitive in HTML
 nav: Filter message string for ...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
-section: Imported
-order: 20009
-source: http://www.java2s.com:80/Tutorial/Java/0120__Development/FiltermessagestringforcharactersthataresensitiveinHTML.htm
+section: Imported - java2s Archive
+order: 1003
+source: https://web.archive.org/web/20100511211951/http://www.java2s.com:80/Tutorial/Java/0120__Development/FiltermessagestringforcharactersthataresensitiveinHTML.htm
 ---
 ```java title=Example.java
 /*

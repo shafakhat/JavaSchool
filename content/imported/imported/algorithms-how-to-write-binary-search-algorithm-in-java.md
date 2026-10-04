@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/20130904182451/http://java2s.com/Tutorials/Java/Algorithms/How_to_write_Binary_Search_algorithm_in_Java.htm
 ---
-Next »329/677« Previous
-
 In this chapter you will learn:
 
 - Recursive Binary Search Implementation
@@ -184,5 +182,3 @@ What you will learn in the next chapter:
 
 - Insertion Sort Implementation
 - Object Insertion Sort
-
-Next »« PreviousHome » Java Tutorial » AlgorithmsBubble sortBinary SearchInsertion SortSelection sortShell sortHeap SortMerge SortQuick SortFibonacciHanoi puzzleFahrenheit to Celsius

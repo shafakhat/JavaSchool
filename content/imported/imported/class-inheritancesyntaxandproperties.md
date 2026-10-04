@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1029
 source: https://web.archive.org/web/20081230020947/http://www.java2s.com:80/Code/Java/Class/Inheritancesyntaxandproperties.htm
 ---
-Inheritance syntax and properties
-
 ```java title=Example.java
 // : c06:Detergent.java
 // Inheritance syntax & properties.

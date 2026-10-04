@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50050
 source: https://www.java2s.com/Tutorials/Java/Java_Date_Time/index.html
 ---
-- Next »
-
 Java 8 introduced a new Date-Time API based on IS0-8601 date-time standards.
 
 The Date-Time API uses the calendar system defined in ISO-8601 as the default calendar. This calendar is based on the Gregorian calendar system
@@ -53,5 +51,3 @@ Java Date-Time API consists of the primary package, java.time, and four subpacka
 - java.time.format contains classes for formatting and parsing dates and times.
 - java.time.temporal contains API allowing interoperations between the date and time classes, querying, and adjustment. For example, TemporalField and ChronoField and TemporalUnit and ChronoUnit.
 - java.time.zone contains classes that support time zones, offsets from time zones, and time zone rules. For example, ZonedDateTime, and ZoneId or ZoneOffset.
-
-- Next »

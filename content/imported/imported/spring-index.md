@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50037
 source: https://www.java2s.com/Tutorials/Java/Spring/index.html
 ---
-- Next »
-
 Spring is a framework for building Java applications. We can use Spring to build any application in Java, for example, stand-alone, web, or Java Enterprise Edition (JEE) applications).
 
 Spring's philosophy is minimal impact.
@@ -80,5 +78,3 @@ web  For using Spring in your web applications
 webmvc  For Spring's own MVC framework.
 web-portlet  For using Spring MVC in developing portlets for deployment to a portal server environment.
 websocket  For the Java API for WebSocket (JSR-356).
-
-- Next »

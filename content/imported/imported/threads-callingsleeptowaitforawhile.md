@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20060503213223/http://www.java2s.com:80/Code/Java/Threads/Callingsleeptowaitforawhile.htm
 ---
-Calling sleep() to wait for a while : Java examples (example source code) » Threads » Simple Threads
-
 Calling sleep() to wait for a while
 
 ```java title=Example.java

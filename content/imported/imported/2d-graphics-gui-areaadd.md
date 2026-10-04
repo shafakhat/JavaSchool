@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513101309/http://www.java2s.com/Code/Ja
 ---
 Area Add : Java examples (example source code) » 2D Graphics GUI » Area Calculation
 
-Area Add
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.Dimension;

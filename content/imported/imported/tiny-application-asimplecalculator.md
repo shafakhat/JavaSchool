@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/20100601040234/http://www.java2s.com:80/Code/Java/Tiny-Application/Asimplecalculator.htm
 ---
-A simple calculator
-
 ```java title=Example.java
 /*
    This program is a part of the companion code for Core Java 8th ed.

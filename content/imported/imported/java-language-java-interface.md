@@ -7,10 +7,7 @@ order: 50446
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5080__Java_Interface.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 interface specifies what a class must do, but not how it does it.
 
@@ -216,5 +213,4 @@ publicclass Main {
 
 The output:
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50196
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0750__Java_Standard_Annotations.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java API defines many standard annotation types.
 
@@ -112,5 +109,4 @@ The following code shows the contents of the package-info.java file.
 package  com.java2s.annotation;
 ```
 
-- Next »
 - « Previous

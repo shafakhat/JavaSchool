@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/20091113151609/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Adirectedgraphdatastructure.htm
 ---
-A directed graph data structure
-
 ```java title=Example.java
 /*
  * JBoss, Home of Professional Open Source
@@ -35,7 +33,6 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 /**
- * A directed graph data structure.
  *
  * @author Scott.Stark@jboss.org
  * @version $Revision$

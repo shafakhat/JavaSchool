@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50046
 source: https://www.java2s.com/Tutorials/Java/Java_Network/index.html
 ---
-- Next »
-
 Internet protocol uses the IP addresses to deliver packets.
 
 We can use Java InetAddress class to work with IP address.
@@ -116,5 +114,3 @@ import java.net.InetSocketAddress;
 ```
 
 The code above generates the following result.
-
-- Next »

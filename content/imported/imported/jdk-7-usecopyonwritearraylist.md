@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1134
 source: https://web.archive.org/web/20130501011225/http://java2s.com:80/Code/Java/JDK-7/UseCopyOnWriteArrayList.htm
 ---
-Use CopyOnWriteArrayList
-
 ```java title=Example.java
 import java.util.ArrayList;
 import java.util.Collections;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1049
 source: https://web.archive.org/web/20070523085140/http://www.java2s.com:80/Code/Java/Ant/Compilethewebapplication.htm
 ---
-Compile the web application
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Example Application Build" default="build-both" basedir=".">
@@ -112,7 +110,6 @@ Compile the web application
     <copy file="${database.properties}" todir="${build.stand-alone.root}"/>
     <jar destfile="${appName.jar}" basedir="${build.stand-alone.root}"/>
   </target>
-  <!-- Compile the web application -->
   <target name="compile-web" depends="dir" description="Compile web application">
     <echo message="Compiling the web application"/>
     <javac destdir="${build.web.classes}">

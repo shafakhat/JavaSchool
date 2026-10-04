@@ -130,5 +130,3 @@ while (i < input.length) {
     if (input[i] == input[j]) {
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

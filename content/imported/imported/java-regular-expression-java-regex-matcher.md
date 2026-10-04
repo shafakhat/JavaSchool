@@ -7,10 +7,7 @@ order: 50382
 source: https://www.java2s.com/Tutorials/Java/Java_Regular_Expression/0040__Java_Regex_Matcher.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Matcher class performs a match on a sequence of characters by interpreting the compiled pattern defined in a Pattern object.
 
@@ -126,5 +123,4 @@ import java.util.regex.Matcher;
 
 The code above generates the following result.
 
-- Next »
 - « Previous

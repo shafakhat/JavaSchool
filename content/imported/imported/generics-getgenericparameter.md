@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20111009070801/http://java2s.com:80/Code/Java/Generics/GetGenericParameter.htm
 ---
-Get Generic Parameter
-
 ```java title=Example.java
 /*
  * Copyright 2008-2010 the T2 Project ant the Others.

@@ -7,10 +7,7 @@ order: 50081
 source: https://www.java2s.com/Tutorials/Java/Scala/0120__Scala_Char_Type.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Char literals are written with single-quotes, distinguishing them from String literals, which are written with double quotes.
 
@@ -23,5 +20,4 @@ The following example illustrates the Char type:
 val x = 'X'
 ```
 
-- Next »
 - « Previous

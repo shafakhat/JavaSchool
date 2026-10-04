@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1099
 source: https://web.archive.org/web/20090106050630/http://www.java2s.com:80/Code/Java/Class/Usinginnerclassesforcallbacks.htm
 ---
-Using inner classes for callbacks
-
 ```java title=Example.java
 // : c08:Callbacks.java
-// Using inner classes for callbacks
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 interface Incrementable {

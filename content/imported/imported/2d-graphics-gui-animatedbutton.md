@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/20091101181024/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AnimatedButton.htm
 ---
-Animated Button
-
 ```java title=Example.java
 /**
  *   Arsenal Real-Time Collaboration Server Project

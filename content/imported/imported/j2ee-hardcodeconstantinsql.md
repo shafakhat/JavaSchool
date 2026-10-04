@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20100212030048/http://java2s.com/Code/Java/J2EE/HardCodeConstantInSQL.htm
 ---
-Hard Code Constant In SQL
-
 ```java title=Example.java
 File: Account.java
 public class Account {

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1016
 source: https://web.archive.org/web/20061026215614/http://www.java2s.com/Code/Java/JSP/CallingaPrivateMethod.htm
 ---
-Calling a Private Method
-
 ```java title=Example.java
 // JSP file
 <HTML>

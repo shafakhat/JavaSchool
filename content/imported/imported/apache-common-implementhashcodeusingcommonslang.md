@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20100213232448/http://java2s.com/Code/Java/Apache-Common/ImplementhashCodeusingcommonslang.htm
 ---
-Implement hashCode using commons-lang
-
 ```java title=Example.java
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.EqualsBuilder;

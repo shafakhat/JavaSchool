@@ -117,5 +117,3 @@ for (int i = 0; i < array.length; i++) {
     data[i] = val;
 return data;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

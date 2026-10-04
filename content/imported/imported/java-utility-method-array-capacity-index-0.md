@@ -66,5 +66,3 @@ for (int i = lastIndex; i >= 0; i--) {
         length--;
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

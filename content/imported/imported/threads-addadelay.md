@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20090717022406/http://www.java2s.com:80/Code/Java/Threads/Addadelay.htm
 ---
-Add a delay
-
 ```java title=Example.java
 public class Main {
   public static void main(String[] args) {

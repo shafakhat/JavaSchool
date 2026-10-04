@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20090126060657/http://www.java2s.com:80/Code/Java/JPA/CreateYourOwnTableForTableGenerator.htm
 ---
-Create Your Own Table For Table Generator
-
 ```java title=Example.java
 File: Student.java
 import javax.persistence.Entity;

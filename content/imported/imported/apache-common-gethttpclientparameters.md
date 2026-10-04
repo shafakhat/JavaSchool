@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1036
 source: https://web.archive.org/web/20061026233648/http://www.java2s.com/Code/Java/Apache-Common/GetHttpclientparameters.htm
 ---
-Get Http client parameters
-
 ```java title=Example.java
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpVersion;

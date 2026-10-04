@@ -7,10 +7,7 @@ order: 50428
 source: https://www.java2s.com/Tutorials/Java/Java_Language/3010__Java_Boolean_Operator.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The Boolean logical operators operate on boolean operands.
 
@@ -137,5 +134,4 @@ publicclass Main {
 
 The output:
 
-- Next »
 - « Previous

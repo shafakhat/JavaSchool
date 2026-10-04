@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20061026233617/http://www.java2s.com/Code/Java/Apache-Common/ConnectMethodExampleForProxyClient.htm
 ---
-Connect Method Example For Proxy Client
-
 ```java title=Example.java
 import org.apache.commons.httpclient.ProxyClient;
 import org.apache.commons.httpclient.ConnectMethod;

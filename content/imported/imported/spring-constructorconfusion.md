@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1054
 source: https://web.archive.org/web/20070508151507/http://www.java2s.com:80/Code/Java/Spring/ConstructorConfusion.htm
 ---
-Constructor Confusion
-
 ```java title=Example.java
 /*
 Pro Spring

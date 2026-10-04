@@ -7,10 +7,7 @@ order: 50240
 source: https://www.java2s.com/Tutorials/Java/java.io/BufferedOutputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -23,5 +20,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/BufferedOutputStream/index
 - Java BufferedOutputStream .write (byte[] b, int off, int len)
 - Java BufferedOutputStream .write (int b)
 
-- Next »
 - « Previous

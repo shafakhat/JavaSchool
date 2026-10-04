@@ -7,10 +7,7 @@ order: 50399
 source: https://www.java2s.com/Tutorials/Java/java.text/NumberFormat/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Field
 
@@ -58,5 +55,4 @@ source: https://www.java2s.com/Tutorials/Java/java.text/NumberFormat/index.html
 - Java NumberFormat .setParseIntegerOnly (boolean value)
 - Java NumberFormat .setRoundingMode (RoundingMode roundingMode)
 
-- Next »
 - « Previous

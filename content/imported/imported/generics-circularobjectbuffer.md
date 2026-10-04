@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20090916030517/http://www.java2s.com:80/Code/Java/Generics/CircularObjectBuffer.htm
 ---
-Circular Object Buffer
-
 ```java title=Example.java
 /*
- * Circular Object Buffer
  * Copyright (C) 2002-2004 Stephen Ostermiller
  * http://ostermiller.org/contact.pl?regarding=Java+Utilities
  *

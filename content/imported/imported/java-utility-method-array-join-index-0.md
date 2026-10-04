@@ -122,5 +122,3 @@ if (array == null) {
     return null;
 return join(array, separator, 0, array.length);
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

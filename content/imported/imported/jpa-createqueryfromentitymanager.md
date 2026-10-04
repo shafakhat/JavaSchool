@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20081221100651/http://www.java2s.com:80/Code/Java/JPA/CreateQueryFromEntityManager.htm
 ---
-Create Query From Entity Manager
-
 ```java title=Example.java
 File: Professor.java
 import javax.persistence.Entity;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20060513075034/http://www.java2s.com/Code/Java/Velocity/Ifandelseif.htm
 ---
-If and elseif
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

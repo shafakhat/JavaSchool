@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1042
 source: https://web.archive.org/web/20100914140110/http://www.java2s.com:80/Code/Java/GWT/AddingtooltipforImgSmartGWT.htm
 ---
-Adding tooltip for Img (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

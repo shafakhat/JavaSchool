@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1087
 source: https://web.archive.org/web/20130715210210/http://www.java2s.com:80/Code/Java/JDK-7/JavaBeanmethodsimprovementsinJava17.htm
 ---
-JavaBean methods improvements in Java 1.7
-
 ```java title=Example.java
 import java.beans.Expression;
 public class Test {

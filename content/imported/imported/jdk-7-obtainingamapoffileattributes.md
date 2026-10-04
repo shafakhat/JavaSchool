@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1107
 source: https://web.archive.org/web/20130820184437/http://java2s.com/Code/Java/JDK-7/ObtainingaMapoffileattributes.htm
 ---
-Obtaining a Map of file attributes
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

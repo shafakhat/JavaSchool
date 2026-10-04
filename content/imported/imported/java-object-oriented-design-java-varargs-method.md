@@ -7,10 +7,7 @@ order: 50146
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0078__Java_varargs_Method.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 The term "varargs" is shorthand for "variable-length arguments."
 
@@ -200,5 +197,4 @@ publicclass Main {
 }
 ```
 
-- Next »
 - « Previous

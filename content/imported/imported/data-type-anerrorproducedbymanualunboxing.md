@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1140
 source: https://web.archive.org/web/20090531101456/http://www.java2s.com:80/Code/Java/Data-Type/Anerrorproducedbymanualunboxing.htm
 ---
-An error produced by manual unboxing.
-
 ```java title=Example.java
 public class UnboxingError {
   public static void main(String args[]) {

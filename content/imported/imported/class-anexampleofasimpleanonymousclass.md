@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1130
 source: https://web.archive.org/web/20090530094024/http://www.java2s.com:80/Code/Java/Class/anexampleofasimpleanonymousclass.htm
 ---
-an example of a simple anonymous class
-
 ```java title=Example.java
 public class MainClass {
   public static void main(String[] args) {

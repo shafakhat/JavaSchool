@@ -7,10 +7,7 @@ order: 50463
 source: https://www.java2s.com/Tutorials/Java/Java_Language/9000__Java_enum.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 An enumeration is a list of named constants.
 
@@ -163,5 +160,4 @@ if (day1.compareTo(day2) < 0)
 
 The code above generates the following result.
 
-- Next »
 - « Previous

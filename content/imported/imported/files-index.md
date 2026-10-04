@@ -7,10 +7,7 @@ order: 50294
 source: https://www.java2s.com/Tutorials/Java/java.nio.file/Files/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -48,5 +45,4 @@ source: https://www.java2s.com/Tutorials/Java/java.nio.file/Files/index.html
 - Java Files.write(Path path, byte[] bytes, OpenOption ... options)
 - Java Files.write(Path path, Iterable lines, Charset cs, OpenOption ... options)
 
-- Next »
 - « Previous

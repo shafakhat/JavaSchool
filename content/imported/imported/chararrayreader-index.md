@@ -7,10 +7,7 @@ order: 50245
 source: https://www.java2s.com/Tutorials/Java/java.io/CharArrayReader/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -28,5 +25,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/CharArrayReader/index.html
 - Java CharArrayReader.reset()
 - Java CharArrayReader.skip(long n)
 
-- Next »
 - « Previous

@@ -7,10 +7,7 @@ order: 50415
 source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Modifier/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Field
 
@@ -48,5 +45,4 @@ source: https://www.java2s.com/Tutorials/Java/java.lang.reflect/Modifier/index.h
 - Java Modifier.methodModifiers()
 - Java Modifier.toString(int mod)
 
-- Next »
 - « Previous

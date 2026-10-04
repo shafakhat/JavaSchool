@@ -7,10 +7,7 @@ order: 50351
 source: https://www.java2s.com/Tutorials/Java/java.util/Dictionary/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -26,5 +23,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/Dictionary/index.html
 - Java Dictionary.remove(Object key)
 - Java Dictionary.size()
 
-- Next »
 - « Previous

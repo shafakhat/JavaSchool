@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20060513092716/http://www.java2s.com/Code/Java/Servlets/DedicatedConnectionServlet.htm
 ---
-Dedicated Connection Servlet : Java examples (example source code) » Servlets » Database
-
 Dedicated Connection Servlet
 
 ```java title=Example.java

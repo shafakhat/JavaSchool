@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20060411090202/http://www.java2s.com:80/Code/Java/J2EE/AFullStrutsApplication.htm
 ---
-A Full Struts Application
-
 ```java title=Example.java
 /*
 Title:       Struts : Essential Skills (Essential Skills)

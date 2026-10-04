@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102122100/http://www.java2s.com/ref/jav
 
 ## Description
 
-Java ActionEvent create for key event
-
 ```java title=Example.java
 import java.awt.AWTEventMulticaster;
 import java.awt.BorderLayout;

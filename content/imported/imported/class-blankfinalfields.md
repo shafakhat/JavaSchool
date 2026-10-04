@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1135
 source: https://web.archive.org/web/20090602122454/http://www.java2s.com:80/Code/Java/Class/Blankfinalfields.htm
 ---
-Blank final fields
-
 ```java title=Example.java
 // : c06:BlankFinal.java
-// "Blank" final fields.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Poppet {

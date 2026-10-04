@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1050
 source: https://web.archive.org/web/20090720053121/http://www.java2s.com:80/Code/Java/Threads/DeterminingWhenaThreadHasFinished.htm
 ---
-Determining When a Thread Has Finished
-
 ```java title=Example.java
 public class Main {
   public static void main(String[] argv) throws Exception {

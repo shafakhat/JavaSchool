@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/20090603133834/http://www.java2s.com:80/Code/Java/Generics/AlistdeclaredtoholdobjectsofatypeTcanalsoholdobjectsthatextendfromT.htm
 ---
-A list declared to hold objects of a type T can also hold objects that extend from T.
-
 ```java title=Example.java
 import java.util.ArrayList;
 import java.util.List;

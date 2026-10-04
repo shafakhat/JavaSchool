@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1063
 source: https://web.archive.org/web/20071025002359/http://www.java2s.com:80/Code/Java/Apache-Common/Stringcontainsonly.htm
 ---
-String contains only
-
 ```java title=Example.java
 /*
 false

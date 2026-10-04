@@ -109,5 +109,3 @@ if (w < 0) {
     w += 360;
 return w;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1031
 source: https://web.archive.org/web/20111010003055/http://java2s.com:80/Code/Java/Generics/GenericTriplestructure.htm
 ---
-Generic Triple structure
-
 ```java title=Example.java
 /**
  * This program is free software; you can redistribute it and/or modify

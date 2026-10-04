@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1058
 source: https://web.archive.org/web/20060513092149/http://www.java2s.com/Code/Java/Velocity/Stringconcatenation.htm
 ---
-String concatenation
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

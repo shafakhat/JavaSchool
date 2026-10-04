@@ -26,5 +26,3 @@ for (int i = 0; i < l1; i++) {
 for (int i = 0; i < l2; i++) {
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

@@ -7,10 +7,7 @@ order: 50347
 source: https://www.java2s.com/Tutorials/Java/java.util/Collections/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Field
 
@@ -76,5 +73,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/Collections/index.html
 - Java Collections .unmodifiableSortedMap ( SortedMap m)
 - Java Collections .unmodifiableSortedSet ( SortedSet s)
 
-- Next »
 - « Previous

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20090802100248/http://www.java2s.com:80/Code/Java/Spring/BeanFactoryAwareandBeanAware.htm
 ---
-BeanFactoryAware and BeanAware
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20090225212611/http://www.java2s.com:80/Code/Java/EJB3/EJBWithWebMethod.htm
 ---
-EJB With Web Method
-
 ```java title=Example.java
 File: jndi.properties
 java.naming.factory.initial=org.jnp.interfaces.NamingContextFactory

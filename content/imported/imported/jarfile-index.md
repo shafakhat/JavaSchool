@@ -7,10 +7,7 @@ order: 50316
 source: https://www.java2s.com/Tutorials/Java/java.util.jar/JarFile/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -28,5 +25,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util.jar/JarFile/index.html
 - Java JarFile.getJarEntry(String name)
 - Java JarFile.getManifest()
 
-- Next »
 - « Previous

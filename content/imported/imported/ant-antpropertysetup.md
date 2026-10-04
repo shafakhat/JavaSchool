@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20061016080634/http://www.java2s.com/Code/Java/Ant/Antpropertysetup.htm
 ---
-Ant property set up
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="sample" default="test" basedir=".">

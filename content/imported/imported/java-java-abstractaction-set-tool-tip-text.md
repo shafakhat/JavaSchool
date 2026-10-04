@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102122120/http://www.java2s.com/ref/jav
 
 ## Description
 
-Java AbstractAction set tool tip text
-
 ```java title=Example.java
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;

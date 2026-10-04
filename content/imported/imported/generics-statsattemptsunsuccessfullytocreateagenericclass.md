@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1049
 source: https://web.archive.org/web/20090416234441/http://www.java2s.com:80/Code/Java/Generics/Statsattemptsunsuccessfullytocreateagenericclass.htm
 ---
-Stats attempts (unsuccessfully) to create a generic class
-
 ```java title=Example.java
 /*
 Java 2, v5.0 (Tiger) New Features

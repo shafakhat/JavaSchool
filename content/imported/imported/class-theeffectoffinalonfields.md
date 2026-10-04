@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1079
 source: https://web.archive.org/web/20090531211320/http://www.java2s.com:80/Code/Java/Class/Theeffectoffinalonfields.htm
 ---
-The effect of final on fields
-
 ```java title=Example.java
 // : c06:FinalData.java
-// The effect of final on fields.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 import java.util.Random;

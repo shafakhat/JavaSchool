@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1027
 source: https://web.archive.org/web/20090502032008/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AlphaCompositeSRCATOP.htm
 ---
-AlphaComposite.SRC_ATOP
-
 ```java title=Example.java
 import java.awt.AlphaComposite;
 import java.awt.Color;

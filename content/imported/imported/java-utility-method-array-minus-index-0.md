@@ -28,5 +28,3 @@ for (int i = 0; i < v.length; i++) {
     vc[i] -= u[i];
 return vc;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

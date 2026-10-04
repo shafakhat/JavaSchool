@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20090429173537/http://www.java2s.com:80/Code/Java/Generics/Agenericinterfaceexample.htm
 ---
-A generic interface example.
-
 ```java title=Example.java
 interface MinMax<T extends Comparable<T>> {
   T min();

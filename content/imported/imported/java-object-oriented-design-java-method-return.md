@@ -7,10 +7,7 @@ order: 50141
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0050__Java_method_Return.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Modifiers, return types, and parameter names are not part of the signature.
 
@@ -78,5 +75,4 @@ Since the printMessage() method does not return any value, you cannot use a call
 
 When a method's return type is void, it is not necessary to use a return statement because we do not have a value to return from the method.
 
-- Next »
 - « Previous

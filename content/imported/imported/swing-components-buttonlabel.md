@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1027
 source: https://web.archive.org/web/20111125080011/http://java2s.com/Code/Java/Swing-Components/ButtonLabel.htm
 ---
-Button Label
-
 ```java title=Example.java
 //package com.towel.swing;
 import java.awt.Color;

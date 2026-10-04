@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1028
 source: https://web.archive.org/web/20081230140546/http://www.java2s.com:80/Code/Java/Class/Inheritanceconstructorsandarguments.htm
 ---
-Inheritance, constructors and arguments
-
 ```java title=Example.java
 // : c06:Chess.java
-// Inheritance, constructors and arguments.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Game {

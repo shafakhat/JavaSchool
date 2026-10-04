@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50000
 source: https://www.java2s.com/Tutorials/Java/Scala/index.html
 ---
-- Next »
-
 We can execute Scala code by first compiling it using the scalac command line tool.
 
 ```java title=Example.java
@@ -79,5 +77,3 @@ object Main {
   }
 }
 ```
-
-- Next »

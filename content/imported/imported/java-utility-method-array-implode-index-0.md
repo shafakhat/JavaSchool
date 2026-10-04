@@ -119,5 +119,3 @@ if (inputArray != null && inputArray.length > 0) {
     output = sb.toString();
 return output;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

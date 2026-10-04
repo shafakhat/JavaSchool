@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20111003002924/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/Amethodtogetthecurrentdatetouseinatimestamp.htm
 ---
-A method to get the current date to use in a timestamp
-
 ```java title=Example.java
 /*
  * This file is part of the AusStage Utilities Package
@@ -36,7 +34,6 @@ import java.text.DateFormat;
  */
 public class DateUtils {
   /**
-   * A method to get the current date to use in a timestamp
    *
    * @return  a string containing the timestamp
    */

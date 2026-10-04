@@ -7,10 +7,7 @@ order: 50447
 source: https://www.java2s.com/Tutorials/Java/Java_Language/5090__Java_Abstract_Class.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Abstract class is for abstract idea or concept. For example, int data type is a concrete data type and double is another concrete data type. They are both numbers. Here number is an abstract concept. Shape is another example. We can have spare, rectangle or triangle or circle. They are all concrete while shape is an abstract class.
 
@@ -103,5 +100,4 @@ publicclass Main {
 
 The output:
 
-- Next »
 - « Previous

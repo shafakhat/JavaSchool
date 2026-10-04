@@ -7,10 +7,7 @@ order: 50378
 source: https://www.java2s.com/Tutorials/Java/java.util.concurrent/ArrayBlockingQueue/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -40,5 +37,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util.concurrent/ArrayBlocking
 - Java ArrayBlockingQueue .toArray (T[] a)
 - Java ArrayBlockingQueue.toString()
 
-- Next »
 - « Previous

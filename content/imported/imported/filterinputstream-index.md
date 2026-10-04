@@ -7,10 +7,7 @@ order: 50260
 source: https://www.java2s.com/Tutorials/Java/java.io/FilterInputStream/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Constructor
 
@@ -28,5 +25,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/FilterInputStream/index.ht
 - Java FilterInputStream.reset()
 - Java FilterInputStream.skip(long n)
 
-- Next »
 - « Previous

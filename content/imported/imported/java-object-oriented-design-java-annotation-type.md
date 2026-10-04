@@ -7,10 +7,7 @@ order: 50195
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0740__Java_Annotation_Type.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Marker Annotation Types
 
@@ -220,5 +217,4 @@ publicclass Main {
 
 The Native annotation type is a meta-annotation that is used to annotate fields which may be referenced from native code. It is a marker annotation.
 
-- Next »
 - « Previous

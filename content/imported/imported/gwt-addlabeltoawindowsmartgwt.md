@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1045
 source: https://web.archive.org/web/20100523193819/http://www.java2s.com:80/Code/Java/GWT/AddlabeltoawindowSmartGWT.htm
 ---
-Add label to a window (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

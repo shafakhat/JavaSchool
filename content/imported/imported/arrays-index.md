@@ -7,10 +7,7 @@ order: 50345
 source: https://www.java2s.com/Tutorials/Java/java.util/Arrays/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
@@ -120,5 +117,4 @@ source: https://www.java2s.com/Tutorials/Java/java.util/Arrays/index.html
 - Java Arrays.toString(Object [] a)
 - Java Arrays.toString(short[] a)
 
-- Next »
 - « Previous

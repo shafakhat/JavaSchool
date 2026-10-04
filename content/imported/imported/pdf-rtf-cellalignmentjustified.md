@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1049
 source: https://web.archive.org/web/20080612153657/http://www.java2s.com:80/Code/Java/PDF-RTF/CellAlignmentJustified.htm
 ---
-Cell Alignment Justified
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

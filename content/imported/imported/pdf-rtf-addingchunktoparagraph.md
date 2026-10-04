@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/20100212120840/http://java2s.com/Code/Java/PDF-RTF/AddingChunktoParagraph.htm
 ---
-Adding Chunk to Paragraph
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Chunk;

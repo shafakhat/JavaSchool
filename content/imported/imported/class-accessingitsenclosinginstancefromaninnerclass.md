@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1121
 source: https://web.archive.org/web/20090531215648/http://www.java2s.com:80/Code/Java/Class/Accessingitsenclosinginstancefromaninnerclass.htm
 ---
-Accessing its enclosing instance from an inner class
-
 ```java title=Example.java
 public class Main {
   private int number = 12;

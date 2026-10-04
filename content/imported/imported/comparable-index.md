@@ -7,14 +7,10 @@ order: 50348
 source: https://www.java2s.com/Tutorials/Java/java.util/Comparable/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Method
 
 - Java Comparable.compareTo(T o)
 
-- Next »
 - « Previous

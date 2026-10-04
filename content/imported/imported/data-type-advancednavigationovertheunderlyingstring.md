@@ -6,7 +6,6 @@ section: Imported - java2s Archive
 order: 1123
 source: https://web.archive.org/web/20111031023227/http://www.java2s.com:80/Code/Java/Data-Type/Advancednavigationovertheunderlyingstring.htm
 ---
-Advanced navigation over the underlying string.
 1.  StrCharAt - show String.charAt()
 2.  Basic tab-character handling stuff
 3.  Convert Characters to Lower Case

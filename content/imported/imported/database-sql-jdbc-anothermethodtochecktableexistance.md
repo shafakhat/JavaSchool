@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20061018125141/http://www.java2s.com/Code/Java/Database-SQL-JDBC/AnotherMethodToCheckTableExistance.htm
 ---
-Another Method To Check Table Existance
-
 ```java title=Example.java
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;

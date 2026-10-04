@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20071104040916/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingListtoParagraph.htm
 ---
-Adding List to Paragraph
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

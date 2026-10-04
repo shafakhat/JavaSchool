@@ -26,5 +26,3 @@ for (int k = 0; k < bitmap1.length; ++k) {
         long t = bitset & -bitset;
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

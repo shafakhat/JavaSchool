@@ -7,10 +7,7 @@ order: 50283
 source: https://www.java2s.com/Tutorials/Java/java.io/StreamTokenizer/index.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 ## Field
 
@@ -39,5 +36,4 @@ source: https://www.java2s.com/Tutorials/Java/java.io/StreamTokenizer/index.html
 - Java StreamTokenizer .whitespaceChars (int low, int hi)
 - Java StreamTokenizer.wordChars(int low, int hi)
 
-- Next »
 - « Previous

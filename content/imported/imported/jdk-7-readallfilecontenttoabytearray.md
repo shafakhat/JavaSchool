@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1113
 source: https://web.archive.org/web/20130111100604/http://www.java2s.com:80/Code/Java/JDK-7/Readallfilecontenttoabytearray.htm
 ---
-Read all file content to a byte array
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.file.Files;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20070116152829/http://www.java2s.com:80/Code/Java/Apache-Common/BeanUtilsCollections2.htm
 ---
-BeanUtils Collections 2
-
 ```java title=Example.java
 import org.apache.commons.beanutils.BeanPredicate;
 import org.apache.commons.collections.PredicateUtils;

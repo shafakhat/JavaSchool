@@ -7,10 +7,7 @@ order: 50335
 source: https://www.java2s.com/Tutorials/Java/Java_Collection/0160__Java_Queue.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 A queue is a collection of objects on which operations can only be performed at two ends of the queue.
 
@@ -51,11 +48,11 @@ E peek()  Peek the queue and it returns null if the queue is empty instead of th
 
 The LinkedList and PriorityQueue are two implementation classes for the Queue interface. LinkedList also implement the List interface.
 
-[Queue APIs](../../../Tutorials/Java/java.util/Queue/index.html)
+Queue APIs
 
-[LinkedList APIs](../../../Tutorials/Java/java.util/LinkedList/index.html)
+LinkedList APIs
 
-[Stack APIs](../../../Tutorials/Java/java.util/Stack/index.html)
+Stack APIs
 
 ## Example
 
@@ -98,5 +95,4 @@ while (queue.peek() != null) {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

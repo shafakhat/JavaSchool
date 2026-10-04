@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 50004
 source: https://www.java2s.com/Tutorials/Java/OCA_Java_SE_8_Core_Java_APIs/index.html
 ---
-- Next »
-
 A string is basically a sequence of characters; here's an example:
 
 ```java title=Example.java
@@ -142,5 +140,3 @@ String name = new String("java2s.com");
 The first uses the string pool normally.
 
 The second doesn't use the string pool and creates a new object.
-
-- Next »

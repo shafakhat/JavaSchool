@@ -137,5 +137,3 @@ for (int k = 0; k < str0.length(); k++) {
         String str = strs[i];
 ...
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

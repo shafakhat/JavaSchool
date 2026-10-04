@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1105
 source: https://web.archive.org/web/20071026130407/http://www.java2s.com:80/Code/Java/Web-Services-SOA/AsimpleservicethatreturnsatextwhichcontainstheversionnumberandthebuiltdateoftheAxis2Distributionused.htm
 ---
-A simple service that returns a text which contains the version number and the built date of the Axis2 Distribution used.
-
 ```java title=Example.java
 Sample: Version
 ===============

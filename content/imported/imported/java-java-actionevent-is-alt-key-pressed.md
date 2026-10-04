@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102122100/http://www.java2s.com/ref/jav
 
 ## Description
 
-Java ActionEvent is alt key pressed
-
 ```java title=Example.java
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

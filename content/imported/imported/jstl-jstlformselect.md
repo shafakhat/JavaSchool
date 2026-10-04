@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1024
 source: https://web.archive.org/web/20060926091545/http://www.java2s.com:80/Code/Java/JSTL/JSTLFormSelect.htm
 ---
-JSTL Form Select
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <c:if test="${pageContext.request.method=='POST'}">

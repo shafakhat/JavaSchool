@@ -11,8 +11,6 @@ source: https://web.archive.org/web/20210102121823/http://www.java2s.com/ref/jav
 
 ## Description
 
-Java AbstractList wrap another list to create custom list and reverse an unmodifiable List
-
 ```java title=Example.java
 import java.util.AbstractList;
 import java.util.Arrays;

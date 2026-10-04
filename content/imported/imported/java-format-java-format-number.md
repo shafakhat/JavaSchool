@@ -7,10 +7,7 @@ order: 50395
 source: https://www.java2s.com/Tutorials/Java/Java_Format/0110__Java_Format_Number.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Java printf supports two types of numeric formatting:
 
@@ -194,5 +191,4 @@ publicclass Main {
 
 The code above generates the following result.
 
-- Next »
 - « Previous

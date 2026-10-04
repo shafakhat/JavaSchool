@@ -28,7 +28,6 @@ import java.util.Calendar;
 import java.util.Date;
 public class Utils {
   /**
-   * Returns a Date set to the last possible millisecond of the minute.
    * If a null day is passed in, a new Date is created.
    */
   public static Date getEndOfMinute(Date day) {

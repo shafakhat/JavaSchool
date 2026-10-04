@@ -110,5 +110,3 @@ for (String p : prefix) {
         return true;
 return false;
 ```
-
-[HOME](https://www.java2s.com/) | Copyright © www.java2s.com 2016

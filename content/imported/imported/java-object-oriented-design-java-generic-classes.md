@@ -7,10 +7,7 @@ order: 50170
 source: https://www.java2s.com/Tutorials/Java/Java_Object_Oriented_Design/0350__Java_Generic_Classes.html
 ---
 ```java title=Example.java
-« Previous
 ```
-
-- Next »
 
 Using generics, we can write code without knowing the type of the objects the code operates on. It lets us create generic classes, constructors, and methods.
 
@@ -153,5 +150,4 @@ class Wrapper<T> {
 }
 ```
 
-- Next »
 - « Previous

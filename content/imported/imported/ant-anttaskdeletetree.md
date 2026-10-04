@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20100203133452/http://www.java2s.com:80/Code/Java/Ant/Anttaskdeletetree.htm
 ---
-Ant task delete tree
-
 ```java title=Example.java
 <project name="foo" default="deploy" basedir=".">
   <target name="init">
