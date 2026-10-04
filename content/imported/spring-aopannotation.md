@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20081209070018/http://www.java2s.com:80/Code/Java/Spring/AOPAnnotation.htm
 ---
-AOP Annotation
-
 ```java title=Example.java
 File: Main.java
 import java.lang.annotation.ElementType;

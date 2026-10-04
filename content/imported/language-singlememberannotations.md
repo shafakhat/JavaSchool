@@ -40,7 +40,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 All annotations for myMeth:
 @MyAnnotation(value=101)
 ```

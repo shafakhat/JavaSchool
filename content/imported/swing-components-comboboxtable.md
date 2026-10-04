@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513064838/http://www.java2s.com/Code/Ja
 ---
 ComboBox Table : Java examples (example source code) » Swing Components » Grid Table
 
-ComboBox Table
-
 ```java title=Example.java
 /*
 Core SWING Advanced Programming

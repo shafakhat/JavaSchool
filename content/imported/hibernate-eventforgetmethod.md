@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20060513083811/http://www.java2s.com/Code/Java/Hibernate/EventForGetMethod.htm
 ---
-Event For Get Method
-
 ```java title=Example.java
 /////////////////////////////////////////////////////////////////////////
 import java.io.Serializable;

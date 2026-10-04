@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20061027021035/http://www.java2s.com/Code/Java/Velocity/Includeanothertemplatefile.htm
 ---
-Include another template file
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20090529070440/http://www.java2s.com:80/Code/Java/Swing-Components/Aboutdialog.htm
 ---
-About dialog
-
 ```java title=Example.java
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;

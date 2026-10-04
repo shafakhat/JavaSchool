@@ -6,14 +6,11 @@ section: Imported - java2s Archive
 order: 1147
 source: https://web.archive.org/web/20071026130412/http://www.java2s.com:80/Code/Java/Web-Services-SOA/ThissampledemonstrateshowtouseWSDL2JavageneratedcodewithCastor.htm
 ---
-This sample demonstrates how to use WSDL2Java generated code with Castor
-
 ```java title=Example.java
 3Sample: Data Binding
 ====================
 Introduction
 ============
-This sample demonstrates how to use WSDL2Java generated code with Castor.
 Running of this sample assumes that you are running this within the extracted release folder (Axis2_HOME/samples/databinding).
 Pre-Requisites
 ==============

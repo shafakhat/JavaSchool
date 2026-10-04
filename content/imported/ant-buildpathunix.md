@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1038
 source: https://web.archive.org/web/20071012045432/http://java2s.com:80/Code/Java/Ant/Buildpathunix.htm
 ---
-Build path unix
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Apache Ant Properties Project" default="build.path.unix" basedir=".">

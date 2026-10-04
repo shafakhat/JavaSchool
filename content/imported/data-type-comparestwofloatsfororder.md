@@ -39,7 +39,6 @@ import java.math.BigInteger;
  */
 public class Main {
   /**
-   * Compares two floats for order.
    *
    * This method is more comprehensive than the standard Java greater than,
    * less than and equals operators.

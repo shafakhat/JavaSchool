@@ -28,7 +28,6 @@ source: https://web.archive.org/web/20111105111948/http://java2s.com/Tutorial/Ja
  * but rereleased by the original author under the ASF license (above).
  */
 /**
- * A hash map that uses primitive ints for the key rather than objects.
  *
  * Note that this class is for internal optimization purposes only, and may
  * not be supported in future releases of Apache Commons Lang.  Utilities of

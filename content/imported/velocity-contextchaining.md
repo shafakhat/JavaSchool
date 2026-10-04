@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1024
 source: https://web.archive.org/web/20060926092723/http://www.java2s.com:80/Code/Java/Velocity/ContextChaining.htm
 ---
-Context Chaining
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;

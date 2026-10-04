@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/20081209042644/http://www.java2s.com:80/Code/Java/JPA/AnyWithSubquery.htm
 ---
-Any With Subquery
-
 ```java title=Example.java
 File: Main.java
 import javax.persistence.EntityManager;

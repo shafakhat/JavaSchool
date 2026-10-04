@@ -7,7 +7,6 @@ order: 1003
 source: https://web.archive.org/web/20091030092501/http://www.java2s.com:80/Code/Java/J2EE/CommonstaticutilitymethodsthathelpinimplementingJSFtags.htm
 ---
 Common static utility methods that help in implementing JSF tags : JavaServer Faces « J2EE « Java
-Common static utility methods that help in implementing JSF tags
 
 ```java title=Example.java
 /**********************************************************************************
@@ -41,7 +40,6 @@ import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.webapp.UIComponentTag;
 /**
- * Common static utility methods that help in implementing JSF tags.
  */
 public class TagUtil
 {

@@ -3,8 +3,8 @@ title: Returns a Date set just to Noon, to the closest possible millisecond of t
 nav: Returns a Date set just to...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1181
-source: https://web.archive.org/web/20100328231357/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/ReturnsaDatesetjusttoNoontotheclosestpossiblemillisecondoftheday.htm
+order: 1046
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ReturnsaDatesetjusttoNoontotheclosestpossiblemillisecondoftheday.htm
 ---
 ```java title=Example.java
 /*
@@ -23,16 +23,14 @@ source: https://web.archive.org/web/20100328231357/http://www.java2s.com:80/Tuto
  * limitations under the License.  For additional information regarding
  * copyright in this work, please see the NOTICE file in the top level
  * directory of this distribution.
- */
-import java.util.Calendar;
+ */import java.util.Calendar;
 import java.util.Date;
-public class Utils {
+publicclass Utils {
   /**
    * Returns a Date set just to Noon, to the closest possible millisecond
    * of the day. If a null day is passed in, a new Date is created.
    * nnoon (00m 12h 00s)
-   */
-  public static Date getNoonOfDay(Date day, Calendar cal) {
+   */publicstatic Date getNoonOfDay(Date day, Calendar cal) {
       if (day == null) day = new Date();
       cal.setTime(day);
       cal.set(Calendar.HOUR_OF_DAY, 12);

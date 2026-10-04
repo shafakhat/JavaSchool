@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1101
 source: https://web.archive.org/web/20130820202449/http://java2s.com/Code/Java/JDK-7/MonitoringfileeventsusingWatchEvents.htm
 ---
-Monitoring file events using WatchEvents
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.file.FileSystem;

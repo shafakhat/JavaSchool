@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1029
 source: https://web.archive.org/web/20100421083511/http://www.java2s.com:80/Code/Java/GWT/AddingimagetodropdownSmartGWT.htm
 ---
-Adding image to dropdown (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

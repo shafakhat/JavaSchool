@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20061018181027/http://www.java2s.com/Code/Java/Apache-Common/CollectionBuffer.htm
 ---
-Collection Buffer
-
 ```java title=Example.java
 import org.apache.commons.collections.Buffer;
 import org.apache.commons.collections.buffer.BlockingBuffer;

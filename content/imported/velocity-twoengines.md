@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1061
 source: https://web.archive.org/web/20061026235254/http://www.java2s.com/Code/Java/Velocity/TwoEngines.htm
 ---
-Two Engines
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

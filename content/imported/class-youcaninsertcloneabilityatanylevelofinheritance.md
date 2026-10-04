@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1103
 source: https://web.archive.org/web/20081009150835/http://www.java2s.com:80/Code/Java/Class/YoucaninsertCloneabilityatanylevelofinheritance.htm
 ---
-You can insert Cloneability at any level of inheritance
-
 ```java title=Example.java
 // : appendixa:HorrorFlick.java
-// You can insert Cloneability at any level of inheritance.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Person {

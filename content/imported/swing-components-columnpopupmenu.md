@@ -8,7 +8,6 @@ source: https://web.archive.org/web/20060513064509/http://www.java2s.com/Code/Ja
 ---
 Column popup menu : Java examples (example source code) » Swing Components » Grid Table
 
-Column popup menu
 ---
 Download: swingx.zip (2003 K)
 Related examples in the same category

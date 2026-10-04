@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20100213172719/http://java2s.com/Code/Java/Collections-Data-Structure/Ahashmapthatusesprimitiveintsforthekeyratherthanobjects.htm
 ---
-A hash map that uses primitive ints for the key rather than objects.
-
 ```java title=Example.java
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more

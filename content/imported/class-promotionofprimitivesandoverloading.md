@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1060
 source: https://web.archive.org/web/20090531123205/http://www.java2s.com:80/Code/Java/Class/Promotionofprimitivesandoverloading.htm
 ---
-Promotion of primitives and overloading
-
 ```java title=Example.java
 // : c04:PrimitiveOverloading.java
-// Promotion of primitives and overloading.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 public class PrimitiveOverloading {

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20070901093706/http://www.java2s.com:80/Code/Java/PDF-RTF/CellAlignmentBaseline.htm
 ---
-Cell Alignment Baseline
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

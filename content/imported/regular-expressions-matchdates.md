@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1052
 source: https://web.archive.org/web/20091106064007/http://www.java2s.com:80/Code/Java/Regular-Expressions/MatchDates.htm
 ---
-Match Dates
-
 ```java title=Example.java
 public class Main {
   public static void main(String[] argv) throws Exception {

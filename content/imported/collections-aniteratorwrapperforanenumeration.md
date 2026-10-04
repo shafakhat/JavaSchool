@@ -28,7 +28,6 @@ source: https://web.archive.org/web/20100831034231/http://www.java2s.com:80/Tuto
 import java.util.Enumeration;
 import java.util.Iterator;
 /**
- * An Iterator wrapper for an Enumeration.
  *
  * @author <a href="mailto:geirm@optonline.net">Geir Magnusson Jr.</a>
  * @version $Id: EnumerationIterator.java 463298 2006-10-12 16:10:32Z henning $

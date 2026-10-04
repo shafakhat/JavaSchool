@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1090
 source: https://web.archive.org/web/20111102081958/http://www.java2s.com:80/Code/Java/Class/Thisprogramdemonstratestheuseofinnerclasses.htm
 ---
-This program demonstrates the use of inner classes
-
 ```java title=Example.java
 /*
    This program is a part of the companion code for Core Java 8th ed.
@@ -30,7 +28,6 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 /**
- * This program demonstrates the use of inner classes.
  * @version 1.10 2004-02-27
  * @author Cay Horstmann
  */

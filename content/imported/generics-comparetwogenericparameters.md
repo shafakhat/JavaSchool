@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1015
 source: https://web.archive.org/web/20111124230651/http://java2s.com/Code/Java/Generics/Comparetwogenericparameters.htm
 ---
-Compare two generic parameters
-
 ```java title=Example.java
 //package com.webex.ta.hydra.util;
 import java.util.Arrays;

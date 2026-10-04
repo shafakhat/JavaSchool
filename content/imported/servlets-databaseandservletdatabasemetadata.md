@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/20060513092706/http://www.java2s.com/Code/Java/Servlets/DatabaseandServletDatabaseMetaData.htm
 ---
-Database and Servlet: Database MetaData : Java examples (example source code) » Servlets » Database
-
 Database and Servlet: Database MetaData
 
 ```java title=Example.java

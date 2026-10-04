@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060423085709/http://www.java2s.com:80/Code
 ---
 Count to 10 Example using JSTL : Java examples (example source code) » JSTL » Loop
 
-Count to 10 Example using JSTL
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <html>

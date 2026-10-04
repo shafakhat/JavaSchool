@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1089
 source: https://web.archive.org/web/20130820225554/http://java2s.com/Code/Java/JDK-7/ListallJavafilerecursivelywithSimpleFileVisitor.htm
 ---
-List all Java file recursively with SimpleFileVisitor
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.file.FileVisitResult;

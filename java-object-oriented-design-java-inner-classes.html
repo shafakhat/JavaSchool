@@ -67,7 +67,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The variable x is never changed after it is initialized and the variable y cannot be changed because it is declared as final.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String... args) {
-    int x = 1;//www.java2s.comfinalint y = 2;
+    int x = 1;finalint y = 2;
     class LocalInner {
       void print() {
         System.out.println("x = " + x);
@@ -78,7 +78,6 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
      * Uncomment the following statement will make the variable x no longer
      * an effectively final variable and the LocalIneer class will not compile.
      */// x = 100;
-
     LocalInner li = new LocalInner();
     li.print();
   }
@@ -86,7 +85,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The code above generates the following result.</p>
 <h2 id="inner-class-and-inheritance">Inner Class and Inheritance</h2>
 <p>An inner class can inherit from another inner class, a top-level class, or its enclosing class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class A {/*fromwww.java2s.com*/publicclass B {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class A {publicclass B {
   }
   publicclass C extends B {
   }
@@ -110,19 +109,16 @@ publicfinal String str = new String("Hello");
 <h2 id="generated-class-files-for-inner-classes">Generated Class Files for Inner Classes</h2>
 <p>Each inner class is compiled into a separate class file.</p>
 <p>The class file name format for a member inner class and a static inner class is as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;outer-class-name&gt;$&lt;member-or-static-inner-class-name&gt;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;outer-class-name&gt;$&lt;member-or-static-inner-class-name&gt;</code></pre></div>
 <p>The format for the class file name for a local inner class is as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;outer-class-name&gt;$&lt;a-number&gt;&lt;local-inner-class-name&gt;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;outer-class-name&gt;$&lt;a-number&gt;&lt;local-inner-class-name&gt;</code></pre></div>
 <p>The format for the class file name for an anonymous class is as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;outer-class-name&gt;$&lt;a-number&gt;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;outer-class-name&gt;$&lt;a-number&gt;</code></pre></div>
 <a-number> in a class file name is a number that is generated sequentially starting from 1 to avoid any name conflicts.
 <h2 id="inner-classes-in-static-contexts">Inner Classes in Static Contexts</h2>
 <p>We can define an inner class in a static context such as inside a static method or a static initializer.</p>
 <p>All static field members are accessible to such an inner class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Outer {//www.java2s.comstaticint k = 1;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Outer {staticint k = 1;
   int m = 2;
   publicstaticvoid staticMethod() {
     // Class Inner is defined in a static context
@@ -143,15 +139,8 @@ class Inner {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

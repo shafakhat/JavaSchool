@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060524074236/http://www.java2s.com:80/Code
 ---
 Another Link button : Java examples (example source code) » Swing Components » Link Button
 
-Another Link button
-
 ```java title=Example.java
 /**
  * $ $ License.
@@ -92,7 +90,7 @@ public class AnotherLinkButton extends JButton {
   public static void main(String[] args) throws Exception {
     JFrame frame = new JFrame("JLinkButton");
     frame.getContentPane().setLayout(new BorderLayout());
-    frame.getContentPane().add("Center", new AnotherLinkButton("www.java2s.com"));
+    frame.getContentPane().add("Center", new AnotherLinkButton("JavaSchool"));
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.pack();
     frame.setLocation(100, 100);

@@ -47,7 +47,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="example">Example</h2>
 <p>The following code shows how to declare an instance initializer for the Test class.</p>
 <p>Note that an instance initializer is executed in instance context and the keyword this is available inside the instance initializer.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test {//fromwww.java2s.comprivateint num;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test {privateint num;
   // An instance initializer
   {
     this.num = 101;
@@ -60,7 +60,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>Code for all instance initializers are executed before any constructor.</p>
 <p>The following code demonstrates the sequence in which the constructor and instance initializers are executed.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-  {//fromwww.java2s.com
+  {
     System.out.println("Inside instance initializer 1.");
   }
   {
@@ -85,7 +85,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   privatestaticint num;
   {// An instance initializer
     System.out.println("Inside instance initializer.");
-  }//www.java2s.com// A static initializer. Note the use of the keyword static below.
+  }// A static initializer. Note the use of the keyword static below.
 static {
     num = 2014;
     System.out.println("Inside static initializer.");
@@ -100,7 +100,6 @@ public Main() {
     Main si;
     System.out.println("Inside  main() #2.   num: " + num);
     new Main();    // Create an object
-
     System.out.println("Inside  main() #3.   num: " + num);
     new Main();// Create another object
   }
@@ -118,15 +117,8 @@ public Main() {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20100210133306/http://java2s.com/Code/Java/Spring/AddBeanFactoryPostProcessorToXmlBeanFactory.htm
 ---
-Add BeanFactoryPostProcessor To XmlBeanFactory
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1073
 source: https://web.archive.org/web/20070129024640/http://www.java2s.com:80/Code/Java/Apache-Common/UseMappedObjectafterdatabaseConnectionclose.htm
 ---
-Use Mapped Object after database Connection close
-
 ```java title=Example.java
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.commons.beanutils.DynaBean;

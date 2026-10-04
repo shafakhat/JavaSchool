@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20111124203541/http://java2s.com/Code/Java/Collections-Data-Structure/Acircularqueuefrommina.htm
 ---
-A circular queue from mina
-
 ```java title=Example.java
 //package com.google.code.yanf4j.util;
 /*
@@ -36,7 +34,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Queue;
 /**
- * A circular queue from mina
  *
  * @author dennis
  *

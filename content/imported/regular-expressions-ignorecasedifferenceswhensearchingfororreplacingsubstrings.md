@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1042
 source: https://web.archive.org/web/20090502013650/http://www.java2s.com:80/Code/Java/Regular-Expressions/Ignorecasedifferenceswhensearchingfororreplacingsubstrings.htm
 ---
-Ignore case differences when searching for or replacing substrings.
-
 ```java title=Example.java
 public class Main {
   public static void main(String args[]) {

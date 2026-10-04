@@ -54,7 +54,6 @@ public class Main {
           lookUpHexAlphabet[i] = (byte) ('A'+i -10);
   }
   /**
-   * Decodes Hex data into octects
    *
    * @param binaryData String containing Hex data
    * @return string containing decoded data.

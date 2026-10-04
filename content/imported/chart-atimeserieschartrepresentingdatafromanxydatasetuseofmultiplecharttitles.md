@@ -8,7 +8,6 @@ source: https://web.archive.org/web/20060510140219/http://www.java2s.com:80/Code
 ---
 A time series chart, representing data from an XYDataset, use of multiple chart titles : Java examples (example source code) » Chart » Time Series Chart
 
-A time series chart, representing data from an XYDataset, use of multiple chart titles
 ---
 Download: jfreechart-1.0.0-rc1.zip (3559 K)
 Related examples in the same category

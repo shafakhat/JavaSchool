@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20100617210033/http://www.java2s.com:80/Code/Java/GWT/AddingrownumbertoTreeGridExtGWT.htm
 ---
-Adding row number to TreeGrid (Ext GWT)
-
 ```java title=Example.java
 /*
  * Ext GWT - Ext for GWT

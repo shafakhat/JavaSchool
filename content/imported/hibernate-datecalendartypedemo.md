@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20061025123852/http://www.java2s.com:80/Code/Java/Hibernate/DateCalendarTypeDemo.htm
 ---
-Date Calendar Type Demo
-
 ```java title=Example.java
 /////////////////////////////////////////////////////////////////////////
 <?xml version="1.0" encoding="UTF-8"?>

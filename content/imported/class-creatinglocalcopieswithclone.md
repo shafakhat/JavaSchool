@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20081009143446/http://www.java2s.com:80/Code/Java/Class/Creatinglocalcopieswithclone.htm
 ---
-Creating local copies with clone
-
 ```java title=Example.java
 // : appendixa:LocalCopy.java
-// Creating local copies with clone().
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class MyObject implements Cloneable {

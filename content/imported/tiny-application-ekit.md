@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20061027005818/http://www.java2s.com/Code/Java/Tiny-Application/Ekit.htm
 ---
-Ekit
-
 ```java title=Example.java
 /*
 http://www.hexidec.com/ekit.php

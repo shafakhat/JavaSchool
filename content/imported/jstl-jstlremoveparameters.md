@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20061018125325/http://www.java2s.com/Code/Java/JSTL/JSTLRemoveParameters.htm
 ---
-JSTL Remove Parameters
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <html>

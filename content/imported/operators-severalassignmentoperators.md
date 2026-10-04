@@ -24,7 +24,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 a = 6
 b = 8
 c = 3

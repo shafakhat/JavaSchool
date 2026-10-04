@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20061026215629/http://www.java2s.com/Code/Java/JSP/Beanswithscriptlet.htm
 ---
-Beans with scriptlet
-
 ```java title=Example.java
 <%@ page import="com.java2s.Book" %>
 <%

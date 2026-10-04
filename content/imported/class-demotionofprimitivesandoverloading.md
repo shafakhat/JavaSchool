@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20090531215003/http://www.java2s.com:80/Code/Java/Class/Demotionofprimitivesandoverloading.htm
 ---
-Demotion of primitives and overloading
-
 ```java title=Example.java
 // : c04:Demotion.java
-// Demotion of primitives and overloading.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 public class Demotion {

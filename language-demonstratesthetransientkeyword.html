@@ -45,7 +45,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Date;
-
 publicclass MainClass {
   publicstaticvoid main(String[] args) throws Exception {
     User a = new User("A", "B");
@@ -53,29 +52,21 @@ publicclass MainClass {
     ObjectOutputStream o = new ObjectOutputStream(new FileOutputStream("User.out"));
     o.writeObject(a);
     o.close();
-
     Thread.sleep(1000); // Delay for 1 second
-
     ObjectInputStream in = new ObjectInputStream(new FileInputStream("User.out"));
     System.out.println("Recovering object at " + new Date());
     a = (User) in.readObject();
     System.out.println("logon a = " + a);
   }
-
 }
-
 class User implements Serializable {
   private Date date = new Date();
-
   private String username;
-
   privatetransient String password;
-
   public User(String name, String pwd) {
     username = name;
     password = pwd;
   }
-
   public String toString() {
     String pwd = (password == null) ? "(n/a)" : password;
     return"logon info: \n   username: " + username + "\n   date: " + date + "\n   password: "
@@ -92,15 +83,8 @@ class User implements Serializable {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

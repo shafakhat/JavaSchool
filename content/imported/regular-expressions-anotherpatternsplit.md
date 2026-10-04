@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513094139/http://www.java2s.com/Code/Ja
 ---
 Another pattern split : Java examples (example source code) » Regular Expressions » Pattern
 
-Another pattern split
-
 ```java title=Example.java
 import java.util.regex.Pattern;
 public class PatternSplit {

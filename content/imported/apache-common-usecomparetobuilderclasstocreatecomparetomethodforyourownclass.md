@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1072
 source: https://web.archive.org/web/20100213232503/http://java2s.com/Code/Java/Apache-Common/UseCompareToBuilderclasstocreatecompareTomethodforyourownclass.htm
 ---
-Use CompareToBuilder class to create compareTo method for your own class
-
 ```java title=Example.java
 import org.apache.commons.lang.builder.CompareToBuilder;
 public class Main {

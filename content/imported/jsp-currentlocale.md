@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1028
 source: https://web.archive.org/web/20070503153327/http://www.java2s.com:80/Code/Java/JSP/CurrentLocale.htm
 ---
-Current Locale
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>

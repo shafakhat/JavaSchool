@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20090917140612/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/Anefficientcolorquantizationalgorithm.htm
 ---
-An efficient color quantization algorithm
-
 ```java title=Example.java
 /*
  * @(#)Quantize.java    0.90 9/19/00 Adam Doppelt

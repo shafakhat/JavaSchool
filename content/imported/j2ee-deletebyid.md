@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20090528125938/http://www.java2s.com:80/Code/Java/J2EE/DeleteByID.htm
 ---
-Delete By ID
-
 ```java title=Example.java
 File: Account.java
 public class Account {

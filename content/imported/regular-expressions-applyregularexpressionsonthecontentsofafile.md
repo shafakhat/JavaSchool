@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/20090504061122/http://www.java2s.com:80/Code/Java/Regular-Expressions/ApplyRegularExpressionsonthecontentsofafile.htm
 ---
-Apply Regular Expressions on the contents of a file
-
 ```java title=Example.java
 import java.io.FileInputStream;
 import java.nio.ByteBuffer;

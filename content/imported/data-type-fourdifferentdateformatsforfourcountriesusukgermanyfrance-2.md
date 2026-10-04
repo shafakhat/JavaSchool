@@ -3,23 +3,23 @@ title: Four different date formats for four countries
 nav: Four different date format...
 description: System.out.println("\nThe Date for " + locale.getDisplayCountry() + ":");
 section: Imported - java2s Archive
-order: 1013
-source: https://web.archive.org/web/20070319213003/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/FourdifferentdateformatsforfourcountriesUSUKGERMANYFRANCE.htm
+order: 1020
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/FourdifferentdateformatsforfourcountriesUSUKGERMANYFRANCE.htm
 ---
 ```java title=Example.java
-import static java.text.DateFormat.FULL;
-import static java.text.DateFormat.LONG;
-import static java.text.DateFormat.MEDIUM;
-import static java.text.DateFormat.SHORT;
-import static java.util.Locale.FRANCE;
-import static java.util.Locale.GERMANY;
-import static java.util.Locale.UK;
-import static java.util.Locale.US;
+importstatic java.text.DateFormat.FULL;
+importstatic java.text.DateFormat.LONG;
+importstatic java.text.DateFormat.MEDIUM;
+importstatic java.text.DateFormat.SHORT;
+importstatic java.util.Locale.FRANCE;
+importstatic java.util.Locale.GERMANY;
+importstatic java.util.Locale.UK;
+importstatic java.util.Locale.US;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
-public class MainClass {
-  public static void main(String[] args) {
+publicclass MainClass {
+  publicstaticvoid main(String[] args) {
     Date today = new Date();
     Locale[] locales = { US, UK, GERMANY, FRANCE };
     int[] styles = { FULL, LONG, MEDIUM, SHORT };
@@ -37,7 +37,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 The Date for United States:
   In FULL is Tuesday, January 16, 2007
   In LONG is January 16, 2007

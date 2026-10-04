@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20070328231143/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingHyperlinkanchortoaPDFDocument.htm
 ---
-Adding Hyperlink anchor to a PDF Document
-
 ```java title=Example.java
 import java.awt.Color;
 import java.io.FileOutputStream;
@@ -30,7 +28,7 @@ public class AHrefForAWebsitePDF {
       document.open();
       Paragraph paragraph = new Paragraph("Please visit my ");
       Anchor anchor1 = new Anchor("website (external reference)", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.UNDERLINE, new Color(0, 0, 255)));
-      anchor1.setReference("http://www.java2s.com");
+      anchor1.setReference("http:");
       paragraph.add(anchor1);
       document.add(paragraph);
     } catch (Exception e) {

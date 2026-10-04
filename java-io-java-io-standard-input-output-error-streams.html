@@ -47,7 +47,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.PrintStream;
 import java.io.FileOutputStream;
 import java.io.File;
-/*fromwww.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     File outFile = newFile("stdout.txt");
     PrintStream ps = new PrintStream(new FileOutputStream(outFile));
@@ -63,7 +63,7 @@ import java.io.File;
 <p>When a user enters data and presses the Enter key, the entered data becomes available, and the read() method returns one byte of data at a time.</p>
 <p>The following code illustrates how to read data entered using the keyboard. \n is the new line character on Windows.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
-/*fromwww.java2s.com*/publicclass EchoStdin {
+publicclass EchoStdin {
   publicstaticvoid main(String[] args) throws IOException {
     System.out.print("Please type   a  message  and  press enter: ");
     int c = '\n';
@@ -79,7 +79,7 @@ import java.io.File;
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
-/*www.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     String text = "q";
@@ -96,15 +96,13 @@ import java.io.IOException;
   }
 }</code></pre></div>
 <p>If we want the standard input to come from a file, we will have to create an input stream object to represent that file and set that object using the System.setIn() method as in the following.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-FileInputStream fis  = new FileInputStream("stdin.txt");
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">FileInputStream fis  = new FileInputStream("stdin.txt");
 System.setIn(fis);
 // Now  System.in.read() will read   from  stdin.txt file</code></pre></div>
 <p>The code above generates the following result.</p>
 <h2 id="standard-error-device">Standard error device</h2>
 <p>The standard error device is used to display any error message. Java provides a PrintStream object called System.err. We use it as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-System.err.println("This is  an  error message.");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">System.err.println("This is  an  error message.");</code></pre></div>
 <ul><li>« Previous</li></ul>
     <div class="pager"><a class="pager-btn" href="java-io-java-io-random-access-files.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java Ra...</span></a><a class="pager-btn pager-next" href="java-io-java-io-console.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java Co...</span></a></div>
   </article>
@@ -116,15 +114,8 @@ System.err.println("This is  an  error message.");</code></pre></div>
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

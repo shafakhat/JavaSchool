@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20111020201715/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/4x4Matrix.htm
 ---
-4 x 4 Matrix
-
 ```java title=Example.java
 /**
  * Copyright (c) 2008-2010  Morten Silcowitz.

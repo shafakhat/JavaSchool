@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1064
 source: https://web.archive.org/web/20130821053755/http://java2s.com/Code/Java/JDK-7/Getrealpathwithoutfollowinglinks.htm
 ---
-Get real path without following links
-
 ```java title=Example.java
 import java.nio.file.LinkOption;
 import java.nio.file.Path;

@@ -53,7 +53,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Bowl(1)
 Bowl(2)
 Table()

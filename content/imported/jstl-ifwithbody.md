@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20060423084332/http://www.java2s.com:80/Code/Java/JSTL/IfwithBody.htm
 ---
-If with Body
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <html>

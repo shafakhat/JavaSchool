@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1065
 source: https://web.archive.org/web/20111013063840/http://www.java2s.com:80/Code/Java/Class/Returnsacopyoftheobjectornulliftheobjectcannotbeserialized.htm
 ---
-Returns a copy of the object, or null if the object cannot be serialized.
-
 ```java title=Example.java
 /*
  * To change this template, choose Tools | Templates

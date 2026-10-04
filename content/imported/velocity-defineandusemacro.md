@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20060928131959/http://www.java2s.com:80/Code/Java/Velocity/DefineanduseMacro.htm
 ---
-Define and use Macro
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

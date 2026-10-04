@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20100209095856/http://java2s.com/Code/Java/Threads/AnexampleofCountDownLatch.htm
 ---
-An example of CountDownLatch.
-
 ```java title=Example.java
 import java.util.concurrent.CountDownLatch;
 public class CDLDemo {

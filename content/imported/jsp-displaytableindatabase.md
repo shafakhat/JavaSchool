@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20060513085327/http://www.java2s.com/Code/Java/JSP/DisplaytableinDatabase.htm
 ---
-Display table in Database : Java examples (example source code) » JSP » Database
-
 Display table in Database
 
 ```java title=Example.java

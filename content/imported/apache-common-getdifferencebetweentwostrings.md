@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20070224145412/http://www.java2s.com:80/Code/Java/Apache-Common/Getdifferencebetweentwostrings.htm
 ---
-Get difference between two strings
-
 ```java title=Example.java
 /*
 4

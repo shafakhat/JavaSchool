@@ -58,7 +58,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Jackets sizes available are:
  small medium large extra_large extra_extra_large
 Jackets in stock are:

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1050
 source: https://web.archive.org/web/20090603133839/http://www.java2s.com:80/Code/Java/Generics/TheGenStackClass.htm
 ---
-The GenStack Class
-
 ```java title=Example.java
 import java.util.LinkedList;
 class GenStack<E> {

@@ -41,30 +41,23 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     <h1>Java Algorithms Convert number to English words example 2</h1>
 <h2 id="description">Description</h2>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-
    publicenum hundreds {
       OneHundred, TwoHundred, ThreeHundred, FourHundred, FiveHundred, SixHundred, SevenHundred, EightHundred,
-      NineHundred/*fromwww.java2s.com*/
+      NineHundred
    }
-
    publicenum tens {
       Twenty, Thirty, Forty, Fifty, Sixty, Seventy, Eighty, Ninety
    }
-
    publicenum ones {
       One, Two, Three, Four, Five, Six, Seven, Eight, Nine
    }
-
    publicenum denom {
       Thousand, Million, Billion
    }
-
    publicenum splNums {
       Ten, Eleven, Twelve, Thirteen, Fourteen, Fifteen, Sixteen, Seventeen, Eighteen, Nineteen
    }
-
    publicstaticString text = "";
-
    publicstaticvoid main(String[] args) {
       long num = 1234567;
       int rem = 0;
@@ -88,7 +81,6 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
          System.out.println(text);
       elseSystem.out.println("Zero");
    }
-
    publicstaticvoid printText(int num) {
       if (!(num &gt; 9 &amp;&amp; num &lt; 19)) {
          if (num % 10 &gt; 0)
@@ -96,7 +88,6 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
          num = num / 10;
          if (num % 10 &gt; 0)
             getTens(num % 10);
-
          num = num / 10;
          if (num &gt; 0)
             getHundreds(num);
@@ -104,19 +95,15 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
          getSplNums(num % 10);
       }
    }
-
    publicstaticvoid getSplNums(int num) {
       text = splNums.values()[num] + " " + text;
    }
-
    publicstaticvoid getHundreds(int num) {
       text = hundreds.values()[num - 1] + " " + text;
    }
-
    publicstaticvoid getTens(int num) {
       text = tens.values()[num - 2] + " " + text;
    }
-
    publicstaticvoid getOnes(int num) {
       text = ones.values()[num - 1] + " " + text;
    }
@@ -133,15 +120,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -3,8 +3,8 @@ title: Right pad a String with spaces (' ').
 nav: Right pad a String with sp...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1196
-source: https://web.archive.org/web/20100905051231/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/RightpadaStringwithspaces.htm
+order: 1048
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/RightpadaStringwithspaces.htm
 ---
 ```java title=Example.java
 /*
@@ -24,14 +24,11 @@ source: https://web.archive.org/web/20100905051231/http://www.java2s.com:80/Tuto
  *  limitations under the License.
  *
  *
- */
-public class Main {
+ */publicclass Main {
   /**
    * The maximum size to which the padding constant(s) can expand.
-   */
-  private static final int PAD_LIMIT = 8192;
+   */privatestaticfinalint PAD_LIMIT = 8192;
   /**
-   * Right pad a String with spaces (' ').
    *
    * The String is padded to the size of <code>size</code>.
    *
@@ -48,8 +45,7 @@ public class Main {
    * @param size  the size to pad to
    * @return right padded String or original String if no padding is necessary,
    *  <code>null</code> if null String input
-   */
-  public static String rightPad(String str, int size) {
+   */publicstatic String rightPad(String str, int size) {
       return rightPad(str, size, ' ');
   }
   /**
@@ -72,8 +68,7 @@ public class Main {
    * @return right padded String or original String if no padding is necessary,
    *  <code>null</code> if null String input
    * @since 2.0
-   */
-  public static String rightPad(String str, int size, char padChar) {
+   */publicstatic String rightPad(String str, int size, char padChar) {
       if (str == null) {
           return null;
       }
@@ -108,8 +103,7 @@ public class Main {
    * @param padStr  the String to pad with, null or empty treated as single space
    * @return right padded String or original String if no padding is necessary,
    *  <code>null</code> if null String input
-   */
-  public static String rightPad(String str, int size, String padStr) {
+   */publicstatic String rightPad(String str, int size, String padStr) {
       if (str == null) {
           return null;
       }
@@ -127,10 +121,10 @@ public class Main {
       }
       if (pads == padLen) {
           return str.concat(padStr);
-      } else if (pads < padLen) {
+      } elseif (pads < padLen) {
           return str.concat(padStr.substring(0, pads));
       } else {
-          char[] padding = new char[pads];
+          char[] padding = newchar[pads];
           char[] padChars = padStr.toCharArray();
           for (int i = 0; i < pads; i++) {
               padding[i] = padChars[i % padLen];
@@ -160,20 +154,19 @@ public class Main {
    * @return String with repeated character
    * @throws IndexOutOfBoundsException if <code>repeat &lt; 0</code>
    * @see #repeat(String, int)
-   */
-  private static String padding(int repeat, char padChar) throws IndexOutOfBoundsException {
+   */privatestatic String padding(int repeat, char padChar) throws IndexOutOfBoundsException {
       if (repeat < 0) {
-          throw new IndexOutOfBoundsException("Cannot pad a negative amount: " + repeat);
+          thrownew IndexOutOfBoundsException("Cannot pad a negative amount: " + repeat);
       }
-      final char[] buf = new char[repeat];
+      finalchar[] buf = newchar[repeat];
       for (int i = 0; i < buf.length; i++) {
           buf[i] = padChar;
       }
-      return new String(buf);
+      returnnew String(buf);
   }
   // Empty checks
-  //-----------------------------------------------------------------------
-  /**
+//-----------------------------------------------------------------------
+/**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -190,8 +183,7 @@ public class Main {
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */
-  public static boolean isEmpty(String str) {
+   */publicstaticboolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }

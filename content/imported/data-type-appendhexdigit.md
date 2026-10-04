@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1143
 source: https://web.archive.org/web/20091113022326/http://www.java2s.com:80/Code/Java/Data-Type/appendhexdigit.htm
 ---
-append hex digit
-
 ```java title=Example.java
 //
 // Copyright 2004-2005 Mort Bay Consulting Pty. Ltd.
@@ -33,7 +31,6 @@ append hex digit
  */
 public class Utils {
   /**
-   * append hex digit
    *
    */
   public static void append(StringBuffer buf, byte b, int base) {

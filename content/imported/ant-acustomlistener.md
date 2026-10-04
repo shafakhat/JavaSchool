@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20061027010207/http://www.java2s.com/Code/Java/Ant/Acustomlistener.htm
 ---
-A custom listener
-
 ```java title=Example.java
 /*
  *

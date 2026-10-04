@@ -50,14 +50,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A variable of the Level enum type can have only one of the four values-LOW, MEDIUM, HIGH, and URGENT-or null.</p>
 <p>We can use dot notation to refer to the enum constants by using the enum type name as the qualifier.</p>
 <p>The following code assigns values to a variable of Level enum type:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Level low  = Level.LOW;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Level low  = Level.LOW;
 Level medium = Level.MEDIUM;
 Level high  = Level.HIGH;
 Level urgent = Level.URGENT;</code></pre></div>
 <p>We cannot instantiate an enum type. The following code results in a compile-time error:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Level badAttempt   = new Level(); // A  compile-time error</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Level badAttempt   = new Level(); // A  compile-time error</code></pre></div>
 <h2 id="enum-order-number">Enum order number</h2>
 <p>An enum type assigns an order number, called ordinal, to all of its constants.</p>
 <p>The ordinal starts with zero and is incremented by one as moving from first to last in the list of constants.</p>
@@ -67,7 +65,7 @@ Level badAttempt   = new Level(); // A  compile-time error</code></pre></div>
 <p>We can get the name and the ordinal of an enum constant using the name() and ordinal() methods, respectively.</p>
 <p>Each enum type has a static method named values() that returns an array of constants in the order they are declared in its body.</p>
 <p>The following code prints the name and ordinal of all enum constants declared in the Level enum type.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Level {//www.java2s.com
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Level {
   LOW, MEDIUM, HIGH, URGENT;
 }
 publicclass Main {
@@ -87,7 +85,7 @@ publicclass Main {
 <p>The order of the values in the array returned by values() method is the same as the order in which the enum constants are declared.</p>
 <p>The ordinal of enum constants starts at zero.</p>
 <p>The following code demonstrates how to reverse look up enum constants:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Level {/*fromwww.java2s.com*/
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Level {
   LOW, MEDIUM, HIGH, URGENT;
 }
 publicclass Main {
@@ -106,7 +104,7 @@ publicclass Main {
 <p>java.util.EnumSet collection class works with lists of enum constants of an enum type.</p>
 <p>The following code demonstrates how to use the EnumSet class to work with the range for enum constants.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.EnumSet;
-/*fromwww.java2s.com*/enum Level {
+enum Level {
   LOW, MEDIUM, HIGH, URGENT;
 }
 publicclass Main {
@@ -134,15 +132,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

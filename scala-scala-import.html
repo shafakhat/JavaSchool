@@ -46,24 +46,18 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A package is a named module of code.</p>
 <p>Java and Scala convention dictates that package names are the reversed domain name of the code owner.</p>
 <p>The first non-comment line in the source file:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-package com.java2s.stuff</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">package com.java2s.stuff</code></pre></div>
 <p>Scala packages can be imported so that they can be referenced in the current compilation scope.</p>
 <p>The following statement imports the contents of the scala.xml package:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import scala.xml._</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import scala.xml._</code></pre></div>
 <p>Import statements are made in the scope of prior imports. The following statement imports the scala.xml.transform package:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import transform._</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import transform._</code></pre></div>
 <p>We can import a single class and object, for example, HashMap from the scala.collection.mutable package:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import scala.collection.mutable.HashMap</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import scala.collection.mutable.HashMap</code></pre></div>
 <p>We can import more than one class or object from a single package, for example, TreeMap and TreeSet from the scala.collection.immutable package:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import scala.collection.immutable.{TreeMap, TreeSet}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import scala.collection.immutable.{TreeMap, TreeSet}</code></pre></div>
 <h2 id="example">Example</h2>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-     import java.awt._
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">     import java.awt._
      import java.io.File
      import java.io.File._
      import java.util.{Map, HashMap}</code></pre></div>
@@ -74,12 +68,10 @@ import scala.collection.immutable.{TreeMap, TreeSet}</code></pre></div>
 <p>The third line imports all the static methods and fields in java.io.File.</p>
 <p>The equivalent Java import statement would be import static java.io.File.*;</p>
 <p>Finally, we can import a class or object and rename it. For example, you can import the JSON class/object from the scala.util.parsing.json package and rename it to JsonParser:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import scala.util.parsing.json.{JSON=&gt; JsonParser}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import scala.util.parsing.json.{JSON=&gt; JsonParser}</code></pre></div>
 <p>import can be used inside any codeblock, and the import will be active only in the scope of that code block.</p>
 <p>For example, we can import something inside a class body as shown in the following code:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-class Frog {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Frog {
     import scala.xml._
     //
 }</code></pre></div>
@@ -90,8 +82,7 @@ class Frog {
 <p>Scala doesn't have an import static construct because it treats object types uniformly like other types.</p>
 <p>We can put import statements almost anywhere to scope their visibility to just where they are needed.</p>
 <p>We can rename types as you import them, and we can suppress the visibility of unwanted types:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-     def stuffWithBigInteger() = {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">     def stuffWithBigInteger() = {
        import java.math.BigInteger.{
          ONE =&gt; _,
          TEN,
@@ -102,8 +93,7 @@ class Frog {
 <h2 id="imports-are-relative">Imports Are Relative</h2>
 <p>Scala imports are relative.</p>
 <p>Note the comments for the following imports:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-     import scala.collection.mutable._
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">     import scala.collection.mutable._
      import collection.immutable._              // Since "scala" is already imported
      import _root_.scala.collection.parallel._  // full path from real "root"</code></pre></div>
 <ul><li>« Previous</li></ul>
@@ -117,15 +107,8 @@ class Frog {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

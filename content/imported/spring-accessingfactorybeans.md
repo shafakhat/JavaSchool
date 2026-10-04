@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20070329152011/http://www.java2s.com:80/Code/Java/Spring/AccessingFactoryBeans.htm
 ---
-Accessing Factory Beans
-
 ```java title=Example.java
 /*
 Pro Spring

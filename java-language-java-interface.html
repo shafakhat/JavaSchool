@@ -45,8 +45,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>To implement an interface, a class must create the complete set of methods defined by the interface.</p>
 <h2 id="syntax">Syntax</h2>
 <p>An interface is defined much like a class. This is the general form of an interface:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-access interface name {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">access interface name {
    return-type method-name1(parameter-list);
    return-type method-name2(parameter-list);
    type final-varname1 = value;
@@ -63,14 +62,13 @@ access interface name {
 <h2 id="implementing-interfaces">Implementing Interfaces</h2>
 <p>To implement an interface, include the implements clause in a class definition, and then create the methods defined by the interface.</p>
 <p>The general form of a class that includes the implements clause looks like this:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-access-level class classname [extends superclass] [implementsinterface [,interface...]] {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">access-level class classname [extends superclass] [implementsinterface [,interface...]] {
    // class-body
 }</code></pre></div>
 <p>Here is a small example class that implements the interface shown earlier.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface MyInterface {
   void callback(int param);
-}//www.java2s.comclass Client implements MyInterface{
+}class Client implements MyInterface{
   // Implement Callback's interface
 publicvoid callback(int p) {
     System.out.println("callback called with " + p);
@@ -82,7 +80,7 @@ publicvoid callback(int p) {
 <p>The following example calls the callback( ) method via an interface reference variable:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface MyInterface {
   void callback(int param);
-}//fromwww.java2s.comclass Client implements MyInterface{
+}class Client implements MyInterface{
   // Implement Callback's interface
 publicvoid callback(int p) {
     System.out.println("callback called with " + p);
@@ -99,7 +97,7 @@ publicclass Main {
 <p>interface is designed for polymorphism. interface defines a list of methods acting as the contract between the interface and its implementation. One interface can be implements by more than once and each different implementation of the same interface would follow the same list of methods. Therefore if we know several classes implement the same interface we can use that interface to reference all of its implementer classes. The compiler will determine dynamically which implementation to use.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface MyInterface {
   void callback(int param);
-}//www.java2s.comclass Client implements MyInterface{
+}class Client implements MyInterface{
   // Implement Callback's interface
 publicvoid callback(int p) {
     System.out.println("Client");
@@ -127,7 +125,7 @@ class TestIface2 {
 <p>If a class implements an interface but does not fully implement its methods, then that class must be declared as abstract. For example:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface MyInterface {
   void callback(int param);
-//www.java2s.comvoid show();
+void show();
 }
 abstractclass Incomplete implements MyInterface {
   int a, b;
@@ -138,7 +136,7 @@ abstractclass Incomplete implements MyInterface {
 <h2 id="variables-in-interfaces">Variables in Interfaces</h2>
 <p>We can use interface to organize constants.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface MyConstants {
-  int NO = 0;/*www.java2s.com*/int YES = 1;
+  int NO = 0;int YES = 1;
 }
 class Question implements MyConstants {
   int ask() {
@@ -165,7 +163,7 @@ publicclass Main implements MyConstants {
 <h2 id="extend-interface">Extend Interface</h2>
 <p>One interface can inherit another interface with the keyword extends.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface IntefaceA {
-  void meth1();//www.java2s.comvoid meth2();
+  void meth1();void meth2();
 }
 interface IntefaceB extends IntefaceA {
   void meth3();
@@ -201,15 +199,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

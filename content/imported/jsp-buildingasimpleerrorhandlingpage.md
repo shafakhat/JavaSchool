@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1015
 source: https://web.archive.org/web/20060713173425/http://www.java2s.com:80/Code/Java/JSP/Buildingasimpleerrorhandlingpage.htm
 ---
-Building a simple error handling page
-
 ```java title=Example.java
 <HTML>
     <HEAD>

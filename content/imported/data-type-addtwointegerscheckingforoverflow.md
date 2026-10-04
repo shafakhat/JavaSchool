@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1121
 source: https://web.archive.org/web/20091107101831/http://www.java2s.com:80/Code/Java/Data-Type/Addtwointegerscheckingforoverflow.htm
 ---
-Add two integers, checking for overflow.
-
 ```java title=Example.java
 import java.io.File;
 /*
@@ -30,7 +28,6 @@ import java.io.File;
  */
 public class Main {
   /**
-   * Add two integers, checking for overflow.
    *
    * @param x an addend
    * @param y an addend

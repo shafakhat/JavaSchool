@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20060904161910/http://www.java2s.com:80/Code/Java/Servlets/CompressionFilter.htm
 ---
-Compression Filter
-
 ```java title=Example.java
 /*
 * Copyright 2004 The Apache Software Foundation

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513091841/http://www.java2s.com/Code/Ja
 ---
 Custom log for Velocity : Java examples (example source code) » Velocity » Velocity Log
 
-Custom log for Velocity
-
 ```java title=Example.java
 /*
  * Copyright 2000-2001,2004 The Apache Software Foundation.

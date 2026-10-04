@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1114
 source: https://web.archive.org/web/20130820180835/http://java2s.com/Code/Java/JDK-7/Readattributes.htm
 ---
-Read attributes
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

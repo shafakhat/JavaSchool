@@ -7,6 +7,5 @@ order: 1008
 source: https://web.archive.org/web/20070513070538/http://www.java2s.com:80/Tutorial/Java/0020__Language/Seethedetailsofthecompilationusetheverboseoption.htm
 ---
 ```java title=Example.java
-
 javac -verbose TestDrive.java
 ```

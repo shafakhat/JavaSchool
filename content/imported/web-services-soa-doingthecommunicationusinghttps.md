@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1117
 source: https://web.archive.org/web/20071120233300/http://www.java2s.com:80/Code/Java/Web-Services-SOA/DoingthecommunicationusingHTTPS.htm
 ---
-Doing the communication using HTTPS
-
 ```java title=Example.java
 Hello World Demo using HTTPS communications
 =============================================

@@ -48,7 +48,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   staticbyte a[] = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74};
   staticbyte b[] = {77, 77, 77, 77, 77, 77, 77, 77, 77, 77};
-//fromjava2s.compublicstaticvoid main(String args[]) {
+publicstaticvoid main(String args[]) {
     System.out.println("a = " + new String(a));
     System.out.println("b = " + new String(b));
     System.arraycopy(a, 0, b, 0, a.length);
@@ -59,12 +59,11 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     System.out.println("a = " + new String(a));
     System.out.println("b = " + new String(b));
   }
-
 }</code></pre></div>
 <p>The output:</p>
 <h3 id="copy-array-1">Copy array</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-//fromjava2s.compublicclass Main
+publicclass Main
 {
     publicstaticvoid main(String args[])
     {
@@ -72,7 +71,6 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
         int arrayNew[] = Arrays.copyOf(arrayOriginal, 3);
         printIntArray(arrayNew);
     }
-
     staticvoid printIntArray(int arrayNew[])
     {
         for (int i : arrayNew)
@@ -96,15 +94,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

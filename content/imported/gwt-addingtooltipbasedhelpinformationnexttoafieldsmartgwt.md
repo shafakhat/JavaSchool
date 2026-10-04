@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20100925015934/http://www.java2s.com:80/Code/Java/GWT/AddingtooltipbasedhelpinformationnexttoafieldSmartGWT.htm
 ---
-Adding tooltip based help information next to a field (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

@@ -59,8 +59,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>Floating-point literals can be expressed with or without exponentials.</p>
 <p>The format of the exponential part is e or E, followed by an optional + or -, followed by one or more digits.</p>
 <p>Here are some example floating-point literals. Double is inferred unless the declared variable is Float or an f or F suffix is used:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-     .14
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">     .14
      3.14
      3.14f
      3.14F
@@ -78,8 +77,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="boolean-literals">Boolean Literals</h2>
 <p>The Boolean literals are true and false.</p>
 <p>The type of the variable to which they are assigned will be inferred to be Boolean:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
      val b1 = true
      val b2 = false
@@ -91,8 +89,7 @@ object Main {
 <p>A character literal is either a printable Unicode character or an escape sequence, written between single quotes.</p>
 <p>A character with a Unicode value between 0 and 255 can be represented by an octal escape, i.e., a backslash (\) followed by a sequence of up to three octal characters.</p>
 <p>Here are some examples:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-      'A'
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">      'A'
       '\u0041'  // 'A' in Unicode
       '\n'
       '\012'    // '\n' in octal
@@ -104,16 +101,14 @@ object Main {
 <p>For string literals in double quotes, the allowed characters are the same as the character literals.</p>
 <p>To include a double quote " character in string, it must be "escaped" with a \ character.</p>
 <p>Here are some examples:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-     "This is a\ntest"
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">     "This is a\ntest"
      "He said, \"SQL is for database!\""
      "First\tSecond"</code></pre></div>
 <p>The string literals bounded by triples of double quotes are called multiline string literals.</p>
 <p>These strings can cover several lines. The line feeds will be part of the string. They can include any characters, including one or two double quotes together, but not three together.</p>
 <p>They are useful for strings with \ characters that don't form valid Unicode or escape sequences.</p>
 <p>Here are three example strings:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-     """This is a \ntest"""
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">     """This is a \ntest"""
      """He said, "SQL is for database!" """
      """First line\n
      Second line\t
@@ -122,8 +117,7 @@ object Main {
 <p>It removes all whitespace in the substrings up to and including the first occurrence of a vertical bar |.</p>
 <p>To add whitespace indentation, put the whitespace after the |.</p>
 <p>Consider this example:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
      println(hello("This is a test") );
   }
@@ -135,10 +129,9 @@ object Main {
 }</code></pre></div>
 <p>To use a different leading character than |, use the overloaded version of stripMargin that takes a Char (character) argument.</p>
 <p>If the whole string has a prefix or suffix you want to remove, there are corresponding strip Prefix and stripSuffix methods.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
-     println(goodbye("java2s.com"));
+     println(goodbye("JavaSchool"));
   }
   def goodbye(name: String) =
        s"""xxxGoodbye, ${name}yyy
@@ -151,8 +144,7 @@ object Main {
 <p>(i: Int, s: String) =&gt; s+i is a function literal of type Function2[Int,String,String] (String is returned).</p>
 <p>You can even use the literal syntax for a type declaration.</p>
 <p>The following declarations are equivalent:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-     val f1: (Int,String) =&gt; String       = (i, s) =&gt; s+i
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">     val f1: (Int,String) =&gt; String       = (i, s) =&gt; s+i
      val f2: Function2[Int,String,String] = (i, s) =&gt; s+i</code></pre></div>
 <h2 id="tuple-literals">Tuple Literals</h2>
 <p>The Scala library includes TupleN classes (e.g., Tuple2), for grouping N items, with the literal syntax of a comma-separated list of the items inside parentheses.</p>
@@ -160,12 +152,10 @@ object Main {
 <p>For example, val tup = ("Hi", 2014) defines a Tuple2 instance with String inferred for the first element and Int inferred for the second element.</p>
 <p>Tuple instances are immutable, first-class values, so you can assign them to variables, pass them as values, and return them from methods.</p>
 <p>We can also use the literal syntax for Tuple type declarations:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-     val t1: (Int,String)       = (1, "two")
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">     val t1: (Int,String)       = (1, "two")
      val t2: Tuple2[Int,String] = (1, "two")</code></pre></div>
 <p>The following example demonstrates working with tuples:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
      val t = ("Hello", 1, 2.3)
      println( "Print the whole tuple: " + t )
@@ -181,8 +171,7 @@ object Main {
 <p>The expression t._n retrieves the nth item from tuple t, starting at one, not zero, following historical conventions.</p>
 <p>There are several ways to define a two-element tuple, which is sometimes called a pair for short.</p>
 <p>We can use the "arrow operator" between two values, as well as special factory methods on the tuple-related classes:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-     (1, "one")
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">     (1, "one")
      1 -&gt; "one"
      Tuple2(1, "one")</code></pre></div>
 <ul><li>« Previous</li></ul>
@@ -196,15 +185,8 @@ object Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

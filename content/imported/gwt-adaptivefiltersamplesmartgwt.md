@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20100417105728/http://www.java2s.com:80/Code/Java/GWT/AdaptiveFilterSampleSmartGWT.htm
 ---
-Adaptive Filter Sample (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

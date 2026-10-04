@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1039
 source: https://web.archive.org/web/20071201174642/http://www.java2s.com:80/Code/Java/PDF-RTF/Barcodes1282.htm
 ---
-Barcodes 128 (2)
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Chunk;
@@ -27,7 +25,7 @@ public class Barcodes128 {
       document.open();
       PdfContentByte cb = writer.getDirectContent();
       Barcode128 code128 = new Barcode128();
-      code128.setCode("www.java2s.com");
+      code128.setCode("JavaSchool");
       Image image128 = code128.createImageWithBarcode(cb, null, null);
       document.add(new Phrase(new Chunk(image128, 0, 0)));
     } catch (Exception de) {

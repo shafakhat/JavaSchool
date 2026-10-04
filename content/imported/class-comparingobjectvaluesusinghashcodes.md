@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1147
 source: https://web.archive.org/web/20100206154041/http://java2s.com/Code/Java/Class/ComparingObjectValuesUsingHashCodes.htm
 ---
-Comparing Object Values Using Hash Codes
-
 ```java title=Example.java
 import java.io.File;
 public class Main {

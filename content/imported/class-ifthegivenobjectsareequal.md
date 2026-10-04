@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1026
 source: https://web.archive.org/web/20091118092245/http://www.java2s.com:80/Code/Java/Class/Ifthegivenobjectsareequal.htm
 ---
-If the given objects are equal
-
 ```java title=Example.java
 import java.lang.reflect.Array;
 import java.util.Arrays;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20061026233613/http://www.java2s.com/Code/Java/Apache-Common/BasicAuthenticationGetJSPMethodReturnCode.htm
 ---
-Basic Authentication Get JSP Method Return Code
-
 ```java title=Example.java
 import org.apache.commons.httpclient.URI;
 import org.apache.commons.httpclient.HttpState;

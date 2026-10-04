@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20070831235332/http://www.java2s.com:80/Code/Java/Ant/Antpath.htm
 ---
-Ant path
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="sample" default="test" basedir=".">

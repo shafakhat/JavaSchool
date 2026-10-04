@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20090530095740/http://www.java2s.com:80/Code/Java/Threads/AnexampleofExchanger.htm
 ---
-An example of Exchanger.
-
 ```java title=Example.java
 import java.util.concurrent.Exchanger;
 class ExgrDemo {

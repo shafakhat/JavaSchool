@@ -24,7 +24,6 @@ source: https://web.archive.org/web/20100718030025/http://www.java2s.com:80/Tuto
  * limitations under the License.
  */
 /**
- * Operations on bit-mapped fields.
  *
  * @author Apache Jakarta POI
  * @author Scott Sanders (sanders at apache dot org)

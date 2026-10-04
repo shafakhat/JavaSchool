@@ -29,7 +29,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 >   This is a string   <
 >This is a string<
 ```

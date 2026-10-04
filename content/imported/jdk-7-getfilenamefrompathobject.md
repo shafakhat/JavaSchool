@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1059
 source: https://web.archive.org/web/20130821074710/http://java2s.com/Code/Java/JDK-7/GetfilenamefromPathobject.htm
 ---
-Get file name from Path object
-
 ```java title=Example.java
 import java.nio.file.Path;
 import java.nio.file.Paths;

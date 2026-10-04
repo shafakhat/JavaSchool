@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20100212074649/http://java2s.com/Code/Java/Threads/Demonstratejoin.htm
 ---
-Demonstrate join().
-
 ```java title=Example.java
 class MyThread implements Runnable {
   int count;

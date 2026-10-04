@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1015
 source: https://web.archive.org/web/20130821051122/http://java2s.com/Code/Java/JDK-7/Convertingarelativepathintoanabsolutepath.htm
 ---
-Converting a relative path into an absolute path
-
 ```java title=Example.java
 import java.net.URI;
 import java.nio.file.FileSystems;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/20111010003103/http://java2s.com:80/Code/Java/Generics/Poolcontainer.htm
 ---
-Pool container
-
 ```java title=Example.java
 /*
  * Copyright 2008-2010 the T2 Project ant the Others.

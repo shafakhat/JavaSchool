@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060506192132/http://www.java2s.com:80/Code
 ---
 AlphaComposite : Java examples (example source code) » 2D Graphics GUI » Composite
 
-AlphaComposite
-
 ```java title=Example.java
 import java.awt.AlphaComposite;
 import java.awt.BorderLayout;

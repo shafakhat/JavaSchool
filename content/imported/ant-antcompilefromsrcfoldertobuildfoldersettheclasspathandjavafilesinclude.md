@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20100810021948/http://www.java2s.com:80/Code/Java/Ant/Antcompilefromsrcfoldertobuildfoldersettheclasspathandjavafilesinclude.htm
 ---
-Ant compile from src folder to build folder, set the class path and java files include
-
 ```java title=Example.java
 <project name="YourName" default="all">
   <target name="all" depends="init,clean,compile,createJars,copyBuild" >

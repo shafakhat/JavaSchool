@@ -3,8 +3,8 @@ title: Uncapitalizes a String changing the first letter to title case as per Cha
 nav: Uncapitalizes a String cha...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1013
-source: https://web.archive.org/web/20100514164122/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/UncapitalizesaStringchangingthefirstlettertotitlecaseasperCharactertoLowerCasecharNootherlettersarechanged.htm
+order: 1040
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/UncapitalizesaStringchangingthefirstlettertotitlecaseasperCharactertoLowerCasecharNootherlettersarechanged.htm
 ---
 ```java title=Example.java
 /*
@@ -22,8 +22,7 @@ source: https://web.archive.org/web/20100514164122/http://www.java2s.com:80/Tuto
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-public class Main {
+ */publicclass Main {
   /**
    * Uncapitalizes a String changing the first letter to title case as
    * per {@link Character#toLowerCase(char)}. No other letters are changed.
@@ -43,13 +42,12 @@ public class Main {
    * @see WordUtils#uncapitalize(String)
    * @see #capitalize(String)
    * @since 2.0
-   */
-  public static String uncapitalize(String str) {
+   */publicstatic String uncapitalize(String str) {
       int strLen;
       if (str == null || (strLen = str.length()) == 0) {
           return str;
       }
-      return new StringBuffer(strLen)
+      returnnew StringBuffer(strLen)
           .append(Character.toLowerCase(str.charAt(0)))
           .append(str.substring(1))
           .toString();

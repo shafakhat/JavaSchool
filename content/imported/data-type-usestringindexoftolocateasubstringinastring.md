@@ -23,7 +23,6 @@ public class MainClass
 ```
 
 ```java title=Example.java
-
 "def" is located at index 3
 "def" is located at index 16
 "hello" is located at index -1

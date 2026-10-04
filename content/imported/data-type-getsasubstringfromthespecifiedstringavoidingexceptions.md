@@ -52,7 +52,6 @@ source: https://web.archive.org/web/20110109132131/http://www.java2s.com:80/Tuto
  */
 public class Main {
   /**
-   * Gets a substring from the specified String avoiding exceptions.
    *
    * A negative start position can be used to start/end <code>n</code>
    * characters from the end of the String.

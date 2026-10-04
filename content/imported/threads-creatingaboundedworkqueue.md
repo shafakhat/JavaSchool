@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/20090831112931/http://www.java2s.com:80/Code/Java/Threads/CreatingaBoundedWorkQueue.htm
 ---
-Creating a Bounded Work Queue
-
 ```java title=Example.java
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

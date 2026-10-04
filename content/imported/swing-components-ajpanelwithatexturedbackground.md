@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20091027045222/http://www.java2s.com:80/Code/Java/Swing-Components/AJPanelwithatexturedbackground.htm
 ---
-A JPanel with a textured background.
-
 ```java title=Example.java
 /*
  *  TexturedPanel.java
@@ -26,7 +24,6 @@ import java.awt.image.BufferedImage;
 import javax.swing.Icon;
 import javax.swing.JPanel;
 /**
- * A JPanel with a textured background.
  *
  * @author Christopher Bach
  */

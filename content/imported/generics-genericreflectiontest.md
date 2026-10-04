@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1029
 source: https://web.archive.org/web/20111008234102/http://java2s.com:80/Code/Java/Generics/GenericReflectionTest.htm
 ---
-Generic Reflection Test
-
 ```java title=Example.java
 /*
    This program is a part of the companion code for Core Java 8th ed.

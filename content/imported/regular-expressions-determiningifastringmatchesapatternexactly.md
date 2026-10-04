@@ -7,7 +7,6 @@ order: 1022
 source: https://web.archive.org/web/20090826174239/http://www.java2s.com:80/Code/Java/Regular-Expressions/DeterminingIfaStringMatchesaPatternExactly.htm
 ---
 Determining If a String Matches a Pattern Exactly : String Operation « Regular Expressions « Java
-Determining If a String Matches a Pattern Exactly
 
 ```java title=Example.java
 import java.util.regex.Matcher;

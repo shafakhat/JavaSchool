@@ -49,8 +49,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A FileSystem object is platform-dependent.</p>
 <h2 id="create-filesystem">Create FileSystem</h2>
 <p>To obtain the default FileSystem object, we need to use the getDefault() static method of the FileSystems class as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-FileSystem fs  = FileSystems.getDefault();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">FileSystem fs  = FileSystems.getDefault();</code></pre></div>
 <p>A FileSystem consists of one or more FileStore. The getFileStores() method from FileSystem returns an Iterator for the FileStore objects.</p>
 <p>The getRootDirectories() method from FileSystem returns an iterator of Path objects, which represent paths to all top-level directories.</p>
 <p>isReadOnly() method from FileSystem tells if we get read-only access to the file stores.</p>
@@ -61,7 +60,7 @@ import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.io.IOException;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     FileSystem fs = FileSystems.getDefault();
     System.out.println("Read-only file system: " + fs.isReadOnly());
@@ -99,15 +98,8 @@ import java.io.IOException;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

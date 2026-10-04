@@ -25,6 +25,5 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 The Date string is: Saturday, July 4, 1998
 ```

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1053
 source: https://web.archive.org/web/20090531123156/http://www.java2s.com:80/Code/Java/Class/Overloadedmethod.htm
 ---
-Overloaded method
-
 ```java title=Example.java
 public class Overloading {
   double method(int i) {

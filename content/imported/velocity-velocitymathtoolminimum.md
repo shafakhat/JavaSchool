@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1082
 source: https://web.archive.org/web/20071105235901/http://www.java2s.com:80/Code/Java/Velocity/VelocityMathToolMinimum.htm
 ---
-Velocity MathTool Minimum
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

@@ -20,7 +20,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 1
 2
 1

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20090225212611/http://www.java2s.com:80/Code/Java/EJB3/EJBWithWebMethod.htm
 ---
-EJB With Web Method
-
 ```java title=Example.java
 File: jndi.properties
 java.naming.factory.initial=org.jnp.interfaces.NamingContextFactory
@@ -71,7 +69,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 @Stateless(name = "EmployeeBeanEJB")
 @WebService(serviceName = "EmployeeBeanWebService",
-            targetNamespace = "http://www.java2s.com/ejb3/credit")
+            targetNamespace = "http:/ejb3/credit")
 public class EmployeeBean implements EmployeeServiceLocal, EmployeeServiceRemote {
   public EmployeeBean() {
   }

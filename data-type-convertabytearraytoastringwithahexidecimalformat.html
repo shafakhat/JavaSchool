@@ -44,35 +44,26 @@ import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Properties;
-
 /*
-
    Derby - Class org.apache.derby.iapi.util.PropertyUtil
-
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
    this work for additional information regarding copyright ownership.
    The ASF licenses this file to you under the Apache License, Version 2.0
    (the "License"); you may not use this file except in compliance with
    the License.  You may obtain a copy of the License at
-
       http://www.apache.org/licenses/LICENSE-2.0
-
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
  */publicclass Main {
-
   privatestaticchar[] hex_table = {
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
     'a', 'b', 'c', 'd', 'e', 'f'
 };
-
   /**
-  Convert a byte array to a String with a hexidecimal format.
   The String may be converted back to a byte array using fromHexString.
   &lt;BR&gt;
   For each byte (b) two characaters are generated, the first character
@@ -80,17 +71,14 @@ import java.util.Properties;
   represents the low nibble (&lt;code&gt;b &amp; 0x0f&lt;/code&gt;).
   &lt;BR&gt;
   The byte at &lt;code&gt;data[offset]&lt;/code&gt; is represented by the first two characters in the returned String.
-
   @param  data  byte array
   @param  offset  starting byte (zero based) to convert.
   @param  length  number of bytes to convert.
-
   @return the String (with hexidecimal format) form of the byte array
 */publicstatic String toHexString(byte[] data, int offset, int length)
 {
   StringBuffer s = new StringBuffer(length*2);
   int end = offset+length;
-
   for (int i = offset; i &lt; end; i++)
   {
     int high_nibble = (data[i] &amp; 0xf0) &gt;&gt;&gt; 4;
@@ -98,10 +86,8 @@ import java.util.Properties;
     s.append(hex_table[high_nibble]);
     s.append(hex_table[low_nibble]);
   }
-
   return s.toString();
 }
-
 }</code></pre></div>
     <div class="pager"><a class="pager-btn" href="class-constructor.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Constructor</span></a><a class="pager-btn pager-next" href="data-type-convertbytetostringusingthestatictostringmethodofthebyteclass.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Convert byte to String</span></a></div>
   </article>
@@ -113,15 +99,8 @@ import java.util.Properties;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

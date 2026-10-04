@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20100206154115/http://java2s.com/Code/Java/Class/Gettheidentityhashcodes.htm
 ---
-Get the identity hash codes
-
 ```java title=Example.java
 import java.io.File;
 public class Main {

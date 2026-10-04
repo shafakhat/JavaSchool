@@ -7,7 +7,6 @@ order: 1039
 source: https://web.archive.org/web/20091021042607/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/Checkifcursorisinthefirstrow.htm
 ---
 Check if cursor is in the first row : ResultSet Scrollable « Database SQL JDBC « Java
-Check if cursor is in the first row
 
 ```java title=Example.java
 import java.sql.Connection;

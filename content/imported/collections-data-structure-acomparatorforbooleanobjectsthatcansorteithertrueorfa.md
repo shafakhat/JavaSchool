@@ -7,7 +7,6 @@ order: 1009
 source: https://web.archive.org/web/20091124193831/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AComparatorforBooleanobjectsthatcansorteithertrueorfalsefirst.htm
 ---
 A Comparator for Boolean objects that can sort either true or false first : Comparator « Collections Data Structure « Java
-A Comparator for Boolean objects that can sort either true or false first
 
 ```java title=Example.java
 /*
@@ -28,7 +27,6 @@ A Comparator for Boolean objects that can sort either true or false first
 import java.io.Serializable;
 import java.util.Comparator;
 /**
- * A Comparator for Boolean objects that can sort either true or false first.
  *
  * @author Keith Donald
  * @since 1.2.2

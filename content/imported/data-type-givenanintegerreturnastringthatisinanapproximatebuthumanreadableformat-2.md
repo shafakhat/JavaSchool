@@ -3,8 +3,8 @@ title: Given an integer, return a string that is in an approximate, but human re
 nav: Given an integer, return a...
 description: * or more contributor license agreements. See the NOTICE file
 section: Imported - java2s Archive
-order: 1122
-source: https://web.archive.org/web/20100719192300/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Givenanintegerreturnastringthatisinanapproximatebuthumanreadableformat.htm
+order: 1020
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Givenanintegerreturnastringthatisinanapproximatebuthumanreadableformat.htm
 ---
 ```java title=Example.java
 /**
@@ -23,8 +23,7 @@ source: https://web.archive.org/web/20100719192300/http://www.java2s.com:80/Tuto
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-import java.io.PrintWriter;
+ */import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.InetAddress;
 import java.net.URI;
@@ -40,29 +39,27 @@ import java.util.StringTokenizer;
 import java.util.Collection;
 /**
  * General string utils
- */
-public class StringUtils {
-  final public static char COMMA = ',';
-  final public static String COMMA_STR = ",";
-  final public static char ESCAPE_CHAR = '\\';
-  private static DecimalFormat oneDecimal = new DecimalFormat("0.0");
+ */publicclass StringUtils {
+  finalpublicstaticchar COMMA = ',';
+  finalpublicstatic String COMMA_STR = ",";
+  finalpublicstaticchar ESCAPE_CHAR = '\\';
+  privatestatic DecimalFormat oneDecimal = new DecimalFormat("0.0");
   /**
    * Given an integer, return a string that is in an approximate, but human
    * readable format.
    * It uses the bases 'k', 'm', and 'g' for 1024, 1024**2, and 1024**3.
    * @param number the number to format
    * @return a human readable form of the integer
-   */
-  public static String humanReadableInt(long number) {
+   */publicstatic String humanReadableInt(long number) {
     long absNumber = Math.abs(number);
     double result = number;
     String suffix = "";
     if (absNumber < 1024) {
       // nothing
-    } else if (absNumber < 1024 * 1024) {
+    } elseif (absNumber < 1024 * 1024) {
       result = number / 1024.0;
       suffix = "k";
-    } else if (absNumber < 1024 * 1024 * 1024) {
+    } elseif (absNumber < 1024 * 1024 * 1024) {
       result = number / (1024.0 * 1024);
       suffix = "m";
     } else {

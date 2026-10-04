@@ -26,7 +26,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.ByteArrayOutputStream;
 /**
- * Hex encoder/decoder implementation (borrowed from BouncyCastle=.
  *
  * @author Johan Lindquist
  * @since 1.1.1

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513072913/http://www.java2s.com/Code/Ja
 ---
 Combine StringWriter with template : Java examples (example source code) » Velocity » Output
 
-Combine StringWriter with template
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;

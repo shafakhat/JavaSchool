@@ -28,7 +28,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 238.14 + 515 - 126.3616
 result = 626.7784146484375
 ```

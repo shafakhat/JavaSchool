@@ -32,7 +32,6 @@ import java.util.TimeZone;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 /**
- * Parse basic types.
  *
  * @author Christoph Beck
  */

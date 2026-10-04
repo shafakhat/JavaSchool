@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20091101181644/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AnimatedPasswordField.htm
 ---
-Animated PasswordField
-
 ```java title=Example.java
 /**
  *   Arsenal Real-Time Collaboration Server Project

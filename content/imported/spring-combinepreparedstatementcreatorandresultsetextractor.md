@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1041
 source: https://web.archive.org/web/20100208235518/http://java2s.com/Code/Java/Spring/CombinePreparedStatementCreatorAndResultSetExtractor.htm
 ---
-Combine PreparedStatementCreator And ResultSetExtractor
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1039
 source: https://web.archive.org/web/20090602121547/http://www.java2s.com:80/Code/Java/Class/Javastaticmethod.htm
 ---
-Java static method
-
 ```java title=Example.java
 public class Main {
   public static void main(String[] args) {

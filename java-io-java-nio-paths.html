@@ -54,17 +54,14 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A FileSystem object acts as a factory to create a Path object.</p>
 <p>getPath() method from FileSystem creates a Path object.</p>
 <p>The following code creates a Path object for file path C:\Java_Dev\test1.txt on Windows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Path  p1  = FileSystems.getDefault().getPath("C:\\Java_Dev\\test1.txt");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Path  p1  = FileSystems.getDefault().getPath("C:\\Java_Dev\\test1.txt");</code></pre></div>
 <p>We can pass components of a path separately to the getPath() method when constructing a Path object.</p>
 <p>The following statement creates a Path object to represent the C:\Java_Dev\test1.txt path on Windows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Path  p2  = FileSystems.getDefault().getPath("C:", "Java_Dev",   "test1.txt");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Path  p2  = FileSystems.getDefault().getPath("C:", "Java_Dev",   "test1.txt");</code></pre></div>
 <p>Paths class can create a Path object from the components of a path string or a URI.</p>
 <p>The Paths.get() static method creates a Path object.</p>
 <p>The following creates Path objects to represent the same path, C:\Java_Dev\test1.txt:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Path  p3  = Paths.get("C:\\Java_Dev\\test1.txt");
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Path  p3  = Paths.get("C:\\Java_Dev\\test1.txt");
 Path  p4  = Paths.get("C:", "Java_Dev", "test1.txt");</code></pre></div>
 <p>We can create a Path object from an empty path such as Paths.get(""). A Path object with an empty path refers to the default directory, which is the same as the current working directory.</p>
 <h2 id="components-of-a-path">Components of a Path</h2>
@@ -86,7 +83,7 @@ Path  p4  = Paths.get("C:", "Java_Dev", "test1.txt");</code></pre></div>
 <p>The following code shows how to access components of a Path object.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.Path;
 import java.nio.file.Paths;
-/*www.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     Path p1 = Paths.get("C:\\Java_Dev\\test1.txt");
     printDetails(p1);
@@ -112,11 +109,9 @@ import java.nio.file.Paths;
 <p>The code above generates the following result.</p>
 <h2 id="different-forms-of-a-path">Different Forms of a Path</h2>
 <p>We can get different type of representations for a path. Suppose we create a Path object as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Path  p1  = Paths.get("test.txt");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Path  p1  = Paths.get("test.txt");</code></pre></div>
 <p>Here, p1 is a relative path. We can get the absolute path that is represented by p1 using its toAbsolutePath() method as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Path  p1AbsPath  = p1.toAbsolutePath();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Path  p1AbsPath  = p1.toAbsolutePath();</code></pre></div>
 <p>Now the p1AbsPath is the absolute path for p1. For example, on Windows, p1AbsPath may look like C:\testapp\test.txt.</p>
 <p>If a path is not an absolute path, the toAbsolutePath() method uses default directory to resolve the path.</p>
 <p>If the path is an absolute path, the toAbsolutePath() method returns the same path.</p>
@@ -127,7 +122,7 @@ Path  p1AbsPath  = p1.toAbsolutePath();</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     Path p2 = Paths.get("test2.txt");
     // Follow link for p2, if it is a symbolic link
@@ -144,7 +139,7 @@ import java.nio.file.Paths;
 <p>The following code shows how to get the URI form of a path.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.Path;
 import java.nio.file.Paths;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     Path p2 = Paths.get("test2.txt");
     java.net.URI p2UriPath = p2.toUri();
@@ -164,15 +159,8 @@ import java.nio.file.Paths;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1031
 source: https://web.archive.org/web/20090418182238/http://www.java2s.com:80/Code/Java/Regular-Expressions/Findtheendpointofthesecondtest.htm
 ---
-Find the end point of the second 'test'
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

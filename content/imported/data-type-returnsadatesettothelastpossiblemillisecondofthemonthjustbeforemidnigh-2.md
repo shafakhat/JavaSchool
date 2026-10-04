@@ -3,8 +3,8 @@ title: Returns a Date set to the last possible millisecond of the month, just be
 nav: Returns a Date set to the ...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1186
-source: https://web.archive.org/web/20100328230332/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/ReturnsaDatesettothelastpossiblemillisecondofthemonthjustbeforemidnight.htm
+order: 1033
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ReturnsaDatesettothelastpossiblemillisecondofthemonthjustbeforemidnight.htm
 ---
 ```java title=Example.java
 /*
@@ -23,19 +23,17 @@ source: https://web.archive.org/web/20100328230332/http://www.java2s.com:80/Tuto
  * limitations under the License.  For additional information regarding
  * copyright in this work, please see the NOTICE file in the top level
  * directory of this distribution.
- */
-import java.util.Calendar;
+ */import java.util.Calendar;
 import java.util.Date;
-public class Utils {
+publicclass Utils {
   /**
    * Returns a Date set to the last possible millisecond of the month, just
    * before midnight. If a null day is passed in, a new Date is created.
    * midnight (00m 00h 00s)
-   */
-  public static Date getEndOfMonth(Date day) {
+   */publicstatic Date getEndOfMonth(Date day) {
       return getEndOfMonth(day, Calendar.getInstance());
   }
-  public static Date getEndOfMonth(Date day,Calendar cal) {
+  publicstatic Date getEndOfMonth(Date day,Calendar cal) {
       if (day == null) day = new Date();
       cal.setTime(day);
       // set time to end of day

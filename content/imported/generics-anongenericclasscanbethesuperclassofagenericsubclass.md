@@ -7,7 +7,6 @@ order: 1004
 source: https://web.archive.org/web/20090924204621/http://www.java2s.com:80/Code/Java/Generics/Anongenericclasscanbethesuperclassofagenericsubclass.htm
 ---
 A nongeneric class can be the superclass of a generic subclass. : Generic Class « Generics « Java
-A nongeneric class can be the superclass of a generic subclass.
 
 ```java title=Example.java
 /*

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20090322135648/http://www.java2s.com:80/Code/Java/Threads/AthreadofexecutionthatusesaCyclicBarrier.htm
 ---
-A thread of execution that uses a CyclicBarrier
-
 ```java title=Example.java
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

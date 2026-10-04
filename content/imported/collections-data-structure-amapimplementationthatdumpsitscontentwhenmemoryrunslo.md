@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1051
 source: https://web.archive.org/web/20111114172141/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AMapimplementationthatdumpsitscontentwhenmemoryrunslow.htm
 ---
-A Map implementation that dumps its content when memory runs low.
-
 ```java title=Example.java
 //     package com.croftsoft.core.util;
 import java.lang.ref.Reference;
@@ -18,7 +16,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.WeakHashMap;
 /*********************************************************************
- * A Map implementation that dumps its content when memory runs low.
  *
  * <P>
  *

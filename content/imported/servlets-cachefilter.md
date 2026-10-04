@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20090912060206/http://www.java2s.com:80/Code/Java/Servlets/CacheFilter.htm
 ---
-Cache Filter
-
 ```java title=Example.java
 /*
  ************************************************************************************

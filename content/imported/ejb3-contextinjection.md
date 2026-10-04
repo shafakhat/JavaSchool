@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20090421175427/http://www.java2s.com:80/Code/Java/EJB3/ContextInjection.htm
 ---
-Context Injection
-
 ```java title=Example.java
 File: AnotherBean.java
 import javax.ejb.Stateless;

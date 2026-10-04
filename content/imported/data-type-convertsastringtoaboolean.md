@@ -38,7 +38,6 @@ source: https://web.archive.org/web/20100219090950/http://www.java2s.com:80/Tuto
  */
 public class Main {
   /**
-   * Converts a String to a Boolean.
    *
    * <code>'true'</code>, <code>'on'</code> or <code>'yes'</code>
    * (case insensitive) will return <code>true</code>.

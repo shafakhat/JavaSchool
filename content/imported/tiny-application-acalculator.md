@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513071932/http://www.java2s.com/Code/Ja
 ---
 A calculator : Java examples (example source code) » Tiny Application » Calculator
 
-A calculator
-
 ```java title=Example.java
 import java.awt.BorderLayout;
 import java.awt.Container;

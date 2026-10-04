@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/20100206135422/http://java2s.com/Code/Java/2D-Graphics-GUI/AgeometricpathconstructedfromstraightlinesquadraticandcubicBeziercurvesandellipticalarc.htm
 ---
-A geometric path constructed from straight lines, quadratic and cubic (Bezier) curves and elliptical arc.
-
 ```java title=Example.java
 /*
    Licensed to the Apache Software Foundation (ASF) under one or more

@@ -3,8 +3,8 @@ title: Removes a substring only if it is at the end of a source string, otherwis
 nav: Removes a substring only i...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1173
-source: https://web.archive.org/web/20100606070851/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Removesasubstringonlyifitisattheendofasourcestringotherwisereturnsthesourcestring.htm
+order: 1043
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Removesasubstringonlyifitisattheendofasourcestringotherwisereturnsthesourcestring.htm
 ---
 ```java title=Example.java
 /*
@@ -22,8 +22,7 @@ source: https://web.archive.org/web/20100606070851/http://www.java2s.com:80/Tuto
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-public class Main {
+ */publicclass Main {
   /**
    * Removes a substring only if it is at the end of a source string,
    * otherwise returns the source string.
@@ -47,8 +46,7 @@ public class Main {
    * @return the substring with the string removed if found,
    *  <code>null</code> if null String input
    * @since 2.1
-   */
-  public static String removeEnd(String str, String remove) {
+   */publicstatic String removeEnd(String str, String remove) {
       if (isEmpty(str) || isEmpty(remove)) {
           return str;
       }
@@ -58,8 +56,8 @@ public class Main {
       return str;
   }
   // Empty checks
-  //-----------------------------------------------------------------------
-  /**
+//-----------------------------------------------------------------------
+/**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -76,8 +74,7 @@ public class Main {
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */
-  public static boolean isEmpty(String str) {
+   */publicstaticboolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }

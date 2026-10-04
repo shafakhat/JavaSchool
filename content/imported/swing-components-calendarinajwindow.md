@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20060721234403/http://www.java2s.com:80/Code/Java/Swing-Components/CalendarinaJWindow.htm
 ---
-Calendar in a JWindow
-
 ```java title=Example.java
 /*
 Swing Hacks Tips and Tools for Killer GUIs

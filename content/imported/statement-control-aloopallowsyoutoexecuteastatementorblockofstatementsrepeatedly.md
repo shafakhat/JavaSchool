@@ -17,7 +17,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Hi.
 Hi.
 Hi.

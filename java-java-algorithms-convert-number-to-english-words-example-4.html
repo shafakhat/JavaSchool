@@ -43,48 +43,36 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
    publicstaticfinalString[] units = { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
          "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
-
    publicstaticfinalString[] tens = { "", // 0"", // 1"twenty", // 2"thirty", // 3"forty", // 4"fifty", // 5"sixty", // 6"seventy", // 7"eighty", // 8"ninety"// 9
-   };//fromwww.java2s.compublicstaticString convert(finalint n) {
+   };publicstaticString convert(finalint n) {
       if (n &lt; 0) {
          return"minus " + convert(-n);
       }
-
       if (n &lt; 20) {
          return units[n];
       }
-
       if (n &lt; 100) {
          return tens[n / 10] + ((n % 10 != 0) ? " " : "") + units[n % 10];
       }
-
       if (n &lt; 1000) {
          return units[n / 100] + " hundred" + ((n % 100 != 0) ? " " : "") + convert(n % 100);
       }
-
       if (n &lt; 1000000) {
          return convert(n / 1000) + " thousand" + ((n % 1000 != 0) ? " " : "") + convert(n % 1000);
       }
-
       if (n &lt; 1000000000) {
          return convert(n / 1000000) + " million" + ((n % 1000000 != 0) ? " " : "") + convert(n % 1000000);
       }
-
       return convert(n / 1000000000) + " billion" + ((n % 1000000000 != 0) ? " " : "") + convert(n % 1000000000);
    }
-
    publicstaticvoid main(finalString[] args) {
       int n = 1000;
       System.out.printf("%10d =  '%s'%n", n, convert(n));
-
       n = 11000;
       System.out.printf("%10d =  '%s'%n", n, convert(n));
-
       n = 999999999;
       System.out.printf("%10d =  '%s'%n", n, convert(n));
-
       n = Integer.MAX_VALUE;
-
       System.out.printf("%10d =  '%s'%n", n, convert(n));
    }
 }</code></pre></div>
@@ -100,15 +88,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

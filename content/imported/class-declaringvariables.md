@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20090530095922/http://www.java2s.com:80/Code/Java/Class/DeclaringVariables.htm
 ---
-Declaring Variables
-
 ```java title=Example.java
 /*
 In this example, a String object is declared and initialized with a reference to the

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20061018193017/http://www.java2s.com/Code/Java/Servlets/AnotherservlettoSendXML.htm
 ---
-Another servlet to Send XML
-
 ```java title=Example.java
 import java.io.BufferedInputStream;
 import java.io.File;

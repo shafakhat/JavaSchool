@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1041
 source: https://web.archive.org/web/20081209042741/http://www.java2s.com:80/Code/Java/JPA/Escapewildcard.htm
 ---
-Escape wildcard
-
 ```java title=Example.java
 File: Main.java
 import javax.persistence.EntityManager;

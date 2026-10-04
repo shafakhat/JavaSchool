@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20070503201238/http://www.java2s.com:80/Code/Java/Threads/Anotherwaytostopathread.htm
 ---
-Another way to stop a thread
-
 ```java title=Example.java
 public class AlternateStop extends Object implements Runnable {
   private volatile boolean stopRequested;

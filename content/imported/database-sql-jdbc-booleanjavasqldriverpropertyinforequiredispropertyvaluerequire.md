@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1021
 source: https://web.archive.org/web/20100213225613/http://java2s.com/Code/Java/Database-SQL-JDBC/booleanjavasqlDriverPropertyInforequiredIspropertyvaluerequired.htm
 ---
-boolean java.sql.DriverPropertyInfo.required (Is property value required?)
-
 ```java title=Example.java
 import java.sql.Driver;
 import java.sql.DriverManager;

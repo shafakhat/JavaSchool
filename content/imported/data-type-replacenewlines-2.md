@@ -3,8 +3,8 @@ title: Replace New Lines
 nav: Replace New Lines
 description: * wingS is free software; you can redistribute it and/or modify
 section: Imported - java2s Archive
-order: 1179
-source: https://web.archive.org/web/20100412210130/http://java2s.com:80/Tutorial/Java/0040__Data-Type/ReplaceNewLines.htm
+order: 1051
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ReplaceNewLines.htm
 ---
 ```java title=Example.java
 /*
@@ -18,14 +18,12 @@ source: https://web.archive.org/web/20100412210130/http://java2s.com:80/Tutorial
  * of the License, or (at your option) any later version.
  *
  * Please see COPYING for the complete licence.
- */
-import java.util.StringTokenizer;
+ */import java.util.StringTokenizer;
 /**
  * Some string manipulation utilities.
  *
  * @author <a href="mailto:haaf@mercatis.de">Armin Haaf</a>
- */
-public class StringUtil {
+ */publicclass StringUtil {
   /**
    * replaces all newlines in the given String 's' with the replacement
    * string 'r'. Each line is trimmed from leading and trailing whitespaces,
@@ -34,8 +32,7 @@ public class StringUtil {
    * @param s the source string.
    * @param r the new line delimiter
    * @return the resulting string.
-   */
-  public static final String replaceNewLines(String s, String r) {
+   */publicstaticfinal String replaceNewLines(String s, String r) {
       StringBuilder result = new StringBuilder();
       StringTokenizer t = new StringTokenizer(s, "\n");
       while (t.hasMoreTokens()) {

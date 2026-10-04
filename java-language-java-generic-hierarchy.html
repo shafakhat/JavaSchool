@@ -44,7 +44,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="example">Example</h2>
 <p>Using a Generic Superclass</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass&lt;T&gt; {
-  T ob;/*fromwww.java2s.com*/
+  T ob;
   MyClass(T o) {
     ob = o;
   }
@@ -72,7 +72,7 @@ publicclass Main {
 <p>The code above generates the following result.</p>
 <h2 id="example-2">Example 2</h2>
 <p>It is perfectly acceptable for a non-generic class to be the superclass of a generic subclass.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {//fromwww.java2s.comint num;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {int num;
   MyClass(int i) {
     num = i;
   }
@@ -101,7 +101,7 @@ publicclass Main {
 <h2 id="example-3">Example 3</h2>
 <p>The instanceof operator can be applied to objects of generic classes.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Gen&lt;T&gt; {
-  T ob;//www.java2s.com
+  T ob;
   Gen(T o) {
     ob = o;
   }
@@ -131,7 +131,7 @@ publicclass Main {
 <h2 id="example-4">Example 4</h2>
 <p>A method in a generic class can be overridden like any other method.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Gen&lt;T&gt; {
-  T obj;/*fromwww.java2s.com*/
+  T obj;
   Gen(T o) {
     obj = o;
   }
@@ -162,7 +162,7 @@ publicclass Main {
 <p>You can cast one instance of a generic class into another only if the two are compatible and their type arguments are the same.</p>
 <p>For example, assuming the following program, this cast is legal:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Gen&lt;T&gt; {
-  T ob;/*fromwww.java2s.com*/
+  T ob;
   Gen(T o) {
     ob = o;
   }
@@ -218,15 +218,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

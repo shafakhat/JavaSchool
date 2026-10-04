@@ -39,7 +39,6 @@ import java.util.Map;
   */
 public class Main{
   /**
-   * Returns a new string with all the whitespace removed
    *
    * @param s the source string
    * @return the string without whitespace or null

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1042
 source: https://web.archive.org/web/20061018125403/http://www.java2s.com/Code/Java/JSTL/JSTLRequestURLAndPassingParameters.htm
 ---
-JSTL Request URL And Passing Parameters
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <html>

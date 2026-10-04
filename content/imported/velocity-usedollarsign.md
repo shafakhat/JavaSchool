@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1063
 source: https://web.archive.org/web/20060513071036/http://www.java2s.com/Code/Java/Velocity/UseDollarSign.htm
 ---
-Use Dollar Sign
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;

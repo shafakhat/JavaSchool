@@ -36,7 +36,6 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 /**
- * A basic priority linked list
  *
  * It implements this by maintaining an individual LinkedList for each priority
  * level.

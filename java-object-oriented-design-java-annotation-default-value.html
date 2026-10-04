@@ -42,8 +42,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>We can define a default value for elements in an annotation. We are not required to provide a value for an annotation element with a default value.</p>
 <p>The default value can be defined using the following general syntax:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;modifiers&gt; @interface &lt;annotation type name&gt; {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;modifiers&gt; @interface &lt;annotation type name&gt; {
     &lt;data-type&gt; &lt;element-name&gt;() default &lt;default-value&gt;;
 }</code></pre></div>
 <p>The keyword default specifies the default value.</p>
@@ -55,13 +54,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 }</code></pre></div>
 <h2 id="example">Example</h2>
 <p>The following code shows how to use annotation with use the default value.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@Version(major=1) // minor is zero, which  is its  default value
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@Version(major=1) // minor is zero, which  is its  default value
 @Version(major=2, minor=1)  // minor  is 1, which  is the   specified  value</code></pre></div>
 <p>The following code shows how to specify default values for an array and other data types:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public @interface Version {
   double d() default 1.89;
-/*fromwww.java2s.com*/int num() default 1;
+int num() default 1;
   int[] x() default { 1, 2 };
   String s() default"Hello";
   String[] s2() default { "abc", "xyz" };
@@ -79,15 +77,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

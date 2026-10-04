@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1155
 source: https://web.archive.org/web/20090530095635/http://www.java2s.com:80/Code/Java/Class/CreateaSingletonObject.htm
 ---
-Create a Singleton Object
-
 ```java title=Example.java
 class MySingleton {
   // the static singleton object

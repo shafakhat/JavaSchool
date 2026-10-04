@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513064500/http://www.java2s.com/Code/Ja
 ---
 Animated Icon Header Example : Java examples (example source code) » Swing Components » Grid Table
 
-Animated Icon Header Example
-
 ```java title=Example.java
 // Example from http://www.crionics.com/products/opensource/faq/swing_ex/SwingExamples.html
 /* (swing1.1.1beta2) */

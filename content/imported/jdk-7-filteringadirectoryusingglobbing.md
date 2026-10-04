@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1051
 source: https://web.archive.org/web/20130111094800/http://www.java2s.com:80/Code/Java/JDK-7/Filteringadirectoryusingglobbing.htm
 ---
-Filtering a directory using globbing
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.file.DirectoryIteratorException;

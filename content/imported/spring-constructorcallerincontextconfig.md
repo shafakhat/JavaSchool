@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1053
 source: https://web.archive.org/web/20090406053255/http://www.java2s.com:80/Code/Java/Spring/ConstructorCallerInContextConfig.htm
 ---
-ConstructorCaller In ContextConfig
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

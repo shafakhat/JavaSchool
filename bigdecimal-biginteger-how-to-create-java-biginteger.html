@@ -45,7 +45,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>BigInteger(byte[] val) Translates a byte array containing the two's-complement binary representation of a BigInteger into a BigInteger.</p>
 <p>The following code use new BigInteger(byte[] val) to create a BigInteger.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-/*java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] argv) throws Exception {
     // A negative value
 byte[] bytes = newbyte[] { (byte) 0xFF, 0x00, 0x00 }; // -65536
@@ -58,37 +58,34 @@ byte[] bytes = newbyte[] { (byte) 0xFF, 0x00, 0x00 }; // -65536
 <p>BigInteger(String val) translates the decimal String representation of a BigInteger into a BigInteger.</p>
 <p>The following code use new BigInteger(String val)to create a BigInteger.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-/*java2s.com*/publicclass MainClass {
+publicclass MainClass {
   publicstaticvoid main(String[] args) {
     System.out.println("Here's Long.MAX_VALUE: " + Long.MAX_VALUE);
     BigInteger bInt = new BigInteger("3419229223372036854775807");
     System.out.println("Here's a bigger number: " + bInt);
     System.out.println("Here it is as a double: " + bInt.doubleValue());
   }
-
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <h3 id="use-different-radix-to-create-biginteger-from-string">Use different radix to create BigInteger from String</h3>
 <p>BigInteger(String val, int radix) translates the String representation of a BigInteger in the specified radix into a BigInteger.</p>
 <p>You can set the radix for the string value passed in with new BigInteger(String val, int radix).</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-//java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] argv) throws Exception {
     BigInteger bi = new BigInteger("4407760", 8);
-
   }
 }</code></pre></div>
 <h3 id="create-biginteger-with-random-number">Create BigInteger with random number</h3>
 <p>new BigInteger(int bitLength, int certainty, Random rnd) creates a BigInteger with a random number</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
 import java.security.SecureRandom;
-/*fromjava2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     int bitLength = 512; // 512 bits
     SecureRandom rnd = new SecureRandom();
     int certainty = 90; // 1 - 1/2(90) certainty
     BigInteger mod = new BigInteger(bitLength, certainty, rnd);
-
   }
 }</code></pre></div>
 <h4 id="next-chapter">Next chapter...</h4>
@@ -108,15 +105,8 @@ import java.security.SecureRandom;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

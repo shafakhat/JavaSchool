@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20061026215124/http://www.java2s.com/Code/Java/JSTL/CatchanExceptioninJSTL.htm
 ---
-Catch an Exception in JSTL
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <html>

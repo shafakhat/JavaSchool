@@ -51,57 +51,45 @@ import java.security.Key;
 import java.security.interfaces.RSAKey;
 import java.util.Date;
 import java.util.Set;
-
 import javax.net.ssl.ExtendedSSLSession;
 import javax.net.ssl.SSLParameters;
 import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLServerSocketFactory;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
-
 class SimpleConstraints implementsAlgorithmConstraints {
    publicboolean permits(Set&lt;CryptoPrimitive&gt; primitives, String algorithm, AlgorithmParameters parameters) {
       return permits(primitives, algorithm, null, parameters);
-   }/*www.java2s.com*/publicboolean permits(Set&lt;CryptoPrimitive&gt; primitives, Key key) {
+   }publicboolean permits(Set&lt;CryptoPrimitive&gt; primitives, Key key) {
       return permits(primitives, null, key, null);
    }
-
    publicboolean permits(Set&lt;CryptoPrimitive&gt; primitives, String algorithm, Key key, AlgorithmParameters parameters) {
       if (algorithm == null)
          algorithm = key.getAlgorithm();
-
       if (algorithm.indexOf("RSA") == -1)
          return false;
-
       if (key != null) {
          RSAKey rsaKey = (RSAKey) key;
          int size = rsaKey.getModulus().bitLength();
          if (size &lt; 2048)
             return false;
       }
-
       return true;
    }
 }
-
 //EchoServerpublicclass Main {
-
    publicstaticvoid main(String[] arstring) {
       try {
          SSLServerSocketFactory sslServerSocketFactory = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
          SSLServerSocket sslServerSocket = (SSLServerSocket) sslServerSocketFactory.createServerSocket(9999);
          System.out.println("Waiting for a client ...");
          SSLSocket sslSocket = (SSLSocket) sslServerSocket.accept();
-
          SSLParameters parameters = sslSocket.getSSLParameters();
          parameters.setAlgorithmConstraints(new SimpleConstraints());
-
          AlgorithmConstraints constraints = parameters.getAlgorithmConstraints();
          System.out.println("Constraint: " + constraints);
-
          String endPoint = parameters.getEndpointIdentificationAlgorithm();
          System.out.println("End Point: " + endPoint);
-
          System.out.println("Local Supported Signature Algorithms");
          if (sslSocket.getSession() instanceofExtendedSSLSession) {
             ExtendedSSLSession extendedSSLSession = (ExtendedSSLSession) sslSocket.getSession();
@@ -110,7 +98,6 @@ class SimpleConstraints implementsAlgorithmConstraints {
                System.out.println("Algortihm: " + algorithm);
             }
          }
-
          System.out.println("Peer Supported Signature Algorithms");
          if (sslSocket.getSession() instanceofExtendedSSLSession) {
             String alogrithms[] = ((ExtendedSSLSession) sslSocket.getSession()).getPeerSupportedSignatureAlgorithms();
@@ -118,16 +105,13 @@ class SimpleConstraints implementsAlgorithmConstraints {
                System.out.println("Algortihm: " + algorithm);
             }
          }
-
          InputStream inputstream = sslSocket.getInputStream();
          InputStreamReader inputstreamreader = newInputStreamReader(inputstream);
          BufferedReader bufferedreader = newBufferedReader(inputstreamreader);
-
          SSLSession session = sslSocket.getHandshakeSession();
          if (session != null) {
             System.out.println("Last accessed: " + newDate(session.getLastAccessedTime()));
          }
-
          String string = null;
          while ((string = bufferedreader.readLine()) != null) {
             System.out.println(string);
@@ -137,7 +121,6 @@ class SimpleConstraints implementsAlgorithmConstraints {
          exception.printStackTrace();
       }
    }
-
 }</code></pre></div>
 <p>PreviousNext</p>
 <h2 id="related">Related</h2>
@@ -152,15 +135,8 @@ class SimpleConstraints implementsAlgorithmConstraints {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

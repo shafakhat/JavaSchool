@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1140
 source: https://web.archive.org/web/20130618052503/http://www.java2s.com:80/Code/Java/JDK-7/UsingAsynchronousFileChannelandFuturetoread.htm
 ---
-Using AsynchronousFileChannel and Future to read
-
 ```java title=Example.java
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousFileChannel;

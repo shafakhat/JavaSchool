@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20090106041547/http://www.java2s.com:80/Code/Java/Class/Nestingaclasswithinascope.htm
 ---
-Nesting a class within a scope
-
 ```java title=Example.java
 // : c08:Parcel5.java
-// Nesting a class within a scope.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 public class Parcel5 {

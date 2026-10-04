@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Data Type (5/7) - Java Tutorial - JavaSchool</title>
-<meta name="description" content="Data Type: java2s tutorial chapter with tabs per sub-topic, 447 archived articles imported.">
+<title>Data Type (5/8) - Java Tutorial - JavaSchool</title>
+<meta name="description" content="Data Type: java2s tutorial chapter with tabs per sub-topic, 641 archived articles imported.">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -38,11 +38,11 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <main class="main">
   <article class="ws-content">
     <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a></nav>
-    <h1>2. Data Type (5/7)</h1>
-    <p><strong>47 sub-topics</strong> &middot; <strong>864 pages archived (2014-2020)</strong> &middot; <strong>447</strong> imported here, grouped into tabs below (part 5 of 7, 13 articles).</p>
+    <h1>2. Data Type (5/8)</h1>
+    <p><strong>47 sub-topics</strong> &middot; <strong>864 pages archived (2014-2020)</strong> &middot; <strong>641</strong> imported here, grouped into tabs below (part 5 of 8, 18 articles).</p>
     <p class="part-pager"><a class="btn btn-outline" href="tutorial-02-data-type-4.html">&larr; Previous part</a> <a class="btn btn-green" href="tutorial-02-data-type-6.html">Next part &rarr;</a></p>
     <div class="tabs">
-      <div class="tab-bar"><button type="button" class="tab-btn active" data-tab="tab-0" aria-selected="true">Number <span class="tab-count">12</span></button><button type="button" class="tab-btn" data-tab="tab-1" aria-selected="false">Number Format <span class="tab-count">1</span></button></div>
+      <div class="tab-bar"><button type="button" class="tab-btn active" data-tab="tab-0" aria-selected="true">Number <span class="tab-count">16</span></button><button type="button" class="tab-btn" data-tab="tab-1" aria-selected="false">Number Format <span class="tab-count">2</span></button></div>
       <div class="tab-panel" id="tab-0"><h3 id="a-custom-number-formatter-that-formats-numbers-as-hexadecimal-strings">A custom number formatter that formats numbers as hexadecimal strings.</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
  * JFreeChart : a free chart library for the Java(tm) platform
@@ -85,39 +85,28 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  */import java.text.FieldPosition;
 import java.text.NumberFormat;
 import java.text.ParsePosition;
-
 /**
- * A custom number formatter that formats numbers as hexadecimal strings.
  * There are some limitations, so be careful using this class.
  *
  * @since 1.0.6
  */publicclass HexNumberFormat extends NumberFormat {
-
     /** Number of hexadecimal digits for a byte. */publicstaticfinalint BYTE = 2;
-
     /** Number of hexadecimal digits for a word. */publicstaticfinalint WORD = 4;
-
     /** Number of hexadecimal digits for a double word. */publicstaticfinalint DWORD = 8;
-
     /** Number of hexadecimal digits for a quad word. */publicstaticfinalint QWORD = 16;
-
     /** The number of digits (shorter strings will be left padded). */privateint m_numDigits = DWORD;
-
     /**
      * Creates a new instance with 8 digits.
      */public HexNumberFormat() {
         this(DWORD);
     }
-
     /**
      * Creates a new instance with the specified number of digits.
-
      * @param digits  the digits.
      */public HexNumberFormat(int digits) {
         super();
         this.m_numDigits = digits;
     }
-
     /**
      * Returns the number of digits.
      *
@@ -125,7 +114,6 @@ import java.text.ParsePosition;
      */publicfinalint getNumberOfDigits() {
         return this.m_numDigits;
     }
-
     /**
      * Sets the number of digits.
      *
@@ -133,7 +121,6 @@ import java.text.ParsePosition;
      */publicvoid setNumberOfDigits(int digits) {
         this.m_numDigits = digits;
     }
-
     /**
      * Formats the specified number as a hexadecimal string.  The decimal
      * fraction is ignored.
@@ -147,7 +134,6 @@ import java.text.ParsePosition;
             FieldPosition pos) {
         return format((long) number, toAppendTo, pos);
     }
-
     /**
      * Formats the specified number as a hexadecimal string.  The decimal
      * fraction is ignored.
@@ -160,19 +146,15 @@ import java.text.ParsePosition;
      */public StringBuffer format(long number, StringBuffer toAppendTo,
             FieldPosition pos) {
         String l_hex = Long.toHexString(number).toUpperCase();
-
         int l_pad = this.m_numDigits - l_hex.length();
         l_pad = (0 &lt; l_pad) ? l_pad : 0;
-
         StringBuffer l_extended = new StringBuffer("0x");
         for (int i = 0; i &lt; l_pad; i++) {
             l_extended.append(0);
         }
         l_extended.append(l_hex);
-
         return l_extended;
     }
-
     /**
      * Parsing is not implemented, so this method always returns
      * &lt;code&gt;null&lt;/code&gt;.
@@ -184,7 +166,6 @@ import java.text.ParsePosition;
      */public Number parse (String source, ParsePosition parsePosition) {
         return null; // don't bother with parsing
     }
-
 }</code></pre></div>
 <h3 id="a-number-formatter-for-logarithmic-values-this-formatter-does-not-support-parsing">A number formatter for logarithmic values. This formatter does not support parsing.</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
@@ -233,30 +214,22 @@ import java.text.ParsePosition;
 import java.text.FieldPosition;
 import java.text.NumberFormat;
 import java.text.ParsePosition;
-
 /**
  * A number formatter for logarithmic values.  This formatter does not support
  * parsing.
  *
  * @since 1.0.7
  */publicclass LogFormat extends NumberFormat {
-
     /** The log base value. */privatedouble base;
-
     /** The natural logarithm of the base value. */privatedouble baseLog;
-
     /** The label for the log base (for example, "e"). */private String baseLabel;
-
     /**
      * The label for the power symbol.
      *
      * @since 1.0.10
      */private String powerLabel;
-
     /** A flag that controls whether or not the base is shown. */privateboolean showBase;
-
     /** The number formatter for the exponent. */private NumberFormat formatter = new DecimalFormat("0.0#");
-
     /**
      * Creates a new instance using base 10.
      *
@@ -264,7 +237,6 @@ import java.text.ParsePosition;
      */public LogFormat() {
         this(10.0, "10", true);
     }
-
     /**
      * Creates a new instance.
      *
@@ -275,7 +247,6 @@ import java.text.ParsePosition;
      */public LogFormat(double base, String baseLabel, boolean showBase) {
         this(base, baseLabel, "^", showBase);
     }
-
     /**
      * Creates a new instance.
      *
@@ -300,7 +271,6 @@ import java.text.ParsePosition;
         this.showBase = showBase;
         this.powerLabel = powerLabel;
     }
-
     /**
      * Returns the number format used for the exponent.
      *
@@ -310,7 +280,6 @@ import java.text.ParsePosition;
      */public NumberFormat getExponentFormat() {
         return (NumberFormat) this.formatter.clone();
     }
-
     /**
      * Sets the number format used for the exponent.
      *
@@ -323,7 +292,6 @@ import java.text.ParsePosition;
         }
         this.formatter = format;
     }
-
     /**
      * Calculates the log of a given value.
      *
@@ -333,7 +301,6 @@ import java.text.ParsePosition;
      */privatedouble calculateLog(double value) {
         return Math.log(value) / this.baseLog;
     }
-
     /**
      * Returns a formatted representation of the specified number.
      *
@@ -352,7 +319,6 @@ import java.text.ParsePosition;
         result.append(this.formatter.format(calculateLog(number)));
         return result;
     }
-
     /**
      * Formats the specified number as a hexadecimal string.  The decimal
      * fraction is ignored.
@@ -372,7 +338,6 @@ import java.text.ParsePosition;
         result.append(this.formatter.format(calculateLog(number)));
         return result;
     }
-
     /**
      * Parsing is not implemented, so this method always returns
      * &lt;code&gt;null&lt;/code&gt;.
@@ -384,7 +349,6 @@ import java.text.ParsePosition;
      */public Number parse (String source, ParsePosition parsePosition) {
         return null; // don't bother with parsing
     }
-
     /**
      * Tests this formatter for equality with an arbitrary object.
      *
@@ -416,7 +380,6 @@ import java.text.ParsePosition;
         }
         return super.equals(obj);
     }
-
     /**
      * Returns a clone of this instance.
      *
@@ -426,19 +389,856 @@ import java.text.ParsePosition;
         clone.formatter = (NumberFormat) this.formatter.clone();
         return clone;
     }
-
 }</code></pre></div>
 <h3 id="add-leading-zeros-to-a-number">Add leading zeros to a number</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String[] args) {
     int number = 1500;
-
     String formatted = String.format("%07d", number);
-
     System.out.println("Number with leading zeros: " + formatted);
   }
 }</code></pre></div>
 <h3 id="fraction-is-a-number-implementation-that-stores-fractions-accurately">Fraction is a Number implementation that stores fractions accurately.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */// Revised from commons math from Apache
+import java.math.BigInteger;
+/**
+ * &lt;p&gt;&lt;code&gt;Fraction&lt;/code&gt; is a &lt;code&gt;Number&lt;/code&gt; implementation that
+ * stores fractions accurately.&lt;/p&gt;
+ *
+ * &lt;p&gt;This class is immutable, and interoperable with most methods that accept
+ * a &lt;code&gt;Number&lt;/code&gt;.&lt;/p&gt;
+ *
+ * @author Travis Reeder
+ * @author Stephen Colebourne
+ * @author Tim O'Brien
+ * @author Pete Gieser
+ * @author C. Scott Ananian
+ * @since 2.0
+ * @version $Id: Fraction.java 599500 2007-11-29 16:25:54Z mbenson $
+ */public final class Fraction extends Number implements Comparable {
+    /**
+     * Required for serialization support. Lang version 2.0.
+     *
+     * @see java.io.Serializable
+     */ private static final long serialVersionUID = 65382027393090L;
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 0.
+     */ public static final Fraction ZERO = new Fraction(0, 1);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 1.
+     */ public static final Fraction ONE = new Fraction(1, 1);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 1/2.
+     */ public static final Fraction ONE_HALF = new Fraction(1, 2);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 1/3.
+     */ public static final Fraction ONE_THIRD = new Fraction(1, 3);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 2/3.
+     */ public static final Fraction TWO_THIRDS = new Fraction(2, 3);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 1/4.
+     */ public static final Fraction ONE_QUARTER = new Fraction(1, 4);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 2/4.
+     */ public static final Fraction TWO_QUARTERS = new Fraction(2, 4);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 3/4.
+     */ public static final Fraction THREE_QUARTERS = new Fraction(3, 4);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 1/5.
+     */ public static final Fraction ONE_FIFTH = new Fraction(1, 5);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 2/5.
+     */ public static final Fraction TWO_FIFTHS = new Fraction(2, 5);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 3/5.
+     */ public static final Fraction THREE_FIFTHS = new Fraction(3, 5);
+    /**
+     * &lt;code&gt;Fraction&lt;/code&gt; representation of 4/5.
+     */ public static final Fraction FOUR_FIFTHS = new Fraction(4, 5);
+    /**
+     * The numerator number part of the fraction (the three in three sevenths).
+     */ private final int numerator;
+    /**
+     * The denominator number part of the fraction (the seven in three sevenths).
+     */ private final int denominator;
+    /**
+     * Cached output hashCode (class is immutable).
+     */ private transient int hashCode = 0;
+    /**
+     * Cached output toString (class is immutable).
+     */ private transient String toString = null;
+    /**
+     * Cached output toProperString (class is immutable).
+     */ private transient String toProperString = null;
+    /**
+     * &lt;p&gt;Constructs a &lt;code&gt;Fraction&lt;/code&gt; instance with the 2 parts
+     * of a fraction Y/Z.&lt;/p&gt;
+     *
+     * @param numerator  the numerator, for example the three in 'three sevenths'
+     * @param denominator  the denominator, for example the seven in 'three sevenths'
+     */ private Fraction(int numerator, int denominator) {
+        super();
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+    /**
+     * &lt;p&gt;Creates a &lt;code&gt;Fraction&lt;/code&gt; instance with the 2 parts
+     * of a fraction Y/Z.&lt;/p&gt;
+     *
+     * &lt;p&gt;Any negative signs are resolved to be on the numerator.&lt;/p&gt;
+     *
+     * @param numerator  the numerator, for example the three in 'three sevenths'
+     * @param denominator  the denominator, for example the seven in 'three sevenths'
+     * @return a new fraction instance
+     * @throws ArithmeticException if the denomiator is &lt;code&gt;zero&lt;/code&gt;
+     */ public static Fraction getFraction(int numerator, int denominator) {
+        if (denominator == 0) {
+            throw new ArithmeticException("The denominator must not be zero");
+        }
+        if (denominator &lt; 0) {
+            if (numerator==Integer.MIN_VALUE ||
+                    denominator==Integer.MIN_VALUE) {
+                throw new ArithmeticException("overflow: can't negate");
+            }
+            numerator = -numerator;
+            denominator = -denominator;
+        }
+        return new Fraction(numerator, denominator);
+    }
+    /**
+     * &lt;p&gt;Creates a &lt;code&gt;Fraction&lt;/code&gt; instance with the 3 parts
+     * of a fraction X Y/Z.&lt;/p&gt;
+     *
+     * &lt;p&gt;The negative sign must be passed in on the whole number part.&lt;/p&gt;
+     *
+     * @param whole  the whole number, for example the one in 'one and three sevenths'
+     * @param numerator  the numerator, for example the three in 'one and three sevenths'
+     * @param denominator  the denominator, for example the seven in 'one and three sevenths'
+     * @return a new fraction instance
+     * @throws ArithmeticException if the denomiator is &lt;code&gt;zero&lt;/code&gt;
+     * @throws ArithmeticException if the denominator is negative
+     * @throws ArithmeticException if the numerator is negative
+     * @throws ArithmeticException if the resulting numerator exceeds
+     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;
+     */ public static Fraction getFraction(int whole, int numerator, int denominator) {
+        if (denominator == 0) {
+            throw new ArithmeticException("The denominator must not be zero");
+        }
+        if (denominator &lt; 0) {
+            throw new ArithmeticException("The denominator must not be negative");
+        }
+        if (numerator &lt; 0) {
+            throw new ArithmeticException("The numerator must not be negative");
+        }
+        long numeratorValue;
+        if (whole &lt; 0) {
+            numeratorValue = whole * (long)denominator - numerator;
+        } else {
+            numeratorValue = whole * (long)denominator + numerator;
+        }
+        if (numeratorValue &lt; Integer.MIN_VALUE ||
+                numeratorValue &gt; Integer.MAX_VALUE)  {
+            throw new ArithmeticException("Numerator too large to represent as an Integer.");
+        }
+        return new Fraction((int) numeratorValue, denominator);
+    }
+    /**
+     * &lt;p&gt;Creates a reduced &lt;code&gt;Fraction&lt;/code&gt; instance with the 2 parts
+     * of a fraction Y/Z.&lt;/p&gt;
+     *
+     * &lt;p&gt;For example, if the input parameters represent 2/4, then the created
+     * fraction will be 1/2.&lt;/p&gt;
+     *
+     * &lt;p&gt;Any negative signs are resolved to be on the numerator.&lt;/p&gt;
+     *
+     * @param numerator  the numerator, for example the three in 'three sevenths'
+     * @param denominator  the denominator, for example the seven in 'three sevenths'
+     * @return a new fraction instance, with the numerator and denominator reduced
+     * @throws ArithmeticException if the denominator is &lt;code&gt;zero&lt;/code&gt;
+     */ public static Fraction getReducedFraction(int numerator, int denominator) {
+        if (denominator == 0) {
+            throw new ArithmeticException("The denominator must not be zero");
+        }
+        if (numerator==0) {
+            return ZERO; // normalize zero.
+        }
+        // allow 2^k/-2^31 as a valid fraction (where k&gt;0)
+ if (denominator==Integer.MIN_VALUE &amp;&amp; (numerator&amp;1)==0) {
+            numerator/=2; denominator/=2;
+        }
+        if (denominator &lt; 0) {
+            if (numerator==Integer.MIN_VALUE ||
+                    denominator==Integer.MIN_VALUE) {
+                throw new ArithmeticException("overflow: can't negate");
+            }
+            numerator = -numerator;
+            denominator = -denominator;
+        }
+        // simplify fraction.
+ int gcd = greatestCommonDivisor(numerator, denominator);
+        numerator /= gcd;
+        denominator /= gcd;
+        return new Fraction(numerator, denominator);
+    }
+    /**
+     * &lt;p&gt;Creates a &lt;code&gt;Fraction&lt;/code&gt; instance from a &lt;code&gt;double&lt;/code&gt; value.&lt;/p&gt;
+     *
+     * &lt;p&gt;This method uses the &lt;a href="http://archives.math.utk.edu/articles/atuyl/confrac/"&gt;
+     *  continued fraction algorithm&lt;/a&gt;, computing a maximum of
+     *  25 convergents and bounding the denominator by 10,000.&lt;/p&gt;
+     *
+     * @param value  the double value to convert
+     * @return a new fraction instance that is close to the value
+     * @throws ArithmeticException if &lt;code&gt;|value| &gt; Integer.MAX_VALUE&lt;/code&gt;
+     *  or &lt;code&gt;value = NaN&lt;/code&gt;
+     * @throws ArithmeticException if the calculated denominator is &lt;code&gt;zero&lt;/code&gt;
+     * @throws ArithmeticException if the the algorithm does not converge
+     */ public static Fraction getFraction(double value) {
+        int sign = (value &lt; 0 ? -1 : 1);
+        value = Math.abs(value);
+        if (value  &gt; Integer.MAX_VALUE || Double.isNaN(value)) {
+            throw new ArithmeticException
+                ("The value must not be greater than Integer.MAX_VALUE or NaN");
+        }
+        int wholeNumber = (int) value;
+        value -= wholeNumber;
+        int numer0 = 0;  // the pre-previous
+ int denom0 = 1;  // the pre-previous
+ int numer1 = 1;  // the previous
+ int denom1 = 0;  // the previous
+ int numer2 = 0;  // the current, setup in calculation
+ int denom2 = 0;  // the current, setup in calculation
+ int a1 = (int) value;
+        int a2 = 0;
+        double x1 = 1;
+        double x2 = 0;
+        double y1 = value - a1;
+        double y2 = 0;
+        double delta1, delta2 = Double.MAX_VALUE;
+        double fraction;
+        int i = 1;
+//        System.out.println("---");
+ do {
+            delta1 = delta2;
+            a2 = (int) (x1 / y1);
+            x2 = y1;
+            y2 = x1 - a2 * y1;
+            numer2 = a1 * numer1 + numer0;
+            denom2 = a1 * denom1 + denom0;
+            fraction = (double) numer2 / (double) denom2;
+            delta2 = Math.abs(value - fraction);
+//            System.out.println(numer2 + " " + denom2 + " " + fraction + " " + delta2 + " " + y1);
+            a1 = a2;
+            x1 = x2;
+            y1 = y2;
+            numer0 = numer1;
+            denom0 = denom1;
+            numer1 = numer2;
+            denom1 = denom2;
+            i++;
+//            System.out.println("&gt;&gt;" + delta1 +" "+ delta2+" "+(delta1 &gt; delta2)+" "+i+" "+denom2);
+        } while ((delta1 &gt; delta2) &amp;&amp; (denom2 &lt;= 10000) &amp;&amp; (denom2 &gt; 0) &amp;&amp; (i &lt; 25));
+        if (i == 25) {
+            throw new ArithmeticException("Unable to convert double to fraction");
+        }
+        return getReducedFraction((numer0 + wholeNumber * denom0) * sign, denom0);
+    }
+    /**
+     * &lt;p&gt;Creates a Fraction from a &lt;code&gt;String&lt;/code&gt;.&lt;/p&gt;
+     *
+     * &lt;p&gt;The formats accepted are:&lt;/p&gt;
+     *
+     * &lt;ol&gt;
+     *  &lt;li&gt;&lt;code&gt;double&lt;/code&gt; String containing a dot&lt;/li&gt;
+     *  &lt;li&gt;'X Y/Z'&lt;/li&gt;
+     *  &lt;li&gt;'Y/Z'&lt;/li&gt;
+     *  &lt;li&gt;'X' (a simple whole number)&lt;/li&gt;
+     * &lt;/ol&gt;
+     * and a .&lt;/p&gt;
+     *
+     * @param str  the string to parse, must not be &lt;code&gt;null&lt;/code&gt;
+     * @return the new &lt;code&gt;Fraction&lt;/code&gt; instance
+     * @throws IllegalArgumentException if the string is &lt;code&gt;null&lt;/code&gt;
+     * @throws NumberFormatException if the number format is invalid
+     */ public static Fraction getFraction(String str) {
+        if (str == null) {
+            throw new IllegalArgumentException("The string must not be null");
+        }
+        // parse double format
+ int pos = str.indexOf('.');
+        if (pos &gt;= 0) {
+            return getFraction(Double.parseDouble(str));
+        }
+        // parse X Y/Z format
+        pos = str.indexOf(' ');
+        if (pos &gt; 0) {
+            int whole = Integer.parseInt(str.substring(0, pos));
+            str = str.substring(pos + 1);
+            pos = str.indexOf('/');
+            if (pos &lt; 0) {
+                throw new NumberFormatException("The fraction could not be parsed as the format X Y/Z");
+            } else {
+                int numer = Integer.parseInt(str.substring(0, pos));
+                int denom = Integer.parseInt(str.substring(pos + 1));
+                return getFraction(whole, numer, denom);
+            }
+        }
+        // parse Y/Z format
+        pos = str.indexOf('/');
+        if (pos &lt; 0) {
+            // simple whole number
+ return getFraction(Integer.parseInt(str), 1);
+        } else {
+            int numer = Integer.parseInt(str.substring(0, pos));
+            int denom = Integer.parseInt(str.substring(pos + 1));
+            return getFraction(numer, denom);
+        }
+    }
+    // Accessors
+ //-------------------------------------------------------------------
+ /**
+     * &lt;p&gt;Gets the numerator part of the fraction.&lt;/p&gt;
+     *
+     * &lt;p&gt;This method may return a value greater than the denominator, an
+     * improper fraction, such as the seven in 7/4.&lt;/p&gt;
+     *
+     * @return the numerator fraction part
+     */ public int getNumerator() {
+        return numerator;
+    }
+    /**
+     * &lt;p&gt;Gets the denominator part of the fraction.&lt;/p&gt;
+     *
+     * @return the denominator fraction part
+     */ public int getDenominator() {
+        return denominator;
+    }
+    /**
+     * &lt;p&gt;Gets the proper numerator, always positive.&lt;/p&gt;
+     *
+     * &lt;p&gt;An improper fraction 7/4 can be resolved into a proper one, 1 3/4.
+     * This method returns the 3 from the proper fraction.&lt;/p&gt;
+     *
+     * &lt;p&gt;If the fraction is negative such as -7/4, it can be resolved into
+     * -1 3/4, so this method returns the positive proper numerator, 3.&lt;/p&gt;
+     *
+     * @return the numerator fraction part of a proper fraction, always positive
+     */ public int getProperNumerator() {
+        return Math.abs(numerator % denominator);
+    }
+    /**
+     * &lt;p&gt;Gets the proper whole part of the fraction.&lt;/p&gt;
+     *
+     * &lt;p&gt;An improper fraction 7/4 can be resolved into a proper one, 1 3/4.
+     * This method returns the 1 from the proper fraction.&lt;/p&gt;
+     *
+     * &lt;p&gt;If the fraction is negative such as -7/4, it can be resolved into
+     * -1 3/4, so this method returns the positive whole part -1.&lt;/p&gt;
+     *
+     * @return the whole fraction part of a proper fraction, that includes the sign
+     */ public int getProperWhole() {
+        return numerator / denominator;
+    }
+    // Number methods
+ //-------------------------------------------------------------------
+ /**
+     * &lt;p&gt;Gets the fraction as an &lt;code&gt;int&lt;/code&gt;. This returns the whole number
+     * part of the fraction.&lt;/p&gt;
+     *
+     * @return the whole number fraction part
+     */ public int intValue() {
+        return numerator / denominator;
+    }
+    /**
+     * &lt;p&gt;Gets the fraction as a &lt;code&gt;long&lt;/code&gt;. This returns the whole number
+     * part of the fraction.&lt;/p&gt;
+     *
+     * @return the whole number fraction part
+     */ public long longValue() {
+        return (long) numerator / denominator;
+    }
+    /**
+     * &lt;p&gt;Gets the fraction as a &lt;code&gt;float&lt;/code&gt;. This calculates the fraction
+     * as the numerator divided by denominator.&lt;/p&gt;
+     *
+     * @return the fraction as a &lt;code&gt;float&lt;/code&gt;
+     */ public float floatValue() {
+        return ((float) numerator) / ((float) denominator);
+    }
+    /**
+     * &lt;p&gt;Gets the fraction as a &lt;code&gt;double&lt;/code&gt;. This calculates the fraction
+     * as the numerator divided by denominator.&lt;/p&gt;
+     *
+     * @return the fraction as a &lt;code&gt;double&lt;/code&gt;
+     */ public double doubleValue() {
+        return ((double) numerator) / ((double) denominator);
+    }
+    // Calculations
+ //-------------------------------------------------------------------
+ /**
+     * &lt;p&gt;Reduce the fraction to the smallest values for the numerator and
+     * denominator, returning the result.&lt;/p&gt;
+     *
+     * &lt;p&gt;For example, if this fraction represents 2/4, then the result
+     * will be 1/2.&lt;/p&gt;
+     *
+     * @return a new reduced fraction instance, or this if no simplification possible
+     */ public Fraction reduce() {
+        if (numerator == 0) {
+            return equals(ZERO) ? this : ZERO;
+        }
+        int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+        if (gcd == 1) {
+            return this;
+        }
+        return Fraction.getFraction(numerator / gcd, denominator / gcd);
+    }
+    /**
+     * &lt;p&gt;Gets a fraction that is the inverse (1/fraction) of this one.&lt;/p&gt;
+     *
+     * &lt;p&gt;The returned fraction is not reduced.&lt;/p&gt;
+     *
+     * @return a new fraction instance with the numerator and denominator
+     *         inverted.
+     * @throws ArithmeticException if the fraction represents zero.
+     */ public Fraction invert() {
+        if (numerator == 0) {
+            throw new ArithmeticException("Unable to invert zero.");
+        }
+        if (numerator==Integer.MIN_VALUE) {
+            throw new ArithmeticException("overflow: can't negate numerator");
+        }
+        if (numerator&lt;0) {
+            return new Fraction(-denominator, -numerator);
+        } else {
+            return new Fraction(denominator, numerator);
+        }
+    }
+    /**
+     * &lt;p&gt;Gets a fraction that is the negative (-fraction) of this one.&lt;/p&gt;
+     *
+     * &lt;p&gt;The returned fraction is not reduced.&lt;/p&gt;
+     *
+     * @return a new fraction instance with the opposite signed numerator
+     */ public Fraction negate() {
+        // the positive range is one smaller than the negative range of an int.
+ if (numerator==Integer.MIN_VALUE) {
+            throw new ArithmeticException("overflow: too large to negate");
+        }
+        return new Fraction(-numerator, denominator);
+    }
+    /**
+     * &lt;p&gt;Gets a fraction that is the positive equivalent of this one.&lt;/p&gt;
+     * &lt;p&gt;More precisely: &lt;code&gt;(fraction &gt;= 0 ? this : -fraction)&lt;/code&gt;&lt;/p&gt;
+     *
+     * &lt;p&gt;The returned fraction is not reduced.&lt;/p&gt;
+     *
+     * @return &lt;code&gt;this&lt;/code&gt; if it is positive, or a new positive fraction
+     *  instance with the opposite signed numerator
+     */ public Fraction abs() {
+        if (numerator &gt;= 0) {
+            return this;
+        }
+        return negate();
+    }
+    /**
+     * &lt;p&gt;Gets a fraction that is raised to the passed in power.&lt;/p&gt;
+     *
+     * &lt;p&gt;The returned fraction is in reduced form.&lt;/p&gt;
+     *
+     * @param power  the power to raise the fraction to
+     * @return &lt;code&gt;this&lt;/code&gt; if the power is one, &lt;code&gt;ONE&lt;/code&gt; if the power
+     * is zero (even if the fraction equals ZERO) or a new fraction instance
+     * raised to the appropriate power
+     * @throws ArithmeticException if the resulting numerator or denominator exceeds
+     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;
+     */ public Fraction pow(int power) {
+        if (power == 1) {
+            return this;
+        } else if (power == 0) {
+            return ONE;
+        } else if (power &lt; 0) {
+            if (power==Integer.MIN_VALUE) { // MIN_VALUE can't be negated.
+ return this.invert().pow(2).pow(-(power/2));
+            }
+            return this.invert().pow(-power);
+        } else {
+            Fraction f = this.multiplyBy(this);
+            if ((power % 2) == 0) { // if even...
+ return f.pow(power/2);
+            } else { // if odd...
+ return f.pow(power/2).multiplyBy(this);
+            }
+        }
+    }
+    /**
+     * &lt;p&gt;Gets the greatest common divisor of the absolute value of
+     * two numbers, using the "binary gcd" method which avoids
+     * division and modulo operations.  See Knuth 4.5.2 algorithm B.
+     * This algorithm is due to Josef Stein (1961).&lt;/p&gt;
+     *
+     * @param u  a non-zero number
+     * @param v  a non-zero number
+     * @return the greatest common divisor, never zero
+     */ private static int greatestCommonDivisor(int u, int v) {
+        //if either op. is abs 0 or 1, return 1:
+ if (Math.abs(u) &lt;= 1 || Math.abs(v) &lt;= 1) {
+            return 1;
+        }
+        // keep u and v negative, as negative integers range down to
+ // -2^31, while positive numbers can only be as large as 2^31-1
+ // (i.e. we can't necessarily negate a negative number without
+ // overflow)
+ if (u&gt;0) { u=-u; } // make u negative
+ if (v&gt;0) { v=-v; } // make v negative
+ // B1. [Find power of 2]
+ int k=0;
+        while ((u&amp;1)==0 &amp;&amp; (v&amp;1)==0 &amp;&amp; k&lt;31) { // while u and v are both even...
+            u/=2; v/=2; k++; // cast out twos.
+        }
+        if (k==31) {
+            throw new ArithmeticException("overflow: gcd is 2^31");
+        }
+        // B2. Initialize: u and v have been divided by 2^k and at least
+ //     one is odd.
+ int t = ((u&amp;1)==1) ? v : -(u/2)/*B3*/;
+        // t negative: u was odd, v may be even (t replaces v)
+ // t positive: u was even, v is odd (t replaces u)
+ do {
+            /* assert u&lt;0 &amp;&amp; v&lt;0; */ // B4/B3: cast out twos from t.
+ while ((t&amp;1)==0) { // while t is even..
+                t/=2; // cast out twos
+            }
+            // B5 [reset max(u,v)]
+ if (t&gt;0) {
+                u = -t;
+            } else {
+                v = t;
+            }
+            // B6/B3. at this point both u and v should be odd.
+            t = (v - u)/2;
+            // |u| larger: t positive (replace u)
+ // |v| larger: t negative (replace v)
+        } while (t!=0);
+        return -u*(1&lt;&lt;k); // gcd is u*2^k
+    }
+    // Arithmetic
+ //-------------------------------------------------------------------
+ /**
+     * Multiply two integers, checking for overflow.
+     *
+     * @param x a factor
+     * @param y a factor
+     * @return the product &lt;code&gt;x*y&lt;/code&gt;
+     * @throws ArithmeticException if the result can not be represented as
+     *                             an int
+     */ private static int mulAndCheck(int x, int y) {
+        long m = ((long)x)*((long)y);
+        if (m &lt; Integer.MIN_VALUE ||
+            m &gt; Integer.MAX_VALUE) {
+            throw new ArithmeticException("overflow: mul");
+        }
+        return (int)m;
+    }
+    /**
+     *  Multiply two non-negative integers, checking for overflow.
+     *
+     * @param x a non-negative factor
+     * @param y a non-negative factor
+     * @return the product &lt;code&gt;x*y&lt;/code&gt;
+     * @throws ArithmeticException if the result can not be represented as
+     * an int
+     */ private static int mulPosAndCheck(int x, int y) {
+        /* assert x&gt;=0 &amp;&amp; y&gt;=0; */ long m = ((long)x)*((long)y);
+        if (m &gt; Integer.MAX_VALUE) {
+            throw new ArithmeticException("overflow: mulPos");
+        }
+        return (int)m;
+    }
+    /**
+     * Add two integers, checking for overflow.
+     *
+     * @param x an addend
+     * @param y an addend
+     * @return the sum &lt;code&gt;x+y&lt;/code&gt;
+     * @throws ArithmeticException if the result can not be represented as
+     * an int
+     */ private static int addAndCheck(int x, int y) {
+        long s = (long)x+(long)y;
+        if (s &lt; Integer.MIN_VALUE ||
+            s &gt; Integer.MAX_VALUE) {
+            throw new ArithmeticException("overflow: add");
+        }
+        return (int)s;
+    }
+    /**
+     * Subtract two integers, checking for overflow.
+     *
+     * @param x the minuend
+     * @param y the subtrahend
+     * @return the difference &lt;code&gt;x-y&lt;/code&gt;
+     * @throws ArithmeticException if the result can not be represented as
+     * an int
+     */ private static int subAndCheck(int x, int y) {
+        long s = (long)x-(long)y;
+        if (s &lt; Integer.MIN_VALUE ||
+            s &gt; Integer.MAX_VALUE) {
+            throw new ArithmeticException("overflow: add");
+        }
+        return (int)s;
+    }
+    /**
+     * &lt;p&gt;Adds the value of this fraction to another, returning the result in reduced form.
+     * The algorithm follows Knuth, 4.5.1.&lt;/p&gt;
+     *
+     * @param fraction  the fraction to add, must not be &lt;code&gt;null&lt;/code&gt;
+     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values
+     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;
+     * @throws ArithmeticException if the resulting numerator or denominator exceeds
+     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;
+     */ public Fraction add(Fraction fraction) {
+        return addSub(fraction, true /* add */);
+    }
+    /**
+     * &lt;p&gt;Subtracts the value of another fraction from the value of this one,
+     * returning the result in reduced form.&lt;/p&gt;
+     *
+     * @param fraction  the fraction to subtract, must not be &lt;code&gt;null&lt;/code&gt;
+     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values
+     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;
+     * @throws ArithmeticException if the resulting numerator or denominator
+     *   cannot be represented in an &lt;code&gt;int&lt;/code&gt;.
+     */ public Fraction subtract(Fraction fraction) {
+        return addSub(fraction, false /* subtract */);
+    }
+    /**
+     * Implement add and subtract using algorithm described in Knuth 4.5.1.
+     *
+     * @param fraction the fraction to subtract, must not be &lt;code&gt;null&lt;/code&gt;
+     * @param isAdd true to add, false to subtract
+     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values
+     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;
+     * @throws ArithmeticException if the resulting numerator or denominator
+     *   cannot be represented in an &lt;code&gt;int&lt;/code&gt;.
+     */ private Fraction addSub(Fraction fraction, boolean isAdd) {
+        if (fraction == null) {
+            throw new IllegalArgumentException("The fraction must not be null");
+        }
+        // zero is identity for addition.
+ if (numerator == 0) {
+            return isAdd ? fraction : fraction.negate();
+        }
+        if (fraction.numerator == 0) {
+            return this;
+        }
+        // if denominators are randomly distributed, d1 will be 1 about 61%
+ // of the time.
+ int d1 = greatestCommonDivisor(denominator, fraction.denominator);
+        if (d1==1) {
+            // result is ( (u*v' +/- u'v) / u'v')
+ int uvp = mulAndCheck(numerator, fraction.denominator);
+            int upv = mulAndCheck(fraction.numerator, denominator);
+            return new Fraction
+                (isAdd ? addAndCheck(uvp, upv) : subAndCheck(uvp, upv),
+                 mulPosAndCheck(denominator, fraction.denominator));
+        }
+        // the quantity 't' requires 65 bits of precision; see knuth 4.5.1
+ // exercise 7.  we're going to use a BigInteger.
+ // t = u(v'/d1) +/- v(u'/d1)
+        BigInteger uvp = BigInteger.valueOf(numerator)
+            .multiply(BigInteger.valueOf(fraction.denominator/d1));
+        BigInteger upv = BigInteger.valueOf(fraction.numerator)
+            .multiply(BigInteger.valueOf(denominator/d1));
+        BigInteger t = isAdd ? uvp.add(upv) : uvp.subtract(upv);
+        // but d2 doesn't need extra precision because
+ // d2 = gcd(t,d1) = gcd(t mod d1, d1)
+ int tmodd1 = t.mod(BigInteger.valueOf(d1)).intValue();
+        int d2 = (tmodd1==0)?d1:greatestCommonDivisor(tmodd1, d1);
+        // result is (t/d2) / (u'/d1)(v'/d2)
+        BigInteger w = t.divide(BigInteger.valueOf(d2));
+        if (w.bitLength() &gt; 31) {
+            throw new ArithmeticException
+                ("overflow: numerator too large after multiply");
+        }
+        return new Fraction
+            (w.intValue(),
+             mulPosAndCheck(denominator/d1, fraction.denominator/d2));
+    }
+    /**
+     * &lt;p&gt;Multiplies the value of this fraction by another, returning the
+     * result in reduced form.&lt;/p&gt;
+     *
+     * @param fraction  the fraction to multiply by, must not be &lt;code&gt;null&lt;/code&gt;
+     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values
+     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;
+     * @throws ArithmeticException if the resulting numerator or denominator exceeds
+     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;
+     */ public Fraction multiplyBy(Fraction fraction) {
+        if (fraction == null) {
+            throw new IllegalArgumentException("The fraction must not be null");
+        }
+        if (numerator == 0 || fraction.numerator == 0) {
+            return ZERO;
+        }
+        // knuth 4.5.1
+ // make sure we don't overflow unless the result *must* overflow.
+ int d1 = greatestCommonDivisor(numerator, fraction.denominator);
+        int d2 = greatestCommonDivisor(fraction.numerator, denominator);
+        return getReducedFraction
+            (mulAndCheck(numerator/d1, fraction.numerator/d2),
+             mulPosAndCheck(denominator/d2, fraction.denominator/d1));
+    }
+    /**
+     * &lt;p&gt;Divide the value of this fraction by another.&lt;/p&gt;
+     *
+     * @param fraction  the fraction to divide by, must not be &lt;code&gt;null&lt;/code&gt;
+     * @return a &lt;code&gt;Fraction&lt;/code&gt; instance with the resulting values
+     * @throws IllegalArgumentException if the fraction is &lt;code&gt;null&lt;/code&gt;
+     * @throws ArithmeticException if the fraction to divide by is zero
+     * @throws ArithmeticException if the resulting numerator or denominator exceeds
+     *  &lt;code&gt;Integer.MAX_VALUE&lt;/code&gt;
+     */ public Fraction divideBy(Fraction fraction) {
+        if (fraction == null) {
+            throw new IllegalArgumentException("The fraction must not be null");
+        }
+        if (fraction.numerator == 0) {
+            throw new ArithmeticException("The fraction to divide by must not be zero");
+        }
+        return multiplyBy(fraction.invert());
+    }
+    // Basics
+ //-------------------------------------------------------------------
+ /**
+     * &lt;p&gt;Compares this fraction to another object to test if they are equal.&lt;/p&gt;.
+     *
+     * &lt;p&gt;To be equal, both values must be equal. Thus 2/4 is not equal to 1/2.&lt;/p&gt;
+     *
+     * @param obj the reference object with which to compare
+     * @return &lt;code&gt;true&lt;/code&gt; if this object is equal
+     */ public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof Fraction == false) {
+            return false;
+        }
+        Fraction other = (Fraction) obj;
+        return (getNumerator() == other.getNumerator() &amp;&amp;
+                getDenominator() == other.getDenominator());
+    }
+    /**
+     * &lt;p&gt;Gets a hashCode for the fraction.&lt;/p&gt;
+     *
+     * @return a hash code value for this object
+     */ public int hashCode() {
+        if (hashCode == 0) {
+            // hashcode update should be atomic.
+            hashCode = 37 * (37 * 17 + getNumerator()) + getDenominator();
+        }
+        return hashCode;
+    }
+    /**
+     * &lt;p&gt;Compares this object to another based on size.&lt;/p&gt;
+     *
+     * &lt;p&gt;Note: this class has a natural ordering that is inconsistent
+     * with equals, because, for example, equals treats 1/2 and 2/4 as
+     * different, whereas compareTo treats them as equal.
+     *
+     * @param object  the object to compare to
+     * @return -1 if this is less, 0 if equal, +1 if greater
+     * @throws ClassCastException if the object is not a &lt;code&gt;Fraction&lt;/code&gt;
+     * @throws NullPointerException if the object is &lt;code&gt;null&lt;/code&gt;
+     */ public int compareTo(Object object) {
+        Fraction other = (Fraction) object;
+        if (this==other) {
+            return 0;
+        }
+        if (numerator == other.numerator &amp;&amp; denominator == other.denominator) {
+            return 0;
+        }
+        // otherwise see which is less
+ long first = (long) numerator * (long) other.denominator;
+        long second = (long) other.numerator * (long) denominator;
+        if (first == second) {
+            return 0;
+        } else if (first &lt; second) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+    /**
+     * &lt;p&gt;Gets the fraction as a &lt;code&gt;String&lt;/code&gt;.&lt;/p&gt;
+     *
+     * &lt;p&gt;The format used is '&lt;i&gt;numerator&lt;/i&gt;/&lt;i&gt;denominator&lt;/i&gt;' always.
+     *
+     * @return a &lt;code&gt;String&lt;/code&gt; form of the fraction
+     */ public String toString() {
+        if (toString == null) {
+            toString = new StringBuffer(32)
+                .append(getNumerator())
+                .append('/')
+                .append(getDenominator()).toString();
+        }
+        return toString;
+    }
+    /**
+     * &lt;p&gt;Gets the fraction as a proper &lt;code&gt;String&lt;/code&gt; in the format X Y/Z.&lt;/p&gt;
+     *
+     * &lt;p&gt;The format used in '&lt;i&gt;wholeNumber&lt;/i&gt; &lt;i&gt;numerator&lt;/i&gt;/&lt;i&gt;denominator&lt;/i&gt;'.
+     * If the whole number is zero it will be ommitted. If the numerator is zero,
+     * only the whole number is returned.&lt;/p&gt;
+     *
+     * @return a &lt;code&gt;String&lt;/code&gt; form of the fraction
+     */ public String toProperString() {
+        if (toProperString == null) {
+            if (numerator == 0) {
+                toProperString = "0";
+            } else if (numerator == denominator) {
+                toProperString = "1";
+            } else if (numerator == -1 * denominator) {
+                toProperString = "-1";
+            } else if ((numerator&gt;0?-numerator:numerator) &lt; -denominator) {
+                // note that we do the magnitude comparison test above with
+ // NEGATIVE (not positive) numbers, since negative numbers
+ // have a larger range.  otherwise numerator==Integer.MIN_VALUE
+ // is handled incorrectly.
+ int properNumerator = getProperNumerator();
+                if (properNumerator == 0) {
+                    toProperString = Integer.toString(getProperWhole());
+                } else {
+                    toProperString = new StringBuffer(32)
+                        .append(getProperWhole()).append(' ')
+                        .append(properNumerator).append('/')
+                        .append(getDenominator()).toString();
+                }
+            } else {
+                toProperString = new StringBuffer(32)
+                    .append(getNumerator()).append('/')
+                    .append(getDenominator()).toString();
+            }
+        }
+        return toProperString;
+    }
+}</code></pre></div>
+<h3 id="fraction-is-a-number-implementation-that-stores-fractions-accurately-1">Fraction is a Number implementation that stores fractions accurately.</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1334,7 +2134,198 @@ public final class Fraction extends Number implements Comparable {
         return toProperString;
     }
 }</code></pre></div>
+<h3 id="get-the-number-of-days-in-that-month">Get the number of days in that month</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Calendar;
+publicclass Main {
+  publicstaticvoid main(String[] argv) throws Exception {
+    Calendar cal = Calendar.getInstance();
+    int days = cal.getActualMaximum(Calendar.DAY_OF_MONTH); // 28
+  }
+}</code></pre></div>
 <h3 id="represents-a-range-of-number-objects">Represents a range of Number objects.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *//**
+ * &lt;p&gt;Represents a range of {@link Number} objects.&lt;/p&gt;
+ *
+ * &lt;p&gt;This class uses &lt;code&gt;double&lt;/code&gt; comparisons. This means that it
+ * is unsuitable for dealing with large &lt;code&gt;Long&lt;/code&gt;, &lt;code&gt;BigDecimal&lt;/code&gt;
+ * or &lt;code&gt;BigInteger&lt;/code&gt; numbers.&lt;/p&gt;
+ *
+ * @author &lt;a href="mailto:chrise@esha.com"&gt;Christopher Elkins&lt;/a&gt;
+ * @author Stephen Colebourne
+ * @since 1.0
+ * @version $Revision: 437554 $ $Date: 2006-08-27 23:21:41 -0700 (Sun, 27 Aug 2006) $
+ *
+ *
+ */public final class NumberRange {
+    /* The minimum number in this range. */ private final Number min;
+    /* The maximum number in this range. */ private final Number max;
+    /**
+     * &lt;p&gt;Constructs a new &lt;code&gt;NumberRange&lt;/code&gt; using
+     * &lt;code&gt;number&lt;/code&gt; as both the minimum and maximum in
+     * this range.&lt;/p&gt;
+     *
+     * @param num the number to use for this range
+     * @throws NullPointerException if the number is &lt;code&gt;null&lt;/code&gt;
+     */ public NumberRange(Number num) {
+        if (num == null) {
+            throw new NullPointerException("The number must not be null");
+        }
+        this.min = num;
+        this.max = num;
+    }
+    /**
+     * &lt;p&gt;Constructs a new &lt;code&gt;NumberRange&lt;/code&gt; with the specified
+     * minimum and maximum numbers.&lt;/p&gt;
+     *
+     * &lt;p&gt;&lt;em&gt;If the maximum is less than the minimum, the range will be constructed
+     * from the minimum value to the minimum value, not what you would expect!.&lt;/em&gt;&lt;/p&gt;
+     *
+     * @param min the minimum number in this range
+     * @param max the maximum number in this range
+     * @throws NullPointerException if either the minimum or maximum number is
+     *  &lt;code&gt;null&lt;/code&gt;
+     */ public NumberRange(Number min, Number max) {
+        if (min == null) {
+            throw new NullPointerException("The minimum value must not be null");
+        } else if (max == null) {
+            throw new NullPointerException("The maximum value must not be null");
+        }
+        if (max.doubleValue() &lt; min.doubleValue()) {
+            this.min = this.max = min;
+        } else {
+            this.min = min;
+            this.max = max;
+        }
+    }
+    /**
+     * &lt;p&gt;Returns the minimum number in this range.&lt;/p&gt;
+     *
+     * @return the minimum number in this range
+     */ public Number getMinimum() {
+        return min;
+    }
+    /**
+     * &lt;p&gt;Returns the maximum number in this range.&lt;/p&gt;
+     *
+     * @return the maximum number in this range
+     */ public Number getMaximum() {
+        return max;
+    }
+    /**
+     * &lt;p&gt;Tests whether the specified &lt;code&gt;number&lt;/code&gt; occurs within
+     * this range using &lt;code&gt;double&lt;/code&gt; comparison.&lt;/p&gt;
+     *
+     * @param number the number to test
+     * @return &lt;code&gt;true&lt;/code&gt; if the specified number occurs within this
+     *  range; otherwise, &lt;code&gt;false&lt;/code&gt;
+     */ public boolean includesNumber(Number number) {
+        if (number == null) {
+            return false;
+        } else {
+            return !(min.doubleValue() &gt; number.doubleValue()) &amp;&amp;
+                !(max.doubleValue() &lt; number.doubleValue());
+        }
+    }
+    /**
+     * &lt;p&gt;Tests whether the specified range occurs entirely within this
+     * range using &lt;code&gt;double&lt;/code&gt; comparison.&lt;/p&gt;
+     *
+     * @param range the range to test
+     * @return &lt;code&gt;true&lt;/code&gt; if the specified range occurs entirely within
+     *  this range; otherwise, &lt;code&gt;false&lt;/code&gt;
+     */ public boolean includesRange(NumberRange range) {
+        if (range == null) {
+            return false;
+        } else {
+            return includesNumber(range.min) &amp;&amp; includesNumber(range.max);
+        }
+    }
+    /**
+     * &lt;p&gt;Tests whether the specified range overlaps with this range
+     * using &lt;code&gt;double&lt;/code&gt; comparison.&lt;/p&gt;
+     *
+     * @param range the range to test
+     * @return &lt;code&gt;true&lt;/code&gt; if the specified range overlaps with this
+     *  range; otherwise, &lt;code&gt;false&lt;/code&gt;
+     */ public boolean overlaps(NumberRange range) {
+        if (range == null) {
+            return false;
+        } else {
+            return range.includesNumber(min) || range.includesNumber(max) ||
+                includesRange(range);
+        }
+    }
+    /**
+     * &lt;p&gt;Indicates whether some other &lt;code&gt;Object&lt;/code&gt; is
+     * &amp;quot;equal&amp;quot; to this one.&lt;/p&gt;
+     *
+     * @param obj the reference object with which to compare
+     * @return &lt;code&gt;true&lt;/code&gt; if this object is the same as the obj
+     *  argument; &lt;code&gt;false&lt;/code&gt; otherwise
+     */ public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        } else if (!(obj instanceof NumberRange)) {
+            return false;
+        } else {
+            NumberRange range = (NumberRange)obj;
+            return min.equals(range.min) &amp;&amp; max.equals(range.max);
+        }
+    }
+    /**
+     * &lt;p&gt;Returns a hash code value for this object.&lt;/p&gt;
+     *
+     * @return a hash code value for this object
+     */ public int hashCode() {
+        int result = 17;
+        result = 37 * result + min.hashCode();
+        result = 37 * result + max.hashCode();
+        return result;
+    }
+    /**
+     * &lt;p&gt;Returns the string representation of this range.&lt;/p&gt;
+     *
+     * &lt;p&gt;This string is the string representation of the minimum and
+     * maximum numbers in the range, separated by a hyphen. If a number
+     * is negative, then it is enclosed in parentheses.&lt;/p&gt;
+     *
+     * @return the string representation of this range
+     */ public String toString() {
+        StringBuffer sb = new StringBuffer();
+        if (min.doubleValue() &lt; 0) {
+            sb.append('(')
+                .append(min)
+                .append(')');
+        } else {
+            sb.append(min);
+        }
+        sb.append('-');
+        if (max.doubleValue() &lt; 0) {
+            sb.append('(')
+                .append(max)
+                .append(')');
+        } else {
+            sb.append(max);
+        }
+        return sb.toString();
+    }
+}</code></pre></div>
+<h3 id="represents-a-range-of-number-objects-1">Represents a range of Number objects.</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1532,6 +2523,238 @@ public final class NumberRange {
     }
 }</code></pre></div>
 <h3 id="returns-the-number-of-days-within-the-fragment">Returns the number of days within the fragment.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Calendar;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.TimeZone;
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *//**
+ * A suite of utilities surrounding the use of the
+ * {@link java.util.Calendar} and {@link java.util.Date} object.
+ *
+ * DateUtils contains a lot of common methods considering manipulations
+ * of Dates or Calendars. Some methods require some extra explanation.
+ * The truncate and round methods could be considered the Math.floor(),
+ * Math.ceil() or Math.round versions for dates
+ * This way date-fields will be ignored in bottom-up order.
+ * As a complement to these methods we've introduced some fragment-methods.
+ * With these methods the Date-fields will be ignored in top-down order.
+ * Since a date without a year is not a valid date, you have to decide in what
+ * kind of date-field you want your result, for instance milliseconds or days.
+ *
+ *
+ *
+ *
+ * @author &lt;a href="mailto:sergek@lokitech.com"&gt;Serge Knystautas&lt;/a&gt;
+ * @author Stephen Colebourne
+ * @author Janek Bogucki
+ * @author &lt;a href="mailto:ggregory@seagullsw.com"&gt;Gary Gregory&lt;/a&gt;
+ * @author Phil Steitz
+ * @author Robert Scholte
+ * @since 2.0
+ * @version $Id: DateUtils.java 634096 2008-03-06 00:58:11Z niallp $
+ */publicclass Main {
+  /**
+   * The UTC time zone  (often referred to as GMT).
+   */publicstaticfinal TimeZone UTC_TIME_ZONE = TimeZone.getTimeZone("GMT");
+  /**
+   * Number of milliseconds in a standard second.
+   * @since 2.1
+   */publicstaticfinallong MILLIS_PER_SECOND = 1000;
+  /**
+   * Number of milliseconds in a standard minute.
+   * @since 2.1
+   */publicstaticfinallong MILLIS_PER_MINUTE = 60 * MILLIS_PER_SECOND;
+  /**
+   * Number of milliseconds in a standard hour.
+   * @since 2.1
+   */publicstaticfinallong MILLIS_PER_HOUR = 60 * MILLIS_PER_MINUTE;
+  /**
+   * Number of milliseconds in a standard day.
+   * @since 2.1
+   */publicstaticfinallong MILLIS_PER_DAY = 24 * MILLIS_PER_HOUR;
+  /**
+   * This is half a month, so this represents whether a date is in the top
+   * or bottom half of the month.
+   */publicfinalstaticint SEMI_MONTH = 1001;
+  privatestaticfinalint[][] fields = {
+          {Calendar.MILLISECOND},
+          {Calendar.SECOND},
+          {Calendar.MINUTE},
+          {Calendar.HOUR_OF_DAY, Calendar.HOUR},
+          {Calendar.DATE, Calendar.DAY_OF_MONTH, Calendar.AM_PM
+              /* Calendar.DAY_OF_YEAR, Calendar.DAY_OF_WEEK, Calendar.DAY_OF_WEEK_IN_MONTH */
+          },
+          {Calendar.MONTH, DateUtils.SEMI_MONTH},
+          {Calendar.YEAR},
+          {Calendar.ERA}};
+  /**
+   * A week range, starting on Sunday.
+   */publicfinalstaticint RANGE_WEEK_SUNDAY = 1;
+  /**
+   * A week range, starting on Monday.
+   */publicfinalstaticint RANGE_WEEK_MONDAY = 2;
+  /**
+   * A week range, starting on the day focused.
+   */publicfinalstaticint RANGE_WEEK_RELATIVE = 3;
+  /**
+   * A week range, centered around the day focused.
+   */publicfinalstaticint RANGE_WEEK_CENTER = 4;
+  /**
+   * A month range, the week starting on Sunday.
+   */publicfinalstaticint RANGE_MONTH_SUNDAY = 5;
+  /**
+   * A month range, the week starting on Monday.
+   */publicfinalstaticint RANGE_MONTH_MONDAY = 6;
+  /**
+   * Returns the number of days within the
+   * fragment. All datefields greater than the fragment will be ignored.
+   *
+   * Asking the days of any date will only return the number of days
+   * of the current month (resulting in a number between 1 and 31). This
+   * method will retrieve the number of days for any fragment.
+   * For example, if you want to calculate the number of days past this year,
+   * your fragment is Calendar.YEAR. The result will be all days of the
+   * past month(s).
+   *
+   * Valid fragments are: Calendar.YEAR, Calendar.MONTH, both
+   * Calendar.DAY_OF_YEAR and Calendar.DATE, Calendar.HOUR_OF_DAY,
+   * Calendar.MINUTE, Calendar.SECOND and Calendar.MILLISECOND
+   * A fragment less than or equal to a DAY field will return 0.
+   *
+   *
+   * &lt;ul&gt;
+   *  &lt;li&gt;January 28, 2008 with Calendar.MONTH as fragment will return 28
+   *   (equivalent to calendar.get(Calendar.DAY_OF_MONTH))&lt;/li&gt;
+   *  &lt;li&gt;February 28, 2008 with Calendar.MONTH as fragment will return 28
+   *   (equivalent to calendar.get(Calendar.DAY_OF_MONTH))&lt;/li&gt;
+   *  &lt;li&gt;January 28, 2008 with Calendar.YEAR as fragment will return 28
+   *   (equivalent to calendar.get(Calendar.DAY_OF_YEAR))&lt;/li&gt;
+   *  &lt;li&gt;February 28, 2008 with Calendar.YEAR as fragment will return 59
+   *   (equivalent to calendar.get(Calendar.DAY_OF_YEAR))&lt;/li&gt;
+   *  &lt;li&gt;January 28, 2008 with Calendar.MILLISECOND as fragment will return 0
+   *   (a millisecond cannot be split in days)&lt;/li&gt;
+   * &lt;/ul&gt;
+   *
+   *
+   * @param calendar the calendar to work with, not null
+   * @param fragment the Calendar field part of calendar to calculate
+   * @return number of days within the fragment of date
+   * @throws IllegalArgumentException if the date is &lt;code&gt;null&lt;/code&gt; or
+   * fragment is not supported
+   * @since 2.4
+   */publicstaticlong getFragmentInDays(Calendar calendar, int fragment) {
+      return getFragment(calendar, fragment, Calendar.DAY_OF_YEAR);
+  }
+  /**
+   * Date-version for fragment-calculation in any unit
+   *
+   * @param date the date to work with, not null
+   * @param fragment the Calendar field part of date to calculate
+   * @param unit Calendar field defining the unit
+   * @return number of units within the fragment of the date
+   * @throws IllegalArgumentException if the date is &lt;code&gt;null&lt;/code&gt; or
+   * fragment is not supported
+   * @since 2.4
+   */privatestaticlong getFragment(Date date, int fragment, int unit) {
+      if(date == null) {
+          thrownew IllegalArgumentException("The date must not be null");
+      }
+      Calendar calendar = Calendar.getInstance();
+      calendar.setTime(date);
+      return getFragment(calendar, fragment, unit);
+  }
+  /**
+   * Calendar-version for fragment-calculation in any unit
+   *
+   * @param calendar the calendar to work with, not null
+   * @param fragment the Calendar field part of calendar to calculate
+   * @param unit Calendar field defining the unit
+   * @return number of units within the fragment of the calendar
+   * @throws IllegalArgumentException if the date is &lt;code&gt;null&lt;/code&gt; or
+   * fragment is not supported
+   * @since 2.4
+   */privatestaticlong getFragment(Calendar calendar, int fragment, int unit) {
+      if(calendar == null) {
+          thrownew IllegalArgumentException("The date must not be null");
+      }
+      long millisPerUnit = getMillisPerUnit(unit);
+      long result = 0;
+      // Fragments bigger than a day require a breakdown to days
+switch (fragment) {
+          case Calendar.YEAR:
+              result += (calendar.get(Calendar.DAY_OF_YEAR) * MILLIS_PER_DAY) / millisPerUnit;
+              break;
+          case Calendar.MONTH:
+              result += (calendar.get(Calendar.DAY_OF_MONTH) * MILLIS_PER_DAY) / millisPerUnit;
+              break;
+      }
+      switch (fragment) {
+          // Number of days already calculated for these cases
+case Calendar.YEAR:
+          case Calendar.MONTH:
+          // The rest of the valid cases
+case Calendar.DAY_OF_YEAR:
+          case Calendar.DATE:
+              result += (calendar.get(Calendar.HOUR_OF_DAY) * MILLIS_PER_HOUR) / millisPerUnit;
+          case Calendar.HOUR_OF_DAY:
+              result += (calendar.get(Calendar.MINUTE) * MILLIS_PER_MINUTE) / millisPerUnit;
+          case Calendar.MINUTE:
+              result += (calendar.get(Calendar.SECOND) * MILLIS_PER_SECOND) / millisPerUnit;
+          case Calendar.SECOND:
+              result += (calendar.get(Calendar.MILLISECOND) * 1) / millisPerUnit;
+              break;
+          case Calendar.MILLISECOND: break;//never useful
+default: thrownew IllegalArgumentException("The fragment " + fragment + " is not supported");
+      }
+      return result;
+  }
+  /**
+   * Returns the number of millis of a datefield, if this is a constant value
+   *
+   * @param unit A Calendar field which is a valid unit for a fragment
+   * @return number of millis
+   * @throws IllegalArgumentException if date can't be represented in millisenconds
+   * @since 2.4
+   */privatestaticlong getMillisPerUnit(int unit) {
+      long result = Long.MAX_VALUE;
+      switch (unit) {
+          case Calendar.DAY_OF_YEAR:
+          case Calendar.DATE:
+              result = MILLIS_PER_DAY;
+              break;
+          case Calendar.HOUR_OF_DAY:
+              result = MILLIS_PER_HOUR;
+              break;
+          case Calendar.MINUTE:
+              result = MILLIS_PER_MINUTE;
+              break;
+          case Calendar.SECOND:
+              result = MILLIS_PER_SECOND;
+              break;
+          case Calendar.MILLISECOND:
+              result = 1;
+              break;
+          default: thrownew IllegalArgumentException("The unit " + unit + " cannot be represented is milleseconds");
+      }
+      return result;
+  }
+}</code></pre></div>
+<h3 id="returns-the-number-of-days-within-the-fragment-1">Returns the number of days within the fragment.</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
@@ -2800,13 +4023,11 @@ Rounded number = 12345.679
  $Id: I18nUtil.java,v 1.2 2004/05/26 00:07:34 inder Exp $ */import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
-
 /**
  * This utility class for internationalization. This class provides a central
  * location to do specialized formatting in both a default and a locale specfic
  * manner.
  */publicclass Main {
-
   publicstatic String formatCurrency(double amount, int precision, String pattern, Locale locale) {
     NumberFormat nf = NumberFormat.getCurrencyInstance(locale);
     DecimalFormat df = (DecimalFormat) nf;
@@ -2816,7 +4037,6 @@ import java.util.Locale;
     df.applyPattern(pattern);
     return df.format(amount);
   }
-
   publicstatic String formatNumber(double amount, int precision, String pattern, Locale locale) {
     NumberFormat nf = NumberFormat.getNumberInstance(locale);
     DecimalFormat df = (DecimalFormat) nf;
@@ -2826,21 +4046,403 @@ import java.util.Locale;
     df.applyPattern(pattern);
     return df.format(amount);
   }
-
   publicstatic String formatCurrency(double amount, int precision, Locale locale) {
     NumberFormat nf = NumberFormat.getCurrencyInstance(locale);
     nf.setMinimumFractionDigits(precision);
     nf.setMaximumFractionDigits(precision);
     return nf.format(amount);
   }
-
   publicstatic String formatNumber(double amount, int precision, Locale locale) {
     NumberFormat nf = NumberFormat.getNumberInstance(locale);
     nf.setMinimumFractionDigits(precision);
     nf.setMaximumFractionDigits(precision);
     return nf.format(amount);
   }
-}</code></pre></div></div>
+}</code></pre></div>
+<h3 id="number-format-with-fieldposition">Number format with FieldPosition</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.FieldPosition;
+import java.text.NumberFormat;
+publicclass MainClass {
+  publicstaticvoid main(String[] args) {
+    NumberFormat myFormat = NumberFormat.getNumberInstance();
+    FieldPosition fp = new FieldPosition(NumberFormat.INTEGER_FIELD);
+    myFormat.setMaximumIntegerDigits(3);
+    myFormat.setMaximumFractionDigits(2);
+    myFormat.setMinimumFractionDigits(2);
+    System.out.println("Degrees  Radians  Grads");
+    for (double d = 0.0; d &lt; 360.0; d++) {
+      String radianString = myFormat.format(Math.PI * d / 180.0, new StringBuffer(), fp)
+          .toString();
+      radianString = "   " + radianString;
+      String gradString = myFormat.format(400 * d / 360, new StringBuffer(), fp).toString();
+      gradString = "   " + gradString;
+      String degreeString = myFormat.format(d, new StringBuffer(), fp).toString();
+      degreeString = "   " + degreeString;
+      System.out.println(degreeString + "  " + radianString + "  " + gradString);
+    }
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Degrees  Radians  Grads
+   0.00     0.00     0.00
+   1.00     0.02     1.11
+   2.00     0.03     2.22
+   3.00     0.05     3.33
+   4.00     0.07     4.44
+   5.00     0.09     5.56
+   6.00     0.10     6.67
+   7.00     0.12     7.78
+   8.00     0.14     8.89
+   9.00     0.16     10.00
+   10.00     0.17     11.11
+   11.00     0.19     12.22
+   12.00     0.21     13.33
+   13.00     0.23     14.44
+   14.00     0.24     15.56
+   15.00     0.26     16.67
+   16.00     0.28     17.78
+   17.00     0.30     18.89
+   18.00     0.31     20.00
+   19.00     0.33     21.11
+   20.00     0.35     22.22
+   21.00     0.37     23.33
+   22.00     0.38     24.44
+   23.00     0.40     25.56
+   24.00     0.42     26.67
+   25.00     0.44     27.78
+   26.00     0.45     28.89
+   27.00     0.47     30.00
+   28.00     0.49     31.11
+   29.00     0.51     32.22
+   30.00     0.52     33.33
+   31.00     0.54     34.44
+   32.00     0.56     35.56
+   33.00     0.58     36.67
+   34.00     0.59     37.78
+   35.00     0.61     38.89
+   36.00     0.63     40.00
+   37.00     0.65     41.11
+   38.00     0.66     42.22
+   39.00     0.68     43.33
+   40.00     0.70     44.44
+   41.00     0.72     45.56
+   42.00     0.73     46.67
+   43.00     0.75     47.78
+   44.00     0.77     48.89
+   45.00     0.79     50.00
+   46.00     0.80     51.11
+   47.00     0.82     52.22
+   48.00     0.84     53.33
+   49.00     0.86     54.44
+   50.00     0.87     55.56
+   51.00     0.89     56.67
+   52.00     0.91     57.78
+   53.00     0.93     58.89
+   54.00     0.94     60.00
+   55.00     0.96     61.11
+   56.00     0.98     62.22
+   57.00     0.99     63.33
+   58.00     1.01     64.44
+   59.00     1.03     65.56
+   60.00     1.05     66.67
+   61.00     1.06     67.78
+   62.00     1.08     68.89
+   63.00     1.10     70.00
+   64.00     1.12     71.11
+   65.00     1.13     72.22
+   66.00     1.15     73.33
+   67.00     1.17     74.44
+   68.00     1.19     75.56
+   69.00     1.20     76.67
+   70.00     1.22     77.78
+   71.00     1.24     78.89
+   72.00     1.26     80.00
+   73.00     1.27     81.11
+   74.00     1.29     82.22
+   75.00     1.31     83.33
+   76.00     1.33     84.44
+   77.00     1.34     85.56
+   78.00     1.36     86.67
+   79.00     1.38     87.78
+   80.00     1.40     88.89
+   81.00     1.41     90.00
+   82.00     1.43     91.11
+   83.00     1.45     92.22
+   84.00     1.47     93.33
+   85.00     1.48     94.44
+   86.00     1.50     95.56
+   87.00     1.52     96.67
+   88.00     1.54     97.78
+   89.00     1.55     98.89
+   90.00     1.57     100.00
+   91.00     1.59     101.11
+   92.00     1.61     102.22
+   93.00     1.62     103.33
+   94.00     1.64     104.44
+   95.00     1.66     105.56
+   96.00     1.68     106.67
+   97.00     1.69     107.78
+   98.00     1.71     108.89
+   99.00     1.73     110.00
+   100.00     1.75     111.11
+   101.00     1.76     112.22
+   102.00     1.78     113.33
+   103.00     1.80     114.44
+   104.00     1.82     115.56
+   105.00     1.83     116.67
+   106.00     1.85     117.78
+   107.00     1.87     118.89
+   108.00     1.88     120.00
+   109.00     1.90     121.11
+   110.00     1.92     122.22
+   111.00     1.94     123.33
+   112.00     1.95     124.44
+   113.00     1.97     125.56
+   114.00     1.99     126.67
+   115.00     2.01     127.78
+   116.00     2.02     128.89
+   117.00     2.04     130.00
+   118.00     2.06     131.11
+   119.00     2.08     132.22
+   120.00     2.09     133.33
+   121.00     2.11     134.44
+   122.00     2.13     135.56
+   123.00     2.15     136.67
+   124.00     2.16     137.78
+   125.00     2.18     138.89
+   126.00     2.20     140.00
+   127.00     2.22     141.11
+   128.00     2.23     142.22
+   129.00     2.25     143.33
+   130.00     2.27     144.44
+   131.00     2.29     145.56
+   132.00     2.30     146.67
+   133.00     2.32     147.78
+   134.00     2.34     148.89
+   135.00     2.36     150.00
+   136.00     2.37     151.11
+   137.00     2.39     152.22
+   138.00     2.41     153.33
+   139.00     2.43     154.44
+   140.00     2.44     155.56
+   141.00     2.46     156.67
+   142.00     2.48     157.78
+   143.00     2.50     158.89
+   144.00     2.51     160.00
+   145.00     2.53     161.11
+   146.00     2.55     162.22
+   147.00     2.57     163.33
+   148.00     2.58     164.44
+   149.00     2.60     165.56
+   150.00     2.62     166.67
+   151.00     2.64     167.78
+   152.00     2.65     168.89
+   153.00     2.67     170.00
+   154.00     2.69     171.11
+   155.00     2.71     172.22
+   156.00     2.72     173.33
+   157.00     2.74     174.44
+   158.00     2.76     175.56
+   159.00     2.78     176.67
+   160.00     2.79     177.78
+   161.00     2.81     178.89
+   162.00     2.83     180.00
+   163.00     2.84     181.11
+   164.00     2.86     182.22
+   165.00     2.88     183.33
+   166.00     2.90     184.44
+   167.00     2.91     185.56
+   168.00     2.93     186.67
+   169.00     2.95     187.78
+   170.00     2.97     188.89
+   171.00     2.98     190.00
+   172.00     3.00     191.11
+   173.00     3.02     192.22
+   174.00     3.04     193.33
+   175.00     3.05     194.44
+   176.00     3.07     195.56
+   177.00     3.09     196.67
+   178.00     3.11     197.78
+   179.00     3.12     198.89
+   180.00     3.14     200.00
+   181.00     3.16     201.11
+   182.00     3.18     202.22
+   183.00     3.19     203.33
+   184.00     3.21     204.44
+   185.00     3.23     205.56
+   186.00     3.25     206.67
+   187.00     3.26     207.78
+   188.00     3.28     208.89
+   189.00     3.30     210.00
+   190.00     3.32     211.11
+   191.00     3.33     212.22
+   192.00     3.35     213.33
+   193.00     3.37     214.44
+   194.00     3.39     215.56
+   195.00     3.40     216.67
+   196.00     3.42     217.78
+   197.00     3.44     218.89
+   198.00     3.46     220.00
+   199.00     3.47     221.11
+   200.00     3.49     222.22
+   201.00     3.51     223.33
+   202.00     3.53     224.44
+   203.00     3.54     225.56
+   204.00     3.56     226.67
+   205.00     3.58     227.78
+   206.00     3.60     228.89
+   207.00     3.61     230.00
+   208.00     3.63     231.11
+   209.00     3.65     232.22
+   210.00     3.67     233.33
+   211.00     3.68     234.44
+   212.00     3.70     235.56
+   213.00     3.72     236.67
+   214.00     3.74     237.78
+   215.00     3.75     238.89
+   216.00     3.77     240.00
+   217.00     3.79     241.11
+   218.00     3.80     242.22
+   219.00     3.82     243.33
+   220.00     3.84     244.44
+   221.00     3.86     245.56
+   222.00     3.87     246.67
+   223.00     3.89     247.78
+   224.00     3.91     248.89
+   225.00     3.93     250.00
+   226.00     3.94     251.11
+   227.00     3.96     252.22
+   228.00     3.98     253.33
+   229.00     4.00     254.44
+   230.00     4.01     255.56
+   231.00     4.03     256.67
+   232.00     4.05     257.78
+   233.00     4.07     258.89
+   234.00     4.08     260.00
+   235.00     4.10     261.11
+   236.00     4.12     262.22
+   237.00     4.14     263.33
+   238.00     4.15     264.44
+   239.00     4.17     265.56
+   240.00     4.19     266.67
+   241.00     4.21     267.78
+   242.00     4.22     268.89
+   243.00     4.24     270.00
+   244.00     4.26     271.11
+   245.00     4.28     272.22
+   246.00     4.29     273.33
+   247.00     4.31     274.44
+   248.00     4.33     275.56
+   249.00     4.35     276.67
+   250.00     4.36     277.78
+   251.00     4.38     278.89
+   252.00     4.40     280.00
+   253.00     4.42     281.11
+   254.00     4.43     282.22
+   255.00     4.45     283.33
+   256.00     4.47     284.44
+   257.00     4.49     285.56
+   258.00     4.50     286.67
+   259.00     4.52     287.78
+   260.00     4.54     288.89
+   261.00     4.56     290.00
+   262.00     4.57     291.11
+   263.00     4.59     292.22
+   264.00     4.61     293.33
+   265.00     4.63     294.44
+   266.00     4.64     295.56
+   267.00     4.66     296.67
+   268.00     4.68     297.78
+   269.00     4.69     298.89
+   270.00     4.71     300.00
+   271.00     4.73     301.11
+   272.00     4.75     302.22
+   273.00     4.76     303.33
+   274.00     4.78     304.44
+   275.00     4.80     305.56
+   276.00     4.82     306.67
+   277.00     4.83     307.78
+   278.00     4.85     308.89
+   279.00     4.87     310.00
+   280.00     4.89     311.11
+   281.00     4.90     312.22
+   282.00     4.92     313.33
+   283.00     4.94     314.44
+   284.00     4.96     315.56
+   285.00     4.97     316.67
+   286.00     4.99     317.78
+   287.00     5.01     318.89
+   288.00     5.03     320.00
+   289.00     5.04     321.11
+   290.00     5.06     322.22
+   291.00     5.08     323.33
+   292.00     5.10     324.44
+   293.00     5.11     325.56
+   294.00     5.13     326.67
+   295.00     5.15     327.78
+   296.00     5.17     328.89
+   297.00     5.18     330.00
+   298.00     5.20     331.11
+   299.00     5.22     332.22
+   300.00     5.24     333.33
+   301.00     5.25     334.44
+   302.00     5.27     335.56
+   303.00     5.29     336.67
+   304.00     5.31     337.78
+   305.00     5.32     338.89
+   306.00     5.34     340.00
+   307.00     5.36     341.11
+   308.00     5.38     342.22
+   309.00     5.39     343.33
+   310.00     5.41     344.44
+   311.00     5.43     345.56
+   312.00     5.45     346.67
+   313.00     5.46     347.78
+   314.00     5.48     348.89
+   315.00     5.50     350.00
+   316.00     5.52     351.11
+   317.00     5.53     352.22
+   318.00     5.55     353.33
+   319.00     5.57     354.44
+   320.00     5.59     355.56
+   321.00     5.60     356.67
+   322.00     5.62     357.78
+   323.00     5.64     358.89
+   324.00     5.65     360.00
+   325.00     5.67     361.11
+   326.00     5.69     362.22
+   327.00     5.71     363.33
+   328.00     5.72     364.44
+   329.00     5.74     365.56
+   330.00     5.76     366.67
+   331.00     5.78     367.78
+   332.00     5.79     368.89
+   333.00     5.81     370.00
+   334.00     5.83     371.11
+   335.00     5.85     372.22
+   336.00     5.86     373.33
+   337.00     5.88     374.44
+   338.00     5.90     375.56
+   339.00     5.92     376.67
+   340.00     5.93     377.78
+   341.00     5.95     378.89
+   342.00     5.97     380.00
+   343.00     5.99     381.11
+   344.00     6.00     382.22
+   345.00     6.02     383.33
+   346.00     6.04     384.44
+   347.00     6.06     385.56
+   348.00     6.07     386.67
+   349.00     6.09     387.78
+   350.00     6.11     388.89
+   351.00     6.13     390.00
+   352.00     6.14     391.11
+   353.00     6.16     392.22
+   354.00     6.18     393.33
+   355.00     6.20     394.44
+   356.00     6.21     395.56
+   357.00     6.23     396.67
+   358.00     6.25     397.78
+   359.00     6.27     398.89</code></pre></div></div>
     </div>
 <script>
 (function(){
@@ -2870,15 +4472,8 @@ import java.util.Locale;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

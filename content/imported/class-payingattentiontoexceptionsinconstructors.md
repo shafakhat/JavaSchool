@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1058
 source: https://web.archive.org/web/20081006032356/http://www.java2s.com:80/Code/Java/Class/Payingattentiontoexceptionsinconstructors.htm
 ---
-Paying attention to exceptions in constructors
-
 ```java title=Example.java
 // : c09:Cleanup.java
-// Paying attention to exceptions in constructors.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 import java.io.BufferedReader;

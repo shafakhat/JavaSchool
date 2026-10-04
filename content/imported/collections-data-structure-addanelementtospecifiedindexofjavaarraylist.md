@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20090425202348/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AddanelementtospecifiedindexofJavaArrayList.htm
 ---
-Add an element to specified index of Java ArrayList
-
 ```java title=Example.java
 import java.util.ArrayList;
 public class Main {

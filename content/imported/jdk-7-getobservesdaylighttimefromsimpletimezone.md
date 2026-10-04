@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1060
 source: https://web.archive.org/web/20130216014212/http://www.java2s.com:80/Code/Java/JDK-7/GetobservesDaylightTimefromSimpleTimeZone.htm
 ---
-Get observes Daylight Time from SimpleTimeZone
-
 ```java title=Example.java
 import java.util.Calendar;
 import java.util.SimpleTimeZone;

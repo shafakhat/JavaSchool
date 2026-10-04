@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/20060513085415/http://www.java2s.com/Code/Java/JSP/FetchingDataFromaDatabase.htm
 ---
-Fetching Data From a Database : Java examples (example source code) » JSP » Database
-
 Fetching Data From a Database
 
 ```java title=Example.java

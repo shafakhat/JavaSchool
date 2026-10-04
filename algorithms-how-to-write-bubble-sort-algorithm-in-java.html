@@ -47,7 +47,6 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     int maxSize = 100; // array size
     BubbleSort arr; // reference to array
     arr = new BubbleSort(maxSize);
-//java2s.com
     arr.insert(77); // insert 10 items
     arr.insert(66);
     arr.insert(44);
@@ -58,40 +57,31 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     arr.insert(00);
     arr.insert(55);
     arr.insert(33);
-
     arr.display();
-
     arr.bubbleSort();
-
     arr.display();
   }
 }
 class BubbleSort {
   privatelong[] a;
-
   privateint nElems;
-
   public BubbleSort(int max) {
     a = newlong[max];
     nElems = 0;
   }
-
   //   put element into array
 publicvoid insert(long value) {
     a[nElems] = value;
     nElems++;
   }
-
   //   displays array contents
 publicvoid display() {
     for (int j = 0; j &lt; nElems; j++)
       System.out.print(a[j] + " ");
     System.out.println("");
   }
-
   publicvoid bubbleSort() {
     int out, in;
-
     for (out = nElems - 1; out &gt; 1; out--)
       // outer loop (backward)
 for (in = 0; in &lt; out; in++)
@@ -99,7 +89,6 @@ for (in = 0; in &lt; out; in++)
 if (a[in] &gt; a[in + 1]) // out of order?
           swap(in, in + 1); // swap them
   }
-
   privatevoid swap(int one, int two) {
     long temp = a[one];
     a[one] = a[two];
@@ -110,7 +99,7 @@ if (a[in] &gt; a[in + 1]) // out of order?
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Recursive Binary Search Implementation</li><li>Binary search without recursive</li><li>Binary Search Insert</li></ul>
-    <div class="pager"><a class="pager-btn" href="hibernate-genericdaodelete.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Generic</span></a><a class="pager-btn pager-next" href="applet-html.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">HTML</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-gettheminimumandmaximumvalueofaprimitivedatatypes.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Get the minimum and maximu...</span></a><a class="pager-btn pager-next" href="applet-html.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">HTML</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">
@@ -120,15 +109,8 @@ if (a[in] &gt; a[in + 1]) // out of order?
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20090202195324/http://www.java2s.com:80/Code/Java/Regular-Expressions/GreedyOperatorDescription.htm
 ---
-Greedy Operator Description
-
 ```java title=Example.java
 X?                        Matches X zero or one time
 X*                        Matches X zero or more times

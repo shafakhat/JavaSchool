@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1016
 source: https://web.archive.org/web/20111125025810/http://java2s.com/Code/Java/Swing-Components/AsimpleJPanelwithaborderandatitle.htm
 ---
-A simple JPanel with a border and a title
-
 ```java title=Example.java
 /*
  *  Copyright (C) 2004 Kai Toedter
@@ -42,7 +40,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 /**
- * A simple JPanel with a border and a title
  *
  * @author Kai Toedter
  * @version $LastChangedRevision: 85 $

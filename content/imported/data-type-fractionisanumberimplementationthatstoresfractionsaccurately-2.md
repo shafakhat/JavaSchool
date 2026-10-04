@@ -3,8 +3,8 @@ title: Fraction is a Number implementation that stores fractions accurately.
 nav: Fraction is a Number imple...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1014
-source: https://web.archive.org/web/20100406202752/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/FractionisaNumberimplementationthatstoresfractionsaccurately.htm
+order: 1000
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/FractionisaNumberimplementationthatstoresfractionsaccurately.htm
 ---
 ```java title=Example.java
 /*
@@ -22,8 +22,7 @@ source: https://web.archive.org/web/20100406202752/http://www.java2s.com:80/Tuto
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-// Revised from commons math from Apache
+ */// Revised from commons math from Apache
 import java.math.BigInteger;
 /**
  * <p><code>Fraction</code> is a <code>Number</code> implementation that
@@ -39,90 +38,70 @@ import java.math.BigInteger;
  * @author C. Scott Ananian
  * @since 2.0
  * @version $Id: Fraction.java 599500 2007-11-29 16:25:54Z mbenson $
- */
-public final class Fraction extends Number implements Comparable {
+ */public final class Fraction extends Number implements Comparable {
     /**
      * Required for serialization support. Lang version 2.0.
      *
      * @see java.io.Serializable
-     */
-    private static final long serialVersionUID = 65382027393090L;
+     */ private static final long serialVersionUID = 65382027393090L;
     /**
      * <code>Fraction</code> representation of 0.
-     */
-    public static final Fraction ZERO = new Fraction(0, 1);
+     */ public static final Fraction ZERO = new Fraction(0, 1);
     /**
      * <code>Fraction</code> representation of 1.
-     */
-    public static final Fraction ONE = new Fraction(1, 1);
+     */ public static final Fraction ONE = new Fraction(1, 1);
     /**
      * <code>Fraction</code> representation of 1/2.
-     */
-    public static final Fraction ONE_HALF = new Fraction(1, 2);
+     */ public static final Fraction ONE_HALF = new Fraction(1, 2);
     /**
      * <code>Fraction</code> representation of 1/3.
-     */
-    public static final Fraction ONE_THIRD = new Fraction(1, 3);
+     */ public static final Fraction ONE_THIRD = new Fraction(1, 3);
     /**
      * <code>Fraction</code> representation of 2/3.
-     */
-    public static final Fraction TWO_THIRDS = new Fraction(2, 3);
+     */ public static final Fraction TWO_THIRDS = new Fraction(2, 3);
     /**
      * <code>Fraction</code> representation of 1/4.
-     */
-    public static final Fraction ONE_QUARTER = new Fraction(1, 4);
+     */ public static final Fraction ONE_QUARTER = new Fraction(1, 4);
     /**
      * <code>Fraction</code> representation of 2/4.
-     */
-    public static final Fraction TWO_QUARTERS = new Fraction(2, 4);
+     */ public static final Fraction TWO_QUARTERS = new Fraction(2, 4);
     /**
      * <code>Fraction</code> representation of 3/4.
-     */
-    public static final Fraction THREE_QUARTERS = new Fraction(3, 4);
+     */ public static final Fraction THREE_QUARTERS = new Fraction(3, 4);
     /**
      * <code>Fraction</code> representation of 1/5.
-     */
-    public static final Fraction ONE_FIFTH = new Fraction(1, 5);
+     */ public static final Fraction ONE_FIFTH = new Fraction(1, 5);
     /**
      * <code>Fraction</code> representation of 2/5.
-     */
-    public static final Fraction TWO_FIFTHS = new Fraction(2, 5);
+     */ public static final Fraction TWO_FIFTHS = new Fraction(2, 5);
     /**
      * <code>Fraction</code> representation of 3/5.
-     */
-    public static final Fraction THREE_FIFTHS = new Fraction(3, 5);
+     */ public static final Fraction THREE_FIFTHS = new Fraction(3, 5);
     /**
      * <code>Fraction</code> representation of 4/5.
-     */
-    public static final Fraction FOUR_FIFTHS = new Fraction(4, 5);
+     */ public static final Fraction FOUR_FIFTHS = new Fraction(4, 5);
     /**
      * The numerator number part of the fraction (the three in three sevenths).
-     */
-    private final int numerator;
+     */ private final int numerator;
     /**
      * The denominator number part of the fraction (the seven in three sevenths).
-     */
-    private final int denominator;
+     */ private final int denominator;
     /**
      * Cached output hashCode (class is immutable).
-     */
-    private transient int hashCode = 0;
+     */ private transient int hashCode = 0;
     /**
      * Cached output toString (class is immutable).
-     */
-    private transient String toString = null;
+     */ private transient String toString = null;
     /**
      * Cached output toProperString (class is immutable).
-     */
-    private transient String toProperString = null;
+     */ private transient String toProperString = null;
     /**
      * <p>Constructs a <code>Fraction</code> instance with the 2 parts
      * of a fraction Y/Z.</p>
      *
      * @param numerator  the numerator, for example the three in 'three sevenths'
      * @param denominator  the denominator, for example the seven in 'three sevenths'
-     */
-    private Fraction(int numerator, int denominator) {
+     */ private Fraction(int numerator, int denominator) {
         super();
         this.numerator = numerator;
         this.denominator = denominator;
@@ -137,8 +116,7 @@ public final class Fraction extends Number implements Comparable {
      * @param denominator  the denominator, for example the seven in 'three sevenths'
      * @return a new fraction instance
      * @throws ArithmeticException if the denomiator is <code>zero</code>
-     */
-    public static Fraction getFraction(int numerator, int denominator) {
+     */ public static Fraction getFraction(int numerator, int denominator) {
         if (denominator == 0) {
             throw new ArithmeticException("The denominator must not be zero");
         }
@@ -167,8 +145,7 @@ public final class Fraction extends Number implements Comparable {
      * @throws ArithmeticException if the numerator is negative
      * @throws ArithmeticException if the resulting numerator exceeds
      *  <code>Integer.MAX_VALUE</code>
-     */
-    public static Fraction getFraction(int whole, int numerator, int denominator) {
+     */ public static Fraction getFraction(int whole, int numerator, int denominator) {
         if (denominator == 0) {
             throw new ArithmeticException("The denominator must not be zero");
         }
@@ -203,8 +180,7 @@ public final class Fraction extends Number implements Comparable {
      * @param denominator  the denominator, for example the seven in 'three sevenths'
      * @return a new fraction instance, with the numerator and denominator reduced
      * @throws ArithmeticException if the denominator is <code>zero</code>
-     */
-    public static Fraction getReducedFraction(int numerator, int denominator) {
+     */ public static Fraction getReducedFraction(int numerator, int denominator) {
         if (denominator == 0) {
             throw new ArithmeticException("The denominator must not be zero");
         }
@@ -212,7 +188,7 @@ public final class Fraction extends Number implements Comparable {
             return ZERO; // normalize zero.
         }
         // allow 2^k/-2^31 as a valid fraction (where k>0)
-        if (denominator==Integer.MIN_VALUE && (numerator&1)==0) {
+ if (denominator==Integer.MIN_VALUE && (numerator&1)==0) {
             numerator/=2; denominator/=2;
         }
         if (denominator < 0) {
@@ -224,7 +200,7 @@ public final class Fraction extends Number implements Comparable {
             denominator = -denominator;
         }
         // simplify fraction.
-        int gcd = greatestCommonDivisor(numerator, denominator);
+ int gcd = greatestCommonDivisor(numerator, denominator);
         numerator /= gcd;
         denominator /= gcd;
         return new Fraction(numerator, denominator);
@@ -242,8 +218,7 @@ public final class Fraction extends Number implements Comparable {
      *  or <code>value = NaN</code>
      * @throws ArithmeticException if the calculated denominator is <code>zero</code>
      * @throws ArithmeticException if the the algorithm does not converge
-     */
-    public static Fraction getFraction(double value) {
+     */ public static Fraction getFraction(double value) {
         int sign = (value < 0 ? -1 : 1);
         value = Math.abs(value);
         if (value  > Integer.MAX_VALUE || Double.isNaN(value)) {
@@ -253,12 +228,12 @@ public final class Fraction extends Number implements Comparable {
         int wholeNumber = (int) value;
         value -= wholeNumber;
         int numer0 = 0;  // the pre-previous
-        int denom0 = 1;  // the pre-previous
-        int numer1 = 1;  // the previous
-        int denom1 = 0;  // the previous
-        int numer2 = 0;  // the current, setup in calculation
-        int denom2 = 0;  // the current, setup in calculation
-        int a1 = (int) value;
+ int denom0 = 1;  // the pre-previous
+ int numer1 = 1;  // the previous
+ int denom1 = 0;  // the previous
+ int numer2 = 0;  // the current, setup in calculation
+ int denom2 = 0;  // the current, setup in calculation
+ int a1 = (int) value;
         int a2 = 0;
         double x1 = 1;
         double x2 = 0;
@@ -268,7 +243,7 @@ public final class Fraction extends Number implements Comparable {
         double fraction;
         int i = 1;
 //        System.out.println("---");
-        do {
+ do {
             delta1 = delta2;
             a2 = (int) (x1 / y1);
             x2 = y1;
@@ -310,13 +285,12 @@ public final class Fraction extends Number implements Comparable {
      * @return the new <code>Fraction</code> instance
      * @throws IllegalArgumentException if the string is <code>null</code>
      * @throws NumberFormatException if the number format is invalid
-     */
-    public static Fraction getFraction(String str) {
+     */ public static Fraction getFraction(String str) {
         if (str == null) {
             throw new IllegalArgumentException("The string must not be null");
         }
         // parse double format
-        int pos = str.indexOf('.');
+ int pos = str.indexOf('.');
         if (pos >= 0) {
             return getFraction(Double.parseDouble(str));
         }
@@ -338,7 +312,7 @@ public final class Fraction extends Number implements Comparable {
         pos = str.indexOf('/');
         if (pos < 0) {
             // simple whole number
-            return getFraction(Integer.parseInt(str), 1);
+ return getFraction(Integer.parseInt(str), 1);
         } else {
             int numer = Integer.parseInt(str.substring(0, pos));
             int denom = Integer.parseInt(str.substring(pos + 1));
@@ -346,24 +320,22 @@ public final class Fraction extends Number implements Comparable {
         }
     }
     // Accessors
-    //-------------------------------------------------------------------
-    /**
+ //-------------------------------------------------------------------
+ /**
      * <p>Gets the numerator part of the fraction.</p>
      *
      * <p>This method may return a value greater than the denominator, an
      * improper fraction, such as the seven in 7/4.</p>
      *
      * @return the numerator fraction part
-     */
-    public int getNumerator() {
+     */ public int getNumerator() {
         return numerator;
     }
     /**
      * <p>Gets the denominator part of the fraction.</p>
      *
      * @return the denominator fraction part
-     */
-    public int getDenominator() {
+     */ public int getDenominator() {
         return denominator;
     }
     /**
@@ -376,8 +348,7 @@ public final class Fraction extends Number implements Comparable {
      * -1 3/4, so this method returns the positive proper numerator, 3.</p>
      *
      * @return the numerator fraction part of a proper fraction, always positive
-     */
-    public int getProperNumerator() {
+     */ public int getProperNumerator() {
         return Math.abs(numerator % denominator);
     }
     /**
@@ -390,19 +361,17 @@ public final class Fraction extends Number implements Comparable {
      * -1 3/4, so this method returns the positive whole part -1.</p>
      *
      * @return the whole fraction part of a proper fraction, that includes the sign
-     */
-    public int getProperWhole() {
+     */ public int getProperWhole() {
         return numerator / denominator;
     }
     // Number methods
-    //-------------------------------------------------------------------
-    /**
+ //-------------------------------------------------------------------
+ /**
      * <p>Gets the fraction as an <code>int</code>. This returns the whole number
      * part of the fraction.</p>
      *
      * @return the whole number fraction part
-     */
-    public int intValue() {
+     */ public int intValue() {
         return numerator / denominator;
     }
     /**
@@ -410,8 +379,7 @@ public final class Fraction extends Number implements Comparable {
      * part of the fraction.</p>
      *
      * @return the whole number fraction part
-     */
-    public long longValue() {
+     */ public long longValue() {
         return (long) numerator / denominator;
     }
     /**
@@ -419,8 +387,7 @@ public final class Fraction extends Number implements Comparable {
      * as the numerator divided by denominator.</p>
      *
      * @return the fraction as a <code>float</code>
-     */
-    public float floatValue() {
+     */ public float floatValue() {
         return ((float) numerator) / ((float) denominator);
     }
     /**
@@ -428,13 +395,12 @@ public final class Fraction extends Number implements Comparable {
      * as the numerator divided by denominator.</p>
      *
      * @return the fraction as a <code>double</code>
-     */
-    public double doubleValue() {
+     */ public double doubleValue() {
         return ((double) numerator) / ((double) denominator);
     }
     // Calculations
-    //-------------------------------------------------------------------
-    /**
+ //-------------------------------------------------------------------
+ /**
      * <p>Reduce the fraction to the smallest values for the numerator and
      * denominator, returning the result.</p>
      *
@@ -442,8 +408,7 @@ public final class Fraction extends Number implements Comparable {
      * will be 1/2.</p>
      *
      * @return a new reduced fraction instance, or this if no simplification possible
-     */
-    public Fraction reduce() {
+     */ public Fraction reduce() {
         if (numerator == 0) {
             return equals(ZERO) ? this : ZERO;
         }
@@ -461,8 +426,7 @@ public final class Fraction extends Number implements Comparable {
      * @return a new fraction instance with the numerator and denominator
      *         inverted.
      * @throws ArithmeticException if the fraction represents zero.
-     */
-    public Fraction invert() {
+     */ public Fraction invert() {
         if (numerator == 0) {
             throw new ArithmeticException("Unable to invert zero.");
         }
@@ -481,10 +445,9 @@ public final class Fraction extends Number implements Comparable {
      * <p>The returned fraction is not reduced.</p>
      *
      * @return a new fraction instance with the opposite signed numerator
-     */
-    public Fraction negate() {
+     */ public Fraction negate() {
         // the positive range is one smaller than the negative range of an int.
-        if (numerator==Integer.MIN_VALUE) {
+ if (numerator==Integer.MIN_VALUE) {
             throw new ArithmeticException("overflow: too large to negate");
         }
         return new Fraction(-numerator, denominator);
@@ -497,8 +460,7 @@ public final class Fraction extends Number implements Comparable {
      *
      * @return <code>this</code> if it is positive, or a new positive fraction
      *  instance with the opposite signed numerator
-     */
-    public Fraction abs() {
+     */ public Fraction abs() {
         if (numerator >= 0) {
             return this;
         }
@@ -515,23 +477,22 @@ public final class Fraction extends Number implements Comparable {
      * raised to the appropriate power
      * @throws ArithmeticException if the resulting numerator or denominator exceeds
      *  <code>Integer.MAX_VALUE</code>
-     */
-    public Fraction pow(int power) {
+     */ public Fraction pow(int power) {
         if (power == 1) {
             return this;
         } else if (power == 0) {
             return ONE;
         } else if (power < 0) {
             if (power==Integer.MIN_VALUE) { // MIN_VALUE can't be negated.
-                return this.invert().pow(2).pow(-(power/2));
+ return this.invert().pow(2).pow(-(power/2));
             }
             return this.invert().pow(-power);
         } else {
             Fraction f = this.multiplyBy(this);
             if ((power % 2) == 0) { // if even...
-                return f.pow(power/2);
+ return f.pow(power/2);
             } else { // if odd...
-                return f.pow(power/2).multiplyBy(this);
+ return f.pow(power/2).multiplyBy(this);
             }
         }
     }
@@ -544,20 +505,19 @@ public final class Fraction extends Number implements Comparable {
      * @param u  a non-zero number
      * @param v  a non-zero number
      * @return the greatest common divisor, never zero
-     */
-    private static int greatestCommonDivisor(int u, int v) {
+     */ private static int greatestCommonDivisor(int u, int v) {
         //if either op. is abs 0 or 1, return 1:
-        if (Math.abs(u) <= 1 || Math.abs(v) <= 1) {
+ if (Math.abs(u) <= 1 || Math.abs(v) <= 1) {
             return 1;
         }
         // keep u and v negative, as negative integers range down to
-        // -2^31, while positive numbers can only be as large as 2^31-1
-        // (i.e. we can't necessarily negate a negative number without
-        // overflow)
-        if (u>0) { u=-u; } // make u negative
-        if (v>0) { v=-v; } // make v negative
-        // B1. [Find power of 2]
-        int k=0;
+ // -2^31, while positive numbers can only be as large as 2^31-1
+ // (i.e. we can't necessarily negate a negative number without
+ // overflow)
+ if (u>0) { u=-u; } // make u negative
+ if (v>0) { v=-v; } // make v negative
+ // B1. [Find power of 2]
+ int k=0;
         while ((u&1)==0 && (v&1)==0 && k<31) { // while u and v are both even...
             u/=2; v/=2; k++; // cast out twos.
         }
@@ -565,18 +525,17 @@ public final class Fraction extends Number implements Comparable {
             throw new ArithmeticException("overflow: gcd is 2^31");
         }
         // B2. Initialize: u and v have been divided by 2^k and at least
-        //     one is odd.
-        int t = ((u&1)==1) ? v : -(u/2)/*B3*/;
+ //     one is odd.
+ int t = ((u&1)==1) ? v : -(u/2)/*B3*/;
         // t negative: u was odd, v may be even (t replaces v)
-        // t positive: u was even, v is odd (t replaces u)
-        do {
-            /* assert u<0 && v<0; */
-            // B4/B3: cast out twos from t.
-            while ((t&1)==0) { // while t is even..
+ // t positive: u was even, v is odd (t replaces u)
+ do {
+            /* assert u<0 && v<0; */ // B4/B3: cast out twos from t.
+ while ((t&1)==0) { // while t is even..
                 t/=2; // cast out twos
             }
             // B5 [reset max(u,v)]
-            if (t>0) {
+ if (t>0) {
                 u = -t;
             } else {
                 v = t;
@@ -584,13 +543,13 @@ public final class Fraction extends Number implements Comparable {
             // B6/B3. at this point both u and v should be odd.
             t = (v - u)/2;
             // |u| larger: t positive (replace u)
-            // |v| larger: t negative (replace v)
+ // |v| larger: t negative (replace v)
         } while (t!=0);
         return -u*(1<<k); // gcd is u*2^k
     }
     // Arithmetic
-    //-------------------------------------------------------------------
-    /**
+ //-------------------------------------------------------------------
+ /**
      * Multiply two integers, checking for overflow.
      *
      * @param x a factor
@@ -598,8 +557,7 @@ public final class Fraction extends Number implements Comparable {
      * @return the product <code>x*y</code>
      * @throws ArithmeticException if the result can not be represented as
      *                             an int
-     */
-    private static int mulAndCheck(int x, int y) {
+     */ private static int mulAndCheck(int x, int y) {
         long m = ((long)x)*((long)y);
         if (m < Integer.MIN_VALUE ||
             m > Integer.MAX_VALUE) {
@@ -615,10 +573,8 @@ public final class Fraction extends Number implements Comparable {
      * @return the product <code>x*y</code>
      * @throws ArithmeticException if the result can not be represented as
      * an int
-     */
-    private static int mulPosAndCheck(int x, int y) {
-        /* assert x>=0 && y>=0; */
-        long m = ((long)x)*((long)y);
+     */ private static int mulPosAndCheck(int x, int y) {
+        /* assert x>=0 && y>=0; */ long m = ((long)x)*((long)y);
         if (m > Integer.MAX_VALUE) {
             throw new ArithmeticException("overflow: mulPos");
         }
@@ -632,8 +588,7 @@ public final class Fraction extends Number implements Comparable {
      * @return the sum <code>x+y</code>
      * @throws ArithmeticException if the result can not be represented as
      * an int
-     */
-    private static int addAndCheck(int x, int y) {
+     */ private static int addAndCheck(int x, int y) {
         long s = (long)x+(long)y;
         if (s < Integer.MIN_VALUE ||
             s > Integer.MAX_VALUE) {
@@ -649,8 +604,7 @@ public final class Fraction extends Number implements Comparable {
      * @return the difference <code>x-y</code>
      * @throws ArithmeticException if the result can not be represented as
      * an int
-     */
-    private static int subAndCheck(int x, int y) {
+     */ private static int subAndCheck(int x, int y) {
         long s = (long)x-(long)y;
         if (s < Integer.MIN_VALUE ||
             s > Integer.MAX_VALUE) {
@@ -667,8 +621,7 @@ public final class Fraction extends Number implements Comparable {
      * @throws IllegalArgumentException if the fraction is <code>null</code>
      * @throws ArithmeticException if the resulting numerator or denominator exceeds
      *  <code>Integer.MAX_VALUE</code>
-     */
-    public Fraction add(Fraction fraction) {
+     */ public Fraction add(Fraction fraction) {
         return addSub(fraction, true /* add */);
     }
     /**
@@ -680,8 +633,7 @@ public final class Fraction extends Number implements Comparable {
      * @throws IllegalArgumentException if the fraction is <code>null</code>
      * @throws ArithmeticException if the resulting numerator or denominator
      *   cannot be represented in an <code>int</code>.
-     */
-    public Fraction subtract(Fraction fraction) {
+     */ public Fraction subtract(Fraction fraction) {
         return addSub(fraction, false /* subtract */);
     }
     /**
@@ -693,40 +645,39 @@ public final class Fraction extends Number implements Comparable {
      * @throws IllegalArgumentException if the fraction is <code>null</code>
      * @throws ArithmeticException if the resulting numerator or denominator
      *   cannot be represented in an <code>int</code>.
-     */
-    private Fraction addSub(Fraction fraction, boolean isAdd) {
+     */ private Fraction addSub(Fraction fraction, boolean isAdd) {
         if (fraction == null) {
             throw new IllegalArgumentException("The fraction must not be null");
         }
         // zero is identity for addition.
-        if (numerator == 0) {
+ if (numerator == 0) {
             return isAdd ? fraction : fraction.negate();
         }
         if (fraction.numerator == 0) {
             return this;
         }
         // if denominators are randomly distributed, d1 will be 1 about 61%
-        // of the time.
-        int d1 = greatestCommonDivisor(denominator, fraction.denominator);
+ // of the time.
+ int d1 = greatestCommonDivisor(denominator, fraction.denominator);
         if (d1==1) {
             // result is ( (u*v' +/- u'v) / u'v')
-            int uvp = mulAndCheck(numerator, fraction.denominator);
+ int uvp = mulAndCheck(numerator, fraction.denominator);
             int upv = mulAndCheck(fraction.numerator, denominator);
             return new Fraction
                 (isAdd ? addAndCheck(uvp, upv) : subAndCheck(uvp, upv),
                  mulPosAndCheck(denominator, fraction.denominator));
         }
         // the quantity 't' requires 65 bits of precision; see knuth 4.5.1
-        // exercise 7.  we're going to use a BigInteger.
-        // t = u(v'/d1) +/- v(u'/d1)
+ // exercise 7.  we're going to use a BigInteger.
+ // t = u(v'/d1) +/- v(u'/d1)
         BigInteger uvp = BigInteger.valueOf(numerator)
             .multiply(BigInteger.valueOf(fraction.denominator/d1));
         BigInteger upv = BigInteger.valueOf(fraction.numerator)
             .multiply(BigInteger.valueOf(denominator/d1));
         BigInteger t = isAdd ? uvp.add(upv) : uvp.subtract(upv);
         // but d2 doesn't need extra precision because
-        // d2 = gcd(t,d1) = gcd(t mod d1, d1)
-        int tmodd1 = t.mod(BigInteger.valueOf(d1)).intValue();
+ // d2 = gcd(t,d1) = gcd(t mod d1, d1)
+ int tmodd1 = t.mod(BigInteger.valueOf(d1)).intValue();
         int d2 = (tmodd1==0)?d1:greatestCommonDivisor(tmodd1, d1);
         // result is (t/d2) / (u'/d1)(v'/d2)
         BigInteger w = t.divide(BigInteger.valueOf(d2));
@@ -747,8 +698,7 @@ public final class Fraction extends Number implements Comparable {
      * @throws IllegalArgumentException if the fraction is <code>null</code>
      * @throws ArithmeticException if the resulting numerator or denominator exceeds
      *  <code>Integer.MAX_VALUE</code>
-     */
-    public Fraction multiplyBy(Fraction fraction) {
+     */ public Fraction multiplyBy(Fraction fraction) {
         if (fraction == null) {
             throw new IllegalArgumentException("The fraction must not be null");
         }
@@ -756,8 +706,8 @@ public final class Fraction extends Number implements Comparable {
             return ZERO;
         }
         // knuth 4.5.1
-        // make sure we don't overflow unless the result *must* overflow.
-        int d1 = greatestCommonDivisor(numerator, fraction.denominator);
+ // make sure we don't overflow unless the result *must* overflow.
+ int d1 = greatestCommonDivisor(numerator, fraction.denominator);
         int d2 = greatestCommonDivisor(fraction.numerator, denominator);
         return getReducedFraction
             (mulAndCheck(numerator/d1, fraction.numerator/d2),
@@ -772,8 +722,7 @@ public final class Fraction extends Number implements Comparable {
      * @throws ArithmeticException if the fraction to divide by is zero
      * @throws ArithmeticException if the resulting numerator or denominator exceeds
      *  <code>Integer.MAX_VALUE</code>
-     */
-    public Fraction divideBy(Fraction fraction) {
+     */ public Fraction divideBy(Fraction fraction) {
         if (fraction == null) {
             throw new IllegalArgumentException("The fraction must not be null");
         }
@@ -783,16 +732,15 @@ public final class Fraction extends Number implements Comparable {
         return multiplyBy(fraction.invert());
     }
     // Basics
-    //-------------------------------------------------------------------
-    /**
+ //-------------------------------------------------------------------
+ /**
      * <p>Compares this fraction to another object to test if they are equal.</p>.
      *
      * <p>To be equal, both values must be equal. Thus 2/4 is not equal to 1/2.</p>
      *
      * @param obj the reference object with which to compare
      * @return <code>true</code> if this object is equal
-     */
-    public boolean equals(Object obj) {
+     */ public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
@@ -807,8 +755,7 @@ public final class Fraction extends Number implements Comparable {
      * <p>Gets a hashCode for the fraction.</p>
      *
      * @return a hash code value for this object
-     */
-    public int hashCode() {
+     */ public int hashCode() {
         if (hashCode == 0) {
             // hashcode update should be atomic.
             hashCode = 37 * (37 * 17 + getNumerator()) + getDenominator();
@@ -826,8 +773,7 @@ public final class Fraction extends Number implements Comparable {
      * @return -1 if this is less, 0 if equal, +1 if greater
      * @throws ClassCastException if the object is not a <code>Fraction</code>
      * @throws NullPointerException if the object is <code>null</code>
-     */
-    public int compareTo(Object object) {
+     */ public int compareTo(Object object) {
         Fraction other = (Fraction) object;
         if (this==other) {
             return 0;
@@ -836,7 +782,7 @@ public final class Fraction extends Number implements Comparable {
             return 0;
         }
         // otherwise see which is less
-        long first = (long) numerator * (long) other.denominator;
+ long first = (long) numerator * (long) other.denominator;
         long second = (long) other.numerator * (long) denominator;
         if (first == second) {
             return 0;
@@ -852,8 +798,7 @@ public final class Fraction extends Number implements Comparable {
      * <p>The format used is '<i>numerator</i>/<i>denominator</i>' always.
      *
      * @return a <code>String</code> form of the fraction
-     */
-    public String toString() {
+     */ public String toString() {
         if (toString == null) {
             toString = new StringBuffer(32)
                 .append(getNumerator())
@@ -870,8 +815,7 @@ public final class Fraction extends Number implements Comparable {
      * only the whole number is returned.</p>
      *
      * @return a <code>String</code> form of the fraction
-     */
-    public String toProperString() {
+     */ public String toProperString() {
         if (toProperString == null) {
             if (numerator == 0) {
                 toProperString = "0";
@@ -881,10 +825,10 @@ public final class Fraction extends Number implements Comparable {
                 toProperString = "-1";
             } else if ((numerator>0?-numerator:numerator) < -denominator) {
                 // note that we do the magnitude comparison test above with
-                // NEGATIVE (not positive) numbers, since negative numbers
-                // have a larger range.  otherwise numerator==Integer.MIN_VALUE
-                // is handled incorrectly.
-                int properNumerator = getProperNumerator();
+ // NEGATIVE (not positive) numbers, since negative numbers
+ // have a larger range.  otherwise numerator==Integer.MIN_VALUE
+ // is handled incorrectly.
+ int properNumerator = getProperNumerator();
                 if (properNumerator == 0) {
                     toProperString = Integer.toString(getProperWhole());
                 } else {

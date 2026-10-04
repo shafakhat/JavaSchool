@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20070501200957/http://www.java2s.com:80/Code/Java/Servlets/ContextAttributesServlet.htm
 ---
-Context Attributes Servlet
-
 ```java title=Example.java
 import java.io.PrintWriter;
 import java.io.IOException;

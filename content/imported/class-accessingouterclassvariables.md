@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1122
 source: https://web.archive.org/web/20090530113559/http://www.java2s.com:80/Code/Java/Class/AccessingOuterClassVariables.htm
 ---
-Accessing Outer Class Variables
-
 ```java title=Example.java
 public class MemberClass {
   int counter = 0;

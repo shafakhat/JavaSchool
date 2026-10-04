@@ -7,7 +7,6 @@ order: 1146
 source: https://web.archive.org/web/20091120142400/http://www.java2s.com:80/Code/Java/Class/Comparestwoobjectsforequalitywhereeitheroneorbothobjectsmaybenull.htm
 ---
 Compares two objects for equality, where either one or both objects may be null : Equals « Class « Java
-Compares two objects for equality, where either one or both objects may be null
 
 ```java title=Example.java
 /*

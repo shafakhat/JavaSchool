@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1101
 source: https://web.archive.org/web/20100212194911/http://java2s.com/Code/Java/Class/Utilityforobjectcloning.htm
 ---
-Utility for object cloning
-
 ```java title=Example.java
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -30,7 +28,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 /**
- * Utility for object cloning
  *
  * @author <a href="mailto:weaver@apache.org">Scott T. Weaver</a>
  */

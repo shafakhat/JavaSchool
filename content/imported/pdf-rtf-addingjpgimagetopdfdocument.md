@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20080102042336/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingJPGimagetoPdfdocument.htm
 ---
-Adding JPG image to Pdf document
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

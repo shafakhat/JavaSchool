@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1053
 source: https://web.archive.org/web/20061018193125/http://www.java2s.com/Code/Java/Velocity/Referencevariablebyname.htm
 ---
-Reference variable by name
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

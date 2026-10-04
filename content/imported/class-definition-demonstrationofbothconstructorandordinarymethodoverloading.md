@@ -36,7 +36,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Creating new Tree that is 0 feet tall
 Tree is 0 feet tall
 overloaded method: Tree is 0 feet tall

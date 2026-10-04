@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1118
 source: https://web.archive.org/web/20130821113911/http://java2s.com/Code/Java/JDK-7/Redirectinginputandoutputfromoperatingsystemsprocesses.htm
 ---
-Redirecting input and output from operating systems processes
-
 ```java title=Example.java
 import java.io.File;
 public class Test {

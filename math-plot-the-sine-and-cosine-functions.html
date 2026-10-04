@@ -47,15 +47,13 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Polygon;
-/*www.java2s.com*/import javax.swing.JFrame;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 publicclass Main extends JFrame {
   public Main() {
     setLayout(new BorderLayout());
     add(new DrawSine(), BorderLayout.CENTER);
   }
-
   publicstaticvoid main(String[] args) {
     Main frame = new Main();
     frame.setSize(400, 300);
@@ -63,43 +61,31 @@ publicclass Main extends JFrame {
     frame.setVisible(true);
   }
 }
-
 class DrawSine extends JPanel {
   double f(double x) {
     return Math.sin(x);
   }
-
   double gCos(double y) {
     return Math.cos(y);
   }
-
   protectedvoid paintComponent(Graphics g) {
     super.paintComponent(g);
-
     g.drawLine(10, 100, 380, 100);
     g.drawLine(200, 30, 200, 190);
-
     g.drawLine(380, 100, 370, 90);
     g.drawLine(380, 100, 370, 110);
     g.drawLine(200, 30, 190, 40);
     g.drawLine(200, 30, 210, 40);
-
     g.drawString("X", 360, 80);
     g.drawString("Y", 220, 40);
-
     Polygon p = new Polygon();
     Polygon p2 = new Polygon();
-
     for (int x = -170; x &lt;= 170; x++) {
       p.addPoint(x + 200, 100 - (int) (50 * f((x / 100.0) * 2 * Math.PI)));
-
     }
-
     for (int x = -170; x &lt;= 170; x++) {
       p2.addPoint(x + 200, 100 - (int) (50 * gCos((x / 100.0) * 2 * Math.PI)));
-
     }
-
     g.setColor(Color.red);
     g.drawPolyline(p.xpoints, p.ypoints, p.npoints);
     g.drawString("-2\u03c0", 95, 115);
@@ -107,10 +93,8 @@ class DrawSine extends JPanel {
     g.drawString("\u03c0", 253, 115);
     g.drawString("2\u03c0", 305, 115);
     g.drawString("0", 200, 115);
-
     g.setColor(Color.blue);
     g.drawPolyline(p2.xpoints, p2.ypoints, p2.npoints);
-
   }
 }</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Back to Math  ↑</code></pre></div>
@@ -124,15 +108,8 @@ class DrawSine extends JPanel {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

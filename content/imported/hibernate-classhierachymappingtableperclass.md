@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513085536/http://www.java2s.com/Code/Ja
 ---
 Class Hierachy Mapping Table Per Class : Java examples (example source code) » Hibernate » Class Hiearchy Mapping
 
-Class Hierachy Mapping Table Per Class
-
 ```java title=Example.java
 /////////////////////////////////////////////////////////////////////////
 <?xml version="1.0" encoding="utf-8" ?>

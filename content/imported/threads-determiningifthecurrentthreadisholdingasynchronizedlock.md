@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1049
 source: https://web.archive.org/web/20090614055910/http://www.java2s.com:80/Code/Java/Threads/DeterminingIftheCurrentThreadIsHoldingaSynchronizedLock.htm
 ---
-Determining If the Current Thread Is Holding a Synchronized Lock
-
 ```java title=Example.java
 public class Main {
   public static void main(String[] argv) throws Exception {

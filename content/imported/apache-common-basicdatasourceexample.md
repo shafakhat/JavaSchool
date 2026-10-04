@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/20061026235120/http://www.java2s.com/Code/Java/Apache-Common/BasicDataSourceExample.htm
 ---
-Basic DataSource Example
-
 ```java title=Example.java
 import java.sql.Connection;
 import org.apache.commons.dbcp.BasicDataSource;

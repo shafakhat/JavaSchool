@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20090531101446/http://www.java2s.com:80/Code/Java/Class/EqualsMethod.htm
 ---
-Equals Method
-
 ```java title=Example.java
 //: c03:EqualsMethod.java
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002

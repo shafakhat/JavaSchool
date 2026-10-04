@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1158
 source: https://web.archive.org/web/20090106230535/http://www.java2s.com:80/Code/Java/Class/Creatinginnerclasses.htm
 ---
-Creating inner classes
-
 ```java title=Example.java
 // : c08:Parcel1.java
-// Creating inner classes.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 public class Parcel1 {

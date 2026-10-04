@@ -49,11 +49,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="parameter-declared-as-a-val">Parameter Declared as a val</h2>
 <p>If the constructor parameter is declared as a val, Scala generates only a getter method for it.</p>
 <p>Let's declare a field as val as shown here:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-class Book( val title:String)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Book( val title:String)</code></pre></div>
 <p>Because the constructor field is defined as a val, the value of the field is immutable by definition. Therefore, Scala generates only the getter method and no setter method.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
     class Book( val title:String)
     val book = new Book("Scala")
@@ -65,14 +63,11 @@ object Main {
 <p>In Scala, if the constructor or method takes zero parameters, you can omit the parameter list.</p>
 <h2 id="parameter-declared-as-a-var">Parameter Declared as a var</h2>
 <p>If the constructor parameter is declared as a var, Scala generates both accessor and mutator methods.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-class Book( var title:String)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Book( var title:String)</code></pre></div>
 <p>So when you set the field, like so</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-book.title("new title")</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">book.title("new title")</code></pre></div>
 <p>We can mutate the field of Book object because it was declared with keyword var.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
     class Book( var title:String)
     val book = new Book("Beginning Scala")
@@ -93,24 +88,20 @@ println(book.printTitle )</code></pre></div>
 <h2 id="parameter-declared-without-val-or-var">Parameter Declared without val or var</h2>
 <p>Scala does not generate getter or setter when neither val nor var are specified on constructor parameters.</p>
 <p>As you can see here, you cannot access the field title of the Book.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-class Book(title: String)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Book(title: String)
 val book = new Book("Beginning Scala")
 //book.title //Error</code></pre></div>
 <h2 id="example">Example</h2>
 <p>Here's Book class with one constructor parameter named title that has default value of "Scala".</p>
 <p>Because the parameter is defined with a default value, you can call the constructor without specifying a title value:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-class Book (val title: String = "Scala")
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Book (val title: String = "Scala")
 val book = new Book
 book.title</code></pre></div>
 <p>You can also specify the title value of your choice when creating a new Book:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-val book = new Book("new title")
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">val book = new Book("new title")
 book.title</code></pre></div>
 <p>You can also choose to provide named parameters as shown in the following code:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-val book = new Book(title="Beginning Scala")
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">val book = new Book(title="Beginning Scala")
 book.title</code></pre></div>
 <h2 id="auxiliary-constructor">Auxiliary Constructor</h2>
 <p>We can define one or more auxiliary constructors for a class to provide different ways to create objects.</p>
@@ -118,8 +109,7 @@ book.title</code></pre></div>
 <p>We can define multiple auxiliary constructors, but they must have different signatures.</p>
 <p>Each auxiliary constructor must begin with a call to a previously defined constructor.</p>
 <p>The following code illustrates a primary constructor and two auxiliary constructors.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-class Book (var title :String, var ISBN: Int) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Book (var title :String, var ISBN: Int) {
     def this(title: String) {
         this(title, 2222)
     }
@@ -130,8 +120,7 @@ class Book (var title :String, var ISBN: Int) {
     override def toString = s"$title ISBN- $ISBN"
 }</code></pre></div>
 <p>Given these constructors, the same Book can be created in the following ways:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-val book1 = new Book
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">val book1 = new Book
 val book2 = new Book("Clojure")
 val book3 = new Book("Scala", 3333)</code></pre></div>
 <p>An auxiliary constructor just needs to call one of the previously defined constructors.</p>
@@ -146,15 +135,8 @@ val book3 = new Book("Scala", 3333)</code></pre></div>
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

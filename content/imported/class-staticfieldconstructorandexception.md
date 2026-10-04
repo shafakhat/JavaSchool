@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1072
 source: https://web.archive.org/web/20090602111630/http://www.java2s.com:80/Code/Java/Class/Staticfieldconstructorandexception.htm
 ---
-Static field, constructor and exception
-
 ```java title=Example.java
 public class Main {
   static Bar bar;

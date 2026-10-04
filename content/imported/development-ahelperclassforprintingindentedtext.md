@@ -25,7 +25,6 @@ source: https://web.archive.org/web/20111106181046/http://java2s.com/Tutorial/Ja
  */
 import java.io.PrintWriter;
 /**
- * A helper class for printing indented text
  *
  * @version $Revision: 1.2 $
  */

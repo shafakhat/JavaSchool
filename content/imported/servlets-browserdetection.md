@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20100206123818/http://java2s.com/Code/Java/Servlets/Browserdetection.htm
 ---
-Browser detection
-
 ```java title=Example.java
 /*
  * Copyright 2005 Joe Walker

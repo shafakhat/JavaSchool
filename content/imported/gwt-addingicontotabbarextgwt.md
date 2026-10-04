@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1028
 source: https://web.archive.org/web/20100422211009/http://www.java2s.com:80/Code/Java/GWT/AddingicontotabbarExtGWT.htm
 ---
-Adding icon to tab bar (Ext GWT)
-
 ```java title=Example.java
 /*
  * Ext GWT - Ext for GWT

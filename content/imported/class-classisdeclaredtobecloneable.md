@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1138
 source: https://web.archive.org/web/20090531214952/http://www.java2s.com:80/Code/Java/Class/Classisdeclaredtobecloneable.htm
 ---
-Class is declared to be cloneable.
-
 ```java title=Example.java
 class Employee implements Cloneable {
   String name;

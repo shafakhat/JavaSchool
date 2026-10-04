@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1036
 source: https://web.archive.org/web/20071130181805/http://www.java2s.com:80/Code/Java/PDF-RTF/Barcode128.htm
 ---
-Barcode 128
-
 ```java title=Example.java
 import java.awt.Color;
 import java.io.FileOutputStream;
@@ -30,7 +28,7 @@ public class Barcode128Demo {
       document.open();
       PdfContentByte cb = writer.getDirectContent();
       String code402 = "123456789012345" + Barcode128.FNC1;
-      String code90 = "www.java2s.com" + Barcode128.FNC1;
+      String code90 = "JavaSchool" + Barcode128.FNC1;
       String code421 = "123456";
       String data = code402 + code90 + code421;
       Barcode128 shipBarCode = new Barcode128();

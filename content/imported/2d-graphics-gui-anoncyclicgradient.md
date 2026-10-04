@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20090615220748/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/Anoncyclicgradient.htm
 ---
-A non-cyclic gradient
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.GradientPaint;

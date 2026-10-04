@@ -27,7 +27,6 @@ source: https://web.archive.org/web/20100328232700/http://www.java2s.com:80/Tuto
 import java.util.Date;
 public class Utils {
   /**
-   * Returns true if endDate is after startDate or if startDate equals endDate.
    * Returns false if either value is null.  If equalOK, returns true if the
    * dates are equal.
    **/

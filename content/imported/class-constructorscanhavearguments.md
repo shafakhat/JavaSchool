@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1153
 source: https://web.archive.org/web/20081006161234/http://www.java2s.com:80/Code/Java/Class/Constructorscanhavearguments.htm
 ---
-Constructors can have arguments
-
 ```java title=Example.java
 // : c04:SimpleConstructor2.java
-// Constructors can have arguments.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Rock2 {

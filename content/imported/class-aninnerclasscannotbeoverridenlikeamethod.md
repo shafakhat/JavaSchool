@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1131
 source: https://web.archive.org/web/20090106053452/http://www.java2s.com:80/Code/Java/Class/Aninnerclasscannotbeoverridenlikeamethod.htm
 ---
-An inner class cannot be overriden like a method
-
 ```java title=Example.java
 // : c08:BigEgg.java
-// An inner class cannot be overriden like a method.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Egg {

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20090526045842/http://www.java2s.com:80/Code/Java/Reflection/Accesstheenclosingclassfromaninnerclass.htm
 ---
-Access the enclosing class from an inner class
-
 ```java title=Example.java
 public class Main {
   public static void main(String a[]){

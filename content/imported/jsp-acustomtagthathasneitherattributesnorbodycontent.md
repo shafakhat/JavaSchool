@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20061026203506/http://www.java2s.com/Code/Java/JSP/Acustomtagthathasneitherattributesnorbodycontent.htm
 ---
-A custom tag that has neither attributes nor body content.
-
 ```java title=Example.java
 /// Empty Tag
    <!-- this must be added to the web application's web.xml -->

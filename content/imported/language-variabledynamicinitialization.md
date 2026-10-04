@@ -18,6 +18,5 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Hypotenuse is 5.0
 ```

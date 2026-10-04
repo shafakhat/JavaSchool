@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20100623085424/http://www.java2s.com:80/Code/Java/GWT/AddingimagetotablecellSmartGWT.htm
 ---
-Adding image to table cell (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

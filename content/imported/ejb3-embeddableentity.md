@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20090204180843/http://www.java2s.com:80/Code/Java/EJB3/EmbeddableEntity.htm
 ---
-Embeddable Entity
-
 ```java title=Example.java
 File: EmployeeService.java
 import javax.ejb.Stateless;

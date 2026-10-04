@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1026
 source: https://web.archive.org/web/20071130200714/http://www.java2s.com:80/Code/Java/Ant/AntWriteOurOwnTask.htm
 ---
-Ant Write Our Own Task
-
 ```java title=Example.java
 /*
  *  Uses org.apache.tools.ant.Main,

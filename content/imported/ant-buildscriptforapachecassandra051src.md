@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1039
 source: https://web.archive.org/web/20100813173931/http://www.java2s.com:80/Code/Java/Ant/Buildscriptforapachecassandra051src.htm
 ---
-Build script for apache-cassandra-0.5.1-src
-
 ```java title=Example.java
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--

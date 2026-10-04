@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1049
 source: https://web.archive.org/web/20061018174654/http://www.java2s.com/Code/Java/JSP/FormTextFieldDemo.htm
 ---
-Form TextField Demo
-
 ```java title=Example.java
 //File: index.html
 <html>

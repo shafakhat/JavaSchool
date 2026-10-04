@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513085548/http://www.java2s.com/Code/Ja
 ---
 Caching Class path Resource Loader : Java examples (example source code) » Velocity » Resource Loader
 
-Caching Class path Resource Loader
-
 ```java title=Example.java
 import java.io.IOException;
 import java.io.InputStream;

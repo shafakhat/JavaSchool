@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/20081206192244/http://www.java2s.com:80/Code/Java/Class/MethodPointer.htm
 ---
-Method Pointer
-
 ```java title=Example.java
 /**
  * @version 1.00 11 Mar 1997

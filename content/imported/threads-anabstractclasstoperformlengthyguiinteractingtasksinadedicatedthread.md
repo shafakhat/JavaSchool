@@ -7,7 +7,6 @@ order: 1004
 source: https://web.archive.org/web/20091027174036/http://www.java2s.com:80/Code/Java/Threads/AnabstractclasstoperformlengthyGUIinteractingtasksinadedicatedthread.htm
 ---
 An abstract class to perform lengthy GUI-interacting tasks in a dedicated thread. : Swing Thread « Threads « Java
-An abstract class to perform lengthy GUI-interacting tasks in a dedicated thread.
 
 ```java title=Example.java
 /*

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20090210132123/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AfilterthattranslatestograyEachoftheredgreenandbluelevelsbecomesthemeanintensity.htm
 ---
-A filter that translates to gray. Each of the red, green, and blue levels becomes the mean intensity.
-
 ```java title=Example.java
 import java.applet.Applet;
 import java.awt.Button;

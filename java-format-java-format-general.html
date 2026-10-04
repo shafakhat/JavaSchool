@@ -58,8 +58,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The following table has the list of conversions that are available under the general formatting category.</p>
 <ul><li>Conversion letter: b Upper case: B Outputs "true" or "false" based on the argument. "false" for a null argument and false Boolean argument. Otherwise, "true."</li><li>Conversion letter: h Upper case: H Output the hash code in hexadecimal format of the argument in a string. If the argument is null, it produces "null".</li><li>Conversion letter: s Upper case: S Output a string representation of the argument. If the argument is null, it produces a "null" string. If the argument implements the Formattable interface, it invokes the formatTo() method on the argument. If the argument does not implement the Formattable interface, toString() method is invoked.</li></ul>
 <p>The general syntax for a format specifier for general formatting is</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-%&lt;argument_index$&gt;&lt;flags&gt;&lt;width&gt;&lt;.precision&gt;&lt;conversion&gt;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">%&lt;argument_index$&gt;&lt;flags&gt;&lt;width&gt;&lt;.precision&gt;&lt;conversion&gt;</code></pre></div>
 <p>The width specifies the minimum number of characters in the output.</p>
 <p>If the length of the string representation is less than the width value, the result will be padded with spaces.</p>
 <p>By default, the space padding is performed to the left of the argument value. If '-' flag is used, space padding is performed to the right.</p>
@@ -67,8 +66,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The precision specifies the maximum number of characters of the output. The precision is applied to the argument before the width is applied.</p>
 <p>If the precision is less than the length of the argument, the argument is truncated to the length set in the precision value, and space padding is performed to match the length to the value of the width.</p>
 <p>Consider the following snippet of code:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-System.out.printf("'%4.1s'",  "abc");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">System.out.printf("'%4.1s'",  "abc");</code></pre></div>
 <p>The code above generates the following result.</p>
 <h2 id="example">Example</h2>
 <p>The following are some examples of using Boolean, string and hash code formatting conversions.</p>
@@ -80,7 +78,7 @@ System.out.printf("'%4.1s'",  "abc");</code></pre></div>
     System.out.printf("'%B', '%6b',  '%.4b'%n", "A", "B", "C");
     System.out.printf("%b %n", 2014);
     System.out.printf("%b %n", new Object());
-/*www.java2s.com*/// String conversion
+// String conversion
     System.out.printf("'%s',  '%5s',  '%.3s'%n", "A", "B", "C");
     System.out.printf("'%S',  '%5S', '%.3S'%n", "A", "B", "C");
     // Use '-' flag to left-justify the result.
@@ -106,7 +104,7 @@ System.out.printf("'%4.1s'",  "abc");</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Formattable;
 import java.util.FormattableFlags;
 import java.util.Formatter;
-/*fromwww.java2s.com*/class MyFormattableObject implements Formattable {
+class MyFormattableObject implements Formattable {
   publicvoid formatTo(Formatter formatter, int flags, int width, int precision) {
     int alternateFlagValue = FormattableFlags.ALTERNATE &amp; flags;
     if (alternateFlagValue == FormattableFlags.ALTERNATE) {
@@ -141,7 +139,7 @@ publicclass Main {
 <p>The conversion character for character formatting is 'c' or uppercase variant 'C'.</p>
 <p>The flag '#' and the precision are not supported for character formatting.</p>
 <p>The flag '-' and width controls the width and alignment as in the general formatting.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">//fromwww.java2s.compublicclass Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String[] args) {
     System.out.printf("%c %n",  'a');
     System.out.printf("%C %n",  'a');
@@ -162,15 +160,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -66,16 +66,18 @@ ORIGINAL_SECTION_MAP = {
 # The "Java HOME" link pinned at the top of the sidebar.
 HOME_NAV = {"label": "Java HOME", "href": "index.html"}
 
-# Footer quick links (only those that exist are shown).
-FOOTER_LINKS = [
-    ("intro", "Java Introduction"),
-    ("variables", "Variables"),
-    ("strings", "Strings"),
-    ("classes-objects", "Classes and Objects"),
-    ("collections", "Collections"),
-    ("exceptions", "Exceptions"),
-    ("quiz", "Java Quiz"),
+# Footer links: the four main sections only (plus HOME) - nothing else.
+FOOTER_SECTIONS = [
+    ("index.html", "Java HOME"),
+    ("java-tutorial.html", "Java Tutorial"),
+    ("certification.html", "Certifications"),
+    ("interview.html", "Interview Questions"),
+    ("archive-index.html", "Java Examples"),
 ]
+
+# Background accents for the four home cards (colour is background-only):
+# SeaGreen, AccentBlue, Grey, LemonYellow.
+CARD_ACCENTS = ("sea", "blue", "gray", "lemon")
 
 LANG_EXT = {
     "java": "java",
@@ -418,6 +420,32 @@ def clean_field(value: str) -> str:
     return re.sub(r"<[^>]+>", "", value).strip()
 
 
+_BAD_DESC = re.compile(
+    r"(?i)^\s*(?://|/\*|\*|package\s|import\s|@)|\bcopyright\b|www\.java2s\.com|"
+    r"\[HOME\]|\$\{|&lt;|&gt;"
+)
+_BAD_TITLE = re.compile(
+    r"(?i)^\s*(?://|/\*|\*|package\s|import\s|\}|\{)|copyright|www\.java2s\.com"
+)
+
+
+def clean_description(title: str, desc: str) -> str:
+    """Some imported pages carry a code comment or site boilerplate in their
+    description field - replace those with something readable."""
+    d = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", desc or "")
+    d = re.sub(r"\s+", " ", d).strip(" -|:\u00ab\u00bb")
+    if len(d) < 16 or _BAD_DESC.search(d):
+        return f"{title}: Java tutorial page with examples and explanations."
+    return d
+
+
+def clean_title(title: str, slug: str) -> str:
+    t = re.sub(r"\s+", " ", title or "").strip()
+    if not t or _BAD_TITLE.search(t) or len(t) > 120:
+        return slug.replace("-", " ").title()[:80]
+    return t
+
+
 def load_pages() -> list[dict]:
     pages: list[dict] = []
     sources = []
@@ -432,7 +460,7 @@ def load_pages() -> list[dict]:
         slug = path.stem
         if slug == "home":
             continue
-        title = clean_field(meta.get("title", slug.replace("-", " ").title()))
+        title = clean_title(clean_field(meta.get("title", "")), slug)
         section = meta.get("section", "Java Examples")
         orig_section = section
         section = ORIGINAL_SECTION_MAP.get(section, section)
@@ -441,7 +469,7 @@ def load_pages() -> list[dict]:
                 "slug": slug,
                 "title": title,
                 "nav": clean_field(meta.get("nav", "")) or title,
-                "description": clean_field(meta.get("description", "")),
+                "description": clean_description(title, clean_field(meta.get("description", ""))),
                 "section": section,
                 "orig_section": orig_section,
                 "order": int(meta.get("order", "100") or 100),
@@ -514,10 +542,9 @@ def build_pager(flat: list[dict], idx: int) -> str:
 
 
 def build_footer() -> str:
-    links = []
-    for slug, label in FOOTER_LINKS:
-        links.append(f'<a href="{slug}.html">{esc(label)}</a>')
-    links_html = "".join(links)
+    links = "".join(
+        f'<a href="{href}">{esc(label)}</a>' for href, label in FOOTER_SECTIONS
+    )
     return f"""<footer class="ws-footer">
   <div class="footer-inner">
     <div class="footer-col footer-brand">
@@ -525,15 +552,8 @@ def build_footer() -> str:
       <p>{esc(SITE_DESCRIPTION)}</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      {links_html}
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      {links}
     </div>
   </div>
   <div class="footer-bottom">
@@ -735,7 +755,8 @@ def build_topic_cards(sections: list[dict]) -> str:
             count = len(sec["pages"])
         opened = i == 0
         icon = SECTION_ICONS.get(sec["title"], "&#128196;")
-        out.append(f'<div class="tcard{" open" if opened else ""}">')
+        accent = CARD_ACCENTS[i % len(CARD_ACCENTS)]
+        out.append(f'<div class="tcard tcard--{accent}{" open" if opened else ""}">')
         out.append(
             f'<button type="button" class="tcard-head" data-target="{sid}" '
             f'aria-expanded="{"true" if opened else "false"}">'
@@ -1107,7 +1128,6 @@ def render_certification(cert: dict, scjp_tree: list[dict], sections: list[dict]
         ("ocjp-practice.html", "Our OCJP Practice Test 1", "50 original exam-style questions, instantly scored"),
         ("ocjp-practice-2.html", "Our Practice Test 2", "Threads, generics, exceptions, streams, memory"),
         ("ocjp-practice-3.html", "Our Practice Test 3", "OOP design, language corners, output puzzles"),
-        ("interview.html", "Interview Question Banks", "205 topical Q&A across 8 banks + 115-question master list"),
     ]
     cards = "\n".join(
         f'<a class="arc-card" href="{href}"><span class="arc-card-name">{esc(name)}</span>'

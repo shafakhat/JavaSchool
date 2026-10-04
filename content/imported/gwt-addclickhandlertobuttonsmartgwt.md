@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20100419013257/http://www.java2s.com:80/Code/Java/GWT/AddclickhandlertobuttonSmartGWT.htm
 ---
-Add click handler to button (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

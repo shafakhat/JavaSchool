@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1026
 source: https://web.archive.org/web/20090328191500/http://www.java2s.com:80/Code/Java/J2EE/iBatisDevelopmentEnvironmentSetup.htm
 ---
-iBatis Development Environment Setup
-
 ```java title=Example.java
 File: Account.java
 public class Account {

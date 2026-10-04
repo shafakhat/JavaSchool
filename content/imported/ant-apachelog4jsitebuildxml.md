@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1028
 source: https://web.archive.org/web/20100814054245/http://www.java2s.com:80/Code/Java/Ant/apachelog4jsitebuildxml.htm
 ---
-apache-log4j-site\build.xml
-
 ```java title=Example.java
 <!--
  Licensed to the Apache Software Foundation (ASF) under one or more

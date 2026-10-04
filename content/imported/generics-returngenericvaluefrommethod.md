@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20090625011233/http://www.java2s.com:80/Code/Java/Generics/Returngenericvaluefrommethod.htm
 ---
-Return generic value from method
-
 ```java title=Example.java
 import java.io.Serializable;
 class Base {

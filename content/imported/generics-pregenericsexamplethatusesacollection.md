@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1045
 source: https://web.archive.org/web/20090603082712/http://www.java2s.com:80/Code/Java/Generics/Pregenericsexamplethatusesacollection.htm
 ---
-Pre generics example that uses a collection.
-
 ```java title=Example.java
 /*
 Java 2, v5.0 (Tiger) New Features

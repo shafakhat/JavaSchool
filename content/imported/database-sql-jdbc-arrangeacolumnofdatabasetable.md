@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20090502025333/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/ArrangeaColumnofDatabaseTable.htm
 ---
-Arrange a Column of Database Table
-
 ```java title=Example.java
 import java.sql.Connection;
 import java.sql.DriverManager;

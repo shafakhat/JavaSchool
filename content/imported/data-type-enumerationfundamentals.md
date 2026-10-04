@@ -43,6 +43,5 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Value of aWeekDay: Monday
 ```

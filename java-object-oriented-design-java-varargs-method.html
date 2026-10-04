@@ -53,8 +53,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 }</code></pre></div>
 <p>A varargs method can have a maximum of one variable-length argument.</p>
 <p>The variable-length argument of a varargs method must be the last argument in the argument list.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-void  m2(String str, int...n1) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">void  m2(String str, int...n1) {
 }</code></pre></div>
 <h2 id="example">Example</h2>
 <p>Let's rewrite the max() method to make it a varargs method:</p>
@@ -63,7 +62,7 @@ void  m2(String str, int...n1) {
     int max = Integer.MIN_VALUE;
     for (int i = 0; i &lt; num.length; i++) {
       if (num[i] &gt; max) {
-        max = num[i];//fromwww.java2s.com
+        max = num[i];
       }
     }
     return max;
@@ -86,15 +85,12 @@ void  m2(String str, int...n1) {
   }
 }</code></pre></div>
 <p>We can call the Main.max() method as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-int max1 = Main.max(1, 8);
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int max1 = Main.max(1, 8);
 int max2 = Main.max(1, 1, 3);</code></pre></div>
 <p>You can use zero or more arguments for a variable-length argument in a method. The following code is a valid call to the max() method:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-int max = Main.max(); // Passing no  argument  is ok</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int max = Main.max(); // Passing no  argument  is ok</code></pre></div>
 <p>The following declaration of the max() method will force its caller to pass at least two integers:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-// Argumenets  n1  and  n2  are   mandatory
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Argumenets  n1  and  n2  are   mandatory
 publicstatic int max(int n1,  int n2,   int... num) {
 }</code></pre></div>
 <p>The compiler will treat the first two arguments, n1 and n2, as mandatory and the third argument, num, as optional.</p>
@@ -102,7 +98,7 @@ publicstatic int max(int n1,  int n2,   int... num) {
   publicstaticint max(int n1, int n2, int... num) {
     // Initialize max to the maximum of n1 and n2
 int max = (n1 &gt; n2 ? n1 : n2);
-/*www.java2s.com*/for (int i = 0; i &lt; num.length; i++) {
+for (int i = 0; i &lt; num.length; i++) {
       if (num[i] &gt; max) {
         max = num[i];
       }
@@ -127,8 +123,7 @@ int max = (n1 &gt; n2 ? n1 : n2);
     }
 }</code></pre></div>
 <p>Consider the following code</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-int max = Main.max(12, 13);  // which  max()  will be  called?</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int max = Main.max(12, 13);  // which  max()  will be  called?</code></pre></div>
 <p>Java will call the max(int x, int y). Java first attempts to find a method declaration using an exact match for the number of parameters. If it does not find an exact match, it looks for a match using variable-length parameters.</p>
 <p>If a varargs method is overloaded, Java uses the more specific version of the method instead of using a varargs method. java uses varargs method as the last resort to resolve a method call.</p>
 <p>The overloading of the method itself may be valid. However, the call to it may cause an issue.</p>
@@ -141,8 +136,7 @@ int max = Main.max(12, 13);  // which  max()  will be  called?</code></pre></div
   }
 }</code></pre></div>
 <p>Which max() would the following code call?</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-int max = Main.max(); // Which max()  to call?</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int max = Main.max(); // Which max()  to call?</code></pre></div>
 <p>The above statement will generate a compilation time error.</p>
 <h2 id="varargs-methods-and-the-main-method">Varargs Methods and the main() Method</h2>
 <p>The signature for the main() method must be main(String[] args).</p>
@@ -163,15 +157,8 @@ int max = Main.max(); // Which max()  to call?</code></pre></div>
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

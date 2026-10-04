@@ -19,10 +19,8 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Lowest one bit: 2
 Number of leading zeros : 24
 Number of trailing zeros : 1
-
 Beginning with the value 1, rotate left 16 times.
 ```

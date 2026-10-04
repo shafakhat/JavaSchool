@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1059
 source: https://web.archive.org/web/20060513092144/http://www.java2s.com/Code/Java/Velocity/StringQuotationDemo.htm
 ---
-String Quotation Demo
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

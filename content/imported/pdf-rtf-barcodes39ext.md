@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1041
 source: https://web.archive.org/web/20071201174647/http://www.java2s.com:80/Code/Java/PDF-RTF/Barcodes39Ext.htm
 ---
-Barcodes 39 Ext
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Chunk;
@@ -26,7 +24,7 @@ public class Barcodes39Ext {
             document.open();
             PdfContentByte cb = writer.getDirectContent();
             Barcode39 code39 = new Barcode39();
-            code39.setCode("www.java2s.com");
+            code39.setCode("JavaSchool");
             code39.setStartStopText(false);
             code39.setExtended(true);
             Image image39 = code39.createImageWithBarcode(cb, null, null);

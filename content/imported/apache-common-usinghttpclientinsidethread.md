@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1075
 source: https://web.archive.org/web/20061026233609/http://www.java2s.com/Code/Java/Apache-Common/UsingHttpClientInsideThread.htm
 ---
-Using Http Client Inside Thread
-
 ```java title=Example.java
 import org.apache.commons.httpclient.URI;
 import org.apache.commons.httpclient.HttpClient;

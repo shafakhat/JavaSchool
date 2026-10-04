@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513101055/http://www.java2s.com/Code/Ja
 ---
 Velocity works With HTML : Java examples (example source code) » Velocity » HTML
 
-Velocity works With HTML
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1051
 source: https://web.archive.org/web/20060513084526/http://www.java2s.com/Code/Java/JSTL/JSTLSQLUpdate.htm
 ---
-JSTL SQL Update
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/core-rt" prefix="c-rt" %>

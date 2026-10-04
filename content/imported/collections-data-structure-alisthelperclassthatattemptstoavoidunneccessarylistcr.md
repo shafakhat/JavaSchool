@@ -7,7 +7,6 @@ order: 1045
 source: https://web.archive.org/web/20091108202145/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AListhelperclassthatattemptstoavoidunneccessaryListcreation.htm
 ---
 A List helper class that attempts to avoid unneccessary List creation. : Link List « Collections Data Structure « Java
-A List helper class that attempts to avoid unneccessary List creation.
 
 ```java title=Example.java
 //

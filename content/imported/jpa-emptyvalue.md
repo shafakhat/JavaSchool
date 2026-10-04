@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20081209042731/http://www.java2s.com:80/Code/Java/JPA/EmptyValue.htm
 ---
-Empty Value
-
 ```java title=Example.java
 File: Main.java
 import javax.persistence.EntityManager;

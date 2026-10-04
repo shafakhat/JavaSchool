@@ -3,8 +3,8 @@ title: Subtract two long integers, checking for overflow.
 nav: Subtract two long integers...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1120
-source: https://web.archive.org/web/20090912060605/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Subtracttwolongintegerscheckingforoverflow.htm
+order: 1042
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Subtracttwolongintegerscheckingforoverflow.htm
 ---
 ```java title=Example.java
 import java.math.BigDecimal;
@@ -25,10 +25,8 @@ import java.math.BigDecimal;
  *  limitations under the License.
  *
  *
- */
-public class Main {
+ */publicclass Main {
   /**
-   * Subtract two long integers, checking for overflow.
    *
    * @param a first value
    * @param b second value
@@ -36,15 +34,14 @@ public class Main {
    * @throws ArithmeticException if the result can not be represented as an
    *         long
    * @since 1.2
-   */
-  public static long subAndCheck(long a, long b) {
+   */publicstaticlong subAndCheck(long a, long b) {
       long ret;
       String msg = "overflow: subtract";
       if (b == Long.MIN_VALUE) {
           if (a < 0) {
               ret = a - b;
           } else {
-              throw new ArithmeticException(msg);
+              thrownew ArithmeticException(msg);
           }
       } else {
           // use additive inverse
@@ -62,21 +59,20 @@ public class Main {
    * @throws ArithmeticException if the result can not be represented as an
    *         long
    * @since 1.2
-   */
-  private static long addAndCheck(long a, long b, String msg) {
+   */privatestaticlong addAndCheck(long a, long b, String msg) {
       long ret;
       if (a > b) {
           // use symmetry to reduce boundry cases
           ret = addAndCheck(b, a, msg);
       } else {
           // assert a <= b
-          if (a < 0) {
+if (a < 0) {
               if (b < 0) {
                   // check for negative overflow
-                  if (Long.MIN_VALUE - b <= a) {
+if (Long.MIN_VALUE - b <= a) {
                       ret = a + b;
                   } else {
-                      throw new ArithmeticException(msg);
+                      thrownew ArithmeticException(msg);
                   }
               } else {
                   // oppisite sign addition is always safe
@@ -84,12 +80,12 @@ public class Main {
               }
           } else {
               // assert a >= 0
-              // assert b >= 0
-              // check for positive overflow
-              if (a <= Long.MAX_VALUE - b) {
+// assert b >= 0
+// check for positive overflow
+if (a <= Long.MAX_VALUE - b) {
                   ret = a + b;
               } else {
-                  throw new ArithmeticException(msg);
+                  thrownew ArithmeticException(msg);
               }
           }
       }

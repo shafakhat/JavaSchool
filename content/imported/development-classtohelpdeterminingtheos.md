@@ -29,7 +29,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 /**
- * Class to help determining the OS.
  *
  * @author <a href="mailto:stefan.bodewig@epost.de">Stefan Bodewig</a>
  * @author <a href="mailto:umagesh@apache.org">Magesh Umasankar</a>

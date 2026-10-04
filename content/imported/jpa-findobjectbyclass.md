@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/20090210034202/http://java2s.com:80/Code/Java/JPA/FindObjectByClass.htm
 ---
-Find Object By Class
-
 ```java title=Example.java
 File: Professor.java
 import javax.persistence.Entity;

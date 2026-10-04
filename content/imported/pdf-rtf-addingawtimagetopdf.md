@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20070410191429/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingAWTImagetoPDF.htm
 ---
-Adding AWT Image to PDF
-
 ```java title=Example.java
 import java.awt.Toolkit;
 import java.io.FileOutputStream;

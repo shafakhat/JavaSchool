@@ -68,26 +68,22 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 }</code></pre></div>
 <h2 id="serializing-objects">Serializing Objects</h2>
 <p>The following code creates an object of the ObjectOutputStream class and save an object to a person.ser file.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-ObjectOutputStream oos  = new ObjectOutputStream(new FileOutputStream("person.ser"));</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">ObjectOutputStream oos  = new ObjectOutputStream(new FileOutputStream("person.ser"));</code></pre></div>
 <p>To save an object to a ByteArrayOutputStream, we construct an object output stream as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-ByteArrayOutputStream baos  = new ByteArrayOutputStream();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">ByteArrayOutputStream baos  = new ByteArrayOutputStream();
 // Creates an  object output stream to write objects to the   byte   array  output stream
 ObjectOutputStream oos  = new ObjectOutputStream(baos);</code></pre></div>
 <p>Use the writeObject() method of the ObjectOutputStream class to serialize the object by passing the object reference as an argument, like so:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-oos.writeObject(p1);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">oos.writeObject(p1);</code></pre></div>
 <p>Finally, use the close() method to close the object output stream when we are done writing all objects to it:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-oos.close();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">oos.close();</code></pre></div>
 <p>The following code shows how to serialize a Person Class That Implements the Serializable Interface.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.Serializable;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-//www.java2s.comclass Person implements Serializable {
+class Person implements Serializable {
   private String name = "Unknown";
   private String gender = "Unknown";
   privatedouble height = Double.NaN;
@@ -125,20 +121,15 @@ publicclass Main {
 <p>The code above generates the following result.</p>
 <h2 id="deserializing-objects">Deserializing Objects</h2>
 <p>The following code shows how to create an object of the ObjectInputStream class and read an object from a person.ser file.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-ObjectInputStream ois  = new ObjectInputStream(new FileInputStream("person.ser"));</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">ObjectInputStream ois  = new ObjectInputStream(new FileInputStream("person.ser"));</code></pre></div>
 <p>To read objects from a ByteArrayInputStream, create an object output stream as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-ObjectInputStream ois  = new ObjectInputStream(Byte-Array-Input-Stream-Reference);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">ObjectInputStream ois  = new ObjectInputStream(Byte-Array-Input-Stream-Reference);</code></pre></div>
 <p>Use the readObject() method of the ObjectInputStream class to deserialize the object.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Object obj  = oos.readObject();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Object obj  = oos.readObject();</code></pre></div>
 <p>Finally, close the object input stream as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-ois.close();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">ois.close();</code></pre></div>
 <p>The following code shows how to reading Objects from a File.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import java.io.File;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 publicclass Main {
@@ -168,7 +159,7 @@ import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
-/*fromwww.java2s.com*/class PersonExt implements Externalizable {
+class PersonExt implements Externalizable {
   private String name = "Unknown";
   private String gender = "Unknown";
   privatedouble height = Double.NaN;
@@ -240,15 +231,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

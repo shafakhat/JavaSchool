@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1074
 source: https://web.archive.org/web/20130821091935/http://java2s.com/Code/Java/JDK-7/GettherootpathfromthePathobject.htm
 ---
-Get the root path from the Path object
-
 ```java title=Example.java
 import java.nio.file.Path;
 import java.nio.file.Paths;

@@ -43,21 +43,19 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="java-object-reference-variable">Java Object Reference Variable</h2>
 <p>Object reference variables act differently when an assignment takes place.</p>
 <p>For example,</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Box b1 = new Box();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Box b1 = new Box();
 Box b2 = b1;</code></pre></div>
 <p>After this fragment executes, b1 and b2 will both refer to the same object.</p>
 <p>The assignment of b1 to b2 did not allocate any memory or copy any part of the original object. It simply makes b2 refer to the same object as does b1. Thus, any changes made to the object through b2 will affect the object to which b1 is referring.</p>
 <p>A subsequent assignment to b1 will simply unhook b1 from the original object without affecting the object or affecting b2.</p>
 <p>For example:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Box b1 = new Box();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Box b1 = new Box();
 Box b2 = b1;
 // ...
 b1 = null;</code></pre></div>
 <p>Here, b1 has been set to null, but b2 still points to the original object.</p>
 <p>Java Object Reference Variable</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Box {//fromwww.java2s.comint width;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Box {int width;
   int height;
   int depth;
 }
@@ -76,7 +74,7 @@ publicclass Main {
 <p>When a parameter is passed into a method, it can be passed by value or by reference. Pass-by-value copies the value of an argument into the parameter. Changes made to the parameter have no effect on the argument. Pass-by-reference passes a reference to the parameter. Changes made to the parameter will affect the argument.</p>
 <p>When a simple primitive type is passed to a method, it is done by use of call-by-value. Objects are passed by use of call-by-reference.</p>
 <p>The following program uses the "pass by value".</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test {//fromwww.java2s.comvoid change(int i, int j) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test {void change(int i, int j) {
     i *= 2;
     j /= 2;
   }
@@ -93,7 +91,7 @@ publicclass Main {
 <p>The output from this program is shown here:</p>
 <h2 id="example">Example</h2>
 <p>In the following program, objects are passed by reference.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test {//www.java2s.comint a, b;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test {int a, b;
   Test(int i, int j) {
     a = i;
     b = j;
@@ -123,15 +121,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

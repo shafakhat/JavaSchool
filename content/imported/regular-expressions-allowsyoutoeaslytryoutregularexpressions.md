@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/20060903221603/http://www.java2s.com:80/Code/Java/Regular-Expressions/Allowsyoutoeaslytryoutregularexpressions.htm
 ---
-Allows you to easly try out regular expressions
-
 ```java title=Example.java
 // : c12:TestRegularExpression.java
-// Allows you to easly try out regular expressions.
 // {Args: abcabcabcdefabc "abc+" "(abc)+" "(abc){2,}" }
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.

@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1159
 source: https://web.archive.org/web/20090106213214/http://www.java2s.com:80/Code/Java/Class/Creatinginstancesofinnerclasses.htm
 ---
-Creating instances of inner classes
-
 ```java title=Example.java
 // : c08:Parcel11.java
-// Creating instances of inner classes.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 public class Parcel11 {

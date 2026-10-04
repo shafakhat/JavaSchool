@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1149
 source: https://web.archive.org/web/20090412153925/http://www.java2s.com:80/Code/Java/Class/Compositionwithpublicobjects.htm
 ---
-Composition with public objects
-
 ```java title=Example.java
 // : c06:Car.java
-// Composition with public objects.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Engine {

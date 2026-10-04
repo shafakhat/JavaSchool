@@ -111,7 +111,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 double argument:
   f1(double)
   f2(float)

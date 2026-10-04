@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20060503213314/http://www.java2s.com:80/Code/Java/Threads/Creatingthreadswithinnerclasses.htm
 ---
-Creating threads with inner classes : Java examples (example source code) » Threads » Simple Threads
-
 Creating threads with inner classes
 
 ```java title=Example.java

@@ -47,7 +47,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The following code shows how to compare Windows paths:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.Path;
 import java.nio.file.Paths;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     Path  p1  = Paths.get("C:\\Java_Dev\\test1.txt");
     Path  p2  = Paths.get("C:\\Java_Dev\\LUCI1.TXT");
@@ -67,7 +67,7 @@ import java.nio.file.Paths;
 <p>The following code shows how to use the compareTo() method:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.Path;
 import java.nio.file.Paths;
-/*www.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     Path  p1  = Paths.get("C:\\Java_Dev\\test1.txt");
     Path  p2  = Paths.get("C:\\Java_Dev\\Test1.txt");
@@ -84,7 +84,7 @@ import java.nio.file.Paths;
 <p>The following code shows how to use endsWith() and startsWith() methods with paths.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.Path;
 import java.nio.file.Paths;
-/*www.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     Path p1 = Paths.get("C:\\Java_Dev\\test1.txt");
     Path p2 = Paths.get("test1.txt");
@@ -111,7 +111,7 @@ boolean b1 = p1.endsWith(p2);
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-/*www.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     // Assume that C:\Java_Dev\test1.txt file exists
     Path p1 = Paths.get("C:\\Java_Dev\\test1.txt");
@@ -135,7 +135,7 @@ import java.nio.file.Paths;
 <p>The following code shows some examples of normalizing paths on Windows.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.Path;
 import java.nio.file.Paths;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     Path p1 = Paths.get("C:\\Java_Dev\\..\\\\Java_Dev\\test1.txt");
     Path p1n = p1.normalize();
@@ -156,7 +156,7 @@ import java.nio.file.Paths;
 <p>The following code has some examples of resolving paths.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.Path;
 import java.nio.file.Paths;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     Path p1 = Paths.get("C:\\Java_Dev");
     Path p2 = Paths.get("test1.txt");
@@ -176,7 +176,7 @@ import java.nio.file.Paths;
 <p>The following code has some examples of getting relative paths.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.Path;
 import java.nio.file.Paths;
-/*www.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     Path p1 = Paths.get("Java_Dev");
     Path p2 = Paths.get("Java_Dev", "recent", "Test");
@@ -200,15 +200,8 @@ import java.nio.file.Paths;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

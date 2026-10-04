@@ -31,7 +31,6 @@ public class Main {
    */
   private static final int PAD_LIMIT = 8192;
   /**
-   * Left pad a String with a specified character.
    *
    * Pad to a size of <code>size</code>.
    *

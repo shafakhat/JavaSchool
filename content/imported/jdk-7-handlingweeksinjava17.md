@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1081
 source: https://web.archive.org/web/20130213064928/http://www.java2s.com:80/Code/Java/JDK-7/HandlingweeksinJava17.htm
 ---
-Handling weeks in Java 1.7
-
 ```java title=Example.java
 import java.text.DateFormat;
 import java.util.Calendar;

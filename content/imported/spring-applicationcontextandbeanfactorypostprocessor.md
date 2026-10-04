@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20100210133337/http://java2s.com/Code/Java/Spring/ApplicationContextAndBeanFactoryPostProcessor.htm
 ---
-ApplicationContext And BeanFactoryPostProcessor
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

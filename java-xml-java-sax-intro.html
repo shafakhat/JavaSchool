@@ -53,8 +53,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>In the following we are going to see a demo application which output all SAX events. It is extending DefaultHandler from package org.xml.sax.helpers as follows.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main extends DefaultHandler {</code></pre></div>
 <p>The following code sets up the parser and gets it started:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-    SAXParserFactory spf = SAXParserFactory.newInstance();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">    SAXParserFactory spf = SAXParserFactory.newInstance();
     spf.setNamespaceAware(true);
     spf.setValidating(true);
     parser = spf.newSAXParser();
@@ -82,7 +81,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The complete code.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
 import java.io.IOException;
-//fromwww.java2s.comimport javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.Attributes;
@@ -154,13 +153,12 @@ publicclass Main extends DefaultHandler {
 <p>When a fatal error occurs, the parser cannot continue.</p>
 <p>For nonfatal errors and warnings, default error handler would not generate exceptions and no messages are displayed.</p>
 <p>The following line installs the our own error handler.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-reader.setErrorHandler(new MyErrorHandler());</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">reader.setErrorHandler(new MyErrorHandler());</code></pre></div>
 <p>The MyErrorHandler class implements the standard org.xml.sax.ErrorHandler interface, and defines a method to obtain the exception information that is provided by any SAXParseException.</p>
 <p>The complete code.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-/*www.java2s.com*/import org.xml.sax.ErrorHandler;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
@@ -202,7 +200,7 @@ publicclass SAXCheck {
 <h2 id="xml-schema-validation">XML Schema validation</h2>
 <p>We can turn on XML Schema validation during parsing with a SAXParser.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
-/*www.java2s.com*/import javax.xml.XMLConstants;
+import javax.xml.XMLConstants;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.validation.Schema;
@@ -222,7 +220,7 @@ publicclass Main {
 <p>The following code shows that when using the DefaultHandler we don't need to implement all methods. We only need to provide the implementation for the methods we care about.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-/*fromwww.java2s.com*/import org.xml.sax.Attributes;
+import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 publicclass Main {
@@ -243,8 +241,7 @@ publicclass Main {
   }
 }</code></pre></div>
 <p>The following code handles SAX errors by override the error handler methods from DefaultHandler</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import javax.xml.parsers.SAXParser;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -280,7 +277,7 @@ class SaxHandler extends DefaultHandler {
 <p>It also implements the ErrorHandler interface.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-//www.java2s.comimport org.xml.sax.Attributes;
+import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
@@ -416,7 +413,7 @@ class MyErrorHandler implements ErrorHandler {
 <p>The following code shows how to access Locator interface from DefaultHandler.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-/*www.java2s.com*/import org.xml.sax.Attributes;
+import org.xml.sax.Attributes;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -460,15 +457,8 @@ class SampleOfXmlLocator extends DefaultHandler {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

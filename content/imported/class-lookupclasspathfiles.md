@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1041
 source: https://web.archive.org/web/20111125091412/http://java2s.com/Code/Java/Class/LookupClasspathFiles.htm
 ---
-Lookup Classpath Files
-
 ```java title=Example.java
 //package com.myapp.util.file;
 import java.io.File;

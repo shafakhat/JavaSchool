@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1031
 source: https://web.archive.org/web/20090420180109/http://www.java2s.com:80/Code/Java/Spring/BeanLifecycleInitializing.htm
 ---
-Bean Lifecycle Initializing
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

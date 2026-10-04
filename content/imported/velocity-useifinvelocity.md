@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1064
 source: https://web.archive.org/web/20060513075051/http://www.java2s.com/Code/Java/Velocity/Useifinvelocity.htm
 ---
-Use if in velocity
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

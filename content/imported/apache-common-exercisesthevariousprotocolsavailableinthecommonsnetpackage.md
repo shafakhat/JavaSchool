@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20061026233248/http://www.java2s.com/Code/Java/Apache-Common/ExercisesthevariousprotocolsavailableintheCommonsNetPackage.htm
 ---
-Exercises the various protocols available in the Commons Net Package
-
 ```java title=Example.java
 /*
  * ProtocolRunner.java

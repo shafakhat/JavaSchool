@@ -3,8 +3,8 @@ title: Removes separator from the end of str if it's there, otherwise leave it a
 nav: Removes separator from the...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1175
-source: https://web.archive.org/web/20100707054344/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Removesseparatorfromtheendofstrifitsthereotherwiseleaveitalone.htm
+order: 1050
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Removesseparatorfromtheendofstrifitsthereotherwiseleaveitalone.htm
 ---
 ```java title=Example.java
 import java.io.PrintWriter;
@@ -27,8 +27,7 @@ import java.sql.SQLException;
  *  limitations under the License.
  *
  *
- */
-public class Main {
+ */publicclass Main {
   /**
    * Removes <code>separator</code> from the end of
    * <code>str</code> if it's there, otherwise leave it alone.
@@ -54,8 +53,7 @@ public class Main {
    * @param str  the String to chomp from, may be null
    * @param separator  separator String, may be null
    * @return String without trailing separator, <code>null</code> if null String input
-   */
-  public static String chomp(String str, String separator) {
+   */publicstatic String chomp(String str, String separator) {
       if (isEmpty(str) || separator == null) {
           return str;
       }
@@ -65,8 +63,8 @@ public class Main {
       return str;
   }
   // Empty checks
-  //-----------------------------------------------------------------------
-  /**
+//-----------------------------------------------------------------------
+/**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -83,8 +81,7 @@ public class Main {
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */
-  public static boolean isEmpty(String str) {
+   */publicstaticboolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }

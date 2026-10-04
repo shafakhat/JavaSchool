@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20100210124321/http://java2s.com/Code/Java/Swing-Components/ApanelfromwhereyoucanchooseacolorbasedonitsHTMLname.htm
 ---
-A panel from where you can choose a color based on it's HTML name
-
 ```java title=Example.java
 //Revised from com.greef.ui;
 import java.awt.BorderLayout;

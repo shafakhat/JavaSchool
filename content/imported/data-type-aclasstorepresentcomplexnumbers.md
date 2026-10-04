@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1107
 source: https://web.archive.org/web/20090426054811/http://www.java2s.com:80/Code/Java/Data-Type/AclasstorepresentComplexNumbers.htm
 ---
-A class to represent Complex Numbers
-
 ```java title=Example.java
 /** A class to represent Complex Numbers. A Complex object is
  * immutable once created; the add, subtract and multiply routines

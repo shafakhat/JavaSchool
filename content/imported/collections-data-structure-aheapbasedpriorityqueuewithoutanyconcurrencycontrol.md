@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1041
 source: https://web.archive.org/web/20111002124527/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Aheapbasedpriorityqueuewithoutanyconcurrencycontrol.htm
 ---
-A heap-based priority queue, without any concurrency control
-
 ```java title=Example.java
 /*
   File: Heap.java
@@ -24,7 +22,6 @@ A heap-based priority queue, without any concurrency control
 //package EDU.oswego.cs.dl.util.concurrent;
 import java.util.Comparator;
 /**
- * A heap-based priority queue, without any concurrency control
  * (i.e., no blocking on empty/full states).
  * This class provides the data structure mechanics for BoundedPriorityQueue.
  * <p>

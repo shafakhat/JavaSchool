@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1031
 source: https://web.archive.org/web/20061018180945/http://www.java2s.com/Code/Java/Apache-Common/FactoryExample1.htm
 ---
-Factory Example 1
-
 ```java title=Example.java
 import org.apache.commons.collections.Factory;
 import org.apache.commons.collections.FactoryUtils;

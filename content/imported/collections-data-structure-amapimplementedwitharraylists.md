@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1053
 source: https://web.archive.org/web/20060509123140/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AMapimplementedwithArrayLists.htm
 ---
-A Map implemented with ArrayLists
-
 ```java title=Example.java
 // : c11:SlowMap.java
-// A Map implemented with ArrayLists.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 import java.util.AbstractMap;

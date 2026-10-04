@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1053
 source: https://web.archive.org/web/20060505114321/http://www.java2s.com:80/Code/Java/JSP/GettingParameterNamesJsp.htm
 ---
-Getting Parameter Names Jsp : Java examples (example source code) » JSP » Form Select
-
 Getting Parameter Names Jsp
 
 ```java title=Example.java

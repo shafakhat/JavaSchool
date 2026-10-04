@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1041
 source: https://web.archive.org/web/20130111095519/http://www.java2s.com:80/Code/Java/JDK-7/DeleteafilewithFilesandPaths.htm
 ---
-Delete a file with Files and Paths
-
 ```java title=Example.java
 import java.net.URI;
 import java.nio.file.Files;

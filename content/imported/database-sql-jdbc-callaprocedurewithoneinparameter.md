@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1027
 source: https://web.archive.org/web/20090502012804/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/CallaprocedurewithoneINparameter.htm
 ---
-Call a procedure with one IN parameter
-
 ```java title=Example.java
 import java.sql.CallableStatement;
 import java.sql.Connection;

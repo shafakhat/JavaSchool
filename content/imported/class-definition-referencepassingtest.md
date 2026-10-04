@@ -33,7 +33,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 9
 0
 ```

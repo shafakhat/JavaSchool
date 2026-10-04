@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1113
 source: https://web.archive.org/web/20071105161225/http://www.java2s.com:80/Code/Java/Web-Services-SOA/DeployingaJiBXgeneratedservice.htm
 ---
-Deploying a JiBX generated service
-
 ```java title=Example.java
 Axis2 Quick Start Guide- (JiBX)
 ======================================

@@ -26,7 +26,6 @@ source: https://web.archive.org/web/20100706224333/http://www.java2s.com:80/Tuto
 import java.io.IOException;
 import java.io.OutputStream;
 /**
- * Dumps data in hexadecimal format.
  *
  * Provides a single function to take an array of bytes and display it
  * in hexadecimal form.

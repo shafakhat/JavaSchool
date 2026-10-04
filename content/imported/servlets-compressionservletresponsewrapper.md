@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20070428162238/http://www.java2s.com:80/Code/Java/Servlets/CompressionServletResponseWrapper.htm
 ---
-Compression Servlet Response Wrapper
-
 ```java title=Example.java
 /*
 * Copyright 2004 The Apache Software Foundation

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1128
 source: https://web.archive.org/web/20130820205203/http://java2s.com/Code/Java/JDK-7/SettingOwner.htm
 ---
-Setting Owner
-
 ```java title=Example.java
 import java.nio.file.FileSystems;
 import java.nio.file.Files;

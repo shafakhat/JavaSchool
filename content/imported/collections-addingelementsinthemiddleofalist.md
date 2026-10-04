@@ -22,6 +22,5 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 [A, G, B, C]
 ```

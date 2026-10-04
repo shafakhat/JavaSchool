@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1072
 source: https://web.archive.org/web/20061018194903/http://www.java2s.com/Code/Java/Velocity/VelocityCommentsMultiline.htm
 ---
-Velocity Comments Multiline
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;

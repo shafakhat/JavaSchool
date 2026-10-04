@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20061016100624/http://www.java2s.com/Code/Java/Apache-Common/CodecDigest.htm
 ---
-Codec Digest
-
 ```java title=Example.java
 import org.apache.commons.codec.digest.*;
 public class DigestUsage{

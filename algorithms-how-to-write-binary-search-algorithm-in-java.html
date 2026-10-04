@@ -48,25 +48,21 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   publicstaticfinalint NOT_FOUND = -1;
   publicstaticint binarySearch(Comparable[] a, Comparable x) {
     return binarySearch(a, x, 0, a.length - 1);
-  }//fromjava2s.comprivatestaticint binarySearch(Comparable[] a, Comparable x, int low, int high) {
+  }privatestaticint binarySearch(Comparable[] a, Comparable x, int low, int high) {
     if (low &gt; high)
       return NOT_FOUND;
-
     int mid = (low + high) / 2;
-
     if (a[mid].compareTo(x) &lt; 0)
       return binarySearch(a, x, mid + 1, high);
     elseif (a[mid].compareTo(x) &gt; 0)
       return binarySearch(a, x, low, mid - 1);
     elsereturn mid;
   }
-
   publicstaticvoid main(String[] args) {
     int SIZE = 8;
     Comparable[] a = newInteger[SIZE];
     for (int i = 0; i &lt; SIZE; i++)
       a[i] = newInteger(i * 2);
-
     for (int i = 0; i &lt; SIZE * 2; i++)
       System.out.println("Found " + i + " at " + binarySearch(a, newInteger(i)));
   }
@@ -77,19 +73,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main{
   publicstaticvoid main(String[] args) {
     double[] x = { -39, -3, 6, 10, 4, 9, 10 };
-/*fromjava2s.com*/double value = 8;
+double value = 8;
     int lower = 0, upper = x.length - 1;
-
     while (lower &lt;= upper) {
       int middle = (lower + upper) / 2;
-
       if (value &gt; x[middle])
         lower = middle + 1;
       elseif (value &lt; x[middle])
         upper = middle - 1;
       elsebreak;
     }
-
     if (lower &gt; upper)
       System.out.println("Not found");
     else
@@ -102,7 +95,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   publicstaticvoid main(String[] args) {
     int maxSize = 100;
     BinarySearchArray arr = new BinarySearchArray(maxSize);
-    arr.insert(2);//java2s.com
+    arr.insert(2);
     arr.insert(0);
     arr.insert(5);
     arr.insert(6);
@@ -118,7 +111,6 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     arr.insert(6);
     arr.insert(8);
     arr.insert(9);
-
     arr.display(); // display array
 int searchKey = 27; // search for item
 if (arr.find(searchKey) != arr.size())
@@ -129,25 +121,19 @@ if (arr.find(searchKey) != arr.size())
 }
 class BinarySearchArray {
   privatelong[] a;
-
   privateint nElems;
-
   public BinarySearchArray(int max) {
     a = newlong[max]; // create array
     nElems = 0;
   }
-
   publicint size() {
     return nElems;
   }
-
   publicint find(long searchKey) {
     return recFind(searchKey, 0, nElems - 1);
   }
-
   privateint recFind(long searchKey, int lowerBound, int upperBound) {
     int curIn;
-
     curIn = (lowerBound + upperBound) / 2;
     if (a[curIn] == searchKey)
       return curIn; // found it
@@ -161,7 +147,6 @@ return recFind(searchKey, curIn + 1, upperBound);
 return recFind(searchKey, lowerBound, curIn - 1);
     }
   }
-
   publicvoid insert(long value) {
     int j;
     for (j = 0; j &lt; nElems; j++)
@@ -174,7 +159,6 @@ break;
     a[j] = value; // insert it
     nElems++; // increment size
   }
-
   publicvoid display() {
     for (int j = 0; j &lt; nElems; j++)
       System.out.print(a[j] + " ");
@@ -187,7 +171,7 @@ Can't find 27</code></pre></div>
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>Insertion Sort Implementation</li><li>Object Insertion Sort</li></ul>
-    <div class="pager"><a class="pager-btn" href="hibernate-genericdaocreate.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Generic Dao</span></a><a class="pager-btn pager-next" href="language-insertanannotationtosuppresswarning.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Insert an annotation to su...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-getstheminimumofthreeintvalues-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Gets the minimum of three ...</span></a><a class="pager-btn pager-next" href="language-insertanannotationtosuppresswarning.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Insert an annotation to su...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">
@@ -197,15 +181,8 @@ Can't find 27</code></pre></div>
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

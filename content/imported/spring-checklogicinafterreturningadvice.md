@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20090130003119/http://www.java2s.com:80/Code/Java/Spring/CheckLogicInAfterReturningAdvice.htm
 ---
-Check Logic In AfterReturningAdvice
-
 ```java title=Example.java
 File: Main.java
 import java.lang.reflect.Method;

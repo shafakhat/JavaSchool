@@ -32,6 +32,5 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 [A, B, C, D]
 ```

@@ -6,12 +6,9 @@ section: Imported - java2s Archive
 order: 1144
 source: https://web.archive.org/web/20071104162811/http://www.java2s.com:80/Code/Java/Web-Services-SOA/ThisdemoshowshowWSReliableMessagingsupportinApacheCXFmaybeenabled.htm
 ---
-This demo shows how WS-ReliableMessaging support in Apache CXF may be enabled
-
 ```java title=Example.java
 WS-RM Demo
 ==========
-This demo shows how WS-ReliableMessaging support in Apache CXF may be enabled.
 The client and server both use interceptor configuration to install the
 WS-RM interceptors, comprising logical interceptors (RMInInterceptor/RMOutInterceptor)
 responsible for managing the reliability properties of the current message, and a

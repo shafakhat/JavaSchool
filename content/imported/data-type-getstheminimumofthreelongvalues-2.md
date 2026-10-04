@@ -3,8 +3,8 @@ title: Gets the minimum of three long values.
 nav: Gets the minimum of three ...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1022
-source: https://web.archive.org/web/20090912060555/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Getstheminimumofthreelongvalues.htm
+order: 1030
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Getstheminimumofthreelongvalues.htm
 ---
 ```java title=Example.java
 import java.math.BigDecimal;
@@ -24,8 +24,7 @@ import java.math.BigInteger;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-/**
+ *//**
  * Provides extra functionality for Java Number classes.
  *
  * @author <a href="mailto:rand_mcneely@yahoo.com">Rand McNeely</a>
@@ -36,18 +35,16 @@ import java.math.BigInteger;
  * @since 1.0
  * @version $Id: NumberUtils.java 488819 2006-12-19 21:50:04Z bayard $
  *
- */
-public class Main {
+ */publicclass Main {
   //--------------------------------------------------------------------
-  /**
+/**
    * Gets the minimum of three <code>long</code> values.
    *
    * @param a  value 1
    * @param b  value 2
    * @param c  value 3
    * @return  the smallest of the values
-   */
-  public static long minimum(long a, long b, long c) {
+   */publicstaticlong minimum(long a, long b, long c) {
       if (b < a) {
           a = b;
       }

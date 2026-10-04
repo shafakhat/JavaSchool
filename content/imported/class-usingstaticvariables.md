@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1100
 source: https://web.archive.org/web/20090531211334/http://www.java2s.com:80/Code/Java/Class/UsingStaticVariables.htm
 ---
-Using Static Variables
-
 ```java title=Example.java
 /*
 In this example, the Box class contains a static variable, numBoxes, which is incremented

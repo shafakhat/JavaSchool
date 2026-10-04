@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1051
 source: https://web.archive.org/web/20070117154808/http://www.java2s.com:80/Code/Java/PDF-RTF/CellBorderColors.htm
 ---
-Cell Border Colors
-
 ```java title=Example.java
 import java.awt.Color;
 import java.io.FileOutputStream;

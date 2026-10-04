@@ -6,14 +6,11 @@ section: Imported - java2s Archive
 order: 1051
 source: https://web.archive.org/web/20090531215201/http://www.java2s.com:80/Code/Java/Regular-Expressions/Matchasingledigit.htm
 ---
-Match a single digit
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class Main {
   public static void main(String args[]) {
-    // match a single digit
     Pattern p = Pattern.compile("\\d");
     Matcher matcher = p.matcher("5");
     boolean isOk = matcher.matches();

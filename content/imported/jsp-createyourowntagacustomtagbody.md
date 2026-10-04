@@ -89,7 +89,7 @@ public class BodyContentTag extends BodyTagSupport
     Here is its output:
     <ol>
       <java2s:bodyContentTag howMany="3">
-        <li>java2s.com</li>
+        <li>JavaSchool</li>
       </java2s:bodyContentTag>
     </ol>
   </body>

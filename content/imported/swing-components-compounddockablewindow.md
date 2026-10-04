@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1052
 source: https://web.archive.org/web/20060716042132/http://www.java2s.com:80/Code/Java/Swing-Components/Compounddockablewindow.htm
 ---
-Compound dockable window
-
 ```java title=Example.java
 package net.eleritec.docking.demos;
 import java.awt.BorderLayout;

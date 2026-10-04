@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1071
 source: https://web.archive.org/web/20070116161454/http://www.java2s.com:80/Code/Java/Apache-Common/UseBeanUtilstogetpropertyvaluefromobject.htm
 ---
-Use Bean Utils to get property value from object
-
 ```java title=Example.java
 import org.apache.commons.beanutils.BeanUtils;
 import java.util.Map;

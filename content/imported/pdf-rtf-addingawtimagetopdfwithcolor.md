@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/20070503171724/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingAWTImagetoPDFwithColor.htm
 ---
-Adding AWT Image to PDF with Color
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.Toolkit;

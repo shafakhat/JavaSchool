@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20111014030733/http://www.java2s.com:80/Code/Java/Class/Deepcopiesthevaluesfromoneobjecttotheother.htm
 ---
-Deep-copies the values from one object to the other
-
 ```java title=Example.java
 //package com.ryanm.util;
 import java.lang.reflect.Field;
@@ -20,7 +18,6 @@ import java.util.Random;
 public class Util
 {
   /**
-   * Deep-copies the values from one object to the other
    *
    * @param <T>
    * @param from

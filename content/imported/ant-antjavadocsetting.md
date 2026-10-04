@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20100210140153/http://java2s.com/Code/Java/Ant/AntJavadocsetting.htm
 ---
-Ant Javadoc setting
-
 ```java title=Example.java
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- You may freely edit this file. See commented blocks below for -->

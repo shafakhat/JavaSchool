@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20061027021039/http://www.java2s.com/Code/Java/JSP/CausingaRuntimeError.htm
 ---
-Causing a Runtime Error
-
 ```java title=Example.java
 <HTML>
     <HEAD>

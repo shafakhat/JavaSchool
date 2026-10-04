@@ -3,8 +3,8 @@ title: Multiply two integers, checking for overflow.
 nav: Multiply two integers, che...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1156
-source: https://web.archive.org/web/20100719201956/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Multiplytwointegerscheckingforoverflow.htm
+order: 1036
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Multiplytwointegerscheckingforoverflow.htm
 ---
 ```java title=Example.java
 import java.io.File;
@@ -25,10 +25,8 @@ import java.io.File;
  *  limitations under the License.
  *
  *
- */
-public class Main {
+ */publicclass Main {
   /**
-   * Multiply two integers, checking for overflow.
    *
    * @param x a factor
    * @param y a factor
@@ -36,11 +34,10 @@ public class Main {
    * @throws ArithmeticException if the result can not be represented as an
    *         int
    * @since 1.1
-   */
-  public static int mulAndCheck(int x, int y) {
+   */publicstaticint mulAndCheck(int x, int y) {
       long m = ((long)x) * ((long)y);
       if (m < Integer.MIN_VALUE || m > Integer.MAX_VALUE) {
-          throw new ArithmeticException("overflow: mul");
+          thrownew ArithmeticException("overflow: mul");
       }
       return (int)m;
   }

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20130223095319/http://www.java2s.com:80/Code/Java/JDK-7/BorderFactorycreateSoftBevelBorderBevelBorderLOWEREDColorlightGrayColoryellow.htm
 ---
-BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED, Color.lightGray, Color.yellow)
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.FlowLayout;

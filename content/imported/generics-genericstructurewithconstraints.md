@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20111010003058/http://java2s.com:80/Code/Java/Generics/Genericstructurewithconstraints.htm
 ---
-Generic structure with constraints
-
 ```java title=Example.java
 /*
    This program is a part of the companion code for Core Java 8th ed.

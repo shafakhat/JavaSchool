@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/20061026234651/http://www.java2s.com/Code/Java/Ant/Assemblethedocumentation.htm
 ---
-Assemble the documentation
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Example Application Build" default="build-both" basedir=".">
@@ -338,7 +336,6 @@ Assemble the documentation
       <link href="${javadoc.j2ee.offline}" resolveLink="true"/>
     </javadoc>
   </target>
-  <!-- Assemble the documentation -->
   <target name="docs" depends="javadocs"
           description="Assemble the documentation" unless="docs.notRequired">
     <echo message="Assembling the documentation"/>

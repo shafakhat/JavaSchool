@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/20130821021559/http://java2s.com/Code/Java/JDK-7/Checkforthesupportedattribute.htm
 ---
-Check for the supported attribute
-
 ```java title=Example.java
 import java.nio.file.FileStore;
 import java.nio.file.Files;

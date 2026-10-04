@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1056
 source: https://web.archive.org/web/20070504045357/http://www.java2s.com:80/Code/Java/Hibernate/FloatDataType.htm
 ---
-Float Data Type
-
 ```java title=Example.java
 /////////////////////////////////////////////////////////////////////////
 import java.io.Serializable;

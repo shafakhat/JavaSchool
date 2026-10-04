@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20090225211829/http://www.java2s.com:80/Code/Java/EJB3/EJBBasedWebServices.htm
 ---
-EJB Based Web Services
-
 ```java title=Example.java
 File: jndi.properties
 java.naming.factory.initial=org.jnp.interfaces.NamingContextFactory

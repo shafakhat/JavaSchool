@@ -28,7 +28,6 @@ import java.math.BigDecimal;
  */
 public class Main {
   /**
-   * Subtract two integers, checking for overflow.
    *
    * @param x the minuend
    * @param y the subtrahend

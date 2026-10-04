@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1038
 source: https://web.archive.org/web/20100211070041/http://java2s.com/Code/Java/Spring/ClassFilterInDynamicMethodMatcherPointcut.htm
 ---
-ClassFilter In DynamicMethodMatcherPointcut
-
 ```java title=Example.java
 File: Main.java
 import java.lang.reflect.Method;

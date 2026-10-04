@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20061209072353/http://www.java2s.com:80/Code/Java/Swing-Components/AnimatedIconTreeExample2.htm
 ---
-Animated Icon Tree Example 2
-
 ```java title=Example.java
 // Example from http://www.crionics.com/products/opensource/faq/swing_ex/SwingExamples.html
 import java.awt.BorderLayout;

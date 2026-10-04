@@ -7,7 +7,6 @@ order: 1030
 source: https://web.archive.org/web/20090914064440/http://www.java2s.com:80/Code/Java/Threads/CreateanewthreadforthethreadpoolThecreatethreadwillbeadaemonthread.htm
 ---
 Create a new thread for the thread pool. The create thread will be a daemon thread. : Thread Pool « Threads « Java
-Create a new thread for the thread pool. The create thread will be a daemon thread.
 
 ```java title=Example.java
 import java.util.concurrent.Executors;

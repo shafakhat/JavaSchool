@@ -24,7 +24,6 @@ public class MainClass{
 ```
 
 ```java title=Example.java
-
 1.496E8
 9.0E-28
 1.496E8

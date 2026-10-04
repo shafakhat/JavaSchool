@@ -21,6 +21,5 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 {key1=value1, key3=value3, key2=value2}
 ```

@@ -46,7 +46,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The Version annotation type declares two elements, major and minor, and both are of int data type.</p>
 <p>The following code declares an annotation type:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public @interface MyAnnotation {
-  byte a();/*www.java2s.com*/short b();
+  byte a();short b();
   int c();
   long d();
   float e();
@@ -54,18 +54,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   boolean g();
   char h();
 }</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@MyAnnotation(a=1, b=2,  c=3,  d=4,  e=12.34F, f=1.89, g=true, h='Y')</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@MyAnnotation(a=1, b=2,  c=3,  d=4,  e=12.34F, f=1.89, g=true, h='Y')</code></pre></div>
 <p>We can use a compile-time constant expression to specify the value for an element of an annotation.</p>
 <p>The following two instances of the Version annotation are valid:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@Version(major=2+1, minor=(int)13.2)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@Version(major=2+1, minor=(int)13.2)
 @Version(major=3, minor=13)</code></pre></div>
 <h2 id="string-types">String Types</h2>
 <p>We can use an element of the String type in an annotation type.</p>
 <p>The following code defines an annotation type called Name. It has two elements, first and last, which are of the String type.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public @interface Name  {
-   String first(); //fromwww.java2s.com
+   String first();
    String last();
 }
 @Name(first="Tom", last="Smith")
@@ -75,12 +73,10 @@ publicclass NameTest {
     }
 }</code></pre></div>
 <p>It is valid to use the string concatenation operator + in the value expression for an element of a String type.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@Name(first="Ja" + "ck", last="Ia" + "an")</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@Name(first="Ja" + "ck", last="Ia" + "an")</code></pre></div>
 <h2 id="class-types">Class Types</h2>
 <p>The following code shows how to use Class type as the annotation value.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
-/*www.java2s.com*/
 @interface MyAnnotation {
   Class&lt;? extends Throwable&gt; willThrow() default java.lang.Throwable.class;
 }
@@ -95,7 +91,7 @@ publicclass Main {
 }</code></pre></div>
 <h2 id="enum-type">Enum Type</h2>
 <p>An annotation can have elements of an enum type.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Level {/*www.java2s.com*/
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Level {
   PENDING, FAILED, PASSED;
 }
 @interface Review {
@@ -108,9 +104,8 @@ publicclass Main {
 <h2 id="annotation-type">Annotation Type</h2>
 <p>We can use an annotation type as the type of an element inside another annotation type's declaration.</p>
 <p>To provide a value for an element of an annotation type, use the syntax that is used to create an annotation type instance.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@interface Name {
-  String first();//www.java2s.com
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@interface Name {
+  String first();
   String last();
 }
 @interface Version {
@@ -130,20 +125,17 @@ publicclass Main {
 <ul><li>A primitive type</li><li>java.lang.String type</li><li>java.lang.Class type</li><li>An enum type</li><li>An annotation type</li></ul>
 <p>We need to specify the value for an array element inside braces.</p>
 <p>Elements of the array are separated by a comma.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@interface ItemList {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@interface ItemList {
   String[] items();
 }
 @ItemList(items = { "A", "B" })
 publicclass Main {
 }</code></pre></div>
 <p>If you have only one element in the array, it is allowed to omit the braces.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@ToDo(items={"A"})
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@ToDo(items={"A"})
 @ToDo(items="A")</code></pre></div>
 <p>To pass in an empty array</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@ToDo(items={})</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@ToDo(items={})</code></pre></div>
 <h2 id="shorthand-annotation-syntax">Shorthand Annotation Syntax</h2>
 <p>Suppose we have an annotation type as follows.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public  @interface Enabled  {
@@ -152,8 +144,7 @@ publicclass Main {
 <p>To annotate a program element with the Enabled annotation type with the default value, we can use the @Enabled() syntax.</p>
 <p>We do not need to specify the values for the status element because it has a default value.</p>
 <p>We can further omit the parentheses.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@Enabled
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@Enabled
 publicclass Main {
 }
 @Enabled()
@@ -166,13 +157,11 @@ publicclass Main {
     String value();
 }</code></pre></div>
 <p>We can omit the name from name=value pair when using the Company annotation.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@Company(value="Inc.")
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@Company(value="Inc.")
 publicclass Test   {
 }</code></pre></div>
 <p>becomes</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@Company("Inc.")
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@Company("Inc.")
 publicclass Test   {
 }</code></pre></div>
 <p>The following code shows how to use this shorthand if the element data type is an array.</p>
@@ -183,8 +172,7 @@ publicclass Test   {
 publicclass Test   {
 }</code></pre></div>
 <p>We can further omit the braces if we specify only one element in the array annotation type.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@Item("A")
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@Item("A")
 publicclass Test   {
 }</code></pre></div>
 <p>If we supply only one value when using an annotation, the name of the element is assumed value.</p>
@@ -199,15 +187,8 @@ publicclass Test   {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

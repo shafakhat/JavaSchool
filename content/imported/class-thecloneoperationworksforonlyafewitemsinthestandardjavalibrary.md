@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1078
 source: https://web.archive.org/web/20081009143521/http://www.java2s.com:80/Code/Java/Class/ThecloneoperationworksforonlyafewitemsinthestandardJavalibrary.htm
 ---
-The clone operation works for only a few items in the standard Java library
-
 ```java title=Example.java
 // : appendixa:Cloning.java
 // The clone() operation works for only a few

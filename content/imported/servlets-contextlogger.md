@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20061123214654/http://www.java2s.com:80/Code/Java/Servlets/Contextlogger.htm
 ---
-Context logger
-
 ```java title=Example.java
 //Log4j from Apache is required
 import org.apache.log4j.Logger;

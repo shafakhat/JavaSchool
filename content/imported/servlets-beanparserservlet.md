@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20070831192830/http://www.java2s.com:80/Code/Java/Servlets/BeanParserServlet.htm
 ---
-Bean Parser Servlet
-
 ```java title=Example.java
 import java.io.IOException;
 import java.io.PrintWriter;

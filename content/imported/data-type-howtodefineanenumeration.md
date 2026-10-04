@@ -28,7 +28,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Today is Friday
 Tomorrow will be Saturday
 Yesterday was Thursday

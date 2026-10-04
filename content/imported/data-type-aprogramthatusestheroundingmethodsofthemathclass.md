@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1146
 source: https://web.archive.org/web/20081019004542/http://www.java2s.com:80/Code/Java/Data-Type/AProgramThatUsestheRoundingMethodsoftheMathClass.htm
 ---
-A Program That Uses the Rounding Methods of the Math Class
-
 ```java title=Example.java
 public class MainCLass {
   public static void main(String[] args) {

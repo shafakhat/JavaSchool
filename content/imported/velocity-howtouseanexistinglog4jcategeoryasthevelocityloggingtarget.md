@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513091832/http://www.java2s.com/Code/Ja
 ---
 How to use an existing Log4j Categeory as the Velocity logging target : Java examples (example source code) » Velocity » Velocity Log
 
-How to use an existing Log4j Categeory as the Velocity logging target
-
 ```java title=Example.java
 /*
  * Copyright 2000-2001,2004 The Apache Software Foundation.

@@ -51,7 +51,7 @@ int d = 0;
       System.out.println("This will not be printed.");
     } catch (ArithmeticException e) { // catch divide-by-zero error
       System.out.println("Division by zero.");
-    }/*fromwww.java2s.com*/
+    }
     System.out.println("After catch statement.");
   }
 }</code></pre></div>
@@ -62,7 +62,7 @@ int d = 0;
 <p>After one catch statement executes, the others are bypassed, and execution continues after the try/catch block.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String args[]) {
-    try {//www.java2s.comint a = args.length;
+    try {int a = args.length;
       System.out.println("a = " + a);
       int b = 42 / a;
       int c[] = { 1 };
@@ -81,7 +81,7 @@ int d = 0;
 <p>The try statement can be nested.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String args[]) {
-    try {//fromwww.java2s.comint a = args.length;
+    try {int a = args.length;
       int b = 42 / a;
       System.out.println("a = " + a);
       try { // nested try block
@@ -111,7 +111,7 @@ if (a == 2) {
 <p>How to use Java throws statement?</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   staticvoid aMethod() {
-    try {//www.java2s.comthrownew NullPointerException("demo");
+    try {thrownew NullPointerException("demo");
     } catch (NullPointerException e) {
       System.out.println("Caught inside demoproc.");
       throw e; // rethrow the exception
@@ -129,8 +129,7 @@ if (a == 2) {
 <h2 id="java-throws-statement">Java throws statement</h2>
 <p>If a method wants to throw an exception, it must specify this behavior.</p>
 <p>This is the general form of a method declaration that includes a throws clause:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-type method-name(parameter-list) throws exception-list
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">type method-name(parameter-list) throws exception-list
 {
 // body of method
 }</code></pre></div>
@@ -139,7 +138,7 @@ type method-name(parameter-list) throws exception-list
   staticvoid throwOne() throws IllegalAccessException {
     System.out.println("Inside throwOne.");
     thrownew IllegalAccessException("demo");
-  }//www.java2s.compublicstaticvoid main(String args[]) {
+  }publicstaticvoid main(String args[]) {
     try {
       throwOne();
     } catch (IllegalAccessException e) {
@@ -170,7 +169,7 @@ finally {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   // Through an exception out of the method.
 staticvoid methodC() {
-    try {//fromwww.java2s.com
+    try {
       System.out.println("inside methodC");
       thrownew RuntimeException("demo");
     } finally {
@@ -216,15 +215,8 @@ staticvoid methodA() {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

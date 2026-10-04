@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1082
 source: https://web.archive.org/web/20111010001304/http://java2s.com:80/Code/Java/Class/Thisprogramdemonstratesabstractclasses.htm
 ---
-This program demonstrates abstract classes
-
 ```java title=Example.java
 /*
    This program is a part of the companion code for Core Java 8th ed.
@@ -26,7 +24,6 @@ This program demonstrates abstract classes
 import java.util.Date;
 import java.util.GregorianCalendar;
 /**
- * This program demonstrates abstract classes.
  * @version 1.01 2004-02-21
  * @author Cay Horstmann
  */

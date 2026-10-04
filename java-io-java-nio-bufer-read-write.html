@@ -57,7 +57,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>ByteBuffer put(ByteBuffer src) reads the remaining bytes from the specified byte buffer src and writes them to the buffer. If the remaining space in the target buffer is less than the remaining bytes in the source buffer, a runtime BufferOverflowException is thrown.</p>
 <p>The following code shows how to do Writing to and Reading from a Buffer.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.ByteBuffer;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     ByteBuffer bb = ByteBuffer.allocate(8);
     printBufferInfo(bb);
@@ -81,7 +81,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="example">Example</h2>
 <p>The following code shows how to use the flip() and hasRemaining() Methods of a Buffer Between Relative Reads and Writes.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.ByteBuffer;
-/*www.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     ByteBuffer bb = ByteBuffer.allocate(8);
     printBufferInfo(bb);
@@ -110,26 +110,22 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="read-only-buffers">Read-Only Buffers</h2>
 <p>A buffer can be read-only or read-write. We can only read the contents of a read-only buffer.</p>
 <p>We can get a read-only buffer by calling the asReadOnlyBuffer() method of the specific buffer class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-// Create a  buffer that is read-write by  default
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Create a  buffer that is read-write by  default
 ByteBuffer bb  = ByteBuffer.allocate(1024);
 boolean readOnly   = bb.isReadOnly(); // false</code></pre></div>
 <p>To check if a buffer is read-only, call the isReadOnly() method as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-ByteBuffer bbReadOnly = bb.asReadOnlyBuffer();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">ByteBuffer bbReadOnly = bb.asReadOnlyBuffer();
 boolean readOnly = bbReadOnly.isReadOnly();</code></pre></div>
 <p>The read-only buffer returned by the asReadOnlyBuffer() method is a different view of the same buffer. Any modifications to the contents of the original buffer are reflected in the read-only buffer.</p>
 <h2 id="buffer-view">Buffer View</h2>
 <p>We can obtain different views of a buffer. A view of a buffer shares data with the original buffer and maintains its own position, mark, and limit.</p>
 <p>We can also duplicate a buffer, in which case they share contents, but maintain mark, position, and limit independently. Use the duplicate() method of a buffer to get a copy of the buffer as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-// Create a  buffer
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Create a  buffer
 ByteBuffer bb  = ByteBuffer.allocate(1024);
 // Create a  duplicate view  of  the   buffer
 ByteBuffer bbDuplicate = bb.duplicate();</code></pre></div>
 <p>We can also create a sliced view of a buffer by using the slice() method of a buffer to create its sliced view as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-// Create a  buffer
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Create a  buffer
 ByteBuffer bb  = ByteBuffer.allocate(8);
 bb.position(3);
 bb.limit(6);
@@ -137,8 +133,7 @@ bb.limit(6);
 ByteBuffer bbSlice  = bb.slice();</code></pre></div>
 <p>We can also get a view of a byte buffer for different primitive data types.</p>
 <p>For example, we can get a character view, a float view, etc. of a byte buffer. The ByteBuffer class contains methods such as asCharBuffer(), asLongBuffer(), asFloatBuffer(), etc. to obtain a view for primitive data types.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-// Create a  byte   buffer
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Create a  byte   buffer
 ByteBuffer bb  = ByteBuffer.allocate(8);
 // Create a  char   view  of  the   byte   buffer
 CharBuffer cb  = bb.asCharBuffer();
@@ -155,15 +150,8 @@ FloatBuffer fb  = bb.asFloatBuffer();</code></pre></div>
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

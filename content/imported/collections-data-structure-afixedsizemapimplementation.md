@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20100213172901/http://java2s.com/Code/Java/Collections-Data-Structure/Afixedsizemapimplementation.htm
 ---
-A fixed size map implementation.
-
 ```java title=Example.java
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more

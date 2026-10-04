@@ -43,7 +43,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="attribute">Attribute</h2>
 <p>The following code shows how to add attribute to an element.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.StringWriter;
-/*www.java2s.com*/import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -63,7 +63,7 @@ publicclass Main {
     doc.appendChild(e1);
     Element e2 = doc.createElement("java");
     e1.appendChild(e2);
-    e2.setAttribute("url", "http://www.java2s.com");
+    e2.setAttribute("url", "http:");
     //transform the DOM for showing the result in console
     DOMSource domSource = new DOMSource(doc);
     Transformer transformer = TransformerFactory.newInstance().newTransformer();
@@ -105,7 +105,7 @@ publicclass Main {
     }</code></pre></div>
 <h2 id="element">Element</h2>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.StringWriter;
-/*www.java2s.com*/import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -155,7 +155,7 @@ publicclass Main {
 <h2 id="text-node">Text Node</h2>
 <p>The following code shows how to add text node to an element.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.StringWriter;
-//fromwww.java2s.comimport javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -180,7 +180,6 @@ publicclass Main {
     item.appendChild(doc.createTextNode("1.80"));
     root.appendChild(item); // Attach another Element - grandaugther
     doc.appendChild(root); // Add Root to Document
-
     DOMImplementationRegistry registry = DOMImplementationRegistry
         .newInstance();
     DOMImplementationLS domImplLS = (DOMImplementationLS) registry
@@ -191,7 +190,6 @@ publicclass Main {
     StringWriter stringOut = new StringWriter(); // Writer will be a String
     out.setCharacterStream(stringOut);
     ser.write(doc, out); // Serialize the DOM
-
     System.out.println("STRXML = " + stringOut.toString()); // DOM as a String
   }
 }</code></pre></div>
@@ -244,7 +242,7 @@ publicclass Main {
 <h2 id="comment">Comment</h2>
 <p>The following code shows how to create comments node for XML.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
-/*fromwww.java2s.com*/import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Comment;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -276,7 +274,7 @@ publicclass Main {
         Element root = doc.getDocumentElement();
         Element place = (Element)root.getFirstChild();
         Element directions = (Element)place.getLastChild();
-        String dirtext =/*fromwww.java2s.com*/"&gt;&gt;&gt;\n" +
+        String dirtext ="&gt;&gt;&gt;\n" +
             "&lt;&lt;&lt;\n" +
             "&amp;&amp;&amp;\n" +
             "&lt;&gt;&lt;&gt;&lt;&gt;.";
@@ -301,15 +299,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

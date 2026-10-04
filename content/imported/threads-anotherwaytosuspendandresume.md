@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20070503111430/http://www.java2s.com:80/Code/Java/Threads/Anotherwaytosuspendandresume.htm
 ---
-Another way to suspend and resume
-
 ```java title=Example.java
 public class AlternateSuspendResume extends Object implements Runnable {
   private volatile int firstVal;

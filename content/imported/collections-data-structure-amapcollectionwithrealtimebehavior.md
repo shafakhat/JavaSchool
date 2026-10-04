@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1049
 source: https://web.archive.org/web/20100213173043/http://java2s.com/Code/Java/Collections-Data-Structure/AMapcollectionwithrealtimebehavior.htm
 ---
-A Map collection with real-time behavior
-
 ```java title=Example.java
 /*
  * J.A.D.E. Java(TM) Addition to Default Environment.

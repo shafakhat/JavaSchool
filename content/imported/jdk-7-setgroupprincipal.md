@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1126
 source: https://web.archive.org/web/20130820190439/http://java2s.com/Code/Java/JDK-7/SetgroupPrincipal.htm
 ---
-Set group Principal
-
 ```java title=Example.java
 import java.nio.file.FileSystems;
 import java.nio.file.Files;

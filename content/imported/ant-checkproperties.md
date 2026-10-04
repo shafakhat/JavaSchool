@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20061016080750/http://www.java2s.com/Code/Java/Ant/CheckProperties.htm
 ---
-Check Properties
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Template Buildfile" default="compile" basedir=".">

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20060713173642/http://www.java2s.com:80/Code/Java/JSP/Dealwiththeerrors.htm
 ---
-Deal with the errors
-
 ```java title=Example.java
 // generateError.jsp
 <%@ page errorPage="processError.jsp" %>

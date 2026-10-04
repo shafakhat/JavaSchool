@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20081204100429/http://www.java2s.com:80/Code/Java/GWT/AbsoluteTable.htm
 ---
-Absolute Table
-
 ```java title=Example.java
 /*
  * Copyright 2007 Sfeir, www.sfeir.com

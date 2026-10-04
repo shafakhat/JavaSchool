@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1096
 source: https://web.archive.org/web/20090531211331/http://www.java2s.com:80/Code/Java/Class/UseagenerictoString.htm
 ---
-Use a generic toString()
-
 ```java title=Example.java
 import java.lang.reflect.Field;
 public class Main {

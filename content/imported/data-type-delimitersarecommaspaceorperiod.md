@@ -25,7 +25,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Analysis with limit = 0
 Number of tokens: 11
 To
@@ -34,12 +33,10 @@ or
 not
 to
 be
-
 that
 is
 the
 question
-
 Analysis with limit = -1
 Number of tokens: 12
 To
@@ -48,7 +45,6 @@ or
 not
 to
 be
-
 that
 is
 the

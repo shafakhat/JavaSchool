@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20070220081415/http://www.java2s.com:80/Code/Java/Tiny-Application/AdvancedFontChooser.htm
 ---
-Advanced Font Chooser
-
 ```java title=Example.java
 import java.awt.BorderLayout;
 import java.awt.Color;

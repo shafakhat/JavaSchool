@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1077
 source: https://web.archive.org/web/20091120144733/http://www.java2s.com:80/Code/Java/Class/Testtheequalityoftwoobjectarrays.htm
 ---
-Test the equality of two object arrays
-
 ```java title=Example.java
 import java.lang.reflect.Array;
 /*
@@ -33,7 +31,6 @@ import java.lang.reflect.Array;
  */
 public class Main {
   /**
-   * Test the equality of two object arrays.
    *
    * @param a       The first array.
    * @param b       The second array.
@@ -64,7 +61,6 @@ public class Main {
      return true;
   }
   /**
-   * Test the equality of two object arrays.
    *
    * @param a    The first array.
    * @param b    The second array.

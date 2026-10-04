@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1039
 source: https://web.archive.org/web/20061026233600/http://www.java2s.com/Code/Java/Velocity/HowtouseDateinVelocity.htm
 ---
-How to use Date in Velocity
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 Today's date is:       $date

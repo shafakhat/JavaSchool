@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060307054347/http://www.java2s.com:80/Code
 ---
 In-container testing with StrutsTestCase and Cactus : Java examples (example source code) » J2EE » Struts
 
-In-container testing with StrutsTestCase and Cactus
-
 ```java title=Example.java
 /*
 Struts Recipes

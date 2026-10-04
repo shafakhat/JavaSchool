@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20100704051023/http://www.java2s.com:80/Code/Java/GWT/AcustomformcontrolimplementedasapickerSmartGWT.htm
 ---
-A custom form control implemented as a picker (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

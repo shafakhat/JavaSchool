@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1128
 source: https://web.archive.org/web/20110722180212/http://www.java2s.com:80/Code/Java/Data-Type/Amethodtogetthelastdayofamonth.htm
 ---
-A method to get the last day of a month
-
 ```java title=Example.java
 /*
  * This file is part of the AusStage Utilities Package
@@ -36,7 +34,6 @@ import java.text.DateFormat;
  */
 public class DateUtils {
   /**
-   * A method to get the last day of a month
    *
    * @param year  the four digit year
    * @param month the two digit month

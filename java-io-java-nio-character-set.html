@@ -46,21 +46,18 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>We can get an object of the Charset class using its forName() method by passing the name of the character set as its argument.</p>
 <p>For simple encoding and decoding tasks, we can use the encode() and decode() methods of the Charset class.</p>
 <p>The following code shows how to encode a sequence of characters in the string Hello stored in a character buffer and decode it using the UTF-8 encoding-scheme.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Charset cs  = Charset.forName("UTF-8");
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Charset cs  = Charset.forName("UTF-8");
 CharBuffer cb  = CharBuffer.wrap("Hello");
 ByteBuffer encodedData   = cs.encode(cb);
 CharBuffer decodedData   = cs.decode(encodedData);</code></pre></div>
 <p>CharsetEncoder and CharsetDecoder classes accept a chunk of input to be encoded or decoded.</p>
 <p>The encode() and decode() methods of the Charset class return the encoded and decoded buffers to us.</p>
 <p>The following code shows how to get encoder and decoder objects from a Charset object.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Charset cs  = Charset.forName("UTF-8");
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Charset cs  = Charset.forName("UTF-8");
 CharsetEncoder encoder = cs.newEncoder();
 CharsetDecoder decoder = cs.newDecoder();</code></pre></div>
 <p>The following code demonstrates how to list all character sets supported by a JVM.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import java.util.Map;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Map;
 import java.nio.charset.Charset;
 import java.util.Set;
 publicclass Main {
@@ -75,8 +72,7 @@ publicclass Main {
 }</code></pre></div>
 <h2 id="byte-order">Byte Order</h2>
 <p>A byte order is useful only in a multi-byte value stored in a byte buffer. To know the byte order of our machine, use the nativeOrder() method of the ByteOrder class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import java.nio.ByteOrder;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.ByteOrder;
 publicclass Main {
   publicstatic void main(String args[]) {
     ByteOrder b = ByteOrder.nativeOrder();
@@ -91,7 +87,7 @@ publicclass Main {
 <p>We use the order() method from the ByteBuffer to get or set the byte order.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-/*fromwww.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     ByteBuffer bb = ByteBuffer.allocate(2);
     System.out.println("Default  Byte  Order: " + bb.order());
@@ -124,15 +120,8 @@ import java.nio.ByteOrder;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

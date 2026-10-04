@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20090120103337/http://www.java2s.com:80/Code/Java/JPA/DateTypeParameter.htm
 ---
-Date Type Parameter
-
 ```java title=Example.java
 File: Main.java
 import java.util.Collection;

@@ -45,7 +45,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>Overloaded methods must have different number of parameters, different types of parameters, or both.</p>
 <p>The return type, access level and throws clause of a method play no effect in making it an overloaded method.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
-/*www.java2s.com*/class MyClass {
+class MyClass {
   publicvoid m1(int a) {
     // Code goes here
   }
@@ -67,7 +67,7 @@ return 0;
   publicdouble add(int a, int b) {
     System.out.println("Inside add(int a, int b)");
     double s = a + b;
-    return s;//fromwww.java2s.com
+    return s;
   }
   publicdouble add(double a, double b) {
     System.out.println("Inside add(double a,  double   b)");
@@ -94,7 +94,7 @@ return 0;
 <p>The code above generates the following result.</p>
 <h2 id="example-2">Example 2</h2>
 <p>Sometimes, overloaded methods and automatic type widening may confuse the compiler resulting in a compiler error.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Adder {/*fromwww.java2s.com*/publicdouble add(int a, double b) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Adder {publicdouble add(int a, double b) {
     return a + b;
   }
   publicdouble add(double a, int b) {
@@ -107,7 +107,6 @@ publicclass Main {
     // double d = a.add(2, 3); // A compile-time error
 double d1 = a.add((double) 2, 3); // OK. Will use add(double, int)
 double d2 = a.add(2, (double) 3); // OK. Will use add(int, double)
-
   }
 }</code></pre></div>
 <ul><li>« Previous</li></ul>
@@ -121,15 +120,8 @@ double d2 = a.add(2, (double) 3); // OK. Will use add(int, double)
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1096
 source: https://web.archive.org/web/20130223220146/http://www.java2s.com:80/Code/Java/JDK-7/ManagingtheOpacityofaWindow.htm
 ---
-Managing the Opacity of a Window
-
 ```java title=Example.java
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;

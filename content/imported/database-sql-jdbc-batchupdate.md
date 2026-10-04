@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20060513071636/http://www.java2s.com/Code/Java/Database-SQL-JDBC/BatchUpdate.htm
 ---
-Batch Update : Java examples (example source code) » Database SQL JDBC » SQL Update
-
 Batch Update
 
 ```java title=Example.java

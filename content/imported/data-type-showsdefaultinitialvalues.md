@@ -38,7 +38,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Data type      Initial value
 boolean        false
 char           []

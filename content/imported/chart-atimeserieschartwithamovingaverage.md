@@ -8,7 +8,6 @@ source: https://web.archive.org/web/20060510133448/http://www.java2s.com:80/Code
 ---
 A time series chart with a moving average : Java examples (example source code) » Chart » Time Series Chart
 
-A time series chart with a moving average
 ---
 Download: jfreechart-1.0.0-rc1.zip (3559 K)
 Related examples in the same category

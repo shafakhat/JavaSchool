@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1029
 source: https://web.archive.org/web/20130111101646/http://www.java2s.com:80/Code/Java/JDK-7/CreateDirectorieswithFilesclass.htm
 ---
-Create Directories with Files class
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

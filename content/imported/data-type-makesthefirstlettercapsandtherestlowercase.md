@@ -10,7 +10,6 @@ source: https://web.archive.org/web/20100412210713/http://java2s.com:80/Tutorial
 public class Main {
   /**
    *
-   *  Makes the first letter caps and the rest lowercase.
    *
    *
    *

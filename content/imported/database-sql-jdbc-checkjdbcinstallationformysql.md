@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20061026214722/http://www.java2s.com/Code/Java/Database-SQL-JDBC/CheckJDBCInstallationforMySQL.htm
 ---
-Check JDBC Installation for MySQL
-
 ```java title=Example.java
 import java.sql.Connection;
 import java.sql.DriverManager;

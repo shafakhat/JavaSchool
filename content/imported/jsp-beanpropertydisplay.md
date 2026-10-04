@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20060829134528/http://www.java2s.com:80/Code/Java/JSP/Beanpropertydisplay.htm
 ---
-Bean property display
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <jsp:useBean id="emailer" class="com.java2s.EmailBean"/>

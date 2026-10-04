@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20091011114137/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingPageFooter.htm
 ---
-Adding Page Footer
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

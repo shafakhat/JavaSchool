@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1149
 source: https://web.archive.org/web/20090526042229/http://www.java2s.com:80/Code/Java/Data-Type/AstringcanbecomparedwithaStringBuffer.htm
 ---
-A string can be compared with a StringBuffer
-
 ```java title=Example.java
 public class Main {
   public static void main(String[] argv) throws Exception {

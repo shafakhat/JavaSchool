@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20130111095514/http://www.java2s.com:80/Code/Java/JDK-7/Createnewfileandappendbytearraytoit.htm
 ---
-Create new file and append byte array to it
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.file.Files;

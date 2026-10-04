@@ -45,13 +45,10 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Array integerArray contains:
 1 2 3 4 5 6
-
 Array doubleArray contains:
 1.1 2.2 3.3 4.4 5.5 6.6 7.7
-
 Array characterArray contains:
 H E L L O
 ```

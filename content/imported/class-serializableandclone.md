@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1066
 source: https://web.archive.org/web/20081009143501/http://www.java2s.com:80/Code/Java/Class/Serializableandclone.htm
 ---
-Serializable and clone
-
 ```java title=Example.java
 // : appendixa:Compete.java
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002

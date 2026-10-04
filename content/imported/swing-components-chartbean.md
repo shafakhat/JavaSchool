@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20060513072923/http://www.java2s.com/Code/Java/Swing-Components/ChartBean.htm
 ---
-Chart Bean
-
 ```java title=Example.java
 /**
  * @version 1.20 1999-09-28

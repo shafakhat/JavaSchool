@@ -52,7 +52,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       if (i == 10)
         break; // terminate loop if i is 10
       System.out.println("i: " + i);
-    }/*www.java2s.com*/
+    }
     System.out.println("Loop complete.");
   }
 }</code></pre></div>
@@ -61,7 +61,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The break statement can be used with while loop as well. For example, here is the preceding program coded by use of a while loop.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String args[]) {
-    int i = 0;//fromwww.java2s.comwhile (i &lt; 100) {
+    int i = 0;while (i &lt; 100) {
       if (i == 10)
         break; // terminate loop if i is 10
       System.out.println("i: " + i);
@@ -75,7 +75,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The break statement is useful to exit an infinite loop. In the following while loop the true value is hard coded in, therefore the while loop is an infinite loop. Then it uses an if statement combined with the break statement to exit the whole loop when i is 10.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String args[]) {
-    int i = 0;/*fromwww.java2s.com*/while (true) {
+    int i = 0;while (true) {
       if (i == 10){
         break; // terminate loop if i is 10
       }
@@ -96,7 +96,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
         if (j == 10)
           break; // terminate loop if j is 10
         System.out.print(j + " ");
-      }//www.java2s.com
+      }
       System.out.println();
     }
     System.out.println("Loops complete.");
@@ -109,7 +109,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   publicstaticvoid main(String args[]) {
     for (int i = 0; i &lt; 6; i++)
       switch (i) {
-        case 1://fromwww.java2s.com
+        case 1:
           System.out.println("i is one.");
           for (int j = 0; j &lt; 5; j++) {
             System.out.println("j is " + j);
@@ -132,7 +132,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     outer: for (int i = 0; i &lt; 10; i++) {
       for (int j = 0; j &lt; 10; j++) {
         if (j + 1 &lt; i) {
-          System.out.println();/*www.java2s.com*/continue outer;
+          System.out.println();continue outer;
         }
         System.out.print(" " + (i * j));
       }
@@ -152,15 +152,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

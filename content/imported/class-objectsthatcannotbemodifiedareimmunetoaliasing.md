@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1050
 source: https://web.archive.org/web/20090504071927/http://www.java2s.com:80/Code/Java/Class/Objectsthatcannotbemodifiedareimmunetoaliasing.htm
 ---
-Objects that cannot be modified are immune to aliasing
-
 ```java title=Example.java
 // : appendixa:Immutable1.java
-// Objects that cannot be modified are immune to aliasing.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 public class Immutable1 {

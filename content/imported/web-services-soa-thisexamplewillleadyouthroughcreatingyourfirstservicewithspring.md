@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1146
 source: https://web.archive.org/web/20071021183848/http://java2s.com:80/Code/Java/Web-Services-SOA/ThisexamplewillleadyouthroughcreatingyourfirstservicewithSpring.htm
 ---
-This example will lead you through creating your first service with Spring
-
 ```java title=Example.java
 Spring HTTP demo
 =============================================

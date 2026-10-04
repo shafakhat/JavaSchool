@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/20061018171538/http://www.java2s.com/Code/Java/JSP/ApplicationObject.htm
 ---
-Application Object
-
 ```java title=Example.java
 //File Name: application_page1.jsp
 <%

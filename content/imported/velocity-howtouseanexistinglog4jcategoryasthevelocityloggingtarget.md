@@ -7,7 +7,6 @@ order: 1038
 source: https://web.archive.org/web/20091116051259/http://www.java2s.com:80/Code/Java/Velocity/HowtouseanexistingLog4jCategoryastheVelocityloggingtarget.htm
 ---
 How to use an existing Log4j Category as the Velocity logging target : Velocity Log « Velocity « Java
-How to use an existing Log4j Category as the Velocity logging target
 
 ```java title=Example.java
 /*

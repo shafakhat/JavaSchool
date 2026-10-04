@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20100201075810/http://java2s.com/Code/Java/Collections-Data-Structure/Addsalltheelementsofthegivenarraysintoanewdoubletypearray.htm
 ---
-Adds all the elements of the given arrays into a new double-type array.
-
 ```java title=Example.java
 /*   Copyright 2004 The Apache Software Foundation
  *

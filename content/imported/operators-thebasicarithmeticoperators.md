@@ -38,14 +38,12 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Integer Arithmetic
 a = 2
 b = 6
 c = 1
 d = -1
 e = 1
-
 Floating Point Arithmetic
 da = 2.0
 db = 6.0

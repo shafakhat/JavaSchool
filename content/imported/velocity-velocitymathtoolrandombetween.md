@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1086
 source: https://web.archive.org/web/20071105053936/http://www.java2s.com:80/Code/Java/Velocity/VelocityMathToolRandomBetween.htm
 ---
-Velocity MathTool Random Between
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

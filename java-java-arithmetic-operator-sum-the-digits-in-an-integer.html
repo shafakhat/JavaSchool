@@ -48,27 +48,22 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>Use the / operator to remove the extracted digit.</p>
 <p>For instance, 932 % 10 = 2 and 932 / 10 = 93.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Scanner;
-
 publicclass Main {
   publicstaticvoid main(String[] args) {
     Scanner input = newScanner(System.in);   // Create new Scanner object// Prompt the user to enter a number between 0 and 1000.System.out.print("Enter a number between 0 and 1000: ");
     int number = input.nextInt();
-
     //your code here// Display resultsSystem.out.println("The sum of the digits is " + sum);
-  }/*www.java2s.com*/
+  }
 }</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Scanner;
-
 publicclass Main {
   publicstaticvoid main(String[] args) {
     Scanner input = newScanner(System.in);   // Create new Scanner object// Prompt the user to enter a number between 0 and 1000.System.out.print("Enter a number between 0 and 1000: ");
     int number = input.nextInt();
-
     // Compute the sum of the digits in the integer.int lessThan10 = number % 10;   // Extract the digit less than 10
     number /= 10;             // Remove the extracted digitint tens = number % 10;       // Extract the digit between 10 to 99
     number /= 10;             // Remove the extracted digitint hundreds = number % 10;   // Extract the digit between 100 to 999
     number /= 10;             // Remove the extracted digitint sum = hundreds + tens + lessThan10;
-
     // Display resultsSystem.out.println("The sum of the digits is " + sum);
   }
 }</code></pre></div>
@@ -85,15 +80,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

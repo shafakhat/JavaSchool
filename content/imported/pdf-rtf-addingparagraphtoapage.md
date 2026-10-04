@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20100212120752/http://java2s.com/Code/Java/PDF-RTF/AddingParagraphtoaPage.htm
 ---
-Adding Paragraph to a Page
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import java.io.IOException;

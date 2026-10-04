@@ -45,8 +45,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 }</code></pre></div>
 <p>This is called a method declaration, which specifies all the information needed to call the method.</p>
 <p>To call this method, just type its name, followed by a single int value in parentheses:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-myMethod(10);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">myMethod(10);</code></pre></div>
 <h2 id="access-modifiers">Access Modifiers</h2>
 <p>Java offers four choices of access modifier:</p>
 <p>Modifier  Meaning ---  --- public  The method can be called from any class. private  The method can only be called from within the same class. protected  The method can only be called from classes in the same package or subclasses. Default (Package Private) Access  The method can only be called from classes in the same package. There is no keyword for default access. Just omit the access modifier.</p>
@@ -55,11 +54,9 @@ myMethod(10);</code></pre></div>
 <p>myMethod2() doesn't compile because default is not a valid access modifier.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">default void myMethod2() {} // DOES NOT COMPILE</code></pre></div>
 <p>myMethod3() doesn't compile because the access modifier is specified after the return type.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-void public myMethod3() {} // DOES NOT COMPILE</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">void public myMethod3() {} // DOES NOT COMPILE</code></pre></div>
 <p>myMethod4() is a valid method declaration with default access.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-void myMethod4() {}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">void myMethod4() {}</code></pre></div>
 <h2 id="optional-specifiers">Optional Specifiers</h2>
 <p>There are a number of optional specifiers in the following list.</p>
 <p>Unlike with access modifiers, you can have multiple specifiers in the same method although not all combinations are legal.</p>
@@ -98,12 +95,10 @@ publicfinalstatic void myMethod4() {}</code></pre></div>
 <p>myMethod5() doesn't compile because the return type is missing.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public myMethod5() { }  // DOES NOT COMPILE</code></pre></div>
 <p>myMethod6() has a return statement, but it doesn't always get run. If a is 5, the return statement doesn't get executed. myMethod6() requires a String to be returned.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-String myMethod6(int a) { if (a == 4) return ""; }  // DOES NOT COMPILE</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String myMethod6(int a) { if (a == 4) return ""; }  // DOES NOT COMPILE</code></pre></div>
 <p>When returning a value, it must be assignable to the return type.</p>
 <p>long1 method returns a long type which cannot be assigned to int type.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-int integer1() {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int integer1() {
   return 9;
 }
 int long1() {
@@ -119,15 +114,8 @@ int long1() {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

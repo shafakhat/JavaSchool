@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513072906/http://www.java2s.com/Code/Ja
 ---
 Criteria QBE (Query By Example) Advanced Criteria : Java examples (example source code) » Hibernate » QBE
 
-Criteria QBE (Query By Example) Advanced Criteria
-
 ```java title=Example.java
 /////////////////////////////////////////////////////////////////////////
 import java.util.*;

@@ -6,10 +6,7 @@ section: Imported - java2s Archive
 order: 1141
 source: https://web.archive.org/web/20071105210638/http://www.java2s.com:80/Code/Java/Web-Services-SOA/ThisdemoshowshowtocreateRESTfulservicesusingCXFsHTTPbinding.htm
 ---
-This demo shows how to create RESTful services using CXF's HTTP binding
-
 ```java title=Example.java
-This demo shows how to create RESTful services using CXF's HTTP binding.
 The server in the demo creates 3 different endpoints: a RESTful XML
 endpoint, a RESTful JSON endpoint, and a SOAP endpoint.
 [RUNNING THE DEMO]

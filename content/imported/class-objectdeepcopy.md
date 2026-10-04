@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1049
 source: https://web.archive.org/web/20111014011125/http://www.java2s.com:80/Code/Java/Class/ObjectDeepcopy.htm
 ---
-Object Deep copy
-
 ```java title=Example.java
 /*
  * Copyright 2009-2010 junithelper.org.

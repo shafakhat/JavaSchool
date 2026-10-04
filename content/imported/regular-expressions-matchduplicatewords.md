@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1053
 source: https://web.archive.org/web/20090422124107/http://www.java2s.com:80/Code/Java/Regular-Expressions/MatchDuplicateWords.htm
 ---
-Match Duplicate Words
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

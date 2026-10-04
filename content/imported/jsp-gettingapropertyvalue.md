@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1051
 source: https://web.archive.org/web/20061026220011/http://www.java2s.com/Code/Java/JSP/GettingaPropertyValue.htm
 ---
-Getting a Property Value
-
 ```java title=Example.java
 //File: index.jsp
 <HTML>

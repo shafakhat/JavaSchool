@@ -43,8 +43,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>Files class can access the commonly used attributes of a file.</p>
 <p>Files.isHidden(Path p) method tests if a file is hidden.</p>
 <p>The following methods in the Files class can access various types of commonly used attributes of a file.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-long size(Path)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">long size(Path)
 boolean isHidden(Path path)
 boolean isRegularFile(Path path, LinkOption... options)
 boolean isDirectory(Path path, LinkOption... options)
@@ -67,7 +66,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.PosixFileAttributeView;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     Path path = Paths.get("");
     FileStore fs = Files.getFileStore(path);
@@ -96,7 +95,7 @@ import java.nio.file.attribute.FileAttributeView;
 import java.nio.file.attribute.FileOwnerAttributeView;
 import java.nio.file.attribute.PosixFileAttributeView;
 import java.nio.file.attribute.UserDefinedFileAttributeView;
-/*fromwww.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     Path path = Paths.get("C:");
     try {
@@ -122,36 +121,29 @@ import java.nio.file.attribute.UserDefinedFileAttributeView;
 <h2 id="reading-and-updating-file-attributes">Reading and Updating File Attributes</h2>
 <p>To read or update one file attribute, use Files class.</p>
 <p>Files class has the following two static methods to read and update a file attribute using the attribute name as a string:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Object getAttribute(Path path, String attribute, LinkOption... options)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Object getAttribute(Path path, String attribute, LinkOption... options)
 Path setAttribute(Path path, String attribute, Object value, LinkOption... options)</code></pre></div>
 <p>To read or update multiple attributes of a file, work with a specific file attribute view.</p>
 <p>For most of the file attribute views, we have to work with two interfaces named as TypeAttributes and TypeAttributeView.</p>
 <p>For the basic file attributes, we have the BasicFileAttributes and BasicFileAtrributeView interfaces.</p>
 <p>The TypeAttributes reads the attributes. The TypeAttributeView reads/updates the attributes.</p>
 <p>The following two methods of the Files class read the file attributes in a bulk.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;A extends BasicFileAttributes&gt; A readAttributes(Path path, Class&lt;A&gt; type, LinkOption... options)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;A extends BasicFileAttributes&gt; A readAttributes(Path path, Class&lt;A&gt; type, LinkOption... options)
 Map&lt;String,Object&gt; readAttributes(Path path, String attributes, LinkOption... options)</code></pre></div>
 <p>The last argument of both methods specify how a symbolic link is handled. By default, if a file is a symbolic link, the attributes of the target of the symbolic link are read.</p>
 <p>If we specify NOFOLLOW_LINKS as the option, the attributes of the symbolic link are read, not the attributes of its target.</p>
 <p>The first readAttributes() method returns all file attributes of a specified type in an TypeAttributes object.</p>
 <p>To create the Path object representing the path of the file</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Path  path   = Paths.get("C:\\Java_Dev\\test1.txt");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Path  path   = Paths.get("C:\\Java_Dev\\test1.txt");</code></pre></div>
 <p>To Read the basic file attributes</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-BasicFileAttributes bfa  = Files.readAttributes(path, BasicFileAttributes.class);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">BasicFileAttributes bfa  = Files.readAttributes(path, BasicFileAttributes.class);</code></pre></div>
 <p>To Get the last modified time</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-FileTime lastModifiedTime  = bfa.lastModifiedTime();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">FileTime lastModifiedTime  = bfa.lastModifiedTime();</code></pre></div>
 <p>To Get the size of the file</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-long  size = bfa.size();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">long  size = bfa.size();</code></pre></div>
 <p>The second readAttributes() method returns all or some of the attributes of a specific type.</p>
 <p>The list of attributes to read is supplied in a string form. The string form of an attribute list uses the following syntax:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-view-name:comma-separated-attributes</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">view-name:comma-separated-attributes</code></pre></div>
 <p>The view-name is the name of the attribute view that we want to read, such as basic, posix, acl, etc.</p>
 <p>If view-name is omitted, it defaults to basic. If view-name is present, it is followed by a colon.</p>
 <p>We can read all attributes of a specific view type by specifying an asterisk as the attributes list. For example, we can specify "basic:<em>" or "</em>" to read all basic file attributes.</p>
@@ -164,7 +156,7 @@ view-name:comma-separated-attributes</code></pre></div>
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
-/*fromwww.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     Path path = Paths.get("C:\\Java_Dev\\test1.txt");
     // Prepare the attribute list
@@ -182,7 +174,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
-/*fromwww.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     Path path = Paths.get("C:\\Java_Dev\\test1.txt");
     try {
@@ -198,13 +190,11 @@ import java.nio.file.attribute.BasicFileAttributes;
 }</code></pre></div>
 <p>We can also read file attributes using a specific view object.</p>
 <p>We can use the getFileAttributeView() method declared as follows of the Files class to get a specific attribute view. It returns null if the file attribute view is not available.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;V extends FileAttributeView&gt; V  getFileAttributeView(Path path,  Class&lt;V&gt; type, LinkOption... options)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;V extends FileAttributeView&gt; V  getFileAttributeView(Path path,  Class&lt;V&gt; type, LinkOption... options)</code></pre></div>
 <p>After getting a view object of a specific view type, we can read all attributes of that view type using the view object's readAttributes() method.</p>
 <h2 id="example-3">Example 3</h2>
 <p>The following code reads all basic attributes for C:\Java_Dev\test1.txt file using a basic view object:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Path  path   = Paths.get("C:\\Java_Dev\\test1.txt");
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Path  path   = Paths.get("C:\\Java_Dev\\test1.txt");
 BasicFileAttributeView bfv = Files.getFileAttributeView(path,  BasicFileAttributeView.class);
 BasicFileAttributes bfa  = bfv.readAttributes();</code></pre></div>
 <p>The following code shows how to use the basic file attribute view to read and update basic file attributes.</p>
@@ -216,7 +206,7 @@ import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 import java.time.Instant;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     Path path = Paths.get("C:\\Java_Dev\\test1.txt");
     try {
@@ -246,15 +236,8 @@ import java.time.Instant;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

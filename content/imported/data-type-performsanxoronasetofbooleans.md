@@ -38,7 +38,6 @@ source: https://web.archive.org/web/20100222021254/http://www.java2s.com:80/Tuto
  */
 public class Main {
   /**
-   * Performs an xor on a set of booleans.
    *
    * <pre>
    *   BooleanUtils.xor(new boolean[] { true, true })   = false

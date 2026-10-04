@@ -48,11 +48,10 @@ import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-/*www.java2s.com*/import javax.swing.JButton;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-
 publicclass Main extends JFrame implements ActionListener {
   JButton num1, num2, num3, num4, num5, num6, num7, num8, num9, num0, add, sub,
       div, mult, equalto, exit, point, reset;
@@ -61,7 +60,6 @@ publicclass Main extends JFrame implements ActionListener {
   int flag = 0;
   double total1;
   double first, second;
-
   void total(double first, double second, String ope) {
     String total;
     if (ope.equalsIgnoreCase("+")) {
@@ -83,7 +81,6 @@ publicclass Main extends JFrame implements ActionListener {
     }
     clearfields();
   }
-
   public Main() {
     Container content = getContentPane();
     content.setLayout(new FlowLayout());
@@ -147,14 +144,11 @@ publicclass Main extends JFrame implements ActionListener {
     content.add(reset);
     content.add(exit);
   }
-
   publicstaticvoid main(String arg[]) {
     Main jf = new Main();
     jf.setSize(230, 250);
     jf.setVisible(true);
-
   }
-
   publicvoid actionPerformed(ActionEvent e) {
     Object o = e.getSource();
     if (o == num1) {
@@ -188,7 +182,6 @@ publicclass Main extends JFrame implements ActionListener {
       textField.setText(s.concat("0"));
       s = textField.getText();
     } elseif (o == add) {
-
       textField.setText("");
       first = Double.parseDouble(s);
       System.out.println(first);
@@ -231,7 +224,6 @@ publicclass Main extends JFrame implements ActionListener {
       total1 = 0;
     }
   }
-
   privatevoid clearfields() {
     first = 0;
     second = 0;
@@ -252,15 +244,8 @@ publicclass Main extends JFrame implements ActionListener {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

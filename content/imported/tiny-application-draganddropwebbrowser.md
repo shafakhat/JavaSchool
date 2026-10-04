@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20061018210619/http://www.java2s.com/Code/Java/Tiny-Application/Draganddropwebbrowser.htm
 ---
-Drag and drop web browser
-
 ```java title=Example.java
 import java.awt.BorderLayout;
 import java.awt.Container;

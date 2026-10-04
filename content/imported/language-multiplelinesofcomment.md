@@ -7,7 +7,6 @@ order: 1006
 source: https://web.archive.org/web/20070613001739/http://www.java2s.com:80/Tutorial/Java/0020__Language/Multiplelinesofcomment.htm
 ---
 ```java title=Example.java
-/*   multiple lines of comment
 another line
  */
 public class MainClass{

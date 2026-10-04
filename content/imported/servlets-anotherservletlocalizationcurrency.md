@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20060411094406/http://www.java2s.com:80/Code/Java/Servlets/AnotherServletLocalizationCurrency.htm
 ---
-Another Servlet Localization: Currency : Java examples (example source code) » Servlets » I18N
-
 Another Servlet Localization: Currency
 
 ```java title=Example.java

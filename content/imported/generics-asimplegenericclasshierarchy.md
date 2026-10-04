@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20090926093331/http://www.java2s.com:80/Code/Java/Generics/Asimplegenericclasshierarchy.htm
 ---
-A simple generic class hierarchy.
-
 ```java title=Example.java
 /*
 Java 2, v5.0 (Tiger) New Features

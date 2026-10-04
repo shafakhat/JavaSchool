@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1042
 source: https://web.archive.org/web/20090123033457/http://java2s.com:80/Code/Java/JPA/FetchLazy.htm
 ---
-Fetch Lazy
-
 ```java title=Example.java
 File: Professor.java
 import static javax.persistence.FetchType.LAZY;

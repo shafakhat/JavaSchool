@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20111124232957/http://java2s.com/Code/Java/Threads/AtomicFloat.htm
 ---
-Atomic Float
-
 ```java title=Example.java
 /*
  * @(#)$Id$

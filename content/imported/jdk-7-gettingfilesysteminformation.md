@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1078
 source: https://web.archive.org/web/20130111101701/http://www.java2s.com:80/Code/Java/JDK-7/GettingFileSystemInformation.htm
 ---
-Getting FileSystem Information
-
 ```java title=Example.java
 import java.nio.file.FileStore;
 import java.nio.file.FileSystem;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20061018171455/http://www.java2s.com/Code/Java/Database-SQL-JDBC/AlldatatypesforOracle.htm
 ---
-All data types for Oracle
-
 ```java title=Example.java
 /**
 Code revised from

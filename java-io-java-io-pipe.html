@@ -46,13 +46,11 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>We can also connect them by passing one object to the constructor when we create another object.</p>
 <p>The following code shows two ways of creating and connecting the two ends of a pipe:</p>
 <p>The first method creates a piped input and output streams and connect them. It connects the two streams using connect method.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-PipedInputStream pis  = new PipedInputStream();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">PipedInputStream pis  = new PipedInputStream();
 PipedOutputStream pos  = new PipedOutputStream();
 pis.connect(pos); /* Connect  the   two  ends  */</code></pre></div>
 <p>The second method creates piped input and output streams and connect them. It connects the two streams by passing the input piped stream to the output stream constructor.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-PipedInputStream pis  = new PipedInputStream();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">PipedInputStream pis  = new PipedInputStream();
 PipedOutputStream pos  = new PipedOutputStream(pis);</code></pre></div>
 <p>We can produce and consume data after we connect the two ends of the pipe.</p>
 <p>We produce data by using one of the write() methods of the PipedOutputStream object. Whatever we write to the piped output stream automatically becomes available to the piped input stream object for reading.</p>
@@ -60,15 +58,14 @@ PipedOutputStream pos  = new PipedOutputStream(pis);</code></pre></div>
 <p>A piped stream has a buffer with a fixed capacity to store data between the time it is written to and read from the pipe.</p>
 <p>We can set the pipe capacity when we create it. If a pipe's buffer is full, an attempt to write on the pipe will block.</p>
 <p>The following code creates piped input and output streams with the buffer capacity of 2048 bytes.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-PipedOutputStream pos  = new PipedOutputStream();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">PipedOutputStream pos  = new PipedOutputStream();
 PipedInputStream pis  = new PipedInputStream(pos, 2048);</code></pre></div>
 <p>A pipe is used to transfer data from one thread to another. The synchronization between two threads is taken care of by the blocking read and write.</p>
 <h2 id="example">Example</h2>
 <p>The following code demonstrates how to use a piped I/O.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     PipedInputStream pis = new PipedInputStream();
     PipedOutputStream pos = new PipedOutputStream();
@@ -115,15 +112,8 @@ import java.io.PipedOutputStream;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

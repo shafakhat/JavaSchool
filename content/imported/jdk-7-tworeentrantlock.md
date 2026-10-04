@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1129
 source: https://web.archive.org/web/20130821064716/http://java2s.com/Code/Java/JDK-7/TwoReentrantLock.htm
 ---
-Two ReentrantLock
-
 ```java title=Example.java
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

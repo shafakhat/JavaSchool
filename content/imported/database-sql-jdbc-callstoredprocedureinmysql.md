@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1033
 source: https://web.archive.org/web/20070116103251/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/CallStoredProcedureInMySql.htm
 ---
-Call Stored Procedure In MySql
-
 ```java title=Example.java
 import java.sql.CallableStatement;
 import java.sql.Connection;

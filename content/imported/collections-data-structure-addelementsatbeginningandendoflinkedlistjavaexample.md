@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1016
 source: https://web.archive.org/web/20090422182846/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AddelementsatbeginningandendofLinkedListJavaexample.htm
 ---
-Add elements at beginning and end of LinkedList Java example
-
 ```java title=Example.java
 import java.util.LinkedList;
 public class Main {

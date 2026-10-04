@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1059
 source: https://web.archive.org/web/20081201082155/http://www.java2s.com:80/Code/Java/Class/PolymorphisminJava.htm
 ---
-Polymorphism in Java
-
 ```java title=Example.java
 // : c07:Shapes.java
-// Polymorphism in Java.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 import java.util.Random;

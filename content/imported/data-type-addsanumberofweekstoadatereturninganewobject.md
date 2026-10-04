@@ -7,7 +7,6 @@ order: 1117
 source: https://web.archive.org/web/20091030195331/http://www.java2s.com:80/Code/Java/Data-Type/Addsanumberofweekstoadatereturninganewobject.htm
 ---
 Adds a number of weeks to a date returning a new object. : Date Calculation « Data Type « Java
-Adds a number of weeks to a date returning a new object.
 
 ```java title=Example.java
 import java.util.Calendar;
@@ -57,7 +56,6 @@ import java.util.Date;
 public class Main {
   //-----------------------------------------------------------------------
   /**
-   * Adds a number of weeks to a date returning a new object.
    * The original date object is unchanged.
    *
    * @param date  the date, not null

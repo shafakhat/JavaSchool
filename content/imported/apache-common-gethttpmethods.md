@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20061026233652/http://www.java2s.com/Code/Java/Apache-Common/GetHttpmethods.htm
 ---
-Get Http methods
-
 ```java title=Example.java
 import org.apache.commons.httpclient.URI;
 import org.apache.commons.httpclient.HttpClient;

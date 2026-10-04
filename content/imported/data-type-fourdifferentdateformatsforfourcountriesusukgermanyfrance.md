@@ -37,7 +37,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 The Date for United States:
   In FULL is Tuesday, January 16, 2007
   In LONG is January 16, 2007

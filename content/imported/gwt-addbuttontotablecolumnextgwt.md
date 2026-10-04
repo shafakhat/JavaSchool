@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20100415063410/http://www.java2s.com:80/Code/Java/GWT/AddbuttontotablecolumnExtGWT.htm
 ---
-Add button to table column (Ext GWT)
-
 ```java title=Example.java
 /*
  * Ext GWT - Ext for GWT

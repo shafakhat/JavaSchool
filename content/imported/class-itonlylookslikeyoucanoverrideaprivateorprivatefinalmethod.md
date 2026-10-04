@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20081201072023/http://www.java2s.com:80/Code/Java/Class/Itonlylookslikeyoucanoverrideaprivateorprivatefinalmethod.htm
 ---
-It only looks like you can override a private or private final method
-
 ```java title=Example.java
 // : c06:FinalOverridingIllusion.java
-// It only looks like you can override a private or private final method.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class WithFinals {

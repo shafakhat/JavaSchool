@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1036
 source: https://web.archive.org/web/20100628173220/http://www.java2s.com:80/Code/Java/GWT/AddingshadowtoaLabelSmartGWT.htm
 ---
-Adding shadow to a Label (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

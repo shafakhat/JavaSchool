@@ -33,7 +33,7 @@ JSTL: Import a Page
           <td width="47%">Enter a site to import:</td>
           <td width="53%">
             <input type="text" name="url" size="20"
-              value="http://www.java2s.com"/>
+              value="http:"/>
           </td>
         </tr>
         <tr>

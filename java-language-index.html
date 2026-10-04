@@ -40,7 +40,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-java-language.html">Java Language</a></nav>
     <h1>Java Tutorial - Java Hello World</h1>
 <p>Let's start by compiling and running the following short sample program.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/* //fromwww.java2s.com
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
  This is a simple Java program. Call this file "Main.java".
  */publicclass Main {
   // Your program begins with a call to main().
@@ -53,25 +53,21 @@ publicstaticvoid main(String args[]) {
 <p>The code above generates the following result.</p>
 <h2 id="compiling-the-program">Compiling the Program</h2>
 <p>To compile the program, execute the compiler, javac, specifying the name of the source file on the command line:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-C:\&gt;javac Main.java</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">C:\&gt;javac Main.java</code></pre></div>
 <p>The javac compiler creates a file called Main.class. Main.class contains the byte code version of the program.</p>
 <p>To run the program, use the Java interpreter, called java. Pass the class name Main as a command-line argument, as shown here:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-C:\&gt;java Main</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">C:\&gt;java Main</code></pre></div>
 <p>When the program is run, the following output is displayed:</p>
 <p>When Java source code is compiled, each individual class is put into its own file named classname.class.</p>
 <h2 id="a-closer-look-at-the-mainjava">A Closer Look at the Main.java</h2>
 <p>The first part is a comment.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-/*
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
    This is a simple Java program. Call this file "Main.java".
 */</code></pre></div>
 <p>Comment is a remark for a program. The contents of a comment are ignored by the compiler. The next line of code in the program is shown here:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {</code></pre></div>
 <p>The keyword class declares that a new class is being defined. Main is the name of the class. The entire class definition is between the opening curly brace ({) and the closing curly brace (}). The next line in the program is the single-line comment, shown here:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-// Your program begins with a call to main().</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Your program begins with a call to main().</code></pre></div>
 <p>A single-line comment begins with a // and ends at the end of the line. The next line of code is shown here:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicstatic void main(String args[]) {</code></pre></div>
 <p>Java applications begin execution by calling main(String args[]). Java is case-sensitive. Thus, Main is different from main.</p>
@@ -81,7 +77,7 @@ C:\&gt;java Main</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String args[]) {
     int num; // a variable called num
-    num = 100;//www.java2s.com
+    num = 100;
     System.out.println("This is num: " + num);
     num = num * 2;
     System.out.print("The value of num * 2 is ");
@@ -90,21 +86,18 @@ C:\&gt;java Main</code></pre></div>
 }</code></pre></div>
 <p>When you run this program, you will see the following output:</p>
 <p>The following snippet declares an integer variable called num. Java requires that variables must be declared before they can be used.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-int num; // this declares a variable called num</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int num; // this declares a variable called num</code></pre></div>
 <p>Following is the general form of a variable declaration:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-type var-name;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">type var-name;</code></pre></div>
 <p>In the program, the line assigns to num the value 100.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-num = 100; // this assigns num the value 100</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">num = 100; // this assigns num the value 100</code></pre></div>
 <h2 id="define-more-than-one-variable-with-comma">Define more than one variable with comma</h2>
 <p>To declare more than one variable of the specified type, you may use a comma-separated list of variable names.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String args[]) {
     int num, num2;
     num = 100; // assigns num the value 100
-    num2 = 200;//fromwww.java2s.com
+    num2 = 200;
     System.out.println("This is num: " + num);
     System.out.println("This is num2: " + num2);
   }
@@ -116,7 +109,7 @@ num = 100; // this assigns num the value 100</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
     publicstaticvoid main(String args[]) {
         int x, y;
-        x = 10;/*www.java2s.com*/
+        x = 10;
         y = 20;
         if (x &lt; y) { // begin a block
             x = y;
@@ -131,7 +124,7 @@ num = 100; // this assigns num the value 100</code></pre></div>
 <p>A block of code as the target of a for loop.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String args[]) {
-    int i, y;//fromwww.java2s.com
+    int i, y;
     y = 20;
     for (i = 0; i &lt; 10; i++) { // the target of this loop is a block
       System.out.println("This is i: " + i);
@@ -151,15 +144,8 @@ num = 100; // this assigns num the value 100</code></pre></div>
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

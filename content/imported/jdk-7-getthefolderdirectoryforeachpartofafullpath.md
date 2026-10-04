@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1071
 source: https://web.archive.org/web/20130821053445/http://java2s.com/Code/Java/JDK-7/Getthefolderdirectoryforeachpartofafullpath.htm
 ---
-Get the folder/directory for each part of a full path
-
 ```java title=Example.java
 import java.nio.file.FileSystems;
 import java.nio.file.Path;

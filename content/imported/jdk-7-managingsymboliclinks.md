@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1095
 source: https://web.archive.org/web/20130821091701/http://java2s.com/Code/Java/JDK-7/Managingsymboliclinks.htm
 ---
-Managing symbolic links
-
 ```java title=Example.java
 import java.net.URI;
 import java.nio.file.Files;

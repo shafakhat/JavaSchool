@@ -39,7 +39,6 @@ public class Main {
   // Cloning Methods //
   // ///////////////////////////////////////////////////////////////////////
   /**
-   * Copy an serializable object deeply.
    *
    * @param obj
    *          Object to copy.

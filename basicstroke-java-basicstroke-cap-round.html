@@ -39,29 +39,23 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   <article class="ws-content">
     <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-javaawt.html">java.awt</a></nav>
     <h1>Java Tutorial - Java BasicStroke CAP_ROUND</h1>
-<p>Next »BasicStroke (3201/9945)« Previous</p>
 <h3 id="syntax">Syntax</h3>
 <p>BasicStroke.CAP_ROUND has the following syntax.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicstaticfinalint CAP_ROUND</code></pre></div>
 <h3 id="example">Example</h3>
 <p>In the following code shows how to use BasicStroke.CAP_ROUND field.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*fromwww.java2s.com*/import java.awt.BasicStroke;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 publicclass Main extends JPanel {
-
   publicvoid paint(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
-
     BasicStroke bs = new BasicStroke(16.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_BEVEL);
     g2.setStroke(bs);
     g.drawLine(30, 20, 270, 20);
   }
-
   publicstaticvoid main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
@@ -70,7 +64,6 @@ publicclass Main extends JPanel {
     frame.setVisible(true);
   }
 }</code></pre></div>
-<p>Next »« PreviousHome » Java Tutorial » java.awt »</p>
 <p>BasicStrokeBorderLayoutCardLayoutColorCursorDesktopDesktopManagerDisplayModeEventQueueFlowLayoutFocusTraversalPolicyFontFontMetricsGradientPaintGraphicsGraphics2DGraphicsConfigurationGraphicsDeviceGraphicsEnvironmentGridBagConstraintsGridBagLayoutGridLayoutImageItemSelectableKeyboardFocusManagerLayoutManagerLayoutManager2PointRectangleRobotShapeSplashScreenSystemColorSystemTrayTexturePaintTrayIconToolkitTransparency</p>
     <div class="pager"><a class="pager-btn" href="borderlayout-borderlayout-north.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="basicstroke-java-basicstroke-join-miter.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Tutorial - Java Basic...</span></a></div>
   </article>
@@ -82,15 +75,8 @@ publicclass Main extends JPanel {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

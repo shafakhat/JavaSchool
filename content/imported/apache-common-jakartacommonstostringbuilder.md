@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/20090629063905/http://www.java2s.com:80/Code/Java/Apache-Common/JakartaCommonstoStringBuilder.htm
 ---
-Jakarta Commons toString Builder
-
 ```java title=Example.java
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;

@@ -46,7 +46,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   publicstaticvoid main(String[] args) {
     int maxSize = 16; // array size
     QuickSortSimpleVersion arr = new QuickSortSimpleVersion(maxSize); // create array
-//fromjava2s.comfor (int j = 0; j &lt; maxSize; j++){
+for (int j = 0; j &lt; maxSize; j++){
       long n = (int) (java.lang.Math.random() * 99);
       arr.insert(n);
     }
@@ -57,30 +57,24 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 }
 class QuickSortSimpleVersion {
   privatelong[] data;
-
   privateint len;
-
   public QuickSortSimpleVersion(int max) {
     data = newlong[max];
     len = 0;
   }
-
   publicvoid insert(long value) {
     data[len] = value;
     len++;
   }
-
   publicvoid display() {
     System.out.print("Data:");
     for (int j = 0; j &lt; len; j++)
       System.out.print(data[j] + " ");
     System.out.println("");
   }
-
   publicvoid quickSort() {
     recQuickSort(0, len - 1);
   }
-
   publicvoid recQuickSort(int left, int right) {
     if (right - left &lt;= 0){ // if size &lt;= 1 already sorted
 return;
@@ -92,7 +86,6 @@ int partition = partitionData(left, right, pivot);
       recQuickSort(partition + 1, right); // sort right side
     }
   }
-
   publicint partitionData(int left, int right, long pivot) {
     int leftPtr = left - 1; // left (after ++)
 int rightPtr = right; // right-1 (after --)
@@ -109,27 +102,23 @@ break;
       }else{
         swap(leftPtr, rightPtr);
       }
-
     }
     swap(leftPtr, right); // restore pivot and return pivot location
 return leftPtr;
   }
-
   publicvoid swap(int d1, int d2) {
     long temp = data[d1];
     data[d1] = data[d2];
     data[d2] = temp;
   }
-
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <h3 id="quick-sort-implementation-from-joddorg">Quick Sort implementation from jodd.org</h3>
 <p>The following quick sort code is from joddy.org and released under open source license.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Copyright (c) 2003-2009, Jodd Team (jodd.org). All Rights Reserved.
-//fromjava2s.comimport java.util.Arrays;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-
 publicclass Main{
   publicstaticvoid main(String[] argv){
     Object[] objectArray = newInteger[]{1,2,3};
@@ -143,7 +132,6 @@ publicclass Main{
  * performs 7.5s for sorting million objects, this implementation
  * sorts for 6.8s. However, {@link FastMergeSort} is much faster.
  */class FastQuickSort  {
-
   @SuppressWarnings({"unchecked"})
   publicstaticvoid qsort(Object[] c, Comparator comparator) {
     int i, j, left = 0, right = c.length - 1, stack_pointer = -1;
@@ -207,7 +195,7 @@ while (comparator.compare(c[--j], temp) &gt; 0);
 <p>The code above generates the following result.</p>
 <h3 id="quicksort-dealing-with-small-amount-of-elements">QuickSort dealing with small amount of elements</h3>
 <p>The following code is an open source version of quick sort. The interesting part of it is that it checks the number of elements in the array. If there are only three elements in the array it would not use the quick sort algorithm which will take longer time and more resource.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*/*java2s.com*/
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
  * Copyright (c) 1998 - 2005 Versant Corporation
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -217,20 +205,17 @@ while (comparator.compare(c[--j], temp) &gt; 0);
  * Contributors:
  * Versant Corporation - initial API and implementation
  */import java.util.Comparator;
-
 /**
  * Quicksort implementation for sorting arrays. Unlike the merge sort in
  * java.utils.Collections this one does not create any objects. There are
  * two implementations, one for arrays of Comparable's and another that
  * uses a comparator.
  */class Quicksort {
-
     /**
      * Sort the first size entries in a.
      */publicstaticvoid quicksort(Object[] a, int size) {
         quicksort(a, 0, size - 1);
     }
-
     /**
      * Sort the entries in a between left and right inclusive.
      */publicstaticvoid quicksort(Object[] a, int left, int right) {
@@ -254,7 +239,6 @@ while (comparator.compare(c[--j], temp) &gt; 0);
                 quicksort(a, partition + 1, right);
         }
     }
-
     privatestaticint compare(Object a, Object b) {
         if (a == null) {
             return b == null ? 0 : -1;
@@ -264,13 +248,11 @@ while (comparator.compare(c[--j], temp) &gt; 0);
             return ((Comparable)a).compareTo(b);
         }
     }
-
     privatestaticvoid swap(Object[] a, int left, int right) {
         Object t = a[left];
         a[left] = a[right];
         a[right] = t;
     }
-
     privatestaticint median(Object[] a, int left, int right) {
         int center = (left + right) / 2;
         if (compare(a[left], a[center]) &gt; 0) swap(a, left, center);
@@ -279,7 +261,6 @@ while (comparator.compare(c[--j], temp) &gt; 0);
         swap(a, center, right - 1);
         return right - 1;
     }
-
     privatestaticint partition(Object[] a, int left, int right, int pivotIndex) {
         int leftIndex = left;
         int rightIndex = right - 1;
@@ -295,13 +276,11 @@ while (comparator.compare(c[--j], temp) &gt; 0);
         swap(a, leftIndex, right - 1);         // restore pivot
 return leftIndex;                 // return pivot location
     }
-
     /**
      * Sort the first size entries in a.
      */publicstaticvoid quicksort(Object[] a, int size, Comparator c) {
         quicksort(a, 0, size - 1, c);
     }
-
     /**
      * Sort the entries in a between left and right inclusive.
      */publicstaticvoid quicksort(Object[] a, int left, int right, Comparator c) {
@@ -325,7 +304,6 @@ return leftIndex;                 // return pivot location
                 quicksort(a, partition + 1, right, c);
         }
     }
-
     privatestaticint median(Object[] a, int left, int right, Comparator c) {
         int center = (left + right) / 2;
         if (c.compare(a[left], a[center]) &gt; 0) swap(a, left, center);
@@ -334,7 +312,6 @@ return leftIndex;                 // return pivot location
         swap(a, center, right - 1);
         return right - 1;
     }
-
     privatestaticint partition(Object[] a, int left, int right,
             int pivotIndex, Comparator c) {
         int leftIndex = left;
@@ -351,34 +328,28 @@ return leftIndex;                 // return pivot location
         swap(a, leftIndex, right - 1);         // restore pivot
 return leftIndex;                 // return pivot location
     }
-
 }</code></pre></div>
 <h3 id="quick-sort-with-median-of-three-partitioning">Quick sort with median-of-three partitioning</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass AnotherQuickSort {
   privatelong[] data;
-//fromjava2s.comprivateint len;
-
+privateint len;
   public AnotherQuickSort(int max) {
     data = newlong[max];
     len = 0;
   }
-
   publicvoid insert(long value) {
     data[len] = value; // insert and increment size
     len++;
   }
-
   publicvoid display() {
     System.out.print("Data:");
     for (int j = 0; j &lt; len; j++)
       System.out.print(data[j] + " ");
     System.out.println("");
   }
-
   publicvoid quickSort() {
     recQuickSort(0, len - 1);
   }
-
   publicvoid recQuickSort(int left, int right) {
     int size = right - left + 1;
     if (size &lt;= 3) // manual sort if small
@@ -391,7 +362,6 @@ return leftIndex;                 // return pivot location
       recQuickSort(partition + 1, right);
     }
   }
-
   publiclong medianOf3(int left, int right) {
     int center = (left + right) / 2;
     // order left &amp; center
@@ -403,17 +373,14 @@ if (data[left] &gt; data[right])
     // order center &amp; right
 if (data[center] &gt; data[right])
       swap(center, right);
-
     swap(center, right - 1); // put pivot on right
 return data[right - 1]; // return median value
   }
-
   publicvoid swap(int dex1, int dex2) {
     long temp = data[dex1];
     data[dex1] = data[dex2];
     data[dex2] = temp;
   }
-
   publicint partitionIt(int left, int right, long pivot) {
     int leftPtr = left; // right of first elem
 int rightPtr = right - 1; // left of pivot
@@ -423,7 +390,6 @@ while (data[++leftPtr] &lt; pivot)
         ;
       //       find smaller
 while (data[--rightPtr] &gt; pivot)
-
         ;
       if (leftPtr &gt;= rightPtr) // if pointers cross, partition done
 break;
@@ -433,7 +399,6 @@ break;
     swap(leftPtr, right - 1); // restore pivot
 return leftPtr; // return pivot location
   }
-
   publicvoid manualSort(int left, int right) {
     int size = right - left + 1;
     if (size &lt;= 1)
@@ -452,11 +417,9 @@ if (data[right - 1] &gt; data[right])
         swap(right - 1, right); // center, right
     }
   }
-
   publicstaticvoid main(String[] args) {
     int maxSize = 16;
     AnotherQuickSort arr = new AnotherQuickSort(maxSize);
-
     for (int j = 0; j &lt; maxSize; j++) { // random numbers
 long n = (int) (java.lang.Math.random() * 99);
       arr.insert(n);
@@ -479,15 +442,8 @@ long n = (int) (java.lang.Math.random() * 99);
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060411085924/http://www.java2s.com:80/Code
 ---
 Calculation In Java : Java examples (example source code) » Velocity » Calculation
 
-Calculation In Java
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

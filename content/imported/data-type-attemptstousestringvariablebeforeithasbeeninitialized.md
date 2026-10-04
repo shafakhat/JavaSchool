@@ -16,7 +16,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Exception in thread "main" java.lang.NullPointerException
 	at MainClass.main(MainClass.java:6)
 ```

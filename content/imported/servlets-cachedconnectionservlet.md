@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20060513092733/http://www.java2s.com/Code/Java/Servlets/CachedConnectionServlet.htm
 ---
-Cached Connection Servlet : Java examples (example source code) » Servlets » Database
-
 Cached Connection Servlet
 
 ```java title=Example.java

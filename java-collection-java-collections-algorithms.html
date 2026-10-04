@@ -48,7 +48,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     List&lt;String&gt; list = new ArrayList&lt;&gt;();
     list.add("J");
@@ -68,7 +68,7 @@ import java.util.List;
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-/*fromwww.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     List&lt;String&gt; list = new ArrayList&lt;&gt;();
     list.add("Java");
@@ -88,8 +88,7 @@ import java.util.List;
 <h2 id="search-a-list">Search a List</h2>
 <p>Two static binarySearch() method in the Collections class search for a key in a List.</p>
 <p>This method uses the binary search algorithm to perform the search.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-int  binarySearch(List list,  T  key)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int  binarySearch(List list,  T  key)
 int  binarySearch(List list, T  key, Comparator c)</code></pre></div>
 <p>A List must be sorted in ascending order before we can use the binarySearch() method.</p>
 <p>If the key is found in the List, the method returns its index in the List.</p>
@@ -99,7 +98,7 @@ int  binarySearch(List list, T  key, Comparator c)</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/*www.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     List&lt;String&gt; list = new ArrayList&lt;&gt;();
     list.add("Java");
@@ -119,14 +118,13 @@ import java.util.List;
 <h2 id="shuffle-a-list">Shuffle a List</h2>
 <p>Shuffling gives us a random permutation of the elements in a List.</p>
 <p>The two versions of the shuffle() methods from Collections class are as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-void  shuffle(List list)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">void  shuffle(List list)
 void  shuffle(List list, Random  rnd)</code></pre></div>
 <p>The following code shows how to use the shuffle methods.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     List&lt;String&gt; list = new ArrayList&lt;&gt;();
     list.add("Java");
@@ -144,13 +142,12 @@ import java.util.List;
 <p>The code above generates the following result.</p>
 <h2 id="reverse-list">Reverse List</h2>
 <p>We can use the reverse() static method of the Collections class to reverse elements in a List.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-void  reverse(List list)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">void  reverse(List list)</code></pre></div>
 <p>The following code shows how to use the reverse() method.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/*www.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     List&lt;String&gt; list = new ArrayList&lt;&gt;();
     list.add("Java");
@@ -167,14 +164,13 @@ import java.util.List;
 <h2 id="swap-list-items">Swap List Items</h2>
 <p>Swapping swaps two elements in a List.</p>
 <p>The swap() static method of the Collections class does the swapping.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-void  swap(List list, int i, int j)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">void  swap(List list, int i, int j)</code></pre></div>
 <p>i and j are indexes of two elements and they must be between 0 and size - 1, where size is the size of the List.</p>
 <p>The following code shows how to reorder elements of a List using these methods.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/*www.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     List&lt;String&gt; list = new ArrayList&lt;&gt;();
     list.add("Java");
@@ -193,7 +189,7 @@ import java.util.List;
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     List&lt;String&gt; list = new ArrayList&lt;&gt;();
     list.add("Java");
@@ -210,16 +206,13 @@ import java.util.List;
 <p>The code above generates the following result.</p>
 <h2 id="creating-different-views-of-a-collection">Creating Different Views of a Collection</h2>
 <p>We can create a LIFO Queue view of a Deque using the asLifoQueue() static method of the Collections class:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;T&gt; Queue&lt;T&gt; asLifoQueue(Deque&lt;T&gt;  deque)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;T&gt; Queue&lt;T&gt; asLifoQueue(Deque&lt;T&gt;  deque)</code></pre></div>
 <p>To use a Map's implementation as a Set implementation, use the newSetFromMap() static method of the Collections class:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;E&gt; Set&lt;E&gt; newSetFromMap(Map&lt;E, Boolean&gt;  map)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;E&gt; Set&lt;E&gt; newSetFromMap(Map&lt;E, Boolean&gt;  map)</code></pre></div>
 <h2 id="read-only-views-of-collections">Read-Only Views of Collections</h2>
 <p>We can get a read-only view of a collection when passing around collection to other methods and we do not want the called method to modify your collection.</p>
 <p>The Collections class offers the following methods to get read-only views of different types of collections:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;T&gt; Collection&lt;T&gt; unmodifiableCollection(Collection&lt;?  extends T&gt; c)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;T&gt; Collection&lt;T&gt; unmodifiableCollection(Collection&lt;?  extends T&gt; c)
 &lt;T&gt; List&lt;T&gt;  unmodifiableList(List&lt;?  extends T&gt; list)
 &lt;K,V&gt; Map&lt;K,V&gt;  unmodifiableMap(Map&lt;?  extends K,?  extends V&gt;  m)
 &lt;K,V&gt; NavigableMap&lt;K,V&gt; unmodifiableNavigableMap(NavigableMap&lt;K,? extends  V&gt;  m)
@@ -230,8 +223,7 @@ static &lt;T&gt; SortedSet&lt;T&gt; unmodifiableSortedSet(SortedSet&lt;T&gt;  s)
 <p>We pass a collection of a specific type and get a read-only collection of the same type.</p>
 <h2 id="synchronized-view-of-a-collection">Synchronized View of a Collection</h2>
 <p>We can get a synchronized view of a collection using one of the following static methods of the Collections class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;T&gt; Collection&lt;T&gt; synchronizedCollection(Collection&lt;T&gt;  c)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;T&gt; Collection&lt;T&gt; synchronizedCollection(Collection&lt;T&gt;  c)
 &lt;T&gt; List&lt;T&gt;  synchronizedList(List&lt;T&gt; list)
 &lt;K,V&gt; Map&lt;K,V&gt;  synchronizedMap(Map&lt;K,V&gt; m)
 &lt;K,V&gt; NavigableMap&lt;K,V&gt; synchronizedNavigableMap(NavigableMap&lt;K,V&gt; m)
@@ -242,19 +234,16 @@ static &lt;T&gt; SortedSet&lt;T&gt; unmodifiableSortedSet(SortedSet&lt;T&gt;  s)
 <h2 id="checked-collections">Checked Collections</h2>
 <p>Generics provide compile-time type-safety for collections.</p>
 <p>The following code has a compile-time error since we are trying to add Integer type value to a Set which can only have String value.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Set&lt;String&gt; s = new HashSet&lt;&gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Set&lt;String&gt; s = new HashSet&lt;&gt;();
 s.add("Hello");
 a.add(new Integer(1)); // A compile-time error</code></pre></div>
 <p>We can bypass the compiler check by using the following code:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Set&lt;String&gt; s = new HashSet&lt;  &gt;();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Set&lt;String&gt; s = new HashSet&lt;  &gt;();
 s.add("Hello");
 Set s2 = s;
 s2.add(new Integer(123)); // No  runtime exception</code></pre></div>
 <p>We can avoid the above error by using the checked collections. The following static methods of the Collections class returns a checked collection of a specific type:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;E&gt; Collection&lt;E&gt; checkedCollection(Collection&lt;E&gt;  c, Class&lt;E&gt;  type)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;E&gt; Collection&lt;E&gt; checkedCollection(Collection&lt;E&gt;  c, Class&lt;E&gt;  type)
 &lt;E&gt; List&lt;E&gt;  checkedList(List&lt;E&gt; list, Class&lt;E&gt;  type)
 &lt;K,V&gt; Map&lt;K,V&gt; checkedMap(Map&lt;K,V&gt;   m, Class&lt;K&gt; keyType,  Class&lt;V&gt; valueType)
 &lt;K,V&gt; NavigableMap&lt;K,V&gt; checkedNavigableMap(NavigableMap&lt;K,V&gt;  m, Class&lt;K&gt; keyType,  Class&lt;V&gt; valueType)
@@ -264,15 +253,13 @@ s2.add(new Integer(123)); // No  runtime exception</code></pre></div>
 &lt;K,V&gt; SortedMap&lt;K,V&gt; checkedSortedMap(SortedMap&lt;K,V&gt;  m, Class&lt;K&gt; keyType, Class&lt;V&gt; valueType)
 &lt;E&gt; SortedSet&lt;E&gt; checkedSortedSet(SortedSet&lt;E&gt;  s, Class&lt;E&gt;  type)</code></pre></div>
 <p>The following code rewrite the code above.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Set&lt;String&gt;  checkedSet = Collections.checkedSet(new HashSet&lt;String&gt;(),  String.class);
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Set&lt;String&gt;  checkedSet = Collections.checkedSet(new HashSet&lt;String&gt;(),  String.class);
 Set s2 = checkedSet;
 s2.add(new Integer(1)); // Throws ClassCastException</code></pre></div>
 <h2 id="creating-empty-collections">Creating Empty Collections</h2>
 <p>The Collections class can return an immutable empty collection object of each type.</p>
 <p>It can also return an empty Iterator. The following code lists such static methods in the Collections class:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;T&gt; List&lt;T&gt;  emptyList()
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;T&gt; List&lt;T&gt;  emptyList()
 &lt;K,V&gt; Map&lt;K,V&gt;  emptyMap()
 &lt;T&gt; Set&lt;T&gt; emptySet()
 &lt;T&gt; Iterator&lt;T&gt; emptyIterator()
@@ -281,13 +268,11 @@ s2.add(new Integer(1)); // Throws ClassCastException</code></pre></div>
 <p>We can create a collection that has one and only one element using Collections class.</p>
 <p>We have to create this kind of collection object when a method accepts a collection as its argument and we have only one object to pass to that method.</p>
 <p>Those methods are as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;T&gt; Set&lt;T&gt; singleton(T o)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;T&gt; Set&lt;T&gt; singleton(T o)
 &lt;T&gt; List&lt;T&gt;  singletonList(T o)
 &lt;K,V&gt; Map&lt;K,V&gt;  singletonMap(K key,  V  value)</code></pre></div>
 <p>The following code shows how to use Collections.singleton() method.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Set&lt;String&gt; singletonSet  = Collections.singleton("Lonely");
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Set&lt;String&gt; singletonSet  = Collections.singleton("Lonely");
 // Throws a  runtime exception since a singleton set is immutable singletonSet.add("Hello");</code></pre></div>
 <ul><li>« Previous</li></ul>
     <div class="pager"><a class="pager-btn" href="java-collection-java-special-map.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Collection Tutorial -...</span></a><a class="pager-btn pager-next" href="arraydeque-index.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Collection Tutorial -...</span></a></div>
@@ -300,15 +285,8 @@ Set&lt;String&gt; singletonSet  = Collections.singleton("Lonely");
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

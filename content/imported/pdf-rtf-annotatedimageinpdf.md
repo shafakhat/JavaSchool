@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20100212194406/http://java2s.com/Code/Java/PDF-RTF/AnnotatedImageinPDF.htm
 ---
-Annotated Image in PDF
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Annotation;

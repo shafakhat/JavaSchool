@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1121
 source: https://web.archive.org/web/20071026050443/http://www.java2s.com:80/Code/Java/Web-Services-SOA/HowtowriteaWebserviceandWebserviceclientwithApacheAxis2usingXMLbasedclientAPIsAxis2sPrimaryAPIs.htm
 ---
-How to write a Web service and Web service client with Apache Axis2 using XML based client APIs (Axis2's Primary APIs)
-
 ```java title=Example.java
 Axis2 User's Guide Sample
 =========================

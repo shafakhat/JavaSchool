@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/20070503190834/http://www.java2s.com:80/Code/Java/Spring/AspectJExamplefromProSpring.htm
 ---
-AspectJ Example from Pro Spring
-
 ```java title=Example.java
 /*
 Pro Spring

@@ -18,7 +18,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 utilDate:Fri Feb 02 12:55:46 PST 2007
 sqlDate:2007-02-02
 ```

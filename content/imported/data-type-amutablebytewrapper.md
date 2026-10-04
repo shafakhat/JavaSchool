@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1132
 source: https://web.archive.org/web/20091215162545/http://www.java2s.com:80/Code/Java/Data-Type/Amutablebytewrapper.htm
 ---
-A mutable byte wrapper.
-
 ```java title=Example.java
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more

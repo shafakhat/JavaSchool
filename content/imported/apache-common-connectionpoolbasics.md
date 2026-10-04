@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20061026235132/http://www.java2s.com/Code/Java/Apache-Common/ConnectionPoolBasics.htm
 ---
-Connection Pool Basics
-
 ```java title=Example.java
 import java.sql.Connection;
 import java.util.Properties;

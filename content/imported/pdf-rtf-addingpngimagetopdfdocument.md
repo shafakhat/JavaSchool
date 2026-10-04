@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20090227122709/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingPNGimagetoPdfdocument.htm
 ---
-Adding PNG image to Pdf document
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Chunk;

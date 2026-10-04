@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1139
 source: https://web.archive.org/web/20071106044920/http://www.java2s.com:80/Code/Java/Web-Services-SOA/ThisdemoshowshowJAXWShandlersareused.htm
 ---
-This demo shows how JAX-WS handlers are used
-
 ```java title=Example.java
 Handler Demo
 ============

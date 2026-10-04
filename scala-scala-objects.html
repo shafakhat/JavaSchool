@@ -46,22 +46,19 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A singleton object definition looks like a class definition, except instead of the keyword class you use the keyword object.</p>
 <p>A singleton is a class that can have only one instance.</p>
 <p>For instance, we can create a singleton object to represent a Car like so:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Car {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Car {
    def drive {
       println("drive car")
    }
 }</code></pre></div>
 <p>With Car defined as an object, there can be only one instance of it, and we can call its methods just like static methods on a Java class:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Car.drive</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Car.drive</code></pre></div>
 <p>Unlike classes, singleton objects cannot take parameter.</p>
 <h2 id="note">Note</h2>
 <p>We can use singleton objects for many purposes, including collecting related utility methods, or defining an entry point to a Scala application.</p>
 <p>There are two ways to create a launching point for your application: define an object with a properly defined main method or define an object or that extends the App trait.</p>
 <p>For the second approach, define an object that extends the App trait as shown here:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main extends App {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main extends App {
     println("Hello, world")
 }</code></pre></div>
 <p>Scala provides a trait, scala.Application that your singleton object should extend for launching the application.</p>
@@ -77,15 +74,8 @@ object Main extends App {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

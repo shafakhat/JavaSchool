@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1081
 source: https://web.archive.org/web/20090411121732/http://www.java2s.com:80/Code/Java/Class/Theprotectedkeyword.htm
 ---
-The protected keyword
-
 ```java title=Example.java
 // : c06:Orc.java
-// The protected keyword.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Villain {

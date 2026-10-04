@@ -44,11 +44,10 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h3 id="bigintegers-power">BigInteger's Power</h3>
 <p>BigInteger pow(int exponent) returns a BigInteger whose value is (thisexponent).</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-//java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] argv) throws Exception {
     BigInteger bi1 = new BigInteger("1234567890123456890");
     int exponent = 2;
-
     bi1 = bi1.pow(exponent);
     System.out.println(bi1);
   }
@@ -58,7 +57,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>BigInteger modPow(BigInteger exponent, BigInteger m) returns a BigInteger whose value is (thisexponent mod m).</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
 import java.security.SecureRandom;
-/*java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     int bitLength = 512; // 512 bits
     SecureRandom rnd = new SecureRandom();
@@ -67,7 +66,6 @@ import java.security.SecureRandom;
     BigInteger mod = new BigInteger(bitLength, certainty, rnd);
     BigInteger exponent = BigInteger.probablePrime(bitLength, rnd);
     BigInteger n = BigInteger.probablePrime(bitLength, rnd);
-
     BigInteger result = n.modPow(exponent, mod);
     System.out.println("Number ^ Exponent MOD Modulus = Result");
     System.out.println("Number");
@@ -88,7 +86,7 @@ import java.security.SecureRandom;
 <p>BigDecimal BigDecimal constants BigDecimal Rounding mode BigDecimal creation BigDecimal calculation BigDecimal convert BigDecimal Comparison BigDecimal to String BigDecimal decimal point BigDecimal precision BigDecimal format</p>
 <h4 id="biginteger">BigInteger</h4>
 <p>BigInteger class BigInteger creation BigInteger add, subtract, multiply and divide BigInteger power and modPow BigInteger conversion BigInteger to String BigInteger bit and,or,xor,test,flip,negate BigInteger bit shift left and right BigInteger prime value BigDecimal BigDecimal constants BigDecimal Rounding mode BigDecimal creation BigDecimal calculation BigDecimal convert BigDecimal Comparison BigDecimal to String BigDecimal decimal point BigDecimal precision BigDecimal format</p>
-    <div class="pager"><a class="pager-btn" href="apache-common-gethttpmethods.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Get Http methods</span></a><a class="pager-btn pager-next" href="velocity-howtouseanexistinglog4jcategeoryasthevelocityloggingtarget.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">How to use an existing Log...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="gradientpaint-gradientpaint-gradientpaint-float-x1-float-y1-color-color1-float-x.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="velocity-howtouseanexistinglog4jcategeoryasthevelocityloggingtarget.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">How to use an existing Log...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">
@@ -98,15 +96,8 @@ import java.security.SecureRandom;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -43,22 +43,19 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>Scala supports single inheritance, not multiple inheritance.</p>
 <p>A child class can have one and only one parent class.</p>
 <p>The root of the Scala class hierarchy is Any, which has no parent.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-class Vehicle (speed : Int){
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Vehicle (speed : Int){
     val mph :Int = speed
     def race() = println("Racing")
 }</code></pre></div>
 <p>The Vehicle class takes one argument, which is the speed of the vehicle.</p>
 <p>This argument must be passed when creating an instance of class Vehicle, as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-new Vehicle(100)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">new Vehicle(100)</code></pre></div>
 <p>The class contains one method, called race.</p>
 <h2 id="extending-class">Extending Class</h2>
 <p>Extending from a base class in Scala is similar to extending in Java except for two restrictions:</p>
 <ul><li>method overriding requires the override keyword,</li><li>only the primary constructor can pass parameters to the base constructor.</li></ul>
 <p>It is possible to override methods inherited from a super class in Scala as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-class Car (speed : Int) extends Vehicle(speed) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Car (speed : Int) extends Vehicle(speed) {
     override val mph: Int= speed
     override def race() = println("Racing Car")
 }</code></pre></div>
@@ -97,15 +94,8 @@ object Main extends App {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

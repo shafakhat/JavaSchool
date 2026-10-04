@@ -27,7 +27,6 @@ class GradeBook
 ```
 
 ```java title=Example.java
-
 Welcome to the grade book for
 Java !
 ```

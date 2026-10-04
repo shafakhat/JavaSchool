@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1091
 source: https://web.archive.org/web/20060717062942/http://www.java2s.com:80/Code/Java/Velocity/VelocityNumberToolIntegerFormat.htm
 ---
-Velocity Number Tool Integer Format
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

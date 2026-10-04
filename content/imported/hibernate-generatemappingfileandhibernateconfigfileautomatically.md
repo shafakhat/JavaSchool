@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20061018180654/http://www.java2s.com/Code/Java/Hibernate/GenerateMappingFileAndHibernateConfigFileAutomatically.htm
 ---
-Generate Mapping File And Hibernate Config File Automatically
-
 ```java title=Example.java
 /////////////////////////////////////////////////////////////////////////
 import java.io.Serializable;

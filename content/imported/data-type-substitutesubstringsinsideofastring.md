@@ -36,7 +36,6 @@ public class Main{
   //                         Substitution Methods                        //
   /////////////////////////////////////////////////////////////////////////
   /**
-   * Substitute sub-strings in side of a string.
    *
    * @param buff    Stirng buffer to use for substitution (buffer is not reset)
    * @param from    String to substitute from
@@ -63,7 +62,6 @@ public class Main{
      return buff.toString();
   }
   /**
-   * Substitute sub-strings in side of a string.
    *
    * @param from    String to substitute from
    * @param to      String to substitute to
@@ -76,7 +74,6 @@ public class Main{
      return subst(new StringBuffer(), from, to, string);
   }
   /**
-   * Substitute sub-strings in side of a string.
    *
    * @param buff       String buffer to use for substitution (buffer is not reset)
    * @param string     String to subst mappings in
@@ -112,7 +109,6 @@ public class Main{
      return buff.toString();
   }
   /**
-   * Substitute sub-strings in side of a string.
    *
    * @param string     String to subst mappings in
    * @param map        Map of from->to strings

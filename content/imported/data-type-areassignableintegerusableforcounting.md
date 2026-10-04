@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1147
 source: https://web.archive.org/web/20111125082809/http://java2s.com/Code/Java/Data-Type/Areassignableintegerusableforcounting.htm
 ---
-A reassignable integer usable for counting.
-
 ```java title=Example.java
 /*
  * LingPipe v. 3.9

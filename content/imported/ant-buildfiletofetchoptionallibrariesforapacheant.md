@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20100813144045/http://www.java2s.com:80/Code/Java/Ant/BuildfiletofetchoptionallibrariesforApacheAnt.htm
 ---
-Build file to fetch optional libraries for Apache Ant
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <!--
@@ -25,7 +23,6 @@ Build file to fetch optional libraries for Apache Ant
    limitations under the License.
 -->
 <!--
-    Build file to fetch optional libraries for Apache Ant
 -->
 <project name="fetch" default="all" basedir=".">
 <description>

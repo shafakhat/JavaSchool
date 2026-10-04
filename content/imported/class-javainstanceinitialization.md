@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20100213071107/http://java2s.com/Code/Java/Class/JavaInstanceInitialization.htm
 ---
-Java Instance Initialization
-
 ```java title=Example.java
 //: c04:Mugs.java
-// Java "Instance Initialization."
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Mug {

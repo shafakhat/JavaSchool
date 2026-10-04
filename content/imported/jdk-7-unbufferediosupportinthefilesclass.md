@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1130
 source: https://web.archive.org/web/20130111095200/http://www.java2s.com:80/Code/Java/JDK-7/UnbufferedIOsupportintheFilesclass.htm
 ---
-Un-buffered IO support in the Files class
-
 ```java title=Example.java
 import java.io.IOException;
 import java.io.InputStream;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1136
 source: https://web.archive.org/web/20130820184538/http://java2s.com/Code/Java/JDK-7/UseLinkedBlockingQueue.htm
 ---
-Use LinkedBlockingQueue
-
 ```java title=Example.java
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;

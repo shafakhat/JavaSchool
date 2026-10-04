@@ -7,7 +7,6 @@ order: 1035
 source: https://web.archive.org/web/20051216065515/http://www.java2s.com:80/Code/Java/Swing-Components/CheckListExample.htm
 ---
 Check List Example : Java examples (example source code) » Swing Components » List
-Check List Example
 
 ```java title=Example.java
 // Example from http://www.crionics.com/products/opensource/faq/swing_ex/SwingExamples.html

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060504200245/http://www.java2s.com:80/Code
 ---
 Bean Name Aliasing : Java examples (example source code) » Spring » IoC Bean Name
 
-Bean Name Aliasing
-
 ```java title=Example.java
 /*
 Pro Spring

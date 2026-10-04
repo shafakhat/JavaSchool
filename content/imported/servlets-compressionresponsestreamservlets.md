@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/20071017023857/http://www.java2s.com:80/Code/Java/Servlets/CompressionResponseStreamservlets.htm
 ---
-Compression Response Stream servlets
-
 ```java title=Example.java
 /*
 * Copyright 2004 The Apache Software Foundation

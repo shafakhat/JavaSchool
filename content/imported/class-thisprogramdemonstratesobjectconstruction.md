@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1086
 source: https://web.archive.org/web/20111023065227/http://www.java2s.com:80/Code/Java/Class/Thisprogramdemonstratesobjectconstruction.htm
 ---
-This program demonstrates object construction
-
 ```java title=Example.java
 /*
  This program is a part of the companion code for Core Java 8th ed.
@@ -25,7 +23,6 @@ This program demonstrates object construction
  */
 import java.util.Random;
 /**
- * This program demonstrates object construction.
  *
  * @version 1.01 2004-02-19
  * @author Cay Horstmann

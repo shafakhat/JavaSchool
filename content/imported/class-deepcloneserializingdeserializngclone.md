@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/20100212195257/http://java2s.com/Code/Java/Class/DeepcloneserializingdeserializngClone.htm
 ---
-Deep clone serializing/de-serializng Clone
-
 ```java title=Example.java
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more

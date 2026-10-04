@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1051
 source: https://web.archive.org/web/20081201185952/http://www.java2s.com:80/Code/Java/Generics/thetypeargumentforTmustbeeitherNumberoraclassderivedfromNumber.htm
 ---
-the type argument for T must be either Number, or a class derived from Number.
-
 ```java title=Example.java
 class Stats<T extends Number> {
   T[] nums;

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060510151734/http://www.java2s.com:80/Code
 ---
 Another Matcher reset : Java examples (example source code) » Regular Expressions » Matcher
 
-Another Matcher reset
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

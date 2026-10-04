@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20100210001300/http://java2s.com/Code/Java/Database-SQL-JDBC/AcommonintermediateformatforanonXAJDBCpool.htm
 ---
-A common intermediate format for a non-XA JDBC pool
-
 ```java title=Example.java
 /**
  *  Licensed to the Apache Software Foundation (ASF) under one or more
@@ -28,7 +26,6 @@ A common intermediate format for a non-XA JDBC pool
 import java.io.Serializable;
 import java.util.Properties;
 /**
- * A common intermediate format for a non-XA JDBC pool
  *
  * @version $Rev: 476049 $ $Date: 2006-11-16 20:35:17 -0800 (Thu, 16 Nov 2006) $
  */

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1021
 source: https://web.archive.org/web/20081209042710/http://www.java2s.com:80/Code/Java/JPA/CreateSubQueryWithEntities.htm
 ---
-Create Sub Query With Entities
-
 ```java title=Example.java
 File: Professor.java
 import java.util.ArrayList;

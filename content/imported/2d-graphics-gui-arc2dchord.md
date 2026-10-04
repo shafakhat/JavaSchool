@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1048
 source: https://web.archive.org/web/20100212183135/http://java2s.com/Code/Java/2D-Graphics-GUI/Arc2DCHORD.htm
 ---
-Arc2D.CHORD
-
 ```java title=Example.java
 import java.awt.Frame;
 import java.awt.Graphics;

@@ -17,7 +17,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Value in binary: 10101010
 Number of one bits: 4
 ```

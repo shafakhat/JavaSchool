@@ -65,22 +65,17 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="buffer-create">Buffer Create</h2>
 <p>We can create a buffer by using the allocate() factory method of a particular buffer class as follows:</p>
 <p>The following code creates a byte buffer with the capacity as 8</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-ByteBuffer bb  = ByteBuffer.allocate(8);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">ByteBuffer bb  = ByteBuffer.allocate(8);</code></pre></div>
 <p>To get the capacity</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-int capacity = bb.capacity();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">int capacity = bb.capacity();</code></pre></div>
 <p>The following code creates a character buffer with the capacity as 1024</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-CharBuffer cb  = CharBuffer.allocate(1024);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">CharBuffer cb  = CharBuffer.allocate(1024);</code></pre></div>
 <p>A byte buffer has a method called allocateDirect() which creates a byte buffer for which the memory is allocated from the operating system memory, not from the JVM heap.</p>
 <p>We can use the isDirect() method of the ByteBuffer class to check if a buffer is direct or non-direct.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-// Create a  direct byte   buffer of  512  bytes capacity
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Create a  direct byte   buffer of  512  bytes capacity
 ByteBuffer bbd = ByteBuffer.allocateDirect(512);</code></pre></div>
 <p>Another way to create a buffer is to wrap an array using the buffer's static wrap() method.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-byte[]  byteArray = new byte[512];
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">byte[]  byteArray = new byte[512];
 ByteBuffer bb  = ByteBuffer.wrap(byteArray);</code></pre></div>
 <p>We can use the same technique to create a buffer to store other primitive values.</p>
 <p>When we create a buffer, all elements of the buffer are initialized to a value of zero.</p>
@@ -97,7 +92,7 @@ ByteBuffer bb  = ByteBuffer.wrap(byteArray);</code></pre></div>
 <p>The following code creates a new buffer and display its four properties.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.ByteBuffer;
 import java.nio.InvalidMarkException;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     ByteBuffer bb = ByteBuffer.allocate(8);
     System.out.println("Capacity: " + bb.capacity());
@@ -125,15 +120,8 @@ try {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

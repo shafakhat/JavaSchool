@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1141
 source: https://web.archive.org/web/20090618013144/http://www.java2s.com:80/Code/Java/Data-Type/antNotoperationonBigInteger.htm
 ---
-antNot operation on BigInteger
-
 ```java title=Example.java
 import java.math.BigInteger;
 public class Main {

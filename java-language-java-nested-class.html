@@ -49,7 +49,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>How to define an anonymous class?</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abstractclass People {
   abstractvoid speak();
-}/*www.java2s.com*/publicclass Main {
+}publicclass Main {
   publicstaticvoid main(final String[] args) {
     new People() {
       String msg = "test";
@@ -65,7 +65,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The following code declares and instantiates an anonymous class that implements an interface.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">interface People {
   abstractvoid speak();
-}/*fromwww.java2s.com*/publicclass Main {
+}publicclass Main {
   publicstaticvoid main(final String[] args) {
     new People() {
       String msg = (args.length == 1) ? args[0] : "nothing to say";
@@ -81,7 +81,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A local class is a class that is declared anywhere that a local variable is declared. A local class has the same scope as a local variable.</p>
 <p>A local class has a name and can be reused. A local class instance can access the surrounding scope's local final variables and final parameters.</p>
 <p>Java Local Class</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {/*www.java2s.com*/void myMethod(finalint x) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {void myMethod(finalint x) {
     finalint y = x;
     class LocalClass {
       int a = x;
@@ -101,7 +101,7 @@ publicclass Main {
 <p>The code above generates the following result.</p>
 <h2 id="example-2">Example 2</h2>
 <p>The following code declares an Iterator interface and Iter inner class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Item{//www.java2s.comprivate String name;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Item{private String name;
   private String value;
   public Item(String n, String v){
     name = n;
@@ -158,7 +158,7 @@ publicclass Main {
 <p>The following code has one outer class named EnclosingClass and a nonstatic member class named EnclosedClass.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class EnclosingClass {
   privateint outerVariable;
-/*www.java2s.com*/privatevoid privateOuterMethod() {
+privatevoid privateOuterMethod() {
     System.out.println(outerVariable);
   }
   class EnclosedClass {
@@ -177,7 +177,7 @@ publicclass Main {
 <p>The code above generates the following result.</p>
 <h2 id="example-3">Example 3</h2>
 <p>The following code uses inner class ItemList to store the items.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Item {/*www.java2s.com*/private String name;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Item {private String name;
   private String desc;
   Item(String name, String desc) {
     this.name = name;
@@ -245,7 +245,7 @@ publicclass Main {
 <p>The code above generates the following result.</p>
 <h2 id="example-4">Example 4</h2>
 <p>The following program illustrates how to define and use an inner class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Outer {//fromwww.java2s.comint outer_x = 100;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Outer {int outer_x = 100;
   void test() {
     Inner inner = new Inner();
     inner.display();
@@ -270,7 +270,7 @@ publicclass Main {
   // this is an inner class
 class Inner {
     int y = 10; // y is local to Inner
-/*www.java2s.com*/void display() {
+void display() {
       System.out.println("display: outer_x = " + outer_x);
     }
   }
@@ -283,7 +283,7 @@ class Inner {
 <p>A static member class is a static member of an enclosing class. A static member class cannot access the enclosing class's instance fields and invoke its instance methods.</p>
 <p>A static member can access the enclosing class's static fields and invoke its static methods including private fields and methods.</p>
 <p>The following code has a static member class declaration.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Demo {//fromwww.java2s.compublicstaticvoid main(String[] args) {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Demo {publicstaticvoid main(String[] args) {
     Main.EnclosedClass.accessEnclosingClass();
     Main.EnclosedClass ec = new Main.EnclosedClass();
     ec.accessEnclosingClass2();
@@ -312,7 +312,7 @@ class Main {
 <p>The following code declares a Rectangle class and it uses static member class to provide Rectangle implementation for different data types, one is for double type and another is for float type.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">abstractclass Rectangle {
   abstractdouble getX();
-//www.java2s.comabstractdouble getY();
+abstractdouble getY();
   abstractdouble getWidth();
   abstractdouble getHeight();
   staticclass Double extends Rectangle {
@@ -380,15 +380,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

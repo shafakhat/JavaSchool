@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1057
 source: https://web.archive.org/web/20130821094750/http://java2s.com/Code/Java/JDK-7/GetfileContentType.htm
 ---
-Get file Content Type
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1136
 source: https://web.archive.org/web/20090903024258/http://www.java2s.com:80/Code/Java/Class/Callingconstructorswiththis.htm
 ---
-Calling constructors with this
-
 ```java title=Example.java
 // : c04:Flower.java
-// Calling constructors with "this."
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 public class Flower {

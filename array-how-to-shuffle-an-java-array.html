@@ -43,7 +43,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <ul><li>Shuffle an array</li></ul>
 <h3 id="shuffle-an-array">Shuffle an array</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Random;
-/*fromjava2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid shuffle(final Object[] array) {
     final Random r = new Random();
     finalint limit = array.length;
@@ -51,7 +51,6 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       swap(array, i, r.nextInt(limit));
     }
   }
-
   publicstaticvoid shuffle(finalint[] array) {
     final Random r = new Random();
     finalint limit = array.length;
@@ -59,7 +58,6 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       swap(array, i, r.nextInt(limit));
     }
   }
-
   publicstaticvoid shuffle(final Object[] array, finallong seed) {
     final Random r = new Random(seed);
     finalint limit = array.length;
@@ -67,19 +65,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       swap(array, i, r.nextInt(limit));
     }
   }
-
   publicstaticvoid swap(final Object[] array, finalint i, finalint j) {
     Object o = array[i];
     array[i] = array[j];
     array[j] = o;
   }
-
   publicstaticvoid swap(finalint[] array, finalint i, finalint j) {
     int o = array[i];
     array[i] = array[j];
     array[j] = o;
   }
-
 }</code></pre></div>
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
@@ -94,15 +89,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

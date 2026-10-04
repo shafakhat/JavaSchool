@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1013
 source: https://web.archive.org/web/20110928152202/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/Addingwatermarktoanimage.htm
 ---
-Adding watermark to an image
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.Font;

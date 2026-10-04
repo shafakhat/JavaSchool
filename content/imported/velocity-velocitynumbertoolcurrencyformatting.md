@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1089
 source: https://web.archive.org/web/20060717064251/http://www.java2s.com:80/Code/Java/Velocity/VelocityNumberToolCurrencyFormatting.htm
 ---
-Velocity NumberTool Currency Formatting
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

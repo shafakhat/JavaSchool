@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1049
 source: https://web.archive.org/web/20070110223035/http://www.java2s.com:80/Code/Java/Apache-Common/MapResultSettoObject.htm
 ---
-Map ResultSet to Object
-
 ```java title=Example.java
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.commons.beanutils.DynaBean;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20100211073412/http://java2s.com/Code/Java/Regular-Expressions/EscapingSpecialCharactersinaPattern.htm
 ---
-Escaping Special Characters in a Pattern
-
 ```java title=Example.java
 import java.util.regex.Pattern;
 public class Main {

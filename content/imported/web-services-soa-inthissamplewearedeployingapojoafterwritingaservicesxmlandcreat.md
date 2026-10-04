@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1123
 source: https://web.archive.org/web/20071026050722/http://www.java2s.com:80/Code/Java/Web-Services-SOA/InthissamplewearedeployingaPOJOafterwritingaservicesxmlandcreatinganaar.htm
 ---
-In this sample, we are deploying a POJO after writing a services.xml and creating an aar
-
 ```java title=Example.java
 Axis2 Quick Start Guide- Sample 1
 =================================

@@ -60,14 +60,13 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>We cannot add a public or protected constructor to an enum type.</p>
 <p>Level enum declares a public method getLevelValue().</p>
 <p>The enum constant declarations have changed to</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-LOW(30), MEDIUM(15),  HIGH(7),  URGENT(1);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">LOW(30), MEDIUM(15),  HIGH(7),  URGENT(1);</code></pre></div>
 <p>Now every enum constant name is followed by an integer value in parentheses. LOW(30) is shorthand for calling the constructor with an int parameter type.</p>
 <p>When an enum constant is created, the value inside the parentheses will be passed to the constructor that we have added.</p>
 <p>LOW invokes a default no-args constructor, while LOW(30) calls the constructor with parameter.</p>
 <h2 id="example">Example</h2>
 <p>The following code tests the Level enum type. It prints the names of the constants, their ordinals, and their underline value.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Level {//fromwww.java2s.com
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">enum Level {
   LOW(30), MEDIUM(15), HIGH(7), URGENT(1);
   // Declare an instance variable
 privateint levelValue;
@@ -102,15 +101,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

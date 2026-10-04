@@ -6,7 +6,6 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20100814060519/http://www.java2s.com:80/Code/Java/Ant/Buildscriptfromapachedbutils.htm
 ---
-Build script from apache dbutils
 1.  Ant script for xmlgraphics-commons
 2.  nutch ant script
 3.  rhino ant build script

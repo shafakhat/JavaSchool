@@ -21,7 +21,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 in the block
 in the block
 ```

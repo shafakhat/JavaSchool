@@ -22,7 +22,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 String: String first, int: 11
 int: 99, String: Int first
 ```

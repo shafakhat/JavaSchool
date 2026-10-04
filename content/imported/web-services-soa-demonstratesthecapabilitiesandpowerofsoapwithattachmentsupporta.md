@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1112
 source: https://web.archive.org/web/20071013163049/http://java2s.com:80/Code/Java/Web-Services-SOA/DemonstratesthecapabilitiesandpowerofSOAPwithAttachmentsupportandtheAttachmentAPIofAXIS2.htm
 ---
-Demonstrates the capabilities and power of SOAP with Attachment support and the Attachment API of AXIS2
-
 ```java title=Example.java
 Sample: SOAP with Attachments
 ================================

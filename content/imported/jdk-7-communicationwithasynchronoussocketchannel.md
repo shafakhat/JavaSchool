@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20130622144858/http://www.java2s.com:80/Code/Java/JDK-7/CommunicationwithAsynchronousSocketChannel.htm
 ---
-Communication with AsynchronousSocketChannel
-
 ```java title=Example.java
 import java.io.InputStream;
 import java.io.ObjectInputStream;

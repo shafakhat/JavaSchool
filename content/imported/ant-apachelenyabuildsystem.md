@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1027
 source: https://web.archive.org/web/20101207185055/http://www.java2s.com:80/Code/Java/Ant/ApacheLenyaBuildSystem.htm
 ---
-Apache Lenya Build System
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <!--
@@ -28,7 +26,6 @@ Apache Lenya Build System
 <!DOCTYPE project [
 <!-- ---------------------------------------------------------------------------
                        * --------------------------- *
-Apache Lenya Build System
                        * --------------------------- *
        CVS $Id: build.xml 473861 2006-11-12 03:51:14Z gregor $:
 ---------------------------------------------------------------------------- -->

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20090602112319/http://www.java2s.com:80/Code/Java/Threads/Adaemonthread.htm
 ---
-A daemon thread.
-
 ```java title=Example.java
 class MyDaemon implements Runnable {
   Thread thrd;

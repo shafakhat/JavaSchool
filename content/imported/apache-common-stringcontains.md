@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1061
 source: https://web.archive.org/web/20071025002349/http://www.java2s.com:80/Code/Java/Apache-Common/Stringcontains.htm
 ---
-String contains
-
 ```java title=Example.java
 /*
 true

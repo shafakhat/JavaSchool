@@ -42,8 +42,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>In Java I/O, a stream means a flow of data. The data in the stream could be bytes, characters, objects, etc.</p>
 <p>To read from a file, we need to create an object of the FileInputStream class, which will represent the input stream.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-String srcFile = "test.txt";
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String srcFile = "test.txt";
 FileInputStream fin  = new FileInputStream(srcFile);</code></pre></div>
 <p>The constructor of the FileInputStream class throws a FileNotFoundException if the file does not exist. To handle this exception, we need to place your code in a try-catch block, like so:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">try  {
@@ -56,8 +55,7 @@ FileInputStream fin  = new FileInputStream(srcFile);</code></pre></div>
 <p>read() method's return type is int, though it returns a byte value. It returns -1 if the end of the file is reached.</p>
 <p>We need to convert the returned int value to a byte to get the byte read from the file. Typically, we read a byte at a time in a loop.</p>
 <p>Finally, we need to close the input stream using its close() method.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-// Close  the   input  stream
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Close  the   input  stream
 fin.close();</code></pre></div>
 <p>The close() method may throw an IOException, and because of that, we need to enclose this call inside a try-catch block.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">try  {
@@ -68,8 +66,7 @@ fin.close();</code></pre></div>
 <p>Typically, we construct an input stream inside a try block and close it in a finally block to make sure it is always closed after we are done with it.</p>
 <p>All input/output streams are auto closeable. We can use a try-with-resources to create their instances, so they will be closed automatically regardless of an exception being thrown or not, avoiding the need to call their close() method explicitly.</p>
 <p>The following code shows using a try-with-resources to create a file input stream:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-String srcFile = "test.txt";
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String srcFile = "test.txt";
 try  (FileInputStream fin  = new FileInputStream(srcFile))  {
     // Use fin to read   data from  the   file here
 }
@@ -80,7 +77,7 @@ catch  (FileNotFoundException e)  {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-/*fromwww.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     String dataSourceFile = "asdf.txt";
     try (FileInputStream fin = new FileInputStream(dataSourceFile)) {
@@ -106,15 +103,8 @@ import java.io.IOException;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

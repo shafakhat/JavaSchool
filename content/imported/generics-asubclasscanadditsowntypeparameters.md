@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/20100213125932/http://java2s.com/Code/Java/Generics/Asubclasscanadditsowntypeparameters.htm
 ---
-A subclass can add its own type parameters.
-
 ```java title=Example.java
 class Gen<T> {
   T ob; // declare an object of type T

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1138
 source: https://web.archive.org/web/20130821082329/http://java2s.com/Code/Java/JDK-7/UseReentrantLocktocoordinate.htm
 ---
-Use ReentrantLock to coordinate
-
 ```java title=Example.java
 import java.util.ArrayList;
 import java.util.HashSet;

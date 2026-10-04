@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1150
 source: https://web.archive.org/web/20081006161218/http://www.java2s.com:80/Code/Java/Class/Constructorcallsduringinheritance.htm
 ---
-Constructor calls during inheritance
-
 ```java title=Example.java
 // : c06:Cartoon.java
-// Constructor calls during inheritance.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Art {

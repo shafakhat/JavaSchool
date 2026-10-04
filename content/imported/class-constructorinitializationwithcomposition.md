@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1151
 source: https://web.archive.org/web/20081006161223/http://www.java2s.com:80/Code/Java/Class/Constructorinitializationwithcomposition.htm
 ---
-Constructor initialization with composition
-
 ```java title=Example.java
 // : c06:Bath.java
-// Constructor initialization with composition.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Soap {

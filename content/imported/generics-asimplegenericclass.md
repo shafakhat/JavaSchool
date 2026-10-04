@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20090409005917/http://www.java2s.com:80/Code/Java/Generics/Asimplegenericclass.htm
 ---
-A simple generic class.
-
 ```java title=Example.java
 class Gen<T> {
   T ob; // declare an object of type T

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1054
 source: https://web.archive.org/web/20070611152055/http://www.java2s.com:80/Code/Java/Regular-Expressions/MatchEmailaddress.htm
 ---
-Match Email address
-
 ```java title=Example.java
   /**
    * SubStringDemo.java separates domain name like "@yahoo.com"

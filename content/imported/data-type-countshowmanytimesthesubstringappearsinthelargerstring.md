@@ -26,7 +26,6 @@ source: https://web.archive.org/web/20100120070745/http://www.java2s.com:80/Tuto
 public class Main {
   //-----------------------------------------------------------------------
   /**
-   * Counts how many times the substring appears in the larger String.
    *
    * A <code>null</code> or empty ("") String input returns <code>0</code>.
    *

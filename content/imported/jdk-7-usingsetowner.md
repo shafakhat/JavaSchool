@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1146
 source: https://web.archive.org/web/20130820202021/http://java2s.com/Code/Java/JDK-7/UsingsetOwner.htm
 ---
-Using setOwner
-
 ```java title=Example.java
 import java.nio.file.FileSystems;
 import java.nio.file.Files;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1045
 source: https://web.archive.org/web/20061026221446/http://www.java2s.com/Code/Java/Ant/Checkoutsourcecodefromcvs.htm
 ---
-Check out source code from cvs
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Example Application Build" default="build-both" basedir=".">

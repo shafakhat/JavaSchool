@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1026
 source: https://web.archive.org/web/20071018071930/http://java2s.com:80/Code/Java/PDF-RTF/AddingTifimagetoPdfDocument.htm
 ---
-Adding Tif image to Pdf Document
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import java.io.IOException;

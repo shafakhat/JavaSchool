@@ -43,36 +43,27 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>We would like to write an application that asks the user to enter two integers.</p>
 <p>The get them from the user and print their sum, product, difference and quotient (division).</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Scanner;
-
 publicclass Main{
     publicstaticvoid main(String[] args){
         Scanner input = newScanner(System.in);
-
         //your code here
     }
 }</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Scanner;
-
 publicclass Main{
     publicstaticvoid main(String[] args){
         Scanner input = newScanner(System.in);
-
         int difference = 0;
         int quotient = 0;
-
         System.out.print("Enter 2 integers separated by a space: ");
         int x = input.nextInt();
         int y = input.nextInt();
-
         // sum
         printSolution("Sum", x + y);
-
         // product
         printSolution("Product", x * y);
-
         // difference
         printSolution("Difference", Math.abs(x - y));
-
         if(x != 0 &amp;&amp; y != 0)
             printSolution("Quotient", y % x);
         else
@@ -84,32 +75,25 @@ publicclass Main{
 }</code></pre></div>
 <p>Or you can do</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">package chapter2;
-
 import java.util.Scanner;
-
 publicclass Main {
-
   publicstaticvoid main(String[] args) {
-    /*www.java2s.com*/// Declaring variables needed for exerciseScanner input = newScanner(System.in);
+    // Declaring variables needed for exerciseScanner input = newScanner(System.in);
     int x, y;
     int xsquare, ysquare;
     int sumsquare;
     int difsquare;
-
     // Prompting user for two integersSystem.out.print("Enter first integer: ");
     x = input.nextInt();
     System.out.println("Eter second integer: ");
     y = input.nextInt();
-
     // Performing calculations as described in exercise specification
     xsquare = x * x;
     ysquare = y * y;
     sumsquare = xsquare + ysquare;
     difsquare = xsquare - ysquare;
-
     // Displaying results to userSystem.out.printf("Square of x = %s, Square o y = %s.%nSum of squares = %s, Difference of squares = %s",
         xsquare, ysquare, sumsquare, difsquare);
-
     input.close();
   }
 }</code></pre></div>
@@ -126,15 +110,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

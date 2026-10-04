@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20081224060129/http://www.java2s.com:80/Code/Java/JPA/CreateEntityManagerFactory.htm
 ---
-Create Entity Manager Factory
-
 ```java title=Example.java
 File: Professor.java
 import javax.persistence.Entity;

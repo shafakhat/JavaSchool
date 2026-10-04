@@ -45,7 +45,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The following code declares an int array and stores integer value into it. Then it uses a for loop to go through each element in that array and sum the int value. Finally it divides the sum by the array length and output the average.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String[] args) {
-/*java2s.com*/int[] intArray = newint[] { 1, 2, 3, 4, 5 };
+int[] intArray = newint[] { 1, 2, 3, 4, 5 };
     // calculate sum
 int sum = 0;
     for (int i = 0; i &lt; intArray.length; i++){
@@ -53,7 +53,6 @@ int sum = 0;
     }
     // calculate average
 double average = sum / intArray.length;
-
     System.out.println("average: " + average);
   }
 }</code></pre></div>
@@ -61,7 +60,7 @@ double average = sum / intArray.length;
 <h3 id="create-fibonacci-series-with-array">Create Fibonacci Series with array</h3>
 <p>The first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-/*fromjava2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     int length = 20;
     long[] series = newlong[length];
@@ -76,29 +75,23 @@ double average = sum / intArray.length;
 <p>The output:</p>
 <h3 id="two-dimensional-double-type-array-and-matrix-calculation">Two-dimensional double type array and Matrix calculation</h3>
 <p>The following code use two-dimensional double type array to do Matrix calculation</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Matrix {//fromjava2s.comprivatedouble[][] doubleArray;
-
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Matrix {privatedouble[][] doubleArray;
   Matrix(int nrows, int ncols) {
     doubleArray = newdouble[nrows][ncols];
   }
-
   int getCols() {
     return doubleArray[0].length;
   }
-
   int getRows() {
     return doubleArray.length;
   }
-
   double getValue(int row, int col) {
     return doubleArray[row][col];
   }
-
   void setValue(int row, int col, double value) {
     doubleArray[row][col] = value;
   }
 }
-
 publicclass Main {
   publicstaticvoid main(String[] args) {
     Matrix a = new Matrix(1, 3);
@@ -116,7 +109,6 @@ publicclass Main {
     dump(b);
     dump(multiply(a, b));
   }
-
   staticvoid dump(Matrix m) {
     for (int i = 0; i &lt; m.getRows(); i++) {
       for (int j = 0; j &lt; m.getCols(); j++){
@@ -126,7 +118,6 @@ publicclass Main {
     }
     System.out.println();
   }
-
   static Matrix multiply(Matrix a, Matrix b) {
     if (a.getCols() != b.getRows()) {
       thrownew IllegalArgumentException("rows/columns mismatch");
@@ -139,7 +130,6 @@ publicclass Main {
         }
       }
     }
-
     return result;
   }
 }</code></pre></div>
@@ -157,15 +147,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

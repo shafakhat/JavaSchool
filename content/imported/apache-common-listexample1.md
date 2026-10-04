@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20061018181044/http://www.java2s.com/Code/Java/Apache-Common/ListExample1.htm
 ---
-List Example 1
-
 ```java title=Example.java
 import org.apache.commons.collections.list.TreeList;
 import org.apache.commons.collections.list.SetUniqueList;

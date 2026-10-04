@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20061026214845/http://www.java2s.com/Code/Java/2D-Graphics-GUI/Aquickutilitytoprintoutgraphicdeviceinformation.htm
 ---
-A quick utility to print out graphic device information
-
 ```java title=Example.java
 /*
 Java Swing, 2nd Edition

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1084
 source: https://web.archive.org/web/20111014030743/http://www.java2s.com:80/Code/Java/Class/Thisprogramdemonstratescloning.htm
 ---
-This program demonstrates cloning
-
 ```java title=Example.java
 /*
    This program is a part of the companion code for Core Java 8th ed.
@@ -26,7 +24,6 @@ This program demonstrates cloning
 import java.util.Date;
 import java.util.GregorianCalendar;
 /**
- * This program demonstrates cloning.
  * @version 1.10 2002-07-01
  * @author Cay Horstmann
  */

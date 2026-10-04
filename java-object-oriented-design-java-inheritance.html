@@ -46,13 +46,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A class in Java cannot have more than one superclass.</p>
 <h2 id="syntax">Syntax</h2>
 <p>The general syntax is</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;class modifiers&gt;class &lt;SubclassName&gt; extends &lt;SuperclassName&gt; {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;class modifiers&gt;class &lt;SubclassName&gt; extends &lt;SuperclassName&gt; {
     // Code for the   Subclass
 }</code></pre></div>
 <h2 id="example">Example</h2>
 <p>The following code shows how to use create a Manager class from Employee class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Employee {/*www.java2s.com*/private String name = "Unknown";
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Employee {private String name = "Unknown";
   publicvoid setName(String name) {
     this.name = name;
   }
@@ -78,12 +77,10 @@ publicclass Main {
 <h2 id="note">Note</h2>
 <p>We did not write any code for the Manager class, it works the same as the Employee class, because it inherits from the Employee class.</p>
 <p>You create a manager object by using the Manager class's constructor.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Manager mgr = new Manager();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Manager mgr = new Manager();</code></pre></div>
 <p>After the manager object is created, Manager object works the same way with Employee object.</p>
 <p>We used the setName() and getName() methods with the manager object.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-mgr.setName("Tom");
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">mgr.setName("Tom");
 String mgrName  = mgr.getName();</code></pre></div>
 <p>The Manager class does not declare the setName() and getName() methods. Manager class "extends Employee".</p>
 <p>When a class inherits from another class, it inherits its superclass members, instance variables, methods, etc.</p>
@@ -94,8 +91,7 @@ String mgrName  = mgr.getName();</code></pre></div>
 }</code></pre></div>
 <p>class P is extending from Object, even though we didn't specify the parent class.</p>
 <p>All classes were implicitly inherited from the Object class. Therefore objects of all classes can use the methods of the Object class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Employee emp = new Employee();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Employee emp = new Employee();
 int hc  = emp.hashCode();
 String str = emp.toString();</code></pre></div>
 <p>Employee class does not specify its superclass using an extends clause. This means that it inherits from the Object class.</p>
@@ -105,7 +101,7 @@ String str = emp.toString();</code></pre></div>
 <p>For example, a Manager is a specific type of Employee. An Employee is a specific type of Object.</p>
 <p>As you move up in the inheritance hierarchy, you move from a specific type to a more general type.</p>
 <p>An assignment from subclass to superclass is called upcasting and it is always allowed in Java.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Employee {//fromwww.java2s.comprivate String name = "Unknown";
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Employee {private String name = "Unknown";
   publicvoid setName(String name) {
     this.name = name;
   }
@@ -134,21 +130,18 @@ publicclass Main {
 <p>Downcasting is the opposite of upcasting.</p>
 <p>In upcasting, the assignment moves up the class hierarchy whereas in downcasting the assignment moves down the class hierarchy.</p>
 <p>We have to use a typecast in downcasting.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Manager mgr = (Manager)emp;  // OK. Downcast  at work</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Manager mgr = (Manager)emp;  // OK. Downcast  at work</code></pre></div>
 <p>The code above generates the following result.</p>
 <h2 id="instanceof-operator">instanceof Operator</h2>
 <p>Java instanceof operator helps us determine whether a reference variable has a reference to a class or a subclass.</p>
 <p>It takes two operands and evaluates to a boolean value true or false.</p>
 <p>Its syntax is</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;Class Reference Variable&gt; instanceof &lt;Class Name or Interface&gt;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;Class Reference Variable&gt; instanceof &lt;Class Name or Interface&gt;</code></pre></div>
 <p>If &lt;Class Reference Variable&gt; refers to an object of class &lt;Class Name&gt; or any of its descendants, instanceof returns true.</p>
 <p>Otherwise, it returns false.</p>
 <p>If reference variable is null, instanceof always returns false.</p>
 <p>We should use the instanceof operator before downcasting.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Manager mgr = new Manager();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Manager mgr = new Manager();
 Employee emp = mgr;
 if (emp instanceof Manager)  {
     // downcast  will succeed
@@ -180,15 +173,8 @@ if (emp instanceof Manager)  {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

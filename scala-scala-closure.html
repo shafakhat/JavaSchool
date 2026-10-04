@@ -43,12 +43,10 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A closure is a function, whose return value depends on the value of one or more variables declared outside this function.</p>
 <h2 id="example">Example</h2>
 <p>Let's create a multiplier function as illustrated:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-var y = 3
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">var y = 3
 val multiplier = (x:Int) =&gt; x * y</code></pre></div>
 <p>Now, y has a reference to a variable outside the function but in the enclosing scope.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main extends App {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main extends App {
     var y = 3
     val multiplier = (x:Int) =&gt; x * y
     println(multiplier(3))
@@ -57,33 +55,26 @@ object Main extends App {
 <p>In functional programming languages, calling a function with parameters is to apply the function to the parameters.</p>
 <p>When all the parameters are passed to the function we have fully applied the function to all the parameters.</p>
 <p>A simple add function:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-val add = (x: Int, y: Int) =&gt; x + y
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">val add = (x: Int, y: Int) =&gt; x + y
 add(1,2)</code></pre></div>
 <p>But when we give only a subset of the parameters to the function, the result of the expression is a partially applied function.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-val partiallyAdd = add(1, _:Int)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">val partiallyAdd = add(1, _:Int)</code></pre></div>
 <p>Because we haven't provided a value for the second parameter, the variable partially Add is a partially applied function.</p>
 <p>When you give partiallyAdd an Int value 2, you get the sum of the Int number passed into the add and partiallyAdd functions:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-partiallyAdd(2)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">partiallyAdd(2)</code></pre></div>
 <p>When we provide all the parameters, the original function is executed, yielding the result.</p>
 <h2 id="curried-function">Curried Function</h2>
 <p>Currying converts a function with multiple parameters creating a chain of function, each expecting a single parameter.</p>
 <p>The following code creates add function that adds two Int parameters, a and b, as illustrated here:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-val add = (x: Int, y: Int) =&gt; x + y
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">val add = (x: Int, y: Int) =&gt; x + y
 add(3,3)</code></pre></div>
 <p>In Scala, curried functions are defined with multiple parameter lists, as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-def add(x: Int)(y: Int) = x + y</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">def add(x: Int)(y: Int) = x + y</code></pre></div>
 <p>We can also use the following syntax to define a curried function:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-def add(x: Int) = (y: Int) =&gt; x + y</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">def add(x: Int) = (y: Int) =&gt; x + y</code></pre></div>
 <p>Instead of one list of two Int parameters, you apply the curried add function to two lists of one Int parameter.</p>
 <p>Thus the curried add function looks like this:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-def curriedAdd(a: Int)(b: Int) = a + b
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">def curriedAdd(a: Int)(b: Int) = a + b
 curriedAdd(2)(2)</code></pre></div>
 <ul><li>« Previous</li></ul>
     <div class="pager"><a class="pager-btn" href="java-utility-method-array-split-index-0.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Utililty Methods Arra...</span></a><a class="pager-btn pager-next" href="java-utility-method-array-start-with-index-0.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Utililty Methods Arra...</span></a></div>
@@ -96,15 +87,8 @@ curriedAdd(2)(2)</code></pre></div>
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

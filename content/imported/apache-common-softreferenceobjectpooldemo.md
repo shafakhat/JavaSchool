@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1055
 source: https://web.archive.org/web/20061016093607/http://www.java2s.com/Code/Java/Apache-Common/SoftReferenceObjectPoolDemo.htm
 ---
-Soft Reference Object Pool Demo
-
 ```java title=Example.java
 import junit.framework.TestCase;
 import junit.framework.TestSuite;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1083
 source: https://web.archive.org/web/20130821101800/http://java2s.com/Code/Java/JDK-7/Isapathabsolute.htm
 ---
-Is a path absolute
-
 ```java title=Example.java
 import java.nio.file.FileSystems;
 import java.nio.file.Path;

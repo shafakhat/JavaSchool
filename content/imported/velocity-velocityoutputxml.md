@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1093
 source: https://web.archive.org/web/20060503013139/http://www.java2s.com:80/Code/Java/Velocity/VelocityOutputXML.htm
 ---
-Velocity Output XML
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.util.List;

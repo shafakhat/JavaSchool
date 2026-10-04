@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1134
 source: https://web.archive.org/web/20071013163104/http://java2s.com:80/Code/Java/Web-Services-SOA/ThisdemoillustratesApacheCXFssupportforSOAPheaders.htm
 ---
-This demo illustrates Apache CXF's support for SOAP headers
-
 ```java title=Example.java
 SOAP Headers
 ============

@@ -30,7 +30,6 @@ import java.sql.SQLException;
  */
 public class Main {
   /**
-   * Overlays part of a String with another String.
    *
    * A <code>null</code> string input returns <code>null</code>.
    * A negative index is treated as zero.

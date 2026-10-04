@@ -29,6 +29,5 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 utilDate:Fri Dec 12 00:00:00 PST 2003
 ```

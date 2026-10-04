@@ -42,7 +42,7 @@ public class Main {
   public static void main(String[] args) throws Exception {
     XmlBeanFactory xbf = new XmlBeanFactory(new ClassPathResource("context.xml"));
     DownloadManager dm = (DownloadManager)xbf.getBean("downloadManager");
-    String uri = "http://www.java2s.com";
+    String uri = "http:";
     dm.download(uri);
   }
 }

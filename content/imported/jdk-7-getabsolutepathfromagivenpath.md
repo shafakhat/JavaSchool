@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1055
 source: https://web.archive.org/web/20130821104023/http://java2s.com/Code/Java/JDK-7/GetabsolutepathfromagivenPath.htm
 ---
-Get absolute path from a given Path
-
 ```java title=Example.java
 import java.nio.file.Path;
 import java.nio.file.Paths;

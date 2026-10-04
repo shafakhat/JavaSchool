@@ -26,7 +26,6 @@ source: https://web.archive.org/web/20091219110338/http://www.java2s.com:80/Tuto
 import java.util.LinkedHashMap;
 import java.util.Map;
 /**
- * A Least Recently Used Cache
  *
  * @version $Revision: 747062 $
  */

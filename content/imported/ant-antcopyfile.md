@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20100203135506/http://www.java2s.com:80/Code/Java/Ant/Antcopyfile.htm
 ---
-Ant copy file
-
 ```java title=Example.java
 <project name="YourName" default="all">
   <target name="all" depends="init,clean,compile,createJars,copyBuild" >

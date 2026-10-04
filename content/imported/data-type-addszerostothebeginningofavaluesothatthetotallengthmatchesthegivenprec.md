@@ -6,7 +6,6 @@ section: Imported - java2s Archive
 order: 1120
 source: https://web.archive.org/web/20100214082541/http://java2s.com/Code/Java/Data-Type/Addszerostothebeginningofavaluesothatthetotallengthmatchesthegivenprecisionotherwisetrimstherightdigits.htm
 ---
-Adds zeros to the beginning of a value so that the total length matches the given precision, otherwise trims the right digits.
 1.  Fmt - format text (like Berkeley UNIX fmt)
 2.  Demonstrate some usage patterns and format-code examples of the Formatter
 3.  String.format(): right pad a string

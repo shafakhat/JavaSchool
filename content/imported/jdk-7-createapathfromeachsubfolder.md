@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1026
 source: https://web.archive.org/web/20130821095911/http://java2s.com/Code/Java/JDK-7/Createapathfromeachsubfolder.htm
 ---
-Create a path from each sub folder
-
 ```java title=Example.java
 import java.nio.file.FileSystems;
 import java.nio.file.Path;

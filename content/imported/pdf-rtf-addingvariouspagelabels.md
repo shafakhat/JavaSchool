@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1027
 source: https://web.archive.org/web/20080102040815/http://www.java2s.com:80/Code/Java/PDF-RTF/AddingvariousPagelabels.htm
 ---
-Adding various Page labels
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import java.io.IOException;

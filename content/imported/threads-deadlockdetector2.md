@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/20111124182721/http://java2s.com/Code/Java/Threads/DeadLockDetector2.htm
 ---
-DeadLock Detector 2
-
 ```java title=Example.java
 /**
  * This file is part of aion-emu <aion-emu.com>.

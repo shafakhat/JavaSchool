@@ -89,7 +89,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Your choice:
 This is a A
 Woof Woof

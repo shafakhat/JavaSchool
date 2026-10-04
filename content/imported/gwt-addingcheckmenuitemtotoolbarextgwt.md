@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20100427005712/http://www.java2s.com:80/Code/Java/GWT/AddingCheckMenuItemtoToolBarExtGWT.htm
 ---
-Adding CheckMenuItem to ToolBar (Ext GWT)
-
 ```java title=Example.java
 /*
  * Ext GWT - Ext for GWT

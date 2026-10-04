@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1062
 source: https://web.archive.org/web/20130721105551/http://www.java2s.com:80/Code/Java/JDK-7/Getparentlogger.htm
 ---
-Get parent logger
-
 ```java title=Example.java
 import java.sql.Connection;
 import java.sql.Driver;

@@ -7,7 +7,6 @@ order: 1022
 source: https://web.archive.org/web/20091030195321/http://www.java2s.com:80/Code/Java/Class/GetsthetoStringthatwouldbeproducedbyObjectifaclassdidnotoverridetoStringitself.htm
 ---
 Gets the toString that would be produced by Object if a class did not override toString itself. : toString « Class « Java
-Gets the toString that would be produced by Object if a class did not override toString itself.
 
 ```java title=Example.java
 /*

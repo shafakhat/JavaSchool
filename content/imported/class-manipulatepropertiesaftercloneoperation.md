@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20100212194957/http://java2s.com/Code/Java/Class/Manipulatepropertiesaftercloneoperation.htm
 ---
-Manipulate properties after clone operation
-
 ```java title=Example.java
 public class Main {
   public static void main(String[] args) {

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20071029211837/http://www.java2s.com:80/Code/Java/PDF-RTF/AnexampleusingMultiColumnTextwithirregularcolumns.htm
 ---
-An example using MultiColumnText with irregular columns
-
 ```java title=Example.java
 /*
  * $Id: MultiColumnIrregular.java,v 1.7 2005/05/09 11:52:45 blowagie Exp $ $Name:  $
@@ -34,11 +32,9 @@ import com.lowagie.text.pdf.MultiColumnText;
 import com.lowagie.text.pdf.PdfContentByte;
 import com.lowagie.text.pdf.PdfWriter;
 /**
- * An example using MultiColumnText with irregular columns.
  */
 public class MultiColumnIrregular {
     /**
-     * An example using MultiColumnText with irregular columns.
      * @param args no arguments needed
      */
     public static void main(String[] args) {

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/20060506000038/http://www.java2s.com:80/Code/Java/J2EE/EssentialStrutsAction.htm
 ---
-Essential Struts Action
-
 ```java title=Example.java
 /*
 Title:       Struts : Essential Skills (Essential Skills)

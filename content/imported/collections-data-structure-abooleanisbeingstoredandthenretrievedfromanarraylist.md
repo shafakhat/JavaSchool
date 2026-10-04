@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20090425194001/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AbooleanisbeingstoredandthenretrievedfromanArrayList.htm
 ---
-A boolean is being stored and then retrieved from an ArrayList
-
 ```java title=Example.java
 import java.util.ArrayList;
 public class Main {

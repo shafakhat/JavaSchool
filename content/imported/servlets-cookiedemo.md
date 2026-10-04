@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1028
 source: https://web.archive.org/web/20070109090621/http://www.java2s.com:80/Code/Java/Servlets/CookieDemo.htm
 ---
-Cookie Demo
-
 ```java title=Example.java
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;

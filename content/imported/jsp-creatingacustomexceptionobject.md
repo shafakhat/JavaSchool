@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20061026100723/http://www.java2s.com:80/Code/Java/JSP/CreatingaCustomExceptionObject.htm
 ---
-Creating a Custom Exception Object
-
 ```java title=Example.java
 <HTML>
     <HEAD>

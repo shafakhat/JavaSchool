@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513094134/http://www.java2s.com/Code/Ja
 ---
 Match address regular expressions : Java examples (example source code) » Regular Expressions » Match Address
 
-Match address regular expressions
-
 ```java title=Example.java
 public class MatchAddress {
   public static void main(String args[]) {

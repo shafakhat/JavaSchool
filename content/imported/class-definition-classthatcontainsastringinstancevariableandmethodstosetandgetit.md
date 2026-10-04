@@ -41,9 +41,7 @@ class GradeBook
 ```
 
 ```java title=Example.java
-
 Initial course name is: null
-
 Welcome to the grade book for
 Java!
 ```

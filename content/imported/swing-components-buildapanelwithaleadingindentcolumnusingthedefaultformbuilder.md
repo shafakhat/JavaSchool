@@ -6,7 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20060905011959/http://www.java2s.com:80/Code/Java/Swing-Components/BuildapanelwithaleadingindentcolumnusingtheDefaultFormBuilder.htm
 ---
-Build a panel with a leading indent column using the DefaultFormBuilder
 ---
 Download: forms.zip ( 197 K )
 Related examples in the same category

@@ -43,8 +43,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A For Comprehension is a very powerful control structure of Scala language.</p>
 <p>It offer the ability to iterate over a collection, and it also provides filtering options and the ability to generate new collections.</p>
 <p>Let's start with a basic for expression:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
      val dogBreeds = List("A", "B", "C", "D", "E", "F")
      for (breed &lt;- dogBreeds)
@@ -53,11 +52,9 @@ object Main {
 }</code></pre></div>
 <p>Basic for Expression is a very basic feature of the for expression.</p>
 <p>First we need a collection over which the for expression will iterate. We create a list of books as shown in the following code:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-val books = List("Scala", "Groovy", "Java", "SQL", "CSS")</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">val books = List("Scala", "Groovy", "Java", "SQL", "CSS")</code></pre></div>
 <p>Now we can write a very basic for expression to iterate over the books list.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
     val books = List("Scala", "Groovy", "Java", "SQL", "CSS")
     for (book&lt;-books)
@@ -70,8 +67,7 @@ object Main {
 <p>The expression breed &lt;- dogBreeds is called a generator expression , so named because it's generating individual values from a collection.</p>
 <p>The left arrow operator (&lt;-) is used to iterate through a collection, such as a List.</p>
 <p>We can also use it with a Range to write a more traditional-looking for loop:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
      for (i &lt;- 1 to 10) println(i)
   }
@@ -80,8 +76,7 @@ object Main {
 <p>We can add if expressions to filter for just elements we want to keep.</p>
 <p>These expressions are called guards.</p>
 <p>To find all D in our list of dog breeds, we modify the previous example to the following:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
      val dogBreeds = List("D", "Y", "D", "S", "G", "P")
      for (breed &lt;- dogBreeds
@@ -90,8 +85,7 @@ object Main {
   }
 }</code></pre></div>
 <p>You can have more than one guard:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
      val dogBreeds = List("D", "Y", "D", "S", "G", "P")
      for (breed &lt;- dogBreeds
@@ -105,8 +99,7 @@ object Main {
 }</code></pre></div>
 <p>A filter is an if clause inside the for expression that is used to filter the collection when we do not want to iterate through the entire collection.</p>
 <p>The following code shows how to find all Scala books in our list of books.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
     val books = List("Scala", "Groovy", "Java", "SQL", "CSS")
     for(book&lt;-books
@@ -117,8 +110,7 @@ object Main {
 <h2 id="variable-binding">Variable Binding</h2>
 <p>We can define variables inside for expressions.</p>
 <p>We can then re-use these variables within the body of your for expression.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
     val books = List("Scala", "Groovy", "Java", "SQL", "CSS")
     for {
@@ -132,8 +124,7 @@ object Main {
 <p>In Scala's for expression we can use the yield keyword to generate new collections.</p>
 <p>The type of the collection generated from the for expression is inferred from the type of the collection being iterated over.</p>
 <p>To hand value off to another part of our program in for loop, use the yield keyword to generating new collections with for expressions.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
      val dogBreeds = List("D", "Y", "D", "S", "G", "P")
      val filteredBreeds = for {
@@ -143,8 +134,7 @@ object Main {
   }
 }</code></pre></div>
 <p>The following code shows how to use yielding for a collection.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
     val books = List("Scala", "Groovy", "Java", "SQL", "CSS")
     var scalabooks = for{
@@ -159,8 +149,7 @@ object Main {
 <p>The scalabooks is of type List[String], because it is a subset of the books list, which is also of type List[String].</p>
 <h2 id="expanded-scope-and-value-definitions">Expanded Scope and Value Definitions</h2>
 <p>Scala's for comprehensions can define values inside the first part of your for expressions that can be used in the later expressions, as in this example:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
      val dogBreeds = List("D", "Y", "D", "S", "G", "P")
      for {
@@ -180,15 +169,8 @@ object Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

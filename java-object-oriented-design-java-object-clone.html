@@ -46,14 +46,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The declaration of the clone() method in the Object class is as follows:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">protected  Object clone()  throws   CloneNotSupportedException</code></pre></div>
 <p>clone() method is declared protected. Therefore, we cannot call it from the client code. The following code is not valid:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Object obj  = new Object();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Object obj  = new Object();
 Object clone = obj.clone(); // Error. Cannot  access protectedclone() method</code></pre></div>
 <p>We need to declare the clone() method public in a class to clone objects of the class.</p>
 <p>Its return type is Object. It means you will need to cast the returned value of the clone() method.</p>
 <p>Suppose MyClass is cloneable. The cloning code will look as</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-MyClass mc  = new MyClass();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">MyClass mc  = new MyClass();
 MyClass clone = (MyClass)mc.clone(); // Need to use  a  cast</code></pre></div>
 <p>The clone() method in the Object class throws a CloneNotSupportedException.</p>
 <p>To call the clone() method, we need to place the call in a try-catch block, or rethrow the exception.</p>
@@ -61,7 +59,7 @@ MyClass clone = (MyClass)mc.clone(); // Need to use  a  cast</code></pre></div>
 <p>The following code shows how to implement a clone method.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass implements Cloneable {
   privatedouble value;
-//www.java2s.compublic MyClass(double value) {
+public MyClass(double value) {
     this.value = value;
   }
   publicvoid setValue(double value) {
@@ -104,7 +102,7 @@ publicclass Main {
 <p>The following code shows how to do shallow clone.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass implements Cloneable {
   privatedouble value;
-//fromwww.java2s.compublic MyClass(double value) {
+public MyClass(double value) {
     this.value = value;
   }
   publicvoid setValue(double value) {
@@ -162,7 +160,7 @@ publicclass Main {
 <p>In a deep cloning, you need to clone all objects referenced by all reference instance variables of an object.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass implements Cloneable {
   privatedouble value;
-//fromwww.java2s.compublic MyClass(double value) {
+public MyClass(double value) {
     this.value = value;
   }
   publicvoid setValue(double value) {
@@ -226,15 +224,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

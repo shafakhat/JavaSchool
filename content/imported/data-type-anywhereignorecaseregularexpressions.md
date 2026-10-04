@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1142
 source: https://web.archive.org/web/20090531123225/http://www.java2s.com:80/Code/Java/Data-Type/Anywhereignorecaseregularexpressions.htm
 ---
-Anywhere, ignore case( regular expressions )
-
 ```java title=Example.java
 public class Main {
   public static void main(String[] argv) throws Exception {

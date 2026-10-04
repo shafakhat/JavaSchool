@@ -47,9 +47,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="no-args-constructor">no-args constructor</h2>
 <p>If you have the reference of a Class object, you can create an object of the class using the newInstance() method on the Class class.</p>
 <p>This method takes no parameter and is equivalent to using the new operator on the no-args constructor of the class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-MyClass m  = myObject.newInstance();</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {/*www.java2s.com*/public MyClass() {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">MyClass m  = myObject.newInstance();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {public MyClass() {
      System.out.println("called");
   }
 }
@@ -69,12 +68,11 @@ publicclass Main {
 <p>You can create an object using reflection by invoking a particular constructor. It involves two steps.</p>
 <ul><li>Get an instance of the constructor</li><li>Call newInstance to invoke it</li></ul>
 <p>You can get the reference of this constructor as shown:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Constructor&lt;MyClass&gt; cons  = myClass.getConstructor(int.class, String.class);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Constructor&lt;MyClass&gt; cons  = myClass.getConstructor(int.class, String.class);</code></pre></div>
 <p>Then call the newInstance() method with the arguments to create an object.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-//fromwww.java2s.comclass MyClass {
+class MyClass {
   public MyClass(int i, String s) {
     System.out.println("called");
     System.out.println(i);
@@ -104,7 +102,7 @@ publicclass Main {
 <p>In case of a static method, we just need specify null for the first argument.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-//www.java2s.comclass MyClass {
+class MyClass {
   public MyClass() {
   }
   publicvoid setName(String n) {
@@ -137,15 +135,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

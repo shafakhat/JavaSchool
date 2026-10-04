@@ -3,8 +3,8 @@ title: Represents a range of Number objects.
 nav: Represents a range of Numb...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1180
-source: https://web.archive.org/web/20100406202757/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/RepresentsarangeofNumberobjects.htm
+order: 1000
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/RepresentsarangeofNumberobjects.htm
 ---
 ```java title=Example.java
 /*
@@ -22,8 +22,7 @@ source: https://web.archive.org/web/20100406202757/http://www.java2s.com:80/Tuto
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-/**
+ *//**
  * <p>Represents a range of {@link Number} objects.</p>
  *
  * <p>This class uses <code>double</code> comparisons. This means that it
@@ -36,12 +35,9 @@ source: https://web.archive.org/web/20100406202757/http://www.java2s.com:80/Tuto
  * @version $Revision: 437554 $ $Date: 2006-08-27 23:21:41 -0700 (Sun, 27 Aug 2006) $
  *
  *
- */
-public final class NumberRange {
-    /* The minimum number in this range. */
-    private final Number min;
-    /* The maximum number in this range. */
-    private final Number max;
+ */public final class NumberRange {
+    /* The minimum number in this range. */ private final Number min;
+    /* The maximum number in this range. */ private final Number max;
     /**
      * <p>Constructs a new <code>NumberRange</code> using
      * <code>number</code> as both the minimum and maximum in
@@ -49,8 +45,7 @@ public final class NumberRange {
      *
      * @param num the number to use for this range
      * @throws NullPointerException if the number is <code>null</code>
-     */
-    public NumberRange(Number num) {
+     */ public NumberRange(Number num) {
         if (num == null) {
             throw new NullPointerException("The number must not be null");
         }
@@ -68,8 +63,7 @@ public final class NumberRange {
      * @param max the maximum number in this range
      * @throws NullPointerException if either the minimum or maximum number is
      *  <code>null</code>
-     */
-    public NumberRange(Number min, Number max) {
+     */ public NumberRange(Number min, Number max) {
         if (min == null) {
             throw new NullPointerException("The minimum value must not be null");
         } else if (max == null) {
@@ -86,16 +80,14 @@ public final class NumberRange {
      * <p>Returns the minimum number in this range.</p>
      *
      * @return the minimum number in this range
-     */
-    public Number getMinimum() {
+     */ public Number getMinimum() {
         return min;
     }
     /**
      * <p>Returns the maximum number in this range.</p>
      *
      * @return the maximum number in this range
-     */
-    public Number getMaximum() {
+     */ public Number getMaximum() {
         return max;
     }
     /**
@@ -105,8 +97,7 @@ public final class NumberRange {
      * @param number the number to test
      * @return <code>true</code> if the specified number occurs within this
      *  range; otherwise, <code>false</code>
-     */
-    public boolean includesNumber(Number number) {
+     */ public boolean includesNumber(Number number) {
         if (number == null) {
             return false;
         } else {
@@ -121,8 +112,7 @@ public final class NumberRange {
      * @param range the range to test
      * @return <code>true</code> if the specified range occurs entirely within
      *  this range; otherwise, <code>false</code>
-     */
-    public boolean includesRange(NumberRange range) {
+     */ public boolean includesRange(NumberRange range) {
         if (range == null) {
             return false;
         } else {
@@ -136,8 +126,7 @@ public final class NumberRange {
      * @param range the range to test
      * @return <code>true</code> if the specified range overlaps with this
      *  range; otherwise, <code>false</code>
-     */
-    public boolean overlaps(NumberRange range) {
+     */ public boolean overlaps(NumberRange range) {
         if (range == null) {
             return false;
         } else {
@@ -152,8 +141,7 @@ public final class NumberRange {
      * @param obj the reference object with which to compare
      * @return <code>true</code> if this object is the same as the obj
      *  argument; <code>false</code> otherwise
-     */
-    public boolean equals(Object obj) {
+     */ public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         } else if (!(obj instanceof NumberRange)) {
@@ -167,8 +155,7 @@ public final class NumberRange {
      * <p>Returns a hash code value for this object.</p>
      *
      * @return a hash code value for this object
-     */
-    public int hashCode() {
+     */ public int hashCode() {
         int result = 17;
         result = 37 * result + min.hashCode();
         result = 37 * result + max.hashCode();
@@ -182,8 +169,7 @@ public final class NumberRange {
      * is negative, then it is enclosed in parentheses.</p>
      *
      * @return the string representation of this range
-     */
-    public String toString() {
+     */ public String toString() {
         StringBuffer sb = new StringBuffer();
         if (min.doubleValue() < 0) {
             sb.append('(')

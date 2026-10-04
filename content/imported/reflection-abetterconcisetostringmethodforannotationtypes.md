@@ -7,7 +7,6 @@ order: 1002
 source: https://web.archive.org/web/20091004013416/http://www.java2s.com:80/Code/Java/Reflection/AbetterconcisetoStringmethodforannotationtypes.htm
 ---
 A better concise toString method for annotation types : Annotation « Reflection « Java
-A better concise toString method for annotation types
 
 ```java title=Example.java
 import java.util.Map;

@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1127
 source: https://web.archive.org/web/20090504072113/http://www.java2s.com:80/Code/Java/Class/Acompanionclasstomodifyimmutableobjects.htm
 ---
-A companion class to modify immutable objects
-
 ```java title=Example.java
 // : appendixa:Immutable2.java
-// A companion class to modify immutable objects.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 class Mutable {

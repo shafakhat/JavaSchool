@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20100208014149/http://java2s.com/Code/Java/Class/DeepcloneObject.htm
 ---
-Deep clone Object
-
 ```java title=Example.java
 /*
  * Copyright (C) 2001-2003 Colin Bell

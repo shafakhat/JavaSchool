@@ -3,8 +3,8 @@ title: For a float value x, this method returns +1.0F if x >= 0 and -1.0F if x <
 nav: For a float value x, this ...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1102
-source: https://web.archive.org/web/20100125091534/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Forafloatvaluexthismethodreturns10Fifx0and10Fifx0ReturnsNaNifxisNaN.htm
+order: 1017
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Forafloatvaluexthismethodreturns10Fifx0and10Fifx0ReturnsNaNifxisNaN.htm
 ---
 ```java title=Example.java
 import java.io.File;
@@ -25,16 +25,14 @@ import java.io.File;
  *  limitations under the License.
  *
  *
- */
-public class Main {
+ */publicclass Main {
   /**
    * For a float value x, this method returns +1.0F if x >= 0 and -1.0F if x <
    * 0. Returns <code>NaN</code> if <code>x</code> is <code>NaN</code>.
    *
    * @param x the value, a float
    * @return +1.0F or -1.0F, depending on the sign of x
-   */
-  public static float indicator(final float x) {
+   */publicstaticfloat indicator(finalfloat x) {
       if (Float.isNaN(x)) {
           return Float.NaN;
       }

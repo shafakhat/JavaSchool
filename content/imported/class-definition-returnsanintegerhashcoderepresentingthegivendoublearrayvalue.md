@@ -28,7 +28,6 @@ import java.io.File;
  */
 public class Main {
   /**
-   * Returns an integer hash code representing the given double array value.
    *
    * @param value the value to be hashed (may be null)
    * @return the hash code

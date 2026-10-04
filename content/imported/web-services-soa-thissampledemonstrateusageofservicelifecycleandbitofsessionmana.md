@@ -6,14 +6,11 @@ section: Imported - java2s Archive
 order: 1148
 source: https://web.archive.org/web/20071026130417/http://www.java2s.com:80/Code/Java/Web-Services-SOA/Thissampledemonstrateusageofservicelifecycleandbitofsessionmanagment.htm
 ---
-This sample demonstrate usage of service lifecycle and bit of session managment
-
 ```java title=Example.java
 Sample: ServiceLifeCycle
 =========================
 Introduction:
 ============
-This sample demonstrate usage of service lifecycle and bit of session managment.
 The main idea is to show where and how to use service lifecycle interface and
 session related methods.
 Prerequisites

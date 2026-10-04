@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1045
 source: https://web.archive.org/web/20090129105626/http://www.java2s.com:80/Code/Java/EJB3/EjbWithGenericMethod.htm
 ---
-Ejb With Generic Method
-
 ```java title=Example.java
 File: Employee.java
 import javax.persistence.Entity;

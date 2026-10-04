@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1089
 source: https://web.archive.org/web/20111124201222/http://java2s.com/Code/Java/Class/Thisprogramdemonstratestheequalsmethod.htm
 ---
-This program demonstrates the equals method
-
 ```java title=Example.java
 /*
  This program is a part of the companion code for Core Java 8th ed.
@@ -26,7 +24,6 @@ This program demonstrates the equals method
 import java.util.Date;
 import java.util.GregorianCalendar;
 /**
- * This program demonstrates the equals method.
  *
  * @version 1.11 2004-02-21
  * @author Cay Horstmann

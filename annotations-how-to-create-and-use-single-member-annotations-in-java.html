@@ -49,13 +49,10 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.reflect.Method;
-//www.java2s.com
-
 @Retention(RetentionPolicy.RUNTIME)
 @interface MySingle {
   int value(); // this variable name must be value
 }
-
 publicclass Main {
   @MySingle(100)
   publicstaticvoid myMeth() {
@@ -68,7 +65,6 @@ publicclass Main {
       System.out.println("Method Not Found.");
     }
   }
-
   publicstaticvoid main(String args[]) {
     myMeth();
   }
@@ -77,20 +73,18 @@ publicclass Main {
 <h3 id="example-2">Example 2</h3>
 <p>You can use the single-value syntax when applying an annotation that has other members, but those other members must all have default values.</p>
 <p>For example, here the value xyz is added, with a default value of zero:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@interface SomeAnno {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@interface SomeAnno {
     int value();
     int xyz() default 0;
 }</code></pre></div>
 <p>You can apply @SomeAnno as ,</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@SomeAnno(1)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@SomeAnno(1)</code></pre></div>
 <p>by specifying the value using the single-member syntax.</p>
 <p>In this case, xyz defaults to zero, and value gets the value 1.</p>
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
 <ul><li>What are built-in annotations</li><li>@Retention</li><li>@Documented</li><li>@Target</li><li>@Inherited</li><li>@Override</li><li>@Deprecated</li><li>@SuppressWarnings</li></ul>
-    <div class="pager"><a class="pager-btn" href="class-getclasspathusingsystemclass.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Get classpath using System...</span></a><a class="pager-btn pager-next" href="java-java-abstractaction-transfer-focus.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java AbstractAction transf...</span></a></div>
+    <div class="pager"><a class="pager-btn" href="data-type-givenanintegerreturnastringthatisinanapproximatebuthumanreadableformat-2.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Given an integer, return a...</span></a><a class="pager-btn pager-next" href="java-java-abstractaction-transfer-focus.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java AbstractAction transf...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">
@@ -100,15 +94,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

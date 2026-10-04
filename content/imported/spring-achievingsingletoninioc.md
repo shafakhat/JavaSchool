@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513074544/http://www.java2s.com/Code/Ja
 ---
 Achieving Singleton in IoC : Java examples (example source code) » Spring » IoC Singleton
 
-Achieving Singleton in IoC
-
 ```java title=Example.java
 /*
 Pro Spring

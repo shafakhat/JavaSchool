@@ -43,8 +43,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The string representation of an object should contain enough information about the state of the object in a readable format.</p>
 <p>The toString() method of the Object class represents the object of a class in a string.</p>
 <p>The Object class provides a default implementation of the toString() method. It returns a string in the following format:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;fully qualified class name&gt;@&lt;hash code of object in hexadecimal&gt;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;fully qualified class name&gt;@&lt;hash code of object in hexadecimal&gt;</code></pre></div>
 <h2 id="example">Example</h2>
 <p>Consider the following code and its output. You may get a different output.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main{
@@ -60,7 +59,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main{
   publicstaticvoid main(String[] argv){
     MyClass obj  = new MyClass(123);
-    String objStr = obj.toString();//www.java2s.com
+    String objStr = obj.toString();
     System.out.println(objStr);
   }
 }
@@ -87,12 +86,10 @@ class MyClass {
 <p>The toString() method of a class is very important. Java calls the toString() method automatically when it needs a string representation of the object.</p>
 <p>Two such situations that are worth mentioning:</p>
 <p>When you concatenate a string and an object like</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-String str = "Hello" + new Point(10, 20);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String str = "Hello" + new Point(10, 20);</code></pre></div>
 <p>Java calls the toString() method on the Point object and concatenate the returned value to the "Hello" string.</p>
 <p>The above statement is the same as the following one:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-String str = "Hello" + new Point(10, 20).toString();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String str = "Hello" + new Point(10, 20).toString();</code></pre></div>
 <ul><li>« Previous</li></ul>
     <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-object-equals.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-object-clone.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
   </article>
@@ -104,15 +101,8 @@ String str = "Hello" + new Point(10, 20).toString();</code></pre></div>
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1045
 source: https://web.archive.org/web/20090321025420/http://www.java2s.com:80/Code/Java/Spring/componentscan.htm
 ---
-component scan
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

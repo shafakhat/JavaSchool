@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1015
 source: https://web.archive.org/web/20100213065034/http://java2s.com/Code/Java/Regular-Expressions/Checkifatextispresentatthecurrentpositioninabufferforstring.htm
 ---
-Check if a text is present at the current position in a buffer for string
-
 ```java title=Example.java
 import java.io.File;
 import java.io.FileFilter;

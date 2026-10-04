@@ -3,8 +3,8 @@ title: Remove the leading and trailing quotes from str.
 nav: Remove the leading and tra...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1177
-source: https://web.archive.org/web/20100323054526/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Removetheleadingandtrailingquotesfromstr.htm
+order: 1044
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Removetheleadingandtrailingquotesfromstr.htm
 ---
 ```java title=Example.java
 /**
@@ -22,14 +22,12 @@ source: https://web.archive.org/web/20100323054526/http://www.java2s.com:80/Tuto
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-/**
+ *//**
  * Contains useful helper methods for classes within this package.
  *
  * @author John Keyes (john at integralsource.com)
  * @version $Revision: 680644 $, $Date: 2008-07-29 01:13:48 -0700 (Tue, 29 Jul 2008) $
- */
-public class Main {
+ */publicclass Main {
   /**
    * Remove the leading and trailing quotes from <code>str</code>.
    * E.g. if str is '"one two"', then 'one two' is returned.
@@ -38,8 +36,7 @@ public class Main {
    * should be removed.
    *
    * @return The string without the leading and trailing quotes.
-   */
-  static String stripLeadingAndTrailingQuotes(String str)
+   */static String stripLeadingAndTrailingQuotes(String str)
   {
       if (str.startsWith("\""))
       {

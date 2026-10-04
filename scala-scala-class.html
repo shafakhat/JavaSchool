@@ -44,29 +44,23 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A class definition consists of field declarations and method definitions.</p>
 <p>Fields are used to store the state of an object and methods may provide access to fields, and alter the state of an object.</p>
 <p>Let's start with a simple example of a blueprint for creating Book objects:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-class Book</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Book</code></pre></div>
 <p>The preceding Scala declaration corresponds to this Java declaration:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-public class Book {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class Book {
 }</code></pre></div>
 <p>Once you've defined a class, you can create objects from the class with the keyword new.</p>
 <p>To create an instance of Book, you can type the following:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-new Book</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">new Book</code></pre></div>
 <p>This works just as well as the follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-new Book()</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">new Book()</code></pre></div>
 <h2 id="example">Example</h2>
 <p>The following code create a class to represent shapes.</p>
 <p>We defined a super type called Shape that has a method area that computes the area of the shape.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-class Shape {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Shape {
    def area:Double = 0.0
 }</code></pre></div>
 <p>The following code create classes for Rectangle and Circle.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-class Rectangle(val width:Double,val height:Double) extends Shape {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Rectangle(val width:Double,val height:Double) extends Shape {
    override def area:Double = width*height
 }
 class Circle(val radius:Double) extends Shape {
@@ -79,11 +73,9 @@ class Circle(val radius:Double) extends Shape {
 <p>We cannot alter the width and the height of a Rectangle and the radius of the Circle objects because if the field is a val, Scala generates only a getter method for it.</p>
 <p>This is an example of encapsulation. In encapsulation, the fields of an object are accessible only through its methods.</p>
 <p>We can write code that takes an instance of Shape and then pass to it an instance of either Rectangle or Circle:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-def draw(s:Shape)</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">def draw(s:Shape)</code></pre></div>
 <p>Now, consider two calls made to this function, like so:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-val circle = draw(new Circle(3))
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">val circle = draw(new Circle(3))
 val rectangle = draw(new Rectangle(2,3))</code></pre></div>
 <p>Inheritance guarantees that any method we could call on an instance of Shape will be defined in the subtypes.</p>
 <ul><li>« Previous</li></ul>
@@ -97,15 +89,8 @@ val rectangle = draw(new Rectangle(2,3))</code></pre></div>
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

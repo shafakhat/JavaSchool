@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20100211100011/http://java2s.com/Code/Java/Swing-Components/Abuttonwhichpaintsonitoneormorescaledarrowsinoneofthecardinaldirections.htm
 ---
-A button which paints on it one or more scaled arrows in one of the cardinal directions
-
 ```java title=Example.java
 //Revised from greef ui;
 import java.awt.BorderLayout;
@@ -23,7 +21,6 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 /**
- * A button which paints on it one or more scaled arrows in one of the cardinal directions.
  * @author Adrian BER
  */
 public class ArrowIcon implements Icon {

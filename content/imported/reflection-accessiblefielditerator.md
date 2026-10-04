@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1003
 source: https://web.archive.org/web/20111125090032/http://java2s.com/Code/Java/Reflection/AccessibleFieldIterator.htm
 ---
-Accessible Field Iterator
-
 ```java title=Example.java
 /*
 Copyright 2011 Karl-Michael Schneider

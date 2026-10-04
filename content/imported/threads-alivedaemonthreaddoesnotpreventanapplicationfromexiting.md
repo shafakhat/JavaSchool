@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20090602113711/http://www.java2s.com:80/Code/Java/Threads/Alivedaemonthreaddoesnotpreventanapplicationfromexiting.htm
 ---
-A live daemon thread does not prevent an application from exiting.
-
 ```java title=Example.java
 class MyThread extends Thread {
   MyThread() {

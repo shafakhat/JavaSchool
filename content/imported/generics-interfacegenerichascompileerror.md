@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20090501061725/http://www.java2s.com:80/Code/Java/Generics/InterfaceGenericHascompileerror.htm
 ---
-Interface Generic (Has compile error)
-
 ```java title=Example.java
 import java.util.*;
 interface BaseInterface<A> {

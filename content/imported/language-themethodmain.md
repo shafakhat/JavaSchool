@@ -29,6 +29,5 @@ java className arg1 arg2 arg3 ...
 All arguments must be passed as strings. For instance, to pass two arguments, "1" and "mode" when running the Test class, you type this:
 
 ```java title=Example.java
-
 java Test 1 mode
 ```

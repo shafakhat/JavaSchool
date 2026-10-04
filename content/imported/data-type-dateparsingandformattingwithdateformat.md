@@ -42,7 +42,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 1/26/07
 Jan 26, 2007
 January 26, 2007

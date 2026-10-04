@@ -3,8 +3,8 @@ title: Trim off trailing blanks but not leading blanks
 nav: Trim off trailing blanks b...
 description: Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1008
-source: https://web.archive.org/web/20100412211334/http://java2s.com:80/Tutorial/Java/0040__Data-Type/Trimofftrailingblanksbutnotleadingblanks.htm
+order: 1060
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Trimofftrailingblanksbutnotleadingblanks.htm
 ---
 ```java title=Example.java
 /*
@@ -21,16 +21,13 @@ source: https://web.archive.org/web/20100412211334/http://java2s.com:80/Tutorial
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
- */
-public class Main {
+ */publicclass Main {
   /**
-   * Trim off trailing blanks but not leading blanks
    *
    * @param str
    *
    * @return The input with trailing blanks stipped off
-   */
-  public static String trimTrailing( String str)
+   */publicstatic String trimTrailing( String str)
   {
       if( str == null)
           return null;

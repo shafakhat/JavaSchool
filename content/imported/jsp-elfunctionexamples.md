@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1039
 source: https://web.archive.org/web/20070901215002/http://www.java2s.com:80/Code/Java/JSP/ELFunctionExamples.htm
 ---
-EL Function Examples
-
 ```java title=Example.java
 /*
 Beginning JavaServer Pages

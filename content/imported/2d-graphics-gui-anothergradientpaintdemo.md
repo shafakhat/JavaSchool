@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060506182544/http://www.java2s.com:80/Code
 ---
 Another GradientPaint Demo : Java examples (example source code) » 2D Graphics GUI » Gradient Paint
 
-Another GradientPaint Demo
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.Dimension;

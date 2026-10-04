@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1137
 source: https://web.archive.org/web/20071105012737/http://www.java2s.com:80/Code/Java/Web-Services-SOA/ThisdemoillustratestheuseoftheJAXWSasynchronousinvocationmodel.htm
 ---
-This demo illustrates the use of the JAX-WS asynchronous invocation model
-
 ```java title=Example.java
 /**
  * Licensed to the Apache Software Foundation (ASF) under one

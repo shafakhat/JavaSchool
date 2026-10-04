@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20090422125539/http://www.java2s.com:80/Code/Java/Regular-Expressions/CompilingaPatternwithMultipleFlags.htm
 ---
-Compiling a Pattern with Multiple Flags
-
 ```java title=Example.java
 Multiple flags must be combined using the or operator (|).
 import java.util.regex.Matcher;

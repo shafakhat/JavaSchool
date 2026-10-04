@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1079
 source: https://web.archive.org/web/20130821151553/http://java2s.com/Code/Java/JDK-7/HandlinglocalesandtheLocaleBuilderclassinJava17.htm
 ---
-Handling locales and the Locale.Builder class in Java 1.7
-
 ```java title=Example.java
 import java.text.DateFormat;
 import java.util.Calendar;

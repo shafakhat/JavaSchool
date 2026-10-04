@@ -44,21 +44,16 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>A reader is used when we want to read character-based data from a data source. A writer is used when we want to write character-based data.</p>
 <p>If we have a stream that supplies bytes and we want to read characters by getting those bytes decoded into characters, we should use the InputStreamReader class.</p>
 <p>For example, if we have an InputStream object called iso, and we want to get a Reader object instance, we can do so as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Reader  reader = new InputStreamReader(iso);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Reader  reader = new InputStreamReader(iso);</code></pre></div>
 <p>If we know the encoding used in the byte-based stream, we can specify it while creating a Reader object as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Reader  reader = new InputStreamReader(iso,  "US-ASCII");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Reader  reader = new InputStreamReader(iso,  "US-ASCII");</code></pre></div>
 <p>Similarly, we can create a Writer object to spit out characters from a bytes-based output stream as follows, assuming that oso is an OutputStream object:</p>
 <p>The following code creates a Writer object from OutputStream using the platform default encoding.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Writer writer  = new OutputStreamWriter(oso);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Writer writer  = new OutputStreamWriter(oso);</code></pre></div>
 <p>Create a Writer object from OutputStream using the "US-ASCII" encoding</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Writer writer  = new OutputStreamWriter(oso,  "US-ASCII");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Writer writer  = new OutputStreamWriter(oso,  "US-ASCII");</code></pre></div>
 <p>Sample</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import java.io.BufferedWriter;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 publicclass Main {
@@ -79,8 +74,7 @@ publicclass Main {
   }
 }</code></pre></div>
 <p>The following code reads the text from the test.txt file.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import java.io.BufferedReader;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.BufferedReader;
 import java.io.FileReader;
 publicclass Main {
   publicstatic void main(String[] args) throws Exception{
@@ -95,23 +89,20 @@ publicclass Main {
 }</code></pre></div>
 <p>Converting a byte-based stream to a character-based stream is straightforward.</p>
 <p>If we have an InputStream object, we can get a Reader object by wrapping it inside an InputStreamReader object, like so:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-InputStream is = create your  InputStream object here;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">InputStream is = create your  InputStream object here;
 Reader  reader = new InputStreamReader(is);</code></pre></div>
 <p>To construct a BufferedReader object from an InputStream object, we can do that as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-InputStream is = create your  InputStream object here;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">InputStream is = create your  InputStream object here;
 BufferedReader br  = new BufferedReader(new InputStreamReader(is));</code></pre></div>
 <p>We can construct a Writer object from an OutputStream object as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-OutputStream os  = create your  OutputStream object here; Writer writer  = new OutputStreamWriter(os);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">OutputStream os  = create your  OutputStream object here; Writer writer  = new OutputStreamWriter(os);</code></pre></div>
 <h2 id="example">Example</h2>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.Reader;
 import java.io.FilterReader;
 import java.io.IOException;
-//fromwww.java2s.comclass LowerCaseReader extends FilterReader {
+class LowerCaseReader extends FilterReader {
   public LowerCaseReader(Reader in) {
     super(in);
   }
@@ -158,15 +149,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

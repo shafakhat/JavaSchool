@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1122
 source: https://web.archive.org/web/20080214172021/http://www.java2s.com:80/Code/Java/Web-Services-SOA/InthissamplewearedeployinganXMLBEANSgeneratedservice.htm
 ---
-In this sample, we are deploying an XMLBEANS generated service
-
 ```java title=Example.java
 Axis2 Quick Start Guide- Sample 4 (XML Beans)
 ============================================

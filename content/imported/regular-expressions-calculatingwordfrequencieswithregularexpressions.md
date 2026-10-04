@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20061201084831/http://www.java2s.com:80/Code/Java/Regular-Expressions/CalculatingWordFrequencieswithRegularExpressions.htm
 ---
-Calculating Word Frequencies with Regular Expressions
-
 ```java title=Example.java
 import java.io.FileInputStream;
 import java.nio.CharBuffer;

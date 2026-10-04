@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1054
 source: https://web.archive.org/web/20061018181000/http://www.java2s.com/Code/Java/Apache-Common/SetExample2.htm
 ---
-Set Example 2
-
 ```java title=Example.java
 import org.apache.commons.collections.collection.*;
 import org.apache.commons.collections.set.*;

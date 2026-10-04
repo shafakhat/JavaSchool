@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1100
 source: https://web.archive.org/web/20061026215440/http://www.java2s.com/Code/Java/Velocity/VelocitywithExternalProperties.htm
 ---
-Velocity with External Properties
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

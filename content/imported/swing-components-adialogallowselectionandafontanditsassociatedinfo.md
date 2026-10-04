@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20100129114022/http://www.java2s.com:80/Code/Java/Swing-Components/Adialogallowselectionandafontanditsassociatedinfo.htm
 ---
-A dialog allow selection and a font and its associated info.
-
 ```java title=Example.java
 /*
  * Copyright (C) 2001-2004 Colin Bell
@@ -47,7 +45,6 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 /**
- * A dialog allow selection and a font and its associated info.
  *
  * @author <A HREF="mailto:colbell@users.sourceforge.net">Colin Bell</A>
  */

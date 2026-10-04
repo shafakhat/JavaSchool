@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1136
 source: https://web.archive.org/web/20071105034051/http://www.java2s.com:80/Code/Java/Web-Services-SOA/ThisdemoillustratestheuseoftheJAXWSAPIstorunasimpleclientagainstastandaloneserverusingSOAP11overHTTP.htm
 ---
-This demo illustrates the use of the JAX-WS APIs to run a simple client against a standalone server using SOAP 1.1 over HTTP
-
 ```java title=Example.java
 Hello World Demo using Document/Literal Style
 =============================================

@@ -90,7 +90,6 @@ public final class  Base64 {
         return (isWhiteSpace(octect) || isPad(octect) || isData(octect));
     }
     /**
-     * Encodes hex octects into Base64
      *
      * @param binaryData Array containing binaryData
      * @return Encoded Base64 array

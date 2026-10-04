@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1054
 source: https://web.archive.org/web/20071020033729/http://java2s.com:80/Code/Java/PDF-RTF/CellFixedHeight.htm
 ---
-Cell Fixed Height
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

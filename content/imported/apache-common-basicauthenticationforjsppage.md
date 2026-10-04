@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20061026233643/http://www.java2s.com/Code/Java/Apache-Common/BasicAuthenticationForJSPPage.htm
 ---
-Basic Authentication For JSP Page
-
 ```java title=Example.java
 import org.apache.commons.httpclient.URI;
 import org.apache.commons.httpclient.HttpState;

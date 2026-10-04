@@ -47,8 +47,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>An "implements" clause consists of the keyword implements, followed by a comma-separated list of interface types.</p>
 <p>A class can implement multiple interfaces.</p>
 <p>The general syntax for a class declaration that implements an interface looks as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;modifiers&gt; class  &lt;class-Name&gt;  implements &lt;comma-separated-list-of-interfaces&gt;  {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;modifiers&gt; class  &lt;class-Name&gt;  implements &lt;comma-separated-list-of-interfaces&gt;  {
     // Class body  goes  here
 }</code></pre></div>
 <p>Suppose there is a Circle class.</p>
@@ -62,16 +61,14 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The implanting classes may choose bu not required to override the default methods.</p>
 <p>The static methods in an interface are not inherited by the implementing classes.</p>
 <p>The following code defines two reference types, one is from class Circle the other is from interface type.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Circle c = new Circle();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Circle c = new Circle();
 Shape shape = new Circle();</code></pre></div>
 <p>The variable c is of the Circle type. It is referring to the Circle object.</p>
 <p>The second assignment is also valid because the Circle class implements the Shape interface and every object of the Circle class is also of the Shape type.</p>
 <h2 id="implementing-interface-methods">Implementing Interface Methods</h2>
 <p>When a class fully implements an interface, it provides an implementation for all abstract methods of the implemented interfaces.</p>
 <p>A method declaration in an interface includes constraints for the methods. For example, the throws clause in the method declaration is a constraint for the method.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import java.io.IOException;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
 interface Shape {
   void draw(double amount) throws IOException;
 }
@@ -83,8 +80,7 @@ class Main implements Shape{
 }</code></pre></div>
 <p>The code for Main is valid, even though it dropped the throws clause. Dropping constraints exceptions is allowed when a class overrides an interface method.</p>
 <p>If we use the Shape type, we have to handle the IOException.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import java.io.IOException;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
 interface Shape {
   void draw(double amount) throws IOException;
 }
@@ -143,15 +139,8 @@ abstractclass Main implements Calculator{
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

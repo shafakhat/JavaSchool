@@ -6,13 +6,10 @@ section: Imported - java2s Archive
 order: 1048
 source: https://web.archive.org/web/20111003193441/http://java2s.com:80/Code/Java/Generics/SimpleSTLPairImplementation.htm
 ---
-Simple STL Pair Implementation
-
 ```java title=Example.java
 //package org.hh.jga.util;
 import java.io.Serializable;
 /**
- * Simple STL Pair Implementation
  *
  * @author Hong Hong
  *

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20081009150855/http://www.java2s.com:80/Code/Java/Generics/Demonstrateasimplegenericmethod.htm
 ---
-Demonstrate a simple generic method.
-
 ```java title=Example.java
 /*
 Java 2, v5.0 (Tiger) New Features

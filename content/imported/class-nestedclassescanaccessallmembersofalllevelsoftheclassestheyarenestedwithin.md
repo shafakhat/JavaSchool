@@ -6,11 +6,8 @@ section: Imported - java2s Archive
 order: 1045
 source: https://web.archive.org/web/20090106160637/http://www.java2s.com:80/Code/Java/Class/Nestedclassescanaccessallmembersofalllevelsoftheclassestheyarenestedwithin.htm
 ---
-Nested classes can access all members of all levels of the classes they are nested within
-
 ```java title=Example.java
 // : c08:MultiNestingAccess.java
-// Nested classes can access all members of all levels of the classes they are nested within.
 // From 'Thinking in Java, 3rd ed.' (c) Bruce Eckel 2002
 // www.BruceEckel.com. See copyright notice in CopyRight.txt.
 public class MultiNestingAccess {

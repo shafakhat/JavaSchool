@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1059
 source: https://web.archive.org/web/20070228140542/http://www.java2s.com:80/Code/Java/Apache-Common/Stringchop.htm
 ---
-String chop
-
 ```java title=Example.java
 /*
 Dan

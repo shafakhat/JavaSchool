@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1084
 source: https://web.archive.org/web/20130111101710/http://www.java2s.com:80/Code/Java/JDK-7/Isapathadirectory.htm
 ---
-Is a path a directory
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

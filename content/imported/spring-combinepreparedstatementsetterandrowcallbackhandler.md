@@ -7,7 +7,6 @@ order: 1042
 source: https://web.archive.org/web/20090729063711/http://www.java2s.com:80/Code/Java/Spring/CombinePreparedStatementSetterAndRowCallbackHandler.htm
 ---
 Combine PreparedStatementSetter And RowCallbackHandler : PreparedStatementSetter « Spring « Java
-Combine PreparedStatementSetter And RowCallbackHandler
 
 ```java title=Example.java
 File: context.xml

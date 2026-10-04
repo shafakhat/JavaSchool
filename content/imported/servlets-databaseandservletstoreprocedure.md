@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1034
 source: https://web.archive.org/web/20060513092636/http://www.java2s.com/Code/Java/Servlets/DatabaseandServletStoreprocedure.htm
 ---
-Database and Servlet: Store procedure : Java examples (example source code) » Servlets » Database
-
 Database and Servlet: Store procedure
 
 ```java title=Example.java

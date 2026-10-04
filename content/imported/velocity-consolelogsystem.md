@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513091837/http://www.java2s.com/Code/Ja
 ---
 Console Log System : Java examples (example source code) » Velocity » Velocity Log
 
-Console Log System
-
 ```java title=Example.java
 import org.apache.velocity.runtime.RuntimeServices;
 import org.apache.velocity.runtime.log.LogSystem;

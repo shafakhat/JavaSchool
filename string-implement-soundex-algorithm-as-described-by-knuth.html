@@ -43,7 +43,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="question">Question</h2>
 <p>We would like to know how to implement Soundex Algorithm, as described by Knuth.</p>
 <h2 id="answer">Answer</h2>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*www.java2s.com*//*
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
  * Copyright (c) Ian F. Darwin, http://www.darwinsys.com/, 1996-2002.
  * All rights reserved. Software written by Ian F. Darwin and others.
  * $Id: LICENSE,v 1.8 2004/02/09 03:33:38 ian Exp $
@@ -119,7 +119,6 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * @author Ian Darwin, http://www.darwinsys.com/ (Java Version)
  * @version $Id: Soundex.java,v 1.9 2004/02/23 00:30:49 ian Exp $
  */publicclass Soundex {
-
   /* Implements the mapping
    * from: AEHIOUWYBFPVCGJKQSXZDTLMNR
    * to:   00000000111122222222334556
@@ -129,28 +128,22 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     //N  O   P   W   R   S   T   U   V   W   X   Y   Z
 '5','0','1','2','6','2','3','0','1','0','2','0','2'
   };
-
   /** Convert the given String to its Soundex code.
    * @return null If the given string can't be mapped to Soundex.
    */publicstatic String soundex(String s) {
-
     // Algorithm works on uppercase (mainframe era).
     String t = s.toUpperCase();
-
     StringBuffer res = new StringBuffer();
     char c, prev = '?';
-
     // Main loop: find up to 4 chars that map.
 for (int i=0; i&lt;t.length() &amp;&amp; res.length() &lt; 4 &amp;&amp;
       (c = t.charAt(i)) != ','; i++) {
-
       // Check to see if the given character is alphabetic.
 // Text is already converted to uppercase. Algorithm
 // only handles ASCII letters, do NOT use Character.isLetter()!
 // Also, skip double letters.
 if (c&gt;='A' &amp;&amp; c&lt;='Z' &amp;&amp; c != prev) {
         prev = c;
-
         // First char is installed unchanged, for sorting.
 if (i==0)
           res.append(c);
@@ -177,7 +170,6 @@ if (i==0)
     for (int i = 0; i&lt; names.length; i++)
       System.out.println(Soundex.soundex(names[i]) + ' ' + names[i]);
   }
-
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Back to String  ↑</code></pre></div>
@@ -191,15 +183,8 @@ if (i==0)
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

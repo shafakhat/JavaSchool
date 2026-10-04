@@ -6,7 +6,6 @@ section: Imported - java2s Archive
 order: 1106
 source: https://web.archive.org/web/20100214083638/http://java2s.com/Code/Java/Data-Type/Abbreviatestring.htm
 ---
-Abbreviate string
 1.  Fmt - format text (like Berkeley UNIX fmt)
 2.  Demonstrate some usage patterns and format-code examples of the Formatter
 3.  String.format(): right pad a string

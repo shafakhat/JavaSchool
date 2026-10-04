@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20111124225913/http://java2s.com/Code/Java/Generics/DefaultimplementationoflinkjavalangreflectParameterizedType.htm
 ---
-Default implementation of {@link java.lang.reflect.ParameterizedType}
-
 ```java title=Example.java
 /*
  * To change this template, choose Tools | Templates
@@ -17,7 +15,6 @@ Default implementation of {@link java.lang.reflect.ParameterizedType}
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 /**
- * Default implementation of {@link java.lang.reflect.ParameterizedType}
  *
  * @author Olivier
  */

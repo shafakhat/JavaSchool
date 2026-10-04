@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20060513092658/http://www.java2s.com/Code/Java/Servlets/Databasetransaction.htm
 ---
-Database transaction : Java examples (example source code) » Servlets » Database
-
 Database transaction
 
 ```java title=Example.java

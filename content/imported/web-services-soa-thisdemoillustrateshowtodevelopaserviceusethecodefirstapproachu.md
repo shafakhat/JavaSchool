@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1135
 source: https://web.archive.org/web/20071104194305/http://www.java2s.com:80/Code/Java/Web-Services-SOA/ThisdemoillustrateshowtodevelopaserviceusethecodefirstapproachusingtheJAXWSAPIs.htm
 ---
-This demo illustrates how to develop a service use the 'code first' approach using the JAX-WS APIs
-
 ```java title=Example.java
 <!--
   Licensed to the Apache Software Foundation (ASF) under one

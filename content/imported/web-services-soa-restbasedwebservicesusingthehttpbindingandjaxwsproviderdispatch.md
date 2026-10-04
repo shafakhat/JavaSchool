@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1125
 source: https://web.archive.org/web/20071105054012/http://www.java2s.com:80/Code/Java/Web-Services-SOA/RESTbasedWebServicesusingtheHTTPbindingandJAXWSProviderDispatch.htm
 ---
-REST based Web Services using the HTTP binding and JAX-WS Provider/Dispatch
-
 ```java title=Example.java
 RESTful Hello World Demo
 ========================

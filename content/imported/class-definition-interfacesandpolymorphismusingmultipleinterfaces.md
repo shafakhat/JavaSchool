@@ -32,7 +32,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 this
 that
 ```

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513064752/http://www.java2s.com/Code/Ja
 ---
 Calculated Column Table : Java examples (example source code) » Swing Components » Grid Table
 
-Calculated Column Table
-
 ```java title=Example.java
 /*
 Core SWING Advanced Programming

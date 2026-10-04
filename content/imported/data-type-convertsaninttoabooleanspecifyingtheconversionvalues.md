@@ -38,7 +38,6 @@ source: https://web.archive.org/web/20100222015848/http://www.java2s.com:80/Tuto
  */
 public class Main {
   /**
-   * Converts an int to a boolean specifying the conversion values.
    *
    * <pre>
    *   BooleanUtils.toBoolean(0, 1, 0) = false

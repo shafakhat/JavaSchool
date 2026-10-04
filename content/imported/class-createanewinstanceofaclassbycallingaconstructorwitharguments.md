@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1154
 source: https://web.archive.org/web/20100206183330/http://java2s.com/Code/Java/Class/Createanewinstanceofaclassbycallingaconstructorwitharguments.htm
 ---
-Create a new instance of a class by calling a constructor with arguments
-
 ```java title=Example.java
 import java.lang.reflect.Constructor;
 /**
@@ -15,7 +13,6 @@ import java.lang.reflect.Constructor;
  */
 public abstract class Reflect {
   /**
-   * Create a new instance of a class by calling a constructor with arguments.
    */
   public static Object newInstance(String className, Class[] signature, Object[] args)
       throws Exception {

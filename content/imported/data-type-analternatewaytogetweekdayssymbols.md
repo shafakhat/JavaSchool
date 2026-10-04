@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1138
 source: https://web.archive.org/web/20090515191403/http://www.java2s.com:80/Code/Java/Data-Type/Analternatewaytogetweekdayssymbols.htm
 ---
-An alternate way to get week days symbols
-
 ```java title=Example.java
 import java.text.DateFormatSymbols;
 import java.util.Calendar;

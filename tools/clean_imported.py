@@ -42,7 +42,38 @@ NAV_CHAIN = re.compile(
 )
 
 
+# ---------------------------------------------------------------------------
+# java2s branding injected into the archived code samples, e.g.
+#   //fromwww.java2s.com        /*from www.java2s.com*/
+#   //from w w w . j a v a 2 s . c o m     (obfuscated: one <span> per character)
+# Stripped from code blocks only; the code itself is left untouched.
+# ---------------------------------------------------------------------------
+_J2S_URL = r"(?:w\s*w\s*w\s*\.?\s*)?j\s*a\s*v\s*a\s*2\s*s\s*\.?\s*c\s*o\s*m"
+CODE_COMMENT = re.compile(r"(?://|/\*)\s*(?:from\s*)?" + _J2S_URL + r"\s*(?:\*/)?", re.I)
+CODE_URL_TEXT = re.compile(_J2S_URL, re.I)
+
+
+def strip_code_branding(body: str) -> str:
+    out: list[str] = []
+    in_code = False
+    for line in body.splitlines():
+        st = line.lstrip()
+        if st.startswith("```") or st.startswith("~~~"):
+            in_code = not in_code
+            out.append(line)
+            continue
+        if in_code:
+            line = CODE_COMMENT.sub("", line)
+            line = CODE_URL_TEXT.sub("JavaSchool", line)
+            line = re.sub(r"[ \t]+$", "", line)
+            if not line.strip():
+                continue
+        out.append(line)
+    return "\n".join(out)
+
+
 def strip_junk(body: str, title: str) -> str:
+    body = strip_code_branding(body)
     out_lines = []
     title_norm = re.sub(r"\W+", "", title.lower())
     seen_titleish = 0

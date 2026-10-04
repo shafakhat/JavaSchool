@@ -32,7 +32,6 @@ public class Main {
   private static final char SLASH_CHAR = '/';
   private static final char BACKSLASH_CHAR = '\\';
   /**
-   * Put quotes around the given String if necessary.
    *
    * If the argument doesn't include spaces or quotes, return it as is. If it
    * contains double quotes, use single quotes - else surround the argument by

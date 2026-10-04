@@ -64,7 +64,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 j = 31
 k = 84
 j + k = 115

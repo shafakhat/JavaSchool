@@ -44,12 +44,10 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h3 id="create-bigdecimals">Create BigDecimals</h3>
 <p>BigDecimal(double val) converts a double into a BigDecimal.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
- /*java2s.com*/publicclass Main {
-
+ publicclass Main {
     publicstaticvoid main(String[] args) {
         System.out.println(new BigDecimal(1f));
         System.out.println(new BigDecimal(2f));
-
     }
 }</code></pre></div>
 <p>The output:</p>
@@ -57,19 +55,15 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>BigDecimal(BigInteger unscaledVal, int scale, MathContext mc) converts a BigInteger and an int scale into a BigDecimal, with rounding according to the context settings.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
 import java.math.MathContext;
- //java2s.compublicclass Main {
-
+ publicclass Main {
     publicstaticvoid main(String[] args) {
         BigDecimal first = new BigDecimal(1f);
         BigDecimal second = new BigDecimal(1000f);
-
         BigDecimal result1 = new BigDecimal(first.doubleValue() / second.doubleValue());
         BigDecimal result2 = first.divide(second, MathContext.DECIMAL128);
-
         System.out.println(result1);
         System.out.println(result2);
         System.out.println((first.doubleValue() / second.doubleValue()));
-
     }
 }</code></pre></div>
 <p>The output:</p>
@@ -90,15 +84,8 @@ import java.math.MathContext;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

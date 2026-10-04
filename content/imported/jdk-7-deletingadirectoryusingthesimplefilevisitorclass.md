@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/20130820232724/http://java2s.com/Code/Java/JDK-7/DeletingadirectoryusingtheSimpleFileVisitorclass.htm
 ---
-Deleting a directory using the SimpleFileVisitor class
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.file.FileVisitResult;

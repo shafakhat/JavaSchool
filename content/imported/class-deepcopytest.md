@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1005
 source: https://web.archive.org/web/20081009143451/http://www.java2s.com:80/Code/Java/Class/DeepCopyTest.htm
 ---
-Deep Copy Test
-
 ```java title=Example.java
 /*
 Correct Output:

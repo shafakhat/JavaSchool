@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20090422123412/http://www.java2s.com:80/Code/Java/Regular-Expressions/FindingEveryOccurrenceoftheLetterA.htm
 ---
-Finding Every Occurrence of the Letter A
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

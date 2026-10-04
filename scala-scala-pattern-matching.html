@@ -42,8 +42,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <p>Pattern matching allows us to make a programmatic choice between multiple conditions.</p>
 <h2 id="example">Example</h2>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main extends App {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main extends App {
     def printNum(int: Int) {
      int match {
          case 0 =&gt; println("Zero")
@@ -57,24 +56,21 @@ object Main extends App {
 }</code></pre></div>
 <p>The last case with the underscore _ is wildcard. It matches anything not defined in the cases above it.</p>
 <p>The following code illustrates the example of calculating Fibonacci numbers.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-def fibonacci(in: Int): Int = in match {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">def fibonacci(in: Int): Int = in match {
  case 0 =&gt; 0
  case 1 =&gt; 1
  case n =&gt; fibonacci(n - 1) + fibonacci(n - 2)
 }</code></pre></div>
 <p>Scala allows guards to be placed in patterns to test for particular conditions that cannot be tested in the pattern declaration itself.</p>
 <p>Thus, we can write our Fibonacci calculator to return 0 if a negative number is passed in as in the following examples.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-def fib2(in: Int): Int = in match {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">def fib2(in: Int): Int = in match {
  case n if n &lt;= 0 =&gt; 0
  case 1 =&gt; 1
  case n =&gt; fib2(n - 1) + fib2(n - 2)
 }</code></pre></div>
 <h2 id="matching-any-type">Matching Any Type</h2>
 <p>Let's consider a list of Any type of element, containing a String, a Double, an Int, and a Char.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main extends App {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main extends App {
     val anyList= List(1, "A", 2, 2.5, 'a')
     for (m &lt;- anyList) {
         m match {
@@ -87,8 +83,7 @@ object Main extends App {
 }</code></pre></div>
 <h2 id="testing-data-types">Testing Data Types</h2>
 <p>The following method tests an incoming Object to see whether it's a String, an Integer, or something else.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-def test2(in: Any) = in match {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">def test2(in: Any) = in match {
     case s: String =&gt; "String, length "+s.length
     case i: Int if i &gt; 0 =&gt; "Natural Int"
     case i: Int =&gt; "Another Int"
@@ -106,15 +101,8 @@ def test2(in: Any) = in match {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

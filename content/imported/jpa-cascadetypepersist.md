@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20090504061426/http://www.java2s.com:80/Code/Java/JPA/CascadeTypePERSIST.htm
 ---
-Cascade Type PERSIST
-
 ```java title=Example.java
 File: JPAUtil.java
 import java.io.Reader;

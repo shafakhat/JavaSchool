@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513064815/http://www.java2s.com/Code/Ja
 ---
 CurrencyTable : Java examples (example source code) » Swing Components » Grid Table
 
-CurrencyTable
-
 ```java title=Example.java
 /*
 Core SWING Advanced Programming

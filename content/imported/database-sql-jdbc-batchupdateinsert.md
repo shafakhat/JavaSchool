@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1015
 source: https://web.archive.org/web/20060822142808/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/BatchUpdateInsert.htm
 ---
-Batch Update Insert
-
 ```java title=Example.java
 import java.sql.BatchUpdateException;
 import java.sql.Connection;

@@ -49,7 +49,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The new type parameter V forces the first and the second arguments of method m1() to be of the same type.</p>
 <p>The third argument must be of the same type T, which is the type of the class instantiation.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyBag&lt;T&gt; {
-  private T ref;/*fromwww.java2s.com*/public MyBag(T ref) {
+  private T ref;public MyBag(T ref) {
     this.ref = ref;
   }
   public T get() {
@@ -66,7 +66,7 @@ class Test&lt;T&gt;  {
 <h2 id="use-generic-methods">Use Generic Methods</h2>
 <p>To pass the actual type parameter for the method's formal type parameter, we must specify it in angle brackets &lt;&gt; between the dot and the method name in the method call.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyBag&lt;T&gt; {
-  private T ref;/*www.java2s.com*/public MyBag(T ref) {
+  private T ref;public MyBag(T ref) {
     this.ref = ref;
   }
   public T get() {
@@ -96,7 +96,7 @@ publicclass Main {
 <p>A static method can refer only to its own declared type parameters.</p>
 <p>The following static generic type defines a type parameter T, which is used to constrain the type of arguments source and dest.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyBag&lt;T&gt; {
-  private T ref;//fromwww.java2s.compublic MyBag(T ref) {
+  private T ref;public MyBag(T ref) {
     this.ref = ref;
   }
   public T get() {
@@ -115,8 +115,7 @@ publicclass Main {
   }
 }</code></pre></div>
 <p>To specify the actual type parameter for a static method call, we can do so as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Main.&lt;Integer&gt;copy(iw1, iw2);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Main.&lt;Integer&gt;copy(iw1, iw2);</code></pre></div>
 <h2 id="generic-constructor">Generic Constructor</h2>
 <p>We can define type parameters for constructors.</p>
 <p>The following code defines a type parameter U for the constructor of class Test.</p>
@@ -128,7 +127,7 @@ Main.&lt;Integer&gt;copy(iw1, iw2);</code></pre></div>
 <p>To specify the actual type parameter value for the constructor, specify it in angle brackets between the new operator and the name of the constructor, as shown in the following snippet of code:</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test&lt;T&gt; {
   public &lt;U extends T&gt; Test(U k) {
-  }/*fromwww.java2s.com*/
+  }
 }
 publicclass Main {
   publicstaticvoid main(String[] argv) {
@@ -142,15 +141,12 @@ publicclass Main {
 <h2 id="type-inference-in-generic-object-creation">Type Inference in Generic Object Creation</h2>
 <p>Java 7 added limited support for type inference in an object-creation expression for generic types.</p>
 <p>For the following statement:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-List&lt;String&gt; list = new ArrayList&lt;String&gt;();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">List&lt;String&gt; list = new ArrayList&lt;String&gt;();</code></pre></div>
 <p>In Java 7, you can specify empty angle brackets, known as the diamond operator or simply the diamond &lt;&gt;, as the type parameter for ArrayList in the above statement.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-List&lt;String&gt; list = new ArrayList&lt;&gt;();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">List&lt;String&gt; list = new ArrayList&lt;&gt;();</code></pre></div>
 <p>If we do not specify a type parameter for a generic type in an object-creation expression, the type is the raw type and the compiler generates unchecked warnings.</p>
 <p>For example, the following statement will compile with unchecked warnings:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-List&lt;String&gt; list = new ArrayList(); // Generates an  unchecked  warning</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">List&lt;String&gt; list = new ArrayList(); // Generates an  unchecked  warning</code></pre></div>
 <p>We cannot create generic exception classes. and there is no generic anonymous classes.</p>
 <ul><li>« Previous</li></ul>
     <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-generic-constraints.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-exception-handling.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
@@ -163,15 +159,8 @@ List&lt;String&gt; list = new ArrayList(); // Generates an  unchecked  warning</
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

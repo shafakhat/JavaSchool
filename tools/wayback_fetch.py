@@ -322,10 +322,18 @@ def extract(raw: str, base_url: str) -> tuple[str, str, str]:
         if not s:
             return
         if in_code:
-            # ignore inter-tag whitespace noise, but keep &nbsp; indentation
-            if s.strip() == "" and "\xa0" not in s:
-                return
-            s = s.replace("\xa0", " ")
+            # java2s wrapped every code token in a <span>; the separating spaces
+            # are whitespace-only text nodes, so they must be kept as separators
+            # (dropping them glues tokens together: "public class" -> "publicclass").
+            if s.strip() == "":
+                if "\xa0" in s:
+                    s = s.replace("\xa0", " ")          # indentation
+                elif " " in s:
+                    s = " "                              # token separator
+                else:
+                    return                               # pure newline noise
+            else:
+                s = s.replace("\xa0", " ")
             code_line.append(s)
         else:
             s = s.replace("\xa0", " ")
@@ -771,7 +779,7 @@ def clean_title(raw_title: str, url: str) -> str:
 
 
 def write_page(out_dir: Path, slug: str, title: str, desc: str, body: str,
-               url: str, ts: str, order: int) -> Path:
+               url: str, ts: str, order: int, overwrite: bool = False) -> Path:
     # if a table header survived as first line, fine; ensure body has content
     source = f"https://web.archive.org/web/{ts}/{url}"
     nav = title if len(title) <= 28 else title[:26] + "..."
@@ -790,10 +798,11 @@ def write_page(out_dir: Path, slug: str, title: str, desc: str, body: str,
     body = re.sub(r"^# ", "## ", body, flags=re.M)
     text = "\n".join(fm) + body
     path = out_dir / f"{slug}.md"
-    n = 2
-    while path.exists():
-        path = out_dir / f"{slug}-{n}.md"
-        n += 1
+    if not overwrite:
+        n = 2
+        while path.exists():
+            path = out_dir / f"{slug}-{n}.md"
+            n += 1
     path.write_text(text, encoding="utf-8")
     return path
 
@@ -856,6 +865,8 @@ def main(argv: list[str] | None = None) -> int:
                     help="snapshot year/ts to request for --urls-file (e.g. 2016); "
                          "default = nearest to 2016")
     ap.add_argument("--retries", type=int, default=3)
+    ap.add_argument("--overwrite", action="store_true",
+                    help="replace existing pages instead of writing -2, -3 duplicates")
     ap.add_argument("--start-order", type=int, default=1000,
                     help="front-matter order of the first imported page")
     args = ap.parse_args(argv)
@@ -894,7 +905,8 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             slug = slug_from_url(original)
             title = clean_title(raw_title, original)
-            write_page(out_dir, slug, title, desc, md, original, stamp, order)
+            write_page(out_dir, slug, title, desc, md, original, stamp, order,
+                       overwrite=args.overwrite)
             append_manifest(slug, original, stamp)
             done[original] = (slug, stamp)
             order += 1

@@ -7,7 +7,6 @@ order: 1020
 source: https://web.archive.org/web/20091101183110/http://www.java2s.com:80/Code/Java/J2EE/Gathersallselectitemsfromspecifiedcomponentschildren.htm
 ---
 Gathers all select items from specified component's children : JavaServer Faces « J2EE « Java
-Gathers all select items from specified component's children
 
 ```java title=Example.java
 /**
@@ -47,7 +46,6 @@ import javax.faces.model.SelectItem;
  */
 public class SelectUtils {
   /**
-   * Gathers all select items from specified component's children
    * @param context
    * @param component
    * @return list of {@link SelectItems} taken from f:selectItem and f:selectItems

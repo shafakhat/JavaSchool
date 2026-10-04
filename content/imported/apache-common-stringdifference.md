@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1066
 source: https://web.archive.org/web/20071024123231/http://www.java2s.com:80/Code/Java/Apache-Common/Stringdifference.htm
 ---
-String difference
-
 ```java title=Example.java
 /*
 ment

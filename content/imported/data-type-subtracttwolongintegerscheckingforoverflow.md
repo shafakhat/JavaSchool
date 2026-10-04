@@ -28,7 +28,6 @@ import java.math.BigDecimal;
  */
 public class Main {
   /**
-   * Subtract two long integers, checking for overflow.
    *
    * @param a first value
    * @param b second value

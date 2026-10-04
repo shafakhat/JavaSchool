@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1021
 source: https://web.archive.org/web/20100212031342/http://java2s.com/Code/Java/Ant/Anttaskcopyfile.htm
 ---
-Ant task copy file
-
 ```java title=Example.java
 <project name="foo" default="deploy" basedir=".">
   <target name="init">

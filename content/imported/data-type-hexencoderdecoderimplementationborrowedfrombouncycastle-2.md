@@ -3,8 +3,8 @@ title: Hex encoder/decoder implementation borrowed from BouncyCastle
 nav: Hex encoder/decoder implem...
 description: * Licensed under the Apache License, Version 2.0 (the "License");
 section: Imported - java2s Archive
-order: 1126
-source: https://web.archive.org/web/20100706223514/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/HexencoderdecoderimplementationborrowedfromBouncyCastle.htm
+order: 1033
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/HexencoderdecoderimplementationborrowedfromBouncyCastle.htm
 ---
 ```java title=Example.java
 /*
@@ -21,30 +21,24 @@ source: https://web.archive.org/web/20100706223514/http://www.java2s.com:80/Tuto
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-import java.io.IOException;
+ */import java.io.IOException;
 import java.io.OutputStream;
 import java.io.ByteArrayOutputStream;
 /**
- * Hex encoder/decoder implementation (borrowed from BouncyCastle=.
  *
  * @author Johan Lindquist
  * @since 1.1.1
  * @version $Revision$
- */
-public final class HexDecoder {
+ */publicfinalclass HexDecoder {
     /**
      * Identifies the data type supported by this decoder.
-     */
-    public static final String DATA_TYPE = "hexBinary";
+     */publicstaticfinal String DATA_TYPE = "hexBinary";
     /**
      * Initial size of the decoding table.
-     */
-    private static final int DECODING_TABLE_SIZE = 128;
+     */privatestaticfinalint DECODING_TABLE_SIZE = 128;
     /**
      * Encoding table.
-     */
-    protected static final byte[] ENCODING_TABLE = {
+     */protectedstaticfinalbyte[] ENCODING_TABLE = {
         (byte) '0', (byte) '1', (byte) '2', (byte) '3',
         (byte) '4', (byte) '5', (byte) '6', (byte) '7',
         (byte) '8', (byte) '9', (byte) 'A', (byte) 'B',
@@ -52,12 +46,10 @@ public final class HexDecoder {
     };
     /**
      * Decoding table.
-     */
-    protected static final byte[] DECODING_TABLE = new byte[DECODING_TABLE_SIZE];
+     */protectedstaticfinalbyte[] DECODING_TABLE = newbyte[DECODING_TABLE_SIZE];
     /**
      * Initialize the decoding table.
-     */
-    protected static void initialiseDecodingTable() {
+     */protectedstaticvoid initialiseDecodingTable() {
         for (int i = 0; i < ENCODING_TABLE.length; i++) {
             DECODING_TABLE[ENCODING_TABLE[i]] = (byte) i;
         }
@@ -74,8 +66,7 @@ public final class HexDecoder {
     }
     /**
      * Creates an instance of this class.
-     */
-    private HexDecoder() {
+     */private HexDecoder() {
         // Nothing to do ...
     }
     /**
@@ -86,8 +77,7 @@ public final class HexDecoder {
      * @param out The {@link OutputStream} instance holding the encoded input data.
      * @return the number of bytes produced.
      * @throws IOException If encoding fails.
-     */
-    public static int encode(final byte[] data, final int off, final int length,
+     */publicstaticint encode(finalbyte[] data, finalint off, finalint length,
             final OutputStream out) throws IOException {
         for (int i = off; i < (off + length); i++) {
             int v = data[i] & 0xff;
@@ -100,8 +90,7 @@ public final class HexDecoder {
      * Indicates whether a given character should be ignored during en-/decoding.
      * @param c The character at question.
      * @return True if the given character should be ignored.
-     */
-    private static boolean ignore(final char c) {
+     */privatestaticboolean ignore(finalchar c) {
         return (c == '\n' || c == '\r' || c == '\t' || c == ' ');
     }
     /**
@@ -113,8 +102,7 @@ public final class HexDecoder {
      * @param out The {@link OutputStream} instance
      * @return the number of bytes produced.
      * @throws IOException If encoding failed.
-     */
-    public static int decode(final byte[] data, final int off, final int length,
+     */publicstaticint decode(finalbyte[] data, finalint off, finalint length,
             final OutputStream out) throws IOException {
         byte b1, b2;
         int outLen = 0;
@@ -148,8 +136,7 @@ public final class HexDecoder {
      * @param out The {@link OutputStream} instance
      * @return the number of bytes produced.
      * @throws IOException If encoding failed.
-     */
-    public static int decode(final String data, final OutputStream out) throws IOException {
+     */publicstaticint decode(final String data, final OutputStream out) throws IOException {
         byte b1, b2;
         int length = 0;
         int end = data.length();
@@ -178,24 +165,22 @@ public final class HexDecoder {
      * Encodes the input data producing a Hex output stream.
      * @param data Input data to encode.
      * @return the number of bytes produced.
-     */
-    public static String encode(final byte[] data) {
+     */publicstatic String encode(finalbyte[] data) {
         try {
             final ByteArrayOutputStream out = new ByteArrayOutputStream();
             encode(data, 0, data.length, out);
             out.close();
-            return new String(out.toByteArray());
+            returnnew String(out.toByteArray());
         } catch (IOException e) {
             e.printStackTrace();
-            throw new RuntimeException(e.getMessage(), e);
+            thrownew RuntimeException(e.getMessage(), e);
         }
     }
     /**
      * Decodes the HEX input data producing a output stream.
      * @param data Input data to be decoded.
      * @return A byte array representing the decoded input data.
-     */
-    public static byte[] decode(final String data) {
+     */publicstaticbyte[] decode(final String data) {
         try {
             final ByteArrayOutputStream out = new ByteArrayOutputStream();
             decode(data, out);
@@ -203,7 +188,7 @@ public final class HexDecoder {
             return out.toByteArray();
         } catch (IOException e) {
             e.printStackTrace();
-            throw new RuntimeException(e.getMessage(), e);
+            thrownew RuntimeException(e.getMessage(), e);
         }
     }
 }

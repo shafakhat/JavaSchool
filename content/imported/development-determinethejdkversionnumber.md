@@ -7,7 +7,6 @@ order: 1041
 source: https://web.archive.org/web/20111105140554/http://java2s.com/Tutorial/Java/0120__Development/DeterminetheJDKVersionNumber.htm
 ---
 ```java title=Example.java
-/** Determine the JDK Version Number
  *
  * There is a human readible JDK version number available as a Java property. The property name is called "java.version".
  * Unfortunately it is complicated to parse it mechanically. A somewhat better choice is the Java property called

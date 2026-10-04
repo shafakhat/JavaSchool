@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1108
 source: https://web.archive.org/web/20071105235910/http://www.java2s.com:80/Code/Java/Web-Services-SOA/Axis2clientAPIhasfacilitiestoinvokeRESTinterfaces.htm
 ---
-Axis2 client API has facilities to invoke REST interfaces
-
 ```java title=Example.java
 Sample for Yahoo - Search - REST
 =================================

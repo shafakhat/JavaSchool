@@ -3,8 +3,8 @@ title: Trim any of the characters
 nav: Trim any of the characters
 description: * This program is free software; you can redistribute it and/or modify
 section: Imported - java2s Archive
-order: 1007
-source: https://web.archive.org/web/20100412211327/http://java2s.com:80/Tutorial/Java/0040__Data-Type/Trimanyofthecharacters.htm
+order: 1057
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Trimanyofthecharacters.htm
 ---
 ```java title=Example.java
 /*
@@ -23,8 +23,7 @@ source: https://web.archive.org/web/20100412211327/http://java2s.com:80/Tutorial
  * GNU General Public License for more details.
  *
  * See COPYING.TXT for details.
- */
-import java.util.HashMap;
+ */import java.util.HashMap;
 import java.util.regex.Pattern;
 /**
  * Utilities for String formatting, manipulation, and queries.
@@ -33,8 +32,7 @@ import java.util.regex.Pattern;
  *
  * @author Stephen Ostermiller http://ostermiller.org/contact.pl?regarding=Java+Utilities
  * @since ostermillerutils 1.00.00
- */
-public class StringHelper {
+ */publicclass StringHelper {
   /**
    * Trim any of the characters contained in the second
    * string from the beginning and end of the first.
@@ -45,8 +43,7 @@ public class StringHelper {
    * @throws NullPointerException if s is null.
    *
    * @since ostermillerutils 1.00.00
-   */
-  public static String trim(String s, String c){
+   */publicstatic String trim(String s, String c){
     int length = s.length();
     if (c == null){
       return s;
@@ -58,9 +55,9 @@ public class StringHelper {
     int start = 0;
     int end = length;
     boolean found; // trim-able character found.
-    int i;
+int i;
     // Start from the beginning and find the
-    // first non-trim-able character.
+// first non-trim-able character.
     found = false;
     for (i=0; !found && i<length; i++){
       char ch = s.charAt(i);
@@ -70,10 +67,10 @@ public class StringHelper {
       }
     }
     // if all characters are trim-able.
-    if (!found) return "";
+if (!found) return"";
     start = i-1;
     // Start from the end and find the
-    // last non-trim-able character.
+// last non-trim-able character.
     found = false;
     for (i=length-1; !found && i>=0; i--){
       char ch = s.charAt(i);

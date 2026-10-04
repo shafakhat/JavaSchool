@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20090606185130/http://www.java2s.com:80/Code/Java/Regular-Expressions/CapturingTextinaGroupinaRegularExpression.htm
 ---
-Capturing Text in a Group in a Regular Expression
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

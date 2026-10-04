@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20081229030734/http://www.java2s.com:80/Code/Java/EJB3/EjbLocalAndRemoteInterfaces.htm
 ---
-Ejb Local And Remote Interfaces
-
 ```java title=Example.java
 File: HelloServiceBean.java
 import javax.ejb.Stateless;

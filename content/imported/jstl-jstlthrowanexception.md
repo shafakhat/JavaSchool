@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1054
 source: https://web.archive.org/web/20061026215129/http://www.java2s.com/Code/Java/JSTL/JSTLThrowanException.htm
 ---
-JSTL Throw an Exception
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <html>

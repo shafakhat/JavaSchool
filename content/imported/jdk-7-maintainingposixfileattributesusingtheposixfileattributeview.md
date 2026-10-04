@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1091
 source: https://web.archive.org/web/20130820193046/http://java2s.com/Code/Java/JDK-7/MaintainingPosixfileattributesusingthePosixFileAttributeView.htm
 ---
-Maintaining Posix file attributes using the PosixFileAttributeView
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

@@ -7,7 +7,6 @@ order: 1000
 source: https://web.archive.org/web/20090917140607/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/140colorsdefinedforXWindowSystemlistedinOReillyhtmlpocketreference87pp.htm
 ---
 140 colors - defined for X Window System listed in O'Reilly html pocket reference 87pp : Color « 2D Graphics GUI « Java
-140 colors - defined for X Window System listed in O'Reilly html pocket reference 87pp
 
 ```java title=Example.java
 /*

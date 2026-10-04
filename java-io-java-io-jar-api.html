@@ -42,27 +42,23 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <h2 id="jar-api">JAR API</h2>
 <p>JAR API includes classes for working with a manifest file. An object of the Manifest class represents a manifest file. You create a Manifest object in your code as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Manifest manifest = new Manifest();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Manifest manifest = new Manifest();</code></pre></div>
 <p>We can read entries from a manifest file and write entries to it.</p>
 <p>To add an entry into a main section, get an instance of the Attributes class using the getMainAttributes() method from Manifest class and keep adding a name-value pair to it using its put() method.</p>
 <p>The following code adds some attributes to the main section of a manifest object. The known attribute names are defined as constants in the Attributes.Name class.</p>
 <p>For example, the constant Attributes.Name.MANIFEST_VERSION represents the Manifest-Version attribute name.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Manifest manifest = new Manifest();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Manifest manifest = new Manifest();
 Attributes  mainAttribs = manifest.getMainAttributes(); mainAttribs.put(Attributes.Name.MANIFEST_VERSION, "1.0"); mainAttribs.put(Attributes.Name.MAIN_CLASS, "com.java2s.Main"); mainAttribs.put(Attributes.Name.SEALED, "true");</code></pre></div>
 <p>Adding an individual entry to the manifest file is a little more complex than adding the main entry.</p>
 <p>The following code shows you how to add an individual entry to a Manifest object:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Map&lt;String,Attributes&gt; attribsMap = manifest.getEntries();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Map&lt;String,Attributes&gt; attribsMap = manifest.getEntries();
 Attributes attribs  = new Attributes();
 Attributes.Name name = new Attributes.Name("Sealed");
 attribs.put(name, "false");
 attribsMap.put("com/java2s/archives/", attribs);</code></pre></div>
 <p>To add a manifest file to a JAR file, specify it in one of the constructors of the JarOutputStream class.</p>
 <p>For example, the following code creates a jar output stream to create a test.jar file with a Manifest object:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Manifest manifest = new Manifest();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Manifest manifest = new Manifest();
 JarOutputStream jos  = new JarOutputStream(new BufferedOutputStream(
 new FileOutputStream("test.jar")), manifest);</code></pre></div>
 <p>The following code creates a JAR file that includes a manifest file.</p>
@@ -79,7 +75,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarOutputStream;
 import java.util.jar.Manifest;
 import java.util.zip.Deflater;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     Manifest manifest = getManifest();
     String jarFileName = "jartest.jar";
@@ -139,8 +135,7 @@ import java.util.zip.Deflater;
   }
 }</code></pre></div>
 <p>To read the entries from a manifest file of a JAR file, get the object of the Manifest class using the getManifest() class of the JarInputStream as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-JarInputStream jis = new JarInputStream(new FileInputStream("jartest.jar"));
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">JarInputStream jis = new JarInputStream(new FileInputStream("jartest.jar"));
 Manifest manifest = jis.getManifest();
 if (manifest !=  null)  {
     Attributes  mainAttributes = manifest.getMainAttributes();
@@ -150,22 +145,17 @@ if (manifest !=  null)  {
 <h2 id="accessing-resources-from-a-jar-file">Accessing Resources from a JAR File</h2>
 <p>You can construct a URL object by using the reference of a resource in a JAR file.</p>
 <p>The JAR file URL syntax is</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-jar:&lt;url&gt;!/{entry}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">jar:&lt;url&gt;!/{entry}</code></pre></div>
 <p>The following URL refers to an images/logo.bmp JAR entry in a test.jar file on www.java2s.com using the HTTP protocol:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-jar:http://www.java2s.com/test.jar!/images/logo.bmp</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">jar:http:/test.jar!/images/logo.bmp</code></pre></div>
 <p>The following URL refers to an images/logo.bmp JAR entry in a test.jar file on the local file system in the c:\jarfiles\ directory using the file protocol:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-jar:file:/c:/jarfiles/test.jar!/images/logo.bmp</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">jar:file:/c:/jarfiles/test.jar!/images/logo.bmp</code></pre></div>
 <p>To read the images/logo.bmp file from a JAR file in the classpath, you can get an input stream object using a class object as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-// Assuming that the   Test   class is in the   CLASSPATH
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Assuming that the   Test   class is in the   CLASSPATH
 Class cls = Test.class;
 InputStream in = cls.getResourceAsStream("/images/logo.bmp")</code></pre></div>
 <p>You can also get a URL object for an entry in your JAR file, which is in your classpath as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-URL  url = cls.getResource("/images/logo.bmp");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">URL  url = cls.getResource("/images/logo.bmp");</code></pre></div>
 <ul><li>« Previous</li></ul>
     <div class="pager"><a class="pager-btn" href="java-io-java-io-jar-manifest.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java IO Tutorial - Java Ja...</span></a><a class="pager-btn pager-next" href="java-io-java-nio-buffer.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java IO Tutorial - Java I/...</span></a></div>
   </article>
@@ -177,15 +167,8 @@ URL  url = cls.getResource("/images/logo.bmp");</code></pre></div>
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

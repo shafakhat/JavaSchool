@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1050
 source: https://web.archive.org/web/20090523115257/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/Arc2DPIE.htm
 ---
-Arc2D.PIE
-
 ```java title=Example.java
 import java.awt.Frame;
 import java.awt.Graphics;

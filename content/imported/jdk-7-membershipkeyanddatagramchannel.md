@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1099
 source: https://web.archive.org/web/20130820200443/http://java2s.com/Code/Java/JDK-7/MembershipKeyandDatagramChannel.htm
 ---
-MembershipKey and DatagramChannel
-
 ```java title=Example.java
 import java.net.InetAddress;
 import java.net.InetSocketAddress;

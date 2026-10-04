@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1068
 source: https://web.archive.org/web/20081009143506/http://www.java2s.com:80/Code/Java/Class/ShallowCopyTest.htm
 ---
-Shallow Copy Test
-
 ```java title=Example.java
 /*
 Software Architecture Design Patterns in Java

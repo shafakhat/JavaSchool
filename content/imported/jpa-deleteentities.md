@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20090322034732/http://www.java2s.com:80/Code/Java/JPA/DeleteEntities.htm
 ---
-Delete Entities
-
 ```java title=Example.java
 File: Main.java
 import javax.persistence.EntityManager;

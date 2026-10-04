@@ -3,8 +3,8 @@ title: Subtract two integers, checking for overflow.
 nav: Subtract two integers, che...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1119
-source: https://web.archive.org/web/20100719191808/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Subtracttwointegerscheckingforoverflow.htm
+order: 1039
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Subtracttwointegerscheckingforoverflow.htm
 ---
 ```java title=Example.java
 import java.math.BigDecimal;
@@ -25,10 +25,8 @@ import java.math.BigDecimal;
  *  limitations under the License.
  *
  *
- */
-public class Main {
+ */publicclass Main {
   /**
-   * Subtract two integers, checking for overflow.
    *
    * @param x the minuend
    * @param y the subtrahend
@@ -36,11 +34,10 @@ public class Main {
    * @throws ArithmeticException if the result can not be represented as an
    *         int
    * @since 1.1
-   */
-  public static int subAndCheck(int x, int y) {
+   */publicstaticint subAndCheck(int x, int y) {
       long s = (long)x - (long)y;
       if (s < Integer.MIN_VALUE || s > Integer.MAX_VALUE) {
-          throw new ArithmeticException("overflow: subtract");
+          thrownew ArithmeticException("overflow: subtract");
       }
       return (int)s;
   }

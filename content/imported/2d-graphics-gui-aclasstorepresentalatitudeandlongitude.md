@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20111125081431/http://java2s.com/Code/Java/2D-Graphics-GUI/Aclasstorepresentalatitudeandlongitude.htm
 ---
-A class to represent a latitude and longitude
-
 ```java title=Example.java
 /*
  * This file is part of the AusStage Utilities Package
@@ -30,7 +28,6 @@ A class to represent a latitude and longitude
 // import additional libraries
 import java.text.DecimalFormat;
 /**
- * A class to represent a latitude and longitude
  */
 public class Coordinate implements Comparable<Coordinate>{
   // declare private class level variables

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1133
 source: https://web.archive.org/web/20091215162550/http://www.java2s.com:80/Code/Java/Data-Type/Amutabledoublewrapper.htm
 ---
-A mutable double wrapper.
-
 ```java title=Example.java
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more

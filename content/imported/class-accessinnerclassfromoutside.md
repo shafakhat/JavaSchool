@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1123
 source: https://web.archive.org/web/20090531214942/http://www.java2s.com:80/Code/Java/Class/Accessinnerclassfromoutside.htm
 ---
-Access inner class from outside
-
 ```java title=Example.java
 public class Main {
     public static void main(String[] args) {

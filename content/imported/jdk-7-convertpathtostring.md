@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20130821081533/http://java2s.com/Code/Java/JDK-7/ConvertPathtoString.htm
 ---
-Convert Path to String
-
 ```java title=Example.java
 import java.nio.file.FileSystems;
 import java.nio.file.Path;

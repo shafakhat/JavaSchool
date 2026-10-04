@@ -1,0 +1,37 @@
+---
+title: Java Tutorial - Java Font.getFontName()
+nav: Java Tutorial - Java Font....
+description: In the following code shows how to use Font.getFontName() method.
+section: Imported - java2s Archive
+order: 1034
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/Font/Java_Font_getFontName_.htm
+---
+### Syntax
+
+Font.getFontName() has the following syntax.
+
+```java title=Example.java
+public String getFontName()
+```
+
+### Example
+
+In the following code shows how to use Font.getFontName() method.
+
+```java title=Example.java
+import java.awt.Font;
+import java.awt.GraphicsEnvironment;
+publicclass Main {
+  publicstaticvoid main(String[] args) throws Exception {
+    Font[] fonts  = GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
+    for (int i = 0; i < fonts.length; i++) {
+      System.out.print(fonts[i].getFontName() + " : ");
+      System.out.print(fonts[i].getFamily() + " : ");
+      System.out.print(fonts[i].getName());
+      System.out.println();
+    }
+  }
+}
+```
+
+BasicStrokeBorderLayoutCardLayoutColorCursorDesktopDesktopManagerDisplayModeEventQueueFlowLayoutFocusTraversalPolicyFontFontMetricsGradientPaintGraphicsGraphics2DGraphicsConfigurationGraphicsDeviceGraphicsEnvironmentGridBagConstraintsGridBagLayoutGridLayoutImageItemSelectableKeyboardFocusManagerLayoutManagerLayoutManager2PointRectangleRobotShapeSplashScreenSystemColorSystemTrayTexturePaintTrayIconToolkitTransparency

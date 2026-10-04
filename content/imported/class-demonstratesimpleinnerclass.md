@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20090106044341/http://www.java2s.com:80/Code/Java/Class/Demonstratesimpleinnerclass.htm
 ---
-Demonstrate simple inner class
-
 ```java title=Example.java
 /** Demonstrate simple inner class. A named inner class
  * is used to show that it can access non-local variables

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20130313054651/http://www.java2s.com:80/Code/Java/JDK-7/CatchingMultipleExceptionTypesToImproveTypeHandling.htm
 ---
-Catching Multiple Exception Types To Improve Type Handling
-
 ```java title=Example.java
 import java.util.InputMismatchException;
 public class Test {

@@ -45,7 +45,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main{
   publicstaticvoid main(String[] args) {
     MergeSortArray arr = new MergeSortArray(20);
-    arr.insert(4);//fromjava2s.com
+    arr.insert(4);
     arr.insert(1);
     arr.insert(3);
     arr.insert(0);
@@ -57,41 +57,32 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     arr.insert(5);
     arr.insert(8);
     arr.insert(6);
-
     arr.display();
-
     arr.mergeSort();
-
     arr.display();
   }
 }
 class MergeSortArray {
   privatelong[] theArray;
-
   privateint nElems;
-
   public MergeSortArray(int max) {
     theArray = newlong[max];
     nElems = 0;
   }
-
   publicvoid insert(long value) {
     theArray[nElems] = value; // insert it
     nElems++; // increment size
   }
-
   publicvoid display() {
     for (int j = 0; j &lt; nElems; j++){
       System.out.print(theArray[j] + " ");
     }
     System.out.println("");
   }
-
   publicvoid mergeSort() {
     long[] workSpace = newlong[nElems];
     recMergeSort(workSpace, 0, nElems - 1);
   }
-
   privatevoid recMergeSort(long[] workSpace, int lowerBound, int upperBound) {
     if (lowerBound == upperBound){ // if range is 1,
 return;
@@ -105,7 +96,6 @@ int mid = (lowerBound + upperBound) / 2;
       merge(workSpace, lowerBound, mid + 1, upperBound);
     }
   }
-
   privatevoid merge(long[] workSpace, int lowPtr, int highPtr, int upperBound) {
     int j = 0; // workspace index
 int lowerBound = lowPtr;
@@ -133,20 +123,17 @@ while (lowPtr &lt;= mid &amp;&amp; highPtr &lt;= upperBound){
 <h3 id="fast-merge-sort">Fast Merge Sort</h3>
 <p>The following code has an open source implementation of merge sort.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Copyright (c) 2003-2009, Jodd Team (jodd.org). All Rights Reserved.
-//java2s.comimport java.util.Comparator;
-
+import java.util.Comparator;
 /**
  * Faster merge sort. When original JDK routine runs 5s for sorting 1 million
  * objects this one runs for 3.5s.
  *
  * reference: Arrays.mergeSort (private method).
  */publicclass FastMergeSort {
-
   @SuppressWarnings( { "unchecked" })
   privatestaticvoid mergeSort(Object src[], Object dest[], int low, int high, int off,
       Comparator c) {
     int length = high - low;
-
     // use insertion sort on smallest arrays
 if (length &lt; 7) {
       for (int i = low; i &lt; high; i++) {
@@ -158,7 +145,6 @@ if (length &lt; 7) {
       }
       return;
     }
-
     // recursively sort halves of dest into src
 int destLow = low;
     int destHigh = high;
@@ -167,13 +153,11 @@ int destLow = low;
     int mid = (low + high) &gt;&gt; 1;
     mergeSort(dest, src, low, mid, -off, c);
     mergeSort(dest, src, mid, high, -off, c);
-
     // is list already sorted?
 if (c.compare(src[mid - 1], src[mid]) &lt;= 0) {
       System.arraycopy(src, low, dest, destLow, length);
       return;
     }
-
     // merge sorted halves from src into dest
 for (int i = destLow, p = low, q = mid; i &lt; destHigh; i++) {
       if (q &gt;= high || p &lt; mid &amp;&amp; c.compare(src[p], src[q]) &lt;= 0) {
@@ -183,44 +167,35 @@ for (int i = destLow, p = low, q = mid; i &lt; destHigh; i++) {
       }
     }
   }
-
   publicvoid sort(Object[] a, Comparator c) {
     Object aux[] = a.clone();
     mergeSort(aux, a, 0, a.length, 0, c);
   }
-
   publicvoid sort(Comparable[] a) {
     Object aux[] = a.clone();
     mergeSort(aux, a, 0, a.length, 0, ComparableComparator.INSTANCE);
   }
-
   // ---------------------------------------------------------------- static
 publicstaticvoid doSort(Object[] a, Comparator c) {
     Object aux[] = a.clone();
     mergeSort(aux, a, 0, a.length, 0, c);
   }
-
   publicstaticvoid doSort(Comparable[] a) {
     Object aux[] = a.clone();
     mergeSort(aux, a, 0, a.length, 0, ComparableComparator.INSTANCE);
   }
-
 }
-
 // Copyright (c) 2003-2009, Jodd Team (jodd.org). All Rights Reserved.
 /**
  * Comparator that adapts Comparables to the
  * Comparator interface.
  */class ComparableComparator&lt;T extends Comparable&lt;T&gt;&gt; implements Comparator&lt;T&gt; {
-
   /**
    * Cached instance.
    */publicstaticfinal ComparableComparator INSTANCE = new ComparableComparator();
-
   publicint compare(T o1, T o2) {
     return o1.compareTo(o2);
   }
-
 }</code></pre></div>
 <h4 id="next-chapter">Next chapter...</h4>
 <p>What you will learn in the next chapter:</p>
@@ -235,15 +210,8 @@ publicstaticvoid doSort(Object[] a, Comparator c) {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

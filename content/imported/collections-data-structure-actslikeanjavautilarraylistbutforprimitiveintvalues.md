@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1010
 source: https://web.archive.org/web/20111115002804/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/ActslikeanjavautilArrayListbutforprimitiveintvalues.htm
 ---
-Acts like an java.util.ArrayList but for primitive int values
-
 ```java title=Example.java
 /*
  * IntList.java Created Aug 310, 2010 by Andrew Butler, PSL

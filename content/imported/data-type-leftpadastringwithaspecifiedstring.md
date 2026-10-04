@@ -65,7 +65,6 @@ public class Main {
       return padding(pads, padChar).concat(str);
   }
   /**
-   * Left pad a String with a specified String.
    *
    * Pad to a size of <code>size</code>.
    *

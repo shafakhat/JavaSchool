@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20101207174144/http://www.java2s.com:80/Code/Java/GWT/AddingtooltipsforButtonExtGWT.htm
 ---
-Adding tooltips for Button (Ext GWT)
-
 ```java title=Example.java
 /*
  * Ext GWT - Ext for GWT

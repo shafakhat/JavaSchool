@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1007
 source: https://web.archive.org/web/20130821111718/http://java2s.com/Code/Java/JDK-7/CatchInvalidpathexception.htm
 ---
-Catch Invalid path exception
-
 ```java title=Example.java
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;

@@ -17,7 +17,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 167772160
 -150994945
 0

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513094501/http://www.java2s.com/Code/Ja
 ---
 Another print demo : Java examples (example source code) » 2D Graphics GUI » Print
 
-Another print demo
-
 ```java title=Example.java
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -110,7 +108,6 @@ class DrawingCanvas extends JPanel {
   }
   public void paintContent(Graphics2D g2D, int w, int h) {
     g2D.setFont(font);
-      g2D.drawString("Java Source and Support", 0,
         (float) (0.5 * h - 1.25 * fontMetrics.getHeight()));
   }
 }

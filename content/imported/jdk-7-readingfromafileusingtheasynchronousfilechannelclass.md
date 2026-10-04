@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1117
 source: https://web.archive.org/web/20130620171555/http://www.java2s.com:80/Code/Java/JDK-7/ReadingfromafileusingtheAsynchronousFileChannelclass.htm
 ---
-Reading from a file using the AsynchronousFileChannel class
-
 ```java title=Example.java
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousFileChannel;

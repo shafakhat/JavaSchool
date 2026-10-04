@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1149
 source: https://web.archive.org/web/20130821052157/http://java2s.com/Code/Java/JDK-7/UsingtheDiamondOperatorandSuppressingUncheckedWarningsSuppressWarnings.htm
 ---
-Using the Diamond Operator and Suppressing Unchecked Warnings(SuppressWarnings)
-
 ```java title=Example.java
 import java.util.ArrayList;
 import java.util.List;

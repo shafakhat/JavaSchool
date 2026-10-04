@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513083644/http://www.java2s.com/Code/Ja
 ---
 Event For Get Identifier : Java examples (example source code) » Hibernate » Event
 
-Event For Get Identifier
-
 ```java title=Example.java
 /////////////////////////////////////////////////////////////////////////
 import java.io.Serializable;

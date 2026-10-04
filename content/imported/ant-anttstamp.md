@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1025
 source: https://web.archive.org/web/20100211103054/http://java2s.com/Code/Java/Ant/Anttstamp.htm
 ---
-Ant tstamp
-
 ```java title=Example.java
 //https://amateur.dev.java.net/
 //GNU General Public License (GPL v. 2.0)

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20081221015118/http://www.java2s.com:80/Code/Java/JPA/CreateMorethanoneNamedQueriesforanEntity.htm
 ---
-Create More than one Named Queries for an Entity
-
 ```java title=Example.java
 File: Department.java
 import java.util.ArrayList;

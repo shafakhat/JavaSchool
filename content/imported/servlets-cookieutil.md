@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20111125102532/http://java2s.com/Code/Java/Servlets/CookieUtil.htm
 ---
-Cookie Util
-
 ```java title=Example.java
 /* infoScoop OpenSource
  * Copyright (C) 2010 Beacon IT Inc.

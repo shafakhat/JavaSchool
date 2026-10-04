@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1047
 source: https://web.archive.org/web/20071029101220/http://www.java2s.com:80/Code/Java/Ant/Checkthecodingconventions.htm
 ---
-Check the coding conventions
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Example Application Build" default="build-both" basedir=".">
@@ -1168,7 +1166,6 @@ Check the coding conventions
     </junit>
   </target>
 -->
-  <!-- Check the coding conventions -->
   <target name="coding-style" depends="test-init"
           description="Check the coding conventions">
     <echo message="Checking the coding conventions"/>

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20100212011225/http://java2s.com/Code/Java/Servlets/Addheaderstopreventbrowsersandproxiesfromcachingthisreply.htm
 ---
-Add headers to prevent browsers and proxies from caching this reply.
-
 ```java title=Example.java
 import javax.servlet.http.HttpServletResponse;
 /*
@@ -30,7 +28,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Main {
   /**
-   * Add headers to prevent browsers and proxies from caching this reply.
    * @param resp The response to add headers to
    */
   public static void addNoCacheHeaders(HttpServletResponse resp)

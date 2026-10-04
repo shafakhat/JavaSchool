@@ -3,8 +3,8 @@ title: Removes one newline from end of a String if it's there, otherwise leave i
 nav: Removes one newline from e...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1174
-source: https://web.archive.org/web/20100412210125/http://java2s.com:80/Tutorial/Java/0040__Data-Type/RemovesonenewlinefromendofaStringifitsthereotherwiseleaveitalone.htm
+order: 1045
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/RemovesonenewlinefromendofaStringifitsthereotherwiseleaveitalone.htm
 ---
 ```java title=Example.java
 import java.io.PrintWriter;
@@ -27,24 +27,21 @@ import java.sql.SQLException;
  *  limitations under the License.
  *
  *
- */
-public class Main {
+ */publicclass Main {
   /**
    * <code>\u000a</code> linefeed LF ('\n').
    *
    * @see <a href="http://java.sun.com/docs/books/jls/third_edition/html/lexical.html#101089">JLF: Escape Sequences
    *      for Character and String Literals</a>
    * @since 2.2
-   */
-  public static final char LF = '\n';
+   */publicstaticfinalchar LF = '\n';
   /**
    * <code>\u000d</code> carriage return CR ('\r').
    *
    * @see <a href="http://java.sun.com/docs/books/jls/third_edition/html/lexical.html#101089">JLF: Escape Sequences
    *      for Character and String Literals</a>
    * @since 2.2
-   */
-  public static final char CR = '\r';
+   */publicstaticfinalchar CR = '\r';
   /**
    * Removes one newline from end of a String if it's there,
    * otherwise leave it alone.  A newline is &quot;<code>\n</code>&quot;,
@@ -69,15 +66,14 @@ public class Main {
    *
    * @param str  the String to chomp a newline from, may be null
    * @return String without newline, <code>null</code> if null String input
-   */
-  public static String chomp(String str) {
+   */publicstatic String chomp(String str) {
       if (isEmpty(str)) {
           return str;
       }
       if (str.length() == 1) {
           char ch = str.charAt(0);
           if (ch == CR || ch == LF) {
-              return "";
+              return"";
           }
           return str;
       }
@@ -87,14 +83,14 @@ public class Main {
           if (str.charAt(lastIdx - 1) == CR) {
               lastIdx--;
           }
-      } else if (last != CR) {
+      } elseif (last != CR) {
           lastIdx++;
       }
       return str.substring(0, lastIdx);
   }
   // Empty checks
-  //-----------------------------------------------------------------------
-  /**
+//-----------------------------------------------------------------------
+/**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -111,8 +107,7 @@ public class Main {
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */
-  public static boolean isEmpty(String str) {
+   */publicstaticboolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }

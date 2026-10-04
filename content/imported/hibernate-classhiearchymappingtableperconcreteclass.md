@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513085540/http://www.java2s.com/Code/Ja
 ---
 Class Hiearchy Mapping Table Per Concrete Class : Java examples (example source code) » Hibernate » Class Hiearchy Mapping
 
-Class Hiearchy Mapping Table Per Concrete Class
-
 ```java title=Example.java
 /////////////////////////////////////////////////////////////////////////
 import java.io.*;

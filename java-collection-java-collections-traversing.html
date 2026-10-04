@@ -50,8 +50,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>An iterator in Java is an instance of the Iterator&lt;E&gt; interface.</p>
 <p>We can get an iterator for a collection using the iterator() method from the Collection interface.</p>
 <p>The following code creates a list of strings and gets an iterator for the list:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import java.util.ArrayList;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 publicclass Main {
@@ -63,8 +62,7 @@ publicclass Main {
   }
 }</code></pre></div>
 <p>The Iterator&lt;E&gt; interface contains the following methods:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-boolean hasNext()
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">boolean hasNext()
 E next()
 default void  remove()
 default void  forEachRemaining(Consumer&lt;? super  E&gt; action)</code></pre></div>
@@ -75,7 +73,7 @@ default void  forEachRemaining(Consumer&lt;? super  E&gt; action)</code></pre></
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     // Create a list of strings
     List&lt;String&gt; names = new ArrayList&lt;&gt;();
@@ -101,7 +99,7 @@ while (nameIterator.hasNext()) {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     // Create a list of strings
     List&lt;String&gt; names = new ArrayList&lt;&gt;();
@@ -127,7 +125,7 @@ while (nameIterator.hasNext()) {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     // Create a list of strings
     List&lt;String&gt; names = new ArrayList&lt;&gt;();
@@ -146,14 +144,13 @@ import java.util.List;
 <p>We can use the for-each loop to iterate over elements of a collection.</p>
 <p>We can use the for-each loop to iterate over any collection whose implementation class implements the Iterable interface.</p>
 <p>The general syntax for the for-each loop is as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Collection&lt;T&gt; yourCollection  = ;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Collection&lt;T&gt; yourCollection  = ;
 for(T  element : yourCollection)  {
 }</code></pre></div>
 <p>Behind the scenes, for-each loop gets the iterator and calls the hasNext() and next() methods.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.List;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     // Create a list of strings
     List&lt;String&gt; names = new ArrayList&lt;&gt;();
@@ -170,8 +167,7 @@ import java.util.List;
 <p>The for-each loop has several limitations.</p>
 <p>We cannot use the for-each loop to remove elements from the collection.</p>
 <p>The following code will throw a ConcurrentModificationException exception:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-List&lt;String&gt; names = get   a  list;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">List&lt;String&gt; names = get   a  list;
 for(String name : names)  {
     names.remove(name);// Throws a  ConcurrentModificationException
 }</code></pre></div>
@@ -183,7 +179,7 @@ for(String name : names)  {
 <p>The forEach() method is available in all collection types that inherit from the Collection interface.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.List;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     // Create a list of strings
     List&lt;String&gt; names = new ArrayList&lt;&gt;();
@@ -205,15 +201,8 @@ import java.util.List;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

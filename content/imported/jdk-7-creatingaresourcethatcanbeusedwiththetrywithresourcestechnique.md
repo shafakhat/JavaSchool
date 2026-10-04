@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20130821074932/http://java2s.com/Code/Java/JDK-7/Creatingaresourcethatcanbeusedwiththetrywithresourcestechnique.htm
 ---
-Creating a resource that can be used with the try-with-resources technique
-
 ```java title=Example.java
 public class Test {
   public static void main(String[] args) {

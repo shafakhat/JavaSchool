@@ -42,8 +42,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java"></code></pre></div>
 <h2 id="creating-the-output-stream">Creating the Output Stream</h2>
 <p>To write to a file, we need to create an object of the FileOutputStream class, which will represent the output stream.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-// Create a  file  output stream
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Create a  file  output stream
 String destFile = "test.txt";
 FileOutputStream fos   = new FileOutputStream(destFile);</code></pre></div>
 <p>When writing to a file, Java tries to create the file if the file does not exist. We must be ready to handle this exception by placing your code in a try-catch block, as shown:</p>
@@ -54,34 +53,29 @@ FileOutputStream fos   = new FileOutputStream(destFile);</code></pre></div>
 }</code></pre></div>
 <p>If the file contains data, the data will be erased. To keep the existing data and append the new data to the file, we need to use another constructor of the FileOutputStream class, which accepts a boolean flag for appending the new data to the file.</p>
 <p>To append data to the file, pass true in the second argument, use the following code.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-FileOutputStream fos   = new FileOutputStream(destFile, true);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">FileOutputStream fos   = new FileOutputStream(destFile, true);</code></pre></div>
 <h2 id="writing-the-data">Writing the Data</h2>
 <p>The FileOutputStream class has an overloaded write() method to write data to a file. We can write one byte or multiple bytes at a time using the different versions of this method.</p>
 <p>Typically, we write binary data using a FileOutputStream.</p>
 <p>To write a string such as "Hello" to the output stream, convert the string to bytes.</p>
 <p>The String class has a getBytes() method that returns an array of bytes that represents the string. We write a string to the FileOutputStream as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-String text = "Hello";
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String text = "Hello";
 byte[] textBytes = text.getBytes();
 fos.write(textBytes);</code></pre></div>
 <p>To insert a new line, use the line.separator system variable as follows.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-String lineSeparator = System.getProperty("line.separator");
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String lineSeparator = System.getProperty("line.separator");
 fos.write(lineSeparator.getBytes());</code></pre></div>
 <p>We need to flush the output stream using the flush() method.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-fos.flush();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">fos.flush();</code></pre></div>
 <p>Flushing an output stream indicates that if any written bytes were buffered, they may be written to the data sink.</p>
 <p>Closing an output stream is similar to closing an input stream. We need to close the output stream using its close() method.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-// Close  the   output  stream
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Close  the   output  stream
 fos.close();</code></pre></div>
 <p>The close() method may throw an IOException. Use a try-with-resources to create an output stream if we want tit to be closed automatically.</p>
 <p>The following code shows how to write Bytes to a File Output Stream.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
 import java.io.FileOutputStream;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     String destFile = "luci2.txt";
     // Get the line separator for the current platform
@@ -119,15 +113,8 @@ import java.io.FileOutputStream;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

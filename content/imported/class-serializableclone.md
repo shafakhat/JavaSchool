@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1067
 source: https://web.archive.org/web/20100212194924/http://java2s.com/Code/Java/Class/SerializableClone.htm
 ---
-Serializable Clone
-
 ```java title=Example.java
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

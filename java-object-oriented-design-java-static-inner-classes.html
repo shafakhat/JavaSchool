@@ -58,11 +58,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <ul><li>A static member class can access the static members of its enclosing class including the private static members.</li><li>A package acts like a container for top-level classes by providing a namespace. Top-level classes having static member classes provide an additional layer of namespaces.</li></ul>
 <p>A static member class is the direct member of its enclosing top-level class, not a member of the package.</p>
 <p>An object of a static member class is created the same way as you create an object of a top-level class using the new operator. To create an object of class B, you write</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-A.B bReference = new A.B();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">A.B bReference = new A.B();</code></pre></div>
 <p>Since the simple name of class B is in the scope inside class A, we can use its simple name to create its object inside class A as</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-B  bReference2 = new B(); // This  statement appears inside class  A  code</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">B  bReference2 = new B(); // This  statement appears inside class  A  code</code></pre></div>
 <p>We can also use the simple name B outside class A by importing the com.java2s.innerclasses.A.B class.</p>
 <h2 id="example-2">Example 2</h2>
 <p>The following code shows how to use static inner class.</p>
@@ -70,7 +68,6 @@ B  bReference2 = new B(); // This  statement appears inside class  A  code</code
   publicstaticvoid main(String[] args) {
     Car.Tire m = new Car.Tire(17);
     Car.Tire m2 = new Car.Tire(19);
-//www.java2s.com
     Car.Keyboard k = new Car.Keyboard(122);
     Car.Keyboard k1 = new Car.Keyboard(142);
     System.out.println(m);
@@ -113,15 +110,8 @@ publicstaticclass Keyboard {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1052
 source: https://web.archive.org/web/20061027011451/http://www.java2s.com/Code/Java/JSTL/JSTLSubmitFormTextFieldAction.htm
 ---
-JSTL Submit Form TextField Action
-
 ```java title=Example.java
 <html>
   <head>

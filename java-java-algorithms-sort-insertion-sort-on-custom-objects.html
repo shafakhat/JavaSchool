@@ -40,47 +40,38 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-index.html">Java Examples</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-ref-java.html">ref java</a></nav>
     <h1>Java Algorithms Sort Insertion Sort on custom objects</h1>
 <h2 id="description">Description</h2>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Person {/*fromwww.java2s.com*/privateString lastName;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Person {privateString lastName;
    privateint age;
-
    public Person(String last, int a) { // constructor
       lastName = last;
       age = a;
    }
-
    publicvoid displayPerson() {
       System.out.print("   Last name: " + lastName);
       System.out.println(", Age: " + age);
    }
-
    publicString getLast() // get last name
    {
       return lastName;
    }
 }
-
 class MyArray {
    private Person[] a;
    privateint nElems;
-
    public MyArray(int max) {
       a = new Person[max];
       nElems = 0; // no items yet
    }
-
    publicvoid insert(String last, int age) {
       a[nElems] = new Person(last, age);
       nElems++; // increment size
    }
-
    publicvoid display() {
       for (int j = 0; j &lt; nElems; j++) // for each element,
          a[j].displayPerson(); // display it
    }
-
    publicvoid insertionSort() {
       int in, out;
-
       for (out = 1; out &lt; nElems; out++) {
          Person temp = a[out]; // out is dividing line
          in = out; // start shifting at outwhile (in &gt; 0 &amp;&amp; // until smaller one found,
@@ -92,13 +83,11 @@ class MyArray {
       }
    }
 }
-
 publicclass Main {
    publicstaticvoid main(String[] args) {
       int maxSize = 100; // array size
       MyArray arr; // reference to array
       arr = new MyArray(maxSize); // create the array
-
       arr.insert("E", 24);
       arr.insert("G", 39);
       arr.insert("D", 37);
@@ -109,10 +98,8 @@ publicclass Main {
       arr.insert("V", 42);
       arr.insert("V", 22);
       arr.insert("C", 18);
-
       System.out.println("Before sorting:");
       arr.display();
-
       arr.insertionSort(); // insertion-sort themSystem.out.println("After sorting:");
       arr.display();
    }
@@ -129,15 +116,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

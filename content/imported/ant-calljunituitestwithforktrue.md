@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1042
 source: https://web.archive.org/web/20100131220649/http://java2s.com/Code/Java/Ant/Calljunituitestwithforktrue.htm
 ---
-Call junit ui test with fork=true
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="yourName" default="junitgui" basedir=".">

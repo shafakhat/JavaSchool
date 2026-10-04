@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20130111100539/http://www.java2s.com:80/Code/Java/JDK-7/CopyingfromanInputStream.htm
 ---
-Copying from an Input Stream
-
 ```java title=Example.java
 import java.io.InputStream;
 import java.net.URI;

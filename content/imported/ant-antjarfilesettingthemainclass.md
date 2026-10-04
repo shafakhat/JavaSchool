@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1009
 source: https://web.archive.org/web/20100213130334/http://java2s.com/Code/Java/Ant/AntjarfilesettingtheMainClass.htm
 ---
-Ant jar file setting the Main-Class
-
 ```java title=Example.java
 <project name="YourName" default="all">
   <target name="all" depends="init,clean,compile,createJars,copyBuild" >

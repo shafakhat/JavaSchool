@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20100811082006/http://www.java2s.com:80/Code/Java/GWT/AddingStatustoToolBarExtGWT.htm
 ---
-Adding Status to ToolBar (Ext GWT)
-
 ```java title=Example.java
 /*
  * Ext GWT - Ext for GWT

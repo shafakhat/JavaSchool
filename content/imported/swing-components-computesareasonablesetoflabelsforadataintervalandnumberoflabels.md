@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1053
 source: https://web.archive.org/web/20111125074732/http://java2s.com/Code/Java/Swing-Components/Computesareasonablesetoflabelsforadataintervalandnumberoflabels.htm
 ---
-Computes a reasonable set of labels for a data interval and number of labels.
-
 ```java title=Example.java
 /**
  * Copyright (C) 2009, 2010 SC 4ViewSoft SRL

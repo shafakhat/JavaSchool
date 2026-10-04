@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20060503130617/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/Accounts.htm
 ---
-Accounts : Java examples (example source code) » Database SQL JDBC » Database Swing Applet
-
 Accounts
 
 ```java title=Example.java

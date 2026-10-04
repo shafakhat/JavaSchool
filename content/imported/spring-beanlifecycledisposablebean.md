@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20090125220917/http://www.java2s.com:80/Code/Java/Spring/BeanLifecycleDisposableBean.htm
 ---
-Bean Lifecycle DisposableBean
-
 ```java title=Example.java
 File: Main.java
 import org.springframework.beans.factory.DisposableBean;

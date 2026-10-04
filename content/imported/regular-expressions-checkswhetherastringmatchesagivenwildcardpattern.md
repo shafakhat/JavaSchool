@@ -6,7 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/20100213064754/http://java2s.com/Code/Java/Regular-Expressions/Checkswhetherastringmatchesagivenwildcardpattern.htm
 ---
-Checks whether a string matches a given wildcard pattern
 1.  Matcher: Find Demo
 2.  Matcher Reset
 3.  Matcher Pattern

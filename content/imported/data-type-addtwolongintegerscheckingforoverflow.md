@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1122
 source: https://web.archive.org/web/20090904105500/http://www.java2s.com:80/Code/Java/Data-Type/Addtwolongintegerscheckingforoverflow.htm
 ---
-Add two long integers, checking for overflow.
-
 ```java title=Example.java
 import java.io.File;
 /*
@@ -30,7 +28,6 @@ import java.io.File;
  */
 public class Main {
   /**
-   * Add two long integers, checking for overflow.
    *
    * @param a an addend
    * @param b an addend
@@ -43,7 +40,6 @@ public class Main {
       return addAndCheck(a, b, "overflow: add");
   }
   /**
-   * Add two long integers, checking for overflow.
    *
    * @param a an addend
    * @param b an addend

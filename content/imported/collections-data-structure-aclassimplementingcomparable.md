@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20060905011634/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AClassImplementingComparable.htm
 ---
-A Class Implementing Comparable
-
 ```java title=Example.java
 public class Time implements Comparable {
   private int hour, minute;

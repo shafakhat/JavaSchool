@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1014
 source: https://web.archive.org/web/20090202201258/http://www.java2s.com:80/Code/Java/Regular-Expressions/Charactersclassesspecifiesalistofpossiblecharacters.htm
 ---
-Characters classes specifies a list of possible characters
-
 ```java title=Example.java
 Character Class Meta-Character            Matches
 .                                         Any single character

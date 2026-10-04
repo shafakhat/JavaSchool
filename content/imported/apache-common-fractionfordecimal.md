@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20061018210414/http://www.java2s.com/Code/Java/Apache-Common/Fractionfordecimal.htm
 ---
-Fraction for decimal
-
 ```java title=Example.java
 import org.apache.commons.lang.math.Fraction;
 public class FractionExampleV1 {

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1057
 source: https://web.archive.org/web/20061023193802/http://www.java2s.com:80/Code/Java/Apache-Common/Stringcapitalize.htm
 ---
-String capitalize
-
 ```java title=Example.java
 /*
 VanderLust

@@ -37,7 +37,6 @@ source: https://web.archive.org/web/20101107124030/http://www.java2s.com:80/Tuto
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 /**
- * A collection of utilities to workaround limitations of Java clone framework.
  */
 public class CloneUtils {
     public static Object clone(final Object obj) throws CloneNotSupportedException {

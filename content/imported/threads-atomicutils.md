@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1019
 source: https://web.archive.org/web/20111124233023/http://java2s.com/Code/Java/Threads/AtomicUtils.htm
 ---
-Atomic Utils
-
 ```java title=Example.java
 /*
  * @(#)$Id: codetemplate_xbird.xml 943 2006-09-13 07:03:37Z yui $

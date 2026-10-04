@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20090307144311/http://www.java2s.com:80/Code/Java/Spring/AliasBeanDemo.htm
 ---
-Alias Bean Demo
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

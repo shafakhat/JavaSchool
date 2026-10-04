@@ -40,8 +40,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="archive-cat-new-scala.html">Scala</a></nav>
     <h1>Scala Tutorial - Scala First Scala Programs</h1>
 <p>We can execute Scala code by first compiling it using the scalac command line tool.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object HelloWorld {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object HelloWorld {
     def main(args: Array[String]) {
         println("Hello,World!")
     }
@@ -54,16 +53,14 @@ object HelloWorld {
 <p>The main method is an instance method on a singleton object that is automatically instantiated.</p>
 <p>There is no return type. Actually there is Unit, which is similar to void, but it is inferred by the compiler.</p>
 <p>We can explicitly specify the return type by putting a colon and the type after the parameters:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-def main(args: Array[String]) : Unit = {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">def main(args: Array[String]) : Unit = {
 }</code></pre></div>
 <p>Scala uses the def keyword to tell the compiler that this is a method.</p>
 <p>There is no access level modifier in Scala.</p>
 <p>Scala does not specify the public modifier because the default access level is public.</p>
 <h2 id="printing-some-numbers">Printing Some Numbers</h2>
 <p>Let's write a program that will print the numbers from 1 to 10 in the Print1.scalafile:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
         for {i &lt;- 1 to10}
           println(i)
@@ -72,8 +69,7 @@ object Main {
 <p>We can run the code by typing scala Main.scala in the console.</p>
 <p>The program assigns the numbers 1 to 10 to the variable and then executes println(i), which prints the numbers 1 to 10.</p>
 <p>In the Print2.scala file, put</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-object Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">object Main {
   def main(args: Array[String]) {
         for {
            i &lt;- 1 to 10
@@ -92,15 +88,8 @@ object Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

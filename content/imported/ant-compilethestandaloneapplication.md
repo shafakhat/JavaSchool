@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1048
 source: https://web.archive.org/web/20070523085343/http://www.java2s.com:80/Code/Java/Ant/Compilethestandaloneapplication.htm
 ---
-Compile the stand-alone application
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Example Application Build" default="build-both" basedir=".">
@@ -76,7 +74,6 @@ Compile the stand-alone application
       </fileset>
     </copy>
   </target>
-  <!-- Compile the stand-alone application -->
   <target name="compile-stand-alone" depends="dir"
           description="Compile stand-alone application">
     <echo message="Compiling the stand-alone application"/>

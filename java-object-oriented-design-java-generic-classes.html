@@ -54,13 +54,11 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The classes that take formal type parameter are also known as parameterized classes.</p>
 <p>You can declare a variable of the Wrapper class specifying the String type as the value for its formal type parameter as shown below.</p>
 <p>Here, String is the actual type parameter.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Wrapper&lt;String&gt; stringWrapper;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Wrapper&lt;String&gt; stringWrapper;</code></pre></div>
 <p>Java lets us use a generic class without specifying the formal type parameters.</p>
 <h2 id="usage">Usage</h2>
 <p>This is allowed for backward compatibility. You can also declare a variable of the Wrapper&lt;T&gt; class as shown:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Wrapper  aRawWrapper;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Wrapper  aRawWrapper;</code></pre></div>
 <p>When a generic class is used without specifying the actual type parameters, it is known as raw type. The above declaration used the Wrapper&lt;T&gt; class as a raw type as it did not specify the value for T.</p>
 <p>The actual type parameter for a generic class must be a reference type.</p>
 <p>Primitive types are not allowed as the actual type parameters for a generic class.</p>
@@ -68,8 +66,7 @@ Wrapper  aRawWrapper;</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Mapper&lt;T, R&gt;    {
 }</code></pre></div>
 <p>We can declare variable of the Mapper&lt;T, R&gt; class as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Mapper&lt;String, Integer&gt;  mapper;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Mapper&lt;String, Integer&gt;  mapper;</code></pre></div>
 <p>Here, the actual type parameters are String and Integer.</p>
 <p>The formal type parameters are available inside the class body to be used as types.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Wrapper&lt;T&gt; {
@@ -86,15 +83,12 @@ Mapper&lt;String, Integer&gt;  mapper;</code></pre></div>
 }</code></pre></div>
 <p>The Wrapper&lt;T&gt; class uses the formal type parameter to declare instance variable obj to declare a formal parameter for its constructor and set() method, and as a return type for the get() method.</p>
 <p>You can create an object of the generic type by specifying the actual type parameter for the constructor as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Wrapper&lt;String&gt; w1  = new Wrapper&lt;String&gt;("Hello");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Wrapper&lt;String&gt; w1  = new Wrapper&lt;String&gt;("Hello");</code></pre></div>
 <p>We can omit the actual type parameter. In the following code, the compiler will infer the actual type parameter for the constructor as String:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Wrapper&lt;String&gt; w1  = new Wrapper&lt;&gt;("Hello");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Wrapper&lt;String&gt; w1  = new Wrapper&lt;&gt;("Hello");</code></pre></div>
 <p>Once you have declared a variable of the generic class, you can think of the formal type parameter as the specified actual type parameter for all practical purposes.</p>
 <p>Now, you can think that, for w1, the get() method of the Wrapper class returns a String.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-String s1=  w1.get();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String s1=  w1.get();</code></pre></div>
 <h2 id="example">Example</h2>
 <p>The following code shows how to use Wrapper class.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
@@ -133,15 +127,8 @@ class Wrapper&lt;T&gt; {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

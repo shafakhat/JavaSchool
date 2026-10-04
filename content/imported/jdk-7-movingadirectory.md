@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1102
 source: https://web.archive.org/web/20130111100559/http://www.java2s.com:80/Code/Java/JDK-7/Movingadirectory.htm
 ---
-Moving a directory
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

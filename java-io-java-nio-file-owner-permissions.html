@@ -49,8 +49,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>To set the owner of a file, get an object of the UserPrincipal from a user name.</p>
 <p>To get a UserPrincipal from the file system, use an instance of the UserPrincipalLookupService class, which we can get using the getUserPrincipalLookupService() method of the FileSystem class.</p>
 <p>The following code gets a UserPrincipal object for a user whose user id is myName:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-FileSystem fs  = FileSystems.getDefault();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">FileSystem fs  = FileSystems.getDefault();
 UserPrincipalLookupService upls  = fs.getUserPrincipalLookupService();
 UserPrincipal user = upls.lookupPrincipalByName("myName");
 System.out.format("User principal name is %s%n", user.getName());</code></pre></div>
@@ -64,7 +63,7 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.FileOwnerAttributeView;
 import java.nio.file.attribute.UserPrincipal;
 import java.nio.file.attribute.UserPrincipalLookupService;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
       Path path = Paths.get("C:\\Java_Dev\\test1.txt");
       FileOwnerAttributeView foav = Files.getFileAttributeView(path,
@@ -82,8 +81,7 @@ import java.nio.file.attribute.UserPrincipalLookupService;
   }
 }</code></pre></div>
 <p>The following code uses the Files.setOwner() method to update the owner of a file identified with the path C:\Java_Dev\test1.txt on Windows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-UserPrincipal owner  = get   the   owner;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">UserPrincipal owner  = get   the   owner;
 Path  path   = Paths.get("C:\\Java_Dev\\test1.txt");
 Files.setOwner(path,  owner);</code></pre></div>
 <h2 id="acl-file-permissions">ACL File Permissions</h2>
@@ -92,8 +90,7 @@ Files.setOwner(path,  owner);</code></pre></div>
 <p>AclEntry class represents an entry in an ACL.</p>
 <p>To get and set a List of AclEntry for a file using the getAcl() and setAcl() methods of the AclFileAttributeView.</p>
 <p>The following code gets the List of ACL entries for a file called C:\Java_Dev\test1.txt:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Path  path   = Paths.get("C:\\Java_Dev\\test1.txt");
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Path  path   = Paths.get("C:\\Java_Dev\\test1.txt");
 AclFileAttributeView view  = Files.getFileAttributeView(path,  AclFileAttributeView.class);
 List&lt;AclEntry&gt; aclEntries = view.getAcl();</code></pre></div>
 <p>AclEntry class can read various properties of an ACL entry. Its principal() method returns the UserPrincipal to identify the user or the group.</p>
@@ -109,7 +106,7 @@ import java.nio.file.attribute.AclEntryPermission;
 import java.nio.file.attribute.AclFileAttributeView;
 import java.util.List;
 import java.util.Set;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     Path path = Paths.get("C:\\Java_Dev\\test1.txt");
     AclFileAttributeView aclView = Files.getFileAttributeView(path,
@@ -134,7 +131,7 @@ import java.util.Set;
 <p>The following code shows how to add a new ACL entry for a user named brice. It adds DATA_READ and DATA_ WRITE permissions for the user on the C:\Java_Dev\test1.txt file.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">importstatic java.nio.file.attribute.AclEntryPermission.READ_DATA;
 importstatic java.nio.file.attribute.AclEntryPermission.WRITE_DATA;
-/*www.java2s.com*/import java.io.IOException;
+import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -181,8 +178,7 @@ publicclass Main {
 <p>Its fromString() method converts the POSIX file permissions in a string of the rwxrwxrwx form to a Set of PosixFilePermission enum constants.</p>
 <p>Its asFileAttribute() method converts a Set of PosixFilePermission enum constants into a FileAttribute object.</p>
 <p>The following code reads and prints POSIX file permissions in the rwxrwxrwx form for a file named test in the default directory:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import java.nio.file.Files;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.PosixFileAttributeView;
@@ -205,19 +201,17 @@ publicclass Main {
 }</code></pre></div>
 <p>To update the POSIX file permissions, call the setPermissions() method of PosixFileAttributeView, passing the Set of the PosixFilePermission enum constants as an argument.</p>
 <p>The following code shows how to set the POSIX file permissions:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-String rwxFormPermissions = "rw-r-----";
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String rwxFormPermissions = "rw-r-----";
 Set&lt;PosixFilePermission&gt; permissions = PosixFilePermissions.fromString(rwxFormPermissions);
 posixView.setPermissions(permissions);</code></pre></div>
 <p>The following code creates a Set of PosixFilePermission enum constants directly and set it as the file permissions.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Set&lt;PosixFilePermission&gt; permissions = EnumSet.of(OWNER_READ,  OWNER_WRITE, GROUP_READ);
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Set&lt;PosixFilePermission&gt; permissions = EnumSet.of(OWNER_READ,  OWNER_WRITE, GROUP_READ);
 posixView.setPermissions(permissions);</code></pre></div>
 <p>The following code demonstrates how to read and update POSIX file permissions for a file named test on UNIX-like platforms.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">importstatic java.nio.file.attribute.PosixFilePermission.GROUP_READ;
 importstatic java.nio.file.attribute.PosixFilePermission.OWNER_READ;
 importstatic java.nio.file.attribute.PosixFilePermission.OWNER_WRITE;
-/*www.java2s.com*/import java.nio.file.Files;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.PosixFileAttributeView;
@@ -267,15 +261,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20060513085335/http://www.java2s.com/Code/Java/JSP/AccessingthetablefieldinDatabase.htm
 ---
-Accessing the table field in Database : Java examples (example source code) » JSP » Database
-
 Accessing the table field in Database
 
 ```java title=Example.java

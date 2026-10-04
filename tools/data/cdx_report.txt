@@ -1,0 +1,7 @@
+/Tutorial/Java/	17306	17306
+/Tutorial/SCJP/	2315	2315
+/Tutorials/Java/	37206	37206
+/Code/Java/	41969	41969
+/ref/java/	984	984
+/Article-Tutorial/Java/	4	4
+/example/java	6374	6374

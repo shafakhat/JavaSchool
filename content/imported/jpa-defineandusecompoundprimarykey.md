@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1024
 source: https://web.archive.org/web/20081231212114/http://www.java2s.com:80/Code/Java/JPA/DefineAndUseCompoundPrimaryKey.htm
 ---
-Define And Use Compound Primary Key
-
 ```java title=Example.java
 File: Main.java
 import javax.persistence.EntityManager;

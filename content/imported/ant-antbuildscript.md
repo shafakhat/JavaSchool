@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20100814115007/http://www.java2s.com:80/Code/Java/Ant/Antbuildscript.htm
 ---
-Ant build script
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <!--

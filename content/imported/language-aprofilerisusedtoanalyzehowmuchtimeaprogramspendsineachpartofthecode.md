@@ -9,6 +9,5 @@ source: https://web.archive.org/web/20070513062927/http://www.java2s.com:80/Tuto
 You can use this information to determine which parts of a program to optimize.
 
 ```java title=Example.java
-
 java -prof TestDrive
 ```

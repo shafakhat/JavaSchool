@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1008
 source: https://web.archive.org/web/20090502015352/http://www.java2s.com:80/Code/Java/Regular-Expressions/ApplyproperuppercaseandlowercaseonaString.htm
 ---
-Apply proper uppercase and lowercase on a String
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

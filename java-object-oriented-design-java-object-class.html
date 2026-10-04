@@ -46,8 +46,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The Object class itself does not have a superclass.</p>
 <p>A reference variable of the Object class can hold a reference of an object of any class.</p>
 <p>The following code declares a reference variable obj of the Object type:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Object obj;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Object obj;</code></pre></div>
 <h2 id="methods">Methods</h2>
 <p>The Object class has nine methods, which are available to be used in all classes in Java.</p>
 <ul><li>public String toString() It is Implemented in Object class and we can customize it. It returns a string representation of an object. Typically, it is used for debugging purpose.</li><li>public boolean equals(Object obj) It is implemented in Object class and we can customize it. It is used to compare two objects for equality.</li><li>public int hashCode() It is implemented in Object class and we can customize it. It returns a hash code (an integer) value of an object.</li><li>protected Object clone() throws CloneNotSupportedException It is not implemented in Object class and we can customize it by overriding the clone method. It is used to make a copy of an object.</li><li>protected void finalize() throws Throwable It is not implemeneted in Object class and we can customize it. It is called by the garbage collector before an object is destroyed.</li><li>public final Class getClass() It is implemented in Object class and we cannot customize it. It returns a reference to the Class object of the object.</li><li>public final void notify() It is implemeneted in Object class and we cannot customize it. This method notifies one thread in the wait queue of the object.</li><li>public final void notifyAll() It is implemeneted in Object class and we cannot customize it. This method notifies all threads in the wait queue of the object.</li><li>public final void wait() throws InterruptedException public final void wait(long timeout) throws InterruptedException public final void wait (long timeout, int nanos) throws InterruptedException It is implemeneted in Object class and we cannot customize it. Makes a thread wait in the wait queue of the object with or without a timeout.</li></ul>
@@ -62,13 +61,11 @@ Object obj;</code></pre></div>
 <p>Every object in Java belongs to a class.</p>
 <p>The getClass() method of the Object class returns the reference of the Class object.</p>
 <p>The following code shows how to get the reference of the Class object for a Cat object:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Cat  c  = new Cat();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Cat  c  = new Cat();
 Class catClass  = c.getClass();</code></pre></div>
 <p>The Class class is generic and its formal type parameter is the name of the class that is represented by its object.</p>
 <p>We can rewrite the above statement using generics.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Class&lt;Cat&gt;   catClass = c.getClass();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Class&lt;Cat&gt;   catClass = c.getClass();</code></pre></div>
 <ul><li>« Previous</li></ul>
     <div class="pager"><a class="pager-btn" href="java-object-oriented-design-java-initialization-block.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Object Oriented Desig...</span></a><a class="pager-btn pager-next" href="java-object-oriented-design-java-object-hashcode.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Object Oriented Desig...</span></a></div>
   </article>
@@ -80,15 +77,8 @@ Class&lt;Cat&gt;   catClass = c.getClass();</code></pre></div>
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20111125102535/http://java2s.com/Code/Java/Servlets/CookieUtility.htm
 ---
-Cookie Utility
-
 ```java title=Example.java
 /**
  * This file is distributed under the GPL

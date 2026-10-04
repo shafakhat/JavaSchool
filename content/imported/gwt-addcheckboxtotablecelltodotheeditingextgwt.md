@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20100423110928/http://www.java2s.com:80/Code/Java/GWT/AddCheckBoxtotablecelltodotheeditingExtGWT.htm
 ---
-Add CheckBox to table cell to do the editing (Ext GWT)
-
 ```java title=Example.java
 /*
  * Ext GWT - Ext for GWT

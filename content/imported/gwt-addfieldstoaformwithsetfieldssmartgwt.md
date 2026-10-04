@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1016
 source: https://web.archive.org/web/20100710214515/http://www.java2s.com:80/Code/Java/GWT/AddfieldstoaformwithsetFieldsSmartGWT.htm
 ---
-Add fields to a form with setFields (Smart GWT)
-
 ```java title=Example.java
 /*
  * SmartGWT (GWT for SmartClient)

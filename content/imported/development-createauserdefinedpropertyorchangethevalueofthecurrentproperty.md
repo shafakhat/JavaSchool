@@ -16,6 +16,5 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 myPassword
 ```

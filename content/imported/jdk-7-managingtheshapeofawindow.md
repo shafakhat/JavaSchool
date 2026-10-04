@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1097
 source: https://web.archive.org/web/20130223094558/http://www.java2s.com:80/Code/Java/JDK-7/ManagingtheShapeofaWindow.htm
 ---
-Managing the Shape of a Window
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.GraphicsDevice;

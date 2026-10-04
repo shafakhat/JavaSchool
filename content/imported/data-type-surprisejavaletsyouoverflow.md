@@ -18,7 +18,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 big = 2147483647
 bigger = -4
 ```

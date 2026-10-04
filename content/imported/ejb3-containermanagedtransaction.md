@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20090503054932/http://www.java2s.com:80/Code/Java/EJB3/ContainerManagedTransaction.htm
 ---
-Container Managed Transaction
-
 ```java title=Example.java
 File: EmployeeService.java
 import java.util.Collection;

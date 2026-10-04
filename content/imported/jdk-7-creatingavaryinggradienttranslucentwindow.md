@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1038
 source: https://web.archive.org/web/20130223220141/http://www.java2s.com:80/Code/Java/JDK-7/Creatingavaryinggradienttranslucentwindow.htm
 ---
-Creating a varying gradient translucent window
-
 ```java title=Example.java
 import java.awt.Color;
 import java.awt.GradientPaint;

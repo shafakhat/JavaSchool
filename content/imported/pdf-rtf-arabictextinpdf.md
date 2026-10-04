@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20071020032246/http://java2s.com:80/Code/Java/PDF-RTF/ArabicTextinPDF.htm
 ---
-Arabic Text in PDF
-
 ```java title=Example.java
 import java.io.FileOutputStream;
 import com.lowagie.text.Document;

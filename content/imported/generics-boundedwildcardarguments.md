@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20090609231928/http://www.java2s.com:80/Code/Java/Generics/BoundedWildcardarguments.htm
 ---
-Bounded Wildcard arguments.
-
 ```java title=Example.java
 class TwoD {
   int x, y;

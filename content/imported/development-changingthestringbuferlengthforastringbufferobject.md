@@ -22,7 +22,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 31
 15
 abcde1234567890

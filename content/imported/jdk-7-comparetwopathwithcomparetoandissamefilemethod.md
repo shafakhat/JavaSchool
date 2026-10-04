@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1012
 source: https://web.archive.org/web/20130821100228/http://java2s.com/Code/Java/JDK-7/ComparetwopathwithcompareToandisSameFilemethod.htm
 ---
-Compare two path with compareTo and isSameFile method
-
 ```java title=Example.java
 import java.io.IOException;
 import java.nio.file.Files;

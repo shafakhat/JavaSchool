@@ -3,8 +3,8 @@ title: Returns a Date set to the first possible millisecond of the day, just aft
 nav: Returns a Date set to the ...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1182
-source: https://web.archive.org/web/20100328231043/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/ReturnsaDatesettothefirstpossiblemillisecondofthedayjustaftermidnight.htm
+order: 1039
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ReturnsaDatesettothefirstpossiblemillisecondofthedayjustaftermidnight.htm
 ---
 ```java title=Example.java
 /*
@@ -23,24 +23,21 @@ source: https://web.archive.org/web/20100328231043/http://www.java2s.com:80/Tuto
  * limitations under the License.  For additional information regarding
  * copyright in this work, please see the NOTICE file in the top level
  * directory of this distribution.
- */
-import java.util.Calendar;
+ */import java.util.Calendar;
 import java.util.Date;
-public class Utils {
+publicclass Utils {
   /**
    * Returns a Date set to the first possible millisecond of the day, just
    * after midnight. If a null day is passed in, a new Date is created.
    * midnight (00m 00h 00s)
-   */
-  public static Date getStartOfDay(Date day) {
+   */publicstatic Date getStartOfDay(Date day) {
       return getStartOfDay(day, Calendar.getInstance());
   }
   /**
    * Returns a Date set to the first possible millisecond of the day, just
    * after midnight. If a null day is passed in, a new Date is created.
    * midnight (00m 00h 00s)
-   */
-  public static Date getStartOfDay(Date day, Calendar cal) {
+   */publicstatic Date getStartOfDay(Date day, Calendar cal) {
       if (day == null) day = new Date();
       cal.setTime(day);
       cal.set(Calendar.HOUR_OF_DAY, cal.getMinimum(Calendar.HOUR_OF_DAY));

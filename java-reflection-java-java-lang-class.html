@@ -52,14 +52,13 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="class-literal">Class Literal</h2>
 <p>A class literal is the class name followed by a dot and the word "class."</p>
 <p>For example, if you have a class Test, its class literal is Test.class and you can write</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Class&lt;Test&gt; testClass = Test.class;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Class&lt;Test&gt; testClass = Test.class;</code></pre></div>
 <p>You can also get the class object for primitive data types and the keyword void using class literals as boolean.class, byte.class, char.class, short.class, int.class, long.class, float.class, double.class, and void.class.</p>
 <p>Each wrapper primitive data type class has a static field named TYPE, which has the reference to the class object of the primitive data type it represents.</p>
 <p>int.class and Integer.TYPE refer to the same class object.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String[] args) {
-    Class c = boolean.class;//www.java2s.com
+    Class c = boolean.class;
     c = Boolean.TYPE;
     c = byte.class;
     c = Byte.TYPE;
@@ -82,7 +81,7 @@ Class&lt;Test&gt; testClass = Test.class;</code></pre></div>
 <h2 id="getclass-method">getClass() method</h2>
 <p>The Object class has a getClass() method, which returns the reference to the Class object of the class of the object.</p>
 <p>The following code shows how to get the reference to the Class object of the Test class:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test{/*www.java2s.com*/
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Test{
 }
 publicclass Main {
   publicstaticvoid main(String[] args) {
@@ -93,17 +92,15 @@ publicclass Main {
 <h2 id="forname-method">forName() method</h2>
 <p>The Class class forName() static method returns a reference to a Class object.</p>
 <p>Its overloaded methods are</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Class&lt;?&gt;   forName(String  className)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Class&lt;?&gt;   forName(String  className)
 Class&lt;?&gt;   forName(String name,  boolean initialize, ClassLoader loader)</code></pre></div>
 <p>The first version of the forName() method takes the fully qualified name of the class as parameter and loads the class, and returns its object reference.</p>
 <p>If the class is already loaded, it returns the reference to the Class object.</p>
 <p>The second version method can control if to initialize or not to initialize the class when it is loaded. We can also passin class loader.</p>
 <p>To load a class named com.java2s..Test:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Class testClass  = Class.forName("com.java2s..Test");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Class testClass  = Class.forName("com.java2s..Test");</code></pre></div>
 <p>The following code shows how to load a class and gets the reference to its Class object.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {//www.java2s.comstatic {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class MyClass {static {
     System.out.println("Loading class MyClass...");
   }
 }
@@ -135,15 +132,8 @@ publicclass Main {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

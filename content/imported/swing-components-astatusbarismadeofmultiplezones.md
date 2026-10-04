@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20090929083837/http://www.java2s.com:80/Code/Java/Swing-Components/Astatusbarismadeofmultiplezones.htm
 ---
-A status bar is made of multiple zones
-
 ```java title=Example.java
 /**
  * L2FProd.com Common Components 7.3 License.

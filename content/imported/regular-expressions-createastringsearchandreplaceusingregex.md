@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1021
 source: https://web.archive.org/web/20090502015357/http://www.java2s.com:80/Code/Java/Regular-Expressions/Createastringsearchandreplaceusingregex.htm
 ---
-Create a string search and replace using regex
-
 ```java title=Example.java
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;

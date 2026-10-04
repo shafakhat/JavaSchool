@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1044
 source: https://web.archive.org/web/20081208042345/http://www.java2s.com:80/Code/Java/GWT/AdditemtoListBox.htm
 ---
-Add item to ListBox
-
 ```java title=Example.java
 package com.java2s.gwt.client;
 import com.google.gwt.core.client.EntryPoint;

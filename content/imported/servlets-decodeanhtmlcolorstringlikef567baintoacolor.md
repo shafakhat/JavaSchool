@@ -7,7 +7,6 @@ order: 1036
 source: https://web.archive.org/web/20091006124627/http://www.java2s.com:80/Code/Java/Servlets/DecodeanHTMLcolorstringlikeF567BAintoaColor.htm
 ---
 Decode an HTML color string like '#F567BA;' into a Color : HTML Output « Servlets « Java
-Decode an HTML color string like '#F567BA;' into a Color
 
 ```java title=Example.java
 /*

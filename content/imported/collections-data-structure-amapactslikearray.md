@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1048
 source: https://web.archive.org/web/20111114171649/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Amapactslikearray.htm
 ---
-A map acts like array.
-
 ```java title=Example.java
 /*
  * Copyright 2004-2010 the Seasar Foundation and the Others.
@@ -37,7 +35,6 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 /**
- * A map acts like array.
  *
  * @author higa
  * @param <K>

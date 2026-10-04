@@ -27,7 +27,6 @@ public class Main {
   // Difference
   //-----------------------------------------------------------------------
   /**
-   * Compares two Strings, and returns the portion where they differ.
    * (More precisely, return the remainder of the second String,
    * starting from where it's different from the first.)
    *

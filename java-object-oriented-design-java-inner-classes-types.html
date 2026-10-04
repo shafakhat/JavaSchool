@@ -48,7 +48,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>It can be declared as public, private, protected, or package-level.</p>
 <p>The instance of a member inner class may exist only within the instance of its enclosing class.</p>
 <p>The following code creates a member inner class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Car {//www.java2s.comprivateint year;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class Car {privateint year;
   // A member inner class named Tire public
 class Tire {
     privatedouble radius;
@@ -74,7 +74,7 @@ public Car(int year) {
 <p>The following code shows an example of a local inner class.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Iterator;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     StringList tl = new StringList();
     tl.addTitle("A");
@@ -114,7 +114,7 @@ class TitleIterator implements Iterator&lt;String&gt; {
 <h2 id="example">Example</h2>
 <p>The following code has a local inner class which inherits from another public class.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Random;
-//fromwww.java2s.comabstractclass IntGenerator {
+abstractclass IntGenerator {
   publicabstractint getValue() ;
 }
 class LocalGen {
@@ -166,7 +166,7 @@ publicclass Main {
   publicstaticvoid main(String[] args) {
     new Object() {
       // An instance initializer
-      {//www.java2s.com
+      {
         System.out.println("Hello from  an  anonymous class.");
       }
     }; // A semi-colon is necessary to end the statement
@@ -177,7 +177,7 @@ publicclass Main {
 <p>The following code use an anonymous class to create an Iterator.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayList;
 import java.util.Iterator;
-/*fromwww.java2s.com*/publicclass Main {
+publicclass Main {
   private ArrayList&lt;String&gt; titleList = new ArrayList&lt;&gt;();
   publicvoid addTitle(String title) {
     titleList.add(title);
@@ -212,15 +212,8 @@ return iterator;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060513092140/http://www.java2s.com/Code/Ja
 ---
 Concatenate two string variables : Java examples (example source code) » Velocity » String
 
-Concatenate two string variables
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

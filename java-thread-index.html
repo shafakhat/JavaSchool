@@ -43,11 +43,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>There are at least two steps involved in working with a thread:</p>
 <ul><li>Creating an object of the Thread class</li><li>Invoking the start() method of the Thread class to start the thread</li></ul>
 <p>We can use the default constructor of the Thread class to create a Thread object.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Thread  simplestThread = new Thread();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Thread  simplestThread = new Thread();</code></pre></div>
 <p>We must call its start() method to start the thread represented by that object.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-simplestThread.start();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">simplestThread.start();</code></pre></div>
 <h2 id="logic-for-thread">Logic for Thread</h2>
 <p>There are three ways you can specify your code to be executed by a thread:</p>
 <ul><li>By inheriting your class from the Thread class</li><li>By implementing the Runnable interface in your class</li><li>By using the method reference to a method that takes no parameters and returns void</li></ul>
@@ -60,26 +58,21 @@ simplestThread.start();</code></pre></div>
   }
 }</code></pre></div>
 <p>The steps to create a thread object and start the thread.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-MyThreadClass  myThread = new MyThreadClass();
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">MyThreadClass  myThread = new MyThreadClass();
 myThread.start();</code></pre></div>
 <p>The thread will execute the run() method of the MyThreadClass class.</p>
 <h2 id="implementing-the-runnable-interface">Implementing the Runnable Interface</h2>
 <p>We can create a class that implements the java.lang.Runnable interface. Runnable is a functional interface and it is declared as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-@FunctionalInterface
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">@FunctionalInterface
 publicinterface Runnable {
   void run();
 }</code></pre></div>
 <p>From Java 8, we can use a lambda expression to create an instance of the Runnable interface.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Runnable  aRunnableObject = () -&gt;  System.out.println("Hello Java  thread!");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Runnable  aRunnableObject = () -&gt;  System.out.println("Hello Java  thread!");</code></pre></div>
 <p>Create an object of the Thread class using the constructor that accepts a Runnable object.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Thread  myThread = new Thread(aRunnableObject);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Thread  myThread = new Thread(aRunnableObject);</code></pre></div>
 <p>Start the thread by calling the start() method of the thread object.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-myThread.start();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">myThread.start();</code></pre></div>
 <p>The thread will execute the code contained in the body of the lambda expressions.</p>
 <h2 id="using-a-method-reference">Using a Method Reference</h2>
 <p>From Java 8, we can use the method reference of a method of any class that takes no parameters and returns void as the code to be executed by a thread.</p>
@@ -91,8 +84,7 @@ myThread.start();</code></pre></div>
   }
 }</code></pre></div>
 <p>The following code uses the method reference of the execute() method of the ThreadTest class to create a Runnable object:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Thread  myThread = new Thread(ThreadTest::execute);
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Thread  myThread = new Thread(ThreadTest::execute);
 myThread.start();</code></pre></div>
 <p>The thread will execute the code contained in the execute() method of the ThreadTest class.</p>
 <p>The following code shows how to create a thread and print integers from 1 to 5 on the standard output.</p>
@@ -100,7 +92,7 @@ myThread.start();</code></pre></div>
   publicstaticvoid main(String[] args) {
     // Create a Thread object
     Thread t = new Thread(Main::print);
-//www.java2s.com// Start the thread
+// Start the thread
     t.start();
   }
   publicstaticvoid print() {
@@ -120,15 +112,8 @@ myThread.start();</code></pre></div>
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

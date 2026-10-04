@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1067
 source: https://web.archive.org/web/20071025002319/http://www.java2s.com:80/Code/Java/Apache-Common/StringEscapeUtils.htm
 ---
-String Escape Utils
-
 ```java title=Example.java
 /*
 Are you for real?

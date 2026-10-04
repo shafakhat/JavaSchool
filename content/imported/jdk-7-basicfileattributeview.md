@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1002
 source: https://web.archive.org/web/20130820181533/http://java2s.com/Code/Java/JDK-7/BasicFileAttributeView.htm
 ---
-Basic File Attribute View
-
 ```java title=Example.java
 import java.nio.file.FileSystems;
 import java.nio.file.Files;

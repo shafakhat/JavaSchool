@@ -56,7 +56,6 @@ import java.util.Date;
 public class Main {
   //-----------------------------------------------------------------------
   /**
-   * Checks if two calendar objects represent the same local time.
    *
    * This method compares the values of the fields of the two objects.
    * In addition, both calendars must be the same of the same type.

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1087
 source: https://web.archive.org/web/20111125103302/http://java2s.com/Code/Java/Class/ThisprogramdemonstratesparameterpassinginJava.htm
 ---
-This program demonstrates parameter passing in Java
-
 ```java title=Example.java
 /*
  This program is a part of the companion code for Core Java 8th ed.
@@ -24,7 +22,6 @@ This program demonstrates parameter passing in Java
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /**
- * This program demonstrates parameter passing in Java.
  *
  * @version 1.00 2000-01-27
  * @author Cay Horstmann

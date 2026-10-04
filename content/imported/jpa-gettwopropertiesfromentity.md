@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1048
 source: https://web.archive.org/web/20081209042751/http://www.java2s.com:80/Code/Java/JPA/GetTwoPropertiesFromEntity.htm
 ---
-Get Two Properties From Entity
-
 ```java title=Example.java
 File: Main.java
 import javax.persistence.EntityManager;

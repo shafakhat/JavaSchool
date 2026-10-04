@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1052
 source: https://web.archive.org/web/20081201185946/http://www.java2s.com:80/Code/Java/Generics/TisatypeparameterthatwillbereplacedbyarealtypewhenanobjectoftypeGeniscreated.htm
 ---
-T is a type parameter that will be replaced by a real type when an object of type Gen is created.
-
 ```java title=Example.java
 class Gen<T> {
   T ob;

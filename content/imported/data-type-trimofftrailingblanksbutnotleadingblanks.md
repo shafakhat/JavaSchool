@@ -24,7 +24,6 @@ source: https://web.archive.org/web/20100412211334/http://java2s.com:80/Tutorial
  */
 public class Main {
   /**
-   * Trim off trailing blanks but not leading blanks
    *
    * @param str
    *

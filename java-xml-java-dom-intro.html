@@ -49,11 +49,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="mixed-content-model">Mixed-Content Model</h2>
 <p>Text and elements is intermixed in a DOM hierarchy. That kind of structure is called mixed content in the DOM model.</p>
 <p>For example, we have the following xml structure:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-&lt;yourTag&gt;This is an &lt;bold&gt;important&lt;/bold&gt; test.&lt;/yourTag&gt;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">&lt;yourTag&gt;This is an &lt;bold&gt;important&lt;/bold&gt; test.&lt;/yourTag&gt;</code></pre></div>
 <p>The hierarchy of DOM nodes is as follows, where each line represents one node:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-ELEMENT: yourTag
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">ELEMENT: yourTag
    + TEXT: This is an
    + ELEMENT: bold
      + TEXT: important
@@ -67,7 +65,7 @@ ELEMENT: yourTag
 <p>For the text node + TEXT: This is an, nodeName() returns #text, and nodeValue() returns "This is an".</p>
 <h2 id="example">Example</h2>
 <p>The following code shows how to use DOM parser to parse a xml file and get a org.w3c.dom.Document object.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*www.java2s.com*/import java.io.File;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
@@ -83,7 +81,7 @@ publicclass Main {
 <p>The following code shows how to do a DOM dump.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-/*fromwww.java2s.com*/import org.w3c.dom.Document;
+import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.ErrorHandler;
@@ -177,7 +175,7 @@ class MyErrorHandler implements ErrorHandler {
 <h2 id="error-handler">Error handler</h2>
 <p>The following code shows how to handle error when parsing the XML with DOM parser.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
-/*www.java2s.com*/import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
@@ -244,15 +242,8 @@ class MyErrorHandler implements ErrorHandler {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

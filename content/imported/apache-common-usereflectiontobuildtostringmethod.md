@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1074
 source: https://web.archive.org/web/20090629171552/http://www.java2s.com:80/Code/Java/Apache-Common/UseReflectionTobuildtoStringmethod.htm
 ---
-Use Reflection To build toString method
-
 ```java title=Example.java
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;

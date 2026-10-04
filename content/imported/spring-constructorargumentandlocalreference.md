@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1052
 source: https://web.archive.org/web/20100211001952/http://java2s.com/Code/Java/Spring/ConstructorArgumentAndLocalReference.htm
 ---
-Constructor Argument And Local Reference
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060527155922/http://www.java2s.com:80/Code
 ---
 JSTL Print Page Context : Java examples (example source code) » JSTL » Page Context
 
-JSTL Print Page Context
-
 ```java title=Example.java
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <html>

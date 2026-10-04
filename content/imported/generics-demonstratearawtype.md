@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20081201192141/http://www.java2s.com:80/Code/Java/Generics/Demonstratearawtype.htm
 ---
-Demonstrate a raw type.
-
 ```java title=Example.java
 class Gen<T> {
   T ob; // declare an object of type T

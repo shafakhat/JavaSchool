@@ -3,8 +3,8 @@ title: Truncate a String to the given length with no warnings or error raised if
 nav: Truncate a String to the g...
 description: Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1009
-source: https://web.archive.org/web/20100412211339/http://java2s.com:80/Tutorial/Java/0040__Data-Type/TruncateaStringtothegivenlengthwithnowarningsorerrorraisedifitisbigger.htm
+order: 1048
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/TruncateaStringtothegivenlengthwithnowarningsorerrorraisedifitisbigger.htm
 ---
 ```java title=Example.java
 /*
@@ -21,8 +21,7 @@ source: https://web.archive.org/web/20100412211339/http://java2s.com:80/Tutorial
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
- */
-public class Main {
+ */publicclass Main {
   /**
   Truncate a String to the given length with no warnings
   or error raised if it is bigger.
@@ -30,8 +29,7 @@ public class Main {
   @param  length  Maximum length of string
   @return Returns value if value is null or value.length() is less or equal to than length, otherwise a String representing
     value truncated to length.
-*/
-public static String truncate(String value, int length)
+*/publicstatic String truncate(String value, int length)
 {
   if (value != null && value.length() > length)
     value = value.substring(0, length);

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1148
 source: https://web.archive.org/web/20111125121359/http://java2s.com/Code/Java/Data-Type/AsimpleXMLparserthatstartsparsingrightawayandvalidatesalongtheway.htm
 ---
-A simple XML parser that starts parsing right away and validates along the way.
-
 ```java title=Example.java
 //Copyright 2007-2008 David Yu dyuproject@gmail.com
 //------------------------------------------------------------------------
@@ -24,7 +22,6 @@ A simple XML parser that starts parsing right away and validates along the way.
 import java.io.IOException;
 import java.io.InputStreamReader;
 /**
- * A simple XML parser that starts parsing right away and validates along the way.
  *
  * @author David Yu
  * @created Sep 17, 2008

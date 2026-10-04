@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060510151924/http://www.java2s.com:80/Code
 ---
 Another Matcher find and group : Java examples (example source code) » Regular Expressions » Matcher
 
-Another Matcher find and group
-
 ```java title=Example.java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

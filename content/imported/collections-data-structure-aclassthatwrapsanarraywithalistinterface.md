@@ -7,7 +7,6 @@ order: 1005
 source: https://web.archive.org/web/20091016224931/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AclassthatwrapsanarraywithaListinterface.htm
 ---
 A class that wraps an array with a List interface. : List « Collections Data Structure « Java
-A class that wraps an array with a List interface.
 
 ```java title=Example.java
 /*
@@ -31,7 +30,6 @@ A class that wraps an array with a List interface.
 import java.lang.reflect.Array;
 import java.util.AbstractList;
 /**
- * A class that wraps an array with a List interface.
  *
  * @author Chris Schultz &lt;chris@christopherschultz.net$gt;
  * @version $Revision: 685685 $ $Date: 2006-04-14 19:40:41 $

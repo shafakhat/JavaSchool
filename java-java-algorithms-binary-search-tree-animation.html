@@ -42,7 +42,6 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <h2 id="description">Description</h2>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Collection;
 import java.util.List;
-
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -57,25 +56,21 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 class BTView extends Pane {
   private BinarySearchTree&lt;Integer&gt; tree = new BinarySearchTree&lt;&gt;();
   privatedouble radius = 15; // Tree node radiusprivatedouble vGap = 50; // Gap between two levels in a tree
-
   BTView(BinarySearchTree&lt;Integer&gt; tree) {
     this.tree = tree;
     setStatus("Tree is empty");
-  }/*www.java2s.com*/publicvoid setStatus(String msg) {
+  }publicvoid setStatus(String msg) {
     getChildren().add(newText(20, 20, msg));
   }
-
   publicvoid displayTree() {
     this.getChildren().clear(); // Clear the paneif (tree.getRoot() != null) {
       // Display tree recursively
       displayTree(tree.getRoot(), getWidth() / 2, vGap, getWidth() / 4);
     }
   }
-
   /** Display a subtree rooted at position (x, y) */privatevoid displayTree(TreeNode&lt;Integer&gt; root, double x, double y, double hGap) {
     if (root.left != null) {
       // Draw a line to the left node
@@ -83,14 +78,12 @@ class BTView extends Pane {
       // Draw the left subtree recursively
       displayTree(root.left, x - hGap, y + vGap, hGap / 2);
     }
-
     if (root.right != null) {
       // Draw a line to the right node
       getChildren().add(newLine(x + hGap, y + vGap, x, y));
       // Draw the right subtree recursively
       displayTree(root.right, x + hGap, y + vGap, hGap / 2);
     }
-
     // Display a node
     Circle circle = new Circle(x, y, radius);
     circle.setFill(Color.WHITE);
@@ -98,15 +91,12 @@ class BTView extends Pane {
     getChildren().addAll(circle, newText(x - 4, y + 4, root.element + ""));
   }
 }
-
 publicclass Main extends Application {
   @Overridepublicvoid start(Stage primaryStage) {
     BinarySearchTree&lt;Integer&gt; tree = new BinarySearchTree&lt;&gt;(); // Create a tree
-
     BorderPane pane = new BorderPane();
     BTView view = new BTView(tree); // Create a View
     pane.setCenter(view);
-
     TextField tfKey = newTextField();
     tfKey.setPrefColumnCount(3);
     tfKey.setAlignment(Pos.BASELINE_RIGHT);
@@ -116,7 +106,6 @@ publicclass Main extends Application {
     hBox.getChildren().addAll(newLabel("Enter a key: "), tfKey, btInsert, btDelete);
     hBox.setAlignment(Pos.CENTER);
     pane.setBottom(hBox);
-
     btInsert.setOnAction(e -&gt; {
       int key = Integer.parseInt(tfKey.getText());
       if (tree.search(key)) { // key is in the tree already
@@ -128,7 +117,6 @@ publicclass Main extends Application {
         view.setStatus(key + " is inserted in the tree");
       }
     });
-
     btDelete.setOnAction(e -&gt; {
       int key = Integer.parseInt(tfKey.getText());
       if (!tree.search(key)) { // key is not in the tree
@@ -140,31 +128,25 @@ publicclass Main extends Application {
         view.setStatus(key + " is deleted from the tree");
       }
     });
-
     // Create a scene and place the pane in the stage
     Scene scene = new Scene(pane, 450, 250);
     primaryStage.setTitle("BSTAnimation");
     primaryStage.setScene(scene);
     primaryStage.show();
   }
-
   publicstaticvoid main(String[] args) {
     launch(args);
   }
 }
-
 class BinarySearchTree&lt;E extendsComparable&lt;E&gt;&gt; implements Tree&lt;E&gt; {
   protectedTreeNode&lt;E&gt; root;
   protectedint size = 0;
-
   public BinarySearchTree() {
   }
-
   public BinarySearchTree(E[] objects) {
     for (int i = 0; i &lt; objects.length; i++)
       add(objects[i]);
   }
-
   @Overridepublicboolean search(E e) {
     TreeNode&lt;E&gt; current = root; // Start from the rootwhile (current != null) {
       if (e.compareTo(current.element) &lt; 0) {
@@ -173,10 +155,8 @@ class BinarySearchTree&lt;E extendsComparable&lt;E&gt;&gt; implements Tree&lt;E&
         current = current.right;
       } else// element matches current.elementreturn true; // Element is found
     }
-
     return false;
   }
-
   @Overridepublicboolean insert(E e) {
     if (root == null)
       root = createNewNode(e); // Create a new rootelse {
@@ -194,19 +174,15 @@ class BinarySearchTree&lt;E extendsComparable&lt;E&gt;&gt; implements Tree&lt;E&
       else
         parent.right = createNewNode(e);
     }
-
     size++;
     return true; // Element inserted successfully
   }
-
   protectedTreeNode&lt;E&gt; createNewNode(E e) {
     returnnewTreeNode&lt;&gt;(e);
   }
-
   @Override/** Inorder traversal from the root */publicvoid inorder() {
     inorder(root);
   }
-
   /** Inorder traversal from a subtree */protectedvoid inorder(TreeNode&lt;E&gt; root) {
     if (root == null)
       return;
@@ -214,11 +190,9 @@ class BinarySearchTree&lt;E extendsComparable&lt;E&gt;&gt; implements Tree&lt;E&
     System.out.print(root.element + " ");
     inorder(root.right);
   }
-
   @Override/** Postorder traversal from the root */publicvoid postorder() {
     postorder(root);
   }
-
   /** Postorder traversal from a subtree */protectedvoid postorder(TreeNode&lt;E&gt; root) {
     if (root == null)
       return;
@@ -226,11 +200,9 @@ class BinarySearchTree&lt;E extendsComparable&lt;E&gt;&gt; implements Tree&lt;E&
     postorder(root.right);
     System.out.print(root.element + " ");
   }
-
   @Override/** Preorder traversal from the root */publicvoid preorder() {
     preorder(root);
   }
-
   /** Preorder traversal from a subtree */protectedvoid preorder(TreeNode&lt;E&gt; root) {
     if (root == null)
       return;
@@ -238,15 +210,12 @@ class BinarySearchTree&lt;E extendsComparable&lt;E&gt;&gt; implements Tree&lt;E&
     preorder(root.left);
     preorder(root.right);
   }
-
   @Override/** Get the number of nodes in the tree */publicint getSize() {
     return size;
   }
-
   /** Returns the root of the tree */publicTreeNode&lt;E&gt; getRoot() {
     return root;
   }
-
   /** Returns a path from the root leading to the specified element */publicList&lt;TreeNode&lt;E&gt;&gt; path(E e) {
     List&lt;TreeNode&lt;E&gt;&gt; list = new java.util.ArrayList&lt;&gt;();
     TreeNode&lt;E&gt; current = root; // Start from the rootwhile (current != null) {
@@ -256,10 +225,8 @@ class BinarySearchTree&lt;E extendsComparable&lt;E&gt;&gt; implements Tree&lt;E&
         current = current.right;
       } elsebreak;
     }
-
     return list;
   }
-
   @Overridepublicboolean delete(E e) {
     TreeNode&lt;E&gt; parent = null;
     TreeNode&lt;E&gt; current = root;
@@ -272,7 +239,6 @@ class BinarySearchTree&lt;E extendsComparable&lt;E&gt;&gt; implements Tree&lt;E&
         current = current.right;
       } elsebreak;
     }
-
     if (current == null)
       return false; // Element is not in the tree// Case 1: current has no left childif (current.left == null) {
       // Connect the parent with the right child of the current nodeif (parent == null) {
@@ -286,39 +252,31 @@ class BinarySearchTree&lt;E extendsComparable&lt;E&gt;&gt; implements Tree&lt;E&
     } else {
       // Case 2: The current node has a left child// Locate the rightmost node in the left subtree of// the current node and also its parentTreeNode&lt;E&gt; parentOfRightMost = current;
       TreeNode&lt;E&gt; rightMost = current.left;
-
       while (rightMost.right != null) {
         parentOfRightMost = rightMost;
         rightMost = rightMost.right; // Keep going to the right
       }
-
       // Replace the element in current by the element in rightMost
       current.element = rightMost.element;
-
       // Eliminate rightmost nodeif (parentOfRightMost.right == rightMost)
         parentOfRightMost.right = rightMost.left;
       else// Special case: parentOfRightMost == current
         parentOfRightMost.left = rightMost.left;
     }
-
     size--;
     return true; // Element deleted successfully
   }
-
   @Override/** Obtain an iterator. Use in order. */public java.util.Iterator&lt;E&gt; iterator() {
     returnnew InorderIterator();
   }
-
   // Inner class InorderIteratorprivateclass InorderIterator implements java.util.Iterator&lt;E&gt; {
     // Store the elements in a listprivate java.util.ArrayList&lt;E&gt; list = new java.util.ArrayList&lt;&gt;();
     privateint current = 0; // Point to the current element in listpublic InorderIterator() {
       inorder(); // Traverse binary tree and store elements in list
     }
-
     /** Inorder traversal from the root */privatevoid inorder() {
       inorder(root);
     }
-
     /** Inorder traversal from a subtree */privatevoid inorder(TreeNode&lt;E&gt; root) {
       if (root == null)
         return;
@@ -326,107 +284,81 @@ class BinarySearchTree&lt;E extendsComparable&lt;E&gt;&gt; implements Tree&lt;E&
       list.add(root.element);
       inorder(root.right);
     }
-
     @Override/** More elements for traversing? */publicboolean hasNext() {
       if (current &lt; list.size())
         return true;
-
       return false;
     }
-
     @Override/** Get the current element and move to the next */public E next() {
       return list.get(current++);
     }
-
     @Override// Remove the element returned by the last next()publicvoid remove() {
       if (current == 0) // next() has not been called yetthrownewIllegalStateException();
-
       delete(list.get(--current));
       list.clear(); // Clear the list
       inorder(); // Rebuild the list
     }
   }
-
   @Override/** Remove all elements from the tree */publicvoid clear() {
     root = null;
     size = 0;
   }
 }
-
 interface Tree&lt;E&gt; extendsCollection&lt;E&gt; {
   /** Return true if the element is in the tree */publicboolean search(E e);
-
   /**
    * Insert element e into the binary tree Return true if the element is inserted
    * successfully
    */publicboolean insert(E e);
-
   /**
    * Delete the specified element from the tree Return true if the element is
    * deleted successfully
    */publicboolean delete(E e);
-
   /** Get the number of elements in the tree */publicint getSize();
-
   /** Inorder traversal from the root */publicdefaultvoid inorder() {
   }
-
   /** Postorder traversal from the root */publicdefaultvoid postorder() {
   }
-
   /** Preorder traversal from the root */publicdefaultvoid preorder() {
   }
-
   @Override/** Return true if the tree is empty */publicdefaultboolean isEmpty() {
     returnthis.size() == 0;
   }
-
   @Overridepublicdefaultboolean contains(Object e) {
     return search((E) e);
   }
-
   @Overridepublicdefaultboolean add(E e) {
     return insert(e);
   }
-
   @Overridepublicdefaultboolean remove(Object e) {
     return delete((E) e);
   }
-
   @Overridepublicdefaultint size() {
     return getSize();
   }
-
   @Overridepublicdefaultboolean containsAll(Collection&lt;?&gt; c) {
     // Left as an exercisereturn false;
   }
-
   @Overridepublicdefaultboolean addAll(Collection&lt;? extends E&gt; c) {
     // Left as an exercisereturn false;
   }
-
   @Overridepublicdefaultboolean removeAll(Collection&lt;?&gt; c) {
     // Left as an exercisereturn false;
   }
-
   @Overridepublicdefaultboolean retainAll(Collection&lt;?&gt; c) {
     // Left as an exercisereturn false;
   }
-
   @OverridepublicdefaultObject[] toArray() {
     // Left as an exercisereturn null;
   }
-
   @Overridepublicdefault &lt;T&gt; T[] toArray(T[] array) {
     // Left as an exercisereturn null;
   }
 }
-
 classTreeNode&lt;E&gt; {
   public E element;
   publicTreeNode&lt;E&gt; left;
   publicTreeNode&lt;E&gt; right;
-
   publicTreeNode(E e) {
     element = e;
   }
@@ -444,15 +376,8 @@ classTreeNode&lt;E&gt; {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

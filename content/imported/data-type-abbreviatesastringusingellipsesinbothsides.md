@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1105
 source: https://web.archive.org/web/20100214083837/http://java2s.com/Code/Java/Data-Type/AbbreviatesaStringusingellipsesinbothsides.htm
 ---
-Abbreviates a String using ellipses in both sides.
-
 ```java title=Example.java
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more

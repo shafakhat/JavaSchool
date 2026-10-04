@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1030
 source: https://web.archive.org/web/20111106022745/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Addstheobjecttothearray.htm
 ---
-Adds the object to the array.
-
 ```java title=Example.java
 /*
  * Copyright 2004-2010 the Seasar Foundation and the Others.
@@ -35,7 +33,6 @@ import java.lang.reflect.Array;
  */
 public final class ArrayUtil {
     /**
-     * Adds the object to the array.
      *
      * @param <T>
      *            the type

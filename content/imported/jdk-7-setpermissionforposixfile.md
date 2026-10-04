@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1127
 source: https://web.archive.org/web/20130820201408/http://java2s.com/Code/Java/JDK-7/SetpermissionforPosixFile.htm
 ---
-Set permission for Posix File
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

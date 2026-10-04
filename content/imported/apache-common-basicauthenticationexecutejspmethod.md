@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1000
 source: https://web.archive.org/web/20061026233605/http://www.java2s.com/Code/Java/Apache-Common/BasicAuthenticationExecuteJSPMethod.htm
 ---
-Basic Authentication Execute JSP Method
-
 ```java title=Example.java
 import org.apache.commons.httpclient.URI;
 import org.apache.commons.httpclient.HttpClient;

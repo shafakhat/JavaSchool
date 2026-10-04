@@ -6,10 +6,7 @@ section: Imported - java2s Archive
 order: 1040
 source: https://web.archive.org/web/20090106043637/http://www.java2s.com:80/Code/Java/Class/JusttoshowthatthereisnosuchthingasinnermethodsinJava.htm
 ---
-Just to show that there is no such thing as inner methods in Java
-
 ```java title=Example.java
-/** Just to show that there is no such thing as inner methods in Java */
 public class InnerMethods {
   public static void main(String[] args) {
     new InnerMethods().work();

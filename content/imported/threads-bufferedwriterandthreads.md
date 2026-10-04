@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1023
 source: https://web.archive.org/web/20060513074749/http://www.java2s.com/Code/Java/Threads/BufferedWriterandthreads.htm
 ---
-BufferedWriter and threads : Java examples (example source code) » Threads » File IO Threads
-
 BufferedWriter and threads
 
 ```java title=Example.java

@@ -7,7 +7,6 @@ order: 1013
 source: https://web.archive.org/web/20090930080856/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AdaptiveextensionofthejavautilVectorclass.htm
 ---
 Adaptive extension of the java.util.Vector class : Vector « Collections Data Structure « Java
-Adaptive extension of the java.util.Vector class
 
 ```java title=Example.java
 //revised from marf

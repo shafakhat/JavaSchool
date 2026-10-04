@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1087
 source: https://web.archive.org/web/20071104045810/http://www.java2s.com:80/Code/Java/Velocity/VelocityMathToolRoundToInteger.htm
 ---
-Velocity Math Tool Round To Integer
-
 ```java title=Example.java
 import java.io.StringWriter;
 import java.io.Writer;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1141
 source: https://web.archive.org/web/20090531215653/http://www.java2s.com:80/Code/Java/Class/Cloneanobjectwithclonemethodfromparent.htm
 ---
-Clone an object with clone method from parent
-
 ```java title=Example.java
 public class Main {
   public static void main(String[] args) {

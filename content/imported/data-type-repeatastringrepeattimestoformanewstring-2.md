@@ -3,8 +3,8 @@ title: Repeat a String repeat times to form a new String.
 nav: Repeat a String repeat tim...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1178
-source: https://web.archive.org/web/20100418203901/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/RepeataStringrepeattimestoformanewString.htm
+order: 1046
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/RepeataStringrepeattimestoformanewString.htm
 ---
 ```java title=Example.java
 import java.io.PrintWriter;
@@ -27,15 +27,13 @@ import java.sql.SQLException;
  *  limitations under the License.
  *
  *
- */
-public class Main {
+ */publicclass Main {
   /**
    * The maximum size to which the padding constant(s) can expand.
-   */
-  private static final int PAD_LIMIT = 8192;
+   */privatestaticfinalint PAD_LIMIT = 8192;
   // Padding
-  //-----------------------------------------------------------------------
-  /**
+//-----------------------------------------------------------------------
+/**
    * Repeat a String <code>repeat</code> times to form a
    * new String.
    *
@@ -52,14 +50,13 @@ public class Main {
    * @param repeat  number of times to repeat str, negative treated as zero
    * @return a new String consisting of the original String repeated,
    *  <code>null</code> if null String input
-   */
-  public static String repeat(String str, int repeat) {
+   */publicstatic String repeat(String str, int repeat) {
       // Performance tuned for 2.0 (JDK1.4)
-      if (str == null) {
+if (str == null) {
           return null;
       }
       if (repeat <= 0) {
-          return "";
+          return"";
       }
       int inputLength = str.length();
       if (repeat == 1 || inputLength == 0) {
@@ -72,20 +69,20 @@ public class Main {
       switch (inputLength) {
           case 1 :
               char ch = str.charAt(0);
-              char[] output1 = new char[outputLength];
+              char[] output1 = newchar[outputLength];
               for (int i = repeat - 1; i >= 0; i--) {
                   output1[i] = ch;
               }
-              return new String(output1);
+              returnnew String(output1);
           case 2 :
               char ch0 = str.charAt(0);
               char ch1 = str.charAt(1);
-              char[] output2 = new char[outputLength];
+              char[] output2 = newchar[outputLength];
               for (int i = repeat * 2 - 2; i >= 0; i--, i--) {
                   output2[i] = ch0;
                   output2[i + 1] = ch1;
               }
-              return new String(output2);
+              returnnew String(output2);
           default :
               StringBuffer buf = new StringBuffer(outputLength);
               for (int i = 0; i < repeat; i++) {
@@ -116,16 +113,15 @@ public class Main {
    * @return String with repeated character
    * @throws IndexOutOfBoundsException if <code>repeat &lt; 0</code>
    * @see #repeat(String, int)
-   */
-  private static String padding(int repeat, char padChar) throws IndexOutOfBoundsException {
+   */privatestatic String padding(int repeat, char padChar) throws IndexOutOfBoundsException {
       if (repeat < 0) {
-          throw new IndexOutOfBoundsException("Cannot pad a negative amount: " + repeat);
+          thrownew IndexOutOfBoundsException("Cannot pad a negative amount: " + repeat);
       }
-      final char[] buf = new char[repeat];
+      finalchar[] buf = newchar[repeat];
       for (int i = 0; i < buf.length; i++) {
           buf[i] = padChar;
       }
-      return new String(buf);
+      returnnew String(buf);
   }
 }
 ```

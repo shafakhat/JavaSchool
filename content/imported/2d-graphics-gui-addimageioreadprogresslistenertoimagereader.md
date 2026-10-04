@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20090531065540/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/AddImageIOReadProgressListenertoImageReader.htm
 ---
-Add Image IO Read Progress Listener to ImageReader
-
 ```java title=Example.java
 import java.awt.image.BufferedImage;
 import java.io.File;

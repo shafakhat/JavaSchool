@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1043
 source: https://web.archive.org/web/20090423061108/http://www.java2s.com:80/Code/Java/Spring/CompareBeansFromFactoryBean.htm
 ---
-Compare Beans From FactoryBean
-
 ```java title=Example.java
 File: context.xml
 <?xml version="1.0" encoding="UTF-8"?>

@@ -3,12 +3,12 @@ title: String concatenation
 nav: String concatenation
 description: String myString = numHands + " " + secondString + thirdString;
 section: Imported - java2s Archive
-order: 1208
-source: https://web.archive.org/web/20070328185948/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/StringconcatenationConvertanintegertoStringandjoinwithtwootherstrings.htm
+order: 1051
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/StringconcatenationConvertanintegertoStringandjoinwithtwootherstrings.htm
 ---
 ```java title=Example.java
-public class MainClass {
-  public static void main(String[] arg) {
+publicclass MainClass {
+  publicstaticvoid main(String[] arg) {
     int numHands = 99;
     String secondString = "secondString";
     String thirdString = "thirdString";

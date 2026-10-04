@@ -45,14 +45,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>We can create a File object from</p>
 <ul><li>A pathname</li><li>A parent pathname and a child pathname</li><li>A URI (uniform resource identifier)</li></ul>
 <p>We can use one of the following constructors of the File class to create a file:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-File(String pathname)
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">File(String pathname)
 File(File parent, String child)
 File(String parent, String child)
 File(URI uri)</code></pre></div>
 <p>If we have a file pathname string of test.txt, we can create an abstract pathname as the following code.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-File dummyFile = new File("test.txt");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">File dummyFile = new File("test.txt");</code></pre></div>
 <p>A file named test.txt does not have to exist to create a File object using this statement.</p>
 <p>The dummyFile object represents an abstract pathname, which may or may not point to a real file in a file-system.</p>
 <p>The File class has several methods to work with files and directories.</p>
@@ -61,21 +59,17 @@ File dummyFile = new File("test.txt");</code></pre></div>
 <h2 id="current-working-directory">Current Working Directory</h2>
 <p>The current working directory for a JVM is set depending on how we run the java command.</p>
 <p>We can get the current working directory for the JVM by reading the user.dir system property as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-String  workingDir = System.getProperty("user.dir");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">String  workingDir = System.getProperty("user.dir");</code></pre></div>
 <p>Use the System.setProperty() method to change the current working directory.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-System.setProperty("user.dir", "C:\\myDir");</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">System.setProperty("user.dir", "C:\\myDir");</code></pre></div>
 <p>To specify C:\test as the user.dir system property value on Windows, we run our program like so:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-java -Duser.dir=C:\test your-java-class</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">java -Duser.dir=C:\test your-java-class</code></pre></div>
 <h2 id="files-existence">File's Existence</h2>
 <p>We can check if the abstract pathname of a File object exists using the exists() method of the File class.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-boolean fileExists = dummyFile.exists();</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">boolean fileExists = dummyFile.exists();</code></pre></div>
 <p>Full Source Code</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] argv) {
     // Create a File object
 File dummyFile = newFile("dummy.txt");
@@ -94,7 +88,7 @@ boolean fileExists = dummyFile.exists();
 <p>We can use the getAbsolutePath() and getCanonicalPath() methods to get the absolute and canonical paths represented by a File object, respectively.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
 import java.io.IOException;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     printFilePath("dummy.txt");
     printFilePath(".." + File.separator + "notes.txt");
@@ -131,15 +125,8 @@ import java.io.IOException;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

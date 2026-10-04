@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1062
 source: https://web.archive.org/web/20061018193047/http://www.java2s.com/Code/Java/Velocity/UseavariabledefinedinVelocity.htm
 ---
-Use a variable defined in Velocity
-
 ```java title=Example.java
 -------------------------------------------------------------------------------------
 import java.io.StringWriter;

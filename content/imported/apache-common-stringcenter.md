@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1058
 source: https://web.archive.org/web/20071025002334/http://www.java2s.com:80/Code/Java/Apache-Common/Stringcenter.htm
 ---
-String center
-
 ```java title=Example.java
 /*
 ==MTV==

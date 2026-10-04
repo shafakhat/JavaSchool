@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1036
 source: https://web.archive.org/web/20111106030951/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/Agrowablearrayofbytes.htm
 ---
-A growable array of bytes
-
 ```java title=Example.java
 /*********************************************************************
 *
@@ -29,7 +27,6 @@ A growable array of bytes
 ***************************************************************************/
 //package jxl.biff;
 /**
- * A growable array of bytes
  */
 public class ByteArray
 {

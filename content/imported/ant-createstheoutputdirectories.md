@@ -6,15 +6,12 @@ section: Imported - java2s Archive
 order: 1053
 source: https://web.archive.org/web/20061016080740/http://www.java2s.com/Code/Java/Ant/Createstheoutputdirectories.htm
 ---
-Creates the output directories
-
 ```java title=Example.java
 <?xml version="1.0"?>
 <project name="Template Buildfile" default="compile" basedir=".">
   <property name="dir.src" value="src"/>
   <property name="dir.build" value="build"/>
   <property name="dir.dist" value="dist"/>
-  <!-- Creates the output directories -->
   <target name="prepare">
     <mkdir dir="${dir.build}"/>
     <mkdir dir="${dir.dist}"/>

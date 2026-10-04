@@ -3,8 +3,8 @@ title: Enumeration Fundamentals
 nav: Enumeration Fundamentals
 description: Monday, Tuesday, Wednesday, Thursday, Friday, Saturaday, Sunday
 section: Imported - java2s Archive
-order: 1097
-source: https://web.archive.org/web/20070428112248/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/EnumerationFundamentals.htm
+order: 1027
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/EnumerationFundamentals.htm
 ---
 An enumeration is created using the new enum keyword.
 
@@ -31,8 +31,8 @@ Because aWeekDay is of type Week, the only values that it can be assigned (or co
 enum Week {
   Monday, Tuesday, Wednesday, Thursday, Friday, Saturaday, Sunday
 }
-public class MainClass {
-  public static void main(String args[]) {
+publicclass MainClass {
+  publicstaticvoid main(String args[]) {
     Week aWeekDay;
     aWeekDay = Week.Monday;
     // Output an enum value.
@@ -43,6 +43,5 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 Value of aWeekDay: Monday
 ```

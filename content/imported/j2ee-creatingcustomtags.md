@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1006
 source: https://web.archive.org/web/20060506000105/http://www.java2s.com:80/Code/Java/J2EE/CreatingCustomTags.htm
 ---
-Creating Custom Tags
-
 ```java title=Example.java
 /*
 Title:       Struts : Essential Skills (Essential Skills)

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1004
 source: https://web.archive.org/web/20081209042629/http://www.java2s.com:80/Code/Java/JPA/AVGWithGroupByclause.htm
 ---
-AVG With GroupBy clause
-
 ```java title=Example.java
 File: Main.java
 import javax.persistence.EntityManager;

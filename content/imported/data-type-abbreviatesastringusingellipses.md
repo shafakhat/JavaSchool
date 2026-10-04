@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1104
 source: https://web.archive.org/web/20100214082950/http://java2s.com/Code/Java/Data-Type/AbbreviatesaStringusingellipses.htm
 ---
-Abbreviates a String using ellipses.
-
 ```java title=Example.java
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more

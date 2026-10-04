@@ -46,16 +46,13 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <ul><li>Single-type import declaration</li><li>Import-on-demand declaration</li></ul>
 <h2 id="single-type-import-declaration">Single-Type Import Declaration</h2>
 <p>A single-type import declaration is used to import a single type from a package. It is of the form.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import &lt;fully qualified name of a type&gt;;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import &lt;fully qualified name of a type&gt;;</code></pre></div>
 <p>The following import declaration imports the Dog class from the com.java2s package:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import com.java2s.Dog;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import com.java2s.Dog;</code></pre></div>
 <p>A single-type import declaration imports only one type(a class) from a package.</p>
 <p>To import more than one type from a package, use a separate import declaration for each type.</p>
 <p>The following import declarations import ClassOne from pkg1 package, ClassTwo and ClassThree from pkg2 package, and ClassFour from pkg3 package:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import pkg1.ClassOne;
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import pkg1.ClassOne;
 import pkg2.ClassTwo;
 import pkg2.ClassThree;
 import pkg3.ClassFour;</code></pre></div>
@@ -67,33 +64,28 @@ import pkg3.ClassFour;</code></pre></div>
 }</code></pre></div>
 <p>The following code shows how to use a single-type-import declaration to import the com.java2s.Dog class to its simple name.</p>
 <p>The modified Main class declaration is as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import com.java2s.Dog; // Import   the   Dog  classpublicclass  Main {
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import com.java2s.Dog; // Import   the   Dog  classpublicclass  Main {
    publicstatic  void  main(String[]  args)  {
       Dog  jack; // Use simple name of  the   Dog  class
    }
 }</code></pre></div>
 <p>When the compiler comes across the simple name of the Dog class in the statement, like</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Dog  jack;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Dog  jack;</code></pre></div>
 <p>it goes through all import declarations to resolve the simple name to a fully qualified name.</p>
 <p>When it tries to resolve the simple name Dog, it finds the import declaration, import com.java2s.Dog, which imports the Dog class.</p>
 <p>It assumes that you intended to use the com.java2s.Dog class when you used the simple name Dog in the above statement.</p>
 <p>The compiler replaces the above statement with the following statement:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-com.java2s.Dog jack;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">com.java2s.Dog jack;</code></pre></div>
 <p>Import declarations let you use the simple name of a type in your code, thus making your code more readable.</p>
 <p>When you compile your code, the compiler replaces the simple name of a type with its fully qualified name.</p>
 <p>It uses import declarations for converting simple names of the types to their fully qualified names.</p>
 <h2 id="import-on-demand-declaration">Import-on-Demand Declaration</h2>
 <p>An import-on-demand declaration imports multiple types from a package using one import declaration.</p>
 <p>The syntax for an import-on-demand declaration is</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import &lt;package name&gt;.*;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import &lt;package name&gt;.*;</code></pre></div>
 <p>Here, the package name is followed by a dot and an asterisk (*).</p>
 <p>For example, the following import-on-demand declaration imports all types from com.java2s package:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import com.java2s.*;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import com.java2s.*;</code></pre></div>
 <p>You can rewrite the code for the Main class using an import-on-demand declaration.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import com.java2s.*;
 publicclass  Main {
@@ -107,16 +99,13 @@ publicclass  Main {
 <p>A single-static import declaration imports one static member from a type. A static-import-on-demand declaration imports all static members of a type.</p>
 <p>The general syntax of static import declaration is as follows:</p>
 <p>Single-static-import declaration:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import static &lt;package  name&gt;.&lt;type name&gt;.&lt;static member name&gt;;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import static &lt;package  name&gt;.&lt;type name&gt;.&lt;static member name&gt;;</code></pre></div>
 <p>Static-import-on-demand declaration:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import static &lt;package  name&gt;&gt;.&lt;type  name&gt;.*;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import static &lt;package  name&gt;&gt;.&lt;type  name&gt;.*;</code></pre></div>
 <p>System is a class in java.lang package that has a static variable named out.</p>
 <p>When you use System.out, we are referring to that static variable out of the System class.</p>
 <p>We can use a static import declaration to import the out static variable from the System class as follows:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import static  java.lang.System.out;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import static  java.lang.System.out;</code></pre></div>
 <p>The following code imports the out static variable of the System class.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">importstatic  java.lang.System.out;
 publicclass  StaticImportTest  {
@@ -130,14 +119,13 @@ publicclass  StaticImportTest  {
 <p>To use any of the static variables or methods of the Math class, we will need to qualify them with the class name Math.</p>
 <p>For example, you would refer to the PI static variable as Math.PI and the sqrt() method as Math.sqrt().</p>
 <p>We can import all static members of the Math class using the following static-import- on-demand declaration:</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-import static  java.lang.Math.*;</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import static  java.lang.Math.*;</code></pre></div>
 <h2 id="example">Example</h2>
 <p>The following code demonstrates using the Math class by importing its static members.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">importstatic java.lang.Math.PI;
 importstatic java.lang.Math.sqrt;
 importstatic java.lang.System.out;
-/*fromwww.java2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     double radius = 6.9;
     double area = PI * radius * radius;
@@ -161,15 +149,8 @@ importstatic java.lang.System.out;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

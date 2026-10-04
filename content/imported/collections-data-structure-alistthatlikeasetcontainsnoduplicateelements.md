@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1046
 source: https://web.archive.org/web/20110927192058/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/AListthatlikeaSetcontainsnoduplicateElements.htm
 ---
-A List that, like a Set, contains no duplicate Elements.
-
 ```java title=Example.java
 //     package com.croftsoft.core.util;
 import java.util.Collection;
@@ -17,7 +15,6 @@ import java.util.ListIterator;
 import java.util.Set;
 /*********************************************************************
  *
- * A List that, like a Set, contains no duplicate Elements.
  *
  * @author <a href="http://www.CroftSoft.com/">David Wallace Croft</a>
  * @version 1998-11-23

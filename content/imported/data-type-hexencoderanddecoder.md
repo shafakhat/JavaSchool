@@ -23,7 +23,6 @@ source: https://web.archive.org/web/20100706223509/http://www.java2s.com:80/Tuto
  * limitations under the License.
  */
 /**
- * Hex encoder and decoder.
  *
  * @since 1.1
  * @author Apache Software Foundation

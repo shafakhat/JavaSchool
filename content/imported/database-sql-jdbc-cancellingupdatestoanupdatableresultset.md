@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1035
 source: https://web.archive.org/web/20090715214952/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/CancellingUpdatestoanUpdatableResultSet.htm
 ---
-Cancelling Updates to an Updatable Result Set
-
 ```java title=Example.java
 import java.sql.Connection;
 import java.sql.DriverManager;

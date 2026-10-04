@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1093
 source: https://web.archive.org/web/20111023000025/http://www.java2s.com:80/Code/Java/Class/ThisprogramteststheEmployeeclass.htm
 ---
-This program tests the Employee class
-
 ```java title=Example.java
 /*
  This program is a part of the companion code for Core Java 8th ed.
@@ -26,7 +24,6 @@ This program tests the Employee class
 import java.util.Date;
 import java.util.GregorianCalendar;
 /**
- * This program tests the Employee class.
  *
  * @version 1.11 2004-02-19
  * @author Cay Horstmann

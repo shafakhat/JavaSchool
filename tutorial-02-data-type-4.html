@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Data Type (4/7) - Java Tutorial - JavaSchool</title>
-<meta name="description" content="Data Type: java2s tutorial chapter with tabs per sub-topic, 447 archived articles imported.">
+<title>Data Type (4/8) - Java Tutorial - JavaSchool</title>
+<meta name="description" content="Data Type: java2s tutorial chapter with tabs per sub-topic, 641 archived articles imported.">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -38,12 +38,463 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <main class="main">
   <article class="ws-content">
     <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-02-data-type.html">Data Type</a></nav>
-    <h1>2. Data Type (4/7)</h1>
-    <p><strong>47 sub-topics</strong> &middot; <strong>864 pages archived (2014-2020)</strong> &middot; <strong>447</strong> imported here, grouped into tabs below (part 4 of 7, 70 articles).</p>
+    <h1>2. Data Type (4/8)</h1>
+    <p><strong>47 sub-topics</strong> &middot; <strong>864 pages archived (2014-2020)</strong> &middot; <strong>641</strong> imported here, grouped into tabs below (part 4 of 8, 90 articles).</p>
     <p class="part-pager"><a class="btn btn-outline" href="tutorial-02-data-type-3.html">&larr; Previous part</a> <a class="btn btn-green" href="tutorial-02-data-type-5.html">Next part &rarr;</a></p>
     <div class="tabs">
-      <div class="tab-bar"><button type="button" class="tab-btn active" data-tab="tab-0" aria-selected="true">Hex Oct <span class="tab-count">5</span></button><button type="button" class="tab-btn" data-tab="tab-1" aria-selected="false">String Join <span class="tab-count">2</span></button><button type="button" class="tab-btn" data-tab="tab-2" aria-selected="false">Float Point Data Type <span class="tab-count">15</span></button><button type="button" class="tab-btn" data-tab="tab-3" aria-selected="false">Substring <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-4" aria-selected="false">Escape Sequences <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-5" aria-selected="false">Double <span class="tab-count">4</span></button><button type="button" class="tab-btn" data-tab="tab-6" aria-selected="false">Convert from String <span class="tab-count">42</span></button></div>
-      <div class="tab-panel" id="tab-0"><h3 id="encodes-hex-octects-into-base64">Encodes hex octects into Base64</h3>
+      <div class="tab-bar"><button type="button" class="tab-btn active" data-tab="tab-0" aria-selected="true">String Match <span class="tab-count">2</span></button><button type="button" class="tab-btn" data-tab="tab-1" aria-selected="false">Long <span class="tab-count">8</span></button><button type="button" class="tab-btn" data-tab="tab-2" aria-selected="false">String Split <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-3" aria-selected="false">Hex Oct <span class="tab-count">5</span></button><button type="button" class="tab-btn" data-tab="tab-4" aria-selected="false">String Join <span class="tab-count">2</span></button><button type="button" class="tab-btn" data-tab="tab-5" aria-selected="false">Float Point Data Type <span class="tab-count">20</span></button><button type="button" class="tab-btn" data-tab="tab-6" aria-selected="false">Substring <span class="tab-count">2</span></button><button type="button" class="tab-btn" data-tab="tab-7" aria-selected="false">Escape Sequences <span class="tab-count">1</span></button><button type="button" class="tab-btn" data-tab="tab-8" aria-selected="false">Double <span class="tab-count">4</span></button><button type="button" class="tab-btn" data-tab="tab-9" aria-selected="false">Convert from String <span class="tab-count">45</span></button></div>
+      <div class="tab-panel" id="tab-0"><h3 id="match-dates">Match Dates</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] argv) throws Exception {
+    boolean retval = false;
+    String date = "12/12/1212";
+    String datePattern = "\\d{1,2}-\\d{1,2}-\\d{4}";
+    retval = date.matches(datePattern);
+  }
+}</code></pre></div>
+<h3 id="match-phone-number">Match Phone Number</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String args[]) {
+    String phone = "(111)-111-1111";
+    String phoneNumberPattern = "(\\d-)?(\\d{3}-)?\\d{3}-\\d{4}";
+    System.out.println(phone.matches(phoneNumberPattern));
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-1" style="display:none"><h3 id="compare-two-java-long-arrays-example">Compare Two Java long Arrays Example</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
+publicclass Main {
+  publicstaticvoid main(String[] args) {
+    long[] a1 = newlong[] { 2, 8, 3 };
+    long[] a2 = newlong[] { 2, 8, 3 };
+    System.out.println(Arrays.equals(a1, a2));
+  }
+}</code></pre></div>
+<h3 id="compute-distance-light-travels-using-long-variables">Compute distance light travels using long variables</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
+  publicstaticvoid main(String args[]) {
+    int lightspeed;
+    long days;
+    long seconds;
+    long distance;
+    // approximate speed of light in miles per second
+    lightspeed = 186000;
+    days = 1000; // specify number of days here
+    seconds = days * 24 * 60 * 60; // convert to seconds
+    distance = lightspeed * seconds; // compute distance
+    System.out.print("In " + days);
+    System.out.print(" days light will travel about ");
+    System.out.println(distance + " miles.");
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">In 1000 days light will travel about 16070400000000 miles</code></pre></div>
+<h3 id="gets-the-maximum-of-three-long-values">Gets the maximum of three long values.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
+import java.math.BigInteger;
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *//**
+ * Provides extra functionality for Java Number classes.
+ *
+ * @author &lt;a href="mailto:rand_mcneely@yahoo.com"&gt;Rand McNeely&lt;/a&gt;
+ * @author Stephen Colebourne
+ * @author &lt;a href="mailto:steve.downey@netfolio.com"&gt;Steve Downey&lt;/a&gt;
+ * @author Eric Pugh
+ * @author Phil Steitz
+ * @since 1.0
+ * @version $Id: NumberUtils.java 488819 2006-12-19 21:50:04Z bayard $
+ *
+ */publicclass Main {
+  /**
+   * Gets the maximum of three &lt;code&gt;long&lt;/code&gt; values.
+   *
+   * @param a  value 1
+   * @param b  value 2
+   * @param c  value 3
+   * @return  the largest of the values
+   */publicstaticlong maximum(long a, long b, long c) {
+      if (b &gt; a) {
+          a = b;
+      }
+      if (c &gt; a) {
+          a = c;
+      }
+      return a;
+  }
+}</code></pre></div>
+<h3 id="gets-the-minimum-of-three-long-values">Gets the minimum of three long values.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
+import java.math.BigInteger;
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *//**
+ * Provides extra functionality for Java Number classes.
+ *
+ * @author &lt;a href="mailto:rand_mcneely@yahoo.com"&gt;Rand McNeely&lt;/a&gt;
+ * @author Stephen Colebourne
+ * @author &lt;a href="mailto:steve.downey@netfolio.com"&gt;Steve Downey&lt;/a&gt;
+ * @author Eric Pugh
+ * @author Phil Steitz
+ * @since 1.0
+ * @version $Id: NumberUtils.java 488819 2006-12-19 21:50:04Z bayard $
+ *
+ */publicclass Main {
+  //--------------------------------------------------------------------
+/**
+   * Gets the minimum of three &lt;code&gt;long&lt;/code&gt; values.
+   *
+   * @param a  value 1
+   * @param b  value 2
+   * @param c  value 3
+   * @return  the smallest of the values
+   */publicstaticlong minimum(long a, long b, long c) {
+      if (b &lt; a) {
+          a = b;
+      }
+      if (c &lt; a) {
+          a = c;
+      }
+      return a;
+  }
+}</code></pre></div>
+<h3 id="gets-the-minimum-of-three-long-values-1">Gets the minimum of three long values.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
+import java.math.BigInteger;
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Provides extra functionality for Java Number classes.
+ *
+ * @author &lt;a href="mailto:rand_mcneely@yahoo.com"&gt;Rand McNeely&lt;/a&gt;
+ * @author Stephen Colebourne
+ * @author &lt;a href="mailto:steve.downey@netfolio.com"&gt;Steve Downey&lt;/a&gt;
+ * @author Eric Pugh
+ * @author Phil Steitz
+ * @since 1.0
+ * @version $Id: NumberUtils.java 488819 2006-12-19 21:50:04Z bayard $
+ *
+ */
+public class Main {
+  //--------------------------------------------------------------------
+  /**
+   * Gets the minimum of three &lt;code&gt;long&lt;/code&gt; values.
+   *
+   * @param a  value 1
+   * @param b  value 2
+   * @param c  value 3
+   * @return  the smallest of the values
+   */
+  public static long minimum(long a, long b, long c) {
+      if (b &lt; a) {
+          a = b;
+      }
+      if (c &lt; a) {
+          a = c;
+      }
+      return a;
+  }
+}</code></pre></div>
+<h3 id="multiply-two-long-integers-checking-for-overflow">Multiply two long integers, checking for overflow.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *
+ */publicclass Main {
+  /**
+   *
+   * @param a first value
+   * @param b second value
+   * @return the product &lt;code&gt;a * b&lt;/code&gt;
+   * @throws ArithmeticException if the result can not be represented as an
+   *         long
+   * @since 1.2
+   */publicstaticlong mulAndCheck(long a, long b) {
+      long ret;
+      String msg = "overflow: multiply";
+      if (a &gt; b) {
+          // use symmetry to reduce boundry cases
+          ret = mulAndCheck(b, a);
+      } else {
+          if (a &lt; 0) {
+              if (b &lt; 0) {
+                  // check for positive overflow with negative a, negative b
+if (a &gt;= Long.MAX_VALUE / b) {
+                      ret = a * b;
+                  } else {
+                      thrownew ArithmeticException(msg);
+                  }
+              } elseif (b &gt; 0) {
+                  // check for negative overflow with negative a, positive b
+if (Long.MIN_VALUE / b &lt;= a) {
+                      ret = a * b;
+                  } else {
+                      thrownew ArithmeticException(msg);
+                  }
+              } else {
+                  // assert b == 0
+                  ret = 0;
+              }
+          } elseif (a &gt; 0) {
+              // assert a &gt; 0
+// assert b &gt; 0
+// check for positive overflow with positive a, positive b
+if (a &lt;= Long.MAX_VALUE / b) {
+                  ret = a * b;
+              } else {
+                  thrownew ArithmeticException(msg);
+              }
+          } else {
+              // assert a == 0
+              ret = 0;
+          }
+      }
+      return ret;
+  }
+}</code></pre></div>
+<h3 id="subtract-two-long-integers-checking-for-overflow">Subtract two long integers, checking for overflow.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *
+ */publicclass Main {
+  /**
+   *
+   * @param a first value
+   * @param b second value
+   * @return the difference &lt;code&gt;a-b&lt;/code&gt;
+   * @throws ArithmeticException if the result can not be represented as an
+   *         long
+   * @since 1.2
+   */publicstaticlong subAndCheck(long a, long b) {
+      long ret;
+      String msg = "overflow: subtract";
+      if (b == Long.MIN_VALUE) {
+          if (a &lt; 0) {
+              ret = a - b;
+          } else {
+              thrownew ArithmeticException(msg);
+          }
+      } else {
+          // use additive inverse
+          ret = addAndCheck(a, -b, msg);
+      }
+      return ret;
+  }
+  /**
+   * Add two long integers, checking for overflow.
+   *
+   * @param a an addend
+   * @param b an addend
+   * @param msg the message to use for any thrown exception.
+   * @return the sum &lt;code&gt;a+b&lt;/code&gt;
+   * @throws ArithmeticException if the result can not be represented as an
+   *         long
+   * @since 1.2
+   */privatestaticlong addAndCheck(long a, long b, String msg) {
+      long ret;
+      if (a &gt; b) {
+          // use symmetry to reduce boundry cases
+          ret = addAndCheck(b, a, msg);
+      } else {
+          // assert a &lt;= b
+if (a &lt; 0) {
+              if (b &lt; 0) {
+                  // check for negative overflow
+if (Long.MIN_VALUE - b &lt;= a) {
+                      ret = a + b;
+                  } else {
+                      thrownew ArithmeticException(msg);
+                  }
+              } else {
+                  // oppisite sign addition is always safe
+                  ret = a + b;
+              }
+          } else {
+              // assert a &gt;= 0
+// assert b &gt;= 0
+// check for positive overflow
+if (a &lt;= Long.MAX_VALUE - b) {
+                  ret = a + b;
+              } else {
+                  thrownew ArithmeticException(msg);
+              }
+          }
+      }
+      return ret;
+  }
+}</code></pre></div>
+<h3 id="subtract-two-long-integers-checking-for-overflow-1">Subtract two long integers, checking for overflow.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigDecimal;
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ *
+ */
+public class Main {
+  /**
+   *
+   * @param a first value
+   * @param b second value
+   * @return the difference &lt;code&gt;a-b&lt;/code&gt;
+   * @throws ArithmeticException if the result can not be represented as an
+   *         long
+   * @since 1.2
+   */
+  public static long subAndCheck(long a, long b) {
+      long ret;
+      String msg = "overflow: subtract";
+      if (b == Long.MIN_VALUE) {
+          if (a &lt; 0) {
+              ret = a - b;
+          } else {
+              throw new ArithmeticException(msg);
+          }
+      } else {
+          // use additive inverse
+          ret = addAndCheck(a, -b, msg);
+      }
+      return ret;
+  }
+  /**
+   * Add two long integers, checking for overflow.
+   *
+   * @param a an addend
+   * @param b an addend
+   * @param msg the message to use for any thrown exception.
+   * @return the sum &lt;code&gt;a+b&lt;/code&gt;
+   * @throws ArithmeticException if the result can not be represented as an
+   *         long
+   * @since 1.2
+   */
+  private static long addAndCheck(long a, long b, String msg) {
+      long ret;
+      if (a &gt; b) {
+          // use symmetry to reduce boundry cases
+          ret = addAndCheck(b, a, msg);
+      } else {
+          // assert a &lt;= b
+          if (a &lt; 0) {
+              if (b &lt; 0) {
+                  // check for negative overflow
+                  if (Long.MIN_VALUE - b &lt;= a) {
+                      ret = a + b;
+                  } else {
+                      throw new ArithmeticException(msg);
+                  }
+              } else {
+                  // oppisite sign addition is always safe
+                  ret = a + b;
+              }
+          } else {
+              // assert a &gt;= 0
+              // assert b &gt;= 0
+              // check for positive overflow
+              if (a &lt;= Long.MAX_VALUE - b) {
+                  ret = a + b;
+              } else {
+                  throw new ArithmeticException(msg);
+              }
+          }
+      }
+      return ret;
+  }
+}</code></pre></div></div>
+      <div class="tab-panel" id="tab-2" style="display:none"><h3 id="stringsplit-is-based-on-regular-expression">String.split() is based on regular expression</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String args[]) throws Exception {
+    String s3 = "{A}{this is a test}{1234}";
+    String[] words = s3.split("[{}]");
+    for (String str : words) {
+      System.out.println(str);
+    }
+  }
+}
+/*
+A
+this is a test
+1234
+*/</code></pre></div></div>
+      <div class="tab-panel" id="tab-3" style="display:none"><h3 id="encodes-hex-octects-into-base64">Encodes hex octects into Base64</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*   Copyright 2004 The Apache Software Foundation
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -382,7 +833,6 @@ public final class  Base64 {
  * @author Sandy Gao
  * @version $Id: Base64.java 111285 2004-12-08 16:54:26Z cezar $
  */publicfinalclass  Base64 {
-
     staticprivatefinalint  BASELENGTH         = 255;
     staticprivatefinalint  LOOKUPLENGTH       = 64;
     staticprivatefinalint  TWENTYFOURBITGROUP = 24;
@@ -395,9 +845,7 @@ staticprivatefinalint  FOURBYTE           = 4;
     staticprivatefinalboolean fDebug          = false;
     staticprivatebyte [] base64Alphabet        = newbyte[BASELENGTH];
     staticprivatebyte [] lookUpBase64Alphabet  = newbyte[LOOKUPLENGTH];
-
     static {
-
         for (int i = 0; i&lt;BASELENGTH; i++) {
             base64Alphabet[i] = -1;
         }
@@ -407,65 +855,48 @@ staticprivatefinalint  FOURBYTE           = 4;
         for (int i = 'z'; i&gt;= 'a'; i--) {
             base64Alphabet[i] = (byte) ( i-'a' + 26);
         }
-
         for (int i = '9'; i &gt;= '0'; i--) {
             base64Alphabet[i] = (byte) (i-'0' + 52);
         }
-
         base64Alphabet['+']  = 62;
         base64Alphabet['/']  = 63;
-
         for (int i = 0; i&lt;=25; i++)
             lookUpBase64Alphabet[i] = (byte) ('A'+i );
-
         for (int i = 26,  j = 0; i&lt;=51; i++, j++)
             lookUpBase64Alphabet[i] = (byte) ('a'+ j );
-
         for (int i = 52,  j = 0; i&lt;=61; i++, j++)
             lookUpBase64Alphabet[i] = (byte) ('0' + j );
         lookUpBase64Alphabet[62] = (byte) '+';
         lookUpBase64Alphabet[63] = (byte) '/';
-
     }
-
     protectedstaticboolean isWhiteSpace(byte octect) {
         return (octect == 0x20 || octect == 0xd || octect == 0xa || octect == 0x9);
     }
-
     protectedstaticboolean isPad(byte octect) {
         return (octect == PAD);
     }
-
     protectedstaticboolean isData(byte octect) {
         return (base64Alphabet[octect] != -1);
     }
-
     protectedstaticboolean isBase64(byte octect) {
         return (isWhiteSpace(octect) || isPad(octect) || isData(octect));
     }
-
     /**
-     * Encodes hex octects into Base64
      *
      * @param binaryData Array containing binaryData
      * @return Encoded Base64 array
      */publicstaticbyte[] encode(byte[] binaryData) {
-
         if (binaryData == null)
             return null;
-
         int      lengthDataBits    = binaryData.length*EIGHTBIT;
         int      fewerThan24bits   = lengthDataBits%TWENTYFOURBITGROUP;
         int      numberTriplets    = lengthDataBits/TWENTYFOURBITGROUP;
         byte     encodedData[]     = null;
-
         if (fewerThan24bits != 0) //data not divisible by 24 bit
             encodedData = newbyte[ (numberTriplets + 1 )*4  ];
         else// 16 or 8 bit
             encodedData = newbyte[ numberTriplets*4 ];
-
         byte k=0, l=0, b1=0,b2=0,b3=0;
-
         int encodedIndex = 0;
         int dataIndex   = 0;
         int i           = 0;
@@ -473,37 +904,29 @@ staticprivatefinalint  FOURBYTE           = 4;
             System.out.println("number of triplets = " + numberTriplets );
         }
         for (i = 0; i&lt;numberTriplets; i++) {
-
             dataIndex = i*3;
             b1 = binaryData[dataIndex];
             b2 = binaryData[dataIndex + 1];
             b3 = binaryData[dataIndex + 2];
-
             if (fDebug) {
                 System.out.println( "b1= " + b1 +", b2= " + b2 + ", b3= " + b3 );
             }
-
             l  = (byte)(b2 &amp; 0x0f);
             k  = (byte)(b1 &amp; 0x03);
-
             encodedIndex = i*4;
             byte val1 = ((b1 &amp; SIGN)==0)?(byte)(b1&gt;&gt;2):(byte)((b1)&gt;&gt;2^0xc0);
-
             byte val2 = ((b2 &amp; SIGN)==0)?(byte)(b2&gt;&gt;4):(byte)((b2)&gt;&gt;4^0xf0);
             byte val3 = ((b3 &amp; SIGN)==0)?(byte)(b3&gt;&gt;6):(byte)((b3)&gt;&gt;6^0xfc);
-
             encodedData[encodedIndex]   = lookUpBase64Alphabet[ val1 ];
             if (fDebug) {
                 System.out.println( "val2 = " + val2 );
                 System.out.println( "k4   = " + (k&lt;&lt;4));
                 System.out.println( "vak  = " + (val2 | (k&lt;&lt;4)));
             }
-
             encodedData[encodedIndex+1] = lookUpBase64Alphabet[ val2 | ( k&lt;&lt;4 )];
             encodedData[encodedIndex+2] = lookUpBase64Alphabet[ (l &lt;&lt;2 ) | val3 ];
             encodedData[encodedIndex+3] = lookUpBase64Alphabet[ b3 &amp; 0x3f ];
         }
-
         // form integral number of 6-bit groups
         dataIndex    = i*3;
         encodedIndex = i*4;
@@ -520,83 +943,64 @@ staticprivatefinalint  FOURBYTE           = 4;
             encodedData[encodedIndex + 2] = PAD;
             encodedData[encodedIndex + 3] = PAD;
         } elseif (fewerThan24bits == SIXTEENBIT) {
-
             b1 = binaryData[dataIndex];
             b2 = binaryData[dataIndex +1 ];
             l = ( byte ) ( b2 &amp;0x0f );
             k = ( byte ) ( b1 &amp;0x03 );
-
             byte val1 = ((b1 &amp; SIGN)==0)?(byte)(b1&gt;&gt;2):(byte)((b1)&gt;&gt;2^0xc0);
             byte val2 = ((b2 &amp; SIGN)==0)?(byte)(b2&gt;&gt;4):(byte)((b2)&gt;&gt;4^0xf0);
-
             encodedData[encodedIndex]     = lookUpBase64Alphabet[ val1 ];
             encodedData[encodedIndex + 1] = lookUpBase64Alphabet[ val2 | ( k&lt;&lt;4 )];
             encodedData[encodedIndex + 2] = lookUpBase64Alphabet[ l&lt;&lt;2 ];
             encodedData[encodedIndex + 3] = PAD;
         }
-
         return encodedData;
     }
-
     /**
      * Decodes Base64 data into octects
      *
      * @param base64Data Byte array containing Base64 data
      * @return Array containind decoded data.
      */publicstaticbyte[] decode(byte[] base64Data) {
-
         if (base64Data == null)
             return null;
-
         // remove white spaces
         base64Data = removeWhiteSpace(base64Data);
-
         if (base64Data.length%FOURBYTE != 0) {
             return null;//should be divisible by four
         }
-
         int      numberQuadruple    = (base64Data.length/FOURBYTE );
-
         if (numberQuadruple == 0)
             returnnewbyte[0];
-
         byte     decodedData[]      = null;
         byte     b1=0,b2=0,b3=0, b4=0;//, marker0=0, marker1=0;
 byte     d1=0,d2=0,d3=0,d4=0;
-
         // Throw away anything not in normalizedBase64Data
 // Adjust size
 int i = 0;
         int encodedIndex = 0;
         int dataIndex    = 0;
         decodedData      = newbyte[ (numberQuadruple)*3];
-
         for (; i&lt;numberQuadruple-1; i++) {
-
             if (!isData( (d1 = base64Data[dataIndex++]) )||
                 !isData( (d2 = base64Data[dataIndex++]) )||
                 !isData( (d3 = base64Data[dataIndex++]) )||
                 !isData( (d4 = base64Data[dataIndex++]) ))
                 return null;//if found "no data" just return null
-
             b1 = base64Alphabet[d1];
             b2 = base64Alphabet[d2];
             b3 = base64Alphabet[d3];
             b4 = base64Alphabet[d4];
-
             decodedData[encodedIndex++] = (byte)(  b1 &lt;&lt;2 | b2&gt;&gt;4 ) ;
             decodedData[encodedIndex++] = (byte)(((b2 &amp; 0xf)&lt;&lt;4 ) |( (b3&gt;&gt;2) &amp; 0xf) );
             decodedData[encodedIndex++] = (byte)( b3&lt;&lt;6 | b4 );
         }
-
         if (!isData( (d1 = base64Data[dataIndex++]) ) ||
             !isData( (d2 = base64Data[dataIndex++]) )) {
             return null;//if found "no data" just return null
         }
-
         b1 = base64Alphabet[d1];
         b2 = base64Alphabet[d2];
-
         d3 = base64Data[dataIndex++];
         d4 = base64Data[dataIndex++];
         if (!isData( (d3 ) ) ||
@@ -626,12 +1030,9 @@ return null;
             decodedData[encodedIndex++] = (byte)(  b1 &lt;&lt;2 | b2&gt;&gt;4 ) ;
             decodedData[encodedIndex++] = (byte)(((b2 &amp; 0xf)&lt;&lt;4 ) |( (b3&gt;&gt;2) &amp; 0xf) );
             decodedData[encodedIndex++] = (byte)( b3&lt;&lt;6 | b4 );
-
         }
-
         return decodedData;
     }
-
 //    /**
 //     * Decodes Base64 data into octects
 //     *
@@ -680,7 +1081,6 @@ return null;
      */protectedstaticbyte[] removeWhiteSpace(byte[] data) {
         if (data == null)
             return null;
-
         // count characters that's not whitespace
 int newSize = 0;
         int len = data.length;
@@ -688,14 +1088,11 @@ int newSize = 0;
             if (!isWhiteSpace(data[i]))
                 newSize++;
         }
-
         // if no whitespace, just return the input array
 if (newSize == len)
             return data;
-
         // create the array to return
 byte[] newArray = newbyte[newSize];
-
         int j = 0;
         for (int i = 0; i &lt; len; i++) {
             if (!isWhiteSpace(data[i]))
@@ -899,23 +1296,18 @@ public class Hex {
  */import java.io.IOException;
 import java.io.OutputStream;
 import java.io.ByteArrayOutputStream;
-
 /**
- * Hex encoder/decoder implementation (borrowed from BouncyCastle=.
  *
  * @author Johan Lindquist
  * @since 1.1.1
  * @version $Revision$
  */publicfinalclass HexDecoder {
-
     /**
      * Identifies the data type supported by this decoder.
      */publicstaticfinal String DATA_TYPE = "hexBinary";
-
     /**
      * Initial size of the decoding table.
      */privatestaticfinalint DECODING_TABLE_SIZE = 128;
-
     /**
      * Encoding table.
      */protectedstaticfinalbyte[] ENCODING_TABLE = {
@@ -924,18 +1316,15 @@ import java.io.ByteArrayOutputStream;
         (byte) '8', (byte) '9', (byte) 'A', (byte) 'B',
         (byte) 'C', (byte) 'D', (byte) 'E', (byte) 'F'
     };
-
     /**
      * Decoding table.
      */protectedstaticfinalbyte[] DECODING_TABLE = newbyte[DECODING_TABLE_SIZE];
-
     /**
      * Initialize the decoding table.
      */protectedstaticvoid initialiseDecodingTable() {
         for (int i = 0; i &lt; ENCODING_TABLE.length; i++) {
             DECODING_TABLE[ENCODING_TABLE[i]] = (byte) i;
         }
-
         // deal with lower case letters as well
         DECODING_TABLE['a'] = DECODING_TABLE['A'];
         DECODING_TABLE['b'] = DECODING_TABLE['B'];
@@ -944,17 +1333,14 @@ import java.io.ByteArrayOutputStream;
         DECODING_TABLE['e'] = DECODING_TABLE['E'];
         DECODING_TABLE['f'] = DECODING_TABLE['F'];
     }
-
     static {
         initialiseDecodingTable();
     }
-
     /**
      * Creates an instance of this class.
      */private HexDecoder() {
         // Nothing to do ...
     }
-
     /**
      * Encodes the input data producing a Hex output stream.
      * @param data The input data to be HEX encoded
@@ -967,14 +1353,11 @@ import java.io.ByteArrayOutputStream;
             final OutputStream out) throws IOException {
         for (int i = off; i &lt; (off + length); i++) {
             int v = data[i] &amp; 0xff;
-
             out.write(ENCODING_TABLE[(v &gt;&gt;&gt; 4)]);
             out.write(ENCODING_TABLE[v &amp; 0xf]);
         }
-
         return length * 2;
     }
-
     /**
      * Indicates whether a given character should be ignored during en-/decoding.
      * @param c The character at question.
@@ -982,7 +1365,6 @@ import java.io.ByteArrayOutputStream;
      */privatestaticboolean ignore(finalchar c) {
         return (c == '\n' || c == '\r' || c == '\t' || c == ' ');
     }
-
     /**
      * Decodes the Hex encoded byte data writing it to the given output stream,
      * whitespace characters will be ignored.
@@ -996,39 +1378,28 @@ import java.io.ByteArrayOutputStream;
             final OutputStream out) throws IOException {
         byte b1, b2;
         int outLen = 0;
-
         int end = off + length;
-
         while (end &gt; off) {
             if (!ignore((char) data[end - 1])) {
                 break;
             }
-
             end--;
         }
-
         int i = off;
         while (i &lt; end) {
             while (i &lt; end &amp;&amp; ignore((char) data[i])) {
                 i++;
             }
-
             b1 = DECODING_TABLE[data[i++]];
-
             while (i &lt; end &amp;&amp; ignore((char) data[i])) {
                 i++;
             }
-
             b2 = DECODING_TABLE[data[i++]];
-
             out.write((b1 &lt;&lt; 4) | b2);
-
             outLen++;
         }
-
         return outLen;
     }
-
     /**
      * Decodes the Hex encoded String data writing it to the given output stream,
      * whitespace characters will be ignored.
@@ -1040,39 +1411,28 @@ import java.io.ByteArrayOutputStream;
      */publicstaticint decode(final String data, final OutputStream out) throws IOException {
         byte b1, b2;
         int length = 0;
-
         int end = data.length();
-
         while (end &gt; 0) {
             if (!ignore(data.charAt(end - 1))) {
                 break;
             }
-
             end--;
         }
-
         int i = 0;
         while (i &lt; end) {
             while (i &lt; end &amp;&amp; ignore(data.charAt(i))) {
                 i++;
             }
-
             b1 = DECODING_TABLE[data.charAt(i++)];
-
             while (i &lt; end &amp;&amp; ignore(data.charAt(i))) {
                 i++;
             }
-
             b2 = DECODING_TABLE[data.charAt(i++)];
-
             out.write((b1 &lt;&lt; 4) | b2);
-
             length++;
         }
-
         return length;
     }
-
     /**
      * Encodes the input data producing a Hex output stream.
      * @param data Input data to encode.
@@ -1088,7 +1448,6 @@ import java.io.ByteArrayOutputStream;
             thrownew RuntimeException(e.getMessage(), e);
         }
     }
-
     /**
      * Decodes the HEX input data producing a output stream.
      * @param data Input data to be decoded.
@@ -1104,7 +1463,6 @@ import java.io.ByteArrayOutputStream;
             thrownew RuntimeException(e.getMessage(), e);
         }
     }
-
 }</code></pre></div>
 <h3 id="hex-encoderdecoder-implementation-borrowed-from-bouncycastle-1">Hex encoder/decoder implementation borrowed from BouncyCastle</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
@@ -1306,7 +1664,7 @@ public final class HexDecoder {
         }
     }
 }</code></pre></div></div>
-      <div class="tab-panel" id="tab-1" style="display:none"><h3 id="join-string">Join String</h3>
+      <div class="tab-panel" id="tab-4" style="display:none"><h3 id="join-string">Join String</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
  * Static String formatting and query routines.
  * Copyright (C) 2001-2005 Stephen Ostermiller
@@ -1423,7 +1781,7 @@ public class Utils {
     return buf.toString();
   }
 }</code></pre></div></div>
-      <div class="tab-panel" id="tab-2" style="display:none"><h3 id="applying-the-modulus-operator-to-floating-point-values">Applying the modulus operator, %, to floating-point values</h3>
+      <div class="tab-panel" id="tab-5" style="display:none"><h3 id="applying-the-modulus-operator-to-floating-point-values">Applying the modulus operator, %, to floating-point values</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass{
   public static void main(String[] arg){
      double a = 2.4;
@@ -1434,36 +1792,28 @@ public class Utils {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">0.1999999999999998</code></pre></div>
 <h3 id="applying-the-modulus-operator-to-floating-point-values-1">Applying the modulus operator, %, to floating-point values</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass{
-
   publicstaticvoid main(String[] arg){
      double a = 2.4;
      double b = 0.2;
-
      System.out.println( a % b );
   }
-
 }</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">0.1999999999999998</code></pre></div>
 <h3 id="compare-two-java-float-arrays">Compare Two Java float Arrays</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-
 publicclass Main {
-
   publicstaticvoid main(String[] args) {
     float[] a1 = newfloat[] { 4.4f, 3.3f, 5.3f };
     float[] a2 = newfloat[] { 4.4f, 3.3f, 5.3f };
-
     System.out.println(Arrays.equals(a1, a2));
   }
 }</code></pre></div>
 <h3 id="declaring-a-variable-of-type-float">Declaring a variable of type float</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass{
-
   publicstaticvoid main(String[] arg){
     float f1 = 9E-28F;
     System.out.println(f1);
   }
-
 }</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">9.0E-28</code></pre></div>
 <h3 id="floating-point-calculations">Floating-Point Calculations</h3>
@@ -1473,6 +1823,18 @@ publicclass Main {
     double numA = 50.0E-1;   // 5.0
     double numB = 1.0E1;     // 10.0
     double averageC = 0.0;
+    averageC = (numA + numB) / 2.0;
+    System.out.println(averageC);
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">7.5</code></pre></div>
+<h3 id="floating-point-calculations-1">Floating-Point Calculations</h3>
+<p>The four arithmetic operators: +, -, *, /.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass {
+  publicstaticvoid main(String[] args) {
+    double numA = 50.0E-1;   // 5.0
+double numB = 1.0E1;     // 10.0
+double averageC = 0.0;
     averageC = (numA + numB) / 2.0;
     System.out.println(averageC);
   }
@@ -1503,11 +1865,9 @@ publicclass Main {
     float f = 2.2F;
     System.out.println("pi = " + pi);
     System.out.println("f = " + f);
-
     int n = 15, d = 4;
     f = n / d;
     System.out.println("15/4 = " + f);
-
     int radius = 10;
     double area = pi * radius * radius;
     System.out.println("area = " + area);
@@ -1550,7 +1910,6 @@ public class Main {
 }</code></pre></div>
 <h3 id="for-a-float-value-x-this-method-returns-10f-if-x-0-and--10f-if-x-0-returns-nan-if-x-is-nan-1">For a float value x, this method returns +1.0F if x &gt;= 0 and -1.0F if x &lt; 0. Returns NaN if x is NaN.</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.File;
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
@@ -1569,7 +1928,6 @@ public class Main {
  *
  *
  */publicclass Main {
-
   /**
    * For a float value x, this method returns +1.0F if x &gt;= 0 and -1.0F if x &lt;
    * 0. Returns &lt;code&gt;NaN&lt;/code&gt; if &lt;code&gt;x&lt;/code&gt; is &lt;code&gt;NaN&lt;/code&gt;.
@@ -1585,10 +1943,8 @@ public class Main {
 }</code></pre></div>
 <h3 id="force-minimum-number-of-digits-to-left-and-right-of-decimal-point">Force minimum number of digits to left and right of decimal point</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
-
 publicclass Main {
   publicstaticvoid main(String[] argv) throws Exception {
-
     DecimalFormat formatter = new DecimalFormat("0.0E0");
     String s = formatter.format(-1234.567); // -1.2E3
     System.out.println(s);
@@ -1611,7 +1967,45 @@ public class Main {
   }
 }</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">1.496E8</code></pre></div>
+<h3 id="java-float-wrapper-class">Java Float Wrapper Class</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] args) {
+    float f = 10.10f;
+    Float fObj1 = new Float(f);
+    System.out.println(fObj1);
+    double d = 10.10;
+    Float fObj2 = new Float(d);
+    System.out.println(fObj2);
+    Float fObj3 = new Float("25.34");
+    System.out.println(fObj3);
+  }
+}</code></pre></div>
+<h3 id="min-and-max-values-of-data-type-float">Min and Max values of data type float</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] args) {
+    System.out.println(Float.MIN_VALUE);
+    System.out.println(Float.MAX_VALUE);
+  }
+}
+/*
+1.4E-45
+3.4028235E38
+*/</code></pre></div>
 <h3 id="the-number-of-s-to-the-left-of-the-decimal-point-sets-the-multiple-of-the-exponent">The number of #'s to the left of the decimal point sets the multiple of the exponent.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
+publicclass Main {
+  publicstaticvoid main(String[] argv) throws Exception {
+    DecimalFormat formatter = new DecimalFormat("#E0"); // exponent can be any
+// value
+    String s = formatter.format(-1234.567);
+    System.out.println(s);
+    s = formatter.format(-.1234567);
+    System.out.println(s);
+  }
+}
+//-.1E4
+//-.1E0</code></pre></div>
+<h3 id="the-number-of-s-to-the-left-of-the-decimal-point-sets-the-multiple-of-the-exponent-1">The number of #'s to the left of the decimal point sets the multiple of the exponent.</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DecimalFormat;
 public class Main {
   public static void main(String[] argv) throws Exception {
@@ -1626,6 +2020,20 @@ public class Main {
 //-.1E4
 //-.1E0</code></pre></div>
 <h3 id="using-and----with-floating-point-variables">Using ++ and -- with floating-point variables</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass MainClass{
+  publicstaticvoid main(String[] arg){
+     double a = 12.12;
+     System.out.println( a-- );
+     System.out.println( a++ );
+     System.out.println( --a );
+     System.out.println( ++a );
+  }
+}</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">12.12
+11.12
+11.12
+12.12</code></pre></div>
+<h3 id="using-and----with-floating-point-variables-1">Using ++ and -- with floating-point variables</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass{
   public static void main(String[] arg){
      double a = 12.12;
@@ -1635,8 +2043,7 @@ public class Main {
      System.out.println( ++a );
   }
 }</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-12.12
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">12.12
 11.12
 11.12
 12.12</code></pre></div>
@@ -1652,11 +2059,10 @@ public class Main {
      System.out.println(f2 + f1);
   }
 }</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-1.496E8
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">1.496E8
 9.0E-28
 1.496E8</code></pre></div></div>
-      <div class="tab-panel" id="tab-3" style="display:none"><h3 id="gets-the-substring-after-the-first-occurrence-of-a-separator-the-separator-is-not-returned">Gets the substring after the first occurrence of a separator. The separator is not returned.</h3>
+      <div class="tab-panel" id="tab-6" style="display:none"><h3 id="gets-the-substring-after-the-first-occurrence-of-a-separator-the-separator-is-not-returned">Gets the substring after the first occurrence of a separator. The separator is not returned.</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -1763,22 +2169,39 @@ public class Main {
   public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
+}</code></pre></div>
+<h3 id="substring-replacement">Substring replacement.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">class StringReplace {
+  publicstaticvoid main(String args[]) {
+    String org = "This is a test. This is, too.";
+    String search = "is";
+    String sub = "was";
+    String result = "";
+    int i;
+    do { // replace all matching substrings
+      System.out.println(org);
+      i = org.indexOf(search);
+      if (i != -1) {
+        result = org.substring(0, i);
+        result = result + sub;
+        result = result + org.substring(i + search.length());
+        org = result;
+      }
+    } while (i != -1);
+  }
 }</code></pre></div></div>
-      <div class="tab-panel" id="tab-4" style="display:none"><h3 id="demo-for-escape">Demo for escape</h3>
+      <div class="tab-panel" id="tab-7" style="display:none"><h3 id="demo-for-escape">Demo for escape</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public class MainClass{
    public static void main(String[] a){
        String s = "John \"The Great\" Monroe";
    }
 }</code></pre></div></div>
-      <div class="tab-panel" id="tab-5" style="display:none"><h3 id="compare-two-java-double-arrays">Compare Two Java double Arrays</h3>
+      <div class="tab-panel" id="tab-8" style="display:none"><h3 id="compare-two-java-double-arrays">Compare Two Java double Arrays</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-
 publicclass Main {
   publicstaticvoid main(String[] args) {
     double[] a1 = newdouble[] { 1.3, 7.2, 4.2 };
-
     double[] a2 = newdouble[] { 1.3, 7.2, 4.2 };
-
     System.out.println(Arrays.equals(a1, a2));
   }
 }</code></pre></div>
@@ -1824,7 +2247,6 @@ public class Main {
   publicstaticvoid main(String args[]) {
     Double d1 = new Double(3.14159);
     Double d2 = new Double("314159E-5");
-
     System.out.println(d1 + " = " + d2 + " -&gt; " + d1.equals(d2));
   }
 }</code></pre></div>
@@ -1838,7 +2260,7 @@ public class Main {
   }
 }
 //3.14</code></pre></div></div>
-      <div class="tab-panel" id="tab-6" style="display:none"><h3 id="check-number-properties-and-convert-from-number">Check Number properties and convert from Number</h3>
+      <div class="tab-panel" id="tab-9" style="display:none"><h3 id="check-number-properties-and-convert-from-number">Check Number properties and convert from Number</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/**
  * Copyright 2004, 2005, 2006 Odysseus Software GmbH
  *
@@ -1855,7 +2277,6 @@ public class Main {
  * limitations under the License.
  */import java.math.BigDecimal;
 import java.math.BigInteger;
-
 /**
  * Number utilities.
  *
@@ -1881,7 +2302,6 @@ import java.math.BigInteger;
    */publicstaticboolean isBig(Number number) {
     return number instanceof BigDecimal || number instanceof BigInteger;
   }
-
   /**
    * Answers &lt;code&gt;true&lt;/code&gt; iff the given number is an instance of
    * &lt;code&gt;Byte&lt;/code&gt;, &lt;code&gt;Short&lt;/code&gt;, &lt;code&gt;Integer&lt;/code&gt; or &lt;code&gt;Long&lt;/code&gt;.
@@ -1891,7 +2311,6 @@ import java.math.BigInteger;
    */publicstaticboolean isLongCompatible(Number number) {
     return number instanceof Byte || number instanceof Short || number instanceofInteger || number instanceof Long;
   }
-
   /**
    * Answers &lt;code&gt;true&lt;/code&gt; iff the given number is an instance of
    * &lt;code&gt;Float&lt;/code&gt; or &lt;code&gt;Double&lt;/code&gt;.
@@ -1901,7 +2320,6 @@ import java.math.BigInteger;
    */publicstaticboolean isDoubleCompatible(Number number) {
     return number instanceof Float || number instanceof Double;
   }
-
   /**
    * Answers &lt;code&gt;true&lt;/code&gt; iff the given number is infinite (i.e., is
    * a &lt;code&gt;Float&lt;/code&gt; or &lt;code&gt;Double&lt;/code&gt; containing one of the
@@ -1916,7 +2334,6 @@ import java.math.BigInteger;
       return true;
     return false;
   }
-
   /**
    * Answers &lt;code&gt;true&lt;/code&gt; iff the given number is 'not a number'
    * (i.e., is a &lt;code&gt;Float&lt;/code&gt; or &lt;code&gt;Double&lt;/code&gt; containing
@@ -1931,7 +2348,6 @@ import java.math.BigInteger;
       return true;
     return false;
   }
-
   /**
    * Answers the signum function of the given number
    * (i.e., &lt;code&gt;-1&lt;/code&gt; if it is negative, &lt;code&gt;0&lt;/code&gt;
@@ -1943,7 +2359,6 @@ import java.math.BigInteger;
    */publicstaticint signum(Number number) throws ArithmeticException {
     if (number == null || isNaN(number))
       thrownew ArithmeticException("Argument must not be null or NaN.");
-
     if (isLongCompatible(number)) {
       long value = number.longValue();
       return value &lt; 0 ? -1 : value == 0 ? 0 : 1;
@@ -1956,7 +2371,6 @@ double value = number.doubleValue();
       return value &lt; 0 ? -1 : value == 0 ? 0 : 1;
     }
   }
-
   /**
    * Converts the given number to a &lt;code&gt;Byte&lt;/code&gt; (by using &lt;code&gt;byteValue()&lt;/code&gt;).
    *
@@ -1970,7 +2384,6 @@ double value = number.doubleValue();
       thrownew IllegalArgumentException("Argument must not be NaN or infinite.");
     returnnew Byte(number.byteValue());
   }
-
   /**
    * Converts the given number to a &lt;code&gt;Short&lt;/code&gt; (by using &lt;code&gt;shortValue()&lt;/code&gt;).
    *
@@ -1984,7 +2397,6 @@ double value = number.doubleValue();
       thrownew IllegalArgumentException("Argument must not be NaN or infinite.");
     returnnew Short(number.shortValue());
   }
-
   /**
    * Converts the given number to a &lt;code&gt;Integer&lt;/code&gt; (by using &lt;code&gt;intValue()&lt;/code&gt;).
    *
@@ -1998,7 +2410,6 @@ double value = number.doubleValue();
       thrownew IllegalArgumentException("Argument must not be NaN or infinite.");
     returnnewInteger(number.intValue());
   }
-
   /**
    * Converts the given number to a &lt;code&gt;Long&lt;/code&gt; (by using &lt;code&gt;longValue()&lt;/code&gt;).
    *
@@ -2012,7 +2423,6 @@ double value = number.doubleValue();
       thrownew IllegalArgumentException("Argument must not be NaN or infinite.");
     returnnew Long(number.longValue());
   }
-
   /**
    * Converts the given number to a &lt;code&gt;Float&lt;/code&gt; (by using &lt;code&gt;floatValue()&lt;/code&gt;).
    *
@@ -2021,7 +2431,6 @@ double value = number.doubleValue();
    */publicstatic Float toFloat(Number number) {
     return number == null || number instanceof Float ? (Float)number : new Float(number.floatValue());
   }
-
   /**
    * Converts the given number to a &lt;code&gt;Double&lt;/code&gt; (by using &lt;code&gt;doubleValue()&lt;/code&gt;).
    *
@@ -2030,7 +2439,6 @@ double value = number.doubleValue();
    */publicstatic Double toDouble(Number number) {
     return number == null || number instanceof Double ? (Double)number : new Double(number.doubleValue());
   }
-
   /**
    * Converts the given number to a &lt;code&gt;java.math.BigInteger&lt;/code&gt;.
    *
@@ -2049,7 +2457,6 @@ double value = number.doubleValue();
     } // =&gt; isLongCompatible(number) or unknown Number type
 return BigInteger.valueOf(number.longValue());
   }
-
   /**
    * Converts the given number to a &lt;code&gt;java.math.BigDecimal&lt;/code&gt;.
    *
@@ -2071,7 +2478,6 @@ return BigInteger.valueOf(number.longValue());
     // =&gt; unknown Number type
 returnnew BigDecimal(String.valueOf(number.doubleValue()));
   }
-
   /**
    * Compares the first number to the second one numerically and
    * returns an integer depending on the comparison result:
@@ -2113,9 +2519,7 @@ returnnew BigDecimal(String.valueOf(number.doubleValue()));
    */publicstaticint compare(Number first, Number second) throws ArithmeticException {
     if (first == null || second == null || isNaN(first) || isNaN(second))
       thrownew ArithmeticException("Arguments must not be null or NaN.");
-
     int result = -2;
-
     if (isLongCompatible(first) &amp;&amp; isLongCompatible(second)) {
       long v1 = first.longValue(), v2 = second.longValue();
       result = v1 &lt; v2 ? -1 : v1 == v2 ? 0 : v1 &gt; v2 ? 1 : 2;
@@ -2123,17 +2527,14 @@ returnnew BigDecimal(String.valueOf(number.doubleValue()));
       double v1 = first.doubleValue(), v2 = second.doubleValue();
       result = v1 &lt; v2 ? -1 : v1 == v2 ? 0 : v1 &gt; v2 ? 1 : 2;
     }
-
     if (result == 2)    // should not happen
 thrownew ArithmeticException("Arguments " + first + " and " + second + " are not comparable.");
     if (result &gt; -2)
       return result;
-
     if (isInfinite(first))    // =&gt; second is finite
 return first.doubleValue() == Double.NEGATIVE_INFINITY ? -1 : 1;
     if (isInfinite(second))   // =&gt; first is finite
 return second.doubleValue() == Double.POSITIVE_INFINITY ? -1 : 1;
-
     return toBigDecimal(first).compareTo(toBigDecimal(second));
   }
 }</code></pre></div>
@@ -2435,9 +2836,7 @@ public class NumberUtils {
 <h3 id="convert-a-string-date-such-as-20030110-into-a-javautildate-object">Convert a String Date Such as 2003/01/10 into a java.util.Date Object</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
 publicclass MainClass {
-
   publicstaticvoid main(String[] args) {
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
     String date = "2003/01/10";
@@ -2450,9 +2849,7 @@ publicclass MainClass {
     }
     System.out.println("date:" + date);
     System.out.println("utilDate:" + utilDate);
-
   }
-
 }</code></pre></div>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">date:2003/01/10
 utilDate:Fri Jan 10 00:00:00 PST 2003</code></pre></div>
@@ -2474,8 +2871,7 @@ public class MainClass {
     System.out.println("utilDate:" + utilDate);
   }
 }</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-date:2003/01/10
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">date:2003/01/10
 utilDate:Fri Jan 10 00:00:00 PST 2003</code></pre></div>
 <h3 id="convert-a-string-to-date">Convert a String to Date</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
@@ -2498,21 +2894,17 @@ public class Main {
     } catch (NumberFormatException ex) {
       ex.printStackTrace();
     }
-
   }
 }</code></pre></div>
 <h3 id="convert-biginteger-into-another-radix-number">Convert BigInteger into another radix number</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.math.BigInteger;
-
 publicclass Main {
   publicstaticvoid main(String[] args) {
     BigInteger number = new BigInteger("2008");
-
     System.out.println("Number      = " + number);
     System.out.println("Binary      = " + number.toString(2));
     System.out.println("Octal       = " + number.toString(8));
     System.out.println("Hexadecimal = " + number.toString(16));
-
     number = new BigInteger("FF", 16);
     System.out.println("Number      = " + number);
     System.out.println("Number      = " + number.toString(16));
@@ -2548,13 +2940,10 @@ publicclass Main {
  * @author Marc Prud'hommeaux
  * @nojavadoc
  */class Base16Encoder {
-
     privatefinalstaticchar[] HEX = newchar[]{
         '0', '1', '2', '3', '4', '5', '6', '7',
         '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
-
     /**
-     * Convert bytes to a base16 string.
      */publicstatic String encode(byte[] byteArray) {
         StringBuffer hexBuffer = new StringBuffer(byteArray.length * 2);
         for (int i = 0; i &lt; byteArray.length; i++)
@@ -2562,7 +2951,6 @@ publicclass Main {
                 hexBuffer.append(HEX[(byteArray[i] &gt;&gt; (j * 4)) &amp; 0xF]);
         return hexBuffer.toString();
     }
-
     /**
      * Convert a base16 string into a byte array.
      */publicstaticbyte[] decode(String s) {
@@ -2578,7 +2966,6 @@ publicclass Main {
                 digit2 -= '0';
             elseif (digit2 &gt;= 'A' &amp;&amp; digit2 &lt;= 'F')
                 digit2 -= 'A' - 10;
-
             r[i] = (byte) ((digit1 &lt;&lt; 4) + digit2);
         }
         return r;
@@ -2586,11 +2973,9 @@ publicclass Main {
 }</code></pre></div>
 <h3 id="convert-date-into-milliseconds-example">Convert Date into milliseconds example</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Date;
-
 publicclass Main {
   publicstaticvoid main(String args[]) {
     Date date = new Date();
-
     System.out.println("Date is : " + date);
     System.out.println("Milliseconds since January 1, 1970, 00:00:00 GMT : " + date.getTime());
   }
@@ -2601,23 +2986,17 @@ publicclass Main {
     int integer = 127;
     String binary = Integer.toBinaryString(integer);
     System.out.println("Binary value of " + integer + " is " + binary + ".");
-
     int original = Integer.parseInt(binary, 2);
     System.out.println("Integer value of binary '" + binary + "' is " + original + ".");
   }
-
 }</code></pre></div>
 <h3 id="convert-decimal-to-octal">Convert Decimal to Octal</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-
   publicstaticvoid main(String[] args) {
     int integer = 1024;
-
     String octal = Integer.toOctalString(integer);
-
     System.out.printf("Octal value of %d is '%s'.\n", integer, octal);
     System.out.printf("Octal value of %1$d is '%1$o'.\n", integer);
-
     int original = Integer.parseInt(octal, 8);
     System.out.printf("Integer value of octal '%s' is %d.", octal, original);
   }
@@ -2653,13 +3032,10 @@ publicclass Main {
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */publicclass ToStringDemo {
-
   publicstaticvoid main(String[] args) {
     double d = 858.48;
     String s = Double.toString(d);
-
     int dot = s.indexOf('.');
-
     System.out.println(dot + " digits before decimal point.");
     System.out.println((s.length() - dot - 1) + " digits after decimal point.");
   }
@@ -2673,13 +3049,11 @@ publicclass Main {
     System.out.println("sqlDate:" + sqlDate);
   }
 }</code></pre></div>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-utilDate:Fri Feb 02 12:55:46 PST 2007
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">utilDate:Fri Feb 02 12:55:46 PST 2007
 sqlDate:2007-02-02</code></pre></div>
 <h3 id="convert-from-decimal-to-binary">Convert from decimal to binary</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
-
     int i = 42;
     String bin = Integer.toBinaryString(i);
     System.out.println(bin);
@@ -2694,7 +3068,6 @@ sqlDate:2007-02-02</code></pre></div>
     System.out.println(hexstr);
     hexstr = Integer.toHexString(i);
     System.out.println(hexstr);
-
   }
 }
 /*
@@ -2704,15 +3077,22 @@ sqlDate:2007-02-02</code></pre></div>
 <h3 id="convert-from-double-to-string">Convert from double to String</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
-
     String str = Double.toString(23);
   }
 }</code></pre></div>
 <h3 id="convert-from-string-to-double">Convert from String to double</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
-
     Double d = Double.valueOf("0.9D").doubleValue();
+  }
+}</code></pre></div>
+<h3 id="convert-from-string-to-integer">Convert from String to integer</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] args) throws Exception {
+    String str = "25";
+    int i = Integer.valueOf(str).intValue();
+    // or
+    i = Integer.parseInt(str);
   }
 }</code></pre></div>
 <h3 id="convert-from-string-to-long">Convert from String to long</h3>
@@ -2740,7 +3120,6 @@ sqlDate:2007-02-02</code></pre></div>
     // Convert using constructor
     Boolean blnObj1 = new Boolean(str);
     System.out.println(blnObj1);
-
     // Use valueOf method of Boolean class. This is a static method.
     Boolean blnObj2 = Boolean.valueOf(str);
     System.out.println(blnObj2);
@@ -2748,13 +3127,10 @@ sqlDate:2007-02-02</code></pre></div>
 }</code></pre></div>
 <h3 id="convert-java-string-to-double">Convert Java String to Double</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-
   publicstaticvoid main(String[] args) {
     Double dObj1 = new Double("100.564");
     System.out.println(dObj1);
-
     Double dObj2 = Double.valueOf("10.6");
-
     System.out.println(dObj2);
     double d = Double.parseDouble("76.39");
     System.out.println(d);
@@ -2762,14 +3138,11 @@ sqlDate:2007-02-02</code></pre></div>
 }</code></pre></div>
 <h3 id="convert-java-string-to-float-object">Convert Java String to Float Object</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-
   publicstaticvoid main(String[] args) {
     Float fObj1 = new Float("10.64");
     System.out.println(fObj1);
-
     Float fObj2 = Float.valueOf("10.76");
     System.out.println(fObj2);
-
     float f = Float.parseFloat("7.39");
     System.out.println(f);
   }
@@ -2784,7 +3157,6 @@ sqlDate:2007-02-02</code></pre></div>
   publicstaticvoid main(String[] args) {
     Long lObj1 = new Long("100");
     System.out.println(lObj1);
-
     String str = "100";
     Long lObj2 = Long.valueOf(str);
     System.out.println(lObj2);
@@ -2851,9 +3223,7 @@ public class MathUtils {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
   publicstaticvoid main(String[] args) {
     String strOctalNumber = "33";
-
     int decimalNumber = Integer.parseInt(strOctalNumber, 8);
-
     System.out.println(decimalNumber);
   }
 }
@@ -2922,14 +3292,11 @@ public class MathUtils {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     String time = "15:30:18";
-
     DateFormat sdf = new SimpleDateFormat("hh:mm:ss");
     Date date = sdf.parse(time);
-
     System.out.println("Date and Time: " + date);
   }
 }</code></pre></div>
@@ -2949,20 +3316,16 @@ public class Main {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
     publicstaticvoid main(String[] args) {
         String strBoolean = "true";
-
         //String to boolean conversion
 boolean theValue = Boolean.parseBoolean(strBoolean);
-
         System.out.println(theValue);
     }
 }
 //true</code></pre></div>
 <h3 id="convert-string-to-short-primitive">Convert String to short primitive</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
-
   publicstaticvoid main(String[] args) {
     short s = Short.parseShort("10");
-
     System.out.println(s);
   }
 }</code></pre></div>
@@ -2979,29 +3342,21 @@ import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Properties;
-
 /*
-
    Derby - Class org.apache.derby.iapi.util.PropertyUtil
-
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
    this work for additional information regarding copyright ownership.
    The ASF licenses this file to you under the Apache License, Version 2.0
    (the "License"); you may not use this file except in compliance with
    the License.  You may obtain a copy of the License at
-
       http://www.apache.org/licenses/LICENSE-2.0
-
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
  */publicclass Main {
-
-  /** Convert string to uppercase
    * Always use the java.util.ENGLISH locale
    * @param s   string to uppercase
    * @return uppercased string
@@ -3009,7 +3364,6 @@ import java.util.Properties;
   {
       return s.toUpperCase(Locale.ENGLISH);
   }
-
 }</code></pre></div>
 <h3 id="convert-string-to-uppercase-1">Convert string to uppercase</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.IOException;
@@ -3073,16 +3427,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.Collection;
-
 /**
  * General string utils
  */publicclass StringUtils {
-
   finalpublicstaticchar COMMA = ',';
   finalpublicstatic String COMMA_STR = ",";
   finalpublicstaticchar ESCAPE_CHAR = '\\';
   privatestatic DecimalFormat oneDecimal = new DecimalFormat("0.0");
-
   /**
    * Given an array of bytes it will convert the bytes to a hex string
    * representation of the bytes
@@ -3156,14 +3507,10 @@ public class StringUtils {
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.sql.Date;
 import java.text.ParseException;
 import java.util.Calendar;
-
 publicclass MainClass {
-
   publicstaticvoid main(String[] args) throws ParseException {
-
     Calendar currenttime = Calendar.getInstance();
     Date sqldate = new Date((currenttime.getTime()).getTime());
-
   }
 }</code></pre></div>
 <h3 id="convert-the-current-time-to-a-javasqldate-object-1">Convert the Current Time to a java.sql.Date Object</h3>
@@ -3174,6 +3521,62 @@ public class MainClass {
   public static void main(String[] args) throws ParseException {
     Calendar currenttime = Calendar.getInstance();
     Date sqldate = new Date((currenttime.getTime()).getTime());
+  }
+}</code></pre></div>
+<h3 id="use-floatvalueof-to-convert-string-value-to-float">Use Float.valueOf to convert string value to float</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright (c) 1995 - 2008 Sun Microsystems, Inc.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   - Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   - Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in the
+ *     documentation and/or other materials provided with the distribution.
+ *
+ *   - Neither the name of Sun Microsystems nor the names of its
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+ * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */publicclass ValueOfDemo {
+  publicstaticvoid main(String[] args) {
+    // this program requires two arguments on the command line
+if (args.length == 2) {
+      // convert strings to numbers
+float a = (Float.valueOf(args[0])).floatValue();
+      float b = (Float.valueOf(args[1])).floatValue();
+      // do some arithmetic
+      System.out.println("a + b = " + (a + b));
+      System.out.println("a - b = " + (a - b));
+      System.out.println("a * b = " + (a * b));
+      System.out.println("a / b = " + (a / b));
+      System.out.println("a % b = " + (a % b));
+    } else {
+      System.out.println("This program requires two command-line arguments.");
+    }
+  }
+}</code></pre></div>
+<h3 id="use-tostring-method-of-long-class-to-convert-long-into-string">Use toString method of Long class to convert Long into String.</h3>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">publicclass Main {
+  publicstaticvoid main(String[] args) {
+    Long lObj = new Long(10);
+    String str = lObj.toString();
+    System.out.println("Long converted to String as " + str);
   }
 }</code></pre></div>
 <h3 id="use-tostring-method-of-short-class-to-convert-short-into-string">Use toString method of Short class to convert Short into String.</h3>
@@ -3214,15 +3617,8 @@ public class MainClass {
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

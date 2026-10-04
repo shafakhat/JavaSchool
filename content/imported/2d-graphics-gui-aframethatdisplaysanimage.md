@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1018
 source: https://web.archive.org/web/20091206070315/http://www.java2s.com:80/Code/Java/2D-Graphics-GUI/Aframethatdisplaysanimage.htm
 ---
-A frame that displays an image
-
 ```java title=Example.java
 /*
  * @(#)ImageFrame.java    0.90 9/19/00 Adam Doppelt

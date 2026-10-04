@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1037
 source: https://web.archive.org/web/20090328193128/http://www.java2s.com:80/Code/Java/J2EE/SetCacheMode.htm
 ---
-Set Cache Mode
-
 ```java title=Example.java
 File: Account.xml
 <?xml version="1.0" encoding="UTF-8" ?>

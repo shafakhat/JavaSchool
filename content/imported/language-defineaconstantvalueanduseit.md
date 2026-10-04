@@ -22,7 +22,6 @@ public class MainClass {
 ```
 
 ```java title=Example.java
-
 3
 25.4
 ```

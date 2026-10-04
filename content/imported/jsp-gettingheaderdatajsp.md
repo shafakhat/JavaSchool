@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1052
 source: https://web.archive.org/web/20070308130935/http://www.java2s.com:80/Code/Java/JSP/GettingHeaderDataJsp.htm
 ---
-Getting Header Data Jsp
-
 ```java title=Example.java
 //File: index.html
 <HTML>

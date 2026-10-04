@@ -47,7 +47,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The following code illustrates how to use the Adler32 and CRC32 classes to compute checksums.</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.zip.Adler32;
 import java.util.zip.CRC32;
-//www.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     String str = "HELLO";
     byte[] data = str.getBytes("UTF-8");
@@ -70,12 +70,10 @@ import java.util.zip.CRC32;
 <p>We can specify the compression level using one of the constants in the Deflater class.</p>
 <p>Those constant are BEST_COMPRESSION, BEST_ SPEED, DEFAULT_COMPRESSION, and NO_COMPRESSION.</p>
 <p>The best speed means lower compression ratio and the best compression means slower compression speed.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-Deflater  compressor = new Deflater(Deflater.BEST_COMPRESSION);</code></pre></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">Deflater  compressor = new Deflater(Deflater.BEST_COMPRESSION);</code></pre></div>
 <p>By default, the compressed data using the Deflater object will be in the ZLIB format.</p>
 <p>To compress data in GZIP or PKZIP format, specify that by using the boolean flag as true in the constructor.</p>
-<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">
-// Uses  the   best speed  compression and  GZIP format
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">// Uses  the   best speed  compression and  GZIP format
 Deflater  compressor = new Deflater(Deflater.BEST_SPEED, true);</code></pre></div>
 <p>The following code shows how to do Compressing and Decompressing a byte Array Using Deflater and the Inflater classes</p>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.ByteArrayOutputStream;
@@ -83,7 +81,7 @@ import java.io.IOException;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
-//fromwww.java2s.compublicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) throws Exception {
     String input = "Hello world!";
     byte[] uncompressedData = input.getBytes("UTF-8");
@@ -141,15 +139,8 @@ import java.util.zip.Inflater;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

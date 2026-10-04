@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1129
 source: https://web.archive.org/web/20090106051326/http://www.java2s.com:80/Code/Java/Class/Anamedinnerclassisusedto.htm
 ---
-A named inner class is used to
-
 ```java title=Example.java
 /** Demonstrate inner-inner class. A named inner class
  * is used to show that it can access non-local variables

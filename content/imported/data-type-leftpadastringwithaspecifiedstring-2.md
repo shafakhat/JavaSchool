@@ -3,8 +3,8 @@ title: Left pad a String with a specified String.
 nav: Left pad a String with a s...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1057
-source: https://web.archive.org/web/20100412210115/http://java2s.com:80/Tutorial/Java/0040__Data-Type/LeftpadaStringwithaspecifiedString.htm
+order: 1035
+source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/LeftpadaStringwithaspecifiedString.htm
 ---
 ```java title=Example.java
 /*
@@ -24,12 +24,10 @@ source: https://web.archive.org/web/20100412210115/http://java2s.com:80/Tutorial
  *  limitations under the License.
  *
  *
- */
-public class Main {
+ */publicclass Main {
   /**
    * The maximum size to which the padding constant(s) can expand.
-   */
-  private static final int PAD_LIMIT = 8192;
+   */privatestaticfinalint PAD_LIMIT = 8192;
   /**
    * Left pad a String with a specified character.
    *
@@ -50,8 +48,7 @@ public class Main {
    * @return left padded String or original String if no padding is necessary,
    *  <code>null</code> if null String input
    * @since 2.0
-   */
-  public static String leftPad(String str, int size, char padChar) {
+   */publicstatic String leftPad(String str, int size, char padChar) {
       if (str == null) {
           return null;
       }
@@ -65,7 +62,6 @@ public class Main {
       return padding(pads, padChar).concat(str);
   }
   /**
-   * Left pad a String with a specified String.
    *
    * Pad to a size of <code>size</code>.
    *
@@ -86,8 +82,7 @@ public class Main {
    * @param padStr  the String to pad with, null or empty treated as single space
    * @return left padded String or original String if no padding is necessary,
    *  <code>null</code> if null String input
-   */
-  public static String leftPad(String str, int size, String padStr) {
+   */publicstatic String leftPad(String str, int size, String padStr) {
       if (str == null) {
           return null;
       }
@@ -105,15 +100,15 @@ public class Main {
       }
       if (pads == padLen) {
           return padStr.concat(str);
-      } else if (pads < padLen) {
+      } elseif (pads < padLen) {
           return padStr.substring(0, pads).concat(str);
       } else {
-          char[] padding = new char[pads];
+          char[] padding = newchar[pads];
           char[] padChars = padStr.toCharArray();
           for (int i = 0; i < pads; i++) {
               padding[i] = padChars[i % padLen];
           }
-          return new String(padding).concat(str);
+          returnnew String(padding).concat(str);
       }
   }
   /**
@@ -138,20 +133,19 @@ public class Main {
    * @return String with repeated character
    * @throws IndexOutOfBoundsException if <code>repeat &lt; 0</code>
    * @see #repeat(String, int)
-   */
-  private static String padding(int repeat, char padChar) throws IndexOutOfBoundsException {
+   */privatestatic String padding(int repeat, char padChar) throws IndexOutOfBoundsException {
       if (repeat < 0) {
-          throw new IndexOutOfBoundsException("Cannot pad a negative amount: " + repeat);
+          thrownew IndexOutOfBoundsException("Cannot pad a negative amount: " + repeat);
       }
-      final char[] buf = new char[repeat];
+      finalchar[] buf = newchar[repeat];
       for (int i = 0; i < buf.length; i++) {
           buf[i] = padChar;
       }
-      return new String(buf);
+      returnnew String(buf);
   }
   // Empty checks
-  //-----------------------------------------------------------------------
-  /**
+//-----------------------------------------------------------------------
+/**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -168,8 +162,7 @@ public class Main {
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */
-  public static boolean isEmpty(String str) {
+   */publicstaticboolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }

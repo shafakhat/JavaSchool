@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1017
 source: https://web.archive.org/web/20061018181032/http://www.java2s.com/Code/Java/Apache-Common/CollectionBidiMap.htm
 ---
-Collection BidiMap
-
 ```java title=Example.java
 import org.apache.commons.collections.BidiMap;
 import org.apache.commons.collections.bidimap.DualHashBidiMap;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20100201080251/http://java2s.com/Code/Java/Collections-Data-Structure/Addsalltheelementsofthegivenarraysintoanewbooleanvaluearray.htm
 ---
-Adds all the elements of the given arrays into a new boolean-value array.
-
 ```java title=Example.java
 /*   Copyright 2004 The Apache Software Foundation
  *

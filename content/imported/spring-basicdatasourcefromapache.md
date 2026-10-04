@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1022
 source: https://web.archive.org/web/20090422032120/http://www.java2s.com:80/Code/Java/Spring/BasicDataSourcefromapache.htm
 ---
-BasicDataSource from apache
-
 ```java title=Example.java
 File: EmployeeDaoImpl.java
 import java.sql.ResultSet;

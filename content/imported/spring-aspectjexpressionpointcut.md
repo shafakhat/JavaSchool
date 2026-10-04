@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1020
 source: https://web.archive.org/web/20081208084510/http://www.java2s.com:80/Code/Java/Spring/AspectJExpressionPointcut.htm
 ---
-AspectJ Expression Pointcut
-
 ```java title=Example.java
 File: Main.java
 import org.springframework.aop.Advisor;

@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1092
 source: https://web.archive.org/web/20130820190817/http://java2s.com/Code/Java/JDK-7/MaintaininguserdefinedfileattributesusingtheUserDefinedFileAttributeView.htm
 ---
-Maintaining user defined file attributes using the UserDefinedFileAttributeView
-
 ```java title=Example.java
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;

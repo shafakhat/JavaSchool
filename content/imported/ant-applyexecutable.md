@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1032
 source: https://web.archive.org/web/20091018053950/http://www.java2s.com:80/Code/Java/Ant/Applyexecutable.htm
 ---
-Apply executable
-
 ```java title=Example.java
 //COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0
 <project name="ajax4jsf" default="distribute">

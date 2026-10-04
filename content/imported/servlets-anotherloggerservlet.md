@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1001
 source: https://web.archive.org/web/20061104062930/http://www.java2s.com:80/Code/Java/Servlets/Anotherloggerservlet.htm
 ---
-Another logger servlet
-
 ```java title=Example.java
 //Log4j from Apache is required
 import org.apache.log4j.Logger;

@@ -45,7 +45,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The following methods sort the specified array into ascending numerical order.</p>
 <ul><li>static void sort(byte[] a)</li><li>static void sort(byte[] a, int fromIndex, int toIndex)</li><li>static void sort(char[] a)</li><li>static void sort(char[] a, int fromIndex, int toIndex)</li><li>static void sort(double[] a)</li><li>static void sort(double[] a, int fromIndex, int toIndex)</li><li>static void sort(float[] a)</li><li>static void sort(float[] a, int fromIndex, int toIndex)</li><li>static void sort(int[] a)</li><li>static void sort(int[] a, int fromIndex, int toIndex)</li><li>static void sort(long[] a)</li><li>static void sort(long[] a, int fromIndex, int toIndex)</li><li>static void sort(Object[] a)</li><li>static void sort(Object[] a, int fromIndex, int toIndex)</li><li>static void sort(short[] a)</li><li>static void sort(short[] a, int fromIndex, int toIndex)</li><li>static&lt;T&gt; void sort(T[] a, Comparator&lt;? super T&gt; c)</li><li>static&lt;T&gt; void sort(T[] a, int fromIndex, int toIndex, Comparator&lt;? super T&gt; c)</li></ul>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-/*fromjava2s.com*/publicclass Main{
+publicclass Main{
   publicstaticvoid main(String args[]) {
     int array[] = newint[10];
     for (int i = 0; i &lt; 10; i++){
@@ -61,7 +61,7 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <p>The output:</p>
 <h3 id="sort-string-type-array-in-case-insensitive-order-and-case-sensitive-order">Sort string type array in case insensitive order and case sensitive order</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
-/*fromjava2s.com*/publicclass Main {
+publicclass Main {
   publicstaticvoid main(String[] args) {
     String[] teams = new String[5];
     teams[0] = "M";
@@ -69,23 +69,19 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     teams[2] = "A";
     teams[3] = "l";
     teams[4] = "E";
-
     Arrays.sort(teams);
     System.out.println(Arrays.toString(teams));
-
     Arrays.sort(teams, String.CASE_INSENSITIVE_ORDER);
     System.out.println(Arrays.toString(teams));
-
     Arrays.sort(teams);
     System.out.println(Arrays.toString(teams));
-
   }
 }</code></pre></div>
 <p>The code above generates the following result.</p>
 <h3 id="sort-an-array-in-descending-reverse-order">Sort an Array in Descending (Reverse) Order</h3>
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
 import java.util.Collections;
-//fromjava2s.compublicclass Main {
+publicclass Main {
     publicstaticvoid main(String[] args) {
         Integer[] arrayToSort = newInteger[] {
             newInteger(5),
@@ -93,9 +89,7 @@ import java.util.Collections;
             newInteger(16),
             newInteger(2)
         };
-
         Arrays.sort(arrayToSort, Collections.reverseOrder());
-
         for (Integer i : arrayToSort) {
             System.out.println(i.intValue());
         }
@@ -115,15 +109,8 @@ import java.util.Collections;
       <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
     </div>
     <div class="footer-col">
-      <h4>Tutorial</h4>
-      <a href="intro.html">Java Introduction</a><a href="variables.html">Variables</a><a href="strings.html">Strings</a><a href="classes-objects.html">Classes and Objects</a><a href="collections.html">Collections</a><a href="exceptions.html">Exceptions</a><a href="quiz.html">Java Quiz</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="keywords.html">Java Keywords</a>
-      <a href="string-methods.html">String Methods</a>
-      <a href="java-api.html">Useful Java Classes</a>
-      <a href="how-java-works.html">How Java Works</a>
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
     </div>
   </div>
   <div class="footer-bottom">

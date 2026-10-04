@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1054
 source: https://web.archive.org/web/20090422105832/http://www.java2s.com:80/Code/Java/JPA/InheritanceResultMapping.htm
 ---
-Inheritance Result Mapping
-
 ```java title=Example.java
 File: ContractProfessor.java
 import javax.persistence.Column;

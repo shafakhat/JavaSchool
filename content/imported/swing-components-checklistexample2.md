@@ -8,8 +8,6 @@ source: https://web.archive.org/web/20060505214156/http://www.java2s.com:80/Code
 ---
 Check List Example 2 : Java examples (example source code) » Swing Components » List
 
-Check List Example 2
-
 ```java title=Example.java
 // Example from http://www.crionics.com/products/opensource/faq/swing_ex/SwingExamples.html
 //File:CheckListExample2.java

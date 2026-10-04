@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1029
 source: https://web.archive.org/web/20090502105248/http://www.java2s.com:80/Code/Java/Database-SQL-JDBC/Callastoredprocedurewithnoparametersandreturnvalue.htm
 ---
-Call a stored procedure with no parameters and return value.
-
 ```java title=Example.java
 import java.sql.CallableStatement;
 import java.sql.Connection;

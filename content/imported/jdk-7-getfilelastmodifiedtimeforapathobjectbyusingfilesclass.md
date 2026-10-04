@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1058
 source: https://web.archive.org/web/20130111100555/http://www.java2s.com:80/Code/Java/JDK-7/GetfilelastmodifiedtimeforapathobjectbyusingFilesclass.htm
 ---
-Get file last modified time for a path object by using Files class
-
 ```java title=Example.java
 import java.nio.file.Files;
 import java.nio.file.Path;

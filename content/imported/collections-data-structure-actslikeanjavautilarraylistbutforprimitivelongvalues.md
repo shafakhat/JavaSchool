@@ -6,8 +6,6 @@ section: Imported - java2s Archive
 order: 1011
 source: https://web.archive.org/web/20111115124906/http://www.java2s.com:80/Code/Java/Collections-Data-Structure/ActslikeanjavautilArrayListbutforprimitivelongvalues.htm
 ---
-Acts like an java.util.ArrayList but for primitive long values
-
 ```java title=Example.java
 /*
  * LongList.java Created Aug 3, 2010 by Andrew Butler, PSL
