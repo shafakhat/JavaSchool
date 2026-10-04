@@ -57,7 +57,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  *  limitations under the License.
  *
  *
- */publicclass Main {
+ */
+public class Main {
   /**
    *
    * @param a first value
@@ -66,7 +67,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @throws ArithmeticException if the result can not be represented as an
    *         long
    * @since 1.2
-   */publicstaticlong mulAndCheck(long a, long b) {
+   */
+  public static long mulAndCheck(long a, long b) {
       long ret;
       String msg = "overflow: multiply";
       if (a &gt; b) {
@@ -76,30 +78,30 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
           if (a &lt; 0) {
               if (b &lt; 0) {
                   // check for positive overflow with negative a, negative b
-if (a &gt;= Long.MAX_VALUE / b) {
+                  if (a &gt;= Long.MAX_VALUE / b) {
                       ret = a * b;
                   } else {
-                      thrownew ArithmeticException(msg);
+                      throw new ArithmeticException(msg);
                   }
-              } elseif (b &gt; 0) {
+              } else if (b &gt; 0) {
                   // check for negative overflow with negative a, positive b
-if (Long.MIN_VALUE / b &lt;= a) {
+                  if (Long.MIN_VALUE / b &lt;= a) {
                       ret = a * b;
                   } else {
-                      thrownew ArithmeticException(msg);
+                      throw new ArithmeticException(msg);
                   }
               } else {
                   // assert b == 0
                   ret = 0;
               }
-          } elseif (a &gt; 0) {
+          } else if (a &gt; 0) {
               // assert a &gt; 0
-// assert b &gt; 0
-// check for positive overflow with positive a, positive b
-if (a &lt;= Long.MAX_VALUE / b) {
+              // assert b &gt; 0
+              // check for positive overflow with positive a, positive b
+              if (a &lt;= Long.MAX_VALUE / b) {
                   ret = a * b;
               } else {
-                  thrownew ArithmeticException(msg);
+                  throw new ArithmeticException(msg);
               }
           } else {
               // assert a == 0
@@ -109,7 +111,8 @@ if (a &lt;= Long.MAX_VALUE / b) {
       return ret;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="jstl-jstlparsexmldocument.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">JSTL</span></a><a class="pager-btn pager-next" href="data-type-onlyreplacefirstoccurence.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Only replace first occurence</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.8.1.</th><th>Long Integer Literal</th></tr></thead><tbody><tr><td>2.8.2.</td><td>Create a Long object</td></tr><tr><td>2.8.3.</td><td>Add two long integers, checking for overflow.</td></tr><tr><td>2.8.4.</td><td>Multiply two long integers, checking for overflow.</td></tr><tr><td>2.8.5.</td><td>Subtract two long integers, checking for overflow.</td></tr><tr><td>2.8.6.</td><td>Convert Long to numeric primitive data types example</td></tr><tr><td>2.8.7.</td><td>Convert long primitive to Long object Example</td></tr><tr><td>2.8.8.</td><td>Compute distance light travels using long variables</td></tr><tr><td>2.8.9.</td><td>Java long Example: long is 64 bit signed type</td></tr><tr><td>2.8.10.</td><td>Min and Max values of datatype long</td></tr><tr><td>2.8.11.</td><td>Gets the maximum of three long values.</td></tr><tr><td>2.8.12.</td><td>Gets the minimum of three long values.</td></tr><tr><td>2.8.13.</td><td>Convert Java String to Long example</td></tr><tr><td>2.8.14.</td><td>Use toString method of Long class to convert Long into String.</td></tr><tr><td>2.8.15.</td><td>Convert from long to String</td></tr><tr><td>2.8.16.</td><td>Convert from String to long</td></tr><tr><td>2.8.17.</td><td>A utility class for converting a long into a human readable string.</td></tr><tr><td>2.8.18.</td><td>Java Sort long Array Example</td></tr><tr><td>2.8.19.</td><td>Compare Two Java long Arrays Example</td></tr><tr><td>2.8.20.</td><td>Format long with System.out.format</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="class-definition-methodsacceptingavariablenumberofobjects.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Methods Accepting a Variab...</span></a><a class="pager-btn pager-next" href="color-color-getcolor-string-nm-int-v.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Swing Tutorial - Java...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

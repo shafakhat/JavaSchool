@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finds the index of the given object in the array starting at the given index. - JavaSchool</title>
+<meta name="description" content="Finds the index of the given object in the array starting at the given index.: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-findstheindexofthegivenobjectinthearraystartingatthegivenindex">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-collections.html">Collections</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-08-array-sort-search.html">Array Sort Search</a></nav>
+    <h1>Finds the index of the given object in the array starting at the given index.</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*   Copyright 2004 The Apache Software Foundation
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+import java.lang.reflect.Array;
+/**
+ * Operations on arrays, primitive arrays (like &lt;code&gt;int[]&lt;/code&gt;) and
+ * primitive wrapper arrays (like &lt;code&gt;Integer[]&lt;/code&gt;).
+ *
+ * This class tries to handle &lt;code&gt;null&lt;/code&gt; input gracefully.
+ * An exception will not be thrown for a &lt;code&gt;null&lt;/code&gt;
+ * array input. However, an Object array that contains a &lt;code&gt;null&lt;/code&gt;
+ * element may throw an exception. Each method documents its behaviour.
+ *
+ * @author Stephen Colebourne
+ * @author Moritz Petersen
+ * @author &lt;a href="mailto:fredrik@westermarck.com"&gt;Fredrik Westermarck&lt;/a&gt;
+ * @author Nikolay Metchev
+ * @author Matthew Hawthorne
+ * @author Tim O'Brien
+ * @author Pete Gieser
+ * @author Gary Gregory
+ * @author &lt;a href="mailto:equinus100@hotmail.com"&gt;Ashwin S&lt;/a&gt;
+ * @author Maarten Coene
+ * @since 2.0
+ * @version $Id: ArrayUtils.java 632503 2008-03-01 00:21:52Z ggregory $
+ */
+public class Main {
+  /**
+   *
+   * This method returns {@link #INDEX_NOT_FOUND} (&lt;code&gt;-1&lt;/code&gt;) for a &lt;code&gt;null&lt;/code&gt; input array.
+   *
+   * A negative startIndex is treated as zero. A startIndex larger than the array
+   * length will return {@link #INDEX_NOT_FOUND} (&lt;code&gt;-1&lt;/code&gt;).
+   *
+   * @param array  the array to search through for the object, may be &lt;code&gt;null&lt;/code&gt;
+   * @param objectToFind  the object to find, may be &lt;code&gt;null&lt;/code&gt;
+   * @param startIndex  the index to start searching at
+   * @return the index of the object within the array starting at the index,
+   *  {@link #INDEX_NOT_FOUND} (&lt;code&gt;-1&lt;/code&gt;) if not found or &lt;code&gt;null&lt;/code&gt; array input
+   */
+  public static int indexOf(Object[] array, Object objectToFind, int startIndex) {
+      if (array == null) {
+          return -1;
+      }
+      if (startIndex &lt; 0) {
+          startIndex = 0;
+      }
+      if (objectToFind == null) {
+          for (int i = startIndex; i &lt; array.length; i++) {
+              if (array[i] == null) {
+                  return i;
+              }
+          }
+      } else {
+          for (int i = startIndex; i &lt; array.length; i++) {
+              if (objectToFind.equals(array[i])) {
+                  return i;
+              }
+          }
+      }
+      return -1;
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>9.8.1.</th><th>Sorting Arrays</th></tr></thead><tbody><tr><td>9.8.2.</td><td>Sorting a subset of array elements</td></tr><tr><td>9.8.3.</td><td>Sorting arrays of objects</td></tr><tr><td>9.8.4.</td><td>Object Arrays: Searching for elements in a sorted object array</td></tr><tr><td>9.8.5.</td><td>Searching Arrays</td></tr><tr><td>9.8.6.</td><td>Finds the index of the given object in the array starting at the given index.</td></tr><tr><td>9.8.7.</td><td>Finds the index of the given object in the array.</td></tr><tr><td>9.8.8.</td><td>Finds the last index of the given object in the array starting at the given index.</td></tr><tr><td>9.8.9.</td><td>Finds the value in the range (start,limit) of the largest element (rank) where the count of all smaller elements in that range is less than or equals target.</td></tr><tr><td>9.8.10.</td><td>Returns an index into arra (or -1) where the character is not in the charset byte array.</td></tr><tr><td>9.8.11.</td><td>Returns an int[] array of length segments containing the distribution count of the elements in unsorted int[] array with values between min and max (range).</td></tr><tr><td>9.8.12.</td><td>Returns the minimum value in an array.</td></tr><tr><td>9.8.13.</td><td>Returns true if all the references in array1 are equal to all the references in array2 (two null references are considered equal for this test).</td></tr><tr><td>9.8.14.</td><td>Get the element index or last index among a boolean type array</td></tr><tr><td>9.8.15.</td><td>Produces a new array containing the elements between the start and end indices.</td></tr><tr><td>9.8.16.</td><td>Test the equality of two object arrays</td></tr><tr><td>9.8.17.</td><td>Get the index and last index of an int type value array</td></tr><tr><td>9.8.18.</td><td>FastQSorts the [l,r] partition (inclusive) of the specfied array of Rows, using the comparator.</td></tr><tr><td>9.8.19.</td><td>Sort array utilities</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="collections-arraysofstringsusingnewoperator.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Arrays of Strings</span></a><a class="pager-btn pager-next" href="collections-findstheindexofthegivenobjectinthearray.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Finds the index of the giv...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

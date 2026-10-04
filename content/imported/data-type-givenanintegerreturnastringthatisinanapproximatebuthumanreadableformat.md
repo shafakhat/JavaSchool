@@ -3,8 +3,8 @@ title: Given an integer, return a string that is in an approximate, but human re
 nav: Given an integer, return a...
 description: * or more contributor license agreements. See the NOTICE file
 section: Imported - java2s Archive
-order: 1006
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Givenanintegerreturnastringthatisinanapproximatebuthumanreadableformat.htm
+order: 1180
+source: https://web.archive.org/web/20140829092053/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Givenanintegerreturnastringthatisinanapproximatebuthumanreadableformat.htm
 ---
 ```java title=Example.java
 /**
@@ -23,7 +23,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */import java.io.PrintWriter;
+ */
+import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.InetAddress;
 import java.net.URI;
@@ -39,7 +40,8 @@ import java.util.StringTokenizer;
 import java.util.Collection;
 /**
  * General string utils
- */public class StringUtils {
+ */
+public class StringUtils {
   final public static char COMMA = ',';
   final public static String COMMA_STR = ",";
   final public static char ESCAPE_CHAR = '\\';
@@ -50,7 +52,8 @@ import java.util.Collection;
    * It uses the bases 'k', 'm', and 'g' for 1024, 1024**2, and 1024**3.
    * @param number the number to format
    * @return a human readable form of the integer
-   */ public static String humanReadableInt(long number) {
+   */
+  public static String humanReadableInt(long number) {
     long absNumber = Math.abs(number);
     double result = number;
     String suffix = "";
@@ -70,3 +73,17 @@ import java.util.Collection;
   }
 }
 ```
+
+| 2.3.1. | Integer Data Types in Java: memory and length |
+|---|---|
+| 2.3.2. | Integer Calculations |
+| 2.3.3. | Add two integers, checking for overflow. |
+| 2.3.4. | Multiply two integers, checking for overflow. |
+| 2.3.5. | Subtract two integers, checking for overflow. |
+| 2.3.6. | Binary and Decimal value table |
+| 2.3.7. | Min and Max values of datatype int |
+| 2.3.8. | Hexadecimal Numbers and its corresponding Decimal and binary value |
+| 2.3.9. | Gets the maximum of three int values. |
+| 2.3.10. | Gets the minimum of three int values. |
+| 2.3.11. | Given an integer, return a string that is in an approximate, but human readable format |
+| 2.3.12. | int array to byte array |

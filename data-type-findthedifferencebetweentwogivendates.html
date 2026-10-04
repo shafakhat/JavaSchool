@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Find the Difference Between Two Given Dates - JavaSchool</title>
-<meta name="description" content="publicstatic Date makeDate(String dateString) throws Exception {">
+<meta name="description" content="public static Date makeDate(String dateString) throws Exception {">
 <meta name="generator" content="build.py (JavaSchool)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
@@ -42,8 +42,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
 <div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-publicclass MainClass {
-  publicstaticint diff(Date date1, Date date2) {
+public class MainClass {
+  public static int diff(Date date1, Date date2) {
     Calendar c1 = Calendar.getInstance();
     Calendar c2 = Calendar.getInstance();
     c1.setTime(date1);
@@ -56,11 +56,11 @@ publicclass MainClass {
     }
     return diffDay;
   }
-  publicstaticvoid DateDiff(Date date1, Date date2) {
+  public static void DateDiff(Date date1, Date date2) {
     int diffDay = diff(date1, date2);
     System.out.println("Different Day : " + diffDay);
   }
-  publicstaticint countDiffDay(Calendar c1, Calendar c2) {
+  public static int countDiffDay(Calendar c1, Calendar c2) {
     int returnInt = 0;
     while (!c1.after(c2)) {
       c1.add(Calendar.DAY_OF_MONTH, 1);
@@ -71,11 +71,11 @@ publicclass MainClass {
     }
     return (returnInt);
   }
-  publicstatic Date makeDate(String dateString) throws Exception {
+  public static Date makeDate(String dateString) throws Exception {
     SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
     return formatter.parse(dateString);
   }
-  publicstaticvoid main(String argv[]) throws Exception {
+  public static void main(String argv[]) throws Exception {
     Calendar cc1 = Calendar.getInstance();
     Calendar cc2 = Calendar.getInstance();
     cc1.add(Calendar.DAY_OF_MONTH, 10);
@@ -89,7 +89,8 @@ publicclass MainClass {
     System.out.println("diff34=" + diff34);
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="j2ee-exercise6paging.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Exercise 6</span></a><a class="pager-btn pager-next" href="development-formathourink124formatlike1224.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Format hour in k (1-24) fo...</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.42.1.</th><th>Compare date time using after method of Java Calendar</th></tr></thead><tbody><tr><td>2.42.2.</td><td>Compare date time using before method of Java Calendar</td></tr><tr><td>2.42.3.</td><td>Increment and Decrement a Date Using the Calendar Class</td></tr><tr><td>2.42.4.</td><td>Increment and Decrement Months Using the Calendar Class</td></tr><tr><td>2.42.5.</td><td>Add or substract days to current date using Java Calendar</td></tr><tr><td>2.42.6.</td><td>Substract days from current date using Calendar.add method</td></tr><tr><td>2.42.7.</td><td>Add hours to current date using Calendar.add method</td></tr><tr><td>2.42.8.</td><td>Calendar adjust date automatically</td></tr><tr><td>2.42.9.</td><td>Substract hours from current date using Calendar.add method</td></tr><tr><td>2.42.10.</td><td>Add minutes to current date using Calendar.add method</td></tr><tr><td>2.42.11.</td><td>Substract minutes from current date using Calendar.add method</td></tr><tr><td>2.42.12.</td><td>Add months to current date using Calendar.add method</td></tr><tr><td>2.42.13.</td><td>Substract months from current date using Calendar.add method</td></tr><tr><td>2.42.14.</td><td>Add seconds to current date using Calendar.add method</td></tr><tr><td>2.42.15.</td><td>Substract seconds from current time using Calendar.add method</td></tr><tr><td>2.42.16.</td><td>Add week to current date using Calendar.add method</td></tr><tr><td>2.42.17.</td><td>Substract week from current date</td></tr><tr><td>2.42.18.</td><td>Add year to current date using Calendar.add method</td></tr><tr><td>2.42.19.</td><td>Substract year from current date</td></tr><tr><td>2.42.20.</td><td>Substract 30 days from the calendar</td></tr><tr><td>2.42.21.</td><td>Add 10 months to the calendar</td></tr><tr><td>2.42.22.</td><td>Substract 1 year from the calendar</td></tr><tr><td>2.42.23.</td><td>If a date is after another date</td></tr><tr><td>2.42.24.</td><td>If a date is before another date</td></tr><tr><td>2.42.25.</td><td>Compute days between 2 dates</td></tr><tr><td>2.42.26.</td><td>Calculate the age</td></tr><tr><td>2.42.27.</td><td>Determining If a Year Is a Leap Year</td></tr><tr><td>2.42.28.</td><td>Determining the Day-of-Week for a Particular Date</td></tr><tr><td>2.42.29.</td><td>Add hours, minutes or seconds to a date</td></tr><tr><td>2.42.30.</td><td>Find the Difference Between Two Given Dates</td></tr><tr><td>2.42.31.</td><td>add another 12 hours and print out the date and time</td></tr><tr><td>2.42.32.</td><td>subtract 4 hours from the time and print out the date and time</td></tr><tr><td>2.42.33.</td><td>add 8 days to the current date and print out the date and time</td></tr><tr><td>2.42.34.</td><td>Returns the number of days within the fragment.</td></tr><tr><td>2.42.35.</td><td>Returns the number of hours within the fragment.</td></tr><tr><td>2.42.36.</td><td>Returns the number of milliseconds within the fragment.</td></tr><tr><td>2.42.37.</td><td>Returns the number of minutes within the fragment.</td></tr><tr><td>2.42.38.</td><td>Returns the number of seconds within the fragment.</td></tr><tr><td>2.42.39.</td><td>Returns a Date set just to Noon, to the closest possible millisecond of the day.</td></tr><tr><td>2.42.40.</td><td>Returns a Date set to the last possible millisecond of the month, just before midnight.</td></tr><tr><td>2.42.41.</td><td>Returns a Date set to the first possible millisecond of the month, just after midnight.</td></tr><tr><td>2.42.42.</td><td>Returns a Date set to the last possible millisecond of the minute.</td></tr><tr><td>2.42.43.</td><td>Returns a Date set to the last possible millisecond of the day, just before midnight.</td></tr><tr><td>2.42.44.</td><td>Returns a Date set to the first possible millisecond of the day, just after midnight.</td></tr><tr><td>2.42.45.</td><td>Returns true if endDate is after startDate or if startDate equals endDate.</td></tr><tr><td>2.42.46.</td><td>Round this date, leaving the field specified as the most significant field.</td></tr><tr><td>2.42.47.</td><td>Checks if two date objects represent the same instant in time</td></tr><tr><td>2.42.48.</td><td>Checks if two calendar objects represent the same local time.</td></tr><tr><td>2.42.49.</td><td>Checks if two date objects are on the same day ignoring time</td></tr><tr><td>2.42.50.</td><td>Truncate this date(Calendar), leaving the field specified as the most significant field.</td></tr><tr><td>2.42.51.</td><td>Truncate this date, leaving the field specified as the most significant field.</td></tr><tr><td>2.42.52.</td><td>Days Till End Of Year</td></tr><tr><td>2.42.53.</td><td>Convert day of year to day of month</td></tr><tr><td>2.42.54.</td><td>Determine if an hour is between an interval</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="class-constructorsandpolymorphismdontproducewhatyoumightexpect.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Constructors and polymorph...</span></a><a class="pager-btn pager-next" href="basicstroke-java-basicstroke-constructor.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java BasicStroke() Constru...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

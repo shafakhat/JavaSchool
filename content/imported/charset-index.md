@@ -1,10 +1,10 @@
 ---
 title: Java IO Tutorial - Charset Example
 nav: Java IO Tutorial - Charset...
-description: Imported from java2s.com: Java IO Tutorial - Charset Example
+description: Imported from the java2s.com archive: Java IO Tutorial - Charset Example
 section: Imported - java2s Archive
-order: 50301
-source: https://www.java2s.com/Tutorials/Java/java.nio.charset/Charset/index.html
+order: 1111
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/java.nio.charset/Charset/index.html
 ---
 ## Method
 

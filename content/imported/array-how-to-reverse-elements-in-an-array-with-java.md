@@ -3,8 +3,8 @@ title: How to reverse elements in an array with Java
 nav: How to reverse elements in...
 description: Next »« PreviousHome » Java Tutorial » ArrayJava ArrayCreate an ArrayArray Index and lengthMultidimensional ArraysArray examplesArray copyArray compareArray Binary search
 section: Imported - java2s Archive
-order: 1030
-source: https://web.archive.org/web/20130905100148/http://java2s.com/Tutorials/Java/Array/How_to_reverse_elements_in_an_array_with_Java.htm
+order: 1111
+source: https://web.archive.org/web/2016/http://java2s.com/Tutorials/Java/Array/How_to_reverse_elements_in_an_array_with_Java.htm
 ---
 In this chapter you will learn:
 
@@ -15,8 +15,8 @@ In this chapter you will learn:
 
 ```java title=Example.java
 import java.util.Arrays;
-publicclass Main {
-  publicstaticvoid reverse(byte[] array) {
+public class Main {
+  public static void reverse(byte[] array) {
     if (array == null) {
       return;
     }
@@ -31,8 +31,8 @@ publicclass Main {
       i++;
     }
   }
-  publicstaticvoid main(String[] args) {
-    byte[] b1 = newbyte[] { 3, 2, 5, 4, 1 };
+  public static void main(String[] args) {
+    byte[] b1 = new byte[] { 3, 2, 5, 4, 1 };
     for (byte b : b1) {
       System.out.println(b);
     }
@@ -49,11 +49,11 @@ Output:
 ### Reverses the order of the given long type value array
 
 ```java title=Example.java
-publicclass Main {
-  publicstaticvoid reverse(long[] array) {
+public class Main {
+  public static void reverse(long[] array) {
       if (array == null) {
           return;
-      }int i = 0;
+      } int i = 0;
       int j = array.length - 1;
       long tmp;
       while (j > i) {

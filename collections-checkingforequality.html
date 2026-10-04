@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checking for Equality - JavaSchool</title>
+<meta name="description" content="The ArrayList class gets its equals() method from the AbstractList class">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-checkingforequality">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-collections.html">Collections</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-11-arraylist.html">ArrayList</a></nav>
+    <h1>Checking for Equality</h1>
+<p>The ArrayList class gets its equals() method from the AbstractList class:</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">public boolean equals(Object o)</code></pre></div>
+<p>An ArrayList is equal to another object if the other object implements the List interface, has the same size(), and contains the same elements in the same positions.</p>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.Arrays;
+import java.util.List;
+public class MainClass {
+  public static void main(String[] a) {
+    List list = Arrays.asList(new String[] { "A", "B", "C", "D" });
+    List list2 = Arrays.asList(new String[] { "A", "B", "C" });
+    System.out.println(list.equals(list2));
+  }
+}
+java title=Example.java
+false</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>9.11.1.</th><th>ArrayList Class</th></tr></thead><tbody><tr><td>9.11.2.</td><td>Creating an ArrayList</td></tr><tr><td>9.11.3.</td><td>A boolean is being stored and then retrieved from an ArrayList</td></tr><tr><td>9.11.4.</td><td>The final constructor is the copy constructor: creating a new ArrayList from another collection</td></tr><tr><td>9.11.5.</td><td>Adding Single Elements</td></tr><tr><td>9.11.6.</td><td>Adding elements in the middle of a List</td></tr><tr><td>9.11.7.</td><td>Add an element to specified index of ArrayList</td></tr><tr><td>9.11.8.</td><td>Append all elements of other Collection to ArrayList</td></tr><tr><td>9.11.9.</td><td>Insert all elements of other Collection to Specified Index of ArrayList</td></tr><tr><td>9.11.10.</td><td>To create a read-only list, use the unmodifiableList() method of the Collections class</td></tr><tr><td>9.11.11.</td><td>Adding Another Collection</td></tr><tr><td>9.11.12.</td><td>Getting an Element</td></tr><tr><td>9.11.13.</td><td>Get Sub List of ArrayList</td></tr><tr><td>9.11.14.</td><td>Removing a Single Element</td></tr><tr><td>9.11.15.</td><td>Removing Another Collection(Removing elements): public boolean removeAll(Collection c)</td></tr><tr><td>9.11.16.</td><td>Retaining Another Collection: public boolean retainAll(Collection c)</td></tr><tr><td>9.11.17.</td><td>Removing Ranges</td></tr><tr><td>9.11.18.</td><td>Fetching Elements with iterator</td></tr><tr><td>9.11.19.</td><td>Checking for Existence: public boolean contains(Object element)</td></tr><tr><td>9.11.20.</td><td>Checking for Position</td></tr><tr><td>9.11.21.</td><td>Checking for List Containment: public boolean containsAll(Collection c)</td></tr><tr><td>9.11.22.</td><td>Replacing Elements with the set() method: public Object set(int index, Object element)</td></tr><tr><td>9.11.23.</td><td>Checking Size: public int size(), public boolean isEmpty()</td></tr><tr><td>9.11.24.</td><td>Checking Capacity</td></tr><tr><td>9.11.25.</td><td>After adding all of the elements, call the trimToSize() method</td></tr><tr><td>9.11.26.</td><td>Copying and Cloning Lists: public Object clone()</td></tr><tr><td>9.11.27.</td><td>ArrayList implements the empty Serializable interface</td></tr><tr><td>9.11.28.</td><td>Checking for Equality</td></tr><tr><td>9.11.29.</td><td>Copying elements out of a list into an array</td></tr><tr><td>9.11.30.</td><td>Convert a List (ArrayList) to an Array with zero length array</td></tr><tr><td>9.11.31.</td><td>Convert a List (ArrayList) to an Array with full length array</td></tr><tr><td>9.11.32.</td><td>Copy all elements of ArrayList to an Object Array</td></tr><tr><td>9.11.33.</td><td>Remove duplicate items from an ArrayList</td></tr><tr><td>9.11.34.</td><td>Removing All Elements</td></tr><tr><td>9.11.35.</td><td>Looping through a Collection object: while loop, iterator, and for each</td></tr><tr><td>9.11.36.</td><td>If an ArrayList contains a given item</td></tr><tr><td>9.11.37.</td><td>Search an element of ArrayList with indexOf and lastIndexOf</td></tr><tr><td>9.11.38.</td><td>Get container with Iterator from ArrayList</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="collections-copyallelementsofarraylisttoanobjectarray.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Copy all elements of Array...</span></a><a class="pager-btn pager-next" href="collections-removingallelements.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Removing All Elements</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

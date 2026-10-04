@@ -3,8 +3,8 @@ title: Parse Comma Delimited List
 nav: Parse Comma Delimited List
 description: * The contents of this file are subject to the Sapient Public License
 section: Imported - java2s Archive
-order: 1039
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ParseCommaDelimitedList.htm
+order: 1250
+source: https://web.archive.org/web/20140829093225/http://www.java2s.com/Tutorial/Java/0040__Data-Type/ParseCommaDelimitedList.htm
 ---
 ```java title=Example.java
 /*
@@ -22,7 +22,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * The Initial Developer of the Original Code is Sapient Corporation
  *
  * Copyright (C) 2003 Sapient Corporation. All Rights Reserved.
- */import java.util.ArrayList;
+ */
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -35,14 +36,16 @@ import java.util.StringTokenizer;
  * @since carbon 1.0
  * @author Greg Hinkle, May 2002
  * @version $Revision: 1.5 $($Author: dvoet $ / $Date: 2003/05/05 21:21:24 $)
- */publicclass StringUtil {
+ */
+public class StringUtil {
   /**
    * Parses a comma-separated list into an array of Strings
    * Values can contain whitespace, but whitespace at the beginning and
    * end of each value is trimmed.
    * @return array of Strings
    * @param csvList a string of comma seperated values
-   */publicstatic String[] parseCommaDelimitedList(String csvList) {
+   */
+  public static String[] parseCommaDelimitedList(String csvList) {
       String[] result = parseList(csvList, ",");
       for (int i = 0; i < result.length; i++) {
           result[i] = result[i].trim();
@@ -53,7 +56,8 @@ import java.util.StringTokenizer;
    * Parses a whitepsace-separated list into an array of Strings
    * @return array of Strings
    * @param wsvList a string of white space seperated values
-   */publicstatic String[] parseWhitespaceDelimitedList(String wsvList) {
+   */
+  public static String[] parseWhitespaceDelimitedList(String wsvList) {
       return parseList(wsvList, "\t ");
   }
   /**
@@ -64,7 +68,8 @@ import java.util.StringTokenizer;
    * @param delim the delimiter character(s).  Each character in the string is a
    * single delimeter.
    * @return an array of strings
-   */publicstatic String[] parseList(String list, String delim) {
+   */
+  public static String[] parseList(String list, String delim) {
       List result = new ArrayList();
       StringTokenizer tokenizer = new StringTokenizer(list, delim);
       while (tokenizer.hasMoreTokens()) {
@@ -74,3 +79,8 @@ import java.util.StringTokenizer;
   }
 }
 ```
+
+| 2.24.1. | Tokenizing a String |
+|---|---|
+| 2.24.2. | Delimiters are comma, space, or period: '[, .]' |
+| 2.24.3. | Parse Comma Delimited List |

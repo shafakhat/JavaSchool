@@ -3,8 +3,8 @@ title: Enumeration Fundamentals
 nav: Enumeration Fundamentals
 description: Monday, Tuesday, Wednesday, Thursday, Friday, Saturaday, Sunday
 section: Imported - java2s Archive
-order: 1004
-source: https://web.archive.org/web/20070428112248/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/EnumerationFundamentals.htm
+order: 1142
+source: https://web.archive.org/web/20140829075538/http://www.java2s.com/Tutorial/Java/0040__Data-Type/EnumerationFundamentals.htm
 ---
 An enumeration is created using the new enum keyword.
 
@@ -14,11 +14,7 @@ enum Week {
 }
 ```
 
-- The identifiers Monday, Tuesday, and so on, are called enumeration constants.
-- Each is implicitly declared as a public, static member of Week.
-- Their type is the type of the enumeration in which they are declared.
-- These constants are called self-typed.
-
+The identifiers Monday, Tuesday, and so on, are called enumeration constants. Each is implicitly declared as a public, static member of Week. Their type is the type of the enumeration in which they are declared. These constants are called self-typed.
 You declare and use an enumeration variable in much the same way as the primitive types.
 
 ```java title=Example.java
@@ -43,3 +39,15 @@ public class MainClass {
 java title=Example.java
 Value of aWeekDay: Monday
 ```
+
+| 2.43.1. | Enumeration Fundamentals |
+|---|---|
+| 2.43.2. | How to define an enumeration |
+| 2.43.3. | Enums in a Class |
+| 2.43.4. | equals and = operator for enum data type |
+| 2.43.5. | Comparing Enumeration Values |
+| 2.43.6. | Two enumeration constants can be compared for equality by using the == relational operator |
+| 2.43.7. | uses an enum, rather than interface variables, to represent the answers. |
+| 2.43.8. | enum type with its own method |
+| 2.43.9. | Enum type field |
+| 2.43.10. | enum with switch |

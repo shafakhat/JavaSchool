@@ -59,11 +59,13 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * License along with this software; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
- *//**
+ */
+/**
  *
  * @version &lt;tt&gt;$Revision: 1958 $&lt;/tt&gt;
  * @author &lt;a href="mailto:jason@planet57.com"&gt;Jason Dillon&lt;/a&gt;
- */publicfinalclass Primitives {
+ */
+public final class Primitives {
   /**
    * Get a Boolean from a boolean, equivalent to the java 1.4 method
    * Boolean.valueOf(boolean)
@@ -71,10 +73,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param value
    *          the boolean
    * @return the Boolean equivalent
-   */publicstatic Boolean valueOf(boolean value) {
+   */
+  public static Boolean valueOf(boolean value) {
     if (value)
       return Boolean.TRUE;
-    elsereturn Boolean.FALSE;
+    else
+      return Boolean.FALSE;
   }
   /**
    * Test the equality of two doubles by converting their values into IEEE 754
@@ -85,7 +89,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param b
    *          Double to check equality with.
    * @return True if a equals b.
-   */publicstaticboolean equals(finaldouble a, finaldouble b) {
+   */
+  public static boolean equals(final double a, final double b) {
     return Double.doubleToLongBits(a) == Double.doubleToLongBits(b);
   }
   /**
@@ -97,7 +102,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param b
    *          Float to check equality with.
    * @return True if a equals b.
-   */publicstaticboolean equals(finalfloat a, finalfloat b) {
+   */
+  public static boolean equals(final float a, final float b) {
     return Float.floatToIntBits(a) == Float.floatToIntBits(b);
   }
   /**
@@ -114,8 +120,9 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param length
    *          The length of the sub-section.
    * @return True if sub-sections are equal.
-   */publicstaticboolean equals(finalbyte a[], finalint abegin, finalbyte b[], finalint bbegin,
-      finalint length) {
+   */
+  public static boolean equals(final byte a[], final int abegin, final byte b[], final int bbegin,
+      final int length) {
     try {
       int i = length;
       while (--i &gt;= 0) {
@@ -136,7 +143,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param b
    *          The second byte array.
    * @return True if the byte arrays are equal.
-   */publicstaticboolean equals(finalbyte a[], finalbyte b[]) {
+   */
+  public static boolean equals(final byte a[], final byte b[]) {
     if (a == b)
       return true;
     if (a == null || b == null)
@@ -155,7 +163,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
     return true;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="generics-pairoftemplatearguments.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Pair of template arguments</span></a><a class="pager-btn pager-next" href="class-definition-referencepassingtest.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Reference Passing Test</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.1.1.</th><th>The Primitive Types</th></tr></thead><tbody><tr><td>2.1.2.</td><td>Size for Java's Primitive Types</td></tr><tr><td>2.1.3.</td><td>Default values for primitives and references</td></tr><tr><td>2.1.4.</td><td>Literals</td></tr><tr><td>2.1.5.</td><td>Surprise! Java lets you overflow</td></tr><tr><td>2.1.6.</td><td>Wrapping a Primitive Type in a Wrapper Object: boolean, byte, char, short, int, long, float, double</td></tr><tr><td>2.1.7.</td><td>Print the limits of primitive types (e.g. byte, short, int ...) in Java</td></tr><tr><td>2.1.8.</td><td>Get the minimum and maximum value of a primitive data types</td></tr><tr><td>2.1.9.</td><td>Shows default initial values</td></tr><tr><td>2.1.10.</td><td>Primitive utilities</td></tr><tr><td>2.1.11.</td><td>Return primitive type the passed in wrapper type corresponds to</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="cursor-cursor-custom-cursor.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Swing Tutorial - Java...</span></a><a class="pager-btn pager-next" href="cubiccurve2d-java-cubiccurve2d-contains-double-x-double-y.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java CubicCurve2D.contains...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

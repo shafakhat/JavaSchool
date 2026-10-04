@@ -3,8 +3,8 @@ title: Overlays part of a String with another String.
 nav: Overlays part of a String ...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1070
-source: https://web.archive.org/web/20100604104946/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/OverlayspartofaStringwithanotherString.htm
+order: 1246
+source: https://web.archive.org/web/20140829092405/http://www.java2s.com/Tutorial/Java/0040__Data-Type/OverlayspartofaStringwithanotherString.htm
 ---
 ```java title=Example.java
 import java.io.PrintWriter;
@@ -90,3 +90,16 @@ public class Main {
   }
 }
 ```
+
+| 2.33.1. | Join String |
+|---|---|
+| 2.33.2. | Join an array of strings into one delimited string |
+| 2.33.3. | Join string from soapUI |
+| 2.33.4. | Joins array elements into a single String without specifying the start index and end index. |
+| 2.33.5. | Joins array elements into a single String: specify the start index and end index. |
+| 2.33.6. | Joins array elements: Null objects or empty strings within the array are represented by empty strings. |
+| 2.33.7. | Joins the elements of Collection into a single String with string separator. |
+| 2.33.8. | Joins the elements of the provided Collection into a single String containing the provided elements. |
+| 2.33.9. | Joins the elements of the provided Iterator into a single String containing the provided elements. |
+| 2.33.10. | Joins the elements of the provided array into a single String containing the provided list of elements. |
+| 2.33.11. | Overlays part of a String with another String. |

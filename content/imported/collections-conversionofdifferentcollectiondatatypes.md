@@ -30,9 +30,7 @@ public class MainClass {
     System.out.println(list);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 [Hello, World]
 ```
 
@@ -53,9 +51,7 @@ public class MainClass {
     System.out.println(set);
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 [World, Hello]
 ```
 

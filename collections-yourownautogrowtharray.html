@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your own auto-growth Array - JavaSchool</title>
+<meta name="description" content="Your own auto-growth Array: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-yourownautogrowtharray">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-collections.html">Collections</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-10-auto-grow-array.html">Auto Grow Array</a></nav>
+    <h1>Your own auto-growth Array</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ *
+ * The Apache Software License, Version 1.1
+ *
+ * Copyright (c) 1999-2003 The Apache Software Foundation.  All rights
+ * reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * 3. The end-user documentation included with the redistribution, if
+ *    any, must include the following acknowlegement:
+ *       "This product includes software developed by the
+ *        Apache Software Foundation (http://www.apache.org/)."
+ *    Alternately, this acknowlegement may appear in the software itself,
+ *    if and wherever such third-party acknowlegements normally appear.
+ *
+ * 4. The names "The Jakarta Project", "Jakarta Element Construction Set",
+ *    "Jakarta ECS" , and "Apache Software Foundation" must not be used
+ *    to endorse or promote products derived
+ *    from this software without prior written permission. For written
+ *    permission, please contact apache@apache.org.
+ *
+ * 5. Products derived from this software may not be called "Apache",
+ *    "Jakarta Element Construction Set" nor "Jakarta ECS" nor may "Apache"
+ *    appear in their names without prior written permission of the Apache Group.
+ *
+ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED.  IN NO EVENT SHALL THE APACHE SOFTWARE FOUNDATION OR
+ * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+ * USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+ * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ */
+public class Array implements java.util.Enumeration,java.io.Serializable
+{
+    private int current = 0;
+    private int size = 10;
+    private int grow = 2;
+    private int place = 0;
+    private Object[] elements = null;
+    private Object[] tmpElements = null;
+    public Array()
+    {
+        init();
+    }
+    public Array(int size)
+    {
+        setSize(size);
+        init();
+    }
+    public Array(int size,int grow)
+    {
+        setSize(size);
+        setGrow(grow);
+        init();
+    }
+    private void init()
+    {
+        elements = new Object[size];
+    }
+    public Object nextElement() throws java.util.NoSuchElementException
+    {
+        if ( elements[place] != null &amp;&amp; place != current)
+        {
+            place++;
+            return elements[place - 1];
+        }
+        else
+        {
+            place = 0;
+            throw new java.util.NoSuchElementException();
+        }
+    }
+    public boolean hasMoreElements()
+    {
+        if( place &lt; elements.length &amp;&amp; current != place )
+            return true;
+        return false;
+    }
+    public void setSize(int size)
+    {
+        this.size = size;
+    }
+    public int getCurrentSize()
+    {
+        return current;
+    }
+    public void rehash()
+    {
+        tmpElements = new Object[size];
+        int count = 0;
+        for ( int x = 0; x &lt; elements.length; x++ )
+        {
+            if( elements[x] != null )
+            {
+                tmpElements[count] = elements[x];
+                count++;
+            }
+        }
+        elements = (Object[])tmpElements.clone();
+        tmpElements = null;
+        current = count;
+    }
+    public void setGrow(int grow)
+    {
+        this.grow = grow;
+    }
+    public void grow()
+    {
+        size = size+=(size/grow);
+        rehash();
+    }
+    public void add(Object o)
+    {
+        if( current == elements.length )
+            grow();
+        try
+        {
+            elements[current] = o;
+            current++;
+        }
+        catch(java.lang.ArrayStoreException ase)
+        {
+        }
+    }
+    public void add(int location,Object o)
+    {
+        try
+        {
+            elements[location] = o;
+        }
+        catch(java.lang.ArrayStoreException ase)
+        {
+        }
+    }
+    public void remove(int location)
+    {
+        elements[location] = null;
+    }
+    public int location(Object o) throws NoSuchObjectException
+    {
+        int loc = -1;
+        for ( int x = 0; x &lt; elements.length; x++ )
+        {
+            if((elements[x] != null &amp;&amp; elements[x] == o )||
+               (elements[x] != null &amp;&amp; elements[x].equals(o)))
+            {
+                loc = x;
+                break;
+            }
+        }
+        if( loc == -1 )
+            throw new NoSuchObjectException();
+        return(loc);
+    }
+    public Object get(int location)
+    {
+        return elements[location];
+    }
+    public java.util.Enumeration elements()
+    {
+        return this;
+    }
+}
+class NoSuchObjectException extends Exception
+{
+    public NoSuchObjectException()
+    {
+        super("No such object found.");
+    }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>9.10.1.</th><th>A variable length Double Array: expanding and contracting its internal storage array as elements are added and removed.</th></tr></thead><tbody><tr><td>9.10.2.</td><td>Simple object pool. Based on ThreadPool and few other classes</td></tr><tr><td>9.10.3.</td><td>Your own auto-growth Array</td></tr><tr><td>9.10.4.</td><td>The character array based string</td></tr><tr><td>9.10.5.</td><td>ByteArray wraps java byte arrays (byte[]) to allow byte arrays to be used as keys in hashtables.</td></tr><tr><td>9.10.6.</td><td>Adds all the elements of the given arrays into a new double-type array.</td></tr><tr><td>9.10.7.</td><td>A writer for char strings</td></tr><tr><td>9.10.8.</td><td>Array-List for integer objects.</td></tr><tr><td>9.10.9.</td><td>Simple object pool</td></tr><tr><td>9.10.10.</td><td>Concatenates two arrays of strings</td></tr><tr><td>9.10.11.</td><td>Puts the entire source array in the target array at offset offset.</td></tr><tr><td>9.10.12.</td><td>Lazy List creation</td></tr><tr><td>9.10.13.</td><td>Stores a list of int</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="collections-reversestheorderofthegivenobjectarray.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Reverses the order of the ...</span></a><a class="pager-btn pager-next" href="collections-simpleobjectpoolbasedonthreadpoolandfewotherclasses.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Simple object pool. Based ...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * &lt;code&gt;null&lt;/code&gt; safe.
  *
@@ -80,10 +81,11 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */publicclass Main {
+ */
+public class Main {
   // IndexOfAny strings
-//-----------------------------------------------------------------------
-/**
+  //-----------------------------------------------------------------------
+  /**
    *
    * A &lt;code&gt;null&lt;/code&gt; String will return &lt;code&gt;-1&lt;/code&gt;.
    * A &lt;code&gt;null&lt;/code&gt; or zero length search array will return &lt;code&gt;-1&lt;/code&gt;.
@@ -107,13 +109,14 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param str  the String to check, may be null
    * @param searchStrs  the Strings to search for, may be null
    * @return the first index of any of the searchStrs in str, -1 if no match
-   */publicstaticint indexOfAny(String str, String[] searchStrs) {
+   */
+  public static int indexOfAny(String str, String[] searchStrs) {
       if ((str == null) || (searchStrs == null)) {
           return -1;
       }
       int sz = searchStrs.length;
       // String's can't have a MAX_VALUEth index.
-int ret = Integer.MAX_VALUE;
+      int ret = Integer.MAX_VALUE;
       int tmp = 0;
       for (int i = 0; i &lt; sz; i++) {
           String search = searchStrs[i];
@@ -131,21 +134,22 @@ int ret = Integer.MAX_VALUE;
       return (ret == Integer.MAX_VALUE) ? -1 : ret;
   }
   // ----------------------------------------------------------------------
-/**
+  /**
    * Checks if an array of Objects is empty or &lt;code&gt;null&lt;/code&gt;.
    *
    * @param array  the array to test
    * @return &lt;code&gt;true&lt;/code&gt; if the array is empty or &lt;code&gt;null&lt;/code&gt;
    * @since 2.1
-   */publicstaticboolean isEmpty(char[] array) {
+   */
+  public static boolean isEmpty(char[] array) {
       if (array == null || array.length == 0) {
           return true;
       }
       return false;
   }
   // Empty checks
-//-----------------------------------------------------------------------
-/**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * &lt;pre&gt;
@@ -162,11 +166,13 @@ int ret = Integer.MAX_VALUE;
    *
    * @param str  the String to check, may be null
    * @return &lt;code&gt;true&lt;/code&gt; if the String is empty or null
-   */publicstaticboolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="j2ee-exercise7betterformandactionhandling.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Exercise 7</span></a><a class="pager-btn pager-next" href="data-type-forafloatvaluexthismethodreturns10fifx0and10fifx0returnsnanifxisnan-2.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">For a float value x, this ...</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.29.1.</th><th>Find the latest index of any of a set of potential substrings.</th></tr></thead><tbody><tr><td>2.29.2.</td><td>Find the first index of any of a set of potential substrings.</td></tr><tr><td>2.29.3.</td><td>Finds the first index within a String, handling null.</td></tr><tr><td>2.29.4.</td><td>Finds the last index within a String from a start position, handling null.</td></tr><tr><td>2.29.5.</td><td>Finds the n-th index within a String, handling null.</td></tr><tr><td>2.29.6.</td><td>Use String.indexOf to locate a character in a string</td></tr><tr><td>2.29.7.</td><td>Use String.lastIndexOf to find a character in a string</td></tr><tr><td>2.29.8.</td><td>Use String.indexOf to locate a substring in a string</td></tr><tr><td>2.29.9.</td><td>Use lastIndexOf to find a substring in a string</td></tr><tr><td>2.29.10.</td><td>Demonstrate indexOf() and lastIndexOf().</td></tr><tr><td>2.29.11.</td><td>Extract Substring with indexOf</td></tr><tr><td>2.29.12.</td><td>Java String endsWith</td></tr><tr><td>2.29.13.</td><td>Java String startsWith</td></tr><tr><td>2.29.14.</td><td>Starts with, ignore case( regular expressions )</td></tr><tr><td>2.29.15.</td><td>Ends with, ignore case( regular expressions )</td></tr><tr><td>2.29.16.</td><td>Anywhere, ignore case( regular expressions )</td></tr><tr><td>2.29.17.</td><td>Last occurrence of a character</td></tr><tr><td>2.29.18.</td><td>Not found returns -1</td></tr><tr><td>2.29.19.</td><td>A bubble sort for Strings.</td></tr><tr><td>2.29.20.</td><td>Search a String to find the first index of any character in the given set of characters.</td></tr><tr><td>2.29.21.</td><td>Search a String to find the first index of any character not in the given set of characters.</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="operators-demonstratethebitwiselogicaloperators.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Demonstrate the bitwise lo...</span></a><a class="pager-btn pager-next" href="data-type-literals.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Literals</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

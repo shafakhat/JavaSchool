@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * &lt;code&gt;null&lt;/code&gt; safe.
  *
@@ -80,7 +81,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */publicclass Main {
+ */
+public class Main {
   /**
    * Finds the n-th index within a String, handling &lt;code&gt;null&lt;/code&gt;.
    * This method uses {@link String#indexOf(String)}.
@@ -107,7 +109,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @return the n-th index of the search String,
    *  &lt;code&gt;-1&lt;/code&gt; (&lt;code&gt;INDEX_NOT_FOUND&lt;/code&gt;) if no match or &lt;code&gt;null&lt;/code&gt; string input
    * @since 2.1
-   */publicstaticint ordinalIndexOf(String str, String searchStr, int ordinal) {
+   */
+  public static int ordinalIndexOf(String str, String searchStr, int ordinal) {
       if (str == null || searchStr == null || ordinal &lt;= 0) {
           return -1;
       }
@@ -126,7 +129,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       return index;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="regular-expressions-findallmatches.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Find all matches</span></a><a class="pager-btn pager-next" href="development-formatyearinyyformatlike0708etc.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Format year in yy format l...</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.29.1.</th><th>Find the latest index of any of a set of potential substrings.</th></tr></thead><tbody><tr><td>2.29.2.</td><td>Find the first index of any of a set of potential substrings.</td></tr><tr><td>2.29.3.</td><td>Finds the first index within a String, handling null.</td></tr><tr><td>2.29.4.</td><td>Finds the last index within a String from a start position, handling null.</td></tr><tr><td>2.29.5.</td><td>Finds the n-th index within a String, handling null.</td></tr><tr><td>2.29.6.</td><td>Use String.indexOf to locate a character in a string</td></tr><tr><td>2.29.7.</td><td>Use String.lastIndexOf to find a character in a string</td></tr><tr><td>2.29.8.</td><td>Use String.indexOf to locate a substring in a string</td></tr><tr><td>2.29.9.</td><td>Use lastIndexOf to find a substring in a string</td></tr><tr><td>2.29.10.</td><td>Demonstrate indexOf() and lastIndexOf().</td></tr><tr><td>2.29.11.</td><td>Extract Substring with indexOf</td></tr><tr><td>2.29.12.</td><td>Java String endsWith</td></tr><tr><td>2.29.13.</td><td>Java String startsWith</td></tr><tr><td>2.29.14.</td><td>Starts with, ignore case( regular expressions )</td></tr><tr><td>2.29.15.</td><td>Ends with, ignore case( regular expressions )</td></tr><tr><td>2.29.16.</td><td>Anywhere, ignore case( regular expressions )</td></tr><tr><td>2.29.17.</td><td>Last occurrence of a character</td></tr><tr><td>2.29.18.</td><td>Not found returns -1</td></tr><tr><td>2.29.19.</td><td>A bubble sort for Strings.</td></tr><tr><td>2.29.20.</td><td>Search a String to find the first index of any character in the given set of characters.</td></tr><tr><td>2.29.21.</td><td>Search a String to find the first index of any character not in the given set of characters.</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="class-constructorinitializationwithcomposition.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Constructor initialization...</span></a><a class="pager-btn pager-next" href="basicstroke-java-basicstroke-getdasharray.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java BasicStroke.getDashAr...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

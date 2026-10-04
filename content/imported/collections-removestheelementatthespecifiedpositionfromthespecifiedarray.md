@@ -46,7 +46,6 @@ import java.lang.reflect.Array;
  */
 public class Main {
   /**
-   * Removes the element at the specified position from the specified array.
    * All subsequent elements are shifted to the left (substracts one from
    * their indices).
    *
@@ -77,7 +76,6 @@ public class Main {
       return (short[]) remove((Object) array, index);
   }
   /**
-   * Removes the element at the specified position from the specified array.
    * All subsequent elements are shifted to the left (substracts one from
    * their indices).
    *

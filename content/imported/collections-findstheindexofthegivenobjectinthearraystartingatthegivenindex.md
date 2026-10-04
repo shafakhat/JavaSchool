@@ -46,7 +46,6 @@ import java.lang.reflect.Array;
  */
 public class Main {
   /**
-   * Finds the index of the given object in the array starting at the given index.
    *
    * This method returns {@link #INDEX_NOT_FOUND} (<code>-1</code>) for a <code>null</code> input array.
    *

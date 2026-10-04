@@ -1,10 +1,10 @@
 ---
 title: Java IO Tutorial - CharArrayWriter Example
 nav: Java IO Tutorial - CharArr...
-description: Imported from java2s.com: Java IO Tutorial - CharArrayWriter Example
+description: Imported from the java2s.com archive: Java IO Tutorial - CharArrayWriter Example
 section: Imported - java2s Archive
-order: 50246
-source: https://www.java2s.com/Tutorials/Java/java.io/CharArrayWriter/index.html
+order: 1111
+source: https://web.archive.org/web/2018/https://www.java2s.com/Tutorials/Java/java.io/CharArrayWriter/index.html
 ---
 ## Constructor
 

@@ -3,21 +3,21 @@ title: String.ValueOf
 nav: String.ValueOf
 description: Object objectRef = "hello"; // assign string to an Object reference
 section: Imported - java2s Archive
-order: 1055
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/StringValueOf.htm
+order: 1328
+source: https://web.archive.org/web/20140829085956/http://www.java2s.com/Tutorial/Java/0040__Data-Type/StringValueOf.htm
 ---
 ```java title=Example.java
-publicclass MainClass
+public class MainClass
 {
-   publicstaticvoid main( String args[] )
+   public static void main( String args[] )
    {
       char charArray[] = { 'a', 'b', 'c', 'd', 'e', 'f' };
       boolean booleanValue = true;
       char characterValue = 'Z';
       int integerValue = 7;
       long longValue = 10000000000L; // L suffix indicates long
-float floatValue = 2.5f; // f indicates that 2.5 is a float
-double doubleValue = 33.333; // no suffix, double is default
+      float floatValue = 2.5f; // f indicates that 2.5 is a float
+      double doubleValue = 33.333; // no suffix, double is default
       Object objectRef = "hello"; // assign string to an Object reference
       System.out.printf("char array = %s\n", String.valueOf( charArray ) );
       System.out.printf("part of char array = %s\n",String.valueOf( charArray, 3, 3 ) );
@@ -41,3 +41,18 @@ float = 2.5
 double = 33.333
 Object = hello
 ```
+
+| 2.36.1. | Number Parsing |
+|---|---|
+| 2.36.2. | Integer.valueOf: Converting String to Integer |
+| 2.36.3. | Integer.parseInt(): Converting String to int |
+| 2.36.4. | String.ValueOf |
+| 2.36.5. | sums a list of numbers entered by the user |
+| 2.36.6. | Convert string of time to time object |
+| 2.36.7. | Converting a String to a byte Number |
+| 2.36.8. | Converting a String to a short Number |
+| 2.36.9. | Converting a String to a int(integer) Number |
+| 2.36.10. | Convert a String to Date |
+| 2.36.11. | Convert String to character array |
+| 2.36.12. | Convert base64 string to a byte array |
+| 2.36.13. | Parse basic types |

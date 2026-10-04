@@ -1,10 +1,10 @@
 ---
 title: Java IO Tutorial - ByteArrayOutputStream Example
 nav: Java IO Tutorial - ByteArr...
-description: Imported from java2s.com: Java IO Tutorial - ByteArrayOutputStream Example
+description: Imported from the java2s.com archive: Java IO Tutorial - ByteArrayOutputStream Example
 section: Imported - java2s Archive
-order: 50244
-source: https://www.java2s.com/Tutorials/Java/java.io/ByteArrayOutputStream/index.html
+order: 1111
+source: https://web.archive.org/web/2016/https://www.java2s.com/Tutorials/Java/java.io/ByteArrayOutputStream/index.html
 ---
 ## Constructor
 

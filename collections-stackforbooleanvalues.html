@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stack for boolean values - JavaSchool</title>
+<meta name="description" content="Stack for boolean values: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-stackforbooleanvalues">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-collections.html">Collections</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-13-stack.html">Stack</a></nav>
+    <h1>Stack for boolean values</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership. The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the  "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * $Id: BoolStack.java 468655 2006-10-28 07:12:06Z minchau $
+ */
+/**
+ * Simple stack for boolean values.
+ * @xsl.usage internal
+ */
+public final class BoolStack implements Cloneable
+{
+  /** Array of boolean values          */
+  private boolean m_values[];
+  /** Array size allocated           */
+  private int m_allocatedSize;
+  /** Index into the array of booleans          */
+  private int m_index;
+  /**
+   * Default constructor.  Note that the default
+   * block size is very small, for small lists.
+   */
+  public BoolStack()
+  {
+    this(32);
+  }
+  /**
+   * Construct a IntVector, using the given block size.
+   *
+   * @param size array size to allocate
+   */
+  public BoolStack(int size)
+  {
+    m_allocatedSize = size;
+    m_values = new boolean[size];
+    m_index = -1;
+  }
+  /**
+   * Get the length of the list.
+   *
+   * @return Current length of the list
+   */
+  public final int size()
+  {
+    return m_index + 1;
+  }
+  /**
+   * Clears the stack.
+   *
+   */
+  public final void clear()
+  {
+    m_index = -1;
+  }
+  /**
+   * Pushes an item onto the top of this stack.
+   *
+   *
+   * @param val the boolean to be pushed onto this stack.
+   * @return  the &lt;code&gt;item&lt;/code&gt; argument.
+   */
+  public final boolean push(boolean val)
+  {
+    if (m_index == m_allocatedSize - 1)
+      grow();
+    return (m_values[++m_index] = val);
+  }
+  /**
+   * Removes the object at the top of this stack and returns that
+   * object as the value of this function.
+   *
+   * @return     The object at the top of this stack.
+   * @throws  EmptyStackException  if this stack is empty.
+   */
+  public final boolean pop()
+  {
+    return m_values[m_index--];
+  }
+  /**
+   * Removes the object at the top of this stack and returns the
+   * next object at the top as the value of this function.
+   *
+   *
+   * @return Next object to the top or false if none there
+   */
+  public final boolean popAndTop()
+  {
+    m_index--;
+    return (m_index &gt;= 0) ? m_values[m_index] : false;
+  }
+  /**
+   * Set the item at the top of this stack
+   *
+   *
+   * @param b Object to set at the top of this stack
+   */
+  public final void setTop(boolean b)
+  {
+    m_values[m_index] = b;
+  }
+  /**
+   * Looks at the object at the top of this stack without removing it
+   * from the stack.
+   *
+   * @return     the object at the top of this stack.
+   * @throws  EmptyStackException  if this stack is empty.
+   */
+  public final boolean peek()
+  {
+    return m_values[m_index];
+  }
+  /**
+   * Looks at the object at the top of this stack without removing it
+   * from the stack.  If the stack is empty, it returns false.
+   *
+   * @return     the object at the top of this stack.
+   */
+  public final boolean peekOrFalse()
+  {
+    return (m_index &gt; -1) ? m_values[m_index] : false;
+  }
+  /**
+   * Looks at the object at the top of this stack without removing it
+   * from the stack.  If the stack is empty, it returns true.
+   *
+   * @return     the object at the top of this stack.
+   */
+  public final boolean peekOrTrue()
+  {
+    return (m_index &gt; -1) ? m_values[m_index] : true;
+  }
+  /**
+   * Tests if this stack is empty.
+   *
+   * @return  &lt;code&gt;true&lt;/code&gt; if this stack is empty;
+   *          &lt;code&gt;false&lt;/code&gt; otherwise.
+   */
+  public boolean isEmpty()
+  {
+    return (m_index == -1);
+  }
+  /**
+   * Grows the size of the stack
+   *
+   */
+  private void grow()
+  {
+    m_allocatedSize *= 2;
+    boolean newVector[] = new boolean[m_allocatedSize];
+    System.arraycopy(m_values, 0, newVector, 0, m_index + 1);
+    m_values = newVector;
+  }
+  public Object clone()
+    throws CloneNotSupportedException
+  {
+    return super.clone();
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>9.13.1.</th><th>Stack Basics: last-in, first-out behavior</th></tr></thead><tbody><tr><td>9.13.2.</td><td>Adding Elements: To add an element to a stack, call the push() method</td></tr><tr><td>9.13.3.</td><td>Removing Elements: To remove an element from the stack, the pop() method</td></tr><tr><td>9.13.4.</td><td>If the size of the stack is zero, true is returned; otherwise, false is returned</td></tr><tr><td>9.13.5.</td><td>Checking the Top: To get the element without removing: using the peek() method</td></tr><tr><td>9.13.6.</td><td>To find out if an element is on the stack: the search() method</td></tr><tr><td>9.13.7.</td><td>Demonstrate the generic Stack class.</td></tr><tr><td>9.13.8.</td><td>A faster, smaller stack implementation.</td></tr><tr><td>9.13.9.</td><td>A simple integer based stack.</td></tr><tr><td>9.13.10.</td><td>A stack of simple integers</td></tr><tr><td>9.13.11.</td><td>A very simple unsynchronized stack. This one is faster than the java.util-Version.</td></tr><tr><td>9.13.12.</td><td>An implementation of the java.util.Stack based on an ArrayList instead of a Vector, so it is not synchronized to protect against multi-threaded access.</td></tr><tr><td>9.13.13.</td><td>Character Stack</td></tr><tr><td>9.13.14.</td><td>Growable Object stack with type specific access methods</td></tr><tr><td>9.13.15.</td><td>Growable String stack with type specific access methods.</td></tr><tr><td>9.13.16.</td><td>Growable int stack with type specific access methods</td></tr><tr><td>9.13.17.</td><td>Stack for boolean values</td></tr><tr><td>9.13.18.</td><td>extends ArrayList to create Stack</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="collections-growablestringstackwithtypespecificaccessmethods.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Growable String stack with...</span></a><a class="pager-btn pager-next" href="collections-extendsarraylistttocreatestack.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">extends ArrayList to cr...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lazy List creation - JavaSchool</title>
+<meta name="description" content="Lazy List creation: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-lazylistcreation">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-collections.html">Collections</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-10-auto-grow-array.html">Auto Grow Array</a></nav>
+    <h1>Lazy List creation</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+// Copyright 2004-2005 Mort Bay Consulting Pty. Ltd.
+// ------------------------------------------------------------------------
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// http://www.apache.org/licenses/LICENSE-2.0
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+/* ------------------------------------------------------------ */
+ * A List helper class that attempts to avoid unneccessary List
+ * creation.   If a method needs to create a List to return, but it is
+ * expected that this will either be empty or frequently contain a
+ * single item, then using LazyList will avoid additional object
+ * creations by using Collections.EMPTY_LIST or
+ * Collections.singletonList where possible.
+ *
+ * &lt;h4&gt;Usage&lt;/h4&gt;
+ * &lt;pre&gt;
+ *   Object lazylist =null;
+ *   while(loopCondition)
+ *   {
+ *     Object item = getItem();
+ *     if (item.isToBeAdded())
+ *         lazylist = LazyList.add(lazylist,item);
+ *   }
+ *   return LazyList.getList(lazylist);
+ * &lt;/pre&gt;
+ *
+ * An ArrayList of default size is used as the initial LazyList.
+ *
+ * @see java.util.List
+ * @author Greg Wilkins (gregw)
+ */
+class LazyList
+    implements Cloneable, Serializable
+{
+    private static final String[] __EMTPY_STRING_ARRAY = new String[0];
+    /* ------------------------------------------------------------ */
+    private LazyList()
+    {}
+    /* ------------------------------------------------------------ */
+    /** Add an item to a LazyList
+     * @param list The list to add to or null if none yet created.
+     * @param item The item to add.
+     * @return The lazylist created or added to.
+     */
+    public static Object add(Object list, Object item)
+    {
+        if (list==null)
+        {
+            if (item instanceof List || item==null)
+            {
+                List l = new ArrayList();
+                l.add(item);
+                return l;
+            }
+            return item;
+        }
+        if (list instanceof List)
+        {
+            ((List)list).add(item);
+            return list;
+        }
+        List l=new ArrayList();
+        l.add(list);
+        l.add(item);
+        return l;
+    }
+    /* ------------------------------------------------------------ */
+    /** Add an item to a LazyList
+     * @param list The list to add to or null if none yet created.
+     * @param index The index to add the item at.
+     * @param item The item to add.
+     * @return The lazylist created or added to.
+     */
+    public static Object add(Object list, int index, Object item)
+    {
+        if (list==null)
+        {
+            if (index&gt;0 || item instanceof List || item==null)
+            {
+                List l = new ArrayList();
+                l.add(index,item);
+                return l;
+            }
+            return item;
+        }
+        if (list instanceof List)
+        {
+            ((List)list).add(index,item);
+            return list;
+        }
+        List l=new ArrayList();
+        l.add(list);
+        l.add(index,item);
+        return l;
+    }
+    /* ------------------------------------------------------------ */
+    /** Add the contents of a Collection to a LazyList
+     * @param list The list to add to or null if none yet created.
+     * @param collection The Collection whose contents should be added.
+     * @return The lazylist created or added to.
+     */
+    public static Object addCollection(Object list, Collection collection)
+    {
+        Iterator i=collection.iterator();
+        while(i.hasNext())
+            list=LazyList.add(list,i.next());
+        return list;
+    }
+    /* ------------------------------------------------------------ */
+    /** Add the contents of an array to a LazyList
+     * @param list The list to add to or null if none yet created.
+     * @param collection The Collection whose contents should be added.
+     * @return The lazylist created or added to.
+     */
+    public static Object addArray(Object list, Object[] array)
+    {
+        for(int i=0;array!=null &amp;&amp; i&lt;array.length;i++)
+            list=LazyList.add(list,array[i]);
+        return list;
+    }
+    /* ------------------------------------------------------------ */
+    /** Ensure the capcity of the underlying list.
+     *
+     */
+    public static Object ensureSize(Object list, int initialSize)
+    {
+        if (list==null)
+            return new ArrayList(initialSize);
+        if (list instanceof ArrayList)
+        {
+            ArrayList ol=(ArrayList)list;
+            if (ol.size()&gt;initialSize)
+                return ol;
+            ArrayList nl = new ArrayList(initialSize);
+            nl.addAll(ol);
+            return nl;
+        }
+        List l= new ArrayList(initialSize);
+        l.add(list);
+        return l;
+    }
+    /* ------------------------------------------------------------ */
+    public static Object remove(Object list, Object o)
+    {
+        if (list==null)
+            return null;
+        if (list instanceof List)
+        {
+            List l = (List)list;
+            l.remove(o);
+            if (l.size()==0)
+                return null;
+            return list;
+        }
+        if (list.equals(o))
+            return null;
+        return list;
+    }
+    /* ------------------------------------------------------------ */
+    public static Object remove(Object list, int i)
+    {
+        if (list==null)
+            return null;
+        if (list instanceof List)
+        {
+            List l = (List)list;
+            l.remove(i);
+            if (l.size()==0)
+                return null;
+            return list;
+        }
+        if (i==0)
+            return null;
+        return list;
+    }
+    /* ------------------------------------------------------------ */
+    /** Get the real List from a LazyList.
+     *
+     * @param list A LazyList returned from LazyList.add(Object)
+     * @return The List of added items, which may be an EMPTY_LIST
+     * or a SingletonList.
+     */
+    public static List getList(Object list)
+    {
+        return getList(list,false);
+    }
+    /* ------------------------------------------------------------ */
+    /** Get the real List from a LazyList.
+     *
+     * @param list A LazyList returned from LazyList.add(Object) or null
+     * @param nullForEmpty If true, null is returned instead of an
+     * empty list.
+     * @return The List of added items, which may be null, an EMPTY_LIST
+     * or a SingletonList.
+     */
+    public static List getList(Object list, boolean nullForEmpty)
+    {
+        if (list==null)
+            return nullForEmpty?null:Collections.EMPTY_LIST;
+        if (list instanceof List)
+            return (List)list;
+        List l = new ArrayList(1);
+        l.add(list);
+        return l;
+    }
+    /* ------------------------------------------------------------ */
+    public static String[] toStringArray(Object list)
+    {
+        if (list==null)
+            return __EMTPY_STRING_ARRAY;
+        if (list instanceof List)
+        {
+            List l = (List)list;
+            String[] a = new String[l.size()];
+            for (int i=l.size();i--&gt;0;)
+            {
+                Object o=l.get(i);
+                if (o!=null)
+                    a[i]=o.toString();
+            }
+            return a;
+        }
+        return new String[] {list.toString()};
+    }
+    /* ------------------------------------------------------------ */
+    public static Object toArray(Object list,Class aClass)
+    {
+        if (list==null)
+            return (Object[])Array.newInstance(aClass,0);
+        if (list instanceof List)
+        {
+            List l = (List)list;
+            if (aClass.isPrimitive())
+            {
+                Object a = Array.newInstance(aClass,l.size());
+                for (int i=0;i&lt;l.size();i++)
+                    Array.set(a,i,l.get(i));
+                return a;
+            }
+            return l.toArray((Object[])Array.newInstance(aClass,l.size()));
+        }
+        Object a = Array.newInstance(aClass,1);
+        Array.set(a,0,list);
+        return a;
+    }
+    /* ------------------------------------------------------------ */
+    /** The size of a lazy List
+     * @param list  A LazyList returned from LazyList.add(Object) or null
+     * @return the size of the list.
+     */
+    public static int size(Object list)
+    {
+        if (list==null)
+            return 0;
+        if (list instanceof List)
+            return ((List)list).size();
+        return 1;
+    }
+    /* ------------------------------------------------------------ */
+    /** Get item from the list
+     * @param list  A LazyList returned from LazyList.add(Object) or null
+     * @param i int index
+     * @return the item from the list.
+     */
+    public static Object get(Object list, int i)
+    {
+        if (list==null)
+            throw new IndexOutOfBoundsException();
+        if (list instanceof List)
+            return ((List)list).get(i);
+        if (i==0)
+            return list;
+        throw new IndexOutOfBoundsException();
+    }
+    /* ------------------------------------------------------------ */
+    public static boolean contains(Object list,Object item)
+    {
+        if (list==null)
+            return false;
+        if (list instanceof List)
+            return ((List)list).contains(item);
+        return list.equals(item);
+    }
+    /* ------------------------------------------------------------ */
+    public static Object clone(Object list)
+    {
+        if (list==null)
+            return null;
+        if (list instanceof List)
+            return new ArrayList((List)list);
+        return list;
+    }
+    /* ------------------------------------------------------------ */
+    public static String toString(Object list)
+    {
+        if (list==null)
+            return "[]";
+        if (list instanceof List)
+            return ((List)list).toString();
+        return "["+list+"]";
+    }
+    /* ------------------------------------------------------------ */
+    public static Iterator iterator(Object list)
+    {
+        if (list==null)
+            return Collections.EMPTY_LIST.iterator();
+        if (list instanceof List)
+            return ((List)list).iterator();
+        return getList(list).iterator();
+    }
+    /* ------------------------------------------------------------ */
+    public static ListIterator listIterator(Object list)
+    {
+        if (list==null)
+            return Collections.EMPTY_LIST.listIterator();
+        if (list instanceof List)
+            return ((List)list).listIterator();
+        return getList(list).listIterator();
+    }
+    /* ------------------------------------------------------------ */
+    /**
+     * @param array Any array of object
+     * @return A new &lt;i&gt;modifiable&lt;/i&gt; list initialised with the elements from &lt;code&gt;array&lt;/code&gt;.
+     */
+    public static List array2List(Object[] array)
+    {
+        if (array==null || array.length==0)
+            return new ArrayList();
+        return new ArrayList(Arrays.asList(array));
+    }
+    /* ------------------------------------------------------------ */
+    /** Add element to an array
+     * @param array The array to add to (or null)
+     * @param item The item to add
+     * @param type The type of the array (in case of null array)
+     * @return new array with contents of array plus item
+     */
+    public static Object[] addToArray(Object[] array, Object item, Class type)
+    {
+        if (array==null)
+        {
+            if (type==null &amp;&amp; item!=null)
+                type= item.getClass();
+            Object[] na = (Object[])Array.newInstance(type, 1);
+            na[0]=item;
+            return na;
+        }
+        else
+        {
+            Class c = array.getClass().getComponentType();
+            Object[] na = (Object[])Array.newInstance(c, Array.getLength(array)+1);
+            System.arraycopy(array, 0, na, 0, array.length);
+            na[array.length]=item;
+            return na;
+        }
+    }
+    /* ------------------------------------------------------------ */
+    public static Object[] removeFromArray(Object[] array, Object item)
+    {
+        if (item==null || array==null)
+            return array;
+        for (int i=array.length;i--&gt;0;)
+        {
+            if (item.equals(array[i]))
+            {
+                Class c = array==null?item.getClass():array.getClass().getComponentType();
+                Object[] na = (Object[])Array.newInstance(c, Array.getLength(array)-1);
+                if (i&gt;0)
+                    System.arraycopy(array, 0, na, 0, i);
+                if (i+1&lt;array.length)
+                    System.arraycopy(array, i+1, na, i, array.length-(i+1));
+                return na;
+            }
+        }
+        return array;
+    }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>9.10.1.</th><th>A variable length Double Array: expanding and contracting its internal storage array as elements are added and removed.</th></tr></thead><tbody><tr><td>9.10.2.</td><td>Simple object pool. Based on ThreadPool and few other classes</td></tr><tr><td>9.10.3.</td><td>Your own auto-growth Array</td></tr><tr><td>9.10.4.</td><td>The character array based string</td></tr><tr><td>9.10.5.</td><td>ByteArray wraps java byte arrays (byte[]) to allow byte arrays to be used as keys in hashtables.</td></tr><tr><td>9.10.6.</td><td>Adds all the elements of the given arrays into a new double-type array.</td></tr><tr><td>9.10.7.</td><td>A writer for char strings</td></tr><tr><td>9.10.8.</td><td>Array-List for integer objects.</td></tr><tr><td>9.10.9.</td><td>Simple object pool</td></tr><tr><td>9.10.10.</td><td>Concatenates two arrays of strings</td></tr><tr><td>9.10.11.</td><td>Puts the entire source array in the target array at offset offset.</td></tr><tr><td>9.10.12.</td><td>Lazy List creation</td></tr><tr><td>9.10.13.</td><td>Stores a list of int</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="collections-storesalistofint.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Stores a list of int</span></a><a class="pager-btn pager-next" href="collections-abooleanisbeingstoredandthenretrievedfromanarraylist.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">A boolean is being stored ...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,10 +1,10 @@
 ---
 title: Java Data Type How to Example
 nav: Java Data Type How to Exam...
-description: Imported from java2s.com: Java Data Type How to Example
+description: Imported from the java2s.com archive: Java Data Type How to Example
 section: Imported - java2s Archive
-order: 50025
-source: https://www.java2s.com/Tutorials/Java/Data_Type_How_to/index.html
+order: 1215
+source: https://web.archive.org/web/2014/https://www.java2s.com/Tutorials/Java/Data_Type_How_to/index.html
 ---
 - BigDecimal 9
 - BigInteger 10

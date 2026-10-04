@@ -3,8 +3,8 @@ title: Multiply two integers, checking for overflow.
 nav: Multiply two integers, che...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1063
-source: https://web.archive.org/web/20100719201956/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Multiplytwointegerscheckingforoverflow.htm
+order: 1229
+source: https://web.archive.org/web/20140829092215/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Multiplytwointegerscheckingforoverflow.htm
 ---
 ```java title=Example.java
 import java.io.File;
@@ -45,3 +45,17 @@ public class Main {
   }
 }
 ```
+
+| 2.3.1. | Integer Data Types in Java: memory and length |
+|---|---|
+| 2.3.2. | Integer Calculations |
+| 2.3.3. | Add two integers, checking for overflow. |
+| 2.3.4. | Multiply two integers, checking for overflow. |
+| 2.3.5. | Subtract two integers, checking for overflow. |
+| 2.3.6. | Binary and Decimal value table |
+| 2.3.7. | Min and Max values of datatype int |
+| 2.3.8. | Hexadecimal Numbers and its corresponding Decimal and binary value |
+| 2.3.9. | Gets the maximum of three int values. |
+| 2.3.10. | Gets the minimum of three int values. |
+| 2.3.11. | Given an integer, return a string that is in an approximate, but human readable format |
+| 2.3.12. | int array to byte array |

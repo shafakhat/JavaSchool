@@ -56,7 +56,8 @@ import java.util.List;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * &lt;code&gt;null&lt;/code&gt; safe.
  *
@@ -82,7 +83,8 @@ import java.util.List;
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */public class Main {
+ */
+public class Main {
     /**
      * Searches a String for substrings delimited by a start and end tag,
      * returning all matching substrings in an array.
@@ -104,7 +106,8 @@ import java.util.List;
      * @param close  the String identifying the end of the substring, empty returns null
      * @return a String Array of substrings, or &lt;code&gt;null&lt;/code&gt; if no match
      * @since 2.3
-     */ public static String[] substringsBetween(String str, String open, String close) {
+     */
+    public static String[] substringsBetween(String str, String open, String close) {
         if (str == null || isEmpty(open) || isEmpty(close)) {
             return null;
         }
@@ -135,8 +138,8 @@ import java.util.List;
         return (String[]) list.toArray(new String [list.size()]);
     }
   // Empty checks
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * &lt;pre&gt;
@@ -153,11 +156,13 @@ import java.util.List;
    *
    * @param str  the String to check, may be null
    * @return &lt;code&gt;true&lt;/code&gt; if the String is empty or null
-   */ public static boolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="language-multiplelinesofcomment.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Multiple lines of comment</span></a><a class="pager-btn pager-next" href="operators-severalassignmentoperators.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Several assignment operators</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.34.1.</th><th>Get the difference between two strings</th></tr></thead><tbody><tr><td>2.34.2.</td><td>Gets a substring from the specified String avoiding exceptions.</td></tr><tr><td>2.34.3.</td><td>Gets len characters from the middle of a String.</td></tr><tr><td>2.34.4.</td><td>Gets the String that is nested in between two Strings. Only the first match is returned.</td></tr><tr><td>2.34.5.</td><td>Gets the String that is nested in between two instances of the same String.</td></tr><tr><td>2.34.6.</td><td>Gets the leftmost len characters of a String</td></tr><tr><td>2.34.7.</td><td>Gets the rightmost len characters of a String.</td></tr><tr><td>2.34.8.</td><td>Gets the substring after the first occurrence of a separator. The separator is not returned.</td></tr><tr><td>2.34.9.</td><td>Gets the substring before the last occurrence of a separator. The separator is not returned.</td></tr><tr><td>2.34.10.</td><td>Removes a substring only if it is at the begining of a source string, otherwise returns the source string.</td></tr><tr><td>2.34.11.</td><td>Removes a substring only if it is at the end of a source string, otherwise returns the source string.</td></tr><tr><td>2.34.12.</td><td>Substitute sub-strings in side of a string</td></tr><tr><td>2.34.13.</td><td>Searches a String for substrings delimited by a start and end tag, returning all matching substrings in an array.</td></tr><tr><td>2.34.14.</td><td>Counts how many times the substring appears in the larger String.</td></tr><tr><td>2.34.15.</td><td>Count the number of instances of substring within a string</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-getsthestringthatisnestedinbetweentwostringsonlythefirstmatchisreturne.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Gets the String that is ne...</span></a><a class="pager-btn pager-next" href="data-type-astringcanbecomparedwithastringbuffer.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">A string can be compared w...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Collections Framework New Types - JavaSchool</title>
+<meta name="description" content="Imported from the java2s.com archive: The Collections Framework New Types">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-thecollectionsframeworknewtypes">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-collections.html">Collections</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-16-deque.html">Deque</a></nav>
+    <h1>The Collections Framework New Types</h1>
+<div class="table-wrap"><table><thead><tr><th>New types in Collections Framework</th></tr></thead><tbody><tr><td>Deque BlockingDeque NavigableMap NavigableSet</td></tr><tr><td>The Deque Interface</td></tr><tr><td>Deque [pronounced "deck"] is short for double-ended queue.</td></tr><tr><td>java.util.Deque is a subinterface of Queue.</td></tr><tr><td>A deque is a queue that supports element insertion and removal at both ends.</td></tr><tr><td>You can also restrict the maximum number of elements in a Deque.</td></tr><tr><td>Deque can also be used as a stack.</td></tr><tr><td>Methods are available for adding, removing, and inspecting elements.</td></tr><tr><td>The ArrayDeque class is an implementation of Deque that does not impose capacity restriction.</td></tr><tr><td>ArrayDeque always grows as necessary to support new elements.</td></tr><tr><td>Using Deque as a stack</td></tr></tbody></table></div>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">import java.util.ArrayDeque;
+import java.util.Deque;
+public class IntegerStack {
+  private Deque&lt;Integer&gt; data = new ArrayDeque&lt;Integer&gt;();
+  public void push(Integer element) {
+    data.addFirst(element);
+  }
+  public Integer pop() {
+    return data.removeFirst();
+  }
+  public Integer peek() {
+    return data.peekFirst();
+  }
+  public String toString() {
+    return data.toString();
+  }
+  public static void main(String[] args) {
+    IntegerStack stack = new IntegerStack();
+    for (int i = 0; i &lt; 5; i++) {
+      stack.push(i);
+    }
+    System.out.println("After pushing 5 elements: " + stack);
+    int m = stack.pop();
+    System.out.println("Popped element = " + m);
+    System.out.println("After popping 1 element : " + stack);
+    int n = stack.peek();
+    System.out.println("Peeked element = " + n);
+    System.out.println("After peeking 1 element : " + stack);
+  }
+}
+java title=Example.java
+After pushing 5 elements: [4, 3, 2, 1, 0]
+Popped element = 4
+After popping 1 element : [3, 2, 1, 0]
+Peeked element = 3
+After peeking 1 element : [3, 2, 1, 0]</code></pre></div>
+    <div class="pager"><a class="pager-btn" href="collections-usearrayscopyoftocopyarray.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">use Arrays.copyOf to copy ...</span></a><a class="pager-btn pager-next" href="collections-blockingdeque.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">BlockingDeque</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

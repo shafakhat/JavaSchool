@@ -3,8 +3,8 @@ title: Removes separator from the end of str if it's there, otherwise leave it a
 nav: Removes separator from the...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1083
-source: https://web.archive.org/web/20100707054344/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/Removesseparatorfromtheendofstrifitsthereotherwiseleaveitalone.htm
+order: 1281
+source: https://web.archive.org/web/20140829083254/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Removesseparatorfromtheendofstrifitsthereotherwiseleaveitalone.htm
 ---
 ```java title=Example.java
 import java.io.PrintWriter;
@@ -89,3 +89,11 @@ public class Main {
   }
 }
 ```
+
+| 2.20.1. | Checking the Start of a String |
+|---|---|
+| 2.20.2. | Checking the End of a String |
+| 2.20.3. | Accessing String Characters |
+| 2.20.4. | Chop i characters off the end of a string. |
+| 2.20.5. | Removes separator from the end of str if it's there, otherwise leave it alone. |
+| 2.20.6. | Remove the last character from a String. |

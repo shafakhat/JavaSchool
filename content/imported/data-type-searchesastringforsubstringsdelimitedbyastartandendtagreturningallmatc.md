@@ -3,8 +3,8 @@ title: Searches a String for substrings delimited by a start and end tag, return
 nav: Searches a String for subs...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1006
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/SearchesaStringforsubstringsdelimitedbyastartandendtagreturningallmatchingsubstringsinanarray.htm
+order: 1301
+source: https://web.archive.org/web/20140829081715/http://www.java2s.com/Tutorial/Java/0040__Data-Type/SearchesaStringforsubstringsdelimitedbyastartandendtagreturningallmatchingsubstringsinanarray.htm
 ---
 ```java title=Example.java
 import java.util.ArrayList;
@@ -24,7 +24,8 @@ import java.util.List;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * <code>null</code> safe.
  *
@@ -50,7 +51,8 @@ import java.util.List;
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */public class Main {
+ */
+public class Main {
     /**
      * Searches a String for substrings delimited by a start and end tag,
      * returning all matching substrings in an array.
@@ -72,7 +74,8 @@ import java.util.List;
      * @param close  the String identifying the end of the substring, empty returns null
      * @return a String Array of substrings, or <code>null</code> if no match
      * @since 2.3
-     */ public static String[] substringsBetween(String str, String open, String close) {
+     */
+    public static String[] substringsBetween(String str, String open, String close) {
         if (str == null || isEmpty(open) || isEmpty(close)) {
             return null;
         }
@@ -103,8 +106,8 @@ import java.util.List;
         return (String[]) list.toArray(new String [list.size()]);
     }
   // Empty checks
- //-----------------------------------------------------------------------
- /**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -121,8 +124,26 @@ import java.util.List;
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */ public static boolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }
 ```
+
+| 2.34.1. | Get the difference between two strings |
+|---|---|
+| 2.34.2. | Gets a substring from the specified String avoiding exceptions. |
+| 2.34.3. | Gets len characters from the middle of a String. |
+| 2.34.4. | Gets the String that is nested in between two Strings. Only the first match is returned. |
+| 2.34.5. | Gets the String that is nested in between two instances of the same String. |
+| 2.34.6. | Gets the leftmost len characters of a String |
+| 2.34.7. | Gets the rightmost len characters of a String. |
+| 2.34.8. | Gets the substring after the first occurrence of a separator. The separator is not returned. |
+| 2.34.9. | Gets the substring before the last occurrence of a separator. The separator is not returned. |
+| 2.34.10. | Removes a substring only if it is at the begining of a source string, otherwise returns the source string. |
+| 2.34.11. | Removes a substring only if it is at the end of a source string, otherwise returns the source string. |
+| 2.34.12. | Substitute sub-strings in side of a string |
+| 2.34.13. | Searches a String for substrings delimited by a start and end tag, returning all matching substrings in an array. |
+| 2.34.14. | Counts how many times the substring appears in the larger String. |
+| 2.34.15. | Count the number of instances of substring within a string |

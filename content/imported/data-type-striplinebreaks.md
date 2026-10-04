@@ -3,8 +3,8 @@ title: Strip Line Breaks
 nav: Strip Line Breaks
 description: * Copyright (c) 2002-2005, Andrei (Andrus) Adamchik and individual authors
 section: Imported - java2s Archive
-order: 1052
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/StripLineBreaks.htm
+order: 1342
+source: https://web.archive.org/web/20140316163346/http://www.java2s.com/Tutorial/Java/0040__Data-Type/StripLineBreaks.htm
 ---
 ```java title=Example.java
 /**
@@ -60,7 +60,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * individuals and hosted on ObjectStyle Group web site.  For more
  * information on the ObjectStyle Group, please see
  * <http://objectstyle.org/>.
- */import java.io.BufferedInputStream;
+ */
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -97,21 +98,23 @@ import org.xml.sax.XMLReader;
  * Contains various unorganized static utility methods used across Cayenne.
  *
  * @author Andrei Adamchik
- */publicclass Util {
+ */
+public class Util {
   /**
    * Strips "\n", "\r\n", "\r" from the argument string.
    *
    * @since 1.2
-   */publicstatic String stripLineBreaks(String string, String replaceWith) {
+   */
+  public static String stripLineBreaks(String string, String replaceWith) {
       int len = string.length();
       StringBuffer buffer = new StringBuffer(len);
       for (int i = 0; i < len; i++) {
           char c = string.charAt(i);
           // skip \n, \r, \r\n
-switch (c) {
-              case'\n':
-              case'\r': // do lookahead
-if (i + 1 < len && string.charAt(i + 1) == '\n') {
+          switch (c) {
+              case '\n':
+              case '\r': // do lookahead
+                  if (i + 1 < len && string.charAt(i + 1) == '\n') {
                       i++;
                   }
                   buffer.append(replaceWith);
@@ -124,3 +127,43 @@ if (i + 1 < len && string.charAt(i + 1) == '\n') {
   }
 }
 ```
+
+| 2.30.1. | Format Calendar with String.format() |
+|---|---|
+| 2.30.2. | Format strings into table |
+| 2.30.3. | String.format(): right pad a string |
+| 2.30.4. | String.format(): left pad a string |
+| 2.30.5. | Format a String (JDK1.5) |
+| 2.30.6. | Pass value array to String.format() |
+| 2.30.7. | Remove/collapse multiple newline characters. |
+| 2.30.8. | Abbreviate string |
+| 2.30.9. | Capital and uncapital strings |
+| 2.30.10. | Transforms words to singular, plural, humanized (human readable), underscore, camel case, or ordinal form |
+| 2.30.11. | Replace New Lines |
+| 2.30.12. | Fix Line Separator |
+| 2.30.13. | Abbreviates a String using ellipses in both sides. |
+| 2.30.14. | Abbreviates a String using ellipses. |
+| 2.30.15. | Capitalize the first character of the given string |
+| 2.30.16. | Centers a String in a larger String of size size using the space character (' '). |
+| 2.30.17. | Centers a String in a larger String of size size. Uses a supplied String as the value to pad the String with. |
+| 2.30.18. | Centers a String in a larger String of size size. Uses a supplied character as the value to pad the String with. |
+| 2.30.19. | Convert string to uppercase |
+| 2.30.20. | Left pad a String with a specified String. |
+| 2.30.21. | Left pad a String with a specified character. |
+| 2.30.22. | Left pad a String with spaces (' '). |
+| 2.30.23. | Makes the first letter caps and the rest lowercase. |
+| 2.30.24. | Put quotes around the given String if necessary. |
+| 2.30.25. | Quote a string so that it can be used as an identifier or a string literal in SQL statements. |
+| 2.30.26. | Right pad a String with a specified String. |
+| 2.30.27. | Right pad a String with a specified character. |
+| 2.30.28. | Right pad a String with spaces (' '). |
+| 2.30.29. | Trim off trailing blanks but not leading blanks |
+| 2.30.30. | Truncate a String to the given length with no warnings or error raised if it is bigger. |
+| 2.30.31. | Uncapitalizes a String changing the first letter to title case as per Character.toLowerCase(char). No other letters are changed. |
+| 2.30.32. | Repeat String |
+| 2.30.33. | Repeat a String repeat times to form a new String. |
+| 2.30.34. | Strip Line Breaks |
+| 2.30.35. | Trim any of the characters |
+| 2.30.36. | Removes one newline from end of a String if it's there, otherwise leave it alone. |
+| 2.30.37. | Removes newline, carriage return and tab characters from a string |
+| 2.30.38. | Remove the leading and trailing quotes from str. |

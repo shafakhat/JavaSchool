@@ -3,8 +3,8 @@ title: Multiply two long integers, checking for overflow.
 nav: Multiply two long integers...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1038
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Multiplytwolongintegerscheckingforoverflow.htm
+order: 1230
+source: https://web.archive.org/web/20140829082309/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Multiplytwolongintegerscheckingforoverflow.htm
 ---
 ```java title=Example.java
 import java.io.File;
@@ -25,7 +25,8 @@ import java.io.File;
  *  limitations under the License.
  *
  *
- */publicclass Main {
+ */
+public class Main {
   /**
    *
    * @param a first value
@@ -34,7 +35,8 @@ import java.io.File;
    * @throws ArithmeticException if the result can not be represented as an
    *         long
    * @since 1.2
-   */publicstaticlong mulAndCheck(long a, long b) {
+   */
+  public static long mulAndCheck(long a, long b) {
       long ret;
       String msg = "overflow: multiply";
       if (a > b) {
@@ -44,30 +46,30 @@ import java.io.File;
           if (a < 0) {
               if (b < 0) {
                   // check for positive overflow with negative a, negative b
-if (a >= Long.MAX_VALUE / b) {
+                  if (a >= Long.MAX_VALUE / b) {
                       ret = a * b;
                   } else {
-                      thrownew ArithmeticException(msg);
+                      throw new ArithmeticException(msg);
                   }
-              } elseif (b > 0) {
+              } else if (b > 0) {
                   // check for negative overflow with negative a, positive b
-if (Long.MIN_VALUE / b <= a) {
+                  if (Long.MIN_VALUE / b <= a) {
                       ret = a * b;
                   } else {
-                      thrownew ArithmeticException(msg);
+                      throw new ArithmeticException(msg);
                   }
               } else {
                   // assert b == 0
                   ret = 0;
               }
-          } elseif (a > 0) {
+          } else if (a > 0) {
               // assert a > 0
-// assert b > 0
-// check for positive overflow with positive a, positive b
-if (a <= Long.MAX_VALUE / b) {
+              // assert b > 0
+              // check for positive overflow with positive a, positive b
+              if (a <= Long.MAX_VALUE / b) {
                   ret = a * b;
               } else {
-                  thrownew ArithmeticException(msg);
+                  throw new ArithmeticException(msg);
               }
           } else {
               // assert a == 0
@@ -78,3 +80,25 @@ if (a <= Long.MAX_VALUE / b) {
   }
 }
 ```
+
+| 2.8.1. | Long Integer Literal |
+|---|---|
+| 2.8.2. | Create a Long object |
+| 2.8.3. | Add two long integers, checking for overflow. |
+| 2.8.4. | Multiply two long integers, checking for overflow. |
+| 2.8.5. | Subtract two long integers, checking for overflow. |
+| 2.8.6. | Convert Long to numeric primitive data types example |
+| 2.8.7. | Convert long primitive to Long object Example |
+| 2.8.8. | Compute distance light travels using long variables |
+| 2.8.9. | Java long Example: long is 64 bit signed type |
+| 2.8.10. | Min and Max values of datatype long |
+| 2.8.11. | Gets the maximum of three long values. |
+| 2.8.12. | Gets the minimum of three long values. |
+| 2.8.13. | Convert Java String to Long example |
+| 2.8.14. | Use toString method of Long class to convert Long into String. |
+| 2.8.15. | Convert from long to String |
+| 2.8.16. | Convert from String to long |
+| 2.8.17. | A utility class for converting a long into a human readable string. |
+| 2.8.18. | Java Sort long Array Example |
+| 2.8.19. | Compare Two Java long Arrays Example |
+| 2.8.20. | Format long with System.out.format |

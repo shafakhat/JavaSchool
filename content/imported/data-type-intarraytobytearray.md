@@ -3,8 +3,8 @@ title: int array to byte array
 nav: int array to byte array
 description: * Permission is hereby granted, free of charge, to any person obtaining a copy of
 section: Imported - java2s Archive
-order: 1007
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/intarraytobytearray.htm
+order: 1189
+source: https://web.archive.org/web/20140829091945/http://www.java2s.com/Tutorial/Java/0040__Data-Type/intarraytobytearray.htm
 ---
 ```java title=Example.java
 /*
@@ -25,7 +25,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- */public class ArrayCopy {
+ */
+public class ArrayCopy {
   public static byte[] int2byte(int[]src) {
     int srcLength = src.length;
     byte[]dst = new byte[srcLength << 2];
@@ -41,3 +42,17 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
 }
 }
 ```
+
+| 2.3.1. | Integer Data Types in Java: memory and length |
+|---|---|
+| 2.3.2. | Integer Calculations |
+| 2.3.3. | Add two integers, checking for overflow. |
+| 2.3.4. | Multiply two integers, checking for overflow. |
+| 2.3.5. | Subtract two integers, checking for overflow. |
+| 2.3.6. | Binary and Decimal value table |
+| 2.3.7. | Min and Max values of datatype int |
+| 2.3.8. | Hexadecimal Numbers and its corresponding Decimal and binary value |
+| 2.3.9. | Gets the maximum of three int values. |
+| 2.3.10. | Gets the minimum of three int values. |
+| 2.3.11. | Given an integer, return a string that is in an approximate, but human readable format |
+| 2.3.12. | int array to byte array |

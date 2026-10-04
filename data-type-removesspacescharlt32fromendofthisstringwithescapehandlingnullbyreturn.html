@@ -57,13 +57,15 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  *  specific language governing permissions and limitations
  *  under the License.
  *
- *//**
+ */
+/**
  * Various string manipulation methods that are more efficient then chaining
  * string operations: all is done in the same buffer without creating a bunch of
  * string objects.
  *
  * @author &lt;a href="mailto:dev@labs.apache.org"&gt;Dungeon Project&lt;/a&gt;
- */publicclass Main {
+ */
+public class Main {
   /**
    *
    * Removes spaces (char &amp;lt;= 32) from end of this String, handling
@@ -82,11 +84,12 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param str the String to be trimmed, may be null
    * @param escapedSpace The last escaped space, if any
    * @return the trimmed string, &lt;code&gt;null&lt;/code&gt; if null String input
-   */publicstaticfinal String trimRight( String str, int escapedSpace )
+   */
+  public static final String trimRight( String str, int escapedSpace )
   {
       if ( isEmpty( str ) )
       {
-          return"";
+          return "";
       }
       int length = str.length();
       int end = length;
@@ -121,12 +124,14 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param str
    *            the String to check, may be null
    * @return &lt;code&gt;true&lt;/code&gt; if the String is empty or null
-   */publicstaticfinalboolean isEmpty( String str )
+   */
+  public static final boolean isEmpty( String str )
   {
       return str == null || str.length() == 0;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="jstl-jstlifelse.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">JSTL</span></a><a class="pager-btn pager-next" href="language-signjarwiththecertificatenamedaliasinthekeystore.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Sign jar with the certific...</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.28.1.</th><th>Demonstrates the charAt and getChars</th></tr></thead><tbody><tr><td>2.28.2.</td><td>Converting Char array to String</td></tr><tr><td>2.28.3.</td><td>Creating Character Arrays From String Objects</td></tr><tr><td>2.28.4.</td><td>Copy characters from string into char Array</td></tr><tr><td>2.28.5.</td><td>Creating String Objects From Character Arrays</td></tr><tr><td>2.28.6.</td><td>new String(textArray, 9, 3): Creating String Objects From certain part of a character Array</td></tr><tr><td>2.28.7.</td><td>Creating String Objects From Character Arrays using String.copyValueOf()</td></tr><tr><td>2.28.8.</td><td>Creating a string from a subset of the array elements</td></tr><tr><td>2.28.9.</td><td>Extracting a substring as an array of characters using the method getChars()</td></tr><tr><td>2.28.10.</td><td>Using the Collection-Based for Loop with a String: Counting all vowels in a string</td></tr><tr><td>2.28.11.</td><td>Construct one String from another.</td></tr><tr><td>2.28.12.</td><td>demonstrates getChars( ):</td></tr><tr><td>2.28.13.</td><td>implements CharSequence</td></tr><tr><td>2.28.14.</td><td>Removes spaces (char &lt;= 32) from end of this String with escape, handling null by returning null</td></tr><tr><td>2.28.15.</td><td>Removes spaces (char &lt;= 32) from end of this String, handling null by returning null</td></tr><tr><td>2.28.16.</td><td>Swaps the case of a String changing upper and title case to lower case, and lower case to upper case.</td></tr><tr><td>2.28.17.</td><td>Deletes all whitespaces from a String as defined by Character.isWhitespace(char).</td></tr><tr><td>2.28.18.</td><td>Checks whether the String contains only digit characters.</td></tr><tr><td>2.28.19.</td><td>Checks that the String does not contain certain characters.</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="data-type-addtwointegerscheckingforoverflow.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Add two integers, checking...</span></a><a class="pager-btn pager-next" href="data-type-addyeartocurrentdateusingcalendaraddmethod.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Add year to current date u...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

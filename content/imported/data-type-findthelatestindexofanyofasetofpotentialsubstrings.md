@@ -3,8 +3,8 @@ title: Find the latest index of any of a set of potential substrings.
 nav: Find the latest index of a...
 description: * Licensed to the Apache Software Foundation (ASF) under one or more
 section: Imported - java2s Archive
-order: 1026
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Findthelatestindexofanyofasetofpotentialsubstrings.htm
+order: 1156
+source: https://web.archive.org/web/20140829090630/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Findthelatestindexofanyofasetofpotentialsubstrings.htm
 ---
 ```java title=Example.java
 /**
@@ -22,7 +22,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * <code>null</code> safe.
  *
@@ -48,7 +49,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */publicclass Main {
+ */
+public class Main {
   /**
    *
    * A <code>null</code> String will return <code>-1</code>.
@@ -72,7 +74,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param str  the String to check, may be null
    * @param searchStrs  the Strings to search for, may be null
    * @return the last index of any of the Strings, -1 if no match
-   */publicstaticint lastIndexOfAny(String str, String[] searchStrs) {
+   */
+  public static int lastIndexOfAny(String str, String[] searchStrs) {
       if ((str == null) || (searchStrs == null)) {
           return -1;
       }
@@ -92,21 +95,22 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
       return ret;
   }
   // ----------------------------------------------------------------------
-/**
+  /**
    * Checks if an array of Objects is empty or <code>null</code>.
    *
    * @param array  the array to test
    * @return <code>true</code> if the array is empty or <code>null</code>
    * @since 2.1
-   */publicstaticboolean isEmpty(char[] array) {
+   */
+  public static boolean isEmpty(char[] array) {
       if (array == null || array.length == 0) {
           return true;
       }
       return false;
   }
   // Empty checks
-//-----------------------------------------------------------------------
-/**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * <pre>
@@ -123,8 +127,32 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    *
    * @param str  the String to check, may be null
    * @return <code>true</code> if the String is empty or null
-   */publicstaticboolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }
 ```
+
+| 2.29.1. | Find the latest index of any of a set of potential substrings. |
+|---|---|
+| 2.29.2. | Find the first index of any of a set of potential substrings. |
+| 2.29.3. | Finds the first index within a String, handling null. |
+| 2.29.4. | Finds the last index within a String from a start position, handling null. |
+| 2.29.5. | Finds the n-th index within a String, handling null. |
+| 2.29.6. | Use String.indexOf to locate a character in a string |
+| 2.29.7. | Use String.lastIndexOf to find a character in a string |
+| 2.29.8. | Use String.indexOf to locate a substring in a string |
+| 2.29.9. | Use lastIndexOf to find a substring in a string |
+| 2.29.10. | Demonstrate indexOf() and lastIndexOf(). |
+| 2.29.11. | Extract Substring with indexOf |
+| 2.29.12. | Java String endsWith |
+| 2.29.13. | Java String startsWith |
+| 2.29.14. | Starts with, ignore case( regular expressions ) |
+| 2.29.15. | Ends with, ignore case( regular expressions ) |
+| 2.29.16. | Anywhere, ignore case( regular expressions ) |
+| 2.29.17. | Last occurrence of a character |
+| 2.29.18. | Not found returns -1 |
+| 2.29.19. | A bubble sort for Strings. |
+| 2.29.20. | Search a String to find the first index of any character in the given set of characters. |
+| 2.29.21. | Search a String to find the first index of any character not in the given set of characters. |

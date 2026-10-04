@@ -3,15 +3,15 @@ title: Java Tutorial - Java BasicStroke JOIN_MITER
 nav: Java Tutorial - Java Basic...
 description: In the following code shows how to use BasicStroke.JOIN_MITER field.
 section: Imported - java2s Archive
-order: 1008
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorials/Java/java.awt/BasicStroke/Java_BasicStroke_JOIN_MITER.htm
+order: 1116
+source: https://web.archive.org/web/2018/http://www.java2s.com/Tutorials/Java/java.awt/BasicStroke/Java_BasicStroke_JOIN_MITER.htm
 ---
 ### Syntax
 
 BasicStroke.JOIN_MITER has the following syntax.
 
 ```java title=Example.java
-publicstaticfinalint JOIN_MITER
+public static final int JOIN_MITER
 ```
 
 ### Example
@@ -26,8 +26,8 @@ import java.awt.RenderingHints;
 import java.awt.geom.GeneralPath;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-publicclass Main extends JPanel {
-  publicvoid paint(Graphics g) {
+public class Main extends JPanel {
+  public void paint(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     RenderingHints rh = g2.getRenderingHints();
     rh.put(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -40,7 +40,7 @@ publicclass Main extends JPanel {
     path.lineTo(270.0f, 90.0f);
     g2.draw(path);
   }
-  publicstaticvoid main(String[] args) {
+  public static void main(String[] args) {
     JFrame frame = new JFrame();
     frame.add(new Main());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

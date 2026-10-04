@@ -3,8 +3,8 @@ title: Floating-Point Calculations
 nav: Floating-Point Calculations
 description: Imported from the java2s.com archive: Floating-Point Calculations
 section: Imported - java2s Archive
-order: 1007
-source: https://web.archive.org/web/20070330081251/http://www.java2s.com:80/Tutorial/Java/0040__Data-Type/FloatingPointCalculations.htm
+order: 1157
+source: https://web.archive.org/web/20140829075918/http://www.java2s.com/Tutorial/Java/0040__Data-Type/FloatingPointCalculations.htm
 ---
 The four arithmetic operators: +, -, *, /.
 
@@ -21,3 +21,10 @@ public class MainClass {
 java title=Example.java
 7.5
 ```
+
+| 2.10.1. | Floating-Point Data Types: memory and length |
+|---|---|
+| 2.10.2. | Write Floating-Point Literals with an exponent |
+| 2.10.3. | Floating-Point Calculations |
+| 2.10.4. | Using ++ and -- with floating-point variables |
+| 2.10.5. | Applying the modulus operator, %, to floating-point values |

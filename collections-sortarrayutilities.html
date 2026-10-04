@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sort array utilities - JavaSchool</title>
+<meta name="description" content="Sort array utilities: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-sortarrayutilities">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-collections.html">Collections</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-08-array-sort-search.html">Array Sort Search</a></nav>
+    <h1>Sort array utilities</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Copyright 2004, 2005, 2006 Odysseus Software GmbH
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+/**
+ * Utility class providing some useful static sort methods. The sort routines
+ * all return index permutations p such that data[p[0]],..,data[p[data.length-1]]
+ * is in sorted order. The data array itself is not modified.
+ * To actually rearrange the array elements, the inverse of p can be used to
+ * permute the array, such that data[0],..,data[data.length-1] is in sorted
+ * order. Use &lt;code&gt;getIterator(p, data)&lt;/code&gt; to iterate in sorted order.
+ * A code example may show you what to do next:
+ * &lt;pre&gt;
+ * String[] colors = { "red", "green", "blue" };
+ * int[] p = SortUtils.sort(colors, new StringComparator());
+ * // --&gt; (colors[p[0]], colors[p[1]], colors[p[2]]) == ("blue","green","red")
+ * Iterator iter = SortUtils.getIterator(p, colors)
+ * // --&gt; (iter.next(), iter.next(), iter.next()) == ("blue","green","red")
+ * SortUtils.permute(SortUtils.inverse(p), colors, true);
+ * // --&gt; (colors[0], colors[1], colors[2]) == ("blue","green","red")
+ * &lt;/pre&gt;
+ * Stable sorts (preserving order of equal elements) are supported.
+ * Sorting is done using quick-sort mith median of 3 (and insertion-sort
+ * for small ranges).
+ *
+ * @author Christoph Beck
+ */
+public class SortUtils {
+  /**
+   * Helper class used to perform quicksort.
+   *
+   * @author Christoph Beck
+   */
+  static final class QuickSorter {
+    private static final int INSERTIONSORT_THRESHOLD = 7;
+    private final Object[] data;
+    QuickSorter(Object[] data) {
+      this.data = data;
+    }
+    private int compare(Comparator cmp, boolean stable, int i, int j) {
+      int result = cmp.compare(data[i], data[j]);
+      if (result == 0 &amp;&amp; stable &amp;&amp; i != j) {
+        result = i &lt; j ? -1 : 1;
+      }
+      return result;
+    }
+    private int med3(Comparator cmp, int a, int b, int c) {
+        return  (compare(cmp, false, a, b) &lt; 0 ?
+            (compare(cmp, false, b, c) &lt; 0 ? b : compare(cmp, false, a, c) &lt; 0 ? c : a) :
+            (compare(cmp, false, b, c) &gt; 0 ? b : compare(cmp, false, a, c) &lt; 0 ? c : a));
+    }
+    private int pivot(int[] indices, Comparator cmp, int lo, int hi) {
+      return med3(cmp, indices[lo + 1], indices[(lo + hi) / 2], indices[hi - 1]);
+    }
+    private void swap(int[] indices, int i, int j) {
+      int tmp = indices[i];
+      indices[i] = indices[j];
+      indices[j] = tmp;
+    }
+    private void insertionSort(int[] indices, Comparator cmp, boolean stable, int lo, int hi) {
+      for (int i = lo; i &lt;= hi; i++) {
+            for (int j = i; j &gt; lo &amp;&amp; compare(cmp, stable, indices[j-1], indices[j]) &gt; 0; j--) {
+              swap(indices, j-1, j);
+            }
+          }
+    }
+    private void quickSort(int[] indices, Comparator cmp, boolean stable, int lo0, int hi0) {
+      int pivot = pivot(indices, cmp, lo0, hi0);
+      int lo = lo0, hi = hi0;
+      while (lo &lt;= hi) {
+        while (lo &lt; hi0 &amp;&amp; compare(cmp, stable, pivot, indices[lo]) &gt; 0)
+          ++lo;
+        while (hi &gt; lo0 &amp;&amp; compare(cmp, stable, pivot, indices[hi]) &lt; 0)
+          --hi;
+        if (lo &lt;= hi) {
+          swap(indices, lo++, hi--);
+        }
+      }
+      sort(indices, cmp, stable, lo0, hi);
+      sort(indices, cmp, stable, lo, hi0);
+    }
+    void sort(int[] indices, Comparator cmp, boolean stable, int lo, int hi) {
+      if (hi - lo &lt; INSERTIONSORT_THRESHOLD) {
+        insertionSort(indices, cmp, stable, lo, hi);
+      } else {
+        quickSort(indices, cmp, stable, lo, hi);
+      }
+    }
+    void sort(int[] indices, Comparator cmp, boolean stable) {
+      sort(indices, cmp, stable, 0, indices.length - 1);
+    }
+    int[] sort(Comparator cmp, boolean stable) {
+      int[] indices = identity(data.length);
+      sort(indices, cmp, stable);
+      return indices;
+    }
+  }
+  /**
+   * Create identity permutation, that is &lt;code&gt;{0, 1, ..., n}&lt;/code&gt;
+   */
+  public static int[] identity(int n) {
+    int[] indices = new int[n];
+    for (int i = 0; i &lt; n; i++)
+      indices[i] = i;
+    return indices;
+  }
+  /**
+   * Create reverse permutation, that is &lt;code&gt;{n-1, .... 1, 0}&lt;/code&gt;
+   */
+  public static int[] reverse(int n) {
+    int[] indices = new int[n];
+    for (int i = 0; i &lt; n; i++)
+      indices[i] = n - i - 1;
+    return indices;
+  }
+  /**
+   * Compute inverse permutation
+   */
+  public static int[] inverse(int[] p) {
+    int[] pi = new int[p.length];
+    for (int i = 0; i &lt; pi.length; i++)
+      pi[p[i]] = i;
+    return pi;
+  }
+  /**
+   * Rearrange the specified data according to the specified permutation.
+   * That is, the array is rearranged, such that
+   * &lt;code&gt;data_after[p[i]] == data_before[i]&lt;/code&gt;.
+   * @param data data to be permuted
+   * @param p the permutation
+   * @param clone if true, rearrange a clone instead of the original data;
+   * @return the permuted array (which is the original reference if clone == false)
+   */
+  public static Object[] permute(int[] p, Object[] data, boolean clone) {
+    Object[] permuted = null;
+    if (clone) {
+      permuted = (Object[])data.clone();
+      for (int i = 0; i &lt; data.length; i++)
+        permuted[p[i]] = data[i];
+    } else {
+      // run thru cycles
+      int i = 0;
+      while (i &lt; p.length) {
+        if (p[i] &lt; 0 || p[i] == i) // skip already handled and cycles of length 1
+          ++i;
+        else { // start a new cycle
+          int j = p[i];
+          Object save = data[i];
+          while (p[j] &gt;= 0) {
+            Object tmp = data[j];
+            data[j] = save;
+            save = tmp;
+            i = j;
+            j = p[j];
+            p[i] = -1;
+          }
+        }
+      }
+      permuted = data;
+    }
+    return permuted;
+  }
+  /**
+   * Answer iterator, which iterates over specified data array according
+   * to the specified permutation, that is
+   * &lt;code&gt;data[p[0]],..,data[p[data.length-1]]&lt;/code&gt;
+   */
+  public static Iterator getIterator(final int[] p, final Object[] data) {
+    return new Iterator() {
+      int pos = 0;
+      public boolean hasNext() {
+        return pos &lt; data.length;
+      }
+      public Object next() {
+        return data[p[pos++]];
+      }
+      public void remove() {
+        throw new UnsupportedOperationException("Cannot remove from immutable iterator!");
+      }
+    };
+  }
+  /**
+   * Answer iterator, which iterates over specified data list according
+   * to the specified permutation, that is
+   * &lt;code&gt;data.get(p[0]),..,data.get(p[data.length-1])&lt;/code&gt;
+   */
+  public static Iterator getIterator(final int[] p, final List data) {
+    return new Iterator() {
+      int pos = 0;
+      public boolean hasNext() {
+        return pos &lt; data.size();
+      }
+      public Object next() {
+        return data.get(p[pos++]);
+      }
+      public void remove() {
+        throw new UnsupportedOperationException("Cannot remove from immutable iterator!");
+      }
+    };
+  }
+//  /**
+//   * An improved heap builder.
+//   * Assumes children of i at 2i and 2i+1 (requires i&gt;0)
+//   */
+//  private static void cheap(int[] indices, Object[] data, Comparator comparator, int i, int j) {
+//    int k = (i &lt;&lt; 1);
+//    if (k &gt; j)
+//      return;
+//    while (k &lt; j) {
+//      if (comparator.compare(data[indices[k]], data[indices[k + 1]]) &lt; 0)
+//        k++;
+//      k &lt;&lt;= 1;
+//    }
+//    if (k &gt; j)
+//      k &gt;&gt;= 1;
+//    while (comparator.compare(data[indices[k]], data[indices[i]]) &lt; 0)
+//      k &gt;&gt;= 1;
+//    int t1 = indices[i], t2;
+//    while (k &gt; i) {
+//      t2 = indices[k];
+//      indices[k] = t1;
+//      k &gt;&gt;= 1;
+//      t1 = indices[k];
+//      indices[k] = t2;
+//      k &gt;&gt;= 1;
+//    }
+//    if (k == i)
+//      indices[i] = t1;
+//  }
+//
+//  /**
+//   * Do a (clever) heapsort.
+//   *
+//   * @param comparator Comparator object specifying the sort order.
+//   */
+//  public static void cheapSort(int[] indices, Object[] data, Comparator comparator) {
+//    int n = data.length;
+//    if (n &gt; 1) {
+//      int i;
+//      int m = 0;
+//      for (i = 1; i &lt; n; i++)
+//        if (comparator.compare(data[indices[i]], data[indices[m]]) &lt; 0)
+//          m = i;
+//      if (m &gt; 0) {
+//        int t = indices[0];
+//        indices[0] = indices[m];
+//        indices[m] = t;
+//      }
+//      if (n &gt; 2) {
+//        for (i = n / 2; i &gt; 1; i--)
+//          cheap(indices, data, comparator, i, n - 1);
+//        for (i = n - 1; i &gt; 1; i--) {
+//          cheap(indices, data, comparator, 1, i);
+//          int t = indices[1];
+//          indices[1] = indices[i];
+//          indices[i] = t;
+//        }
+//      }
+//    }
+//  }
+//
+//  /**
+//   * Perform a cheapsort
+//   */
+//  public static int[] cheapSort(Object[] data, Comparator comparator) {
+//    int[] indices = identity(data.length);
+//    cheapSort(indices, data, comparator);
+//    return indices;
+//  }
+  /**
+   * Do a sort on indices.
+   * @param data data to be sorted
+   * @param comparator comparator to use
+   * @param stable do a stable sort iff true
+   * @param indices into data (any permutation of 0,..data.length-1).
+   */
+  public static void sort(int[] indices, Object[] data, Comparator comparator, boolean stable) {
+    new QuickSorter(data).sort(indices, comparator, stable);
+  }
+  /**
+   * Do a sort on indices.
+   * @param data data to be sorted
+   * @param comparator comparator to use
+   * @param stable do a stable sort iff true
+   * @return permutation p such that data[p[0]],..,data[p[data.length-1]] is in sorted order
+   */
+  public static int[] sort(Object[] data, Comparator comparator, boolean stable) {
+    int[] indices = identity(data.length);
+    sort(indices, data, comparator, stable);
+    return indices;
+  }
+  /**
+   * Do an unstable sort.
+   * @param data data to be sorted
+   * @param comparator comparator to use
+   * @return permutation p such that data[p[0]],..,data[p[data.length-1]] is in sorted order
+   */
+  public static int[] sort(Object[] data, Comparator comparator) {
+    return sort(data, comparator, false);
+  }
+  /**
+   * Do an unstable sort.
+   * @param data data to be sorted
+   * @param indices into data (permutation of 0,..data.length-1).
+   */
+  public static void sort(int[] indices, Object[] data, Comparator comparator) {
+    sort(indices, data, comparator, false);
+  }
+  /**
+   * Test method
+   */
+  public static void main(String[] args) {
+    Comparator cmp = new Comparator() {
+      public int compare(Object o1, Object o2) {
+        return ((Comparable)o1).compareTo(o2);
+      }
+    };
+    int n = 1000000;
+    if (args.length == 1)
+      try {
+        n = Integer.parseInt(args[0]);
+      } catch (Exception e) {
+        System.err.println(e);
+      }
+    System.out.println("Generating " + n + " random integers...");
+    java.util.Random random = new java.util.Random();
+    Integer[] data = new Integer[n];
+    for (int i = 0; i &lt; n; i++) {
+      data[i] = new Integer(Math.abs(random.nextInt()));
+//      data[i] = new Integer(i);
+    }
+    int[] indices;
+    long time;
+    System.out.print("Arrays.sort...");
+    time = System.currentTimeMillis();
+    Integer[] clone = (Integer[])data.clone();
+    Arrays.sort(clone, cmp);
+    System.out.println(System.currentTimeMillis()-time  + "ms");
+    System.out.print("quicksort...");
+    indices = identity(n);
+    time = System.currentTimeMillis();
+    sort(indices, data, cmp, false);
+    System.out.println(System.currentTimeMillis()-time  + "ms");
+    for (int i = 1; i &lt; n; i++)
+      if (cmp.compare(data[indices[i-1]], data[indices[i]]) &gt; 0)
+        System.err.println("proplem: quickSort at " + i);
+    System.out.print("quicksort stable...");
+//    indices = identity(n);
+    time = System.currentTimeMillis();
+    sort(indices, data, cmp, true);
+    System.out.println(System.currentTimeMillis()-time + "ms");
+    for (int i = 1; i &lt; n; i++) {
+      int res = cmp.compare(data[indices[i-1]], data[indices[i]]);
+      if (res &gt; 0)
+        System.err.println("proplem: quickSort stable at " + i);
+      if (res == 0 &amp;&amp; indices[i-1] &gt; indices[i])
+        System.err.println("proplem: quickSort stable (not stable) at " + i);
+    }
+//    System.out.print("cheapsort...");
+//    time = System.currentTimeMillis();
+//    indices = cheapSort(data, cmp);
+//    System.out.println(System.currentTimeMillis()-time + "ms");
+//    for (int i = 1; i &lt; n; i++)
+//      if (cmp.compare(data[indices[i-1]], data[indices[i]]) &gt; 0)
+//        System.err.println("proplem: cheapSort at " + i);
+    System.out.print("permutate copy...");
+    time = System.currentTimeMillis();
+    Object[] data_copy = permute(inverse(indices), data, true);
+    System.out.println(System.currentTimeMillis()-time + "ms");
+    for (int i = 1; i &lt; n; i++)
+      if (cmp.compare(data_copy[i-1], data_copy[i]) &gt; 0)
+        System.err.println("proplem: permute copy at " + i);
+    System.out.print("permutate original...");
+    time = System.currentTimeMillis();
+    permute(inverse(indices), data, false);
+    System.out.println(System.currentTimeMillis()-time + "ms");
+    for (int i = 1; i &lt; n; i++)
+      if (cmp.compare(data[i-1], data[i]) &gt; 0)
+        System.err.println("proplem: permute original at " + i);
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>9.8.1.</th><th>Sorting Arrays</th></tr></thead><tbody><tr><td>9.8.2.</td><td>Sorting a subset of array elements</td></tr><tr><td>9.8.3.</td><td>Sorting arrays of objects</td></tr><tr><td>9.8.4.</td><td>Object Arrays: Searching for elements in a sorted object array</td></tr><tr><td>9.8.5.</td><td>Searching Arrays</td></tr><tr><td>9.8.6.</td><td>Finds the index of the given object in the array starting at the given index.</td></tr><tr><td>9.8.7.</td><td>Finds the index of the given object in the array.</td></tr><tr><td>9.8.8.</td><td>Finds the last index of the given object in the array starting at the given index.</td></tr><tr><td>9.8.9.</td><td>Finds the value in the range (start,limit) of the largest element (rank) where the count of all smaller elements in that range is less than or equals target.</td></tr><tr><td>9.8.10.</td><td>Returns an index into arra (or -1) where the character is not in the charset byte array.</td></tr><tr><td>9.8.11.</td><td>Returns an int[] array of length segments containing the distribution count of the elements in unsorted int[] array with values between min and max (range).</td></tr><tr><td>9.8.12.</td><td>Returns the minimum value in an array.</td></tr><tr><td>9.8.13.</td><td>Returns true if all the references in array1 are equal to all the references in array2 (two null references are considered equal for this test).</td></tr><tr><td>9.8.14.</td><td>Get the element index or last index among a boolean type array</td></tr><tr><td>9.8.15.</td><td>Produces a new array containing the elements between the start and end indices.</td></tr><tr><td>9.8.16.</td><td>Test the equality of two object arrays</td></tr><tr><td>9.8.17.</td><td>Get the index and last index of an int type value array</td></tr><tr><td>9.8.18.</td><td>FastQSorts the [l,r] partition (inclusive) of the specfied array of Rows, using the comparator.</td></tr><tr><td>9.8.19.</td><td>Sort array utilities</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="collections-fastqsortsthelrpartitioninclusiveofthespecfiedarrayofrowsusingthecom.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">FastQSorts the [l,r] parti...</span></a><a class="pager-btn pager-next" href="collections-sortinganarrayindescendingreverseorder.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Sorting an Array in Descen...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

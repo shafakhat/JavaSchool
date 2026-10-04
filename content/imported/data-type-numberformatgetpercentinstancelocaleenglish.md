@@ -3,14 +3,14 @@ title: NumberFormat.getPercentInstance(Locale.ENGLISH)
 nav: NumberFormat.getPercentIns...
 description: NumberFormat percentFormat = NumberFormat.getPercentInstance(Locale.ENGLISH);
 section: Imported - java2s Archive
-order: 1039
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/NumberFormatgetPercentInstanceLocaleENGLISH.htm
+order: 1242
+source: https://web.archive.org/web/20140829090326/http://www.java2s.com/Tutorial/Java/0040__Data-Type/NumberFormatgetPercentInstanceLocaleENGLISH.htm
 ---
 ```java title=Example.java
 import java.text.NumberFormat;
 import java.util.Locale;
-publicclass MainClass {
-  publicstaticvoid main(String[] args) {
+public class MainClass {
+  public static void main(String[] args) {
     NumberFormat percentFormat = NumberFormat.getPercentInstance(Locale.ENGLISH);
     for (double d = 0.0; d <= 1.0; d += 0.005) {
       System.out.println(percentFormat.format(d));
@@ -219,3 +219,19 @@ java title=Example.java
 99%
 100%
 ```
+
+| 2.14.1. | Number formatting helps make your numbers more readable. |
+|---|---|
+| 2.14.2. | Specifying Precision |
+| 2.14.3. | Applied to strings, the precision specifier specifies the maximum field length |
+| 2.14.4. | Illustrating the precision specifier |
+| 2.14.5. | Add leading zeros to a number |
+| 2.14.6. | NumberFormat.getInstance() |
+| 2.14.7. | NumberFormat.getCurrencyInstance(Locale.ENGLISH) |
+| 2.14.8. | NumberFormat: Minimum Integer Digits, Maximum/Minimum Fraction Digits |
+| 2.14.9. | Number format with FieldPosition |
+| 2.14.10. | NumberFormat.getPercentInstance(Locale.ENGLISH) |
+| 2.14.11. | A number formatter for logarithmic values. This formatter does not support parsing. |
+| 2.14.12. | Format a percentage for presentation to the user |
+| 2.14.13. | Get Percent Value |
+| 2.14.14. | Helper class for format number and currency |

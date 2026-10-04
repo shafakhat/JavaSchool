@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * Operations on {@link java.lang.String} that are
  * &lt;code&gt;null&lt;/code&gt; safe.
  *
@@ -80,7 +81,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * @author Scott Johnson
  * @since 1.0
  * @version $Id: StringUtils.java 635447 2008-03-10 06:27:09Z bayard $
- */publicclass Main {
+ */
+public class Main {
   /**
    *
    * A &lt;code&gt;null&lt;/code&gt; String will return &lt;code&gt;-1&lt;/code&gt;.
@@ -104,7 +106,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    * @param str  the String to check, may be null
    * @param searchStrs  the Strings to search for, may be null
    * @return the last index of any of the Strings, -1 if no match
-   */publicstaticint lastIndexOfAny(String str, String[] searchStrs) {
+   */
+  public static int lastIndexOfAny(String str, String[] searchStrs) {
       if ((str == null) || (searchStrs == null)) {
           return -1;
       }
@@ -124,21 +127,22 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
       return ret;
   }
   // ----------------------------------------------------------------------
-/**
+  /**
    * Checks if an array of Objects is empty or &lt;code&gt;null&lt;/code&gt;.
    *
    * @param array  the array to test
    * @return &lt;code&gt;true&lt;/code&gt; if the array is empty or &lt;code&gt;null&lt;/code&gt;
    * @since 2.1
-   */publicstaticboolean isEmpty(char[] array) {
+   */
+  public static boolean isEmpty(char[] array) {
       if (array == null || array.length == 0) {
           return true;
       }
       return false;
   }
   // Empty checks
-//-----------------------------------------------------------------------
-/**
+  //-----------------------------------------------------------------------
+  /**
    * Checks if a String is empty ("") or null.
    *
    * &lt;pre&gt;
@@ -155,11 +159,13 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
    *
    * @param str  the String to check, may be null
    * @return &lt;code&gt;true&lt;/code&gt; if the String is empty or null
-   */publicstaticboolean isEmpty(String str) {
+   */
+  public static boolean isEmpty(String str) {
       return str == null || str.length() == 0;
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="regular-expressions-extractasubstringbymatchingaregularexpression.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Extract a substring by mat...</span></a><a class="pager-btn pager-next" href="development-formattingdayinddformatlike0102etc.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Formatting day in dd forma...</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.29.1.</th><th>Find the latest index of any of a set of potential substrings.</th></tr></thead><tbody><tr><td>2.29.2.</td><td>Find the first index of any of a set of potential substrings.</td></tr><tr><td>2.29.3.</td><td>Finds the first index within a String, handling null.</td></tr><tr><td>2.29.4.</td><td>Finds the last index within a String from a start position, handling null.</td></tr><tr><td>2.29.5.</td><td>Finds the n-th index within a String, handling null.</td></tr><tr><td>2.29.6.</td><td>Use String.indexOf to locate a character in a string</td></tr><tr><td>2.29.7.</td><td>Use String.lastIndexOf to find a character in a string</td></tr><tr><td>2.29.8.</td><td>Use String.indexOf to locate a substring in a string</td></tr><tr><td>2.29.9.</td><td>Use lastIndexOf to find a substring in a string</td></tr><tr><td>2.29.10.</td><td>Demonstrate indexOf() and lastIndexOf().</td></tr><tr><td>2.29.11.</td><td>Extract Substring with indexOf</td></tr><tr><td>2.29.12.</td><td>Java String endsWith</td></tr><tr><td>2.29.13.</td><td>Java String startsWith</td></tr><tr><td>2.29.14.</td><td>Starts with, ignore case( regular expressions )</td></tr><tr><td>2.29.15.</td><td>Ends with, ignore case( regular expressions )</td></tr><tr><td>2.29.16.</td><td>Anywhere, ignore case( regular expressions )</td></tr><tr><td>2.29.17.</td><td>Last occurrence of a character</td></tr><tr><td>2.29.18.</td><td>Not found returns -1</td></tr><tr><td>2.29.19.</td><td>A bubble sort for Strings.</td></tr><tr><td>2.29.20.</td><td>Search a String to find the first index of any character in the given set of characters.</td></tr><tr><td>2.29.21.</td><td>Search a String to find the first index of any character not in the given set of characters.</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="class-creatingaconstructorforananonymousinnerclass.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Creating a constructor for...</span></a><a class="pager-btn pager-next" href="data-type-getthelastdayofamonth.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Get the last day of a month</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

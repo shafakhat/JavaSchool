@@ -54,7 +54,8 @@ document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
  * The Initial Developer of the Original Code is Sapient Corporation
  *
  * Copyright (C) 2003 Sapient Corporation. All Rights Reserved.
- */import java.util.ArrayList;
+ */
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -67,14 +68,16 @@ import java.util.StringTokenizer;
  * @since carbon 1.0
  * @author Greg Hinkle, May 2002
  * @version $Revision: 1.5 $($Author: dvoet $ / $Date: 2003/05/05 21:21:24 $)
- */publicclass StringUtil {
+ */
+public class StringUtil {
   /**
    * Parses a comma-separated list into an array of Strings
    * Values can contain whitespace, but whitespace at the beginning and
    * end of each value is trimmed.
    * @return array of Strings
    * @param csvList a string of comma seperated values
-   */publicstatic String[] parseCommaDelimitedList(String csvList) {
+   */
+  public static String[] parseCommaDelimitedList(String csvList) {
       String[] result = parseList(csvList, ",");
       for (int i = 0; i &lt; result.length; i++) {
           result[i] = result[i].trim();
@@ -85,7 +88,8 @@ import java.util.StringTokenizer;
    * Parses a whitepsace-separated list into an array of Strings
    * @return array of Strings
    * @param wsvList a string of white space seperated values
-   */publicstatic String[] parseWhitespaceDelimitedList(String wsvList) {
+   */
+  public static String[] parseWhitespaceDelimitedList(String wsvList) {
       return parseList(wsvList, "\t ");
   }
   /**
@@ -96,7 +100,8 @@ import java.util.StringTokenizer;
    * @param delim the delimiter character(s).  Each character in the string is a
    * single delimeter.
    * @return an array of strings
-   */publicstatic String[] parseList(String list, String delim) {
+   */
+  public static String[] parseList(String list, String delim) {
       List result = new ArrayList();
       StringTokenizer tokenizer = new StringTokenizer(list, delim);
       while (tokenizer.hasMoreTokens()) {
@@ -105,7 +110,8 @@ import java.util.StringTokenizer;
       return (String[]) result.toArray(new String[0]);
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="data-type-numberformatgetpercentinstancelocaleenglish.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">NumberFormat.getPercentIns...</span></a><a class="pager-btn pager-next" href="class-definition-polymorphism.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Polymorphism</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.24.1.</th><th>Tokenizing a String</th></tr></thead><tbody><tr><td>2.24.2.</td><td>Delimiters are comma, space, or period: '[, .]'</td></tr><tr><td>2.24.3.</td><td>Parse Comma Delimited List</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="comparator-index.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Java Collection Tutorial -...</span></a><a class="pager-btn pager-next" href="class-definition-demonstrateruntimetypeinformation.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Demonstrate Run-Time Type ...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

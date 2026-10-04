@@ -126,27 +126,22 @@ public class MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 Natural Order
 X, A. Age:56
 C, S. Age:8
 H, E. Age:16
 Q, B. Age:69
-
 Sorted by last name
 C, S. Age:8
 H, E. Age:16
 Q, B. Age:69
 X, A. Age:56
-
 Sorted by first name
 X, A. Age:56
 Q, B. Age:69
 H, E. Age:16
 C, S. Age:8
-
 Sorted by age
 C, S. Age:8
 H, E. Age:16

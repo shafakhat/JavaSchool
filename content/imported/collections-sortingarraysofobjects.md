@@ -11,9 +11,7 @@ public static void sort(Object array[])
 public static void sort(Object array[], int fromIndex, int toIndex)
 public static void sort(Object array[], Comparator c)
 public static void sort(Object array[], int fromIndex, int toIndex, Comparator c)
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Arrays;
 public class MainClass {
   public static void main(String args[]) throws Exception {
@@ -24,9 +22,7 @@ public class MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 A
 B
 C

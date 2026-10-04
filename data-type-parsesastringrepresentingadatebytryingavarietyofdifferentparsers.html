@@ -61,7 +61,8 @@ import java.util.Date;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *//**
+ */
+/**
  * &lt;p&gt;A suite of utilities surrounding the use of the
  * {@link java.util.Calendar} and {@link java.util.Date} object.&lt;/p&gt;
  *
@@ -86,9 +87,10 @@ import java.util.Date;
  * @author Robert Scholte
  * @since 2.0
  * @version $Id: DateUtils.java 634096 2008-03-06 00:58:11Z niallp $
- */publicclass Main {
+ */
+public class Main {
   //-----------------------------------------------------------------------
-/**
+  /**
    * &lt;p&gt;Parses a string representing a date by trying a variety of different parsers.&lt;/p&gt;
    *
    * &lt;p&gt;The parse will try each parse pattern in turn.
@@ -100,9 +102,10 @@ import java.util.Date;
    * @return the parsed date
    * @throws IllegalArgumentException if the date string or pattern array is null
    * @throws ParseException if none of the date patterns were suitable
-   */publicstatic Date parseDate(String str, String[] parsePatterns) throws ParseException {
+   */
+  public static Date parseDate(String str, String[] parsePatterns) throws ParseException {
       if (str == null || parsePatterns == null) {
-          thrownew IllegalArgumentException("Date and Patterns must not be null");
+          throw new IllegalArgumentException("Date and Patterns must not be null");
       }
       SimpleDateFormat parser = null;
       ParsePosition pos = new ParsePosition(0);
@@ -118,10 +121,11 @@ import java.util.Date;
               return date;
           }
       }
-      thrownew ParseException("Unable to parse the date: " + str, -1);
+      throw new ParseException("Unable to parse the date: " + str, -1);
   }
 }</code></pre></div>
-    <div class="pager"><a class="pager-btn" href="data-type-parseadateandtime.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Parse a date and time</span></a><a class="pager-btn pager-next" href="class-definition-primitivesandoverloading.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Primitives and overloading</span></a></div>
+<div class="table-wrap"><table><thead><tr><th>2.38.1.</th><th>The java.util.Date Class</th></tr></thead><tbody><tr><td>2.38.2.</td><td>Show date and time using only Date methods.</td></tr><tr><td>2.38.3.</td><td>Obtaining a Date Object From a String</td></tr><tr><td>2.38.4.</td><td>Convert from a java.util.Date Object to a java.sql.Date Object</td></tr><tr><td>2.38.5.</td><td>Convert a String Date Such as 2003/01/10 into a java.util.Date Object</td></tr><tr><td>2.38.6.</td><td>Create Yesterday's Date from a Date in the String Format of MM/DD/YYYY</td></tr><tr><td>2.38.7.</td><td>Create a java.util.Date Object from a Year, Month, Day Format</td></tr><tr><td>2.38.8.</td><td>Create a java.sql.Time Object from java.util.Date</td></tr><tr><td>2.38.9.</td><td>Convert the Current Time to a java.sql.Date Object</td></tr><tr><td>2.38.10.</td><td>Convert Date into milliseconds example</td></tr><tr><td>2.38.11.</td><td>Create java Date from specific time example</td></tr><tr><td>2.38.12.</td><td>Determine the Day of the Week from Today's Date</td></tr><tr><td>2.38.13.</td><td>ISO 8601 date parsing utility.</td></tr><tr><td>2.38.14.</td><td>Parses a string representing a date by trying a variety of different parsers.</td></tr><tr><td>2.38.15.</td><td>Perform date validations</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="class-definition-nestedclassescanaccessallmembersofalllevelsoftheclassestheyaren.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Nested classes can access ...</span></a><a class="pager-btn pager-next" href="cubiccurve2d-cubiccurve2d-getx2.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Java Swing Tutorial - Java...</span></a></div>
   </article>
 </main>
 <footer class="ws-footer">

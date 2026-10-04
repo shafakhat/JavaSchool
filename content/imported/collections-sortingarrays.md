@@ -21,9 +21,7 @@ public static void sort(long array[])
 public static void sort(long array[], int fromIndex, int toIndex)
 public static void sort(short array[])
 public static void sort(short array[], int fromIndex, int toIndex)
-```
-
-```java title=Example.java
+java title=Example.java
 import java.util.Arrays;
 public class MainClass {
   public static void main(String[] a) {
@@ -34,9 +32,7 @@ public class MainClass {
     }
   }
 }
-```
-
-```java title=Example.java
+java title=Example.java
 -3
 -2
 2

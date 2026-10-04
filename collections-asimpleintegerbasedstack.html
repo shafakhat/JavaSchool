@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A simple integer based stack. - JavaSchool</title>
+<meta name="description" content="A simple integer based stack.: Java tutorial page with examples and explanations.">
+<meta name="generator" content="build.py (JavaSchool)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('jschool-theme');
+if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body class="page-collections-asimpleintegerbasedstack">
+<header class="topnav">
+  <button type="button" id="navToggle" class="icon-btn nav-toggle" aria-label="Open menu">&#9776;</button>
+  <a class="brand" href="index.html" aria-label="JavaSchool home">
+    <span class="brand-mark">J</span><span class="brand-text">avaSchool</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search Tutorials..." autocomplete="off" spellcheck="false">
+    <div id="searchResults" class="search-results" hidden></div>
+  </div>
+  <button type="button" id="themeToggle" class="icon-btn theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+<nav id="sidebar" class="sidebar" aria-label="Tutorial menu">
+<div class="side-section">
+<a class="side-link side-home" href="index.html"><span class="side-home-icon">&#127968;</span> Java HOME</a>
+<a class="side-link side-home top active" href="java-tutorial.html">Java Tutorial</a>
+<a class="side-link side-home top" href="certification.html">Certifications</a>
+<a class="side-link side-home top" href="interview.html">Interview Questions</a>
+<a class="side-link side-home top" href="archive-index.html">Java Examples</a>
+</div>
+</nav>
+<main class="main">
+  <article class="ws-content">
+    <nav class="crumb">&#127968; <a href="index.html">Java HOME</a> <span class="crumb-sep">&rsaquo;</span> <a href="java-tutorial.html">Java Tutorial</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-collections.html">Collections</a> <span class="crumb-sep">&rsaquo;</span> <a href="tutorial-09-13-stack.html">Stack</a></nav>
+    <h1>A simple integer based stack.</h1>
+<div class="code-box"><div class="code-bar"><span class="code-file">Example.java</span><button type="button" class="copy-btn" title="Copy code">Copy</button></div><pre><code class="lang-java" data-lang="java">/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ *
+ * moved to org.apache.xerces.util by neilg to support the
+ * XPathMatcher.
+ * @author  Andy Clark, IBM
+ *
+ * @version $Id: IntStack.java 447241 2006-09-18 05:12:57Z mrglavas $
+ */
+public final class IntStack {
+    //
+    // Data
+    //
+    /** Stack depth. */
+    private int fDepth;
+    /** Stack data. */
+    private int[] fData;
+    //
+    // Public methods
+    //
+    /** Returns the size of the stack. */
+    public int size() {
+        return fDepth;
+    }
+    /** Pushes a value onto the stack. */
+    public void push(int value) {
+        ensureCapacity(fDepth + 1);
+        fData[fDepth++] = value;
+    }
+    /** Peeks at the top of the stack. */
+    public int peek() {
+        return fData[fDepth - 1];
+    }
+    /** Returns the element at the specified depth in the stack. */
+    public int elementAt(int depth) {
+        return fData[depth];
+    }
+    /** Pops a value off of the stack. */
+    public int pop() {
+        return fData[--fDepth];
+    }
+    /** Clears the stack. */
+    public void clear() {
+        fDepth = 0;
+    }
+    // debugging
+    /** Prints the stack. */
+    public void print() {
+        System.out.print('(');
+        System.out.print(fDepth);
+        System.out.print(") {");
+        for (int i = 0; i &lt; fDepth; i++) {
+            if (i == 3) {
+                System.out.print(" ...");
+                break;
+            }
+            System.out.print(' ');
+            System.out.print(fData[i]);
+            if (i &lt; fDepth - 1) {
+                System.out.print(',');
+            }
+        }
+        System.out.print(" }");
+        System.out.println();
+    }
+    //
+    // Private methods
+    //
+    /** Ensures capacity. */
+    private void ensureCapacity(int size) {
+        if (fData == null) {
+            fData = new int[32];
+        }
+        else if (fData.length &lt;= size) {
+            int[] newdata = new int[fData.length * 2];
+            System.arraycopy(fData, 0, newdata, 0, fData.length);
+            fData = newdata;
+        }
+    }
+} // class IntStack</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>9.13.1.</th><th>Stack Basics: last-in, first-out behavior</th></tr></thead><tbody><tr><td>9.13.2.</td><td>Adding Elements: To add an element to a stack, call the push() method</td></tr><tr><td>9.13.3.</td><td>Removing Elements: To remove an element from the stack, the pop() method</td></tr><tr><td>9.13.4.</td><td>If the size of the stack is zero, true is returned; otherwise, false is returned</td></tr><tr><td>9.13.5.</td><td>Checking the Top: To get the element without removing: using the peek() method</td></tr><tr><td>9.13.6.</td><td>To find out if an element is on the stack: the search() method</td></tr><tr><td>9.13.7.</td><td>Demonstrate the generic Stack class.</td></tr><tr><td>9.13.8.</td><td>A faster, smaller stack implementation.</td></tr><tr><td>9.13.9.</td><td>A simple integer based stack.</td></tr><tr><td>9.13.10.</td><td>A stack of simple integers</td></tr><tr><td>9.13.11.</td><td>A very simple unsynchronized stack. This one is faster than the java.util-Version.</td></tr><tr><td>9.13.12.</td><td>An implementation of the java.util.Stack based on an ArrayList instead of a Vector, so it is not synchronized to protect against multi-threaded access.</td></tr><tr><td>9.13.13.</td><td>Character Stack</td></tr><tr><td>9.13.14.</td><td>Growable Object stack with type specific access methods</td></tr><tr><td>9.13.15.</td><td>Growable String stack with type specific access methods.</td></tr><tr><td>9.13.16.</td><td>Growable int stack with type specific access methods</td></tr><tr><td>9.13.17.</td><td>Stack for boolean values</td></tr><tr><td>9.13.18.</td><td>extends ArrayList to create Stack</td></tr></tbody></table></div>
+    <div class="pager"><a class="pager-btn" href="collections-demonstratethegenericstackclass.html"><span class="pager-lbl">&#10094; Previous</span><span class="pager-title">Demonstrate the generic St...</span></a><a class="pager-btn pager-next" href="collections-growableobjectstackwithtypespecificaccessmethods.html"><span class="pager-lbl">Next &#10095;</span><span class="pager-title">Growable Object stack with...</span></a></div>
+  </article>
+</main>
+<footer class="ws-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="brand footer-logo"><span class="brand-mark">J</span><span class="brand-text">avaSchool</span></div>
+      <p>Complete Java tutorial with hundreds of runnable examples: syntax, object oriented programming, collections, threads, lambdas, streams, JDBC and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html">Java HOME</a><a href="java-tutorial.html">Java Tutorial</a><a href="certification.html">Certifications</a><a href="interview.html">Interview Questions</a><a href="archive-index.html">Java Examples</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="site-year">2026</span> JavaSchool &middot; Tutorial content is original, written for this site.</span>
+    <span>Shafakhatullah Khan Mohammed</span>
+  </div>
+</footer>
+<button type="button" id="topBtn" class="top-btn" title="Go to top" aria-label="Go to top">&#8679;</button>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

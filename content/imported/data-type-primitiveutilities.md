@@ -3,8 +3,8 @@ title: Primitive utilities
 nav: Primitive utilities
 description: * Copyright 2005, JBoss Inc., and individual contributors as indicated
 section: Imported - java2s Archive
-order: 1043
-source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Primitiveutilities.htm
+order: 1270
+source: https://web.archive.org/web/20140829091439/http://www.java2s.com/Tutorial/Java/0040__Data-Type/Primitiveutilities.htm
 ---
 ```java title=Example.java
 /*
@@ -27,11 +27,13 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
  * License along with this software; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
- *//**
+ */
+/**
  *
  * @version <tt>$Revision: 1958 $</tt>
  * @author <a href="mailto:jason@planet57.com">Jason Dillon</a>
- */publicfinalclass Primitives {
+ */
+public final class Primitives {
   /**
    * Get a Boolean from a boolean, equivalent to the java 1.4 method
    * Boolean.valueOf(boolean)
@@ -39,10 +41,12 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param value
    *          the boolean
    * @return the Boolean equivalent
-   */publicstatic Boolean valueOf(boolean value) {
+   */
+  public static Boolean valueOf(boolean value) {
     if (value)
       return Boolean.TRUE;
-    elsereturn Boolean.FALSE;
+    else
+      return Boolean.FALSE;
   }
   /**
    * Test the equality of two doubles by converting their values into IEEE 754
@@ -53,7 +57,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param b
    *          Double to check equality with.
    * @return True if a equals b.
-   */publicstaticboolean equals(finaldouble a, finaldouble b) {
+   */
+  public static boolean equals(final double a, final double b) {
     return Double.doubleToLongBits(a) == Double.doubleToLongBits(b);
   }
   /**
@@ -65,7 +70,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param b
    *          Float to check equality with.
    * @return True if a equals b.
-   */publicstaticboolean equals(finalfloat a, finalfloat b) {
+   */
+  public static boolean equals(final float a, final float b) {
     return Float.floatToIntBits(a) == Float.floatToIntBits(b);
   }
   /**
@@ -82,8 +88,9 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param length
    *          The length of the sub-section.
    * @return True if sub-sections are equal.
-   */publicstaticboolean equals(finalbyte a[], finalint abegin, finalbyte b[], finalint bbegin,
-      finalint length) {
+   */
+  public static boolean equals(final byte a[], final int abegin, final byte b[], final int bbegin,
+      final int length) {
     try {
       int i = length;
       while (--i >= 0) {
@@ -104,7 +111,8 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
    * @param b
    *          The second byte array.
    * @return True if the byte arrays are equal.
-   */publicstaticboolean equals(finalbyte a[], finalbyte b[]) {
+   */
+  public static boolean equals(final byte a[], final byte b[]) {
     if (a == b)
       return true;
     if (a == null || b == null)
@@ -124,3 +132,16 @@ source: https://web.archive.org/web/2016/http://www.java2s.com/Tutorial/Java/004
   }
 }
 ```
+
+| 2.1.1. | The Primitive Types |
+|---|---|
+| 2.1.2. | Size for Java's Primitive Types |
+| 2.1.3. | Default values for primitives and references |
+| 2.1.4. | Literals |
+| 2.1.5. | Surprise! Java lets you overflow |
+| 2.1.6. | Wrapping a Primitive Type in a Wrapper Object: boolean, byte, char, short, int, long, float, double |
+| 2.1.7. | Print the limits of primitive types (e.g. byte, short, int ...) in Java |
+| 2.1.8. | Get the minimum and maximum value of a primitive data types |
+| 2.1.9. | Shows default initial values |
+| 2.1.10. | Primitive utilities |
+| 2.1.11. | Return primitive type the passed in wrapper type corresponds to |

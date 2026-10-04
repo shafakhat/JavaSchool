@@ -36,7 +36,6 @@ import java.io.Serializable;
  */
 public class Main {
   /**
-   * Check if the given object is an array (primitve or native).
    *
    * @param obj  Object to test.
    * @return     True of the object is an array.
