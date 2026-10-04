@@ -1,0 +1,254 @@
+[
+ {
+  "title": "Java Source And Data Type",
+  "subtopics": []
+ },
+ {
+  "title": "Operators",
+  "subtopics": []
+ },
+ {
+  "title": "Modifiers",
+  "subtopics": []
+ },
+ {
+  "title": "Type Casting",
+  "subtopics": []
+ },
+ {
+  "title": "Statements",
+  "subtopics": []
+ },
+ {
+  "title": "Object Oriented",
+  "subtopics": []
+ },
+ {
+  "title": "Thread",
+  "subtopics": []
+ },
+ {
+  "title": "Utility Classes",
+  "subtopics": []
+ },
+ {
+  "title": "File",
+  "subtopics": []
+ },
+ {
+  "title": "Java Source And Data Type",
+  "subtopics": [
+   "Java Source",
+   "Array Dimension",
+   "Comments",
+   "main method",
+   "package",
+   "Member Variable",
+   "import",
+   "Method Variable",
+   "static import",
+   "static Variable",
+   "identifier",
+   "Method",
+   "Literal",
+   "static Method",
+   "Primitive Data Types",
+   "Parameter",
+   "Integer",
+   "variable scope",
+   "char",
+   "Garbage Collection",
+   "float",
+   "Questions",
+   "boolean",
+   "Questions",
+   "long",
+   "Questions",
+   "double",
+   "Questions",
+   "String",
+   "Questions",
+   "Array",
+   "Questions",
+   "Array Elements"
+  ]
+ },
+ {
+  "title": "Operators",
+  "subtopics": []
+ },
+ {
+  "title": "Operators",
+  "subtopics": [
+   "Conditional Operator",
+   "Unary Operators",
+   "Assignment Operators",
+   "Bitwise Operators",
+   "Questions",
+   "Cast Operators",
+   "Questions",
+   "Arithmatic Operators",
+   "Questions",
+   "Comparison Operators",
+   "Questions",
+   "instanceof Operator",
+   "Questions",
+   "boolean Operators"
+  ]
+ },
+ {
+  "title": "Modifiers",
+  "subtopics": [
+   "Access Modifiers",
+   "super",
+   "private",
+   "native",
+   "default modifier",
+   "transient",
+   "public",
+   "volatile",
+   "protected",
+   "strictfp",
+   "final",
+   "Questions",
+   "abstract",
+   "Questions",
+   "static",
+   "Questions",
+   "this"
+  ]
+ },
+ {
+  "title": "Type Casting",
+  "subtopics": []
+ },
+ {
+  "title": "Type Casting",
+  "subtopics": [
+   "Array Type Casting",
+   "Primitive Type Casting",
+   "Questions",
+   "Reference Type Casting",
+   "Questions"
+  ]
+ },
+ {
+  "title": "Statements",
+  "subtopics": [
+   "while",
+   "finally",
+   "do while",
+   "Exception",
+   "for",
+   "throw",
+   "enhanced for loop",
+   "assert",
+   "break",
+   "block",
+   "continue",
+   "Questions",
+   "if",
+   "Questions",
+   "switch",
+   "Questions",
+   "try catch"
+  ]
+ },
+ {
+  "title": "Object Oriented",
+  "subtopics": [
+   "Encapsulation",
+   "JavaBeans",
+   "Composition",
+   "enum",
+   "Inheritance",
+   "interface",
+   "overridden method",
+   "Questions",
+   "overloading method",
+   "Questions",
+   "Variable Length Argument",
+   "Questions",
+   "Constructor",
+   "Questions",
+   "Inner Classes",
+   "Questions",
+   "Anonymous Class"
+  ]
+ },
+ {
+  "title": "Thread",
+  "subtopics": [
+   "Thread Creation",
+   "Wait Notify",
+   "Thread Starting",
+   "Synchronize",
+   "Thread Priority",
+   "Questions",
+   "Daemon Threads",
+   "Questions",
+   "Thread Join",
+   "Questions",
+   "Yielding",
+   "Questions",
+   "Sleeping",
+   "Questions"
+  ]
+ },
+ {
+  "title": "Utility Classes",
+  "subtopics": [
+   "Object",
+   "SortedSet",
+   "equals method",
+   "Comparable",
+   "toString method",
+   "Map",
+   "hashCode",
+   "Arrays",
+   "clone method",
+   "generics",
+   "Math class",
+   "Scanner",
+   "String class",
+   "Regex",
+   "StringBuffer",
+   "Formatter",
+   "Wrapper classes",
+   "Date",
+   "Boxing Unboxing",
+   "Iterator",
+   "Collection",
+   "Runtime",
+   "Collections",
+   "System",
+   "List",
+   "Questions",
+   "Vector",
+   "Questions",
+   "LinkedList",
+   "Questions",
+   "Set",
+   "Questions",
+   "TreeSet",
+   "Questions"
+  ]
+ },
+ {
+  "title": "File",
+  "subtopics": []
+ },
+ {
+  "title": "File",
+  "subtopics": [
+   "Serialization",
+   "RandomAccessFile",
+   "Questions",
+   "Stream",
+   "Questions",
+   "Reader",
+   "Questions",
+   "java2s.com"
+  ]
+ }
+]

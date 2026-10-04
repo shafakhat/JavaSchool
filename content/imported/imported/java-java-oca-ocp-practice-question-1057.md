@@ -1,0 +1,80 @@
+---
+title: Java OCA OCP Practice Question 1057
+nav: Java OCA OCP Practice Ques...
+description: Consider the following two classes defined in two .java files.
+section: Imported - java2s Archive
+order: 1037
+source: https://web.archive.org/web/20210101014708/http://www.java2s.com/ref/java/java-oca-ocp-practice-question-1057.html
+---
+- Java Basic
+- Java Language Basics Java Language Data Types Operator Statement String enum Array Autobox class Method interface Generics Exception Javadoc Lambda package import Java Features Algorithms Byte Array Data Structures Design Patterns Directory Network Regular Expression Text File OCA OCP Exam OCA OCP Exam 1 OCA OCP Exam 2 OCA OCP Exam 3 OCA OCP Exam 4 OCA OCP Exam 5 OCA OCP Exam 6 OCA OCP Exam 7 OCA OCP Exam 8 OCA OCP Exam 9 OCA OCP Exam 10 OCA OCP Exam 11 OCA OCP Exam 12 OCA OCP Exam 13 OCA OCP Exam 14 OCA OCP Exam 15 OCA OCP Exam 16 OCA OCP Exam 17 OCA OCP Exam 18 OCA OCP Exam 19 OCA OCP Exam 20 OCA OCP Exam 21 OCA OCP Exam 22 OCA OCP Exam 23 OCA OCP Exam 24 OCA OCP Exam 25 OCA OCP Exam 26 OCA OCP Exam 27 OCA OCP Exam 28 OCA OCP Exam 29 OCA OCP Exam 30 OCA OCP Exam 31 OCA OCP Exam 32 OCA OCP Exam 33
+
+## Question
+
+Consider the following two classes defined in two .java files.
+
+```java title=Example.java
+//in file /root/com/foo/X.java package com .foo;
+publicclass X{
+  publicstaticint MyID = 10;
+  publicvoid apply (int i){
+    System.out.println ("applied");
+   } //www.java2s.com
+}
+
+//in file /root/com/bar/Y.java package com .bar;
+//1  <== INSERT STATEMENT (s) HERE publicclass Y{
+    publicstaticvoid main (String [] args){
+       System.out.println (X.MyID);
+     }
+}
+```
+
+What should be inserted at // 1 so that Y.java can compile without any error?
+
+Select 1 option
+
+```java title=Example.java
+
+A. importstatic X;
+B. importstatic com.foo.*;
+C. importstatic com.foo.X .*;
+D. import com .foo.*;
+E. import com .foo.X .MyID;
+```
+
+```java title=Example.java
+Correct Option is  : D
+```
+
+## Note
+
+A. and B. are wrong.
+
+Bad syntax. Package import does not use static keyword.
+
+C. is wrong.
+
+This static import, although syntactically correct, will not help here because Y is accessing class X in X.MyID.
+
+D. is correct. This is required because Y is accessing class X.
+
+static import of MyID is NOT required because Y is accessing MyID through X ( X.MyID).
+
+Had it been j ust System.out.println(MyID), only one import statement: import static com.foo.X.*; would have worked.
+
+E. is wrong. Bad Syntax.
+
+Syntax for importing static fields is: import static <package>.
+
+<classname>.*; or import static <package>.<classname>.<fieldname>;
+
+PreviousNext
+
+## Related
+
+- Java OCA OCP Practice Question 1054
+- Java OCA OCP Practice Question 1055
+- Java OCA OCP Practice Question 1056
+- Java OCA OCP Practice Question 1058
+- Java OCA OCP Practice Question 1059

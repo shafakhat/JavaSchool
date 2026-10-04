@@ -2,7 +2,7 @@
 title: Web & Frameworks Interview Questions
 nav: Interview - Web
 description: 25 web-layer interview questions - servlets, JSP, sessions, filters, Spring IoC/MVC/Boot, Hibernate, Struts, EJB, REST design.
-section: Interview & Certification
+section: Interview Prep
 order: 80
 ---
 

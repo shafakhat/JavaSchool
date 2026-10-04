@@ -2,7 +2,7 @@
 title: Java Interview Questions - Master List
 nav: All 115 Questions
 description: 100 Java interview questions with crisp answers - core Java, OOP, collections, threads, Java 8+, JDBC, web and JVM internals.
-section: Interview & Certification
+section: Interview Prep
 order: 15
 ---
 

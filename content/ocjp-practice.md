@@ -2,7 +2,7 @@
 title: OCJP / OCJA Practice Test
 nav: OCJP Practice Test
 description: 50-question practice test for Oracle Certified Java Associate/Professional style exams - timed, scored, with explanations.
-section: Interview & Certification
+section: Interview Prep
 order: 20
 ---
 
