@@ -1,0 +1,12 @@
+---
+title: Casting
+nav: Casting
+description: 1. Java performance programming, Part 2: The cost of casting javaworld.com does not create an java.awt.Component object; it creates a reference variable of type java.lang
+section: Imported - java2s Archive
+order: 1011
+source: https://web.archive.org/web/20120515094025/http://java2s.com/Article-Tutorial/Java/Class/Casting.htm
+---
+1. Java performance programming, Part 2: The cost of casting javaworld.com does not create an java.awt.Component object; it creates a reference variable of type java.lang.Component. Even though references have types just as objects do, there is not a precise match between reference and object types -- a reference value may be null, an object of the same type as the reference, or an object of any subclass (i.e., class descended from) the type of the reference. In this particular case, java.awt.Component is an abstract class, so we know that there can never be an object of the same type as our reference, but there can certainly be objects of subclasses of that reference type.
+---
+2. Restricted-channel multicast in Java javaworld.com This article describes the modifications made to an existing multicast application during research and development at Sun Microsystems. The goal was to convert an application bundled with Java Reliable Multicast Service (JRMS) to something we are calling a restricted-channel system. In a restricted-channel system, the multicast server transmits encrypted information that can be deciphered only by authorized multicast client programs or multicast client programs operating under authorized conditions. For security reasons, a Java Card was chosen as the device on which to perform decryption. The program performing the decryption was run by the smart card chip itself. The system envisioned in this project is a complete one, where both decryption and payment are handled by the Java Card device. This article also demonstrates the use of the Java Card as a "purse," performing debit and credit card functions and actually "holding" money.
+3. Java Advanced Placement Study Guide: Logical Operations, Numeric Cast, String Concatenation, and the toString() Method developer.com Please see the first lesson in the miniseries entitled Java Advanced Placement Study Guide: Introduction to the Lessons, Primitive Types, for additional background information. The lesson immediately prior to this one was entitled Java Advanced Placement Study Guide: Relational Operators, Increment Operator, and Control Structures.
